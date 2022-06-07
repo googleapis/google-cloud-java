@@ -23,7 +23,7 @@ for MODULE in ${MODULE_LIST}; do
   echo
 
   # Copy files from bazel-bin and saves to staging directory
-  echo docker run --rm --user $(id -u):$(id -g) \
+  docker run --rm --user $(id -u):$(id -g) \
       -v $(pwd):/repo \
       -v ${ROOT_DIR}/googleapis/bazel-bin:/bazel-bin \
       gcr.io/cloud-devrel-public-resources/owlbot-cli:${OWLBOT_VERSION} copy-bazel-bin \
@@ -32,7 +32,7 @@ for MODULE in ${MODULE_LIST}; do
 
   # Extracts files from staging directory and post-process
   # the files via OwlBot. This includes templating, formatting, etc.
-  echo docker run --rm --user $(id -u):$(id -g) \
+  docker run --rm --user $(id -u):$(id -g) \
       -v $(pwd)/${MODULE}:/workspace   -w /workspace \
       gcr.io/cloud-devrel-public-resources/owlbot-java
 
