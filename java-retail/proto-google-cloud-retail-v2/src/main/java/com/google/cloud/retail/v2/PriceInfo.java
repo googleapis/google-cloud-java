@@ -1462,7 +1462,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Price of the product without any discount. If zero, by default set to be
-   * the [price][google.cloud.retail.v2.PriceInfo.price].
+   * the [price][google.cloud.retail.v2.PriceInfo.price]. If set,
+   * [original_price][google.cloud.retail.v2.PriceInfo.original_price] should be
+   * greater than or equal to [price][google.cloud.retail.v2.PriceInfo.price],
+   * otherwise an INVALID_ARGUMENT error is thrown.
    * </pre>
    *
    * <code>float original_price = 3;</code>
@@ -2400,7 +2403,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Price of the product without any discount. If zero, by default set to be
-     * the [price][google.cloud.retail.v2.PriceInfo.price].
+     * the [price][google.cloud.retail.v2.PriceInfo.price]. If set,
+     * [original_price][google.cloud.retail.v2.PriceInfo.original_price] should be
+     * greater than or equal to [price][google.cloud.retail.v2.PriceInfo.price],
+     * otherwise an INVALID_ARGUMENT error is thrown.
      * </pre>
      *
      * <code>float original_price = 3;</code>
@@ -2416,7 +2422,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Price of the product without any discount. If zero, by default set to be
-     * the [price][google.cloud.retail.v2.PriceInfo.price].
+     * the [price][google.cloud.retail.v2.PriceInfo.price]. If set,
+     * [original_price][google.cloud.retail.v2.PriceInfo.original_price] should be
+     * greater than or equal to [price][google.cloud.retail.v2.PriceInfo.price],
+     * otherwise an INVALID_ARGUMENT error is thrown.
      * </pre>
      *
      * <code>float original_price = 3;</code>
@@ -2435,7 +2444,10 @@ public final class PriceInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Price of the product without any discount. If zero, by default set to be
-     * the [price][google.cloud.retail.v2.PriceInfo.price].
+     * the [price][google.cloud.retail.v2.PriceInfo.price]. If set,
+     * [original_price][google.cloud.retail.v2.PriceInfo.original_price] should be
+     * greater than or equal to [price][google.cloud.retail.v2.PriceInfo.price],
+     * otherwise an INVALID_ARGUMENT error is thrown.
      * </pre>
      *
      * <code>float original_price = 3;</code>

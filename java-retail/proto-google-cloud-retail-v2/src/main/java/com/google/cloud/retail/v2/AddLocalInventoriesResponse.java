@@ -22,8 +22,11 @@ package com.google.cloud.retail.v2;
  *
  *
  * <pre>
- * Response of the [AddLocalInventories][] API.  Currently empty because
- * there is no meaningful response populated from the [AddLocalInventories][]
+ * Response of the
+ * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+ * API.  Currently empty because there is no meaningful response populated from
+ * the
+ * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
  * method.
  * </pre>
  *
@@ -261,8 +264,11 @@ public final class AddLocalInventoriesResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Response of the [AddLocalInventories][] API.  Currently empty because
-   * there is no meaningful response populated from the [AddLocalInventories][]
+   * Response of the
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * API.  Currently empty because there is no meaningful response populated from
+   * the
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
    * method.
    * </pre>
    *

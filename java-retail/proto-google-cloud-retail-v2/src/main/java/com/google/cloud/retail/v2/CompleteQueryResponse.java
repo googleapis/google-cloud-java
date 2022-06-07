@@ -188,7 +188,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. This is an experimental feature. Contact Retail Search
+     * support team if you are interested in enabling it.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -202,7 +203,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. This is an experimental feature. Contact Retail Search
+     * support team if you are interested in enabling it.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -219,7 +221,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. This is an experimental feature. Contact Retail Search
+     * support team if you are interested in enabling it.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -233,7 +236,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. This is an experimental feature. Contact Retail Search
+     * support team if you are interested in enabling it.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -252,7 +256,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. This is an experimental feature. Contact Retail Search
+     * support team if you are interested in enabling it.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -473,7 +478,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. This is an experimental feature. Contact Retail Search
+     * support team if you are interested in enabling it.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -500,7 +506,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. This is an experimental feature. Contact Retail Search
+     * support team if you are interested in enabling it.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -518,7 +525,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. This is an experimental feature. Contact Retail Search
+     * support team if you are interested in enabling it.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -541,7 +549,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. This is an experimental feature. Contact Retail Search
+     * support team if you are interested in enabling it.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1081,7 +1090,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. This is an experimental feature. Contact Retail Search
+       * support team if you are interested in enabling it.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1108,7 +1118,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. This is an experimental feature. Contact Retail Search
+       * support team if you are interested in enabling it.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1126,7 +1137,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. This is an experimental feature. Contact Retail Search
+       * support team if you are interested in enabling it.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1149,7 +1161,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. This is an experimental feature. Contact Retail Search
+       * support team if you are interested in enabling it.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1179,7 +1192,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. This is an experimental feature. Contact Retail Search
+       * support team if you are interested in enabling it.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1205,7 +1219,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. This is an experimental feature. Contact Retail Search
+       * support team if you are interested in enabling it.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>
@@ -1230,7 +1245,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. This is an experimental feature. Contact Retail Search
+       * support team if you are interested in enabling it.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2.CustomAttribute&gt; attributes = 2;</code>

@@ -618,6 +618,9 @@ public class ProductServiceClient implements BackgroundResource {
    *     are NOT supported. If not set, all supported fields (the fields that are neither immutable
    *     nor output only) are updated.
    *     <p>If an unsupported or unknown field is provided, an INVALID_ARGUMENT error is returned.
+   *     <p>The attribute key can be updated by setting the mask path as "attributes.${key_name}".
+   *     If a key name is present in the mask but not in the patching product from the request, this
+   *     key will be deleted after the update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Product updateProduct(Product product, FieldMask updateMask) {
@@ -816,8 +819,7 @@ public class ProductServiceClient implements BackgroundResource {
   /**
    * Bulk import of multiple [Product][google.cloud.retail.v2.Product]s.
    *
-   * <p>Request processing may be synchronous. No partial updating is supported. Non-existing items
-   * are created.
+   * <p>Request processing may be synchronous. Non-existing items are created.
    *
    * <p>Note that it is possible for a subset of the [Product][google.cloud.retail.v2.Product]s to
    * be successfully updated.
@@ -854,8 +856,7 @@ public class ProductServiceClient implements BackgroundResource {
   /**
    * Bulk import of multiple [Product][google.cloud.retail.v2.Product]s.
    *
-   * <p>Request processing may be synchronous. No partial updating is supported. Non-existing items
-   * are created.
+   * <p>Request processing may be synchronous. Non-existing items are created.
    *
    * <p>Note that it is possible for a subset of the [Product][google.cloud.retail.v2.Product]s to
    * be successfully updated.
@@ -892,8 +893,7 @@ public class ProductServiceClient implements BackgroundResource {
   /**
    * Bulk import of multiple [Product][google.cloud.retail.v2.Product]s.
    *
-   * <p>Request processing may be synchronous. No partial updating is supported. Non-existing items
-   * are created.
+   * <p>Request processing may be synchronous. Non-existing items are created.
    *
    * <p>Note that it is possible for a subset of the [Product][google.cloud.retail.v2.Product]s to
    * be successfully updated.
@@ -957,8 +957,8 @@ public class ProductServiceClient implements BackgroundResource {
    *
    * <p>Pre-existing inventory information can only be updated with
    * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
-   * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and
-   * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
+   * and [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1071,8 +1071,8 @@ public class ProductServiceClient implements BackgroundResource {
    *
    * <p>Pre-existing inventory information can only be updated with
    * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
-   * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and
-   * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
+   * and [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1134,8 +1134,8 @@ public class ProductServiceClient implements BackgroundResource {
    *
    * <p>Pre-existing inventory information can only be updated with
    * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
-   * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and
-   * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
+   * and [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1197,8 +1197,8 @@ public class ProductServiceClient implements BackgroundResource {
    *
    * <p>Pre-existing inventory information can only be updated with
    * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
-   * [AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and
-   * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
+   * and [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
