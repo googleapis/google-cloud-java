@@ -15,7 +15,19 @@ jobs:
         run: ./bootstrap.sh
         env:
           USERNAME: ${{ github.actor }}
-      - name: Archive code coverage
+      - name: Compile
+        working-directory: monorepo/google-cloud-java
+        run: mvn compile -T C1 -B
+      - name: Unit Tests
+        working-directory: monorepo/google-cloud-java
+        run: mvn install -T C1 -B
+      - name: Aggregate coverage
+        working-directory: monorepo/google-cloud-java
+        run: mvn jacoco:report-aggregate -T C1 -B
+      - name: Create code coverage archive
+        working-directory: monorepo/google-cloud-java/CoverageAggregator/target/site/jacoco-aggregate
+        run: zip ../../../../../coverage.zip ./* -r
+      - name: Upload code coverage archive
         uses: actions/upload-artifact@v3
         with:
           name: code-coverage

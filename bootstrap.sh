@@ -64,10 +64,3 @@ awk -v MODULE='    <module>CoverageAggregator</module>' '/<\/modules>/{print MOD
 
 git add --all
 git commit -am 'feat: create CoverageAggregator module'
-
-mvn install -T C1 -B
-mvn jacoco:report-aggregate -T C1 -B
-
-# create coverage archive
-cd CoverageAggregator/target/site/jacoco-aggregate
-zip ../../../../../coverage.zip ./* -r
