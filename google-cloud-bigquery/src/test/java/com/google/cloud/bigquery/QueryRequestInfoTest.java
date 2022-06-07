@@ -16,8 +16,8 @@
 
 package com.google.cloud.bigquery;
 
-import static org.assertj.core.api.Assertions.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
@@ -167,8 +167,28 @@ public class QueryRequestInfoTest {
     compareQueryRequestInfo(new QueryRequestInfo(QUERY_JOB_CONFIGURATION), REQUEST_INFO);
   }
 
+  /*
+  Ref: https://github.com/googleapis/java-bigquery/issues/2083
+  Refactoring to remove the assert4j dependency which was causing RequireUpperBoundDeps Error
+   */
   private void compareQueryRequestInfo(QueryRequestInfo expected, QueryRequestInfo actual) {
+    QueryRequest expectedQueryReq = expected.toPb();
+    QueryRequest actualQueryReq = actual.toPb();
+
     // requestId are expected to be different
-    assertThat(actual).isEqualToIgnoringGivenFields(expected, "requestId");
+    assertNotEquals(expectedQueryReq.getRequestId(), actualQueryReq.getRequestId());
+    // rest of the attributes should be equal
+    assertEquals(
+        expectedQueryReq.getConnectionProperties(), actualQueryReq.getConnectionProperties());
+    assertEquals(expectedQueryReq.getDefaultDataset(), actualQueryReq.getDefaultDataset());
+    assertEquals(expectedQueryReq.getDryRun(), actualQueryReq.getDryRun());
+    assertEquals(expectedQueryReq.getLabels(), actualQueryReq.getLabels());
+    assertEquals(expectedQueryReq.getMaximumBytesBilled(), actualQueryReq.getMaximumBytesBilled());
+    assertEquals(expectedQueryReq.getMaxResults(), actualQueryReq.getMaxResults());
+    assertEquals(expectedQueryReq.getQuery(), actualQueryReq.getQuery());
+    assertEquals(expectedQueryReq.getQueryParameters(), actualQueryReq.getQueryParameters());
+    assertEquals(expectedQueryReq.getCreateSession(), actualQueryReq.getCreateSession());
+    assertEquals(expectedQueryReq.getUseQueryCache(), actualQueryReq.getUseQueryCache());
+    assertEquals(expectedQueryReq.getUseLegacySql(), actualQueryReq.getUseLegacySql());
   }
 }
