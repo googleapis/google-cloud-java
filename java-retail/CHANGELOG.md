@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-retail/compare/v2.1.0...v2.2.0) (2022-06-07)
+
+
+### Features
+
+* add v2alpha/v2beta clients ([#452](https://github.com/googleapis/java-retail/issues/452)) ([35a598d](https://github.com/googleapis/java-retail/commit/35a598dbac1ba909e87c70934651e9b463b6286b))
+* allow users to disable spell check in search requests ([#449](https://github.com/googleapis/java-retail/issues/449)) ([5e19c6d](https://github.com/googleapis/java-retail/commit/5e19c6d4df49d14cd37d7489a9bb5161ebd78645))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.12.0 ([#446](https://github.com/googleapis/java-retail/issues/446)) ([62d951e](https://github.com/googleapis/java-retail/commit/62d951e9ba3e33ad66215e593e1f4e40d8e4ba70))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.1 ([#448](https://github.com/googleapis/java-retail/issues/448)) ([a031d67](https://github.com/googleapis/java-retail/commit/a031d677a2d9087527388e448a94da3144b9e8ed))
+* update dependency com.google.cloud:google-cloud-storage to v2.7.1 ([#444](https://github.com/googleapis/java-retail/issues/444)) ([91a264d](https://github.com/googleapis/java-retail/commit/91a264d8c019e6fb42d2cb26c0f49c08c59a98d0))
+* update dependency com.google.cloud:google-cloud-storage to v2.7.2 ([#447](https://github.com/googleapis/java-retail/issues/447)) ([5ff519b](https://github.com/googleapis/java-retail/commit/5ff519b1a4ff7d20d685c4db5d0217ac900025a7))
+
 ## [2.1.0](https://github.com/googleapis/java-retail/compare/v2.0.19...v2.1.0) (2022-05-19)
 
 
