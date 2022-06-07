@@ -24,9 +24,9 @@ deep-preserve-regex:
 - "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
-- source: "/google/cloud/retail/(v\\d)/.*-java/proto-google-.*/src"
+- source: "/google/cloud/retail/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/$1/proto-google-cloud-retail-$1/src"
-- source: "/google/cloud/retail/(v\\d)/.*-java/grpc-google-.*/src"
+- source: "/google/cloud/retail/(v.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/$1/grpc-google-cloud-retail-$1/src"
-- source: "/google/cloud/retail/(v\\d)/.*-java/gapic-google-.*/src"
+- source: "/google/cloud/retail/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-retail/src"

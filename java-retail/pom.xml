@@ -65,6 +65,26 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-retail-v2beta</artifactId>
+        <version>2.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-retail-v2beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-retail-v2alpha</artifactId>
+        <version>2.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-retail-v2alpha:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-retail-v2beta</artifactId>
+        <version>2.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-retail-v2beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-retail-v2alpha</artifactId>
+        <version>2.1.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-retail-v2alpha:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-retail-v2</artifactId>
         <version>2.1.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-retail-v2:current} -->
       </dependency>
@@ -104,7 +124,11 @@
   <modules>
     <module>google-cloud-retail</module>
     <module>grpc-google-cloud-retail-v2</module>
+    <module>grpc-google-cloud-retail-v2alpha</module>
+    <module>grpc-google-cloud-retail-v2beta</module>
     <module>proto-google-cloud-retail-v2</module>
+    <module>proto-google-cloud-retail-v2alpha</module>
+    <module>proto-google-cloud-retail-v2beta</module>
     <module>google-cloud-retail-bom</module>
   </modules>
 

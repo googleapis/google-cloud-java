@@ -4,3 +4,7 @@
 google-cloud-retail:2.1.0:2.1.1-SNAPSHOT
 grpc-google-cloud-retail-v2:2.1.0:2.1.1-SNAPSHOT
 proto-google-cloud-retail-v2:2.1.0:2.1.1-SNAPSHOT
+proto-google-cloud-retail-v2alpha:2.1.0:2.1.1-SNAPSHOT
+proto-google-cloud-retail-v2beta:2.1.0:2.1.1-SNAPSHOT
+grpc-google-cloud-retail-v2alpha:2.1.0:2.1.1-SNAPSHOT
+grpc-google-cloud-retail-v2beta:2.1.0:2.1.1-SNAPSHOT
