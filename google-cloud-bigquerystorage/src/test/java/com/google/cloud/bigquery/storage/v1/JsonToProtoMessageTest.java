@@ -421,6 +421,18 @@ public class JsonToProtoMessageTest {
           .setMode(TableFieldSchema.Mode.NULLABLE)
           .setName("test_numeric_long")
           .build();
+  private final TableFieldSchema TEST_NUMERIC_FLOAT =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.NUMERIC)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_numeric_float")
+          .build();
+  private final TableFieldSchema TEST_NUMERIC_DOUBLE =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.NUMERIC)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_numeric_double")
+          .build();
   private final TableFieldSchema TEST_BIGNUMERIC =
       TableFieldSchema.newBuilder()
           .setType(TableFieldSchema.Type.BIGNUMERIC)
@@ -444,6 +456,18 @@ public class JsonToProtoMessageTest {
           .setType(TableFieldSchema.Type.BIGNUMERIC)
           .setMode(TableFieldSchema.Mode.NULLABLE)
           .setName("test_bignumeric_long")
+          .build();
+  private final TableFieldSchema TEST_BIGNUMERIC_FLOAT =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.BIGNUMERIC)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_bignumeric_float")
+          .build();
+  private final TableFieldSchema TEST_BIGNUMERIC_DOUBLE =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.BIGNUMERIC)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_bignumeric_double")
           .build();
   final TableFieldSchema TEST_INTERVAL =
       TableFieldSchema.newBuilder()
@@ -478,12 +502,16 @@ public class JsonToProtoMessageTest {
           .addFields(16, TEST_NUMERIC_STR)
           .addFields(17, TEST_NUMERIC_INT)
           .addFields(18, TEST_NUMERIC_LONG)
-          .addFields(19, TEST_BIGNUMERIC)
-          .addFields(20, TEST_BIGNUMERIC_STR)
-          .addFields(21, TEST_BIGNUMERIC_INT)
-          .addFields(22, TEST_BIGNUMERIC_LONG)
-          .addFields(23, TEST_INTERVAL)
-          .addFields(24, TEST_JSON)
+          .addFields(19, TEST_NUMERIC_FLOAT)
+          .addFields(20, TEST_NUMERIC_DOUBLE)
+          .addFields(21, TEST_BIGNUMERIC)
+          .addFields(22, TEST_BIGNUMERIC_STR)
+          .addFields(23, TEST_BIGNUMERIC_INT)
+          .addFields(24, TEST_BIGNUMERIC_LONG)
+          .addFields(25, TEST_BIGNUMERIC_FLOAT)
+          .addFields(26, TEST_BIGNUMERIC_DOUBLE)
+          .addFields(27, TEST_INTERVAL)
+          .addFields(28, TEST_JSON)
           .build();
 
   @Test
@@ -600,27 +628,6 @@ public class JsonToProtoMessageTest {
   }
 
   @Test
-  public void testNumericMismatch() throws Exception {
-    TableFieldSchema field =
-        TableFieldSchema.newBuilder()
-            .setName("numeric")
-            .setType(TableFieldSchema.Type.NUMERIC)
-            .setMode(TableFieldSchema.Mode.NULLABLE)
-            .build();
-    TableSchema tableSchema = TableSchema.newBuilder().addFields(field).build();
-    JSONObject json = new JSONObject();
-    json.put("numeric", 1.0);
-    try {
-      DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(
-              TestNumeric.getDescriptor(), tableSchema, json);
-      Assert.fail("should fail");
-    } catch (IllegalArgumentException e) {
-      assertEquals("JSONObject does not have a bytes field at root.numeric.", e.getMessage());
-    }
-  }
-
-  @Test
   public void testMixedCaseFieldNames() throws Exception {
     TableFieldSchema field =
         TableFieldSchema.newBuilder()
@@ -636,27 +643,6 @@ public class JsonToProtoMessageTest {
     DynamicMessage protoMsg =
         JsonToProtoMessage.convertJsonToProtoMessage(
             TestMixedCaseFieldNames.getDescriptor(), tableSchema, json);
-  }
-
-  @Test
-  public void testBigNumericMismatch() throws Exception {
-    TableFieldSchema field =
-        TableFieldSchema.newBuilder()
-            .setName("bignumeric")
-            .setType(TableFieldSchema.Type.BIGNUMERIC)
-            .setMode(TableFieldSchema.Mode.REPEATED)
-            .build();
-    TableSchema tableSchema = TableSchema.newBuilder().addFields(field).build();
-    JSONObject json = new JSONObject();
-    json.put("bignumeric", new JSONArray(new Double[] {1.0}));
-    try {
-      DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(
-              TestBignumeric.getDescriptor(), tableSchema, json);
-      Assert.fail("should fail");
-    } catch (IllegalArgumentException e) {
-      assertEquals("JSONObject does not have a bytes field at root.bignumeric[0].", e.getMessage());
-    }
   }
 
   @Test
@@ -920,6 +906,10 @@ public class JsonToProtoMessageTest {
                 BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal(1)))
             .setTestNumericLong(
                 BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal(1L)))
+            .setTestNumericFloat(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal(1f)))
+            .setTestNumericDouble(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal(1D)))
             .setTestBignumeric(
                 BigDecimalByteStringEncoder.encodeToBigNumericByteString(
                     new BigDecimal("578960446186580977117854925043439539266.3")))
@@ -929,6 +919,10 @@ public class JsonToProtoMessageTest {
                 BigDecimalByteStringEncoder.encodeToBigNumericByteString(new BigDecimal(1)))
             .setTestBignumericLong(
                 BigDecimalByteStringEncoder.encodeToBigNumericByteString(new BigDecimal(1L)))
+            .setTestBignumericFloat(
+                BigDecimalByteStringEncoder.encodeToBigNumericByteString(new BigDecimal(1f)))
+            .setTestBignumericDouble(
+                BigDecimalByteStringEncoder.encodeToBigNumericByteString(new BigDecimal(1D)))
             .setTestInterval("0-0 0 0:0:0.000005")
             .addTestJson("{'a':'b'}")
             .build();
@@ -975,6 +969,8 @@ public class JsonToProtoMessageTest {
     json.put("test_numeric_str", "12.4");
     json.put("test_numeric_int", 1);
     json.put("test_numeric_long", 1L);
+    json.put("test_numeric_float", 1f);
+    json.put("test_numeric_double", 1D);
     json.put(
         "test_bignumeric",
         BigDecimalByteStringEncoder.encodeToBigNumericByteString(
@@ -982,6 +978,8 @@ public class JsonToProtoMessageTest {
     json.put("test_bignumeric_str", new JSONArray(new String[] {"1.23"}));
     json.put("test_bignumeric_int", 1);
     json.put("test_bignumeric_long", 1L);
+    json.put("test_bignumeric_float", 1f);
+    json.put("test_bignumeric_double", 1D);
     json.put("test_interval", "0-0 0 0:0:0.000005");
     json.put("test_json", new JSONArray(new String[] {"{'a':'b'}"}));
     DynamicMessage protoMsg =
