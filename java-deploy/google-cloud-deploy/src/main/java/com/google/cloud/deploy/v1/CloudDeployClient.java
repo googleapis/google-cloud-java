@@ -105,7 +105,7 @@ import javax.annotation.Generated;
  * CloudDeployClient cloudDeployClient = CloudDeployClient.create(cloudDeploySettings);
  * }</pre>
  *
- * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.Testing this module
  */
 @Generated("by gapic-generator-java")
 public class CloudDeployClient implements BackgroundResource {

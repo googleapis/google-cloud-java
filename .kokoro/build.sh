@@ -27,16 +27,30 @@ source ${scriptDir}/common.sh
 mvn -version
 echo ${JOB_TYPE}
 
-mvn clean install
+declare -a files=$(git diff --name-only)
+
+for directory in ${files[@]}
+do
+  if [[ $directory == java* ]]
+  then
+    if [ "$modules" ];then
+       modules+=','
+    fi
+    modules+=$(sed 's#/.*##' <<< $directory)
+  fi
+done
+echo $modules
+mvn  -pl ${modules} install
+
 ## if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
-#if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
-#    export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS})
-#fi
-#
-#RETURN_CODE=0
-#set +e
-#
-#case ${JOB_TYPE} in
+if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
+    export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS})
+fi
+
+RETURN_CODE=0
+set +e
+
+case ${JOB_TYPE} in
 #test)
 #    mvn test -B -ntp -Dclirr.skip=true -Denforcer.skip=true
 #    RETURN_CODE=$?
@@ -49,17 +63,18 @@ mvn clean install
 #    mvn javadoc:javadoc javadoc:test-javadoc -B -ntp
 #    RETURN_CODE=$?
 #    ;;
-#integration)
-#    mvn -B ${INTEGRATION_TEST_ARGS} \
-#      -ntp \
-#      -Penable-integration-tests \
-#      -DtrimStackTrace=false \
-#      -Dclirr.skip=true \
-#      -Denforcer.skip=true \
-#      -fae \
-#      verify
-#    RETURN_CODE=$?
-#    ;;
+integration)
+    mvn -pl ${modules} \
+       -B ${INTEGRATION_TEST_ARGS} \
+      -ntp \
+      -Penable-integration-tests \
+      -DtrimStackTrace=false \
+      -Dclirr.skip=true \
+      -Denforcer.skip=true \
+      -fae \
+      verify
+    RETURN_CODE=$?
+    ;;
 #graalvm)
 #    # Run Unit and Integration Tests with Native Image
 #    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative -Penable-integration-tests test
@@ -105,7 +120,7 @@ mvn clean install
 #    ;;
 #*)
 #    ;;
-#esac
+esac
 #
 #if [ "${REPORT_COVERAGE}" == "true" ]
 #then

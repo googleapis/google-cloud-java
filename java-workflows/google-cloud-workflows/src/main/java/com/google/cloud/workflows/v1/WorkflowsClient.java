@@ -112,7 +112,7 @@ public class WorkflowsClient implements BackgroundResource {
   private final WorkflowsStub stub;
   private final OperationsClient operationsClient;
 
-  /** Constructs an instance of WorkflowsClient with default settings. */
+  /** Constructs an instance of WorkflowsClient with default settings. testing this module */
   public static final WorkflowsClient create() throws IOException {
     return create(WorkflowsSettings.newBuilder().build());
   }

@@ -104,7 +104,7 @@ import javax.annotation.Generated;
  *     ProfilerServiceClient.create(profilerServiceSettings);
  * }</pre>
  *
- * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.Testing this module
  */
 @Generated("by gapic-generator-java")
 public class ProfilerServiceClient implements BackgroundResource {
