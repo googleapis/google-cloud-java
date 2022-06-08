@@ -20,7 +20,7 @@ jobs:
         run: mvn compile -T C1 -B
       - name: Unit Tests
         working-directory: monorepo/google-cloud-java
-        run: mvn install -T C1 -B
+        run: mvn test -T C1 -B
       - name: Aggregate coverage
         working-directory: monorepo/google-cloud-java
         run: mvn jacoco:report-aggregate -T C1 -B
