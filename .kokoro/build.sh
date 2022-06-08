@@ -57,6 +57,7 @@ integration)
      -Dclirr.skip=true \
      -Denforcer.skip=true \
      -fae \
+    -T 3C \
      verify
    RETURN_CODE=$?
    ;;
