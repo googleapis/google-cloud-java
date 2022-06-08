@@ -73,12 +73,17 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assume;
@@ -94,6 +99,8 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public final class SpannerIntegrationTest {
 
+  private static final Logger testLogger = Logger.getLogger(GcpManagedChannel.class.getName());
+  private final List<LogRecord> logRecords = new LinkedList<>();
   private static final String GCP_PROJECT_ID = System.getenv("GCP_PROJECT_ID");
   private static final String INSTANCE_ID = "grpc-gcp-test-instance";
   private static final String DB_NAME = "grpc-gcp-test-db";
@@ -127,6 +134,31 @@ public final class SpannerIntegrationTest {
     DatabaseClient databaseClient = spanner.getDatabaseClient(databaseId);
     initializeTable(databaseClient);
   }
+
+  private String lastLogMessage() {
+    return lastLogMessage(1);
+  }
+
+  private String lastLogMessage(int nthFromLast) {
+    return logRecords.get(logRecords.size() - nthFromLast).getMessage();
+  }
+
+  private Level lastLogLevel() {
+    return logRecords.get(logRecords.size() - 1).getLevel();
+  }
+
+  private final Handler testLogHandler = new Handler() {
+    @Override
+    public void publish(LogRecord record) {
+      logRecords.add(record);
+    }
+
+    @Override
+    public void flush() {}
+
+    @Override
+    public void close() throws SecurityException {}
+  };
 
   private static void initializeTable(DatabaseClient databaseClient) {
     List<Mutation> mutations =
@@ -370,6 +402,7 @@ public final class SpannerIntegrationTest {
 
   @Before
   public void setupChannels() {
+    testLogger.addHandler(testLogHandler);
     File configFile =
         new File(SpannerIntegrationTest.class.getClassLoader().getResource(API_FILE).getFile());
     gcpChannel =
@@ -394,6 +427,8 @@ public final class SpannerIntegrationTest {
 
   @After
   public void shutdownChannels() {
+    testLogger.removeHandler(testLogHandler);
+    testLogger.setLevel(Level.INFO);
     gcpChannel.shutdownNow();
     gcpChannelBRR.shutdownNow();
   }
@@ -498,15 +533,32 @@ public final class SpannerIntegrationTest {
 
   @Test
   public void testSessionsCreatedWithoutRoundRobin() throws Exception {
+    // Watch debug messages.
+    testLogger.setLevel(Level.FINEST);
+    final int currentIndex = GcpManagedChannel.channelPoolIndex.get() - 1;
+    final String poolIndex = String.format("pool-%d", currentIndex);
+
     SpannerFutureStub stub = getSpannerFutureStub();
     List<ListenableFuture<Session>> futures = new ArrayList<>();
     assertEquals(ConnectivityState.IDLE, gcpChannel.getState(false));
+
+    // Initial log messages count.
+    int logCount = logRecords.size();
 
     // Should create one session per channel.
     CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE_PATH).build();
     for (int i = 0; i < MAX_CHANNEL; i++) {
       ListenableFuture<Session> future = stub.createSession(req);
       futures.add(future);
+      assertThat(lastLogMessage(3)).isEqualTo(
+          poolIndex + ": Channel " + i + " state change detected: null -> IDLE");
+      assertThat(lastLogMessage(2)).isEqualTo(
+          poolIndex + ": Channel " + i + " created.");
+      assertThat(lastLogMessage()).isEqualTo(
+          poolIndex + ": Channel " + i + " picked for bind operation.");
+      logCount += 3;
+      assertThat(logRecords.size()).isEqualTo(logCount);
+      assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
     }
     // Each channel should have 1 active stream with the CreateSession request because we create them concurrently.
     checkChannelRefs(gcpChannel, MAX_CHANNEL, 1, 0);
@@ -534,11 +586,17 @@ public final class SpannerIntegrationTest {
     // Verify the channel is in use.
     assertEquals(1, currentChannel.getActiveStreamsCount());
 
+    logCount = logRecords.size();
+
     // Create another 1 session per channel sequentially.
     // Without the round-robin it won't use the currentChannel as it has more active streams (1) than other channels.
     for (int i = 0; i < MAX_CHANNEL; i++) {
       ListenableFuture<Session> future = stub.createSession(req);
+      assertThat(lastLogMessage()).isEqualTo(
+          poolIndex + ": Channel 0 picked for bind operation.");
+      assertThat(logRecords.size()).isEqualTo(++logCount);
       future.get();
+      logCount++; // For session mapping log message.
     }
     ResultSet response = responseFuture.get();
 

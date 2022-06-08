@@ -949,10 +949,14 @@ public class GcpManagedChannel extends ManagedChannel {
    * @return {@link ChannelRef} channel to use for a call.
    */
   protected ChannelRef getChannelRefForBind() {
+    ChannelRef channelRef;
     if (options.getChannelPoolOptions() != null && options.getChannelPoolOptions().isUseRoundRobinOnBind()) {
-      return getChannelRefRoundRobin();
+      channelRef = getChannelRefRoundRobin();
+    } else {
+      channelRef = getChannelRef(null);
     }
-    return getChannelRef(null);
+    logger.finest(log("Channel %d picked for bind operation.", channelRef.getId()));
+    return channelRef;
   }
 
   /**
