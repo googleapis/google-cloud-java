@@ -50,6 +50,10 @@ javadoc)
    RETURN_CODE=$?
    ;;
 integration)
+   if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets" ]
+        then
+            source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
+    fi
    mvn -B ${INTEGRATION_TEST_ARGS} \
      -ntp \
      -Penable-integration-tests \
