@@ -1,6 +1,4 @@
-# monorepo-experiments
-
-## Auto-generated artifacts
+## Generating the monorepo
 
 Built by running [bootstrap.sh](bootstrap.sh).
 
@@ -17,12 +15,3 @@ To generate the coverage report, then run:
 mvn jacoco:report-aggregate -T C1 -B
 ```
 The coverage report will be in `monorepo/google-cloud-java/CoverageAggregator/target/site/jacoco-aggregate`.
-
-
-### Monorepo branch
-
-[monorepo](https://github.com/meltsufin/monorepo-experiments/tree/monorepo) (auto-generated)
-
-### Code coverage report
-
-https://meltsufin.github.io/monorepo-experiments/ (auto-generated)
