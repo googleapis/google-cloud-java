@@ -15,7 +15,7 @@
 import synthtool as s
 from synthtool.languages import java
 
-
+#testing this
 for library in s.get_staging_dirs():
     # put any special-case replacements here
     s.move(library)

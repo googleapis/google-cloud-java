@@ -27,11 +27,11 @@ source ${scriptDir}/common.sh
 mvn -version
 echo ${JOB_TYPE}
 
-declare -a files=$(git diff --name-only main..pull_branch)
+declare -a files=$(git diff --name-only monorepo_main..selective-modules )
 
 for directory in ${files[@]}
 do
-  if [[ $directory == java* && $modules != *"${directory}"*]]
+  if [[ $directory == java*java ]] &&  [[ ! $modules =~ ${directory} ]];
   then
     if [ "$modules" ];then
        modules+=','

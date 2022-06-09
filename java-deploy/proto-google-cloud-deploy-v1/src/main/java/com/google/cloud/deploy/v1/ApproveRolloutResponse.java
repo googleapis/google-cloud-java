@@ -25,7 +25,7 @@ package com.google.cloud.deploy.v1;
  * The response object from `ApproveRollout`.
  * </pre>
  *
- * Protobuf type {@code google.cloud.deploy.v1.ApproveRolloutResponse}
+ * Protobuf type {@code google.cloud.deploy.v1.ApproveRolloutResponse}Test
  */
 public final class ApproveRolloutResponse extends com.google.protobuf.GeneratedMessageV3
     implements
