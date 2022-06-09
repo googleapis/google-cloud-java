@@ -7,7 +7,7 @@ After running the script locally, you can `cd` into the generated repository and
 
 ```shell
 cd monorepo/google-cloud-java
-mvn install -T C1 -B
+mvn test -T C1 -B
 ```
 
 To generate the coverage report, then run:
@@ -15,3 +15,7 @@ To generate the coverage report, then run:
 mvn jacoco:report-aggregate -T C1 -B
 ```
 The coverage report will be in `monorepo/google-cloud-java/CoverageAggregator/target/site/jacoco-aggregate`.
+
+## Output
+
+See: [monorepo_script_output](https://github.com/googleapis/google-cloud-java/tree/monorepo_script_output) branch.
