@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.14.2](https://github.com/googleapis/java-bigquerystorage/compare/v2.14.1...v2.14.2) (2022-06-08)
+
+
+### Bug Fixes
+
+* **floating:** floating point numbers as numerics ([#1648](https://github.com/googleapis/java-bigquerystorage/issues/1648)) ([ecf8598](https://github.com/googleapis/java-bigquerystorage/commit/ecf8598bf66c0921524bbdb74d968edb389f197c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.1 ([#1668](https://github.com/googleapis/java-bigquerystorage/issues/1668)) ([3eb8d4f](https://github.com/googleapis/java-bigquerystorage/commit/3eb8d4f0ab4db257899f7c72e02fef0a8b200c6e))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.2 ([#1671](https://github.com/googleapis/java-bigquerystorage/issues/1671)) ([2018ede](https://github.com/googleapis/java-bigquerystorage/commit/2018ede764ebf02e658f685922dd16438c70f69b))
+
 ## [2.14.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.14.0...v2.14.1) (2022-06-01)
 
 
