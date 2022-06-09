@@ -26,7 +26,6 @@ source ${scriptDir}/common.sh
 # Print out Maven & Java version
 mvn -version
 echo ${JOB_TYPE}
-git  remote add origin https://github.com/googleapis/google-cloud-java.git
 git remote -v
 git fetch origin monorepo_main
 declare -a files=$(git diff --name-only monorepo_main..pull_branch )
