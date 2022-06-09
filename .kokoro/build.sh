@@ -27,7 +27,7 @@ source ${scriptDir}/common.sh
 mvn -version
 echo ${JOB_TYPE}
 
-declare -a files=$(git diff --name-only monorepo_main..selective-modules )
+declare -a files=$(git diff --name-only monorepo_main..pull_branch )
 
 for directory in ${files[@]}
 do
