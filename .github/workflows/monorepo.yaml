@@ -4,6 +4,9 @@ on:
     - cron: '0 1 * * *' # nightly at 1 am UTC
   push:
     branches: [ monorepo_script ]
+  pull_request:
+    branches: [ monorepo_script ]
+
   workflow_dispatch:
 
 jobs:
@@ -22,6 +25,7 @@ jobs:
         working-directory: monorepo/google-cloud-java
         run: mvn test -T C1 -B
       - name: Push monorepo to branch
+        if: ${{ github.event_name != 'pull_request' }}
         run: |
           cd monorepo/google-cloud-java
           git remote add monorepo https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
