@@ -222,7 +222,6 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     return testIamPermissionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SchemaServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

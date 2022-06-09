@@ -363,7 +363,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     return testIamPermissionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SubscriberStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

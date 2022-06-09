@@ -18,7 +18,6 @@ package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -168,7 +167,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * Constructs an instance of SubscriptionAdminClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(SubscriptionAdminSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SubscriptionAdminClient create(SubscriberStub stub) {
     return new SubscriptionAdminClient(stub);
   }
@@ -183,7 +181,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
     this.stub = ((SubscriberStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SubscriptionAdminClient(SubscriberStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -193,7 +190,6 @@ public class SubscriptionAdminClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SubscriberStub getStub() {
     return stub;
   }

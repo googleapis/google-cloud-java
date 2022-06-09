@@ -18,7 +18,6 @@ package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -142,7 +141,6 @@ public class SchemaServiceClient implements BackgroundResource {
    * Constructs an instance of SchemaServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(SchemaServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SchemaServiceClient create(SchemaServiceStub stub) {
     return new SchemaServiceClient(stub);
   }
@@ -157,7 +155,6 @@ public class SchemaServiceClient implements BackgroundResource {
     this.stub = ((SchemaServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SchemaServiceClient(SchemaServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -167,7 +164,6 @@ public class SchemaServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SchemaServiceStub getStub() {
     return stub;
   }

@@ -458,7 +458,6 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     return testIamPermissionsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PublisherStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
