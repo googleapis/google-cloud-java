@@ -272,7 +272,10 @@ public abstract class StructuredQuery<V> extends Query<V> {
       static final Operator GREATER_THAN = type.createAndRegister("GREATER_THAN");
       static final Operator GREATER_THAN_OR_EQUAL = type.createAndRegister("GREATER_THAN_OR_EQUAL");
       static final Operator EQUAL = type.createAndRegister("EQUAL");
+      static final Operator IN = type.createAndRegister("IN");
+      static final Operator NOT_EQUAL = type.createAndRegister("NOT_EQUAL");
       static final Operator HAS_ANCESTOR = type.createAndRegister("HAS_ANCESTOR");
+      static final Operator NOT_IN = type.createAndRegister("NOT_IN");
 
       com.google.datastore.v1.PropertyFilter.Operator toPb() {
         return com.google.datastore.v1.PropertyFilter.Operator.valueOf(name());
@@ -500,6 +503,46 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
     public static PropertyFilter eq(String property, Blob value) {
       return new PropertyFilter(property, Operator.EQUAL, of(value));
+    }
+
+    public static PropertyFilter neq(String property, Value<?> value) {
+      return new PropertyFilter(property, Operator.NOT_EQUAL, value);
+    }
+
+    public static PropertyFilter neq(String property, String value) {
+      return new PropertyFilter(property, Operator.NOT_EQUAL, of(value));
+    }
+
+    public static PropertyFilter neq(String property, long value) {
+      return new PropertyFilter(property, Operator.NOT_EQUAL, of(value));
+    }
+
+    public static PropertyFilter neq(String property, double value) {
+      return new PropertyFilter(property, Operator.NOT_EQUAL, of(value));
+    }
+
+    public static PropertyFilter neq(String property, boolean value) {
+      return new PropertyFilter(property, Operator.NOT_EQUAL, of(value));
+    }
+
+    public static PropertyFilter neq(String property, Timestamp value) {
+      return new PropertyFilter(property, Operator.NOT_EQUAL, of(value));
+    }
+
+    public static PropertyFilter neq(String property, Key value) {
+      return new PropertyFilter(property, Operator.NOT_EQUAL, of(value));
+    }
+
+    public static PropertyFilter neq(String property, Blob value) {
+      return new PropertyFilter(property, Operator.NOT_EQUAL, of(value));
+    }
+
+    public static PropertyFilter in(String property, ListValue value) {
+      return new PropertyFilter(property, Operator.IN, value);
+    }
+
+    public static PropertyFilter not_in(String property, ListValue value) {
+      return new PropertyFilter(property, Operator.NOT_IN, value);
     }
 
     public static PropertyFilter hasAncestor(Key key) {
