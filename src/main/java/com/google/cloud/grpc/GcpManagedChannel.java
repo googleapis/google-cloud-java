@@ -1009,6 +1009,7 @@ public class GcpManagedChannel extends ManagedChannel {
     Integer channelId = tempMap.get(key);
     if (channelId != null && !fallbackMap.containsKey(channelId)) {
       // Fallback channel is ready.
+      logger.finest(log("Using fallback channel: %d -> %d", mappedChannel.getId(), channelId));
       fallbacksSucceeded.incrementAndGet();
       return channelRefs.get(channelId);
     }
@@ -1018,11 +1019,15 @@ public class GcpManagedChannel extends ManagedChannel {
         && channelRef.getActiveStreamsCount() < DEFAULT_MAX_STREAM) {
       // Got a ready and not an overloaded channel.
       if (channelRef.getId() != mappedChannel.getId()) {
+        logger.finest(log(
+            "Setting fallback channel: %d -> %d", mappedChannel.getId(), channelRef.getId()
+        ));
         fallbacksSucceeded.incrementAndGet();
         tempMap.put(key, channelRef.getId());
       }
       return channelRef;
     }
+    logger.finest(log("Failed to find fallback for channel %d", mappedChannel.getId()));
     fallbacksFailed.incrementAndGet();
     if (channelId != null) {
       // Stick with previous mapping if fallback has failed.
@@ -1081,7 +1086,8 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     if (channelRefs.size() < maxSize && readyMinStreams >= maxConcurrentStreamsLowWatermark) {
-      if (!forFallback) {
+      if (!forFallback && readyCandidate == null) {
+        logger.finest(log("Fallback to newly created channel"));
         fallbacksSucceeded.incrementAndGet();
       }
       return createNewChannel();
@@ -1089,11 +1095,17 @@ public class GcpManagedChannel extends ManagedChannel {
 
     if (readyCandidate != null) {
       if (!forFallback && readyCandidate.getId() != channelCandidate.getId()) {
+        logger.finest(log(
+            "Picking fallback channel: %d -> %d", channelCandidate.getId(), readyCandidate.getId()));
         fallbacksSucceeded.incrementAndGet();
       }
       return readyCandidate;
     }
 
+    if (!forFallback) {
+      logger.finest(log("Failed to find fallback for channel %d", channelCandidate.getId()));
+      fallbacksFailed.incrementAndGet();
+    }
     return channelCandidate;
   }
 
