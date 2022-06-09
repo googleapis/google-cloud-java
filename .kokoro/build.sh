@@ -21,13 +21,14 @@ scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 cd ${scriptDir}/..
 
 # include common functions
-source ${scriptDir}/common.sh
+#source ${scriptDir}/common.sh
 
 # Print out Maven & Java version
 mvn -version
 echo ${JOB_TYPE}
+git  remote add monorepo https://github.com/googleapis/google-cloud-java.git
 git remote -v
-git fetch origin monorepo_main
+git fetch monorepo monorepo_main
 declare -a files=$(git diff --name-only monorepo_main..pull_branch )
 
 for directory in ${files[@]}
@@ -41,7 +42,7 @@ do
   fi
 done
 echo $modules
-mvn  -pl ${modules} install
+#mvn  -pl ${modules} install
 
 ## if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
 #if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
