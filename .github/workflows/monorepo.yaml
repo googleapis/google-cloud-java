@@ -1,4 +1,4 @@
-name: CI
+name: Monorepo Script CI
 on:
   schedule:
     - cron: '0 1 * * *' # nightly at 1 am UTC
