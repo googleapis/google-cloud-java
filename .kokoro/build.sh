@@ -31,7 +31,7 @@ declare -a files=$(git diff --name-only main..pull_branch)
 
 for directory in ${files[@]}
 do
-  if [[ $directory == java* ]]
+  if [[ $directory == java* && $modules != *"${directory}"*]]
   then
     if [ "$modules" ];then
        modules+=','
