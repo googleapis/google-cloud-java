@@ -27,7 +27,7 @@ source ${scriptDir}/common.sh
 mvn -version
 echo ${JOB_TYPE}
 
-declare -a files=$(git diff --name-only)
+declare -a files=$(git diff --name-only main..pull_branch)
 
 for directory in ${files[@]}
 do
