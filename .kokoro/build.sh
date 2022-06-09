@@ -29,6 +29,8 @@ echo ${JOB_TYPE}
 git  remote add monorepo https://github.com/googleapis/google-cloud-java.git
 git remote -v
 git fetch monorepo monorepo_main
+git status
+
 declare -a files=$(git diff --name-only monorepo_main..pull_branch )
 
 for directory in ${files[@]}
