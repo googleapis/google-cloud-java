@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.0](https://github.com/googleapis/java-datastore/compare/v2.7.0...v2.8.0) (2022-06-09)
+
+
+### Features
+
+* support IN/NOT_IN/NOT_EQUAL operators ([#688](https://github.com/googleapis/java-datastore/issues/688)) ([f8a84ff](https://github.com/googleapis/java-datastore/commit/f8a84ffa6d743501f5cfb71ac271d8a9b764705c))
+
 ## [2.7.0](https://github.com/googleapis/java-datastore/compare/v2.6.0...v2.7.0) (2022-06-02)
 
 
