@@ -51,6 +51,11 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-recaptchaenterprise</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>recaptcha-password-check-helpers</artifactId>
+      <version>1.0.1</version>
+    </dependency>
 
 
     <!-- [Start_Selenium_dependencies] -->

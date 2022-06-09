@@ -75,6 +75,23 @@ public class SnippetsIT {
   @LocalServerPort private int randomServerPort;
   private ByteArrayOutputStream stdOut;
 
+  @Test
+  public void testCreateAnnotateAssessment()
+      throws JSONException, IOException, InterruptedException, NoSuchAlgorithmException,
+          ExecutionException {
+    // Create an assessment.
+    String testURL = "http://localhost:" + randomServerPort + "/";
+    JSONObject createAssessmentResult =
+        createAssessment(testURL, ByteString.EMPTY, AssessmentType.ASSESSMENT);
+    String assessmentName = createAssessmentResult.getString("assessmentName");
+    // Verify that the assessment name has been modified post the assessment creation.
+    assertThat(assessmentName).isNotEmpty();
+
+    // Annotate the assessment.
+    AnnotateAssessment.annotateAssessment(PROJECT_ID, assessmentName);
+    assertThat(stdOut.toString()).contains("Annotated response sent successfully ! ");
+  }
+
   // Check if the required environment variables are set.
   public static void requireEnvVar(String envVarName) {
     assertWithMessage(String.format("Missing environment variable '%s' ", envVarName))
@@ -158,23 +175,9 @@ public class SnippetsIT {
   }
 
   @Test
-  public void testCreateAnnotateAssessment()
-      throws JSONException, IOException, InterruptedException, NoSuchAlgorithmException {
-    // Create an assessment.
-    String testURL = "http://localhost:" + randomServerPort + "/";
-    JSONObject createAssessmentResult = createAssessment(testURL, ByteString.EMPTY);
-    String assessmentName = createAssessmentResult.getString("assessmentName");
-    // Verify that the assessment name has been modified post the assessment creation.
-    assertThat(assessmentName).isNotEmpty();
-
-    // Annotate the assessment.
-    AnnotateAssessment.annotateAssessment(PROJECT_ID, assessmentName);
-    assertThat(stdOut.toString()).contains("Annotated response sent successfully ! ");
-  }
-
-  @Test
   public void testCreateAnnotateAccountDefender()
-      throws JSONException, IOException, InterruptedException, NoSuchAlgorithmException {
+      throws JSONException, IOException, InterruptedException, NoSuchAlgorithmException,
+          ExecutionException {
 
     String testURL = "http://localhost:" + randomServerPort + "/";
     // Create a random SHA-256 Hashed account id.
@@ -186,7 +189,8 @@ public class SnippetsIT {
     ByteString hashedAccountId = ByteString.copyFrom(hashBytes);
 
     // Create the assessment.
-    JSONObject createAssessmentResult = createAssessment(testURL, hashedAccountId);
+    JSONObject createAssessmentResult =
+        createAssessment(testURL, hashedAccountId, AssessmentType.ACCOUNT_DEFENDER);
     String assessmentName = createAssessmentResult.getString("assessmentName");
     // Verify that the assessment name has been modified post the assessment creation.
     assertThat(assessmentName).isNotEmpty();
@@ -219,33 +223,58 @@ public class SnippetsIT {
                 "Finished searching related account group memberships for %s", hashedAccountId));
   }
 
+  @Test
   public void testGetMetrics() throws IOException {
     GetMetrics.getMetrics(PROJECT_ID, RECAPTCHA_SITE_KEY_1);
     assertThat(stdOut.toString())
         .contains("Retrieved the bucket count for score based key: " + RECAPTCHA_SITE_KEY_1);
   }
 
-  public JSONObject createAssessment(String testURL)
-      throws IOException, JSONException, InterruptedException {
+  @Test
+  public void testPasswordLeakAssessment()
+      throws JSONException, IOException, ExecutionException, InterruptedException {
+    String testURL = "http://localhost:" + randomServerPort + "/";
+    createAssessment(testURL, ByteString.EMPTY, AssessmentType.PASSWORD_LEAK);
+    assertThat(stdOut.toString()).contains("Is Credential leaked: ");
+  }
+
+  public JSONObject createAssessment(
+      String testURL, ByteString hashedAccountId, AssessmentType assessmentType)
+      throws IOException, JSONException, InterruptedException, ExecutionException {
 
     // Setup the automated browser test and retrieve the token and action.
     JSONObject tokenActionPair = initiateBrowserTest(testURL);
 
     // Send the token for analysis. The analysis score ranges from 0.0 to 1.0
-    if (!hashedAccountId.isEmpty()) {
-      AccountDefenderAssessment.accountDefenderAssessment(
-          PROJECT_ID,
-          RECAPTCHA_SITE_KEY_1,
-          tokenActionPair.getString("token"),
-          tokenActionPair.getString("action"),
-          hashedAccountId);
-
-    } else {
-      recaptcha.CreateAssessment.createAssessment(
-          PROJECT_ID,
-          RECAPTCHA_SITE_KEY_1,
-          tokenActionPair.getString("token"),
-          tokenActionPair.getString("action"));
+    switch (assessmentType) {
+      case ACCOUNT_DEFENDER:
+        {
+          AccountDefenderAssessment.accountDefenderAssessment(
+              PROJECT_ID,
+              RECAPTCHA_SITE_KEY_1,
+              tokenActionPair.getString("token"),
+              tokenActionPair.getString("action"),
+              hashedAccountId);
+          break;
+        }
+      case ASSESSMENT:
+        {
+          recaptcha.CreateAssessment.createAssessment(
+              PROJECT_ID,
+              RECAPTCHA_SITE_KEY_1,
+              tokenActionPair.getString("token"),
+              tokenActionPair.getString("action"));
+          break;
+        }
+      case PASSWORD_LEAK:
+        {
+          passwordleak.CreatePasswordLeakAssessment.checkPasswordLeak(
+              PROJECT_ID,
+              RECAPTCHA_SITE_KEY_1,
+              tokenActionPair.getString("token"),
+              tokenActionPair.getString("action"));
+          break;
+        }
     }
 
     // Assert the response.
@@ -272,6 +301,14 @@ public class SnippetsIT {
     return new JSONObject()
         .put("recaptchaScore", recaptchaScore)
         .put("assessmentName", assessmentName);
+  }
+
+  enum AssessmentType {
+    ASSESSMENT,
+    ACCOUNT_DEFENDER,
+    PASSWORD_LEAK;
+
+    AssessmentType() {}
   }
 
   public JSONObject initiateBrowserTest(String testURL)
