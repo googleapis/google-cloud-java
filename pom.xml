@@ -105,7 +105,6 @@
     <module>java-cloudbuild</module>
     <module>java-compute</module>
     <module>java-contact-center-insights</module>
-    <module>java-container</module>
     <module>java-containeranalysis</module>
     <module>java-data-fusion</module>
     <module>java-datacatalog</module>
