@@ -10,7 +10,7 @@
   "repo": "googleapis/java-apigee-registry",
   "repo_short": "java-apigee-registry",
   "distribution_name": "com.google.cloud:google-cloud-apigee-registry",
-  "api_id": "apigee-registry.googleapis.com",
+  "api_id": "apigeeregistry.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
