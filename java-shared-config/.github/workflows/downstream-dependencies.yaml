@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java: [8, 11]
+        java: [11]
         repo:
         - java-bigquery
         - java-bigqueryconnection
@@ -27,5 +27,3 @@ jobs:
     - run: sudo apt-get update -y
     - run: sudo apt-get install libxml2-utils
     - run: .kokoro/client-library-check.sh ${{matrix.repo}} dependencies
-      if: ${{matrix.java != '8' }}
-      # Always successful for Java 8, which we'll remove soon
