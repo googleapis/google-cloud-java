@@ -1,4 +1,4 @@
-# Google Google Cloud Batch Client for Java
+# Google Cloud Batch Client for Java
 
 Java idiomatic client for [Google Cloud Batch][product-docs].
 
