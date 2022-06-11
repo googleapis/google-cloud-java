@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://github.com/googleapis/java-shared-config/compare/v1.4.0...v1.5.0) (2022-06-10)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-shared-config/issues/1440)) ([#475](https://github.com/googleapis/java-shared-config/issues/475)) ([e4dfc1b](https://github.com/googleapis/java-shared-config/commit/e4dfc1ba29295158c78c8fcf94467d2a6a33538a))
+* to produce Java 8 compatible bytecode when using JDK 9+ ([2468276](https://github.com/googleapis/java-shared-config/commit/2468276145cdfe1ca911b52f765e026e77661a09))
+
+
+### Dependencies
+
+* update surefire.version to v3.0.0-m7 ([bbfe663](https://github.com/googleapis/java-shared-config/commit/bbfe66393af3e49612c9c1e4334ba39c133ea1d0))
+
 ## [1.4.0](https://github.com/googleapis/java-shared-config/compare/v1.3.3...v1.4.0) (2022-04-28)
 
 
