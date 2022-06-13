@@ -329,7 +329,7 @@ public class DataCatalogClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     SearchCatalogResponse response = dataCatalogClient.searchCatalogCallable().call(request);
-   *     for (SearchCatalogResult element : response.getResponsesList()) {
+   *     for (SearchCatalogResult element : response.getResultsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1099,7 +1099,7 @@ public class DataCatalogClient implements BackgroundResource {
    *   while (true) {
    *     ListEntryGroupsResponse response =
    *         dataCatalogClient.listEntryGroupsCallable().call(request);
-   *     for (EntryGroup element : response.getResponsesList()) {
+   *     for (EntryGroup element : response.getEntryGroupsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1849,7 +1849,7 @@ public class DataCatalogClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListEntriesResponse response = dataCatalogClient.listEntriesCallable().call(request);
-   *     for (Entry element : response.getResponsesList()) {
+   *     for (Entry element : response.getEntriesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3845,7 +3845,7 @@ public class DataCatalogClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTagsResponse response = dataCatalogClient.listTagsCallable().call(request);
-   *     for (Tag element : response.getResponsesList()) {
+   *     for (Tag element : response.getTagsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -4091,7 +4091,7 @@ public class DataCatalogClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
-   *   ResourceName resource = EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]");
+   *   ResourceName resource = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = dataCatalogClient.setIamPolicy(resource, policy);
    * }
@@ -4181,8 +4181,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .setResource(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -4222,8 +4221,7 @@ public class DataCatalogClient implements BackgroundResource {
    * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(
-   *               EntryName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY]").toString())
+   *           .setResource(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
