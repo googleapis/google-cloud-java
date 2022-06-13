@@ -465,7 +465,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *   while (true) {
    *     ListBackupPlansResponse response =
    *         backupForGKEClient.listBackupPlansCallable().call(request);
-   *     for (BackupPlan element : response.getResponsesList()) {
+   *     for (BackupPlan element : response.getBackupPlansList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1121,7 +1121,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListBackupsResponse response = backupForGKEClient.listBackupsCallable().call(request);
-   *     for (Backup element : response.getResponsesList()) {
+   *     for (Backup element : response.getBackupsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1630,7 +1630,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *   while (true) {
    *     ListVolumeBackupsResponse response =
    *         backupForGKEClient.listVolumeBackupsCallable().call(request);
-   *     for (VolumeBackup element : response.getResponsesList()) {
+   *     for (VolumeBackup element : response.getVolumeBackupsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2059,7 +2059,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *   while (true) {
    *     ListRestorePlansResponse response =
    *         backupForGKEClient.listRestorePlansCallable().call(request);
-   *     for (RestorePlan element : response.getResponsesList()) {
+   *     for (RestorePlan element : response.getRestorePlansList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2724,7 +2724,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListRestoresResponse response = backupForGKEClient.listRestoresCallable().call(request);
-   *     for (Restore element : response.getResponsesList()) {
+   *     for (Restore element : response.getRestoresList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3242,7 +3242,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *   while (true) {
    *     ListVolumeRestoresResponse response =
    *         backupForGKEClient.listVolumeRestoresCallable().call(request);
-   *     for (VolumeRestore element : response.getResponsesList()) {
+   *     for (VolumeRestore element : response.getVolumeRestoresList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
