@@ -875,7 +875,7 @@ public class BinauthzManagementServiceV1Client implements BackgroundResource {
    *   while (true) {
    *     Service.ListAttestorsResponse response =
    *         binauthzManagementServiceV1Client.listAttestorsCallable().call(request);
-   *     for (Resources.Attestor element : response.getResponsesList()) {
+   *     for (Resources.Attestor element : response.getAttestorsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

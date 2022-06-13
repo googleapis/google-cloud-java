@@ -51,7 +51,7 @@
  * // This snippet has been automatically generated for illustrative purposes only.
  * // It may require modifications to work in your environment.
  * try (SystemPolicyV1Beta1Client systemPolicyV1Beta1Client = SystemPolicyV1Beta1Client.create()) {
- *   PolicyName name = PolicyName.ofProjectName("[PROJECT]");
+ *   PolicyName name = PolicyName.ofLocationName("[LOCATION]");
  *   Policy response = systemPolicyV1Beta1Client.getSystemPolicy(name);
  * }
  * }</pre>
