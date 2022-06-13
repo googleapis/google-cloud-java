@@ -613,7 +613,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListCertificatesResponse response =
    *         certificateAuthorityServiceClient.listCertificatesCallable().call(request);
-   *     for (Certificate element : response.getResponsesList()) {
+   *     for (Certificate element : response.getCertificatesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1994,7 +1994,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListCertificateAuthoritiesResponse response =
    *         certificateAuthorityServiceClient.listCertificateAuthoritiesCallable().call(request);
-   *     for (CertificateAuthority element : response.getResponsesList()) {
+   *     for (CertificateAuthority element : response.getCertificateAuthoritiesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2787,7 +2787,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *         certificateAuthorityServiceClient
    *             .listCertificateRevocationListsCallable()
    *             .call(request);
-   *     for (CertificateRevocationList element : response.getResponsesList()) {
+   *     for (CertificateRevocationList element : response.getCertificateRevocationListsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3199,7 +3199,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListReusableConfigsResponse response =
    *         certificateAuthorityServiceClient.listReusableConfigsCallable().call(request);
-   *     for (ReusableConfig element : response.getResponsesList()) {
+   *     for (ReusableConfig element : response.getReusableConfigsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

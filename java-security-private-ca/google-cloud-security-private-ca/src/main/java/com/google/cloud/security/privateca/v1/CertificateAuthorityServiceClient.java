@@ -597,7 +597,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListCertificatesResponse response =
    *         certificateAuthorityServiceClient.listCertificatesCallable().call(request);
-   *     for (Certificate element : response.getResponsesList()) {
+   *     for (Certificate element : response.getCertificatesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1995,7 +1995,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListCertificateAuthoritiesResponse response =
    *         certificateAuthorityServiceClient.listCertificateAuthoritiesCallable().call(request);
-   *     for (CertificateAuthority element : response.getResponsesList()) {
+   *     for (CertificateAuthority element : response.getCertificateAuthoritiesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3014,7 +3014,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListCaPoolsResponse response =
    *         certificateAuthorityServiceClient.listCaPoolsCallable().call(request);
-   *     for (CaPool element : response.getResponsesList()) {
+   *     for (CaPool element : response.getCaPoolsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3614,7 +3614,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *         certificateAuthorityServiceClient
    *             .listCertificateRevocationListsCallable()
    *             .call(request);
-   *     for (CertificateRevocationList element : response.getResponsesList()) {
+   *     for (CertificateRevocationList element : response.getCertificateRevocationListsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -4383,7 +4383,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListCertificateTemplatesResponse response =
    *         certificateAuthorityServiceClient.listCertificateTemplatesCallable().call(request);
-   *     for (CertificateTemplate element : response.getResponsesList()) {
+   *     for (CertificateTemplate element : response.getCertificateTemplatesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -4614,7 +4614,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListLocationsResponse response =
    *         certificateAuthorityServiceClient.listLocationsCallable().call(request);
-   *     for (Location element : response.getResponsesList()) {
+   *     for (Location element : response.getLocationsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -4692,7 +4692,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     CertificateAuthorityServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -4722,7 +4722,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     CertificateAuthorityServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -4751,7 +4751,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     CertificateAuthorityServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = certificateAuthorityServiceClient.getIamPolicy(request);
@@ -4779,7 +4779,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     CertificateAuthorityServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -4811,7 +4811,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     CertificateAuthorityServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response =
@@ -4844,7 +4844,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     CertificateAuthorityServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResource(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
