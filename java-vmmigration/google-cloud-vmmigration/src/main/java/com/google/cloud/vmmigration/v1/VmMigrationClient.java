@@ -299,7 +299,7 @@ public class VmMigrationClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListSourcesResponse response = vmMigrationClient.listSourcesCallable().call(request);
-   *     for (Source element : response.getResponsesList()) {
+   *     for (Source element : response.getSourcesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1060,7 +1060,7 @@ public class VmMigrationClient implements BackgroundResource {
    *   while (true) {
    *     ListUtilizationReportsResponse response =
    *         vmMigrationClient.listUtilizationReportsCallable().call(request);
-   *     for (UtilizationReport element : response.getResponsesList()) {
+   *     for (UtilizationReport element : response.getUtilizationReportsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1642,7 +1642,7 @@ public class VmMigrationClient implements BackgroundResource {
    *   while (true) {
    *     ListDatacenterConnectorsResponse response =
    *         vmMigrationClient.listDatacenterConnectorsCallable().call(request);
-   *     for (DatacenterConnector element : response.getResponsesList()) {
+   *     for (DatacenterConnector element : response.getDatacenterConnectorsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2380,7 +2380,7 @@ public class VmMigrationClient implements BackgroundResource {
    *   while (true) {
    *     ListMigratingVmsResponse response =
    *         vmMigrationClient.listMigratingVmsCallable().call(request);
-   *     for (MigratingVm element : response.getResponsesList()) {
+   *     for (MigratingVm element : response.getMigratingVmsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3655,7 +3655,7 @@ public class VmMigrationClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListCloneJobsResponse response = vmMigrationClient.listCloneJobsCallable().call(request);
-   *     for (CloneJob element : response.getResponsesList()) {
+   *     for (CloneJob element : response.getCloneJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -4230,7 +4230,7 @@ public class VmMigrationClient implements BackgroundResource {
    *   while (true) {
    *     ListCutoverJobsResponse response =
    *         vmMigrationClient.listCutoverJobsCallable().call(request);
-   *     for (CutoverJob element : response.getResponsesList()) {
+   *     for (CutoverJob element : response.getCutoverJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -4487,7 +4487,7 @@ public class VmMigrationClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListGroupsResponse response = vmMigrationClient.listGroupsCallable().call(request);
-   *     for (Group element : response.getResponsesList()) {
+   *     for (Group element : response.getGroupsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -5425,7 +5425,7 @@ public class VmMigrationClient implements BackgroundResource {
    *   while (true) {
    *     ListTargetProjectsResponse response =
    *         vmMigrationClient.listTargetProjectsCallable().call(request);
-   *     for (TargetProject element : response.getResponsesList()) {
+   *     for (TargetProject element : response.getTargetProjectsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
