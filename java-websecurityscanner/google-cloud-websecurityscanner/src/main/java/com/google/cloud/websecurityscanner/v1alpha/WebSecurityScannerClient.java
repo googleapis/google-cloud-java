@@ -598,7 +598,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *   while (true) {
    *     ListScanConfigsResponse response =
    *         webSecurityScannerClient.listScanConfigsCallable().call(request);
-   *     for (ScanConfig element : response.getResponsesList()) {
+   *     for (ScanConfig element : response.getScanConfigsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1031,7 +1031,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *   while (true) {
    *     ListScanRunsResponse response =
    *         webSecurityScannerClient.listScanRunsCallable().call(request);
-   *     for (ScanRun element : response.getResponsesList()) {
+   *     for (ScanRun element : response.getScanRunsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1280,7 +1280,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *   while (true) {
    *     ListCrawledUrlsResponse response =
    *         webSecurityScannerClient.listCrawledUrlsCallable().call(request);
-   *     for (CrawledUrl element : response.getResponsesList()) {
+   *     for (CrawledUrl element : response.getCrawledUrlsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1549,7 +1549,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *   while (true) {
    *     ListFindingsResponse response =
    *         webSecurityScannerClient.listFindingsCallable().call(request);
-   *     for (Finding element : response.getResponsesList()) {
+   *     for (Finding element : response.getFindingsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
