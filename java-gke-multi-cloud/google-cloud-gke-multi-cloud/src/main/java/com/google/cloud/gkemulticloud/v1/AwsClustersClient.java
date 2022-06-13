@@ -740,7 +740,7 @@ public class AwsClustersClient implements BackgroundResource {
    *   while (true) {
    *     ListAwsClustersResponse response =
    *         awsClustersClient.listAwsClustersCallable().call(request);
-   *     for (AwsCluster element : response.getResponsesList()) {
+   *     for (AwsCluster element : response.getAwsClustersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1579,7 +1579,7 @@ public class AwsClustersClient implements BackgroundResource {
    *   while (true) {
    *     ListAwsNodePoolsResponse response =
    *         awsClustersClient.listAwsNodePoolsCallable().call(request);
-   *     for (AwsNodePool element : response.getResponsesList()) {
+   *     for (AwsNodePool element : response.getAwsNodePoolsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

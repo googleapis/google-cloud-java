@@ -632,7 +632,7 @@ public class AzureClustersClient implements BackgroundResource {
    *   while (true) {
    *     ListAzureClientsResponse response =
    *         azureClustersClient.listAzureClientsCallable().call(request);
-   *     for (AzureClient element : response.getResponsesList()) {
+   *     for (AzureClient element : response.getAzureClientsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1399,7 +1399,7 @@ public class AzureClustersClient implements BackgroundResource {
    *   while (true) {
    *     ListAzureClustersResponse response =
    *         azureClustersClient.listAzureClustersCallable().call(request);
-   *     for (AzureCluster element : response.getResponsesList()) {
+   *     for (AzureCluster element : response.getAzureClustersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2248,7 +2248,7 @@ public class AzureClustersClient implements BackgroundResource {
    *   while (true) {
    *     ListAzureNodePoolsResponse response =
    *         azureClustersClient.listAzureNodePoolsCallable().call(request);
-   *     for (AzureNodePool element : response.getResponsesList()) {
+   *     for (AzureNodePool element : response.getAzureNodePoolsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
