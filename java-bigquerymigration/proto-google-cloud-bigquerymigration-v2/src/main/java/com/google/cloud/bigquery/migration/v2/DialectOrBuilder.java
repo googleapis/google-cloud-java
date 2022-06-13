@@ -374,5 +374,40 @@ public interface DialectOrBuilder
    */
   com.google.cloud.bigquery.migration.v2.VerticaDialectOrBuilder getVerticaDialectOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The SQL Server dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+   *
+   * @return Whether the sqlServerDialect field is set.
+   */
+  boolean hasSqlServerDialect();
+  /**
+   *
+   *
+   * <pre>
+   * The SQL Server dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+   *
+   * @return The sqlServerDialect.
+   */
+  com.google.cloud.bigquery.migration.v2.SQLServerDialect getSqlServerDialect();
+  /**
+   *
+   *
+   * <pre>
+   * The SQL Server dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+   */
+  com.google.cloud.bigquery.migration.v2.SQLServerDialectOrBuilder getSqlServerDialectOrBuilder();
+
   public com.google.cloud.bigquery.migration.v2.Dialect.DialectValueCase getDialectValueCase();
 }

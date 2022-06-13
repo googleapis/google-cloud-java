@@ -612,7 +612,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
    * The type of the task. This must be one of the supported task types:
    * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
    * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-   * Translation_Snowflake2BQ, Translation_Netezza2BQ.
+   * Translation_Snowflake2BQ, Translation_Netezza2BQ,
+   * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
+   * Translation_SQLServer2BQ.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -638,7 +640,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
    * The type of the task. This must be one of the supported task types:
    * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
    * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-   * Translation_Snowflake2BQ, Translation_Netezza2BQ.
+   * Translation_Snowflake2BQ, Translation_Netezza2BQ,
+   * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
+   * Translation_SQLServer2BQ.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -1713,7 +1717,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * The type of the task. This must be one of the supported task types:
      * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
      * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-     * Translation_Snowflake2BQ, Translation_Netezza2BQ.
+     * Translation_Snowflake2BQ, Translation_Netezza2BQ,
+     * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
+     * Translation_SQLServer2BQ.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1738,7 +1744,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * The type of the task. This must be one of the supported task types:
      * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
      * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-     * Translation_Snowflake2BQ, Translation_Netezza2BQ.
+     * Translation_Snowflake2BQ, Translation_Netezza2BQ,
+     * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
+     * Translation_SQLServer2BQ.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1763,7 +1771,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * The type of the task. This must be one of the supported task types:
      * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
      * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-     * Translation_Snowflake2BQ, Translation_Netezza2BQ.
+     * Translation_Snowflake2BQ, Translation_Netezza2BQ,
+     * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
+     * Translation_SQLServer2BQ.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1787,7 +1797,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * The type of the task. This must be one of the supported task types:
      * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
      * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-     * Translation_Snowflake2BQ, Translation_Netezza2BQ.
+     * Translation_Snowflake2BQ, Translation_Netezza2BQ,
+     * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
+     * Translation_SQLServer2BQ.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1807,7 +1819,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * The type of the task. This must be one of the supported task types:
      * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
      * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-     * Translation_Snowflake2BQ, Translation_Netezza2BQ.
+     * Translation_Snowflake2BQ, Translation_Netezza2BQ,
+     * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
+     * Translation_SQLServer2BQ.
      * </pre>
      *
      * <code>string type = 2;</code>

@@ -268,6 +268,26 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
               dialectValueCase_ = 10;
               break;
             }
+          case 90:
+            {
+              com.google.cloud.bigquery.migration.v2.SQLServerDialect.Builder subBuilder = null;
+              if (dialectValueCase_ == 11) {
+                subBuilder =
+                    ((com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_)
+                        .toBuilder();
+              }
+              dialectValue_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.migration.v2.SQLServerDialect.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_);
+                dialectValue_ = subBuilder.buildPartial();
+              }
+              dialectValueCase_ = 11;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -321,6 +341,7 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     NETEZZA_DIALECT(8),
     AZURE_SYNAPSE_DIALECT(9),
     VERTICA_DIALECT(10),
+    SQL_SERVER_DIALECT(11),
     DIALECTVALUE_NOT_SET(0);
     private final int value;
 
@@ -359,6 +380,8 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
           return AZURE_SYNAPSE_DIALECT;
         case 10:
           return VERTICA_DIALECT;
+        case 11:
+          return SQL_SERVER_DIALECT;
         case 0:
           return DIALECTVALUE_NOT_SET;
         default:
@@ -893,6 +916,58 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.bigquery.migration.v2.VerticaDialect.getDefaultInstance();
   }
 
+  public static final int SQL_SERVER_DIALECT_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * The SQL Server dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+   *
+   * @return Whether the sqlServerDialect field is set.
+   */
+  @java.lang.Override
+  public boolean hasSqlServerDialect() {
+    return dialectValueCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The SQL Server dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+   *
+   * @return The sqlServerDialect.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.SQLServerDialect getSqlServerDialect() {
+    if (dialectValueCase_ == 11) {
+      return (com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_;
+    }
+    return com.google.cloud.bigquery.migration.v2.SQLServerDialect.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The SQL Server dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.SQLServerDialectOrBuilder
+      getSqlServerDialectOrBuilder() {
+    if (dialectValueCase_ == 11) {
+      return (com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_;
+    }
+    return com.google.cloud.bigquery.migration.v2.SQLServerDialect.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -943,6 +1018,10 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     if (dialectValueCase_ == 10) {
       output.writeMessage(
           10, (com.google.cloud.bigquery.migration.v2.VerticaDialect) dialectValue_);
+    }
+    if (dialectValueCase_ == 11) {
+      output.writeMessage(
+          11, (com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_);
     }
     unknownFields.writeTo(output);
   }
@@ -1003,6 +1082,11 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.cloud.bigquery.migration.v2.VerticaDialect) dialectValue_);
     }
+    if (dialectValueCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1050,6 +1134,9 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         break;
       case 10:
         if (!getVerticaDialect().equals(other.getVerticaDialect())) return false;
+        break;
+      case 11:
+        if (!getSqlServerDialect().equals(other.getSqlServerDialect())) return false;
         break;
       case 0:
       default:
@@ -1105,6 +1192,10 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       case 10:
         hash = (37 * hash) + VERTICA_DIALECT_FIELD_NUMBER;
         hash = (53 * hash) + getVerticaDialect().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + SQL_SERVER_DIALECT_FIELD_NUMBER;
+        hash = (53 * hash) + getSqlServerDialect().hashCode();
         break;
       case 0:
       default:
@@ -1353,6 +1444,13 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
           result.dialectValue_ = verticaDialectBuilder_.build();
         }
       }
+      if (dialectValueCase_ == 11) {
+        if (sqlServerDialectBuilder_ == null) {
+          result.dialectValue_ = dialectValue_;
+        } else {
+          result.dialectValue_ = sqlServerDialectBuilder_.build();
+        }
+      }
       result.dialectValueCase_ = dialectValueCase_;
       onBuilt();
       return result;
@@ -1452,6 +1550,11 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         case VERTICA_DIALECT:
           {
             mergeVerticaDialect(other.getVerticaDialect());
+            break;
+          }
+        case SQL_SERVER_DIALECT:
+          {
+            mergeSqlServerDialect(other.getSqlServerDialect());
             break;
           }
         case DIALECTVALUE_NOT_SET:
@@ -3660,6 +3763,222 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return verticaDialectBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2.SQLServerDialect,
+            com.google.cloud.bigquery.migration.v2.SQLServerDialect.Builder,
+            com.google.cloud.bigquery.migration.v2.SQLServerDialectOrBuilder>
+        sqlServerDialectBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The SQL Server dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+     *
+     * @return Whether the sqlServerDialect field is set.
+     */
+    @java.lang.Override
+    public boolean hasSqlServerDialect() {
+      return dialectValueCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The SQL Server dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+     *
+     * @return The sqlServerDialect.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2.SQLServerDialect getSqlServerDialect() {
+      if (sqlServerDialectBuilder_ == null) {
+        if (dialectValueCase_ == 11) {
+          return (com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_;
+        }
+        return com.google.cloud.bigquery.migration.v2.SQLServerDialect.getDefaultInstance();
+      } else {
+        if (dialectValueCase_ == 11) {
+          return sqlServerDialectBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.migration.v2.SQLServerDialect.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The SQL Server dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+     */
+    public Builder setSqlServerDialect(
+        com.google.cloud.bigquery.migration.v2.SQLServerDialect value) {
+      if (sqlServerDialectBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dialectValue_ = value;
+        onChanged();
+      } else {
+        sqlServerDialectBuilder_.setMessage(value);
+      }
+      dialectValueCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The SQL Server dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+     */
+    public Builder setSqlServerDialect(
+        com.google.cloud.bigquery.migration.v2.SQLServerDialect.Builder builderForValue) {
+      if (sqlServerDialectBuilder_ == null) {
+        dialectValue_ = builderForValue.build();
+        onChanged();
+      } else {
+        sqlServerDialectBuilder_.setMessage(builderForValue.build());
+      }
+      dialectValueCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The SQL Server dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+     */
+    public Builder mergeSqlServerDialect(
+        com.google.cloud.bigquery.migration.v2.SQLServerDialect value) {
+      if (sqlServerDialectBuilder_ == null) {
+        if (dialectValueCase_ == 11
+            && dialectValue_
+                != com.google.cloud.bigquery.migration.v2.SQLServerDialect.getDefaultInstance()) {
+          dialectValue_ =
+              com.google.cloud.bigquery.migration.v2.SQLServerDialect.newBuilder(
+                      (com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dialectValue_ = value;
+        }
+        onChanged();
+      } else {
+        if (dialectValueCase_ == 11) {
+          sqlServerDialectBuilder_.mergeFrom(value);
+        } else {
+          sqlServerDialectBuilder_.setMessage(value);
+        }
+      }
+      dialectValueCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The SQL Server dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+     */
+    public Builder clearSqlServerDialect() {
+      if (sqlServerDialectBuilder_ == null) {
+        if (dialectValueCase_ == 11) {
+          dialectValueCase_ = 0;
+          dialectValue_ = null;
+          onChanged();
+        }
+      } else {
+        if (dialectValueCase_ == 11) {
+          dialectValueCase_ = 0;
+          dialectValue_ = null;
+        }
+        sqlServerDialectBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The SQL Server dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+     */
+    public com.google.cloud.bigquery.migration.v2.SQLServerDialect.Builder
+        getSqlServerDialectBuilder() {
+      return getSqlServerDialectFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The SQL Server dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2.SQLServerDialectOrBuilder
+        getSqlServerDialectOrBuilder() {
+      if ((dialectValueCase_ == 11) && (sqlServerDialectBuilder_ != null)) {
+        return sqlServerDialectBuilder_.getMessageOrBuilder();
+      } else {
+        if (dialectValueCase_ == 11) {
+          return (com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_;
+        }
+        return com.google.cloud.bigquery.migration.v2.SQLServerDialect.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The SQL Server dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.SQLServerDialect sql_server_dialect = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2.SQLServerDialect,
+            com.google.cloud.bigquery.migration.v2.SQLServerDialect.Builder,
+            com.google.cloud.bigquery.migration.v2.SQLServerDialectOrBuilder>
+        getSqlServerDialectFieldBuilder() {
+      if (sqlServerDialectBuilder_ == null) {
+        if (!(dialectValueCase_ == 11)) {
+          dialectValue_ =
+              com.google.cloud.bigquery.migration.v2.SQLServerDialect.getDefaultInstance();
+        }
+        sqlServerDialectBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.migration.v2.SQLServerDialect,
+                com.google.cloud.bigquery.migration.v2.SQLServerDialect.Builder,
+                com.google.cloud.bigquery.migration.v2.SQLServerDialectOrBuilder>(
+                (com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_,
+                getParentForChildren(),
+                isClean());
+        dialectValue_ = null;
+      }
+      dialectValueCase_ = 11;
+      onChanged();
+      ;
+      return sqlServerDialectBuilder_;
     }
 
     @java.lang.Override

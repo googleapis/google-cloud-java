@@ -518,7 +518,7 @@ public class MigrationServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListMigrationWorkflowsResponse response =
    *         migrationServiceClient.listMigrationWorkflowsCallable().call(request);
-   *     for (MigrationWorkflow element : response.getResponsesList()) {
+   *     for (MigrationWorkflow element : response.getMigrationWorkflowsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1012,7 +1012,7 @@ public class MigrationServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListMigrationSubtasksResponse response =
    *         migrationServiceClient.listMigrationSubtasksCallable().call(request);
-   *     for (MigrationSubtask element : response.getResponsesList()) {
+   *     for (MigrationSubtask element : response.getMigrationSubtasksList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
