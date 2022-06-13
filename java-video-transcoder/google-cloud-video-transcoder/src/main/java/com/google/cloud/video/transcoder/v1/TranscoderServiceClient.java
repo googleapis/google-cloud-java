@@ -396,7 +396,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListJobsResponse response = transcoderServiceClient.listJobsCallable().call(request);
-   *     for (Job element : response.getResponsesList()) {
+   *     for (Job element : response.getJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -881,7 +881,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListJobTemplatesResponse response =
    *         transcoderServiceClient.listJobTemplatesCallable().call(request);
-   *     for (JobTemplate element : response.getResponsesList()) {
+   *     for (JobTemplate element : response.getJobTemplatesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
