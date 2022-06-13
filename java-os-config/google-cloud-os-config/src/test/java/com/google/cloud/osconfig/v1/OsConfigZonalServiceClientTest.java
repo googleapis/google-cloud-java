@@ -961,7 +961,7 @@ public class OsConfigZonalServiceClientTest {
     mockOsConfigZonalService.addResponse(expectedResponse);
 
     InstanceName parent =
-        InstanceName.ofProjectZoneInstanceName("[PROJECT]", "[ZONE]", "[INSTANCE]");
+        InstanceName.ofProjectLocationInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
 
     ListInventoriesPagedResponse pagedListResponse = client.listInventories(parent);
 
@@ -988,7 +988,7 @@ public class OsConfigZonalServiceClientTest {
 
     try {
       InstanceName parent =
-          InstanceName.ofProjectZoneInstanceName("[PROJECT]", "[ZONE]", "[INSTANCE]");
+          InstanceName.ofProjectLocationInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
       client.listInventories(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1135,7 +1135,7 @@ public class OsConfigZonalServiceClientTest {
     mockOsConfigZonalService.addResponse(expectedResponse);
 
     InstanceName parent =
-        InstanceName.ofProjectZoneInstanceName("[PROJECT]", "[ZONE]", "[INSTANCE]");
+        InstanceName.ofProjectLocationInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
 
     ListVulnerabilityReportsPagedResponse pagedListResponse =
         client.listVulnerabilityReports(parent);
@@ -1164,7 +1164,7 @@ public class OsConfigZonalServiceClientTest {
 
     try {
       InstanceName parent =
-          InstanceName.ofProjectZoneInstanceName("[PROJECT]", "[ZONE]", "[INSTANCE]");
+          InstanceName.ofProjectLocationInstanceName("[PROJECT]", "[LOCATION]", "[INSTANCE]");
       client.listVulnerabilityReports(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
