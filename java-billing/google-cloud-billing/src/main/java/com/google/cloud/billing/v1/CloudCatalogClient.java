@@ -247,7 +247,7 @@ public class CloudCatalogClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListServicesResponse response = cloudCatalogClient.listServicesCallable().call(request);
-   *     for (Service element : response.getResponsesList()) {
+   *     for (Service element : response.getServicesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -399,7 +399,7 @@ public class CloudCatalogClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListSkusResponse response = cloudCatalogClient.listSkusCallable().call(request);
-   *     for (Sku element : response.getResponsesList()) {
+   *     for (Sku element : response.getSkusList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

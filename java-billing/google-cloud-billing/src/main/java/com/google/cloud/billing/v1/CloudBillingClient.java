@@ -365,7 +365,7 @@ public class CloudBillingClient implements BackgroundResource {
    *   while (true) {
    *     ListBillingAccountsResponse response =
    *         cloudBillingClient.listBillingAccountsCallable().call(request);
-   *     for (BillingAccount element : response.getResponsesList()) {
+   *     for (BillingAccount element : response.getBillingAccountsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -750,7 +750,7 @@ public class CloudBillingClient implements BackgroundResource {
    *   while (true) {
    *     ListProjectBillingInfoResponse response =
    *         cloudBillingClient.listProjectBillingInfoCallable().call(request);
-   *     for (ProjectBillingInfo element : response.getResponsesList()) {
+   *     for (ProjectBillingInfo element : response.getProjectBillingInfoList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
