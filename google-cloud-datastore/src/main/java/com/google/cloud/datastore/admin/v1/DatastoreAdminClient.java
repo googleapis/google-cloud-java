@@ -888,7 +888,7 @@ public class DatastoreAdminClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListIndexesResponse response = datastoreAdminClient.listIndexesCallable().call(request);
-   *     for (Index element : response.getResponsesList()) {
+   *     for (Index element : response.getIndexesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
