@@ -1478,7 +1478,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListGlossariesResponse response =
    *         translationServiceClient.listGlossariesCallable().call(request);
-   *     for (Glossary element : response.getResponsesList()) {
+   *     for (Glossary element : response.getGlossariesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
