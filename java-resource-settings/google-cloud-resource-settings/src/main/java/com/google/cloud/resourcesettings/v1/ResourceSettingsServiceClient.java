@@ -56,7 +56,7 @@ import javax.annotation.Generated;
  * try (ResourceSettingsServiceClient resourceSettingsServiceClient =
  *     ResourceSettingsServiceClient.create()) {
  *   SettingName name =
- *       SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]");
+ *       SettingName.ofOrganizationSettingNameName("[ORGANIZATION]", "[SETTING_NAME]");
  *   Setting response = resourceSettingsServiceClient.getSetting(name);
  * }
  * }</pre>
@@ -177,7 +177,24 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
    * try (ResourceSettingsServiceClient resourceSettingsServiceClient =
    *     ResourceSettingsServiceClient.create()) {
    *   ResourceName parent =
-   *       SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]");
+   *       new ResourceName() {
+   *         {@literal @}Override
+   *         public Map<String, String> getFieldValuesMap() {
+   *           Map<String, String> fieldValuesMap = new HashMap<>();
+   *           fieldValuesMap.put("parent", "organizations/organization-8287");
+   *           return fieldValuesMap;
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String getFieldValue(String fieldName) {
+   *           return getFieldValuesMap().get(fieldName);
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String toString() {
+   *           return "organizations/organization-8287";
+   *         }
+   *       };
    *   for (Setting element : resourceSettingsServiceClient.listSettings(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -252,9 +269,7 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
    *     ResourceSettingsServiceClient.create()) {
    *   ListSettingsRequest request =
    *       ListSettingsRequest.newBuilder()
-   *           .setParent(
-   *               SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]")
-   *                   .toString())
+   *           .setParent("ListSettingsRequest-286838706".toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setView(SettingView.forNumber(0))
@@ -285,9 +300,7 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
    *     ResourceSettingsServiceClient.create()) {
    *   ListSettingsRequest request =
    *       ListSettingsRequest.newBuilder()
-   *           .setParent(
-   *               SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]")
-   *                   .toString())
+   *           .setParent("ListSettingsRequest-286838706".toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setView(SettingView.forNumber(0))
@@ -319,9 +332,7 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
    *     ResourceSettingsServiceClient.create()) {
    *   ListSettingsRequest request =
    *       ListSettingsRequest.newBuilder()
-   *           .setParent(
-   *               SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]")
-   *                   .toString())
+   *           .setParent("ListSettingsRequest-286838706".toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setView(SettingView.forNumber(0))
@@ -329,7 +340,7 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListSettingsResponse response =
    *         resourceSettingsServiceClient.listSettingsCallable().call(request);
-   *     for (Setting element : response.getResponsesList()) {
+   *     for (Setting element : response.getSettingsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -361,7 +372,7 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
    * try (ResourceSettingsServiceClient resourceSettingsServiceClient =
    *     ResourceSettingsServiceClient.create()) {
    *   SettingName name =
-   *       SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]");
+   *       SettingName.ofOrganizationSettingNameName("[ORGANIZATION]", "[SETTING_NAME]");
    *   Setting response = resourceSettingsServiceClient.getSetting(name);
    * }
    * }</pre>
@@ -423,7 +434,7 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
    *   GetSettingRequest request =
    *       GetSettingRequest.newBuilder()
    *           .setName(
-   *               SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]")
+   *               SettingName.ofOrganizationSettingNameName("[ORGANIZATION]", "[SETTING_NAME]")
    *                   .toString())
    *           .setView(SettingView.forNumber(0))
    *           .build();
@@ -455,7 +466,7 @@ public class ResourceSettingsServiceClient implements BackgroundResource {
    *   GetSettingRequest request =
    *       GetSettingRequest.newBuilder()
    *           .setName(
-   *               SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]")
+   *               SettingName.ofOrganizationSettingNameName("[ORGANIZATION]", "[SETTING_NAME]")
    *                   .toString())
    *           .setView(SettingView.forNumber(0))
    *           .build();

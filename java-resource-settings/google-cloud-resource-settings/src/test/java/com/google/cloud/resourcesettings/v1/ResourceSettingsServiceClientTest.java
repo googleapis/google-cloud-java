@@ -31,7 +31,9 @@ import com.google.protobuf.AbstractMessage;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -91,7 +93,24 @@ public class ResourceSettingsServiceClientTest {
     mockResourceSettingsService.addResponse(expectedResponse);
 
     ResourceName parent =
-        SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]");
+        new ResourceName() {
+          @Override
+          public Map<String, String> getFieldValuesMap() {
+            Map<String, String> fieldValuesMap = new HashMap<>();
+            fieldValuesMap.put("parent", "organizations/organization-8287");
+            return fieldValuesMap;
+          }
+
+          @Override
+          public String getFieldValue(String fieldName) {
+            return getFieldValuesMap().get(fieldName);
+          }
+
+          @Override
+          public String toString() {
+            return "organizations/organization-8287";
+          }
+        };
 
     ListSettingsPagedResponse pagedListResponse = client.listSettings(parent);
 
@@ -118,7 +137,24 @@ public class ResourceSettingsServiceClientTest {
 
     try {
       ResourceName parent =
-          SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]");
+          new ResourceName() {
+            @Override
+            public Map<String, String> getFieldValuesMap() {
+              Map<String, String> fieldValuesMap = new HashMap<>();
+              fieldValuesMap.put("parent", "organizations/organization-8287");
+              return fieldValuesMap;
+            }
+
+            @Override
+            public String getFieldValue(String fieldName) {
+              return getFieldValuesMap().get(fieldName);
+            }
+
+            @Override
+            public String toString() {
+              return "organizations/organization-8287";
+            }
+          };
       client.listSettings(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -175,7 +211,7 @@ public class ResourceSettingsServiceClientTest {
     Setting expectedResponse =
         Setting.newBuilder()
             .setName(
-                SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]")
+                SettingName.ofOrganizationSettingNameName("[ORGANIZATION]", "[SETTING_NAME]")
                     .toString())
             .setMetadata(SettingMetadata.newBuilder().build())
             .setLocalValue(Value.newBuilder().build())
@@ -185,7 +221,7 @@ public class ResourceSettingsServiceClientTest {
     mockResourceSettingsService.addResponse(expectedResponse);
 
     SettingName name =
-        SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]");
+        SettingName.ofOrganizationSettingNameName("[ORGANIZATION]", "[SETTING_NAME]");
 
     Setting actualResponse = client.getSetting(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -208,7 +244,7 @@ public class ResourceSettingsServiceClientTest {
 
     try {
       SettingName name =
-          SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]");
+          SettingName.ofOrganizationSettingNameName("[ORGANIZATION]", "[SETTING_NAME]");
       client.getSetting(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -221,7 +257,7 @@ public class ResourceSettingsServiceClientTest {
     Setting expectedResponse =
         Setting.newBuilder()
             .setName(
-                SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]")
+                SettingName.ofOrganizationSettingNameName("[ORGANIZATION]", "[SETTING_NAME]")
                     .toString())
             .setMetadata(SettingMetadata.newBuilder().build())
             .setLocalValue(Value.newBuilder().build())
@@ -265,7 +301,7 @@ public class ResourceSettingsServiceClientTest {
     Setting expectedResponse =
         Setting.newBuilder()
             .setName(
-                SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]")
+                SettingName.ofOrganizationSettingNameName("[ORGANIZATION]", "[SETTING_NAME]")
                     .toString())
             .setMetadata(SettingMetadata.newBuilder().build())
             .setLocalValue(Value.newBuilder().build())
