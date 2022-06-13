@@ -546,7 +546,7 @@ public class AdaptationClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListPhraseSetResponse response = adaptationClient.listPhraseSetCallable().call(request);
-   *     for (PhraseSet element : response.getResponsesList()) {
+   *     for (PhraseSet element : response.getPhraseSetsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1128,7 +1128,7 @@ public class AdaptationClient implements BackgroundResource {
    *   while (true) {
    *     ListCustomClassesResponse response =
    *         adaptationClient.listCustomClassesCallable().call(request);
-   *     for (CustomClass element : response.getResponsesList()) {
+   *     for (CustomClass element : response.getCustomClassesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
