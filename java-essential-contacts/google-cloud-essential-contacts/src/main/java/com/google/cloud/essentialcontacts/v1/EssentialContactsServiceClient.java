@@ -614,7 +614,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListContactsResponse response =
    *         essentialContactsServiceClient.listContactsCallable().call(request);
-   *     for (Contact element : response.getResponsesList()) {
+   *     for (Contact element : response.getContactsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -928,7 +928,7 @@ public class EssentialContactsServiceClient implements BackgroundResource {
    *   while (true) {
    *     ComputeContactsResponse response =
    *         essentialContactsServiceClient.computeContactsCallable().call(request);
-   *     for (Contact element : response.getResponsesList()) {
+   *     for (Contact element : response.getContactsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
