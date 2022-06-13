@@ -423,7 +423,7 @@ public class FoldersClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListFoldersResponse response = foldersClient.listFoldersCallable().call(request);
-   *     for (Folder element : response.getResponsesList()) {
+   *     for (Folder element : response.getFoldersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -580,7 +580,7 @@ public class FoldersClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     SearchFoldersResponse response = foldersClient.searchFoldersCallable().call(request);
-   *     for (Folder element : response.getResponsesList()) {
+   *     for (Folder element : response.getFoldersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

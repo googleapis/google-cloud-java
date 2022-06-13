@@ -498,7 +498,7 @@ public class TagKeysClientTest {
             .build();
     mockTagKeys.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = TagKeyName.of("[TAG_KEY]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -520,7 +520,7 @@ public class TagKeysClientTest {
     mockTagKeys.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = TagKeyName.of("[TAG_KEY]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -580,7 +580,7 @@ public class TagKeysClientTest {
             .build();
     mockTagKeys.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = TagKeyName.of("[TAG_KEY]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -604,7 +604,7 @@ public class TagKeysClientTest {
     mockTagKeys.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = TagKeyName.of("[TAG_KEY]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -663,7 +663,7 @@ public class TagKeysClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockTagKeys.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = TagKeyName.of("[TAG_KEY]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -687,7 +687,7 @@ public class TagKeysClientTest {
     mockTagKeys.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = TagKeyName.of("[TAG_KEY]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");

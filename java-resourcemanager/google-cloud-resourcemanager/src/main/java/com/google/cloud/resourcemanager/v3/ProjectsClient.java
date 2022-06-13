@@ -428,7 +428,7 @@ public class ProjectsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListProjectsResponse response = projectsClient.listProjectsCallable().call(request);
-   *     for (Project element : response.getResponsesList()) {
+   *     for (Project element : response.getProjectsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -600,7 +600,7 @@ public class ProjectsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     SearchProjectsResponse response = projectsClient.searchProjectsCallable().call(request);
-   *     for (Project element : response.getResponsesList()) {
+   *     for (Project element : response.getProjectsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -866,7 +866,7 @@ public class ProjectsClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   ProjectName name = ProjectName.of("[PROJECT]");
-   *   ResourceName destinationParent = FolderName.of("[FOLDER]");
+   *   ResourceName destinationParent = ProjectName.of("[PROJECT]");
    *   Project response = projectsClient.moveProjectAsync(name, destinationParent).get();
    * }
    * }</pre>
@@ -938,7 +938,7 @@ public class ProjectsClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String name = ProjectName.of("[PROJECT]").toString();
-   *   ResourceName destinationParent = FolderName.of("[FOLDER]");
+   *   ResourceName destinationParent = ProjectName.of("[PROJECT]");
    *   Project response = projectsClient.moveProjectAsync(name, destinationParent).get();
    * }
    * }</pre>
@@ -1012,7 +1012,7 @@ public class ProjectsClient implements BackgroundResource {
    *   MoveProjectRequest request =
    *       MoveProjectRequest.newBuilder()
    *           .setName(ProjectName.of("[PROJECT]").toString())
-   *           .setDestinationParent(FolderName.of("[FOLDER]").toString())
+   *           .setDestinationParent(ProjectName.of("[PROJECT]").toString())
    *           .build();
    *   Project response = projectsClient.moveProjectAsync(request).get();
    * }
@@ -1045,7 +1045,7 @@ public class ProjectsClient implements BackgroundResource {
    *   MoveProjectRequest request =
    *       MoveProjectRequest.newBuilder()
    *           .setName(ProjectName.of("[PROJECT]").toString())
-   *           .setDestinationParent(FolderName.of("[FOLDER]").toString())
+   *           .setDestinationParent(ProjectName.of("[PROJECT]").toString())
    *           .build();
    *   OperationFuture<Project, MoveProjectMetadata> future =
    *       projectsClient.moveProjectOperationCallable().futureCall(request);
@@ -1078,7 +1078,7 @@ public class ProjectsClient implements BackgroundResource {
    *   MoveProjectRequest request =
    *       MoveProjectRequest.newBuilder()
    *           .setName(ProjectName.of("[PROJECT]").toString())
-   *           .setDestinationParent(FolderName.of("[FOLDER]").toString())
+   *           .setDestinationParent(ProjectName.of("[PROJECT]").toString())
    *           .build();
    *   ApiFuture<Operation> future = projectsClient.moveProjectCallable().futureCall(request);
    *   // Do something.
@@ -1490,7 +1490,7 @@ public class ProjectsClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
-   *   ResourceName resource = FolderName.of("[FOLDER]");
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   Policy response = projectsClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -1545,7 +1545,7 @@ public class ProjectsClient implements BackgroundResource {
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(FolderName.of("[FOLDER]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = projectsClient.getIamPolicy(request);
@@ -1572,7 +1572,7 @@ public class ProjectsClient implements BackgroundResource {
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(FolderName.of("[FOLDER]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = projectsClient.getIamPolicyCallable().futureCall(request);
@@ -1633,7 +1633,7 @@ public class ProjectsClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
-   *   ResourceName resource = FolderName.of("[FOLDER]");
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = projectsClient.setIamPolicy(resource, policy);
    * }
@@ -1772,7 +1772,7 @@ public class ProjectsClient implements BackgroundResource {
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(FolderName.of("[FOLDER]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1837,7 +1837,7 @@ public class ProjectsClient implements BackgroundResource {
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(FolderName.of("[FOLDER]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1861,7 +1861,7 @@ public class ProjectsClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
-   *   ResourceName resource = FolderName.of("[FOLDER]");
+   *   ResourceName resource = ProjectName.of("[PROJECT]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       projectsClient.testIamPermissions(resource, permissions);
@@ -1931,7 +1931,7 @@ public class ProjectsClient implements BackgroundResource {
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(FolderName.of("[FOLDER]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = projectsClient.testIamPermissions(request);
@@ -1957,7 +1957,7 @@ public class ProjectsClient implements BackgroundResource {
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(FolderName.of("[FOLDER]").toString())
+   *           .setResource(ProjectName.of("[PROJECT]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

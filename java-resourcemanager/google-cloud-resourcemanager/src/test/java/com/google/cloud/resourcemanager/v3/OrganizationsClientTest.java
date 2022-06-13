@@ -230,7 +230,7 @@ public class OrganizationsClientTest {
             .build();
     mockOrganizations.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = OrganizationName.of("[ORGANIZATION]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -252,7 +252,7 @@ public class OrganizationsClientTest {
     mockOrganizations.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = OrganizationName.of("[ORGANIZATION]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -312,7 +312,7 @@ public class OrganizationsClientTest {
             .build();
     mockOrganizations.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = OrganizationName.of("[ORGANIZATION]");
 
     Policy actualResponse = client.setIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -334,7 +334,7 @@ public class OrganizationsClientTest {
     mockOrganizations.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = OrganizationName.of("[ORGANIZATION]");
       client.setIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -389,7 +389,7 @@ public class OrganizationsClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockOrganizations.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = OrganizationName.of("[ORGANIZATION]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -413,7 +413,7 @@ public class OrganizationsClientTest {
     mockOrganizations.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = OrganizationName.of("[ORGANIZATION]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");

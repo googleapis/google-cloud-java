@@ -454,7 +454,7 @@ public class ProjectsClientTest {
     mockProjects.addResponse(resultOperation);
 
     ProjectName name = ProjectName.of("[PROJECT]");
-    ResourceName destinationParent = FolderName.of("[FOLDER]");
+    ResourceName destinationParent = ProjectName.of("[PROJECT]");
 
     Project actualResponse = client.moveProjectAsync(name, destinationParent).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -478,7 +478,7 @@ public class ProjectsClientTest {
 
     try {
       ProjectName name = ProjectName.of("[PROJECT]");
-      ResourceName destinationParent = FolderName.of("[FOLDER]");
+      ResourceName destinationParent = ProjectName.of("[PROJECT]");
       client.moveProjectAsync(name, destinationParent).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -568,7 +568,7 @@ public class ProjectsClientTest {
     mockProjects.addResponse(resultOperation);
 
     String name = "name3373707";
-    ResourceName destinationParent = FolderName.of("[FOLDER]");
+    ResourceName destinationParent = ProjectName.of("[PROJECT]");
 
     Project actualResponse = client.moveProjectAsync(name, destinationParent).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -592,7 +592,7 @@ public class ProjectsClientTest {
 
     try {
       String name = "name3373707";
-      ResourceName destinationParent = FolderName.of("[FOLDER]");
+      ResourceName destinationParent = ProjectName.of("[PROJECT]");
       client.moveProjectAsync(name, destinationParent).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -886,7 +886,7 @@ public class ProjectsClientTest {
             .build();
     mockProjects.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -908,7 +908,7 @@ public class ProjectsClientTest {
     mockProjects.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -968,7 +968,7 @@ public class ProjectsClientTest {
             .build();
     mockProjects.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -992,7 +992,7 @@ public class ProjectsClientTest {
     mockProjects.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -1051,7 +1051,7 @@ public class ProjectsClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockProjects.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = ProjectName.of("[PROJECT]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -1075,7 +1075,7 @@ public class ProjectsClientTest {
     mockProjects.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = ProjectName.of("[PROJECT]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");

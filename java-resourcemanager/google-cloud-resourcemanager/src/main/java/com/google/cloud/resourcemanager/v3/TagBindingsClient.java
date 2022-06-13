@@ -315,7 +315,7 @@ public class TagBindingsClient implements BackgroundResource {
    *   while (true) {
    *     ListTagBindingsResponse response =
    *         tagBindingsClient.listTagBindingsCallable().call(request);
-   *     for (TagBinding element : response.getResponsesList()) {
+   *     for (TagBinding element : response.getTagBindingsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
