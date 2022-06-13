@@ -291,7 +291,7 @@ public class TpuClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListNodesResponse response = tpuClient.listNodesCallable().call(request);
-   *     for (Node element : response.getResponsesList()) {
+   *     for (Node element : response.getNodesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1106,7 +1106,7 @@ public class TpuClient implements BackgroundResource {
    *   while (true) {
    *     ListAcceleratorTypesResponse response =
    *         tpuClient.listAcceleratorTypesCallable().call(request);
-   *     for (AcceleratorType element : response.getResponsesList()) {
+   *     for (AcceleratorType element : response.getAcceleratorTypesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1375,7 +1375,7 @@ public class TpuClient implements BackgroundResource {
    *   while (true) {
    *     ListRuntimeVersionsResponse response =
    *         tpuClient.listRuntimeVersionsCallable().call(request);
-   *     for (RuntimeVersion element : response.getResponsesList()) {
+   *     for (RuntimeVersion element : response.getRuntimeVersionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
