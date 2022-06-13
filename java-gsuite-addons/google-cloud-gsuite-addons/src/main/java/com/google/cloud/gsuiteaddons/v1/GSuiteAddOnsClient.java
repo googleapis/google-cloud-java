@@ -699,7 +699,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    *   while (true) {
    *     ListDeploymentsResponse response =
    *         gSuiteAddOnsClient.listDeploymentsCallable().call(request);
-   *     for (Deployment element : response.getResponsesList()) {
+   *     for (Deployment element : response.getDeploymentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
