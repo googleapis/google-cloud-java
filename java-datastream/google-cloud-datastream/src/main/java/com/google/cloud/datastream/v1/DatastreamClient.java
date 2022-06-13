@@ -310,7 +310,7 @@ public class DatastreamClient implements BackgroundResource {
    *   while (true) {
    *     ListConnectionProfilesResponse response =
    *         datastreamClient.listConnectionProfilesCallable().call(request);
-   *     for (ConnectionProfile element : response.getResponsesList()) {
+   *     for (ConnectionProfile element : response.getConnectionProfilesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1058,7 +1058,7 @@ public class DatastreamClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListStreamsResponse response = datastreamClient.listStreamsCallable().call(request);
-   *     for (Stream element : response.getResponsesList()) {
+   *     for (Stream element : response.getStreamsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1857,7 +1857,7 @@ public class DatastreamClient implements BackgroundResource {
    *   while (true) {
    *     ListStreamObjectsResponse response =
    *         datastreamClient.listStreamObjectsCallable().call(request);
-   *     for (StreamObject element : response.getResponsesList()) {
+   *     for (StreamObject element : response.getStreamObjectsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2213,7 +2213,7 @@ public class DatastreamClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     FetchStaticIpsResponse response = datastreamClient.fetchStaticIpsCallable().call(request);
-   *     for (String element : response.getResponsesList()) {
+   *     for (String element : response.getStaticIpsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2642,7 +2642,7 @@ public class DatastreamClient implements BackgroundResource {
    *   while (true) {
    *     ListPrivateConnectionsResponse response =
    *         datastreamClient.listPrivateConnectionsCallable().call(request);
-   *     for (PrivateConnection element : response.getResponsesList()) {
+   *     for (PrivateConnection element : response.getPrivateConnectionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3213,7 +3213,7 @@ public class DatastreamClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListRoutesResponse response = datastreamClient.listRoutesCallable().call(request);
-   *     for (Route element : response.getResponsesList()) {
+   *     for (Route element : response.getRoutesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3443,7 +3443,7 @@ public class DatastreamClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListLocationsResponse response = datastreamClient.listLocationsCallable().call(request);
-   *     for (Location element : response.getResponsesList()) {
+   *     for (Location element : response.getLocationsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
