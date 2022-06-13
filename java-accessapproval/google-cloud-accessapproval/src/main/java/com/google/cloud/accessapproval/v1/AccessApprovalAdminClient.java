@@ -18,7 +18,6 @@ package com.google.cloud.accessapproval.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -156,7 +155,6 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * Constructs an instance of AccessApprovalAdminClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(AccessApprovalAdminSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AccessApprovalAdminClient create(AccessApprovalStub stub) {
     return new AccessApprovalAdminClient(stub);
   }
@@ -171,7 +169,6 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     this.stub = ((AccessApprovalStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AccessApprovalAdminClient(AccessApprovalStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -181,7 +178,6 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AccessApprovalStub getStub() {
     return stub;
   }
@@ -394,7 +390,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    *   while (true) {
    *     ListApprovalRequestsResponse response =
    *         accessApprovalAdminClient.listApprovalRequestsCallable().call(request);
-   *     for (ApprovalRequest element : response.getResponsesList()) {
+   *     for (ApprovalRequest element : response.getApprovalRequestsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

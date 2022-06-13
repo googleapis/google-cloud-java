@@ -250,7 +250,6 @@ public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubS
     return getAccessApprovalServiceAccountSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AccessApprovalStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
