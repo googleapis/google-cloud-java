@@ -672,7 +672,7 @@ public class ContentServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListContentResponse response = contentServiceClient.listContentCallable().call(request);
-   *     for (Content element : response.getResponsesList()) {
+   *     for (Content element : response.getContentList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

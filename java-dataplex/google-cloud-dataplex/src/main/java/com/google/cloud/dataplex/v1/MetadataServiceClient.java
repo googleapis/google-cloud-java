@@ -658,7 +658,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListEntitiesResponse response = metadataServiceClient.listEntitiesCallable().call(request);
-   *     for (Entity element : response.getResponsesList()) {
+   *     for (Entity element : response.getEntitiesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1161,7 +1161,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListPartitionsResponse response =
    *         metadataServiceClient.listPartitionsCallable().call(request);
-   *     for (Partition element : response.getResponsesList()) {
+   *     for (Partition element : response.getPartitionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
