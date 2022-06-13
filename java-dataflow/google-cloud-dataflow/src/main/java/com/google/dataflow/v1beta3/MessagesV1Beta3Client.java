@@ -277,7 +277,7 @@ public class MessagesV1Beta3Client implements BackgroundResource {
    *   while (true) {
    *     ListJobMessagesResponse response =
    *         messagesV1Beta3Client.listJobMessagesCallable().call(request);
-   *     for (JobMessage element : response.getResponsesList()) {
+   *     for (JobMessage element : response.getJobMessagesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
