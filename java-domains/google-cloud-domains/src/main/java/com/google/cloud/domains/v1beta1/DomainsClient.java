@@ -1155,7 +1155,7 @@ public class DomainsClient implements BackgroundResource {
    *   while (true) {
    *     ListRegistrationsResponse response =
    *         domainsClient.listRegistrationsCallable().call(request);
-   *     for (Registration element : response.getResponsesList()) {
+   *     for (Registration element : response.getRegistrationsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
