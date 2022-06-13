@@ -2213,7 +2213,8 @@ public class DlpServiceClientTest {
     HybridInspectResponse expectedResponse = HybridInspectResponse.newBuilder().build();
     mockDlpService.addResponse(expectedResponse);
 
-    JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+    JobTriggerName name =
+        JobTriggerName.ofProjectLocationJobTriggerName("[PROJECT]", "[LOCATION]", "[JOB_TRIGGER]");
 
     HybridInspectResponse actualResponse = client.hybridInspectJobTrigger(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -2236,7 +2237,9 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+      JobTriggerName name =
+          JobTriggerName.ofProjectLocationJobTriggerName(
+              "[PROJECT]", "[LOCATION]", "[JOB_TRIGGER]");
       client.hybridInspectJobTrigger(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3959,7 +3962,8 @@ public class DlpServiceClientTest {
     HybridInspectResponse expectedResponse = HybridInspectResponse.newBuilder().build();
     mockDlpService.addResponse(expectedResponse);
 
-    DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+    DlpJobName name =
+        DlpJobName.ofProjectLocationDlpJobName("[PROJECT]", "[LOCATION]", "[DLP_JOB]");
 
     HybridInspectResponse actualResponse = client.hybridInspectDlpJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -3981,7 +3985,8 @@ public class DlpServiceClientTest {
     mockDlpService.addException(exception);
 
     try {
-      DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+      DlpJobName name =
+          DlpJobName.ofProjectLocationDlpJobName("[PROJECT]", "[LOCATION]", "[DLP_JOB]");
       client.hybridInspectDlpJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4031,7 +4036,9 @@ public class DlpServiceClientTest {
 
     FinishDlpJobRequest request =
         FinishDlpJobRequest.newBuilder()
-            .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+            .setName(
+                DlpJobName.ofProjectLocationDlpJobName("[PROJECT]", "[LOCATION]", "[DLP_JOB]")
+                    .toString())
             .build();
 
     client.finishDlpJob(request);
@@ -4055,7 +4062,9 @@ public class DlpServiceClientTest {
     try {
       FinishDlpJobRequest request =
           FinishDlpJobRequest.newBuilder()
-              .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+              .setName(
+                  DlpJobName.ofProjectLocationDlpJobName("[PROJECT]", "[LOCATION]", "[DLP_JOB]")
+                      .toString())
               .build();
       client.finishDlpJob(request);
       Assert.fail("No exception raised");

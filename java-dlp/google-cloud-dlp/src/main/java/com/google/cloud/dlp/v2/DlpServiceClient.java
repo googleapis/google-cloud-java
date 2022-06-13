@@ -1436,7 +1436,7 @@ public class DlpServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListInspectTemplatesResponse response =
    *         dlpServiceClient.listInspectTemplatesCallable().call(request);
-   *     for (InspectTemplate element : response.getResponsesList()) {
+   *     for (InspectTemplate element : response.getInspectTemplatesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2442,7 +2442,7 @@ public class DlpServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListDeidentifyTemplatesResponse response =
    *         dlpServiceClient.listDeidentifyTemplatesCallable().call(request);
-   *     for (DeidentifyTemplate element : response.getResponsesList()) {
+   *     for (DeidentifyTemplate element : response.getDeidentifyTemplatesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2891,7 +2891,9 @@ public class DlpServiceClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   JobTriggerName name = JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]");
+   *   JobTriggerName name =
+   *       JobTriggerName.ofProjectLocationJobTriggerName(
+   *           "[PROJECT]", "[LOCATION]", "[JOB_TRIGGER]");
    *   HybridInspectResponse response = dlpServiceClient.hybridInspectJobTrigger(name);
    * }
    * }</pre>
@@ -2948,7 +2950,9 @@ public class DlpServiceClient implements BackgroundResource {
    *   HybridInspectJobTriggerRequest request =
    *       HybridInspectJobTriggerRequest.newBuilder()
    *           .setName(
-   *               JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]").toString())
+   *               JobTriggerName.ofProjectLocationJobTriggerName(
+   *                       "[PROJECT]", "[LOCATION]", "[JOB_TRIGGER]")
+   *                   .toString())
    *           .setHybridItem(HybridContentItem.newBuilder().build())
    *           .build();
    *   HybridInspectResponse response = dlpServiceClient.hybridInspectJobTrigger(request);
@@ -2977,7 +2981,9 @@ public class DlpServiceClient implements BackgroundResource {
    *   HybridInspectJobTriggerRequest request =
    *       HybridInspectJobTriggerRequest.newBuilder()
    *           .setName(
-   *               JobTriggerName.ofProjectJobTriggerName("[PROJECT]", "[JOB_TRIGGER]").toString())
+   *               JobTriggerName.ofProjectLocationJobTriggerName(
+   *                       "[PROJECT]", "[LOCATION]", "[JOB_TRIGGER]")
+   *                   .toString())
    *           .setHybridItem(HybridContentItem.newBuilder().build())
    *           .build();
    *   ApiFuture<HybridInspectResponse> future =
@@ -3289,7 +3295,7 @@ public class DlpServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListJobTriggersResponse response = dlpServiceClient.listJobTriggersCallable().call(request);
-   *     for (JobTrigger element : response.getResponsesList()) {
+   *     for (JobTrigger element : response.getJobTriggersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3998,7 +4004,7 @@ public class DlpServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListDlpJobsResponse response = dlpServiceClient.listDlpJobsCallable().call(request);
-   *     for (DlpJob element : response.getResponsesList()) {
+   *     for (DlpJob element : response.getJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -5128,7 +5134,7 @@ public class DlpServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListStoredInfoTypesResponse response =
    *         dlpServiceClient.listStoredInfoTypesCallable().call(request);
-   *     for (StoredInfoType element : response.getResponsesList()) {
+   *     for (StoredInfoType element : response.getStoredInfoTypesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -5275,7 +5281,8 @@ public class DlpServiceClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
-   *   DlpJobName name = DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]");
+   *   DlpJobName name =
+   *       DlpJobName.ofProjectLocationDlpJobName("[PROJECT]", "[LOCATION]", "[DLP_JOB]");
    *   HybridInspectResponse response = dlpServiceClient.hybridInspectDlpJob(name);
    * }
    * }</pre>
@@ -5331,7 +5338,9 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   HybridInspectDlpJobRequest request =
    *       HybridInspectDlpJobRequest.newBuilder()
-   *           .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+   *           .setName(
+   *               DlpJobName.ofProjectLocationDlpJobName("[PROJECT]", "[LOCATION]", "[DLP_JOB]")
+   *                   .toString())
    *           .setHybridItem(HybridContentItem.newBuilder().build())
    *           .build();
    *   HybridInspectResponse response = dlpServiceClient.hybridInspectDlpJob(request);
@@ -5358,7 +5367,9 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   HybridInspectDlpJobRequest request =
    *       HybridInspectDlpJobRequest.newBuilder()
-   *           .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+   *           .setName(
+   *               DlpJobName.ofProjectLocationDlpJobName("[PROJECT]", "[LOCATION]", "[DLP_JOB]")
+   *                   .toString())
    *           .setHybridItem(HybridContentItem.newBuilder().build())
    *           .build();
    *   ApiFuture<HybridInspectResponse> future =
@@ -5386,7 +5397,9 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   FinishDlpJobRequest request =
    *       FinishDlpJobRequest.newBuilder()
-   *           .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+   *           .setName(
+   *               DlpJobName.ofProjectLocationDlpJobName("[PROJECT]", "[LOCATION]", "[DLP_JOB]")
+   *                   .toString())
    *           .build();
    *   dlpServiceClient.finishDlpJob(request);
    * }
@@ -5412,7 +5425,9 @@ public class DlpServiceClient implements BackgroundResource {
    * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
    *   FinishDlpJobRequest request =
    *       FinishDlpJobRequest.newBuilder()
-   *           .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+   *           .setName(
+   *               DlpJobName.ofProjectLocationDlpJobName("[PROJECT]", "[LOCATION]", "[DLP_JOB]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Empty> future = dlpServiceClient.finishDlpJobCallable().futureCall(request);
    *   // Do something.
