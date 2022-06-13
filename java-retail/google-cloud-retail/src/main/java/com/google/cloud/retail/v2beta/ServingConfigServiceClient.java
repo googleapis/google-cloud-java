@@ -783,7 +783,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListServingConfigsResponse response =
    *         servingConfigServiceClient.listServingConfigsCallable().call(request);
-   *     for (ServingConfig element : response.getResponsesList()) {
+   *     for (ServingConfig element : response.getServingConfigsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

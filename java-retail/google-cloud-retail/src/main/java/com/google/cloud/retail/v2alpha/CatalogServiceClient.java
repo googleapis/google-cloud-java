@@ -289,7 +289,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListCatalogsResponse response = catalogServiceClient.listCatalogsCallable().call(request);
-   *     for (Catalog element : response.getResponsesList()) {
+   *     for (Catalog element : response.getCatalogsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

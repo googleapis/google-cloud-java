@@ -315,7 +315,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchCallable().call(request);
-   *     for (SearchResponse.SearchResult element : response.getResponsesList()) {
+   *     for (SearchResponse.SearchResult element : response.getResultsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

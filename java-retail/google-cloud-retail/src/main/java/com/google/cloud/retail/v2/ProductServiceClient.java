@@ -573,7 +573,7 @@ public class ProductServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListProductsResponse response = productServiceClient.listProductsCallable().call(request);
-   *     for (Product element : response.getResponsesList()) {
+   *     for (Product element : response.getProductsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

@@ -730,7 +730,7 @@ public class ControlServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListControlsResponse response = controlServiceClient.listControlsCallable().call(request);
-   *     for (Control element : response.getResponsesList()) {
+   *     for (Control element : response.getControlsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
