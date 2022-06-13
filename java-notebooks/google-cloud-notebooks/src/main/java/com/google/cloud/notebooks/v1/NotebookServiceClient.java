@@ -270,7 +270,7 @@ public class NotebookServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListInstancesResponse response =
    *         notebookServiceClient.listInstancesCallable().call(request);
-   *     for (Instance element : response.getResponsesList()) {
+   *     for (Instance element : response.getInstancesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1918,7 +1918,7 @@ public class NotebookServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListEnvironmentsResponse response =
    *         notebookServiceClient.listEnvironmentsCallable().call(request);
-   *     for (Environment element : response.getResponsesList()) {
+   *     for (Environment element : response.getEnvironmentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2358,7 +2358,7 @@ public class NotebookServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListSchedulesResponse response =
    *         notebookServiceClient.listSchedulesCallable().call(request);
-   *     for (Schedule element : response.getResponsesList()) {
+   *     for (Schedule element : response.getSchedulesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2964,7 +2964,7 @@ public class NotebookServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListExecutionsResponse response =
    *         notebookServiceClient.listExecutionsCallable().call(request);
-   *     for (Execution element : response.getResponsesList()) {
+   *     for (Execution element : response.getExecutionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

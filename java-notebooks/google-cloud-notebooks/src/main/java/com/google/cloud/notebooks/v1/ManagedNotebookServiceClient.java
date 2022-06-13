@@ -305,7 +305,7 @@ public class ManagedNotebookServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListRuntimesResponse response =
    *         managedNotebookServiceClient.listRuntimesCallable().call(request);
-   *     for (Runtime element : response.getResponsesList()) {
+   *     for (Runtime element : response.getRuntimesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
