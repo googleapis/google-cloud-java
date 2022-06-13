@@ -16,6 +16,7 @@ docker:
   image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
+- "/samples/snippets/generated"
 - "/grpc-google-.*/src"
 - "/proto-google-.*/src"
 - "/google-.*/src"
@@ -30,3 +31,5 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-eventarc-$1/src"
 - source: "/google/cloud/eventarc/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-eventarc/src"
+- source: "/google/cloud/eventarc/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/$1/samples/snippets/generated"
