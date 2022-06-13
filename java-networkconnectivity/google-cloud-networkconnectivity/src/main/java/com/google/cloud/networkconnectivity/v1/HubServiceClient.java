@@ -297,7 +297,7 @@ public class HubServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListHubsResponse response = hubServiceClient.listHubsCallable().call(request);
-   *     for (Hub element : response.getResponsesList()) {
+   *     for (Hub element : response.getHubsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -920,7 +920,7 @@ public class HubServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListSpokesResponse response = hubServiceClient.listSpokesCallable().call(request);
-   *     for (Spoke element : response.getResponsesList()) {
+   *     for (Spoke element : response.getSpokesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
