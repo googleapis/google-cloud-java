@@ -1238,7 +1238,7 @@ public class RegistrationServiceClientTest {
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
-            .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
 
@@ -1265,7 +1265,7 @@ public class RegistrationServiceClientTest {
     try {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
-              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
       client.getIamPolicy(request);
@@ -1288,7 +1288,7 @@ public class RegistrationServiceClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -1317,7 +1317,7 @@ public class RegistrationServiceClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
@@ -1336,7 +1336,7 @@ public class RegistrationServiceClientTest {
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
-            .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
 
@@ -1363,7 +1363,7 @@ public class RegistrationServiceClientTest {
     try {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
-              .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setResource(NamespaceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]").toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);
