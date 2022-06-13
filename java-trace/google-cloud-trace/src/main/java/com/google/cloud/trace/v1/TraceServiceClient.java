@@ -270,7 +270,7 @@ public class TraceServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTracesResponse response = traceServiceClient.listTracesCallable().call(request);
-   *     for (Trace element : response.getResponsesList()) {
+   *     for (Trace element : response.getTracesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
