@@ -331,7 +331,7 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListGameServerDeploymentsResponse response =
    *         gameServerDeploymentsServiceClient.listGameServerDeploymentsCallable().call(request);
-   *     for (GameServerDeployment element : response.getResponsesList()) {
+   *     for (GameServerDeployment element : response.getGameServerDeploymentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

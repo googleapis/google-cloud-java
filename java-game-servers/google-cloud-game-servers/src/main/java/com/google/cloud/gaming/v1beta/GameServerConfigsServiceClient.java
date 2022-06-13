@@ -328,7 +328,7 @@ public class GameServerConfigsServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListGameServerConfigsResponse response =
    *         gameServerConfigsServiceClient.listGameServerConfigsCallable().call(request);
-   *     for (GameServerConfig element : response.getResponsesList()) {
+   *     for (GameServerConfig element : response.getGameServerConfigsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
