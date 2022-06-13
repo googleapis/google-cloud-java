@@ -307,7 +307,7 @@ public class DataFusionClient implements BackgroundResource {
    *   while (true) {
    *     ListAvailableVersionsResponse response =
    *         dataFusionClient.listAvailableVersionsCallable().call(request);
-   *     for (Version element : response.getResponsesList()) {
+   *     for (Version element : response.getAvailableVersionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -408,7 +408,7 @@ public class DataFusionClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListInstancesResponse response = dataFusionClient.listInstancesCallable().call(request);
-   *     for (Instance element : response.getResponsesList()) {
+   *     for (Instance element : response.getInstancesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1193,7 +1193,7 @@ public class DataFusionClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListNamespacesResponse response = dataFusionClient.listNamespacesCallable().call(request);
-   *     for (Namespace element : response.getResponsesList()) {
+   *     for (Namespace element : response.getNamespacesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1545,7 +1545,7 @@ public class DataFusionClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListDnsPeeringsResponse response = dataFusionClient.listDnsPeeringsCallable().call(request);
-   *     for (DnsPeering element : response.getResponsesList()) {
+   *     for (DnsPeering element : response.getDnsPeeringsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
