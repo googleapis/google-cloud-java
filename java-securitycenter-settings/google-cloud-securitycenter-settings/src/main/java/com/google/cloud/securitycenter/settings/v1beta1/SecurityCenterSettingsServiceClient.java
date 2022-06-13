@@ -1383,7 +1383,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListDetectorsResponse response =
    *         securityCenterSettingsServiceClient.listDetectorsCallable().call(request);
-   *     for (Detector element : response.getResponsesList()) {
+   *     for (Detector element : response.getDetectorsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1541,7 +1541,7 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListComponentsResponse response =
    *         securityCenterSettingsServiceClient.listComponentsCallable().call(request);
-   *     for (String element : response.getResponsesList()) {
+   *     for (String element : response.getComponentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
