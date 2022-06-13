@@ -310,7 +310,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListSecretsResponse response =
    *         secretManagerServiceClient.listSecretsCallable().call(request);
-   *     for (Secret element : response.getResponsesList()) {
+   *     for (Secret element : response.getSecretsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1026,7 +1026,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListSecretVersionsResponse response =
    *         secretManagerServiceClient.listSecretVersionsCallable().call(request);
-   *     for (SecretVersion element : response.getResponsesList()) {
+   *     for (SecretVersion element : response.getVersionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1696,7 +1696,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     SecretManagerServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1727,7 +1727,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     SecretManagerServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1756,7 +1756,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     SecretManagerServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = secretManagerServiceClient.getIamPolicy(request);
@@ -1784,7 +1784,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     SecretManagerServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future =
@@ -1816,7 +1816,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     SecretManagerServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = secretManagerServiceClient.testIamPermissions(request);
@@ -1848,7 +1848,7 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *     SecretManagerServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
