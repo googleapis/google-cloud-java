@@ -459,7 +459,8 @@ public class PredictionApiKeyRegistryClient implements BackgroundResource {
    *         predictionApiKeyRegistryClient
    *             .listPredictionApiKeyRegistrationsCallable()
    *             .call(request);
-   *     for (PredictionApiKeyRegistration element : response.getResponsesList()) {
+   *     for (PredictionApiKeyRegistration element :
+   *         response.getPredictionApiKeyRegistrationsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

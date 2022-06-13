@@ -400,7 +400,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     PredictResponse response = predictionServiceClient.predictCallable().call(request);
-   *     for (Map.Entry<String, Value> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, Value> element : response.getMetadataList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

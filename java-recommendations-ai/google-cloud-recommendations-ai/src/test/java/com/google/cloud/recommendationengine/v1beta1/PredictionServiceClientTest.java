@@ -83,7 +83,7 @@ public class PredictionServiceClientTest {
 
   @Test
   public void predictTest() throws Exception {
-    Value responsesElement = Value.newBuilder().build();
+    Value responsesElement = Value.newBuilder().setBoolValue(true).build();
     PredictResponse expectedResponse =
         PredictResponse.newBuilder()
             .setNextPageToken("")
@@ -133,7 +133,7 @@ public class PredictionServiceClientTest {
 
   @Test
   public void predictTest2() throws Exception {
-    Value responsesElement = Value.newBuilder().build();
+    Value responsesElement = Value.newBuilder().setBoolValue(true).build();
     PredictResponse expectedResponse =
         PredictResponse.newBuilder()
             .setNextPageToken("")
