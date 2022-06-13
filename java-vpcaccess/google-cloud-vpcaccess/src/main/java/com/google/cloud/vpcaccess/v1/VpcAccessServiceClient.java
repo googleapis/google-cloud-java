@@ -550,7 +550,7 @@ public class VpcAccessServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListConnectorsResponse response =
    *         vpcAccessServiceClient.listConnectorsCallable().call(request);
-   *     for (Connector element : response.getResponsesList()) {
+   *     for (Connector element : response.getConnectorsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
