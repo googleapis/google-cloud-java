@@ -1181,7 +1181,7 @@ public class DeviceManagerClientTest {
             .build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+    ResourceName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -1205,7 +1205,7 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+      ResourceName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -1269,7 +1269,7 @@ public class DeviceManagerClientTest {
             .build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+    ResourceName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1291,7 +1291,7 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+      ResourceName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1346,7 +1346,7 @@ public class DeviceManagerClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockDeviceManager.addResponse(expectedResponse);
 
-    ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+    ResourceName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -1370,7 +1370,7 @@ public class DeviceManagerClientTest {
     mockDeviceManager.addException(exception);
 
     try {
-      ResourceName resource = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+      ResourceName resource = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
