@@ -398,7 +398,7 @@ public class RevisionsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListRevisionsResponse response = revisionsClient.listRevisionsCallable().call(request);
-   *     for (Revision element : response.getResponsesList()) {
+   *     for (Revision element : response.getRevisionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
