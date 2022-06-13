@@ -390,7 +390,7 @@ public class MetricServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListMonitoredResourceDescriptorsResponse response =
    *         metricServiceClient.listMonitoredResourceDescriptorsCallable().call(request);
-   *     for (MonitoredResourceDescriptor element : response.getResponsesList()) {
+   *     for (MonitoredResourceDescriptor element : response.getResourceDescriptorsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -735,7 +735,7 @@ public class MetricServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListMetricDescriptorsResponse response =
    *         metricServiceClient.listMetricDescriptorsCallable().call(request);
-   *     for (MetricDescriptor element : response.getResponsesList()) {
+   *     for (MetricDescriptor element : response.getMetricDescriptorsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1477,7 +1477,7 @@ public class MetricServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListTimeSeriesResponse response =
    *         metricServiceClient.listTimeSeriesCallable().call(request);
-   *     for (TimeSeries element : response.getResponsesList()) {
+   *     for (TimeSeries element : response.getTimeSeriesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

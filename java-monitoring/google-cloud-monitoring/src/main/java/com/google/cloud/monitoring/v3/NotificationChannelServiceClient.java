@@ -428,7 +428,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *         notificationChannelServiceClient
    *             .listNotificationChannelDescriptorsCallable()
    *             .call(request);
-   *     for (NotificationChannelDescriptor element : response.getResponsesList()) {
+   *     for (NotificationChannelDescriptor element : response.getChannelDescriptorsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -810,7 +810,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListNotificationChannelsResponse response =
    *         notificationChannelServiceClient.listNotificationChannelsCallable().call(request);
-   *     for (NotificationChannel element : response.getResponsesList()) {
+   *     for (NotificationChannel element : response.getNotificationChannelsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

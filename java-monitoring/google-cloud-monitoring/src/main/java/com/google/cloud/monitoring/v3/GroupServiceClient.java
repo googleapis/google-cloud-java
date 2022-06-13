@@ -356,7 +356,7 @@ public class GroupServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListGroupsResponse response = groupServiceClient.listGroupsCallable().call(request);
-   *     for (Group element : response.getResponsesList()) {
+   *     for (Group element : response.getGroupList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -961,7 +961,7 @@ public class GroupServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListGroupMembersResponse response =
    *         groupServiceClient.listGroupMembersCallable().call(request);
-   *     for (MonitoredResource element : response.getResponsesList()) {
+   *     for (MonitoredResource element : response.getMembersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

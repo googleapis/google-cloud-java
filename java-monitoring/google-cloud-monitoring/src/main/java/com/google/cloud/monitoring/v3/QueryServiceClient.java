@@ -241,7 +241,7 @@ public class QueryServiceClient implements BackgroundResource {
    *   while (true) {
    *     QueryTimeSeriesResponse response =
    *         queryServiceClient.queryTimeSeriesCallable().call(request);
-   *     for (TimeSeriesData element : response.getResponsesList()) {
+   *     for (TimeSeriesData element : response.getTimeSeriesDataList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

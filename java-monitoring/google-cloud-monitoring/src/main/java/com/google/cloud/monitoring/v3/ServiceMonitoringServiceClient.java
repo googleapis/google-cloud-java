@@ -674,7 +674,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListServicesResponse response =
    *         serviceMonitoringServiceClient.listServicesCallable().call(request);
-   *     for (Service element : response.getResponsesList()) {
+   *     for (Service element : response.getServicesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1276,7 +1276,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListServiceLevelObjectivesResponse response =
    *         serviceMonitoringServiceClient.listServiceLevelObjectivesCallable().call(request);
-   *     for (ServiceLevelObjective element : response.getResponsesList()) {
+   *     for (ServiceLevelObjective element : response.getServiceLevelObjectivesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
