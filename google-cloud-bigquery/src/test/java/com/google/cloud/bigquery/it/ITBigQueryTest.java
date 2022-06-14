@@ -2687,7 +2687,8 @@ public class ITBigQueryTest {
     assertEquals(300000, cnt); // total 300000 rows should be read
   }
 
-  @Test
+  // @Test - Temporarily disabling till https://github.com/googleapis/gax-java/issues/1712 or
+  // b/235591056 are resolved
   public void testReadAPIIterationAndOrder()
       throws SQLException { // use read API to read 300K records and check the order
     String query =
@@ -2733,7 +2734,8 @@ public class ITBigQueryTest {
     assertTrue(connection.close());
   }
 
-  @Test
+  // @Test - Temporarily disabling till https://github.com/googleapis/gax-java/issues/1712 or
+  // b/235591056 are resolved
   public void testReadAPIConnectionMultiClose()
       throws
           SQLException { // use read API to read 300K records, then closes the connection. This test
