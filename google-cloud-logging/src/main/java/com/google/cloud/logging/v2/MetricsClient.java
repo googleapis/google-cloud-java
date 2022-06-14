@@ -286,7 +286,7 @@ public class MetricsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListLogMetricsResponse response = metricsClient.listLogMetricsCallable().call(request);
-   *     for (LogMetric element : response.getResponsesList()) {
+   *     for (LogMetric element : response.getMetricsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

@@ -674,7 +674,7 @@ public class LoggingClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListLogEntriesResponse response = loggingClient.listLogEntriesCallable().call(request);
-   *     for (LogEntry element : response.getResponsesList()) {
+   *     for (LogEntry element : response.getEntriesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -770,7 +770,7 @@ public class LoggingClient implements BackgroundResource {
    *   while (true) {
    *     ListMonitoredResourceDescriptorsResponse response =
    *         loggingClient.listMonitoredResourceDescriptorsCallable().call(request);
-   *     for (MonitoredResourceDescriptor element : response.getResponsesList()) {
+   *     for (MonitoredResourceDescriptor element : response.getResourceDescriptorsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1039,7 +1039,7 @@ public class LoggingClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListLogsResponse response = loggingClient.listLogsCallable().call(request);
-   *     for (String element : response.getResponsesList()) {
+   *     for (String element : response.getLogNamesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
