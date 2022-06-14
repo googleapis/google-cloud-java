@@ -141,6 +141,7 @@
               <buildArgs>
                 <buildArg>--no-fallback</buildArg>
                 <buildArg>--no-server</buildArg>
+                <buildArg>--allow-incomplete-classpath</buildArg>
               </buildArgs>
             </configuration>
             <executions>
