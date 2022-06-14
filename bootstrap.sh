@@ -19,6 +19,8 @@ git clone https://github.com/newren/git-filter-repo.git
 export PATH=$PATH:`pwd`/git-filter-repo
 
 mkdir google-cloud-java
+cp -r ../templates/.kokoro google-cloud-java
+
 cd google-cloud-java
 git init -b main
 
