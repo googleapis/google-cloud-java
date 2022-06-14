@@ -300,7 +300,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListDataExchangesResponse response =
    *         analyticsHubServiceClient.listDataExchangesCallable().call(request);
-   *     for (DataExchange element : response.getResponsesList()) {
+   *     for (DataExchange element : response.getDataExchangesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -426,7 +426,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListOrgDataExchangesResponse response =
    *         analyticsHubServiceClient.listOrgDataExchangesCallable().call(request);
-   *     for (DataExchange element : response.getResponsesList()) {
+   *     for (DataExchange element : response.getDataExchangesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -979,7 +979,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListListingsResponse response =
    *         analyticsHubServiceClient.listListingsCallable().call(request);
-   *     for (Listing element : response.getResponsesList()) {
+   *     for (Listing element : response.getListingsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
