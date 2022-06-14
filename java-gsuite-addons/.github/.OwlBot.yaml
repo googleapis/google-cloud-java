@@ -16,6 +16,7 @@ docker:
   image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
+- "/samples/snippets/generated"
 - "/grpc-google-.*/src"
 - "/proto-google-.*/src"
 - "/google-.*/src"
@@ -41,3 +42,5 @@ deep-copy-regex:
   dest: "/owl-bot-staging/v1/proto-google-apps-script-type-protos/src"
 - source: "/google/apps/script/type/slides/google-apps-script-type-slides-java/proto-google-apps-script-type-slides-java/src"
   dest: "/owl-bot-staging/v1/proto-google-apps-script-type-protos/src"
+- source: "/google/cloud/gsuiteaddons/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/$1/samples/snippets/generated"
