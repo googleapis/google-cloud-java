@@ -305,7 +305,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *   while (true) {
    *     ListInstancesResponse response =
    *         bareMetalSolutionClient.listInstancesCallable().call(request);
-   *     for (Instance element : response.getResponsesList()) {
+   *     for (Instance element : response.getInstancesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -680,7 +680,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListVolumesResponse response = bareMetalSolutionClient.listVolumesCallable().call(request);
-   *     for (Volume element : response.getResponsesList()) {
+   *     for (Volume element : response.getVolumesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1034,7 +1034,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *   while (true) {
    *     ListNetworksResponse response =
    *         bareMetalSolutionClient.listNetworksCallable().call(request);
-   *     for (Network element : response.getResponsesList()) {
+   *     for (Network element : response.getNetworksList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1286,7 +1286,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *   while (true) {
    *     ListSnapshotSchedulePoliciesResponse response =
    *         bareMetalSolutionClient.listSnapshotSchedulePoliciesCallable().call(request);
-   *     for (SnapshotSchedulePolicy element : response.getResponsesList()) {
+   *     for (SnapshotSchedulePolicy element : response.getSnapshotSchedulePoliciesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2348,7 +2348,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *   while (true) {
    *     ListVolumeSnapshotsResponse response =
    *         bareMetalSolutionClient.listVolumeSnapshotsCallable().call(request);
-   *     for (VolumeSnapshot element : response.getResponsesList()) {
+   *     for (VolumeSnapshot element : response.getVolumeSnapshotsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2588,7 +2588,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListLunsResponse response = bareMetalSolutionClient.listLunsCallable().call(request);
-   *     for (Lun element : response.getResponsesList()) {
+   *     for (Lun element : response.getLunsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
