@@ -332,7 +332,7 @@ public class CertificateManagerClient implements BackgroundResource {
    *   while (true) {
    *     ListCertificatesResponse response =
    *         certificateManagerClient.listCertificatesCallable().call(request);
-   *     for (Certificate element : response.getResponsesList()) {
+   *     for (Certificate element : response.getCertificatesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -988,7 +988,7 @@ public class CertificateManagerClient implements BackgroundResource {
    *   while (true) {
    *     ListCertificateMapsResponse response =
    *         certificateManagerClient.listCertificateMapsCallable().call(request);
-   *     for (CertificateMap element : response.getResponsesList()) {
+   *     for (CertificateMap element : response.getCertificateMapsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1677,7 +1677,7 @@ public class CertificateManagerClient implements BackgroundResource {
    *   while (true) {
    *     ListCertificateMapEntriesResponse response =
    *         certificateManagerClient.listCertificateMapEntriesCallable().call(request);
-   *     for (CertificateMapEntry element : response.getResponsesList()) {
+   *     for (CertificateMapEntry element : response.getCertificateMapEntriesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2388,7 +2388,7 @@ public class CertificateManagerClient implements BackgroundResource {
    *   while (true) {
    *     ListDnsAuthorizationsResponse response =
    *         certificateManagerClient.listDnsAuthorizationsCallable().call(request);
-   *     for (DnsAuthorization element : response.getResponsesList()) {
+   *     for (DnsAuthorization element : response.getDnsAuthorizationsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
