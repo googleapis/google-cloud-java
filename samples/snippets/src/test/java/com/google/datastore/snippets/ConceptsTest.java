@@ -27,6 +27,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.Cursor;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreException;
+import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.EntityQuery;
 import com.google.cloud.datastore.FullEntity;
@@ -83,6 +84,7 @@ public class ConceptsTest {
   private static final FullEntity<IncompleteKey> TEST_FULL_ENTITY = FullEntity.newBuilder().build();
 
   private Datastore datastore;
+  private Datastore datastoreRealBackend;
   private KeyFactory keyFactory;
   private Key taskKey;
   private Entity testEntity;
@@ -123,6 +125,8 @@ public class ConceptsTest {
     endDate = Timestamp.of(calendar.getTime());
     calendar.set(1999, DECEMBER, 31);
     includedDate = Timestamp.of(calendar.getTime());
+    // Create a client for tests that require a real backend
+    datastoreRealBackend = DatastoreOptions.getDefaultInstance().getService();
   }
 
   /**
@@ -384,7 +388,7 @@ public class ConceptsTest {
             .set(
                 "description",
                 StringValue.newBuilder("Learn Cloud Datastore").setExcludeFromIndexes(true).build())
-            .set("tag", "fun", "l", "programming")
+            .set("tag", "fun", "l", "programming", "learn")
             .build());
   }
 
@@ -1043,5 +1047,102 @@ public class ConceptsTest {
     Map<String, ImmutableSet<String>> expected =
         ImmutableMap.of("Task", ImmutableSet.of("priority", "tag"));
     assertEquals(expected, propertiesByKind);
+  }
+
+  @Test
+  public void testEqQuerySorted() {
+    setUpQueryTests();
+    // [START datastore_eq_query_sorted]
+    Query<Entity> query =
+        Query.newEntityQueryBuilder()
+            .setKind("Task")
+            .setFilter(PropertyFilter.eq("tag", "learn"))
+            .setOrderBy(OrderBy.asc("tag"))
+            .build();
+    // [END datastore_eq_query_sorted]
+    assertValidQuery(query);
+  }
+
+  /** Start tests using a real backend. */
+  private <V> V assertValidQueryRealBackend(Query<V> query) {
+    QueryResults<V> results = datastoreRealBackend.run(query);
+    V result = results.next();
+    // assertFalse(results.hasNext());
+    return result;
+  }
+
+  private void setUpQueryTestsRealBackend() {
+    Key taskKey =
+        datastoreRealBackend
+            .newKeyFactory()
+            .setKind("Task")
+            .addAncestors(PathElement.of("TaskList", "default"))
+            .newKey("someTask");
+    datastoreRealBackend.put(
+        Entity.newBuilder(taskKey)
+            .set("category", "Personal")
+            .set("done", false)
+            .set("completed", false)
+            .set("priority", 4)
+            .set("created", includedDate)
+            .set("percent_complete", 10.0)
+            .set(
+                "description",
+                StringValue.newBuilder("Learn Cloud Datastore").setExcludeFromIndexes(true).build())
+            .set("tag", "fun", "l", "programming", "learn")
+            .build());
+  }
+
+  @Test
+  public void testInQuery() {
+    setUpQueryTestsRealBackend();
+    // [START datastore_in_query]
+    Query<Entity> query =
+        Query.newEntityQueryBuilder()
+            .setKind("Task")
+            .setFilter(PropertyFilter.in("tag", ListValue.of("learn", "study")))
+            .build();
+    // [END datastore_in_query]
+    assertValidQueryRealBackend(query);
+  }
+
+  @Test
+  public void testNotEqualsQuery() {
+    setUpQueryTestsRealBackend();
+    // [START datastore_not_equals_query]
+    Query<Entity> query =
+        Query.newEntityQueryBuilder()
+            .setKind("Task")
+            .setFilter(PropertyFilter.neq("category", "Work"))
+            .build();
+    // [END datastore_not_equals_query]
+    assertValidQueryRealBackend(query);
+  }
+
+  @Test
+  public void testNotInQuery() {
+    setUpQueryTestsRealBackend();
+    // [START datastore_not_in_query]
+    Query<Entity> query =
+        Query.newEntityQueryBuilder()
+            .setKind("Task")
+            .setFilter(PropertyFilter.not_in("category", ListValue.of("Work", "Chores", "School")))
+            .build();
+    // [END datastore_not_in_query]
+    assertValidQueryRealBackend(query);
+  }
+
+  @Test
+  public void testInQuerySorted() {
+    setUpQueryTestsRealBackend();
+    // [START datastore_in_query_sorted]
+    Query<Entity> query =
+        Query.newEntityQueryBuilder()
+            .setKind("Task")
+            .setFilter(PropertyFilter.in("tag", ListValue.of("learn", "study")))
+            .setOrderBy(OrderBy.asc("tag"))
+            .build();
+    // [END datastore_in_query_sorted]
+    assertValidQueryRealBackend(query);
   }
 }
