@@ -428,7 +428,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListReservationsResponse response =
    *         reservationServiceClient.listReservationsCallable().call(request);
-   *     for (Reservation element : response.getResponsesList()) {
+   *     for (Reservation element : response.getReservationsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -991,7 +991,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListCapacityCommitmentsResponse response =
    *         reservationServiceClient.listCapacityCommitmentsCallable().call(request);
-   *     for (CapacityCommitment element : response.getResponsesList()) {
+   *     for (CapacityCommitment element : response.getCapacityCommitmentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2093,7 +2093,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListAssignmentsResponse response =
    *         reservationServiceClient.listAssignmentsCallable().call(request);
-   *     for (Assignment element : response.getResponsesList()) {
+   *     for (Assignment element : response.getAssignmentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2530,7 +2530,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *   while (true) {
    *     SearchAssignmentsResponse response =
    *         reservationServiceClient.searchAssignmentsCallable().call(request);
-   *     for (Assignment element : response.getResponsesList()) {
+   *     for (Assignment element : response.getAssignmentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2797,7 +2797,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *   while (true) {
    *     SearchAllAssignmentsResponse response =
    *         reservationServiceClient.searchAllAssignmentsCallable().call(request);
-   *     for (Assignment element : response.getResponsesList()) {
+   *     for (Assignment element : response.getAssignmentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
