@@ -307,7 +307,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListGatewaysResponse response =
    *         apiGatewayServiceClient.listGatewaysCallable().call(request);
-   *     for (Gateway element : response.getResponsesList()) {
+   *     for (Gateway element : response.getGatewaysList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -947,7 +947,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListApisResponse response = apiGatewayServiceClient.listApisCallable().call(request);
-   *     for (Api element : response.getResponsesList()) {
+   *     for (Api element : response.getApisList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1572,7 +1572,7 @@ public class ApiGatewayServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListApiConfigsResponse response =
    *         apiGatewayServiceClient.listApiConfigsCallable().call(request);
-   *     for (ApiConfig element : response.getResponsesList()) {
+   *     for (ApiConfig element : response.getApiConfigsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
