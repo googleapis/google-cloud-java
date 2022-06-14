@@ -304,7 +304,10 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .addAllProcesses(new ArrayList<Process>())
+            .addAllCompliances(new ArrayList<Compliance>())
             .setDescription("description-1724546052")
+            .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
             .build();
@@ -371,7 +374,10 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .addAllProcesses(new ArrayList<Process>())
+            .addAllCompliances(new ArrayList<Compliance>())
             .setDescription("description-1724546052")
+            .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
             .build();
@@ -1258,7 +1264,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1280,7 +1286,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2539,7 +2545,10 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .addAllProcesses(new ArrayList<Process>())
+            .addAllCompliances(new ArrayList<Compliance>())
             .setDescription("description-1724546052")
+            .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
             .build();
@@ -2608,7 +2617,10 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .addAllProcesses(new ArrayList<Process>())
+            .addAllCompliances(new ArrayList<Compliance>())
             .setDescription("description-1724546052")
+            .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
             .build();
@@ -2675,7 +2687,10 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .addAllProcesses(new ArrayList<Process>())
+            .addAllCompliances(new ArrayList<Compliance>())
             .setDescription("description-1724546052")
+            .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
             .build();
@@ -2741,7 +2756,10 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .addAllProcesses(new ArrayList<Process>())
+            .addAllCompliances(new ArrayList<Compliance>())
             .setDescription("description-1724546052")
+            .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
             .build();
@@ -2791,7 +2809,7 @@ public class SecurityCenterClientTest {
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -2815,7 +2833,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -2874,7 +2892,7 @@ public class SecurityCenterClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockSecurityCenter.addResponse(expectedResponse);
 
-    ResourceName resource = FolderName.of("[FOLDER]");
+    ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -2898,7 +2916,7 @@ public class SecurityCenterClientTest {
     mockSecurityCenter.addException(exception);
 
     try {
-      ResourceName resource = FolderName.of("[FOLDER]");
+      ResourceName resource = SourceName.ofOrganizationSourceName("[ORGANIZATION]", "[SOURCE]");
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");
@@ -3017,7 +3035,10 @@ public class SecurityCenterClientTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .addAllProcesses(new ArrayList<Process>())
+            .addAllCompliances(new ArrayList<Compliance>())
             .setDescription("description-1724546052")
+            .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
             .build();

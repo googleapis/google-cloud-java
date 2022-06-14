@@ -638,7 +638,6 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * MITRE ATT&amp;CK techniques that can be referenced by SCC findings.
    * See: https://attack.mitre.org/techniques/enterprise/
-   * Next ID: 31
    * </pre>
    *
    * Protobuf enum {@code google.cloud.securitycenter.v1.MitreAttack.Technique}
@@ -954,6 +953,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>DOMAIN_POLICY_MODIFICATION = 30;</code>
      */
     DOMAIN_POLICY_MODIFICATION(30),
+    /**
+     *
+     *
+     * <pre>
+     * T1562
+     * </pre>
+     *
+     * <code>IMPAIR_DEFENSES = 31;</code>
+     */
+    IMPAIR_DEFENSES(31),
     UNRECOGNIZED(-1),
     ;
 
@@ -1267,6 +1276,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>DOMAIN_POLICY_MODIFICATION = 30;</code>
      */
     public static final int DOMAIN_POLICY_MODIFICATION_VALUE = 30;
+    /**
+     *
+     *
+     * <pre>
+     * T1562
+     * </pre>
+     *
+     * <code>IMPAIR_DEFENSES = 31;</code>
+     */
+    public static final int IMPAIR_DEFENSES_VALUE = 31;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1354,6 +1373,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return DATA_DESTRUCTION;
         case 30:
           return DOMAIN_POLICY_MODIFICATION;
+        case 31:
+          return IMPAIR_DEFENSES;
         default:
           return null;
       }

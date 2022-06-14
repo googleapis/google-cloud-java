@@ -663,8 +663,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -676,8 +676,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -693,8 +693,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -707,8 +707,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -725,8 +725,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -898,6 +898,115 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
+   * Represents operating system processes associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.Process> getProcessesList();
+  /**
+   *
+   *
+   * <pre>
+   * Represents operating system processes associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+   */
+  com.google.cloud.securitycenter.v1.Process getProcesses(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Represents operating system processes associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+   */
+  int getProcessesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Represents operating system processes associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.ProcessOrBuilder>
+      getProcessesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Represents operating system processes associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+   */
+  com.google.cloud.securitycenter.v1.ProcessOrBuilder getProcessesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains compliance information for security standards associated to the
+   * finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.Compliance> getCompliancesList();
+  /**
+   *
+   *
+   * <pre>
+   * Contains compliance information for security standards associated to the
+   * finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+   */
+  com.google.cloud.securitycenter.v1.Compliance getCompliances(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Contains compliance information for security standards associated to the
+   * finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+   */
+  int getCompliancesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Contains compliance information for security standards associated to the
+   * finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.ComplianceOrBuilder>
+      getCompliancesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Contains compliance information for security standards associated to the
+   * finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+   */
+  com.google.cloud.securitycenter.v1.ComplianceOrBuilder getCompliancesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Contains more detail about the finding.
    * </pre>
    *
@@ -918,6 +1027,41 @@ public interface FindingOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents exfiltration associated with the Finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+   *
+   * @return Whether the exfiltration field is set.
+   */
+  boolean hasExfiltration();
+  /**
+   *
+   *
+   * <pre>
+   * Represents exfiltration associated with the Finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+   *
+   * @return The exfiltration.
+   */
+  com.google.cloud.securitycenter.v1.Exfiltration getExfiltration();
+  /**
+   *
+   *
+   * <pre>
+   * Represents exfiltration associated with the Finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+   */
+  com.google.cloud.securitycenter.v1.ExfiltrationOrBuilder getExfiltrationOrBuilder();
 
   /**
    *
