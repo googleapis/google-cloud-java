@@ -1,4 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-grafeas:2.3.0:2.3.1-SNAPSHOT
