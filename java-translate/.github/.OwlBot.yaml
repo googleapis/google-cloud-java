@@ -16,6 +16,7 @@ docker:
   image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
+- "/samples/snippets/generated"
 - "/grpc-google-.*/src"
 - "/proto-google-.*/src"
 - "/google-.*/src/com/google/cloud/translate/v3"
@@ -31,3 +32,5 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-translate-$1/src"
 - source: "/google/cloud/translate/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-translate/src"
+- source: "/google/cloud/translate/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/$1/samples/snippets/generated"
