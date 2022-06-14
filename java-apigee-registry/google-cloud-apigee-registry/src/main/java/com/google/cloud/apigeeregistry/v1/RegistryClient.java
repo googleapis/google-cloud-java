@@ -4458,10 +4458,6 @@ public class RegistryClient implements BackgroundResource {
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
-   * <dependency>
-   * <groupId>com.google.api.grpc</groupId>
-   * <artifactId>proto-google-iam-v1</artifactId>
-   * </dependency>
    *       registryClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something.
    *   TestIamPermissionsResponse response = future.get();
