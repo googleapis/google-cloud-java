@@ -29,7 +29,7 @@
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
  *   BatchGetAssetsHistoryRequest request =
  *       BatchGetAssetsHistoryRequest.newBuilder()
- *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+ *           .setParent(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
  *           .addAllAssetNames(new ArrayList<String>())
  *           .setContentType(ContentType.forNumber(0))
  *           .setReadTimeWindow(TimeWindow.newBuilder().build())
