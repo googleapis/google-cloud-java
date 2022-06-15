@@ -24,25 +24,25 @@ You will need to follow these prerequisite steps in order to run these samples:
    
     **Note:** Authenticating with Application Default Credentials is convenient to use during development, but we recommend [alternate methods of authentication](https://cloud.google.com/docs/authentication/production) during production use.
     
-3. Install the GraalVM compiler.
+3. Install the native image compiler.
     
-    You can follow the [official installation instructions](https://www.graalvm.org/docs/getting-started/#install-graalvm) from the GraalVM website.
+    You can follow the [official installation instructions](https://www.graalvm.org/docs/getting-started/#install-graalvm).
     After following the instructions, ensure that you install the Native Image extension installed by running:
     
     ```
     gu install native-image
     ```
    
-    Once you finish following the instructions, verify that the default version of Java is set to the GraalVM version by running `java -version` in a terminal.
+    Once you finish following the instructions, verify that the default version of Java is set to the correct version by running `java -version` in a terminal.
     
     You will see something similar to the below output:
     
     ```
     $ java -version
    
-    openjdk 11.0.14 2022-01-18
-    OpenJDK Runtime Environment GraalVM CE 22.0.0.2 (build 11.0.14+9-jvmci-22.0-b05)
-    OpenJDK 64-Bit Server VM GraalVM CE 22.0.0.2 (build 11.0.14+9-jvmci-22.0-b05, mixed mode, sharing)
+    openjdk version "17.0.3" 2022-04-19
+    OpenJDK Runtime Environment GraalVM CE 22.1.0 (build 17.0.3+7-jvmci-22.1-b06)
+    OpenJDK 64-Bit Server VM GraalVM CE 22.1.0 (build 17.0.3+7-jvmci-22.1-b06, mixed mode, sharing)
 
     ```
 
@@ -58,7 +58,7 @@ Navigate to this directory in a new terminal.
    export LOCATION_ID=us-east1
    ```
  
-2. Compile the application using the Native Image Compiler. This step may take a few minutes.
+2. Compile the application using the native image Compiler. This step may take a few minutes.
 
    ```
    $ mvn package -P native
