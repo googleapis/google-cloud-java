@@ -1,6 +1,6 @@
 # Google Cloud Batch Client for Java
 
-Java idiomatic client for [Google Cloud Batch][product-docs].
+Java idiomatic client for [Cloud Batch][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -44,14 +44,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Google Cloud Batch APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Google Cloud Batch API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Cloud Batch APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Cloud Batch API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Google Cloud Batch [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Google Cloud Batch.
+You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Batch [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Cloud Batch.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -61,13 +61,13 @@ You will need to [enable billing][enable-billing] to use Google Google Cloud Bat
 You'll need to obtain the `google-cloud-batch` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-batch` as a dependency in your code.
 
-## About Google Cloud Batch
+## About Cloud Batch
 
 
-[Google Cloud Batch][product-docs] n/a
+[Cloud Batch][product-docs] n/a
 
-See the [Google Cloud Batch client library docs][javadocs] to learn how to
-use this Google Cloud Batch Client Library.
+See the [Cloud Batch client library docs][javadocs] to learn how to
+use this Cloud Batch Client Library.
 
 
 
@@ -80,7 +80,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Google Cloud Batch uses gRPC for the transport layer.
+Cloud Batch uses gRPC for the transport layer.
 
 ## Supported Java Versions
 
