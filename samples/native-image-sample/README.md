@@ -18,25 +18,25 @@ You will need to follow these prerequisite steps in order to run the samples:
 
    **Note:** Authenticating with Application Default Credentials is convenient to use during development, but we recommend [alternate methods of authentication](https://cloud.google.com/docs/authentication/production) during production use.
 
-3. Install the GraalVM compiler.
+3. Install the native image compiler.
 
-   You can follow the [official installation instructions](https://www.graalvm.org/docs/getting-started/#install-graalvm) from the GraalVM website.
+   You can follow the [official installation instructions](https://www.graalvm.org/docs/getting-started/#install-graalvm).
    After following the instructions, ensure that you install the native image extension installed by running:
 
     ```
     gu install native-image
     ```
 
-   Once you finish following the instructions, verify that the default version of Java is set to the GraalVM version by running `java -version` in a terminal.
+   Once you finish following the instructions, verify that the default version of Java is set to the correct version by running `java -version` in a terminal.
 
    You will see something similar to the below output:
 
     ```
     $ java -version
    
-    openjdk version "11.0.7" 2020-04-14
-    OpenJDK Runtime Environment GraalVM CE 20.1.0 (build 11.0.7+10-jvmci-20.1-b02)
-    OpenJDK 64-Bit Server VM GraalVM CE 20.1.0 (build 11.0.7+10-jvmci-20.1-b02, mixed mode, sharing)
+    openjdk version "17.0.3" 2022-04-19
+    OpenJDK Runtime Environment GraalVM CE 22.1.0 (build 17.0.3+7-jvmci-22.1-b06)
+    OpenJDK 64-Bit Server VM GraalVM CE 22.1.0 (build 17.0.3+7-jvmci-22.1-b06, mixed mode, sharing)
     ```
 
 4. Enable the [Logging APIs](https://console.cloud.google.com/flows/enableapi?apiid=logging.googleapis.com).
@@ -45,7 +45,7 @@ You will need to follow these prerequisite steps in order to run the samples:
 
 Navigate to this directory in a new terminal.
 
-1. Compile the application using the Native Image Compiler. This step may take a few minutes.
+1. Compile the application using the native image Compiler. This step may take a few minutes.
 
    ```
    mvn package -P native -DskipTests
