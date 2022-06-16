@@ -19,6 +19,7 @@ package com.google.api.serviceusage.v1;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -30,7 +31,6 @@ import com.google.api.serviceusage.v1.stub.ServiceUsageStub;
 import com.google.api.serviceusage.v1.stub.ServiceUsageStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -104,13 +104,28 @@ import javax.annotation.Generated;
  * ServiceUsageClient serviceUsageClient = ServiceUsageClient.create(serviceUsageSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * ServiceUsageSettings serviceUsageSettings =
+ *     ServiceUsageSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             ServiceUsageSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * ServiceUsageClient serviceUsageClient = ServiceUsageClient.create(serviceUsageSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class ServiceUsageClient implements BackgroundResource {
   private final ServiceUsageSettings settings;
   private final ServiceUsageStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of ServiceUsageClient with default settings. */
   public static final ServiceUsageClient create() throws IOException {
@@ -141,13 +156,17 @@ public class ServiceUsageClient implements BackgroundResource {
   protected ServiceUsageClient(ServiceUsageSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((ServiceUsageStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected ServiceUsageClient(ServiceUsageStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final ServiceUsageSettings getSettings() {
@@ -162,8 +181,16 @@ public class ServiceUsageClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -477,7 +504,7 @@ public class ServiceUsageClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListServicesResponse response = serviceUsageClient.listServicesCallable().call(request);
-   *     for (Service element : response.getResponsesList()) {
+   *     for (Service element : response.getServicesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
