@@ -19,7 +19,6 @@ git clone https://github.com/newren/git-filter-repo.git
 export PATH=$PATH:`pwd`/git-filter-repo
 
 mkdir google-cloud-java
-cp -r ../templates/.kokoro google-cloud-java
 
 cd google-cloud-java
 git init -b main
@@ -48,6 +47,10 @@ cd google-cloud-java
 
 git add pom.xml
 git commit -am 'feat: create aggregator pom'
+
+cp -r ../../templates/.kokoro ./
+git add .kokoro
+git commit -am 'chore: add kokoro config files'
 
 # generate coverage report
 mkdir CoverageAggregator
