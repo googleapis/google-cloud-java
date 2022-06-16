@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.13.3](https://github.com/googleapis/java-bigquery/compare/v2.13.2...v2.13.3) (2022-06-16)
+
+
+### Bug Fixes
+
+* Assertj-core cleanup ([#2102](https://github.com/googleapis/java-bigquery/issues/2102)) ([4630c50](https://github.com/googleapis/java-bigquery/commit/4630c50db7428d888b726297408b7a223b39b28a))
+
+
+### Documentation
+
+* **sample:** clean up native image sample README ([#2120](https://github.com/googleapis/java-bigquery/issues/2120)) ([de7b45a](https://github.com/googleapis/java-bigquery/commit/de7b45a52259cec16970e074dd4f526685aa4d09))
+
+
+### Dependencies
+
+* update cloud client dependencies ([#2110](https://github.com/googleapis/java-bigquery/issues/2110)) ([30a88f4](https://github.com/googleapis/java-bigquery/commit/30a88f43aea6269e3fbe82544eb2112f25830761))
+* update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.8.2 ([#2101](https://github.com/googleapis/java-bigquery/issues/2101)) ([bdbd3da](https://github.com/googleapis/java-bigquery/commit/bdbd3da4c6c8bb7f2363711691edb31c7711d811))
+* update dependency com.google.oauth-client:google-oauth-client-java6 to v1.34.1 ([#2111](https://github.com/googleapis/java-bigquery/issues/2111)) ([1a0235f](https://github.com/googleapis/java-bigquery/commit/1a0235f9cdea0ae37b2e8b1047ca66395b1af3b0))
+* update dependency com.google.oauth-client:google-oauth-client-jetty to v1.34.1 ([#2112](https://github.com/googleapis/java-bigquery/issues/2112)) ([e52739f](https://github.com/googleapis/java-bigquery/commit/e52739ffcaeb9ca9dc362f07f117f37ecff220c7))
+
 ## [2.13.2](https://github.com/googleapis/java-bigquery/compare/v2.13.1...v2.13.2) (2022-06-05)
 
 
