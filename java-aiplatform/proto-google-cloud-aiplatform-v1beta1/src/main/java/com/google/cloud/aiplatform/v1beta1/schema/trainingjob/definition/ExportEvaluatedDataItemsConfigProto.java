@@ -48,12 +48,17 @@ public final class ExportEvaluatedDataItemsConfigProto {
           + "inition\032\034google/api/annotations.proto\"c\n"
           + "\036ExportEvaluatedDataItemsConfig\022 \n\030desti"
           + "nation_bigquery_uri\030\001 \001(\t\022\037\n\027override_ex"
-          + "isting_table\030\002 \001(\010B\323\001\nAcom.google.cloud."
+          + "isting_table\030\002 \001(\010B\231\003\nAcom.google.cloud."
           + "aiplatform.v1beta1.schema.trainingjob.de"
           + "finitionB#ExportEvaluatedDataItemsConfig"
           + "ProtoP\001Zggoogle.golang.org/genproto/goog"
           + "leapis/cloud/aiplatform/v1beta1/schema/t"
-          + "rainingjob/definition;definitionb\006proto3"
+          + "rainingjob/definition;definition\252\002=Googl"
+          + "e.Cloud.AIPlatform.V1Beta1.Schema.Traini"
+          + "ngJob.Definition\312\002=Google\\Cloud\\AIPlatfo"
+          + "rm\\V1beta1\\Schema\\TrainingJob\\Definition"
+          + "\352\002CGoogle::Cloud::AIPlatform::V1beta1::S"
+          + "chema::TrainingJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -718,7 +718,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     return updateProjectSettingsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ArtifactRegistryStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

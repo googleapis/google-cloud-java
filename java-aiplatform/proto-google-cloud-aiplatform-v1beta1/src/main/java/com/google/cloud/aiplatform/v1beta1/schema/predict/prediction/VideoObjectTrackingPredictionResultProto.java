@@ -64,13 +64,17 @@ public final class VideoObjectTrackingPredictionResultProto {
           + ".FloatValue\022*\n\005x_max\030\003 \001(\0132\033.google.prot"
           + "obuf.FloatValue\022*\n\005y_min\030\004 \001(\0132\033.google."
           + "protobuf.FloatValue\022*\n\005y_max\030\005 \001(\0132\033.goo"
-          + "gle.protobuf.FloatValueB\320\001\n=com.google.c"
+          + "gle.protobuf.FloatValueB\212\003\n=com.google.c"
           + "loud.aiplatform.v1beta1.schema.predict.p"
           + "redictionB(VideoObjectTrackingPrediction"
           + "ResultProtoP\001Zcgoogle.golang.org/genprot"
           + "o/googleapis/cloud/aiplatform/v1beta1/sc"
-          + "hema/predict/prediction;predictionb\006prot"
-          + "o3"
+          + "hema/predict/prediction;prediction\252\0029Goo"
+          + "gle.Cloud.AIPlatform.V1Beta1.Schema.Pred"
+          + "ict.Prediction\312\0029Google\\Cloud\\AIPlatform"
+          + "\\V1beta1\\Schema\\Predict\\Prediction\352\002?Goo"
+          + "gle::Cloud::AIPlatform::V1beta1::Schema:"
+          + ":Predict::Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

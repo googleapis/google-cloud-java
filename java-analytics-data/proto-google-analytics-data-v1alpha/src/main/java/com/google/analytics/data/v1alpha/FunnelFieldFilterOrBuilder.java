@@ -18,9 +18,9 @@
 
 package com.google.analytics.data.v1alpha;
 
-public interface FunnelFilterOrBuilder
+public interface FunnelFieldFilterOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.analytics.data.v1alpha.FunnelFilter)
+    // @@protoc_insertion_point(interface_extends:google.analytics.data.v1alpha.FunnelFieldFilter)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -188,5 +188,5 @@ public interface FunnelFilterOrBuilder
    */
   com.google.analytics.data.v1alpha.BetweenFilterOrBuilder getBetweenFilterOrBuilder();
 
-  public com.google.analytics.data.v1alpha.FunnelFilter.OneFilterCase getOneFilterCase();
+  public com.google.analytics.data.v1alpha.FunnelFieldFilter.OneFilterCase getOneFilterCase();
 }

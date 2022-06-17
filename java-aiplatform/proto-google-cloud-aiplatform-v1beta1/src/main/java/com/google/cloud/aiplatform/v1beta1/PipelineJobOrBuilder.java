@@ -610,4 +610,76 @@ public interface PipelineJobOrBuilder
    * @return The bytes for network.
    */
   com.google.protobuf.ByteString getNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1beta1.PipelineJob.pipeline_spec], if empty, will
+   * be downloaded.
+   * </pre>
+   *
+   * <code>string template_uri = 19;</code>
+   *
+   * @return The templateUri.
+   */
+  java.lang.String getTemplateUri();
+  /**
+   *
+   *
+   * <pre>
+   * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1beta1.PipelineJob.pipeline_spec], if empty, will
+   * be downloaded.
+   * </pre>
+   *
+   * <code>string template_uri = 19;</code>
+   *
+   * @return The bytes for templateUri.
+   */
+  com.google.protobuf.ByteString getTemplateUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Pipeline template metadata. Will fill up fields if
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is from supported template registry.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the templateMetadata field is set.
+   */
+  boolean hasTemplateMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Pipeline template metadata. Will fill up fields if
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is from supported template registry.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The templateMetadata.
+   */
+  com.google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata getTemplateMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Pipeline template metadata. Will fill up fields if
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1beta1.PipelineJob.template_uri] is from supported template registry.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PipelineTemplateMetadataOrBuilder
+      getTemplateMetadataOrBuilder();
 }

@@ -51,13 +51,18 @@ public final class VideoActionRecognitionPredictionResultProto {
           + "\0225\n\022time_segment_start\030\004 \001(\0132\031.google.pr"
           + "otobuf.Duration\0223\n\020time_segment_end\030\005 \001("
           + "\0132\031.google.protobuf.Duration\022/\n\nconfiden"
-          + "ce\030\006 \001(\0132\033.google.protobuf.FloatValueB\323\001"
+          + "ce\030\006 \001(\0132\033.google.protobuf.FloatValueB\215\003"
           + "\n=com.google.cloud.aiplatform.v1beta1.sc"
           + "hema.predict.predictionB+VideoActionReco"
           + "gnitionPredictionResultProtoP\001Zcgoogle.g"
           + "olang.org/genproto/googleapis/cloud/aipl"
           + "atform/v1beta1/schema/predict/prediction"
-          + ";predictionb\006proto3"
+          + ";prediction\252\0029Google.Cloud.AIPlatform.V1"
+          + "Beta1.Schema.Predict.Prediction\312\0029Google"
+          + "\\Cloud\\AIPlatform\\V1beta1\\Schema\\Predict"
+          + "\\Prediction\352\002?Google::Cloud::AIPlatform:"
+          + ":V1beta1::Schema::Predict::Predictionb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

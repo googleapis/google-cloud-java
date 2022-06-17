@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,16 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.stub.MetadataServiceStub;
 import com.google.cloud.aiplatform.v1beta1.stub.MetadataServiceStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -47,6 +56,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
  *   MetadataStoreName name = MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
  *   MetadataStore response = metadataServiceClient.getMetadataStore(name);
@@ -83,6 +94,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * MetadataServiceSettings metadataServiceSettings =
  *     MetadataServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -94,6 +107,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * MetadataServiceSettings metadataServiceSettings =
  *     MetadataServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * MetadataServiceClient metadataServiceClient =
@@ -127,7 +142,6 @@ public class MetadataServiceClient implements BackgroundResource {
    * Constructs an instance of MetadataServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(MetadataServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final MetadataServiceClient create(MetadataServiceStub stub) {
     return new MetadataServiceClient(stub);
   }
@@ -143,7 +157,6 @@ public class MetadataServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected MetadataServiceClient(MetadataServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +167,6 @@ public class MetadataServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MetadataServiceStub getStub() {
     return stub;
   }
@@ -174,6 +186,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   MetadataStore metadataStore = MetadataStore.newBuilder().build();
@@ -215,6 +229,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   MetadataStore metadataStore = MetadataStore.newBuilder().build();
@@ -255,6 +271,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   CreateMetadataStoreRequest request =
    *       CreateMetadataStoreRequest.newBuilder()
@@ -281,6 +299,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   CreateMetadataStoreRequest request =
    *       CreateMetadataStoreRequest.newBuilder()
@@ -308,6 +328,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   CreateMetadataStoreRequest request =
    *       CreateMetadataStoreRequest.newBuilder()
@@ -333,6 +355,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataStoreName name = MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
    *   MetadataStore response = metadataServiceClient.getMetadataStore(name);
@@ -356,6 +380,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String name = MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
    *   MetadataStore response = metadataServiceClient.getMetadataStore(name);
@@ -378,6 +404,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   GetMetadataStoreRequest request =
    *       GetMetadataStoreRequest.newBuilder()
@@ -402,6 +430,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   GetMetadataStoreRequest request =
    *       GetMetadataStoreRequest.newBuilder()
@@ -426,6 +456,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (MetadataStore element : metadataServiceClient.listMetadataStores(parent).iterateAll()) {
@@ -453,6 +485,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (MetadataStore element : metadataServiceClient.listMetadataStores(parent).iterateAll()) {
@@ -478,6 +512,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListMetadataStoresRequest request =
    *       ListMetadataStoresRequest.newBuilder()
@@ -506,6 +542,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListMetadataStoresRequest request =
    *       ListMetadataStoresRequest.newBuilder()
@@ -534,6 +572,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListMetadataStoresRequest request =
    *       ListMetadataStoresRequest.newBuilder()
@@ -544,7 +584,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListMetadataStoresResponse response =
    *         metadataServiceClient.listMetadataStoresCallable().call(request);
-   *     for (MetadataStore element : response.getResponsesList()) {
+   *     for (MetadataStore element : response.getMetadataStoresList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -570,6 +610,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataStoreName name = MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
    *   metadataServiceClient.deleteMetadataStoreAsync(name).get();
@@ -597,6 +639,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String name = MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
    *   metadataServiceClient.deleteMetadataStoreAsync(name).get();
@@ -622,6 +666,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   DeleteMetadataStoreRequest request =
    *       DeleteMetadataStoreRequest.newBuilder()
@@ -649,6 +695,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   DeleteMetadataStoreRequest request =
    *       DeleteMetadataStoreRequest.newBuilder()
@@ -677,6 +725,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   DeleteMetadataStoreRequest request =
    *       DeleteMetadataStoreRequest.newBuilder()
@@ -702,6 +752,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataStoreName parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
@@ -740,6 +792,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
@@ -777,6 +831,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   CreateArtifactRequest request =
    *       CreateArtifactRequest.newBuilder()
@@ -803,6 +859,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   CreateArtifactRequest request =
    *       CreateArtifactRequest.newBuilder()
@@ -829,6 +887,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ArtifactName name =
    *       ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]");
@@ -853,6 +913,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String name =
    *       ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]").toString();
@@ -876,6 +938,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   GetArtifactRequest request =
    *       GetArtifactRequest.newBuilder()
@@ -901,6 +965,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   GetArtifactRequest request =
    *       GetArtifactRequest.newBuilder()
@@ -925,6 +991,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataStoreName parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
@@ -953,6 +1021,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
@@ -978,6 +1048,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListArtifactsRequest request =
    *       ListArtifactsRequest.newBuilder()
@@ -1007,6 +1079,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListArtifactsRequest request =
    *       ListArtifactsRequest.newBuilder()
@@ -1037,6 +1111,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListArtifactsRequest request =
    *       ListArtifactsRequest.newBuilder()
@@ -1049,7 +1125,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListArtifactsResponse response =
    *         metadataServiceClient.listArtifactsCallable().call(request);
-   *     for (Artifact element : response.getResponsesList()) {
+   *     for (Artifact element : response.getArtifactsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1073,6 +1149,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   Artifact artifact = Artifact.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1101,6 +1179,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   UpdateArtifactRequest request =
    *       UpdateArtifactRequest.newBuilder()
@@ -1126,6 +1206,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   UpdateArtifactRequest request =
    *       UpdateArtifactRequest.newBuilder()
@@ -1151,6 +1233,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ArtifactName name =
    *       ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]");
@@ -1176,6 +1260,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String name =
    *       ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]").toString();
@@ -1199,6 +1285,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   DeleteArtifactRequest request =
    *       DeleteArtifactRequest.newBuilder()
@@ -1226,6 +1314,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   DeleteArtifactRequest request =
    *       DeleteArtifactRequest.newBuilder()
@@ -1253,6 +1343,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   DeleteArtifactRequest request =
    *       DeleteArtifactRequest.newBuilder()
@@ -1279,6 +1371,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataStoreName parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
@@ -1306,6 +1400,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
@@ -1330,6 +1426,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   PurgeArtifactsRequest request =
    *       PurgeArtifactsRequest.newBuilder()
@@ -1357,6 +1455,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   PurgeArtifactsRequest request =
    *       PurgeArtifactsRequest.newBuilder()
@@ -1385,6 +1485,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   PurgeArtifactsRequest request =
    *       PurgeArtifactsRequest.newBuilder()
@@ -1411,6 +1513,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataStoreName parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
@@ -1448,6 +1552,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
@@ -1485,6 +1591,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   CreateContextRequest request =
    *       CreateContextRequest.newBuilder()
@@ -1511,6 +1619,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   CreateContextRequest request =
    *       CreateContextRequest.newBuilder()
@@ -1536,6 +1646,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ContextName name = ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]");
    *   Context response = metadataServiceClient.getContext(name);
@@ -1559,6 +1671,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String name =
    *       ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]").toString();
@@ -1582,6 +1696,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   GetContextRequest request =
    *       GetContextRequest.newBuilder()
@@ -1607,6 +1723,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   GetContextRequest request =
    *       GetContextRequest.newBuilder()
@@ -1631,6 +1749,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataStoreName parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
@@ -1659,6 +1779,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
@@ -1684,6 +1806,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListContextsRequest request =
    *       ListContextsRequest.newBuilder()
@@ -1713,6 +1837,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListContextsRequest request =
    *       ListContextsRequest.newBuilder()
@@ -1743,6 +1869,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListContextsRequest request =
    *       ListContextsRequest.newBuilder()
@@ -1754,7 +1882,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListContextsResponse response = metadataServiceClient.listContextsCallable().call(request);
-   *     for (Context element : response.getResponsesList()) {
+   *     for (Context element : response.getContextsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1778,6 +1906,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   Context context = Context.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1806,6 +1936,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   UpdateContextRequest request =
    *       UpdateContextRequest.newBuilder()
@@ -1831,6 +1963,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   UpdateContextRequest request =
    *       UpdateContextRequest.newBuilder()
@@ -1855,6 +1989,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ContextName name = ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]");
    *   metadataServiceClient.deleteContextAsync(name).get();
@@ -1879,6 +2015,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String name =
    *       ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]").toString();
@@ -1902,6 +2040,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   DeleteContextRequest request =
    *       DeleteContextRequest.newBuilder()
@@ -1930,6 +2070,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   DeleteContextRequest request =
    *       DeleteContextRequest.newBuilder()
@@ -1958,6 +2100,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   DeleteContextRequest request =
    *       DeleteContextRequest.newBuilder()
@@ -1985,6 +2129,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataStoreName parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
@@ -2012,6 +2158,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
@@ -2036,6 +2184,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   PurgeContextsRequest request =
    *       PurgeContextsRequest.newBuilder()
@@ -2063,6 +2213,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   PurgeContextsRequest request =
    *       PurgeContextsRequest.newBuilder()
@@ -2090,6 +2242,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   PurgeContextsRequest request =
    *       PurgeContextsRequest.newBuilder()
@@ -2117,6 +2271,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ContextName context =
    *       ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]");
@@ -2157,6 +2313,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String context =
    *       ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]").toString();
@@ -2197,6 +2355,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   AddContextArtifactsAndExecutionsRequest request =
    *       AddContextArtifactsAndExecutionsRequest.newBuilder()
@@ -2227,6 +2387,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   AddContextArtifactsAndExecutionsRequest request =
    *       AddContextArtifactsAndExecutionsRequest.newBuilder()
@@ -2259,6 +2421,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ContextName context =
    *       ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]");
@@ -2294,6 +2458,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String context =
    *       ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]").toString();
@@ -2329,6 +2495,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   AddContextChildrenRequest request =
    *       AddContextChildrenRequest.newBuilder()
@@ -2358,6 +2526,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   AddContextChildrenRequest request =
    *       AddContextChildrenRequest.newBuilder()
@@ -2386,6 +2556,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ContextName context =
    *       ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]");
@@ -2416,6 +2588,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String context =
    *       ContextName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[CONTEXT]").toString();
@@ -2444,6 +2618,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   QueryContextLineageSubgraphRequest request =
    *       QueryContextLineageSubgraphRequest.newBuilder()
@@ -2471,6 +2647,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   QueryContextLineageSubgraphRequest request =
    *       QueryContextLineageSubgraphRequest.newBuilder()
@@ -2497,6 +2675,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataStoreName parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
@@ -2535,6 +2715,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
@@ -2572,6 +2754,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   CreateExecutionRequest request =
    *       CreateExecutionRequest.newBuilder()
@@ -2598,6 +2782,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   CreateExecutionRequest request =
    *       CreateExecutionRequest.newBuilder()
@@ -2624,6 +2810,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ExecutionName name =
    *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]");
@@ -2648,6 +2836,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String name =
    *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]").toString();
@@ -2671,6 +2861,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   GetExecutionRequest request =
    *       GetExecutionRequest.newBuilder()
@@ -2696,6 +2888,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   GetExecutionRequest request =
    *       GetExecutionRequest.newBuilder()
@@ -2721,6 +2915,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataStoreName parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
@@ -2749,6 +2945,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
@@ -2774,6 +2972,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListExecutionsRequest request =
    *       ListExecutionsRequest.newBuilder()
@@ -2803,6 +3003,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListExecutionsRequest request =
    *       ListExecutionsRequest.newBuilder()
@@ -2833,6 +3035,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListExecutionsRequest request =
    *       ListExecutionsRequest.newBuilder()
@@ -2845,7 +3049,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListExecutionsResponse response =
    *         metadataServiceClient.listExecutionsCallable().call(request);
-   *     for (Execution element : response.getResponsesList()) {
+   *     for (Execution element : response.getExecutionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2870,6 +3074,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   Execution execution = Execution.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
@@ -2901,6 +3107,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   UpdateExecutionRequest request =
    *       UpdateExecutionRequest.newBuilder()
@@ -2926,6 +3134,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   UpdateExecutionRequest request =
    *       UpdateExecutionRequest.newBuilder()
@@ -2951,6 +3161,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ExecutionName name =
    *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]");
@@ -2976,6 +3188,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String name =
    *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]").toString();
@@ -2999,6 +3213,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   DeleteExecutionRequest request =
    *       DeleteExecutionRequest.newBuilder()
@@ -3026,6 +3242,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   DeleteExecutionRequest request =
    *       DeleteExecutionRequest.newBuilder()
@@ -3053,6 +3271,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   DeleteExecutionRequest request =
    *       DeleteExecutionRequest.newBuilder()
@@ -3079,6 +3299,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataStoreName parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
@@ -3106,6 +3328,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
@@ -3130,6 +3354,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   PurgeExecutionsRequest request =
    *       PurgeExecutionsRequest.newBuilder()
@@ -3157,6 +3383,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   PurgeExecutionsRequest request =
    *       PurgeExecutionsRequest.newBuilder()
@@ -3185,6 +3413,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   PurgeExecutionsRequest request =
    *       PurgeExecutionsRequest.newBuilder()
@@ -3213,6 +3443,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ExecutionName execution =
    *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]");
@@ -3247,6 +3479,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String execution =
    *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]").toString();
@@ -3277,6 +3511,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   AddExecutionEventsRequest request =
    *       AddExecutionEventsRequest.newBuilder()
@@ -3305,6 +3541,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   AddExecutionEventsRequest request =
    *       AddExecutionEventsRequest.newBuilder()
@@ -3333,6 +3571,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ExecutionName execution =
    *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]");
@@ -3361,6 +3601,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String execution =
    *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[EXECUTION]").toString();
@@ -3387,6 +3629,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   QueryExecutionInputsAndOutputsRequest request =
    *       QueryExecutionInputsAndOutputsRequest.newBuilder()
@@ -3414,6 +3658,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   QueryExecutionInputsAndOutputsRequest request =
    *       QueryExecutionInputsAndOutputsRequest.newBuilder()
@@ -3440,6 +3686,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataStoreName parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
@@ -3481,6 +3729,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
@@ -3522,6 +3772,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   CreateMetadataSchemaRequest request =
    *       CreateMetadataSchemaRequest.newBuilder()
@@ -3548,6 +3800,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   CreateMetadataSchemaRequest request =
    *       CreateMetadataSchemaRequest.newBuilder()
@@ -3575,6 +3829,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataSchemaName name =
    *       MetadataSchemaName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[METADATA_SCHEMA]");
@@ -3601,6 +3857,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String name =
    *       MetadataSchemaName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[METADATA_SCHEMA]")
@@ -3625,6 +3883,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   GetMetadataSchemaRequest request =
    *       GetMetadataSchemaRequest.newBuilder()
@@ -3651,6 +3911,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   GetMetadataSchemaRequest request =
    *       GetMetadataSchemaRequest.newBuilder()
@@ -3677,6 +3939,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   MetadataStoreName parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
@@ -3706,6 +3970,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String parent =
    *       MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]").toString();
@@ -3733,6 +3999,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListMetadataSchemasRequest request =
    *       ListMetadataSchemasRequest.newBuilder()
@@ -3764,6 +4032,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListMetadataSchemasRequest request =
    *       ListMetadataSchemasRequest.newBuilder()
@@ -3794,6 +4064,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ListMetadataSchemasRequest request =
    *       ListMetadataSchemasRequest.newBuilder()
@@ -3806,7 +4078,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListMetadataSchemasResponse response =
    *         metadataServiceClient.listMetadataSchemasCallable().call(request);
-   *     for (MetadataSchema element : response.getResponsesList()) {
+   *     for (MetadataSchema element : response.getMetadataSchemasList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3832,6 +4104,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   ArtifactName artifact =
    *       ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]");
@@ -3862,6 +4136,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   String artifact =
    *       ArtifactName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]", "[ARTIFACT]").toString();
@@ -3890,6 +4166,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   QueryArtifactLineageSubgraphRequest request =
    *       QueryArtifactLineageSubgraphRequest.newBuilder()
@@ -3919,6 +4197,8 @@ public class MetadataServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
    *   QueryArtifactLineageSubgraphRequest request =
    *       QueryArtifactLineageSubgraphRequest.newBuilder()
@@ -3938,6 +4218,332 @@ public class MetadataServiceClient implements BackgroundResource {
   public final UnaryCallable<QueryArtifactLineageSubgraphRequest, LineageSubgraph>
       queryArtifactLineageSubgraphCallable() {
     return stub.queryArtifactLineageSubgraphCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : metadataServiceClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       metadataServiceClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response =
+   *         metadataServiceClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = metadataServiceClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future = metadataServiceClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = metadataServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = metadataServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = metadataServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = metadataServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = metadataServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       metadataServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override
@@ -4358,6 +4964,82 @@ public class MetadataServiceClient implements BackgroundResource {
     protected ListMetadataSchemasFixedSizeCollection createCollection(
         List<ListMetadataSchemasPage> pages, int collectionSize) {
       return new ListMetadataSchemasFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

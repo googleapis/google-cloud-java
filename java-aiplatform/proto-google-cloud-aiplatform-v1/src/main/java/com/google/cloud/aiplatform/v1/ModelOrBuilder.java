@@ -52,6 +52,206 @@ public interface ModelOrBuilder
    *
    *
    * <pre>
+   * Output only. Immutable. The version ID of the model.
+   * A new version is committed when a new model version is uploaded or
+   * trained under an existing model id. It is an auto-incrementing decimal
+   * number in string representation.
+   * </pre>
+   *
+   * <code>
+   * string version_id = 28 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The versionId.
+   */
+  java.lang.String getVersionId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable. The version ID of the model.
+   * A new version is committed when a new model version is uploaded or
+   * trained under an existing model id. It is an auto-incrementing decimal
+   * number in string representation.
+   * </pre>
+   *
+   * <code>
+   * string version_id = 28 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for versionId.
+   */
+  com.google.protobuf.ByteString getVersionIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * User provided version aliases so that a model version can be referenced via
+   * alias (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * instead of auto-generated version id (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+   * version_id. A default version alias will be created for the first version
+   * of the model, and there must be exactly one default version alias for a
+   * model.
+   * </pre>
+   *
+   * <code>repeated string version_aliases = 29;</code>
+   *
+   * @return A list containing the versionAliases.
+   */
+  java.util.List<java.lang.String> getVersionAliasesList();
+  /**
+   *
+   *
+   * <pre>
+   * User provided version aliases so that a model version can be referenced via
+   * alias (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * instead of auto-generated version id (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+   * version_id. A default version alias will be created for the first version
+   * of the model, and there must be exactly one default version alias for a
+   * model.
+   * </pre>
+   *
+   * <code>repeated string version_aliases = 29;</code>
+   *
+   * @return The count of versionAliases.
+   */
+  int getVersionAliasesCount();
+  /**
+   *
+   *
+   * <pre>
+   * User provided version aliases so that a model version can be referenced via
+   * alias (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * instead of auto-generated version id (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+   * version_id. A default version alias will be created for the first version
+   * of the model, and there must be exactly one default version alias for a
+   * model.
+   * </pre>
+   *
+   * <code>repeated string version_aliases = 29;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The versionAliases at the given index.
+   */
+  java.lang.String getVersionAliases(int index);
+  /**
+   *
+   *
+   * <pre>
+   * User provided version aliases so that a model version can be referenced via
+   * alias (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * instead of auto-generated version id (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+   * version_id. A default version alias will be created for the first version
+   * of the model, and there must be exactly one default version alias for a
+   * model.
+   * </pre>
+   *
+   * <code>repeated string version_aliases = 29;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the versionAliases at the given index.
+   */
+  com.google.protobuf.ByteString getVersionAliasesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this version was created.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the versionCreateTime field is set.
+   */
+  boolean hasVersionCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this version was created.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The versionCreateTime.
+   */
+  com.google.protobuf.Timestamp getVersionCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this version was created.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getVersionCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this version was most recently updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the versionUpdateTime field is set.
+   */
+  boolean hasVersionUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this version was most recently updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The versionUpdateTime.
+   */
+  com.google.protobuf.Timestamp getVersionUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this version was most recently updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getVersionUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The display name of the Model.
    * The name can be up to 128 characters long and can be consist of any UTF-8
    * characters.
@@ -101,6 +301,31 @@ public interface ModelOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The description of this version.
+   * </pre>
+   *
+   * <code>string version_description = 30;</code>
+   *
+   * @return The versionDescription.
+   */
+  java.lang.String getVersionDescription();
+  /**
+   *
+   *
+   * <pre>
+   * The description of this version.
+   * </pre>
+   *
+   * <code>string version_description = 30;</code>
+   *
+   * @return The bytes for versionDescription.
+   */
+  com.google.protobuf.ByteString getVersionDescriptionBytes();
 
   /**
    *

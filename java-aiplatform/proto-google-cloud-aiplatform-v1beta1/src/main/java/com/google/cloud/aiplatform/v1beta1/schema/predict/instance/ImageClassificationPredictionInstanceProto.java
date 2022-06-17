@@ -46,12 +46,17 @@ public final class ImageClassificationPredictionInstanceProto {
           + "hema.predict.instance\032\034google/api/annota"
           + "tions.proto\"K\n%ImageClassificationPredic"
           + "tionInstance\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_ty"
-          + "pe\030\002 \001(\tB\314\001\n;com.google.cloud.aiplatform"
+          + "pe\030\002 \001(\tB\200\003\n;com.google.cloud.aiplatform"
           + ".v1beta1.schema.predict.instanceB*ImageC"
           + "lassificationPredictionInstanceProtoP\001Z_"
           + "google.golang.org/genproto/googleapis/cl"
           + "oud/aiplatform/v1beta1/schema/predict/in"
-          + "stance;instanceb\006proto3"
+          + "stance;instance\252\0027Google.Cloud.AIPlatfor"
+          + "m.V1Beta1.Schema.Predict.Instance\312\0027Goog"
+          + "le\\Cloud\\AIPlatform\\V1beta1\\Schema\\Predi"
+          + "ct\\Instance\352\002=Google::Cloud::AIPlatform:"
+          + ":V1beta1::Schema::Predict::Instanceb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

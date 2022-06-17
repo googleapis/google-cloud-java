@@ -88,21 +88,36 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
           case 18:
             {
               com.google.protobuf.Value.Builder subBuilder = null;
-              if (nearestNeighborSearchConfig_ != null) {
-                subBuilder = nearestNeighborSearchConfig_.toBuilder();
+              if (configCase_ == 2) {
+                subBuilder = ((com.google.protobuf.Value) config_).toBuilder();
               }
-              nearestNeighborSearchConfig_ =
-                  input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
+              config_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(nearestNeighborSearchConfig_);
-                nearestNeighborSearchConfig_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom((com.google.protobuf.Value) config_);
+                config_ = subBuilder.buildPartial();
               }
-
+              configCase_ = 2;
               break;
             }
           case 24:
             {
               neighborCount_ = input.readInt32();
+              break;
+            }
+          case 34:
+            {
+              com.google.cloud.aiplatform.v1beta1.Presets.Builder subBuilder = null;
+              if (configCase_ == 4) {
+                subBuilder = ((com.google.cloud.aiplatform.v1beta1.Presets) config_).toBuilder();
+              }
+              config_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.Presets.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.aiplatform.v1beta1.Presets) config_);
+                config_ = subBuilder.buildPartial();
+              }
+              configCase_ = 4;
               break;
             }
           default:
@@ -139,6 +154,161 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.aiplatform.v1beta1.Examples.class,
             com.google.cloud.aiplatform.v1beta1.Examples.Builder.class);
+  }
+
+  private int configCase_ = 0;
+  private java.lang.Object config_;
+
+  public enum ConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    NEAREST_NEIGHBOR_SEARCH_CONFIG(2),
+    PRESETS(4),
+    CONFIG_NOT_SET(0);
+    private final int value;
+
+    private ConfigCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ConfigCase forNumber(int value) {
+      switch (value) {
+        case 2:
+          return NEAREST_NEIGHBOR_SEARCH_CONFIG;
+        case 4:
+          return PRESETS;
+        case 0:
+          return CONFIG_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ConfigCase getConfigCase() {
+    return ConfigCase.forNumber(configCase_);
+  }
+
+  public static final int NEAREST_NEIGHBOR_SEARCH_CONFIG_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for the generated index, the semantics are the same as
+   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
+   *
+   * @return Whether the nearestNeighborSearchConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNearestNeighborSearchConfig() {
+    return configCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for the generated index, the semantics are the same as
+   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
+   *
+   * @return The nearestNeighborSearchConfig.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Value getNearestNeighborSearchConfig() {
+    if (configCase_ == 2) {
+      return (com.google.protobuf.Value) config_;
+    }
+    return com.google.protobuf.Value.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for the generated index, the semantics are the same as
+   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.ValueOrBuilder getNearestNeighborSearchConfigOrBuilder() {
+    if (configCase_ == 2) {
+      return (com.google.protobuf.Value) config_;
+    }
+    return com.google.protobuf.Value.getDefaultInstance();
+  }
+
+  public static final int PRESETS_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Preset config based on the desired query speed-precision trade-off
+   * and modality
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+   *
+   * @return Whether the presets field is set.
+   */
+  @java.lang.Override
+  public boolean hasPresets() {
+    return configCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preset config based on the desired query speed-precision trade-off
+   * and modality
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+   *
+   * @return The presets.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Presets getPresets() {
+    if (configCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1beta1.Presets) config_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.Presets.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preset config based on the desired query speed-precision trade-off
+   * and modality
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.PresetsOrBuilder getPresetsOrBuilder() {
+    if (configCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1beta1.Presets) config_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.Presets.getDefaultInstance();
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
@@ -189,57 +359,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     return getGcsSource();
   }
 
-  public static final int NEAREST_NEIGHBOR_SEARCH_CONFIG_FIELD_NUMBER = 2;
-  private com.google.protobuf.Value nearestNeighborSearchConfig_;
-  /**
-   *
-   *
-   * <pre>
-   * The configuration for the generated index, the semantics are the same as
-   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
-   * </pre>
-   *
-   * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
-   *
-   * @return Whether the nearestNeighborSearchConfig field is set.
-   */
-  @java.lang.Override
-  public boolean hasNearestNeighborSearchConfig() {
-    return nearestNeighborSearchConfig_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The configuration for the generated index, the semantics are the same as
-   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
-   * </pre>
-   *
-   * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
-   *
-   * @return The nearestNeighborSearchConfig.
-   */
-  @java.lang.Override
-  public com.google.protobuf.Value getNearestNeighborSearchConfig() {
-    return nearestNeighborSearchConfig_ == null
-        ? com.google.protobuf.Value.getDefaultInstance()
-        : nearestNeighborSearchConfig_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The configuration for the generated index, the semantics are the same as
-   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
-   * </pre>
-   *
-   * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.ValueOrBuilder getNearestNeighborSearchConfigOrBuilder() {
-    return getNearestNeighborSearchConfig();
-  }
-
   public static final int NEIGHBOR_COUNT_FIELD_NUMBER = 3;
   private int neighborCount_;
   /**
@@ -275,11 +394,14 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     if (gcsSource_ != null) {
       output.writeMessage(1, getGcsSource());
     }
-    if (nearestNeighborSearchConfig_ != null) {
-      output.writeMessage(2, getNearestNeighborSearchConfig());
+    if (configCase_ == 2) {
+      output.writeMessage(2, (com.google.protobuf.Value) config_);
     }
     if (neighborCount_ != 0) {
       output.writeInt32(3, neighborCount_);
+    }
+    if (configCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.aiplatform.v1beta1.Presets) config_);
     }
     unknownFields.writeTo(output);
   }
@@ -293,13 +415,18 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     if (gcsSource_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getGcsSource());
     }
-    if (nearestNeighborSearchConfig_ != null) {
+    if (configCase_ == 2) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              2, getNearestNeighborSearchConfig());
+              2, (com.google.protobuf.Value) config_);
     }
     if (neighborCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, neighborCount_);
+    }
+    if (configCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.aiplatform.v1beta1.Presets) config_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -321,12 +448,19 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     if (hasGcsSource()) {
       if (!getGcsSource().equals(other.getGcsSource())) return false;
     }
-    if (hasNearestNeighborSearchConfig() != other.hasNearestNeighborSearchConfig()) return false;
-    if (hasNearestNeighborSearchConfig()) {
-      if (!getNearestNeighborSearchConfig().equals(other.getNearestNeighborSearchConfig()))
-        return false;
-    }
     if (getNeighborCount() != other.getNeighborCount()) return false;
+    if (!getConfigCase().equals(other.getConfigCase())) return false;
+    switch (configCase_) {
+      case 2:
+        if (!getNearestNeighborSearchConfig().equals(other.getNearestNeighborSearchConfig()))
+          return false;
+        break;
+      case 4:
+        if (!getPresets().equals(other.getPresets())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -342,12 +476,20 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getGcsSource().hashCode();
     }
-    if (hasNearestNeighborSearchConfig()) {
-      hash = (37 * hash) + NEAREST_NEIGHBOR_SEARCH_CONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getNearestNeighborSearchConfig().hashCode();
-    }
     hash = (37 * hash) + NEIGHBOR_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getNeighborCount();
+    switch (configCase_) {
+      case 2:
+        hash = (37 * hash) + NEAREST_NEIGHBOR_SEARCH_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getNearestNeighborSearchConfig().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + PRESETS_FIELD_NUMBER;
+        hash = (53 * hash) + getPresets().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -500,14 +642,10 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         gcsSource_ = null;
         gcsSourceBuilder_ = null;
       }
-      if (nearestNeighborSearchConfigBuilder_ == null) {
-        nearestNeighborSearchConfig_ = null;
-      } else {
-        nearestNeighborSearchConfig_ = null;
-        nearestNeighborSearchConfigBuilder_ = null;
-      }
       neighborCount_ = 0;
 
+      configCase_ = 0;
+      config_ = null;
       return this;
     }
 
@@ -535,17 +673,27 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.Examples buildPartial() {
       com.google.cloud.aiplatform.v1beta1.Examples result =
           new com.google.cloud.aiplatform.v1beta1.Examples(this);
+      if (configCase_ == 2) {
+        if (nearestNeighborSearchConfigBuilder_ == null) {
+          result.config_ = config_;
+        } else {
+          result.config_ = nearestNeighborSearchConfigBuilder_.build();
+        }
+      }
+      if (configCase_ == 4) {
+        if (presetsBuilder_ == null) {
+          result.config_ = config_;
+        } else {
+          result.config_ = presetsBuilder_.build();
+        }
+      }
       if (gcsSourceBuilder_ == null) {
         result.gcsSource_ = gcsSource_;
       } else {
         result.gcsSource_ = gcsSourceBuilder_.build();
       }
-      if (nearestNeighborSearchConfigBuilder_ == null) {
-        result.nearestNeighborSearchConfig_ = nearestNeighborSearchConfig_;
-      } else {
-        result.nearestNeighborSearchConfig_ = nearestNeighborSearchConfigBuilder_.build();
-      }
       result.neighborCount_ = neighborCount_;
+      result.configCase_ = configCase_;
       onBuilt();
       return result;
     }
@@ -598,11 +746,24 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       if (other.hasGcsSource()) {
         mergeGcsSource(other.getGcsSource());
       }
-      if (other.hasNearestNeighborSearchConfig()) {
-        mergeNearestNeighborSearchConfig(other.getNearestNeighborSearchConfig());
-      }
       if (other.getNeighborCount() != 0) {
         setNeighborCount(other.getNeighborCount());
+      }
+      switch (other.getConfigCase()) {
+        case NEAREST_NEIGHBOR_SEARCH_CONFIG:
+          {
+            mergeNearestNeighborSearchConfig(other.getNearestNeighborSearchConfig());
+            break;
+          }
+        case PRESETS:
+          {
+            mergePresets(other.getPresets());
+            break;
+          }
+        case CONFIG_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -631,6 +792,453 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         }
       }
       return this;
+    }
+
+    private int configCase_ = 0;
+    private java.lang.Object config_;
+
+    public ConfigCase getConfigCase() {
+      return ConfigCase.forNumber(configCase_);
+    }
+
+    public Builder clearConfig() {
+      configCase_ = 0;
+      config_ = null;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        nearestNeighborSearchConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the generated index, the semantics are the same as
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
+     *
+     * @return Whether the nearestNeighborSearchConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasNearestNeighborSearchConfig() {
+      return configCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the generated index, the semantics are the same as
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
+     *
+     * @return The nearestNeighborSearchConfig.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Value getNearestNeighborSearchConfig() {
+      if (nearestNeighborSearchConfigBuilder_ == null) {
+        if (configCase_ == 2) {
+          return (com.google.protobuf.Value) config_;
+        }
+        return com.google.protobuf.Value.getDefaultInstance();
+      } else {
+        if (configCase_ == 2) {
+          return nearestNeighborSearchConfigBuilder_.getMessage();
+        }
+        return com.google.protobuf.Value.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the generated index, the semantics are the same as
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
+     */
+    public Builder setNearestNeighborSearchConfig(com.google.protobuf.Value value) {
+      if (nearestNeighborSearchConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        config_ = value;
+        onChanged();
+      } else {
+        nearestNeighborSearchConfigBuilder_.setMessage(value);
+      }
+      configCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the generated index, the semantics are the same as
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
+     */
+    public Builder setNearestNeighborSearchConfig(
+        com.google.protobuf.Value.Builder builderForValue) {
+      if (nearestNeighborSearchConfigBuilder_ == null) {
+        config_ = builderForValue.build();
+        onChanged();
+      } else {
+        nearestNeighborSearchConfigBuilder_.setMessage(builderForValue.build());
+      }
+      configCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the generated index, the semantics are the same as
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
+     */
+    public Builder mergeNearestNeighborSearchConfig(com.google.protobuf.Value value) {
+      if (nearestNeighborSearchConfigBuilder_ == null) {
+        if (configCase_ == 2 && config_ != com.google.protobuf.Value.getDefaultInstance()) {
+          config_ =
+              com.google.protobuf.Value.newBuilder((com.google.protobuf.Value) config_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          config_ = value;
+        }
+        onChanged();
+      } else {
+        if (configCase_ == 2) {
+          nearestNeighborSearchConfigBuilder_.mergeFrom(value);
+        } else {
+          nearestNeighborSearchConfigBuilder_.setMessage(value);
+        }
+      }
+      configCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the generated index, the semantics are the same as
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
+     */
+    public Builder clearNearestNeighborSearchConfig() {
+      if (nearestNeighborSearchConfigBuilder_ == null) {
+        if (configCase_ == 2) {
+          configCase_ = 0;
+          config_ = null;
+          onChanged();
+        }
+      } else {
+        if (configCase_ == 2) {
+          configCase_ = 0;
+          config_ = null;
+        }
+        nearestNeighborSearchConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the generated index, the semantics are the same as
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
+     */
+    public com.google.protobuf.Value.Builder getNearestNeighborSearchConfigBuilder() {
+      return getNearestNeighborSearchConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the generated index, the semantics are the same as
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.ValueOrBuilder getNearestNeighborSearchConfigOrBuilder() {
+      if ((configCase_ == 2) && (nearestNeighborSearchConfigBuilder_ != null)) {
+        return nearestNeighborSearchConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (configCase_ == 2) {
+          return (com.google.protobuf.Value) config_;
+        }
+        return com.google.protobuf.Value.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for the generated index, the semantics are the same as
+     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        getNearestNeighborSearchConfigFieldBuilder() {
+      if (nearestNeighborSearchConfigBuilder_ == null) {
+        if (!(configCase_ == 2)) {
+          config_ = com.google.protobuf.Value.getDefaultInstance();
+        }
+        nearestNeighborSearchConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Value,
+                com.google.protobuf.Value.Builder,
+                com.google.protobuf.ValueOrBuilder>(
+                (com.google.protobuf.Value) config_, getParentForChildren(), isClean());
+        config_ = null;
+      }
+      configCase_ = 2;
+      onChanged();
+      ;
+      return nearestNeighborSearchConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Presets,
+            com.google.cloud.aiplatform.v1beta1.Presets.Builder,
+            com.google.cloud.aiplatform.v1beta1.PresetsOrBuilder>
+        presetsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Preset config based on the desired query speed-precision trade-off
+     * and modality
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+     *
+     * @return Whether the presets field is set.
+     */
+    @java.lang.Override
+    public boolean hasPresets() {
+      return configCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preset config based on the desired query speed-precision trade-off
+     * and modality
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+     *
+     * @return The presets.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Presets getPresets() {
+      if (presetsBuilder_ == null) {
+        if (configCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.Presets) config_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.Presets.getDefaultInstance();
+      } else {
+        if (configCase_ == 4) {
+          return presetsBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.Presets.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preset config based on the desired query speed-precision trade-off
+     * and modality
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+     */
+    public Builder setPresets(com.google.cloud.aiplatform.v1beta1.Presets value) {
+      if (presetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        config_ = value;
+        onChanged();
+      } else {
+        presetsBuilder_.setMessage(value);
+      }
+      configCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preset config based on the desired query speed-precision trade-off
+     * and modality
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+     */
+    public Builder setPresets(com.google.cloud.aiplatform.v1beta1.Presets.Builder builderForValue) {
+      if (presetsBuilder_ == null) {
+        config_ = builderForValue.build();
+        onChanged();
+      } else {
+        presetsBuilder_.setMessage(builderForValue.build());
+      }
+      configCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preset config based on the desired query speed-precision trade-off
+     * and modality
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+     */
+    public Builder mergePresets(com.google.cloud.aiplatform.v1beta1.Presets value) {
+      if (presetsBuilder_ == null) {
+        if (configCase_ == 4
+            && config_ != com.google.cloud.aiplatform.v1beta1.Presets.getDefaultInstance()) {
+          config_ =
+              com.google.cloud.aiplatform.v1beta1.Presets.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.Presets) config_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          config_ = value;
+        }
+        onChanged();
+      } else {
+        if (configCase_ == 4) {
+          presetsBuilder_.mergeFrom(value);
+        } else {
+          presetsBuilder_.setMessage(value);
+        }
+      }
+      configCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preset config based on the desired query speed-precision trade-off
+     * and modality
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+     */
+    public Builder clearPresets() {
+      if (presetsBuilder_ == null) {
+        if (configCase_ == 4) {
+          configCase_ = 0;
+          config_ = null;
+          onChanged();
+        }
+      } else {
+        if (configCase_ == 4) {
+          configCase_ = 0;
+          config_ = null;
+        }
+        presetsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preset config based on the desired query speed-precision trade-off
+     * and modality
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Presets.Builder getPresetsBuilder() {
+      return getPresetsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preset config based on the desired query speed-precision trade-off
+     * and modality
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PresetsOrBuilder getPresetsOrBuilder() {
+      if ((configCase_ == 4) && (presetsBuilder_ != null)) {
+        return presetsBuilder_.getMessageOrBuilder();
+      } else {
+        if (configCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.Presets) config_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.Presets.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preset config based on the desired query speed-precision trade-off
+     * and modality
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Presets,
+            com.google.cloud.aiplatform.v1beta1.Presets.Builder,
+            com.google.cloud.aiplatform.v1beta1.PresetsOrBuilder>
+        getPresetsFieldBuilder() {
+      if (presetsBuilder_ == null) {
+        if (!(configCase_ == 4)) {
+          config_ = com.google.cloud.aiplatform.v1beta1.Presets.getDefaultInstance();
+        }
+        presetsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Presets,
+                com.google.cloud.aiplatform.v1beta1.Presets.Builder,
+                com.google.cloud.aiplatform.v1beta1.PresetsOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.Presets) config_,
+                getParentForChildren(),
+                isClean());
+        config_ = null;
+      }
+      configCase_ = 4;
+      onChanged();
+      ;
+      return presetsBuilder_;
     }
 
     private com.google.cloud.aiplatform.v1beta1.GcsSource gcsSource_;
@@ -817,201 +1425,6 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         gcsSource_ = null;
       }
       return gcsSourceBuilder_;
-    }
-
-    private com.google.protobuf.Value nearestNeighborSearchConfig_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Value,
-            com.google.protobuf.Value.Builder,
-            com.google.protobuf.ValueOrBuilder>
-        nearestNeighborSearchConfigBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
-     * </pre>
-     *
-     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
-     *
-     * @return Whether the nearestNeighborSearchConfig field is set.
-     */
-    public boolean hasNearestNeighborSearchConfig() {
-      return nearestNeighborSearchConfigBuilder_ != null || nearestNeighborSearchConfig_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
-     * </pre>
-     *
-     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
-     *
-     * @return The nearestNeighborSearchConfig.
-     */
-    public com.google.protobuf.Value getNearestNeighborSearchConfig() {
-      if (nearestNeighborSearchConfigBuilder_ == null) {
-        return nearestNeighborSearchConfig_ == null
-            ? com.google.protobuf.Value.getDefaultInstance()
-            : nearestNeighborSearchConfig_;
-      } else {
-        return nearestNeighborSearchConfigBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
-     * </pre>
-     *
-     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
-     */
-    public Builder setNearestNeighborSearchConfig(com.google.protobuf.Value value) {
-      if (nearestNeighborSearchConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        nearestNeighborSearchConfig_ = value;
-        onChanged();
-      } else {
-        nearestNeighborSearchConfigBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
-     * </pre>
-     *
-     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
-     */
-    public Builder setNearestNeighborSearchConfig(
-        com.google.protobuf.Value.Builder builderForValue) {
-      if (nearestNeighborSearchConfigBuilder_ == null) {
-        nearestNeighborSearchConfig_ = builderForValue.build();
-        onChanged();
-      } else {
-        nearestNeighborSearchConfigBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
-     * </pre>
-     *
-     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
-     */
-    public Builder mergeNearestNeighborSearchConfig(com.google.protobuf.Value value) {
-      if (nearestNeighborSearchConfigBuilder_ == null) {
-        if (nearestNeighborSearchConfig_ != null) {
-          nearestNeighborSearchConfig_ =
-              com.google.protobuf.Value.newBuilder(nearestNeighborSearchConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          nearestNeighborSearchConfig_ = value;
-        }
-        onChanged();
-      } else {
-        nearestNeighborSearchConfigBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
-     * </pre>
-     *
-     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
-     */
-    public Builder clearNearestNeighborSearchConfig() {
-      if (nearestNeighborSearchConfigBuilder_ == null) {
-        nearestNeighborSearchConfig_ = null;
-        onChanged();
-      } else {
-        nearestNeighborSearchConfig_ = null;
-        nearestNeighborSearchConfigBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
-     * </pre>
-     *
-     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
-     */
-    public com.google.protobuf.Value.Builder getNearestNeighborSearchConfigBuilder() {
-
-      onChanged();
-      return getNearestNeighborSearchConfigFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
-     * </pre>
-     *
-     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
-     */
-    public com.google.protobuf.ValueOrBuilder getNearestNeighborSearchConfigOrBuilder() {
-      if (nearestNeighborSearchConfigBuilder_ != null) {
-        return nearestNeighborSearchConfigBuilder_.getMessageOrBuilder();
-      } else {
-        return nearestNeighborSearchConfig_ == null
-            ? com.google.protobuf.Value.getDefaultInstance()
-            : nearestNeighborSearchConfig_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
-     * </pre>
-     *
-     * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Value,
-            com.google.protobuf.Value.Builder,
-            com.google.protobuf.ValueOrBuilder>
-        getNearestNeighborSearchConfigFieldBuilder() {
-      if (nearestNeighborSearchConfigBuilder_ == null) {
-        nearestNeighborSearchConfigBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.protobuf.Value,
-                com.google.protobuf.Value.Builder,
-                com.google.protobuf.ValueOrBuilder>(
-                getNearestNeighborSearchConfig(), getParentForChildren(), isClean());
-        nearestNeighborSearchConfig_ = null;
-      }
-      return nearestNeighborSearchConfigBuilder_;
     }
 
     private int neighborCount_;

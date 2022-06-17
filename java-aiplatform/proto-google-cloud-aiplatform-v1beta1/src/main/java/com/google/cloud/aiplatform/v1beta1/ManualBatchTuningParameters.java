@@ -121,7 +121,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
    * speeds up the batch operation's execution, but too high value will result
    * in a whole batch not fitting in a machine's memory, and the whole
    * operation will fail.
-   * The default value is 4.
+   * The default value is 64.
    * </pre>
    *
    * <code>int32 batch_size = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -466,7 +466,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
      * speeds up the batch operation's execution, but too high value will result
      * in a whole batch not fitting in a machine's memory, and the whole
      * operation will fail.
-     * The default value is 4.
+     * The default value is 64.
      * </pre>
      *
      * <code>int32 batch_size = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -487,7 +487,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
      * speeds up the batch operation's execution, but too high value will result
      * in a whole batch not fitting in a machine's memory, and the whole
      * operation will fail.
-     * The default value is 4.
+     * The default value is 64.
      * </pre>
      *
      * <code>int32 batch_size = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -511,7 +511,7 @@ public final class ManualBatchTuningParameters extends com.google.protobuf.Gener
      * speeds up the batch operation's execution, but too high value will result
      * in a whole batch not fitting in a machine's memory, and the whole
      * operation will fail.
-     * The default value is 4.
+     * The default value is 64.
      * </pre>
      *
      * <code>int32 batch_size = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>

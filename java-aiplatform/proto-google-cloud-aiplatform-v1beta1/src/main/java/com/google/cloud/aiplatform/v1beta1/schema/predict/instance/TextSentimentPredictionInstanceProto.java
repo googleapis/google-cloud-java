@@ -45,13 +45,17 @@ public final class TextSentimentPredictionInstanceProto {
           + "google.cloud.aiplatform.v1beta1.schema.p"
           + "redict.instance\032\034google/api/annotations."
           + "proto\"E\n\037TextSentimentPredictionInstance"
-          + "\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\tB\306\001\n"
+          + "\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\tB\372\002\n"
           + ";com.google.cloud.aiplatform.v1beta1.sch"
           + "ema.predict.instanceB$TextSentimentPredi"
           + "ctionInstanceProtoP\001Z_google.golang.org/"
           + "genproto/googleapis/cloud/aiplatform/v1b"
-          + "eta1/schema/predict/instance;instanceb\006p"
-          + "roto3"
+          + "eta1/schema/predict/instance;instance\252\0027"
+          + "Google.Cloud.AIPlatform.V1Beta1.Schema.P"
+          + "redict.Instance\312\0027Google\\Cloud\\AIPlatfor"
+          + "m\\V1beta1\\Schema\\Predict\\Instance\352\002=Goog"
+          + "le::Cloud::AIPlatform::V1beta1::Schema::"
+          + "Predict::Instanceb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

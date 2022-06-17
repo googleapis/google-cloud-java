@@ -42,6 +42,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     packageUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     pythonModule_ = "";
     args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    env_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -108,6 +109,17 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
               args_.add(s);
               break;
             }
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                env_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.EnvVar>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              env_.add(
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.EnvVar.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -129,6 +141,9 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         args_ = args_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        env_ = java.util.Collections.unmodifiableList(env_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -388,6 +403,80 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     return args_.getByteString(index);
   }
 
+  public static final int ENV_FIELD_NUMBER = 5;
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.EnvVar> env_;
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.EnvVar> getEnvList() {
+    return env_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.EnvVarOrBuilder>
+      getEnvOrBuilderList() {
+    return env_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+   */
+  @java.lang.Override
+  public int getEnvCount() {
+    return env_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EnvVar getEnv(int index) {
+    return env_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EnvVarOrBuilder getEnvOrBuilder(int index) {
+    return env_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -413,6 +502,9 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     }
     for (int i = 0; i < args_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, args_.getRaw(i));
+    }
+    for (int i = 0; i < env_.size(); i++) {
+      output.writeMessage(5, env_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -445,6 +537,9 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 1 * getArgsList().size();
     }
+    for (int i = 0; i < env_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, env_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -465,6 +560,7 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     if (!getPackageUrisList().equals(other.getPackageUrisList())) return false;
     if (!getPythonModule().equals(other.getPythonModule())) return false;
     if (!getArgsList().equals(other.getArgsList())) return false;
+    if (!getEnvList().equals(other.getEnvList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -487,6 +583,10 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     if (getArgsCount() > 0) {
       hash = (37 * hash) + ARGS_FIELD_NUMBER;
       hash = (53 * hash) + getArgsList().hashCode();
+    }
+    if (getEnvCount() > 0) {
+      hash = (37 * hash) + ENV_FIELD_NUMBER;
+      hash = (53 * hash) + getEnvList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -628,7 +728,9 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getEnvFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -642,6 +744,12 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
 
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      if (envBuilder_ == null) {
+        env_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        envBuilder_.clear();
+      }
       return this;
     }
 
@@ -682,6 +790,15 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.args_ = args_;
+      if (envBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          env_ = java.util.Collections.unmodifiableList(env_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.env_ = env_;
+      } else {
+        result.env_ = envBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -759,6 +876,33 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
           args_.addAll(other.args_);
         }
         onChanged();
+      }
+      if (envBuilder_ == null) {
+        if (!other.env_.isEmpty()) {
+          if (env_.isEmpty()) {
+            env_ = other.env_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureEnvIsMutable();
+            env_.addAll(other.env_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.env_.isEmpty()) {
+          if (envBuilder_.isEmpty()) {
+            envBuilder_.dispose();
+            envBuilder_ = null;
+            env_ = other.env_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            envBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEnvFieldBuilder()
+                    : null;
+          } else {
+            envBuilder_.addAllMessages(other.env_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1381,6 +1525,372 @@ public final class PythonPackageSpec extends com.google.protobuf.GeneratedMessag
       args_.add(value);
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.EnvVar> env_ =
+        java.util.Collections.emptyList();
+
+    private void ensureEnvIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        env_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.EnvVar>(env_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EnvVar,
+            com.google.cloud.aiplatform.v1beta1.EnvVar.Builder,
+            com.google.cloud.aiplatform.v1beta1.EnvVarOrBuilder>
+        envBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.EnvVar> getEnvList() {
+      if (envBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(env_);
+      } else {
+        return envBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public int getEnvCount() {
+      if (envBuilder_ == null) {
+        return env_.size();
+      } else {
+        return envBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EnvVar getEnv(int index) {
+      if (envBuilder_ == null) {
+        return env_.get(index);
+      } else {
+        return envBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public Builder setEnv(int index, com.google.cloud.aiplatform.v1beta1.EnvVar value) {
+      if (envBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEnvIsMutable();
+        env_.set(index, value);
+        onChanged();
+      } else {
+        envBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public Builder setEnv(
+        int index, com.google.cloud.aiplatform.v1beta1.EnvVar.Builder builderForValue) {
+      if (envBuilder_ == null) {
+        ensureEnvIsMutable();
+        env_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        envBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public Builder addEnv(com.google.cloud.aiplatform.v1beta1.EnvVar value) {
+      if (envBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEnvIsMutable();
+        env_.add(value);
+        onChanged();
+      } else {
+        envBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public Builder addEnv(int index, com.google.cloud.aiplatform.v1beta1.EnvVar value) {
+      if (envBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEnvIsMutable();
+        env_.add(index, value);
+        onChanged();
+      } else {
+        envBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public Builder addEnv(com.google.cloud.aiplatform.v1beta1.EnvVar.Builder builderForValue) {
+      if (envBuilder_ == null) {
+        ensureEnvIsMutable();
+        env_.add(builderForValue.build());
+        onChanged();
+      } else {
+        envBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public Builder addEnv(
+        int index, com.google.cloud.aiplatform.v1beta1.EnvVar.Builder builderForValue) {
+      if (envBuilder_ == null) {
+        ensureEnvIsMutable();
+        env_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        envBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public Builder addAllEnv(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.EnvVar> values) {
+      if (envBuilder_ == null) {
+        ensureEnvIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, env_);
+        onChanged();
+      } else {
+        envBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public Builder clearEnv() {
+      if (envBuilder_ == null) {
+        env_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        envBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public Builder removeEnv(int index) {
+      if (envBuilder_ == null) {
+        ensureEnvIsMutable();
+        env_.remove(index);
+        onChanged();
+      } else {
+        envBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EnvVar.Builder getEnvBuilder(int index) {
+      return getEnvFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EnvVarOrBuilder getEnvOrBuilder(int index) {
+      if (envBuilder_ == null) {
+        return env_.get(index);
+      } else {
+        return envBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.EnvVarOrBuilder>
+        getEnvOrBuilderList() {
+      if (envBuilder_ != null) {
+        return envBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(env_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EnvVar.Builder addEnvBuilder() {
+      return getEnvFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.EnvVar.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EnvVar.Builder addEnvBuilder(int index) {
+      return getEnvFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1beta1.EnvVar.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Environment variables to be passed to the python module.
+     * Maximum limit is 100.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.EnvVar.Builder> getEnvBuilderList() {
+      return getEnvFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EnvVar,
+            com.google.cloud.aiplatform.v1beta1.EnvVar.Builder,
+            com.google.cloud.aiplatform.v1beta1.EnvVarOrBuilder>
+        getEnvFieldBuilder() {
+      if (envBuilder_ == null) {
+        envBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.EnvVar,
+                com.google.cloud.aiplatform.v1beta1.EnvVar.Builder,
+                com.google.cloud.aiplatform.v1beta1.EnvVarOrBuilder>(
+                env_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        env_ = null;
+      }
+      return envBuilder_;
     }
 
     @java.lang.Override

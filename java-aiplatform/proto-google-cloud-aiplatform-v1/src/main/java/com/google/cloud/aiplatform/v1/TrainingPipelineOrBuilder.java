@@ -337,6 +337,64 @@ public interface TrainingPipelineOrBuilder
    *
    *
    * <pre>
+   * Optional. The ID to use for the uploaded Model, which will become the final
+   * component of the model resource name.
+   * This value may be up to 63 characters, and valid characters are
+   * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+   * </pre>
+   *
+   * <code>string model_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The modelId.
+   */
+  java.lang.String getModelId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID to use for the uploaded Model, which will become the final
+   * component of the model resource name.
+   * This value may be up to 63 characters, and valid characters are
+   * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+   * </pre>
+   *
+   * <code>string model_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for modelId.
+   */
+  com.google.protobuf.ByteString getModelIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
+   * new model, instead, it will become a new version of this `parent_model`.
+   * </pre>
+   *
+   * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The parentModel.
+   */
+  java.lang.String getParentModel();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
+   * new model, instead, it will become a new version of this `parent_model`.
+   * </pre>
+   *
+   * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for parentModel.
+   */
+  com.google.protobuf.ByteString getParentModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The detailed state of the pipeline.
    * </pre>
    *

@@ -262,7 +262,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *   while (true) {
    *     ListAccessPoliciesResponse response =
    *         accessContextManagerClient.listAccessPoliciesCallable().call(request);
-   *     for (AccessPolicy element : response.getResponsesList()) {
+   *     for (AccessPolicy element : response.getAccessPoliciesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -918,7 +918,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *   while (true) {
    *     ListAccessLevelsResponse response =
    *         accessContextManagerClient.listAccessLevelsCallable().call(request);
-   *     for (AccessLevel element : response.getResponsesList()) {
+   *     for (AccessLevel element : response.getAccessLevelsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1776,7 +1776,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *   while (true) {
    *     ListServicePerimetersResponse response =
    *         accessContextManagerClient.listServicePerimetersCallable().call(request);
-   *     for (ServicePerimeter element : response.getResponsesList()) {
+   *     for (ServicePerimeter element : response.getServicePerimetersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2775,7 +2775,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *   while (true) {
    *     ListGcpUserAccessBindingsResponse response =
    *         accessContextManagerClient.listGcpUserAccessBindingsCallable().call(request);
-   *     for (GcpUserAccessBinding element : response.getResponsesList()) {
+   *     for (GcpUserAccessBinding element : response.getGcpUserAccessBindingsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

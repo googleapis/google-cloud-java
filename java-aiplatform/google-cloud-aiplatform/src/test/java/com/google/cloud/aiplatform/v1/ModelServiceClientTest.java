@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,10 @@
 
 package com.google.cloud.aiplatform.v1;
 
+import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -28,10 +30,23 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.GetPolicyOptions;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -54,6 +69,8 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ModelServiceClientTest {
+  private static MockIAMPolicy mockIAMPolicy;
+  private static MockLocations mockLocations;
   private static MockModelService mockModelService;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
@@ -62,9 +79,12 @@ public class ModelServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockModelService = new MockModelService();
+    mockLocations = new MockLocations();
+    mockIAMPolicy = new MockIAMPolicy();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockModelService));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockModelService, mockLocations, mockIAMPolicy));
     mockServiceHelper.start();
   }
 
@@ -95,6 +115,7 @@ public class ModelServiceClientTest {
     UploadModelResponse expectedResponse =
         UploadModelResponse.newBuilder()
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -144,6 +165,7 @@ public class ModelServiceClientTest {
     UploadModelResponse expectedResponse =
         UploadModelResponse.newBuilder()
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -193,11 +215,16 @@ public class ModelServiceClientTest {
     Model expectedResponse =
         Model.newBuilder()
             .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setVersionId("versionId-1407102957")
+            .addAllVersionAliases(new ArrayList<String>())
+            .setVersionCreateTime(Timestamp.newBuilder().build())
+            .setVersionUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setVersionDescription("versionDescription-1736173564")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
@@ -252,11 +279,16 @@ public class ModelServiceClientTest {
     Model expectedResponse =
         Model.newBuilder()
             .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setVersionId("versionId-1407102957")
+            .addAllVersionAliases(new ArrayList<String>())
+            .setVersionCreateTime(Timestamp.newBuilder().build())
+            .setVersionUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setVersionDescription("versionDescription-1736173564")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
@@ -395,15 +427,108 @@ public class ModelServiceClientTest {
   }
 
   @Test
+  public void listModelVersionsTest() throws Exception {
+    Model responsesElement = Model.newBuilder().build();
+    ListModelVersionsResponse expectedResponse =
+        ListModelVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModels(Arrays.asList(responsesElement))
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    ListModelVersionsPagedResponse pagedListResponse = client.listModelVersions(name);
+
+    List<Model> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getModelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelVersionsRequest actualRequest = ((ListModelVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelVersionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      client.listModelVersions(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listModelVersionsTest2() throws Exception {
+    Model responsesElement = Model.newBuilder().build();
+    ListModelVersionsResponse expectedResponse =
+        ListModelVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllModels(Arrays.asList(responsesElement))
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ListModelVersionsPagedResponse pagedListResponse = client.listModelVersions(name);
+
+    List<Model> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getModelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelVersionsRequest actualRequest = ((ListModelVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelVersionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.listModelVersions(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateModelTest() throws Exception {
     Model expectedResponse =
         Model.newBuilder()
             .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setVersionId("versionId-1407102957")
+            .addAllVersionAliases(new ArrayList<String>())
+            .setVersionCreateTime(Timestamp.newBuilder().build())
+            .setVersionUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setVersionDescription("versionDescription-1736173564")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
-            .setMetadata(Value.newBuilder().build())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
             .setTrainingPipeline(
                 TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
@@ -541,6 +666,224 @@ public class ModelServiceClientTest {
   }
 
   @Test
+  public void deleteModelVersionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteModelVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelService.addResponse(resultOperation);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    client.deleteModelVersionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteModelVersionRequest actualRequest = ((DeleteModelVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteModelVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      client.deleteModelVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteModelVersionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteModelVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockModelService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteModelVersionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteModelVersionRequest actualRequest = ((DeleteModelVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteModelVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteModelVersionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void mergeVersionAliasesTest() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setVersionId("versionId-1407102957")
+            .addAllVersionAliases(new ArrayList<String>())
+            .setVersionCreateTime(Timestamp.newBuilder().build())
+            .setVersionUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setVersionDescription("versionDescription-1736173564")
+            .setPredictSchemata(PredictSchemata.newBuilder().build())
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
+            .setTrainingPipeline(
+                TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
+                    .toString())
+            .setContainerSpec(ModelContainerSpec.newBuilder().build())
+            .setArtifactUri("artifactUri-1130062278")
+            .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
+            .addAllSupportedInputStorageFormats(new ArrayList<String>())
+            .addAllSupportedOutputStorageFormats(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllDeployedModels(new ArrayList<DeployedModelRef>())
+            .setExplanationSpec(ExplanationSpec.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+    List<String> versionAliases = new ArrayList<>();
+
+    Model actualResponse = client.mergeVersionAliases(name, versionAliases);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MergeVersionAliasesRequest actualRequest = ((MergeVersionAliasesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(versionAliases, actualRequest.getVersionAliasesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void mergeVersionAliasesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      List<String> versionAliases = new ArrayList<>();
+      client.mergeVersionAliases(name, versionAliases);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void mergeVersionAliasesTest2() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setVersionId("versionId-1407102957")
+            .addAllVersionAliases(new ArrayList<String>())
+            .setVersionCreateTime(Timestamp.newBuilder().build())
+            .setVersionUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setVersionDescription("versionDescription-1736173564")
+            .setPredictSchemata(PredictSchemata.newBuilder().build())
+            .setMetadataSchemaUri("metadataSchemaUri781971868")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .addAllSupportedExportFormats(new ArrayList<Model.ExportFormat>())
+            .setTrainingPipeline(
+                TrainingPipelineName.of("[PROJECT]", "[LOCATION]", "[TRAINING_PIPELINE]")
+                    .toString())
+            .setContainerSpec(ModelContainerSpec.newBuilder().build())
+            .setArtifactUri("artifactUri-1130062278")
+            .addAllSupportedDeploymentResourcesTypes(new ArrayList<Model.DeploymentResourcesType>())
+            .addAllSupportedInputStorageFormats(new ArrayList<String>())
+            .addAllSupportedOutputStorageFormats(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllDeployedModels(new ArrayList<DeployedModelRef>())
+            .setExplanationSpec(ExplanationSpec.newBuilder().build())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    List<String> versionAliases = new ArrayList<>();
+
+    Model actualResponse = client.mergeVersionAliases(name, versionAliases);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MergeVersionAliasesRequest actualRequest = ((MergeVersionAliasesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(versionAliases, actualRequest.getVersionAliasesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void mergeVersionAliasesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      List<String> versionAliases = new ArrayList<>();
+      client.mergeVersionAliases(name, versionAliases);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void exportModelTest() throws Exception {
     ExportModelResponse expectedResponse = ExportModelResponse.newBuilder().build();
     Operation resultOperation =
@@ -643,14 +986,16 @@ public class ModelServiceClientTest {
             .setName(
                 ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
-            .setMetrics(Value.newBuilder().build())
+            .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
             .setDataItemSchemaUri("dataItemSchemaUri-154921298")
             .setAnnotationSchemaUri("annotationSchemaUri1480032668")
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -695,14 +1040,16 @@ public class ModelServiceClientTest {
             .setName(
                 ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
-            .setMetrics(Value.newBuilder().build())
+            .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
             .setDataItemSchemaUri("dataItemSchemaUri-154921298")
             .setAnnotationSchemaUri("annotationSchemaUri1480032668")
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -747,14 +1094,16 @@ public class ModelServiceClientTest {
             .setName(
                 ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
-            .setMetrics(Value.newBuilder().build())
+            .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
             .setDataItemSchemaUri("dataItemSchemaUri-154921298")
             .setAnnotationSchemaUri("annotationSchemaUri1480032668")
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -797,14 +1146,16 @@ public class ModelServiceClientTest {
             .setName(
                 ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
                     .toString())
+            .setDisplayName("displayName1714148973")
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
-            .setMetrics(Value.newBuilder().build())
+            .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllSliceDimensions(new ArrayList<String>())
             .setDataItemSchemaUri("dataItemSchemaUri-154921298")
             .setAnnotationSchemaUri("annotationSchemaUri1480032668")
             .setModelExplanation(ModelExplanation.newBuilder().build())
             .addAllExplanationSpecs(new ArrayList<ModelEvaluation.ModelEvaluationExplanationSpec>())
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -938,7 +1289,7 @@ public class ModelServiceClientTest {
                     .toString())
             .setSlice(ModelEvaluationSlice.Slice.newBuilder().build())
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
-            .setMetrics(Value.newBuilder().build())
+            .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
@@ -988,7 +1339,7 @@ public class ModelServiceClientTest {
                     .toString())
             .setSlice(ModelEvaluationSlice.Slice.newBuilder().build())
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
-            .setMetrics(Value.newBuilder().build())
+            .setMetrics(Value.newBuilder().setBoolValue(true).build())
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
@@ -1112,6 +1463,267 @@ public class ModelServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listModelEvaluationSlices(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLocationsTest() throws Exception {
+    Location responsesElement = Location.newBuilder().build();
+    ListLocationsResponse expectedResponse =
+        ListLocationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLocations(Arrays.asList(responsesElement))
+            .build();
+    mockLocations.addResponse(expectedResponse);
+
+    ListLocationsRequest request =
+        ListLocationsRequest.newBuilder()
+            .setName("name3373707")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListLocationsPagedResponse pagedListResponse = client.listLocations(request);
+
+    List<Location> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLocationsRequest actualRequest = ((ListLocationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLocationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLocations.addException(exception);
+
+    try {
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("name3373707")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listLocations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLocationTest() throws Exception {
+    Location expectedResponse =
+        Location.newBuilder()
+            .setName("name3373707")
+            .setLocationId("locationId1541836720")
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setMetadata(Any.newBuilder().build())
+            .build();
+    mockLocations.addResponse(expectedResponse);
+
+    GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+
+    Location actualResponse = client.getLocation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLocations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetLocationRequest actualRequest = ((GetLocationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getLocationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLocations.addException(exception);
+
+    try {
+      GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+      client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockIAMPolicy.addResponse(expectedResponse);
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                    .toString())
+            .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.setIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetIamPolicyRequest actualRequest = ((SetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getPolicy(), actualRequest.getPolicy());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                      .toString())
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.setIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockIAMPolicy.addResponse(expectedResponse);
+
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                    .toString())
+            .setOptions(GetPolicyOptions.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.getIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder()
+              .setResource(
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                      .toString())
+              .setOptions(GetPolicyOptions.newBuilder().build())
+              .build();
+      client.getIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockIAMPolicy.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                    .toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TestIamPermissionsRequest actualRequest = ((TestIamPermissionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getResource(), actualRequest.getResource());
+    Assert.assertEquals(request.getPermissionsList(), actualRequest.getPermissionsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                      .toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -46,12 +46,17 @@ public final class ImageClassificationPredictionParamsProto {
           + "ma.predict.params\032\034google/api/annotation"
           + "s.proto\"\\\n#ImageClassificationPrediction"
           + "Params\022\034\n\024confidence_threshold\030\001 \001(\002\022\027\n\017"
-          + "max_predictions\030\002 \001(\005B\304\001\n9com.google.clo"
+          + "max_predictions\030\002 \001(\005B\362\002\n9com.google.clo"
           + "ud.aiplatform.v1beta1.schema.predict.par"
           + "amsB(ImageClassificationPredictionParams"
           + "ProtoP\001Z[google.golang.org/genproto/goog"
           + "leapis/cloud/aiplatform/v1beta1/schema/p"
-          + "redict/params;paramsb\006proto3"
+          + "redict/params;params\252\0025Google.Cloud.AIPl"
+          + "atform.V1Beta1.Schema.Predict.Params\312\0025G"
+          + "oogle\\Cloud\\AIPlatform\\V1beta1\\Schema\\Pr"
+          + "edict\\Params\352\002;Google::Cloud::AIPlatform"
+          + "::V1beta1::Schema::Predict::Paramsb\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

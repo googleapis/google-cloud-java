@@ -27,41 +27,6 @@ public interface ExamplesOrBuilder
    *
    *
    * <pre>
-   * The Cloud Storage location for the input instances.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
-   *
-   * @return Whether the gcsSource field is set.
-   */
-  boolean hasGcsSource();
-  /**
-   *
-   *
-   * <pre>
-   * The Cloud Storage location for the input instances.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
-   *
-   * @return The gcsSource.
-   */
-  com.google.cloud.aiplatform.v1beta1.GcsSource getGcsSource();
-  /**
-   *
-   *
-   * <pre>
-   * The Cloud Storage location for the input instances.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
-   */
-  com.google.cloud.aiplatform.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * The configuration for the generated index, the semantics are the same as
    * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should match NearestNeighborSearchConfig.
    * </pre>
@@ -100,6 +65,79 @@ public interface ExamplesOrBuilder
    *
    *
    * <pre>
+   * Preset config based on the desired query speed-precision trade-off
+   * and modality
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+   *
+   * @return Whether the presets field is set.
+   */
+  boolean hasPresets();
+  /**
+   *
+   *
+   * <pre>
+   * Preset config based on the desired query speed-precision trade-off
+   * and modality
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+   *
+   * @return The presets.
+   */
+  com.google.cloud.aiplatform.v1beta1.Presets getPresets();
+  /**
+   *
+   *
+   * <pre>
+   * Preset config based on the desired query speed-precision trade-off
+   * and modality
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PresetsOrBuilder getPresetsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage location for the input instances.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
+   *
+   * @return Whether the gcsSource field is set.
+   */
+  boolean hasGcsSource();
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage location for the input instances.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
+   *
+   * @return The gcsSource.
+   */
+  com.google.cloud.aiplatform.v1beta1.GcsSource getGcsSource();
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage location for the input instances.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The number of neighbors to return.
    * </pre>
    *
@@ -108,4 +146,6 @@ public interface ExamplesOrBuilder
    * @return The neighborCount.
    */
   int getNeighborCount();
+
+  public com.google.cloud.aiplatform.v1beta1.Examples.ConfigCase getConfigCase();
 }

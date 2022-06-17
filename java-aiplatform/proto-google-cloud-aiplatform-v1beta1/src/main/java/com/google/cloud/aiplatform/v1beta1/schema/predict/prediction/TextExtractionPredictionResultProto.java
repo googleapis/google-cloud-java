@@ -48,12 +48,17 @@ public final class TextExtractionPredictionResultProto {
           + "esult\022\013\n\003ids\030\001 \003(\003\022\025\n\rdisplay_names\030\002 \003("
           + "\t\022\"\n\032text_segment_start_offsets\030\003 \003(\003\022 \n"
           + "\030text_segment_end_offsets\030\004 \003(\003\022\023\n\013confi"
-          + "dences\030\005 \003(\002B\313\001\n=com.google.cloud.aiplat"
+          + "dences\030\005 \003(\002B\205\003\n=com.google.cloud.aiplat"
           + "form.v1beta1.schema.predict.predictionB#"
           + "TextExtractionPredictionResultProtoP\001Zcg"
           + "oogle.golang.org/genproto/googleapis/clo"
           + "ud/aiplatform/v1beta1/schema/predict/pre"
-          + "diction;predictionb\006proto3"
+          + "diction;prediction\252\0029Google.Cloud.AIPlat"
+          + "form.V1Beta1.Schema.Predict.Prediction\312\002"
+          + "9Google\\Cloud\\AIPlatform\\V1beta1\\Schema\\"
+          + "Predict\\Prediction\352\002?Google::Cloud::AIPl"
+          + "atform::V1beta1::Schema::Predict::Predic"
+          + "tionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

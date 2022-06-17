@@ -156,12 +156,17 @@ public final class AutoMLTablesProto {
           + "column_name\030\001 \001(\tB\027\n\025transformation_deta"
           + "ilB*\n(additional_optimization_objective_"
           + "config\";\n\024AutoMlTablesMetadata\022#\n\033train_"
-          + "cost_milli_node_hours\030\001 \001(\003B\301\001\nAcom.goog"
+          + "cost_milli_node_hours\030\001 \001(\003B\207\003\nAcom.goog"
           + "le.cloud.aiplatform.v1beta1.schema.train"
           + "ingjob.definitionB\021AutoMLTablesProtoP\001Zg"
           + "google.golang.org/genproto/googleapis/cl"
           + "oud/aiplatform/v1beta1/schema/trainingjo"
-          + "b/definition;definitionb\006proto3"
+          + "b/definition;definition\252\002=Google.Cloud.A"
+          + "IPlatform.V1Beta1.Schema.TrainingJob.Def"
+          + "inition\312\002=Google\\Cloud\\AIPlatform\\V1beta"
+          + "1\\Schema\\TrainingJob\\Definition\352\002CGoogle"
+          + "::Cloud::AIPlatform::V1beta1::Schema::Tr"
+          + "ainingJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

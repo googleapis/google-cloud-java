@@ -23,7 +23,6 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  * <pre>
  * Value for a feature.
- * NEXT ID: 15
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureValue}
@@ -1898,7 +1897,6 @@ public final class FeatureValue extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Value for a feature.
-   * NEXT ID: 15
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureValue}

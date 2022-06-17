@@ -46,12 +46,17 @@ public final class ImageSegmentationPredictionResultProto {
           + "hema.predict.prediction\032\034google/api/anno"
           + "tations.proto\"S\n!ImageSegmentationPredic"
           + "tionResult\022\025\n\rcategory_mask\030\001 \001(\t\022\027\n\017con"
-          + "fidence_mask\030\002 \001(\tB\316\001\n=com.google.cloud."
+          + "fidence_mask\030\002 \001(\tB\210\003\n=com.google.cloud."
           + "aiplatform.v1beta1.schema.predict.predic"
           + "tionB&ImageSegmentationPredictionResultP"
           + "rotoP\001Zcgoogle.golang.org/genproto/googl"
           + "eapis/cloud/aiplatform/v1beta1/schema/pr"
-          + "edict/prediction;predictionb\006proto3"
+          + "edict/prediction;prediction\252\0029Google.Clo"
+          + "ud.AIPlatform.V1Beta1.Schema.Predict.Pre"
+          + "diction\312\0029Google\\Cloud\\AIPlatform\\V1beta"
+          + "1\\Schema\\Predict\\Prediction\352\002?Google::Cl"
+          + "oud::AIPlatform::V1beta1::Schema::Predic"
+          + "t::Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

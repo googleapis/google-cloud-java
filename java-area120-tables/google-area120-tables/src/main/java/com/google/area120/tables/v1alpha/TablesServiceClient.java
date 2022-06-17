@@ -349,7 +349,7 @@ public class TablesServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTablesResponse response = tablesServiceClient.listTablesCallable().call(request);
-   *     for (Table element : response.getResponsesList()) {
+   *     for (Table element : response.getTablesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -537,7 +537,7 @@ public class TablesServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListWorkspacesResponse response =
    *         tablesServiceClient.listWorkspacesCallable().call(request);
-   *     for (Workspace element : response.getResponsesList()) {
+   *     for (Workspace element : response.getWorkspacesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -759,7 +759,7 @@ public class TablesServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListRowsResponse response = tablesServiceClient.listRowsCallable().call(request);
-   *     for (Row element : response.getResponsesList()) {
+   *     for (Row element : response.getRowsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

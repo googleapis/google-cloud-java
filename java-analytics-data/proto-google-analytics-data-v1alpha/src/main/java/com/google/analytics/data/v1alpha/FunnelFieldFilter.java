@@ -25,26 +25,26 @@ package com.google.analytics.data.v1alpha;
  * An expression to filter dimension or metric values.
  * </pre>
  *
- * Protobuf type {@code google.analytics.data.v1alpha.FunnelFilter}
+ * Protobuf type {@code google.analytics.data.v1alpha.FunnelFieldFilter}
  */
-public final class FunnelFilter extends com.google.protobuf.GeneratedMessageV3
+public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.FunnelFilter)
-    FunnelFilterOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.FunnelFieldFilter)
+    FunnelFieldFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use FunnelFilter.newBuilder() to construct.
-  private FunnelFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use FunnelFieldFilter.newBuilder() to construct.
+  private FunnelFieldFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private FunnelFilter() {
+  private FunnelFieldFilter() {
     fieldName_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new FunnelFilter();
+    return new FunnelFieldFilter();
   }
 
   @java.lang.Override
@@ -52,7 +52,7 @@ public final class FunnelFilter extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private FunnelFilter(
+  private FunnelFieldFilter(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -168,17 +168,17 @@ public final class FunnelFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
-        .internal_static_google_analytics_data_v1alpha_FunnelFilter_descriptor;
+        .internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.analytics.data.v1alpha.ReportingApiProto
-        .internal_static_google_analytics_data_v1alpha_FunnelFilter_fieldAccessorTable
+        .internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.analytics.data.v1alpha.FunnelFilter.class,
-            com.google.analytics.data.v1alpha.FunnelFilter.Builder.class);
+            com.google.analytics.data.v1alpha.FunnelFieldFilter.class,
+            com.google.analytics.data.v1alpha.FunnelFieldFilter.Builder.class);
   }
 
   private int oneFilterCase_ = 0;
@@ -558,11 +558,11 @@ public final class FunnelFilter extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.analytics.data.v1alpha.FunnelFilter)) {
+    if (!(obj instanceof com.google.analytics.data.v1alpha.FunnelFieldFilter)) {
       return super.equals(obj);
     }
-    com.google.analytics.data.v1alpha.FunnelFilter other =
-        (com.google.analytics.data.v1alpha.FunnelFilter) obj;
+    com.google.analytics.data.v1alpha.FunnelFieldFilter other =
+        (com.google.analytics.data.v1alpha.FunnelFieldFilter) obj;
 
     if (!getFieldName().equals(other.getFieldName())) return false;
     if (!getOneFilterCase().equals(other.getOneFilterCase())) return false;
@@ -620,71 +620,71 @@ public final class FunnelFilter extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static com.google.analytics.data.v1alpha.FunnelFilter parseFrom(java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.analytics.data.v1alpha.FunnelFieldFilter parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.data.v1alpha.FunnelFilter parseFrom(
+  public static com.google.analytics.data.v1alpha.FunnelFieldFilter parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.FunnelFilter parseFrom(
+  public static com.google.analytics.data.v1alpha.FunnelFieldFilter parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.data.v1alpha.FunnelFilter parseFrom(
+  public static com.google.analytics.data.v1alpha.FunnelFieldFilter parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.FunnelFilter parseFrom(byte[] data)
+  public static com.google.analytics.data.v1alpha.FunnelFieldFilter parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.analytics.data.v1alpha.FunnelFilter parseFrom(
+  public static com.google.analytics.data.v1alpha.FunnelFieldFilter parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.FunnelFilter parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.analytics.data.v1alpha.FunnelFieldFilter parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.data.v1alpha.FunnelFilter parseFrom(
+  public static com.google.analytics.data.v1alpha.FunnelFieldFilter parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.FunnelFilter parseDelimitedFrom(
+  public static com.google.analytics.data.v1alpha.FunnelFieldFilter parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.data.v1alpha.FunnelFilter parseDelimitedFrom(
+  public static com.google.analytics.data.v1alpha.FunnelFieldFilter parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.analytics.data.v1alpha.FunnelFilter parseFrom(
+  public static com.google.analytics.data.v1alpha.FunnelFieldFilter parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.analytics.data.v1alpha.FunnelFilter parseFrom(
+  public static com.google.analytics.data.v1alpha.FunnelFieldFilter parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -701,7 +701,7 @@ public final class FunnelFilter extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.analytics.data.v1alpha.FunnelFilter prototype) {
+  public static Builder newBuilder(com.google.analytics.data.v1alpha.FunnelFieldFilter prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -722,28 +722,28 @@ public final class FunnelFilter extends com.google.protobuf.GeneratedMessageV3
    * An expression to filter dimension or metric values.
    * </pre>
    *
-   * Protobuf type {@code google.analytics.data.v1alpha.FunnelFilter}
+   * Protobuf type {@code google.analytics.data.v1alpha.FunnelFieldFilter}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.analytics.data.v1alpha.FunnelFilter)
-      com.google.analytics.data.v1alpha.FunnelFilterOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.analytics.data.v1alpha.FunnelFieldFilter)
+      com.google.analytics.data.v1alpha.FunnelFieldFilterOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.analytics.data.v1alpha.ReportingApiProto
-          .internal_static_google_analytics_data_v1alpha_FunnelFilter_descriptor;
+          .internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.analytics.data.v1alpha.ReportingApiProto
-          .internal_static_google_analytics_data_v1alpha_FunnelFilter_fieldAccessorTable
+          .internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.analytics.data.v1alpha.FunnelFilter.class,
-              com.google.analytics.data.v1alpha.FunnelFilter.Builder.class);
+              com.google.analytics.data.v1alpha.FunnelFieldFilter.class,
+              com.google.analytics.data.v1alpha.FunnelFieldFilter.Builder.class);
     }
 
-    // Construct using com.google.analytics.data.v1alpha.FunnelFilter.newBuilder()
+    // Construct using com.google.analytics.data.v1alpha.FunnelFieldFilter.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -770,17 +770,17 @@ public final class FunnelFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.analytics.data.v1alpha.ReportingApiProto
-          .internal_static_google_analytics_data_v1alpha_FunnelFilter_descriptor;
+          .internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_descriptor;
     }
 
     @java.lang.Override
-    public com.google.analytics.data.v1alpha.FunnelFilter getDefaultInstanceForType() {
-      return com.google.analytics.data.v1alpha.FunnelFilter.getDefaultInstance();
+    public com.google.analytics.data.v1alpha.FunnelFieldFilter getDefaultInstanceForType() {
+      return com.google.analytics.data.v1alpha.FunnelFieldFilter.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.analytics.data.v1alpha.FunnelFilter build() {
-      com.google.analytics.data.v1alpha.FunnelFilter result = buildPartial();
+    public com.google.analytics.data.v1alpha.FunnelFieldFilter build() {
+      com.google.analytics.data.v1alpha.FunnelFieldFilter result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -788,9 +788,9 @@ public final class FunnelFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.analytics.data.v1alpha.FunnelFilter buildPartial() {
-      com.google.analytics.data.v1alpha.FunnelFilter result =
-          new com.google.analytics.data.v1alpha.FunnelFilter(this);
+    public com.google.analytics.data.v1alpha.FunnelFieldFilter buildPartial() {
+      com.google.analytics.data.v1alpha.FunnelFieldFilter result =
+          new com.google.analytics.data.v1alpha.FunnelFieldFilter(this);
       result.fieldName_ = fieldName_;
       if (oneFilterCase_ == 4) {
         if (stringFilterBuilder_ == null) {
@@ -860,16 +860,17 @@ public final class FunnelFilter extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.analytics.data.v1alpha.FunnelFilter) {
-        return mergeFrom((com.google.analytics.data.v1alpha.FunnelFilter) other);
+      if (other instanceof com.google.analytics.data.v1alpha.FunnelFieldFilter) {
+        return mergeFrom((com.google.analytics.data.v1alpha.FunnelFieldFilter) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.analytics.data.v1alpha.FunnelFilter other) {
-      if (other == com.google.analytics.data.v1alpha.FunnelFilter.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.analytics.data.v1alpha.FunnelFieldFilter other) {
+      if (other == com.google.analytics.data.v1alpha.FunnelFieldFilter.getDefaultInstance())
+        return this;
       if (!other.getFieldName().isEmpty()) {
         fieldName_ = other.fieldName_;
         onChanged();
@@ -915,11 +916,12 @@ public final class FunnelFilter extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.analytics.data.v1alpha.FunnelFilter parsedMessage = null;
+      com.google.analytics.data.v1alpha.FunnelFieldFilter parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.analytics.data.v1alpha.FunnelFilter) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.analytics.data.v1alpha.FunnelFieldFilter) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1900,42 +1902,42 @@ public final class FunnelFilter extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.analytics.data.v1alpha.FunnelFilter)
+    // @@protoc_insertion_point(builder_scope:google.analytics.data.v1alpha.FunnelFieldFilter)
   }
 
-  // @@protoc_insertion_point(class_scope:google.analytics.data.v1alpha.FunnelFilter)
-  private static final com.google.analytics.data.v1alpha.FunnelFilter DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.analytics.data.v1alpha.FunnelFieldFilter)
+  private static final com.google.analytics.data.v1alpha.FunnelFieldFilter DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.analytics.data.v1alpha.FunnelFilter();
+    DEFAULT_INSTANCE = new com.google.analytics.data.v1alpha.FunnelFieldFilter();
   }
 
-  public static com.google.analytics.data.v1alpha.FunnelFilter getDefaultInstance() {
+  public static com.google.analytics.data.v1alpha.FunnelFieldFilter getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FunnelFilter> PARSER =
-      new com.google.protobuf.AbstractParser<FunnelFilter>() {
+  private static final com.google.protobuf.Parser<FunnelFieldFilter> PARSER =
+      new com.google.protobuf.AbstractParser<FunnelFieldFilter>() {
         @java.lang.Override
-        public FunnelFilter parsePartialFrom(
+        public FunnelFieldFilter parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new FunnelFilter(input, extensionRegistry);
+          return new FunnelFieldFilter(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<FunnelFilter> parser() {
+  public static com.google.protobuf.Parser<FunnelFieldFilter> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FunnelFilter> getParserForType() {
+  public com.google.protobuf.Parser<FunnelFieldFilter> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.analytics.data.v1alpha.FunnelFilter getDefaultInstanceForType() {
+  public com.google.analytics.data.v1alpha.FunnelFieldFilter getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

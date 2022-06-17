@@ -4146,7 +4146,7 @@ public class AnalyticsAdminServiceClientTest {
   public void createCustomDimensionTest() throws Exception {
     CustomDimension expectedResponse =
         CustomDimension.newBuilder()
-            .setName(CustomDimensionName.of("[PROPERTY]").toString())
+            .setName(CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]").toString())
             .setParameterName("parameterName-379607596")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -4192,7 +4192,7 @@ public class AnalyticsAdminServiceClientTest {
   public void createCustomDimensionTest2() throws Exception {
     CustomDimension expectedResponse =
         CustomDimension.newBuilder()
-            .setName(CustomDimensionName.of("[PROPERTY]").toString())
+            .setName(CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]").toString())
             .setParameterName("parameterName-379607596")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -4238,7 +4238,7 @@ public class AnalyticsAdminServiceClientTest {
   public void updateCustomDimensionTest() throws Exception {
     CustomDimension expectedResponse =
         CustomDimension.newBuilder()
-            .setName(CustomDimensionName.of("[PROPERTY]").toString())
+            .setName(CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]").toString())
             .setParameterName("parameterName-379607596")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -4375,7 +4375,7 @@ public class AnalyticsAdminServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
-    CustomDimensionName name = CustomDimensionName.of("[PROPERTY]");
+    CustomDimensionName name = CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]");
 
     client.archiveCustomDimension(name);
 
@@ -4397,7 +4397,7 @@ public class AnalyticsAdminServiceClientTest {
     mockAnalyticsAdminService.addException(exception);
 
     try {
-      CustomDimensionName name = CustomDimensionName.of("[PROPERTY]");
+      CustomDimensionName name = CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]");
       client.archiveCustomDimension(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4444,7 +4444,7 @@ public class AnalyticsAdminServiceClientTest {
   public void getCustomDimensionTest() throws Exception {
     CustomDimension expectedResponse =
         CustomDimension.newBuilder()
-            .setName(CustomDimensionName.of("[PROPERTY]").toString())
+            .setName(CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]").toString())
             .setParameterName("parameterName-379607596")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -4452,7 +4452,7 @@ public class AnalyticsAdminServiceClientTest {
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
-    CustomDimensionName name = CustomDimensionName.of("[PROPERTY]");
+    CustomDimensionName name = CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]");
 
     CustomDimension actualResponse = client.getCustomDimension(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -4474,7 +4474,7 @@ public class AnalyticsAdminServiceClientTest {
     mockAnalyticsAdminService.addException(exception);
 
     try {
-      CustomDimensionName name = CustomDimensionName.of("[PROPERTY]");
+      CustomDimensionName name = CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]");
       client.getCustomDimension(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4486,7 +4486,7 @@ public class AnalyticsAdminServiceClientTest {
   public void getCustomDimensionTest2() throws Exception {
     CustomDimension expectedResponse =
         CustomDimension.newBuilder()
-            .setName(CustomDimensionName.of("[PROPERTY]").toString())
+            .setName(CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]").toString())
             .setParameterName("parameterName-379607596")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -4528,7 +4528,7 @@ public class AnalyticsAdminServiceClientTest {
   public void createCustomMetricTest() throws Exception {
     CustomMetric expectedResponse =
         CustomMetric.newBuilder()
-            .setName(CustomMetricName.of("[PROPERTY]").toString())
+            .setName(CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]").toString())
             .setParameterName("parameterName-379607596")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -4573,7 +4573,7 @@ public class AnalyticsAdminServiceClientTest {
   public void createCustomMetricTest2() throws Exception {
     CustomMetric expectedResponse =
         CustomMetric.newBuilder()
-            .setName(CustomMetricName.of("[PROPERTY]").toString())
+            .setName(CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]").toString())
             .setParameterName("parameterName-379607596")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -4618,7 +4618,7 @@ public class AnalyticsAdminServiceClientTest {
   public void updateCustomMetricTest() throws Exception {
     CustomMetric expectedResponse =
         CustomMetric.newBuilder()
-            .setName(CustomMetricName.of("[PROPERTY]").toString())
+            .setName(CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]").toString())
             .setParameterName("parameterName-379607596")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -4752,7 +4752,7 @@ public class AnalyticsAdminServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
-    CustomMetricName name = CustomMetricName.of("[PROPERTY]");
+    CustomMetricName name = CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]");
 
     client.archiveCustomMetric(name);
 
@@ -4773,7 +4773,7 @@ public class AnalyticsAdminServiceClientTest {
     mockAnalyticsAdminService.addException(exception);
 
     try {
-      CustomMetricName name = CustomMetricName.of("[PROPERTY]");
+      CustomMetricName name = CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]");
       client.archiveCustomMetric(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4819,7 +4819,7 @@ public class AnalyticsAdminServiceClientTest {
   public void getCustomMetricTest() throws Exception {
     CustomMetric expectedResponse =
         CustomMetric.newBuilder()
-            .setName(CustomMetricName.of("[PROPERTY]").toString())
+            .setName(CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]").toString())
             .setParameterName("parameterName-379607596")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -4827,7 +4827,7 @@ public class AnalyticsAdminServiceClientTest {
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
-    CustomMetricName name = CustomMetricName.of("[PROPERTY]");
+    CustomMetricName name = CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]");
 
     CustomMetric actualResponse = client.getCustomMetric(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -4849,7 +4849,7 @@ public class AnalyticsAdminServiceClientTest {
     mockAnalyticsAdminService.addException(exception);
 
     try {
-      CustomMetricName name = CustomMetricName.of("[PROPERTY]");
+      CustomMetricName name = CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]");
       client.getCustomMetric(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4861,7 +4861,7 @@ public class AnalyticsAdminServiceClientTest {
   public void getCustomMetricTest2() throws Exception {
     CustomMetric expectedResponse =
         CustomMetric.newBuilder()
-            .setName(CustomMetricName.of("[PROPERTY]").toString())
+            .setName(CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]").toString())
             .setParameterName("parameterName-379607596")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")

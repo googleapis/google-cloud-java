@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.aiplatform.v1.stub;
 import static com.google.cloud.aiplatform.v1.FeaturestoreServiceClient.ListEntityTypesPagedResponse;
 import static com.google.cloud.aiplatform.v1.FeaturestoreServiceClient.ListFeaturesPagedResponse;
 import static com.google.cloud.aiplatform.v1.FeaturestoreServiceClient.ListFeaturestoresPagedResponse;
+import static com.google.cloud.aiplatform.v1.FeaturestoreServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.FeaturestoreServiceClient.SearchFeaturesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -64,6 +65,15 @@ import com.google.cloud.aiplatform.v1.UpdateEntityTypeRequest;
 import com.google.cloud.aiplatform.v1.UpdateFeatureRequest;
 import com.google.cloud.aiplatform.v1.UpdateFeaturestoreOperationMetadata;
 import com.google.cloud.aiplatform.v1.UpdateFeaturestoreRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -256,6 +266,32 @@ public abstract class FeaturestoreServiceStub implements BackgroundResource {
 
   public UnaryCallable<SearchFeaturesRequest, SearchFeaturesResponse> searchFeaturesCallable() {
     throw new UnsupportedOperationException("Not implemented: searchFeaturesCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

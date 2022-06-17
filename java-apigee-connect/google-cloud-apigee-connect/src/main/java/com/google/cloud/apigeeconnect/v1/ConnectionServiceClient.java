@@ -286,7 +286,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListConnectionsResponse response =
    *         connectionServiceClient.listConnectionsCallable().call(request);
-   *     for (Connection element : response.getResponsesList()) {
+   *     for (Connection element : response.getConnectionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

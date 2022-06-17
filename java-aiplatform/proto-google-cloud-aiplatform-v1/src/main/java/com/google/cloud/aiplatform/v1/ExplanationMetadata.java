@@ -39,6 +39,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
 
   private ExplanationMetadata() {
     featureAttributionsSchemaUri_ = "";
+    latentSpaceSource_ = "";
   }
 
   @java.lang.Override
@@ -111,6 +112,13 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
               java.lang.String s = input.readStringRequireUtf8();
 
               featureAttributionsSchemaUri_ = s;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              latentSpaceSource_ = s;
               break;
             }
           default:
@@ -10590,6 +10598,55 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int LATENT_SPACE_SOURCE_FIELD_NUMBER = 5;
+  private volatile java.lang.Object latentSpaceSource_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the source to generate embeddings for example based explanations.
+   * </pre>
+   *
+   * <code>string latent_space_source = 5;</code>
+   *
+   * @return The latentSpaceSource.
+   */
+  @java.lang.Override
+  public java.lang.String getLatentSpaceSource() {
+    java.lang.Object ref = latentSpaceSource_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      latentSpaceSource_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the source to generate embeddings for example based explanations.
+   * </pre>
+   *
+   * <code>string latent_space_source = 5;</code>
+   *
+   * @return The bytes for latentSpaceSource.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLatentSpaceSourceBytes() {
+    java.lang.Object ref = latentSpaceSource_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      latentSpaceSource_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -10610,6 +10667,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
         output, internalGetOutputs(), OutputsDefaultEntryHolder.defaultEntry, 2);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(featureAttributionsSchemaUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, featureAttributionsSchemaUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latentSpaceSource_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, latentSpaceSource_);
     }
     unknownFields.writeTo(output);
   }
@@ -10651,6 +10711,9 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               3, featureAttributionsSchemaUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(latentSpaceSource_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, latentSpaceSource_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10671,6 +10734,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     if (!internalGetOutputs().equals(other.internalGetOutputs())) return false;
     if (!getFeatureAttributionsSchemaUri().equals(other.getFeatureAttributionsSchemaUri()))
       return false;
+    if (!getLatentSpaceSource().equals(other.getLatentSpaceSource())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -10692,6 +10756,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + FEATURE_ATTRIBUTIONS_SCHEMA_URI_FIELD_NUMBER;
     hash = (53 * hash) + getFeatureAttributionsSchemaUri().hashCode();
+    hash = (37 * hash) + LATENT_SPACE_SOURCE_FIELD_NUMBER;
+    hash = (53 * hash) + getLatentSpaceSource().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -10865,6 +10931,8 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       internalGetMutableOutputs().clear();
       featureAttributionsSchemaUri_ = "";
 
+      latentSpaceSource_ = "";
+
       return this;
     }
 
@@ -10898,6 +10966,7 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       result.outputs_ = internalGetOutputs();
       result.outputs_.makeImmutable();
       result.featureAttributionsSchemaUri_ = featureAttributionsSchemaUri_;
+      result.latentSpaceSource_ = latentSpaceSource_;
       onBuilt();
       return result;
     }
@@ -10952,6 +11021,10 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       internalGetMutableOutputs().mergeFrom(other.internalGetOutputs());
       if (!other.getFeatureAttributionsSchemaUri().isEmpty()) {
         featureAttributionsSchemaUri_ = other.featureAttributionsSchemaUri_;
+        onChanged();
+      }
+      if (!other.getLatentSpaceSource().isEmpty()) {
+        latentSpaceSource_ = other.latentSpaceSource_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -11616,6 +11689,112 @@ public final class ExplanationMetadata extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
 
       featureAttributionsSchemaUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object latentSpaceSource_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the source to generate embeddings for example based explanations.
+     * </pre>
+     *
+     * <code>string latent_space_source = 5;</code>
+     *
+     * @return The latentSpaceSource.
+     */
+    public java.lang.String getLatentSpaceSource() {
+      java.lang.Object ref = latentSpaceSource_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        latentSpaceSource_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the source to generate embeddings for example based explanations.
+     * </pre>
+     *
+     * <code>string latent_space_source = 5;</code>
+     *
+     * @return The bytes for latentSpaceSource.
+     */
+    public com.google.protobuf.ByteString getLatentSpaceSourceBytes() {
+      java.lang.Object ref = latentSpaceSource_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        latentSpaceSource_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the source to generate embeddings for example based explanations.
+     * </pre>
+     *
+     * <code>string latent_space_source = 5;</code>
+     *
+     * @param value The latentSpaceSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLatentSpaceSource(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      latentSpaceSource_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the source to generate embeddings for example based explanations.
+     * </pre>
+     *
+     * <code>string latent_space_source = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLatentSpaceSource() {
+
+      latentSpaceSource_ = getDefaultInstance().getLatentSpaceSource();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the source to generate embeddings for example based explanations.
+     * </pre>
+     *
+     * <code>string latent_space_source = 5;</code>
+     *
+     * @param value The bytes for latentSpaceSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLatentSpaceSourceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      latentSpaceSource_ = value;
       onChanged();
       return this;
     }

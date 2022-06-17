@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Vertex AI API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= DatasetServiceClient =======================
  *
@@ -25,6 +27,8 @@
  * <p>Sample for DatasetServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
  *   DatasetName name = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
  *   Dataset response = datasetServiceClient.getDataset(name);
@@ -38,6 +42,8 @@
  * <p>Sample for EndpointServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
  *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
  *   Endpoint response = endpointServiceClient.getEndpoint(name);
@@ -51,6 +57,8 @@
  * <p>Sample for FeaturestoreOnlineServingServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (FeaturestoreOnlineServingServiceClient featurestoreOnlineServingServiceClient =
  *     FeaturestoreOnlineServingServiceClient.create()) {
  *   EntityTypeName entityType =
@@ -67,6 +75,8 @@
  * <p>Sample for FeaturestoreServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
  *   FeaturestoreName name = FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]");
  *   Featurestore response = featurestoreServiceClient.getFeaturestore(name);
@@ -80,6 +90,8 @@
  * <p>Sample for IndexEndpointServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (IndexEndpointServiceClient indexEndpointServiceClient =
  *     IndexEndpointServiceClient.create()) {
  *   IndexEndpointName name = IndexEndpointName.of("[PROJECT]", "[LOCATION]", "[INDEX_ENDPOINT]");
@@ -94,6 +106,8 @@
  * <p>Sample for IndexServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (IndexServiceClient indexServiceClient = IndexServiceClient.create()) {
  *   IndexName name = IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]");
  *   Index response = indexServiceClient.getIndex(name);
@@ -107,6 +121,8 @@
  * <p>Sample for JobServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   CustomJob customJob = CustomJob.newBuilder().build();
@@ -121,6 +137,8 @@
  * <p>Sample for MetadataServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (MetadataServiceClient metadataServiceClient = MetadataServiceClient.create()) {
  *   MetadataStoreName name = MetadataStoreName.of("[PROJECT]", "[LOCATION]", "[METADATA_STORE]");
  *   MetadataStore response = metadataServiceClient.getMetadataStore(name);
@@ -135,12 +153,11 @@
  * <p>Sample for MigrationServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (MigrationServiceClient migrationServiceClient = MigrationServiceClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   for (MigratableResource element :
- *       migrationServiceClient.searchMigratableResources(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+ *   Location response = migrationServiceClient.getLocation(request);
  * }
  * }</pre>
  *
@@ -151,6 +168,8 @@
  * <p>Sample for ModelServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
  *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
  *   Model response = modelServiceClient.getModel(name);
@@ -166,6 +185,8 @@
  * <p>Sample for PipelineServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (PipelineServiceClient pipelineServiceClient = PipelineServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   TrainingPipeline trainingPipeline = TrainingPipeline.newBuilder().build();
@@ -181,10 +202,12 @@
  * <p>Sample for PredictionServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
  *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
  *   List<Value> instances = new ArrayList<>();
- *   Value parameters = Value.newBuilder().build();
+ *   Value parameters = Value.newBuilder().setBoolValue(true).build();
  *   PredictResponse response = predictionServiceClient.predict(endpoint, instances, parameters);
  * }
  * }</pre>
@@ -200,6 +223,8 @@
  * <p>Sample for SpecialistPoolServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SpecialistPoolServiceClient specialistPoolServiceClient =
  *     SpecialistPoolServiceClient.create()) {
  *   SpecialistPoolName name =
@@ -215,6 +240,8 @@
  * <p>Sample for TensorboardServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
  *   TensorboardName name = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]");
  *   Tensorboard response = tensorboardServiceClient.getTensorboard(name);
@@ -231,6 +258,8 @@
  * <p>Sample for VizierServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Study study = Study.newBuilder().build();

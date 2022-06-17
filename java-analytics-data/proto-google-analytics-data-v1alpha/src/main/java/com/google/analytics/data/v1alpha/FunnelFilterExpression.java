@@ -131,15 +131,17 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
             }
           case 34:
             {
-              com.google.analytics.data.v1alpha.FunnelFilter.Builder subBuilder = null;
+              com.google.analytics.data.v1alpha.FunnelFieldFilter.Builder subBuilder = null;
               if (exprCase_ == 4) {
-                subBuilder = ((com.google.analytics.data.v1alpha.FunnelFilter) expr_).toBuilder();
+                subBuilder =
+                    ((com.google.analytics.data.v1alpha.FunnelFieldFilter) expr_).toBuilder();
               }
               expr_ =
                   input.readMessage(
-                      com.google.analytics.data.v1alpha.FunnelFilter.parser(), extensionRegistry);
+                      com.google.analytics.data.v1alpha.FunnelFieldFilter.parser(),
+                      extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.analytics.data.v1alpha.FunnelFilter) expr_);
+                subBuilder.mergeFrom((com.google.analytics.data.v1alpha.FunnelFieldFilter) expr_);
                 expr_ = subBuilder.buildPartial();
               }
               exprCase_ = 4;
@@ -209,7 +211,7 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
     AND_GROUP(1),
     OR_GROUP(2),
     NOT_EXPRESSION(3),
-    FUNNEL_FILTER(4),
+    FUNNEL_FIELD_FILTER(4),
     FUNNEL_EVENT_FILTER(5),
     EXPR_NOT_SET(0);
     private final int value;
@@ -236,7 +238,7 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
         case 3:
           return NOT_EXPRESSION;
         case 4:
-          return FUNNEL_FILTER;
+          return FUNNEL_FIELD_FILTER;
         case 5:
           return FUNNEL_EVENT_FILTER;
         case 0:
@@ -411,55 +413,56 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
     return com.google.analytics.data.v1alpha.FunnelFilterExpression.getDefaultInstance();
   }
 
-  public static final int FUNNEL_FILTER_FIELD_NUMBER = 4;
+  public static final int FUNNEL_FIELD_FILTER_FIELD_NUMBER = 4;
   /**
    *
    *
    * <pre>
-   * A primitive funnel filter.
+   * A funnel filter for a dimension or metric.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+   * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
    *
-   * @return Whether the funnelFilter field is set.
+   * @return Whether the funnelFieldFilter field is set.
    */
   @java.lang.Override
-  public boolean hasFunnelFilter() {
+  public boolean hasFunnelFieldFilter() {
     return exprCase_ == 4;
   }
   /**
    *
    *
    * <pre>
-   * A primitive funnel filter.
+   * A funnel filter for a dimension or metric.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+   * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
    *
-   * @return The funnelFilter.
+   * @return The funnelFieldFilter.
    */
   @java.lang.Override
-  public com.google.analytics.data.v1alpha.FunnelFilter getFunnelFilter() {
+  public com.google.analytics.data.v1alpha.FunnelFieldFilter getFunnelFieldFilter() {
     if (exprCase_ == 4) {
-      return (com.google.analytics.data.v1alpha.FunnelFilter) expr_;
+      return (com.google.analytics.data.v1alpha.FunnelFieldFilter) expr_;
     }
-    return com.google.analytics.data.v1alpha.FunnelFilter.getDefaultInstance();
+    return com.google.analytics.data.v1alpha.FunnelFieldFilter.getDefaultInstance();
   }
   /**
    *
    *
    * <pre>
-   * A primitive funnel filter.
+   * A funnel filter for a dimension or metric.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+   * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
    */
   @java.lang.Override
-  public com.google.analytics.data.v1alpha.FunnelFilterOrBuilder getFunnelFilterOrBuilder() {
+  public com.google.analytics.data.v1alpha.FunnelFieldFilterOrBuilder
+      getFunnelFieldFilterOrBuilder() {
     if (exprCase_ == 4) {
-      return (com.google.analytics.data.v1alpha.FunnelFilter) expr_;
+      return (com.google.analytics.data.v1alpha.FunnelFieldFilter) expr_;
     }
-    return com.google.analytics.data.v1alpha.FunnelFilter.getDefaultInstance();
+    return com.google.analytics.data.v1alpha.FunnelFieldFilter.getDefaultInstance();
   }
 
   public static final int FUNNEL_EVENT_FILTER_FIELD_NUMBER = 5;
@@ -547,7 +550,7 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
       output.writeMessage(3, (com.google.analytics.data.v1alpha.FunnelFilterExpression) expr_);
     }
     if (exprCase_ == 4) {
-      output.writeMessage(4, (com.google.analytics.data.v1alpha.FunnelFilter) expr_);
+      output.writeMessage(4, (com.google.analytics.data.v1alpha.FunnelFieldFilter) expr_);
     }
     if (exprCase_ == 5) {
       output.writeMessage(5, (com.google.analytics.data.v1alpha.FunnelEventFilter) expr_);
@@ -579,7 +582,7 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
     if (exprCase_ == 4) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              4, (com.google.analytics.data.v1alpha.FunnelFilter) expr_);
+              4, (com.google.analytics.data.v1alpha.FunnelFieldFilter) expr_);
     }
     if (exprCase_ == 5) {
       size +=
@@ -614,7 +617,7 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
         if (!getNotExpression().equals(other.getNotExpression())) return false;
         break;
       case 4:
-        if (!getFunnelFilter().equals(other.getFunnelFilter())) return false;
+        if (!getFunnelFieldFilter().equals(other.getFunnelFieldFilter())) return false;
         break;
       case 5:
         if (!getFunnelEventFilter().equals(other.getFunnelEventFilter())) return false;
@@ -647,8 +650,8 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
         hash = (53 * hash) + getNotExpression().hashCode();
         break;
       case 4:
-        hash = (37 * hash) + FUNNEL_FILTER_FIELD_NUMBER;
-        hash = (53 * hash) + getFunnelFilter().hashCode();
+        hash = (37 * hash) + FUNNEL_FIELD_FILTER_FIELD_NUMBER;
+        hash = (53 * hash) + getFunnelFieldFilter().hashCode();
         break;
       case 5:
         hash = (37 * hash) + FUNNEL_EVENT_FILTER_FIELD_NUMBER;
@@ -854,10 +857,10 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
         }
       }
       if (exprCase_ == 4) {
-        if (funnelFilterBuilder_ == null) {
+        if (funnelFieldFilterBuilder_ == null) {
           result.expr_ = expr_;
         } else {
-          result.expr_ = funnelFilterBuilder_.build();
+          result.expr_ = funnelFieldFilterBuilder_.build();
         }
       }
       if (exprCase_ == 5) {
@@ -934,9 +937,9 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
             mergeNotExpression(other.getNotExpression());
             break;
           }
-        case FUNNEL_FILTER:
+        case FUNNEL_FIELD_FILTER:
           {
-            mergeFunnelFilter(other.getFunnelFilter());
+            mergeFunnelFieldFilter(other.getFunnelFieldFilter());
             break;
           }
         case FUNNEL_EVENT_FILTER:
@@ -1639,68 +1642,68 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.analytics.data.v1alpha.FunnelFilter,
-            com.google.analytics.data.v1alpha.FunnelFilter.Builder,
-            com.google.analytics.data.v1alpha.FunnelFilterOrBuilder>
-        funnelFilterBuilder_;
+            com.google.analytics.data.v1alpha.FunnelFieldFilter,
+            com.google.analytics.data.v1alpha.FunnelFieldFilter.Builder,
+            com.google.analytics.data.v1alpha.FunnelFieldFilterOrBuilder>
+        funnelFieldFilterBuilder_;
     /**
      *
      *
      * <pre>
-     * A primitive funnel filter.
+     * A funnel filter for a dimension or metric.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+     * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
      *
-     * @return Whether the funnelFilter field is set.
+     * @return Whether the funnelFieldFilter field is set.
      */
     @java.lang.Override
-    public boolean hasFunnelFilter() {
+    public boolean hasFunnelFieldFilter() {
       return exprCase_ == 4;
     }
     /**
      *
      *
      * <pre>
-     * A primitive funnel filter.
+     * A funnel filter for a dimension or metric.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+     * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
      *
-     * @return The funnelFilter.
+     * @return The funnelFieldFilter.
      */
     @java.lang.Override
-    public com.google.analytics.data.v1alpha.FunnelFilter getFunnelFilter() {
-      if (funnelFilterBuilder_ == null) {
+    public com.google.analytics.data.v1alpha.FunnelFieldFilter getFunnelFieldFilter() {
+      if (funnelFieldFilterBuilder_ == null) {
         if (exprCase_ == 4) {
-          return (com.google.analytics.data.v1alpha.FunnelFilter) expr_;
+          return (com.google.analytics.data.v1alpha.FunnelFieldFilter) expr_;
         }
-        return com.google.analytics.data.v1alpha.FunnelFilter.getDefaultInstance();
+        return com.google.analytics.data.v1alpha.FunnelFieldFilter.getDefaultInstance();
       } else {
         if (exprCase_ == 4) {
-          return funnelFilterBuilder_.getMessage();
+          return funnelFieldFilterBuilder_.getMessage();
         }
-        return com.google.analytics.data.v1alpha.FunnelFilter.getDefaultInstance();
+        return com.google.analytics.data.v1alpha.FunnelFieldFilter.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * A primitive funnel filter.
+     * A funnel filter for a dimension or metric.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+     * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
      */
-    public Builder setFunnelFilter(com.google.analytics.data.v1alpha.FunnelFilter value) {
-      if (funnelFilterBuilder_ == null) {
+    public Builder setFunnelFieldFilter(com.google.analytics.data.v1alpha.FunnelFieldFilter value) {
+      if (funnelFieldFilterBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         expr_ = value;
         onChanged();
       } else {
-        funnelFilterBuilder_.setMessage(value);
+        funnelFieldFilterBuilder_.setMessage(value);
       }
       exprCase_ = 4;
       return this;
@@ -1709,18 +1712,18 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A primitive funnel filter.
+     * A funnel filter for a dimension or metric.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+     * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
      */
-    public Builder setFunnelFilter(
-        com.google.analytics.data.v1alpha.FunnelFilter.Builder builderForValue) {
-      if (funnelFilterBuilder_ == null) {
+    public Builder setFunnelFieldFilter(
+        com.google.analytics.data.v1alpha.FunnelFieldFilter.Builder builderForValue) {
+      if (funnelFieldFilterBuilder_ == null) {
         expr_ = builderForValue.build();
         onChanged();
       } else {
-        funnelFilterBuilder_.setMessage(builderForValue.build());
+        funnelFieldFilterBuilder_.setMessage(builderForValue.build());
       }
       exprCase_ = 4;
       return this;
@@ -1729,18 +1732,19 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A primitive funnel filter.
+     * A funnel filter for a dimension or metric.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+     * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
      */
-    public Builder mergeFunnelFilter(com.google.analytics.data.v1alpha.FunnelFilter value) {
-      if (funnelFilterBuilder_ == null) {
+    public Builder mergeFunnelFieldFilter(
+        com.google.analytics.data.v1alpha.FunnelFieldFilter value) {
+      if (funnelFieldFilterBuilder_ == null) {
         if (exprCase_ == 4
-            && expr_ != com.google.analytics.data.v1alpha.FunnelFilter.getDefaultInstance()) {
+            && expr_ != com.google.analytics.data.v1alpha.FunnelFieldFilter.getDefaultInstance()) {
           expr_ =
-              com.google.analytics.data.v1alpha.FunnelFilter.newBuilder(
-                      (com.google.analytics.data.v1alpha.FunnelFilter) expr_)
+              com.google.analytics.data.v1alpha.FunnelFieldFilter.newBuilder(
+                      (com.google.analytics.data.v1alpha.FunnelFieldFilter) expr_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
@@ -1749,9 +1753,9 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
         onChanged();
       } else {
         if (exprCase_ == 4) {
-          funnelFilterBuilder_.mergeFrom(value);
+          funnelFieldFilterBuilder_.mergeFrom(value);
         } else {
-          funnelFilterBuilder_.setMessage(value);
+          funnelFieldFilterBuilder_.setMessage(value);
         }
       }
       exprCase_ = 4;
@@ -1761,13 +1765,13 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A primitive funnel filter.
+     * A funnel filter for a dimension or metric.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+     * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
      */
-    public Builder clearFunnelFilter() {
-      if (funnelFilterBuilder_ == null) {
+    public Builder clearFunnelFieldFilter() {
+      if (funnelFieldFilterBuilder_ == null) {
         if (exprCase_ == 4) {
           exprCase_ = 0;
           expr_ = null;
@@ -1778,7 +1782,7 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
           exprCase_ = 0;
           expr_ = null;
         }
-        funnelFilterBuilder_.clear();
+        funnelFieldFilterBuilder_.clear();
       }
       return this;
     }
@@ -1786,58 +1790,60 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * A primitive funnel filter.
+     * A funnel filter for a dimension or metric.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+     * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
      */
-    public com.google.analytics.data.v1alpha.FunnelFilter.Builder getFunnelFilterBuilder() {
-      return getFunnelFilterFieldBuilder().getBuilder();
+    public com.google.analytics.data.v1alpha.FunnelFieldFilter.Builder
+        getFunnelFieldFilterBuilder() {
+      return getFunnelFieldFilterFieldBuilder().getBuilder();
     }
     /**
      *
      *
      * <pre>
-     * A primitive funnel filter.
+     * A funnel filter for a dimension or metric.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+     * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
      */
     @java.lang.Override
-    public com.google.analytics.data.v1alpha.FunnelFilterOrBuilder getFunnelFilterOrBuilder() {
-      if ((exprCase_ == 4) && (funnelFilterBuilder_ != null)) {
-        return funnelFilterBuilder_.getMessageOrBuilder();
+    public com.google.analytics.data.v1alpha.FunnelFieldFilterOrBuilder
+        getFunnelFieldFilterOrBuilder() {
+      if ((exprCase_ == 4) && (funnelFieldFilterBuilder_ != null)) {
+        return funnelFieldFilterBuilder_.getMessageOrBuilder();
       } else {
         if (exprCase_ == 4) {
-          return (com.google.analytics.data.v1alpha.FunnelFilter) expr_;
+          return (com.google.analytics.data.v1alpha.FunnelFieldFilter) expr_;
         }
-        return com.google.analytics.data.v1alpha.FunnelFilter.getDefaultInstance();
+        return com.google.analytics.data.v1alpha.FunnelFieldFilter.getDefaultInstance();
       }
     }
     /**
      *
      *
      * <pre>
-     * A primitive funnel filter.
+     * A funnel filter for a dimension or metric.
      * </pre>
      *
-     * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+     * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.analytics.data.v1alpha.FunnelFilter,
-            com.google.analytics.data.v1alpha.FunnelFilter.Builder,
-            com.google.analytics.data.v1alpha.FunnelFilterOrBuilder>
-        getFunnelFilterFieldBuilder() {
-      if (funnelFilterBuilder_ == null) {
+            com.google.analytics.data.v1alpha.FunnelFieldFilter,
+            com.google.analytics.data.v1alpha.FunnelFieldFilter.Builder,
+            com.google.analytics.data.v1alpha.FunnelFieldFilterOrBuilder>
+        getFunnelFieldFilterFieldBuilder() {
+      if (funnelFieldFilterBuilder_ == null) {
         if (!(exprCase_ == 4)) {
-          expr_ = com.google.analytics.data.v1alpha.FunnelFilter.getDefaultInstance();
+          expr_ = com.google.analytics.data.v1alpha.FunnelFieldFilter.getDefaultInstance();
         }
-        funnelFilterBuilder_ =
+        funnelFieldFilterBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.analytics.data.v1alpha.FunnelFilter,
-                com.google.analytics.data.v1alpha.FunnelFilter.Builder,
-                com.google.analytics.data.v1alpha.FunnelFilterOrBuilder>(
-                (com.google.analytics.data.v1alpha.FunnelFilter) expr_,
+                com.google.analytics.data.v1alpha.FunnelFieldFilter,
+                com.google.analytics.data.v1alpha.FunnelFieldFilter.Builder,
+                com.google.analytics.data.v1alpha.FunnelFieldFilterOrBuilder>(
+                (com.google.analytics.data.v1alpha.FunnelFieldFilter) expr_,
                 getParentForChildren(),
                 isClean());
         expr_ = null;
@@ -1845,7 +1851,7 @@ public final class FunnelFilterExpression extends com.google.protobuf.GeneratedM
       exprCase_ = 4;
       onChanged();
       ;
-      return funnelFilterBuilder_;
+      return funnelFieldFilterBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -262,6 +262,55 @@ public final class ModelServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest,
+          com.google.longrunning.Operation>
+      getUpdateExplanationDatasetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateExplanationDataset",
+      requestType = com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest,
+          com.google.longrunning.Operation>
+      getUpdateExplanationDatasetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest,
+            com.google.longrunning.Operation>
+        getUpdateExplanationDatasetMethod;
+    if ((getUpdateExplanationDatasetMethod = ModelServiceGrpc.getUpdateExplanationDatasetMethod)
+        == null) {
+      synchronized (ModelServiceGrpc.class) {
+        if ((getUpdateExplanationDatasetMethod = ModelServiceGrpc.getUpdateExplanationDatasetMethod)
+            == null) {
+          ModelServiceGrpc.getUpdateExplanationDatasetMethod =
+              getUpdateExplanationDatasetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateExplanationDataset"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelServiceMethodDescriptorSupplier("UpdateExplanationDataset"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateExplanationDatasetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.DeleteModelRequest, com.google.longrunning.Operation>
       getDeleteModelMethod;
 
@@ -812,6 +861,20 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Incrementally update the dataset used for an examples model.
+     * </pre>
+     */
+    public void updateExplanationDataset(
+        com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateExplanationDatasetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Model.
      * A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] resource has a
      * [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] based on the model in its
@@ -985,6 +1048,12 @@ public final class ModelServiceGrpc {
                       com.google.cloud.aiplatform.v1beta1.UpdateModelRequest,
                       com.google.cloud.aiplatform.v1beta1.Model>(this, METHODID_UPDATE_MODEL)))
           .addMethod(
+              getUpdateExplanationDatasetMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UPDATE_EXPLANATION_DATASET)))
+          .addMethod(
               getDeleteModelMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -1140,6 +1209,22 @@ public final class ModelServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Model> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateModelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Incrementally update the dataset used for an examples model.
+     * </pre>
+     */
+    public void updateExplanationDataset(
+        com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateExplanationDatasetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1392,6 +1477,19 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Incrementally update the dataset used for an examples model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateExplanationDataset(
+        com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateExplanationDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Model.
      * A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] resource has a
      * [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] based on the model in its
@@ -1607,6 +1705,20 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Incrementally update the dataset used for an examples model.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateExplanationDataset(
+            com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateExplanationDatasetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Model.
      * A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] resource has a
      * [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] based on the model in its
@@ -1745,15 +1857,16 @@ public final class ModelServiceGrpc {
   private static final int METHODID_LIST_MODELS = 2;
   private static final int METHODID_LIST_MODEL_VERSIONS = 3;
   private static final int METHODID_UPDATE_MODEL = 4;
-  private static final int METHODID_DELETE_MODEL = 5;
-  private static final int METHODID_DELETE_MODEL_VERSION = 6;
-  private static final int METHODID_MERGE_VERSION_ALIASES = 7;
-  private static final int METHODID_EXPORT_MODEL = 8;
-  private static final int METHODID_IMPORT_MODEL_EVALUATION = 9;
-  private static final int METHODID_GET_MODEL_EVALUATION = 10;
-  private static final int METHODID_LIST_MODEL_EVALUATIONS = 11;
-  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 12;
-  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 13;
+  private static final int METHODID_UPDATE_EXPLANATION_DATASET = 5;
+  private static final int METHODID_DELETE_MODEL = 6;
+  private static final int METHODID_DELETE_MODEL_VERSION = 7;
+  private static final int METHODID_MERGE_VERSION_ALIASES = 8;
+  private static final int METHODID_EXPORT_MODEL = 9;
+  private static final int METHODID_IMPORT_MODEL_EVALUATION = 10;
+  private static final int METHODID_GET_MODEL_EVALUATION = 11;
+  private static final int METHODID_LIST_MODEL_EVALUATIONS = 12;
+  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 13;
+  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1801,6 +1914,11 @@ public final class ModelServiceGrpc {
               (com.google.cloud.aiplatform.v1beta1.UpdateModelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Model>)
                   responseObserver);
+          break;
+        case METHODID_UPDATE_EXPLANATION_DATASET:
+          serviceImpl.updateExplanationDataset(
+              (com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_MODEL:
           serviceImpl.deleteModel(
@@ -1925,6 +2043,7 @@ public final class ModelServiceGrpc {
                       .addMethod(getListModelsMethod())
                       .addMethod(getListModelVersionsMethod())
                       .addMethod(getUpdateModelMethod())
+                      .addMethod(getUpdateExplanationDatasetMethod())
                       .addMethod(getDeleteModelMethod())
                       .addMethod(getDeleteModelVersionMethod())
                       .addMethod(getMergeVersionAliasesMethod())
