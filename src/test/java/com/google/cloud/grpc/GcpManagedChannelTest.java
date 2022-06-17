@@ -52,6 +52,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Handler;
@@ -81,11 +83,19 @@ public final class GcpManagedChannelTest {
   private final List<LogRecord> logRecords = new LinkedList<>();
 
   private String lastLogMessage() {
-    return logRecords.get(logRecords.size() - 1).getMessage();
+    return lastLogMessage(1);
+  }
+
+  private String lastLogMessage(int nthFromLast) {
+    return logRecords.get(logRecords.size() - nthFromLast).getMessage();
   }
 
   private Level lastLogLevel() {
-    return logRecords.get(logRecords.size() - 1).getLevel();
+    return lastLogLevel(1);
+  }
+
+  private Level lastLogLevel(int nthFromLast) {
+    return logRecords.get(logRecords.size() - nthFromLast).getLevel();
   }
 
   private final Handler testLogHandler = new Handler() {
@@ -213,10 +223,27 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testGetChannelRefInitialization() {
+    // Watch debug messages.
+    testLogger.setLevel(Level.FINER);
+
+    final int currentIndex = GcpManagedChannel.channelPoolIndex.get();
+    final String poolIndex = String.format("pool-%d", currentIndex);
+
+    // Initial log messages count.
+    int logCount = logRecords.size();
+
     // Should not have a managedchannel by default.
     assertEquals(0, gcpChannel.channelRefs.size());
     // But once requested it's there.
     assertEquals(0, gcpChannel.getChannelRef(null).getAffinityCount());
+
+    assertThat(logRecords.size()).isEqualTo(logCount + 2);
+    assertThat(lastLogMessage()).isEqualTo(poolIndex + ": Channel 0 created.");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINER);
+    assertThat(logRecords.get(logRecords.size() - 2).getMessage()).isEqualTo(
+        poolIndex + ": Channel 0 state change detected: null -> IDLE");
+    assertThat(logRecords.get(logRecords.size() - 2).getLevel()).isEqualTo(Level.FINER);
+
     // The state of this channel is idle.
     assertEquals(ConnectivityState.IDLE, gcpChannel.getState(false));
     assertEquals(1, gcpChannel.channelRefs.size());
@@ -296,6 +323,9 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testGetChannelRefWithFallback() {
+    // Watch debug messages.
+    testLogger.setLevel(Level.FINEST);
+
     final FakeMetricRegistry fakeRegistry = new FakeMetricRegistry();
 
     final int maxSize = 3;
@@ -322,6 +352,9 @@ public final class GcpManagedChannelTest {
                         .build())
                 .build();
 
+    final int currentIndex = GcpManagedChannel.channelPoolIndex.get();
+    final String poolIndex = String.format("pool-%d", currentIndex);
+
     // Creates the first channel with 0 id.
     assertEquals(0, pool.getNumberOfChannels());
     ChannelRef chRef = pool.getChannelRef(null);
@@ -336,16 +369,22 @@ public final class GcpManagedChannelTest {
 
     // Let's simulate the non-ready state for the 0 channel.
     pool.processChannelStateChange(0, ConnectivityState.CONNECTING);
+    int logCount = logRecords.size();
     // Now request for a channel should return a newly created channel because our current channel
-    // is not ready and we haven't reached the pool's max size.
+    // is not ready, and we haven't reached the pool's max size.
     chRef = pool.getChannelRef(null);
     assertEquals(1, chRef.getId());
     assertEquals(2, pool.getNumberOfChannels());
     // This was a fallback from non-ready channel 0 to the newly created channel 1.
+    assertThat(logRecords.size()).isEqualTo(logCount + 3);
+    assertThat(lastLogMessage(3)).isEqualTo(
+        poolIndex + ": Fallback to newly created channel");
+    assertThat(lastLogLevel(3)).isEqualTo(Level.FINEST);
     assertFallbacksMetric(fakeRegistry, 1, 0);
 
     // Adding one active stream to channel 1.
     pool.channelRefs.get(1).activeStreamsCountIncr();
+    logCount = logRecords.size();
     // Having 0 active streams on channel 0 and 1 active streams on channel one with the default
     // settings would return channel 0 for the next channel request. But having fallback enabled and
     // channel 0 not ready it should return channel 1 instead.
@@ -353,6 +392,10 @@ public final class GcpManagedChannelTest {
     assertEquals(1, chRef.getId());
     assertEquals(2, pool.getNumberOfChannels());
     // This was the second fallback from non-ready channel 0 to the channel 1.
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + ": Picking fallback channel: 0 -> 1");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
     assertFallbacksMetric(fakeRegistry, 2, 0);
 
     // Now let's have channel 0 still as not ready but bring channel 1 streams to low watermark.
@@ -364,8 +407,6 @@ public final class GcpManagedChannelTest {
     chRef = pool.getChannelRef(null);
     assertEquals(2, chRef.getId());
     assertEquals(3, pool.getNumberOfChannels());
-    // This was the third fallback from non-ready channel 0 to the newly created channel 2.
-    assertFallbacksMetric(fakeRegistry, 3, 0);
 
     // Now we reached max pool size. Let's bring channel 2 to the low watermark and channel 1 to the
     // low watermark + 1 streams.
@@ -382,8 +423,8 @@ public final class GcpManagedChannelTest {
     chRef = pool.getChannelRef(null);
     assertEquals(2, chRef.getId());
     assertEquals(3, pool.getNumberOfChannels());
-    // This was the fourth fallback from non-ready channel 0 to the channel 2.
-    assertFallbacksMetric(fakeRegistry, 4, 0);
+    // This was the third fallback from non-ready channel 0 to the channel 2.
+    assertFallbacksMetric(fakeRegistry, 3, 0);
 
     // Let's bring channel 1 to max streams and mark channel 2 as not ready.
     for (int i = 0; i < MAX_STREAM - lowWatermark; i++) {
@@ -394,47 +435,88 @@ public final class GcpManagedChannelTest {
 
     // Now we have two non-ready channels and one overloaded.
     // Even when fallback enabled there is no good candidate at this time, the next channel request
-    // should return a channel with lowest streams count regardless of its readiness state.
+    // should return a channel with the lowest streams count regardless of its readiness state.
     // In our case it is channel 0.
+    logCount = logRecords.size();
     chRef = pool.getChannelRef(null);
     assertEquals(0, chRef.getId());
     assertEquals(3, pool.getNumberOfChannels());
+    // This will also count as a failed fallback because we couldn't find a ready and non-overloaded
+    // channel.
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + ": Failed to find fallback for channel 0");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
+    assertFallbacksMetric(fakeRegistry, 3, 1);
 
     // Let's have an affinity key and bind it to channel 0.
     final String key = "ABC";
     pool.bind(pool.channelRefs.get(0), Collections.singletonList(key));
+    logCount = logRecords.size();
 
     // Channel 0 is not ready currently and the fallback enabled should look for a fallback but we
     // still don't have a good channel because channel 1 is not ready and channel 2 is overloaded.
     // The getChannelRef should return the original channel 0 and report a failed fallback.
     chRef = pool.getChannelRef(key);
     assertEquals(0, chRef.getId());
-    assertFallbacksMetric(fakeRegistry, 4, 1);
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + ": Failed to find fallback for channel 0");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
+    assertFallbacksMetric(fakeRegistry, 3, 2);
 
     // Let's return channel 1 to a ready state.
     pool.processChannelStateChange(1, ConnectivityState.READY);
+    logCount = logRecords.size();
     // Now we have a fallback candidate.
     // The getChannelRef should return the channel 1 and report a successful fallback.
     chRef = pool.getChannelRef(key);
     assertEquals(1, chRef.getId());
-    assertFallbacksMetric(fakeRegistry, 5, 1);
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + ": Setting fallback channel: 0 -> 1");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
+    assertFallbacksMetric(fakeRegistry, 4, 2);
+
+    // Let's briefly bring channel 2 to ready state.
+    pool.processChannelStateChange(2, ConnectivityState.READY);
+    logCount = logRecords.size();
+    // Now we have a better fallback candidate (fewer streams on channel 2). But this time we
+    // already used channel 1 as a fallback, and we should stick to it instead of returning the
+    // original channel.
+    // The getChannelRef should return the channel 1 and report a successful fallback.
+    chRef = pool.getChannelRef(key);
+    assertEquals(1, chRef.getId());
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + ": Using fallback channel: 0 -> 1");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
+    assertFallbacksMetric(fakeRegistry, 5, 2);
+    pool.processChannelStateChange(2, ConnectivityState.CONNECTING);
 
     // Let's bring channel 1 back to connecting state.
     pool.processChannelStateChange(1, ConnectivityState.CONNECTING);
+    logCount = logRecords.size();
     // Now we don't have a good fallback candidate again. But this time we already used channel 1
     // as a fallback and we should stick to it instead of returning the original channel.
     // The getChannelRef should return the channel 1 and report a failed fallback.
     chRef = pool.getChannelRef(key);
     assertEquals(1, chRef.getId());
-    assertFallbacksMetric(fakeRegistry, 5, 2);
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + ": Failed to find fallback for channel 0");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
+    assertFallbacksMetric(fakeRegistry, 5, 3);
 
     // Finally, we bring both channel 1 and channel 0 to the ready state and we should get the
     // original channel 0 for the key without any fallbacks happening.
     pool.processChannelStateChange(1, ConnectivityState.READY);
     pool.processChannelStateChange(0, ConnectivityState.READY);
+    logCount = logRecords.size();
     chRef = pool.getChannelRef(key);
     assertEquals(0, chRef.getId());
-    assertFallbacksMetric(fakeRegistry, 5, 2);
+    assertThat(logRecords.size()).isEqualTo(logCount);
+    assertFallbacksMetric(fakeRegistry, 5, 3);
   }
 
   @Test
@@ -451,13 +533,30 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testBindUnbindKey() {
+    // Watch debug messages.
+    testLogger.setLevel(Level.FINEST);
+
+    final int currentIndex = GcpManagedChannel.channelPoolIndex.get();
+    final String poolIndex = String.format("pool-%d", currentIndex);
+
     // Initialize the channel and bind the key, check the affinity count.
     ChannelRef cf1 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 5);
     ChannelRef cf2 = gcpChannel.new ChannelRef(builder.build(), 2, 0, 4);
     gcpChannel.channelRefs.add(cf1);
     gcpChannel.channelRefs.add(cf2);
+
     gcpChannel.bind(cf1, Collections.singletonList("key1"));
+
+    // Initial log messages count.
+    int logCount = logRecords.size();
+
     gcpChannel.bind(cf2, Collections.singletonList("key2"));
+
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + ": Binding 1 key(s) to channel 2: [key2]");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
+
     gcpChannel.bind(cf2, Collections.singletonList("key3"));
     // Binding the same key to the same channel should not increase affinity count.
     gcpChannel.bind(cf1, Collections.singletonList("key1"));
@@ -470,15 +569,25 @@ public final class GcpManagedChannelTest {
     assertEquals(1, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(3, gcpChannel.affinityKeyToChannelRef.size());
 
+    logCount = logRecords.size();
+
     // Unbind the affinity key.
     gcpChannel.unbind(Collections.singletonList("key1"));
     assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(1, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + ": Unbinding key key1 from channel 1.");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
     gcpChannel.unbind(Collections.singletonList("key1"));
     assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(1, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + ": Unbinding key key1 but it wasn't bound.");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
     gcpChannel.unbind(Collections.singletonList("key2"));
     assertEquals(1, gcpChannel.channelRefs.get(0).getAffinityCount());
     assertEquals(0, gcpChannel.channelRefs.get(1).getAffinityCount());
@@ -656,8 +765,9 @@ public final class GcpManagedChannelTest {
 
     // Logs metrics options.
     assertThat(logRecords.get(logRecords.size() - 2).getLevel()).isEqualTo(Level.FINE);
-    assertThat(logRecords.get(logRecords.size() - 2).getMessage()).isEqualTo(
-        poolIndex + ": Metrics name prefix = \"some/prefix/\", tags: key_a = val_a, key_b = val_b"
+    assertThat(logRecords.get(logRecords.size() - 2).getMessage()).startsWith(
+        poolIndex + ": Metrics options: {namePrefix: \"some/prefix/\", labels: " +
+            "[key_a: \"val_a\", key_b: \"val_b\"],"
     );
 
     assertThat(lastLogLevel()).isEqualTo(Level.INFO);
@@ -747,9 +857,224 @@ public final class GcpManagedChannelTest {
   }
 
   @Test
-  public void testUnresponsiveDetection() throws InterruptedException {
+  public void testLogMetrics() throws InterruptedException {
     // Watch debug messages.
     testLogger.setLevel(Level.FINE);
+
+    final GcpManagedChannel pool =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withOptions(
+                    GcpManagedChannelOptions.newBuilder()
+                        .withChannelPoolOptions(
+                            GcpChannelPoolOptions.newBuilder()
+                                .setMaxSize(5)
+                                .setConcurrentStreamsLowWatermark(3)
+                                .build())
+                        .withMetricsOptions(
+                            GcpMetricsOptions.newBuilder()
+                                .withNamePrefix("prefix")
+                                .build())
+                        .withResiliencyOptions(
+                            GcpResiliencyOptions.newBuilder()
+                                .setNotReadyFallback(true)
+                                .withUnresponsiveConnectionDetection(100, 2)
+                                .build())
+                        .build())
+                .build();
+
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+    try {
+      final int currentIndex = GcpManagedChannel.channelPoolIndex.get();
+      final String poolIndex = String.format("pool-%d", currentIndex);
+
+      int[] streams = new int[]{3, 2, 5, 7, 1};
+      int[] keyCount = new int[]{2, 3, 1, 1, 4};
+      int[] okCalls = new int[]{2, 2, 8, 2, 3};
+      int[] errCalls = new int[]{1, 1, 2, 2, 1};
+      List<FakeManagedChannel> channels = new ArrayList<>();
+      for (int i = 0; i < streams.length; i++) {
+        FakeManagedChannel channel = new FakeManagedChannel(executorService);
+        channels.add(channel);
+        ChannelRef ref = pool.new ChannelRef(channel, i);
+        pool.channelRefs.add(ref);
+
+        // Simulate channel connecting.
+        channel.setState(ConnectivityState.CONNECTING);
+        TimeUnit.MILLISECONDS.sleep(10);
+
+        // For the last one...
+        if (i == streams.length - 1) {
+          // This will be a couple of successful fallbacks.
+          pool.getChannelRef(null);
+          pool.getChannelRef(null);
+          // Bring down all other channels.
+          for (int j = 0; j < i; j++) {
+            channels.get(j).setState(ConnectivityState.CONNECTING);
+          }
+          TimeUnit.MILLISECONDS.sleep(100);
+          // And this will be a failed fallback (no ready channels).
+          pool.getChannelRef(null);
+
+          // Simulate unresponsive connection.
+          long startNanos = System.nanoTime();
+          final Status deStatus = Status.fromCode(Code.DEADLINE_EXCEEDED);
+          ref.activeStreamsCountIncr();
+          ref.activeStreamsCountDecr(startNanos, deStatus, false);
+          ref.activeStreamsCountIncr();
+          ref.activeStreamsCountDecr(startNanos, deStatus, false);
+
+          // Simulate unresponsive connection with more dropped calls.
+          startNanos = System.nanoTime();
+          ref.activeStreamsCountIncr();
+          ref.activeStreamsCountDecr(startNanos, deStatus, false);
+          ref.activeStreamsCountIncr();
+          ref.activeStreamsCountDecr(startNanos, deStatus, false);
+          TimeUnit.MILLISECONDS.sleep(110);
+          ref.activeStreamsCountIncr();
+          ref.activeStreamsCountDecr(startNanos, deStatus, false);
+        }
+
+        channel.setState(ConnectivityState.READY);
+
+        for (int j = 0; j < streams[i]; j++) {
+          ref.activeStreamsCountIncr();
+        }
+        // Bind affinity keys.
+        final List<String> keys = new ArrayList<>();
+        for (int j = 0; j < keyCount[i]; j++) {
+          keys.add("key-" + i + "-" + j);
+        }
+        pool.bind(ref, keys);
+        // Simulate successful calls.
+        for (int j = 0; j < okCalls[i]; j++) {
+          ref.activeStreamsCountDecr(0, Status.OK, false);
+          ref.activeStreamsCountIncr();
+        }
+        // Simulate failed calls.
+        for (int j = 0; j < errCalls[i]; j++) {
+          ref.activeStreamsCountDecr(0, Status.UNAVAILABLE, false);
+          ref.activeStreamsCountIncr();
+        }
+
+      }
+
+      logRecords.clear();
+
+      pool.logMetrics();
+
+      List<Object> messages = Arrays.asList(logRecords.stream().map(LogRecord::getMessage).toArray());
+
+      assertThat(messages).contains(poolIndex + ": Active streams counts: [3, 2, 5, 7, 1]");
+      assertThat(messages).contains(poolIndex + ": Affinity counts: [2, 3, 1, 1, 4]");
+
+      assertThat(messages).contains(poolIndex + ": stat: min_ready_channels = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_ready_channels = 4");
+      assertThat(messages).contains(poolIndex + ": stat: max_channels = 5");
+      assertThat(messages).contains(poolIndex + ": stat: max_allowed_channels = 5");
+      assertThat(messages).contains(poolIndex + ": stat: num_channel_disconnect = 4");
+      assertThat(messages).contains(poolIndex + ": stat: num_channel_connect = 5");
+      assertThat(messages.stream().filter(o -> o.toString().matches(
+          poolIndex + ": stat: min_channel_readiness_time = \\d\\d+"
+          )
+      ).count()).isEqualTo(1);
+      assertThat(messages.stream().filter(o -> o.toString().matches(
+          poolIndex + ": stat: avg_channel_readiness_time = \\d\\d+"
+          )
+      ).count()).isEqualTo(1);
+      assertThat(messages.stream().filter(o -> o.toString().matches(
+          poolIndex + ": stat: max_channel_readiness_time = \\d\\d+"
+          )
+      ).count()).isEqualTo(1);
+      assertThat(messages).contains(poolIndex + ": stat: min_active_streams_per_channel = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_active_streams_per_channel = 7");
+      assertThat(messages).contains(poolIndex + ": stat: min_total_active_streams = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_total_active_streams = 18");
+      assertThat(messages).contains(poolIndex + ": stat: min_affinity_per_channel = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_affinity_per_channel = 4");
+      assertThat(messages).contains(poolIndex + ": stat: num_affinity = 11");
+      assertThat(messages).contains(poolIndex + ": Ok calls: [2, 2, 8, 2, 3]");
+      assertThat(messages).contains(poolIndex + ": Failed calls: [1, 1, 2, 2, 6]");
+      assertThat(messages).contains(poolIndex + ": stat: min_calls_per_channel_ok = 2");
+      assertThat(messages).contains(poolIndex + ": stat: min_calls_per_channel_err = 1");
+      assertThat(messages).contains(poolIndex + ": stat: max_calls_per_channel_ok = 8");
+      assertThat(messages).contains(poolIndex + ": stat: max_calls_per_channel_err = 6");
+      assertThat(messages).contains(poolIndex + ": stat: num_calls_completed_ok = 17");
+      assertThat(messages).contains(poolIndex + ": stat: num_calls_completed_err = 12");
+      assertThat(messages).contains(poolIndex + ": stat: num_fallbacks_ok = 2");
+      assertThat(messages).contains(poolIndex + ": stat: num_fallbacks_fail = 1");
+      assertThat(messages).contains(poolIndex + ": stat: num_unresponsive_detections = 2");
+      assertThat(messages.stream().filter(o -> o.toString().matches(
+              poolIndex + ": stat: min_unresponsive_detection_time = 1\\d\\d"
+          )
+      ).count()).isEqualTo(1);
+      assertThat(messages.stream().filter(o -> o.toString().matches(
+              poolIndex + ": stat: max_unresponsive_detection_time = 1\\d\\d"
+          )
+      ).count()).isEqualTo(1);
+      assertThat(messages).contains(poolIndex + ": stat: min_unresponsive_dropped_calls = 2");
+      assertThat(messages).contains(poolIndex + ": stat: max_unresponsive_dropped_calls = 3");
+
+      assertThat(logRecords.size()).isEqualTo(34);
+      logRecords.forEach(logRecord ->
+          assertThat(logRecord.getLevel()).named(logRecord.getMessage()).isEqualTo(Level.FINE)
+      );
+
+      logRecords.clear();
+
+      // Next call should update minimums that was 0 previously (e.g., min_ready_channels,
+      // min_active_streams_per_channel, min_total_active_streams...).
+      pool.logMetrics();
+
+      messages = Arrays.asList(logRecords.stream().map(LogRecord::getMessage).toArray());
+
+      assertThat(messages).contains(poolIndex + ": Active streams counts: [3, 2, 5, 7, 1]");
+      assertThat(messages).contains(poolIndex + ": Affinity counts: [2, 3, 1, 1, 4]");
+
+      assertThat(messages).contains(poolIndex + ": stat: min_ready_channels = 1");
+      assertThat(messages).contains(poolIndex + ": stat: max_ready_channels = 1");
+      assertThat(messages).contains(poolIndex + ": stat: max_channels = 5");
+      assertThat(messages).contains(poolIndex + ": stat: max_allowed_channels = 5");
+      assertThat(messages).contains(poolIndex + ": stat: num_channel_disconnect = 0");
+      assertThat(messages).contains(poolIndex + ": stat: num_channel_connect = 0");
+      assertThat(messages).contains(poolIndex + ": stat: min_channel_readiness_time = 0");
+      assertThat(messages).contains(poolIndex + ": stat: avg_channel_readiness_time = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_channel_readiness_time = 0");
+      assertThat(messages).contains(poolIndex + ": stat: min_active_streams_per_channel = 1");
+      assertThat(messages).contains(poolIndex + ": stat: max_active_streams_per_channel = 7");
+      assertThat(messages).contains(poolIndex + ": stat: min_total_active_streams = 18");
+      assertThat(messages).contains(poolIndex + ": stat: max_total_active_streams = 18");
+      assertThat(messages).contains(poolIndex + ": stat: min_affinity_per_channel = 1");
+      assertThat(messages).contains(poolIndex + ": stat: max_affinity_per_channel = 4");
+      assertThat(messages).contains(poolIndex + ": stat: num_affinity = 11");
+      assertThat(messages).contains(poolIndex + ": Ok calls: [0, 0, 0, 0, 0]");
+      assertThat(messages).contains(poolIndex + ": Failed calls: [0, 0, 0, 0, 0]");
+      assertThat(messages).contains(poolIndex + ": stat: min_calls_per_channel_ok = 0");
+      assertThat(messages).contains(poolIndex + ": stat: min_calls_per_channel_err = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_calls_per_channel_ok = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_calls_per_channel_err = 0");
+      assertThat(messages).contains(poolIndex + ": stat: num_calls_completed_ok = 0");
+      assertThat(messages).contains(poolIndex + ": stat: num_calls_completed_err = 0");
+      assertThat(messages).contains(poolIndex + ": stat: num_fallbacks_ok = 0");
+      assertThat(messages).contains(poolIndex + ": stat: num_fallbacks_fail = 0");
+      assertThat(messages).contains(poolIndex + ": stat: num_unresponsive_detections = 0");
+      assertThat(messages).contains(poolIndex + ": stat: min_unresponsive_detection_time = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_unresponsive_detection_time = 0");
+      assertThat(messages).contains(poolIndex + ": stat: min_unresponsive_dropped_calls = 0");
+      assertThat(messages).contains(poolIndex + ": stat: max_unresponsive_dropped_calls = 0");
+
+      assertThat(logRecords.size()).isEqualTo(34);
+
+    } finally {
+      pool.shutdownNow();
+      executorService.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testUnresponsiveDetection() throws InterruptedException {
+    // Watch debug messages.
+    testLogger.setLevel(Level.FINER);
     final FakeMetricRegistry fakeRegistry = new FakeMetricRegistry();
     // Creating a pool with unresponsive connection detection for 100 ms, 3 dropped requests.
     final GcpManagedChannel pool =
@@ -873,17 +1198,22 @@ public final class GcpManagedChannelTest {
     // Any subsequent deadline exceeded after 100ms must trigger the reconnection.
     chRef.activeStreamsCountDecr(startNanos, deStatus, false);
     assertEquals(2, idleCounter.get());
+    assertThat(logRecords.size()).isEqualTo(++logCount);
+    assertThat(lastLogMessage()).matches(
+        poolIndex + ": Channel 0 connection is unresponsive for 1\\d\\d ms and 4 deadline " +
+            "exceeded calls. Forcing channel to idle state.");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINER);
 
     // The cumulative num_unresponsive_detections metric must become 2.
     metric = record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS);
     assertThat(metric.size()).isEqualTo(1);
     assertThat(metric.get(0).value()).isEqualTo(2L);
     assertThat(logRecords.size()).isEqualTo(++logCount);
-    assertThat(lastLogLevel()).isEqualTo(Level.FINE);
     // But the log metric count the detections since previous report for num_unresponsive_detections
     // in the logs. It is always delta in the logs, not cumulative.
     assertThat(lastLogMessage()).isEqualTo(
         poolIndex + ": stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 1");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINE);
     // If we log it again the cumulative metric value must remain unchanged.
     metric = record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS);
     assertThat(metric.size()).isEqualTo(1);
@@ -893,6 +1223,80 @@ public final class GcpManagedChannelTest {
     // But in the log it must post 0.
     assertThat(lastLogMessage()).isEqualTo(
         poolIndex + ": stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 0");
+  }
+
+  static class FakeManagedChannel extends ManagedChannel {
+    private ConnectivityState state = ConnectivityState.IDLE;
+    private Runnable stateCallback;
+    private final ExecutorService exec;
+
+    FakeManagedChannel(ExecutorService exec) {
+      this.exec = exec;
+    }
+
+    @Override
+    public void enterIdle() {}
+
+    @Override
+    public ConnectivityState getState(boolean requestConnection) {
+      return state;
+    }
+
+    public void setState(ConnectivityState state) {
+      if (state.equals(this.state)) {
+        return;
+      }
+      this.state = state;
+      if (stateCallback != null) {
+        exec.execute(stateCallback);
+        stateCallback = null;
+      }
+    }
+
+    @Override
+    public void notifyWhenStateChanged(ConnectivityState source, Runnable callback) {
+      if (!source.equals(state)) {
+        exec.execute(callback);
+        return;
+      }
+      stateCallback = callback;
+    }
+
+    @Override
+    public ManagedChannel shutdown() {
+      return null;
+    }
+
+    @Override
+    public boolean isShutdown() {
+      return false;
+    }
+
+    @Override
+    public boolean isTerminated() {
+      return false;
+    }
+
+    @Override
+    public ManagedChannel shutdownNow() {
+      return null;
+    }
+
+    @Override
+    public boolean awaitTermination(long timeout, TimeUnit unit) {
+      return false;
+    }
+
+    @Override
+    public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
+        MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions) {
+      return null;
+    }
+
+    @Override
+    public String authority() {
+      return null;
+    }
   }
 
   static class FakeIdleCountingManagedChannel extends ManagedChannel {
