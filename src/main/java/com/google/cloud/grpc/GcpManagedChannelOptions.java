@@ -152,6 +152,9 @@ public class GcpManagedChannelOptions {
   public static class GcpChannelPoolOptions {
     // The maximum number of channels in the pool.
     private final int maxSize;
+    // The minimum size of the channel pool. This number of channels will be created and these
+    // channels will try to always keep connection to the server.
+    private final int minSize;
     // If every channel in the pool has at least this amount of concurrent streams then a new channel will be created
     // in the pool unless the pool reached its maximum size.
     private final int concurrentStreamsLowWatermark;
@@ -160,12 +163,17 @@ public class GcpManagedChannelOptions {
 
     public GcpChannelPoolOptions(Builder builder) {
       maxSize = builder.maxSize;
+      minSize = builder.minSize;
       concurrentStreamsLowWatermark = builder.concurrentStreamsLowWatermark;
       useRoundRobinOnBind = builder.useRoundRobinOnBind;
     }
 
     public int getMaxSize() {
       return maxSize;
+    }
+
+    public int getMinSize() {
+      return minSize;
     }
 
     public int getConcurrentStreamsLowWatermark() {
@@ -188,6 +196,7 @@ public class GcpManagedChannelOptions {
 
     public static class Builder {
       private int maxSize = GcpManagedChannel.DEFAULT_MAX_CHANNEL;
+      private int minSize = 0;
       private int concurrentStreamsLowWatermark = GcpManagedChannel.DEFAULT_MAX_STREAM;
       private boolean useRoundRobinOnBind = false;
 
@@ -199,6 +208,7 @@ public class GcpManagedChannelOptions {
           return;
         }
         this.maxSize = options.getMaxSize();
+        this.minSize = options.getMinSize();
         this.concurrentStreamsLowWatermark = options.getConcurrentStreamsLowWatermark();
         this.useRoundRobinOnBind = options.isUseRoundRobinOnBind();
       }
@@ -215,6 +225,19 @@ public class GcpManagedChannelOptions {
       public Builder setMaxSize(int maxSize) {
         Preconditions.checkArgument(maxSize > 0, "Channel pool size must be positive.");
         this.maxSize = maxSize;
+        return this;
+      }
+
+      /**
+       * Sets the minimum size of the channel pool. This number of channels will be created and
+       * these channels will try to always keep connection to the server established.
+       *
+       * @param minSize minimum number of channels the pool must have.
+       */
+      public Builder setMinSize(int minSize) {
+        Preconditions.checkArgument(minSize >= 0,
+            "Channel pool minimum size must be 0 or positive.");
+        this.minSize = minSize;
         return this;
       }
 

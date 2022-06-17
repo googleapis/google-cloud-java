@@ -16,11 +16,13 @@
 
 package com.google.cloud.grpc;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpResiliencyOptions;
 import io.opencensus.metrics.LabelKey;
@@ -34,7 +36,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Unit tests for GcpManagedChannel. */
+/** Unit tests for GcpManagedChannelOptionsTest. */
 @RunWith(JUnit4.class)
 public final class GcpManagedChannelOptionsTest {
   private static final String namePrefix = "name-prefix";
@@ -167,5 +169,26 @@ public final class GcpManagedChannelOptionsTest {
     assertTrue(resOpts.isUnresponsiveDetectionEnabled());
     assertEquals(unresponsiveMs, resOpts.getUnresponsiveDetectionMs());
     assertEquals(unresponsiveDroppedCount, resOpts.getUnresponsiveDetectionDroppedCount());
+  }
+
+  @Test
+  public void testPoolOptions() {
+    final GcpManagedChannelOptions opts = GcpManagedChannelOptions.newBuilder()
+        .withChannelPoolOptions(
+            GcpChannelPoolOptions.newBuilder()
+                .setMaxSize(5)
+                .setMinSize(2)
+                .setConcurrentStreamsLowWatermark(10)
+                .setUseRoundRobinOnBind(true)
+                .build()
+        )
+        .build();
+
+    GcpChannelPoolOptions channelPoolOptions = opts.getChannelPoolOptions();
+    assertThat(channelPoolOptions).isNotNull();
+    assertThat(channelPoolOptions.getMaxSize()).isEqualTo(5);
+    assertThat(channelPoolOptions.getMinSize()).isEqualTo(2);
+    assertThat(channelPoolOptions.getConcurrentStreamsLowWatermark()).isEqualTo(10);
+    assertThat(channelPoolOptions.isUseRoundRobinOnBind()).isTrue();
   }
 }

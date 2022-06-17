@@ -169,6 +169,7 @@ public final class GcpManagedChannelTest {
     resetGcpChannel();
     GcpChannelPoolOptions poolOptions = GcpChannelPoolOptions.newBuilder()
             .setMaxSize(5)
+            .setMinSize(2)
             .setConcurrentStreamsLowWatermark(50)
             .build();
     GcpManagedChannelOptions options = GcpManagedChannelOptions.newBuilder()
@@ -179,8 +180,9 @@ public final class GcpManagedChannelTest {
                     GcpManagedChannelBuilder.forDelegateBuilder(builder)
                             .withOptions(options)
                             .build();
-    assertEquals(0, gcpChannel.channelRefs.size());
+    assertEquals(2, gcpChannel.channelRefs.size());
     assertEquals(5, gcpChannel.getMaxSize());
+    assertEquals(2, gcpChannel.getMinSize());
     assertEquals(50, gcpChannel.getStreamsLowWatermark());
   }
 
@@ -218,6 +220,42 @@ public final class GcpManagedChannelTest {
     // The state of this channel is idle.
     assertEquals(ConnectivityState.IDLE, gcpChannel.getState(false));
     assertEquals(1, gcpChannel.channelRefs.size());
+  }
+
+  @Test
+  public void testGetChannelRefInitializationWithMinSize() throws InterruptedException {
+    resetGcpChannel();
+    GcpChannelPoolOptions poolOptions = GcpChannelPoolOptions.newBuilder()
+        .setMaxSize(5)
+        .setMinSize(2)
+        .build();
+    GcpManagedChannelOptions options = GcpManagedChannelOptions.newBuilder()
+        .withChannelPoolOptions(poolOptions)
+        .build();
+    gcpChannel =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withOptions(options)
+                .build();
+    // Should have 2 channels since the beginning.
+    assertThat(gcpChannel.channelRefs.size()).isEqualTo(2);
+    TimeUnit.MILLISECONDS.sleep(50);
+    // The connection establishment must have been started on these two channels.
+    assertThat(gcpChannel.getState(false))
+        .isAnyOf(
+            ConnectivityState.CONNECTING,
+            ConnectivityState.READY,
+            ConnectivityState.TRANSIENT_FAILURE);
+    assertThat(gcpChannel.channelRefs.get(0).getChannel().getState(false))
+        .isAnyOf(
+            ConnectivityState.CONNECTING,
+            ConnectivityState.READY,
+            ConnectivityState.TRANSIENT_FAILURE);
+    assertThat(gcpChannel.channelRefs.get(1).getChannel().getState(false))
+        .isAnyOf(
+            ConnectivityState.CONNECTING,
+            ConnectivityState.READY,
+            ConnectivityState.TRANSIENT_FAILURE);
   }
 
   @Test
