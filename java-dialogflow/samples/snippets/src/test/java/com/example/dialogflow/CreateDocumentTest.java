@@ -19,10 +19,10 @@ package com.example.dialogflow;
 import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
-import com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest;
-import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
-import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
-import com.google.cloud.dialogflow.v2beta1.ProjectName;
+import com.google.cloud.dialogflow.v2.DeleteKnowledgeBaseRequest;
+import com.google.cloud.dialogflow.v2.KnowledgeBase;
+import com.google.cloud.dialogflow.v2.KnowledgeBasesClient;
+import com.google.cloud.dialogflow.v2.LocationName;
 import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -41,14 +41,16 @@ import org.junit.runners.JUnit4;
 public class CreateDocumentTest {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static final String LOCATION = "global";
   private static String KNOWLEDGE_DISPLAY_NAME = UUID.randomUUID().toString();
   private static String DOCUMENT_DISPLAY_NAME = UUID.randomUUID().toString();
-  private ByteArrayOutputStream bout;
-  private PrintStream out;
   private String knowledgeBaseName;
+  private ByteArrayOutputStream bout;
+  private PrintStream newOutputStream;
+  private PrintStream originalOutputStream;
 
   private static void requireEnvVar(String varName) {
-    assertNotNull(String.format(varName), String.format(varName));
+    assertNotNull(String.format(varName));
   }
 
   @BeforeClass
@@ -59,23 +61,28 @@ public class CreateDocumentTest {
 
   @Before
   public void setUp() throws IOException {
+    originalOutputStream = System.out;
+    bout = new ByteArrayOutputStream();
+    newOutputStream = new PrintStream(bout);
+    System.setOut(newOutputStream);
+
     // Create a knowledge base for the document
     try (KnowledgeBasesClient client = KnowledgeBasesClient.create()) {
       KnowledgeBase knowledgeBase =
           KnowledgeBase.newBuilder().setDisplayName(KNOWLEDGE_DISPLAY_NAME).build();
-      ProjectName projectName = ProjectName.of(PROJECT_ID);
-      KnowledgeBase response = client.createKnowledgeBase(projectName, knowledgeBase);
+      LocationName parent = LocationName.of(PROJECT_ID, LOCATION);
+      KnowledgeBase response = client.createKnowledgeBase(parent, knowledgeBase);
       // Save the full name for deletion
       knowledgeBaseName = response.getName();
     }
-
-    bout = new ByteArrayOutputStream();
-    out = new PrintStream(bout);
-    System.setOut(out);
   }
 
   @After
   public void tearDown() throws IOException {
+    if (knowledgeBaseName == null) {
+      return;
+    }
+
     // Delete the created knowledge base
     try (KnowledgeBasesClient client = KnowledgeBasesClient.create()) {
       DeleteKnowledgeBaseRequest request =
@@ -83,7 +90,7 @@ public class CreateDocumentTest {
       client.deleteKnowledgeBase(request);
     }
 
-    System.setOut(null);
+    System.setOut(originalOutputStream);
   }
 
   @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
