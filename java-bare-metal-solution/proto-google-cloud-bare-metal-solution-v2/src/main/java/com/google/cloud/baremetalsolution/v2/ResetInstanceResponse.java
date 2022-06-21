@@ -90,14 +90,14 @@ public final class ResetInstanceResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.baremetalsolution.v2.BaremetalsolutionProto
+    return com.google.cloud.baremetalsolution.v2.BareMetalSolutionProto
         .internal_static_google_cloud_baremetalsolution_v2_ResetInstanceResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.baremetalsolution.v2.BaremetalsolutionProto
+    return com.google.cloud.baremetalsolution.v2.BareMetalSolutionProto
         .internal_static_google_cloud_baremetalsolution_v2_ResetInstanceResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.baremetalsolution.v2.ResetInstanceResponse.class,
@@ -269,14 +269,14 @@ public final class ResetInstanceResponse extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(builder_implements:google.cloud.baremetalsolution.v2.ResetInstanceResponse)
       com.google.cloud.baremetalsolution.v2.ResetInstanceResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.baremetalsolution.v2.BaremetalsolutionProto
+      return com.google.cloud.baremetalsolution.v2.BareMetalSolutionProto
           .internal_static_google_cloud_baremetalsolution_v2_ResetInstanceResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.baremetalsolution.v2.BaremetalsolutionProto
+      return com.google.cloud.baremetalsolution.v2.BareMetalSolutionProto
           .internal_static_google_cloud_baremetalsolution_v2_ResetInstanceResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.baremetalsolution.v2.ResetInstanceResponse.class,
@@ -305,7 +305,7 @@ public final class ResetInstanceResponse extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.baremetalsolution.v2.BaremetalsolutionProto
+      return com.google.cloud.baremetalsolution.v2.BareMetalSolutionProto
           .internal_static_google_cloud_baremetalsolution_v2_ResetInstanceResponse_descriptor;
     }
 

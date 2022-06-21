@@ -19,50 +19,49 @@ package com.google.cloud.baremetalsolution.v2.stub;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListInstancesPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListLunsPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListNetworksPagedResponse;
-import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListSnapshotSchedulePoliciesPagedResponse;
-import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumeSnapshotsPagedResponse;
+import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListNfsSharesPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest;
-import com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest;
-import com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest;
-import com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest;
+import com.google.cloud.baremetalsolution.v2.DetachLunRequest;
 import com.google.cloud.baremetalsolution.v2.GetInstanceRequest;
 import com.google.cloud.baremetalsolution.v2.GetLunRequest;
 import com.google.cloud.baremetalsolution.v2.GetNetworkRequest;
-import com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest;
+import com.google.cloud.baremetalsolution.v2.GetNfsShareRequest;
 import com.google.cloud.baremetalsolution.v2.GetVolumeRequest;
-import com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest;
 import com.google.cloud.baremetalsolution.v2.Instance;
 import com.google.cloud.baremetalsolution.v2.ListInstancesRequest;
 import com.google.cloud.baremetalsolution.v2.ListInstancesResponse;
 import com.google.cloud.baremetalsolution.v2.ListLunsRequest;
 import com.google.cloud.baremetalsolution.v2.ListLunsResponse;
+import com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest;
+import com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse;
 import com.google.cloud.baremetalsolution.v2.ListNetworksRequest;
 import com.google.cloud.baremetalsolution.v2.ListNetworksResponse;
-import com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest;
-import com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesResponse;
-import com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest;
-import com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse;
+import com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest;
+import com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse;
 import com.google.cloud.baremetalsolution.v2.ListVolumesRequest;
 import com.google.cloud.baremetalsolution.v2.ListVolumesResponse;
 import com.google.cloud.baremetalsolution.v2.Lun;
 import com.google.cloud.baremetalsolution.v2.Network;
+import com.google.cloud.baremetalsolution.v2.NfsShare;
 import com.google.cloud.baremetalsolution.v2.OperationMetadata;
 import com.google.cloud.baremetalsolution.v2.ResetInstanceRequest;
 import com.google.cloud.baremetalsolution.v2.ResetInstanceResponse;
-import com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest;
-import com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy;
-import com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest;
+import com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest;
+import com.google.cloud.baremetalsolution.v2.StartInstanceRequest;
+import com.google.cloud.baremetalsolution.v2.StartInstanceResponse;
+import com.google.cloud.baremetalsolution.v2.StopInstanceRequest;
+import com.google.cloud.baremetalsolution.v2.StopInstanceResponse;
+import com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest;
+import com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest;
+import com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest;
 import com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest;
 import com.google.cloud.baremetalsolution.v2.Volume;
-import com.google.cloud.baremetalsolution.v2.VolumeSnapshot;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
-import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -91,6 +90,15 @@ public abstract class BareMetalSolutionStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getInstanceCallable()");
   }
 
+  public OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
+      updateInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateInstanceCallable()");
+  }
+
   public OperationCallable<ResetInstanceRequest, ResetInstanceResponse, OperationMetadata>
       resetInstanceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: resetInstanceOperationCallable()");
@@ -98,6 +106,33 @@ public abstract class BareMetalSolutionStub implements BackgroundResource {
 
   public UnaryCallable<ResetInstanceRequest, Operation> resetInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: resetInstanceCallable()");
+  }
+
+  public OperationCallable<StartInstanceRequest, StartInstanceResponse, OperationMetadata>
+      startInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: startInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<StartInstanceRequest, Operation> startInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: startInstanceCallable()");
+  }
+
+  public OperationCallable<StopInstanceRequest, StopInstanceResponse, OperationMetadata>
+      stopInstanceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<StopInstanceRequest, Operation> stopInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopInstanceCallable()");
+  }
+
+  public OperationCallable<DetachLunRequest, Instance, OperationMetadata>
+      detachLunOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: detachLunOperationCallable()");
+  }
+
+  public UnaryCallable<DetachLunRequest, Operation> detachLunCallable() {
+    throw new UnsupportedOperationException("Not implemented: detachLunCallable()");
   }
 
   public UnaryCallable<ListVolumesRequest, ListVolumesPagedResponse> listVolumesPagedCallable() {
@@ -121,6 +156,15 @@ public abstract class BareMetalSolutionStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateVolumeCallable()");
   }
 
+  public OperationCallable<ResizeVolumeRequest, Volume, OperationMetadata>
+      resizeVolumeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: resizeVolumeOperationCallable()");
+  }
+
+  public UnaryCallable<ResizeVolumeRequest, Operation> resizeVolumeCallable() {
+    throw new UnsupportedOperationException("Not implemented: resizeVolumeCallable()");
+  }
+
   public UnaryCallable<ListNetworksRequest, ListNetworksPagedResponse> listNetworksPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listNetworksPagedCallable()");
   }
@@ -129,76 +173,22 @@ public abstract class BareMetalSolutionStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listNetworksCallable()");
   }
 
+  public UnaryCallable<ListNetworkUsageRequest, ListNetworkUsageResponse>
+      listNetworkUsageCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNetworkUsageCallable()");
+  }
+
   public UnaryCallable<GetNetworkRequest, Network> getNetworkCallable() {
     throw new UnsupportedOperationException("Not implemented: getNetworkCallable()");
   }
 
-  public UnaryCallable<
-          ListSnapshotSchedulePoliciesRequest, ListSnapshotSchedulePoliciesPagedResponse>
-      listSnapshotSchedulePoliciesPagedCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: listSnapshotSchedulePoliciesPagedCallable()");
+  public OperationCallable<UpdateNetworkRequest, Network, OperationMetadata>
+      updateNetworkOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateNetworkOperationCallable()");
   }
 
-  public UnaryCallable<ListSnapshotSchedulePoliciesRequest, ListSnapshotSchedulePoliciesResponse>
-      listSnapshotSchedulePoliciesCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: listSnapshotSchedulePoliciesCallable()");
-  }
-
-  public UnaryCallable<GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      getSnapshotSchedulePolicyCallable() {
-    throw new UnsupportedOperationException("Not implemented: getSnapshotSchedulePolicyCallable()");
-  }
-
-  public UnaryCallable<CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      createSnapshotSchedulePolicyCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: createSnapshotSchedulePolicyCallable()");
-  }
-
-  public UnaryCallable<UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      updateSnapshotSchedulePolicyCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: updateSnapshotSchedulePolicyCallable()");
-  }
-
-  public UnaryCallable<DeleteSnapshotSchedulePolicyRequest, Empty>
-      deleteSnapshotSchedulePolicyCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: deleteSnapshotSchedulePolicyCallable()");
-  }
-
-  public UnaryCallable<CreateVolumeSnapshotRequest, VolumeSnapshot> createVolumeSnapshotCallable() {
-    throw new UnsupportedOperationException("Not implemented: createVolumeSnapshotCallable()");
-  }
-
-  public OperationCallable<RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
-      restoreVolumeSnapshotOperationCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: restoreVolumeSnapshotOperationCallable()");
-  }
-
-  public UnaryCallable<RestoreVolumeSnapshotRequest, Operation> restoreVolumeSnapshotCallable() {
-    throw new UnsupportedOperationException("Not implemented: restoreVolumeSnapshotCallable()");
-  }
-
-  public UnaryCallable<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteVolumeSnapshotCallable()");
-  }
-
-  public UnaryCallable<GetVolumeSnapshotRequest, VolumeSnapshot> getVolumeSnapshotCallable() {
-    throw new UnsupportedOperationException("Not implemented: getVolumeSnapshotCallable()");
-  }
-
-  public UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsPagedResponse>
-      listVolumeSnapshotsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listVolumeSnapshotsPagedCallable()");
-  }
-
-  public UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
-      listVolumeSnapshotsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listVolumeSnapshotsCallable()");
+  public UnaryCallable<UpdateNetworkRequest, Operation> updateNetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateNetworkCallable()");
   }
 
   public UnaryCallable<GetLunRequest, Lun> getLunCallable() {
@@ -211,6 +201,28 @@ public abstract class BareMetalSolutionStub implements BackgroundResource {
 
   public UnaryCallable<ListLunsRequest, ListLunsResponse> listLunsCallable() {
     throw new UnsupportedOperationException("Not implemented: listLunsCallable()");
+  }
+
+  public UnaryCallable<GetNfsShareRequest, NfsShare> getNfsShareCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNfsShareCallable()");
+  }
+
+  public UnaryCallable<ListNfsSharesRequest, ListNfsSharesPagedResponse>
+      listNfsSharesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNfsSharesPagedCallable()");
+  }
+
+  public UnaryCallable<ListNfsSharesRequest, ListNfsSharesResponse> listNfsSharesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNfsSharesCallable()");
+  }
+
+  public OperationCallable<UpdateNfsShareRequest, NfsShare, OperationMetadata>
+      updateNfsShareOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateNfsShareOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateNfsShareRequest, Operation> updateNfsShareCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateNfsShareCallable()");
   }
 
   @Override
