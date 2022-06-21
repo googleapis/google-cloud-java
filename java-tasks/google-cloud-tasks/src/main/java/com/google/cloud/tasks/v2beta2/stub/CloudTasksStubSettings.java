@@ -351,7 +351,6 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     return runTaskSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudTasksStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

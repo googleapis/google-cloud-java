@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (GlobalForwardingRulesClient globalForwardingRulesClient =
  *     GlobalForwardingRulesClient.create()) {
  *   String project = "project-309310695";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GlobalForwardingRulesSettings globalForwardingRulesSettings =
  *     GlobalForwardingRulesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,6 +96,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GlobalForwardingRulesSettings globalForwardingRulesSettings =
  *     GlobalForwardingRulesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GlobalForwardingRulesClient globalForwardingRulesClient =
@@ -123,7 +129,6 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * Constructs an instance of GlobalForwardingRulesClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(GlobalForwardingRulesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GlobalForwardingRulesClient create(GlobalForwardingRulesStub stub) {
     return new GlobalForwardingRulesClient(stub);
   }
@@ -138,7 +143,6 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
     this.stub = ((GlobalForwardingRulesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GlobalForwardingRulesClient(GlobalForwardingRulesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -148,7 +152,6 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GlobalForwardingRulesStub getStub() {
     return stub;
   }
@@ -160,6 +163,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -189,6 +194,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   DeleteGlobalForwardingRuleRequest request =
@@ -218,6 +225,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   DeleteGlobalForwardingRuleRequest request =
@@ -245,6 +254,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   DeleteGlobalForwardingRuleRequest request =
@@ -272,6 +283,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -301,6 +314,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   GetGlobalForwardingRuleRequest request =
@@ -327,6 +342,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   GetGlobalForwardingRuleRequest request =
@@ -353,6 +370,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -384,6 +403,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   InsertGlobalForwardingRuleRequest request =
@@ -414,6 +435,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   InsertGlobalForwardingRuleRequest request =
@@ -442,6 +465,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   InsertGlobalForwardingRuleRequest request =
@@ -468,6 +493,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -493,6 +520,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   ListGlobalForwardingRulesRequest request =
@@ -524,6 +553,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   ListGlobalForwardingRulesRequest request =
@@ -556,6 +587,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   ListGlobalForwardingRulesRequest request =
@@ -569,7 +602,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ForwardingRuleList response = globalForwardingRulesClient.listCallable().call(request);
-   *     for (ForwardingRule element : response.getResponsesList()) {
+   *     for (ForwardingRule element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -595,6 +628,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -632,6 +667,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   PatchGlobalForwardingRuleRequest request =
@@ -664,6 +701,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   PatchGlobalForwardingRuleRequest request =
@@ -694,6 +733,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   PatchGlobalForwardingRuleRequest request =
@@ -721,6 +762,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -758,6 +801,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   SetLabelsGlobalForwardingRuleRequest request =
@@ -788,6 +833,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   SetLabelsGlobalForwardingRuleRequest request =
@@ -816,6 +863,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   SetLabelsGlobalForwardingRuleRequest request =
@@ -843,6 +892,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   String project = "project-309310695";
@@ -879,6 +930,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   SetTargetGlobalForwardingRuleRequest request =
@@ -910,6 +963,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   SetTargetGlobalForwardingRuleRequest request =
@@ -939,6 +994,8 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalForwardingRulesClient globalForwardingRulesClient =
    *     GlobalForwardingRulesClient.create()) {
    *   SetTargetGlobalForwardingRuleRequest request =

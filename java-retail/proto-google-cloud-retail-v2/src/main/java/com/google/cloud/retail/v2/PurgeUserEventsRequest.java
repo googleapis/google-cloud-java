@@ -137,7 +137,9 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
    * `projects/${projectId}/locations/global/catalogs/${catalogId}`
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -162,7 +164,9 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
    * `projects/${projectId}/locations/global/catalogs/${catalogId}`
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -643,7 +647,9 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * `projects/${projectId}/locations/global/catalogs/${catalogId}`
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -667,7 +673,9 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * `projects/${projectId}/locations/global/catalogs/${catalogId}`
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -691,7 +699,9 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * `projects/${projectId}/locations/global/catalogs/${catalogId}`
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -714,7 +724,9 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * `projects/${projectId}/locations/global/catalogs/${catalogId}`
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -733,7 +745,9 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
      * `projects/${projectId}/locations/global/catalogs/${catalogId}`
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.

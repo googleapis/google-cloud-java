@@ -468,7 +468,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListChannelsResponse response =
    *         livestreamServiceClient.listChannelsCallable().call(request);
-   *     for (Channel element : response.getResponsesList()) {
+   *     for (Channel element : response.getChannelsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1399,7 +1399,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListInputsResponse response = livestreamServiceClient.listInputsCallable().call(request);
-   *     for (Input element : response.getResponsesList()) {
+   *     for (Input element : response.getInputsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2018,7 +2018,7 @@ public class LivestreamServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListEventsResponse response = livestreamServiceClient.listEventsCallable().call(request);
-   *     for (Event element : response.getResponsesList()) {
+   *     for (Event element : response.getEventsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

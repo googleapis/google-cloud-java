@@ -65,7 +65,12 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
    */
-  java.lang.String getDomainStatusOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getDomainStatusOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

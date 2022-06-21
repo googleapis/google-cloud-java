@@ -130,6 +130,22 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
               predicateCase_ = 5;
               break;
             }
+          case 50:
+            {
+              io.grafeas.v1.SlsaProvenanceZeroTwo.Builder subBuilder = null;
+              if (predicateCase_ == 6) {
+                subBuilder = ((io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_).toBuilder();
+              }
+              predicate_ =
+                  input.readMessage(
+                      io.grafeas.v1.SlsaProvenanceZeroTwo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_);
+                predicate_ = subBuilder.buildPartial();
+              }
+              predicateCase_ = 6;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -176,6 +192,7 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PROVENANCE(4),
     SLSA_PROVENANCE(5),
+    SLSA_PROVENANCE_ZERO_TWO(6),
     PREDICATE_NOT_SET(0);
     private final int value;
 
@@ -198,6 +215,8 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
           return PROVENANCE;
         case 5:
           return SLSA_PROVENANCE;
+        case 6:
+          return SLSA_PROVENANCE_ZERO_TWO;
         case 0:
           return PREDICATE_NOT_SET;
         default:
@@ -402,6 +421,37 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     return io.grafeas.v1.SlsaProvenance.getDefaultInstance();
   }
 
+  public static final int SLSA_PROVENANCE_ZERO_TWO_FIELD_NUMBER = 6;
+  /**
+   * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
+   *
+   * @return Whether the slsaProvenanceZeroTwo field is set.
+   */
+  @java.lang.Override
+  public boolean hasSlsaProvenanceZeroTwo() {
+    return predicateCase_ == 6;
+  }
+  /**
+   * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
+   *
+   * @return The slsaProvenanceZeroTwo.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.SlsaProvenanceZeroTwo getSlsaProvenanceZeroTwo() {
+    if (predicateCase_ == 6) {
+      return (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_;
+    }
+    return io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
+  }
+  /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
+  @java.lang.Override
+  public io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder getSlsaProvenanceZeroTwoOrBuilder() {
+    if (predicateCase_ == 6) {
+      return (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_;
+    }
+    return io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -431,6 +481,9 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     if (predicateCase_ == 5) {
       output.writeMessage(5, (io.grafeas.v1.SlsaProvenance) predicate_);
     }
+    if (predicateCase_ == 6) {
+      output.writeMessage(6, (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -459,6 +512,11 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (io.grafeas.v1.SlsaProvenance) predicate_);
     }
+    if (predicateCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -484,6 +542,9 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         break;
       case 5:
         if (!getSlsaProvenance().equals(other.getSlsaProvenance())) return false;
+        break;
+      case 6:
+        if (!getSlsaProvenanceZeroTwo().equals(other.getSlsaProvenanceZeroTwo())) return false;
         break;
       case 0:
       default:
@@ -515,6 +576,10 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       case 5:
         hash = (37 * hash) + SLSA_PROVENANCE_FIELD_NUMBER;
         hash = (53 * hash) + getSlsaProvenance().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + SLSA_PROVENANCE_ZERO_TWO_FIELD_NUMBER;
+        hash = (53 * hash) + getSlsaProvenanceZeroTwo().hashCode();
         break;
       case 0:
       default:
@@ -731,6 +796,13 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
           result.predicate_ = slsaProvenanceBuilder_.build();
         }
       }
+      if (predicateCase_ == 6) {
+        if (slsaProvenanceZeroTwoBuilder_ == null) {
+          result.predicate_ = predicate_;
+        } else {
+          result.predicate_ = slsaProvenanceZeroTwoBuilder_.build();
+        }
+      }
       result.predicateCase_ = predicateCase_;
       onBuilt();
       return result;
@@ -825,6 +897,11 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         case SLSA_PROVENANCE:
           {
             mergeSlsaProvenance(other.getSlsaProvenance());
+            break;
+          }
+        case SLSA_PROVENANCE_ZERO_TWO:
+          {
+            mergeSlsaProvenanceZeroTwo(other.getSlsaProvenanceZeroTwo());
             break;
           }
         case PREDICATE_NOT_SET:
@@ -1556,6 +1633,148 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       onChanged();
       ;
       return slsaProvenanceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.SlsaProvenanceZeroTwo,
+            io.grafeas.v1.SlsaProvenanceZeroTwo.Builder,
+            io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder>
+        slsaProvenanceZeroTwoBuilder_;
+    /**
+     * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
+     *
+     * @return Whether the slsaProvenanceZeroTwo field is set.
+     */
+    @java.lang.Override
+    public boolean hasSlsaProvenanceZeroTwo() {
+      return predicateCase_ == 6;
+    }
+    /**
+     * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
+     *
+     * @return The slsaProvenanceZeroTwo.
+     */
+    @java.lang.Override
+    public io.grafeas.v1.SlsaProvenanceZeroTwo getSlsaProvenanceZeroTwo() {
+      if (slsaProvenanceZeroTwoBuilder_ == null) {
+        if (predicateCase_ == 6) {
+          return (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_;
+        }
+        return io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
+      } else {
+        if (predicateCase_ == 6) {
+          return slsaProvenanceZeroTwoBuilder_.getMessage();
+        }
+        return io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
+      }
+    }
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
+    public Builder setSlsaProvenanceZeroTwo(io.grafeas.v1.SlsaProvenanceZeroTwo value) {
+      if (slsaProvenanceZeroTwoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        predicate_ = value;
+        onChanged();
+      } else {
+        slsaProvenanceZeroTwoBuilder_.setMessage(value);
+      }
+      predicateCase_ = 6;
+      return this;
+    }
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
+    public Builder setSlsaProvenanceZeroTwo(
+        io.grafeas.v1.SlsaProvenanceZeroTwo.Builder builderForValue) {
+      if (slsaProvenanceZeroTwoBuilder_ == null) {
+        predicate_ = builderForValue.build();
+        onChanged();
+      } else {
+        slsaProvenanceZeroTwoBuilder_.setMessage(builderForValue.build());
+      }
+      predicateCase_ = 6;
+      return this;
+    }
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
+    public Builder mergeSlsaProvenanceZeroTwo(io.grafeas.v1.SlsaProvenanceZeroTwo value) {
+      if (slsaProvenanceZeroTwoBuilder_ == null) {
+        if (predicateCase_ == 6
+            && predicate_ != io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance()) {
+          predicate_ =
+              io.grafeas.v1.SlsaProvenanceZeroTwo.newBuilder(
+                      (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          predicate_ = value;
+        }
+        onChanged();
+      } else {
+        if (predicateCase_ == 6) {
+          slsaProvenanceZeroTwoBuilder_.mergeFrom(value);
+        } else {
+          slsaProvenanceZeroTwoBuilder_.setMessage(value);
+        }
+      }
+      predicateCase_ = 6;
+      return this;
+    }
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
+    public Builder clearSlsaProvenanceZeroTwo() {
+      if (slsaProvenanceZeroTwoBuilder_ == null) {
+        if (predicateCase_ == 6) {
+          predicateCase_ = 0;
+          predicate_ = null;
+          onChanged();
+        }
+      } else {
+        if (predicateCase_ == 6) {
+          predicateCase_ = 0;
+          predicate_ = null;
+        }
+        slsaProvenanceZeroTwoBuilder_.clear();
+      }
+      return this;
+    }
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
+    public io.grafeas.v1.SlsaProvenanceZeroTwo.Builder getSlsaProvenanceZeroTwoBuilder() {
+      return getSlsaProvenanceZeroTwoFieldBuilder().getBuilder();
+    }
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
+    @java.lang.Override
+    public io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder getSlsaProvenanceZeroTwoOrBuilder() {
+      if ((predicateCase_ == 6) && (slsaProvenanceZeroTwoBuilder_ != null)) {
+        return slsaProvenanceZeroTwoBuilder_.getMessageOrBuilder();
+      } else {
+        if (predicateCase_ == 6) {
+          return (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_;
+        }
+        return io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
+      }
+    }
+    /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.SlsaProvenanceZeroTwo,
+            io.grafeas.v1.SlsaProvenanceZeroTwo.Builder,
+            io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder>
+        getSlsaProvenanceZeroTwoFieldBuilder() {
+      if (slsaProvenanceZeroTwoBuilder_ == null) {
+        if (!(predicateCase_ == 6)) {
+          predicate_ = io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
+        }
+        slsaProvenanceZeroTwoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.SlsaProvenanceZeroTwo,
+                io.grafeas.v1.SlsaProvenanceZeroTwo.Builder,
+                io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder>(
+                (io.grafeas.v1.SlsaProvenanceZeroTwo) predicate_,
+                getParentForChildren(),
+                isClean());
+        predicate_ = null;
+      }
+      predicateCase_ = 6;
+      onChanged();
+      ;
+      return slsaProvenanceZeroTwoBuilder_;
     }
 
     @java.lang.Override

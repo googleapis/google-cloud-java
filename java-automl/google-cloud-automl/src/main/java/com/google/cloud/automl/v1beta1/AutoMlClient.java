@@ -510,7 +510,7 @@ public class AutoMlClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListDatasetsResponse response = autoMlClient.listDatasetsCallable().call(request);
-   *     for (Dataset element : response.getResponsesList()) {
+   *     for (Dataset element : response.getDatasetsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1399,7 +1399,7 @@ public class AutoMlClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTableSpecsResponse response = autoMlClient.listTableSpecsCallable().call(request);
-   *     for (TableSpec element : response.getResponsesList()) {
+   *     for (TableSpec element : response.getTableSpecsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1744,7 +1744,7 @@ public class AutoMlClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListColumnSpecsResponse response = autoMlClient.listColumnSpecsCallable().call(request);
-   *     for (ColumnSpec element : response.getResponsesList()) {
+   *     for (ColumnSpec element : response.getColumnSpecsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2208,7 +2208,7 @@ public class AutoMlClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListModelsResponse response = autoMlClient.listModelsCallable().call(request);
-   *     for (Model element : response.getResponsesList()) {
+   *     for (Model element : response.getModelList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3293,7 +3293,7 @@ public class AutoMlClient implements BackgroundResource {
    *   while (true) {
    *     ListModelEvaluationsResponse response =
    *         autoMlClient.listModelEvaluationsCallable().call(request);
-   *     for (ModelEvaluation element : response.getResponsesList()) {
+   *     for (ModelEvaluation element : response.getModelEvaluationList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

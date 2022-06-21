@@ -121,6 +121,8 @@ public final class KubernetesClusterConfig extends com.google.protobuf.Generated
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1005,8 +1007,9 @@ public final class KubernetesClusterConfig extends com.google.protobuf.Generated
       } else {
         if (configCase_ == 2) {
           gkeClusterConfigBuilder_.mergeFrom(value);
+        } else {
+          gkeClusterConfigBuilder_.setMessage(value);
         }
-        gkeClusterConfigBuilder_.setMessage(value);
       }
       configCase_ = 2;
       return this;

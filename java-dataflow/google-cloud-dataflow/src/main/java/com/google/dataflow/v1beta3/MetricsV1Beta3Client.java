@@ -314,7 +314,7 @@ public class MetricsV1Beta3Client implements BackgroundResource {
    *   while (true) {
    *     JobExecutionDetails response =
    *         metricsV1Beta3Client.getJobExecutionDetailsCallable().call(request);
-   *     for (StageSummary element : response.getResponsesList()) {
+   *     for (StageSummary element : response.getStagesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -433,7 +433,7 @@ public class MetricsV1Beta3Client implements BackgroundResource {
    *   while (true) {
    *     StageExecutionDetails response =
    *         metricsV1Beta3Client.getStageExecutionDetailsCallable().call(request);
-   *     for (WorkerDetails element : response.getResponsesList()) {
+   *     for (WorkerDetails element : response.getWorkersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

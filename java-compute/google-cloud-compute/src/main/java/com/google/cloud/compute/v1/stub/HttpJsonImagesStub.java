@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.ImagesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -66,7 +65,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonImagesStub extends ImagesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -74,7 +73,7 @@ public class HttpJsonImagesStub extends ImagesStub {
   private static final ApiMethodDescriptor<DeleteImageRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteImageRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Images/Delete")
-          .setHttpMethod(HttpMethods.DELETE)
+          .setHttpMethod("DELETE")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteImageRequest>newBuilder()
@@ -123,7 +122,7 @@ public class HttpJsonImagesStub extends ImagesStub {
       deprecateMethodDescriptor =
           ApiMethodDescriptor.<DeprecateImageRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Images/Deprecate")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeprecateImageRequest>newBuilder()
@@ -176,7 +175,7 @@ public class HttpJsonImagesStub extends ImagesStub {
   private static final ApiMethodDescriptor<GetImageRequest, Image> getMethodDescriptor =
       ApiMethodDescriptor.<GetImageRequest, Image>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Images/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetImageRequest>newBuilder()
@@ -210,7 +209,7 @@ public class HttpJsonImagesStub extends ImagesStub {
       getFromFamilyMethodDescriptor =
           ApiMethodDescriptor.<GetFromFamilyImageRequest, Image>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Images/GetFromFamily")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetFromFamilyImageRequest>newBuilder()
@@ -244,7 +243,7 @@ public class HttpJsonImagesStub extends ImagesStub {
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyImageRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Images/GetIamPolicy")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyImageRequest>newBuilder()
@@ -283,7 +282,7 @@ public class HttpJsonImagesStub extends ImagesStub {
   private static final ApiMethodDescriptor<InsertImageRequest, Operation> insertMethodDescriptor =
       ApiMethodDescriptor.<InsertImageRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Images/Insert")
-          .setHttpMethod(HttpMethods.POST)
+          .setHttpMethod("POST")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertImageRequest>newBuilder()
@@ -336,7 +335,7 @@ public class HttpJsonImagesStub extends ImagesStub {
   private static final ApiMethodDescriptor<ListImagesRequest, ImageList> listMethodDescriptor =
       ApiMethodDescriptor.<ListImagesRequest, ImageList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Images/List")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListImagesRequest>newBuilder()
@@ -384,7 +383,7 @@ public class HttpJsonImagesStub extends ImagesStub {
   private static final ApiMethodDescriptor<PatchImageRequest, Operation> patchMethodDescriptor =
       ApiMethodDescriptor.<PatchImageRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Images/Patch")
-          .setHttpMethod(HttpMethods.PATCH)
+          .setHttpMethod("PATCH")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchImageRequest>newBuilder()
@@ -436,7 +435,7 @@ public class HttpJsonImagesStub extends ImagesStub {
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyImageRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Images/SetIamPolicy")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyImageRequest>newBuilder()
@@ -475,7 +474,7 @@ public class HttpJsonImagesStub extends ImagesStub {
       setLabelsMethodDescriptor =
           ApiMethodDescriptor.<SetLabelsImageRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Images/SetLabels")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsImageRequest>newBuilder()
@@ -526,7 +525,7 @@ public class HttpJsonImagesStub extends ImagesStub {
       testIamPermissionsMethodDescriptor =
           ApiMethodDescriptor.<TestIamPermissionsImageRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Images/TestIamPermissions")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsImageRequest>newBuilder()

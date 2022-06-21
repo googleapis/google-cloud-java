@@ -153,6 +153,38 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
               typeCase_ = 8;
               break;
             }
+          case 74:
+            {
+              com.google.cloud.gkehub.v1beta1.EdgeCluster.Builder subBuilder = null;
+              if (typeCase_ == 9) {
+                subBuilder = ((com.google.cloud.gkehub.v1beta1.EdgeCluster) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.cloud.gkehub.v1beta1.EdgeCluster.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.gkehub.v1beta1.EdgeCluster) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 9;
+              break;
+            }
+          case 82:
+            {
+              com.google.cloud.gkehub.v1beta1.ApplianceCluster.Builder subBuilder = null;
+              if (typeCase_ == 10) {
+                subBuilder = ((com.google.cloud.gkehub.v1beta1.ApplianceCluster) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.cloud.gkehub.v1beta1.ApplianceCluster.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.gkehub.v1beta1.ApplianceCluster) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 10;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -199,6 +231,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     GKE_CLUSTER(4),
     ON_PREM_CLUSTER(7),
     MULTI_CLOUD_CLUSTER(8),
+    EDGE_CLUSTER(9),
+    APPLIANCE_CLUSTER(10),
     TYPE_NOT_SET(0);
     private final int value;
 
@@ -223,6 +257,10 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
           return ON_PREM_CLUSTER;
         case 8:
           return MULTI_CLOUD_CLUSTER;
+        case 9:
+          return EDGE_CLUSTER;
+        case 10:
+          return APPLIANCE_CLUSTER;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -301,7 +339,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Specific information for a GKE On-Prem cluster.
+   * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+   * who has no resourceLink is not allowed to use this field, it should have
+   * a nil "type" instead.
    * </pre>
    *
    * <code>
@@ -318,7 +358,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Specific information for a GKE On-Prem cluster.
+   * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+   * who has no resourceLink is not allowed to use this field, it should have
+   * a nil "type" instead.
    * </pre>
    *
    * <code>
@@ -338,7 +380,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Specific information for a GKE On-Prem cluster.
+   * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+   * who has no resourceLink is not allowed to use this field, it should have
+   * a nil "type" instead.
    * </pre>
    *
    * <code>
@@ -411,6 +455,120 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.gkehub.v1beta1.MultiCloudCluster.getDefaultInstance();
   }
 
+  public static final int EDGE_CLUSTER_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a Google Edge cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the edgeCluster field is set.
+   */
+  @java.lang.Override
+  public boolean hasEdgeCluster() {
+    return typeCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a Google Edge cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The edgeCluster.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1beta1.EdgeCluster getEdgeCluster() {
+    if (typeCase_ == 9) {
+      return (com.google.cloud.gkehub.v1beta1.EdgeCluster) type_;
+    }
+    return com.google.cloud.gkehub.v1beta1.EdgeCluster.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a Google Edge cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1beta1.EdgeClusterOrBuilder getEdgeClusterOrBuilder() {
+    if (typeCase_ == 9) {
+      return (com.google.cloud.gkehub.v1beta1.EdgeCluster) type_;
+    }
+    return com.google.cloud.gkehub.v1beta1.EdgeCluster.getDefaultInstance();
+  }
+
+  public static final int APPLIANCE_CLUSTER_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a GDC Edge Appliance cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the applianceCluster field is set.
+   */
+  @java.lang.Override
+  public boolean hasApplianceCluster() {
+    return typeCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a GDC Edge Appliance cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The applianceCluster.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1beta1.ApplianceCluster getApplianceCluster() {
+    if (typeCase_ == 10) {
+      return (com.google.cloud.gkehub.v1beta1.ApplianceCluster) type_;
+    }
+    return com.google.cloud.gkehub.v1beta1.ApplianceCluster.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a GDC Edge Appliance cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1beta1.ApplianceClusterOrBuilder getApplianceClusterOrBuilder() {
+    if (typeCase_ == 10) {
+      return (com.google.cloud.gkehub.v1beta1.ApplianceCluster) type_;
+    }
+    return com.google.cloud.gkehub.v1beta1.ApplianceCluster.getDefaultInstance();
+  }
+
   public static final int KUBERNETES_METADATA_FIELD_NUMBER = 5;
   private com.google.cloud.gkehub.v1beta1.KubernetesMetadata kubernetesMetadata_;
   /**
@@ -472,8 +630,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The in-cluster Kubernetes Resources that should be applied for a
-   * correctly registered cluster, in the steady state. These resources:
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+   * registered cluster, in the steady state. These resources:
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -495,8 +653,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The in-cluster Kubernetes Resources that should be applied for a
-   * correctly registered cluster, in the steady state. These resources:
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+   * registered cluster, in the steady state. These resources:
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -520,8 +678,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The in-cluster Kubernetes Resources that should be applied for a
-   * correctly registered cluster, in the steady state. These resources:
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+   * registered cluster, in the steady state. These resources:
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -568,6 +726,12 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
     if (typeCase_ == 8) {
       output.writeMessage(8, (com.google.cloud.gkehub.v1beta1.MultiCloudCluster) type_);
     }
+    if (typeCase_ == 9) {
+      output.writeMessage(9, (com.google.cloud.gkehub.v1beta1.EdgeCluster) type_);
+    }
+    if (typeCase_ == 10) {
+      output.writeMessage(10, (com.google.cloud.gkehub.v1beta1.ApplianceCluster) type_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -597,6 +761,16 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.cloud.gkehub.v1beta1.MultiCloudCluster) type_);
+    }
+    if (typeCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.cloud.gkehub.v1beta1.EdgeCluster) type_);
+    }
+    if (typeCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.cloud.gkehub.v1beta1.ApplianceCluster) type_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -633,6 +807,12 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       case 8:
         if (!getMultiCloudCluster().equals(other.getMultiCloudCluster())) return false;
         break;
+      case 9:
+        if (!getEdgeCluster().equals(other.getEdgeCluster())) return false;
+        break;
+      case 10:
+        if (!getApplianceCluster().equals(other.getApplianceCluster())) return false;
+        break;
       case 0:
       default:
     }
@@ -667,6 +847,14 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       case 8:
         hash = (37 * hash) + MULTI_CLOUD_CLUSTER_FIELD_NUMBER;
         hash = (53 * hash) + getMultiCloudCluster().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + EDGE_CLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getEdgeCluster().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + APPLIANCE_CLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getApplianceCluster().hashCode();
         break;
       case 0:
       default:
@@ -879,6 +1067,20 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
           result.type_ = multiCloudClusterBuilder_.build();
         }
       }
+      if (typeCase_ == 9) {
+        if (edgeClusterBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = edgeClusterBuilder_.build();
+        }
+      }
+      if (typeCase_ == 10) {
+        if (applianceClusterBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = applianceClusterBuilder_.build();
+        }
+      }
       if (kubernetesMetadataBuilder_ == null) {
         result.kubernetesMetadata_ = kubernetesMetadata_;
       } else {
@@ -960,6 +1162,16 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
         case MULTI_CLOUD_CLUSTER:
           {
             mergeMultiCloudCluster(other.getMultiCloudCluster());
+            break;
+          }
+        case EDGE_CLUSTER:
+          {
+            mergeEdgeCluster(other.getEdgeCluster());
+            break;
+          }
+        case APPLIANCE_CLUSTER:
+          {
+            mergeApplianceCluster(other.getApplianceCluster());
             break;
           }
         case TYPE_NOT_SET:
@@ -1248,7 +1460,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specific information for a GKE On-Prem cluster.
+     * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+     * who has no resourceLink is not allowed to use this field, it should have
+     * a nil "type" instead.
      * </pre>
      *
      * <code>
@@ -1265,7 +1479,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specific information for a GKE On-Prem cluster.
+     * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+     * who has no resourceLink is not allowed to use this field, it should have
+     * a nil "type" instead.
      * </pre>
      *
      * <code>
@@ -1292,7 +1508,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specific information for a GKE On-Prem cluster.
+     * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+     * who has no resourceLink is not allowed to use this field, it should have
+     * a nil "type" instead.
      * </pre>
      *
      * <code>
@@ -1316,7 +1534,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specific information for a GKE On-Prem cluster.
+     * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+     * who has no resourceLink is not allowed to use this field, it should have
+     * a nil "type" instead.
      * </pre>
      *
      * <code>
@@ -1338,7 +1558,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specific information for a GKE On-Prem cluster.
+     * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+     * who has no resourceLink is not allowed to use this field, it should have
+     * a nil "type" instead.
      * </pre>
      *
      * <code>
@@ -1372,7 +1594,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specific information for a GKE On-Prem cluster.
+     * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+     * who has no resourceLink is not allowed to use this field, it should have
+     * a nil "type" instead.
      * </pre>
      *
      * <code>
@@ -1399,7 +1623,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specific information for a GKE On-Prem cluster.
+     * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+     * who has no resourceLink is not allowed to use this field, it should have
+     * a nil "type" instead.
      * </pre>
      *
      * <code>
@@ -1413,7 +1639,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specific information for a GKE On-Prem cluster.
+     * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+     * who has no resourceLink is not allowed to use this field, it should have
+     * a nil "type" instead.
      * </pre>
      *
      * <code>
@@ -1435,7 +1663,9 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specific information for a GKE On-Prem cluster.
+     * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+     * who has no resourceLink is not allowed to use this field, it should have
+     * a nil "type" instead.
      * </pre>
      *
      * <code>
@@ -1696,6 +1926,463 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
       return multiCloudClusterBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.v1beta1.EdgeCluster,
+            com.google.cloud.gkehub.v1beta1.EdgeCluster.Builder,
+            com.google.cloud.gkehub.v1beta1.EdgeClusterOrBuilder>
+        edgeClusterBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a Google Edge cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the edgeCluster field is set.
+     */
+    @java.lang.Override
+    public boolean hasEdgeCluster() {
+      return typeCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a Google Edge cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The edgeCluster.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.v1beta1.EdgeCluster getEdgeCluster() {
+      if (edgeClusterBuilder_ == null) {
+        if (typeCase_ == 9) {
+          return (com.google.cloud.gkehub.v1beta1.EdgeCluster) type_;
+        }
+        return com.google.cloud.gkehub.v1beta1.EdgeCluster.getDefaultInstance();
+      } else {
+        if (typeCase_ == 9) {
+          return edgeClusterBuilder_.getMessage();
+        }
+        return com.google.cloud.gkehub.v1beta1.EdgeCluster.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a Google Edge cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEdgeCluster(com.google.cloud.gkehub.v1beta1.EdgeCluster value) {
+      if (edgeClusterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        edgeClusterBuilder_.setMessage(value);
+      }
+      typeCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a Google Edge cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEdgeCluster(
+        com.google.cloud.gkehub.v1beta1.EdgeCluster.Builder builderForValue) {
+      if (edgeClusterBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        edgeClusterBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a Google Edge cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEdgeCluster(com.google.cloud.gkehub.v1beta1.EdgeCluster value) {
+      if (edgeClusterBuilder_ == null) {
+        if (typeCase_ == 9
+            && type_ != com.google.cloud.gkehub.v1beta1.EdgeCluster.getDefaultInstance()) {
+          type_ =
+              com.google.cloud.gkehub.v1beta1.EdgeCluster.newBuilder(
+                      (com.google.cloud.gkehub.v1beta1.EdgeCluster) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 9) {
+          edgeClusterBuilder_.mergeFrom(value);
+        } else {
+          edgeClusterBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a Google Edge cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEdgeCluster() {
+      if (edgeClusterBuilder_ == null) {
+        if (typeCase_ == 9) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 9) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        edgeClusterBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a Google Edge cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkehub.v1beta1.EdgeCluster.Builder getEdgeClusterBuilder() {
+      return getEdgeClusterFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a Google Edge cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.v1beta1.EdgeClusterOrBuilder getEdgeClusterOrBuilder() {
+      if ((typeCase_ == 9) && (edgeClusterBuilder_ != null)) {
+        return edgeClusterBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 9) {
+          return (com.google.cloud.gkehub.v1beta1.EdgeCluster) type_;
+        }
+        return com.google.cloud.gkehub.v1beta1.EdgeCluster.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a Google Edge cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.v1beta1.EdgeCluster,
+            com.google.cloud.gkehub.v1beta1.EdgeCluster.Builder,
+            com.google.cloud.gkehub.v1beta1.EdgeClusterOrBuilder>
+        getEdgeClusterFieldBuilder() {
+      if (edgeClusterBuilder_ == null) {
+        if (!(typeCase_ == 9)) {
+          type_ = com.google.cloud.gkehub.v1beta1.EdgeCluster.getDefaultInstance();
+        }
+        edgeClusterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkehub.v1beta1.EdgeCluster,
+                com.google.cloud.gkehub.v1beta1.EdgeCluster.Builder,
+                com.google.cloud.gkehub.v1beta1.EdgeClusterOrBuilder>(
+                (com.google.cloud.gkehub.v1beta1.EdgeCluster) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 9;
+      onChanged();
+      ;
+      return edgeClusterBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.v1beta1.ApplianceCluster,
+            com.google.cloud.gkehub.v1beta1.ApplianceCluster.Builder,
+            com.google.cloud.gkehub.v1beta1.ApplianceClusterOrBuilder>
+        applianceClusterBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a GDC Edge Appliance cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the applianceCluster field is set.
+     */
+    @java.lang.Override
+    public boolean hasApplianceCluster() {
+      return typeCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a GDC Edge Appliance cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The applianceCluster.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.v1beta1.ApplianceCluster getApplianceCluster() {
+      if (applianceClusterBuilder_ == null) {
+        if (typeCase_ == 10) {
+          return (com.google.cloud.gkehub.v1beta1.ApplianceCluster) type_;
+        }
+        return com.google.cloud.gkehub.v1beta1.ApplianceCluster.getDefaultInstance();
+      } else {
+        if (typeCase_ == 10) {
+          return applianceClusterBuilder_.getMessage();
+        }
+        return com.google.cloud.gkehub.v1beta1.ApplianceCluster.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a GDC Edge Appliance cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setApplianceCluster(com.google.cloud.gkehub.v1beta1.ApplianceCluster value) {
+      if (applianceClusterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        applianceClusterBuilder_.setMessage(value);
+      }
+      typeCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a GDC Edge Appliance cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setApplianceCluster(
+        com.google.cloud.gkehub.v1beta1.ApplianceCluster.Builder builderForValue) {
+      if (applianceClusterBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        applianceClusterBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a GDC Edge Appliance cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeApplianceCluster(com.google.cloud.gkehub.v1beta1.ApplianceCluster value) {
+      if (applianceClusterBuilder_ == null) {
+        if (typeCase_ == 10
+            && type_ != com.google.cloud.gkehub.v1beta1.ApplianceCluster.getDefaultInstance()) {
+          type_ =
+              com.google.cloud.gkehub.v1beta1.ApplianceCluster.newBuilder(
+                      (com.google.cloud.gkehub.v1beta1.ApplianceCluster) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 10) {
+          applianceClusterBuilder_.mergeFrom(value);
+        } else {
+          applianceClusterBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a GDC Edge Appliance cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearApplianceCluster() {
+      if (applianceClusterBuilder_ == null) {
+        if (typeCase_ == 10) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 10) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        applianceClusterBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a GDC Edge Appliance cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.gkehub.v1beta1.ApplianceCluster.Builder getApplianceClusterBuilder() {
+      return getApplianceClusterFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a GDC Edge Appliance cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.v1beta1.ApplianceClusterOrBuilder
+        getApplianceClusterOrBuilder() {
+      if ((typeCase_ == 10) && (applianceClusterBuilder_ != null)) {
+        return applianceClusterBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 10) {
+          return (com.google.cloud.gkehub.v1beta1.ApplianceCluster) type_;
+        }
+        return com.google.cloud.gkehub.v1beta1.ApplianceCluster.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specific information for a GDC Edge Appliance cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gkehub.v1beta1.ApplianceCluster,
+            com.google.cloud.gkehub.v1beta1.ApplianceCluster.Builder,
+            com.google.cloud.gkehub.v1beta1.ApplianceClusterOrBuilder>
+        getApplianceClusterFieldBuilder() {
+      if (applianceClusterBuilder_ == null) {
+        if (!(typeCase_ == 10)) {
+          type_ = com.google.cloud.gkehub.v1beta1.ApplianceCluster.getDefaultInstance();
+        }
+        applianceClusterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkehub.v1beta1.ApplianceCluster,
+                com.google.cloud.gkehub.v1beta1.ApplianceCluster.Builder,
+                com.google.cloud.gkehub.v1beta1.ApplianceClusterOrBuilder>(
+                (com.google.cloud.gkehub.v1beta1.ApplianceCluster) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 10;
+      onChanged();
+      ;
+      return applianceClusterBuilder_;
+    }
+
     private com.google.cloud.gkehub.v1beta1.KubernetesMetadata kubernetesMetadata_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.v1beta1.KubernetesMetadata,
@@ -1913,8 +2600,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The in-cluster Kubernetes Resources that should be applied for a
-     * correctly registered cluster, in the steady state. These resources:
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1935,8 +2622,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The in-cluster Kubernetes Resources that should be applied for a
-     * correctly registered cluster, in the steady state. These resources:
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1963,8 +2650,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The in-cluster Kubernetes Resources that should be applied for a
-     * correctly registered cluster, in the steady state. These resources:
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -1993,8 +2680,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The in-cluster Kubernetes Resources that should be applied for a
-     * correctly registered cluster, in the steady state. These resources:
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -2021,8 +2708,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The in-cluster Kubernetes Resources that should be applied for a
-     * correctly registered cluster, in the steady state. These resources:
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -2056,8 +2743,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The in-cluster Kubernetes Resources that should be applied for a
-     * correctly registered cluster, in the steady state. These resources:
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -2084,8 +2771,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The in-cluster Kubernetes Resources that should be applied for a
-     * correctly registered cluster, in the steady state. These resources:
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -2107,8 +2794,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The in-cluster Kubernetes Resources that should be applied for a
-     * correctly registered cluster, in the steady state. These resources:
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership
@@ -2134,8 +2821,8 @@ public final class MembershipEndpoint extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The in-cluster Kubernetes Resources that should be applied for a
-     * correctly registered cluster, in the steady state. These resources:
+     * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+     * registered cluster, in the steady state. These resources:
      *   * Ensure that the cluster is exclusively registered to one and only one
      *     Hub Membership.
      *   * Propagate Workload Pool Information available in the Membership

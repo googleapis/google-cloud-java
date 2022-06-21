@@ -628,7 +628,7 @@ public class ManagedIdentitiesServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListDomainsResponse response =
    *         managedIdentitiesServiceClient.listDomainsCallable().call(request);
-   *     for (Domain element : response.getResponsesList()) {
+   *     for (Domain element : response.getDomainsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3beta1;
 
+import static com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupsClient.ListTransitionRouteGroupsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -30,6 +31,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.cx.v3beta1.stub.TransitionRouteGroupsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -110,6 +115,17 @@ public class TransitionRouteGroupsSettings extends ClientSettings<TransitionRout
       deleteTransitionRouteGroupSettings() {
     return ((TransitionRouteGroupsStubSettings) getStubSettings())
         .deleteTransitionRouteGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((TransitionRouteGroupsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((TransitionRouteGroupsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final TransitionRouteGroupsSettings create(TransitionRouteGroupsStubSettings stub)
@@ -241,6 +257,18 @@ public class TransitionRouteGroupsSettings extends ClientSettings<TransitionRout
     public UnaryCallSettings.Builder<DeleteTransitionRouteGroupRequest, Empty>
         deleteTransitionRouteGroupSettings() {
       return getStubSettingsBuilder().deleteTransitionRouteGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

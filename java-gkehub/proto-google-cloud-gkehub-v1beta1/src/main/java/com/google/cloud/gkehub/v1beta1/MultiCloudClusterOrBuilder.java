@@ -27,8 +27,8 @@ public interface MultiCloudClusterOrBuilder
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster.
-   * For example:
+   * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+   * example:
    *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
    *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
    * </pre>
@@ -42,8 +42,8 @@ public interface MultiCloudClusterOrBuilder
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster.
-   * For example:
+   * Immutable. Self-link of the GCP resource for the GKE Multi-Cloud cluster. For
+   * example:
    *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/awsClusters/my-cluster
    *  //gkemulticloud.googleapis.com/projects/my-project/locations/us-west1-a/azureClusters/my-cluster
    * </pre>

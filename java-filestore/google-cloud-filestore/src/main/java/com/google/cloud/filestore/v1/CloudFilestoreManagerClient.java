@@ -342,7 +342,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *   while (true) {
    *     ListInstancesResponse response =
    *         cloudFilestoreManagerClient.listInstancesCallable().call(request);
-   *     for (Instance element : response.getResponsesList()) {
+   *     for (Instance element : response.getInstancesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1124,7 +1124,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *   while (true) {
    *     ListBackupsResponse response =
    *         cloudFilestoreManagerClient.listBackupsCallable().call(request);
-   *     for (Backup element : response.getResponsesList()) {
+   *     for (Backup element : response.getBackupsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

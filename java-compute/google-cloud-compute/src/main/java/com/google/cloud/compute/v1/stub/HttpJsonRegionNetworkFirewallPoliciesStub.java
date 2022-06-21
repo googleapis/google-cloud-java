@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionNetworkFirewallPoliciesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -75,7 +74,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFirewallPoliciesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -87,7 +86,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
               .<AddAssociationRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionNetworkFirewallPolicies/AddAssociation")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -152,7 +151,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
       addRuleMethodDescriptor =
           ApiMethodDescriptor.<AddRuleRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkFirewallPolicies/AddRule")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -218,7 +217,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
       cloneRulesMethodDescriptor =
           ApiMethodDescriptor.<CloneRulesRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkFirewallPolicies/CloneRules")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -277,7 +276,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkFirewallPolicies/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -330,7 +329,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionNetworkFirewallPolicyRequest, FirewallPolicy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkFirewallPolicies/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionNetworkFirewallPolicyRequest>newBuilder()
@@ -370,7 +369,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                   newBuilder()
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionNetworkFirewallPolicies/GetAssociation")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -416,7 +415,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                   newBuilder()
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionNetworkFirewallPolicies/GetEffectiveFirewalls")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -458,7 +457,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
           ApiMethodDescriptor.<GetIamPolicyRegionNetworkFirewallPolicyRequest, Policy>newBuilder()
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionNetworkFirewallPolicies/GetIamPolicy")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -502,7 +501,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
           ApiMethodDescriptor
               .<GetRuleRegionNetworkFirewallPolicyRequest, FirewallPolicyRule>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkFirewallPolicies/GetRule")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -542,7 +541,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkFirewallPolicies/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -600,7 +599,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
           ApiMethodDescriptor
               .<ListRegionNetworkFirewallPoliciesRequest, FirewallPolicyList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkFirewallPolicies/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -654,7 +653,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkFirewallPolicies/Patch")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRegionNetworkFirewallPolicyRequest>newBuilder()
@@ -711,7 +710,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
       patchRuleMethodDescriptor =
           ApiMethodDescriptor.<PatchRuleRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkFirewallPolicies/PatchRule")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -775,7 +774,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
               .<RemoveAssociationRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionNetworkFirewallPolicies/RemoveAssociation")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -832,7 +831,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
       removeRuleMethodDescriptor =
           ApiMethodDescriptor.<RemoveRuleRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkFirewallPolicies/RemoveRule")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -889,7 +888,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
           ApiMethodDescriptor.<SetIamPolicyRegionNetworkFirewallPolicyRequest, Policy>newBuilder()
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionNetworkFirewallPolicies/SetIamPolicy")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -934,7 +933,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                   newBuilder()
               .setFullMethodName(
                   "google.cloud.compute.v1.RegionNetworkFirewallPolicies/TestIamPermissions")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter

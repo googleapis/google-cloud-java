@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * This reservation type allows to pre allocate specific instance configuration. Next ID: 5
+ * This reservation type allows to pre allocate specific instance configuration. Next ID: 6
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AllocationSpecificSKUReservation}
@@ -119,6 +119,8 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -517,7 +519,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    *
    *
    * <pre>
-   * This reservation type allows to pre allocate specific instance configuration. Next ID: 5
+   * This reservation type allows to pre allocate specific instance configuration. Next ID: 6
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AllocationSpecificSKUReservation}

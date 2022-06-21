@@ -419,6 +419,51 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * @return The fixedNodeCount.
      */
     int getFixedNodeCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Online serving scaling configuration.
+     * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+     * reset the other.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+     * </code>
+     *
+     * @return Whether the scaling field is set.
+     */
+    boolean hasScaling();
+    /**
+     *
+     *
+     * <pre>
+     * Online serving scaling configuration.
+     * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+     * reset the other.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+     * </code>
+     *
+     * @return The scaling.
+     */
+    com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling getScaling();
+    /**
+     *
+     *
+     * <pre>
+     * Online serving scaling configuration.
+     * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+     * reset the other.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.ScalingOrBuilder
+        getScalingOrBuilder();
   }
   /**
    *
@@ -476,6 +521,25 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
                 fixedNodeCount_ = input.readInt32();
                 break;
               }
+            case 34:
+              {
+                com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling.Builder
+                    subBuilder = null;
+                if (scaling_ != null) {
+                  subBuilder = scaling_.toBuilder();
+                }
+                scaling_ =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+                            .parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(scaling_);
+                  scaling_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
             default:
               {
                 if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -512,6 +576,703 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Builder.class);
     }
 
+    public interface ScalingOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The minimum number of nodes to scale down to. Must be greater than or
+       * equal to 1.
+       * </pre>
+       *
+       * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The minNodeCount.
+       */
+      int getMinNodeCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of nodes to scale up to. Must be greater than
+       * min_node_count, and less than or equal to 10 times of 'min_node_count'.
+       * </pre>
+       *
+       * <code>int32 max_node_count = 2;</code>
+       *
+       * @return The maxNodeCount.
+       */
+      int getMaxNodeCount();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Online serving scaling configuration. If min_node_count and
+     * max_node_count are set to the same value, the cluster will be configured
+     * with the fixed number of node (no auto-scaling).
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling}
+     */
+    public static final class Scaling extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling)
+        ScalingOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Scaling.newBuilder() to construct.
+      private Scaling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Scaling() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Scaling();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private Scaling(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  minNodeCount_ = input.readInt32();
+                  break;
+                }
+              case 16:
+                {
+                  maxNodeCount_ = input.readInt32();
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.FeaturestoreProto
+            .internal_static_google_cloud_aiplatform_v1_Featurestore_OnlineServingConfig_Scaling_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.FeaturestoreProto
+            .internal_static_google_cloud_aiplatform_v1_Featurestore_OnlineServingConfig_Scaling_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling.class,
+                com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling.Builder
+                    .class);
+      }
+
+      public static final int MIN_NODE_COUNT_FIELD_NUMBER = 1;
+      private int minNodeCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The minimum number of nodes to scale down to. Must be greater than or
+       * equal to 1.
+       * </pre>
+       *
+       * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The minNodeCount.
+       */
+      @java.lang.Override
+      public int getMinNodeCount() {
+        return minNodeCount_;
+      }
+
+      public static final int MAX_NODE_COUNT_FIELD_NUMBER = 2;
+      private int maxNodeCount_;
+      /**
+       *
+       *
+       * <pre>
+       * The maximum number of nodes to scale up to. Must be greater than
+       * min_node_count, and less than or equal to 10 times of 'min_node_count'.
+       * </pre>
+       *
+       * <code>int32 max_node_count = 2;</code>
+       *
+       * @return The maxNodeCount.
+       */
+      @java.lang.Override
+      public int getMaxNodeCount() {
+        return maxNodeCount_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (minNodeCount_ != 0) {
+          output.writeInt32(1, minNodeCount_);
+        }
+        if (maxNodeCount_ != 0) {
+          output.writeInt32(2, maxNodeCount_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (minNodeCount_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, minNodeCount_);
+        }
+        if (maxNodeCount_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxNodeCount_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling other =
+            (com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling) obj;
+
+        if (getMinNodeCount() != other.getMinNodeCount()) return false;
+        if (getMaxNodeCount() != other.getMaxNodeCount()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + MIN_NODE_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getMinNodeCount();
+        hash = (37 * hash) + MAX_NODE_COUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getMaxNodeCount();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Online serving scaling configuration. If min_node_count and
+       * max_node_count are set to the same value, the cluster will be configured
+       * with the fixed number of node (no auto-scaling).
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling)
+          com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.ScalingOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1.FeaturestoreProto
+              .internal_static_google_cloud_aiplatform_v1_Featurestore_OnlineServingConfig_Scaling_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1.FeaturestoreProto
+              .internal_static_google_cloud_aiplatform_v1_Featurestore_OnlineServingConfig_Scaling_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling.class,
+                  com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          minNodeCount_ = 0;
+
+          maxNodeCount_ = 0;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1.FeaturestoreProto
+              .internal_static_google_cloud_aiplatform_v1_Featurestore_OnlineServingConfig_Scaling_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling build() {
+          com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+            buildPartial() {
+          com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling result =
+              new com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling(this);
+          result.minNodeCount_ = minNodeCount_;
+          result.maxNodeCount_ = maxNodeCount_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling other) {
+          if (other
+              == com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+                  .getDefaultInstance()) return this;
+          if (other.getMinNodeCount() != 0) {
+            setMinNodeCount(other.getMinNodeCount());
+          }
+          if (other.getMaxNodeCount() != 0) {
+            setMaxNodeCount(other.getMaxNodeCount());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling parsedMessage =
+              null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int minNodeCount_;
+        /**
+         *
+         *
+         * <pre>
+         * Required. The minimum number of nodes to scale down to. Must be greater than or
+         * equal to 1.
+         * </pre>
+         *
+         * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The minNodeCount.
+         */
+        @java.lang.Override
+        public int getMinNodeCount() {
+          return minNodeCount_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The minimum number of nodes to scale down to. Must be greater than or
+         * equal to 1.
+         * </pre>
+         *
+         * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The minNodeCount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMinNodeCount(int value) {
+
+          minNodeCount_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The minimum number of nodes to scale down to. Must be greater than or
+         * equal to 1.
+         * </pre>
+         *
+         * <code>int32 min_node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMinNodeCount() {
+
+          minNodeCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int maxNodeCount_;
+        /**
+         *
+         *
+         * <pre>
+         * The maximum number of nodes to scale up to. Must be greater than
+         * min_node_count, and less than or equal to 10 times of 'min_node_count'.
+         * </pre>
+         *
+         * <code>int32 max_node_count = 2;</code>
+         *
+         * @return The maxNodeCount.
+         */
+        @java.lang.Override
+        public int getMaxNodeCount() {
+          return maxNodeCount_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The maximum number of nodes to scale up to. Must be greater than
+         * min_node_count, and less than or equal to 10 times of 'min_node_count'.
+         * </pre>
+         *
+         * <code>int32 max_node_count = 2;</code>
+         *
+         * @param value The maxNodeCount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMaxNodeCount(int value) {
+
+          maxNodeCount_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The maximum number of nodes to scale up to. Must be greater than
+         * min_node_count, and less than or equal to 10 times of 'min_node_count'.
+         * </pre>
+         *
+         * <code>int32 max_node_count = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMaxNodeCount() {
+
+          maxNodeCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling)
+      private static final com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling();
+      }
+
+      public static com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Scaling> PARSER =
+          new com.google.protobuf.AbstractParser<Scaling>() {
+            @java.lang.Override
+            public Scaling parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new Scaling(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<Scaling> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Scaling> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     public static final int FIXED_NODE_COUNT_FIELD_NUMBER = 2;
     private int fixedNodeCount_;
     /**
@@ -533,6 +1294,65 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       return fixedNodeCount_;
     }
 
+    public static final int SCALING_FIELD_NUMBER = 4;
+    private com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling_;
+    /**
+     *
+     *
+     * <pre>
+     * Online serving scaling configuration.
+     * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+     * reset the other.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+     * </code>
+     *
+     * @return Whether the scaling field is set.
+     */
+    @java.lang.Override
+    public boolean hasScaling() {
+      return scaling_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Online serving scaling configuration.
+     * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+     * reset the other.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+     * </code>
+     *
+     * @return The scaling.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling getScaling() {
+      return scaling_ == null
+          ? com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+              .getDefaultInstance()
+          : scaling_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Online serving scaling configuration.
+     * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+     * reset the other.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.ScalingOrBuilder
+        getScalingOrBuilder() {
+      return getScaling();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -550,6 +1370,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       if (fixedNodeCount_ != 0) {
         output.writeInt32(2, fixedNodeCount_);
       }
+      if (scaling_ != null) {
+        output.writeMessage(4, getScaling());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -561,6 +1384,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (fixedNodeCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, fixedNodeCount_);
+      }
+      if (scaling_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getScaling());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -579,6 +1405,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig) obj;
 
       if (getFixedNodeCount() != other.getFixedNodeCount()) return false;
+      if (hasScaling() != other.hasScaling()) return false;
+      if (hasScaling()) {
+        if (!getScaling().equals(other.getScaling())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -592,6 +1422,10 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + FIXED_NODE_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getFixedNodeCount();
+      if (hasScaling()) {
+        hash = (37 * hash) + SCALING_FIELD_NUMBER;
+        hash = (53 * hash) + getScaling().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -745,6 +1579,12 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         fixedNodeCount_ = 0;
 
+        if (scalingBuilder_ == null) {
+          scaling_ = null;
+        } else {
+          scaling_ = null;
+          scalingBuilder_ = null;
+        }
         return this;
       }
 
@@ -774,6 +1614,11 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig result =
             new com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig(this);
         result.fixedNodeCount_ = fixedNodeCount_;
+        if (scalingBuilder_ == null) {
+          result.scaling_ = scaling_;
+        } else {
+          result.scaling_ = scalingBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -830,6 +1675,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (other.getFixedNodeCount() != 0) {
           setFixedNodeCount(other.getFixedNodeCount());
+        }
+        if (other.hasScaling()) {
+          mergeScaling(other.getScaling());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -921,6 +1769,227 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         fixedNodeCount_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling,
+              com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling.Builder,
+              com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.ScalingOrBuilder>
+          scalingBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Online serving scaling configuration.
+       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+       * reset the other.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+       * </code>
+       *
+       * @return Whether the scaling field is set.
+       */
+      public boolean hasScaling() {
+        return scalingBuilder_ != null || scaling_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Online serving scaling configuration.
+       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+       * reset the other.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+       * </code>
+       *
+       * @return The scaling.
+       */
+      public com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling getScaling() {
+        if (scalingBuilder_ == null) {
+          return scaling_ == null
+              ? com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+                  .getDefaultInstance()
+              : scaling_;
+        } else {
+          return scalingBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Online serving scaling configuration.
+       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+       * reset the other.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+       * </code>
+       */
+      public Builder setScaling(
+          com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling value) {
+        if (scalingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          scaling_ = value;
+          onChanged();
+        } else {
+          scalingBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Online serving scaling configuration.
+       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+       * reset the other.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+       * </code>
+       */
+      public Builder setScaling(
+          com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling.Builder
+              builderForValue) {
+        if (scalingBuilder_ == null) {
+          scaling_ = builderForValue.build();
+          onChanged();
+        } else {
+          scalingBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Online serving scaling configuration.
+       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+       * reset the other.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+       * </code>
+       */
+      public Builder mergeScaling(
+          com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling value) {
+        if (scalingBuilder_ == null) {
+          if (scaling_ != null) {
+            scaling_ =
+                com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling.newBuilder(
+                        scaling_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            scaling_ = value;
+          }
+          onChanged();
+        } else {
+          scalingBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Online serving scaling configuration.
+       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+       * reset the other.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+       * </code>
+       */
+      public Builder clearScaling() {
+        if (scalingBuilder_ == null) {
+          scaling_ = null;
+          onChanged();
+        } else {
+          scaling_ = null;
+          scalingBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Online serving scaling configuration.
+       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+       * reset the other.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling.Builder
+          getScalingBuilder() {
+
+        onChanged();
+        return getScalingFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Online serving scaling configuration.
+       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+       * reset the other.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.ScalingOrBuilder
+          getScalingOrBuilder() {
+        if (scalingBuilder_ != null) {
+          return scalingBuilder_.getMessageOrBuilder();
+        } else {
+          return scaling_ == null
+              ? com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling
+                  .getDefaultInstance()
+              : scaling_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Online serving scaling configuration.
+       * Only one of `fixed_node_count` and `scaling` can be set. Setting one will
+       * reset the other.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling scaling = 4;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling,
+              com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling.Builder,
+              com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.ScalingOrBuilder>
+          getScalingFieldBuilder() {
+        if (scalingBuilder_ == null) {
+          scalingBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling,
+                  com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.Scaling.Builder,
+                  com.google.cloud.aiplatform.v1.Featurestore.OnlineServingConfig.ScalingOrBuilder>(
+                  getScaling(), getParentForChildren(), isClean());
+          scaling_ = null;
+        }
+        return scalingBuilder_;
       }
 
       @java.lang.Override

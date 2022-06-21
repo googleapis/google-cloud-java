@@ -164,6 +164,8 @@ public final class ResourcePolicyAggregatedList extends com.google.protobuf.Gene
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -359,7 +361,7 @@ public final class ResourcePolicyAggregatedList extends com.google.protobuf.Gene
   @java.lang.Override
   public boolean containsItems(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetItems().getMap().containsKey(key);
   }
@@ -399,7 +401,7 @@ public final class ResourcePolicyAggregatedList extends com.google.protobuf.Gene
   public com.google.cloud.compute.v1.ResourcePoliciesScopedList getItemsOrDefault(
       java.lang.String key, com.google.cloud.compute.v1.ResourcePoliciesScopedList defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.ResourcePoliciesScopedList> map =
         internalGetItems().getMap();
@@ -419,7 +421,7 @@ public final class ResourcePolicyAggregatedList extends com.google.protobuf.Gene
   public com.google.cloud.compute.v1.ResourcePoliciesScopedList getItemsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.ResourcePoliciesScopedList> map =
         internalGetItems().getMap();
@@ -1520,7 +1522,7 @@ public final class ResourcePolicyAggregatedList extends com.google.protobuf.Gene
     @java.lang.Override
     public boolean containsItems(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetItems().getMap().containsKey(key);
     }
@@ -1562,7 +1564,7 @@ public final class ResourcePolicyAggregatedList extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.ResourcePoliciesScopedList getItemsOrDefault(
         java.lang.String key, com.google.cloud.compute.v1.ResourcePoliciesScopedList defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.ResourcePoliciesScopedList> map =
           internalGetItems().getMap();
@@ -1583,7 +1585,7 @@ public final class ResourcePolicyAggregatedList extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.ResourcePoliciesScopedList getItemsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.ResourcePoliciesScopedList> map =
           internalGetItems().getMap();
@@ -1610,7 +1612,7 @@ public final class ResourcePolicyAggregatedList extends com.google.protobuf.Gene
      */
     public Builder removeItems(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableItems().getMutableMap().remove(key);
       return this;
@@ -1635,11 +1637,12 @@ public final class ResourcePolicyAggregatedList extends com.google.protobuf.Gene
     public Builder putItems(
         java.lang.String key, com.google.cloud.compute.v1.ResourcePoliciesScopedList value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableItems().getMutableMap().put(key, value);
       return this;
     }

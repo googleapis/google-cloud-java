@@ -450,7 +450,12 @@ public interface ImageOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
-  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -1077,7 +1082,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * The type of the image used to create this disk. The default and only value is RAW
+   * The type of the image used to create this disk. The default and only valid value is RAW.
    * Check the SourceType enum for the list of possible values.
    * </pre>
    *
@@ -1090,7 +1095,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * The type of the image used to create this disk. The default and only value is RAW
+   * The type of the image used to create this disk. The default and only valid value is RAW.
    * Check the SourceType enum for the list of possible values.
    * </pre>
    *
@@ -1103,7 +1108,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * The type of the image used to create this disk. The default and only value is RAW
+   * The type of the image used to create this disk. The default and only valid value is RAW.
    * Check the SourceType enum for the list of possible values.
    * </pre>
    *

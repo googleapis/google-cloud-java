@@ -62,12 +62,17 @@ public final class AutoMLVideoObjectTrackingProto {
           + "ERSATILE_1\020\002\022\034\n\030MOBILE_CORAL_VERSATILE_1"
           + "\020\003\022\036\n\032MOBILE_CORAL_LOW_LATENCY_1\020\004\022\035\n\031MO"
           + "BILE_JETSON_VERSATILE_1\020\005\022\037\n\033MOBILE_JETS"
-          + "ON_LOW_LATENCY_1\020\006B\316\001\nAcom.google.cloud."
+          + "ON_LOW_LATENCY_1\020\006B\224\003\nAcom.google.cloud."
           + "aiplatform.v1beta1.schema.trainingjob.de"
           + "finitionB\036AutoMLVideoObjectTrackingProto"
           + "P\001Zggoogle.golang.org/genproto/googleapi"
           + "s/cloud/aiplatform/v1beta1/schema/traini"
-          + "ngjob/definition;definitionb\006proto3"
+          + "ngjob/definition;definition\252\002=Google.Clo"
+          + "ud.AIPlatform.V1Beta1.Schema.TrainingJob"
+          + ".Definition\312\002=Google\\Cloud\\AIPlatform\\V1"
+          + "beta1\\Schema\\TrainingJob\\Definition\352\002CGo"
+          + "ogle::Cloud::AIPlatform::V1beta1::Schema"
+          + "::TrainingJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

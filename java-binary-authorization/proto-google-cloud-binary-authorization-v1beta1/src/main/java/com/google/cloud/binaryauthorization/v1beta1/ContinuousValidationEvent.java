@@ -167,6 +167,31 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
      *
      *
      * <pre>
+     * The k8s namespace of the Pod.
+     * </pre>
+     *
+     * <code>string pod_namespace = 7;</code>
+     *
+     * @return The podNamespace.
+     */
+    java.lang.String getPodNamespace();
+    /**
+     *
+     *
+     * <pre>
+     * The k8s namespace of the Pod.
+     * </pre>
+     *
+     * <code>string pod_namespace = 7;</code>
+     *
+     * @return The bytes for podNamespace.
+     */
+    com.google.protobuf.ByteString getPodNamespaceBytes();
+
+    /**
+     *
+     *
+     * <pre>
      * The name of the Pod.
      * </pre>
      *
@@ -384,6 +409,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
     }
 
     private ContinuousValidationPodEvent() {
+      podNamespace_ = "";
       pod_ = "";
       verdict_ = 0;
       images_ = java.util.Collections.emptyList();
@@ -477,6 +503,13 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                         com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                             .ContinuousValidationPodEvent.ImageDetails.parser(),
                         extensionRegistry));
+                break;
+              }
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                podNamespace_ = s;
                 break;
               }
             default:
@@ -1977,6 +2010,55 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       }
     }
 
+    public static final int POD_NAMESPACE_FIELD_NUMBER = 7;
+    private volatile java.lang.Object podNamespace_;
+    /**
+     *
+     *
+     * <pre>
+     * The k8s namespace of the Pod.
+     * </pre>
+     *
+     * <code>string pod_namespace = 7;</code>
+     *
+     * @return The podNamespace.
+     */
+    @java.lang.Override
+    public java.lang.String getPodNamespace() {
+      java.lang.Object ref = podNamespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        podNamespace_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The k8s namespace of the Pod.
+     * </pre>
+     *
+     * <code>string pod_namespace = 7;</code>
+     *
+     * @return The bytes for podNamespace.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPodNamespaceBytes() {
+      java.lang.Object ref = podNamespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        podNamespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int POD_FIELD_NUMBER = 1;
     private volatile java.lang.Object pod_;
     /**
@@ -2291,6 +2373,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       for (int i = 0; i < images_.size(); i++) {
         output.writeMessage(5, images_.get(i));
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podNamespace_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, podNamespace_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2319,6 +2404,9 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       for (int i = 0; i < images_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, images_.get(i));
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(podNamespace_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, podNamespace_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2342,6 +2430,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                       .ContinuousValidationPodEvent)
                   obj;
 
+      if (!getPodNamespace().equals(other.getPodNamespace())) return false;
       if (!getPod().equals(other.getPod())) return false;
       if (hasDeployTime() != other.hasDeployTime()) return false;
       if (hasDeployTime()) {
@@ -2364,6 +2453,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + POD_NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getPodNamespace().hashCode();
       hash = (37 * hash) + POD_FIELD_NUMBER;
       hash = (53 * hash) + getPod().hashCode();
       if (hasDeployTime()) {
@@ -2555,6 +2646,8 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        podNamespace_ = "";
+
         pod_ = "";
 
         if (deployTimeBuilder_ == null) {
@@ -2617,6 +2710,7 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
                 new com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                     .ContinuousValidationPodEvent(this);
         int from_bitField0_ = bitField0_;
+        result.podNamespace_ = podNamespace_;
         result.pod_ = pod_;
         if (deployTimeBuilder_ == null) {
           result.deployTime_ = deployTime_;
@@ -2700,6 +2794,10 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
         if (other
             == com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
                 .ContinuousValidationPodEvent.getDefaultInstance()) return this;
+        if (!other.getPodNamespace().isEmpty()) {
+          podNamespace_ = other.podNamespace_;
+          onChanged();
+        }
         if (!other.getPod().isEmpty()) {
           pod_ = other.pod_;
           onChanged();
@@ -2775,6 +2873,112 @@ public final class ContinuousValidationEvent extends com.google.protobuf.Generat
       }
 
       private int bitField0_;
+
+      private java.lang.Object podNamespace_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The k8s namespace of the Pod.
+       * </pre>
+       *
+       * <code>string pod_namespace = 7;</code>
+       *
+       * @return The podNamespace.
+       */
+      public java.lang.String getPodNamespace() {
+        java.lang.Object ref = podNamespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          podNamespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The k8s namespace of the Pod.
+       * </pre>
+       *
+       * <code>string pod_namespace = 7;</code>
+       *
+       * @return The bytes for podNamespace.
+       */
+      public com.google.protobuf.ByteString getPodNamespaceBytes() {
+        java.lang.Object ref = podNamespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          podNamespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The k8s namespace of the Pod.
+       * </pre>
+       *
+       * <code>string pod_namespace = 7;</code>
+       *
+       * @param value The podNamespace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPodNamespace(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        podNamespace_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The k8s namespace of the Pod.
+       * </pre>
+       *
+       * <code>string pod_namespace = 7;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPodNamespace() {
+
+        podNamespace_ = getDefaultInstance().getPodNamespace();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The k8s namespace of the Pod.
+       * </pre>
+       *
+       * <code>string pod_namespace = 7;</code>
+       *
+       * @param value The bytes for podNamespace to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPodNamespaceBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        podNamespace_ = value;
+        onChanged();
+        return this;
+      }
 
       private java.lang.Object pod_ = "";
       /**

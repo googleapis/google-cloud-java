@@ -802,6 +802,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of output sprite sheets.
+   * Spritesheets require at least one VideoStream in the Jobconfig.
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -815,6 +816,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of output sprite sheets.
+   * Spritesheets require at least one VideoStream in the Jobconfig.
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -829,6 +831,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of output sprite sheets.
+   * Spritesheets require at least one VideoStream in the Jobconfig.
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -842,6 +845,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of output sprite sheets.
+   * Spritesheets require at least one VideoStream in the Jobconfig.
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -855,6 +859,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of output sprite sheets.
+   * Spritesheets require at least one VideoStream in the Jobconfig.
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4298,6 +4303,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4314,6 +4320,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4330,6 +4337,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4346,6 +4354,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4369,6 +4378,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4389,6 +4399,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4411,6 +4422,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4434,6 +4446,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4454,6 +4467,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4474,6 +4488,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4494,6 +4509,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4513,6 +4529,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4532,6 +4549,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4545,6 +4563,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4562,6 +4581,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4579,6 +4599,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4592,6 +4613,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -4606,6 +4628,7 @@ public final class JobConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of output sprite sheets.
+     * Spritesheets require at least one VideoStream in the Jobconfig.
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>

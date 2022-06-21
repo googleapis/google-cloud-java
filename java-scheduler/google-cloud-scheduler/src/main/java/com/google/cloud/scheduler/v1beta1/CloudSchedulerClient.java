@@ -126,7 +126,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * Constructs an instance of CloudSchedulerClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(CloudSchedulerSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CloudSchedulerClient create(CloudSchedulerStub stub) {
     return new CloudSchedulerClient(stub);
   }
@@ -141,7 +140,6 @@ public class CloudSchedulerClient implements BackgroundResource {
     this.stub = ((CloudSchedulerStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CloudSchedulerClient(CloudSchedulerStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -151,7 +149,6 @@ public class CloudSchedulerClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudSchedulerStub getStub() {
     return stub;
   }
@@ -284,7 +281,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListJobsResponse response = cloudSchedulerClient.listJobsCallable().call(request);
-   *     for (Job element : response.getResponsesList()) {
+   *     for (Job element : response.getJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

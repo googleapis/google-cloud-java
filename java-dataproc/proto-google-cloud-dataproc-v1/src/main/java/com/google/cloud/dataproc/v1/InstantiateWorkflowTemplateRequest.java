@@ -118,6 +118,8 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -341,7 +343,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
   @java.lang.Override
   public boolean containsParameters(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetParameters().getMap().containsKey(key);
   }
@@ -381,7 +383,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
   public java.lang.String getParametersOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -400,7 +402,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
   @java.lang.Override
   public java.lang.String getParametersOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
     if (!map.containsKey(key)) {
@@ -1200,7 +1202,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
     @java.lang.Override
     public boolean containsParameters(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetParameters().getMap().containsKey(key);
     }
@@ -1240,7 +1242,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
     public java.lang.String getParametersOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1259,7 +1261,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
     @java.lang.Override
     public java.lang.String getParametersOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       if (!map.containsKey(key)) {
@@ -1285,7 +1287,7 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      */
     public Builder removeParameters(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableParameters().getMutableMap().remove(key);
       return this;
@@ -1308,11 +1310,12 @@ public final class InstantiateWorkflowTemplateRequest extends com.google.protobu
      */
     public Builder putParameters(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableParameters().getMutableMap().put(key, value);
       return this;
     }

@@ -27,7 +27,9 @@
  * // This snippet has been automatically generated for illustrative purposes only.
  * // It may require modifications to work in your environment.
  * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
- *   DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
+ *   DataSourceName name =
+ *       DataSourceName.ofProjectLocationDataSourceName(
+ *           "[PROJECT]", "[LOCATION]", "[DATA_SOURCE]");
  *   DataSource response = dataTransferServiceClient.getDataSource(name);
  * }
  * }</pre>

@@ -112,6 +112,8 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -610,7 +612,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
         != com.google.cloud.dataproc.v1.YarnApplication.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, state_);
     }
-    if (progress_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(progress_) != 0) {
       output.writeFloat(3, progress_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackingUrl_)) {
@@ -632,7 +634,7 @@ public final class YarnApplication extends com.google.protobuf.GeneratedMessageV
         != com.google.cloud.dataproc.v1.YarnApplication.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, state_);
     }
-    if (progress_ != 0F) {
+    if (java.lang.Float.floatToRawIntBits(progress_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, progress_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trackingUrl_)) {

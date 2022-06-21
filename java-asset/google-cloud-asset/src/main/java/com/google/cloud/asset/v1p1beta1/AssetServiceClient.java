@@ -304,7 +304,7 @@ public class AssetServiceClient implements BackgroundResource {
    *   while (true) {
    *     SearchAllResourcesResponse response =
    *         assetServiceClient.searchAllResourcesCallable().call(request);
-   *     for (StandardResourceMetadata element : response.getResponsesList()) {
+   *     for (StandardResourceMetadata element : response.getResultsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -463,7 +463,7 @@ public class AssetServiceClient implements BackgroundResource {
    *   while (true) {
    *     SearchAllIamPoliciesResponse response =
    *         assetServiceClient.searchAllIamPoliciesCallable().call(request);
-   *     for (IamPolicySearchResult element : response.getResponsesList()) {
+   *     for (IamPolicySearchResult element : response.getResultsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

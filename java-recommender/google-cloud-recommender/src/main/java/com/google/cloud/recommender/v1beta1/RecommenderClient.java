@@ -345,7 +345,7 @@ public class RecommenderClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListInsightsResponse response = recommenderClient.listInsightsCallable().call(request);
-   *     for (Insight element : response.getResponsesList()) {
+   *     for (Insight element : response.getInsightsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -877,7 +877,7 @@ public class RecommenderClient implements BackgroundResource {
    *   while (true) {
    *     ListRecommendationsResponse response =
    *         recommenderClient.listRecommendationsCallable().call(request);
-   *     for (Recommendation element : response.getResponsesList()) {
+   *     for (Recommendation element : response.getRecommendationsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

@@ -56,7 +56,9 @@ public interface InputOrBuilder
    * <pre>
    * URI of the media. Input files must be at least 5 seconds in duration and
    * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
-   * If empty, the value will be populated from `Job.input_uri`.
+   * If empty, the value is populated from `Job.input_uri`. See
+   * [Supported input and output
+   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -70,7 +72,9 @@ public interface InputOrBuilder
    * <pre>
    * URI of the media. Input files must be at least 5 seconds in duration and
    * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
-   * If empty, the value will be populated from `Job.input_uri`.
+   * If empty, the value is populated from `Job.input_uri`. See
+   * [Supported input and output
+   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
    * </pre>
    *
    * <code>string uri = 2;</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -41,6 +40,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ZonesClient zonesClient = ZonesClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -77,6 +78,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ZonesSettings zonesSettings =
  *     ZonesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -87,6 +90,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ZonesSettings zonesSettings = ZonesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ZonesClient zonesClient = ZonesClient.create(zonesSettings);
  * }</pre>
@@ -115,7 +120,6 @@ public class ZonesClient implements BackgroundResource {
    * Constructs an instance of ZonesClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(ZonesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ZonesClient create(ZonesStub stub) {
     return new ZonesClient(stub);
   }
@@ -129,7 +133,6 @@ public class ZonesClient implements BackgroundResource {
     this.stub = ((ZonesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ZonesClient(ZonesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -139,7 +142,6 @@ public class ZonesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ZonesStub getStub() {
     return stub;
   }
@@ -151,6 +153,8 @@ public class ZonesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZonesClient zonesClient = ZonesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -174,6 +178,8 @@ public class ZonesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZonesClient zonesClient = ZonesClient.create()) {
    *   GetZoneRequest request =
    *       GetZoneRequest.newBuilder()
@@ -198,6 +204,8 @@ public class ZonesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZonesClient zonesClient = ZonesClient.create()) {
    *   GetZoneRequest request =
    *       GetZoneRequest.newBuilder()
@@ -221,6 +229,8 @@ public class ZonesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZonesClient zonesClient = ZonesClient.create()) {
    *   String project = "project-309310695";
    *   for (Zone element : zonesClient.list(project).iterateAll()) {
@@ -244,6 +254,8 @@ public class ZonesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZonesClient zonesClient = ZonesClient.create()) {
    *   ListZonesRequest request =
    *       ListZonesRequest.newBuilder()
@@ -274,6 +286,8 @@ public class ZonesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZonesClient zonesClient = ZonesClient.create()) {
    *   ListZonesRequest request =
    *       ListZonesRequest.newBuilder()
@@ -303,6 +317,8 @@ public class ZonesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZonesClient zonesClient = ZonesClient.create()) {
    *   ListZonesRequest request =
    *       ListZonesRequest.newBuilder()
@@ -315,7 +331,7 @@ public class ZonesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ZoneList response = zonesClient.listCallable().call(request);
-   *     for (Zone element : response.getResponsesList()) {
+   *     for (Zone element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

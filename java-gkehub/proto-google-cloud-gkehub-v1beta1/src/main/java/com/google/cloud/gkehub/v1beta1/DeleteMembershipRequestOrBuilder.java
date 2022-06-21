@@ -31,7 +31,9 @@ public interface DeleteMembershipRequestOrBuilder
    * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -44,7 +46,9 @@ public interface DeleteMembershipRequestOrBuilder
    * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */

@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3.stub;
 
 import static com.google.cloud.dialogflow.cx.v3.ExperimentsClient.ListExperimentsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3.ExperimentsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -49,6 +50,10 @@ import com.google.cloud.dialogflow.cx.v3.ListExperimentsResponse;
 import com.google.cloud.dialogflow.cx.v3.StartExperimentRequest;
 import com.google.cloud.dialogflow.cx.v3.StopExperimentRequest;
 import com.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -111,6 +116,10 @@ public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSetting
   private final UnaryCallSettings<DeleteExperimentRequest, Empty> deleteExperimentSettings;
   private final UnaryCallSettings<StartExperimentRequest, Experiment> startExperimentSettings;
   private final UnaryCallSettings<StopExperimentRequest, Experiment> stopExperimentSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<
           ListExperimentsRequest, ListExperimentsResponse, Experiment>
@@ -151,6 +160,42 @@ public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSetting
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListExperimentsRequest, ListExperimentsResponse, ListExperimentsPagedResponse>
       LIST_EXPERIMENTS_PAGE_STR_FACT =
@@ -165,6 +210,23 @@ public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSetting
               PageContext<ListExperimentsRequest, ListExperimentsResponse, Experiment> pageContext =
                   PageContext.create(callable, LIST_EXPERIMENTS_PAGE_STR_DESC, request, context);
               return ListExperimentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -203,6 +265,17 @@ public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSetting
   /** Returns the object with the settings used for calls to stopExperiment. */
   public UnaryCallSettings<StopExperimentRequest, Experiment> stopExperimentSettings() {
     return stopExperimentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public ExperimentsStub createStub() throws IOException {
@@ -287,6 +360,8 @@ public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSetting
     deleteExperimentSettings = settingsBuilder.deleteExperimentSettings().build();
     startExperimentSettings = settingsBuilder.startExperimentSettings().build();
     stopExperimentSettings = settingsBuilder.stopExperimentSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for ExperimentsStubSettings. */
@@ -306,6 +381,10 @@ public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSetting
         startExperimentSettings;
     private final UnaryCallSettings.Builder<StopExperimentRequest, Experiment>
         stopExperimentSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -351,6 +430,8 @@ public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSetting
       deleteExperimentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       startExperimentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       stopExperimentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -360,7 +441,9 @@ public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSetting
               updateExperimentSettings,
               deleteExperimentSettings,
               startExperimentSettings,
-              stopExperimentSettings);
+              stopExperimentSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -374,6 +457,8 @@ public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSetting
       deleteExperimentSettings = settings.deleteExperimentSettings.toBuilder();
       startExperimentSettings = settings.startExperimentSettings.toBuilder();
       stopExperimentSettings = settings.stopExperimentSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -383,7 +468,9 @@ public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSetting
               updateExperimentSettings,
               deleteExperimentSettings,
               startExperimentSettings,
-              stopExperimentSettings);
+              stopExperimentSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -432,6 +519,16 @@ public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSetting
 
       builder
           .stopExperimentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -490,6 +587,18 @@ public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSetting
     /** Returns the builder for the settings used for calls to stopExperiment. */
     public UnaryCallSettings.Builder<StopExperimentRequest, Experiment> stopExperimentSettings() {
       return stopExperimentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

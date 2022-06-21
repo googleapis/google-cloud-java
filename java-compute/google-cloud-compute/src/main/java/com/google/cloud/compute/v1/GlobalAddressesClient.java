@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
  *   String project = "project-309310695";
  *   String address = "address-1147692044";
@@ -80,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GlobalAddressesSettings globalAddressesSettings =
  *     GlobalAddressesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GlobalAddressesSettings globalAddressesSettings =
  *     GlobalAddressesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GlobalAddressesClient globalAddressesClient =
@@ -122,7 +128,6 @@ public class GlobalAddressesClient implements BackgroundResource {
    * Constructs an instance of GlobalAddressesClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(GlobalAddressesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GlobalAddressesClient create(GlobalAddressesStub stub) {
     return new GlobalAddressesClient(stub);
   }
@@ -137,7 +142,6 @@ public class GlobalAddressesClient implements BackgroundResource {
     this.stub = ((GlobalAddressesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GlobalAddressesClient(GlobalAddressesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -147,7 +151,6 @@ public class GlobalAddressesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GlobalAddressesStub getStub() {
     return stub;
   }
@@ -159,6 +162,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   String project = "project-309310695";
    *   String address = "address-1147692044";
@@ -183,6 +188,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   DeleteGlobalAddressRequest request =
    *       DeleteGlobalAddressRequest.newBuilder()
@@ -211,6 +218,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   DeleteGlobalAddressRequest request =
    *       DeleteGlobalAddressRequest.newBuilder()
@@ -237,6 +246,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   DeleteGlobalAddressRequest request =
    *       DeleteGlobalAddressRequest.newBuilder()
@@ -262,6 +273,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   String project = "project-309310695";
    *   String address = "address-1147692044";
@@ -287,6 +300,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   GetGlobalAddressRequest request =
    *       GetGlobalAddressRequest.newBuilder()
@@ -312,6 +327,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   GetGlobalAddressRequest request =
    *       GetGlobalAddressRequest.newBuilder()
@@ -335,6 +352,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   String project = "project-309310695";
    *   Address addressResource = Address.newBuilder().build();
@@ -363,6 +382,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   InsertGlobalAddressRequest request =
    *       InsertGlobalAddressRequest.newBuilder()
@@ -391,6 +412,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   InsertGlobalAddressRequest request =
    *       InsertGlobalAddressRequest.newBuilder()
@@ -417,6 +440,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   InsertGlobalAddressRequest request =
    *       InsertGlobalAddressRequest.newBuilder()
@@ -441,6 +466,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   String project = "project-309310695";
    *   for (Address element : globalAddressesClient.list(project).iterateAll()) {
@@ -465,6 +492,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   ListGlobalAddressesRequest request =
    *       ListGlobalAddressesRequest.newBuilder()
@@ -495,6 +524,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   ListGlobalAddressesRequest request =
    *       ListGlobalAddressesRequest.newBuilder()
@@ -524,6 +555,8 @@ public class GlobalAddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
    *   ListGlobalAddressesRequest request =
    *       ListGlobalAddressesRequest.newBuilder()
@@ -536,7 +569,7 @@ public class GlobalAddressesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     AddressList response = globalAddressesClient.listCallable().call(request);
-   *     for (Address element : response.getResponsesList()) {
+   *     for (Address element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

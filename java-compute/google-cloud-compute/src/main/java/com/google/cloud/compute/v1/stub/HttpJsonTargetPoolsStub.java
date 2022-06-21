@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.TargetPoolsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.TargetPoolsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -67,7 +66,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -76,7 +75,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
       addHealthCheckMethodDescriptor =
           ApiMethodDescriptor.<AddHealthCheckTargetPoolRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetPools/AddHealthCheck")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddHealthCheckTargetPoolRequest>newBuilder()
@@ -132,7 +131,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
       addInstanceMethodDescriptor =
           ApiMethodDescriptor.<AddInstanceTargetPoolRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetPools/AddInstance")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddInstanceTargetPoolRequest>newBuilder()
@@ -190,7 +189,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
           ApiMethodDescriptor
               .<AggregatedListTargetPoolsRequest, TargetPoolAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetPools/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListTargetPoolsRequest>newBuilder()
@@ -246,7 +245,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteTargetPoolRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetPools/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteTargetPoolRequest>newBuilder()
@@ -296,7 +295,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
   private static final ApiMethodDescriptor<GetTargetPoolRequest, TargetPool> getMethodDescriptor =
       ApiMethodDescriptor.<GetTargetPoolRequest, TargetPool>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.TargetPools/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetTargetPoolRequest>newBuilder()
@@ -331,7 +330,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
       getHealthMethodDescriptor =
           ApiMethodDescriptor.<GetHealthTargetPoolRequest, TargetPoolInstanceHealth>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetPools/GetHealth")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetHealthTargetPoolRequest>newBuilder()
@@ -371,7 +370,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertTargetPoolRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetPools/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertTargetPoolRequest>newBuilder()
@@ -424,7 +423,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListTargetPoolsRequest, TargetPoolList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetPools/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTargetPoolsRequest>newBuilder()
@@ -477,7 +476,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
       removeHealthCheckMethodDescriptor =
           ApiMethodDescriptor.<RemoveHealthCheckTargetPoolRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetPools/RemoveHealthCheck")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveHealthCheckTargetPoolRequest>newBuilder()
@@ -533,7 +532,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
       removeInstanceMethodDescriptor =
           ApiMethodDescriptor.<RemoveInstanceTargetPoolRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetPools/RemoveInstance")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveInstanceTargetPoolRequest>newBuilder()
@@ -589,7 +588,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
       setBackupMethodDescriptor =
           ApiMethodDescriptor.<SetBackupTargetPoolRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetPools/SetBackup")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetBackupTargetPoolRequest>newBuilder()

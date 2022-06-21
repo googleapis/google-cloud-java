@@ -34,6 +34,7 @@ import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -93,6 +94,7 @@ public class TranscoderServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTtlAfterCompletionDays(107576420)
+            .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
             .build();
     mockTranscoderService.addResponse(expectedResponse);
@@ -141,6 +143,7 @@ public class TranscoderServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTtlAfterCompletionDays(107576420)
+            .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
             .build();
     mockTranscoderService.addResponse(expectedResponse);
@@ -277,6 +280,7 @@ public class TranscoderServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTtlAfterCompletionDays(107576420)
+            .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
             .build();
     mockTranscoderService.addResponse(expectedResponse);
@@ -322,6 +326,7 @@ public class TranscoderServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTtlAfterCompletionDays(107576420)
+            .putAllLabels(new HashMap<String, String>())
             .setError(Status.newBuilder().build())
             .build();
     mockTranscoderService.addResponse(expectedResponse);
@@ -430,6 +435,7 @@ public class TranscoderServiceClientTest {
         JobTemplate.newBuilder()
             .setName(JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]").toString())
             .setConfig(JobConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -475,6 +481,7 @@ public class TranscoderServiceClientTest {
         JobTemplate.newBuilder()
             .setName(JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]").toString())
             .setConfig(JobConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -608,6 +615,7 @@ public class TranscoderServiceClientTest {
         JobTemplate.newBuilder()
             .setName(JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]").toString())
             .setConfig(JobConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 
@@ -647,6 +655,7 @@ public class TranscoderServiceClientTest {
         JobTemplate.newBuilder()
             .setName(JobTemplateName.of("[PROJECT]", "[LOCATION]", "[JOB_TEMPLATE]").toString())
             .setConfig(JobConfig.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockTranscoderService.addResponse(expectedResponse);
 

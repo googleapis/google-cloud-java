@@ -297,7 +297,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListCustomersResponse response =
    *         cloudChannelServiceClient.listCustomersCallable().call(request);
-   *     for (Customer element : response.getResponsesList()) {
+   *     for (Customer element : response.getCustomersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1189,7 +1189,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListEntitlementsResponse response =
    *         cloudChannelServiceClient.listEntitlementsCallable().call(request);
-   *     for (Entitlement element : response.getResponsesList()) {
+   *     for (Entitlement element : response.getEntitlementsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1341,7 +1341,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListTransferableSkusResponse response =
    *         cloudChannelServiceClient.listTransferableSkusCallable().call(request);
-   *     for (TransferableSku element : response.getResponsesList()) {
+   *     for (TransferableSku element : response.getTransferableSkusList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1493,7 +1493,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListTransferableOffersResponse response =
    *         cloudChannelServiceClient.listTransferableOffersCallable().call(request);
-   *     for (TransferableOffer element : response.getResponsesList()) {
+   *     for (TransferableOffer element : response.getTransferableOffersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3266,7 +3266,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListChannelPartnerLinksResponse response =
    *         cloudChannelServiceClient.listChannelPartnerLinksCallable().call(request);
-   *     for (ChannelPartnerLink element : response.getResponsesList()) {
+   *     for (ChannelPartnerLink element : response.getChannelPartnerLinksList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3992,7 +3992,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListCustomerRepricingConfigsResponse response =
    *         cloudChannelServiceClient.listCustomerRepricingConfigsCallable().call(request);
-   *     for (CustomerRepricingConfig element : response.getResponsesList()) {
+   *     for (CustomerRepricingConfig element : response.getCustomerRepricingConfigsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -5110,7 +5110,8 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListChannelPartnerRepricingConfigsResponse response =
    *         cloudChannelServiceClient.listChannelPartnerRepricingConfigsCallable().call(request);
-   *     for (ChannelPartnerRepricingConfig element : response.getResponsesList()) {
+   *     for (ChannelPartnerRepricingConfig element :
+   *         response.getChannelPartnerRepricingConfigsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -5954,7 +5955,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListProductsResponse response =
    *         cloudChannelServiceClient.listProductsCallable().call(request);
-   *     for (Product element : response.getResponsesList()) {
+   *     for (Product element : response.getProductsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -6070,7 +6071,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListSkusResponse response = cloudChannelServiceClient.listSkusCallable().call(request);
-   *     for (Sku element : response.getResponsesList()) {
+   *     for (Sku element : response.getSkusList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -6187,7 +6188,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListOffersResponse response = cloudChannelServiceClient.listOffersCallable().call(request);
-   *     for (Offer element : response.getResponsesList()) {
+   *     for (Offer element : response.getOffersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -6323,7 +6324,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListPurchasableSkusResponse response =
    *         cloudChannelServiceClient.listPurchasableSkusCallable().call(request);
-   *     for (PurchasableSku element : response.getResponsesList()) {
+   *     for (PurchasableSku element : response.getPurchasableSkusList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -6460,7 +6461,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListPurchasableOffersResponse response =
    *         cloudChannelServiceClient.listPurchasableOffersCallable().call(request);
-   *     for (PurchasableOffer element : response.getResponsesList()) {
+   *     for (PurchasableOffer element : response.getPurchasableOffersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -6780,7 +6781,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListSubscribersResponse response =
    *         cloudChannelServiceClient.listSubscribersCallable().call(request);
-   *     for (String element : response.getResponsesList()) {
+   *     for (String element : response.getServiceAccountsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

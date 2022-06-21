@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,10 @@
 
 package com.google.cloud.aiplatform.v1.stub;
 
+import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -47,6 +49,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.DeleteModelRequest;
+import com.google.cloud.aiplatform.v1.DeleteModelVersionRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1.ExportModelOperationMetadata;
 import com.google.cloud.aiplatform.v1.ExportModelRequest;
@@ -59,8 +62,11 @@ import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationsResponse;
+import com.google.cloud.aiplatform.v1.ListModelVersionsRequest;
+import com.google.cloud.aiplatform.v1.ListModelVersionsResponse;
 import com.google.cloud.aiplatform.v1.ListModelsRequest;
 import com.google.cloud.aiplatform.v1.ListModelsResponse;
+import com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1.Model;
 import com.google.cloud.aiplatform.v1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1.ModelEvaluationSlice;
@@ -68,10 +74,19 @@ import com.google.cloud.aiplatform.v1.UpdateModelRequest;
 import com.google.cloud.aiplatform.v1.UploadModelOperationMetadata;
 import com.google.cloud.aiplatform.v1.UploadModelRequest;
 import com.google.cloud.aiplatform.v1.UploadModelResponse;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -97,6 +112,8 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of getModel to 30 seconds:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ModelServiceStubSettings.Builder modelServiceSettingsBuilder =
  *     ModelServiceStubSettings.newBuilder();
  * modelServiceSettingsBuilder
@@ -124,10 +141,17 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
   private final UnaryCallSettings<GetModelRequest, Model> getModelSettings;
   private final PagedCallSettings<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
       listModelsSettings;
+  private final PagedCallSettings<
+          ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
+      listModelVersionsSettings;
   private final UnaryCallSettings<UpdateModelRequest, Model> updateModelSettings;
   private final UnaryCallSettings<DeleteModelRequest, Operation> deleteModelSettings;
   private final OperationCallSettings<DeleteModelRequest, Empty, DeleteOperationMetadata>
       deleteModelOperationSettings;
+  private final UnaryCallSettings<DeleteModelVersionRequest, Operation> deleteModelVersionSettings;
+  private final OperationCallSettings<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+      deleteModelVersionOperationSettings;
+  private final UnaryCallSettings<MergeVersionAliasesRequest, Model> mergeVersionAliasesSettings;
   private final UnaryCallSettings<ExportModelRequest, Operation> exportModelSettings;
   private final OperationCallSettings<
           ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
@@ -148,6 +172,14 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           ListModelEvaluationSlicesResponse,
           ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListModelsRequest, ListModelsResponse, Model>
       LIST_MODELS_PAGE_STR_DESC =
@@ -179,6 +211,45 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
             @Override
             public Iterable<Model> extractResources(ListModelsResponse payload) {
+              return payload.getModelsList() == null
+                  ? ImmutableList.<Model>of()
+                  : payload.getModelsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListModelVersionsRequest, ListModelVersionsResponse, Model>
+      LIST_MODEL_VERSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListModelVersionsRequest, ListModelVersionsResponse, Model>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListModelVersionsRequest injectToken(
+                ListModelVersionsRequest payload, String token) {
+              return ListModelVersionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListModelVersionsRequest injectPageSize(
+                ListModelVersionsRequest payload, int pageSize) {
+              return ListModelVersionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListModelVersionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListModelVersionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Model> extractResources(ListModelVersionsResponse payload) {
               return payload.getModelsList() == null
                   ? ImmutableList.<Model>of()
                   : payload.getModelsList();
@@ -273,6 +344,42 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
       LIST_MODELS_PAGE_STR_FACT =
@@ -287,6 +394,25 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
               PageContext<ListModelsRequest, ListModelsResponse, Model> pageContext =
                   PageContext.create(callable, LIST_MODELS_PAGE_STR_DESC, request, context);
               return ListModelsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
+      LIST_MODEL_VERSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListModelVersionsRequest,
+              ListModelVersionsResponse,
+              ListModelVersionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListModelVersionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListModelVersionsRequest, ListModelVersionsResponse> callable,
+                ListModelVersionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListModelVersionsResponse> futureResponse) {
+              PageContext<ListModelVersionsRequest, ListModelVersionsResponse, Model> pageContext =
+                  PageContext.create(callable, LIST_MODEL_VERSIONS_PAGE_STR_DESC, request, context);
+              return ListModelVersionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -342,6 +468,23 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to uploadModel. */
   public UnaryCallSettings<UploadModelRequest, Operation> uploadModelSettings() {
     return uploadModelSettings;
@@ -365,6 +508,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     return listModelsSettings;
   }
 
+  /** Returns the object with the settings used for calls to listModelVersions. */
+  public PagedCallSettings<
+          ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
+      listModelVersionsSettings() {
+    return listModelVersionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateModel. */
   public UnaryCallSettings<UpdateModelRequest, Model> updateModelSettings() {
     return updateModelSettings;
@@ -379,6 +529,22 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
   public OperationCallSettings<DeleteModelRequest, Empty, DeleteOperationMetadata>
       deleteModelOperationSettings() {
     return deleteModelOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteModelVersion. */
+  public UnaryCallSettings<DeleteModelVersionRequest, Operation> deleteModelVersionSettings() {
+    return deleteModelVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteModelVersion. */
+  public OperationCallSettings<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+      deleteModelVersionOperationSettings() {
+    return deleteModelVersionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to mergeVersionAliases. */
+  public UnaryCallSettings<MergeVersionAliasesRequest, Model> mergeVersionAliasesSettings() {
+    return mergeVersionAliasesSettings;
   }
 
   /** Returns the object with the settings used for calls to exportModel. */
@@ -429,7 +595,33 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     return listModelEvaluationSlicesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public ModelServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -509,9 +701,14 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     uploadModelOperationSettings = settingsBuilder.uploadModelOperationSettings().build();
     getModelSettings = settingsBuilder.getModelSettings().build();
     listModelsSettings = settingsBuilder.listModelsSettings().build();
+    listModelVersionsSettings = settingsBuilder.listModelVersionsSettings().build();
     updateModelSettings = settingsBuilder.updateModelSettings().build();
     deleteModelSettings = settingsBuilder.deleteModelSettings().build();
     deleteModelOperationSettings = settingsBuilder.deleteModelOperationSettings().build();
+    deleteModelVersionSettings = settingsBuilder.deleteModelVersionSettings().build();
+    deleteModelVersionOperationSettings =
+        settingsBuilder.deleteModelVersionOperationSettings().build();
+    mergeVersionAliasesSettings = settingsBuilder.mergeVersionAliasesSettings().build();
     exportModelSettings = settingsBuilder.exportModelSettings().build();
     exportModelOperationSettings = settingsBuilder.exportModelOperationSettings().build();
     importModelEvaluationSettings = settingsBuilder.importModelEvaluationSettings().build();
@@ -519,6 +716,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     listModelEvaluationsSettings = settingsBuilder.listModelEvaluationsSettings().build();
     getModelEvaluationSliceSettings = settingsBuilder.getModelEvaluationSliceSettings().build();
     listModelEvaluationSlicesSettings = settingsBuilder.listModelEvaluationSlicesSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for ModelServiceStubSettings. */
@@ -532,10 +734,20 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     private final PagedCallSettings.Builder<
             ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
         listModelsSettings;
+    private final PagedCallSettings.Builder<
+            ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
+        listModelVersionsSettings;
     private final UnaryCallSettings.Builder<UpdateModelRequest, Model> updateModelSettings;
     private final UnaryCallSettings.Builder<DeleteModelRequest, Operation> deleteModelSettings;
     private final OperationCallSettings.Builder<DeleteModelRequest, Empty, DeleteOperationMetadata>
         deleteModelOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteModelVersionRequest, Operation>
+        deleteModelVersionSettings;
+    private final OperationCallSettings.Builder<
+            DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+        deleteModelVersionOperationSettings;
+    private final UnaryCallSettings.Builder<MergeVersionAliasesRequest, Model>
+        mergeVersionAliasesSettings;
     private final UnaryCallSettings.Builder<ExportModelRequest, Operation> exportModelSettings;
     private final OperationCallSettings.Builder<
             ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
@@ -556,6 +768,14 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             ListModelEvaluationSlicesResponse,
             ListModelEvaluationSlicesPagedResponse>
         listModelEvaluationSlicesSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -587,9 +807,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       uploadModelOperationSettings = OperationCallSettings.newBuilder();
       getModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listModelsSettings = PagedCallSettings.newBuilder(LIST_MODELS_PAGE_STR_FACT);
+      listModelVersionsSettings = PagedCallSettings.newBuilder(LIST_MODEL_VERSIONS_PAGE_STR_FACT);
       updateModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteModelOperationSettings = OperationCallSettings.newBuilder();
+      deleteModelVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteModelVersionOperationSettings = OperationCallSettings.newBuilder();
+      mergeVersionAliasesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       exportModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       exportModelOperationSettings = OperationCallSettings.newBuilder();
       importModelEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -599,20 +823,33 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       getModelEvaluationSliceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listModelEvaluationSlicesSettings =
           PagedCallSettings.newBuilder(LIST_MODEL_EVALUATION_SLICES_PAGE_STR_FACT);
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               uploadModelSettings,
               getModelSettings,
               listModelsSettings,
+              listModelVersionsSettings,
               updateModelSettings,
               deleteModelSettings,
+              deleteModelVersionSettings,
+              mergeVersionAliasesSettings,
               exportModelSettings,
               importModelEvaluationSettings,
               getModelEvaluationSettings,
               listModelEvaluationsSettings,
               getModelEvaluationSliceSettings,
-              listModelEvaluationSlicesSettings);
+              listModelEvaluationSlicesSettings,
+              listLocationsSettings,
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -623,9 +860,14 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       uploadModelOperationSettings = settings.uploadModelOperationSettings.toBuilder();
       getModelSettings = settings.getModelSettings.toBuilder();
       listModelsSettings = settings.listModelsSettings.toBuilder();
+      listModelVersionsSettings = settings.listModelVersionsSettings.toBuilder();
       updateModelSettings = settings.updateModelSettings.toBuilder();
       deleteModelSettings = settings.deleteModelSettings.toBuilder();
       deleteModelOperationSettings = settings.deleteModelOperationSettings.toBuilder();
+      deleteModelVersionSettings = settings.deleteModelVersionSettings.toBuilder();
+      deleteModelVersionOperationSettings =
+          settings.deleteModelVersionOperationSettings.toBuilder();
+      mergeVersionAliasesSettings = settings.mergeVersionAliasesSettings.toBuilder();
       exportModelSettings = settings.exportModelSettings.toBuilder();
       exportModelOperationSettings = settings.exportModelOperationSettings.toBuilder();
       importModelEvaluationSettings = settings.importModelEvaluationSettings.toBuilder();
@@ -633,20 +875,33 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       listModelEvaluationsSettings = settings.listModelEvaluationsSettings.toBuilder();
       getModelEvaluationSliceSettings = settings.getModelEvaluationSliceSettings.toBuilder();
       listModelEvaluationSlicesSettings = settings.listModelEvaluationSlicesSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               uploadModelSettings,
               getModelSettings,
               listModelsSettings,
+              listModelVersionsSettings,
               updateModelSettings,
               deleteModelSettings,
+              deleteModelVersionSettings,
+              mergeVersionAliasesSettings,
               exportModelSettings,
               importModelEvaluationSettings,
               getModelEvaluationSettings,
               listModelEvaluationsSettings,
               getModelEvaluationSliceSettings,
-              listModelEvaluationSlicesSettings);
+              listModelEvaluationSlicesSettings,
+              listLocationsSettings,
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -679,12 +934,27 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .listModelVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .updateModelSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .deleteModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteModelVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .mergeVersionAliasesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -719,6 +989,31 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .uploadModelOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<UploadModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
@@ -746,6 +1041,30 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
           .deleteModelOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<DeleteModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteModelVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteModelVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
@@ -832,6 +1151,13 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       return listModelsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listModelVersions. */
+    public PagedCallSettings.Builder<
+            ListModelVersionsRequest, ListModelVersionsResponse, ListModelVersionsPagedResponse>
+        listModelVersionsSettings() {
+      return listModelVersionsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateModel. */
     public UnaryCallSettings.Builder<UpdateModelRequest, Model> updateModelSettings() {
       return updateModelSettings;
@@ -848,6 +1174,26 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     public OperationCallSettings.Builder<DeleteModelRequest, Empty, DeleteOperationMetadata>
         deleteModelOperationSettings() {
       return deleteModelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModelVersion. */
+    public UnaryCallSettings.Builder<DeleteModelVersionRequest, Operation>
+        deleteModelVersionSettings() {
+      return deleteModelVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModelVersion. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+        deleteModelVersionOperationSettings() {
+      return deleteModelVersionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to mergeVersionAliases. */
+    public UnaryCallSettings.Builder<MergeVersionAliasesRequest, Model>
+        mergeVersionAliasesSettings() {
+      return mergeVersionAliasesSettings;
     }
 
     /** Returns the builder for the settings used for calls to exportModel. */
@@ -898,6 +1244,34 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
             ListModelEvaluationSlicesPagedResponse>
         listModelEvaluationSlicesSettings() {
       return listModelEvaluationSlicesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

@@ -302,7 +302,7 @@ public class RealmsServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListRealmsResponse response = realmsServiceClient.listRealmsCallable().call(request);
-   *     for (Realm element : response.getResponsesList()) {
+   *     for (Realm element : response.getRealmsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

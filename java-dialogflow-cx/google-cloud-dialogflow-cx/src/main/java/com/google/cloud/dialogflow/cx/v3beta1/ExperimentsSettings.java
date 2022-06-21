@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3beta1;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.ExperimentsClient.ListExperimentsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.ExperimentsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -30,6 +31,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.cx.v3beta1.stub.ExperimentsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -107,6 +112,17 @@ public class ExperimentsSettings extends ClientSettings<ExperimentsSettings> {
   /** Returns the object with the settings used for calls to stopExperiment. */
   public UnaryCallSettings<StopExperimentRequest, Experiment> stopExperimentSettings() {
     return ((ExperimentsStubSettings) getStubSettings()).stopExperimentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((ExperimentsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((ExperimentsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final ExperimentsSettings create(ExperimentsStubSettings stub) throws IOException {
@@ -242,6 +258,18 @@ public class ExperimentsSettings extends ClientSettings<ExperimentsSettings> {
     /** Returns the builder for the settings used for calls to stopExperiment. */
     public UnaryCallSettings.Builder<StopExperimentRequest, Experiment> stopExperimentSettings() {
       return getStubSettingsBuilder().stopExperimentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

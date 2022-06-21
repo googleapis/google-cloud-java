@@ -339,7 +339,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListGroupStatsResponse response =
    *         errorStatsServiceClient.listGroupStatsCallable().call(request);
-   *     for (ErrorGroupStats element : response.getResponsesList()) {
+   *     for (ErrorGroupStats element : response.getErrorGroupStatsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -509,7 +509,7 @@ public class ErrorStatsServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListEventsResponse response = errorStatsServiceClient.listEventsCallable().call(request);
-   *     for (ErrorEvent element : response.getResponsesList()) {
+   *     for (ErrorEvent element : response.getErrorEventsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

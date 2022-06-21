@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ import com.google.cloud.compute.v1.InsertTargetSslProxyRequest;
 import com.google.cloud.compute.v1.ListTargetSslProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SetBackendServiceTargetSslProxyRequest;
+import com.google.cloud.compute.v1.SetCertificateMapTargetSslProxyRequest;
 import com.google.cloud.compute.v1.SetProxyHeaderTargetSslProxyRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetSslProxyRequest;
 import com.google.cloud.compute.v1.SetSslPolicyTargetSslProxyRequest;
@@ -82,6 +83,8 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TargetSslProxiesStubSettings.Builder targetSslProxiesSettingsBuilder =
  *     TargetSslProxiesStubSettings.newBuilder();
  * targetSslProxiesSettingsBuilder
@@ -119,6 +122,10 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
       setBackendServiceSettings;
   private final OperationCallSettings<SetBackendServiceTargetSslProxyRequest, Operation, Operation>
       setBackendServiceOperationSettings;
+  private final UnaryCallSettings<SetCertificateMapTargetSslProxyRequest, Operation>
+      setCertificateMapSettings;
+  private final OperationCallSettings<SetCertificateMapTargetSslProxyRequest, Operation, Operation>
+      setCertificateMapOperationSettings;
   private final UnaryCallSettings<SetProxyHeaderTargetSslProxyRequest, Operation>
       setProxyHeaderSettings;
   private final OperationCallSettings<SetProxyHeaderTargetSslProxyRequest, Operation, Operation>
@@ -236,6 +243,18 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
     return setBackendServiceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setCertificateMap. */
+  public UnaryCallSettings<SetCertificateMapTargetSslProxyRequest, Operation>
+      setCertificateMapSettings() {
+    return setCertificateMapSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setCertificateMap. */
+  public OperationCallSettings<SetCertificateMapTargetSslProxyRequest, Operation, Operation>
+      setCertificateMapOperationSettings() {
+    return setCertificateMapOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setProxyHeader. */
   public UnaryCallSettings<SetProxyHeaderTargetSslProxyRequest, Operation>
       setProxyHeaderSettings() {
@@ -271,7 +290,6 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
     return setSslPolicyOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TargetSslProxiesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -357,6 +375,9 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
     setBackendServiceSettings = settingsBuilder.setBackendServiceSettings().build();
     setBackendServiceOperationSettings =
         settingsBuilder.setBackendServiceOperationSettings().build();
+    setCertificateMapSettings = settingsBuilder.setCertificateMapSettings().build();
+    setCertificateMapOperationSettings =
+        settingsBuilder.setCertificateMapOperationSettings().build();
     setProxyHeaderSettings = settingsBuilder.setProxyHeaderSettings().build();
     setProxyHeaderOperationSettings = settingsBuilder.setProxyHeaderOperationSettings().build();
     setSslCertificatesSettings = settingsBuilder.setSslCertificatesSettings().build();
@@ -384,6 +405,11 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
     private final OperationCallSettings.Builder<
             SetBackendServiceTargetSslProxyRequest, Operation, Operation>
         setBackendServiceOperationSettings;
+    private final UnaryCallSettings.Builder<SetCertificateMapTargetSslProxyRequest, Operation>
+        setCertificateMapSettings;
+    private final OperationCallSettings.Builder<
+            SetCertificateMapTargetSslProxyRequest, Operation, Operation>
+        setCertificateMapOperationSettings;
     private final UnaryCallSettings.Builder<SetProxyHeaderTargetSslProxyRequest, Operation>
         setProxyHeaderSettings;
     private final OperationCallSettings.Builder<
@@ -457,6 +483,8 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       setBackendServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setBackendServiceOperationSettings = OperationCallSettings.newBuilder();
+      setCertificateMapSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setCertificateMapOperationSettings = OperationCallSettings.newBuilder();
       setProxyHeaderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setProxyHeaderOperationSettings = OperationCallSettings.newBuilder();
       setSslCertificatesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -471,6 +499,7 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
               insertSettings,
               listSettings,
               setBackendServiceSettings,
+              setCertificateMapSettings,
               setProxyHeaderSettings,
               setSslCertificatesSettings,
               setSslPolicySettings);
@@ -488,6 +517,8 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
       listSettings = settings.listSettings.toBuilder();
       setBackendServiceSettings = settings.setBackendServiceSettings.toBuilder();
       setBackendServiceOperationSettings = settings.setBackendServiceOperationSettings.toBuilder();
+      setCertificateMapSettings = settings.setCertificateMapSettings.toBuilder();
+      setCertificateMapOperationSettings = settings.setCertificateMapOperationSettings.toBuilder();
       setProxyHeaderSettings = settings.setProxyHeaderSettings.toBuilder();
       setProxyHeaderOperationSettings = settings.setProxyHeaderOperationSettings.toBuilder();
       setSslCertificatesSettings = settings.setSslCertificatesSettings.toBuilder();
@@ -503,6 +534,7 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
               insertSettings,
               listSettings,
               setBackendServiceSettings,
+              setCertificateMapSettings,
               setProxyHeaderSettings,
               setSslCertificatesSettings,
               setSslPolicySettings);
@@ -544,6 +576,11 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
 
       builder
           .setBackendServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setCertificateMapSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -615,6 +652,31 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<SetBackendServiceTargetSslProxyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setCertificateMapOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetCertificateMapTargetSslProxyRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
@@ -779,6 +841,21 @@ public class TargetSslProxiesStubSettings extends StubSettings<TargetSslProxiesS
             SetBackendServiceTargetSslProxyRequest, Operation, Operation>
         setBackendServiceOperationSettings() {
       return setBackendServiceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setCertificateMap. */
+    public UnaryCallSettings.Builder<SetCertificateMapTargetSslProxyRequest, Operation>
+        setCertificateMapSettings() {
+      return setCertificateMapSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setCertificateMap. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetCertificateMapTargetSslProxyRequest, Operation, Operation>
+        setCertificateMapOperationSettings() {
+      return setCertificateMapOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setProxyHeader. */

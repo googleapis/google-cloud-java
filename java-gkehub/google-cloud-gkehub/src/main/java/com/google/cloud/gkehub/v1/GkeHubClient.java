@@ -18,7 +18,6 @@ package com.google.cloud.gkehub.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -141,7 +140,6 @@ public class GkeHubClient implements BackgroundResource {
    * Constructs an instance of GkeHubClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(GkeHubSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GkeHubClient create(GkeHubStub stub) {
     return new GkeHubClient(stub);
   }
@@ -156,7 +154,6 @@ public class GkeHubClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GkeHubClient(GkeHubStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -167,7 +164,6 @@ public class GkeHubClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GkeHubStub getStub() {
     return stub;
   }
@@ -318,7 +314,7 @@ public class GkeHubClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListMembershipsResponse response = gkeHubClient.listMembershipsCallable().call(request);
-   *     for (Membership element : response.getResponsesList()) {
+   *     for (Membership element : response.getResourcesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -473,7 +469,7 @@ public class GkeHubClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListFeaturesResponse response = gkeHubClient.listFeaturesCallable().call(request);
-   *     for (Feature element : response.getResponsesList()) {
+   *     for (Feature element : response.getResourcesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

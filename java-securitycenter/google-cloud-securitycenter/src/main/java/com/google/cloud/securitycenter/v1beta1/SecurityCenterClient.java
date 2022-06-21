@@ -419,7 +419,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = OrganizationName.of("[ORGANIZATION]");
+   *   ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
    *   Policy response = securityCenterClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -472,7 +472,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = securityCenterClient.getIamPolicy(request);
@@ -498,7 +498,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = securityCenterClient.getIamPolicyCallable().futureCall(request);
@@ -802,7 +802,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     GroupAssetsResponse response = securityCenterClient.groupAssetsCallable().call(request);
-   *     for (GroupResult element : response.getResponsesList()) {
+   *     for (GroupResult element : response.getGroupByResultsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1003,7 +1003,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     GroupFindingsResponse response = securityCenterClient.groupFindingsCallable().call(request);
-   *     for (GroupResult element : response.getResponsesList()) {
+   *     for (GroupResult element : response.getGroupByResultsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1112,7 +1112,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListAssetsResponse response = securityCenterClient.listAssetsCallable().call(request);
-   *     for (ListAssetsResponse.ListAssetsResult element : response.getResponsesList()) {
+   *     for (ListAssetsResponse.ListAssetsResult element : response.getListAssetsResultsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1227,7 +1227,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListFindingsResponse response = securityCenterClient.listFindingsCallable().call(request);
-   *     for (Finding element : response.getResponsesList()) {
+   *     for (Finding element : response.getFindingsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1376,7 +1376,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListSourcesResponse response = securityCenterClient.listSourcesCallable().call(request);
-   *     for (Source element : response.getResponsesList()) {
+   *     for (Source element : response.getSourcesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1667,7 +1667,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = OrganizationName.of("[ORGANIZATION]");
+   *   ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = securityCenterClient.setIamPolicy(resource, policy);
    * }
@@ -1730,7 +1730,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1757,7 +1757,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1781,7 +1781,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
-   *   ResourceName resource = OrganizationName.of("[ORGANIZATION]");
+   *   ResourceName resource = SourceName.of("[ORGANIZATION]", "[SOURCE]");
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       securityCenterClient.testIamPermissions(resource, permissions);
@@ -1851,7 +1851,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = securityCenterClient.testIamPermissions(request);
@@ -1877,7 +1877,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setResource(SourceName.of("[ORGANIZATION]", "[SOURCE]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

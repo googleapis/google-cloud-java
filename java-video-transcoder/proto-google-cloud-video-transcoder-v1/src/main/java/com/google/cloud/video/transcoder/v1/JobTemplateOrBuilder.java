@@ -86,4 +86,68 @@ public interface JobTemplateOrBuilder
    * <code>.google.cloud.video.transcoder.v1.JobConfig config = 2;</code>
    */
   com.google.cloud.video.transcoder.v1.JobConfigOrBuilder getConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job template. You can use these to organize
+   * and group your job templates.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3;</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job template. You can use these to organize
+   * and group your job templates.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3;</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job template. You can use these to organize
+   * and group your job templates.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job template. You can use these to organize
+   * and group your job templates.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3;</code>
+   */
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job template. You can use these to organize
+   * and group your job templates.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3;</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 }

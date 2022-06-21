@@ -263,7 +263,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListConnectivityTestsResponse response =
    *         reachabilityServiceClient.listConnectivityTestsCallable().call(request);
-   *     for (ConnectivityTest element : response.getResponsesList()) {
+   *     for (ConnectivityTest element : response.getResourcesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

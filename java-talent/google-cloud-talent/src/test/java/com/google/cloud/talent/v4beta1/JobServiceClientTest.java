@@ -1181,6 +1181,7 @@ public class JobServiceClientTest {
     Assert.assertEquals(request.getDiversificationLevel(), actualRequest.getDiversificationLevel());
     Assert.assertEquals(request.getCustomRankingInfo(), actualRequest.getCustomRankingInfo());
     Assert.assertEquals(request.getDisableKeywordMatch(), actualRequest.getDisableKeywordMatch());
+    Assert.assertEquals(request.getKeywordMatchMode(), actualRequest.getKeywordMatchMode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -1272,6 +1273,7 @@ public class JobServiceClientTest {
     Assert.assertEquals(request.getDiversificationLevel(), actualRequest.getDiversificationLevel());
     Assert.assertEquals(request.getCustomRankingInfo(), actualRequest.getCustomRankingInfo());
     Assert.assertEquals(request.getDisableKeywordMatch(), actualRequest.getDisableKeywordMatch());
+    Assert.assertEquals(request.getKeywordMatchMode(), actualRequest.getKeywordMatchMode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

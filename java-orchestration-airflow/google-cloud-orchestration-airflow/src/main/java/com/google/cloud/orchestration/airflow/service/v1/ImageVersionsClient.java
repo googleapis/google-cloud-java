@@ -258,7 +258,7 @@ public class ImageVersionsClient implements BackgroundResource {
    *   while (true) {
    *     ListImageVersionsResponse response =
    *         imageVersionsClient.listImageVersionsCallable().call(request);
-   *     for (ImageVersion element : response.getResponsesList()) {
+   *     for (ImageVersion element : response.getImageVersionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

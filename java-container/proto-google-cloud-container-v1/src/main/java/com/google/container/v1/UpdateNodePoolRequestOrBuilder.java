@@ -34,6 +34,8 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2007
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -49,6 +51,8 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2007
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -66,6 +70,8 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2013
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -82,6 +88,8 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2013
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -97,6 +105,8 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2017
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -111,6 +121,8 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2017
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -126,6 +138,8 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2021
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -140,6 +154,8 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2021
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated

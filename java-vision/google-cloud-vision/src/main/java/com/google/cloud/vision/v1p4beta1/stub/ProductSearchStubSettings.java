@@ -527,7 +527,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     return purgeProductsOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProductSearchStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

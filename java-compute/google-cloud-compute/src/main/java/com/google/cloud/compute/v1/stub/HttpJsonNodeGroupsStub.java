@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.NodeGroupsClient.AggregatedListPagedRe
 import static com.google.cloud.compute.v1.NodeGroupsClient.ListNodesPagedResponse;
 import static com.google.cloud.compute.v1.NodeGroupsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -72,7 +71,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -81,7 +80,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
       addNodesMethodDescriptor =
           ApiMethodDescriptor.<AddNodesNodeGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeGroups/AddNodes")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddNodesNodeGroupRequest>newBuilder()
@@ -137,7 +136,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListNodeGroupsRequest, NodeGroupAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeGroups/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListNodeGroupsRequest>newBuilder()
@@ -193,7 +192,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteNodeGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeGroups/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteNodeGroupRequest>newBuilder()
@@ -244,7 +243,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
       deleteNodesMethodDescriptor =
           ApiMethodDescriptor.<DeleteNodesNodeGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeGroups/DeleteNodes")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteNodesNodeGroupRequest>newBuilder()
@@ -299,7 +298,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   private static final ApiMethodDescriptor<GetNodeGroupRequest, NodeGroup> getMethodDescriptor =
       ApiMethodDescriptor.<GetNodeGroupRequest, NodeGroup>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.NodeGroups/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetNodeGroupRequest>newBuilder()
@@ -334,7 +333,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyNodeGroupRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeGroups/GetIamPolicy")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyNodeGroupRequest>newBuilder()
@@ -375,7 +374,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertNodeGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeGroups/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertNodeGroupRequest>newBuilder()
@@ -430,7 +429,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListNodeGroupsRequest, NodeGroupList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeGroups/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListNodeGroupsRequest>newBuilder()
@@ -483,7 +482,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
       listNodesMethodDescriptor =
           ApiMethodDescriptor.<ListNodesNodeGroupsRequest, NodeGroupsListNodes>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeGroups/ListNodes")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListNodesNodeGroupsRequest>newBuilder()
@@ -536,7 +535,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   private static final ApiMethodDescriptor<PatchNodeGroupRequest, Operation> patchMethodDescriptor =
       ApiMethodDescriptor.<PatchNodeGroupRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.NodeGroups/Patch")
-          .setHttpMethod(HttpMethods.PATCH)
+          .setHttpMethod("PATCH")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchNodeGroupRequest>newBuilder()
@@ -590,7 +589,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyNodeGroupRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeGroups/SetIamPolicy")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyNodeGroupRequest>newBuilder()
@@ -630,7 +629,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
       setNodeTemplateMethodDescriptor =
           ApiMethodDescriptor.<SetNodeTemplateNodeGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeGroups/SetNodeTemplate")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetNodeTemplateNodeGroupRequest>newBuilder()
@@ -688,7 +687,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
           ApiMethodDescriptor
               .<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeGroups/TestIamPermissions")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsNodeGroupRequest>newBuilder()

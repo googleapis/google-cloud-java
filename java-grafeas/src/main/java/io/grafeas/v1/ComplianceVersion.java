@@ -41,6 +41,7 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
 
   private ComplianceVersion() {
     cpeUri_ = "";
+    benchmarkDocument_ = "";
     version_ = "";
   }
 
@@ -85,6 +86,13 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
               java.lang.String s = input.readStringRequireUtf8();
 
               version_ = s;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              benchmarkDocument_ = s;
               break;
             }
           default:
@@ -171,6 +179,57 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int BENCHMARK_DOCUMENT_FIELD_NUMBER = 3;
+  private volatile java.lang.Object benchmarkDocument_;
+  /**
+   *
+   *
+   * <pre>
+   * The name of the document that defines this benchmark, e.g. "CIS
+   * Container-Optimized OS".
+   * </pre>
+   *
+   * <code>string benchmark_document = 3;</code>
+   *
+   * @return The benchmarkDocument.
+   */
+  @java.lang.Override
+  public java.lang.String getBenchmarkDocument() {
+    java.lang.Object ref = benchmarkDocument_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      benchmarkDocument_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of the document that defines this benchmark, e.g. "CIS
+   * Container-Optimized OS".
+   * </pre>
+   *
+   * <code>string benchmark_document = 3;</code>
+   *
+   * @return The bytes for benchmarkDocument.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBenchmarkDocumentBytes() {
+    java.lang.Object ref = benchmarkDocument_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      benchmarkDocument_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int VERSION_FIELD_NUMBER = 2;
   private volatile java.lang.Object version_;
   /**
@@ -242,6 +301,9 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(benchmarkDocument_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, benchmarkDocument_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -256,6 +318,9 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, version_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(benchmarkDocument_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, benchmarkDocument_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -273,6 +338,7 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
     io.grafeas.v1.ComplianceVersion other = (io.grafeas.v1.ComplianceVersion) obj;
 
     if (!getCpeUri().equals(other.getCpeUri())) return false;
+    if (!getBenchmarkDocument().equals(other.getBenchmarkDocument())) return false;
     if (!getVersion().equals(other.getVersion())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -287,6 +353,8 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + CPE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getCpeUri().hashCode();
+    hash = (37 * hash) + BENCHMARK_DOCUMENT_FIELD_NUMBER;
+    hash = (53 * hash) + getBenchmarkDocument().hashCode();
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getVersion().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -434,6 +502,8 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
       super.clear();
       cpeUri_ = "";
 
+      benchmarkDocument_ = "";
+
       version_ = "";
 
       return this;
@@ -462,6 +532,7 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
     public io.grafeas.v1.ComplianceVersion buildPartial() {
       io.grafeas.v1.ComplianceVersion result = new io.grafeas.v1.ComplianceVersion(this);
       result.cpeUri_ = cpeUri_;
+      result.benchmarkDocument_ = benchmarkDocument_;
       result.version_ = version_;
       onBuilt();
       return result;
@@ -514,6 +585,10 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
       if (other == io.grafeas.v1.ComplianceVersion.getDefaultInstance()) return this;
       if (!other.getCpeUri().isEmpty()) {
         cpeUri_ = other.cpeUri_;
+        onChanged();
+      }
+      if (!other.getBenchmarkDocument().isEmpty()) {
+        benchmarkDocument_ = other.benchmarkDocument_;
         onChanged();
       }
       if (!other.getVersion().isEmpty()) {
@@ -656,6 +731,117 @@ public final class ComplianceVersion extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
 
       cpeUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object benchmarkDocument_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The name of the document that defines this benchmark, e.g. "CIS
+     * Container-Optimized OS".
+     * </pre>
+     *
+     * <code>string benchmark_document = 3;</code>
+     *
+     * @return The benchmarkDocument.
+     */
+    public java.lang.String getBenchmarkDocument() {
+      java.lang.Object ref = benchmarkDocument_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        benchmarkDocument_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the document that defines this benchmark, e.g. "CIS
+     * Container-Optimized OS".
+     * </pre>
+     *
+     * <code>string benchmark_document = 3;</code>
+     *
+     * @return The bytes for benchmarkDocument.
+     */
+    public com.google.protobuf.ByteString getBenchmarkDocumentBytes() {
+      java.lang.Object ref = benchmarkDocument_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        benchmarkDocument_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the document that defines this benchmark, e.g. "CIS
+     * Container-Optimized OS".
+     * </pre>
+     *
+     * <code>string benchmark_document = 3;</code>
+     *
+     * @param value The benchmarkDocument to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBenchmarkDocument(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      benchmarkDocument_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the document that defines this benchmark, e.g. "CIS
+     * Container-Optimized OS".
+     * </pre>
+     *
+     * <code>string benchmark_document = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBenchmarkDocument() {
+
+      benchmarkDocument_ = getDefaultInstance().getBenchmarkDocument();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the document that defines this benchmark, e.g. "CIS
+     * Container-Optimized OS".
+     * </pre>
+     *
+     * <code>string benchmark_document = 3;</code>
+     *
+     * @param value The bytes for benchmarkDocument to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBenchmarkDocumentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      benchmarkDocument_ = value;
       onChanged();
       return this;
     }

@@ -16,7 +16,6 @@
 
 package com.google.cloud.shell.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
@@ -126,7 +125,6 @@ public class CloudShellServiceClient implements BackgroundResource {
    * Constructs an instance of CloudShellServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(CloudShellServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CloudShellServiceClient create(CloudShellServiceStub stub) {
     return new CloudShellServiceClient(stub);
   }
@@ -142,7 +140,6 @@ public class CloudShellServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CloudShellServiceClient(CloudShellServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -153,7 +150,6 @@ public class CloudShellServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudShellServiceStub getStub() {
     return stub;
   }

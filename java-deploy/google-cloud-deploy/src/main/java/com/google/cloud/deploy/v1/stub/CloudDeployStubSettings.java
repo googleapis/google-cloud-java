@@ -551,7 +551,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     return getConfigSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudDeployStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

@@ -381,7 +381,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListConstraintsResponse response = orgPolicyClient.listConstraintsCallable().call(request);
-   *     for (Constraint element : response.getResponsesList()) {
+   *     for (Constraint element : response.getConstraintsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -616,7 +616,7 @@ public class OrgPolicyClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListPoliciesResponse response = orgPolicyClient.listPoliciesCallable().call(request);
-   *     for (Policy element : response.getResponsesList()) {
+   *     for (Policy element : response.getPoliciesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

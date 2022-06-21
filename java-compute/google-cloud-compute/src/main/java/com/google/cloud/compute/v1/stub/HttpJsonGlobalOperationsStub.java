@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.GlobalOperationsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.GlobalOperationsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -62,7 +61,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
@@ -72,7 +71,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
           ApiMethodDescriptor
               .<AggregatedListGlobalOperationsRequest, OperationAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalOperations/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListGlobalOperationsRequest>newBuilder()
@@ -130,7 +129,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
           ApiMethodDescriptor
               .<DeleteGlobalOperationRequest, DeleteGlobalOperationResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalOperations/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteGlobalOperationRequest>newBuilder()
@@ -164,7 +163,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetGlobalOperationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalOperations/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetGlobalOperationRequest>newBuilder()
@@ -217,7 +216,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListGlobalOperationsRequest, OperationList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalOperations/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListGlobalOperationsRequest>newBuilder()
@@ -269,7 +268,7 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
       waitMethodDescriptor =
           ApiMethodDescriptor.<WaitGlobalOperationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalOperations/Wait")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<WaitGlobalOperationRequest>newBuilder()

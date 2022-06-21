@@ -517,7 +517,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListDatasetsResponse response =
    *         dataLabelingServiceClient.listDatasetsCallable().call(request);
-   *     for (Dataset element : response.getResponsesList()) {
+   *     for (Dataset element : response.getDatasetsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1325,7 +1325,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListDataItemsResponse response =
    *         dataLabelingServiceClient.listDataItemsCallable().call(request);
-   *     for (DataItem element : response.getResponsesList()) {
+   *     for (DataItem element : response.getDataItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1599,7 +1599,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListAnnotatedDatasetsResponse response =
    *         dataLabelingServiceClient.listAnnotatedDatasetsCallable().call(request);
-   *     for (AnnotatedDataset element : response.getResponsesList()) {
+   *     for (AnnotatedDataset element : response.getAnnotatedDatasetsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2410,7 +2410,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListExamplesResponse response =
    *         dataLabelingServiceClient.listExamplesCallable().call(request);
-   *     for (Example element : response.getResponsesList()) {
+   *     for (Example element : response.getExamplesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2795,7 +2795,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListAnnotationSpecSetsResponse response =
    *         dataLabelingServiceClient.listAnnotationSpecSetsCallable().call(request);
-   *     for (AnnotationSpecSet element : response.getResponsesList()) {
+   *     for (AnnotationSpecSet element : response.getAnnotationSpecSetsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3296,7 +3296,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListInstructionsResponse response =
    *         dataLabelingServiceClient.listInstructionsCallable().call(request);
-   *     for (Instruction element : response.getResponsesList()) {
+   *     for (Instruction element : response.getInstructionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3725,7 +3725,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *   while (true) {
    *     SearchEvaluationsResponse response =
    *         dataLabelingServiceClient.searchEvaluationsCallable().call(request);
-   *     for (Evaluation element : response.getResponsesList()) {
+   *     for (Evaluation element : response.getEvaluationsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3895,7 +3895,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *     SearchExampleComparisonsResponse response =
    *         dataLabelingServiceClient.searchExampleComparisonsCallable().call(request);
    *     for (SearchExampleComparisonsResponse.ExampleComparison element :
-   *         response.getResponsesList()) {
+   *         response.getExampleComparisonsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -4705,7 +4705,7 @@ public class DataLabelingServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListEvaluationJobsResponse response =
    *         dataLabelingServiceClient.listEvaluationJobsCallable().call(request);
-   *     for (EvaluationJob element : response.getResponsesList()) {
+   *     for (EvaluationJob element : response.getEvaluationJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

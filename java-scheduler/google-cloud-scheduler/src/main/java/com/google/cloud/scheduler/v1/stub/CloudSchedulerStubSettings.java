@@ -204,7 +204,6 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
     return runJobSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudSchedulerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

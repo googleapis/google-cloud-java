@@ -640,7 +640,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   while (true) {
    *     ListConversationsResponse response =
    *         contactCenterInsightsClient.listConversationsCallable().call(request);
-   *     for (Conversation element : response.getResponsesList()) {
+   *     for (Conversation element : response.getConversationsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1158,7 +1158,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   while (true) {
    *     ListAnalysesResponse response =
    *         contactCenterInsightsClient.listAnalysesCallable().call(request);
-   *     for (Analysis element : response.getResponsesList()) {
+   *     for (Analysis element : response.getAnalysesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3036,7 +3036,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *   while (true) {
    *     ListPhraseMatchersResponse response =
    *         contactCenterInsightsClient.listPhraseMatchersCallable().call(request);
-   *     for (PhraseMatcher element : response.getResponsesList()) {
+   *     for (PhraseMatcher element : response.getPhraseMatchersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3882,7 +3882,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListViewsResponse response = contactCenterInsightsClient.listViewsCallable().call(request);
-   *     for (View element : response.getResponsesList()) {
+   *     for (View element : response.getViewsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

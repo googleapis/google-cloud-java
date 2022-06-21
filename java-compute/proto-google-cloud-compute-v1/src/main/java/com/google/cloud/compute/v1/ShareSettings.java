@@ -106,6 +106,8 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -368,7 +370,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsProjectMap(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetProjectMap().getMap().containsKey(key);
   }
@@ -410,7 +412,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.ShareSettingsProjectConfig getProjectMapOrDefault(
       java.lang.String key, com.google.cloud.compute.v1.ShareSettingsProjectConfig defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.ShareSettingsProjectConfig> map =
         internalGetProjectMap().getMap();
@@ -431,7 +433,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.ShareSettingsProjectConfig getProjectMapOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.ShareSettingsProjectConfig> map =
         internalGetProjectMap().getMap();
@@ -928,7 +930,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsProjectMap(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetProjectMap().getMap().containsKey(key);
     }
@@ -970,7 +972,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.ShareSettingsProjectConfig getProjectMapOrDefault(
         java.lang.String key, com.google.cloud.compute.v1.ShareSettingsProjectConfig defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.ShareSettingsProjectConfig> map =
           internalGetProjectMap().getMap();
@@ -991,7 +993,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.ShareSettingsProjectConfig getProjectMapOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.ShareSettingsProjectConfig> map =
           internalGetProjectMap().getMap();
@@ -1018,7 +1020,7 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeProjectMap(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableProjectMap().getMutableMap().remove(key);
       return this;
@@ -1043,11 +1045,12 @@ public final class ShareSettings extends com.google.protobuf.GeneratedMessageV3
     public Builder putProjectMap(
         java.lang.String key, com.google.cloud.compute.v1.ShareSettingsProjectConfig value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableProjectMap().getMutableMap().put(key, value);
       return this;
     }

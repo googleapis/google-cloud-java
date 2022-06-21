@@ -178,7 +178,6 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
     return cancelExecutionSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ExecutionsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

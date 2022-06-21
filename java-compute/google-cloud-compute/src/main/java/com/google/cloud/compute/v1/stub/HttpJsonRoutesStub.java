@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RoutesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -57,7 +56,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonRoutesStub extends RoutesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -65,7 +64,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
   private static final ApiMethodDescriptor<DeleteRouteRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteRouteRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routes/Delete")
-          .setHttpMethod(HttpMethods.DELETE)
+          .setHttpMethod("DELETE")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteRouteRequest>newBuilder()
@@ -113,7 +112,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
   private static final ApiMethodDescriptor<GetRouteRequest, Route> getMethodDescriptor =
       ApiMethodDescriptor.<GetRouteRequest, Route>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routes/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetRouteRequest>newBuilder()
@@ -146,7 +145,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
   private static final ApiMethodDescriptor<InsertRouteRequest, Operation> insertMethodDescriptor =
       ApiMethodDescriptor.<InsertRouteRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routes/Insert")
-          .setHttpMethod(HttpMethods.POST)
+          .setHttpMethod("POST")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertRouteRequest>newBuilder()
@@ -196,7 +195,7 @@ public class HttpJsonRoutesStub extends RoutesStub {
   private static final ApiMethodDescriptor<ListRoutesRequest, RouteList> listMethodDescriptor =
       ApiMethodDescriptor.<ListRoutesRequest, RouteList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routes/List")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListRoutesRequest>newBuilder()

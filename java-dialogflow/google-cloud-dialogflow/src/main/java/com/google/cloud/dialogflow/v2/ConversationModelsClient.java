@@ -496,7 +496,7 @@ public class ConversationModelsClient implements BackgroundResource {
    *   while (true) {
    *     ListConversationModelsResponse response =
    *         conversationModelsClient.listConversationModelsCallable().call(request);
-   *     for (ConversationModel element : response.getResponsesList()) {
+   *     for (ConversationModel element : response.getConversationModelsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1049,7 +1049,7 @@ public class ConversationModelsClient implements BackgroundResource {
    *   while (true) {
    *     ListConversationModelEvaluationsResponse response =
    *         conversationModelsClient.listConversationModelEvaluationsCallable().call(request);
-   *     for (ConversationModelEvaluation element : response.getResponsesList()) {
+   *     for (ConversationModelEvaluation element : response.getConversationModelEvaluationsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

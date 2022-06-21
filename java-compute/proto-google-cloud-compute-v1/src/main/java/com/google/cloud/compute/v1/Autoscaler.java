@@ -214,6 +214,8 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -940,7 +942,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsScalingScheduleStatus(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetScalingScheduleStatus().getMap().containsKey(key);
   }
@@ -982,7 +984,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.ScalingScheduleStatus getScalingScheduleStatusOrDefault(
       java.lang.String key, com.google.cloud.compute.v1.ScalingScheduleStatus defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus> map =
         internalGetScalingScheduleStatus().getMap();
@@ -1003,7 +1005,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.ScalingScheduleStatus getScalingScheduleStatusOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus> map =
         internalGetScalingScheduleStatus().getMap();
@@ -3042,7 +3044,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsScalingScheduleStatus(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetScalingScheduleStatus().getMap().containsKey(key);
     }
@@ -3084,7 +3086,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.ScalingScheduleStatus getScalingScheduleStatusOrDefault(
         java.lang.String key, com.google.cloud.compute.v1.ScalingScheduleStatus defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus> map =
           internalGetScalingScheduleStatus().getMap();
@@ -3105,7 +3107,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.ScalingScheduleStatus getScalingScheduleStatusOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus> map =
           internalGetScalingScheduleStatus().getMap();
@@ -3132,7 +3134,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeScalingScheduleStatus(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableScalingScheduleStatus().getMutableMap().remove(key);
       return this;
@@ -3157,11 +3159,12 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     public Builder putScalingScheduleStatus(
         java.lang.String key, com.google.cloud.compute.v1.ScalingScheduleStatus value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableScalingScheduleStatus().getMutableMap().put(key, value);
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.TargetTcpProxiesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -59,7 +58,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -68,7 +67,7 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteTargetTcpProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetTcpProxies/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteTargetTcpProxyRequest>newBuilder()
@@ -118,7 +117,7 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetTargetTcpProxyRequest, TargetTcpProxy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetTcpProxies/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetTargetTcpProxyRequest>newBuilder()
@@ -153,7 +152,7 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertTargetTcpProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetTcpProxies/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertTargetTcpProxyRequest>newBuilder()
@@ -206,7 +205,7 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListTargetTcpProxiesRequest, TargetTcpProxyList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetTcpProxies/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTargetTcpProxiesRequest>newBuilder()
@@ -258,7 +257,7 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
       setBackendServiceMethodDescriptor =
           ApiMethodDescriptor.<SetBackendServiceTargetTcpProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetTcpProxies/SetBackendService")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetBackendServiceTargetTcpProxyRequest>newBuilder()
@@ -314,7 +313,7 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
       setProxyHeaderMethodDescriptor =
           ApiMethodDescriptor.<SetProxyHeaderTargetTcpProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetTcpProxies/SetProxyHeader")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetProxyHeaderTargetTcpProxyRequest>newBuilder()

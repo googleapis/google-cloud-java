@@ -633,7 +633,7 @@ public class UserEventServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListUserEventsResponse response =
    *         userEventServiceClient.listUserEventsCallable().call(request);
-   *     for (UserEvent element : response.getResponsesList()) {
+   *     for (UserEvent element : response.getUserEventsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

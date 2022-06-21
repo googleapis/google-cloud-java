@@ -63,6 +63,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -175,6 +176,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
               ttlAfterCompletionDays_ = input.readInt32();
               break;
             }
+          case 130:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
           case 138:
             {
               com.google.rpc.Status.Builder subBuilder = null;
@@ -213,6 +227,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.transcoder.v1.ResourcesProto
         .internal_static_google_cloud_video_transcoder_v1_Job_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 16:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -537,7 +562,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
    * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
    * URI of the media. Input files must be at least 5 seconds in duration and
-   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
+   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`). See
+   * [Supported input and output
+   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
    * </pre>
    *
    * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -563,7 +590,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
    * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
    * URI of the media. Input files must be at least 5 seconds in duration and
-   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
+   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`). See
+   * [Supported input and output
+   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
    * </pre>
    *
    * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -591,7 +620,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input only. Specify the `output_uri` to populate an empty `Job.config.output.uri` or
    * `JobTemplate.config.output.uri` when using template.
-   * URI for the output file(s). For example, `gs://my-bucket/outputs/`.
+   * URI for the output file(s). For example, `gs://my-bucket/outputs/`. See
+   * [Supported input and output
+   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
    * </pre>
    *
    * <code>string output_uri = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -616,7 +647,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Input only. Specify the `output_uri` to populate an empty `Job.config.output.uri` or
    * `JobTemplate.config.output.uri` when using template.
-   * URI for the output file(s). For example, `gs://my-bucket/outputs/`.
+   * URI for the output file(s). For example, `gs://my-bucket/outputs/`. See
+   * [Supported input and output
+   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
    * </pre>
    *
    * <code>string output_uri = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -981,6 +1014,108 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return ttlAfterCompletionDays_;
   }
 
+  public static final int LABELS_FIELD_NUMBER = 16;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.video.transcoder.v1.ResourcesProto
+                .internal_static_google_cloud_video_transcoder_v1_Job_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job. You can use these to organize and
+   * group your jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 16;</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job. You can use these to organize and
+   * group your jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 16;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job. You can use these to organize and
+   * group your jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 16;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job. You can use these to organize and
+   * group your jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 16;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int ERROR_FIELD_NUMBER = 17;
   private com.google.rpc.Status error_;
   /**
@@ -1076,6 +1211,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (ttlAfterCompletionDays_ != 0) {
       output.writeInt32(15, ttlAfterCompletionDays_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 16);
     if (error_ != null) {
       output.writeMessage(17, getError());
     }
@@ -1122,6 +1259,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (ttlAfterCompletionDays_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(15, ttlAfterCompletionDays_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, labels__);
+    }
     if (error_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getError());
     }
@@ -1157,6 +1304,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
     if (getTtlAfterCompletionDays() != other.getTtlAfterCompletionDays()) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (hasError() != other.hasError()) return false;
     if (hasError()) {
       if (!getError().equals(other.getError())) return false;
@@ -1205,6 +1353,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + TTL_AFTER_COMPLETION_DAYS_FIELD_NUMBER;
     hash = (53 * hash) + getTtlAfterCompletionDays();
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
@@ -1339,6 +1491,26 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_video_transcoder_v1_Job_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 16:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 16:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1394,6 +1566,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       ttlAfterCompletionDays_ = 0;
 
+      internalGetMutableLabels().clear();
       if (errorBuilder_ == null) {
         error_ = null;
       } else {
@@ -1429,6 +1602,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.Job buildPartial() {
       com.google.cloud.video.transcoder.v1.Job result =
           new com.google.cloud.video.transcoder.v1.Job(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.inputUri_ = inputUri_;
       result.outputUri_ = outputUri_;
@@ -1459,6 +1633,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         result.endTime_ = endTimeBuilder_.build();
       }
       result.ttlAfterCompletionDays_ = ttlAfterCompletionDays_;
+      result.labels_ = internalGetLabels();
+      result.labels_.makeImmutable();
       if (errorBuilder_ == null) {
         result.error_ = error_;
       } else {
@@ -1541,6 +1717,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (other.getTtlAfterCompletionDays() != 0) {
         setTtlAfterCompletionDays(other.getTtlAfterCompletionDays());
       }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasError()) {
         mergeError(other.getError());
       }
@@ -1604,6 +1781,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1724,7 +1903,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
      * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
      * URI of the media. Input files must be at least 5 seconds in duration and
-     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
+     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`). See
+     * [Supported input and output
+     * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
      * </pre>
      *
      * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1749,7 +1930,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
      * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
      * URI of the media. Input files must be at least 5 seconds in duration and
-     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
+     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`). See
+     * [Supported input and output
+     * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
      * </pre>
      *
      * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1774,7 +1957,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
      * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
      * URI of the media. Input files must be at least 5 seconds in duration and
-     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
+     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`). See
+     * [Supported input and output
+     * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
      * </pre>
      *
      * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1798,7 +1983,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
      * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
      * URI of the media. Input files must be at least 5 seconds in duration and
-     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
+     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`). See
+     * [Supported input and output
+     * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
      * </pre>
      *
      * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1818,7 +2005,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
      * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
      * URI of the media. Input files must be at least 5 seconds in duration and
-     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
+     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`). See
+     * [Supported input and output
+     * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
      * </pre>
      *
      * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1844,7 +2033,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `output_uri` to populate an empty `Job.config.output.uri` or
      * `JobTemplate.config.output.uri` when using template.
-     * URI for the output file(s). For example, `gs://my-bucket/outputs/`.
+     * URI for the output file(s). For example, `gs://my-bucket/outputs/`. See
+     * [Supported input and output
+     * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
      * </pre>
      *
      * <code>string output_uri = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1868,7 +2059,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `output_uri` to populate an empty `Job.config.output.uri` or
      * `JobTemplate.config.output.uri` when using template.
-     * URI for the output file(s). For example, `gs://my-bucket/outputs/`.
+     * URI for the output file(s). For example, `gs://my-bucket/outputs/`. See
+     * [Supported input and output
+     * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
      * </pre>
      *
      * <code>string output_uri = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1892,7 +2085,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `output_uri` to populate an empty `Job.config.output.uri` or
      * `JobTemplate.config.output.uri` when using template.
-     * URI for the output file(s). For example, `gs://my-bucket/outputs/`.
+     * URI for the output file(s). For example, `gs://my-bucket/outputs/`. See
+     * [Supported input and output
+     * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
      * </pre>
      *
      * <code>string output_uri = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1915,7 +2110,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `output_uri` to populate an empty `Job.config.output.uri` or
      * `JobTemplate.config.output.uri` when using template.
-     * URI for the output file(s). For example, `gs://my-bucket/outputs/`.
+     * URI for the output file(s). For example, `gs://my-bucket/outputs/`. See
+     * [Supported input and output
+     * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
      * </pre>
      *
      * <code>string output_uri = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1934,7 +2131,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Input only. Specify the `output_uri` to populate an empty `Job.config.output.uri` or
      * `JobTemplate.config.output.uri` when using template.
-     * URI for the output file(s). For example, `gs://my-bucket/outputs/`.
+     * URI for the output file(s). For example, `gs://my-bucket/outputs/`. See
+     * [Supported input and output
+     * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
      * </pre>
      *
      * <code>string output_uri = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3071,6 +3270,171 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
       ttlAfterCompletionDays_ = 0;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      onChanged();
+      ;
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job. You can use these to organize and
+     * group your jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 16;</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job. You can use these to organize and
+     * group your jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 16;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job. You can use these to organize and
+     * group your jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 16;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job. You can use these to organize and
+     * group your jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 16;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job. You can use these to organize and
+     * group your jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 16;</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job. You can use these to organize and
+     * group your jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 16;</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job. You can use these to organize and
+     * group your jobs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 16;</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
 

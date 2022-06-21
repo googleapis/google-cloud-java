@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3.stub;
 
 import static com.google.cloud.dialogflow.cx.v3.ExperimentsClient.ListExperimentsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3.ExperimentsClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -29,6 +30,10 @@ import com.google.cloud.dialogflow.cx.v3.ListExperimentsResponse;
 import com.google.cloud.dialogflow.cx.v3.StartExperimentRequest;
 import com.google.cloud.dialogflow.cx.v3.StopExperimentRequest;
 import com.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -72,6 +77,19 @@ public abstract class ExperimentsStub implements BackgroundResource {
 
   public UnaryCallable<StopExperimentRequest, Experiment> stopExperimentCallable() {
     throw new UnsupportedOperationException("Not implemented: stopExperimentCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

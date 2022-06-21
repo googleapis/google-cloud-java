@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.BackendBucketsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -62,7 +61,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -71,7 +70,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
       addSignedUrlKeyMethodDescriptor =
           ApiMethodDescriptor.<AddSignedUrlKeyBackendBucketRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/AddSignedUrlKey")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddSignedUrlKeyBackendBucketRequest>newBuilder()
@@ -125,7 +124,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteBackendBucketRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteBackendBucketRequest>newBuilder()
@@ -175,7 +174,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
       deleteSignedUrlKeyMethodDescriptor =
           ApiMethodDescriptor.<DeleteSignedUrlKeyBackendBucketRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/DeleteSignedUrlKey")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSignedUrlKeyBackendBucketRequest>newBuilder()
@@ -226,7 +225,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetBackendBucketRequest, BackendBucket>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetBackendBucketRequest>newBuilder()
@@ -261,7 +260,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertBackendBucketRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertBackendBucketRequest>newBuilder()
@@ -313,7 +312,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListBackendBucketsRequest, BackendBucketList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListBackendBucketsRequest>newBuilder()
@@ -365,7 +364,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchBackendBucketRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/Patch")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchBackendBucketRequest>newBuilder()
@@ -419,7 +418,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
       setEdgeSecurityPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetEdgeSecurityPolicyBackendBucketRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/SetEdgeSecurityPolicy")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -475,7 +474,7 @@ public class HttpJsonBackendBucketsStub extends BackendBucketsStub {
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateBackendBucketRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.BackendBuckets/Update")
-              .setHttpMethod(HttpMethods.PUT)
+              .setHttpMethod("PUT")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateBackendBucketRequest>newBuilder()

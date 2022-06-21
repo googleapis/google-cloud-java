@@ -291,7 +291,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *   while (true) {
    *     ListEnvironmentsResponse response =
    *         environmentsClient.listEnvironmentsCallable().call(request);
-   *     for (Environment element : response.getResponsesList()) {
+   *     for (Environment element : response.getEnvironmentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -621,7 +621,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *   while (true) {
    *     EnvironmentHistory response =
    *         environmentsClient.getEnvironmentHistoryCallable().call(request);
-   *     for (EnvironmentHistory.Entry element : response.getResponsesList()) {
+   *     for (EnvironmentHistory.Entry element : response.getEntriesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

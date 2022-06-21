@@ -327,7 +327,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *   while (true) {
    *     ListServicesResponse response =
    *         dataprocMetastoreClient.listServicesCallable().call(request);
-   *     for (Service element : response.getResponsesList()) {
+   *     for (Service element : response.getServicesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1003,7 +1003,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *   while (true) {
    *     ListMetadataImportsResponse response =
    *         dataprocMetastoreClient.listMetadataImportsCallable().call(request);
-   *     for (MetadataImport element : response.getResponsesList()) {
+   *     for (MetadataImport element : response.getMetadataImportsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1867,7 +1867,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListBackupsResponse response = dataprocMetastoreClient.listBackupsCallable().call(request);
-   *     for (Backup element : response.getResponsesList()) {
+   *     for (Backup element : response.getBackupsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

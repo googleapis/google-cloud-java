@@ -153,6 +153,8 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -421,7 +423,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsScriptVariables(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetScriptVariables().getMap().containsKey(key);
   }
@@ -461,7 +463,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getScriptVariablesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -480,7 +482,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getScriptVariablesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
     if (!map.containsKey(key)) {
@@ -530,7 +532,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetProperties().getMap().containsKey(key);
   }
@@ -574,7 +576,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPropertiesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -595,7 +597,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     if (!map.containsKey(key)) {
@@ -1415,8 +1417,9 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
       } else {
         if (queriesCase_ == 2) {
           queryListBuilder_.mergeFrom(value);
+        } else {
+          queryListBuilder_.setMessage(value);
         }
-        queryListBuilder_.setMessage(value);
       }
       queriesCase_ = 2;
       return this;
@@ -1614,7 +1617,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsScriptVariables(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetScriptVariables().getMap().containsKey(key);
     }
@@ -1656,7 +1659,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getScriptVariablesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1676,7 +1679,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getScriptVariablesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
       if (!map.containsKey(key)) {
@@ -1703,7 +1706,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeScriptVariables(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableScriptVariables().getMutableMap().remove(key);
       return this;
@@ -1727,11 +1730,12 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putScriptVariables(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableScriptVariables().getMutableMap().put(key, value);
       return this;
     }
@@ -1796,7 +1800,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetProperties().getMap().containsKey(key);
     }
@@ -1840,7 +1844,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPropertiesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1861,7 +1865,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       if (!map.containsKey(key)) {
@@ -1889,7 +1893,7 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeProperties(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableProperties().getMutableMap().remove(key);
       return this;
@@ -1914,11 +1918,12 @@ public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putProperties(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableProperties().getMutableMap().put(key, value);
       return this;
     }

@@ -620,7 +620,7 @@ public class BudgetServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListBudgetsResponse response = budgetServiceClient.listBudgetsCallable().call(request);
-   *     for (Budget element : response.getResponsesList()) {
+   *     for (Budget element : response.getBudgetsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,7 @@ import com.google.cloud.compute.v1.InsertTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.ListTargetHttpsProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchTargetHttpsProxyRequest;
+import com.google.cloud.compute.v1.SetCertificateMapTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetQuicOverrideTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetSslPolicyTargetHttpsProxyRequest;
@@ -89,6 +90,8 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TargetHttpsProxiesStubSettings.Builder targetHttpsProxiesSettingsBuilder =
  *     TargetHttpsProxiesStubSettings.newBuilder();
  * targetHttpsProxiesSettingsBuilder
@@ -131,6 +134,11 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
   private final UnaryCallSettings<PatchTargetHttpsProxyRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchTargetHttpsProxyRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<SetCertificateMapTargetHttpsProxyRequest, Operation>
+      setCertificateMapSettings;
+  private final OperationCallSettings<
+          SetCertificateMapTargetHttpsProxyRequest, Operation, Operation>
+      setCertificateMapOperationSettings;
   private final UnaryCallSettings<SetQuicOverrideTargetHttpsProxyRequest, Operation>
       setQuicOverrideSettings;
   private final OperationCallSettings<SetQuicOverrideTargetHttpsProxyRequest, Operation, Operation>
@@ -336,6 +344,18 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setCertificateMap. */
+  public UnaryCallSettings<SetCertificateMapTargetHttpsProxyRequest, Operation>
+      setCertificateMapSettings() {
+    return setCertificateMapSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setCertificateMap. */
+  public OperationCallSettings<SetCertificateMapTargetHttpsProxyRequest, Operation, Operation>
+      setCertificateMapOperationSettings() {
+    return setCertificateMapOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setQuicOverride. */
   public UnaryCallSettings<SetQuicOverrideTargetHttpsProxyRequest, Operation>
       setQuicOverrideSettings() {
@@ -382,7 +402,6 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
     return setUrlMapOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TargetHttpsProxiesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -468,6 +487,9 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    setCertificateMapSettings = settingsBuilder.setCertificateMapSettings().build();
+    setCertificateMapOperationSettings =
+        settingsBuilder.setCertificateMapOperationSettings().build();
     setQuicOverrideSettings = settingsBuilder.setQuicOverrideSettings().build();
     setQuicOverrideOperationSettings = settingsBuilder.setQuicOverrideOperationSettings().build();
     setSslCertificatesSettings = settingsBuilder.setSslCertificatesSettings().build();
@@ -504,6 +526,11 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
     private final UnaryCallSettings.Builder<PatchTargetHttpsProxyRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchTargetHttpsProxyRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<SetCertificateMapTargetHttpsProxyRequest, Operation>
+        setCertificateMapSettings;
+    private final OperationCallSettings.Builder<
+            SetCertificateMapTargetHttpsProxyRequest, Operation, Operation>
+        setCertificateMapOperationSettings;
     private final UnaryCallSettings.Builder<SetQuicOverrideTargetHttpsProxyRequest, Operation>
         setQuicOverrideSettings;
     private final OperationCallSettings.Builder<
@@ -583,6 +610,8 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      setCertificateMapSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setCertificateMapOperationSettings = OperationCallSettings.newBuilder();
       setQuicOverrideSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setQuicOverrideOperationSettings = OperationCallSettings.newBuilder();
       setSslCertificatesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -600,6 +629,7 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
               insertSettings,
               listSettings,
               patchSettings,
+              setCertificateMapSettings,
               setQuicOverrideSettings,
               setSslCertificatesSettings,
               setSslPolicySettings,
@@ -619,6 +649,8 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      setCertificateMapSettings = settings.setCertificateMapSettings.toBuilder();
+      setCertificateMapOperationSettings = settings.setCertificateMapOperationSettings.toBuilder();
       setQuicOverrideSettings = settings.setQuicOverrideSettings.toBuilder();
       setQuicOverrideOperationSettings = settings.setQuicOverrideOperationSettings.toBuilder();
       setSslCertificatesSettings = settings.setSslCertificatesSettings.toBuilder();
@@ -637,6 +669,7 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
               insertSettings,
               listSettings,
               patchSettings,
+              setCertificateMapSettings,
               setQuicOverrideSettings,
               setSslCertificatesSettings,
               setSslPolicySettings,
@@ -684,6 +717,11 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setCertificateMapSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -760,6 +798,31 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
           .setInitialCallSettings(
               UnaryCallSettings
                   .<PatchTargetHttpsProxyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setCertificateMapOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetCertificateMapTargetHttpsProxyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -955,6 +1018,21 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
     public OperationCallSettings.Builder<PatchTargetHttpsProxyRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setCertificateMap. */
+    public UnaryCallSettings.Builder<SetCertificateMapTargetHttpsProxyRequest, Operation>
+        setCertificateMapSettings() {
+      return setCertificateMapSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setCertificateMap. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SetCertificateMapTargetHttpsProxyRequest, Operation, Operation>
+        setCertificateMapOperationSettings() {
+      return setCertificateMapOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setQuicOverride. */

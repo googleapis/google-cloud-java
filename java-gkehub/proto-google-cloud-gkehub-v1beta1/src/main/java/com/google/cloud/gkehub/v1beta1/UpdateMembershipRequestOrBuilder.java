@@ -31,7 +31,9 @@ public interface UpdateMembershipRequestOrBuilder
    * `projects/[project_id]/locations/global/memberships/[membership_id]`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -44,7 +46,9 @@ public interface UpdateMembershipRequestOrBuilder
    * `projects/[project_id]/locations/global/memberships/[membership_id]`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -54,8 +58,8 @@ public interface UpdateMembershipRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask of fields to update. At least one field path must be
-   * specified in this mask.
+   * Required. Mask of fields to update. At least one field path must be specified in this
+   * mask.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -68,8 +72,8 @@ public interface UpdateMembershipRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask of fields to update. At least one field path must be
-   * specified in this mask.
+   * Required. Mask of fields to update. At least one field path must be specified in this
+   * mask.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -82,8 +86,8 @@ public interface UpdateMembershipRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask of fields to update. At least one field path must be
-   * specified in this mask.
+   * Required. Mask of fields to update. At least one field path must be specified in this
+   * mask.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

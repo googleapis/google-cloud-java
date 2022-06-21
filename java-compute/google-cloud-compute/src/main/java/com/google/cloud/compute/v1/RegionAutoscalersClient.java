@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionAutoscalersSettings regionAutoscalersSettings =
  *     RegionAutoscalersSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,6 +96,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionAutoscalersSettings regionAutoscalersSettings =
  *     RegionAutoscalersSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionAutoscalersClient regionAutoscalersClient =
@@ -123,7 +129,6 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * Constructs an instance of RegionAutoscalersClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(RegionAutoscalersSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionAutoscalersClient create(RegionAutoscalersStub stub) {
     return new RegionAutoscalersClient(stub);
   }
@@ -138,7 +143,6 @@ public class RegionAutoscalersClient implements BackgroundResource {
     this.stub = ((RegionAutoscalersStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RegionAutoscalersClient(RegionAutoscalersStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -148,7 +152,6 @@ public class RegionAutoscalersClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegionAutoscalersStub getStub() {
     return stub;
   }
@@ -160,6 +163,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -191,6 +196,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   DeleteRegionAutoscalerRequest request =
    *       DeleteRegionAutoscalerRequest.newBuilder()
@@ -220,6 +227,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   DeleteRegionAutoscalerRequest request =
    *       DeleteRegionAutoscalerRequest.newBuilder()
@@ -247,6 +256,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   DeleteRegionAutoscalerRequest request =
    *       DeleteRegionAutoscalerRequest.newBuilder()
@@ -272,6 +283,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -302,6 +315,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   GetRegionAutoscalerRequest request =
    *       GetRegionAutoscalerRequest.newBuilder()
@@ -327,6 +342,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   GetRegionAutoscalerRequest request =
    *       GetRegionAutoscalerRequest.newBuilder()
@@ -351,6 +368,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -383,6 +402,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   InsertRegionAutoscalerRequest request =
    *       InsertRegionAutoscalerRequest.newBuilder()
@@ -412,6 +433,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   InsertRegionAutoscalerRequest request =
    *       InsertRegionAutoscalerRequest.newBuilder()
@@ -439,6 +462,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   InsertRegionAutoscalerRequest request =
    *       InsertRegionAutoscalerRequest.newBuilder()
@@ -464,6 +489,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -490,6 +517,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   ListRegionAutoscalersRequest request =
    *       ListRegionAutoscalersRequest.newBuilder()
@@ -521,6 +550,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   ListRegionAutoscalersRequest request =
    *       ListRegionAutoscalersRequest.newBuilder()
@@ -552,6 +583,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   ListRegionAutoscalersRequest request =
    *       ListRegionAutoscalersRequest.newBuilder()
@@ -565,7 +598,7 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     RegionAutoscalerList response = regionAutoscalersClient.listCallable().call(request);
-   *     for (Autoscaler element : response.getResponsesList()) {
+   *     for (Autoscaler element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -590,6 +623,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -623,6 +658,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   PatchRegionAutoscalerRequest request =
    *       PatchRegionAutoscalerRequest.newBuilder()
@@ -654,6 +691,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   PatchRegionAutoscalerRequest request =
    *       PatchRegionAutoscalerRequest.newBuilder()
@@ -683,6 +722,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   PatchRegionAutoscalerRequest request =
    *       PatchRegionAutoscalerRequest.newBuilder()
@@ -709,6 +750,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -741,6 +784,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   UpdateRegionAutoscalerRequest request =
    *       UpdateRegionAutoscalerRequest.newBuilder()
@@ -771,6 +816,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   UpdateRegionAutoscalerRequest request =
    *       UpdateRegionAutoscalerRequest.newBuilder()
@@ -799,6 +846,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
    *   UpdateRegionAutoscalerRequest request =
    *       UpdateRegionAutoscalerRequest.newBuilder()

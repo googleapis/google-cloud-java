@@ -146,7 +146,6 @@ public class ProductSearchClient implements BackgroundResource {
    * Constructs an instance of ProductSearchClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(ProductSearchSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ProductSearchClient create(ProductSearchStub stub) {
     return new ProductSearchClient(stub);
   }
@@ -162,7 +161,6 @@ public class ProductSearchClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ProductSearchClient(ProductSearchStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -173,7 +171,6 @@ public class ProductSearchClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProductSearchStub getStub() {
     return stub;
   }
@@ -501,7 +498,7 @@ public class ProductSearchClient implements BackgroundResource {
    *   while (true) {
    *     ListProductSetsResponse response =
    *         productSearchClient.listProductSetsCallable().call(request);
-   *     for (ProductSet element : response.getResponsesList()) {
+   *     for (ProductSet element : response.getProductSetsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1202,7 +1199,7 @@ public class ProductSearchClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListProductsResponse response = productSearchClient.listProductsCallable().call(request);
-   *     for (Product element : response.getResponsesList()) {
+   *     for (Product element : response.getProductsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2134,7 +2131,7 @@ public class ProductSearchClient implements BackgroundResource {
    *   while (true) {
    *     ListReferenceImagesResponse response =
    *         productSearchClient.listReferenceImagesCallable().call(request);
-   *     for (ReferenceImage element : response.getResponsesList()) {
+   *     for (ReferenceImage element : response.getReferenceImagesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2894,7 +2891,7 @@ public class ProductSearchClient implements BackgroundResource {
    *   while (true) {
    *     ListProductsInProductSetResponse response =
    *         productSearchClient.listProductsInProductSetCallable().call(request);
-   *     for (Product element : response.getResponsesList()) {
+   *     for (Product element : response.getProductsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

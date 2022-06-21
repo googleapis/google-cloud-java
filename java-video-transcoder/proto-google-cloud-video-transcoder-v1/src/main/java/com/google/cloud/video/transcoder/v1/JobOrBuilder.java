@@ -57,7 +57,9 @@ public interface JobOrBuilder
    * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
    * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
    * URI of the media. Input files must be at least 5 seconds in duration and
-   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
+   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`). See
+   * [Supported input and output
+   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
    * </pre>
    *
    * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -72,7 +74,9 @@ public interface JobOrBuilder
    * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
    * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
    * URI of the media. Input files must be at least 5 seconds in duration and
-   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
+   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`). See
+   * [Supported input and output
+   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
    * </pre>
    *
    * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -87,7 +91,9 @@ public interface JobOrBuilder
    * <pre>
    * Input only. Specify the `output_uri` to populate an empty `Job.config.output.uri` or
    * `JobTemplate.config.output.uri` when using template.
-   * URI for the output file(s). For example, `gs://my-bucket/outputs/`.
+   * URI for the output file(s). For example, `gs://my-bucket/outputs/`. See
+   * [Supported input and output
+   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
    * </pre>
    *
    * <code>string output_uri = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -101,7 +107,9 @@ public interface JobOrBuilder
    * <pre>
    * Input only. Specify the `output_uri` to populate an empty `Job.config.output.uri` or
    * `JobTemplate.config.output.uri` when using template.
-   * URI for the output file(s). For example, `gs://my-bucket/outputs/`.
+   * URI for the output file(s). For example, `gs://my-bucket/outputs/`. See
+   * [Supported input and output
+   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
    * </pre>
    *
    * <code>string output_uri = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -354,6 +362,70 @@ public interface JobOrBuilder
    * @return The ttlAfterCompletionDays.
    */
   int getTtlAfterCompletionDays();
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job. You can use these to organize and
+   * group your jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 16;</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job. You can use these to organize and
+   * group your jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 16;</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job. You can use these to organize and
+   * group your jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 16;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job. You can use these to organize and
+   * group your jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 16;</code>
+   */
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job. You can use these to organize and
+   * group your jobs.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 16;</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
    *

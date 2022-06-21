@@ -82,6 +82,8 @@ public interface BatchPredictionJobOrBuilder
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
+   * The model resource name may contain version id or version alias to specify
+   * the version, if no version is specified, the default version will be used.
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -98,6 +100,8 @@ public interface BatchPredictionJobOrBuilder
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
+   * The model resource name may contain version id or version alias to specify
+   * the version, if no version is specified, the default version will be used.
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>

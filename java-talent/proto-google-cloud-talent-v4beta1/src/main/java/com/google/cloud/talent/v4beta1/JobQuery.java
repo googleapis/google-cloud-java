@@ -823,8 +823,20 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
-   * of the jobs to search against.
+   * This filter specifies the company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
+   * of the jobs to search against. The company name must match the value
+   * exactly.
+   * Alternatively, the value being searched for can be wrapped in different
+   * match operators.
+   * `SUBSTRING_MATCH([value])`
+   * The company name must contain a case insensitive substring match of the
+   * value. Using this function may increase latency.
+   * Sample Value: `SUBSTRING_MATCH(google)`
+   * `MULTI_WORD_TOKEN_MATCH([value])`
+   * The value will be treated as a multi word token and the company name must
+   * contain a case insensitive match of the value. Using this function may
+   * increase latency.
+   * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
    * If multiple values are specified, jobs within the search results may be
@@ -843,8 +855,20 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
-   * of the jobs to search against.
+   * This filter specifies the company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
+   * of the jobs to search against. The company name must match the value
+   * exactly.
+   * Alternatively, the value being searched for can be wrapped in different
+   * match operators.
+   * `SUBSTRING_MATCH([value])`
+   * The company name must contain a case insensitive substring match of the
+   * value. Using this function may increase latency.
+   * Sample Value: `SUBSTRING_MATCH(google)`
+   * `MULTI_WORD_TOKEN_MATCH([value])`
+   * The value will be treated as a multi word token and the company name must
+   * contain a case insensitive match of the value. Using this function may
+   * increase latency.
+   * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
    * If multiple values are specified, jobs within the search results may be
@@ -863,8 +887,20 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
-   * of the jobs to search against.
+   * This filter specifies the company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
+   * of the jobs to search against. The company name must match the value
+   * exactly.
+   * Alternatively, the value being searched for can be wrapped in different
+   * match operators.
+   * `SUBSTRING_MATCH([value])`
+   * The company name must contain a case insensitive substring match of the
+   * value. Using this function may increase latency.
+   * Sample Value: `SUBSTRING_MATCH(google)`
+   * `MULTI_WORD_TOKEN_MATCH([value])`
+   * The value will be treated as a multi word token and the company name must
+   * contain a case insensitive match of the value. Using this function may
+   * increase latency.
+   * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
    * If multiple values are specified, jobs within the search results may be
@@ -884,8 +920,20 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
-   * of the jobs to search against.
+   * This filter specifies the company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
+   * of the jobs to search against. The company name must match the value
+   * exactly.
+   * Alternatively, the value being searched for can be wrapped in different
+   * match operators.
+   * `SUBSTRING_MATCH([value])`
+   * The company name must contain a case insensitive substring match of the
+   * value. Using this function may increase latency.
+   * Sample Value: `SUBSTRING_MATCH(google)`
+   * `MULTI_WORD_TOKEN_MATCH([value])`
+   * The value will be treated as a multi word token and the company name must
+   * contain a case insensitive match of the value. Using this function may
+   * increase latency.
+   * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
    * If a value isn't specified, jobs within the search results are
    * associated with any company.
    * If multiple values are specified, jobs within the search results may be
@@ -982,7 +1030,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of
    * nesting (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
    * comparisons or functions are allowed in the expression. The expression
-   * must be &lt; 6000 bytes in length.
+   * must be &lt; 10000 bytes in length.
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
@@ -1021,7 +1069,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
    * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of
    * nesting (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
    * comparisons or functions are allowed in the expression. The expression
-   * must be &lt; 6000 bytes in length.
+   * must be &lt; 10000 bytes in length.
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
@@ -3632,8 +3680,20 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly.
+     * Alternatively, the value being searched for can be wrapped in different
+     * match operators.
+     * `SUBSTRING_MATCH([value])`
+     * The company name must contain a case insensitive substring match of the
+     * value. Using this function may increase latency.
+     * Sample Value: `SUBSTRING_MATCH(google)`
+     * `MULTI_WORD_TOKEN_MATCH([value])`
+     * The value will be treated as a multi word token and the company name must
+     * contain a case insensitive match of the value. Using this function may
+     * increase latency.
+     * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3652,8 +3712,20 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly.
+     * Alternatively, the value being searched for can be wrapped in different
+     * match operators.
+     * `SUBSTRING_MATCH([value])`
+     * The company name must contain a case insensitive substring match of the
+     * value. Using this function may increase latency.
+     * Sample Value: `SUBSTRING_MATCH(google)`
+     * `MULTI_WORD_TOKEN_MATCH([value])`
+     * The value will be treated as a multi word token and the company name must
+     * contain a case insensitive match of the value. Using this function may
+     * increase latency.
+     * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3672,8 +3744,20 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly.
+     * Alternatively, the value being searched for can be wrapped in different
+     * match operators.
+     * `SUBSTRING_MATCH([value])`
+     * The company name must contain a case insensitive substring match of the
+     * value. Using this function may increase latency.
+     * Sample Value: `SUBSTRING_MATCH(google)`
+     * `MULTI_WORD_TOKEN_MATCH([value])`
+     * The value will be treated as a multi word token and the company name must
+     * contain a case insensitive match of the value. Using this function may
+     * increase latency.
+     * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3693,8 +3777,20 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly.
+     * Alternatively, the value being searched for can be wrapped in different
+     * match operators.
+     * `SUBSTRING_MATCH([value])`
+     * The company name must contain a case insensitive substring match of the
+     * value. Using this function may increase latency.
+     * Sample Value: `SUBSTRING_MATCH(google)`
+     * `MULTI_WORD_TOKEN_MATCH([value])`
+     * The value will be treated as a multi word token and the company name must
+     * contain a case insensitive match of the value. Using this function may
+     * increase latency.
+     * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3714,8 +3810,20 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly.
+     * Alternatively, the value being searched for can be wrapped in different
+     * match operators.
+     * `SUBSTRING_MATCH([value])`
+     * The company name must contain a case insensitive substring match of the
+     * value. Using this function may increase latency.
+     * Sample Value: `SUBSTRING_MATCH(google)`
+     * `MULTI_WORD_TOKEN_MATCH([value])`
+     * The value will be treated as a multi word token and the company name must
+     * contain a case insensitive match of the value. Using this function may
+     * increase latency.
+     * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3742,8 +3850,20 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly.
+     * Alternatively, the value being searched for can be wrapped in different
+     * match operators.
+     * `SUBSTRING_MATCH([value])`
+     * The company name must contain a case insensitive substring match of the
+     * value. Using this function may increase latency.
+     * Sample Value: `SUBSTRING_MATCH(google)`
+     * `MULTI_WORD_TOKEN_MATCH([value])`
+     * The value will be treated as a multi word token and the company name must
+     * contain a case insensitive match of the value. Using this function may
+     * increase latency.
+     * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3769,8 +3889,20 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly.
+     * Alternatively, the value being searched for can be wrapped in different
+     * match operators.
+     * `SUBSTRING_MATCH([value])`
+     * The company name must contain a case insensitive substring match of the
+     * value. Using this function may increase latency.
+     * Sample Value: `SUBSTRING_MATCH(google)`
+     * `MULTI_WORD_TOKEN_MATCH([value])`
+     * The value will be treated as a multi word token and the company name must
+     * contain a case insensitive match of the value. Using this function may
+     * increase latency.
+     * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3793,8 +3925,20 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly.
+     * Alternatively, the value being searched for can be wrapped in different
+     * match operators.
+     * `SUBSTRING_MATCH([value])`
+     * The company name must contain a case insensitive substring match of the
+     * value. Using this function may increase latency.
+     * Sample Value: `SUBSTRING_MATCH(google)`
+     * `MULTI_WORD_TOKEN_MATCH([value])`
+     * The value will be treated as a multi word token and the company name must
+     * contain a case insensitive match of the value. Using this function may
+     * increase latency.
+     * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -3816,8 +3960,20 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This filter specifies the exact company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
-     * of the jobs to search against.
+     * This filter specifies the company [Company.display_name][google.cloud.talent.v4beta1.Company.display_name]
+     * of the jobs to search against. The company name must match the value
+     * exactly.
+     * Alternatively, the value being searched for can be wrapped in different
+     * match operators.
+     * `SUBSTRING_MATCH([value])`
+     * The company name must contain a case insensitive substring match of the
+     * value. Using this function may increase latency.
+     * Sample Value: `SUBSTRING_MATCH(google)`
+     * `MULTI_WORD_TOKEN_MATCH([value])`
+     * The value will be treated as a multi word token and the company name must
+     * contain a case insensitive match of the value. Using this function may
+     * increase latency.
+     * Sample Value: `MULTI_WORD_TOKEN_MATCH(google)`
      * If a value isn't specified, jobs within the search results are
      * associated with any company.
      * If multiple values are specified, jobs within the search results may be
@@ -4084,7 +4240,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of
      * nesting (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression
-     * must be &lt; 6000 bytes in length.
+     * must be &lt; 10000 bytes in length.
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
@@ -4122,7 +4278,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of
      * nesting (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression
-     * must be &lt; 6000 bytes in length.
+     * must be &lt; 10000 bytes in length.
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
@@ -4160,7 +4316,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of
      * nesting (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression
-     * must be &lt; 6000 bytes in length.
+     * must be &lt; 10000 bytes in length.
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
@@ -4197,7 +4353,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of
      * nesting (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression
-     * must be &lt; 6000 bytes in length.
+     * must be &lt; 10000 bytes in length.
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
@@ -4230,7 +4386,7 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      * Boolean expressions (AND/OR/NOT) are supported up to 3 levels of
      * nesting (for example, "((A AND B AND C) OR NOT D) AND E"), a maximum of 100
      * comparisons or functions are allowed in the expression. The expression
-     * must be &lt; 6000 bytes in length.
+     * must be &lt; 10000 bytes in length.
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`

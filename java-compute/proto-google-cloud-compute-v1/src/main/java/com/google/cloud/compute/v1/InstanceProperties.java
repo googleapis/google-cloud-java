@@ -342,6 +342,8 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -968,7 +970,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -1003,7 +1005,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1020,7 +1022,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -1494,7 +1496,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public boolean containsResourceManagerTags(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetResourceManagerTags().getMap().containsKey(key);
   }
@@ -1530,7 +1532,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
   public java.lang.String getResourceManagerTagsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetResourceManagerTags().getMap();
@@ -1548,7 +1550,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public java.lang.String getResourceManagerTagsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetResourceManagerTags().getMap();
@@ -4241,7 +4243,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -4277,7 +4279,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -4294,7 +4296,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -4318,7 +4320,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -4339,11 +4341,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -5741,7 +5744,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public boolean containsResourceManagerTags(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetResourceManagerTags().getMap().containsKey(key);
     }
@@ -5777,7 +5780,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     public java.lang.String getResourceManagerTagsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetResourceManagerTags().getMap();
@@ -5795,7 +5798,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public java.lang.String getResourceManagerTagsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetResourceManagerTags().getMap();
@@ -5820,7 +5823,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      */
     public Builder removeResourceManagerTags(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableResourceManagerTags().getMutableMap().remove(key);
       return this;
@@ -5841,11 +5844,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      */
     public Builder putResourceManagerTags(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableResourceManagerTags().getMutableMap().put(key, value);
       return this;
     }

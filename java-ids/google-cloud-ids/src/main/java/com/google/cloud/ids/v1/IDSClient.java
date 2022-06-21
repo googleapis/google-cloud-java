@@ -296,7 +296,7 @@ public class IDSClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListEndpointsResponse response = iDSClient.listEndpointsCallable().call(request);
-   *     for (Endpoint element : response.getResponsesList()) {
+   *     for (Endpoint element : response.getEndpointsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

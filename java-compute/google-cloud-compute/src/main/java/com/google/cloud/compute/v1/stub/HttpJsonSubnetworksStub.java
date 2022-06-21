@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.SubnetworksClient.AggregatedListPagedR
 import static com.google.cloud.compute.v1.SubnetworksClient.ListPagedResponse;
 import static com.google.cloud.compute.v1.SubnetworksClient.ListUsablePagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -71,7 +70,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonSubnetworksStub extends SubnetworksStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -82,7 +81,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
           ApiMethodDescriptor
               .<AggregatedListSubnetworksRequest, SubnetworkAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListSubnetworksRequest>newBuilder()
@@ -138,7 +137,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteSubnetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSubnetworkRequest>newBuilder()
@@ -189,7 +188,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
       expandIpCidrRangeMethodDescriptor =
           ApiMethodDescriptor.<ExpandIpCidrRangeSubnetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/ExpandIpCidrRange")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ExpandIpCidrRangeSubnetworkRequest>newBuilder()
@@ -244,7 +243,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
   private static final ApiMethodDescriptor<GetSubnetworkRequest, Subnetwork> getMethodDescriptor =
       ApiMethodDescriptor.<GetSubnetworkRequest, Subnetwork>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Subnetworks/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetSubnetworkRequest>newBuilder()
@@ -279,7 +278,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicySubnetworkRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/GetIamPolicy")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicySubnetworkRequest>newBuilder()
@@ -320,7 +319,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertSubnetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertSubnetworkRequest>newBuilder()
@@ -373,7 +372,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListSubnetworksRequest, SubnetworkList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListSubnetworksRequest>newBuilder()
@@ -428,7 +427,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
           ApiMethodDescriptor
               .<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/ListUsable")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListUsableSubnetworksRequest>newBuilder()
@@ -480,7 +479,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchSubnetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/Patch")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchSubnetworkRequest>newBuilder()
@@ -538,7 +537,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicySubnetworkRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/SetIamPolicy")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicySubnetworkRequest>newBuilder()
@@ -578,7 +577,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
       setPrivateIpGoogleAccessMethodDescriptor =
           ApiMethodDescriptor.<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/SetPrivateIpGoogleAccess")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -638,7 +637,7 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
           ApiMethodDescriptor
               .<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Subnetworks/TestIamPermissions")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsSubnetworkRequest>newBuilder()

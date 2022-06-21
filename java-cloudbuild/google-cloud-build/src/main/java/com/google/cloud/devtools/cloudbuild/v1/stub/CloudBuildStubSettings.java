@@ -479,7 +479,6 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     return listWorkerPoolsSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudBuildStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

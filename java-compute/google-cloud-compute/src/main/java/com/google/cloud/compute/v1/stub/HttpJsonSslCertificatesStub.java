@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.SslCertificatesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.SslCertificatesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -60,7 +59,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -71,7 +70,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
           ApiMethodDescriptor
               .<AggregatedListSslCertificatesRequest, SslCertificateAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslCertificates/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListSslCertificatesRequest>newBuilder()
@@ -127,7 +126,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteSslCertificateRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslCertificates/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSslCertificateRequest>newBuilder()
@@ -177,7 +176,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetSslCertificateRequest, SslCertificate>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslCertificates/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetSslCertificateRequest>newBuilder()
@@ -212,7 +211,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertSslCertificateRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslCertificates/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertSslCertificateRequest>newBuilder()
@@ -265,7 +264,7 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListSslCertificatesRequest, SslCertificateList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslCertificates/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListSslCertificatesRequest>newBuilder()

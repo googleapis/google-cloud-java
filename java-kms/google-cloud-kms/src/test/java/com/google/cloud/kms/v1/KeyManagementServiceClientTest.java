@@ -1037,9 +1037,7 @@ public class KeyManagementServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1093,9 +1091,7 @@ public class KeyManagementServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
-            .setCryptoKeyBackend(
-                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
-                    .toString())
+            .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 

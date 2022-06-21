@@ -121,22 +121,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
               eventCase_ = 5;
               break;
             }
-          case 50:
-            {
-              com.google.cloud.talent.v4beta1.ProfileEvent.Builder subBuilder = null;
-              if (eventCase_ == 6) {
-                subBuilder = ((com.google.cloud.talent.v4beta1.ProfileEvent) event_).toBuilder();
-              }
-              event_ =
-                  input.readMessage(
-                      com.google.cloud.talent.v4beta1.ProfileEvent.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.talent.v4beta1.ProfileEvent) event_);
-                event_ = subBuilder.buildPartial();
-              }
-              eventCase_ = 6;
-              break;
-            }
           case 74:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -188,7 +172,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     JOB_EVENT(5),
-    PROFILE_EVENT(6),
     EVENT_NOT_SET(0);
     private final int value;
 
@@ -209,8 +192,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 5:
           return JOB_EVENT;
-        case 6:
-          return PROFILE_EVENT;
         case 0:
           return EVENT_NOT_SET;
         default:
@@ -432,60 +413,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.talent.v4beta1.JobEvent.getDefaultInstance();
   }
 
-  public static final int PROFILE_EVENT_FIELD_NUMBER = 6;
-  /**
-   *
-   *
-   * <pre>
-   * An event issued when a profile searcher interacts with the application
-   * that implements Cloud Talent Solution.
-   * </pre>
-   *
-   * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-   *
-   * @return Whether the profileEvent field is set.
-   */
-  @java.lang.Override
-  public boolean hasProfileEvent() {
-    return eventCase_ == 6;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * An event issued when a profile searcher interacts with the application
-   * that implements Cloud Talent Solution.
-   * </pre>
-   *
-   * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-   *
-   * @return The profileEvent.
-   */
-  @java.lang.Override
-  public com.google.cloud.talent.v4beta1.ProfileEvent getProfileEvent() {
-    if (eventCase_ == 6) {
-      return (com.google.cloud.talent.v4beta1.ProfileEvent) event_;
-    }
-    return com.google.cloud.talent.v4beta1.ProfileEvent.getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * An event issued when a profile searcher interacts with the application
-   * that implements Cloud Talent Solution.
-   * </pre>
-   *
-   * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.talent.v4beta1.ProfileEventOrBuilder getProfileEventOrBuilder() {
-    if (eventCase_ == 6) {
-      return (com.google.cloud.talent.v4beta1.ProfileEvent) event_;
-    }
-    return com.google.cloud.talent.v4beta1.ProfileEvent.getDefaultInstance();
-  }
-
   public static final int EVENT_NOTES_FIELD_NUMBER = 9;
   private volatile java.lang.Object eventNotes_;
   /**
@@ -563,9 +490,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
     if (eventCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.talent.v4beta1.JobEvent) event_);
     }
-    if (eventCase_ == 6) {
-      output.writeMessage(6, (com.google.cloud.talent.v4beta1.ProfileEvent) event_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventNotes_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, eventNotes_);
     }
@@ -591,11 +515,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.cloud.talent.v4beta1.JobEvent) event_);
-    }
-    if (eventCase_ == 6) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              6, (com.google.cloud.talent.v4beta1.ProfileEvent) event_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventNotes_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, eventNotes_);
@@ -628,9 +547,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       case 5:
         if (!getJobEvent().equals(other.getJobEvent())) return false;
         break;
-      case 6:
-        if (!getProfileEvent().equals(other.getProfileEvent())) return false;
-        break;
       case 0:
       default:
     }
@@ -659,10 +575,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + JOB_EVENT_FIELD_NUMBER;
         hash = (53 * hash) + getJobEvent().hashCode();
-        break;
-      case 6:
-        hash = (37 * hash) + PROFILE_EVENT_FIELD_NUMBER;
-        hash = (53 * hash) + getProfileEvent().hashCode();
         break;
       case 0:
       default:
@@ -871,13 +783,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
           result.event_ = jobEventBuilder_.build();
         }
       }
-      if (eventCase_ == 6) {
-        if (profileEventBuilder_ == null) {
-          result.event_ = event_;
-        } else {
-          result.event_ = profileEventBuilder_.build();
-        }
-      }
       result.eventNotes_ = eventNotes_;
       result.eventCase_ = eventCase_;
       onBuilt();
@@ -948,11 +853,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
         case JOB_EVENT:
           {
             mergeJobEvent(other.getJobEvent());
-            break;
-          }
-        case PROFILE_EVENT:
-          {
-            mergeProfileEvent(other.getProfileEvent());
             break;
           }
         case EVENT_NOT_SET:
@@ -1633,225 +1533,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return jobEventBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.talent.v4beta1.ProfileEvent,
-            com.google.cloud.talent.v4beta1.ProfileEvent.Builder,
-            com.google.cloud.talent.v4beta1.ProfileEventOrBuilder>
-        profileEventBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * An event issued when a profile searcher interacts with the application
-     * that implements Cloud Talent Solution.
-     * </pre>
-     *
-     * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-     *
-     * @return Whether the profileEvent field is set.
-     */
-    @java.lang.Override
-    public boolean hasProfileEvent() {
-      return eventCase_ == 6;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * An event issued when a profile searcher interacts with the application
-     * that implements Cloud Talent Solution.
-     * </pre>
-     *
-     * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-     *
-     * @return The profileEvent.
-     */
-    @java.lang.Override
-    public com.google.cloud.talent.v4beta1.ProfileEvent getProfileEvent() {
-      if (profileEventBuilder_ == null) {
-        if (eventCase_ == 6) {
-          return (com.google.cloud.talent.v4beta1.ProfileEvent) event_;
-        }
-        return com.google.cloud.talent.v4beta1.ProfileEvent.getDefaultInstance();
-      } else {
-        if (eventCase_ == 6) {
-          return profileEventBuilder_.getMessage();
-        }
-        return com.google.cloud.talent.v4beta1.ProfileEvent.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * An event issued when a profile searcher interacts with the application
-     * that implements Cloud Talent Solution.
-     * </pre>
-     *
-     * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-     */
-    public Builder setProfileEvent(com.google.cloud.talent.v4beta1.ProfileEvent value) {
-      if (profileEventBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        event_ = value;
-        onChanged();
-      } else {
-        profileEventBuilder_.setMessage(value);
-      }
-      eventCase_ = 6;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * An event issued when a profile searcher interacts with the application
-     * that implements Cloud Talent Solution.
-     * </pre>
-     *
-     * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-     */
-    public Builder setProfileEvent(
-        com.google.cloud.talent.v4beta1.ProfileEvent.Builder builderForValue) {
-      if (profileEventBuilder_ == null) {
-        event_ = builderForValue.build();
-        onChanged();
-      } else {
-        profileEventBuilder_.setMessage(builderForValue.build());
-      }
-      eventCase_ = 6;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * An event issued when a profile searcher interacts with the application
-     * that implements Cloud Talent Solution.
-     * </pre>
-     *
-     * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-     */
-    public Builder mergeProfileEvent(com.google.cloud.talent.v4beta1.ProfileEvent value) {
-      if (profileEventBuilder_ == null) {
-        if (eventCase_ == 6
-            && event_ != com.google.cloud.talent.v4beta1.ProfileEvent.getDefaultInstance()) {
-          event_ =
-              com.google.cloud.talent.v4beta1.ProfileEvent.newBuilder(
-                      (com.google.cloud.talent.v4beta1.ProfileEvent) event_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          event_ = value;
-        }
-        onChanged();
-      } else {
-        if (eventCase_ == 6) {
-          profileEventBuilder_.mergeFrom(value);
-        } else {
-          profileEventBuilder_.setMessage(value);
-        }
-      }
-      eventCase_ = 6;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * An event issued when a profile searcher interacts with the application
-     * that implements Cloud Talent Solution.
-     * </pre>
-     *
-     * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-     */
-    public Builder clearProfileEvent() {
-      if (profileEventBuilder_ == null) {
-        if (eventCase_ == 6) {
-          eventCase_ = 0;
-          event_ = null;
-          onChanged();
-        }
-      } else {
-        if (eventCase_ == 6) {
-          eventCase_ = 0;
-          event_ = null;
-        }
-        profileEventBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * An event issued when a profile searcher interacts with the application
-     * that implements Cloud Talent Solution.
-     * </pre>
-     *
-     * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-     */
-    public com.google.cloud.talent.v4beta1.ProfileEvent.Builder getProfileEventBuilder() {
-      return getProfileEventFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * An event issued when a profile searcher interacts with the application
-     * that implements Cloud Talent Solution.
-     * </pre>
-     *
-     * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-     */
-    @java.lang.Override
-    public com.google.cloud.talent.v4beta1.ProfileEventOrBuilder getProfileEventOrBuilder() {
-      if ((eventCase_ == 6) && (profileEventBuilder_ != null)) {
-        return profileEventBuilder_.getMessageOrBuilder();
-      } else {
-        if (eventCase_ == 6) {
-          return (com.google.cloud.talent.v4beta1.ProfileEvent) event_;
-        }
-        return com.google.cloud.talent.v4beta1.ProfileEvent.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * An event issued when a profile searcher interacts with the application
-     * that implements Cloud Talent Solution.
-     * </pre>
-     *
-     * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.talent.v4beta1.ProfileEvent,
-            com.google.cloud.talent.v4beta1.ProfileEvent.Builder,
-            com.google.cloud.talent.v4beta1.ProfileEventOrBuilder>
-        getProfileEventFieldBuilder() {
-      if (profileEventBuilder_ == null) {
-        if (!(eventCase_ == 6)) {
-          event_ = com.google.cloud.talent.v4beta1.ProfileEvent.getDefaultInstance();
-        }
-        profileEventBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.talent.v4beta1.ProfileEvent,
-                com.google.cloud.talent.v4beta1.ProfileEvent.Builder,
-                com.google.cloud.talent.v4beta1.ProfileEventOrBuilder>(
-                (com.google.cloud.talent.v4beta1.ProfileEvent) event_,
-                getParentForChildren(),
-                isClean());
-        event_ = null;
-      }
-      eventCase_ = 6;
-      onChanged();
-      ;
-      return profileEventBuilder_;
     }
 
     private java.lang.Object eventNotes_ = "";

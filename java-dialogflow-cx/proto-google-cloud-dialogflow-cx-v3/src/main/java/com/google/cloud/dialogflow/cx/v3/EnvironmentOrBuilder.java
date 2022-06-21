@@ -258,4 +258,39 @@ public interface EnvironmentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.Environment.TestCasesConfigOrBuilder
       getTestCasesConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The webhook configuration for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig webhook_config = 10;</code>
+   *
+   * @return Whether the webhookConfig field is set.
+   */
+  boolean hasWebhookConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The webhook configuration for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig webhook_config = 10;</code>
+   *
+   * @return The webhookConfig.
+   */
+  com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig getWebhookConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The webhook configuration for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.Environment.WebhookConfig webhook_config = 10;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3.Environment.WebhookConfigOrBuilder getWebhookConfigOrBuilder();
 }

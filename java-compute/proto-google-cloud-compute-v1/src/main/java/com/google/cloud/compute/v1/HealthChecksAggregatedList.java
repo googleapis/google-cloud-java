@@ -155,6 +155,8 @@ public final class HealthChecksAggregatedList extends com.google.protobuf.Genera
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -303,7 +305,7 @@ public final class HealthChecksAggregatedList extends com.google.protobuf.Genera
   @java.lang.Override
   public boolean containsItems(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetItems().getMap().containsKey(key);
   }
@@ -343,7 +345,7 @@ public final class HealthChecksAggregatedList extends com.google.protobuf.Genera
   public com.google.cloud.compute.v1.HealthChecksScopedList getItemsOrDefault(
       java.lang.String key, com.google.cloud.compute.v1.HealthChecksScopedList defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.HealthChecksScopedList> map =
         internalGetItems().getMap();
@@ -362,7 +364,7 @@ public final class HealthChecksAggregatedList extends com.google.protobuf.Genera
   @java.lang.Override
   public com.google.cloud.compute.v1.HealthChecksScopedList getItemsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.HealthChecksScopedList> map =
         internalGetItems().getMap();
@@ -1351,7 +1353,7 @@ public final class HealthChecksAggregatedList extends com.google.protobuf.Genera
     @java.lang.Override
     public boolean containsItems(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetItems().getMap().containsKey(key);
     }
@@ -1391,7 +1393,7 @@ public final class HealthChecksAggregatedList extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.HealthChecksScopedList getItemsOrDefault(
         java.lang.String key, com.google.cloud.compute.v1.HealthChecksScopedList defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.HealthChecksScopedList> map =
           internalGetItems().getMap();
@@ -1411,7 +1413,7 @@ public final class HealthChecksAggregatedList extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.HealthChecksScopedList getItemsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.HealthChecksScopedList> map =
           internalGetItems().getMap();
@@ -1437,7 +1439,7 @@ public final class HealthChecksAggregatedList extends com.google.protobuf.Genera
      */
     public Builder removeItems(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableItems().getMutableMap().remove(key);
       return this;
@@ -1461,11 +1463,12 @@ public final class HealthChecksAggregatedList extends com.google.protobuf.Genera
     public Builder putItems(
         java.lang.String key, com.google.cloud.compute.v1.HealthChecksScopedList value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableItems().getMutableMap().put(key, value);
       return this;
     }

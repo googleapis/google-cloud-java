@@ -112,8 +112,12 @@ public interface ServiceAttachmentAggregatedListOrBuilder
    * map&lt;string, .google.cloud.compute.v1.ServiceAttachmentsScopedList&gt; items = 100526016;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.compute.v1.ServiceAttachmentsScopedList getItemsOrDefault(
-      java.lang.String key, com.google.cloud.compute.v1.ServiceAttachmentsScopedList defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.ServiceAttachmentsScopedList defaultValue);
   /**
    *
    *

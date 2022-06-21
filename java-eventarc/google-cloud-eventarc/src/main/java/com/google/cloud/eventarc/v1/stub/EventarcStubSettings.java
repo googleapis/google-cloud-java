@@ -18,6 +18,7 @@ package com.google.cloud.eventarc.v1.stub;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -56,14 +57,18 @@ import com.google.cloud.eventarc.v1.DeleteChannelRequest;
 import com.google.cloud.eventarc.v1.DeleteTriggerRequest;
 import com.google.cloud.eventarc.v1.GetChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.GetChannelRequest;
+import com.google.cloud.eventarc.v1.GetProviderRequest;
 import com.google.cloud.eventarc.v1.GetTriggerRequest;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsRequest;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsResponse;
 import com.google.cloud.eventarc.v1.ListChannelsRequest;
 import com.google.cloud.eventarc.v1.ListChannelsResponse;
+import com.google.cloud.eventarc.v1.ListProvidersRequest;
+import com.google.cloud.eventarc.v1.ListProvidersResponse;
 import com.google.cloud.eventarc.v1.ListTriggersRequest;
 import com.google.cloud.eventarc.v1.ListTriggersResponse;
 import com.google.cloud.eventarc.v1.OperationMetadata;
+import com.google.cloud.eventarc.v1.Provider;
 import com.google.cloud.eventarc.v1.Trigger;
 import com.google.cloud.eventarc.v1.UpdateChannelRequest;
 import com.google.cloud.eventarc.v1.UpdateTriggerRequest;
@@ -142,6 +147,10 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
   private final UnaryCallSettings<DeleteChannelRequest, Operation> deleteChannelSettings;
   private final OperationCallSettings<DeleteChannelRequest, Channel, OperationMetadata>
       deleteChannelOperationSettings;
+  private final UnaryCallSettings<GetProviderRequest, Provider> getProviderSettings;
+  private final PagedCallSettings<
+          ListProvidersRequest, ListProvidersResponse, ListProvidersPagedResponse>
+      listProvidersSettings;
   private final UnaryCallSettings<GetChannelConnectionRequest, ChannelConnection>
       getChannelConnectionSettings;
   private final PagedCallSettings<
@@ -232,6 +241,42 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListProvidersRequest, ListProvidersResponse, Provider>
+      LIST_PROVIDERS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListProvidersRequest, ListProvidersResponse, Provider>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListProvidersRequest injectToken(ListProvidersRequest payload, String token) {
+              return ListProvidersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListProvidersRequest injectPageSize(ListProvidersRequest payload, int pageSize) {
+              return ListProvidersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListProvidersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListProvidersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Provider> extractResources(ListProvidersResponse payload) {
+              return payload.getProvidersList() == null
+                  ? ImmutableList.<Provider>of()
+                  : payload.getProvidersList();
+            }
+          };
+
   private static final PagedListDescriptor<
           ListChannelConnectionsRequest, ListChannelConnectionsResponse, ChannelConnection>
       LIST_CHANNEL_CONNECTIONS_PAGE_STR_DESC =
@@ -306,6 +351,23 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
               PageContext<ListChannelsRequest, ListChannelsResponse, Channel> pageContext =
                   PageContext.create(callable, LIST_CHANNELS_PAGE_STR_DESC, request, context);
               return ListChannelsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListProvidersRequest, ListProvidersResponse, ListProvidersPagedResponse>
+      LIST_PROVIDERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListProvidersRequest, ListProvidersResponse, ListProvidersPagedResponse>() {
+            @Override
+            public ApiFuture<ListProvidersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListProvidersRequest, ListProvidersResponse> callable,
+                ListProvidersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListProvidersResponse> futureResponse) {
+              PageContext<ListProvidersRequest, ListProvidersResponse, Provider> pageContext =
+                  PageContext.create(callable, LIST_PROVIDERS_PAGE_STR_DESC, request, context);
+              return ListProvidersPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -424,6 +486,17 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     return deleteChannelOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to getProvider. */
+  public UnaryCallSettings<GetProviderRequest, Provider> getProviderSettings() {
+    return getProviderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listProviders. */
+  public PagedCallSettings<ListProvidersRequest, ListProvidersResponse, ListProvidersPagedResponse>
+      listProvidersSettings() {
+    return listProvidersSettings;
+  }
+
   /** Returns the object with the settings used for calls to getChannelConnection. */
   public UnaryCallSettings<GetChannelConnectionRequest, ChannelConnection>
       getChannelConnectionSettings() {
@@ -463,7 +536,6 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     return deleteChannelConnectionOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public EventarcStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -554,6 +626,8 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     updateChannelOperationSettings = settingsBuilder.updateChannelOperationSettings().build();
     deleteChannelSettings = settingsBuilder.deleteChannelSettings().build();
     deleteChannelOperationSettings = settingsBuilder.deleteChannelOperationSettings().build();
+    getProviderSettings = settingsBuilder.getProviderSettings().build();
+    listProvidersSettings = settingsBuilder.listProvidersSettings().build();
     getChannelConnectionSettings = settingsBuilder.getChannelConnectionSettings().build();
     listChannelConnectionsSettings = settingsBuilder.listChannelConnectionsSettings().build();
     createChannelConnectionSettings = settingsBuilder.createChannelConnectionSettings().build();
@@ -593,6 +667,10 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     private final UnaryCallSettings.Builder<DeleteChannelRequest, Operation> deleteChannelSettings;
     private final OperationCallSettings.Builder<DeleteChannelRequest, Channel, OperationMetadata>
         deleteChannelOperationSettings;
+    private final UnaryCallSettings.Builder<GetProviderRequest, Provider> getProviderSettings;
+    private final PagedCallSettings.Builder<
+            ListProvidersRequest, ListProvidersResponse, ListProvidersPagedResponse>
+        listProvidersSettings;
     private final UnaryCallSettings.Builder<GetChannelConnectionRequest, ChannelConnection>
         getChannelConnectionSettings;
     private final PagedCallSettings.Builder<
@@ -653,6 +731,8 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
       updateChannelOperationSettings = OperationCallSettings.newBuilder();
       deleteChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteChannelOperationSettings = OperationCallSettings.newBuilder();
+      getProviderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listProvidersSettings = PagedCallSettings.newBuilder(LIST_PROVIDERS_PAGE_STR_FACT);
       getChannelConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listChannelConnectionsSettings =
           PagedCallSettings.newBuilder(LIST_CHANNEL_CONNECTIONS_PAGE_STR_FACT);
@@ -673,6 +753,8 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
               createChannelSettings,
               updateChannelSettings,
               deleteChannelSettings,
+              getProviderSettings,
+              listProvidersSettings,
               getChannelConnectionSettings,
               listChannelConnectionsSettings,
               createChannelConnectionSettings,
@@ -699,6 +781,8 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
       updateChannelOperationSettings = settings.updateChannelOperationSettings.toBuilder();
       deleteChannelSettings = settings.deleteChannelSettings.toBuilder();
       deleteChannelOperationSettings = settings.deleteChannelOperationSettings.toBuilder();
+      getProviderSettings = settings.getProviderSettings.toBuilder();
+      listProvidersSettings = settings.listProvidersSettings.toBuilder();
       getChannelConnectionSettings = settings.getChannelConnectionSettings.toBuilder();
       listChannelConnectionsSettings = settings.listChannelConnectionsSettings.toBuilder();
       createChannelConnectionSettings = settings.createChannelConnectionSettings.toBuilder();
@@ -720,6 +804,8 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
               createChannelSettings,
               updateChannelSettings,
               deleteChannelSettings,
+              getProviderSettings,
+              listProvidersSettings,
               getChannelConnectionSettings,
               listChannelConnectionsSettings,
               createChannelConnectionSettings,
@@ -787,6 +873,16 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
 
       builder
           .deleteChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getProviderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listProvidersSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1120,6 +1216,18 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     public OperationCallSettings.Builder<DeleteChannelRequest, Channel, OperationMetadata>
         deleteChannelOperationSettings() {
       return deleteChannelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getProvider. */
+    public UnaryCallSettings.Builder<GetProviderRequest, Provider> getProviderSettings() {
+      return getProviderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listProviders. */
+    public PagedCallSettings.Builder<
+            ListProvidersRequest, ListProvidersResponse, ListProvidersPagedResponse>
+        listProvidersSettings() {
+      return listProvidersSettings;
     }
 
     /** Returns the builder for the settings used for calls to getChannelConnection. */

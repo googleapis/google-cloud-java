@@ -105,6 +105,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -391,6 +393,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.StatusCondition.code is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=3327
    * @return The enum numeric value on the wire for code.
    */
   @java.lang.Override
@@ -408,6 +412,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
    *
    * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.StatusCondition.code is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=3327
    * @return The code.
    */
   @java.lang.Override
@@ -860,6 +866,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.StatusCondition.code is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=3327
      * @return The enum numeric value on the wire for code.
      */
     @java.lang.Override
@@ -877,6 +885,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.StatusCondition.code is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=3327
      * @param value The enum numeric value on the wire for code to set.
      * @return This builder for chaining.
      */
@@ -897,6 +907,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.StatusCondition.code is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=3327
      * @return The code.
      */
     @java.lang.Override
@@ -917,6 +929,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.StatusCondition.code is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=3327
      * @param value The code to set.
      * @return This builder for chaining.
      */
@@ -940,6 +954,8 @@ public final class StatusCondition extends com.google.protobuf.GeneratedMessageV
      *
      * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.StatusCondition.code is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=3327
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

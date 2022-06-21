@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SubnetworksSettings subnetworksSettings =
  *     SubnetworksSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SubnetworksSettings subnetworksSettings =
  *     SubnetworksSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SubnetworksClient subnetworksClient = SubnetworksClient.create(subnetworksSettings);
@@ -120,7 +126,6 @@ public class SubnetworksClient implements BackgroundResource {
    * Constructs an instance of SubnetworksClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(SubnetworksSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SubnetworksClient create(SubnetworksStub stub) {
     return new SubnetworksClient(stub);
   }
@@ -135,7 +140,6 @@ public class SubnetworksClient implements BackgroundResource {
     this.stub = ((SubnetworksStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SubnetworksClient(SubnetworksStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -145,7 +149,6 @@ public class SubnetworksClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SubnetworksStub getStub() {
     return stub;
   }
@@ -157,6 +160,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, SubnetworksScopedList> element :
@@ -182,6 +187,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   AggregatedListSubnetworksRequest request =
    *       AggregatedListSubnetworksRequest.newBuilder()
@@ -215,6 +222,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   AggregatedListSubnetworksRequest request =
    *       AggregatedListSubnetworksRequest.newBuilder()
@@ -247,6 +256,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   AggregatedListSubnetworksRequest request =
    *       AggregatedListSubnetworksRequest.newBuilder()
@@ -261,7 +272,7 @@ public class SubnetworksClient implements BackgroundResource {
    *   while (true) {
    *     SubnetworkAggregatedList response =
    *         subnetworksClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, SubnetworksScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, SubnetworksScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -286,6 +297,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -317,6 +330,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   DeleteSubnetworkRequest request =
    *       DeleteSubnetworkRequest.newBuilder()
@@ -345,6 +360,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   DeleteSubnetworkRequest request =
    *       DeleteSubnetworkRequest.newBuilder()
@@ -372,6 +389,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   DeleteSubnetworkRequest request =
    *       DeleteSubnetworkRequest.newBuilder()
@@ -397,6 +416,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -440,6 +461,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   ExpandIpCidrRangeSubnetworkRequest request =
    *       ExpandIpCidrRangeSubnetworkRequest.newBuilder()
@@ -471,6 +494,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   ExpandIpCidrRangeSubnetworkRequest request =
    *       ExpandIpCidrRangeSubnetworkRequest.newBuilder()
@@ -500,6 +525,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   ExpandIpCidrRangeSubnetworkRequest request =
    *       ExpandIpCidrRangeSubnetworkRequest.newBuilder()
@@ -529,6 +556,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -559,6 +588,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   GetSubnetworkRequest request =
    *       GetSubnetworkRequest.newBuilder()
@@ -584,6 +615,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   GetSubnetworkRequest request =
    *       GetSubnetworkRequest.newBuilder()
@@ -609,6 +642,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -640,6 +675,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   GetIamPolicySubnetworkRequest request =
    *       GetIamPolicySubnetworkRequest.newBuilder()
@@ -667,6 +704,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   GetIamPolicySubnetworkRequest request =
    *       GetIamPolicySubnetworkRequest.newBuilder()
@@ -692,6 +731,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -723,6 +764,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   InsertSubnetworkRequest request =
    *       InsertSubnetworkRequest.newBuilder()
@@ -751,6 +794,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   InsertSubnetworkRequest request =
    *       InsertSubnetworkRequest.newBuilder()
@@ -778,6 +823,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   InsertSubnetworkRequest request =
    *       InsertSubnetworkRequest.newBuilder()
@@ -803,6 +850,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -829,6 +878,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   ListSubnetworksRequest request =
    *       ListSubnetworksRequest.newBuilder()
@@ -860,6 +911,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   ListSubnetworksRequest request =
    *       ListSubnetworksRequest.newBuilder()
@@ -890,6 +943,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   ListSubnetworksRequest request =
    *       ListSubnetworksRequest.newBuilder()
@@ -903,7 +958,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     SubnetworkList response = subnetworksClient.listCallable().call(request);
-   *     for (Subnetwork element : response.getResponsesList()) {
+   *     for (Subnetwork element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -927,6 +982,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "project-309310695";
    *   for (UsableSubnetwork element : subnetworksClient.listUsable(project).iterateAll()) {
@@ -951,6 +1008,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   ListUsableSubnetworksRequest request =
    *       ListUsableSubnetworksRequest.newBuilder()
@@ -981,6 +1040,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   ListUsableSubnetworksRequest request =
    *       ListUsableSubnetworksRequest.newBuilder()
@@ -1012,6 +1073,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   ListUsableSubnetworksRequest request =
    *       ListUsableSubnetworksRequest.newBuilder()
@@ -1025,7 +1088,7 @@ public class SubnetworksClient implements BackgroundResource {
    *   while (true) {
    *     UsableSubnetworksAggregatedList response =
    *         subnetworksClient.listUsableCallable().call(request);
-   *     for (UsableSubnetwork element : response.getResponsesList()) {
+   *     for (UsableSubnetwork element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1052,6 +1115,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1089,6 +1154,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   PatchSubnetworkRequest request =
    *       PatchSubnetworkRequest.newBuilder()
@@ -1121,6 +1188,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   PatchSubnetworkRequest request =
    *       PatchSubnetworkRequest.newBuilder()
@@ -1152,6 +1221,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   PatchSubnetworkRequest request =
    *       PatchSubnetworkRequest.newBuilder()
@@ -1179,6 +1250,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1218,6 +1291,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   SetIamPolicySubnetworkRequest request =
    *       SetIamPolicySubnetworkRequest.newBuilder()
@@ -1244,6 +1319,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   SetIamPolicySubnetworkRequest request =
    *       SetIamPolicySubnetworkRequest.newBuilder()
@@ -1270,6 +1347,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1316,6 +1395,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   SetPrivateIpGoogleAccessSubnetworkRequest request =
    *       SetPrivateIpGoogleAccessSubnetworkRequest.newBuilder()
@@ -1348,6 +1429,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   SetPrivateIpGoogleAccessSubnetworkRequest request =
    *       SetPrivateIpGoogleAccessSubnetworkRequest.newBuilder()
@@ -1378,6 +1461,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   SetPrivateIpGoogleAccessSubnetworkRequest request =
    *       SetPrivateIpGoogleAccessSubnetworkRequest.newBuilder()
@@ -1407,6 +1492,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1447,6 +1534,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   TestIamPermissionsSubnetworkRequest request =
    *       TestIamPermissionsSubnetworkRequest.newBuilder()
@@ -1474,6 +1563,8 @@ public class SubnetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   TestIamPermissionsSubnetworkRequest request =
    *       TestIamPermissionsSubnetworkRequest.newBuilder()

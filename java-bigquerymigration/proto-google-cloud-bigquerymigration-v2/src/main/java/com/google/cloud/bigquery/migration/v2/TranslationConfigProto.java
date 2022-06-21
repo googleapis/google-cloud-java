@@ -76,6 +76,10 @@ public final class TranslationConfigProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_migration_v2_VerticaDialect_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_migration_v2_SQLServerDialect_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_migration_v2_SQLServerDialect_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_bigquery_migration_v2_ObjectNameMappingList_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_migration_v2_ObjectNameMappingList_fieldAccessorTable;
@@ -117,7 +121,7 @@ public final class TranslationConfigProto {
           + "ListH\002\022A\n\nsource_env\030\006 \001(\0132-.google.clou"
           + "d.bigquery.migration.v2.SourceEnvB\021\n\017sou"
           + "rce_locationB\021\n\017target_locationB\025\n\023outpu"
-          + "t_name_mapping\"\303\006\n\007Dialect\022O\n\020bigquery_d"
+          + "t_name_mapping\"\227\007\n\007Dialect\022O\n\020bigquery_d"
           + "ialect\030\001 \001(\01323.google.cloud.bigquery.mig"
           + "ration.v2.BigQueryDialectH\000\022K\n\016hiveql_di"
           + "alect\030\002 \001(\01321.google.cloud.bigquery.migr"
@@ -137,39 +141,42 @@ public final class TranslationConfigProto {
           + "pse_dialect\030\t \001(\01327.google.cloud.bigquer"
           + "y.migration.v2.AzureSynapseDialectH\000\022M\n\017"
           + "vertica_dialect\030\n \001(\01322.google.cloud.big"
-          + "query.migration.v2.VerticaDialectH\000B\017\n\rd"
-          + "ialect_value\"\021\n\017BigQueryDialect\"\017\n\rHiveQ"
-          + "LDialect\"\021\n\017RedshiftDialect\"\212\001\n\017Teradata"
-          + "Dialect\022F\n\004mode\030\001 \001(\01628.google.cloud.big"
-          + "query.migration.v2.TeradataDialect.Mode\""
-          + "/\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\007\n\003SQL\020\001\022\010"
-          + "\n\004BTEQ\020\002\"\017\n\rOracleDialect\"\021\n\017SparkSQLDia"
-          + "lect\"\022\n\020SnowflakeDialect\"\020\n\016NetezzaDiale"
-          + "ct\"\025\n\023AzureSynapseDialect\"\020\n\016VerticaDial"
-          + "ect\"`\n\025ObjectNameMappingList\022G\n\010name_map"
-          + "\030\001 \003(\01325.google.cloud.bigquery.migration"
-          + ".v2.ObjectNameMapping\"\235\001\n\021ObjectNameMapp"
-          + "ing\022B\n\006source\030\001 \001(\01322.google.cloud.bigqu"
-          + "ery.migration.v2.NameMappingKey\022D\n\006targe"
-          + "t\030\002 \001(\01324.google.cloud.bigquery.migratio"
-          + "n.v2.NameMappingValue\"\253\002\n\016NameMappingKey"
-          + "\022E\n\004type\030\001 \001(\01627.google.cloud.bigquery.m"
-          + "igration.v2.NameMappingKey.Type\022\020\n\010datab"
-          + "ase\030\002 \001(\t\022\016\n\006schema\030\003 \001(\t\022\020\n\010relation\030\004 "
-          + "\001(\t\022\021\n\tattribute\030\005 \001(\t\"\212\001\n\004Type\022\024\n\020TYPE_"
-          + "UNSPECIFIED\020\000\022\014\n\010DATABASE\020\001\022\n\n\006SCHEMA\020\002\022"
-          + "\014\n\010RELATION\020\003\022\r\n\tATTRIBUTE\020\004\022\022\n\016RELATION"
-          + "_ALIAS\020\005\022\023\n\017ATTRIBUTE_ALIAS\020\006\022\014\n\010FUNCTIO"
-          + "N\020\007\"Y\n\020NameMappingValue\022\020\n\010database\030\001 \001("
-          + "\t\022\016\n\006schema\030\002 \001(\t\022\020\n\010relation\030\003 \001(\t\022\021\n\ta"
-          + "ttribute\030\004 \001(\t\"A\n\tSourceEnv\022\030\n\020default_d"
-          + "atabase\030\001 \001(\t\022\032\n\022schema_search_path\030\002 \003("
-          + "\tB\331\001\n&com.google.cloud.bigquery.migratio"
-          + "n.v2B\026TranslationConfigProtoP\001ZKgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/bigq"
-          + "uery/migration/v2;migration\252\002\"Google.Clo"
-          + "ud.BigQuery.Migration.V2\312\002\"Google\\Cloud\\"
-          + "BigQuery\\Migration\\V2b\006proto3"
+          + "query.migration.v2.VerticaDialectH\000\022R\n\022s"
+          + "ql_server_dialect\030\013 \001(\01324.google.cloud.b"
+          + "igquery.migration.v2.SQLServerDialectH\000B"
+          + "\017\n\rdialect_value\"\021\n\017BigQueryDialect\"\017\n\rH"
+          + "iveQLDialect\"\021\n\017RedshiftDialect\"\212\001\n\017Tera"
+          + "dataDialect\022F\n\004mode\030\001 \001(\01628.google.cloud"
+          + ".bigquery.migration.v2.TeradataDialect.M"
+          + "ode\"/\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\007\n\003SQL"
+          + "\020\001\022\010\n\004BTEQ\020\002\"\017\n\rOracleDialect\"\021\n\017SparkSQ"
+          + "LDialect\"\022\n\020SnowflakeDialect\"\020\n\016NetezzaD"
+          + "ialect\"\025\n\023AzureSynapseDialect\"\020\n\016Vertica"
+          + "Dialect\"\022\n\020SQLServerDialect\"`\n\025ObjectNam"
+          + "eMappingList\022G\n\010name_map\030\001 \003(\01325.google."
+          + "cloud.bigquery.migration.v2.ObjectNameMa"
+          + "pping\"\235\001\n\021ObjectNameMapping\022B\n\006source\030\001 "
+          + "\001(\01322.google.cloud.bigquery.migration.v2"
+          + ".NameMappingKey\022D\n\006target\030\002 \001(\01324.google"
+          + ".cloud.bigquery.migration.v2.NameMapping"
+          + "Value\"\253\002\n\016NameMappingKey\022E\n\004type\030\001 \001(\01627"
+          + ".google.cloud.bigquery.migration.v2.Name"
+          + "MappingKey.Type\022\020\n\010database\030\002 \001(\t\022\016\n\006sch"
+          + "ema\030\003 \001(\t\022\020\n\010relation\030\004 \001(\t\022\021\n\tattribute"
+          + "\030\005 \001(\t\"\212\001\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\014\n"
+          + "\010DATABASE\020\001\022\n\n\006SCHEMA\020\002\022\014\n\010RELATION\020\003\022\r\n"
+          + "\tATTRIBUTE\020\004\022\022\n\016RELATION_ALIAS\020\005\022\023\n\017ATTR"
+          + "IBUTE_ALIAS\020\006\022\014\n\010FUNCTION\020\007\"Y\n\020NameMappi"
+          + "ngValue\022\020\n\010database\030\001 \001(\t\022\016\n\006schema\030\002 \001("
+          + "\t\022\020\n\010relation\030\003 \001(\t\022\021\n\tattribute\030\004 \001(\t\"A"
+          + "\n\tSourceEnv\022\030\n\020default_database\030\001 \001(\t\022\032\n"
+          + "\022schema_search_path\030\002 \003(\tB\331\001\n&com.google"
+          + ".cloud.bigquery.migration.v2B\026Translatio"
+          + "nConfigProtoP\001ZKgoogle.golang.org/genpro"
+          + "to/googleapis/cloud/bigquery/migration/v"
+          + "2;migration\252\002\"Google.Cloud.BigQuery.Migr"
+          + "ation.V2\312\002\"Google\\Cloud\\BigQuery\\Migrati"
+          + "on\\V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -206,6 +213,7 @@ public final class TranslationConfigProto {
               "NetezzaDialect",
               "AzureSynapseDialect",
               "VerticaDialect",
+              "SqlServerDialect",
               "DialectValue",
             });
     internal_static_google_cloud_bigquery_migration_v2_BigQueryDialect_descriptor =
@@ -270,8 +278,14 @@ public final class TranslationConfigProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_migration_v2_VerticaDialect_descriptor,
             new java.lang.String[] {});
-    internal_static_google_cloud_bigquery_migration_v2_ObjectNameMappingList_descriptor =
+    internal_static_google_cloud_bigquery_migration_v2_SQLServerDialect_descriptor =
         getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_bigquery_migration_v2_SQLServerDialect_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_migration_v2_SQLServerDialect_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_bigquery_migration_v2_ObjectNameMappingList_descriptor =
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_bigquery_migration_v2_ObjectNameMappingList_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_migration_v2_ObjectNameMappingList_descriptor,
@@ -279,7 +293,7 @@ public final class TranslationConfigProto {
               "NameMap",
             });
     internal_static_google_cloud_bigquery_migration_v2_ObjectNameMapping_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_bigquery_migration_v2_ObjectNameMapping_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_migration_v2_ObjectNameMapping_descriptor,
@@ -287,7 +301,7 @@ public final class TranslationConfigProto {
               "Source", "Target",
             });
     internal_static_google_cloud_bigquery_migration_v2_NameMappingKey_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_bigquery_migration_v2_NameMappingKey_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_migration_v2_NameMappingKey_descriptor,
@@ -295,7 +309,7 @@ public final class TranslationConfigProto {
               "Type", "Database", "Schema", "Relation", "Attribute",
             });
     internal_static_google_cloud_bigquery_migration_v2_NameMappingValue_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_bigquery_migration_v2_NameMappingValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_migration_v2_NameMappingValue_descriptor,
@@ -303,7 +317,7 @@ public final class TranslationConfigProto {
               "Database", "Schema", "Relation", "Attribute",
             });
     internal_static_google_cloud_bigquery_migration_v2_SourceEnv_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_bigquery_migration_v2_SourceEnv_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_migration_v2_SourceEnv_descriptor,

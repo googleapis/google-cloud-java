@@ -5634,7 +5634,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    *
    * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-   *     google/cloud/talent/v4beta1/job.proto;l=277
+   *     google/cloud/talent/v4beta1/job.proto;l=275
    * @return The enum numeric value on the wire for visibility.
    */
   @java.lang.Override
@@ -5654,7 +5654,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    *
    * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-   *     google/cloud/talent/v4beta1/job.proto;l=277
+   *     google/cloud/talent/v4beta1/job.proto;l=275
    * @return The visibility.
    */
   @java.lang.Override
@@ -10451,7 +10451,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-     *     google/cloud/talent/v4beta1/job.proto;l=277
+     *     google/cloud/talent/v4beta1/job.proto;l=275
      * @return The enum numeric value on the wire for visibility.
      */
     @java.lang.Override
@@ -10471,7 +10471,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-     *     google/cloud/talent/v4beta1/job.proto;l=277
+     *     google/cloud/talent/v4beta1/job.proto;l=275
      * @param value The enum numeric value on the wire for visibility to set.
      * @return This builder for chaining.
      */
@@ -10494,7 +10494,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-     *     google/cloud/talent/v4beta1/job.proto;l=277
+     *     google/cloud/talent/v4beta1/job.proto;l=275
      * @return The visibility.
      */
     @java.lang.Override
@@ -10517,7 +10517,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-     *     google/cloud/talent/v4beta1/job.proto;l=277
+     *     google/cloud/talent/v4beta1/job.proto;l=275
      * @param value The visibility to set.
      * @return This builder for chaining.
      */
@@ -10543,7 +10543,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-     *     google/cloud/talent/v4beta1/job.proto;l=277
+     *     google/cloud/talent/v4beta1/job.proto;l=275
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

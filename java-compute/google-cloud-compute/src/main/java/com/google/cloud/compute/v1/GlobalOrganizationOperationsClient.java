@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -41,6 +40,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
  *     GlobalOrganizationOperationsClient.create()) {
  *   String operation = "operation1662702951";
@@ -79,6 +80,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GlobalOrganizationOperationsSettings globalOrganizationOperationsSettings =
  *     GlobalOrganizationOperationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -90,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GlobalOrganizationOperationsSettings globalOrganizationOperationsSettings =
  *     GlobalOrganizationOperationsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
@@ -122,7 +127,6 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    * Constructs an instance of GlobalOrganizationOperationsClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(GlobalOrganizationOperationsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GlobalOrganizationOperationsClient create(
       GlobalOrganizationOperationsStub stub) {
     return new GlobalOrganizationOperationsClient(stub);
@@ -140,7 +144,6 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
         ((GlobalOrganizationOperationsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GlobalOrganizationOperationsClient(GlobalOrganizationOperationsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -150,7 +153,6 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GlobalOrganizationOperationsStub getStub() {
     return stub;
   }
@@ -162,6 +164,8 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
    *     GlobalOrganizationOperationsClient.create()) {
    *   String operation = "operation1662702951";
@@ -186,6 +190,8 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
    *     GlobalOrganizationOperationsClient.create()) {
    *   DeleteGlobalOrganizationOperationRequest request =
@@ -213,6 +219,8 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
    *     GlobalOrganizationOperationsClient.create()) {
    *   DeleteGlobalOrganizationOperationRequest request =
@@ -241,6 +249,8 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
    *     GlobalOrganizationOperationsClient.create()) {
    *   String operation = "operation1662702951";
@@ -265,6 +275,8 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
    *     GlobalOrganizationOperationsClient.create()) {
    *   GetGlobalOrganizationOperationRequest request =
@@ -291,6 +303,8 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
    *     GlobalOrganizationOperationsClient.create()) {
    *   GetGlobalOrganizationOperationRequest request =
@@ -316,6 +330,8 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
    *     GlobalOrganizationOperationsClient.create()) {
    *   for (Operation element : globalOrganizationOperationsClient.list().iterateAll()) {
@@ -340,6 +356,8 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
    *     GlobalOrganizationOperationsClient.create()) {
    *   ListGlobalOrganizationOperationsRequest request =
@@ -371,6 +389,8 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
    *     GlobalOrganizationOperationsClient.create()) {
    *   ListGlobalOrganizationOperationsRequest request =
@@ -403,6 +423,8 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient =
    *     GlobalOrganizationOperationsClient.create()) {
    *   ListGlobalOrganizationOperationsRequest request =
@@ -416,7 +438,7 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     OperationList response = globalOrganizationOperationsClient.listCallable().call(request);
-   *     for (Operation element : response.getResponsesList()) {
+   *     for (Operation element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

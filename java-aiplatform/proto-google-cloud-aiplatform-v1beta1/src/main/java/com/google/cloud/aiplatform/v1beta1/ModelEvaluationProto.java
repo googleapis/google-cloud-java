@@ -50,29 +50,31 @@ public final class ModelEvaluationProto {
           + "to\032\031google/api/resource.proto\0321google/cl"
           + "oud/aiplatform/v1beta1/explanation.proto"
           + "\032\034google/protobuf/struct.proto\032\037google/p"
-          + "rotobuf/timestamp.proto\"\375\004\n\017ModelEvaluat"
-          + "ion\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\032\n\022metrics_schema"
-          + "_uri\030\002 \001(\t\022\'\n\007metrics\030\003 \001(\0132\026.google.pro"
-          + "tobuf.Value\0224\n\013create_time\030\004 \001(\0132\032.googl"
-          + "e.protobuf.TimestampB\003\340A\003\022\030\n\020slice_dimen"
-          + "sions\030\005 \003(\t\022L\n\021model_explanation\030\010 \001(\01321"
-          + ".google.cloud.aiplatform.v1beta1.ModelEx"
-          + "planation\022j\n\021explanation_specs\030\t \003(\0132O.g"
-          + "oogle.cloud.aiplatform.v1beta1.ModelEval"
-          + "uation.ModelEvaluationExplanationSpec\032\206\001"
-          + "\n\036ModelEvaluationExplanationSpec\022\030\n\020expl"
-          + "anation_type\030\001 \001(\t\022J\n\020explanation_spec\030\002"
-          + " \001(\01320.google.cloud.aiplatform.v1beta1.E"
-          + "xplanationSpec:\177\352A|\n)aiplatform.googleap"
-          + "is.com/ModelEvaluation\022Oprojects/{projec"
-          + "t}/locations/{location}/models/{model}/e"
-          + "valuations/{evaluation}B\361\001\n#com.google.c"
-          + "loud.aiplatform.v1beta1B\024ModelEvaluation"
-          + "ProtoP\001ZIgoogle.golang.org/genproto/goog"
-          + "leapis/cloud/aiplatform/v1beta1;aiplatfo"
-          + "rm\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037G"
-          + "oogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google:"
-          + ":Cloud::AIPlatform::V1beta1b\006proto3"
+          + "rotobuf/timestamp.proto\"\275\005\n\017ModelEvaluat"
+          + "ion\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014display_name\030\n"
+          + " \001(\t\022\032\n\022metrics_schema_uri\030\002 \001(\t\022\'\n\007metr"
+          + "ics\030\003 \001(\0132\026.google.protobuf.Value\0224\n\013cre"
+          + "ate_time\030\004 \001(\0132\032.google.protobuf.Timesta"
+          + "mpB\003\340A\003\022\030\n\020slice_dimensions\030\005 \003(\t\022L\n\021mod"
+          + "el_explanation\030\010 \001(\01321.google.cloud.aipl"
+          + "atform.v1beta1.ModelExplanation\022j\n\021expla"
+          + "nation_specs\030\t \003(\0132O.google.cloud.aiplat"
+          + "form.v1beta1.ModelEvaluation.ModelEvalua"
+          + "tionExplanationSpec\022(\n\010metadata\030\013 \001(\0132\026."
+          + "google.protobuf.Value\032\206\001\n\036ModelEvaluatio"
+          + "nExplanationSpec\022\030\n\020explanation_type\030\001 \001"
+          + "(\t\022J\n\020explanation_spec\030\002 \001(\01320.google.cl"
+          + "oud.aiplatform.v1beta1.ExplanationSpec:\177"
+          + "\352A|\n)aiplatform.googleapis.com/ModelEval"
+          + "uation\022Oprojects/{project}/locations/{lo"
+          + "cation}/models/{model}/evaluations/{eval"
+          + "uation}B\361\001\n#com.google.cloud.aiplatform."
+          + "v1beta1B\024ModelEvaluationProtoP\001ZIgoogle."
+          + "golang.org/genproto/googleapis/cloud/aip"
+          + "latform/v1beta1;aiplatform\252\002\037Google.Clou"
+          + "d.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPl"
+          + "atform\\V1beta1\352\002\"Google::Cloud::AIPlatfo"
+          + "rm::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -91,12 +93,14 @@ public final class ModelEvaluationProto {
             internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_descriptor,
             new java.lang.String[] {
               "Name",
+              "DisplayName",
               "MetricsSchemaUri",
               "Metrics",
               "CreateTime",
               "SliceDimensions",
               "ModelExplanation",
               "ExplanationSpecs",
+              "Metadata",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_ModelEvaluationExplanationSpec_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ModelEvaluation_descriptor

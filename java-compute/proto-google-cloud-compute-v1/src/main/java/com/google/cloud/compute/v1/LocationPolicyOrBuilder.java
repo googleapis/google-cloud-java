@@ -71,8 +71,12 @@ public interface LocationPolicyOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.LocationPolicyLocation&gt; locations = 413423454;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.compute.v1.LocationPolicyLocation getLocationsOrDefault(
-      java.lang.String key, com.google.cloud.compute.v1.LocationPolicyLocation defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.LocationPolicyLocation defaultValue);
   /**
    *
    *
@@ -84,4 +88,44 @@ public interface LocationPolicyOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.LocationPolicyLocation getLocationsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Strategy for distributing VMs across zones in a region.
+   * Check the TargetShape enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_shape = 338621299;</code>
+   *
+   * @return Whether the targetShape field is set.
+   */
+  boolean hasTargetShape();
+  /**
+   *
+   *
+   * <pre>
+   * Strategy for distributing VMs across zones in a region.
+   * Check the TargetShape enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_shape = 338621299;</code>
+   *
+   * @return The targetShape.
+   */
+  java.lang.String getTargetShape();
+  /**
+   *
+   *
+   * <pre>
+   * Strategy for distributing VMs across zones in a region.
+   * Check the TargetShape enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_shape = 338621299;</code>
+   *
+   * @return The bytes for targetShape.
+   */
+  com.google.protobuf.ByteString getTargetShapeBytes();
 }

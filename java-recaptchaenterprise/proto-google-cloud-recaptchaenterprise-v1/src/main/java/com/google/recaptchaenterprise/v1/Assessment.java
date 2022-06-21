@@ -143,7 +143,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case 58:
+          case 66:
             {
               com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.Builder subBuilder =
                   null;
@@ -461,7 +461,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     return getAccountDefenderAssessment();
   }
 
-  public static final int PRIVATE_PASSWORD_LEAK_VERIFICATION_FIELD_NUMBER = 7;
+  public static final int PRIVATE_PASSWORD_LEAK_VERIFICATION_FIELD_NUMBER = 8;
   private com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification
       privatePasswordLeakVerification_;
   /**
@@ -472,7 +472,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
    * </code>
    *
    * @return Whether the privatePasswordLeakVerification field is set.
@@ -489,7 +489,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
    * </code>
    *
    * @return The privatePasswordLeakVerification.
@@ -509,7 +509,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
    * </code>
    */
   @java.lang.Override
@@ -548,7 +548,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(6, getAccountDefenderAssessment());
     }
     if (privatePasswordLeakVerification_ != null) {
-      output.writeMessage(7, getPrivatePasswordLeakVerification());
+      output.writeMessage(8, getPrivatePasswordLeakVerification());
     }
     unknownFields.writeTo(output);
   }
@@ -579,7 +579,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (privatePasswordLeakVerification_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              7, getPrivatePasswordLeakVerification());
+              8, getPrivatePasswordLeakVerification());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1920,7 +1920,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
      * </code>
      *
      * @return Whether the privatePasswordLeakVerification field is set.
@@ -1937,7 +1937,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
      * </code>
      *
      * @return The privatePasswordLeakVerification.
@@ -1960,7 +1960,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
      * </code>
      */
     public Builder setPrivatePasswordLeakVerification(
@@ -1985,7 +1985,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
      * </code>
      */
     public Builder setPrivatePasswordLeakVerification(
@@ -2007,7 +2007,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
      * </code>
      */
     public Builder mergePrivatePasswordLeakVerification(
@@ -2037,7 +2037,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
      * </code>
      */
     public Builder clearPrivatePasswordLeakVerification() {
@@ -2059,7 +2059,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
      * </code>
      */
     public com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.Builder
@@ -2076,7 +2076,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
      * </code>
      */
     public com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerificationOrBuilder
@@ -2097,7 +2097,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+     * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -128,7 +128,6 @@ public class Debugger2StubSettings extends StubSettings<Debugger2StubSettings> {
     return listDebuggeesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public Debugger2Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

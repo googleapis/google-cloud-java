@@ -25,8 +25,14 @@
             "GetAgentValidationResult": {
               "methods": ["getAgentValidationResult", "getAgentValidationResult", "getAgentValidationResult", "getAgentValidationResultCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListAgents": {
               "methods": ["listAgents", "listAgents", "listAgents", "listAgentsPagedCallable", "listAgentsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "RestoreAgent": {
               "methods": ["restoreAgentAsync", "restoreAgentOperationCallable", "restoreAgentCallable"]
@@ -49,8 +55,14 @@
             "GetChangelog": {
               "methods": ["getChangelog", "getChangelog", "getChangelog", "getChangelogCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListChangelogs": {
               "methods": ["listChangelogs", "listChangelogs", "listChangelogs", "listChangelogsPagedCallable", "listChangelogsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             }
           }
         }
@@ -64,8 +76,14 @@
             "GetDeployment": {
               "methods": ["getDeployment", "getDeployment", "getDeployment", "getDeploymentCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListDeployments": {
               "methods": ["listDeployments", "listDeployments", "listDeployments", "listDeploymentsPagedCallable", "listDeploymentsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             }
           }
         }
@@ -85,8 +103,14 @@
             "GetEntityType": {
               "methods": ["getEntityType", "getEntityType", "getEntityType", "getEntityTypeCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListEntityTypes": {
               "methods": ["listEntityTypes", "listEntityTypes", "listEntityTypes", "listEntityTypesPagedCallable", "listEntityTypesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "UpdateEntityType": {
               "methods": ["updateEntityType", "updateEntityType", "updateEntityTypeCallable"]
@@ -112,11 +136,17 @@
             "GetEnvironment": {
               "methods": ["getEnvironment", "getEnvironment", "getEnvironment", "getEnvironmentCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListContinuousTestResults": {
               "methods": ["listContinuousTestResults", "listContinuousTestResults", "listContinuousTestResults", "listContinuousTestResultsPagedCallable", "listContinuousTestResultsCallable"]
             },
             "ListEnvironments": {
               "methods": ["listEnvironments", "listEnvironments", "listEnvironments", "listEnvironmentsPagedCallable", "listEnvironmentsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "LookupEnvironmentHistory": {
               "methods": ["lookupEnvironmentHistory", "lookupEnvironmentHistory", "lookupEnvironmentHistory", "lookupEnvironmentHistoryPagedCallable", "lookupEnvironmentHistoryCallable"]
@@ -145,8 +175,14 @@
             "GetExperiment": {
               "methods": ["getExperiment", "getExperiment", "getExperiment", "getExperimentCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListExperiments": {
               "methods": ["listExperiments", "listExperiments", "listExperiments", "listExperimentsPagedCallable", "listExperimentsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "StartExperiment": {
               "methods": ["startExperiment", "startExperiment", "startExperiment", "startExperimentCallable"]
@@ -181,11 +217,17 @@
             "GetFlowValidationResult": {
               "methods": ["getFlowValidationResult", "getFlowValidationResult", "getFlowValidationResult", "getFlowValidationResultCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ImportFlow": {
               "methods": ["importFlowAsync", "importFlowOperationCallable", "importFlowCallable"]
             },
             "ListFlows": {
               "methods": ["listFlows", "listFlows", "listFlows", "listFlowsPagedCallable", "listFlowsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "TrainFlow": {
               "methods": ["trainFlowAsync", "trainFlowAsync", "trainFlowAsync", "trainFlowOperationCallable", "trainFlowCallable"]
@@ -214,8 +256,14 @@
             "GetIntent": {
               "methods": ["getIntent", "getIntent", "getIntent", "getIntentCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListIntents": {
               "methods": ["listIntents", "listIntents", "listIntents", "listIntentsPagedCallable", "listIntentsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "UpdateIntent": {
               "methods": ["updateIntent", "updateIntent", "updateIntentCallable"]
@@ -235,8 +283,14 @@
             "DeletePage": {
               "methods": ["deletePage", "deletePage", "deletePage", "deletePageCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetPage": {
               "methods": ["getPage", "getPage", "getPage", "getPageCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListPages": {
               "methods": ["listPages", "listPages", "listPages", "listPagesPagedCallable", "listPagesCallable"]
@@ -259,8 +313,14 @@
             "DeleteSecuritySettings": {
               "methods": ["deleteSecuritySettings", "deleteSecuritySettings", "deleteSecuritySettings", "deleteSecuritySettingsCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetSecuritySettings": {
               "methods": ["getSecuritySettings", "getSecuritySettings", "getSecuritySettings", "getSecuritySettingsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListSecuritySettings": {
               "methods": ["listSecuritySettings", "listSecuritySettings", "listSecuritySettings", "listSecuritySettingsPagedCallable", "listSecuritySettingsCallable"]
@@ -283,6 +343,12 @@
             "FulfillIntent": {
               "methods": ["fulfillIntent", "fulfillIntentCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
             "MatchIntent": {
               "methods": ["matchIntent", "matchIntentCallable"]
             },
@@ -304,8 +370,14 @@
             "DeleteSessionEntityType": {
               "methods": ["deleteSessionEntityType", "deleteSessionEntityType", "deleteSessionEntityType", "deleteSessionEntityTypeCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetSessionEntityType": {
               "methods": ["getSessionEntityType", "getSessionEntityType", "getSessionEntityType", "getSessionEntityTypeCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListSessionEntityTypes": {
               "methods": ["listSessionEntityTypes", "listSessionEntityTypes", "listSessionEntityTypes", "listSessionEntityTypesPagedCallable", "listSessionEntityTypesCallable"]
@@ -337,6 +409,9 @@
             "ExportTestCases": {
               "methods": ["exportTestCasesAsync", "exportTestCasesOperationCallable", "exportTestCasesCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetTestCase": {
               "methods": ["getTestCase", "getTestCase", "getTestCase", "getTestCaseCallable"]
             },
@@ -345,6 +420,9 @@
             },
             "ImportTestCases": {
               "methods": ["importTestCasesAsync", "importTestCasesOperationCallable", "importTestCasesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListTestCaseResults": {
               "methods": ["listTestCaseResults", "listTestCaseResults", "listTestCaseResults", "listTestCaseResultsPagedCallable", "listTestCaseResultsCallable"]
@@ -373,8 +451,14 @@
             "DeleteTransitionRouteGroup": {
               "methods": ["deleteTransitionRouteGroup", "deleteTransitionRouteGroup", "deleteTransitionRouteGroup", "deleteTransitionRouteGroupCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetTransitionRouteGroup": {
               "methods": ["getTransitionRouteGroup", "getTransitionRouteGroup", "getTransitionRouteGroup", "getTransitionRouteGroupCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListTransitionRouteGroups": {
               "methods": ["listTransitionRouteGroups", "listTransitionRouteGroups", "listTransitionRouteGroups", "listTransitionRouteGroupsPagedCallable", "listTransitionRouteGroupsCallable"]
@@ -400,8 +484,14 @@
             "DeleteVersion": {
               "methods": ["deleteVersion", "deleteVersion", "deleteVersion", "deleteVersionCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetVersion": {
               "methods": ["getVersion", "getVersion", "getVersion", "getVersionCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListVersions": {
               "methods": ["listVersions", "listVersions", "listVersions", "listVersionsPagedCallable", "listVersionsCallable"]
@@ -427,8 +517,14 @@
             "DeleteWebhook": {
               "methods": ["deleteWebhook", "deleteWebhook", "deleteWebhook", "deleteWebhookCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetWebhook": {
               "methods": ["getWebhook", "getWebhook", "getWebhook", "getWebhookCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListWebhooks": {
               "methods": ["listWebhooks", "listWebhooks", "listWebhooks", "listWebhooksPagedCallable", "listWebhooksCallable"]

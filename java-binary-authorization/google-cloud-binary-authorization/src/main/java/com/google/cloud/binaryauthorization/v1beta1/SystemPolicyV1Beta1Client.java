@@ -36,7 +36,7 @@ import javax.annotation.Generated;
  * // This snippet has been automatically generated for illustrative purposes only.
  * // It may require modifications to work in your environment.
  * try (SystemPolicyV1Beta1Client systemPolicyV1Beta1Client = SystemPolicyV1Beta1Client.create()) {
- *   PolicyName name = PolicyName.ofProjectName("[PROJECT]");
+ *   PolicyName name = PolicyName.ofLocationName("[LOCATION]");
  *   Policy response = systemPolicyV1Beta1Client.getSystemPolicy(name);
  * }
  * }</pre>
@@ -155,7 +155,7 @@ public class SystemPolicyV1Beta1Client implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (SystemPolicyV1Beta1Client systemPolicyV1Beta1Client = SystemPolicyV1Beta1Client.create()) {
-   *   PolicyName name = PolicyName.ofProjectName("[PROJECT]");
+   *   PolicyName name = PolicyName.ofLocationName("[LOCATION]");
    *   Policy response = systemPolicyV1Beta1Client.getSystemPolicy(name);
    * }
    * }</pre>
@@ -206,7 +206,7 @@ public class SystemPolicyV1Beta1Client implements BackgroundResource {
    * try (SystemPolicyV1Beta1Client systemPolicyV1Beta1Client = SystemPolicyV1Beta1Client.create()) {
    *   GetSystemPolicyRequest request =
    *       GetSystemPolicyRequest.newBuilder()
-   *           .setName(PolicyName.ofProjectName("[PROJECT]").toString())
+   *           .setName(PolicyName.ofLocationName("[LOCATION]").toString())
    *           .build();
    *   Policy response = systemPolicyV1Beta1Client.getSystemPolicy(request);
    * }
@@ -231,7 +231,7 @@ public class SystemPolicyV1Beta1Client implements BackgroundResource {
    * try (SystemPolicyV1Beta1Client systemPolicyV1Beta1Client = SystemPolicyV1Beta1Client.create()) {
    *   GetSystemPolicyRequest request =
    *       GetSystemPolicyRequest.newBuilder()
-   *           .setName(PolicyName.ofProjectName("[PROJECT]").toString())
+   *           .setName(PolicyName.ofLocationName("[LOCATION]").toString())
    *           .build();
    *   ApiFuture<Policy> future =
    *       systemPolicyV1Beta1Client.getSystemPolicyCallable().futureCall(request);

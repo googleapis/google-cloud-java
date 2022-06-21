@@ -60,12 +60,17 @@ public final class AutoMLVideoClassificationProto {
           + "puts.ModelType\"i\n\tModelType\022\032\n\026MODEL_TYP"
           + "E_UNSPECIFIED\020\000\022\t\n\005CLOUD\020\001\022\026\n\022MOBILE_VER"
           + "SATILE_1\020\002\022\035\n\031MOBILE_JETSON_VERSATILE_1\020"
-          + "\003B\316\001\nAcom.google.cloud.aiplatform.v1beta"
+          + "\003B\224\003\nAcom.google.cloud.aiplatform.v1beta"
           + "1.schema.trainingjob.definitionB\036AutoMLV"
           + "ideoClassificationProtoP\001Zggoogle.golang"
           + ".org/genproto/googleapis/cloud/aiplatfor"
           + "m/v1beta1/schema/trainingjob/definition;"
-          + "definitionb\006proto3"
+          + "definition\252\002=Google.Cloud.AIPlatform.V1B"
+          + "eta1.Schema.TrainingJob.Definition\312\002=Goo"
+          + "gle\\Cloud\\AIPlatform\\V1beta1\\Schema\\Trai"
+          + "ningJob\\Definition\352\002CGoogle::Cloud::AIPl"
+          + "atform::V1beta1::Schema::TrainingJob::De"
+          + "finitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

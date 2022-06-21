@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.RegionCommitmentsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RegionCommitmentsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -60,7 +59,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -71,7 +70,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
           ApiMethodDescriptor
               .<AggregatedListRegionCommitmentsRequest, CommitmentAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionCommitments/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListRegionCommitmentsRequest>newBuilder()
@@ -127,7 +126,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionCommitmentRequest, Commitment>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionCommitments/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionCommitmentRequest>newBuilder()
@@ -162,7 +161,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionCommitmentRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionCommitments/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionCommitmentRequest>newBuilder()
@@ -215,7 +214,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionCommitmentsRequest, CommitmentList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionCommitments/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionCommitmentsRequest>newBuilder()
@@ -268,7 +267,7 @@ public class HttpJsonRegionCommitmentsStub extends RegionCommitmentsStub {
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateRegionCommitmentRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionCommitments/Update")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateRegionCommitmentRequest>newBuilder()

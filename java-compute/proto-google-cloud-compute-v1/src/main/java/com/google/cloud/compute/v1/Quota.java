@@ -109,6 +109,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -196,6 +198,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     COMMITTED_N2D_CPUS(125951757),
     /** <code>COMMITTED_N2_CPUS = 322589603;</code> */
     COMMITTED_N2_CPUS(322589603),
+    /** <code>COMMITTED_NVIDIA_A100_80GB_GPUS = 464326565;</code> */
+    COMMITTED_NVIDIA_A100_80GB_GPUS(464326565),
     /** <code>COMMITTED_NVIDIA_A100_GPUS = 375799445;</code> */
     COMMITTED_NVIDIA_A100_GPUS(375799445),
     /** <code>COMMITTED_NVIDIA_K80_GPUS = 3857188;</code> */
@@ -304,6 +308,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     NODE_GROUPS(24624817),
     /** <code>NODE_TEMPLATES = 474896668;</code> */
     NODE_TEMPLATES(474896668),
+    /** <code>NVIDIA_A100_80GB_GPUS = 286389320;</code> */
+    NVIDIA_A100_80GB_GPUS(286389320),
     /** <code>NVIDIA_A100_GPUS = 504872978;</code> */
     NVIDIA_A100_GPUS(504872978),
     /** <code>NVIDIA_K80_GPUS = 163886599;</code> */
@@ -330,6 +336,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     PREEMPTIBLE_CPUS(251184841),
     /** <code>PREEMPTIBLE_LOCAL_SSD_GB = 260819336;</code> */
     PREEMPTIBLE_LOCAL_SSD_GB(260819336),
+    /** <code>PREEMPTIBLE_NVIDIA_A100_80GB_GPUS = 151942410;</code> */
+    PREEMPTIBLE_NVIDIA_A100_80GB_GPUS(151942410),
     /** <code>PREEMPTIBLE_NVIDIA_A100_GPUS = 68832784;</code> */
     PREEMPTIBLE_NVIDIA_A100_GPUS(68832784),
     /** <code>PREEMPTIBLE_NVIDIA_K80_GPUS = 374960201;</code> */
@@ -483,6 +491,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int COMMITTED_N2D_CPUS_VALUE = 125951757;
     /** <code>COMMITTED_N2_CPUS = 322589603;</code> */
     public static final int COMMITTED_N2_CPUS_VALUE = 322589603;
+    /** <code>COMMITTED_NVIDIA_A100_80GB_GPUS = 464326565;</code> */
+    public static final int COMMITTED_NVIDIA_A100_80GB_GPUS_VALUE = 464326565;
     /** <code>COMMITTED_NVIDIA_A100_GPUS = 375799445;</code> */
     public static final int COMMITTED_NVIDIA_A100_GPUS_VALUE = 375799445;
     /** <code>COMMITTED_NVIDIA_K80_GPUS = 3857188;</code> */
@@ -591,6 +601,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int NODE_GROUPS_VALUE = 24624817;
     /** <code>NODE_TEMPLATES = 474896668;</code> */
     public static final int NODE_TEMPLATES_VALUE = 474896668;
+    /** <code>NVIDIA_A100_80GB_GPUS = 286389320;</code> */
+    public static final int NVIDIA_A100_80GB_GPUS_VALUE = 286389320;
     /** <code>NVIDIA_A100_GPUS = 504872978;</code> */
     public static final int NVIDIA_A100_GPUS_VALUE = 504872978;
     /** <code>NVIDIA_K80_GPUS = 163886599;</code> */
@@ -617,6 +629,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int PREEMPTIBLE_CPUS_VALUE = 251184841;
     /** <code>PREEMPTIBLE_LOCAL_SSD_GB = 260819336;</code> */
     public static final int PREEMPTIBLE_LOCAL_SSD_GB_VALUE = 260819336;
+    /** <code>PREEMPTIBLE_NVIDIA_A100_80GB_GPUS = 151942410;</code> */
+    public static final int PREEMPTIBLE_NVIDIA_A100_80GB_GPUS_VALUE = 151942410;
     /** <code>PREEMPTIBLE_NVIDIA_A100_GPUS = 68832784;</code> */
     public static final int PREEMPTIBLE_NVIDIA_A100_GPUS_VALUE = 68832784;
     /** <code>PREEMPTIBLE_NVIDIA_K80_GPUS = 374960201;</code> */
@@ -785,6 +799,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return COMMITTED_N2D_CPUS;
         case 322589603:
           return COMMITTED_N2_CPUS;
+        case 464326565:
+          return COMMITTED_NVIDIA_A100_80GB_GPUS;
         case 375799445:
           return COMMITTED_NVIDIA_A100_GPUS;
         case 3857188:
@@ -885,6 +901,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return NODE_GROUPS;
         case 474896668:
           return NODE_TEMPLATES;
+        case 286389320:
+          return NVIDIA_A100_80GB_GPUS;
         case 504872978:
           return NVIDIA_A100_GPUS;
         case 163886599:
@@ -911,6 +929,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return PREEMPTIBLE_CPUS;
         case 260819336:
           return PREEMPTIBLE_LOCAL_SSD_GB;
+        case 151942410:
+          return PREEMPTIBLE_NVIDIA_A100_80GB_GPUS;
         case 68832784:
           return PREEMPTIBLE_NVIDIA_A100_GPUS;
         case 374960201:

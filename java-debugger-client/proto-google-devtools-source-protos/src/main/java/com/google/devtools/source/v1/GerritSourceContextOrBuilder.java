@@ -124,7 +124,7 @@ public interface GerritSourceContextOrBuilder
    * <code>string alias_name = 4 [deprecated = true];</code>
    *
    * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
-   *     google/devtools/source/v1/source_context.proto;l=131
+   *     google/devtools/source/v1/source_context.proto;l=129
    * @return Whether the aliasName field is set.
    */
   @java.lang.Deprecated
@@ -139,7 +139,7 @@ public interface GerritSourceContextOrBuilder
    * <code>string alias_name = 4 [deprecated = true];</code>
    *
    * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
-   *     google/devtools/source/v1/source_context.proto;l=131
+   *     google/devtools/source/v1/source_context.proto;l=129
    * @return The aliasName.
    */
   @java.lang.Deprecated
@@ -154,7 +154,7 @@ public interface GerritSourceContextOrBuilder
    * <code>string alias_name = 4 [deprecated = true];</code>
    *
    * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
-   *     google/devtools/source/v1/source_context.proto;l=131
+   *     google/devtools/source/v1/source_context.proto;l=129
    * @return The bytes for aliasName.
    */
   @java.lang.Deprecated

@@ -369,7 +369,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   while (true) {
    *     ListEntityTypesResponse response =
    *         entityTypesClient.listEntityTypesCallable().call(request);
-   *     for (EntityType element : response.getResponsesList()) {
+   *     for (EntityType element : response.getEntityTypesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

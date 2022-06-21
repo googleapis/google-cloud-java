@@ -106,8 +106,12 @@ public interface OperationAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.OperationsScopedList&gt; items = 100526016;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.compute.v1.OperationsScopedList getItemsOrDefault(
-      java.lang.String key, com.google.cloud.compute.v1.OperationsScopedList defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.OperationsScopedList defaultValue);
   /**
    *
    *

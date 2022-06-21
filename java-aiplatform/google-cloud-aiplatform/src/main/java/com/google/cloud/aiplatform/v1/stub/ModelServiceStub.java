@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,17 @@
 
 package com.google.cloud.aiplatform.v1.stub;
 
+import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.DeleteModelRequest;
+import com.google.cloud.aiplatform.v1.DeleteModelVersionRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1.ExportModelOperationMetadata;
 import com.google.cloud.aiplatform.v1.ExportModelRequest;
@@ -36,8 +39,11 @@ import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationsResponse;
+import com.google.cloud.aiplatform.v1.ListModelVersionsRequest;
+import com.google.cloud.aiplatform.v1.ListModelVersionsResponse;
 import com.google.cloud.aiplatform.v1.ListModelsRequest;
 import com.google.cloud.aiplatform.v1.ListModelsResponse;
+import com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1.Model;
 import com.google.cloud.aiplatform.v1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1.ModelEvaluationSlice;
@@ -45,6 +51,15 @@ import com.google.cloud.aiplatform.v1.UpdateModelRequest;
 import com.google.cloud.aiplatform.v1.UploadModelOperationMetadata;
 import com.google.cloud.aiplatform.v1.UploadModelRequest;
 import com.google.cloud.aiplatform.v1.UploadModelResponse;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -84,6 +99,16 @@ public abstract class ModelServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listModelsCallable()");
   }
 
+  public UnaryCallable<ListModelVersionsRequest, ListModelVersionsPagedResponse>
+      listModelVersionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listModelVersionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListModelVersionsRequest, ListModelVersionsResponse>
+      listModelVersionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listModelVersionsCallable()");
+  }
+
   public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
     throw new UnsupportedOperationException("Not implemented: updateModelCallable()");
   }
@@ -95,6 +120,20 @@ public abstract class ModelServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteModelCallable()");
+  }
+
+  public OperationCallable<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+      deleteModelVersionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteModelVersionOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteModelVersionRequest, Operation> deleteModelVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteModelVersionCallable()");
+  }
+
+  public UnaryCallable<MergeVersionAliasesRequest, Model> mergeVersionAliasesCallable() {
+    throw new UnsupportedOperationException("Not implemented: mergeVersionAliasesCallable()");
   }
 
   public OperationCallable<ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
@@ -139,6 +178,32 @@ public abstract class ModelServiceStub implements BackgroundResource {
   public UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesResponse>
       listModelEvaluationSlicesCallable() {
     throw new UnsupportedOperationException("Not implemented: listModelEvaluationSlicesCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

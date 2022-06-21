@@ -321,7 +321,7 @@ public class CloudMemcacheClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListInstancesResponse response = cloudMemcacheClient.listInstancesCallable().call(request);
-   *     for (Instance element : response.getResponsesList()) {
+   *     for (Instance element : response.getInstancesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

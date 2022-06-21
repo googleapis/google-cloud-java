@@ -85,6 +85,21 @@ public final class ModelDeploymentMonitoringScheduleConfig
 
               break;
             }
+          case 18:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (monitorWindow_ != null) {
+                subBuilder = monitorWindow_.toBuilder();
+              }
+              monitorWindow_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(monitorWindow_);
+                monitorWindow_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -176,6 +191,75 @@ public final class ModelDeploymentMonitoringScheduleConfig
     return getMonitorInterval();
   }
 
+  public static final int MONITOR_WINDOW_FIELD_NUMBER = 2;
+  private com.google.protobuf.Duration monitorWindow_;
+  /**
+   *
+   *
+   * <pre>
+   * The time window of the prediction data being included in each prediction
+   * dataset. This window specifies how long the data should be collected from
+   * historical model results for each run. If not set,
+   * [ModelDeploymentMonitoringScheduleConfig.monitor_interval][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig.monitor_interval] will be used.
+   * e.g. If currently the cutoff time is 2022-01-08 14:30:00 and the
+   * monitor_window is set to be 3600, then data from 2022-01-08 13:30:00
+   * to 2022-01-08 14:30:00 will be retrieved and aggregated to calculate the
+   * monitoring statistics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration monitor_window = 2;</code>
+   *
+   * @return Whether the monitorWindow field is set.
+   */
+  @java.lang.Override
+  public boolean hasMonitorWindow() {
+    return monitorWindow_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time window of the prediction data being included in each prediction
+   * dataset. This window specifies how long the data should be collected from
+   * historical model results for each run. If not set,
+   * [ModelDeploymentMonitoringScheduleConfig.monitor_interval][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig.monitor_interval] will be used.
+   * e.g. If currently the cutoff time is 2022-01-08 14:30:00 and the
+   * monitor_window is set to be 3600, then data from 2022-01-08 13:30:00
+   * to 2022-01-08 14:30:00 will be retrieved and aggregated to calculate the
+   * monitoring statistics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration monitor_window = 2;</code>
+   *
+   * @return The monitorWindow.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getMonitorWindow() {
+    return monitorWindow_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : monitorWindow_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time window of the prediction data being included in each prediction
+   * dataset. This window specifies how long the data should be collected from
+   * historical model results for each run. If not set,
+   * [ModelDeploymentMonitoringScheduleConfig.monitor_interval][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig.monitor_interval] will be used.
+   * e.g. If currently the cutoff time is 2022-01-08 14:30:00 and the
+   * monitor_window is set to be 3600, then data from 2022-01-08 13:30:00
+   * to 2022-01-08 14:30:00 will be retrieved and aggregated to calculate the
+   * monitoring statistics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration monitor_window = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getMonitorWindowOrBuilder() {
+    return getMonitorWindow();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -193,6 +277,9 @@ public final class ModelDeploymentMonitoringScheduleConfig
     if (monitorInterval_ != null) {
       output.writeMessage(1, getMonitorInterval());
     }
+    if (monitorWindow_ != null) {
+      output.writeMessage(2, getMonitorWindow());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -204,6 +291,9 @@ public final class ModelDeploymentMonitoringScheduleConfig
     size = 0;
     if (monitorInterval_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getMonitorInterval());
+    }
+    if (monitorWindow_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getMonitorWindow());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -226,6 +316,10 @@ public final class ModelDeploymentMonitoringScheduleConfig
     if (hasMonitorInterval()) {
       if (!getMonitorInterval().equals(other.getMonitorInterval())) return false;
     }
+    if (hasMonitorWindow() != other.hasMonitorWindow()) return false;
+    if (hasMonitorWindow()) {
+      if (!getMonitorWindow().equals(other.getMonitorWindow())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -240,6 +334,10 @@ public final class ModelDeploymentMonitoringScheduleConfig
     if (hasMonitorInterval()) {
       hash = (37 * hash) + MONITOR_INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getMonitorInterval().hashCode();
+    }
+    if (hasMonitorWindow()) {
+      hash = (37 * hash) + MONITOR_WINDOW_FIELD_NUMBER;
+      hash = (53 * hash) + getMonitorWindow().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -401,6 +499,12 @@ public final class ModelDeploymentMonitoringScheduleConfig
         monitorInterval_ = null;
         monitorIntervalBuilder_ = null;
       }
+      if (monitorWindowBuilder_ == null) {
+        monitorWindow_ = null;
+      } else {
+        monitorWindow_ = null;
+        monitorWindowBuilder_ = null;
+      }
       return this;
     }
 
@@ -436,6 +540,11 @@ public final class ModelDeploymentMonitoringScheduleConfig
         result.monitorInterval_ = monitorInterval_;
       } else {
         result.monitorInterval_ = monitorIntervalBuilder_.build();
+      }
+      if (monitorWindowBuilder_ == null) {
+        result.monitorWindow_ = monitorWindow_;
+      } else {
+        result.monitorWindow_ = monitorWindowBuilder_.build();
       }
       onBuilt();
       return result;
@@ -493,6 +602,9 @@ public final class ModelDeploymentMonitoringScheduleConfig
               .getDefaultInstance()) return this;
       if (other.hasMonitorInterval()) {
         mergeMonitorInterval(other.getMonitorInterval());
+      }
+      if (other.hasMonitorWindow()) {
+        mergeMonitorWindow(other.getMonitorWindow());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -736,6 +848,254 @@ public final class ModelDeploymentMonitoringScheduleConfig
         monitorInterval_ = null;
       }
       return monitorIntervalBuilder_;
+    }
+
+    private com.google.protobuf.Duration monitorWindow_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        monitorWindowBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The time window of the prediction data being included in each prediction
+     * dataset. This window specifies how long the data should be collected from
+     * historical model results for each run. If not set,
+     * [ModelDeploymentMonitoringScheduleConfig.monitor_interval][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig.monitor_interval] will be used.
+     * e.g. If currently the cutoff time is 2022-01-08 14:30:00 and the
+     * monitor_window is set to be 3600, then data from 2022-01-08 13:30:00
+     * to 2022-01-08 14:30:00 will be retrieved and aggregated to calculate the
+     * monitoring statistics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration monitor_window = 2;</code>
+     *
+     * @return Whether the monitorWindow field is set.
+     */
+    public boolean hasMonitorWindow() {
+      return monitorWindowBuilder_ != null || monitorWindow_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time window of the prediction data being included in each prediction
+     * dataset. This window specifies how long the data should be collected from
+     * historical model results for each run. If not set,
+     * [ModelDeploymentMonitoringScheduleConfig.monitor_interval][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig.monitor_interval] will be used.
+     * e.g. If currently the cutoff time is 2022-01-08 14:30:00 and the
+     * monitor_window is set to be 3600, then data from 2022-01-08 13:30:00
+     * to 2022-01-08 14:30:00 will be retrieved and aggregated to calculate the
+     * monitoring statistics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration monitor_window = 2;</code>
+     *
+     * @return The monitorWindow.
+     */
+    public com.google.protobuf.Duration getMonitorWindow() {
+      if (monitorWindowBuilder_ == null) {
+        return monitorWindow_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : monitorWindow_;
+      } else {
+        return monitorWindowBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time window of the prediction data being included in each prediction
+     * dataset. This window specifies how long the data should be collected from
+     * historical model results for each run. If not set,
+     * [ModelDeploymentMonitoringScheduleConfig.monitor_interval][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig.monitor_interval] will be used.
+     * e.g. If currently the cutoff time is 2022-01-08 14:30:00 and the
+     * monitor_window is set to be 3600, then data from 2022-01-08 13:30:00
+     * to 2022-01-08 14:30:00 will be retrieved and aggregated to calculate the
+     * monitoring statistics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration monitor_window = 2;</code>
+     */
+    public Builder setMonitorWindow(com.google.protobuf.Duration value) {
+      if (monitorWindowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        monitorWindow_ = value;
+        onChanged();
+      } else {
+        monitorWindowBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time window of the prediction data being included in each prediction
+     * dataset. This window specifies how long the data should be collected from
+     * historical model results for each run. If not set,
+     * [ModelDeploymentMonitoringScheduleConfig.monitor_interval][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig.monitor_interval] will be used.
+     * e.g. If currently the cutoff time is 2022-01-08 14:30:00 and the
+     * monitor_window is set to be 3600, then data from 2022-01-08 13:30:00
+     * to 2022-01-08 14:30:00 will be retrieved and aggregated to calculate the
+     * monitoring statistics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration monitor_window = 2;</code>
+     */
+    public Builder setMonitorWindow(com.google.protobuf.Duration.Builder builderForValue) {
+      if (monitorWindowBuilder_ == null) {
+        monitorWindow_ = builderForValue.build();
+        onChanged();
+      } else {
+        monitorWindowBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time window of the prediction data being included in each prediction
+     * dataset. This window specifies how long the data should be collected from
+     * historical model results for each run. If not set,
+     * [ModelDeploymentMonitoringScheduleConfig.monitor_interval][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig.monitor_interval] will be used.
+     * e.g. If currently the cutoff time is 2022-01-08 14:30:00 and the
+     * monitor_window is set to be 3600, then data from 2022-01-08 13:30:00
+     * to 2022-01-08 14:30:00 will be retrieved and aggregated to calculate the
+     * monitoring statistics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration monitor_window = 2;</code>
+     */
+    public Builder mergeMonitorWindow(com.google.protobuf.Duration value) {
+      if (monitorWindowBuilder_ == null) {
+        if (monitorWindow_ != null) {
+          monitorWindow_ =
+              com.google.protobuf.Duration.newBuilder(monitorWindow_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          monitorWindow_ = value;
+        }
+        onChanged();
+      } else {
+        monitorWindowBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time window of the prediction data being included in each prediction
+     * dataset. This window specifies how long the data should be collected from
+     * historical model results for each run. If not set,
+     * [ModelDeploymentMonitoringScheduleConfig.monitor_interval][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig.monitor_interval] will be used.
+     * e.g. If currently the cutoff time is 2022-01-08 14:30:00 and the
+     * monitor_window is set to be 3600, then data from 2022-01-08 13:30:00
+     * to 2022-01-08 14:30:00 will be retrieved and aggregated to calculate the
+     * monitoring statistics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration monitor_window = 2;</code>
+     */
+    public Builder clearMonitorWindow() {
+      if (monitorWindowBuilder_ == null) {
+        monitorWindow_ = null;
+        onChanged();
+      } else {
+        monitorWindow_ = null;
+        monitorWindowBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time window of the prediction data being included in each prediction
+     * dataset. This window specifies how long the data should be collected from
+     * historical model results for each run. If not set,
+     * [ModelDeploymentMonitoringScheduleConfig.monitor_interval][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig.monitor_interval] will be used.
+     * e.g. If currently the cutoff time is 2022-01-08 14:30:00 and the
+     * monitor_window is set to be 3600, then data from 2022-01-08 13:30:00
+     * to 2022-01-08 14:30:00 will be retrieved and aggregated to calculate the
+     * monitoring statistics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration monitor_window = 2;</code>
+     */
+    public com.google.protobuf.Duration.Builder getMonitorWindowBuilder() {
+
+      onChanged();
+      return getMonitorWindowFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time window of the prediction data being included in each prediction
+     * dataset. This window specifies how long the data should be collected from
+     * historical model results for each run. If not set,
+     * [ModelDeploymentMonitoringScheduleConfig.monitor_interval][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig.monitor_interval] will be used.
+     * e.g. If currently the cutoff time is 2022-01-08 14:30:00 and the
+     * monitor_window is set to be 3600, then data from 2022-01-08 13:30:00
+     * to 2022-01-08 14:30:00 will be retrieved and aggregated to calculate the
+     * monitoring statistics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration monitor_window = 2;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getMonitorWindowOrBuilder() {
+      if (monitorWindowBuilder_ != null) {
+        return monitorWindowBuilder_.getMessageOrBuilder();
+      } else {
+        return monitorWindow_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : monitorWindow_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time window of the prediction data being included in each prediction
+     * dataset. This window specifies how long the data should be collected from
+     * historical model results for each run. If not set,
+     * [ModelDeploymentMonitoringScheduleConfig.monitor_interval][google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig.monitor_interval] will be used.
+     * e.g. If currently the cutoff time is 2022-01-08 14:30:00 and the
+     * monitor_window is set to be 3600, then data from 2022-01-08 13:30:00
+     * to 2022-01-08 14:30:00 will be retrieved and aggregated to calculate the
+     * monitoring statistics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration monitor_window = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getMonitorWindowFieldBuilder() {
+      if (monitorWindowBuilder_ == null) {
+        monitorWindowBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getMonitorWindow(), getParentForChildren(), isClean());
+        monitorWindow_ = null;
+      }
+      return monitorWindowBuilder_;
     }
 
     @java.lang.Override

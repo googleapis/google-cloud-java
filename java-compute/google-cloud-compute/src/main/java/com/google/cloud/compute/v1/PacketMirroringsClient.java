@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * PacketMirroringsSettings packetMirroringsSettings =
  *     PacketMirroringsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * PacketMirroringsSettings packetMirroringsSettings =
  *     PacketMirroringsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PacketMirroringsClient packetMirroringsClient =
@@ -124,7 +130,6 @@ public class PacketMirroringsClient implements BackgroundResource {
    * Constructs an instance of PacketMirroringsClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(PacketMirroringsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PacketMirroringsClient create(PacketMirroringsStub stub) {
     return new PacketMirroringsClient(stub);
   }
@@ -139,7 +144,6 @@ public class PacketMirroringsClient implements BackgroundResource {
     this.stub = ((PacketMirroringsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected PacketMirroringsClient(PacketMirroringsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -149,7 +153,6 @@ public class PacketMirroringsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PacketMirroringsStub getStub() {
     return stub;
   }
@@ -161,6 +164,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, PacketMirroringsScopedList> element :
@@ -186,6 +191,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   AggregatedListPacketMirroringsRequest request =
    *       AggregatedListPacketMirroringsRequest.newBuilder()
@@ -219,6 +226,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   AggregatedListPacketMirroringsRequest request =
    *       AggregatedListPacketMirroringsRequest.newBuilder()
@@ -251,6 +260,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   AggregatedListPacketMirroringsRequest request =
    *       AggregatedListPacketMirroringsRequest.newBuilder()
@@ -265,7 +276,7 @@ public class PacketMirroringsClient implements BackgroundResource {
    *   while (true) {
    *     PacketMirroringAggregatedList response =
    *         packetMirroringsClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, PacketMirroringsScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, PacketMirroringsScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -290,6 +301,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -322,6 +335,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   DeletePacketMirroringRequest request =
    *       DeletePacketMirroringRequest.newBuilder()
@@ -351,6 +366,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   DeletePacketMirroringRequest request =
    *       DeletePacketMirroringRequest.newBuilder()
@@ -378,6 +395,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   DeletePacketMirroringRequest request =
    *       DeletePacketMirroringRequest.newBuilder()
@@ -403,6 +422,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -433,6 +454,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   GetPacketMirroringRequest request =
    *       GetPacketMirroringRequest.newBuilder()
@@ -458,6 +481,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   GetPacketMirroringRequest request =
    *       GetPacketMirroringRequest.newBuilder()
@@ -483,6 +508,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -516,6 +543,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   InsertPacketMirroringRequest request =
    *       InsertPacketMirroringRequest.newBuilder()
@@ -546,6 +575,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   InsertPacketMirroringRequest request =
    *       InsertPacketMirroringRequest.newBuilder()
@@ -574,6 +605,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   InsertPacketMirroringRequest request =
    *       InsertPacketMirroringRequest.newBuilder()
@@ -599,6 +632,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -625,6 +660,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   ListPacketMirroringsRequest request =
    *       ListPacketMirroringsRequest.newBuilder()
@@ -656,6 +693,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   ListPacketMirroringsRequest request =
    *       ListPacketMirroringsRequest.newBuilder()
@@ -687,6 +726,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   ListPacketMirroringsRequest request =
    *       ListPacketMirroringsRequest.newBuilder()
@@ -700,7 +741,7 @@ public class PacketMirroringsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     PacketMirroringList response = packetMirroringsClient.listCallable().call(request);
-   *     for (PacketMirroring element : response.getResponsesList()) {
+   *     for (PacketMirroring element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -725,6 +766,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -766,6 +809,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   PatchPacketMirroringRequest request =
    *       PatchPacketMirroringRequest.newBuilder()
@@ -797,6 +842,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   PatchPacketMirroringRequest request =
    *       PatchPacketMirroringRequest.newBuilder()
@@ -826,6 +873,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   PatchPacketMirroringRequest request =
    *       PatchPacketMirroringRequest.newBuilder()
@@ -852,6 +901,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -892,6 +943,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   TestIamPermissionsPacketMirroringRequest request =
    *       TestIamPermissionsPacketMirroringRequest.newBuilder()
@@ -919,6 +972,8 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   TestIamPermissionsPacketMirroringRequest request =
    *       TestIamPermissionsPacketMirroringRequest.newBuilder()

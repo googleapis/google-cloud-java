@@ -32,6 +32,8 @@ public interface WorkloadIdentityConfigOrBuilder
    *
    * <code>string identity_namespace = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
+   *     See google/container/v1beta1/cluster_service.proto;l=4169
    * @return The identityNamespace.
    */
   @java.lang.Deprecated
@@ -45,6 +47,8 @@ public interface WorkloadIdentityConfigOrBuilder
    *
    * <code>string identity_namespace = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
+   *     See google/container/v1beta1/cluster_service.proto;l=4169
    * @return The bytes for identityNamespace.
    */
   @java.lang.Deprecated

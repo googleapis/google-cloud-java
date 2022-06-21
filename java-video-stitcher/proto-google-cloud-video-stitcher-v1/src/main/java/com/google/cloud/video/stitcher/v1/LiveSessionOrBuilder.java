@@ -402,4 +402,29 @@ public interface LiveSessionOrBuilder
    * <code>.google.cloud.video.stitcher.v1.ManifestOptions manifest_options = 10;</code>
    */
   com.google.cloud.video.stitcher.v1.ManifestOptionsOrBuilder getManifestOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generated ID of the LiveSession's source stream.
+   * </pre>
+   *
+   * <code>string stream_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The streamId.
+   */
+  java.lang.String getStreamId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generated ID of the LiveSession's source stream.
+   * </pre>
+   *
+   * <code>string stream_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for streamId.
+   */
+  com.google.protobuf.ByteString getStreamIdBytes();
 }

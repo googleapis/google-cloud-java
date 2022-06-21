@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,6 +89,8 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NetworksStubSettings.Builder networksSettingsBuilder = NetworksStubSettings.newBuilder();
  * networksSettingsBuilder
  *     .getSettings()
@@ -372,7 +374,6 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
     return updatePeeringOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public NetworksStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

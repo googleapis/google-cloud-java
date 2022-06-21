@@ -46,7 +46,9 @@ import javax.annotation.Generated;
  * // This snippet has been automatically generated for illustrative purposes only.
  * // It may require modifications to work in your environment.
  * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
- *   DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
+ *   DataSourceName name =
+ *       DataSourceName.ofProjectLocationDataSourceName(
+ *           "[PROJECT]", "[LOCATION]", "[DATA_SOURCE]");
  *   DataSource response = dataTransferServiceClient.getDataSource(name);
  * }
  * }</pre>
@@ -164,7 +166,9 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
+   *   DataSourceName name =
+   *       DataSourceName.ofProjectLocationDataSourceName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_SOURCE]");
    *   DataSource response = dataTransferServiceClient.getDataSource(name);
    * }
    * }</pre>
@@ -218,7 +222,9 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   GetDataSourceRequest request =
    *       GetDataSourceRequest.newBuilder()
    *           .setName(
-   *               DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString())
+   *               DataSourceName.ofProjectLocationDataSourceName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_SOURCE]")
+   *                   .toString())
    *           .build();
    *   DataSource response = dataTransferServiceClient.getDataSource(request);
    * }
@@ -244,7 +250,9 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   GetDataSourceRequest request =
    *       GetDataSourceRequest.newBuilder()
    *           .setName(
-   *               DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString())
+   *               DataSourceName.ofProjectLocationDataSourceName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_SOURCE]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<DataSource> future =
    *       dataTransferServiceClient.getDataSourceCallable().futureCall(request);
@@ -419,7 +427,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListDataSourcesResponse response =
    *         dataTransferServiceClient.listDataSourcesCallable().call(request);
-   *     for (DataSource element : response.getResponsesList()) {
+   *     for (DataSource element : response.getDataSourcesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -698,7 +706,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   TransferConfigName name =
-   *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+   *       TransferConfigName.ofProjectLocationTransferConfigName(
+   *           "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]");
    *   dataTransferServiceClient.deleteTransferConfig(name);
    * }
    * }</pre>
@@ -757,7 +766,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   DeleteTransferConfigRequest request =
    *       DeleteTransferConfigRequest.newBuilder()
    *           .setName(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+   *               TransferConfigName.ofProjectLocationTransferConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .build();
    *   dataTransferServiceClient.deleteTransferConfig(request);
@@ -784,7 +794,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   DeleteTransferConfigRequest request =
    *       DeleteTransferConfigRequest.newBuilder()
    *           .setName(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+   *               TransferConfigName.ofProjectLocationTransferConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Empty> future =
@@ -809,7 +820,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   TransferConfigName name =
-   *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+   *       TransferConfigName.ofProjectLocationTransferConfigName(
+   *           "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]");
    *   TransferConfig response = dataTransferServiceClient.getTransferConfig(name);
    * }
    * }</pre>
@@ -867,7 +879,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   GetTransferConfigRequest request =
    *       GetTransferConfigRequest.newBuilder()
    *           .setName(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+   *               TransferConfigName.ofProjectLocationTransferConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .build();
    *   TransferConfig response = dataTransferServiceClient.getTransferConfig(request);
@@ -894,7 +907,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   GetTransferConfigRequest request =
    *       GetTransferConfigRequest.newBuilder()
    *           .setName(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+   *               TransferConfigName.ofProjectLocationTransferConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .build();
    *   ApiFuture<TransferConfig> future =
@@ -1079,7 +1093,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListTransferConfigsResponse response =
    *         dataTransferServiceClient.listTransferConfigsCallable().call(request);
-   *     for (TransferConfig element : response.getResponsesList()) {
+   *     for (TransferConfig element : response.getTransferConfigsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1111,7 +1125,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   TransferConfigName parent =
-   *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+   *       TransferConfigName.ofProjectLocationTransferConfigName(
+   *           "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]");
    *   Timestamp startTime = Timestamp.newBuilder().build();
    *   Timestamp endTime = Timestamp.newBuilder().build();
    *   ScheduleTransferRunsResponse response =
@@ -1202,7 +1217,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   ScheduleTransferRunsRequest request =
    *       ScheduleTransferRunsRequest.newBuilder()
    *           .setParent(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+   *               TransferConfigName.ofProjectLocationTransferConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .setStartTime(Timestamp.newBuilder().build())
    *           .setEndTime(Timestamp.newBuilder().build())
@@ -1238,7 +1254,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   ScheduleTransferRunsRequest request =
    *       ScheduleTransferRunsRequest.newBuilder()
    *           .setParent(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+   *               TransferConfigName.ofProjectLocationTransferConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .setStartTime(Timestamp.newBuilder().build())
    *           .setEndTime(Timestamp.newBuilder().build())
@@ -1273,7 +1290,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   StartManualTransferRunsRequest request =
    *       StartManualTransferRunsRequest.newBuilder()
    *           .setParent(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+   *               TransferConfigName.ofProjectLocationTransferConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .build();
    *   StartManualTransferRunsResponse response =
@@ -1304,7 +1322,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   StartManualTransferRunsRequest request =
    *       StartManualTransferRunsRequest.newBuilder()
    *           .setParent(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+   *               TransferConfigName.ofProjectLocationTransferConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .build();
    *   ApiFuture<StartManualTransferRunsResponse> future =
@@ -1330,7 +1349,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   RunName name =
-   *       RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
+   *       RunName.ofProjectLocationTransferConfigRunName(
+   *           "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]");
    *   TransferRun response = dataTransferServiceClient.getTransferRun(name);
    * }
    * }</pre>
@@ -1386,7 +1406,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   GetTransferRunRequest request =
    *       GetTransferRunRequest.newBuilder()
    *           .setName(
-   *               RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+   *               RunName.ofProjectLocationTransferConfigRunName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]")
    *                   .toString())
    *           .build();
    *   TransferRun response = dataTransferServiceClient.getTransferRun(request);
@@ -1413,7 +1434,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   GetTransferRunRequest request =
    *       GetTransferRunRequest.newBuilder()
    *           .setName(
-   *               RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+   *               RunName.ofProjectLocationTransferConfigRunName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]")
    *                   .toString())
    *           .build();
    *   ApiFuture<TransferRun> future =
@@ -1438,7 +1460,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   RunName name =
-   *       RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
+   *       RunName.ofProjectLocationTransferConfigRunName(
+   *           "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]");
    *   dataTransferServiceClient.deleteTransferRun(name);
    * }
    * }</pre>
@@ -1496,7 +1519,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   DeleteTransferRunRequest request =
    *       DeleteTransferRunRequest.newBuilder()
    *           .setName(
-   *               RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+   *               RunName.ofProjectLocationTransferConfigRunName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]")
    *                   .toString())
    *           .build();
    *   dataTransferServiceClient.deleteTransferRun(request);
@@ -1523,7 +1547,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   DeleteTransferRunRequest request =
    *       DeleteTransferRunRequest.newBuilder()
    *           .setName(
-   *               RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+   *               RunName.ofProjectLocationTransferConfigRunName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Empty> future =
@@ -1548,7 +1573,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   TransferConfigName parent =
-   *       TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+   *       TransferConfigName.ofProjectLocationTransferConfigName(
+   *           "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]");
    *   for (TransferRun element : dataTransferServiceClient.listTransferRuns(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1613,7 +1639,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   ListTransferRunsRequest request =
    *       ListTransferRunsRequest.newBuilder()
    *           .setParent(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+   *               TransferConfigName.ofProjectLocationTransferConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .addAllStates(new ArrayList<TransferState>())
    *           .setPageToken("pageToken873572522")
@@ -1645,7 +1672,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   ListTransferRunsRequest request =
    *       ListTransferRunsRequest.newBuilder()
    *           .setParent(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+   *               TransferConfigName.ofProjectLocationTransferConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .addAllStates(new ArrayList<TransferState>())
    *           .setPageToken("pageToken873572522")
@@ -1678,7 +1706,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   ListTransferRunsRequest request =
    *       ListTransferRunsRequest.newBuilder()
    *           .setParent(
-   *               TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+   *               TransferConfigName.ofProjectLocationTransferConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
    *                   .toString())
    *           .addAllStates(new ArrayList<TransferState>())
    *           .setPageToken("pageToken873572522")
@@ -1687,7 +1716,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListTransferRunsResponse response =
    *         dataTransferServiceClient.listTransferRunsCallable().call(request);
-   *     for (TransferRun element : response.getResponsesList()) {
+   *     for (TransferRun element : response.getTransferRunsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1716,7 +1745,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
    *   RunName parent =
-   *       RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
+   *       RunName.ofProjectLocationTransferConfigRunName(
+   *           "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]");
    *   for (TransferMessage element :
    *       dataTransferServiceClient.listTransferLogs(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1781,7 +1811,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   ListTransferLogsRequest request =
    *       ListTransferLogsRequest.newBuilder()
    *           .setParent(
-   *               RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+   *               RunName.ofProjectLocationTransferConfigRunName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]")
    *                   .toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -1814,7 +1845,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   ListTransferLogsRequest request =
    *       ListTransferLogsRequest.newBuilder()
    *           .setParent(
-   *               RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+   *               RunName.ofProjectLocationTransferConfigRunName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]")
    *                   .toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -1847,7 +1879,8 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   ListTransferLogsRequest request =
    *       ListTransferLogsRequest.newBuilder()
    *           .setParent(
-   *               RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+   *               RunName.ofProjectLocationTransferConfigRunName(
+   *                       "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]")
    *                   .toString())
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
@@ -1856,7 +1889,7 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListTransferLogsResponse response =
    *         dataTransferServiceClient.listTransferLogsCallable().call(request);
-   *     for (TransferMessage element : response.getResponsesList()) {
+   *     for (TransferMessage element : response.getTransferMessagesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1884,7 +1917,9 @@ public class DataTransferServiceClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
-   *   DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
+   *   DataSourceName name =
+   *       DataSourceName.ofProjectLocationDataSourceName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_SOURCE]");
    *   CheckValidCredsResponse response = dataTransferServiceClient.checkValidCreds(name);
    * }
    * }</pre>
@@ -1938,7 +1973,9 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   CheckValidCredsRequest request =
    *       CheckValidCredsRequest.newBuilder()
    *           .setName(
-   *               DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString())
+   *               DataSourceName.ofProjectLocationDataSourceName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_SOURCE]")
+   *                   .toString())
    *           .build();
    *   CheckValidCredsResponse response = dataTransferServiceClient.checkValidCreds(request);
    * }
@@ -1964,7 +2001,9 @@ public class DataTransferServiceClient implements BackgroundResource {
    *   CheckValidCredsRequest request =
    *       CheckValidCredsRequest.newBuilder()
    *           .setName(
-   *               DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString())
+   *               DataSourceName.ofProjectLocationDataSourceName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_SOURCE]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<CheckValidCredsResponse> future =
    *       dataTransferServiceClient.checkValidCredsCallable().futureCall(request);

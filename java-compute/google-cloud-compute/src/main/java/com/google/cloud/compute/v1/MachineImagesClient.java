@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
  *   String project = "project-309310695";
  *   String machineImage = "machineImage1817774420";
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * MachineImagesSettings machineImagesSettings =
  *     MachineImagesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * MachineImagesSettings machineImagesSettings =
  *     MachineImagesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * MachineImagesClient machineImagesClient = MachineImagesClient.create(machineImagesSettings);
@@ -119,7 +125,6 @@ public class MachineImagesClient implements BackgroundResource {
    * Constructs an instance of MachineImagesClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(MachineImagesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final MachineImagesClient create(MachineImagesStub stub) {
     return new MachineImagesClient(stub);
   }
@@ -134,7 +139,6 @@ public class MachineImagesClient implements BackgroundResource {
     this.stub = ((MachineImagesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected MachineImagesClient(MachineImagesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -144,7 +148,6 @@ public class MachineImagesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MachineImagesStub getStub() {
     return stub;
   }
@@ -157,6 +160,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   String project = "project-309310695";
    *   String machineImage = "machineImage1817774420";
@@ -186,6 +191,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   DeleteMachineImageRequest request =
    *       DeleteMachineImageRequest.newBuilder()
@@ -215,6 +222,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   DeleteMachineImageRequest request =
    *       DeleteMachineImageRequest.newBuilder()
@@ -242,6 +251,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   DeleteMachineImageRequest request =
    *       DeleteMachineImageRequest.newBuilder()
@@ -267,6 +278,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   String project = "project-309310695";
    *   String machineImage = "machineImage1817774420";
@@ -295,6 +308,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   GetMachineImageRequest request =
    *       GetMachineImageRequest.newBuilder()
@@ -320,6 +335,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   GetMachineImageRequest request =
    *       GetMachineImageRequest.newBuilder()
@@ -344,6 +361,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -372,6 +391,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   GetIamPolicyMachineImageRequest request =
    *       GetIamPolicyMachineImageRequest.newBuilder()
@@ -398,6 +419,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   GetIamPolicyMachineImageRequest request =
    *       GetIamPolicyMachineImageRequest.newBuilder()
@@ -425,6 +448,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   String project = "project-309310695";
    *   MachineImage machineImageResource = MachineImage.newBuilder().build();
@@ -456,6 +481,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   InsertMachineImageRequest request =
    *       InsertMachineImageRequest.newBuilder()
@@ -488,6 +515,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   InsertMachineImageRequest request =
    *       InsertMachineImageRequest.newBuilder()
@@ -518,6 +547,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   InsertMachineImageRequest request =
    *       InsertMachineImageRequest.newBuilder()
@@ -543,6 +574,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   String project = "project-309310695";
    *   for (MachineImage element : machineImagesClient.list(project).iterateAll()) {
@@ -567,6 +600,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   ListMachineImagesRequest request =
    *       ListMachineImagesRequest.newBuilder()
@@ -597,6 +632,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   ListMachineImagesRequest request =
    *       ListMachineImagesRequest.newBuilder()
@@ -626,6 +663,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   ListMachineImagesRequest request =
    *       ListMachineImagesRequest.newBuilder()
@@ -638,7 +677,7 @@ public class MachineImagesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     MachineImageList response = machineImagesClient.listCallable().call(request);
-   *     for (MachineImage element : response.getResponsesList()) {
+   *     for (MachineImage element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -662,6 +701,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -695,6 +736,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   SetIamPolicyMachineImageRequest request =
    *       SetIamPolicyMachineImageRequest.newBuilder()
@@ -720,6 +763,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   SetIamPolicyMachineImageRequest request =
    *       SetIamPolicyMachineImageRequest.newBuilder()
@@ -744,6 +789,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -777,6 +824,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   TestIamPermissionsMachineImageRequest request =
    *       TestIamPermissionsMachineImageRequest.newBuilder()
@@ -803,6 +852,8 @@ public class MachineImagesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineImagesClient machineImagesClient = MachineImagesClient.create()) {
    *   TestIamPermissionsMachineImageRequest request =
    *       TestIamPermissionsMachineImageRequest.newBuilder()

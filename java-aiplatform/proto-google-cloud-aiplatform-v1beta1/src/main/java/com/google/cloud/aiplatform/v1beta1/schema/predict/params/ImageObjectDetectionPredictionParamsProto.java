@@ -46,12 +46,17 @@ public final class ImageObjectDetectionPredictionParamsProto {
           + "hema.predict.params\032\034google/api/annotati"
           + "ons.proto\"]\n$ImageObjectDetectionPredict"
           + "ionParams\022\034\n\024confidence_threshold\030\001 \001(\002\022"
-          + "\027\n\017max_predictions\030\002 \001(\005B\305\001\n9com.google."
+          + "\027\n\017max_predictions\030\002 \001(\005B\363\002\n9com.google."
           + "cloud.aiplatform.v1beta1.schema.predict."
           + "paramsB)ImageObjectDetectionPredictionPa"
           + "ramsProtoP\001Z[google.golang.org/genproto/"
           + "googleapis/cloud/aiplatform/v1beta1/sche"
-          + "ma/predict/params;paramsb\006proto3"
+          + "ma/predict/params;params\252\0025Google.Cloud."
+          + "AIPlatform.V1Beta1.Schema.Predict.Params"
+          + "\312\0025Google\\Cloud\\AIPlatform\\V1beta1\\Schem"
+          + "a\\Predict\\Params\352\002;Google::Cloud::AIPlat"
+          + "form::V1beta1::Schema::Predict::Paramsb\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

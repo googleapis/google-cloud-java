@@ -107,6 +107,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -273,6 +275,16 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_CANNOT_IP_FORWARD = 383382887;</code>
      */
     NEXT_HOP_CANNOT_IP_FORWARD(383382887),
+    /**
+     *
+     *
+     * <pre>
+     * The route's nextHopInstance URL refers to an instance that does not have an ipv6 interface on the same network as the route.
+     * </pre>
+     *
+     * <code>NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE = 146748434;</code>
+     */
+    NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE(146748434),
     /**
      *
      *
@@ -540,6 +552,16 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The route's nextHopInstance URL refers to an instance that does not have an ipv6 interface on the same network as the route.
+     * </pre>
+     *
+     * <code>NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE = 146748434;</code>
+     */
+    public static final int NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE_VALUE = 146748434;
+    /**
+     *
+     *
+     * <pre>
      * The route's nextHopInstance URL refers to an instance that does not exist.
      * </pre>
      *
@@ -717,6 +739,8 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
           return NEXT_HOP_ADDRESS_NOT_ASSIGNED;
         case 383382887:
           return NEXT_HOP_CANNOT_IP_FORWARD;
+        case 146748434:
+          return NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE;
         case 464250446:
           return NEXT_HOP_INSTANCE_NOT_FOUND;
         case 243758146:

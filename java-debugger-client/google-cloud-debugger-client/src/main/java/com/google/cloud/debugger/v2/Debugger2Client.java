@@ -16,7 +16,6 @@
 
 package com.google.cloud.debugger.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.debugger.v2.stub.Debugger2Stub;
@@ -137,7 +136,6 @@ public class Debugger2Client implements BackgroundResource {
    * Constructs an instance of Debugger2Client, using the given stub for making calls. This is for
    * advanced usage - prefer using create(Debugger2Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final Debugger2Client create(Debugger2Stub stub) {
     return new Debugger2Client(stub);
   }
@@ -151,7 +149,6 @@ public class Debugger2Client implements BackgroundResource {
     this.stub = ((Debugger2StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected Debugger2Client(Debugger2Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -161,7 +158,6 @@ public class Debugger2Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public Debugger2Stub getStub() {
     return stub;
   }

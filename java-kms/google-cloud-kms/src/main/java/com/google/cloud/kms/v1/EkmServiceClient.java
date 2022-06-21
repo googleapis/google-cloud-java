@@ -302,7 +302,7 @@ public class EkmServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListEkmConnectionsResponse response =
    *         ekmServiceClient.listEkmConnectionsCallable().call(request);
-   *     for (EkmConnection element : response.getResponsesList()) {
+   *     for (EkmConnection element : response.getEkmConnectionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

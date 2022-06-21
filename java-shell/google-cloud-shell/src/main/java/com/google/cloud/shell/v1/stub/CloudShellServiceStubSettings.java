@@ -171,7 +171,6 @@ public class CloudShellServiceStubSettings extends StubSettings<CloudShellServic
     return removePublicKeyOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudShellServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

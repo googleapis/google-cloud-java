@@ -39,8 +39,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
 
   private Model() {
     name_ = "";
+    versionId_ = "";
+    versionAliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     displayName_ = "";
     description_ = "";
+    versionDescription_ = "";
     metadataSchemaUri_ = "";
     supportedExportFormats_ = java.util.Collections.emptyList();
     trainingPipeline_ = "";
@@ -167,9 +170,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           case 80:
             {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 supportedDeploymentResourcesTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               supportedDeploymentResourcesTypes_.add(rawValue);
               break;
@@ -180,9 +183,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
               int oldLimit = input.pushLimit(length);
               while (input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                   supportedDeploymentResourcesTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
+                  mutable_bitField0_ |= 0x00000004;
                 }
                 supportedDeploymentResourcesTypes_.add(rawValue);
               }
@@ -192,9 +195,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           case 90:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 supportedInputStorageFormats_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               supportedInputStorageFormats_.add(s);
               break;
@@ -202,9 +205,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           case 98:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
                 supportedOutputStorageFormats_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000010;
               }
               supportedOutputStorageFormats_.add(s);
               break;
@@ -241,10 +244,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             }
           case 122:
             {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 deployedModels_ =
                     new java.util.ArrayList<com.google.cloud.aiplatform.v1.DeployedModelRef>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000020;
               }
               deployedModels_.add(
                   input.readMessage(
@@ -260,10 +263,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             }
           case 138:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 labels_ =
                     com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000040;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
                   input.readMessage(
@@ -273,10 +276,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             }
           case 162:
             {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 supportedExportFormats_ =
                     new java.util.ArrayList<com.google.cloud.aiplatform.v1.Model.ExportFormat>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               supportedExportFormats_.add(
                   input.readMessage(
@@ -323,6 +326,60 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
               artifactUri_ = s;
               break;
             }
+          case 226:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              versionId_ = s;
+              break;
+            }
+          case 234:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                versionAliases_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              versionAliases_.add(s);
+              break;
+            }
+          case 242:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              versionDescription_ = s;
+              break;
+            }
+          case 250:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (versionCreateTime_ != null) {
+                subBuilder = versionCreateTime_.toBuilder();
+              }
+              versionCreateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(versionCreateTime_);
+                versionCreateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 258:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (versionUpdateTime_ != null) {
+                subBuilder = versionUpdateTime_.toBuilder();
+              }
+              versionUpdateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(versionUpdateTime_);
+                versionUpdateTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -339,21 +396,24 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         supportedDeploymentResourcesTypes_ =
             java.util.Collections.unmodifiableList(supportedDeploymentResourcesTypes_);
       }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         supportedInputStorageFormats_ = supportedInputStorageFormats_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         supportedOutputStorageFormats_ = supportedOutputStorageFormats_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         deployedModels_ = java.util.Collections.unmodifiableList(deployedModels_);
       }
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         supportedExportFormats_ = java.util.Collections.unmodifiableList(supportedExportFormats_);
+      }
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        versionAliases_ = versionAliases_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -2069,6 +2129,266 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int VERSION_ID_FIELD_NUMBER = 28;
+  private volatile java.lang.Object versionId_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable. The version ID of the model.
+   * A new version is committed when a new model version is uploaded or
+   * trained under an existing model id. It is an auto-incrementing decimal
+   * number in string representation.
+   * </pre>
+   *
+   * <code>
+   * string version_id = 28 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The versionId.
+   */
+  @java.lang.Override
+  public java.lang.String getVersionId() {
+    java.lang.Object ref = versionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      versionId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Immutable. The version ID of the model.
+   * A new version is committed when a new model version is uploaded or
+   * trained under an existing model id. It is an auto-incrementing decimal
+   * number in string representation.
+   * </pre>
+   *
+   * <code>
+   * string version_id = 28 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for versionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVersionIdBytes() {
+    java.lang.Object ref = versionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      versionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int VERSION_ALIASES_FIELD_NUMBER = 29;
+  private com.google.protobuf.LazyStringList versionAliases_;
+  /**
+   *
+   *
+   * <pre>
+   * User provided version aliases so that a model version can be referenced via
+   * alias (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * instead of auto-generated version id (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+   * version_id. A default version alias will be created for the first version
+   * of the model, and there must be exactly one default version alias for a
+   * model.
+   * </pre>
+   *
+   * <code>repeated string version_aliases = 29;</code>
+   *
+   * @return A list containing the versionAliases.
+   */
+  public com.google.protobuf.ProtocolStringList getVersionAliasesList() {
+    return versionAliases_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User provided version aliases so that a model version can be referenced via
+   * alias (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * instead of auto-generated version id (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+   * version_id. A default version alias will be created for the first version
+   * of the model, and there must be exactly one default version alias for a
+   * model.
+   * </pre>
+   *
+   * <code>repeated string version_aliases = 29;</code>
+   *
+   * @return The count of versionAliases.
+   */
+  public int getVersionAliasesCount() {
+    return versionAliases_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User provided version aliases so that a model version can be referenced via
+   * alias (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * instead of auto-generated version id (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+   * version_id. A default version alias will be created for the first version
+   * of the model, and there must be exactly one default version alias for a
+   * model.
+   * </pre>
+   *
+   * <code>repeated string version_aliases = 29;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The versionAliases at the given index.
+   */
+  public java.lang.String getVersionAliases(int index) {
+    return versionAliases_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User provided version aliases so that a model version can be referenced via
+   * alias (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+   * instead of auto-generated version id (i.e.
+   * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+   * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+   * version_id. A default version alias will be created for the first version
+   * of the model, and there must be exactly one default version alias for a
+   * model.
+   * </pre>
+   *
+   * <code>repeated string version_aliases = 29;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the versionAliases at the given index.
+   */
+  public com.google.protobuf.ByteString getVersionAliasesBytes(int index) {
+    return versionAliases_.getByteString(index);
+  }
+
+  public static final int VERSION_CREATE_TIME_FIELD_NUMBER = 31;
+  private com.google.protobuf.Timestamp versionCreateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this version was created.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the versionCreateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasVersionCreateTime() {
+    return versionCreateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this version was created.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The versionCreateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getVersionCreateTime() {
+    return versionCreateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : versionCreateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this version was created.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getVersionCreateTimeOrBuilder() {
+    return getVersionCreateTime();
+  }
+
+  public static final int VERSION_UPDATE_TIME_FIELD_NUMBER = 32;
+  private com.google.protobuf.Timestamp versionUpdateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this version was most recently updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the versionUpdateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasVersionUpdateTime() {
+    return versionUpdateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this version was most recently updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The versionUpdateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getVersionUpdateTime() {
+    return versionUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : versionUpdateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this version was most recently updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getVersionUpdateTimeOrBuilder() {
+    return getVersionUpdateTime();
+  }
+
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object displayName_;
   /**
@@ -2165,6 +2485,55 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int VERSION_DESCRIPTION_FIELD_NUMBER = 30;
+  private volatile java.lang.Object versionDescription_;
+  /**
+   *
+   *
+   * <pre>
+   * The description of this version.
+   * </pre>
+   *
+   * <code>string version_description = 30;</code>
+   *
+   * @return The versionDescription.
+   */
+  @java.lang.Override
+  public java.lang.String getVersionDescription() {
+    java.lang.Object ref = versionDescription_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      versionDescription_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The description of this version.
+   * </pre>
+   *
+   * <code>string version_description = 30;</code>
+   *
+   * @return The bytes for versionDescription.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVersionDescriptionBytes() {
+    java.lang.Object ref = versionDescription_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      versionDescription_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -3699,6 +4068,21 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 26, artifactUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 28, versionId_);
+    }
+    for (int i = 0; i < versionAliases_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 29, versionAliases_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionDescription_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 30, versionDescription_);
+    }
+    if (versionCreateTime_ != null) {
+      output.writeMessage(31, getVersionCreateTime());
+    }
+    if (versionUpdateTime_ != null) {
+      output.writeMessage(32, getVersionUpdateTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -3798,6 +4182,26 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(artifactUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, artifactUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, versionId_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < versionAliases_.size(); i++) {
+        dataSize += computeStringSizeNoTag(versionAliases_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getVersionAliasesList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionDescription_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30, versionDescription_);
+    }
+    if (versionCreateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getVersionCreateTime());
+    }
+    if (versionUpdateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getVersionUpdateTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3814,8 +4218,19 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.aiplatform.v1.Model other = (com.google.cloud.aiplatform.v1.Model) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getVersionId().equals(other.getVersionId())) return false;
+    if (!getVersionAliasesList().equals(other.getVersionAliasesList())) return false;
+    if (hasVersionCreateTime() != other.hasVersionCreateTime()) return false;
+    if (hasVersionCreateTime()) {
+      if (!getVersionCreateTime().equals(other.getVersionCreateTime())) return false;
+    }
+    if (hasVersionUpdateTime() != other.hasVersionUpdateTime()) return false;
+    if (hasVersionUpdateTime()) {
+      if (!getVersionUpdateTime().equals(other.getVersionUpdateTime())) return false;
+    }
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (!getVersionDescription().equals(other.getVersionDescription())) return false;
     if (hasPredictSchemata() != other.hasPredictSchemata()) return false;
     if (hasPredictSchemata()) {
       if (!getPredictSchemata().equals(other.getPredictSchemata())) return false;
@@ -3871,10 +4286,26 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getVersionId().hashCode();
+    if (getVersionAliasesCount() > 0) {
+      hash = (37 * hash) + VERSION_ALIASES_FIELD_NUMBER;
+      hash = (53 * hash) + getVersionAliasesList().hashCode();
+    }
+    if (hasVersionCreateTime()) {
+      hash = (37 * hash) + VERSION_CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getVersionCreateTime().hashCode();
+    }
+    if (hasVersionUpdateTime()) {
+      hash = (37 * hash) + VERSION_UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getVersionUpdateTime().hashCode();
+    }
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + VERSION_DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersionDescription().hashCode();
     if (hasPredictSchemata()) {
       hash = (37 * hash) + PREDICT_SCHEMATA_FIELD_NUMBER;
       hash = (53 * hash) + getPredictSchemata().hashCode();
@@ -4104,9 +4535,27 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       name_ = "";
 
+      versionId_ = "";
+
+      versionAliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      if (versionCreateTimeBuilder_ == null) {
+        versionCreateTime_ = null;
+      } else {
+        versionCreateTime_ = null;
+        versionCreateTimeBuilder_ = null;
+      }
+      if (versionUpdateTimeBuilder_ == null) {
+        versionUpdateTime_ = null;
+      } else {
+        versionUpdateTime_ = null;
+        versionUpdateTimeBuilder_ = null;
+      }
       displayName_ = "";
 
       description_ = "";
+
+      versionDescription_ = "";
 
       if (predictSchemataBuilder_ == null) {
         predictSchemata_ = null;
@@ -4124,7 +4573,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (supportedExportFormatsBuilder_ == null) {
         supportedExportFormats_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         supportedExportFormatsBuilder_.clear();
       }
@@ -4139,11 +4588,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       artifactUri_ = "";
 
       supportedDeploymentResourcesTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      supportedInputStorageFormats_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
-      supportedOutputStorageFormats_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      supportedInputStorageFormats_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      supportedOutputStorageFormats_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (createTimeBuilder_ == null) {
         createTime_ = null;
       } else {
@@ -4158,7 +4607,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (deployedModelsBuilder_ == null) {
         deployedModels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         deployedModelsBuilder_.clear();
       }
@@ -4205,8 +4654,25 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.aiplatform.v1.Model result = new com.google.cloud.aiplatform.v1.Model(this);
       int from_bitField0_ = bitField0_;
       result.name_ = name_;
+      result.versionId_ = versionId_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        versionAliases_ = versionAliases_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.versionAliases_ = versionAliases_;
+      if (versionCreateTimeBuilder_ == null) {
+        result.versionCreateTime_ = versionCreateTime_;
+      } else {
+        result.versionCreateTime_ = versionCreateTimeBuilder_.build();
+      }
+      if (versionUpdateTimeBuilder_ == null) {
+        result.versionUpdateTime_ = versionUpdateTime_;
+      } else {
+        result.versionUpdateTime_ = versionUpdateTimeBuilder_.build();
+      }
       result.displayName_ = displayName_;
       result.description_ = description_;
+      result.versionDescription_ = versionDescription_;
       if (predictSchemataBuilder_ == null) {
         result.predictSchemata_ = predictSchemata_;
       } else {
@@ -4219,9 +4685,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         result.metadata_ = metadataBuilder_.build();
       }
       if (supportedExportFormatsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           supportedExportFormats_ = java.util.Collections.unmodifiableList(supportedExportFormats_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.supportedExportFormats_ = supportedExportFormats_;
       } else {
@@ -4234,20 +4700,20 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         result.containerSpec_ = containerSpecBuilder_.build();
       }
       result.artifactUri_ = artifactUri_;
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         supportedDeploymentResourcesTypes_ =
             java.util.Collections.unmodifiableList(supportedDeploymentResourcesTypes_);
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.supportedDeploymentResourcesTypes_ = supportedDeploymentResourcesTypes_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        supportedInputStorageFormats_ = supportedInputStorageFormats_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
       }
-      result.supportedInputStorageFormats_ = supportedInputStorageFormats_;
+      result.supportedDeploymentResourcesTypes_ = supportedDeploymentResourcesTypes_;
       if (((bitField0_ & 0x00000008) != 0)) {
-        supportedOutputStorageFormats_ = supportedOutputStorageFormats_.getUnmodifiableView();
+        supportedInputStorageFormats_ = supportedInputStorageFormats_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.supportedInputStorageFormats_ = supportedInputStorageFormats_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        supportedOutputStorageFormats_ = supportedOutputStorageFormats_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.supportedOutputStorageFormats_ = supportedOutputStorageFormats_;
       if (createTimeBuilder_ == null) {
@@ -4261,9 +4727,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTimeBuilder_.build();
       }
       if (deployedModelsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           deployedModels_ = java.util.Collections.unmodifiableList(deployedModels_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.deployedModels_ = deployedModels_;
       } else {
@@ -4335,12 +4801,36 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         name_ = other.name_;
         onChanged();
       }
+      if (!other.getVersionId().isEmpty()) {
+        versionId_ = other.versionId_;
+        onChanged();
+      }
+      if (!other.versionAliases_.isEmpty()) {
+        if (versionAliases_.isEmpty()) {
+          versionAliases_ = other.versionAliases_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureVersionAliasesIsMutable();
+          versionAliases_.addAll(other.versionAliases_);
+        }
+        onChanged();
+      }
+      if (other.hasVersionCreateTime()) {
+        mergeVersionCreateTime(other.getVersionCreateTime());
+      }
+      if (other.hasVersionUpdateTime()) {
+        mergeVersionUpdateTime(other.getVersionUpdateTime());
+      }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        onChanged();
+      }
+      if (!other.getVersionDescription().isEmpty()) {
+        versionDescription_ = other.versionDescription_;
         onChanged();
       }
       if (other.hasPredictSchemata()) {
@@ -4357,7 +4847,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         if (!other.supportedExportFormats_.isEmpty()) {
           if (supportedExportFormats_.isEmpty()) {
             supportedExportFormats_ = other.supportedExportFormats_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSupportedExportFormatsIsMutable();
             supportedExportFormats_.addAll(other.supportedExportFormats_);
@@ -4370,7 +4860,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             supportedExportFormatsBuilder_.dispose();
             supportedExportFormatsBuilder_ = null;
             supportedExportFormats_ = other.supportedExportFormats_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             supportedExportFormatsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSupportedExportFormatsFieldBuilder()
@@ -4394,7 +4884,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (!other.supportedDeploymentResourcesTypes_.isEmpty()) {
         if (supportedDeploymentResourcesTypes_.isEmpty()) {
           supportedDeploymentResourcesTypes_ = other.supportedDeploymentResourcesTypes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureSupportedDeploymentResourcesTypesIsMutable();
           supportedDeploymentResourcesTypes_.addAll(other.supportedDeploymentResourcesTypes_);
@@ -4404,7 +4894,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (!other.supportedInputStorageFormats_.isEmpty()) {
         if (supportedInputStorageFormats_.isEmpty()) {
           supportedInputStorageFormats_ = other.supportedInputStorageFormats_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureSupportedInputStorageFormatsIsMutable();
           supportedInputStorageFormats_.addAll(other.supportedInputStorageFormats_);
@@ -4414,7 +4904,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (!other.supportedOutputStorageFormats_.isEmpty()) {
         if (supportedOutputStorageFormats_.isEmpty()) {
           supportedOutputStorageFormats_ = other.supportedOutputStorageFormats_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureSupportedOutputStorageFormatsIsMutable();
           supportedOutputStorageFormats_.addAll(other.supportedOutputStorageFormats_);
@@ -4431,7 +4921,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         if (!other.deployedModels_.isEmpty()) {
           if (deployedModels_.isEmpty()) {
             deployedModels_ = other.deployedModels_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureDeployedModelsIsMutable();
             deployedModels_.addAll(other.deployedModels_);
@@ -4444,7 +4934,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
             deployedModelsBuilder_.dispose();
             deployedModelsBuilder_ = null;
             deployedModels_ = other.deployedModels_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             deployedModelsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDeployedModelsFieldBuilder()
@@ -4600,6 +5090,783 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       name_ = value;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object versionId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. The version ID of the model.
+     * A new version is committed when a new model version is uploaded or
+     * trained under an existing model id. It is an auto-incrementing decimal
+     * number in string representation.
+     * </pre>
+     *
+     * <code>
+     * string version_id = 28 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The versionId.
+     */
+    public java.lang.String getVersionId() {
+      java.lang.Object ref = versionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        versionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. The version ID of the model.
+     * A new version is committed when a new model version is uploaded or
+     * trained under an existing model id. It is an auto-incrementing decimal
+     * number in string representation.
+     * </pre>
+     *
+     * <code>
+     * string version_id = 28 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for versionId.
+     */
+    public com.google.protobuf.ByteString getVersionIdBytes() {
+      java.lang.Object ref = versionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        versionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. The version ID of the model.
+     * A new version is committed when a new model version is uploaded or
+     * trained under an existing model id. It is an auto-incrementing decimal
+     * number in string representation.
+     * </pre>
+     *
+     * <code>
+     * string version_id = 28 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The versionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      versionId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. The version ID of the model.
+     * A new version is committed when a new model version is uploaded or
+     * trained under an existing model id. It is an auto-incrementing decimal
+     * number in string representation.
+     * </pre>
+     *
+     * <code>
+     * string version_id = 28 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVersionId() {
+
+      versionId_ = getDefaultInstance().getVersionId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Immutable. The version ID of the model.
+     * A new version is committed when a new model version is uploaded or
+     * trained under an existing model id. It is an auto-incrementing decimal
+     * number in string representation.
+     * </pre>
+     *
+     * <code>
+     * string version_id = 28 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for versionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      versionId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList versionAliases_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureVersionAliasesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        versionAliases_ = new com.google.protobuf.LazyStringArrayList(versionAliases_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User provided version aliases so that a model version can be referenced via
+     * alias (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * instead of auto-generated version id (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+     * version_id. A default version alias will be created for the first version
+     * of the model, and there must be exactly one default version alias for a
+     * model.
+     * </pre>
+     *
+     * <code>repeated string version_aliases = 29;</code>
+     *
+     * @return A list containing the versionAliases.
+     */
+    public com.google.protobuf.ProtocolStringList getVersionAliasesList() {
+      return versionAliases_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User provided version aliases so that a model version can be referenced via
+     * alias (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * instead of auto-generated version id (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+     * version_id. A default version alias will be created for the first version
+     * of the model, and there must be exactly one default version alias for a
+     * model.
+     * </pre>
+     *
+     * <code>repeated string version_aliases = 29;</code>
+     *
+     * @return The count of versionAliases.
+     */
+    public int getVersionAliasesCount() {
+      return versionAliases_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User provided version aliases so that a model version can be referenced via
+     * alias (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * instead of auto-generated version id (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+     * version_id. A default version alias will be created for the first version
+     * of the model, and there must be exactly one default version alias for a
+     * model.
+     * </pre>
+     *
+     * <code>repeated string version_aliases = 29;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The versionAliases at the given index.
+     */
+    public java.lang.String getVersionAliases(int index) {
+      return versionAliases_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User provided version aliases so that a model version can be referenced via
+     * alias (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * instead of auto-generated version id (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+     * version_id. A default version alias will be created for the first version
+     * of the model, and there must be exactly one default version alias for a
+     * model.
+     * </pre>
+     *
+     * <code>repeated string version_aliases = 29;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the versionAliases at the given index.
+     */
+    public com.google.protobuf.ByteString getVersionAliasesBytes(int index) {
+      return versionAliases_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User provided version aliases so that a model version can be referenced via
+     * alias (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * instead of auto-generated version id (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+     * version_id. A default version alias will be created for the first version
+     * of the model, and there must be exactly one default version alias for a
+     * model.
+     * </pre>
+     *
+     * <code>repeated string version_aliases = 29;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The versionAliases to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionAliases(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureVersionAliasesIsMutable();
+      versionAliases_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User provided version aliases so that a model version can be referenced via
+     * alias (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * instead of auto-generated version id (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+     * version_id. A default version alias will be created for the first version
+     * of the model, and there must be exactly one default version alias for a
+     * model.
+     * </pre>
+     *
+     * <code>repeated string version_aliases = 29;</code>
+     *
+     * @param value The versionAliases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addVersionAliases(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureVersionAliasesIsMutable();
+      versionAliases_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User provided version aliases so that a model version can be referenced via
+     * alias (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * instead of auto-generated version id (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+     * version_id. A default version alias will be created for the first version
+     * of the model, and there must be exactly one default version alias for a
+     * model.
+     * </pre>
+     *
+     * <code>repeated string version_aliases = 29;</code>
+     *
+     * @param values The versionAliases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllVersionAliases(java.lang.Iterable<java.lang.String> values) {
+      ensureVersionAliasesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, versionAliases_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User provided version aliases so that a model version can be referenced via
+     * alias (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * instead of auto-generated version id (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+     * version_id. A default version alias will be created for the first version
+     * of the model, and there must be exactly one default version alias for a
+     * model.
+     * </pre>
+     *
+     * <code>repeated string version_aliases = 29;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVersionAliases() {
+      versionAliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User provided version aliases so that a model version can be referenced via
+     * alias (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_alias}
+     * instead of auto-generated version id (i.e.
+     * projects/{project}/locations/{location}/models/{model_id}&#64;{version_id}).
+     * The format is [a-z][a-zA-Z0-9-]{0,126}[a-z0-9] to distinguish from
+     * version_id. A default version alias will be created for the first version
+     * of the model, and there must be exactly one default version alias for a
+     * model.
+     * </pre>
+     *
+     * <code>repeated string version_aliases = 29;</code>
+     *
+     * @param value The bytes of the versionAliases to add.
+     * @return This builder for chaining.
+     */
+    public Builder addVersionAliasesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureVersionAliasesIsMutable();
+      versionAliases_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp versionCreateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        versionCreateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the versionCreateTime field is set.
+     */
+    public boolean hasVersionCreateTime() {
+      return versionCreateTimeBuilder_ != null || versionCreateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The versionCreateTime.
+     */
+    public com.google.protobuf.Timestamp getVersionCreateTime() {
+      if (versionCreateTimeBuilder_ == null) {
+        return versionCreateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : versionCreateTime_;
+      } else {
+        return versionCreateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVersionCreateTime(com.google.protobuf.Timestamp value) {
+      if (versionCreateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        versionCreateTime_ = value;
+        onChanged();
+      } else {
+        versionCreateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVersionCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (versionCreateTimeBuilder_ == null) {
+        versionCreateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        versionCreateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeVersionCreateTime(com.google.protobuf.Timestamp value) {
+      if (versionCreateTimeBuilder_ == null) {
+        if (versionCreateTime_ != null) {
+          versionCreateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(versionCreateTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          versionCreateTime_ = value;
+        }
+        onChanged();
+      } else {
+        versionCreateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearVersionCreateTime() {
+      if (versionCreateTimeBuilder_ == null) {
+        versionCreateTime_ = null;
+        onChanged();
+      } else {
+        versionCreateTime_ = null;
+        versionCreateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getVersionCreateTimeBuilder() {
+
+      onChanged();
+      return getVersionCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getVersionCreateTimeOrBuilder() {
+      if (versionCreateTimeBuilder_ != null) {
+        return versionCreateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return versionCreateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : versionCreateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_create_time = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getVersionCreateTimeFieldBuilder() {
+      if (versionCreateTimeBuilder_ == null) {
+        versionCreateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getVersionCreateTime(), getParentForChildren(), isClean());
+        versionCreateTime_ = null;
+      }
+      return versionCreateTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp versionUpdateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        versionUpdateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was most recently updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the versionUpdateTime field is set.
+     */
+    public boolean hasVersionUpdateTime() {
+      return versionUpdateTimeBuilder_ != null || versionUpdateTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was most recently updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The versionUpdateTime.
+     */
+    public com.google.protobuf.Timestamp getVersionUpdateTime() {
+      if (versionUpdateTimeBuilder_ == null) {
+        return versionUpdateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : versionUpdateTime_;
+      } else {
+        return versionUpdateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was most recently updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVersionUpdateTime(com.google.protobuf.Timestamp value) {
+      if (versionUpdateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        versionUpdateTime_ = value;
+        onChanged();
+      } else {
+        versionUpdateTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was most recently updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVersionUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (versionUpdateTimeBuilder_ == null) {
+        versionUpdateTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        versionUpdateTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was most recently updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeVersionUpdateTime(com.google.protobuf.Timestamp value) {
+      if (versionUpdateTimeBuilder_ == null) {
+        if (versionUpdateTime_ != null) {
+          versionUpdateTime_ =
+              com.google.protobuf.Timestamp.newBuilder(versionUpdateTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          versionUpdateTime_ = value;
+        }
+        onChanged();
+      } else {
+        versionUpdateTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was most recently updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearVersionUpdateTime() {
+      if (versionUpdateTimeBuilder_ == null) {
+        versionUpdateTime_ = null;
+        onChanged();
+      } else {
+        versionUpdateTime_ = null;
+        versionUpdateTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was most recently updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getVersionUpdateTimeBuilder() {
+
+      onChanged();
+      return getVersionUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was most recently updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getVersionUpdateTimeOrBuilder() {
+      if (versionUpdateTimeBuilder_ != null) {
+        return versionUpdateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return versionUpdateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : versionUpdateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this version was most recently updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp version_update_time = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getVersionUpdateTimeFieldBuilder() {
+      if (versionUpdateTimeBuilder_ == null) {
+        versionUpdateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getVersionUpdateTime(), getParentForChildren(), isClean());
+        versionUpdateTime_ = null;
+      }
+      return versionUpdateTimeBuilder_;
     }
 
     private java.lang.Object displayName_ = "";
@@ -4820,6 +6087,112 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object versionDescription_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The description of this version.
+     * </pre>
+     *
+     * <code>string version_description = 30;</code>
+     *
+     * @return The versionDescription.
+     */
+    public java.lang.String getVersionDescription() {
+      java.lang.Object ref = versionDescription_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        versionDescription_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of this version.
+     * </pre>
+     *
+     * <code>string version_description = 30;</code>
+     *
+     * @return The bytes for versionDescription.
+     */
+    public com.google.protobuf.ByteString getVersionDescriptionBytes() {
+      java.lang.Object ref = versionDescription_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        versionDescription_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of this version.
+     * </pre>
+     *
+     * <code>string version_description = 30;</code>
+     *
+     * @param value The versionDescription to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      versionDescription_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of this version.
+     * </pre>
+     *
+     * <code>string version_description = 30;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVersionDescription() {
+
+      versionDescription_ = getDefaultInstance().getVersionDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of this version.
+     * </pre>
+     *
+     * <code>string version_description = 30;</code>
+     *
+     * @param value The bytes for versionDescription to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      versionDescription_ = value;
       onChanged();
       return this;
     }
@@ -5380,11 +6753,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         supportedExportFormats_ = java.util.Collections.emptyList();
 
     private void ensureSupportedExportFormatsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         supportedExportFormats_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.Model.ExportFormat>(
                 supportedExportFormats_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -5637,7 +7010,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSupportedExportFormats() {
       if (supportedExportFormatsBuilder_ == null) {
         supportedExportFormats_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         supportedExportFormatsBuilder_.clear();
@@ -5786,7 +7159,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1.Model.ExportFormat.Builder,
                 com.google.cloud.aiplatform.v1.Model.ExportFormatOrBuilder>(
                 supportedExportFormats_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         supportedExportFormats_ = null;
@@ -6275,10 +7648,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSupportedDeploymentResourcesTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         supportedDeploymentResourcesTypes_ =
             new java.util.ArrayList<java.lang.Integer>(supportedDeploymentResourcesTypes_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -6493,7 +7866,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSupportedDeploymentResourcesTypes() {
       supportedDeploymentResourcesTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -6653,10 +8026,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSupportedInputStorageFormatsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         supportedInputStorageFormats_ =
             new com.google.protobuf.LazyStringArrayList(supportedInputStorageFormats_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -7039,7 +8412,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSupportedInputStorageFormats() {
       supportedInputStorageFormats_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -7101,10 +8474,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSupportedOutputStorageFormatsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         supportedOutputStorageFormats_ =
             new com.google.protobuf.LazyStringArrayList(supportedOutputStorageFormats_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -7449,7 +8822,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSupportedOutputStorageFormats() {
       supportedOutputStorageFormats_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -7908,11 +9281,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDeployedModelsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         deployedModels_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1.DeployedModelRef>(
                 deployedModels_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -8163,7 +9536,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDeployedModels() {
       if (deployedModelsBuilder_ == null) {
         deployedModels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         deployedModelsBuilder_.clear();
@@ -8310,7 +9683,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1.DeployedModelRef.Builder,
                 com.google.cloud.aiplatform.v1.DeployedModelRefOrBuilder>(
                 deployedModels_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         deployedModels_ = null;

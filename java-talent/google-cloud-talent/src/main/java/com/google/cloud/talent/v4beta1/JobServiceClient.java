@@ -1162,16 +1162,20 @@ public class JobServiceClient implements BackgroundResource {
    *     <p>Supported operator: =, AND
    *     <p>The fields eligible for filtering are:
    *     <ul>
-   *       <li>`companyName` (Required)
+   *       <li>`companyName`
    *       <li>`requisitionId`
    *       <li>`status` Available values: OPEN, EXPIRED, ALL. Defaults to OPEN if no value is
    *           specified.
    *     </ul>
+   *     <p>At least one of `companyName` and `requisitionId` must present or an INVALID_ARGUMENT
+   *     error is thrown.
    *     <p>Sample Query:
    *     <ul>
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz"
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND requisitionId = "req-1"
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND status = "EXPIRED"
+   *       <li>requisitionId = "req-1"
+   *       <li>requisitionId = "req-1" AND status = "EXPIRED"
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1211,16 +1215,20 @@ public class JobServiceClient implements BackgroundResource {
    *     <p>Supported operator: =, AND
    *     <p>The fields eligible for filtering are:
    *     <ul>
-   *       <li>`companyName` (Required)
+   *       <li>`companyName`
    *       <li>`requisitionId`
    *       <li>`status` Available values: OPEN, EXPIRED, ALL. Defaults to OPEN if no value is
    *           specified.
    *     </ul>
+   *     <p>At least one of `companyName` and `requisitionId` must present or an INVALID_ARGUMENT
+   *     error is thrown.
    *     <p>Sample Query:
    *     <ul>
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz"
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND requisitionId = "req-1"
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND status = "EXPIRED"
+   *       <li>requisitionId = "req-1"
+   *       <li>requisitionId = "req-1" AND status = "EXPIRED"
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1260,16 +1268,20 @@ public class JobServiceClient implements BackgroundResource {
    *     <p>Supported operator: =, AND
    *     <p>The fields eligible for filtering are:
    *     <ul>
-   *       <li>`companyName` (Required)
+   *       <li>`companyName`
    *       <li>`requisitionId`
    *       <li>`status` Available values: OPEN, EXPIRED, ALL. Defaults to OPEN if no value is
    *           specified.
    *     </ul>
+   *     <p>At least one of `companyName` and `requisitionId` must present or an INVALID_ARGUMENT
+   *     error is thrown.
    *     <p>Sample Query:
    *     <ul>
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz"
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND requisitionId = "req-1"
    *       <li>companyName = "projects/foo/tenants/bar/companies/baz" AND status = "EXPIRED"
+   *       <li>requisitionId = "req-1"
+   *       <li>requisitionId = "req-1" AND status = "EXPIRED"
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1361,7 +1373,7 @@ public class JobServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListJobsResponse response = jobServiceClient.listJobsCallable().call(request);
-   *     for (Job element : response.getResponsesList()) {
+   *     for (Job element : response.getJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1500,7 +1512,7 @@ public class JobServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     SearchJobsResponse response = jobServiceClient.searchJobsCallable().call(request);
-   *     for (SearchJobsResponse.MatchingJob element : response.getResponsesList()) {
+   *     for (SearchJobsResponse.MatchingJob element : response.getMatchingJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1649,7 +1661,7 @@ public class JobServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     SearchJobsResponse response = jobServiceClient.searchJobsForAlertCallable().call(request);
-   *     for (SearchJobsResponse.MatchingJob element : response.getResponsesList()) {
+   *     for (SearchJobsResponse.MatchingJob element : response.getMatchingJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

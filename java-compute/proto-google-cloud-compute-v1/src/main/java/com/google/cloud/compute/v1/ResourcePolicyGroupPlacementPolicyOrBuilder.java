@@ -27,7 +27,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    *
    *
    * <pre>
-   * The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
+   * The number of availability domains to spread instances across. If two instances are in different availability domain, they are not in the same low latency network.
    * </pre>
    *
    * <code>optional int32 availability_domain_count = 12453432;</code>
@@ -39,7 +39,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    *
    *
    * <pre>
-   * The number of availability domains instances will be spread across. If two instances are in different availability domain, they will not be put in the same low latency network
+   * The number of availability domains to spread instances across. If two instances are in different availability domain, they are not in the same low latency network.
    * </pre>
    *
    * <code>optional int32 availability_domain_count = 12453432;</code>
@@ -92,7 +92,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    *
    *
    * <pre>
-   * Number of vms in this placement group
+   * Number of VMs in this placement group. Google does not recommend that you use this field unless you use a compact policy and you want your policy to work only if it contains this exact number of VMs.
    * </pre>
    *
    * <code>optional int32 vm_count = 261463431;</code>
@@ -104,7 +104,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    *
    *
    * <pre>
-   * Number of vms in this placement group
+   * Number of VMs in this placement group. Google does not recommend that you use this field unless you use a compact policy and you want your policy to work only if it contains this exact number of VMs.
    * </pre>
    *
    * <code>optional int32 vm_count = 261463431;</code>

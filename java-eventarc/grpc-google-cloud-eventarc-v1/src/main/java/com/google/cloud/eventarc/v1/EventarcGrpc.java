@@ -463,6 +463,93 @@ public final class EventarcGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetProviderRequest, com.google.cloud.eventarc.v1.Provider>
+      getGetProviderMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProvider",
+      requestType = com.google.cloud.eventarc.v1.GetProviderRequest.class,
+      responseType = com.google.cloud.eventarc.v1.Provider.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.GetProviderRequest, com.google.cloud.eventarc.v1.Provider>
+      getGetProviderMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.GetProviderRequest, com.google.cloud.eventarc.v1.Provider>
+        getGetProviderMethod;
+    if ((getGetProviderMethod = EventarcGrpc.getGetProviderMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getGetProviderMethod = EventarcGrpc.getGetProviderMethod) == null) {
+          EventarcGrpc.getGetProviderMethod =
+              getGetProviderMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.GetProviderRequest,
+                          com.google.cloud.eventarc.v1.Provider>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetProvider"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.GetProviderRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.Provider.getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("GetProvider"))
+                      .build();
+        }
+      }
+    }
+    return getGetProviderMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListProvidersRequest,
+          com.google.cloud.eventarc.v1.ListProvidersResponse>
+      getListProvidersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListProviders",
+      requestType = com.google.cloud.eventarc.v1.ListProvidersRequest.class,
+      responseType = com.google.cloud.eventarc.v1.ListProvidersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.v1.ListProvidersRequest,
+          com.google.cloud.eventarc.v1.ListProvidersResponse>
+      getListProvidersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.v1.ListProvidersRequest,
+            com.google.cloud.eventarc.v1.ListProvidersResponse>
+        getListProvidersMethod;
+    if ((getListProvidersMethod = EventarcGrpc.getListProvidersMethod) == null) {
+      synchronized (EventarcGrpc.class) {
+        if ((getListProvidersMethod = EventarcGrpc.getListProvidersMethod) == null) {
+          EventarcGrpc.getListProvidersMethod =
+              getListProvidersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.v1.ListProvidersRequest,
+                          com.google.cloud.eventarc.v1.ListProvidersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListProviders"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListProvidersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.v1.ListProvidersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new EventarcMethodDescriptorSupplier("ListProviders"))
+                      .build();
+        }
+      }
+    }
+    return getListProvidersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.eventarc.v1.GetChannelConnectionRequest,
           com.google.cloud.eventarc.v1.ChannelConnection>
       getGetChannelConnectionMethod;
@@ -850,6 +937,35 @@ public final class EventarcGrpc {
      *
      *
      * <pre>
+     * Get a single Provider.
+     * </pre>
+     */
+    public void getProvider(
+        com.google.cloud.eventarc.v1.GetProviderRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.Provider> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetProviderMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List providers.
+     * </pre>
+     */
+    public void listProviders(
+        com.google.cloud.eventarc.v1.ListProvidersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListProvidersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListProvidersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get a single ChannelConnection.
      * </pre>
      */
@@ -969,6 +1085,19 @@ public final class EventarcGrpc {
                   new MethodHandlers<
                       com.google.cloud.eventarc.v1.DeleteChannelRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_CHANNEL)))
+          .addMethod(
+              getGetProviderMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.v1.GetProviderRequest,
+                      com.google.cloud.eventarc.v1.Provider>(this, METHODID_GET_PROVIDER)))
+          .addMethod(
+              getListProvidersMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.eventarc.v1.ListProvidersRequest,
+                      com.google.cloud.eventarc.v1.ListProvidersResponse>(
+                      this, METHODID_LIST_PROVIDERS)))
           .addMethod(
               getGetChannelConnectionMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1171,6 +1300,39 @@ public final class EventarcGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteChannelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Provider.
+     * </pre>
+     */
+    public void getProvider(
+        com.google.cloud.eventarc.v1.GetProviderRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.Provider> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetProviderMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List providers.
+     * </pre>
+     */
+    public void listProviders(
+        com.google.cloud.eventarc.v1.ListProvidersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListProvidersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListProvidersMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1395,6 +1557,32 @@ public final class EventarcGrpc {
      *
      *
      * <pre>
+     * Get a single Provider.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.Provider getProvider(
+        com.google.cloud.eventarc.v1.GetProviderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProviderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List providers.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListProvidersResponse listProviders(
+        com.google.cloud.eventarc.v1.ListProvidersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProvidersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get a single ChannelConnection.
      * </pre>
      */
@@ -1599,6 +1787,33 @@ public final class EventarcGrpc {
      *
      *
      * <pre>
+     * Get a single Provider.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.eventarc.v1.Provider>
+        getProvider(com.google.cloud.eventarc.v1.GetProviderRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetProviderMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List providers.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.v1.ListProvidersResponse>
+        listProviders(com.google.cloud.eventarc.v1.ListProvidersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListProvidersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get a single ChannelConnection.
      * </pre>
      */
@@ -1662,10 +1877,12 @@ public final class EventarcGrpc {
   private static final int METHODID_CREATE_CHANNEL = 7;
   private static final int METHODID_UPDATE_CHANNEL = 8;
   private static final int METHODID_DELETE_CHANNEL = 9;
-  private static final int METHODID_GET_CHANNEL_CONNECTION = 10;
-  private static final int METHODID_LIST_CHANNEL_CONNECTIONS = 11;
-  private static final int METHODID_CREATE_CHANNEL_CONNECTION = 12;
-  private static final int METHODID_DELETE_CHANNEL_CONNECTION = 13;
+  private static final int METHODID_GET_PROVIDER = 10;
+  private static final int METHODID_LIST_PROVIDERS = 11;
+  private static final int METHODID_GET_CHANNEL_CONNECTION = 12;
+  private static final int METHODID_LIST_CHANNEL_CONNECTIONS = 13;
+  private static final int METHODID_CREATE_CHANNEL_CONNECTION = 14;
+  private static final int METHODID_DELETE_CHANNEL_CONNECTION = 15;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1735,6 +1952,18 @@ public final class EventarcGrpc {
           serviceImpl.deleteChannel(
               (com.google.cloud.eventarc.v1.DeleteChannelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_PROVIDER:
+          serviceImpl.getProvider(
+              (com.google.cloud.eventarc.v1.GetProviderRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.Provider>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_PROVIDERS:
+          serviceImpl.listProviders(
+              (com.google.cloud.eventarc.v1.ListProvidersRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.v1.ListProvidersResponse>)
+                  responseObserver);
           break;
         case METHODID_GET_CHANNEL_CONNECTION:
           serviceImpl.getChannelConnection(
@@ -1831,6 +2060,8 @@ public final class EventarcGrpc {
                       .addMethod(getCreateChannelMethod())
                       .addMethod(getUpdateChannelMethod())
                       .addMethod(getDeleteChannelMethod())
+                      .addMethod(getGetProviderMethod())
+                      .addMethod(getListProvidersMethod())
                       .addMethod(getGetChannelConnectionMethod())
                       .addMethod(getListChannelConnectionsMethod())
                       .addMethod(getCreateChannelConnectionMethod())

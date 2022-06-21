@@ -673,7 +673,7 @@ public class AgentsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     SearchAgentsResponse response = agentsClient.searchAgentsCallable().call(request);
-   *     for (Agent element : response.getResponsesList()) {
+   *     for (Agent element : response.getAgentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

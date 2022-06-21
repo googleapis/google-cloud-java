@@ -305,7 +305,7 @@ public class DataFusionClient implements BackgroundResource {
    *   while (true) {
    *     ListAvailableVersionsResponse response =
    *         dataFusionClient.listAvailableVersionsCallable().call(request);
-   *     for (Version element : response.getResponsesList()) {
+   *     for (Version element : response.getAvailableVersionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -406,7 +406,7 @@ public class DataFusionClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListInstancesResponse response = dataFusionClient.listInstancesCallable().call(request);
-   *     for (Instance element : response.getResponsesList()) {
+   *     for (Instance element : response.getInstancesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

@@ -55,6 +55,33 @@ public interface ComplianceVersionOrBuilder
    *
    *
    * <pre>
+   * The name of the document that defines this benchmark, e.g. "CIS
+   * Container-Optimized OS".
+   * </pre>
+   *
+   * <code>string benchmark_document = 3;</code>
+   *
+   * @return The benchmarkDocument.
+   */
+  java.lang.String getBenchmarkDocument();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the document that defines this benchmark, e.g. "CIS
+   * Container-Optimized OS".
+   * </pre>
+   *
+   * <code>string benchmark_document = 3;</code>
+   *
+   * @return The bytes for benchmarkDocument.
+   */
+  com.google.protobuf.ByteString getBenchmarkDocumentBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The version of the benchmark. This is set to the version of the OS-specific
    * CIS document the benchmark is defined in.
    * </pre>

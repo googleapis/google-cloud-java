@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.ReservationsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.ReservationsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -67,7 +66,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonReservationsStub extends ReservationsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -78,7 +77,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
           ApiMethodDescriptor
               .<AggregatedListReservationsRequest, ReservationAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListReservationsRequest>newBuilder()
@@ -134,7 +133,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteReservationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteReservationRequest>newBuilder()
@@ -185,7 +184,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
   private static final ApiMethodDescriptor<GetReservationRequest, Reservation> getMethodDescriptor =
       ApiMethodDescriptor.<GetReservationRequest, Reservation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Reservations/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetReservationRequest>newBuilder()
@@ -220,7 +219,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyReservationRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/GetIamPolicy")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyReservationRequest>newBuilder()
@@ -261,7 +260,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertReservationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertReservationRequest>newBuilder()
@@ -314,7 +313,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListReservationsRequest, ReservationList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListReservationsRequest>newBuilder()
@@ -367,7 +366,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
       resizeMethodDescriptor =
           ApiMethodDescriptor.<ResizeReservationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/Resize")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ResizeReservationRequest>newBuilder()
@@ -424,7 +423,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyReservationRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/SetIamPolicy")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyReservationRequest>newBuilder()
@@ -466,7 +465,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
           ApiMethodDescriptor
               .<TestIamPermissionsReservationRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/TestIamPermissions")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsReservationRequest>newBuilder()
@@ -506,7 +505,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateReservationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Reservations/Update")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateReservationRequest>newBuilder()

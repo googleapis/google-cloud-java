@@ -314,7 +314,7 @@ public class DashboardsServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListDashboardsResponse response =
    *         dashboardsServiceClient.listDashboardsCallable().call(request);
-   *     for (Dashboard element : response.getResponsesList()) {
+   *     for (Dashboard element : response.getDashboardsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

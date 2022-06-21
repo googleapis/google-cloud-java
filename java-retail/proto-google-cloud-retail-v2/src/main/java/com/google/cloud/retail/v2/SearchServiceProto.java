@@ -60,6 +60,14 @@ public final class SearchServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2_SearchRequest_PersonalizationSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2_SearchRequest_SpellCorrectionSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2_SearchRequest_SpellCorrectionSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2_SearchRequest_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2_SearchRequest_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_retail_v2_SearchResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2_SearchResponse_fieldAccessorTable;
@@ -104,7 +112,7 @@ public final class SearchServiceProto {
           + "etail/v2/common.proto\032$google/cloud/reta"
           + "il/v2/product.proto\032 google/protobuf/fie"
           + "ld_mask.proto\032\034google/protobuf/struct.pr"
-          + "oto\"\356\017\n\rSearchRequest\022\026\n\tplacement\030\001 \001(\t"
+          + "oto\"\374\022\n\rSearchRequest\022\026\n\tplacement\030\001 \001(\t"
           + "B\003\340A\002\0221\n\006branch\030\002 \001(\tB!\372A\036\n\034retail.googl"
           + "eapis.com/Branch\022\r\n\005query\030\003 \001(\t\022\027\n\nvisit"
           + "or_id\030\004 \001(\tB\003\340A\002\0223\n\tuser_info\030\005 \001(\0132 .go"
@@ -124,82 +132,92 @@ public final class SearchServiceProto {
           + "rch_mode\030\037 \001(\01620.google.cloud.retail.v2."
           + "SearchRequest.SearchMode\022W\n\024personalizat"
           + "ion_spec\030  \001(\01329.google.cloud.retail.v2."
-          + "SearchRequest.PersonalizationSpec\032\337\002\n\tFa"
-          + "cetSpec\022P\n\tfacet_key\030\001 \001(\01328.google.clou"
-          + "d.retail.v2.SearchRequest.FacetSpec.Face"
-          + "tKeyB\003\340A\002\022\r\n\005limit\030\002 \001(\005\022\034\n\024excluded_fil"
-          + "ter_keys\030\003 \003(\t\022\037\n\027enable_dynamic_positio"
-          + "n\030\004 \001(\010\032\261\001\n\010FacetKey\022\020\n\003key\030\001 \001(\tB\003\340A\002\0223"
-          + "\n\tintervals\030\002 \003(\0132 .google.cloud.retail."
-          + "v2.Interval\022\031\n\021restricted_values\030\003 \003(\t\022\020"
-          + "\n\010prefixes\030\010 \003(\t\022\020\n\010contains\030\t \003(\t\022\020\n\010or"
-          + "der_by\030\004 \001(\t\022\r\n\005query\030\005 \001(\t\032\226\001\n\020DynamicF"
-          + "acetSpec\022I\n\004mode\030\001 \001(\0162;.google.cloud.re"
-          + "tail.v2.SearchRequest.DynamicFacetSpec.M"
-          + "ode\"7\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\014\n\010DIS"
-          + "ABLED\020\001\022\013\n\007ENABLED\020\002\032\356\001\n\tBoostSpec\022a\n\025co"
-          + "ndition_boost_specs\030\001 \003(\0132B.google.cloud"
-          + ".retail.v2.SearchRequest.BoostSpec.Condi"
-          + "tionBoostSpec\022\'\n\032skip_boost_spec_validat"
-          + "ion\030\002 \001(\010H\000\210\001\001\0326\n\022ConditionBoostSpec\022\021\n\t"
-          + "condition\030\001 \001(\t\022\r\n\005boost\030\002 \001(\002B\035\n\033_skip_"
-          + "boost_spec_validation\032\313\001\n\022QueryExpansion"
-          + "Spec\022U\n\tcondition\030\001 \001(\0162B.google.cloud.r"
-          + "etail.v2.SearchRequest.QueryExpansionSpe"
-          + "c.Condition\022\036\n\026pin_unexpanded_results\030\002 "
-          + "\001(\010\">\n\tCondition\022\031\n\025CONDITION_UNSPECIFIE"
-          + "D\020\000\022\014\n\010DISABLED\020\001\022\010\n\004AUTO\020\003\032\231\001\n\023Personal"
-          + "izationSpec\022L\n\004mode\030\001 \001(\0162>.google.cloud"
-          + ".retail.v2.SearchRequest.Personalization"
-          + "Spec.Mode\"4\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022"
-          + "\010\n\004AUTO\020\001\022\014\n\010DISABLED\020\002\"[\n\nSearchMode\022\033\n"
-          + "\027SEARCH_MODE_UNSPECIFIED\020\000\022\027\n\023PRODUCT_SE"
-          + "ARCH_ONLY\020\001\022\027\n\023FACETED_SEARCH_ONLY\020\002\"\231\n\n"
-          + "\016SearchResponse\022D\n\007results\030\001 \003(\01323.googl"
-          + "e.cloud.retail.v2.SearchResponse.SearchR"
-          + "esult\022<\n\006facets\030\002 \003(\0132,.google.cloud.ret"
-          + "ail.v2.SearchResponse.Facet\022\022\n\ntotal_siz"
-          + "e\030\003 \001(\005\022\027\n\017corrected_query\030\004 \001(\t\022\031\n\021attr"
-          + "ibution_token\030\005 \001(\t\022\027\n\017next_page_token\030\006"
-          + " \001(\t\022W\n\024query_expansion_info\030\007 \001(\01329.goo"
-          + "gle.cloud.retail.v2.SearchResponse.Query"
-          + "ExpansionInfo\022\024\n\014redirect_uri\030\n \001(\t\022\030\n\020a"
-          + "pplied_controls\030\014 \003(\t\022i\n\035invalid_conditi"
-          + "on_boost_specs\030\016 \003(\0132B.google.cloud.reta"
-          + "il.v2.SearchRequest.BoostSpec.ConditionB"
-          + "oostSpec\032\370\003\n\014SearchResult\022\n\n\002id\030\001 \001(\t\0220\n"
-          + "\007product\030\002 \001(\0132\037.google.cloud.retail.v2."
-          + "Product\022\036\n\026matching_variant_count\030\003 \001(\005\022"
-          + "o\n\027matching_variant_fields\030\004 \003(\0132N.googl"
-          + "e.cloud.retail.v2.SearchResponse.SearchR"
-          + "esult.MatchingVariantFieldsEntry\022k\n\025vari"
-          + "ant_rollup_values\030\005 \003(\0132L.google.cloud.r"
-          + "etail.v2.SearchResponse.SearchResult.Var"
-          + "iantRollupValuesEntry\032X\n\032MatchingVariant"
-          + "FieldsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132"
-          + "\032.google.protobuf.FieldMask:\0028\001\032R\n\030Varia"
-          + "ntRollupValuesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005valu"
-          + "e\030\002 \001(\0132\026.google.protobuf.Value:\0028\001\032\347\001\n\005"
-          + "Facet\022\013\n\003key\030\001 \001(\t\022G\n\006values\030\002 \003(\01327.goo"
-          + "gle.cloud.retail.v2.SearchResponse.Facet"
-          + ".FacetValue\022\025\n\rdynamic_facet\030\003 \001(\010\032q\n\nFa"
-          + "cetValue\022\017\n\005value\030\001 \001(\tH\000\0224\n\010interval\030\002 "
-          + "\001(\0132 .google.cloud.retail.v2.IntervalH\000\022"
-          + "\r\n\005count\030\003 \001(\003B\r\n\013facet_value\032I\n\022QueryEx"
-          + "pansionInfo\022\026\n\016expanded_query\030\001 \001(\010\022\033\n\023p"
-          + "inned_result_count\030\002 \001(\0032\206\002\n\rSearchServi"
-          + "ce\022\251\001\n\006Search\022%.google.cloud.retail.v2.S"
-          + "earchRequest\032&.google.cloud.retail.v2.Se"
-          + "archResponse\"P\202\323\344\223\002J\"E/v2/{placement=pro"
-          + "jects/*/locations/*/catalogs/*/placement"
-          + "s/*}:search:\001*\032I\312A\025retail.googleapis.com"
-          + "\322A.https://www.googleapis.com/auth/cloud"
-          + "-platformB\307\001\n\032com.google.cloud.retail.v2"
-          + "B\022SearchServiceProtoP\001Z<google.golang.or"
-          + "g/genproto/googleapis/cloud/retail/v2;re"
-          + "tail\242\002\006RETAIL\252\002\026Google.Cloud.Retail.V2\312\002"
-          + "\026Google\\Cloud\\Retail\\V2\352\002\031Google::Cloud:"
-          + ":Retail::V2b\006proto3"
+          + "SearchRequest.PersonalizationSpec\022A\n\006lab"
+          + "els\030\" \003(\01321.google.cloud.retail.v2.Searc"
+          + "hRequest.LabelsEntry\022]\n\025spell_correction"
+          + "_spec\030# \001(\01329.google.cloud.retail.v2.Sea"
+          + "rchRequest.SpellCorrectionSpecH\000\210\001\001\032\337\002\n\t"
+          + "FacetSpec\022P\n\tfacet_key\030\001 \001(\01328.google.cl"
+          + "oud.retail.v2.SearchRequest.FacetSpec.Fa"
+          + "cetKeyB\003\340A\002\022\r\n\005limit\030\002 \001(\005\022\034\n\024excluded_f"
+          + "ilter_keys\030\003 \003(\t\022\037\n\027enable_dynamic_posit"
+          + "ion\030\004 \001(\010\032\261\001\n\010FacetKey\022\020\n\003key\030\001 \001(\tB\003\340A\002"
+          + "\0223\n\tintervals\030\002 \003(\0132 .google.cloud.retai"
+          + "l.v2.Interval\022\031\n\021restricted_values\030\003 \003(\t"
+          + "\022\020\n\010prefixes\030\010 \003(\t\022\020\n\010contains\030\t \003(\t\022\020\n\010"
+          + "order_by\030\004 \001(\t\022\r\n\005query\030\005 \001(\t\032\226\001\n\020Dynami"
+          + "cFacetSpec\022I\n\004mode\030\001 \001(\0162;.google.cloud."
+          + "retail.v2.SearchRequest.DynamicFacetSpec"
+          + ".Mode\"7\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\014\n\010D"
+          + "ISABLED\020\001\022\013\n\007ENABLED\020\002\032\356\001\n\tBoostSpec\022a\n\025"
+          + "condition_boost_specs\030\001 \003(\0132B.google.clo"
+          + "ud.retail.v2.SearchRequest.BoostSpec.Con"
+          + "ditionBoostSpec\022\'\n\032skip_boost_spec_valid"
+          + "ation\030\002 \001(\010H\000\210\001\001\0326\n\022ConditionBoostSpec\022\021"
+          + "\n\tcondition\030\001 \001(\t\022\r\n\005boost\030\002 \001(\002B\035\n\033_ski"
+          + "p_boost_spec_validation\032\313\001\n\022QueryExpansi"
+          + "onSpec\022U\n\tcondition\030\001 \001(\0162B.google.cloud"
+          + ".retail.v2.SearchRequest.QueryExpansionS"
+          + "pec.Condition\022\036\n\026pin_unexpanded_results\030"
+          + "\002 \001(\010\">\n\tCondition\022\031\n\025CONDITION_UNSPECIF"
+          + "IED\020\000\022\014\n\010DISABLED\020\001\022\010\n\004AUTO\020\003\032\231\001\n\023Person"
+          + "alizationSpec\022L\n\004mode\030\001 \001(\0162>.google.clo"
+          + "ud.retail.v2.SearchRequest.Personalizati"
+          + "onSpec.Mode\"4\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020"
+          + "\000\022\010\n\004AUTO\020\001\022\014\n\010DISABLED\020\002\032\240\001\n\023SpellCorre"
+          + "ctionSpec\022L\n\004mode\030\001 \001(\0162>.google.cloud.r"
+          + "etail.v2.SearchRequest.SpellCorrectionSp"
+          + "ec.Mode\";\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\023\n"
+          + "\017SUGGESTION_ONLY\020\001\022\010\n\004AUTO\020\002\032-\n\013LabelsEn"
+          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"[\n\nS"
+          + "earchMode\022\033\n\027SEARCH_MODE_UNSPECIFIED\020\000\022\027"
+          + "\n\023PRODUCT_SEARCH_ONLY\020\001\022\027\n\023FACETED_SEARC"
+          + "H_ONLY\020\002B\030\n\026_spell_correction_spec\"\231\n\n\016S"
+          + "earchResponse\022D\n\007results\030\001 \003(\01323.google."
+          + "cloud.retail.v2.SearchResponse.SearchRes"
+          + "ult\022<\n\006facets\030\002 \003(\0132,.google.cloud.retai"
+          + "l.v2.SearchResponse.Facet\022\022\n\ntotal_size\030"
+          + "\003 \001(\005\022\027\n\017corrected_query\030\004 \001(\t\022\031\n\021attrib"
+          + "ution_token\030\005 \001(\t\022\027\n\017next_page_token\030\006 \001"
+          + "(\t\022W\n\024query_expansion_info\030\007 \001(\01329.googl"
+          + "e.cloud.retail.v2.SearchResponse.QueryEx"
+          + "pansionInfo\022\024\n\014redirect_uri\030\n \001(\t\022\030\n\020app"
+          + "lied_controls\030\014 \003(\t\022i\n\035invalid_condition"
+          + "_boost_specs\030\016 \003(\0132B.google.cloud.retail"
+          + ".v2.SearchRequest.BoostSpec.ConditionBoo"
+          + "stSpec\032\370\003\n\014SearchResult\022\n\n\002id\030\001 \001(\t\0220\n\007p"
+          + "roduct\030\002 \001(\0132\037.google.cloud.retail.v2.Pr"
+          + "oduct\022\036\n\026matching_variant_count\030\003 \001(\005\022o\n"
+          + "\027matching_variant_fields\030\004 \003(\0132N.google."
+          + "cloud.retail.v2.SearchResponse.SearchRes"
+          + "ult.MatchingVariantFieldsEntry\022k\n\025varian"
+          + "t_rollup_values\030\005 \003(\0132L.google.cloud.ret"
+          + "ail.v2.SearchResponse.SearchResult.Varia"
+          + "ntRollupValuesEntry\032X\n\032MatchingVariantFi"
+          + "eldsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value\030\002 \001(\0132\032."
+          + "google.protobuf.FieldMask:\0028\001\032R\n\030Variant"
+          + "RollupValuesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030"
+          + "\002 \001(\0132\026.google.protobuf.Value:\0028\001\032\347\001\n\005Fa"
+          + "cet\022\013\n\003key\030\001 \001(\t\022G\n\006values\030\002 \003(\01327.googl"
+          + "e.cloud.retail.v2.SearchResponse.Facet.F"
+          + "acetValue\022\025\n\rdynamic_facet\030\003 \001(\010\032q\n\nFace"
+          + "tValue\022\017\n\005value\030\001 \001(\tH\000\0224\n\010interval\030\002 \001("
+          + "\0132 .google.cloud.retail.v2.IntervalH\000\022\r\n"
+          + "\005count\030\003 \001(\003B\r\n\013facet_value\032I\n\022QueryExpa"
+          + "nsionInfo\022\026\n\016expanded_query\030\001 \001(\010\022\033\n\023pin"
+          + "ned_result_count\030\002 \001(\0032\206\002\n\rSearchService"
+          + "\022\251\001\n\006Search\022%.google.cloud.retail.v2.Sea"
+          + "rchRequest\032&.google.cloud.retail.v2.Sear"
+          + "chResponse\"P\202\323\344\223\002J\"E/v2/{placement=proje"
+          + "cts/*/locations/*/catalogs/*/placements/"
+          + "*}:search:\001*\032I\312A\025retail.googleapis.com\322A"
+          + ".https://www.googleapis.com/auth/cloud-p"
+          + "latformB\307\001\n\032com.google.cloud.retail.v2B\022"
+          + "SearchServiceProtoP\001Z<google.golang.org/"
+          + "genproto/googleapis/cloud/retail/v2;reta"
+          + "il\242\002\006RETAIL\252\002\026Google.Cloud.Retail.V2\312\002\026G"
+          + "oogle\\Cloud\\Retail\\V2\352\002\031Google::Cloud::R"
+          + "etail::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -239,6 +257,9 @@ public final class SearchServiceProto {
               "PageCategories",
               "SearchMode",
               "PersonalizationSpec",
+              "Labels",
+              "SpellCorrectionSpec",
+              "SpellCorrectionSpec",
             });
     internal_static_google_cloud_retail_v2_SearchRequest_FacetSpec_descriptor =
         internal_static_google_cloud_retail_v2_SearchRequest_descriptor.getNestedTypes().get(0);
@@ -299,6 +320,22 @@ public final class SearchServiceProto {
             internal_static_google_cloud_retail_v2_SearchRequest_PersonalizationSpec_descriptor,
             new java.lang.String[] {
               "Mode",
+            });
+    internal_static_google_cloud_retail_v2_SearchRequest_SpellCorrectionSpec_descriptor =
+        internal_static_google_cloud_retail_v2_SearchRequest_descriptor.getNestedTypes().get(5);
+    internal_static_google_cloud_retail_v2_SearchRequest_SpellCorrectionSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2_SearchRequest_SpellCorrectionSpec_descriptor,
+            new java.lang.String[] {
+              "Mode",
+            });
+    internal_static_google_cloud_retail_v2_SearchRequest_LabelsEntry_descriptor =
+        internal_static_google_cloud_retail_v2_SearchRequest_descriptor.getNestedTypes().get(6);
+    internal_static_google_cloud_retail_v2_SearchRequest_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2_SearchRequest_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_retail_v2_SearchResponse_descriptor =
         getDescriptor().getMessageTypes().get(1);

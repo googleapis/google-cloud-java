@@ -97,6 +97,8 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -180,7 +182,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
   @java.lang.Override
   public boolean containsDisks(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetDisks().getMap().containsKey(key);
   }
@@ -225,7 +227,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
       java.lang.String key,
       com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice>
@@ -247,7 +249,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
   public com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice getDisksOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice>
@@ -652,7 +654,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
     @java.lang.Override
     public boolean containsDisks(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetDisks().getMap().containsKey(key);
     }
@@ -697,7 +699,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
         java.lang.String key,
         com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice>
@@ -719,7 +721,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice getDisksOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String, com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice>
@@ -747,7 +749,7 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
      */
     public Builder removeDisks(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableDisks().getMutableMap().remove(key);
       return this;
@@ -774,11 +776,12 @@ public final class StatefulPolicyPreservedState extends com.google.protobuf.Gene
         java.lang.String key,
         com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableDisks().getMutableMap().put(key, value);
       return this;
     }

@@ -34,6 +34,8 @@ public interface SetLabelsRequestOrBuilder
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.SetLabelsRequest.project_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=3104
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -49,6 +51,8 @@ public interface SetLabelsRequestOrBuilder
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.SetLabelsRequest.project_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=3104
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -66,6 +70,8 @@ public interface SetLabelsRequestOrBuilder
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.SetLabelsRequest.zone is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=3110
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -82,6 +88,8 @@ public interface SetLabelsRequestOrBuilder
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.SetLabelsRequest.zone is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=3110
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -97,6 +105,8 @@ public interface SetLabelsRequestOrBuilder
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.SetLabelsRequest.cluster_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=3114
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -111,6 +121,8 @@ public interface SetLabelsRequestOrBuilder
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.SetLabelsRequest.cluster_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=3114
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -162,7 +174,12 @@ public interface SetLabelsRequestOrBuilder
    * <code>map&lt;string, string&gt; resource_labels = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-  java.lang.String getResourceLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getResourceLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

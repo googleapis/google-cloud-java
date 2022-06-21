@@ -115,6 +115,8 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -786,8 +788,9 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       } else {
         if (validationTypeCase_ == 1) {
           regexBuilder_.mergeFrom(value);
+        } else {
+          regexBuilder_.setMessage(value);
         }
-        regexBuilder_.setMessage(value);
       }
       validationTypeCase_ = 1;
       return this;
@@ -995,8 +998,9 @@ public final class ParameterValidation extends com.google.protobuf.GeneratedMess
       } else {
         if (validationTypeCase_ == 2) {
           valuesBuilder_.mergeFrom(value);
+        } else {
+          valuesBuilder_.setMessage(value);
         }
-        valuesBuilder_.setMessage(value);
       }
       validationTypeCase_ = 2;
       return this;

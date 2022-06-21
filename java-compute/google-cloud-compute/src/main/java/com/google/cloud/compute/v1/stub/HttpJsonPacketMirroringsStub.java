@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.PacketMirroringsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.PacketMirroringsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -63,7 +62,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -74,7 +73,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
           ApiMethodDescriptor
               .<AggregatedListPacketMirroringsRequest, PacketMirroringAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListPacketMirroringsRequest>newBuilder()
@@ -130,7 +129,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeletePacketMirroringRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeletePacketMirroringRequest>newBuilder()
@@ -182,7 +181,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetPacketMirroringRequest, PacketMirroring>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetPacketMirroringRequest>newBuilder()
@@ -218,7 +217,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertPacketMirroringRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertPacketMirroringRequest>newBuilder()
@@ -273,7 +272,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListPacketMirroringsRequest, PacketMirroringList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListPacketMirroringsRequest>newBuilder()
@@ -326,7 +325,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchPacketMirroringRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/Patch")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchPacketMirroringRequest>newBuilder()
@@ -385,7 +384,7 @@ public class HttpJsonPacketMirroringsStub extends PacketMirroringsStub {
           ApiMethodDescriptor
               .<TestIamPermissionsPacketMirroringRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PacketMirrorings/TestIamPermissions")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter

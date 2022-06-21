@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,8 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TargetSslProxiesSettings.Builder targetSslProxiesSettingsBuilder =
  *     TargetSslProxiesSettings.newBuilder();
  * targetSslProxiesSettingsBuilder
@@ -113,6 +115,18 @@ public class TargetSslProxiesSettings extends ClientSettings<TargetSslProxiesSet
   public OperationCallSettings<SetBackendServiceTargetSslProxyRequest, Operation, Operation>
       setBackendServiceOperationSettings() {
     return ((TargetSslProxiesStubSettings) getStubSettings()).setBackendServiceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setCertificateMap. */
+  public UnaryCallSettings<SetCertificateMapTargetSslProxyRequest, Operation>
+      setCertificateMapSettings() {
+    return ((TargetSslProxiesStubSettings) getStubSettings()).setCertificateMapSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setCertificateMap. */
+  public OperationCallSettings<SetCertificateMapTargetSslProxyRequest, Operation, Operation>
+      setCertificateMapOperationSettings() {
+    return ((TargetSslProxiesStubSettings) getStubSettings()).setCertificateMapOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setProxyHeader. */
@@ -293,6 +307,19 @@ public class TargetSslProxiesSettings extends ClientSettings<TargetSslProxiesSet
             SetBackendServiceTargetSslProxyRequest, Operation, Operation>
         setBackendServiceOperationSettings() {
       return getStubSettingsBuilder().setBackendServiceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setCertificateMap. */
+    public UnaryCallSettings.Builder<SetCertificateMapTargetSslProxyRequest, Operation>
+        setCertificateMapSettings() {
+      return getStubSettingsBuilder().setCertificateMapSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setCertificateMap. */
+    public OperationCallSettings.Builder<
+            SetCertificateMapTargetSslProxyRequest, Operation, Operation>
+        setCertificateMapOperationSettings() {
+      return getStubSettingsBuilder().setCertificateMapOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setProxyHeader. */

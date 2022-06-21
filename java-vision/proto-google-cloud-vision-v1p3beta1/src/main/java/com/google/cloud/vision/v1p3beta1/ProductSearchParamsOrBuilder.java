@@ -27,140 +27,8 @@ public interface ProductSearchParamsOrBuilder
    *
    *
    * <pre>
-   * The resource name of the catalog to search.
-   * Format is: `productSearch/catalogs/CATALOG_NAME`.
-   * </pre>
-   *
-   * <code>string catalog_name = 1;</code>
-   *
-   * @return The catalogName.
-   */
-  java.lang.String getCatalogName();
-  /**
-   *
-   *
-   * <pre>
-   * The resource name of the catalog to search.
-   * Format is: `productSearch/catalogs/CATALOG_NAME`.
-   * </pre>
-   *
-   * <code>string catalog_name = 1;</code>
-   *
-   * @return The bytes for catalogName.
-   */
-  com.google.protobuf.ByteString getCatalogNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * The category to search in.
-   * Optional. It is inferred by the system if it is not specified.
-   * [Deprecated] Use `product_category`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 2;</code>
-   *
-   * @return The enum numeric value on the wire for category.
-   */
-  int getCategoryValue();
-  /**
-   *
-   *
-   * <pre>
-   * The category to search in.
-   * Optional. It is inferred by the system if it is not specified.
-   * [Deprecated] Use `product_category`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 2;</code>
-   *
-   * @return The category.
-   */
-  com.google.cloud.vision.v1p3beta1.ProductSearchCategory getCategory();
-
-  /**
-   *
-   *
-   * <pre>
-   * The product category to search in.
-   * Optional. It is inferred by the system if it is not specified.
-   * Supported values are `bag`, `shoe`, `sunglasses`, `dress`, `outerwear`,
-   * `skirt`, `top`, `shorts`, and `pants`.
-   * </pre>
-   *
-   * <code>string product_category = 5;</code>
-   *
-   * @return The productCategory.
-   */
-  java.lang.String getProductCategory();
-  /**
-   *
-   *
-   * <pre>
-   * The product category to search in.
-   * Optional. It is inferred by the system if it is not specified.
-   * Supported values are `bag`, `shoe`, `sunglasses`, `dress`, `outerwear`,
-   * `skirt`, `top`, `shorts`, and `pants`.
-   * </pre>
-   *
-   * <code>string product_category = 5;</code>
-   *
-   * @return The bytes for productCategory.
-   */
-  com.google.protobuf.ByteString getProductCategoryBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
-   * [Deprecated] Use `bounding_poly`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-   * </code>
-   *
-   * @return Whether the normalizedBoundingPoly field is set.
-   */
-  boolean hasNormalizedBoundingPoly();
-  /**
-   *
-   *
-   * <pre>
-   * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
-   * [Deprecated] Use `bounding_poly`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-   * </code>
-   *
-   * @return The normalizedBoundingPoly.
-   */
-  com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly getNormalizedBoundingPoly();
-  /**
-   *
-   *
-   * <pre>
-   * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
-   * [Deprecated] Use `bounding_poly`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-   * </code>
-   */
-  com.google.cloud.vision.v1p3beta1.NormalizedBoundingPolyOrBuilder
-      getNormalizedBoundingPolyOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
+   * If it is not specified, system discretion will be applied.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -173,7 +41,7 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
+   * If it is not specified, system discretion will be applied.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -186,7 +54,7 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
+   * If it is not specified, system discretion will be applied.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -197,36 +65,7 @@ public interface ProductSearchParamsOrBuilder
    *
    *
    * <pre>
-   * Specifies the verbosity of the  product search results.
-   * Optional. Defaults to `BASIC`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSearchResultsView view = 4;</code>
-   *
-   * @return The enum numeric value on the wire for view.
-   */
-  int getViewValue();
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the verbosity of the  product search results.
-   * Optional. Defaults to `BASIC`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSearchResultsView view = 4;</code>
-   *
-   * @return The view.
-   */
-  com.google.cloud.vision.v1p3beta1.ProductSearchResultsView getView();
-
-  /**
-   *
-   *
-   * <pre>
-   * The resource name of a
-   * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for
-   * similar images.
+   * The resource name of a [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for similar images.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
@@ -240,9 +79,7 @@ public interface ProductSearchParamsOrBuilder
    *
    *
    * <pre>
-   * The resource name of a
-   * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for
-   * similar images.
+   * The resource name of a [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for similar images.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
@@ -258,8 +95,12 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
-   * the first category, and either "homegoods" or "apparel" should be
-   * specified.
+   * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+   * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+   * categories "homegoods", "apparel", and "toys" are still supported but will
+   * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+   * or "toys-v2" for better product search accuracy. It is recommended to
+   * migrate existing products to these categories as well.
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
@@ -272,8 +113,12 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
-   * the first category, and either "homegoods" or "apparel" should be
-   * specified.
+   * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+   * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+   * categories "homegoods", "apparel", and "toys" are still supported but will
+   * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+   * or "toys-v2" for better product search accuracy. It is recommended to
+   * migrate existing products to these categories as well.
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
@@ -286,8 +131,12 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
-   * the first category, and either "homegoods" or "apparel" should be
-   * specified.
+   * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+   * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+   * categories "homegoods", "apparel", and "toys" are still supported but will
+   * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+   * or "toys-v2" for better product search accuracy. It is recommended to
+   * migrate existing products to these categories as well.
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
@@ -301,8 +150,12 @@ public interface ProductSearchParamsOrBuilder
    *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
-   * the first category, and either "homegoods" or "apparel" should be
-   * specified.
+   * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+   * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+   * categories "homegoods", "apparel", and "toys" are still supported but will
+   * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+   * or "toys-v2" for better product search accuracy. It is recommended to
+   * migrate existing products to these categories as well.
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
@@ -318,9 +171,11 @@ public interface ProductSearchParamsOrBuilder
    * <pre>
    * The filtering expression. This can be used to restrict search results based
    * on Product labels. We currently support an AND of OR of key-value
-   * expressions, where each expression within an OR must have the same key.
+   * expressions, where each expression within an OR must have the same key. An
+   * '=' should be used to connect the key and value.
    * For example, "(color = red OR color = blue) AND brand = Google" is
-   * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+   * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+   * "color: red" is not acceptable because it uses a ':' instead of an '='.
    * </pre>
    *
    * <code>string filter = 8;</code>
@@ -334,9 +189,11 @@ public interface ProductSearchParamsOrBuilder
    * <pre>
    * The filtering expression. This can be used to restrict search results based
    * on Product labels. We currently support an AND of OR of key-value
-   * expressions, where each expression within an OR must have the same key.
+   * expressions, where each expression within an OR must have the same key. An
+   * '=' should be used to connect the key and value.
    * For example, "(color = red OR color = blue) AND brand = Google" is
-   * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+   * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+   * "color: red" is not acceptable because it uses a ':' instead of an '='.
    * </pre>
    *
    * <code>string filter = 8;</code>

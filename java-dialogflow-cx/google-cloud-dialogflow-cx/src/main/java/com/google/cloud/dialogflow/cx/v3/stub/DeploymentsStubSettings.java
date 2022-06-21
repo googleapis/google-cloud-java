@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3.stub;
 
 import static com.google.cloud.dialogflow.cx.v3.DeploymentsClient.ListDeploymentsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3.DeploymentsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -44,6 +45,10 @@ import com.google.cloud.dialogflow.cx.v3.Deployment;
 import com.google.cloud.dialogflow.cx.v3.GetDeploymentRequest;
 import com.google.cloud.dialogflow.cx.v3.ListDeploymentsRequest;
 import com.google.cloud.dialogflow.cx.v3.ListDeploymentsResponse;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -100,6 +105,10 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
           ListDeploymentsRequest, ListDeploymentsResponse, ListDeploymentsPagedResponse>
       listDeploymentsSettings;
   private final UnaryCallSettings<GetDeploymentRequest, Deployment> getDeploymentSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<
           ListDeploymentsRequest, ListDeploymentsResponse, Deployment>
@@ -140,6 +149,42 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListDeploymentsRequest, ListDeploymentsResponse, ListDeploymentsPagedResponse>
       LIST_DEPLOYMENTS_PAGE_STR_FACT =
@@ -157,6 +202,23 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to listDeployments. */
   public PagedCallSettings<
           ListDeploymentsRequest, ListDeploymentsResponse, ListDeploymentsPagedResponse>
@@ -167,6 +229,17 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
   /** Returns the object with the settings used for calls to getDeployment. */
   public UnaryCallSettings<GetDeploymentRequest, Deployment> getDeploymentSettings() {
     return getDeploymentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public DeploymentsStub createStub() throws IOException {
@@ -246,6 +319,8 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
 
     listDeploymentsSettings = settingsBuilder.listDeploymentsSettings().build();
     getDeploymentSettings = settingsBuilder.getDeploymentSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for DeploymentsStubSettings. */
@@ -255,6 +330,10 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
             ListDeploymentsRequest, ListDeploymentsResponse, ListDeploymentsPagedResponse>
         listDeploymentsSettings;
     private final UnaryCallSettings.Builder<GetDeploymentRequest, Deployment> getDeploymentSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -295,10 +374,15 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
 
       listDeploymentsSettings = PagedCallSettings.newBuilder(LIST_DEPLOYMENTS_PAGE_STR_FACT);
       getDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listDeploymentsSettings, getDeploymentSettings);
+              listDeploymentsSettings,
+              getDeploymentSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -307,10 +391,15 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
 
       listDeploymentsSettings = settings.listDeploymentsSettings.toBuilder();
       getDeploymentSettings = settings.getDeploymentSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listDeploymentsSettings, getDeploymentSettings);
+              listDeploymentsSettings,
+              getDeploymentSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -334,6 +423,16 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
 
       builder
           .getDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -365,6 +464,18 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
     /** Returns the builder for the settings used for calls to getDeployment. */
     public UnaryCallSettings.Builder<GetDeploymentRequest, Deployment> getDeploymentSettings() {
       return getDeploymentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

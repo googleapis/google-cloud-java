@@ -28,8 +28,8 @@ public interface LocationOrBuilder
    *
    *
    * <pre>
-   * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
-   * denoting the package manager version distributing a package.
+   * Deprecated.
+   * The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
@@ -41,8 +41,8 @@ public interface LocationOrBuilder
    *
    *
    * <pre>
-   * Required. The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
-   * denoting the package manager version distributing a package.
+   * Deprecated.
+   * The CPE URI in [CPE format](https://cpe.mitre.org/specification/)
    * </pre>
    *
    * <code>string cpe_uri = 1;</code>
@@ -55,6 +55,7 @@ public interface LocationOrBuilder
    *
    *
    * <pre>
+   * Deprecated.
    * The version installed at this location.
    * </pre>
    *
@@ -67,6 +68,7 @@ public interface LocationOrBuilder
    *
    *
    * <pre>
+   * Deprecated.
    * The version installed at this location.
    * </pre>
    *
@@ -79,6 +81,7 @@ public interface LocationOrBuilder
    *
    *
    * <pre>
+   * Deprecated.
    * The version installed at this location.
    * </pre>
    *

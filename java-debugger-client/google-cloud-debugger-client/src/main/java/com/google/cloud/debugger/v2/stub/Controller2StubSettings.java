@@ -114,7 +114,6 @@ public class Controller2StubSettings extends StubSettings<Controller2StubSetting
     return updateActiveBreakpointSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public Controller2Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

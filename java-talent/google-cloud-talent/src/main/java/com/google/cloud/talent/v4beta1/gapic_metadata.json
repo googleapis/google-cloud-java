@@ -5,30 +5,6 @@
   "protoPackage": "google.cloud.talent.v4beta1",
   "libraryPackage": "com.google.cloud.talent.v4beta1",
   "services": {
-    "ApplicationService": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "ApplicationServiceClient",
-          "rpcs": {
-            "CreateApplication": {
-              "methods": ["createApplication", "createApplication", "createApplication", "createApplicationCallable"]
-            },
-            "DeleteApplication": {
-              "methods": ["deleteApplication", "deleteApplication", "deleteApplication", "deleteApplicationCallable"]
-            },
-            "GetApplication": {
-              "methods": ["getApplication", "getApplication", "getApplication", "getApplicationCallable"]
-            },
-            "ListApplications": {
-              "methods": ["listApplications", "listApplications", "listApplications", "listApplicationsPagedCallable", "listApplicationsCallable"]
-            },
-            "UpdateApplication": {
-              "methods": ["updateApplication", "updateApplication", "updateApplicationCallable"]
-            }
-          }
-        }
-      }
-    },
     "CompanyService": {
       "clients": {
         "grpc": {
@@ -111,33 +87,6 @@
             },
             "UpdateJob": {
               "methods": ["updateJob", "updateJob", "updateJobCallable"]
-            }
-          }
-        }
-      }
-    },
-    "ProfileService": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "ProfileServiceClient",
-          "rpcs": {
-            "CreateProfile": {
-              "methods": ["createProfile", "createProfile", "createProfile", "createProfileCallable"]
-            },
-            "DeleteProfile": {
-              "methods": ["deleteProfile", "deleteProfile", "deleteProfile", "deleteProfileCallable"]
-            },
-            "GetProfile": {
-              "methods": ["getProfile", "getProfile", "getProfile", "getProfileCallable"]
-            },
-            "ListProfiles": {
-              "methods": ["listProfiles", "listProfiles", "listProfiles", "listProfilesPagedCallable", "listProfilesCallable"]
-            },
-            "SearchProfiles": {
-              "methods": ["searchProfiles", "searchProfilesPagedCallable", "searchProfilesCallable"]
-            },
-            "UpdateProfile": {
-              "methods": ["updateProfile", "updateProfile", "updateProfileCallable"]
             }
           }
         }

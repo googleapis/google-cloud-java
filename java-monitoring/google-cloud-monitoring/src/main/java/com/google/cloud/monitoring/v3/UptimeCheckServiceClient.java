@@ -382,7 +382,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListUptimeCheckConfigsResponse response =
    *         uptimeCheckServiceClient.listUptimeCheckConfigsCallable().call(request);
-   *     for (UptimeCheckConfig element : response.getResponsesList()) {
+   *     for (UptimeCheckConfig element : response.getUptimeCheckConfigsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -987,7 +987,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListUptimeCheckIpsResponse response =
    *         uptimeCheckServiceClient.listUptimeCheckIpsCallable().call(request);
-   *     for (UptimeCheckIp element : response.getResponsesList()) {
+   *     for (UptimeCheckIp element : response.getUptimeCheckIpsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

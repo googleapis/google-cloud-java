@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3;
 
+import static com.google.cloud.dialogflow.cx.v3.TestCasesClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.TestCasesClient.ListTestCaseResultsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.TestCasesClient.ListTestCasesPagedResponse;
 
@@ -32,6 +33,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.cx.v3.stub.TestCasesStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -163,6 +168,17 @@ public class TestCasesSettings extends ClientSettings<TestCasesSettings> {
   /** Returns the object with the settings used for calls to getTestCaseResult. */
   public UnaryCallSettings<GetTestCaseResultRequest, TestCaseResult> getTestCaseResultSettings() {
     return ((TestCasesStubSettings) getStubSettings()).getTestCaseResultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((TestCasesStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((TestCasesStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final TestCasesSettings create(TestCasesStubSettings stub) throws IOException {
@@ -357,6 +373,18 @@ public class TestCasesSettings extends ClientSettings<TestCasesSettings> {
     public UnaryCallSettings.Builder<GetTestCaseResultRequest, TestCaseResult>
         getTestCaseResultSettings() {
       return getStubSettingsBuilder().getTestCaseResultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.dataproc.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -48,6 +47,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
  *   String projectId = "projectId-894832108";
  *   String region = "region-934795532";
@@ -86,6 +87,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ClusterControllerSettings clusterControllerSettings =
  *     ClusterControllerSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -97,6 +100,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ClusterControllerSettings clusterControllerSettings =
  *     ClusterControllerSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ClusterControllerClient clusterControllerClient =
@@ -129,7 +134,6 @@ public class ClusterControllerClient implements BackgroundResource {
    * Constructs an instance of ClusterControllerClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(ClusterControllerSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ClusterControllerClient create(ClusterControllerStub stub) {
     return new ClusterControllerClient(stub);
   }
@@ -145,7 +149,6 @@ public class ClusterControllerClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ClusterControllerClient(ClusterControllerStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -156,7 +159,6 @@ public class ClusterControllerClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ClusterControllerStub getStub() {
     return stub;
   }
@@ -178,6 +180,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -213,6 +217,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   CreateClusterRequest request =
    *       CreateClusterRequest.newBuilder()
@@ -243,6 +249,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   CreateClusterRequest request =
    *       CreateClusterRequest.newBuilder()
@@ -273,6 +281,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   CreateClusterRequest request =
    *       CreateClusterRequest.newBuilder()
@@ -304,6 +314,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -368,6 +380,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   UpdateClusterRequest request =
    *       UpdateClusterRequest.newBuilder()
@@ -402,6 +416,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   UpdateClusterRequest request =
    *       UpdateClusterRequest.newBuilder()
@@ -436,6 +452,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   UpdateClusterRequest request =
    *       UpdateClusterRequest.newBuilder()
@@ -465,6 +483,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   StopClusterRequest request =
    *       StopClusterRequest.newBuilder()
@@ -493,6 +513,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   StopClusterRequest request =
    *       StopClusterRequest.newBuilder()
@@ -521,6 +543,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   StopClusterRequest request =
    *       StopClusterRequest.newBuilder()
@@ -548,6 +572,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   StartClusterRequest request =
    *       StartClusterRequest.newBuilder()
@@ -576,6 +602,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   StartClusterRequest request =
    *       StartClusterRequest.newBuilder()
@@ -604,6 +632,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   StartClusterRequest request =
    *       StartClusterRequest.newBuilder()
@@ -633,6 +663,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -667,6 +699,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   DeleteClusterRequest request =
    *       DeleteClusterRequest.newBuilder()
@@ -697,6 +731,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   DeleteClusterRequest request =
    *       DeleteClusterRequest.newBuilder()
@@ -727,6 +763,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   DeleteClusterRequest request =
    *       DeleteClusterRequest.newBuilder()
@@ -754,6 +792,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -785,6 +825,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   GetClusterRequest request =
    *       GetClusterRequest.newBuilder()
@@ -810,6 +852,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   GetClusterRequest request =
    *       GetClusterRequest.newBuilder()
@@ -834,6 +878,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -861,6 +907,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -909,6 +957,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   ListClustersRequest request =
    *       ListClustersRequest.newBuilder()
@@ -938,6 +988,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   ListClustersRequest request =
    *       ListClustersRequest.newBuilder()
@@ -968,6 +1020,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   ListClustersRequest request =
    *       ListClustersRequest.newBuilder()
@@ -980,7 +1034,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *   while (true) {
    *     ListClustersResponse response =
    *         clusterControllerClient.listClustersCallable().call(request);
-   *     for (Cluster element : response.getResponsesList()) {
+   *     for (Cluster element : response.getClustersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1009,6 +1063,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -1047,6 +1103,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   DiagnoseClusterRequest request =
    *       DiagnoseClusterRequest.newBuilder()
@@ -1078,6 +1136,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   DiagnoseClusterRequest request =
    *       DiagnoseClusterRequest.newBuilder()
@@ -1110,6 +1170,8 @@ public class ClusterControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
    *   DiagnoseClusterRequest request =
    *       DiagnoseClusterRequest.newBuilder()

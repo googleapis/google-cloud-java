@@ -104,6 +104,23 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
 
               break;
             }
+          case 26:
+            {
+              com.google.cloud.aiplatform.v1beta1.ExamplesOverride.Builder subBuilder = null;
+              if (examplesOverride_ != null) {
+                subBuilder = examplesOverride_.toBuilder();
+              }
+              examplesOverride_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.ExamplesOverride.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(examplesOverride_);
+                examplesOverride_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -244,6 +261,55 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
     return getMetadata();
   }
 
+  public static final int EXAMPLES_OVERRIDE_FIELD_NUMBER = 3;
+  private com.google.cloud.aiplatform.v1beta1.ExamplesOverride examplesOverride_;
+  /**
+   *
+   *
+   * <pre>
+   * The example-based explanations parameter overrides.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+   *
+   * @return Whether the examplesOverride field is set.
+   */
+  @java.lang.Override
+  public boolean hasExamplesOverride() {
+    return examplesOverride_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The example-based explanations parameter overrides.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+   *
+   * @return The examplesOverride.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ExamplesOverride getExamplesOverride() {
+    return examplesOverride_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ExamplesOverride.getDefaultInstance()
+        : examplesOverride_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The example-based explanations parameter overrides.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ExamplesOverrideOrBuilder
+      getExamplesOverrideOrBuilder() {
+    return getExamplesOverride();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -264,6 +330,9 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
     if (metadata_ != null) {
       output.writeMessage(2, getMetadata());
     }
+    if (examplesOverride_ != null) {
+      output.writeMessage(3, getExamplesOverride());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -278,6 +347,9 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
     }
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getMetadata());
+    }
+    if (examplesOverride_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getExamplesOverride());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -303,6 +375,10 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
     if (hasMetadata()) {
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
+    if (hasExamplesOverride() != other.hasExamplesOverride()) return false;
+    if (hasExamplesOverride()) {
+      if (!getExamplesOverride().equals(other.getExamplesOverride())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -321,6 +397,10 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
+    }
+    if (hasExamplesOverride()) {
+      hash = (37 * hash) + EXAMPLES_OVERRIDE_FIELD_NUMBER;
+      hash = (53 * hash) + getExamplesOverride().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -481,6 +561,12 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
         metadata_ = null;
         metadataBuilder_ = null;
       }
+      if (examplesOverrideBuilder_ == null) {
+        examplesOverride_ = null;
+      } else {
+        examplesOverride_ = null;
+        examplesOverrideBuilder_ = null;
+      }
       return this;
     }
 
@@ -517,6 +603,11 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
         result.metadata_ = metadata_;
       } else {
         result.metadata_ = metadataBuilder_.build();
+      }
+      if (examplesOverrideBuilder_ == null) {
+        result.examplesOverride_ = examplesOverride_;
+      } else {
+        result.examplesOverride_ = examplesOverrideBuilder_.build();
       }
       onBuilt();
       return result;
@@ -573,6 +664,9 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
+      }
+      if (other.hasExamplesOverride()) {
+        mergeExamplesOverride(other.getExamplesOverride());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -999,6 +1093,195 @@ public final class ExplanationSpecOverride extends com.google.protobuf.Generated
         metadata_ = null;
       }
       return metadataBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.ExamplesOverride examplesOverride_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ExamplesOverride,
+            com.google.cloud.aiplatform.v1beta1.ExamplesOverride.Builder,
+            com.google.cloud.aiplatform.v1beta1.ExamplesOverrideOrBuilder>
+        examplesOverrideBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The example-based explanations parameter overrides.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+     *
+     * @return Whether the examplesOverride field is set.
+     */
+    public boolean hasExamplesOverride() {
+      return examplesOverrideBuilder_ != null || examplesOverride_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The example-based explanations parameter overrides.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+     *
+     * @return The examplesOverride.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ExamplesOverride getExamplesOverride() {
+      if (examplesOverrideBuilder_ == null) {
+        return examplesOverride_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ExamplesOverride.getDefaultInstance()
+            : examplesOverride_;
+      } else {
+        return examplesOverrideBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The example-based explanations parameter overrides.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+     */
+    public Builder setExamplesOverride(com.google.cloud.aiplatform.v1beta1.ExamplesOverride value) {
+      if (examplesOverrideBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        examplesOverride_ = value;
+        onChanged();
+      } else {
+        examplesOverrideBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The example-based explanations parameter overrides.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+     */
+    public Builder setExamplesOverride(
+        com.google.cloud.aiplatform.v1beta1.ExamplesOverride.Builder builderForValue) {
+      if (examplesOverrideBuilder_ == null) {
+        examplesOverride_ = builderForValue.build();
+        onChanged();
+      } else {
+        examplesOverrideBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The example-based explanations parameter overrides.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+     */
+    public Builder mergeExamplesOverride(
+        com.google.cloud.aiplatform.v1beta1.ExamplesOverride value) {
+      if (examplesOverrideBuilder_ == null) {
+        if (examplesOverride_ != null) {
+          examplesOverride_ =
+              com.google.cloud.aiplatform.v1beta1.ExamplesOverride.newBuilder(examplesOverride_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          examplesOverride_ = value;
+        }
+        onChanged();
+      } else {
+        examplesOverrideBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The example-based explanations parameter overrides.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+     */
+    public Builder clearExamplesOverride() {
+      if (examplesOverrideBuilder_ == null) {
+        examplesOverride_ = null;
+        onChanged();
+      } else {
+        examplesOverride_ = null;
+        examplesOverrideBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The example-based explanations parameter overrides.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ExamplesOverride.Builder
+        getExamplesOverrideBuilder() {
+
+      onChanged();
+      return getExamplesOverrideFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The example-based explanations parameter overrides.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ExamplesOverrideOrBuilder
+        getExamplesOverrideOrBuilder() {
+      if (examplesOverrideBuilder_ != null) {
+        return examplesOverrideBuilder_.getMessageOrBuilder();
+      } else {
+        return examplesOverride_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ExamplesOverride.getDefaultInstance()
+            : examplesOverride_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The example-based explanations parameter overrides.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ExamplesOverride,
+            com.google.cloud.aiplatform.v1beta1.ExamplesOverride.Builder,
+            com.google.cloud.aiplatform.v1beta1.ExamplesOverrideOrBuilder>
+        getExamplesOverrideFieldBuilder() {
+      if (examplesOverrideBuilder_ == null) {
+        examplesOverrideBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ExamplesOverride,
+                com.google.cloud.aiplatform.v1beta1.ExamplesOverride.Builder,
+                com.google.cloud.aiplatform.v1beta1.ExamplesOverrideOrBuilder>(
+                getExamplesOverride(), getParentForChildren(), isClean());
+        examplesOverride_ = null;
+      }
+      return examplesOverrideBuilder_;
     }
 
     @java.lang.Override

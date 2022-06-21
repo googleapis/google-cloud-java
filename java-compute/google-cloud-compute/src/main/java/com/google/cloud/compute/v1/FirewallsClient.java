@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
  *   String project = "project-309310695";
  *   String firewall = "firewall-562725632";
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * FirewallsSettings firewallsSettings =
  *     FirewallsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * FirewallsSettings firewallsSettings =
  *     FirewallsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * FirewallsClient firewallsClient = FirewallsClient.create(firewallsSettings);
@@ -118,7 +124,6 @@ public class FirewallsClient implements BackgroundResource {
    * Constructs an instance of FirewallsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(FirewallsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final FirewallsClient create(FirewallsStub stub) {
     return new FirewallsClient(stub);
   }
@@ -132,7 +137,6 @@ public class FirewallsClient implements BackgroundResource {
     this.stub = ((FirewallsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected FirewallsClient(FirewallsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -142,7 +146,6 @@ public class FirewallsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FirewallsStub getStub() {
     return stub;
   }
@@ -154,6 +157,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   String project = "project-309310695";
    *   String firewall = "firewall-562725632";
@@ -178,6 +183,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   DeleteFirewallRequest request =
    *       DeleteFirewallRequest.newBuilder()
@@ -205,6 +212,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   DeleteFirewallRequest request =
    *       DeleteFirewallRequest.newBuilder()
@@ -231,6 +240,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   DeleteFirewallRequest request =
    *       DeleteFirewallRequest.newBuilder()
@@ -255,6 +266,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   String project = "project-309310695";
    *   String firewall = "firewall-562725632";
@@ -279,6 +292,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   GetFirewallRequest request =
    *       GetFirewallRequest.newBuilder()
@@ -303,6 +318,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   GetFirewallRequest request =
    *       GetFirewallRequest.newBuilder()
@@ -326,6 +343,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   String project = "project-309310695";
    *   Firewall firewallResource = Firewall.newBuilder().build();
@@ -354,6 +373,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   InsertFirewallRequest request =
    *       InsertFirewallRequest.newBuilder()
@@ -381,6 +402,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   InsertFirewallRequest request =
    *       InsertFirewallRequest.newBuilder()
@@ -407,6 +430,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   InsertFirewallRequest request =
    *       InsertFirewallRequest.newBuilder()
@@ -431,6 +456,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   String project = "project-309310695";
    *   for (Firewall element : firewallsClient.list(project).iterateAll()) {
@@ -454,6 +481,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   ListFirewallsRequest request =
    *       ListFirewallsRequest.newBuilder()
@@ -484,6 +513,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   ListFirewallsRequest request =
    *       ListFirewallsRequest.newBuilder()
@@ -513,6 +544,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   ListFirewallsRequest request =
    *       ListFirewallsRequest.newBuilder()
@@ -525,7 +558,7 @@ public class FirewallsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     FirewallList response = firewallsClient.listCallable().call(request);
-   *     for (Firewall element : response.getResponsesList()) {
+   *     for (Firewall element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -550,6 +583,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   String project = "project-309310695";
    *   String firewall = "firewall-562725632";
@@ -582,6 +617,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   PatchFirewallRequest request =
    *       PatchFirewallRequest.newBuilder()
@@ -611,6 +648,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   PatchFirewallRequest request =
    *       PatchFirewallRequest.newBuilder()
@@ -639,6 +678,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   PatchFirewallRequest request =
    *       PatchFirewallRequest.newBuilder()
@@ -666,6 +707,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   String project = "project-309310695";
    *   String firewall = "firewall-562725632";
@@ -699,6 +742,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   UpdateFirewallRequest request =
    *       UpdateFirewallRequest.newBuilder()
@@ -729,6 +774,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   UpdateFirewallRequest request =
    *       UpdateFirewallRequest.newBuilder()
@@ -758,6 +805,8 @@ public class FirewallsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallsClient firewallsClient = FirewallsClient.create()) {
    *   UpdateFirewallRequest request =
    *       UpdateFirewallRequest.newBuilder()

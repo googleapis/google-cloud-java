@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -42,6 +41,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DiskTypesClient diskTypesClient = DiskTypesClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -79,6 +80,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DiskTypesSettings diskTypesSettings =
  *     DiskTypesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DiskTypesSettings diskTypesSettings =
  *     DiskTypesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DiskTypesClient diskTypesClient = DiskTypesClient.create(diskTypesSettings);
@@ -118,7 +123,6 @@ public class DiskTypesClient implements BackgroundResource {
    * Constructs an instance of DiskTypesClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(DiskTypesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DiskTypesClient create(DiskTypesStub stub) {
     return new DiskTypesClient(stub);
   }
@@ -132,7 +136,6 @@ public class DiskTypesClient implements BackgroundResource {
     this.stub = ((DiskTypesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DiskTypesClient(DiskTypesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -142,7 +145,6 @@ public class DiskTypesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DiskTypesStub getStub() {
     return stub;
   }
@@ -154,6 +156,8 @@ public class DiskTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DiskTypesClient diskTypesClient = DiskTypesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, DiskTypesScopedList> element :
@@ -179,6 +183,8 @@ public class DiskTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DiskTypesClient diskTypesClient = DiskTypesClient.create()) {
    *   AggregatedListDiskTypesRequest request =
    *       AggregatedListDiskTypesRequest.newBuilder()
@@ -211,6 +217,8 @@ public class DiskTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DiskTypesClient diskTypesClient = DiskTypesClient.create()) {
    *   AggregatedListDiskTypesRequest request =
    *       AggregatedListDiskTypesRequest.newBuilder()
@@ -243,6 +251,8 @@ public class DiskTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DiskTypesClient diskTypesClient = DiskTypesClient.create()) {
    *   AggregatedListDiskTypesRequest request =
    *       AggregatedListDiskTypesRequest.newBuilder()
@@ -256,7 +266,7 @@ public class DiskTypesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     DiskTypeAggregatedList response = diskTypesClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, DiskTypesScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, DiskTypesScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -282,6 +292,8 @@ public class DiskTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DiskTypesClient diskTypesClient = DiskTypesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -313,6 +325,8 @@ public class DiskTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DiskTypesClient diskTypesClient = DiskTypesClient.create()) {
    *   GetDiskTypeRequest request =
    *       GetDiskTypeRequest.newBuilder()
@@ -339,6 +353,8 @@ public class DiskTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DiskTypesClient diskTypesClient = DiskTypesClient.create()) {
    *   GetDiskTypeRequest request =
    *       GetDiskTypeRequest.newBuilder()
@@ -363,6 +379,8 @@ public class DiskTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DiskTypesClient diskTypesClient = DiskTypesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -389,6 +407,8 @@ public class DiskTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DiskTypesClient diskTypesClient = DiskTypesClient.create()) {
    *   ListDiskTypesRequest request =
    *       ListDiskTypesRequest.newBuilder()
@@ -420,6 +440,8 @@ public class DiskTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DiskTypesClient diskTypesClient = DiskTypesClient.create()) {
    *   ListDiskTypesRequest request =
    *       ListDiskTypesRequest.newBuilder()
@@ -450,6 +472,8 @@ public class DiskTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DiskTypesClient diskTypesClient = DiskTypesClient.create()) {
    *   ListDiskTypesRequest request =
    *       ListDiskTypesRequest.newBuilder()
@@ -463,7 +487,7 @@ public class DiskTypesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     DiskTypeList response = diskTypesClient.listCallable().call(request);
-   *     for (DiskType element : response.getResponsesList()) {
+   *     for (DiskType element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

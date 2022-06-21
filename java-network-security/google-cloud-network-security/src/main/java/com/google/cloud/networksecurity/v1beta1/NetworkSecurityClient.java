@@ -312,7 +312,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    *   while (true) {
    *     ListAuthorizationPoliciesResponse response =
    *         networkSecurityClient.listAuthorizationPoliciesCallable().call(request);
-   *     for (AuthorizationPolicy element : response.getResponsesList()) {
+   *     for (AuthorizationPolicy element : response.getAuthorizationPoliciesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1016,7 +1016,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    *   while (true) {
    *     ListServerTlsPoliciesResponse response =
    *         networkSecurityClient.listServerTlsPoliciesCallable().call(request);
-   *     for (ServerTlsPolicy element : response.getResponsesList()) {
+   *     for (ServerTlsPolicy element : response.getServerTlsPoliciesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1705,7 +1705,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    *   while (true) {
    *     ListClientTlsPoliciesResponse response =
    *         networkSecurityClient.listClientTlsPoliciesCallable().call(request);
-   *     for (ClientTlsPolicy element : response.getResponsesList()) {
+   *     for (ClientTlsPolicy element : response.getClientTlsPoliciesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

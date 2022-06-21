@@ -281,7 +281,7 @@ public class VersionsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListVersionsResponse response = versionsClient.listVersionsCallable().call(request);
-   *     for (Version element : response.getResponsesList()) {
+   *     for (Version element : response.getVersionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

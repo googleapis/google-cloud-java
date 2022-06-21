@@ -453,7 +453,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListJobsResponse response = jobsV1Beta3Client.listJobsCallable().call(request);
-   *     for (Job element : response.getResponsesList()) {
+   *     for (Job element : response.getJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -553,7 +553,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListJobsResponse response = jobsV1Beta3Client.aggregatedListJobsCallable().call(request);
-   *     for (Job element : response.getResponsesList()) {
+   *     for (Job element : response.getJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

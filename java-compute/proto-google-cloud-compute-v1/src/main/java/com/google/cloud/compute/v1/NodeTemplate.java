@@ -243,6 +243,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1073,7 +1075,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsNodeAffinityLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetNodeAffinityLabels().getMap().containsKey(key);
   }
@@ -1109,7 +1111,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getNodeAffinityLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetNodeAffinityLabels().getMap();
@@ -1127,7 +1129,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getNodeAffinityLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetNodeAffinityLabels().getMap();
@@ -3531,7 +3533,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsNodeAffinityLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetNodeAffinityLabels().getMap().containsKey(key);
     }
@@ -3567,7 +3569,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getNodeAffinityLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetNodeAffinityLabels().getMap();
@@ -3585,7 +3587,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getNodeAffinityLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetNodeAffinityLabels().getMap();
@@ -3610,7 +3612,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeNodeAffinityLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableNodeAffinityLabels().getMutableMap().remove(key);
       return this;
@@ -3631,11 +3633,12 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putNodeAffinityLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableNodeAffinityLabels().getMutableMap().put(key, value);
       return this;
     }

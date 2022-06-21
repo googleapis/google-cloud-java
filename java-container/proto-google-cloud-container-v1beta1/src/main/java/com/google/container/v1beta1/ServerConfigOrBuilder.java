@@ -327,8 +327,12 @@ public interface ServerConfigOrBuilder
    * <code>map&lt;string, .google.container.v1beta1.WindowsVersions&gt; windows_version_maps = 10;
    * </code>
    */
+
+  /* nullable */
   com.google.container.v1beta1.WindowsVersions getWindowsVersionMapsOrDefault(
-      java.lang.String key, com.google.container.v1beta1.WindowsVersions defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.container.v1beta1.WindowsVersions defaultValue);
   /**
    *
    *

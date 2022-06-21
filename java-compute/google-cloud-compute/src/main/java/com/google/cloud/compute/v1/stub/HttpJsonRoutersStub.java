@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.RoutersClient.AggregatedListPagedRespo
 import static com.google.cloud.compute.v1.RoutersClient.GetNatMappingInfoPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -69,7 +68,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonRoutersStub extends RoutersStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -78,7 +77,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListRoutersRequest, RouterAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Routers/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListRoutersRequest>newBuilder()
@@ -133,7 +132,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
   private static final ApiMethodDescriptor<DeleteRouterRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteRouterRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routers/Delete")
-          .setHttpMethod(HttpMethods.DELETE)
+          .setHttpMethod("DELETE")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteRouterRequest>newBuilder()
@@ -183,7 +182,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
   private static final ApiMethodDescriptor<GetRouterRequest, Router> getMethodDescriptor =
       ApiMethodDescriptor.<GetRouterRequest, Router>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routers/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetRouterRequest>newBuilder()
@@ -220,7 +219,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
           ApiMethodDescriptor
               .<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Routers/GetNatMappingInfo")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetNatMappingInfoRoutersRequest>newBuilder()
@@ -274,7 +273,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
       getRouterStatusMethodDescriptor =
           ApiMethodDescriptor.<GetRouterStatusRouterRequest, RouterStatusResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Routers/GetRouterStatus")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRouterStatusRouterRequest>newBuilder()
@@ -308,7 +307,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
   private static final ApiMethodDescriptor<InsertRouterRequest, Operation> insertMethodDescriptor =
       ApiMethodDescriptor.<InsertRouterRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routers/Insert")
-          .setHttpMethod(HttpMethods.POST)
+          .setHttpMethod("POST")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertRouterRequest>newBuilder()
@@ -360,7 +359,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
   private static final ApiMethodDescriptor<ListRoutersRequest, RouterList> listMethodDescriptor =
       ApiMethodDescriptor.<ListRoutersRequest, RouterList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routers/List")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListRoutersRequest>newBuilder()
@@ -409,7 +408,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
   private static final ApiMethodDescriptor<PatchRouterRequest, Operation> patchMethodDescriptor =
       ApiMethodDescriptor.<PatchRouterRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routers/Patch")
-          .setHttpMethod(HttpMethods.PATCH)
+          .setHttpMethod("PATCH")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchRouterRequest>newBuilder()
@@ -463,7 +462,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
       previewMethodDescriptor =
           ApiMethodDescriptor.<PreviewRouterRequest, RoutersPreviewResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Routers/Preview")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PreviewRouterRequest>newBuilder()
@@ -500,7 +499,7 @@ public class HttpJsonRoutersStub extends RoutersStub {
   private static final ApiMethodDescriptor<UpdateRouterRequest, Operation> updateMethodDescriptor =
       ApiMethodDescriptor.<UpdateRouterRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Routers/Update")
-          .setHttpMethod(HttpMethods.PUT)
+          .setHttpMethod("PUT")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<UpdateRouterRequest>newBuilder()

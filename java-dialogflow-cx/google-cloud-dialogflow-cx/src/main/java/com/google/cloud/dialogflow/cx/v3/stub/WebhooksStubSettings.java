@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3.stub;
 
+import static com.google.cloud.dialogflow.cx.v3.WebhooksClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.WebhooksClient.ListWebhooksPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -47,6 +48,10 @@ import com.google.cloud.dialogflow.cx.v3.ListWebhooksRequest;
 import com.google.cloud.dialogflow.cx.v3.ListWebhooksResponse;
 import com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest;
 import com.google.cloud.dialogflow.cx.v3.Webhook;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -106,6 +111,10 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
   private final UnaryCallSettings<CreateWebhookRequest, Webhook> createWebhookSettings;
   private final UnaryCallSettings<UpdateWebhookRequest, Webhook> updateWebhookSettings;
   private final UnaryCallSettings<DeleteWebhookRequest, Empty> deleteWebhookSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListWebhooksRequest, ListWebhooksResponse, Webhook>
       LIST_WEBHOOKS_PAGE_STR_DESC =
@@ -143,6 +152,42 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListWebhooksRequest, ListWebhooksResponse, ListWebhooksPagedResponse>
       LIST_WEBHOOKS_PAGE_STR_FACT =
@@ -157,6 +202,23 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
               PageContext<ListWebhooksRequest, ListWebhooksResponse, Webhook> pageContext =
                   PageContext.create(callable, LIST_WEBHOOKS_PAGE_STR_DESC, request, context);
               return ListWebhooksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -184,6 +246,17 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
   /** Returns the object with the settings used for calls to deleteWebhook. */
   public UnaryCallSettings<DeleteWebhookRequest, Empty> deleteWebhookSettings() {
     return deleteWebhookSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public WebhooksStub createStub() throws IOException {
@@ -265,6 +338,8 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
     createWebhookSettings = settingsBuilder.createWebhookSettings().build();
     updateWebhookSettings = settingsBuilder.updateWebhookSettings().build();
     deleteWebhookSettings = settingsBuilder.deleteWebhookSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for WebhooksStubSettings. */
@@ -277,6 +352,10 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
     private final UnaryCallSettings.Builder<CreateWebhookRequest, Webhook> createWebhookSettings;
     private final UnaryCallSettings.Builder<UpdateWebhookRequest, Webhook> updateWebhookSettings;
     private final UnaryCallSettings.Builder<DeleteWebhookRequest, Empty> deleteWebhookSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -320,6 +399,8 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
       createWebhookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateWebhookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteWebhookSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -327,7 +408,9 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
               getWebhookSettings,
               createWebhookSettings,
               updateWebhookSettings,
-              deleteWebhookSettings);
+              deleteWebhookSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -339,6 +422,8 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
       createWebhookSettings = settings.createWebhookSettings.toBuilder();
       updateWebhookSettings = settings.updateWebhookSettings.toBuilder();
       deleteWebhookSettings = settings.deleteWebhookSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -346,7 +431,9 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
               getWebhookSettings,
               createWebhookSettings,
               updateWebhookSettings,
-              deleteWebhookSettings);
+              deleteWebhookSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -385,6 +472,16 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
 
       builder
           .deleteWebhookSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -431,6 +528,18 @@ public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
     /** Returns the builder for the settings used for calls to deleteWebhook. */
     public UnaryCallSettings.Builder<DeleteWebhookRequest, Empty> deleteWebhookSettings() {
       return deleteWebhookSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

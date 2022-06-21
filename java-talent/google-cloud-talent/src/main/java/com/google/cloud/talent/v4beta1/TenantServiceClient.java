@@ -665,7 +665,7 @@ public class TenantServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTenantsResponse response = tenantServiceClient.listTenantsCallable().call(request);
-   *     for (Tenant element : response.getResponsesList()) {
+   *     for (Tenant element : response.getTenantsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

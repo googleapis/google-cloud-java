@@ -18,6 +18,7 @@ package com.google.cloud.eventarc.v1;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -1017,6 +1018,174 @@ public class EventarcClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getProviderTest() throws Exception {
+    Provider expectedResponse =
+        Provider.newBuilder()
+            .setName(ProviderName.of("[PROJECT]", "[LOCATION]", "[PROVIDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllEventTypes(new ArrayList<EventType>())
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    ProviderName name = ProviderName.of("[PROJECT]", "[LOCATION]", "[PROVIDER]");
+
+    Provider actualResponse = client.getProvider(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetProviderRequest actualRequest = ((GetProviderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getProviderExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      ProviderName name = ProviderName.of("[PROJECT]", "[LOCATION]", "[PROVIDER]");
+      client.getProvider(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProviderTest2() throws Exception {
+    Provider expectedResponse =
+        Provider.newBuilder()
+            .setName(ProviderName.of("[PROJECT]", "[LOCATION]", "[PROVIDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .addAllEventTypes(new ArrayList<EventType>())
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Provider actualResponse = client.getProvider(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetProviderRequest actualRequest = ((GetProviderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getProviderExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getProvider(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listProvidersTest() throws Exception {
+    Provider responsesElement = Provider.newBuilder().build();
+    ListProvidersResponse expectedResponse =
+        ListProvidersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProviders(Arrays.asList(responsesElement))
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListProvidersPagedResponse pagedListResponse = client.listProviders(parent);
+
+    List<Provider> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProvidersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListProvidersRequest actualRequest = ((ListProvidersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listProvidersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listProviders(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listProvidersTest2() throws Exception {
+    Provider responsesElement = Provider.newBuilder().build();
+    ListProvidersResponse expectedResponse =
+        ListProvidersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProviders(Arrays.asList(responsesElement))
+            .build();
+    mockEventarc.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListProvidersPagedResponse pagedListResponse = client.listProviders(parent);
+
+    List<Provider> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProvidersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockEventarc.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListProvidersRequest actualRequest = ((ListProvidersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listProvidersExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEventarc.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listProviders(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

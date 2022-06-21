@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TargetPoolsSettings targetPoolsSettings =
  *     TargetPoolsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TargetPoolsSettings targetPoolsSettings =
  *     TargetPoolsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TargetPoolsClient targetPoolsClient = TargetPoolsClient.create(targetPoolsSettings);
@@ -120,7 +126,6 @@ public class TargetPoolsClient implements BackgroundResource {
    * Constructs an instance of TargetPoolsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(TargetPoolsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetPoolsClient create(TargetPoolsStub stub) {
     return new TargetPoolsClient(stub);
   }
@@ -135,7 +140,6 @@ public class TargetPoolsClient implements BackgroundResource {
     this.stub = ((TargetPoolsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TargetPoolsClient(TargetPoolsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -145,7 +149,6 @@ public class TargetPoolsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TargetPoolsStub getStub() {
     return stub;
   }
@@ -157,6 +160,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -199,6 +204,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AddHealthCheckTargetPoolRequest request =
    *       AddHealthCheckTargetPoolRequest.newBuilder()
@@ -230,6 +237,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AddHealthCheckTargetPoolRequest request =
    *       AddHealthCheckTargetPoolRequest.newBuilder()
@@ -259,6 +268,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AddHealthCheckTargetPoolRequest request =
    *       AddHealthCheckTargetPoolRequest.newBuilder()
@@ -286,6 +297,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -327,6 +340,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AddInstanceTargetPoolRequest request =
    *       AddInstanceTargetPoolRequest.newBuilder()
@@ -358,6 +373,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AddInstanceTargetPoolRequest request =
    *       AddInstanceTargetPoolRequest.newBuilder()
@@ -387,6 +404,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AddInstanceTargetPoolRequest request =
    *       AddInstanceTargetPoolRequest.newBuilder()
@@ -414,6 +433,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, TargetPoolsScopedList> element :
@@ -439,6 +460,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AggregatedListTargetPoolsRequest request =
    *       AggregatedListTargetPoolsRequest.newBuilder()
@@ -472,6 +495,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AggregatedListTargetPoolsRequest request =
    *       AggregatedListTargetPoolsRequest.newBuilder()
@@ -504,6 +529,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   AggregatedListTargetPoolsRequest request =
    *       AggregatedListTargetPoolsRequest.newBuilder()
@@ -518,7 +545,7 @@ public class TargetPoolsClient implements BackgroundResource {
    *   while (true) {
    *     TargetPoolAggregatedList response =
    *         targetPoolsClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, TargetPoolsScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, TargetPoolsScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -543,6 +570,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -574,6 +603,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   DeleteTargetPoolRequest request =
    *       DeleteTargetPoolRequest.newBuilder()
@@ -602,6 +633,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   DeleteTargetPoolRequest request =
    *       DeleteTargetPoolRequest.newBuilder()
@@ -629,6 +662,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   DeleteTargetPoolRequest request =
    *       DeleteTargetPoolRequest.newBuilder()
@@ -655,6 +690,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -686,6 +723,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   GetTargetPoolRequest request =
    *       GetTargetPoolRequest.newBuilder()
@@ -712,6 +751,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   GetTargetPoolRequest request =
    *       GetTargetPoolRequest.newBuilder()
@@ -737,6 +778,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -776,6 +819,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   GetHealthTargetPoolRequest request =
    *       GetHealthTargetPoolRequest.newBuilder()
@@ -803,6 +848,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   GetHealthTargetPoolRequest request =
    *       GetHealthTargetPoolRequest.newBuilder()
@@ -831,6 +878,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -863,6 +912,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   InsertTargetPoolRequest request =
    *       InsertTargetPoolRequest.newBuilder()
@@ -892,6 +943,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   InsertTargetPoolRequest request =
    *       InsertTargetPoolRequest.newBuilder()
@@ -920,6 +973,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   InsertTargetPoolRequest request =
    *       InsertTargetPoolRequest.newBuilder()
@@ -945,6 +1000,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -971,6 +1028,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   ListTargetPoolsRequest request =
    *       ListTargetPoolsRequest.newBuilder()
@@ -1002,6 +1061,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   ListTargetPoolsRequest request =
    *       ListTargetPoolsRequest.newBuilder()
@@ -1032,6 +1093,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   ListTargetPoolsRequest request =
    *       ListTargetPoolsRequest.newBuilder()
@@ -1045,7 +1108,7 @@ public class TargetPoolsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     TargetPoolList response = targetPoolsClient.listCallable().call(request);
-   *     for (TargetPool element : response.getResponsesList()) {
+   *     for (TargetPool element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1069,6 +1132,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1112,6 +1177,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   RemoveHealthCheckTargetPoolRequest request =
    *       RemoveHealthCheckTargetPoolRequest.newBuilder()
@@ -1143,6 +1210,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   RemoveHealthCheckTargetPoolRequest request =
    *       RemoveHealthCheckTargetPoolRequest.newBuilder()
@@ -1172,6 +1241,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   RemoveHealthCheckTargetPoolRequest request =
    *       RemoveHealthCheckTargetPoolRequest.newBuilder()
@@ -1201,6 +1272,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1243,6 +1316,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   RemoveInstanceTargetPoolRequest request =
    *       RemoveInstanceTargetPoolRequest.newBuilder()
@@ -1274,6 +1349,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   RemoveInstanceTargetPoolRequest request =
    *       RemoveInstanceTargetPoolRequest.newBuilder()
@@ -1303,6 +1380,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   RemoveInstanceTargetPoolRequest request =
    *       RemoveInstanceTargetPoolRequest.newBuilder()
@@ -1330,6 +1409,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1367,6 +1448,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   SetBackupTargetPoolRequest request =
    *       SetBackupTargetPoolRequest.newBuilder()
@@ -1398,6 +1481,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   SetBackupTargetPoolRequest request =
    *       SetBackupTargetPoolRequest.newBuilder()
@@ -1427,6 +1512,8 @@ public class TargetPoolsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   SetBackupTargetPoolRequest request =
    *       SetBackupTargetPoolRequest.newBuilder()

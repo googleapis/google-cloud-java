@@ -561,7 +561,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListKeysResponse response =
    *         recaptchaEnterpriseServiceClient.listKeysCallable().call(request);
-   *     for (Key element : response.getResponsesList()) {
+   *     for (Key element : response.getKeysList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1037,7 +1037,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListRelatedAccountGroupsResponse response =
    *         recaptchaEnterpriseServiceClient.listRelatedAccountGroupsCallable().call(request);
-   *     for (RelatedAccountGroup element : response.getResponsesList()) {
+   *     for (RelatedAccountGroup element : response.getRelatedAccountGroupsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1216,7 +1216,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *         recaptchaEnterpriseServiceClient
    *             .listRelatedAccountGroupMembershipsCallable()
    *             .call(request);
-   *     for (RelatedAccountGroupMembership element : response.getResponsesList()) {
+   *     for (RelatedAccountGroupMembership element :
+   *         response.getRelatedAccountGroupMembershipsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1412,7 +1413,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *         recaptchaEnterpriseServiceClient
    *             .searchRelatedAccountGroupMembershipsCallable()
    *             .call(request);
-   *     for (RelatedAccountGroupMembership element : response.getResponsesList()) {
+   *     for (RelatedAccountGroupMembership element :
+   *         response.getRelatedAccountGroupMembershipsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

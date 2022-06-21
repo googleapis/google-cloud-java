@@ -35,6 +35,8 @@ public interface CreateClusterRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.container.v1beta1.CreateClusterRequest.project_id is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2109
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -51,6 +53,8 @@ public interface CreateClusterRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.container.v1beta1.CreateClusterRequest.project_id is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2109
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -68,6 +72,8 @@ public interface CreateClusterRequestOrBuilder
    *
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.container.v1beta1.CreateClusterRequest.zone is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2118
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -84,6 +90,8 @@ public interface CreateClusterRequestOrBuilder
    *
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.container.v1beta1.CreateClusterRequest.zone is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2118
    * @return The bytes for zone.
    */
   @java.lang.Deprecated

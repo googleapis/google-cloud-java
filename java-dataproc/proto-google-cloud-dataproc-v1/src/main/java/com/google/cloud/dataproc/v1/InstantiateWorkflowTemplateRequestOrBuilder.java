@@ -170,7 +170,12 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder
    * <code>map&lt;string, string&gt; parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  java.lang.String getParametersOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getParametersOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

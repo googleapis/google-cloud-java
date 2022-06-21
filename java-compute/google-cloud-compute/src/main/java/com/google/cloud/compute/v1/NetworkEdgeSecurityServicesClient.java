@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
  *     NetworkEdgeSecurityServicesClient.create()) {
  *   String project = "project-309310695";
@@ -84,6 +86,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NetworkEdgeSecurityServicesSettings networkEdgeSecurityServicesSettings =
  *     NetworkEdgeSecurityServicesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,6 +99,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NetworkEdgeSecurityServicesSettings networkEdgeSecurityServicesSettings =
  *     NetworkEdgeSecurityServicesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
@@ -127,7 +133,6 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * Constructs an instance of NetworkEdgeSecurityServicesClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(NetworkEdgeSecurityServicesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NetworkEdgeSecurityServicesClient create(
       NetworkEdgeSecurityServicesStub stub) {
     return new NetworkEdgeSecurityServicesClient(stub);
@@ -144,7 +149,6 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
     this.stub = ((NetworkEdgeSecurityServicesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected NetworkEdgeSecurityServicesClient(NetworkEdgeSecurityServicesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +158,6 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public NetworkEdgeSecurityServicesStub getStub() {
     return stub;
   }
@@ -167,6 +170,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   String project = "project-309310695";
@@ -194,6 +199,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   AggregatedListNetworkEdgeSecurityServicesRequest request =
@@ -229,6 +236,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   AggregatedListNetworkEdgeSecurityServicesRequest request =
@@ -265,6 +274,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   AggregatedListNetworkEdgeSecurityServicesRequest request =
@@ -281,7 +292,7 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    *     NetworkEdgeSecurityServiceAggregatedList response =
    *         networkEdgeSecurityServicesClient.aggregatedListCallable().call(request);
    *     for (Map.Entry<String, NetworkEdgeSecurityServicesScopedList> element :
-   *         response.getResponsesList()) {
+   *         response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -308,6 +319,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   String project = "project-309310695";
@@ -343,6 +356,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   DeleteNetworkEdgeSecurityServiceRequest request =
@@ -373,6 +388,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   DeleteNetworkEdgeSecurityServiceRequest request =
@@ -401,6 +418,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   DeleteNetworkEdgeSecurityServiceRequest request =
@@ -428,6 +447,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   String project = "project-309310695";
@@ -461,6 +482,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   GetNetworkEdgeSecurityServiceRequest request =
@@ -487,6 +510,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   GetNetworkEdgeSecurityServiceRequest request =
@@ -514,6 +539,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   String project = "project-309310695";
@@ -552,6 +579,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   InsertNetworkEdgeSecurityServiceRequest request =
@@ -584,6 +613,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   InsertNetworkEdgeSecurityServiceRequest request =
@@ -614,6 +645,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   InsertNetworkEdgeSecurityServiceRequest request =
@@ -643,6 +676,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   String project = "project-309310695";
@@ -686,6 +721,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   PatchNetworkEdgeSecurityServiceRequest request =
@@ -720,6 +757,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   PatchNetworkEdgeSecurityServiceRequest request =
@@ -752,6 +791,8 @@ public class NetworkEdgeSecurityServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEdgeSecurityServicesClient networkEdgeSecurityServicesClient =
    *     NetworkEdgeSecurityServicesClient.create()) {
    *   PatchNetworkEdgeSecurityServiceRequest request =

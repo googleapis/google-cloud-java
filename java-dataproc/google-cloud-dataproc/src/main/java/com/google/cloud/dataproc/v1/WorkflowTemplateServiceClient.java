@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.dataproc.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -47,6 +46,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
  *     WorkflowTemplateServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -86,6 +87,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * WorkflowTemplateServiceSettings workflowTemplateServiceSettings =
  *     WorkflowTemplateServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -97,6 +100,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * WorkflowTemplateServiceSettings workflowTemplateServiceSettings =
  *     WorkflowTemplateServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * WorkflowTemplateServiceClient workflowTemplateServiceClient =
@@ -129,7 +134,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * Constructs an instance of WorkflowTemplateServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(WorkflowTemplateServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final WorkflowTemplateServiceClient create(WorkflowTemplateServiceStub stub) {
     return new WorkflowTemplateServiceClient(stub);
   }
@@ -146,7 +150,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected WorkflowTemplateServiceClient(WorkflowTemplateServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -157,7 +160,6 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public WorkflowTemplateServiceStub getStub() {
     return stub;
   }
@@ -177,6 +179,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -217,6 +221,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
@@ -257,6 +263,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   String parent = RegionName.of("[PROJECT]", "[REGION]").toString();
@@ -293,6 +301,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   CreateWorkflowTemplateRequest request =
@@ -318,6 +328,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   CreateWorkflowTemplateRequest request =
@@ -346,11 +358,13 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   WorkflowTemplateName name =
-   *       WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *           "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *       WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+   *           "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]");
    *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(name);
    * }
    * }</pre>
@@ -387,6 +401,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   String name =
@@ -427,13 +443,15 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   GetWorkflowTemplateRequest request =
    *       GetWorkflowTemplateRequest.newBuilder()
    *           .setName(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
+   *               WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]")
    *                   .toString())
    *           .setVersion(351608024)
    *           .build();
@@ -457,13 +475,15 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   GetWorkflowTemplateRequest request =
    *       GetWorkflowTemplateRequest.newBuilder()
    *           .setName(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
+   *               WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]")
    *                   .toString())
    *           .setVersion(351608024)
    *           .build();
@@ -502,11 +522,13 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   WorkflowTemplateName name =
-   *       WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *           "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *       WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+   *           "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]");
    *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name).get();
    * }
    * }</pre>
@@ -558,6 +580,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   String name =
@@ -613,11 +637,13 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   WorkflowTemplateName name =
-   *       WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *           "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *       WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+   *           "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]");
    *   Map<String, String> parameters = new HashMap<>();
    *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name, parameters).get();
    * }
@@ -673,6 +699,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   String name =
@@ -734,13 +762,15 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   InstantiateWorkflowTemplateRequest request =
    *       InstantiateWorkflowTemplateRequest.newBuilder()
    *           .setName(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
+   *               WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]")
    *                   .toString())
    *           .setVersion(351608024)
    *           .setRequestId("requestId693933066")
@@ -781,13 +811,15 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   InstantiateWorkflowTemplateRequest request =
    *       InstantiateWorkflowTemplateRequest.newBuilder()
    *           .setName(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
+   *               WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]")
    *                   .toString())
    *           .setVersion(351608024)
    *           .setRequestId("requestId693933066")
@@ -830,13 +862,15 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   InstantiateWorkflowTemplateRequest request =
    *       InstantiateWorkflowTemplateRequest.newBuilder()
    *           .setName(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
+   *               WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]")
    *                   .toString())
    *           .setVersion(351608024)
    *           .setRequestId("requestId693933066")
@@ -882,6 +916,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -942,6 +978,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
@@ -1002,6 +1040,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   String parent = RegionName.of("[PROJECT]", "[REGION]").toString();
@@ -1062,6 +1102,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   InstantiateInlineWorkflowTemplateRequest request =
@@ -1110,6 +1152,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   InstantiateInlineWorkflowTemplateRequest request =
@@ -1160,6 +1204,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   InstantiateInlineWorkflowTemplateRequest request =
@@ -1190,6 +1236,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
@@ -1215,6 +1263,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   UpdateWorkflowTemplateRequest request =
@@ -1240,6 +1290,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   UpdateWorkflowTemplateRequest request =
@@ -1265,6 +1317,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -1303,6 +1357,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
@@ -1341,6 +1397,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   String parent = RegionName.of("[PROJECT]", "[REGION]").toString();
@@ -1377,6 +1435,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   ListWorkflowTemplatesRequest request =
@@ -1407,6 +1467,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   ListWorkflowTemplatesRequest request =
@@ -1436,6 +1498,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   ListWorkflowTemplatesRequest request =
@@ -1447,7 +1511,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListWorkflowTemplatesResponse response =
    *         workflowTemplateServiceClient.listWorkflowTemplatesCallable().call(request);
-   *     for (WorkflowTemplate element : response.getResponsesList()) {
+   *     for (WorkflowTemplate element : response.getTemplatesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1472,11 +1536,13 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   WorkflowTemplateName name =
-   *       WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *           "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *       WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+   *           "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]");
    *   workflowTemplateServiceClient.deleteWorkflowTemplate(name);
    * }
    * }</pre>
@@ -1511,6 +1577,8 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   String name =
@@ -1549,13 +1617,15 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   DeleteWorkflowTemplateRequest request =
    *       DeleteWorkflowTemplateRequest.newBuilder()
    *           .setName(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
+   *               WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]")
    *                   .toString())
    *           .setVersion(351608024)
    *           .build();
@@ -1577,13 +1647,15 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
    *     WorkflowTemplateServiceClient.create()) {
    *   DeleteWorkflowTemplateRequest request =
    *       DeleteWorkflowTemplateRequest.newBuilder()
    *           .setName(
-   *               WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-   *                       "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
+   *               WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+   *                       "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]")
    *                   .toString())
    *           .setVersion(351608024)
    *           .build();

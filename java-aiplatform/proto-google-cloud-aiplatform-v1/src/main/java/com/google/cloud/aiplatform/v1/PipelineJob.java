@@ -43,6 +43,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     serviceAccount_ = "";
     network_ = "";
+    templateUri_ = "";
   }
 
   @java.lang.Override
@@ -259,6 +260,30 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               network_ = s;
+              break;
+            }
+          case 154:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              templateUri_ = s;
+              break;
+            }
+          case 162:
+            {
+              com.google.cloud.aiplatform.v1.PipelineTemplateMetadata.Builder subBuilder = null;
+              if (templateMetadata_ != null) {
+                subBuilder = templateMetadata_.toBuilder();
+              }
+              templateMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1.PipelineTemplateMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(templateMetadata_);
+                templateMetadata_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -526,6 +551,41 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
      */
     com.google.protobuf.Value getParameterValuesOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents the failure policy of a pipeline. Currently, the default of a
+     * pipeline is that the pipeline will continue to run until no more tasks
+     * can be executed, also known as PIPELINE_FAILURE_POLICY_FAIL_SLOW.
+     * However, if a pipeline is set to PIPELINE_FAILURE_POLICY_FAIL_FAST, it
+     * will stop scheduling any new tasks when a task has failed. Any scheduled
+     * tasks will continue to completion.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.PipelineFailurePolicy failure_policy = 4;</code>
+     *
+     * @return The enum numeric value on the wire for failurePolicy.
+     */
+    int getFailurePolicyValue();
+    /**
+     *
+     *
+     * <pre>
+     * Represents the failure policy of a pipeline. Currently, the default of a
+     * pipeline is that the pipeline will continue to run until no more tasks
+     * can be executed, also known as PIPELINE_FAILURE_POLICY_FAIL_SLOW.
+     * However, if a pipeline is set to PIPELINE_FAILURE_POLICY_FAIL_FAST, it
+     * will stop scheduling any new tasks when a task has failed. Any scheduled
+     * tasks will continue to completion.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.PipelineFailurePolicy failure_policy = 4;</code>
+     *
+     * @return The failurePolicy.
+     */
+    com.google.cloud.aiplatform.v1.PipelineFailurePolicy getFailurePolicy();
   }
   /**
    *
@@ -548,6 +608,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
 
     private RuntimeConfig() {
       gcsOutputDirectory_ = "";
+      failurePolicy_ = 0;
     }
 
     @java.lang.Override
@@ -619,6 +680,13 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
                 parameterValues_
                     .getMutableMap()
                     .put(parameterValues__.getKey(), parameterValues__.getValue());
+                break;
+              }
+            case 32:
+              {
+                int rawValue = input.readEnum();
+
+                failurePolicy_ = rawValue;
                 break;
               }
             default:
@@ -994,6 +1062,54 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       return map.get(key);
     }
 
+    public static final int FAILURE_POLICY_FIELD_NUMBER = 4;
+    private int failurePolicy_;
+    /**
+     *
+     *
+     * <pre>
+     * Represents the failure policy of a pipeline. Currently, the default of a
+     * pipeline is that the pipeline will continue to run until no more tasks
+     * can be executed, also known as PIPELINE_FAILURE_POLICY_FAIL_SLOW.
+     * However, if a pipeline is set to PIPELINE_FAILURE_POLICY_FAIL_FAST, it
+     * will stop scheduling any new tasks when a task has failed. Any scheduled
+     * tasks will continue to completion.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.PipelineFailurePolicy failure_policy = 4;</code>
+     *
+     * @return The enum numeric value on the wire for failurePolicy.
+     */
+    @java.lang.Override
+    public int getFailurePolicyValue() {
+      return failurePolicy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the failure policy of a pipeline. Currently, the default of a
+     * pipeline is that the pipeline will continue to run until no more tasks
+     * can be executed, also known as PIPELINE_FAILURE_POLICY_FAIL_SLOW.
+     * However, if a pipeline is set to PIPELINE_FAILURE_POLICY_FAIL_FAST, it
+     * will stop scheduling any new tasks when a task has failed. Any scheduled
+     * tasks will continue to completion.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.PipelineFailurePolicy failure_policy = 4;</code>
+     *
+     * @return The failurePolicy.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.PipelineFailurePolicy getFailurePolicy() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.aiplatform.v1.PipelineFailurePolicy result =
+          com.google.cloud.aiplatform.v1.PipelineFailurePolicy.valueOf(failurePolicy_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1.PipelineFailurePolicy.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1015,6 +1131,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetParameterValues(), ParameterValuesDefaultEntryHolder.defaultEntry, 3);
+      if (failurePolicy_
+          != com.google.cloud.aiplatform.v1.PipelineFailurePolicy
+              .PIPELINE_FAILURE_POLICY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, failurePolicy_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1049,6 +1171,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
                     .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, parameterValues__);
       }
+      if (failurePolicy_
+          != com.google.cloud.aiplatform.v1.PipelineFailurePolicy
+              .PIPELINE_FAILURE_POLICY_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, failurePolicy_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1068,6 +1196,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       if (!internalGetParameters().equals(other.internalGetParameters())) return false;
       if (!getGcsOutputDirectory().equals(other.getGcsOutputDirectory())) return false;
       if (!internalGetParameterValues().equals(other.internalGetParameterValues())) return false;
+      if (failurePolicy_ != other.failurePolicy_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1089,6 +1218,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + PARAMETER_VALUES_FIELD_NUMBER;
         hash = (53 * hash) + internalGetParameterValues().hashCode();
       }
+      hash = (37 * hash) + FAILURE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + failurePolicy_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1265,6 +1396,8 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         gcsOutputDirectory_ = "";
 
         internalGetMutableParameterValues().clear();
+        failurePolicy_ = 0;
+
         return this;
       }
 
@@ -1298,6 +1431,7 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
         result.gcsOutputDirectory_ = gcsOutputDirectory_;
         result.parameterValues_ = internalGetParameterValues();
         result.parameterValues_.makeImmutable();
+        result.failurePolicy_ = failurePolicy_;
         onBuilt();
         return result;
       }
@@ -1356,6 +1490,9 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
           onChanged();
         }
         internalGetMutableParameterValues().mergeFrom(other.internalGetParameterValues());
+        if (other.failurePolicy_ != 0) {
+          setFailurePolicyValue(other.getFailurePolicyValue());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1942,6 +2079,124 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       public Builder putAllParameterValues(
           java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
         internalGetMutableParameterValues().getMutableMap().putAll(values);
+        return this;
+      }
+
+      private int failurePolicy_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Represents the failure policy of a pipeline. Currently, the default of a
+       * pipeline is that the pipeline will continue to run until no more tasks
+       * can be executed, also known as PIPELINE_FAILURE_POLICY_FAIL_SLOW.
+       * However, if a pipeline is set to PIPELINE_FAILURE_POLICY_FAIL_FAST, it
+       * will stop scheduling any new tasks when a task has failed. Any scheduled
+       * tasks will continue to completion.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.PipelineFailurePolicy failure_policy = 4;</code>
+       *
+       * @return The enum numeric value on the wire for failurePolicy.
+       */
+      @java.lang.Override
+      public int getFailurePolicyValue() {
+        return failurePolicy_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the failure policy of a pipeline. Currently, the default of a
+       * pipeline is that the pipeline will continue to run until no more tasks
+       * can be executed, also known as PIPELINE_FAILURE_POLICY_FAIL_SLOW.
+       * However, if a pipeline is set to PIPELINE_FAILURE_POLICY_FAIL_FAST, it
+       * will stop scheduling any new tasks when a task has failed. Any scheduled
+       * tasks will continue to completion.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.PipelineFailurePolicy failure_policy = 4;</code>
+       *
+       * @param value The enum numeric value on the wire for failurePolicy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFailurePolicyValue(int value) {
+
+        failurePolicy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the failure policy of a pipeline. Currently, the default of a
+       * pipeline is that the pipeline will continue to run until no more tasks
+       * can be executed, also known as PIPELINE_FAILURE_POLICY_FAIL_SLOW.
+       * However, if a pipeline is set to PIPELINE_FAILURE_POLICY_FAIL_FAST, it
+       * will stop scheduling any new tasks when a task has failed. Any scheduled
+       * tasks will continue to completion.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.PipelineFailurePolicy failure_policy = 4;</code>
+       *
+       * @return The failurePolicy.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.PipelineFailurePolicy getFailurePolicy() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.aiplatform.v1.PipelineFailurePolicy result =
+            com.google.cloud.aiplatform.v1.PipelineFailurePolicy.valueOf(failurePolicy_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1.PipelineFailurePolicy.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the failure policy of a pipeline. Currently, the default of a
+       * pipeline is that the pipeline will continue to run until no more tasks
+       * can be executed, also known as PIPELINE_FAILURE_POLICY_FAIL_SLOW.
+       * However, if a pipeline is set to PIPELINE_FAILURE_POLICY_FAIL_FAST, it
+       * will stop scheduling any new tasks when a task has failed. Any scheduled
+       * tasks will continue to completion.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.PipelineFailurePolicy failure_policy = 4;</code>
+       *
+       * @param value The failurePolicy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFailurePolicy(com.google.cloud.aiplatform.v1.PipelineFailurePolicy value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        failurePolicy_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents the failure policy of a pipeline. Currently, the default of a
+       * pipeline is that the pipeline will continue to run until no more tasks
+       * can be executed, also known as PIPELINE_FAILURE_POLICY_FAIL_SLOW.
+       * However, if a pipeline is set to PIPELINE_FAILURE_POLICY_FAIL_FAST, it
+       * will stop scheduling any new tasks when a task has failed. Any scheduled
+       * tasks will continue to completion.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.PipelineFailurePolicy failure_policy = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFailurePolicy() {
+
+        failurePolicy_ = 0;
+        onChanged();
         return this;
       }
 
@@ -2832,6 +3087,115 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int TEMPLATE_URI_FIELD_NUMBER = 19;
+  private volatile java.lang.Object templateUri_;
+  /**
+   *
+   *
+   * <pre>
+   * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
+   * be downloaded.
+   * </pre>
+   *
+   * <code>string template_uri = 19;</code>
+   *
+   * @return The templateUri.
+   */
+  @java.lang.Override
+  public java.lang.String getTemplateUri() {
+    java.lang.Object ref = templateUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      templateUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
+   * be downloaded.
+   * </pre>
+   *
+   * <code>string template_uri = 19;</code>
+   *
+   * @return The bytes for templateUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTemplateUriBytes() {
+    java.lang.Object ref = templateUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      templateUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TEMPLATE_METADATA_FIELD_NUMBER = 20;
+  private com.google.cloud.aiplatform.v1.PipelineTemplateMetadata templateMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Pipeline template metadata. Will fill up fields if
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the templateMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasTemplateMetadata() {
+    return templateMetadata_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Pipeline template metadata. Will fill up fields if
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The templateMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.PipelineTemplateMetadata getTemplateMetadata() {
+    return templateMetadata_ == null
+        ? com.google.cloud.aiplatform.v1.PipelineTemplateMetadata.getDefaultInstance()
+        : templateMetadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Pipeline template metadata. Will fill up fields if
+   * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.PipelineTemplateMetadataOrBuilder
+      getTemplateMetadataOrBuilder() {
+    return getTemplateMetadata();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2890,6 +3254,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, network_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(templateUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 19, templateUri_);
+    }
+    if (templateMetadata_ != null) {
+      output.writeMessage(20, getTemplateMetadata());
     }
     unknownFields.writeTo(output);
   }
@@ -2953,6 +3323,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, network_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(templateUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, templateUri_);
+    }
+    if (templateMetadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getTemplateMetadata());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3011,6 +3387,11 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (!getNetwork().equals(other.getNetwork())) return false;
+    if (!getTemplateUri().equals(other.getTemplateUri())) return false;
+    if (hasTemplateMetadata() != other.hasTemplateMetadata()) return false;
+    if (hasTemplateMetadata()) {
+      if (!getTemplateMetadata().equals(other.getTemplateMetadata())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -3072,6 +3453,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getServiceAccount().hashCode();
     hash = (37 * hash) + NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getNetwork().hashCode();
+    hash = (37 * hash) + TEMPLATE_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getTemplateUri().hashCode();
+    if (hasTemplateMetadata()) {
+      hash = (37 * hash) + TEMPLATE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getTemplateMetadata().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3302,6 +3689,14 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
 
       network_ = "";
 
+      templateUri_ = "";
+
+      if (templateMetadataBuilder_ == null) {
+        templateMetadata_ = null;
+      } else {
+        templateMetadata_ = null;
+        templateMetadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -3382,6 +3777,12 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       }
       result.serviceAccount_ = serviceAccount_;
       result.network_ = network_;
+      result.templateUri_ = templateUri_;
+      if (templateMetadataBuilder_ == null) {
+        result.templateMetadata_ = templateMetadata_;
+      } else {
+        result.templateMetadata_ = templateMetadataBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -3477,6 +3878,13 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
         onChanged();
+      }
+      if (!other.getTemplateUri().isEmpty()) {
+        templateUri_ = other.templateUri_;
+        onChanged();
+      }
+      if (other.hasTemplateMetadata()) {
+        mergeTemplateMetadata(other.getTemplateMetadata());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -6050,6 +6458,334 @@ public final class PipelineJob extends com.google.protobuf.GeneratedMessageV3
       network_ = value;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object templateUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
+     * be downloaded.
+     * </pre>
+     *
+     * <code>string template_uri = 19;</code>
+     *
+     * @return The templateUri.
+     */
+    public java.lang.String getTemplateUri() {
+      java.lang.Object ref = templateUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        templateUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
+     * be downloaded.
+     * </pre>
+     *
+     * <code>string template_uri = 19;</code>
+     *
+     * @return The bytes for templateUri.
+     */
+    public com.google.protobuf.ByteString getTemplateUriBytes() {
+      java.lang.Object ref = templateUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        templateUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
+     * be downloaded.
+     * </pre>
+     *
+     * <code>string template_uri = 19;</code>
+     *
+     * @param value The templateUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTemplateUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      templateUri_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
+     * be downloaded.
+     * </pre>
+     *
+     * <code>string template_uri = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTemplateUri() {
+
+      templateUri_ = getDefaultInstance().getTemplateUri();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A template uri from where the [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec], if empty, will
+     * be downloaded.
+     * </pre>
+     *
+     * <code>string template_uri = 19;</code>
+     *
+     * @param value The bytes for templateUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTemplateUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      templateUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.PipelineTemplateMetadata templateMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.PipelineTemplateMetadata,
+            com.google.cloud.aiplatform.v1.PipelineTemplateMetadata.Builder,
+            com.google.cloud.aiplatform.v1.PipelineTemplateMetadataOrBuilder>
+        templateMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pipeline template metadata. Will fill up fields if
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the templateMetadata field is set.
+     */
+    public boolean hasTemplateMetadata() {
+      return templateMetadataBuilder_ != null || templateMetadata_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pipeline template metadata. Will fill up fields if
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The templateMetadata.
+     */
+    public com.google.cloud.aiplatform.v1.PipelineTemplateMetadata getTemplateMetadata() {
+      if (templateMetadataBuilder_ == null) {
+        return templateMetadata_ == null
+            ? com.google.cloud.aiplatform.v1.PipelineTemplateMetadata.getDefaultInstance()
+            : templateMetadata_;
+      } else {
+        return templateMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pipeline template metadata. Will fill up fields if
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setTemplateMetadata(
+        com.google.cloud.aiplatform.v1.PipelineTemplateMetadata value) {
+      if (templateMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        templateMetadata_ = value;
+        onChanged();
+      } else {
+        templateMetadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pipeline template metadata. Will fill up fields if
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setTemplateMetadata(
+        com.google.cloud.aiplatform.v1.PipelineTemplateMetadata.Builder builderForValue) {
+      if (templateMetadataBuilder_ == null) {
+        templateMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        templateMetadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pipeline template metadata. Will fill up fields if
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeTemplateMetadata(
+        com.google.cloud.aiplatform.v1.PipelineTemplateMetadata value) {
+      if (templateMetadataBuilder_ == null) {
+        if (templateMetadata_ != null) {
+          templateMetadata_ =
+              com.google.cloud.aiplatform.v1.PipelineTemplateMetadata.newBuilder(templateMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          templateMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        templateMetadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pipeline template metadata. Will fill up fields if
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearTemplateMetadata() {
+      if (templateMetadataBuilder_ == null) {
+        templateMetadata_ = null;
+        onChanged();
+      } else {
+        templateMetadata_ = null;
+        templateMetadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pipeline template metadata. Will fill up fields if
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.PipelineTemplateMetadata.Builder
+        getTemplateMetadataBuilder() {
+
+      onChanged();
+      return getTemplateMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pipeline template metadata. Will fill up fields if
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.PipelineTemplateMetadataOrBuilder
+        getTemplateMetadataOrBuilder() {
+      if (templateMetadataBuilder_ != null) {
+        return templateMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return templateMetadata_ == null
+            ? com.google.cloud.aiplatform.v1.PipelineTemplateMetadata.getDefaultInstance()
+            : templateMetadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Pipeline template metadata. Will fill up fields if
+     * [PipelineJob.template_uri][google.cloud.aiplatform.v1.PipelineJob.template_uri] is from supported template registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PipelineTemplateMetadata template_metadata = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.PipelineTemplateMetadata,
+            com.google.cloud.aiplatform.v1.PipelineTemplateMetadata.Builder,
+            com.google.cloud.aiplatform.v1.PipelineTemplateMetadataOrBuilder>
+        getTemplateMetadataFieldBuilder() {
+      if (templateMetadataBuilder_ == null) {
+        templateMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.PipelineTemplateMetadata,
+                com.google.cloud.aiplatform.v1.PipelineTemplateMetadata.Builder,
+                com.google.cloud.aiplatform.v1.PipelineTemplateMetadataOrBuilder>(
+                getTemplateMetadata(), getParentForChildren(), isClean());
+        templateMetadata_ = null;
+      }
+      return templateMetadataBuilder_;
     }
 
     @java.lang.Override

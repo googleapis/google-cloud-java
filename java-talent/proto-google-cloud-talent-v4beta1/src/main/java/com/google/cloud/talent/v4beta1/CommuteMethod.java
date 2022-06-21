@@ -197,7 +197,7 @@ public enum CommuteMethod implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.talent.v4beta1.CommonProto.getDescriptor().getEnumTypes().get(10);
+    return com.google.cloud.talent.v4beta1.CommonProto.getDescriptor().getEnumTypes().get(9);
   }
 
   private static final CommuteMethod[] VALUES = values();

@@ -68,7 +68,9 @@ public interface MembershipEndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. Specific information for a GKE On-Prem cluster.
+   * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+   * who has no resourceLink is not allowed to use this field, it should have
+   * a nil "type" instead.
    * </pre>
    *
    * <code>
@@ -82,7 +84,9 @@ public interface MembershipEndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. Specific information for a GKE On-Prem cluster.
+   * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+   * who has no resourceLink is not allowed to use this field, it should have
+   * a nil "type" instead.
    * </pre>
    *
    * <code>
@@ -96,7 +100,9 @@ public interface MembershipEndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. Specific information for a GKE On-Prem cluster.
+   * Optional. Specific information for a GKE On-Prem cluster. An onprem user-cluster
+   * who has no resourceLink is not allowed to use this field, it should have
+   * a nil "type" instead.
    * </pre>
    *
    * <code>
@@ -150,6 +156,88 @@ public interface MembershipEndpointOrBuilder
    *
    *
    * <pre>
+   * Optional. Specific information for a Google Edge cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the edgeCluster field is set.
+   */
+  boolean hasEdgeCluster();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a Google Edge cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The edgeCluster.
+   */
+  com.google.cloud.gkehub.v1beta1.EdgeCluster getEdgeCluster();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a Google Edge cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.EdgeCluster edge_cluster = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkehub.v1beta1.EdgeClusterOrBuilder getEdgeClusterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a GDC Edge Appliance cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the applianceCluster field is set.
+   */
+  boolean hasApplianceCluster();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a GDC Edge Appliance cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The applianceCluster.
+   */
+  com.google.cloud.gkehub.v1beta1.ApplianceCluster getApplianceCluster();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specific information for a GDC Edge Appliance cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.ApplianceCluster appliance_cluster = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.gkehub.v1beta1.ApplianceClusterOrBuilder getApplianceClusterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Useful Kubernetes-specific metadata.
    * </pre>
    *
@@ -191,8 +279,8 @@ public interface MembershipEndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. The in-cluster Kubernetes Resources that should be applied for a
-   * correctly registered cluster, in the steady state. These resources:
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+   * registered cluster, in the steady state. These resources:
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -211,8 +299,8 @@ public interface MembershipEndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. The in-cluster Kubernetes Resources that should be applied for a
-   * correctly registered cluster, in the steady state. These resources:
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+   * registered cluster, in the steady state. These resources:
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership
@@ -231,8 +319,8 @@ public interface MembershipEndpointOrBuilder
    *
    *
    * <pre>
-   * Optional. The in-cluster Kubernetes Resources that should be applied for a
-   * correctly registered cluster, in the steady state. These resources:
+   * Optional. The in-cluster Kubernetes Resources that should be applied for a correctly
+   * registered cluster, in the steady state. These resources:
    *   * Ensure that the cluster is exclusively registered to one and only one
    *     Hub Membership.
    *   * Propagate Workload Pool Information available in the Membership

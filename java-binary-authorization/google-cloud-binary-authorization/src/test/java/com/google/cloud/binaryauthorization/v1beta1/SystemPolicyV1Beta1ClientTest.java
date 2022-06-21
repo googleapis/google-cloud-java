@@ -82,7 +82,7 @@ public class SystemPolicyV1Beta1ClientTest {
   public void getSystemPolicyTest() throws Exception {
     Policy expectedResponse =
         Policy.newBuilder()
-            .setName(PolicyName.ofProjectName("[PROJECT]").toString())
+            .setName(PolicyName.ofLocationName("[LOCATION]").toString())
             .setDescription("description-1724546052")
             .addAllAdmissionWhitelistPatterns(new ArrayList<AdmissionWhitelistPattern>())
             .putAllClusterAdmissionRules(new HashMap<String, AdmissionRule>())
@@ -94,7 +94,7 @@ public class SystemPolicyV1Beta1ClientTest {
             .build();
     mockSystemPolicyV1Beta1.addResponse(expectedResponse);
 
-    PolicyName name = PolicyName.ofProjectName("[PROJECT]");
+    PolicyName name = PolicyName.ofLocationName("[LOCATION]");
 
     Policy actualResponse = client.getSystemPolicy(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -116,7 +116,7 @@ public class SystemPolicyV1Beta1ClientTest {
     mockSystemPolicyV1Beta1.addException(exception);
 
     try {
-      PolicyName name = PolicyName.ofProjectName("[PROJECT]");
+      PolicyName name = PolicyName.ofLocationName("[LOCATION]");
       client.getSystemPolicy(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -128,7 +128,7 @@ public class SystemPolicyV1Beta1ClientTest {
   public void getSystemPolicyTest2() throws Exception {
     Policy expectedResponse =
         Policy.newBuilder()
-            .setName(PolicyName.ofProjectName("[PROJECT]").toString())
+            .setName(PolicyName.ofLocationName("[LOCATION]").toString())
             .setDescription("description-1724546052")
             .addAllAdmissionWhitelistPatterns(new ArrayList<AdmissionWhitelistPattern>())
             .putAllClusterAdmissionRules(new HashMap<String, AdmissionRule>())

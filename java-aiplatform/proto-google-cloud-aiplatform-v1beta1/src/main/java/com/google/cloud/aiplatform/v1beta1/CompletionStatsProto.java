@@ -43,16 +43,17 @@ public final class CompletionStatsProto {
       "\n6google/cloud/aiplatform/v1beta1/comple"
           + "tion_stats.proto\022\037google.cloud.aiplatfor"
           + "m.v1beta1\032\037google/api/field_behavior.pro"
-          + "to\"j\n\017CompletionStats\022\035\n\020successful_coun"
-          + "t\030\001 \001(\003B\003\340A\003\022\031\n\014failed_count\030\002 \001(\003B\003\340A\003\022"
-          + "\035\n\020incomplete_count\030\003 \001(\003B\003\340A\003B\361\001\n#com.g"
-          + "oogle.cloud.aiplatform.v1beta1B\024Completi"
-          + "onStatsProtoP\001ZIgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/aiplatform/v1beta1;a"
-          + "iplatform\252\002\037Google.Cloud.AIPlatform.V1Be"
-          + "ta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\""
-          + "Google::Cloud::AIPlatform::V1beta1b\006prot"
-          + "o3"
+          + "to\"\230\001\n\017CompletionStats\022\035\n\020successful_cou"
+          + "nt\030\001 \001(\003B\003\340A\003\022\031\n\014failed_count\030\002 \001(\003B\003\340A\003"
+          + "\022\035\n\020incomplete_count\030\003 \001(\003B\003\340A\003\022,\n\037succe"
+          + "ssful_forecast_point_count\030\005 \001(\003B\003\340A\003B\361\001"
+          + "\n#com.google.cloud.aiplatform.v1beta1B\024C"
+          + "ompletionStatsProtoP\001ZIgoogle.golang.org"
+          + "/genproto/googleapis/cloud/aiplatform/v1"
+          + "beta1;aiplatform\252\002\037Google.Cloud.AIPlatfo"
+          + "rm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1b"
+          + "eta1\352\002\"Google::Cloud::AIPlatform::V1beta"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -66,7 +67,7 @@ public final class CompletionStatsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_CompletionStats_descriptor,
             new java.lang.String[] {
-              "SuccessfulCount", "FailedCount", "IncompleteCount",
+              "SuccessfulCount", "FailedCount", "IncompleteCount", "SuccessfulForecastPointCount",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

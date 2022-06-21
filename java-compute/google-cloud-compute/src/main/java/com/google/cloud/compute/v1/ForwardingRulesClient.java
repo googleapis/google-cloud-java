@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ForwardingRulesSettings forwardingRulesSettings =
  *     ForwardingRulesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ForwardingRulesSettings forwardingRulesSettings =
  *     ForwardingRulesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ForwardingRulesClient forwardingRulesClient =
@@ -124,7 +130,6 @@ public class ForwardingRulesClient implements BackgroundResource {
    * Constructs an instance of ForwardingRulesClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(ForwardingRulesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ForwardingRulesClient create(ForwardingRulesStub stub) {
     return new ForwardingRulesClient(stub);
   }
@@ -139,7 +144,6 @@ public class ForwardingRulesClient implements BackgroundResource {
     this.stub = ((ForwardingRulesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ForwardingRulesClient(ForwardingRulesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -149,7 +153,6 @@ public class ForwardingRulesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ForwardingRulesStub getStub() {
     return stub;
   }
@@ -161,6 +164,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, ForwardingRulesScopedList> element :
@@ -186,6 +191,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   AggregatedListForwardingRulesRequest request =
    *       AggregatedListForwardingRulesRequest.newBuilder()
@@ -219,6 +226,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   AggregatedListForwardingRulesRequest request =
    *       AggregatedListForwardingRulesRequest.newBuilder()
@@ -251,6 +260,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   AggregatedListForwardingRulesRequest request =
    *       AggregatedListForwardingRulesRequest.newBuilder()
@@ -265,7 +276,7 @@ public class ForwardingRulesClient implements BackgroundResource {
    *   while (true) {
    *     ForwardingRuleAggregatedList response =
    *         forwardingRulesClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, ForwardingRulesScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, ForwardingRulesScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -290,6 +301,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -321,6 +334,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   DeleteForwardingRuleRequest request =
    *       DeleteForwardingRuleRequest.newBuilder()
@@ -350,6 +365,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   DeleteForwardingRuleRequest request =
    *       DeleteForwardingRuleRequest.newBuilder()
@@ -377,6 +394,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   DeleteForwardingRuleRequest request =
    *       DeleteForwardingRuleRequest.newBuilder()
@@ -402,6 +421,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -432,6 +453,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   GetForwardingRuleRequest request =
    *       GetForwardingRuleRequest.newBuilder()
@@ -457,6 +480,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   GetForwardingRuleRequest request =
    *       GetForwardingRuleRequest.newBuilder()
@@ -482,6 +507,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -515,6 +542,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   InsertForwardingRuleRequest request =
    *       InsertForwardingRuleRequest.newBuilder()
@@ -545,6 +574,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   InsertForwardingRuleRequest request =
    *       InsertForwardingRuleRequest.newBuilder()
@@ -573,6 +604,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   InsertForwardingRuleRequest request =
    *       InsertForwardingRuleRequest.newBuilder()
@@ -598,6 +631,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -624,6 +659,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   ListForwardingRulesRequest request =
    *       ListForwardingRulesRequest.newBuilder()
@@ -655,6 +692,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   ListForwardingRulesRequest request =
    *       ListForwardingRulesRequest.newBuilder()
@@ -686,6 +725,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   ListForwardingRulesRequest request =
    *       ListForwardingRulesRequest.newBuilder()
@@ -699,7 +740,7 @@ public class ForwardingRulesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ForwardingRuleList response = forwardingRulesClient.listCallable().call(request);
-   *     for (ForwardingRule element : response.getResponsesList()) {
+   *     for (ForwardingRule element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -725,6 +766,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -764,6 +807,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   PatchForwardingRuleRequest request =
    *       PatchForwardingRuleRequest.newBuilder()
@@ -796,6 +841,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   PatchForwardingRuleRequest request =
    *       PatchForwardingRuleRequest.newBuilder()
@@ -826,6 +873,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   PatchForwardingRuleRequest request =
    *       PatchForwardingRuleRequest.newBuilder()
@@ -853,6 +902,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -895,6 +946,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   SetLabelsForwardingRuleRequest request =
    *       SetLabelsForwardingRuleRequest.newBuilder()
@@ -926,6 +979,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   SetLabelsForwardingRuleRequest request =
    *       SetLabelsForwardingRuleRequest.newBuilder()
@@ -955,6 +1010,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   SetLabelsForwardingRuleRequest request =
    *       SetLabelsForwardingRuleRequest.newBuilder()
@@ -982,6 +1039,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1023,6 +1082,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   SetTargetForwardingRuleRequest request =
    *       SetTargetForwardingRuleRequest.newBuilder()
@@ -1054,6 +1115,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   SetTargetForwardingRuleRequest request =
    *       SetTargetForwardingRuleRequest.newBuilder()
@@ -1083,6 +1146,8 @@ public class ForwardingRulesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ForwardingRulesClient forwardingRulesClient = ForwardingRulesClient.create()) {
    *   SetTargetForwardingRuleRequest request =
    *       SetTargetForwardingRuleRequest.newBuilder()

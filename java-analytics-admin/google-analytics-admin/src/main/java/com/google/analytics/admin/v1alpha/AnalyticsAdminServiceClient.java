@@ -103,6 +103,21 @@ import javax.annotation.Generated;
  *     AnalyticsAdminServiceClient.create(analyticsAdminServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * AnalyticsAdminServiceSettings analyticsAdminServiceSettings =
+ *     AnalyticsAdminServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             AnalyticsAdminServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * AnalyticsAdminServiceClient analyticsAdminServiceClient =
+ *     AnalyticsAdminServiceClient.create(analyticsAdminServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
@@ -129,7 +144,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Constructs an instance of AnalyticsAdminServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(AnalyticsAdminServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AnalyticsAdminServiceClient create(AnalyticsAdminServiceStub stub) {
     return new AnalyticsAdminServiceClient(stub);
   }
@@ -144,7 +158,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     this.stub = ((AnalyticsAdminServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AnalyticsAdminServiceClient(AnalyticsAdminServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +167,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AnalyticsAdminServiceStub getStub() {
     return stub;
   }
@@ -351,7 +363,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListAccountsResponse response =
    *         analyticsAdminServiceClient.listAccountsCallable().call(request);
-   *     for (Account element : response.getResponsesList()) {
+   *     for (Account element : response.getAccountsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -724,7 +736,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListAccountSummariesResponse response =
    *         analyticsAdminServiceClient.listAccountSummariesCallable().call(request);
-   *     for (AccountSummary element : response.getResponsesList()) {
+   *     for (AccountSummary element : response.getAccountSummariesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -937,7 +949,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListPropertiesResponse response =
    *         analyticsAdminServiceClient.listPropertiesCallable().call(request);
-   *     for (Property element : response.getResponsesList()) {
+   *     for (Property element : response.getPropertiesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1573,7 +1585,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListUserLinksResponse response =
    *         analyticsAdminServiceClient.listUserLinksCallable().call(request);
-   *     for (UserLink element : response.getResponsesList()) {
+   *     for (UserLink element : response.getUserLinksList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1690,7 +1702,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     AuditUserLinksResponse response =
    *         analyticsAdminServiceClient.auditUserLinksCallable().call(request);
-   *     for (AuditUserLink element : response.getResponsesList()) {
+   *     for (AuditUserLink element : response.getUserLinksList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2589,7 +2601,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListFirebaseLinksResponse response =
    *         analyticsAdminServiceClient.listFirebaseLinksCallable().call(request);
-   *     for (FirebaseLink element : response.getResponsesList()) {
+   *     for (FirebaseLink element : response.getFirebaseLinksList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3165,7 +3177,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListGoogleAdsLinksResponse response =
    *         analyticsAdminServiceClient.listGoogleAdsLinksCallable().call(request);
-   *     for (GoogleAdsLink element : response.getResponsesList()) {
+   *     for (GoogleAdsLink element : response.getGoogleAdsLinksList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3561,7 +3573,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListMeasurementProtocolSecretsResponse response =
    *         analyticsAdminServiceClient.listMeasurementProtocolSecretsCallable().call(request);
-   *     for (MeasurementProtocolSecret element : response.getResponsesList()) {
+   *     for (MeasurementProtocolSecret element : response.getMeasurementProtocolSecretsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -4083,7 +4095,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     SearchChangeHistoryEventsResponse response =
    *         analyticsAdminServiceClient.searchChangeHistoryEventsCallable().call(request);
-   *     for (ChangeHistoryEvent element : response.getResponsesList()) {
+   *     for (ChangeHistoryEvent element : response.getChangeHistoryEventsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -4792,7 +4804,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListConversionEventsResponse response =
    *         analyticsAdminServiceClient.listConversionEventsCallable().call(request);
-   *     for (ConversionEvent element : response.getResponsesList()) {
+   *     for (ConversionEvent element : response.getConversionEventsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -5080,7 +5092,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListDisplayVideo360AdvertiserLinksResponse response =
    *         analyticsAdminServiceClient.listDisplayVideo360AdvertiserLinksCallable().call(request);
-   *     for (DisplayVideo360AdvertiserLink element : response.getResponsesList()) {
+   *     for (DisplayVideo360AdvertiserLink element :
+   *         response.getDisplayVideo360AdvertiserLinksList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -5737,7 +5750,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *         analyticsAdminServiceClient
    *             .listDisplayVideo360AdvertiserLinkProposalsCallable()
    *             .call(request);
-   *     for (DisplayVideo360AdvertiserLinkProposal element : response.getResponsesList()) {
+   *     for (DisplayVideo360AdvertiserLinkProposal element :
+   *         response.getDisplayVideo360AdvertiserLinkProposalsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -6501,7 +6515,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListCustomDimensionsResponse response =
    *         analyticsAdminServiceClient.listCustomDimensionsCallable().call(request);
-   *     for (CustomDimension element : response.getResponsesList()) {
+   *     for (CustomDimension element : response.getCustomDimensionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -6530,7 +6544,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   CustomDimensionName name = CustomDimensionName.of("[PROPERTY]");
+   *   CustomDimensionName name = CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]");
    *   analyticsAdminServiceClient.archiveCustomDimension(name);
    * }
    * }</pre>
@@ -6558,7 +6572,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String name = CustomDimensionName.of("[PROPERTY]").toString();
+   *   String name = CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]").toString();
    *   analyticsAdminServiceClient.archiveCustomDimension(name);
    * }
    * }</pre>
@@ -6586,7 +6600,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ArchiveCustomDimensionRequest request =
    *       ArchiveCustomDimensionRequest.newBuilder()
-   *           .setName(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setName(CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]").toString())
    *           .build();
    *   analyticsAdminServiceClient.archiveCustomDimension(request);
    * }
@@ -6612,7 +6626,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ArchiveCustomDimensionRequest request =
    *       ArchiveCustomDimensionRequest.newBuilder()
-   *           .setName(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setName(CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]").toString())
    *           .build();
    *   ApiFuture<Empty> future =
    *       analyticsAdminServiceClient.archiveCustomDimensionCallable().futureCall(request);
@@ -6637,7 +6651,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   CustomDimensionName name = CustomDimensionName.of("[PROPERTY]");
+   *   CustomDimensionName name = CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]");
    *   CustomDimension response = analyticsAdminServiceClient.getCustomDimension(name);
    * }
    * }</pre>
@@ -6665,7 +6679,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String name = CustomDimensionName.of("[PROPERTY]").toString();
+   *   String name = CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]").toString();
    *   CustomDimension response = analyticsAdminServiceClient.getCustomDimension(name);
    * }
    * }</pre>
@@ -6693,7 +6707,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   GetCustomDimensionRequest request =
    *       GetCustomDimensionRequest.newBuilder()
-   *           .setName(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setName(CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]").toString())
    *           .build();
    *   CustomDimension response = analyticsAdminServiceClient.getCustomDimension(request);
    * }
@@ -6719,7 +6733,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   GetCustomDimensionRequest request =
    *       GetCustomDimensionRequest.newBuilder()
-   *           .setName(CustomDimensionName.of("[PROPERTY]").toString())
+   *           .setName(CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]").toString())
    *           .build();
    *   ApiFuture<CustomDimension> future =
    *       analyticsAdminServiceClient.getCustomDimensionCallable().futureCall(request);
@@ -7074,7 +7088,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListCustomMetricsResponse response =
    *         analyticsAdminServiceClient.listCustomMetricsCallable().call(request);
-   *     for (CustomMetric element : response.getResponsesList()) {
+   *     for (CustomMetric element : response.getCustomMetricsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -7103,7 +7117,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   CustomMetricName name = CustomMetricName.of("[PROPERTY]");
+   *   CustomMetricName name = CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]");
    *   analyticsAdminServiceClient.archiveCustomMetric(name);
    * }
    * }</pre>
@@ -7131,7 +7145,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String name = CustomMetricName.of("[PROPERTY]").toString();
+   *   String name = CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]").toString();
    *   analyticsAdminServiceClient.archiveCustomMetric(name);
    * }
    * }</pre>
@@ -7159,7 +7173,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ArchiveCustomMetricRequest request =
    *       ArchiveCustomMetricRequest.newBuilder()
-   *           .setName(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setName(CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]").toString())
    *           .build();
    *   analyticsAdminServiceClient.archiveCustomMetric(request);
    * }
@@ -7185,7 +7199,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   ArchiveCustomMetricRequest request =
    *       ArchiveCustomMetricRequest.newBuilder()
-   *           .setName(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setName(CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]").toString())
    *           .build();
    *   ApiFuture<Empty> future =
    *       analyticsAdminServiceClient.archiveCustomMetricCallable().futureCall(request);
@@ -7209,7 +7223,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   CustomMetricName name = CustomMetricName.of("[PROPERTY]");
+   *   CustomMetricName name = CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]");
    *   CustomMetric response = analyticsAdminServiceClient.getCustomMetric(name);
    * }
    * }</pre>
@@ -7235,7 +7249,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
    *     AnalyticsAdminServiceClient.create()) {
-   *   String name = CustomMetricName.of("[PROPERTY]").toString();
+   *   String name = CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]").toString();
    *   CustomMetric response = analyticsAdminServiceClient.getCustomMetric(name);
    * }
    * }</pre>
@@ -7262,7 +7276,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   GetCustomMetricRequest request =
    *       GetCustomMetricRequest.newBuilder()
-   *           .setName(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setName(CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]").toString())
    *           .build();
    *   CustomMetric response = analyticsAdminServiceClient.getCustomMetric(request);
    * }
@@ -7288,7 +7302,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     AnalyticsAdminServiceClient.create()) {
    *   GetCustomMetricRequest request =
    *       GetCustomMetricRequest.newBuilder()
-   *           .setName(CustomMetricName.of("[PROPERTY]").toString())
+   *           .setName(CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]").toString())
    *           .build();
    *   ApiFuture<CustomMetric> future =
    *       analyticsAdminServiceClient.getCustomMetricCallable().futureCall(request);
@@ -7941,7 +7955,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListDataStreamsResponse response =
    *         analyticsAdminServiceClient.listDataStreamsCallable().call(request);
-   *     for (DataStream element : response.getResponsesList()) {
+   *     for (DataStream element : response.getDataStreamsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

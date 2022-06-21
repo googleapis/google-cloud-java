@@ -315,7 +315,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListMigrationJobsResponse response =
    *         dataMigrationServiceClient.listMigrationJobsCallable().call(request);
-   *     for (MigrationJob element : response.getResponsesList()) {
+   *     for (MigrationJob element : response.getMigrationJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1556,7 +1556,7 @@ public class DataMigrationServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListConnectionProfilesResponse response =
    *         dataMigrationServiceClient.listConnectionProfilesCallable().call(request);
-   *     for (ConnectionProfile element : response.getResponsesList()) {
+   *     for (ConnectionProfile element : response.getConnectionProfilesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

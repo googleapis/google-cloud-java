@@ -94,6 +94,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -176,7 +178,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public boolean containsSysctls(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetSysctls().getMap().containsKey(key);
   }
@@ -233,7 +235,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public java.lang.String getSysctlsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetSysctls().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -261,7 +263,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public java.lang.String getSysctlsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetSysctls().getMap();
     if (!map.containsKey(key)) {
@@ -662,7 +664,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public boolean containsSysctls(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetSysctls().getMap().containsKey(key);
     }
@@ -720,7 +722,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getSysctlsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetSysctls().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -748,7 +750,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public java.lang.String getSysctlsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetSysctls().getMap();
       if (!map.containsKey(key)) {
@@ -783,7 +785,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      */
     public Builder removeSysctls(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableSysctls().getMutableMap().remove(key);
       return this;
@@ -815,11 +817,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessageV
      */
     public Builder putSysctls(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableSysctls().getMutableMap().put(key, value);
       return this;
     }

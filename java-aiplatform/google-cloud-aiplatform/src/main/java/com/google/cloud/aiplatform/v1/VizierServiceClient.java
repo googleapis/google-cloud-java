@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.aiplatform.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -29,7 +28,16 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.stub.VizierServiceStub;
 import com.google.cloud.aiplatform.v1.stub.VizierServiceStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -49,6 +57,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Study study = Study.newBuilder().build();
@@ -85,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * VizierServiceSettings vizierServiceSettings =
  *     VizierServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,6 +107,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * VizierServiceSettings vizierServiceSettings =
  *     VizierServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * VizierServiceClient vizierServiceClient = VizierServiceClient.create(vizierServiceSettings);
@@ -126,7 +140,6 @@ public class VizierServiceClient implements BackgroundResource {
    * Constructs an instance of VizierServiceClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(VizierServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final VizierServiceClient create(VizierServiceStub stub) {
     return new VizierServiceClient(stub);
   }
@@ -142,7 +155,6 @@ public class VizierServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected VizierServiceClient(VizierServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -153,7 +165,6 @@ public class VizierServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public VizierServiceStub getStub() {
     return stub;
   }
@@ -173,6 +184,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Study study = Study.newBuilder().build();
@@ -201,6 +214,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Study study = Study.newBuilder().build();
@@ -226,6 +241,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   CreateStudyRequest request =
    *       CreateStudyRequest.newBuilder()
@@ -250,6 +267,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   CreateStudyRequest request =
    *       CreateStudyRequest.newBuilder()
@@ -273,6 +292,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   StudyName name = StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]");
    *   Study response = vizierServiceClient.getStudy(name);
@@ -296,6 +317,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   String name = StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]").toString();
    *   Study response = vizierServiceClient.getStudy(name);
@@ -318,6 +341,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   GetStudyRequest request =
    *       GetStudyRequest.newBuilder()
@@ -341,6 +366,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   GetStudyRequest request =
    *       GetStudyRequest.newBuilder()
@@ -363,6 +390,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Study element : vizierServiceClient.listStudies(parent).iterateAll()) {
@@ -390,6 +419,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Study element : vizierServiceClient.listStudies(parent).iterateAll()) {
@@ -414,6 +445,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   ListStudiesRequest request =
    *       ListStudiesRequest.newBuilder()
@@ -441,6 +474,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   ListStudiesRequest request =
    *       ListStudiesRequest.newBuilder()
@@ -468,6 +503,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   ListStudiesRequest request =
    *       ListStudiesRequest.newBuilder()
@@ -477,7 +514,7 @@ public class VizierServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListStudiesResponse response = vizierServiceClient.listStudiesCallable().call(request);
-   *     for (Study element : response.getResponsesList()) {
+   *     for (Study element : response.getStudiesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -501,6 +538,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   StudyName name = StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]");
    *   vizierServiceClient.deleteStudy(name);
@@ -524,6 +563,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   String name = StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]").toString();
    *   vizierServiceClient.deleteStudy(name);
@@ -546,6 +587,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   DeleteStudyRequest request =
    *       DeleteStudyRequest.newBuilder()
@@ -569,6 +612,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   DeleteStudyRequest request =
    *       DeleteStudyRequest.newBuilder()
@@ -592,6 +637,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Study response = vizierServiceClient.lookupStudy(parent);
@@ -618,6 +665,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Study response = vizierServiceClient.lookupStudy(parent);
@@ -641,6 +690,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   LookupStudyRequest request =
    *       LookupStudyRequest.newBuilder()
@@ -666,6 +717,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   LookupStudyRequest request =
    *       LookupStudyRequest.newBuilder()
@@ -692,6 +745,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   SuggestTrialsRequest request =
    *       SuggestTrialsRequest.newBuilder()
@@ -721,6 +776,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   SuggestTrialsRequest request =
    *       SuggestTrialsRequest.newBuilder()
@@ -750,6 +807,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   SuggestTrialsRequest request =
    *       SuggestTrialsRequest.newBuilder()
@@ -774,6 +833,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   StudyName parent = StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]");
    *   Trial trial = Trial.newBuilder().build();
@@ -802,6 +863,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   String parent = StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]").toString();
    *   Trial trial = Trial.newBuilder().build();
@@ -827,6 +890,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   CreateTrialRequest request =
    *       CreateTrialRequest.newBuilder()
@@ -851,6 +916,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   CreateTrialRequest request =
    *       CreateTrialRequest.newBuilder()
@@ -874,6 +941,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   TrialName name = TrialName.of("[PROJECT]", "[LOCATION]", "[STUDY]", "[TRIAL]");
    *   Trial response = vizierServiceClient.getTrial(name);
@@ -897,6 +966,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   String name = TrialName.of("[PROJECT]", "[LOCATION]", "[STUDY]", "[TRIAL]").toString();
    *   Trial response = vizierServiceClient.getTrial(name);
@@ -919,6 +990,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   GetTrialRequest request =
    *       GetTrialRequest.newBuilder()
@@ -942,6 +1015,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   GetTrialRequest request =
    *       GetTrialRequest.newBuilder()
@@ -964,6 +1039,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   StudyName parent = StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]");
    *   for (Trial element : vizierServiceClient.listTrials(parent).iterateAll()) {
@@ -989,6 +1066,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   String parent = StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]").toString();
    *   for (Trial element : vizierServiceClient.listTrials(parent).iterateAll()) {
@@ -1013,6 +1092,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   ListTrialsRequest request =
    *       ListTrialsRequest.newBuilder()
@@ -1040,6 +1121,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   ListTrialsRequest request =
    *       ListTrialsRequest.newBuilder()
@@ -1066,6 +1149,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   ListTrialsRequest request =
    *       ListTrialsRequest.newBuilder()
@@ -1075,7 +1160,7 @@ public class VizierServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTrialsResponse response = vizierServiceClient.listTrialsCallable().call(request);
-   *     for (Trial element : response.getResponsesList()) {
+   *     for (Trial element : response.getTrialsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1100,6 +1185,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   AddTrialMeasurementRequest request =
    *       AddTrialMeasurementRequest.newBuilder()
@@ -1126,6 +1213,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   AddTrialMeasurementRequest request =
    *       AddTrialMeasurementRequest.newBuilder()
@@ -1151,6 +1240,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   CompleteTrialRequest request =
    *       CompleteTrialRequest.newBuilder()
@@ -1177,6 +1268,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   CompleteTrialRequest request =
    *       CompleteTrialRequest.newBuilder()
@@ -1202,6 +1295,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   TrialName name = TrialName.of("[PROJECT]", "[LOCATION]", "[STUDY]", "[TRIAL]");
    *   vizierServiceClient.deleteTrial(name);
@@ -1225,6 +1320,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   String name = TrialName.of("[PROJECT]", "[LOCATION]", "[STUDY]", "[TRIAL]").toString();
    *   vizierServiceClient.deleteTrial(name);
@@ -1247,6 +1344,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   DeleteTrialRequest request =
    *       DeleteTrialRequest.newBuilder()
@@ -1270,6 +1369,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   DeleteTrialRequest request =
    *       DeleteTrialRequest.newBuilder()
@@ -1294,6 +1395,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   CheckTrialEarlyStoppingStateRequest request =
    *       CheckTrialEarlyStoppingStateRequest.newBuilder()
@@ -1323,6 +1426,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   CheckTrialEarlyStoppingStateRequest request =
    *       CheckTrialEarlyStoppingStateRequest.newBuilder()
@@ -1356,6 +1461,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   CheckTrialEarlyStoppingStateRequest request =
    *       CheckTrialEarlyStoppingStateRequest.newBuilder()
@@ -1381,6 +1488,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   StopTrialRequest request =
    *       StopTrialRequest.newBuilder()
@@ -1404,6 +1513,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   StopTrialRequest request =
    *       StopTrialRequest.newBuilder()
@@ -1428,6 +1539,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   StudyName parent = StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]");
    *   ListOptimalTrialsResponse response = vizierServiceClient.listOptimalTrials(parent);
@@ -1454,6 +1567,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   String parent = StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]").toString();
    *   ListOptimalTrialsResponse response = vizierServiceClient.listOptimalTrials(parent);
@@ -1478,6 +1593,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   ListOptimalTrialsRequest request =
    *       ListOptimalTrialsRequest.newBuilder()
@@ -1503,6 +1620,8 @@ public class VizierServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
    *   ListOptimalTrialsRequest request =
    *       ListOptimalTrialsRequest.newBuilder()
@@ -1518,6 +1637,331 @@ public class VizierServiceClient implements BackgroundResource {
   public final UnaryCallable<ListOptimalTrialsRequest, ListOptimalTrialsResponse>
       listOptimalTrialsCallable() {
     return stub.listOptimalTrialsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : vizierServiceClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       vizierServiceClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response = vizierServiceClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = vizierServiceClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future = vizierServiceClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = vizierServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = vizierServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = vizierServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = vizierServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = vizierServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VizierServiceClient vizierServiceClient = VizierServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       vizierServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override
@@ -1693,6 +2137,82 @@ public class VizierServiceClient implements BackgroundResource {
     protected ListTrialsFixedSizeCollection createCollection(
         List<ListTrialsPage> pages, int collectionSize) {
       return new ListTrialsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -39,7 +39,7 @@
  * try (ResourceSettingsServiceClient resourceSettingsServiceClient =
  *     ResourceSettingsServiceClient.create()) {
  *   SettingName name =
- *       SettingName.ofProjectNumberSettingNameName("[PROJECT_NUMBER]", "[SETTING_NAME]");
+ *       SettingName.ofOrganizationSettingNameName("[ORGANIZATION]", "[SETTING_NAME]");
  *   Setting response = resourceSettingsServiceClient.getSetting(name);
  * }
  * }</pre>

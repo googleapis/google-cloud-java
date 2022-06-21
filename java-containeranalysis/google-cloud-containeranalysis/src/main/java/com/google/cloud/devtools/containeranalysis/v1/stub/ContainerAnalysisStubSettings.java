@@ -120,7 +120,6 @@ public class ContainerAnalysisStubSettings extends StubSettings<ContainerAnalysi
     return getVulnerabilityOccurrencesSummarySettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ContainerAnalysisStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

@@ -18,6 +18,7 @@ package com.google.cloud.eventarc.v1;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -160,6 +161,17 @@ public class EventarcSettings extends ClientSettings<EventarcSettings> {
   public OperationCallSettings<DeleteChannelRequest, Channel, OperationMetadata>
       deleteChannelOperationSettings() {
     return ((EventarcStubSettings) getStubSettings()).deleteChannelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getProvider. */
+  public UnaryCallSettings<GetProviderRequest, Provider> getProviderSettings() {
+    return ((EventarcStubSettings) getStubSettings()).getProviderSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listProviders. */
+  public PagedCallSettings<ListProvidersRequest, ListProvidersResponse, ListProvidersPagedResponse>
+      listProvidersSettings() {
+    return ((EventarcStubSettings) getStubSettings()).listProvidersSettings();
   }
 
   /** Returns the object with the settings used for calls to getChannelConnection. */
@@ -385,6 +397,18 @@ public class EventarcSettings extends ClientSettings<EventarcSettings> {
     public OperationCallSettings.Builder<DeleteChannelRequest, Channel, OperationMetadata>
         deleteChannelOperationSettings() {
       return getStubSettingsBuilder().deleteChannelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getProvider. */
+    public UnaryCallSettings.Builder<GetProviderRequest, Provider> getProviderSettings() {
+      return getStubSettingsBuilder().getProviderSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listProviders. */
+    public PagedCallSettings.Builder<
+            ListProvidersRequest, ListProvidersResponse, ListProvidersPagedResponse>
+        listProvidersSettings() {
+      return getStubSettingsBuilder().listProvidersSettings();
     }
 
     /** Returns the builder for the settings used for calls to getChannelConnection. */

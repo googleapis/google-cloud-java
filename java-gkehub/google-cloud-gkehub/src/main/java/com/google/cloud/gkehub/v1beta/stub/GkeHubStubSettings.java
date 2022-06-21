@@ -214,7 +214,6 @@ public class GkeHubStubSettings extends StubSettings<GkeHubStubSettings> {
     return updateFeatureOperationSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GkeHubStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

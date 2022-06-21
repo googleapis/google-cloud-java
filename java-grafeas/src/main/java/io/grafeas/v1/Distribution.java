@@ -164,11 +164,11 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+   * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
-   * <code>string cpe_uri = 1;</code>
+   * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The cpeUri.
    */
@@ -188,11 +188,11 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+   * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
-   * <code>string cpe_uri = 1;</code>
+   * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for cpeUri.
    */
@@ -845,11 +845,11 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+     * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
-     * <code>string cpe_uri = 1;</code>
+     * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The cpeUri.
      */
@@ -868,11 +868,11 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+     * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
-     * <code>string cpe_uri = 1;</code>
+     * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for cpeUri.
      */
@@ -891,11 +891,11 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+     * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
-     * <code>string cpe_uri = 1;</code>
+     * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The cpeUri to set.
      * @return This builder for chaining.
@@ -913,11 +913,11 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+     * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
-     * <code>string cpe_uri = 1;</code>
+     * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -931,11 +931,11 @@ public final class Distribution extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+     * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
      * denoting the package manager version distributing a package.
      * </pre>
      *
-     * <code>string cpe_uri = 1;</code>
+     * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for cpeUri to set.
      * @return This builder for chaining.

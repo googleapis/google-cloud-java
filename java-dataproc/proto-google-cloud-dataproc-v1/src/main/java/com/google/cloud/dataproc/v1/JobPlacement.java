@@ -114,6 +114,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -288,7 +290,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsClusterLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetClusterLabels().getMap().containsKey(key);
   }
@@ -326,7 +328,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getClusterLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetClusterLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -344,7 +346,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getClusterLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetClusterLabels().getMap();
     if (!map.containsKey(key)) {
@@ -987,7 +989,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsClusterLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetClusterLabels().getMap().containsKey(key);
     }
@@ -1025,7 +1027,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getClusterLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetClusterLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1043,7 +1045,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getClusterLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetClusterLabels().getMap();
       if (!map.containsKey(key)) {
@@ -1068,7 +1070,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeClusterLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableClusterLabels().getMutableMap().remove(key);
       return this;
@@ -1090,11 +1092,12 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putClusterLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableClusterLabels().getMutableMap().put(key, value);
       return this;
     }

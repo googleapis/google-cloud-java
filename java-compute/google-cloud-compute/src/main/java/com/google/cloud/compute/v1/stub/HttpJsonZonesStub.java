@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.ZonesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -51,14 +50,14 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonZonesStub extends ZonesStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
   private static final ApiMethodDescriptor<GetZoneRequest, Zone> getMethodDescriptor =
       ApiMethodDescriptor.<GetZoneRequest, Zone>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Zones/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetZoneRequest>newBuilder()
@@ -91,7 +90,7 @@ public class HttpJsonZonesStub extends ZonesStub {
   private static final ApiMethodDescriptor<ListZonesRequest, ZoneList> listMethodDescriptor =
       ApiMethodDescriptor.<ListZonesRequest, ZoneList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Zones/List")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListZonesRequest>newBuilder()

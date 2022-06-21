@@ -763,7 +763,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListCompaniesResponse response = companyServiceClient.listCompaniesCallable().call(request);
-   *     for (Company element : response.getResponsesList()) {
+   *     for (Company element : response.getCompaniesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

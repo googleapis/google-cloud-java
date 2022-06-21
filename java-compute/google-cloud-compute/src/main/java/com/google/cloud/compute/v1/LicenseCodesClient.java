@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.compute.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.LicenseCodesStub;
@@ -33,6 +32,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
  *   String project = "project-309310695";
  *   String licenseCode = "licenseCode-641557042";
@@ -69,6 +70,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * LicenseCodesSettings licenseCodesSettings =
  *     LicenseCodesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -79,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * LicenseCodesSettings licenseCodesSettings =
  *     LicenseCodesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * LicenseCodesClient licenseCodesClient = LicenseCodesClient.create(licenseCodesSettings);
@@ -108,7 +113,6 @@ public class LicenseCodesClient implements BackgroundResource {
    * Constructs an instance of LicenseCodesClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(LicenseCodesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final LicenseCodesClient create(LicenseCodesStub stub) {
     return new LicenseCodesClient(stub);
   }
@@ -123,7 +127,6 @@ public class LicenseCodesClient implements BackgroundResource {
     this.stub = ((LicenseCodesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected LicenseCodesClient(LicenseCodesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -133,7 +136,6 @@ public class LicenseCodesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public LicenseCodesStub getStub() {
     return stub;
   }
@@ -147,6 +149,8 @@ public class LicenseCodesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
    *   String project = "project-309310695";
    *   String licenseCode = "licenseCode-641557042";
@@ -173,6 +177,8 @@ public class LicenseCodesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
    *   GetLicenseCodeRequest request =
    *       GetLicenseCodeRequest.newBuilder()
@@ -199,6 +205,8 @@ public class LicenseCodesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
    *   GetLicenseCodeRequest request =
    *       GetLicenseCodeRequest.newBuilder()
@@ -224,6 +232,8 @@ public class LicenseCodesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -259,6 +269,8 @@ public class LicenseCodesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
    *   TestIamPermissionsLicenseCodeRequest request =
    *       TestIamPermissionsLicenseCodeRequest.newBuilder()
@@ -287,6 +299,8 @@ public class LicenseCodesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
    *   TestIamPermissionsLicenseCodeRequest request =
    *       TestIamPermissionsLicenseCodeRequest.newBuilder()

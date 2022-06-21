@@ -93,7 +93,9 @@ public class DataTransferServiceClientTest {
     DataSource expectedResponse =
         DataSource.newBuilder()
             .setName(
-                DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString())
+                DataSourceName.ofProjectLocationDataSourceName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_SOURCE]")
+                    .toString())
             .setDataSourceId("dataSourceId-1221402528")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -112,7 +114,8 @@ public class DataTransferServiceClientTest {
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
-    DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
+    DataSourceName name =
+        DataSourceName.ofProjectLocationDataSourceName("[PROJECT]", "[LOCATION]", "[DATA_SOURCE]");
 
     DataSource actualResponse = client.getDataSource(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -134,7 +137,9 @@ public class DataTransferServiceClientTest {
     mockDataTransferService.addException(exception);
 
     try {
-      DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
+      DataSourceName name =
+          DataSourceName.ofProjectLocationDataSourceName(
+              "[PROJECT]", "[LOCATION]", "[DATA_SOURCE]");
       client.getDataSource(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -147,7 +152,9 @@ public class DataTransferServiceClientTest {
     DataSource expectedResponse =
         DataSource.newBuilder()
             .setName(
-                DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]").toString())
+                DataSourceName.ofProjectLocationDataSourceName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_SOURCE]")
+                    .toString())
             .setDataSourceId("dataSourceId-1221402528")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -510,7 +517,8 @@ public class DataTransferServiceClientTest {
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
             .setName(
-                TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+                TransferConfigName.ofProjectLocationTransferConfigName(
+                        "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDataSourceId("dataSourceId-1221402528")
@@ -570,7 +578,8 @@ public class DataTransferServiceClientTest {
     mockDataTransferService.addResponse(expectedResponse);
 
     TransferConfigName name =
-        TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+        TransferConfigName.ofProjectLocationTransferConfigName(
+            "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]");
 
     client.deleteTransferConfig(name);
 
@@ -593,7 +602,8 @@ public class DataTransferServiceClientTest {
 
     try {
       TransferConfigName name =
-          TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+          TransferConfigName.ofProjectLocationTransferConfigName(
+              "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]");
       client.deleteTransferConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -641,7 +651,8 @@ public class DataTransferServiceClientTest {
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
             .setName(
-                TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+                TransferConfigName.ofProjectLocationTransferConfigName(
+                        "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDataSourceId("dataSourceId-1221402528")
@@ -662,7 +673,8 @@ public class DataTransferServiceClientTest {
     mockDataTransferService.addResponse(expectedResponse);
 
     TransferConfigName name =
-        TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+        TransferConfigName.ofProjectLocationTransferConfigName(
+            "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]");
 
     TransferConfig actualResponse = client.getTransferConfig(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -685,7 +697,8 @@ public class DataTransferServiceClientTest {
 
     try {
       TransferConfigName name =
-          TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+          TransferConfigName.ofProjectLocationTransferConfigName(
+              "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]");
       client.getTransferConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -698,7 +711,8 @@ public class DataTransferServiceClientTest {
     TransferConfig expectedResponse =
         TransferConfig.newBuilder()
             .setName(
-                TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+                TransferConfigName.ofProjectLocationTransferConfigName(
+                        "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDataSourceId("dataSourceId-1221402528")
@@ -887,7 +901,8 @@ public class DataTransferServiceClientTest {
     mockDataTransferService.addResponse(expectedResponse);
 
     TransferConfigName parent =
-        TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+        TransferConfigName.ofProjectLocationTransferConfigName(
+            "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]");
     Timestamp startTime = Timestamp.newBuilder().build();
     Timestamp endTime = Timestamp.newBuilder().build();
 
@@ -916,7 +931,8 @@ public class DataTransferServiceClientTest {
 
     try {
       TransferConfigName parent =
-          TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+          TransferConfigName.ofProjectLocationTransferConfigName(
+              "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]");
       Timestamp startTime = Timestamp.newBuilder().build();
       Timestamp endTime = Timestamp.newBuilder().build();
       client.scheduleTransferRuns(parent, startTime, endTime);
@@ -981,7 +997,8 @@ public class DataTransferServiceClientTest {
     StartManualTransferRunsRequest request =
         StartManualTransferRunsRequest.newBuilder()
             .setParent(
-                TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+                TransferConfigName.ofProjectLocationTransferConfigName(
+                        "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
                     .toString())
             .build();
 
@@ -1011,7 +1028,8 @@ public class DataTransferServiceClientTest {
       StartManualTransferRunsRequest request =
           StartManualTransferRunsRequest.newBuilder()
               .setParent(
-                  TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]")
+                  TransferConfigName.ofProjectLocationTransferConfigName(
+                          "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]")
                       .toString())
               .build();
       client.startManualTransferRuns(request);
@@ -1026,7 +1044,8 @@ public class DataTransferServiceClientTest {
     TransferRun expectedResponse =
         TransferRun.newBuilder()
             .setName(
-                RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+                RunName.ofProjectLocationTransferConfigRunName(
+                        "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]")
                     .toString())
             .setScheduleTime(Timestamp.newBuilder().build())
             .setRunTime(Timestamp.newBuilder().build())
@@ -1045,7 +1064,8 @@ public class DataTransferServiceClientTest {
     mockDataTransferService.addResponse(expectedResponse);
 
     RunName name =
-        RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
+        RunName.ofProjectLocationTransferConfigRunName(
+            "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]");
 
     TransferRun actualResponse = client.getTransferRun(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1068,7 +1088,8 @@ public class DataTransferServiceClientTest {
 
     try {
       RunName name =
-          RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
+          RunName.ofProjectLocationTransferConfigRunName(
+              "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]");
       client.getTransferRun(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1081,7 +1102,8 @@ public class DataTransferServiceClientTest {
     TransferRun expectedResponse =
         TransferRun.newBuilder()
             .setName(
-                RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]")
+                RunName.ofProjectLocationTransferConfigRunName(
+                        "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]")
                     .toString())
             .setScheduleTime(Timestamp.newBuilder().build())
             .setRunTime(Timestamp.newBuilder().build())
@@ -1135,7 +1157,8 @@ public class DataTransferServiceClientTest {
     mockDataTransferService.addResponse(expectedResponse);
 
     RunName name =
-        RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
+        RunName.ofProjectLocationTransferConfigRunName(
+            "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]");
 
     client.deleteTransferRun(name);
 
@@ -1157,7 +1180,8 @@ public class DataTransferServiceClientTest {
 
     try {
       RunName name =
-          RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
+          RunName.ofProjectLocationTransferConfigRunName(
+              "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]");
       client.deleteTransferRun(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1210,7 +1234,8 @@ public class DataTransferServiceClientTest {
     mockDataTransferService.addResponse(expectedResponse);
 
     TransferConfigName parent =
-        TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+        TransferConfigName.ofProjectLocationTransferConfigName(
+            "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]");
 
     ListTransferRunsPagedResponse pagedListResponse = client.listTransferRuns(parent);
 
@@ -1237,7 +1262,8 @@ public class DataTransferServiceClientTest {
 
     try {
       TransferConfigName parent =
-          TransferConfigName.ofProjectTransferConfigName("[PROJECT]", "[TRANSFER_CONFIG]");
+          TransferConfigName.ofProjectLocationTransferConfigName(
+              "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]");
       client.listTransferRuns(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1300,7 +1326,8 @@ public class DataTransferServiceClientTest {
     mockDataTransferService.addResponse(expectedResponse);
 
     RunName parent =
-        RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
+        RunName.ofProjectLocationTransferConfigRunName(
+            "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]");
 
     ListTransferLogsPagedResponse pagedListResponse = client.listTransferLogs(parent);
 
@@ -1327,7 +1354,8 @@ public class DataTransferServiceClientTest {
 
     try {
       RunName parent =
-          RunName.ofProjectTransferConfigRunName("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
+          RunName.ofProjectLocationTransferConfigRunName(
+              "[PROJECT]", "[LOCATION]", "[TRANSFER_CONFIG]", "[RUN]");
       client.listTransferLogs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1385,7 +1413,8 @@ public class DataTransferServiceClientTest {
         CheckValidCredsResponse.newBuilder().setHasValidCreds(true).build();
     mockDataTransferService.addResponse(expectedResponse);
 
-    DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
+    DataSourceName name =
+        DataSourceName.ofProjectLocationDataSourceName("[PROJECT]", "[LOCATION]", "[DATA_SOURCE]");
 
     CheckValidCredsResponse actualResponse = client.checkValidCreds(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1407,7 +1436,9 @@ public class DataTransferServiceClientTest {
     mockDataTransferService.addException(exception);
 
     try {
-      DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
+      DataSourceName name =
+          DataSourceName.ofProjectLocationDataSourceName(
+              "[PROJECT]", "[LOCATION]", "[DATA_SOURCE]");
       client.checkValidCreds(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

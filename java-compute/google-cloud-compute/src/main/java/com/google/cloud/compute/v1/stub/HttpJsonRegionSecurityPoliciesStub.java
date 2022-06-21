@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionSecurityPoliciesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -58,7 +57,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -67,7 +66,7 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionSecurityPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionSecurityPolicies/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionSecurityPolicyRequest>newBuilder()
@@ -119,7 +118,7 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionSecurityPolicyRequest, SecurityPolicy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionSecurityPolicies/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionSecurityPolicyRequest>newBuilder()
@@ -155,7 +154,7 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionSecurityPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionSecurityPolicies/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionSecurityPolicyRequest>newBuilder()
@@ -214,7 +213,7 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionSecurityPoliciesRequest, SecurityPolicyList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionSecurityPolicies/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionSecurityPoliciesRequest>newBuilder()
@@ -267,7 +266,7 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchRegionSecurityPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionSecurityPolicies/Patch")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRegionSecurityPolicyRequest>newBuilder()

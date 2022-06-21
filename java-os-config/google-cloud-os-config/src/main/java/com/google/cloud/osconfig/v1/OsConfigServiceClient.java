@@ -522,7 +522,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    *   while (true) {
    *     PatchJobs.ListPatchJobsResponse response =
    *         osConfigServiceClient.listPatchJobsCallable().call(request);
-   *     for (PatchJobs.PatchJob element : response.getResponsesList()) {
+   *     for (PatchJobs.PatchJob element : response.getPatchJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -683,7 +683,8 @@ public class OsConfigServiceClient implements BackgroundResource {
    *   while (true) {
    *     PatchJobs.ListPatchJobInstanceDetailsResponse response =
    *         osConfigServiceClient.listPatchJobInstanceDetailsCallable().call(request);
-   *     for (PatchJobs.PatchJobInstanceDetails element : response.getResponsesList()) {
+   *     for (PatchJobs.PatchJobInstanceDetails element :
+   *         response.getPatchJobInstanceDetailsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1095,7 +1096,7 @@ public class OsConfigServiceClient implements BackgroundResource {
    *   while (true) {
    *     PatchDeployments.ListPatchDeploymentsResponse response =
    *         osConfigServiceClient.listPatchDeploymentsCallable().call(request);
-   *     for (PatchDeployments.PatchDeployment element : response.getResponsesList()) {
+   *     for (PatchDeployments.PatchDeployment element : response.getPatchDeploymentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

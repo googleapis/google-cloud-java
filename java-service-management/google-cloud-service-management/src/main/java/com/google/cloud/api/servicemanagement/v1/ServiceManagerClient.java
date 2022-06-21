@@ -20,6 +20,7 @@ import com.google.api.Service;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -54,7 +55,6 @@ import com.google.cloud.api.servicemanagement.v1.stub.ServiceManagerStub;
 import com.google.cloud.api.servicemanagement.v1.stub.ServiceManagerStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -127,13 +127,28 @@ import javax.annotation.Generated;
  * ServiceManagerClient serviceManagerClient = ServiceManagerClient.create(serviceManagerSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * ServiceManagerSettings serviceManagerSettings =
+ *     ServiceManagerSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             ServiceManagerSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * ServiceManagerClient serviceManagerClient = ServiceManagerClient.create(serviceManagerSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class ServiceManagerClient implements BackgroundResource {
   private final ServiceManagerSettings settings;
   private final ServiceManagerStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of ServiceManagerClient with default settings. */
   public static final ServiceManagerClient create() throws IOException {
@@ -165,13 +180,17 @@ public class ServiceManagerClient implements BackgroundResource {
   protected ServiceManagerClient(ServiceManagerSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((ServiceManagerStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected ServiceManagerClient(ServiceManagerStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final ServiceManagerSettings getSettings() {
@@ -186,8 +205,16 @@ public class ServiceManagerClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -316,7 +343,7 @@ public class ServiceManagerClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListServicesResponse response = serviceManagerClient.listServicesCallable().call(request);
-   *     for (ManagedService element : response.getResponsesList()) {
+   *     for (ManagedService element : response.getServicesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -873,7 +900,7 @@ public class ServiceManagerClient implements BackgroundResource {
    *   while (true) {
    *     ListServiceConfigsResponse response =
    *         serviceManagerClient.listServiceConfigsCallable().call(request);
-   *     for (Service element : response.getResponsesList()) {
+   *     for (Service element : response.getServiceConfigsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1364,7 +1391,7 @@ public class ServiceManagerClient implements BackgroundResource {
    *   while (true) {
    *     ListServiceRolloutsResponse response =
    *         serviceManagerClient.listServiceRolloutsCallable().call(request);
-   *     for (Rollout element : response.getResponsesList()) {
+   *     for (Rollout element : response.getRolloutsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

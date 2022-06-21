@@ -149,6 +149,24 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 82:
+            {
+              com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.Builder subBuilder =
+                  null;
+              if (webhookConfig_ != null) {
+                subBuilder = webhookConfig_.toBuilder();
+              }
+              webhookConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(webhookConfig_);
+                webhookConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -1924,6 +1942,1113 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface WebhookConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhooks to override for the agent environment. The webhook
+     * must exist in the agent. You can override fields in
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+     * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+     */
+    java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Webhook> getWebhookOverridesList();
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhooks to override for the agent environment. The webhook
+     * must exist in the agent. You can override fields in
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+     * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Webhook getWebhookOverrides(int index);
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhooks to override for the agent environment. The webhook
+     * must exist in the agent. You can override fields in
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+     * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+     */
+    int getWebhookOverridesCount();
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhooks to override for the agent environment. The webhook
+     * must exist in the agent. You can override fields in
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+     * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+     */
+    java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.WebhookOrBuilder>
+        getWebhookOverridesOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhooks to override for the agent environment. The webhook
+     * must exist in the agent. You can override fields in
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+     * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.WebhookOrBuilder getWebhookOverridesOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for webhooks.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig}
+   */
+  public static final class WebhookConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig)
+      WebhookConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use WebhookConfig.newBuilder() to construct.
+    private WebhookConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private WebhookConfig() {
+      webhookOverrides_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new WebhookConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private WebhookConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  webhookOverrides_ =
+                      new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.Webhook>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                webhookOverrides_.add(
+                    input.readMessage(
+                        com.google.cloud.dialogflow.cx.v3beta1.Webhook.parser(),
+                        extensionRegistry));
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          webhookOverrides_ = java.util.Collections.unmodifiableList(webhookOverrides_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.EnvironmentProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Environment_WebhookConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.EnvironmentProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Environment_WebhookConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.class,
+              com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.Builder.class);
+    }
+
+    public static final int WEBHOOK_OVERRIDES_FIELD_NUMBER = 1;
+    private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Webhook> webhookOverrides_;
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhooks to override for the agent environment. The webhook
+     * must exist in the agent. You can override fields in
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+     * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Webhook>
+        getWebhookOverridesList() {
+      return webhookOverrides_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhooks to override for the agent environment. The webhook
+     * must exist in the agent. You can override fields in
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+     * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.WebhookOrBuilder>
+        getWebhookOverridesOrBuilderList() {
+      return webhookOverrides_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhooks to override for the agent environment. The webhook
+     * must exist in the agent. You can override fields in
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+     * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+     */
+    @java.lang.Override
+    public int getWebhookOverridesCount() {
+      return webhookOverrides_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhooks to override for the agent environment. The webhook
+     * must exist in the agent. You can override fields in
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+     * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Webhook getWebhookOverrides(int index) {
+      return webhookOverrides_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The list of webhooks to override for the agent environment. The webhook
+     * must exist in the agent. You can override fields in
+     * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+     * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.WebhookOrBuilder getWebhookOverridesOrBuilder(
+        int index) {
+      return webhookOverrides_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < webhookOverrides_.size(); i++) {
+        output.writeMessage(1, webhookOverrides_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < webhookOverrides_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, webhookOverrides_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig other =
+          (com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig) obj;
+
+      if (!getWebhookOverridesList().equals(other.getWebhookOverridesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getWebhookOverridesCount() > 0) {
+        hash = (37 * hash) + WEBHOOK_OVERRIDES_FIELD_NUMBER;
+        hash = (53 * hash) + getWebhookOverridesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for webhooks.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig)
+        com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.EnvironmentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Environment_WebhookConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.EnvironmentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Environment_WebhookConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getWebhookOverridesFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (webhookOverridesBuilder_ == null) {
+          webhookOverrides_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          webhookOverridesBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.EnvironmentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Environment_WebhookConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig build() {
+        com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig result =
+            new com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig(this);
+        int from_bitField0_ = bitField0_;
+        if (webhookOverridesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            webhookOverrides_ = java.util.Collections.unmodifiableList(webhookOverrides_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.webhookOverrides_ = webhookOverrides_;
+        } else {
+          result.webhookOverrides_ = webhookOverridesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig
+                .getDefaultInstance()) return this;
+        if (webhookOverridesBuilder_ == null) {
+          if (!other.webhookOverrides_.isEmpty()) {
+            if (webhookOverrides_.isEmpty()) {
+              webhookOverrides_ = other.webhookOverrides_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureWebhookOverridesIsMutable();
+              webhookOverrides_.addAll(other.webhookOverrides_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.webhookOverrides_.isEmpty()) {
+            if (webhookOverridesBuilder_.isEmpty()) {
+              webhookOverridesBuilder_.dispose();
+              webhookOverridesBuilder_ = null;
+              webhookOverrides_ = other.webhookOverrides_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              webhookOverridesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getWebhookOverridesFieldBuilder()
+                      : null;
+            } else {
+              webhookOverridesBuilder_.addAllMessages(other.webhookOverrides_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Webhook> webhookOverrides_ =
+          java.util.Collections.emptyList();
+
+      private void ensureWebhookOverridesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          webhookOverrides_ =
+              new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3beta1.Webhook>(
+                  webhookOverrides_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook,
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.WebhookOrBuilder>
+          webhookOverridesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Webhook>
+          getWebhookOverridesList() {
+        if (webhookOverridesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(webhookOverrides_);
+        } else {
+          return webhookOverridesBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public int getWebhookOverridesCount() {
+        if (webhookOverridesBuilder_ == null) {
+          return webhookOverrides_.size();
+        } else {
+          return webhookOverridesBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook getWebhookOverrides(int index) {
+        if (webhookOverridesBuilder_ == null) {
+          return webhookOverrides_.get(index);
+        } else {
+          return webhookOverridesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public Builder setWebhookOverrides(
+          int index, com.google.cloud.dialogflow.cx.v3beta1.Webhook value) {
+        if (webhookOverridesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureWebhookOverridesIsMutable();
+          webhookOverrides_.set(index, value);
+          onChanged();
+        } else {
+          webhookOverridesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public Builder setWebhookOverrides(
+          int index, com.google.cloud.dialogflow.cx.v3beta1.Webhook.Builder builderForValue) {
+        if (webhookOverridesBuilder_ == null) {
+          ensureWebhookOverridesIsMutable();
+          webhookOverrides_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          webhookOverridesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public Builder addWebhookOverrides(com.google.cloud.dialogflow.cx.v3beta1.Webhook value) {
+        if (webhookOverridesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureWebhookOverridesIsMutable();
+          webhookOverrides_.add(value);
+          onChanged();
+        } else {
+          webhookOverridesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public Builder addWebhookOverrides(
+          int index, com.google.cloud.dialogflow.cx.v3beta1.Webhook value) {
+        if (webhookOverridesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureWebhookOverridesIsMutable();
+          webhookOverrides_.add(index, value);
+          onChanged();
+        } else {
+          webhookOverridesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public Builder addWebhookOverrides(
+          com.google.cloud.dialogflow.cx.v3beta1.Webhook.Builder builderForValue) {
+        if (webhookOverridesBuilder_ == null) {
+          ensureWebhookOverridesIsMutable();
+          webhookOverrides_.add(builderForValue.build());
+          onChanged();
+        } else {
+          webhookOverridesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public Builder addWebhookOverrides(
+          int index, com.google.cloud.dialogflow.cx.v3beta1.Webhook.Builder builderForValue) {
+        if (webhookOverridesBuilder_ == null) {
+          ensureWebhookOverridesIsMutable();
+          webhookOverrides_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          webhookOverridesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public Builder addAllWebhookOverrides(
+          java.lang.Iterable<? extends com.google.cloud.dialogflow.cx.v3beta1.Webhook> values) {
+        if (webhookOverridesBuilder_ == null) {
+          ensureWebhookOverridesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, webhookOverrides_);
+          onChanged();
+        } else {
+          webhookOverridesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public Builder clearWebhookOverrides() {
+        if (webhookOverridesBuilder_ == null) {
+          webhookOverrides_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          webhookOverridesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public Builder removeWebhookOverrides(int index) {
+        if (webhookOverridesBuilder_ == null) {
+          ensureWebhookOverridesIsMutable();
+          webhookOverrides_.remove(index);
+          onChanged();
+        } else {
+          webhookOverridesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook.Builder getWebhookOverridesBuilder(
+          int index) {
+        return getWebhookOverridesFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.WebhookOrBuilder getWebhookOverridesOrBuilder(
+          int index) {
+        if (webhookOverridesBuilder_ == null) {
+          return webhookOverrides_.get(index);
+        } else {
+          return webhookOverridesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.WebhookOrBuilder>
+          getWebhookOverridesOrBuilderList() {
+        if (webhookOverridesBuilder_ != null) {
+          return webhookOverridesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(webhookOverrides_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook.Builder addWebhookOverridesBuilder() {
+        return getWebhookOverridesFieldBuilder()
+            .addBuilder(com.google.cloud.dialogflow.cx.v3beta1.Webhook.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Webhook.Builder addWebhookOverridesBuilder(
+          int index) {
+        return getWebhookOverridesFieldBuilder()
+            .addBuilder(index, com.google.cloud.dialogflow.cx.v3beta1.Webhook.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The list of webhooks to override for the agent environment. The webhook
+       * must exist in the agent. You can override fields in
+       * [`generic_web_service`][google.cloud.dialogflow.cx.v3beta1.Webhook.generic_web_service] and
+       * [`service_directory`][google.cloud.dialogflow.cx.v3beta1.Webhook.service_directory].
+       * </pre>
+       *
+       * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Webhook webhook_overrides = 1;</code>
+       */
+      public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Webhook.Builder>
+          getWebhookOverridesBuilderList() {
+        return getWebhookOverridesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook,
+              com.google.cloud.dialogflow.cx.v3beta1.Webhook.Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.WebhookOrBuilder>
+          getWebhookOverridesFieldBuilder() {
+        if (webhookOverridesBuilder_ == null) {
+          webhookOverridesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.Webhook,
+                  com.google.cloud.dialogflow.cx.v3beta1.Webhook.Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.WebhookOrBuilder>(
+                  webhookOverrides_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          webhookOverrides_ = null;
+        }
+        return webhookOverridesBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WebhookConfig> PARSER =
+        new com.google.protobuf.AbstractParser<WebhookConfig>() {
+          @java.lang.Override
+          public WebhookConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new WebhookConfig(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<WebhookConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WebhookConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -2279,6 +3404,55 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     return getTestCasesConfig();
   }
 
+  public static final int WEBHOOK_CONFIG_FIELD_NUMBER = 10;
+  private com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhookConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The webhook configuration for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhook_config = 10;</code>
+   *
+   * @return Whether the webhookConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWebhookConfig() {
+    return webhookConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The webhook configuration for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhook_config = 10;</code>
+   *
+   * @return The webhookConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig getWebhookConfig() {
+    return webhookConfig_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.getDefaultInstance()
+        : webhookConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The webhook configuration for this environment.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhook_config = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfigOrBuilder
+      getWebhookConfigOrBuilder() {
+    return getWebhookConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2311,6 +3485,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (testCasesConfig_ != null) {
       output.writeMessage(7, getTestCasesConfig());
     }
+    if (webhookConfig_ != null) {
+      output.writeMessage(10, getWebhookConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -2337,6 +3514,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
     if (testCasesConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getTestCasesConfig());
+    }
+    if (webhookConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getWebhookConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2366,6 +3546,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (hasTestCasesConfig()) {
       if (!getTestCasesConfig().equals(other.getTestCasesConfig())) return false;
     }
+    if (hasWebhookConfig() != other.hasWebhookConfig()) return false;
+    if (hasWebhookConfig()) {
+      if (!getWebhookConfig().equals(other.getWebhookConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2394,6 +3578,10 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     if (hasTestCasesConfig()) {
       hash = (37 * hash) + TEST_CASES_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getTestCasesConfig().hashCode();
+    }
+    if (hasWebhookConfig()) {
+      hash = (37 * hash) + WEBHOOK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWebhookConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2573,6 +3761,12 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         testCasesConfig_ = null;
         testCasesConfigBuilder_ = null;
       }
+      if (webhookConfigBuilder_ == null) {
+        webhookConfig_ = null;
+      } else {
+        webhookConfig_ = null;
+        webhookConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2622,6 +3816,11 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         result.testCasesConfig_ = testCasesConfig_;
       } else {
         result.testCasesConfig_ = testCasesConfigBuilder_.build();
+      }
+      if (webhookConfigBuilder_ == null) {
+        result.webhookConfig_ = webhookConfig_;
+      } else {
+        result.webhookConfig_ = webhookConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2717,6 +3916,9 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasTestCasesConfig()) {
         mergeTestCasesConfig(other.getTestCasesConfig());
+      }
+      if (other.hasWebhookConfig()) {
+        mergeWebhookConfig(other.getWebhookConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3954,6 +5156,206 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         testCasesConfig_ = null;
       }
       return testCasesConfigBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhookConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig,
+            com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfigOrBuilder>
+        webhookConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The webhook configuration for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhook_config = 10;
+     * </code>
+     *
+     * @return Whether the webhookConfig field is set.
+     */
+    public boolean hasWebhookConfig() {
+      return webhookConfigBuilder_ != null || webhookConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The webhook configuration for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhook_config = 10;
+     * </code>
+     *
+     * @return The webhookConfig.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig getWebhookConfig() {
+      if (webhookConfigBuilder_ == null) {
+        return webhookConfig_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.getDefaultInstance()
+            : webhookConfig_;
+      } else {
+        return webhookConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The webhook configuration for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhook_config = 10;
+     * </code>
+     */
+    public Builder setWebhookConfig(
+        com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig value) {
+      if (webhookConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        webhookConfig_ = value;
+        onChanged();
+      } else {
+        webhookConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The webhook configuration for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhook_config = 10;
+     * </code>
+     */
+    public Builder setWebhookConfig(
+        com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.Builder builderForValue) {
+      if (webhookConfigBuilder_ == null) {
+        webhookConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        webhookConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The webhook configuration for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhook_config = 10;
+     * </code>
+     */
+    public Builder mergeWebhookConfig(
+        com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig value) {
+      if (webhookConfigBuilder_ == null) {
+        if (webhookConfig_ != null) {
+          webhookConfig_ =
+              com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.newBuilder(
+                      webhookConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          webhookConfig_ = value;
+        }
+        onChanged();
+      } else {
+        webhookConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The webhook configuration for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhook_config = 10;
+     * </code>
+     */
+    public Builder clearWebhookConfig() {
+      if (webhookConfigBuilder_ == null) {
+        webhookConfig_ = null;
+        onChanged();
+      } else {
+        webhookConfig_ = null;
+        webhookConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The webhook configuration for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhook_config = 10;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.Builder
+        getWebhookConfigBuilder() {
+
+      onChanged();
+      return getWebhookConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The webhook configuration for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhook_config = 10;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfigOrBuilder
+        getWebhookConfigOrBuilder() {
+      if (webhookConfigBuilder_ != null) {
+        return webhookConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return webhookConfig_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.getDefaultInstance()
+            : webhookConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The webhook configuration for this environment.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig webhook_config = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig,
+            com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfigOrBuilder>
+        getWebhookConfigFieldBuilder() {
+      if (webhookConfigBuilder_ == null) {
+        webhookConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig,
+                com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfig.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.Environment.WebhookConfigOrBuilder>(
+                getWebhookConfig(), getParentForChildren(), isClean());
+        webhookConfig_ = null;
+      }
+      return webhookConfigBuilder_;
     }
 
     @java.lang.Override

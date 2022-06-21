@@ -30,7 +30,9 @@ public interface BatchAnnotateImagesRequestOrBuilder
    * Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageRequest> getRequestsList();
   /**
@@ -40,7 +42,9 @@ public interface BatchAnnotateImagesRequestOrBuilder
    * Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1p3beta1.AnnotateImageRequest getRequests(int index);
   /**
@@ -50,7 +54,9 @@ public interface BatchAnnotateImagesRequestOrBuilder
    * Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   int getRequestsCount();
   /**
@@ -60,7 +66,9 @@ public interface BatchAnnotateImagesRequestOrBuilder
    * Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.vision.v1p3beta1.AnnotateImageRequestOrBuilder>
       getRequestsOrBuilderList();
@@ -71,7 +79,9 @@ public interface BatchAnnotateImagesRequestOrBuilder
    * Individual image annotation requests for this batch.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageRequest requests = 1;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.AnnotateImageRequest requests = 1 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.vision.v1p3beta1.AnnotateImageRequestOrBuilder getRequestsOrBuilder(int index);
 }

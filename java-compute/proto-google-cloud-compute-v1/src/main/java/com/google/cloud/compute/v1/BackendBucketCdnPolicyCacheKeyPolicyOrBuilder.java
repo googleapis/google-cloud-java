@@ -78,7 +78,7 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. Default parameters are always included. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_whitelist = 52456496;</code>
@@ -90,7 +90,7 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. Default parameters are always included. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_whitelist = 52456496;</code>
@@ -102,7 +102,7 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. Default parameters are always included. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_whitelist = 52456496;</code>
@@ -115,7 +115,7 @@ public interface BackendBucketCdnPolicyCacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. Default parameters are always included. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
    * <code>repeated string query_string_whitelist = 52456496;</code>

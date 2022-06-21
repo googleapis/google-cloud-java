@@ -685,7 +685,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListProcessorsResponse response =
    *         documentProcessorServiceClient.listProcessorsCallable().call(request);
-   *     for (Processor element : response.getResponsesList()) {
+   *     for (Processor element : response.getProcessorsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

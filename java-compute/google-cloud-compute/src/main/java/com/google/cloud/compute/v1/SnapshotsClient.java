@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
  *   String project = "project-309310695";
  *   String snapshot = "snapshot284874180";
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SnapshotsSettings snapshotsSettings =
  *     SnapshotsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SnapshotsSettings snapshotsSettings =
  *     SnapshotsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SnapshotsClient snapshotsClient = SnapshotsClient.create(snapshotsSettings);
@@ -118,7 +124,6 @@ public class SnapshotsClient implements BackgroundResource {
    * Constructs an instance of SnapshotsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(SnapshotsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SnapshotsClient create(SnapshotsStub stub) {
     return new SnapshotsClient(stub);
   }
@@ -132,7 +137,6 @@ public class SnapshotsClient implements BackgroundResource {
     this.stub = ((SnapshotsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SnapshotsClient(SnapshotsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -142,7 +146,6 @@ public class SnapshotsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SnapshotsStub getStub() {
     return stub;
   }
@@ -157,6 +160,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   String project = "project-309310695";
    *   String snapshot = "snapshot284874180";
@@ -184,6 +189,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   DeleteSnapshotRequest request =
    *       DeleteSnapshotRequest.newBuilder()
@@ -214,6 +221,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   DeleteSnapshotRequest request =
    *       DeleteSnapshotRequest.newBuilder()
@@ -243,6 +252,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   DeleteSnapshotRequest request =
    *       DeleteSnapshotRequest.newBuilder()
@@ -268,6 +279,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   String project = "project-309310695";
    *   String snapshot = "snapshot284874180";
@@ -293,6 +306,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   GetSnapshotRequest request =
    *       GetSnapshotRequest.newBuilder()
@@ -318,6 +333,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   GetSnapshotRequest request =
    *       GetSnapshotRequest.newBuilder()
@@ -342,6 +359,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -367,6 +386,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   GetIamPolicySnapshotRequest request =
    *       GetIamPolicySnapshotRequest.newBuilder()
@@ -393,6 +414,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   GetIamPolicySnapshotRequest request =
    *       GetIamPolicySnapshotRequest.newBuilder()
@@ -420,6 +443,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   String project = "project-309310695";
    *   Snapshot snapshotResource = Snapshot.newBuilder().build();
@@ -451,6 +476,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   InsertSnapshotRequest request =
    *       InsertSnapshotRequest.newBuilder()
@@ -481,6 +508,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   InsertSnapshotRequest request =
    *       InsertSnapshotRequest.newBuilder()
@@ -510,6 +539,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   InsertSnapshotRequest request =
    *       InsertSnapshotRequest.newBuilder()
@@ -534,6 +565,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   String project = "project-309310695";
    *   for (Snapshot element : snapshotsClient.list(project).iterateAll()) {
@@ -557,6 +590,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   ListSnapshotsRequest request =
    *       ListSnapshotsRequest.newBuilder()
@@ -587,6 +622,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   ListSnapshotsRequest request =
    *       ListSnapshotsRequest.newBuilder()
@@ -616,6 +653,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   ListSnapshotsRequest request =
    *       ListSnapshotsRequest.newBuilder()
@@ -628,7 +667,7 @@ public class SnapshotsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     SnapshotList response = snapshotsClient.listCallable().call(request);
-   *     for (Snapshot element : response.getResponsesList()) {
+   *     for (Snapshot element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -652,6 +691,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -685,6 +726,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   SetIamPolicySnapshotRequest request =
    *       SetIamPolicySnapshotRequest.newBuilder()
@@ -710,6 +753,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   SetIamPolicySnapshotRequest request =
    *       SetIamPolicySnapshotRequest.newBuilder()
@@ -735,6 +780,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -769,6 +816,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   SetLabelsSnapshotRequest request =
    *       SetLabelsSnapshotRequest.newBuilder()
@@ -798,6 +847,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   SetLabelsSnapshotRequest request =
    *       SetLabelsSnapshotRequest.newBuilder()
@@ -825,6 +876,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   SetLabelsSnapshotRequest request =
    *       SetLabelsSnapshotRequest.newBuilder()
@@ -849,6 +902,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -882,6 +937,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   TestIamPermissionsSnapshotRequest request =
    *       TestIamPermissionsSnapshotRequest.newBuilder()
@@ -908,6 +965,8 @@ public class SnapshotsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   TestIamPermissionsSnapshotRequest request =
    *       TestIamPermissionsSnapshotRequest.newBuilder()

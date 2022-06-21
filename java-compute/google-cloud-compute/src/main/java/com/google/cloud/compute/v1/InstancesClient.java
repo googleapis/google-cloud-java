@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (InstancesClient instancesClient = InstancesClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * InstancesSettings instancesSettings =
  *     InstancesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * InstancesSettings instancesSettings =
  *     InstancesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * InstancesClient instancesClient = InstancesClient.create(instancesSettings);
@@ -120,7 +126,6 @@ public class InstancesClient implements BackgroundResource {
    * Constructs an instance of InstancesClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(InstancesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InstancesClient create(InstancesStub stub) {
     return new InstancesClient(stub);
   }
@@ -134,7 +139,6 @@ public class InstancesClient implements BackgroundResource {
     this.stub = ((InstancesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected InstancesClient(InstancesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -144,7 +148,6 @@ public class InstancesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public InstancesStub getStub() {
     return stub;
   }
@@ -156,6 +159,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -200,6 +205,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   AddAccessConfigInstanceRequest request =
    *       AddAccessConfigInstanceRequest.newBuilder()
@@ -231,6 +238,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   AddAccessConfigInstanceRequest request =
    *       AddAccessConfigInstanceRequest.newBuilder()
@@ -260,6 +269,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   AddAccessConfigInstanceRequest request =
    *       AddAccessConfigInstanceRequest.newBuilder()
@@ -288,6 +299,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -332,6 +345,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   AddResourcePoliciesInstanceRequest request =
    *       AddResourcePoliciesInstanceRequest.newBuilder()
@@ -364,6 +379,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   AddResourcePoliciesInstanceRequest request =
    *       AddResourcePoliciesInstanceRequest.newBuilder()
@@ -394,6 +411,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   AddResourcePoliciesInstanceRequest request =
    *       AddResourcePoliciesInstanceRequest.newBuilder()
@@ -425,6 +444,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, InstancesScopedList> element :
@@ -452,6 +473,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   AggregatedListInstancesRequest request =
    *       AggregatedListInstancesRequest.newBuilder()
@@ -486,6 +509,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   AggregatedListInstancesRequest request =
    *       AggregatedListInstancesRequest.newBuilder()
@@ -520,6 +545,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   AggregatedListInstancesRequest request =
    *       AggregatedListInstancesRequest.newBuilder()
@@ -533,7 +560,7 @@ public class InstancesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     InstanceAggregatedList response = instancesClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, InstancesScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, InstancesScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -560,6 +587,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -597,6 +626,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   AttachDiskInstanceRequest request =
    *       AttachDiskInstanceRequest.newBuilder()
@@ -630,6 +661,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   AttachDiskInstanceRequest request =
    *       AttachDiskInstanceRequest.newBuilder()
@@ -661,6 +694,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   AttachDiskInstanceRequest request =
    *       AttachDiskInstanceRequest.newBuilder()
@@ -688,6 +723,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -721,6 +758,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   BulkInsertInstanceRequest request =
    *       BulkInsertInstanceRequest.newBuilder()
@@ -751,6 +790,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   BulkInsertInstanceRequest request =
    *       BulkInsertInstanceRequest.newBuilder()
@@ -779,6 +820,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   BulkInsertInstanceRequest request =
    *       BulkInsertInstanceRequest.newBuilder()
@@ -805,6 +848,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -836,6 +881,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
@@ -864,6 +911,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
@@ -891,6 +940,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
@@ -916,6 +967,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -956,6 +1009,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   DeleteAccessConfigInstanceRequest request =
    *       DeleteAccessConfigInstanceRequest.newBuilder()
@@ -987,6 +1042,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   DeleteAccessConfigInstanceRequest request =
    *       DeleteAccessConfigInstanceRequest.newBuilder()
@@ -1016,6 +1073,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   DeleteAccessConfigInstanceRequest request =
    *       DeleteAccessConfigInstanceRequest.newBuilder()
@@ -1045,6 +1104,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1081,6 +1142,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   DetachDiskInstanceRequest request =
    *       DetachDiskInstanceRequest.newBuilder()
@@ -1111,6 +1174,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   DetachDiskInstanceRequest request =
    *       DetachDiskInstanceRequest.newBuilder()
@@ -1139,6 +1204,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   DetachDiskInstanceRequest request =
    *       DetachDiskInstanceRequest.newBuilder()
@@ -1166,6 +1233,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1197,6 +1266,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetInstanceRequest request =
    *       GetInstanceRequest.newBuilder()
@@ -1223,6 +1294,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetInstanceRequest request =
    *       GetInstanceRequest.newBuilder()
@@ -1247,6 +1320,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1282,6 +1357,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetEffectiveFirewallsInstanceRequest request =
    *       GetEffectiveFirewallsInstanceRequest.newBuilder()
@@ -1310,6 +1387,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetEffectiveFirewallsInstanceRequest request =
    *       GetEffectiveFirewallsInstanceRequest.newBuilder()
@@ -1338,6 +1417,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1368,6 +1449,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetGuestAttributesInstanceRequest request =
    *       GetGuestAttributesInstanceRequest.newBuilder()
@@ -1395,6 +1478,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetGuestAttributesInstanceRequest request =
    *       GetGuestAttributesInstanceRequest.newBuilder()
@@ -1424,6 +1509,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1455,6 +1542,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetIamPolicyInstanceRequest request =
    *       GetIamPolicyInstanceRequest.newBuilder()
@@ -1482,6 +1571,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetIamPolicyInstanceRequest request =
    *       GetIamPolicyInstanceRequest.newBuilder()
@@ -1507,6 +1598,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1537,6 +1630,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetScreenshotInstanceRequest request =
    *       GetScreenshotInstanceRequest.newBuilder()
@@ -1562,6 +1657,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetScreenshotInstanceRequest request =
    *       GetScreenshotInstanceRequest.newBuilder()
@@ -1586,6 +1683,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1616,6 +1715,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetSerialPortOutputInstanceRequest request =
    *       GetSerialPortOutputInstanceRequest.newBuilder()
@@ -1643,6 +1744,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetSerialPortOutputInstanceRequest request =
    *       GetSerialPortOutputInstanceRequest.newBuilder()
@@ -1671,6 +1774,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1703,6 +1808,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetShieldedInstanceIdentityInstanceRequest request =
    *       GetShieldedInstanceIdentityInstanceRequest.newBuilder()
@@ -1729,6 +1836,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   GetShieldedInstanceIdentityInstanceRequest request =
    *       GetShieldedInstanceIdentityInstanceRequest.newBuilder()
@@ -1755,6 +1864,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1786,6 +1897,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   InsertInstanceRequest request =
    *       InsertInstanceRequest.newBuilder()
@@ -1816,6 +1929,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   InsertInstanceRequest request =
    *       InsertInstanceRequest.newBuilder()
@@ -1845,6 +1960,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   InsertInstanceRequest request =
    *       InsertInstanceRequest.newBuilder()
@@ -1872,6 +1989,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1898,6 +2017,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -1929,6 +2050,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -1959,6 +2082,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   ListInstancesRequest request =
    *       ListInstancesRequest.newBuilder()
@@ -1972,7 +2097,7 @@ public class InstancesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     InstanceList response = instancesClient.listCallable().call(request);
-   *     for (Instance element : response.getResponsesList()) {
+   *     for (Instance element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1998,6 +2123,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -2035,6 +2162,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   ListReferrersInstancesRequest request =
    *       ListReferrersInstancesRequest.newBuilder()
@@ -2069,6 +2198,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   ListReferrersInstancesRequest request =
    *       ListReferrersInstancesRequest.newBuilder()
@@ -2104,6 +2235,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   ListReferrersInstancesRequest request =
    *       ListReferrersInstancesRequest.newBuilder()
@@ -2118,7 +2251,7 @@ public class InstancesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     InstanceListReferrers response = instancesClient.listReferrersCallable().call(request);
-   *     for (Reference element : response.getResponsesList()) {
+   *     for (Reference element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2143,6 +2276,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -2186,6 +2321,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   RemoveResourcePoliciesInstanceRequest request =
    *       RemoveResourcePoliciesInstanceRequest.newBuilder()
@@ -2217,6 +2354,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   RemoveResourcePoliciesInstanceRequest request =
    *       RemoveResourcePoliciesInstanceRequest.newBuilder()
@@ -2246,6 +2385,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   RemoveResourcePoliciesInstanceRequest request =
    *       RemoveResourcePoliciesInstanceRequest.newBuilder()
@@ -2276,6 +2417,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -2308,6 +2451,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   ResetInstanceRequest request =
    *       ResetInstanceRequest.newBuilder()
@@ -2337,6 +2482,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   ResetInstanceRequest request =
    *       ResetInstanceRequest.newBuilder()
@@ -2365,6 +2512,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   ResetInstanceRequest request =
    *       ResetInstanceRequest.newBuilder()
@@ -2390,6 +2539,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -2421,6 +2572,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   ResumeInstanceRequest request =
    *       ResumeInstanceRequest.newBuilder()
@@ -2449,6 +2602,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   ResumeInstanceRequest request =
    *       ResumeInstanceRequest.newBuilder()
@@ -2476,6 +2631,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   ResumeInstanceRequest request =
    *       ResumeInstanceRequest.newBuilder()
@@ -2501,6 +2658,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -2533,6 +2692,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SendDiagnosticInterruptInstanceRequest request =
    *       SendDiagnosticInterruptInstanceRequest.newBuilder()
@@ -2560,6 +2721,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SendDiagnosticInterruptInstanceRequest request =
    *       SendDiagnosticInterruptInstanceRequest.newBuilder()
@@ -2587,6 +2750,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -2619,6 +2784,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetDeletionProtectionInstanceRequest request =
    *       SetDeletionProtectionInstanceRequest.newBuilder()
@@ -2649,6 +2816,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetDeletionProtectionInstanceRequest request =
    *       SetDeletionProtectionInstanceRequest.newBuilder()
@@ -2677,6 +2846,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetDeletionProtectionInstanceRequest request =
    *       SetDeletionProtectionInstanceRequest.newBuilder()
@@ -2705,6 +2876,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -2746,6 +2919,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetDiskAutoDeleteInstanceRequest request =
    *       SetDiskAutoDeleteInstanceRequest.newBuilder()
@@ -2777,6 +2952,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetDiskAutoDeleteInstanceRequest request =
    *       SetDiskAutoDeleteInstanceRequest.newBuilder()
@@ -2806,6 +2983,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetDiskAutoDeleteInstanceRequest request =
    *       SetDiskAutoDeleteInstanceRequest.newBuilder()
@@ -2834,6 +3013,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -2872,6 +3053,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetIamPolicyInstanceRequest request =
    *       SetIamPolicyInstanceRequest.newBuilder()
@@ -2898,6 +3081,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetIamPolicyInstanceRequest request =
    *       SetIamPolicyInstanceRequest.newBuilder()
@@ -2924,6 +3109,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -2966,6 +3153,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetLabelsInstanceRequest request =
    *       SetLabelsInstanceRequest.newBuilder()
@@ -2997,6 +3186,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetLabelsInstanceRequest request =
    *       SetLabelsInstanceRequest.newBuilder()
@@ -3026,6 +3217,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetLabelsInstanceRequest request =
    *       SetLabelsInstanceRequest.newBuilder()
@@ -3053,6 +3246,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -3097,6 +3292,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetMachineResourcesInstanceRequest request =
    *       SetMachineResourcesInstanceRequest.newBuilder()
@@ -3129,6 +3326,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetMachineResourcesInstanceRequest request =
    *       SetMachineResourcesInstanceRequest.newBuilder()
@@ -3159,6 +3358,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetMachineResourcesInstanceRequest request =
    *       SetMachineResourcesInstanceRequest.newBuilder()
@@ -3188,6 +3389,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -3229,6 +3432,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetMachineTypeInstanceRequest request =
    *       SetMachineTypeInstanceRequest.newBuilder()
@@ -3260,6 +3465,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetMachineTypeInstanceRequest request =
    *       SetMachineTypeInstanceRequest.newBuilder()
@@ -3289,6 +3496,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetMachineTypeInstanceRequest request =
    *       SetMachineTypeInstanceRequest.newBuilder()
@@ -3316,6 +3525,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -3351,6 +3562,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetMetadataInstanceRequest request =
    *       SetMetadataInstanceRequest.newBuilder()
@@ -3381,6 +3594,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetMetadataInstanceRequest request =
    *       SetMetadataInstanceRequest.newBuilder()
@@ -3409,6 +3624,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetMetadataInstanceRequest request =
    *       SetMetadataInstanceRequest.newBuilder()
@@ -3436,6 +3653,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -3479,6 +3698,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetMinCpuPlatformInstanceRequest request =
    *       SetMinCpuPlatformInstanceRequest.newBuilder()
@@ -3511,6 +3732,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetMinCpuPlatformInstanceRequest request =
    *       SetMinCpuPlatformInstanceRequest.newBuilder()
@@ -3541,6 +3764,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetMinCpuPlatformInstanceRequest request =
    *       SetMinCpuPlatformInstanceRequest.newBuilder()
@@ -3567,11 +3792,13 @@ public class InstancesClient implements BackgroundResource {
    * Sets an instance's scheduling options. You can only call this method on a stopped instance,
    * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
    * information on the possible instance states. For more information about setting scheduling
-   * options for a VM, see Set VM availability policies.
+   * options for a VM, see Set VM host maintenance policy.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -3605,11 +3832,13 @@ public class InstancesClient implements BackgroundResource {
    * Sets an instance's scheduling options. You can only call this method on a stopped instance,
    * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
    * information on the possible instance states. For more information about setting scheduling
-   * options for a VM, see Set VM availability policies.
+   * options for a VM, see Set VM host maintenance policy.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetSchedulingInstanceRequest request =
    *       SetSchedulingInstanceRequest.newBuilder()
@@ -3638,11 +3867,13 @@ public class InstancesClient implements BackgroundResource {
    * Sets an instance's scheduling options. You can only call this method on a stopped instance,
    * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
    * information on the possible instance states. For more information about setting scheduling
-   * options for a VM, see Set VM availability policies.
+   * options for a VM, see Set VM host maintenance policy.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetSchedulingInstanceRequest request =
    *       SetSchedulingInstanceRequest.newBuilder()
@@ -3669,11 +3900,13 @@ public class InstancesClient implements BackgroundResource {
    * Sets an instance's scheduling options. You can only call this method on a stopped instance,
    * that is, a VM instance that is in a `TERMINATED` state. See Instance Life Cycle for more
    * information on the possible instance states. For more information about setting scheduling
-   * options for a VM, see Set VM availability policies.
+   * options for a VM, see Set VM host maintenance policy.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetSchedulingInstanceRequest request =
    *       SetSchedulingInstanceRequest.newBuilder()
@@ -3701,6 +3934,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -3744,6 +3979,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetServiceAccountInstanceRequest request =
    *       SetServiceAccountInstanceRequest.newBuilder()
@@ -3776,6 +4013,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetServiceAccountInstanceRequest request =
    *       SetServiceAccountInstanceRequest.newBuilder()
@@ -3806,6 +4045,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetServiceAccountInstanceRequest request =
    *       SetServiceAccountInstanceRequest.newBuilder()
@@ -3836,6 +4077,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -3880,6 +4123,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetShieldedInstanceIntegrityPolicyInstanceRequest request =
    *       SetShieldedInstanceIntegrityPolicyInstanceRequest.newBuilder()
@@ -3913,6 +4158,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetShieldedInstanceIntegrityPolicyInstanceRequest request =
    *       SetShieldedInstanceIntegrityPolicyInstanceRequest.newBuilder()
@@ -3945,6 +4192,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetShieldedInstanceIntegrityPolicyInstanceRequest request =
    *       SetShieldedInstanceIntegrityPolicyInstanceRequest.newBuilder()
@@ -3974,6 +4223,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -4009,6 +4260,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetTagsInstanceRequest request =
    *       SetTagsInstanceRequest.newBuilder()
@@ -4038,6 +4291,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetTagsInstanceRequest request =
    *       SetTagsInstanceRequest.newBuilder()
@@ -4066,6 +4321,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SetTagsInstanceRequest request =
    *       SetTagsInstanceRequest.newBuilder()
@@ -4093,6 +4350,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -4126,6 +4385,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SimulateMaintenanceEventInstanceRequest request =
    *       SimulateMaintenanceEventInstanceRequest.newBuilder()
@@ -4155,6 +4416,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SimulateMaintenanceEventInstanceRequest request =
    *       SimulateMaintenanceEventInstanceRequest.newBuilder()
@@ -4182,6 +4445,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SimulateMaintenanceEventInstanceRequest request =
    *       SimulateMaintenanceEventInstanceRequest.newBuilder()
@@ -4209,6 +4474,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -4241,6 +4508,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   StartInstanceRequest request =
    *       StartInstanceRequest.newBuilder()
@@ -4270,6 +4539,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   StartInstanceRequest request =
    *       StartInstanceRequest.newBuilder()
@@ -4298,6 +4569,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   StartInstanceRequest request =
    *       StartInstanceRequest.newBuilder()
@@ -4324,6 +4597,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -4368,6 +4643,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   StartWithEncryptionKeyInstanceRequest request =
    *       StartWithEncryptionKeyInstanceRequest.newBuilder()
@@ -4400,6 +4677,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   StartWithEncryptionKeyInstanceRequest request =
    *       StartWithEncryptionKeyInstanceRequest.newBuilder()
@@ -4430,6 +4709,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   StartWithEncryptionKeyInstanceRequest request =
    *       StartWithEncryptionKeyInstanceRequest.newBuilder()
@@ -4462,6 +4743,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -4496,6 +4779,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   StopInstanceRequest request =
    *       StopInstanceRequest.newBuilder()
@@ -4527,6 +4812,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   StopInstanceRequest request =
    *       StopInstanceRequest.newBuilder()
@@ -4557,6 +4844,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   StopInstanceRequest request =
    *       StopInstanceRequest.newBuilder()
@@ -4587,6 +4876,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -4623,6 +4914,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SuspendInstanceRequest request =
    *       SuspendInstanceRequest.newBuilder()
@@ -4656,6 +4949,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SuspendInstanceRequest request =
    *       SuspendInstanceRequest.newBuilder()
@@ -4688,6 +4983,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   SuspendInstanceRequest request =
    *       SuspendInstanceRequest.newBuilder()
@@ -4713,6 +5010,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -4753,6 +5052,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   TestIamPermissionsInstanceRequest request =
    *       TestIamPermissionsInstanceRequest.newBuilder()
@@ -4780,6 +5081,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   TestIamPermissionsInstanceRequest request =
    *       TestIamPermissionsInstanceRequest.newBuilder()
@@ -4809,6 +5112,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -4846,6 +5151,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
@@ -4879,6 +5186,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
@@ -4911,6 +5220,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateInstanceRequest request =
    *       UpdateInstanceRequest.newBuilder()
@@ -4941,6 +5252,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -4988,6 +5301,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateAccessConfigInstanceRequest request =
    *       UpdateAccessConfigInstanceRequest.newBuilder()
@@ -5021,6 +5336,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateAccessConfigInstanceRequest request =
    *       UpdateAccessConfigInstanceRequest.newBuilder()
@@ -5052,6 +5369,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateAccessConfigInstanceRequest request =
    *       UpdateAccessConfigInstanceRequest.newBuilder()
@@ -5083,6 +5402,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -5122,6 +5443,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateDisplayDeviceInstanceRequest request =
    *       UpdateDisplayDeviceInstanceRequest.newBuilder()
@@ -5154,6 +5477,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateDisplayDeviceInstanceRequest request =
    *       UpdateDisplayDeviceInstanceRequest.newBuilder()
@@ -5184,6 +5509,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateDisplayDeviceInstanceRequest request =
    *       UpdateDisplayDeviceInstanceRequest.newBuilder()
@@ -5215,6 +5542,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -5263,6 +5592,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateNetworkInterfaceInstanceRequest request =
    *       UpdateNetworkInterfaceInstanceRequest.newBuilder()
@@ -5297,6 +5628,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateNetworkInterfaceInstanceRequest request =
    *       UpdateNetworkInterfaceInstanceRequest.newBuilder()
@@ -5329,6 +5662,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateNetworkInterfaceInstanceRequest request =
    *       UpdateNetworkInterfaceInstanceRequest.newBuilder()
@@ -5360,6 +5695,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -5404,6 +5741,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateShieldedInstanceConfigInstanceRequest request =
    *       UpdateShieldedInstanceConfigInstanceRequest.newBuilder()
@@ -5436,6 +5775,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateShieldedInstanceConfigInstanceRequest request =
    *       UpdateShieldedInstanceConfigInstanceRequest.newBuilder()
@@ -5466,6 +5807,8 @@ public class InstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   UpdateShieldedInstanceConfigInstanceRequest request =
    *       UpdateShieldedInstanceConfigInstanceRequest.newBuilder()

@@ -16,7 +16,6 @@
 
 package com.google.cloud.debugger.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.debugger.v2.stub.Controller2Stub;
@@ -137,7 +136,6 @@ public class Controller2Client implements BackgroundResource {
    * Constructs an instance of Controller2Client, using the given stub for making calls. This is for
    * advanced usage - prefer using create(Controller2Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final Controller2Client create(Controller2Stub stub) {
     return new Controller2Client(stub);
   }
@@ -152,7 +150,6 @@ public class Controller2Client implements BackgroundResource {
     this.stub = ((Controller2StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected Controller2Client(Controller2Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -162,7 +159,6 @@ public class Controller2Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public Controller2Stub getStub() {
     return stub;
   }

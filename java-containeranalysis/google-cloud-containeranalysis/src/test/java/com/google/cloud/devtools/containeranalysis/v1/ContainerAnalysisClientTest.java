@@ -40,7 +40,9 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -99,7 +101,25 @@ public class ContainerAnalysisClientTest {
             .build();
     mockContainerAnalysis.addResponse(expectedResponse);
 
-    ResourceName resource = ProjectName.of("[PROJECT]");
+    ResourceName resource =
+        new ResourceName() {
+          @Override
+          public Map<String, String> getFieldValuesMap() {
+            Map<String, String> fieldValuesMap = new HashMap<>();
+            fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+            return fieldValuesMap;
+          }
+
+          @Override
+          public String getFieldValue(String fieldName) {
+            return getFieldValuesMap().get(fieldName);
+          }
+
+          @Override
+          public String toString() {
+            return "projects/project-8432/notes/note-8432";
+          }
+        };
     Policy policy = Policy.newBuilder().build();
 
     Policy actualResponse = client.setIamPolicy(resource, policy);
@@ -123,7 +143,25 @@ public class ContainerAnalysisClientTest {
     mockContainerAnalysis.addException(exception);
 
     try {
-      ResourceName resource = ProjectName.of("[PROJECT]");
+      ResourceName resource =
+          new ResourceName() {
+            @Override
+            public Map<String, String> getFieldValuesMap() {
+              Map<String, String> fieldValuesMap = new HashMap<>();
+              fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+              return fieldValuesMap;
+            }
+
+            @Override
+            public String getFieldValue(String fieldName) {
+              return getFieldValuesMap().get(fieldName);
+            }
+
+            @Override
+            public String toString() {
+              return "projects/project-8432/notes/note-8432";
+            }
+          };
       Policy policy = Policy.newBuilder().build();
       client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
@@ -187,7 +225,25 @@ public class ContainerAnalysisClientTest {
             .build();
     mockContainerAnalysis.addResponse(expectedResponse);
 
-    ResourceName resource = ProjectName.of("[PROJECT]");
+    ResourceName resource =
+        new ResourceName() {
+          @Override
+          public Map<String, String> getFieldValuesMap() {
+            Map<String, String> fieldValuesMap = new HashMap<>();
+            fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+            return fieldValuesMap;
+          }
+
+          @Override
+          public String getFieldValue(String fieldName) {
+            return getFieldValuesMap().get(fieldName);
+          }
+
+          @Override
+          public String toString() {
+            return "projects/project-8432/notes/note-8432";
+          }
+        };
 
     Policy actualResponse = client.getIamPolicy(resource);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -209,7 +265,25 @@ public class ContainerAnalysisClientTest {
     mockContainerAnalysis.addException(exception);
 
     try {
-      ResourceName resource = ProjectName.of("[PROJECT]");
+      ResourceName resource =
+          new ResourceName() {
+            @Override
+            public Map<String, String> getFieldValuesMap() {
+              Map<String, String> fieldValuesMap = new HashMap<>();
+              fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+              return fieldValuesMap;
+            }
+
+            @Override
+            public String getFieldValue(String fieldName) {
+              return getFieldValuesMap().get(fieldName);
+            }
+
+            @Override
+            public String toString() {
+              return "projects/project-8432/notes/note-8432";
+            }
+          };
       client.getIamPolicy(resource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -264,7 +338,25 @@ public class ContainerAnalysisClientTest {
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
     mockContainerAnalysis.addResponse(expectedResponse);
 
-    ResourceName resource = ProjectName.of("[PROJECT]");
+    ResourceName resource =
+        new ResourceName() {
+          @Override
+          public Map<String, String> getFieldValuesMap() {
+            Map<String, String> fieldValuesMap = new HashMap<>();
+            fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+            return fieldValuesMap;
+          }
+
+          @Override
+          public String getFieldValue(String fieldName) {
+            return getFieldValuesMap().get(fieldName);
+          }
+
+          @Override
+          public String toString() {
+            return "projects/project-8432/notes/note-8432";
+          }
+        };
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(resource, permissions);
@@ -288,7 +380,25 @@ public class ContainerAnalysisClientTest {
     mockContainerAnalysis.addException(exception);
 
     try {
-      ResourceName resource = ProjectName.of("[PROJECT]");
+      ResourceName resource =
+          new ResourceName() {
+            @Override
+            public Map<String, String> getFieldValuesMap() {
+              Map<String, String> fieldValuesMap = new HashMap<>();
+              fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+              return fieldValuesMap;
+            }
+
+            @Override
+            public String getFieldValue(String fieldName) {
+              return getFieldValuesMap().get(fieldName);
+            }
+
+            @Override
+            public String toString() {
+              return "projects/project-8432/notes/note-8432";
+            }
+          };
       List<String> permissions = new ArrayList<>();
       client.testIamPermissions(resource, permissions);
       Assert.fail("No exception raised");

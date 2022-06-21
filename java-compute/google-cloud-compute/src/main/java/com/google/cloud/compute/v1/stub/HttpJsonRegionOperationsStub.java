@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionOperationsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -59,7 +58,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
@@ -69,7 +68,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
           ApiMethodDescriptor
               .<DeleteRegionOperationRequest, DeleteRegionOperationResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionOperations/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionOperationRequest>newBuilder()
@@ -104,7 +103,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionOperationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionOperations/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionOperationRequest>newBuilder()
@@ -159,7 +158,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionOperationsRequest, OperationList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionOperations/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionOperationsRequest>newBuilder()
@@ -212,7 +211,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
       waitMethodDescriptor =
           ApiMethodDescriptor.<WaitRegionOperationRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionOperations/Wait")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<WaitRegionOperationRequest>newBuilder()

@@ -45,6 +45,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     name_ = "";
     displayName_ = "";
     trainingTaskDefinition_ = "";
+    modelId_ = "";
+    parentModel_ = "";
     state_ = 0;
   }
 
@@ -269,6 +271,20 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
                 encryptionSpec_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 170:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              parentModel_ = s;
+              break;
+            }
+          case 178:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelId_ = s;
               break;
             }
           default:
@@ -750,6 +766,112 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.aiplatform.v1.ModelOrBuilder getModelToUploadOrBuilder() {
     return getModelToUpload();
+  }
+
+  public static final int MODEL_ID_FIELD_NUMBER = 22;
+  private volatile java.lang.Object modelId_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID to use for the uploaded Model, which will become the final
+   * component of the model resource name.
+   * This value may be up to 63 characters, and valid characters are
+   * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+   * </pre>
+   *
+   * <code>string model_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The modelId.
+   */
+  @java.lang.Override
+  public java.lang.String getModelId() {
+    java.lang.Object ref = modelId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID to use for the uploaded Model, which will become the final
+   * component of the model resource name.
+   * This value may be up to 63 characters, and valid characters are
+   * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+   * </pre>
+   *
+   * <code>string model_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for modelId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelIdBytes() {
+    java.lang.Object ref = modelId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      modelId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PARENT_MODEL_FIELD_NUMBER = 21;
+  private volatile java.lang.Object parentModel_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
+   * new model, instead, it will become a new version of this `parent_model`.
+   * </pre>
+   *
+   * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The parentModel.
+   */
+  @java.lang.Override
+  public java.lang.String getParentModel() {
+    java.lang.Object ref = parentModel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parentModel_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
+   * new model, instead, it will become a new version of this `parent_model`.
+   * </pre>
+   *
+   * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for parentModel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getParentModelBytes() {
+    java.lang.Object ref = parentModel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parentModel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STATE_FIELD_NUMBER = 9;
@@ -1276,6 +1398,12 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     if (encryptionSpec_ != null) {
       output.writeMessage(18, getEncryptionSpec());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentModel_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, parentModel_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, modelId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1339,6 +1467,12 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     if (encryptionSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getEncryptionSpec());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentModel_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, parentModel_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, modelId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1374,6 +1508,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     if (hasModelToUpload()) {
       if (!getModelToUpload().equals(other.getModelToUpload())) return false;
     }
+    if (!getModelId().equals(other.getModelId())) return false;
+    if (!getParentModel().equals(other.getParentModel())) return false;
     if (state_ != other.state_) return false;
     if (hasError() != other.hasError()) return false;
     if (hasError()) {
@@ -1433,6 +1569,10 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + MODEL_TO_UPLOAD_FIELD_NUMBER;
       hash = (53 * hash) + getModelToUpload().hashCode();
     }
+    hash = (37 * hash) + MODEL_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getModelId().hashCode();
+    hash = (37 * hash) + PARENT_MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + getParentModel().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
     if (hasError()) {
@@ -1662,6 +1802,10 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         modelToUpload_ = null;
         modelToUploadBuilder_ = null;
       }
+      modelId_ = "";
+
+      parentModel_ = "";
+
       state_ = 0;
 
       if (errorBuilder_ == null) {
@@ -1752,6 +1896,8 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       } else {
         result.modelToUpload_ = modelToUploadBuilder_.build();
       }
+      result.modelId_ = modelId_;
+      result.parentModel_ = parentModel_;
       result.state_ = state_;
       if (errorBuilder_ == null) {
         result.error_ = error_;
@@ -1858,6 +2004,14 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasModelToUpload()) {
         mergeModelToUpload(other.getModelToUpload());
+      }
+      if (!other.getModelId().isEmpty()) {
+        modelId_ = other.modelId_;
+        onChanged();
+      }
+      if (!other.getParentModel().isEmpty()) {
+        parentModel_ = other.parentModel_;
+        onChanged();
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
@@ -3247,6 +3401,238 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         modelToUpload_ = null;
       }
       return modelToUploadBuilder_;
+    }
+
+    private java.lang.Object modelId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID to use for the uploaded Model, which will become the final
+     * component of the model resource name.
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+     * </pre>
+     *
+     * <code>string model_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The modelId.
+     */
+    public java.lang.String getModelId() {
+      java.lang.Object ref = modelId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID to use for the uploaded Model, which will become the final
+     * component of the model resource name.
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+     * </pre>
+     *
+     * <code>string model_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for modelId.
+     */
+    public com.google.protobuf.ByteString getModelIdBytes() {
+      java.lang.Object ref = modelId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID to use for the uploaded Model, which will become the final
+     * component of the model resource name.
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+     * </pre>
+     *
+     * <code>string model_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The modelId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      modelId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID to use for the uploaded Model, which will become the final
+     * component of the model resource name.
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+     * </pre>
+     *
+     * <code>string model_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModelId() {
+
+      modelId_ = getDefaultInstance().getModelId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID to use for the uploaded Model, which will become the final
+     * component of the model resource name.
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+     * </pre>
+     *
+     * <code>string model_id = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for modelId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      modelId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object parentModel_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
+     * new model, instead, it will become a new version of this `parent_model`.
+     * </pre>
+     *
+     * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The parentModel.
+     */
+    public java.lang.String getParentModel() {
+      java.lang.Object ref = parentModel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parentModel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
+     * new model, instead, it will become a new version of this `parent_model`.
+     * </pre>
+     *
+     * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for parentModel.
+     */
+    public com.google.protobuf.ByteString getParentModelBytes() {
+      java.lang.Object ref = parentModel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parentModel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
+     * new model, instead, it will become a new version of this `parent_model`.
+     * </pre>
+     *
+     * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The parentModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentModel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      parentModel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
+     * new model, instead, it will become a new version of this `parent_model`.
+     * </pre>
+     *
+     * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParentModel() {
+
+      parentModel_ = getDefaultInstance().getParentModel();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When specify this field, the `model_to_upload` will not be uploaded as a
+     * new model, instead, it will become a new version of this `parent_model`.
+     * </pre>
+     *
+     * <code>string parent_model = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for parentModel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentModelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      parentModel_ = value;
+      onChanged();
+      return this;
     }
 
     private int state_ = 0;

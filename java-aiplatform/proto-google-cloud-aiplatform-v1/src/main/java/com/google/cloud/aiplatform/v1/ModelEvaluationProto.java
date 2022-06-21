@@ -50,30 +50,31 @@ public final class ModelEvaluationProto {
           + "/api/resource.proto\032,google/cloud/aiplat"
           + "form/v1/explanation.proto\032\034google/protob"
           + "uf/struct.proto\032\037google/protobuf/timesta"
-          + "mp.proto\"\253\005\n\017ModelEvaluation\022\021\n\004name\030\001 \001"
-          + "(\tB\003\340A\003\022\032\n\022metrics_schema_uri\030\002 \001(\t\022\'\n\007m"
-          + "etrics\030\003 \001(\0132\026.google.protobuf.Value\0224\n\013"
-          + "create_time\030\004 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\022\030\n\020slice_dimensions\030\005 \003(\t\022\034\n\024"
-          + "data_item_schema_uri\030\006 \001(\t\022\035\n\025annotation"
-          + "_schema_uri\030\007 \001(\t\022G\n\021model_explanation\030\010"
-          + " \001(\0132,.google.cloud.aiplatform.v1.ModelE"
-          + "xplanation\022e\n\021explanation_specs\030\t \003(\0132J."
-          + "google.cloud.aiplatform.v1.ModelEvaluati"
-          + "on.ModelEvaluationExplanationSpec\032\201\001\n\036Mo"
-          + "delEvaluationExplanationSpec\022\030\n\020explanat"
-          + "ion_type\030\001 \001(\t\022E\n\020explanation_spec\030\002 \001(\013"
-          + "2+.google.cloud.aiplatform.v1.Explanatio"
-          + "nSpec:\177\352A|\n)aiplatform.googleapis.com/Mo"
-          + "delEvaluation\022Oprojects/{project}/locati"
-          + "ons/{location}/models/{model}/evaluation"
-          + "s/{evaluation}B\330\001\n\036com.google.cloud.aipl"
-          + "atform.v1B\024ModelEvaluationProtoP\001ZDgoogl"
-          + "e.golang.org/genproto/googleapis/cloud/a"
-          + "iplatform/v1;aiplatform\252\002\032Google.Cloud.A"
-          + "IPlatform.V1\312\002\032Google\\Cloud\\AIPlatform\\V"
-          + "1\352\002\035Google::Cloud::AIPlatform::V1b\006proto"
-          + "3"
+          + "mp.proto\"\353\005\n\017ModelEvaluation\022\021\n\004name\030\001 \001"
+          + "(\tB\003\340A\003\022\024\n\014display_name\030\n \001(\t\022\032\n\022metrics"
+          + "_schema_uri\030\002 \001(\t\022\'\n\007metrics\030\003 \001(\0132\026.goo"
+          + "gle.protobuf.Value\0224\n\013create_time\030\004 \001(\0132"
+          + "\032.google.protobuf.TimestampB\003\340A\003\022\030\n\020slic"
+          + "e_dimensions\030\005 \003(\t\022\034\n\024data_item_schema_u"
+          + "ri\030\006 \001(\t\022\035\n\025annotation_schema_uri\030\007 \001(\t\022"
+          + "G\n\021model_explanation\030\010 \001(\0132,.google.clou"
+          + "d.aiplatform.v1.ModelExplanation\022e\n\021expl"
+          + "anation_specs\030\t \003(\0132J.google.cloud.aipla"
+          + "tform.v1.ModelEvaluation.ModelEvaluation"
+          + "ExplanationSpec\022(\n\010metadata\030\013 \001(\0132\026.goog"
+          + "le.protobuf.Value\032\201\001\n\036ModelEvaluationExp"
+          + "lanationSpec\022\030\n\020explanation_type\030\001 \001(\t\022E"
+          + "\n\020explanation_spec\030\002 \001(\0132+.google.cloud."
+          + "aiplatform.v1.ExplanationSpec:\177\352A|\n)aipl"
+          + "atform.googleapis.com/ModelEvaluation\022Op"
+          + "rojects/{project}/locations/{location}/m"
+          + "odels/{model}/evaluations/{evaluation}B\330"
+          + "\001\n\036com.google.cloud.aiplatform.v1B\024Model"
+          + "EvaluationProtoP\001ZDgoogle.golang.org/gen"
+          + "proto/googleapis/cloud/aiplatform/v1;aip"
+          + "latform\252\002\032Google.Cloud.AIPlatform.V1\312\002\032G"
+          + "oogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Clou"
+          + "d::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -92,6 +93,7 @@ public final class ModelEvaluationProto {
             internal_static_google_cloud_aiplatform_v1_ModelEvaluation_descriptor,
             new java.lang.String[] {
               "Name",
+              "DisplayName",
               "MetricsSchemaUri",
               "Metrics",
               "CreateTime",
@@ -100,6 +102,7 @@ public final class ModelEvaluationProto {
               "AnnotationSchemaUri",
               "ModelExplanation",
               "ExplanationSpecs",
+              "Metadata",
             });
     internal_static_google_cloud_aiplatform_v1_ModelEvaluation_ModelEvaluationExplanationSpec_descriptor =
         internal_static_google_cloud_aiplatform_v1_ModelEvaluation_descriptor

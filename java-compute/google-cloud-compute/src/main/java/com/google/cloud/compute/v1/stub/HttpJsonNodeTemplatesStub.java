@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.NodeTemplatesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.NodeTemplatesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -65,7 +64,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -76,7 +75,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
           ApiMethodDescriptor
               .<AggregatedListNodeTemplatesRequest, NodeTemplateAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListNodeTemplatesRequest>newBuilder()
@@ -132,7 +131,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteNodeTemplateRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteNodeTemplateRequest>newBuilder()
@@ -184,7 +183,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetNodeTemplateRequest, NodeTemplate>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetNodeTemplateRequest>newBuilder()
@@ -220,7 +219,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyNodeTemplateRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/GetIamPolicy")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyNodeTemplateRequest>newBuilder()
@@ -261,7 +260,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertNodeTemplateRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertNodeTemplateRequest>newBuilder()
@@ -315,7 +314,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListNodeTemplatesRequest, NodeTemplateList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListNodeTemplatesRequest>newBuilder()
@@ -368,7 +367,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyNodeTemplateRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/SetIamPolicy")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyNodeTemplateRequest>newBuilder()
@@ -410,7 +409,7 @@ public class HttpJsonNodeTemplatesStub extends NodeTemplatesStub {
           ApiMethodDescriptor
               .<TestIamPermissionsNodeTemplateRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTemplates/TestIamPermissions")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsNodeTemplateRequest>newBuilder()

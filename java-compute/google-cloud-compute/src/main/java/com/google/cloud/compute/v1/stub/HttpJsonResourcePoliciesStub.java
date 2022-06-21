@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.ResourcePoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.ResourcePoliciesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -65,7 +64,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -76,7 +75,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
           ApiMethodDescriptor
               .<AggregatedListResourcePoliciesRequest, ResourcePolicyAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListResourcePoliciesRequest>newBuilder()
@@ -132,7 +131,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteResourcePolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteResourcePolicyRequest>newBuilder()
@@ -184,7 +183,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetResourcePolicyRequest, ResourcePolicy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetResourcePolicyRequest>newBuilder()
@@ -220,7 +219,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyResourcePolicyRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/GetIamPolicy")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyResourcePolicyRequest>newBuilder()
@@ -261,7 +260,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertResourcePolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertResourcePolicyRequest>newBuilder()
@@ -316,7 +315,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListResourcePoliciesRequest, ResourcePolicyList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListResourcePoliciesRequest>newBuilder()
@@ -369,7 +368,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyResourcePolicyRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/SetIamPolicy")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyResourcePolicyRequest>newBuilder()
@@ -411,7 +410,7 @@ public class HttpJsonResourcePoliciesStub extends ResourcePoliciesStub {
           ApiMethodDescriptor
               .<TestIamPermissionsResourcePolicyRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.ResourcePolicies/TestIamPermissions")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsResourcePolicyRequest>newBuilder()

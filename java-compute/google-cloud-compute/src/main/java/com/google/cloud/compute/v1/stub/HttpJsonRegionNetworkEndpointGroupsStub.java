@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionNetworkEndpointGroupsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -57,7 +56,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpointGroupsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -66,7 +65,7 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkEndpointGroups/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionNetworkEndpointGroupRequest>newBuilder()
@@ -120,7 +119,7 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
           ApiMethodDescriptor
               .<GetRegionNetworkEndpointGroupRequest, NetworkEndpointGroup>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkEndpointGroups/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionNetworkEndpointGroupRequest>newBuilder()
@@ -156,7 +155,7 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkEndpointGroups/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionNetworkEndpointGroupRequest>newBuilder()
@@ -213,7 +212,7 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
           ApiMethodDescriptor
               .<ListRegionNetworkEndpointGroupsRequest, NetworkEndpointGroupList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionNetworkEndpointGroups/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionNetworkEndpointGroupsRequest>newBuilder()

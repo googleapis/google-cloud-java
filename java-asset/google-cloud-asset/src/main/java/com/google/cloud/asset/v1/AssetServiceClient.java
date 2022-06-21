@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
  *   BatchGetAssetsHistoryRequest request =
  *       BatchGetAssetsHistoryRequest.newBuilder()
- *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+ *           .setParent(FolderName.of("[FOLDER]").toString())
  *           .addAllAssetNames(new ArrayList<String>())
  *           .setContentType(ContentType.forNumber(0))
  *           .setReadTimeWindow(TimeWindow.newBuilder().build())
@@ -191,7 +191,7 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ExportAssetsRequest request =
    *       ExportAssetsRequest.newBuilder()
-   *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setReadTime(Timestamp.newBuilder().build())
    *           .addAllAssetTypes(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
@@ -229,7 +229,7 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ExportAssetsRequest request =
    *       ExportAssetsRequest.newBuilder()
-   *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setReadTime(Timestamp.newBuilder().build())
    *           .addAllAssetTypes(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
@@ -267,7 +267,7 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ExportAssetsRequest request =
    *       ExportAssetsRequest.newBuilder()
-   *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setReadTime(Timestamp.newBuilder().build())
    *           .addAllAssetTypes(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
@@ -294,7 +294,7 @@ public class AssetServiceClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
-   *   ResourceName parent = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+   *   ResourceName parent = FolderName.of("[FOLDER]");
    *   for (Asset element : assetServiceClient.listAssets(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -353,7 +353,7 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setReadTime(Timestamp.newBuilder().build())
    *           .addAllAssetTypes(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
@@ -386,7 +386,7 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setReadTime(Timestamp.newBuilder().build())
    *           .addAllAssetTypes(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
@@ -418,7 +418,7 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .setReadTime(Timestamp.newBuilder().build())
    *           .addAllAssetTypes(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
@@ -428,7 +428,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListAssetsResponse response = assetServiceClient.listAssetsCallable().call(request);
-   *     for (Asset element : response.getResponsesList()) {
+   *     for (Asset element : response.getAssetsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -461,7 +461,7 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   BatchGetAssetsHistoryRequest request =
    *       BatchGetAssetsHistoryRequest.newBuilder()
-   *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .addAllAssetNames(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
    *           .setReadTimeWindow(TimeWindow.newBuilder().build())
@@ -495,7 +495,7 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   BatchGetAssetsHistoryRequest request =
    *       BatchGetAssetsHistoryRequest.newBuilder()
-   *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+   *           .setParent(FolderName.of("[FOLDER]").toString())
    *           .addAllAssetNames(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
    *           .setReadTimeWindow(TimeWindow.newBuilder().build())
@@ -1133,7 +1133,7 @@ public class AssetServiceClient implements BackgroundResource {
    *   while (true) {
    *     SearchAllResourcesResponse response =
    *         assetServiceClient.searchAllResourcesCallable().call(request);
-   *     for (ResourceSearchResult element : response.getResponsesList()) {
+   *     for (ResourceSearchResult element : response.getResultsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1325,7 +1325,7 @@ public class AssetServiceClient implements BackgroundResource {
    *   while (true) {
    *     SearchAllIamPoliciesResponse response =
    *         assetServiceClient.searchAllIamPoliciesCallable().call(request);
-   *     for (IamPolicySearchResult element : response.getResponsesList()) {
+   *     for (IamPolicySearchResult element : response.getResultsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2094,7 +2094,7 @@ public class AssetServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListSavedQueriesResponse response =
    *         assetServiceClient.listSavedQueriesCallable().call(request);
-   *     for (SavedQuery element : response.getResponsesList()) {
+   *     for (SavedQuery element : response.getSavedQueriesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2323,7 +2323,7 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   BatchGetEffectiveIamPoliciesRequest request =
    *       BatchGetEffectiveIamPoliciesRequest.newBuilder()
-   *           .setScope(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+   *           .setScope(FolderName.of("[FOLDER]").toString())
    *           .addAllNames(new ArrayList<String>())
    *           .build();
    *   BatchGetEffectiveIamPoliciesResponse response =
@@ -2351,7 +2351,7 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   BatchGetEffectiveIamPoliciesRequest request =
    *       BatchGetEffectiveIamPoliciesRequest.newBuilder()
-   *           .setScope(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+   *           .setScope(FolderName.of("[FOLDER]").toString())
    *           .addAllNames(new ArrayList<String>())
    *           .build();
    *   ApiFuture<BatchGetEffectiveIamPoliciesResponse> future =

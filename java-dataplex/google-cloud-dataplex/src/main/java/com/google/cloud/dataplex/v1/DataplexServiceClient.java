@@ -713,7 +713,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListLakesResponse response = dataplexServiceClient.listLakesCallable().call(request);
-   *     for (Lake element : response.getResponsesList()) {
+   *     for (Lake element : response.getLakesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -961,7 +961,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListActionsResponse response =
    *         dataplexServiceClient.listLakeActionsCallable().call(request);
-   *     for (Action element : response.getResponsesList()) {
+   *     for (Action element : response.getActionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1519,7 +1519,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListZonesResponse response = dataplexServiceClient.listZonesCallable().call(request);
-   *     for (Zone element : response.getResponsesList()) {
+   *     for (Zone element : response.getZonesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1767,7 +1767,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListActionsResponse response =
    *         dataplexServiceClient.listZoneActionsCallable().call(request);
-   *     for (Action element : response.getResponsesList()) {
+   *     for (Action element : response.getActionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2333,7 +2333,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListAssetsResponse response = dataplexServiceClient.listAssetsCallable().call(request);
-   *     for (Asset element : response.getResponsesList()) {
+   *     for (Asset element : response.getAssetsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2589,7 +2589,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListActionsResponse response =
    *         dataplexServiceClient.listAssetActionsCallable().call(request);
-   *     for (Action element : response.getResponsesList()) {
+   *     for (Action element : response.getActionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3122,7 +3122,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTasksResponse response = dataplexServiceClient.listTasksCallable().call(request);
-   *     for (Task element : response.getResponsesList()) {
+   *     for (Task element : response.getTasksList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3365,7 +3365,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListJobsResponse response = dataplexServiceClient.listJobsCallable().call(request);
-   *     for (Job element : response.getResponsesList()) {
+   *     for (Job element : response.getJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -4151,7 +4151,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListEnvironmentsResponse response =
    *         dataplexServiceClient.listEnvironmentsCallable().call(request);
-   *     for (Environment element : response.getResponsesList()) {
+   *     for (Environment element : response.getEnvironmentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -4414,7 +4414,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListSessionsResponse response = dataplexServiceClient.listSessionsCallable().call(request);
-   *     for (Session element : response.getResponsesList()) {
+   *     for (Session element : response.getSessionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

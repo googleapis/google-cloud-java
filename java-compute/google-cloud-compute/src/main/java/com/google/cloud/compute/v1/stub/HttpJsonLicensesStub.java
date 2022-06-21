@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.LicensesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -62,7 +61,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonLicensesStub extends LicensesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -70,7 +69,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
   private static final ApiMethodDescriptor<DeleteLicenseRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteLicenseRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Licenses/Delete")
-          .setHttpMethod(HttpMethods.DELETE)
+          .setHttpMethod("DELETE")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteLicenseRequest>newBuilder()
@@ -118,7 +117,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
   private static final ApiMethodDescriptor<GetLicenseRequest, License> getMethodDescriptor =
       ApiMethodDescriptor.<GetLicenseRequest, License>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Licenses/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetLicenseRequest>newBuilder()
@@ -152,7 +151,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyLicenseRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Licenses/GetIamPolicy")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyLicenseRequest>newBuilder()
@@ -191,7 +190,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
   private static final ApiMethodDescriptor<InsertLicenseRequest, Operation> insertMethodDescriptor =
       ApiMethodDescriptor.<InsertLicenseRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Licenses/Insert")
-          .setHttpMethod(HttpMethods.POST)
+          .setHttpMethod("POST")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertLicenseRequest>newBuilder()
@@ -242,7 +241,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListLicensesRequest, LicensesListResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Licenses/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListLicensesRequest>newBuilder()
@@ -294,7 +293,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyLicenseRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Licenses/SetIamPolicy")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyLicenseRequest>newBuilder()
@@ -335,7 +334,7 @@ public class HttpJsonLicensesStub extends LicensesStub {
           ApiMethodDescriptor
               .<TestIamPermissionsLicenseRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Licenses/TestIamPermissions")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsLicenseRequest>newBuilder()

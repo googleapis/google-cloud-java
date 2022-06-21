@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.GlobalAddressesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -57,7 +56,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -66,7 +65,7 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteGlobalAddressRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalAddresses/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteGlobalAddressRequest>newBuilder()
@@ -114,7 +113,7 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
   private static final ApiMethodDescriptor<GetGlobalAddressRequest, Address> getMethodDescriptor =
       ApiMethodDescriptor.<GetGlobalAddressRequest, Address>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.GlobalAddresses/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetGlobalAddressRequest>newBuilder()
@@ -148,7 +147,7 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertGlobalAddressRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalAddresses/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertGlobalAddressRequest>newBuilder()
@@ -199,7 +198,7 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListGlobalAddressesRequest, AddressList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalAddresses/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListGlobalAddressesRequest>newBuilder()

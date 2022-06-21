@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.NetworkFirewallPoliciesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -73,7 +72,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPoliciesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -82,7 +81,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       addAssociationMethodDescriptor =
           ApiMethodDescriptor.<AddAssociationNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/AddAssociation")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -144,7 +143,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       addRuleMethodDescriptor =
           ApiMethodDescriptor.<AddRuleNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/AddRule")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddRuleNetworkFirewallPolicyRequest>newBuilder()
@@ -207,7 +206,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       cloneRulesMethodDescriptor =
           ApiMethodDescriptor.<CloneRulesNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/CloneRules")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<CloneRulesNetworkFirewallPolicyRequest>newBuilder()
@@ -263,7 +262,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteNetworkFirewallPolicyRequest>newBuilder()
@@ -313,7 +312,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       getMethodDescriptor =
           ApiMethodDescriptor.<GetNetworkFirewallPolicyRequest, FirewallPolicy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetNetworkFirewallPolicyRequest>newBuilder()
@@ -350,7 +349,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
           ApiMethodDescriptor
               .<GetAssociationNetworkFirewallPolicyRequest, FirewallPolicyAssociation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/GetAssociation")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -389,7 +388,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyNetworkFirewallPolicyRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/GetIamPolicy")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -430,7 +429,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       getRuleMethodDescriptor =
           ApiMethodDescriptor.<GetRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/GetRule")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRuleNetworkFirewallPolicyRequest>newBuilder()
@@ -468,7 +467,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertNetworkFirewallPolicyRequest>newBuilder()
@@ -521,7 +520,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       listMethodDescriptor =
           ApiMethodDescriptor.<ListNetworkFirewallPoliciesRequest, FirewallPolicyList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListNetworkFirewallPoliciesRequest>newBuilder()
@@ -573,7 +572,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/Patch")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchNetworkFirewallPolicyRequest>newBuilder()
@@ -628,7 +627,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       patchRuleMethodDescriptor =
           ApiMethodDescriptor.<PatchRuleNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/PatchRule")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRuleNetworkFirewallPolicyRequest>newBuilder()
@@ -687,7 +686,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
           ApiMethodDescriptor.<RemoveAssociationNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName(
                   "google.cloud.compute.v1.NetworkFirewallPolicies/RemoveAssociation")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -741,7 +740,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       removeRuleMethodDescriptor =
           ApiMethodDescriptor.<RemoveRuleNetworkFirewallPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/RemoveRule")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveRuleNetworkFirewallPolicyRequest>newBuilder()
@@ -794,7 +793,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyNetworkFirewallPolicyRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/SetIamPolicy")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -837,7 +836,7 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
               .<TestIamPermissionsNetworkFirewallPolicyRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName(
                   "google.cloud.compute.v1.NetworkFirewallPolicies/TestIamPermissions")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter

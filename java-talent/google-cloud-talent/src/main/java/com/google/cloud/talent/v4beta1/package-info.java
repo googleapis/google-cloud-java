@@ -15,24 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Cloud Talent Solution API
  *
- * <p>======================= ApplicationServiceClient =======================
- *
- * <p>Service Description: A service that handles application management, including CRUD and
- * enumeration.
- *
- * <p>Sample for ApplicationServiceClient:
- *
- * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
- * try (ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.create()) {
- *   ProfileName parent = ProfileName.of("[PROJECT]", "[TENANT]", "[PROFILE]");
- *   Application application = Application.newBuilder().build();
- *   Application response = applicationServiceClient.createApplication(parent, application);
- * }
- * }</pre>
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= CompanyServiceClient =======================
  *
@@ -105,23 +90,6 @@
  *   ProjectName parent = ProjectName.of("[PROJECT]");
  *   Job job = Job.newBuilder().build();
  *   Job response = jobServiceClient.createJob(parent, job);
- * }
- * }</pre>
- *
- * <p>======================= ProfileServiceClient =======================
- *
- * <p>Service Description: A service that handles profile management, including profile CRUD,
- * enumeration and search.
- *
- * <p>Sample for ProfileServiceClient:
- *
- * <pre>{@code
- * // This snippet has been automatically generated for illustrative purposes only.
- * // It may require modifications to work in your environment.
- * try (ProfileServiceClient profileServiceClient = ProfileServiceClient.create()) {
- *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
- *   Profile profile = Profile.newBuilder().build();
- *   Profile response = profileServiceClient.createProfile(parent, profile);
  * }
  * }</pre>
  *

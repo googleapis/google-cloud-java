@@ -106,8 +106,12 @@ public interface TargetPoolAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.TargetPoolsScopedList&gt; items = 100526016;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.compute.v1.TargetPoolsScopedList getItemsOrDefault(
-      java.lang.String key, com.google.cloud.compute.v1.TargetPoolsScopedList defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.TargetPoolsScopedList defaultValue);
   /**
    *
    *

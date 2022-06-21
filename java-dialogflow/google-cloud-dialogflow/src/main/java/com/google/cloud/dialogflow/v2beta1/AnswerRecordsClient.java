@@ -367,7 +367,7 @@ public class AnswerRecordsClient implements BackgroundResource {
    *   while (true) {
    *     ListAnswerRecordsResponse response =
    *         answerRecordsClient.listAnswerRecordsCallable().call(request);
-   *     for (AnswerRecord element : response.getResponsesList()) {
+   *     for (AnswerRecord element : response.getAnswerRecordsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

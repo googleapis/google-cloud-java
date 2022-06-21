@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.FlowsClient.ListFlowsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.FlowsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -59,6 +60,10 @@ import com.google.cloud.dialogflow.cx.v3beta1.ListFlowsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateFlowRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -131,6 +136,10 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
   private final UnaryCallSettings<ExportFlowRequest, Operation> exportFlowSettings;
   private final OperationCallSettings<ExportFlowRequest, ExportFlowResponse, Struct>
       exportFlowOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListFlowsRequest, ListFlowsResponse, Flow>
       LIST_FLOWS_PAGE_STR_DESC =
@@ -168,6 +177,42 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListFlowsRequest, ListFlowsResponse, ListFlowsPagedResponse>
       LIST_FLOWS_PAGE_STR_FACT =
@@ -182,6 +227,23 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
               PageContext<ListFlowsRequest, ListFlowsResponse, Flow> pageContext =
                   PageContext.create(callable, LIST_FLOWS_PAGE_STR_DESC, request, context);
               return ListFlowsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -252,6 +314,17 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
   public OperationCallSettings<ExportFlowRequest, ExportFlowResponse, Struct>
       exportFlowOperationSettings() {
     return exportFlowOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public FlowsStub createStub() throws IOException {
@@ -341,6 +414,8 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
     importFlowOperationSettings = settingsBuilder.importFlowOperationSettings().build();
     exportFlowSettings = settingsBuilder.exportFlowSettings().build();
     exportFlowOperationSettings = settingsBuilder.exportFlowOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for FlowsStubSettings. */
@@ -366,6 +441,10 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
     private final UnaryCallSettings.Builder<ExportFlowRequest, Operation> exportFlowSettings;
     private final OperationCallSettings.Builder<ExportFlowRequest, ExportFlowResponse, Struct>
         exportFlowOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -417,6 +496,8 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
       importFlowOperationSettings = OperationCallSettings.newBuilder();
       exportFlowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       exportFlowOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -429,7 +510,9 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
               validateFlowSettings,
               getFlowValidationResultSettings,
               importFlowSettings,
-              exportFlowSettings);
+              exportFlowSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -449,6 +532,8 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
       importFlowOperationSettings = settings.importFlowOperationSettings.toBuilder();
       exportFlowSettings = settings.exportFlowSettings.toBuilder();
       exportFlowOperationSettings = settings.exportFlowOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -461,7 +546,9 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
               validateFlowSettings,
               getFlowValidationResultSettings,
               importFlowSettings,
-              exportFlowSettings);
+              exportFlowSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -525,6 +612,16 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
 
       builder
           .exportFlowSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -690,6 +787,18 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
     public OperationCallSettings.Builder<ExportFlowRequest, ExportFlowResponse, Struct>
         exportFlowOperationSettings() {
       return exportFlowOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

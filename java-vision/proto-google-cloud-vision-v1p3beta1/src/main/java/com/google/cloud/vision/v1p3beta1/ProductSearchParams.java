@@ -38,10 +38,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
   }
 
   private ProductSearchParams() {
-    catalogName_ = "";
-    category_ = 0;
-    productCategory_ = "";
-    view_ = 0;
     productSet_ = "";
     productCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     filter_ = "";
@@ -77,51 +73,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
           case 0:
             done = true;
             break;
-          case 10:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              catalogName_ = s;
-              break;
-            }
-          case 16:
-            {
-              int rawValue = input.readEnum();
-
-              category_ = rawValue;
-              break;
-            }
-          case 26:
-            {
-              com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly.Builder subBuilder = null;
-              if (normalizedBoundingPoly_ != null) {
-                subBuilder = normalizedBoundingPoly_.toBuilder();
-              }
-              normalizedBoundingPoly_ =
-                  input.readMessage(
-                      com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(normalizedBoundingPoly_);
-                normalizedBoundingPoly_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case 32:
-            {
-              int rawValue = input.readEnum();
-
-              view_ = rawValue;
-              break;
-            }
-          case 42:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              productCategory_ = s;
-              break;
-            }
           case 50:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -201,212 +152,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
             com.google.cloud.vision.v1p3beta1.ProductSearchParams.Builder.class);
   }
 
-  public static final int CATALOG_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object catalogName_;
-  /**
-   *
-   *
-   * <pre>
-   * The resource name of the catalog to search.
-   * Format is: `productSearch/catalogs/CATALOG_NAME`.
-   * </pre>
-   *
-   * <code>string catalog_name = 1;</code>
-   *
-   * @return The catalogName.
-   */
-  @java.lang.Override
-  public java.lang.String getCatalogName() {
-    java.lang.Object ref = catalogName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      catalogName_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The resource name of the catalog to search.
-   * Format is: `productSearch/catalogs/CATALOG_NAME`.
-   * </pre>
-   *
-   * <code>string catalog_name = 1;</code>
-   *
-   * @return The bytes for catalogName.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getCatalogNameBytes() {
-    java.lang.Object ref = catalogName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      catalogName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CATEGORY_FIELD_NUMBER = 2;
-  private int category_;
-  /**
-   *
-   *
-   * <pre>
-   * The category to search in.
-   * Optional. It is inferred by the system if it is not specified.
-   * [Deprecated] Use `product_category`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 2;</code>
-   *
-   * @return The enum numeric value on the wire for category.
-   */
-  @java.lang.Override
-  public int getCategoryValue() {
-    return category_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The category to search in.
-   * Optional. It is inferred by the system if it is not specified.
-   * [Deprecated] Use `product_category`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 2;</code>
-   *
-   * @return The category.
-   */
-  @java.lang.Override
-  public com.google.cloud.vision.v1p3beta1.ProductSearchCategory getCategory() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.vision.v1p3beta1.ProductSearchCategory result =
-        com.google.cloud.vision.v1p3beta1.ProductSearchCategory.valueOf(category_);
-    return result == null
-        ? com.google.cloud.vision.v1p3beta1.ProductSearchCategory.UNRECOGNIZED
-        : result;
-  }
-
-  public static final int PRODUCT_CATEGORY_FIELD_NUMBER = 5;
-  private volatile java.lang.Object productCategory_;
-  /**
-   *
-   *
-   * <pre>
-   * The product category to search in.
-   * Optional. It is inferred by the system if it is not specified.
-   * Supported values are `bag`, `shoe`, `sunglasses`, `dress`, `outerwear`,
-   * `skirt`, `top`, `shorts`, and `pants`.
-   * </pre>
-   *
-   * <code>string product_category = 5;</code>
-   *
-   * @return The productCategory.
-   */
-  @java.lang.Override
-  public java.lang.String getProductCategory() {
-    java.lang.Object ref = productCategory_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      productCategory_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The product category to search in.
-   * Optional. It is inferred by the system if it is not specified.
-   * Supported values are `bag`, `shoe`, `sunglasses`, `dress`, `outerwear`,
-   * `skirt`, `top`, `shorts`, and `pants`.
-   * </pre>
-   *
-   * <code>string product_category = 5;</code>
-   *
-   * @return The bytes for productCategory.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getProductCategoryBytes() {
-    java.lang.Object ref = productCategory_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      productCategory_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int NORMALIZED_BOUNDING_POLY_FIELD_NUMBER = 3;
-  private com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalizedBoundingPoly_;
-  /**
-   *
-   *
-   * <pre>
-   * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
-   * [Deprecated] Use `bounding_poly`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-   * </code>
-   *
-   * @return Whether the normalizedBoundingPoly field is set.
-   */
-  @java.lang.Override
-  public boolean hasNormalizedBoundingPoly() {
-    return normalizedBoundingPoly_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
-   * [Deprecated] Use `bounding_poly`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-   * </code>
-   *
-   * @return The normalizedBoundingPoly.
-   */
-  @java.lang.Override
-  public com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly getNormalizedBoundingPoly() {
-    return normalizedBoundingPoly_ == null
-        ? com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly.getDefaultInstance()
-        : normalizedBoundingPoly_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
-   * [Deprecated] Use `bounding_poly`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.vision.v1p3beta1.NormalizedBoundingPolyOrBuilder
-      getNormalizedBoundingPolyOrBuilder() {
-    return getNormalizedBoundingPoly();
-  }
-
   public static final int BOUNDING_POLY_FIELD_NUMBER = 9;
   private com.google.cloud.vision.v1p3beta1.BoundingPoly boundingPoly_;
   /**
@@ -414,7 +159,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
+   * If it is not specified, system discretion will be applied.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -430,7 +175,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
+   * If it is not specified, system discretion will be applied.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -448,7 +193,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
+   * If it is not specified, system discretion will be applied.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -458,55 +203,13 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     return getBoundingPoly();
   }
 
-  public static final int VIEW_FIELD_NUMBER = 4;
-  private int view_;
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the verbosity of the  product search results.
-   * Optional. Defaults to `BASIC`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSearchResultsView view = 4;</code>
-   *
-   * @return The enum numeric value on the wire for view.
-   */
-  @java.lang.Override
-  public int getViewValue() {
-    return view_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Specifies the verbosity of the  product search results.
-   * Optional. Defaults to `BASIC`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSearchResultsView view = 4;</code>
-   *
-   * @return The view.
-   */
-  @java.lang.Override
-  public com.google.cloud.vision.v1p3beta1.ProductSearchResultsView getView() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.vision.v1p3beta1.ProductSearchResultsView result =
-        com.google.cloud.vision.v1p3beta1.ProductSearchResultsView.valueOf(view_);
-    return result == null
-        ? com.google.cloud.vision.v1p3beta1.ProductSearchResultsView.UNRECOGNIZED
-        : result;
-  }
-
   public static final int PRODUCT_SET_FIELD_NUMBER = 6;
   private volatile java.lang.Object productSet_;
   /**
    *
    *
    * <pre>
-   * The resource name of a
-   * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for
-   * similar images.
+   * The resource name of a [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for similar images.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
@@ -531,9 +234,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The resource name of a
-   * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for
-   * similar images.
+   * The resource name of a [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for similar images.
    * Format is:
    * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
    * </pre>
@@ -562,8 +263,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
-   * the first category, and either "homegoods" or "apparel" should be
-   * specified.
+   * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+   * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+   * categories "homegoods", "apparel", and "toys" are still supported but will
+   * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+   * or "toys-v2" for better product search accuracy. It is recommended to
+   * migrate existing products to these categories as well.
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
@@ -578,8 +283,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
-   * the first category, and either "homegoods" or "apparel" should be
-   * specified.
+   * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+   * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+   * categories "homegoods", "apparel", and "toys" are still supported but will
+   * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+   * or "toys-v2" for better product search accuracy. It is recommended to
+   * migrate existing products to these categories as well.
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
@@ -594,8 +303,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
-   * the first category, and either "homegoods" or "apparel" should be
-   * specified.
+   * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+   * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+   * categories "homegoods", "apparel", and "toys" are still supported but will
+   * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+   * or "toys-v2" for better product search accuracy. It is recommended to
+   * migrate existing products to these categories as well.
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
@@ -611,8 +324,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
-   * the first category, and either "homegoods" or "apparel" should be
-   * specified.
+   * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+   * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+   * categories "homegoods", "apparel", and "toys" are still supported but will
+   * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+   * or "toys-v2" for better product search accuracy. It is recommended to
+   * migrate existing products to these categories as well.
    * </pre>
    *
    * <code>repeated string product_categories = 7;</code>
@@ -632,9 +349,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * <pre>
    * The filtering expression. This can be used to restrict search results based
    * on Product labels. We currently support an AND of OR of key-value
-   * expressions, where each expression within an OR must have the same key.
+   * expressions, where each expression within an OR must have the same key. An
+   * '=' should be used to connect the key and value.
    * For example, "(color = red OR color = blue) AND brand = Google" is
-   * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+   * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+   * "color: red" is not acceptable because it uses a ':' instead of an '='.
    * </pre>
    *
    * <code>string filter = 8;</code>
@@ -659,9 +378,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    * <pre>
    * The filtering expression. This can be used to restrict search results based
    * on Product labels. We currently support an AND of OR of key-value
-   * expressions, where each expression within an OR must have the same key.
+   * expressions, where each expression within an OR must have the same key. An
+   * '=' should be used to connect the key and value.
    * For example, "(color = red OR color = blue) AND brand = Google" is
-   * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+   * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+   * "color: red" is not acceptable because it uses a ':' instead of an '='.
    * </pre>
    *
    * <code>string filter = 8;</code>
@@ -695,24 +416,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(catalogName_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, catalogName_);
-    }
-    if (category_
-        != com.google.cloud.vision.v1p3beta1.ProductSearchCategory
-            .PRODUCT_SEARCH_CATEGORY_UNSPECIFIED
-            .getNumber()) {
-      output.writeEnum(2, category_);
-    }
-    if (normalizedBoundingPoly_ != null) {
-      output.writeMessage(3, getNormalizedBoundingPoly());
-    }
-    if (view_ != com.google.cloud.vision.v1p3beta1.ProductSearchResultsView.BASIC.getNumber()) {
-      output.writeEnum(4, view_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productCategory_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, productCategory_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productSet_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, productSet_);
     }
@@ -734,25 +437,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(catalogName_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, catalogName_);
-    }
-    if (category_
-        != com.google.cloud.vision.v1p3beta1.ProductSearchCategory
-            .PRODUCT_SEARCH_CATEGORY_UNSPECIFIED
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, category_);
-    }
-    if (normalizedBoundingPoly_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getNormalizedBoundingPoly());
-    }
-    if (view_ != com.google.cloud.vision.v1p3beta1.ProductSearchResultsView.BASIC.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, view_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productCategory_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, productCategory_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productSet_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, productSet_);
     }
@@ -786,18 +470,10 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     com.google.cloud.vision.v1p3beta1.ProductSearchParams other =
         (com.google.cloud.vision.v1p3beta1.ProductSearchParams) obj;
 
-    if (!getCatalogName().equals(other.getCatalogName())) return false;
-    if (category_ != other.category_) return false;
-    if (!getProductCategory().equals(other.getProductCategory())) return false;
-    if (hasNormalizedBoundingPoly() != other.hasNormalizedBoundingPoly()) return false;
-    if (hasNormalizedBoundingPoly()) {
-      if (!getNormalizedBoundingPoly().equals(other.getNormalizedBoundingPoly())) return false;
-    }
     if (hasBoundingPoly() != other.hasBoundingPoly()) return false;
     if (hasBoundingPoly()) {
       if (!getBoundingPoly().equals(other.getBoundingPoly())) return false;
     }
-    if (view_ != other.view_) return false;
     if (!getProductSet().equals(other.getProductSet())) return false;
     if (!getProductCategoriesList().equals(other.getProductCategoriesList())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
@@ -812,22 +488,10 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CATALOG_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getCatalogName().hashCode();
-    hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
-    hash = (53 * hash) + category_;
-    hash = (37 * hash) + PRODUCT_CATEGORY_FIELD_NUMBER;
-    hash = (53 * hash) + getProductCategory().hashCode();
-    if (hasNormalizedBoundingPoly()) {
-      hash = (37 * hash) + NORMALIZED_BOUNDING_POLY_FIELD_NUMBER;
-      hash = (53 * hash) + getNormalizedBoundingPoly().hashCode();
-    }
     if (hasBoundingPoly()) {
       hash = (37 * hash) + BOUNDING_POLY_FIELD_NUMBER;
       hash = (53 * hash) + getBoundingPoly().hashCode();
     }
-    hash = (37 * hash) + VIEW_FIELD_NUMBER;
-    hash = (53 * hash) + view_;
     hash = (37 * hash) + PRODUCT_SET_FIELD_NUMBER;
     hash = (53 * hash) + getProductSet().hashCode();
     if (getProductCategoriesCount() > 0) {
@@ -982,26 +646,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      catalogName_ = "";
-
-      category_ = 0;
-
-      productCategory_ = "";
-
-      if (normalizedBoundingPolyBuilder_ == null) {
-        normalizedBoundingPoly_ = null;
-      } else {
-        normalizedBoundingPoly_ = null;
-        normalizedBoundingPolyBuilder_ = null;
-      }
       if (boundingPolyBuilder_ == null) {
         boundingPoly_ = null;
       } else {
         boundingPoly_ = null;
         boundingPolyBuilder_ = null;
       }
-      view_ = 0;
-
       productSet_ = "";
 
       productCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1036,20 +686,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       com.google.cloud.vision.v1p3beta1.ProductSearchParams result =
           new com.google.cloud.vision.v1p3beta1.ProductSearchParams(this);
       int from_bitField0_ = bitField0_;
-      result.catalogName_ = catalogName_;
-      result.category_ = category_;
-      result.productCategory_ = productCategory_;
-      if (normalizedBoundingPolyBuilder_ == null) {
-        result.normalizedBoundingPoly_ = normalizedBoundingPoly_;
-      } else {
-        result.normalizedBoundingPoly_ = normalizedBoundingPolyBuilder_.build();
-      }
       if (boundingPolyBuilder_ == null) {
         result.boundingPoly_ = boundingPoly_;
       } else {
         result.boundingPoly_ = boundingPolyBuilder_.build();
       }
-      result.view_ = view_;
       result.productSet_ = productSet_;
       if (((bitField0_ & 0x00000001) != 0)) {
         productCategories_ = productCategories_.getUnmodifiableView();
@@ -1107,25 +748,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.cloud.vision.v1p3beta1.ProductSearchParams other) {
       if (other == com.google.cloud.vision.v1p3beta1.ProductSearchParams.getDefaultInstance())
         return this;
-      if (!other.getCatalogName().isEmpty()) {
-        catalogName_ = other.catalogName_;
-        onChanged();
-      }
-      if (other.category_ != 0) {
-        setCategoryValue(other.getCategoryValue());
-      }
-      if (!other.getProductCategory().isEmpty()) {
-        productCategory_ = other.productCategory_;
-        onChanged();
-      }
-      if (other.hasNormalizedBoundingPoly()) {
-        mergeNormalizedBoundingPoly(other.getNormalizedBoundingPoly());
-      }
       if (other.hasBoundingPoly()) {
         mergeBoundingPoly(other.getBoundingPoly());
-      }
-      if (other.view_ != 0) {
-        setViewValue(other.getViewValue());
       }
       if (!other.getProductSet().isEmpty()) {
         productSet_ = other.productSet_;
@@ -1177,559 +801,6 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
 
     private int bitField0_;
 
-    private java.lang.Object catalogName_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * The resource name of the catalog to search.
-     * Format is: `productSearch/catalogs/CATALOG_NAME`.
-     * </pre>
-     *
-     * <code>string catalog_name = 1;</code>
-     *
-     * @return The catalogName.
-     */
-    public java.lang.String getCatalogName() {
-      java.lang.Object ref = catalogName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        catalogName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The resource name of the catalog to search.
-     * Format is: `productSearch/catalogs/CATALOG_NAME`.
-     * </pre>
-     *
-     * <code>string catalog_name = 1;</code>
-     *
-     * @return The bytes for catalogName.
-     */
-    public com.google.protobuf.ByteString getCatalogNameBytes() {
-      java.lang.Object ref = catalogName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        catalogName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The resource name of the catalog to search.
-     * Format is: `productSearch/catalogs/CATALOG_NAME`.
-     * </pre>
-     *
-     * <code>string catalog_name = 1;</code>
-     *
-     * @param value The catalogName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCatalogName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      catalogName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The resource name of the catalog to search.
-     * Format is: `productSearch/catalogs/CATALOG_NAME`.
-     * </pre>
-     *
-     * <code>string catalog_name = 1;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearCatalogName() {
-
-      catalogName_ = getDefaultInstance().getCatalogName();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The resource name of the catalog to search.
-     * Format is: `productSearch/catalogs/CATALOG_NAME`.
-     * </pre>
-     *
-     * <code>string catalog_name = 1;</code>
-     *
-     * @param value The bytes for catalogName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCatalogNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      catalogName_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int category_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * The category to search in.
-     * Optional. It is inferred by the system if it is not specified.
-     * [Deprecated] Use `product_category`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 2;</code>
-     *
-     * @return The enum numeric value on the wire for category.
-     */
-    @java.lang.Override
-    public int getCategoryValue() {
-      return category_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The category to search in.
-     * Optional. It is inferred by the system if it is not specified.
-     * [Deprecated] Use `product_category`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 2;</code>
-     *
-     * @param value The enum numeric value on the wire for category to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCategoryValue(int value) {
-
-      category_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The category to search in.
-     * Optional. It is inferred by the system if it is not specified.
-     * [Deprecated] Use `product_category`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 2;</code>
-     *
-     * @return The category.
-     */
-    @java.lang.Override
-    public com.google.cloud.vision.v1p3beta1.ProductSearchCategory getCategory() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.vision.v1p3beta1.ProductSearchCategory result =
-          com.google.cloud.vision.v1p3beta1.ProductSearchCategory.valueOf(category_);
-      return result == null
-          ? com.google.cloud.vision.v1p3beta1.ProductSearchCategory.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The category to search in.
-     * Optional. It is inferred by the system if it is not specified.
-     * [Deprecated] Use `product_category`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 2;</code>
-     *
-     * @param value The category to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCategory(com.google.cloud.vision.v1p3beta1.ProductSearchCategory value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      category_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The category to search in.
-     * Optional. It is inferred by the system if it is not specified.
-     * [Deprecated] Use `product_category`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 2;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearCategory() {
-
-      category_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object productCategory_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * The product category to search in.
-     * Optional. It is inferred by the system if it is not specified.
-     * Supported values are `bag`, `shoe`, `sunglasses`, `dress`, `outerwear`,
-     * `skirt`, `top`, `shorts`, and `pants`.
-     * </pre>
-     *
-     * <code>string product_category = 5;</code>
-     *
-     * @return The productCategory.
-     */
-    public java.lang.String getProductCategory() {
-      java.lang.Object ref = productCategory_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        productCategory_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The product category to search in.
-     * Optional. It is inferred by the system if it is not specified.
-     * Supported values are `bag`, `shoe`, `sunglasses`, `dress`, `outerwear`,
-     * `skirt`, `top`, `shorts`, and `pants`.
-     * </pre>
-     *
-     * <code>string product_category = 5;</code>
-     *
-     * @return The bytes for productCategory.
-     */
-    public com.google.protobuf.ByteString getProductCategoryBytes() {
-      java.lang.Object ref = productCategory_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        productCategory_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The product category to search in.
-     * Optional. It is inferred by the system if it is not specified.
-     * Supported values are `bag`, `shoe`, `sunglasses`, `dress`, `outerwear`,
-     * `skirt`, `top`, `shorts`, and `pants`.
-     * </pre>
-     *
-     * <code>string product_category = 5;</code>
-     *
-     * @param value The productCategory to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProductCategory(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      productCategory_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The product category to search in.
-     * Optional. It is inferred by the system if it is not specified.
-     * Supported values are `bag`, `shoe`, `sunglasses`, `dress`, `outerwear`,
-     * `skirt`, `top`, `shorts`, and `pants`.
-     * </pre>
-     *
-     * <code>string product_category = 5;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearProductCategory() {
-
-      productCategory_ = getDefaultInstance().getProductCategory();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The product category to search in.
-     * Optional. It is inferred by the system if it is not specified.
-     * Supported values are `bag`, `shoe`, `sunglasses`, `dress`, `outerwear`,
-     * `skirt`, `top`, `shorts`, and `pants`.
-     * </pre>
-     *
-     * <code>string product_category = 5;</code>
-     *
-     * @param value The bytes for productCategory to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProductCategoryBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      productCategory_ = value;
-      onChanged();
-      return this;
-    }
-
-    private com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalizedBoundingPoly_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly,
-            com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly.Builder,
-            com.google.cloud.vision.v1p3beta1.NormalizedBoundingPolyOrBuilder>
-        normalizedBoundingPolyBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
-     * [Deprecated] Use `bounding_poly`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-     * </code>
-     *
-     * @return Whether the normalizedBoundingPoly field is set.
-     */
-    public boolean hasNormalizedBoundingPoly() {
-      return normalizedBoundingPolyBuilder_ != null || normalizedBoundingPoly_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
-     * [Deprecated] Use `bounding_poly`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-     * </code>
-     *
-     * @return The normalizedBoundingPoly.
-     */
-    public com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly getNormalizedBoundingPoly() {
-      if (normalizedBoundingPolyBuilder_ == null) {
-        return normalizedBoundingPoly_ == null
-            ? com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly.getDefaultInstance()
-            : normalizedBoundingPoly_;
-      } else {
-        return normalizedBoundingPolyBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
-     * [Deprecated] Use `bounding_poly`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-     * </code>
-     */
-    public Builder setNormalizedBoundingPoly(
-        com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly value) {
-      if (normalizedBoundingPolyBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        normalizedBoundingPoly_ = value;
-        onChanged();
-      } else {
-        normalizedBoundingPolyBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
-     * [Deprecated] Use `bounding_poly`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-     * </code>
-     */
-    public Builder setNormalizedBoundingPoly(
-        com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly.Builder builderForValue) {
-      if (normalizedBoundingPolyBuilder_ == null) {
-        normalizedBoundingPoly_ = builderForValue.build();
-        onChanged();
-      } else {
-        normalizedBoundingPolyBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
-     * [Deprecated] Use `bounding_poly`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-     * </code>
-     */
-    public Builder mergeNormalizedBoundingPoly(
-        com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly value) {
-      if (normalizedBoundingPolyBuilder_ == null) {
-        if (normalizedBoundingPoly_ != null) {
-          normalizedBoundingPoly_ =
-              com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly.newBuilder(
-                      normalizedBoundingPoly_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          normalizedBoundingPoly_ = value;
-        }
-        onChanged();
-      } else {
-        normalizedBoundingPolyBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
-     * [Deprecated] Use `bounding_poly`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-     * </code>
-     */
-    public Builder clearNormalizedBoundingPoly() {
-      if (normalizedBoundingPolyBuilder_ == null) {
-        normalizedBoundingPoly_ = null;
-        onChanged();
-      } else {
-        normalizedBoundingPoly_ = null;
-        normalizedBoundingPolyBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
-     * [Deprecated] Use `bounding_poly`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-     * </code>
-     */
-    public com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly.Builder
-        getNormalizedBoundingPolyBuilder() {
-
-      onChanged();
-      return getNormalizedBoundingPolyFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
-     * [Deprecated] Use `bounding_poly`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-     * </code>
-     */
-    public com.google.cloud.vision.v1p3beta1.NormalizedBoundingPolyOrBuilder
-        getNormalizedBoundingPolyOrBuilder() {
-      if (normalizedBoundingPolyBuilder_ != null) {
-        return normalizedBoundingPolyBuilder_.getMessageOrBuilder();
-      } else {
-        return normalizedBoundingPoly_ == null
-            ? com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly.getDefaultInstance()
-            : normalizedBoundingPoly_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
-     * [Deprecated] Use `bounding_poly`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly normalized_bounding_poly = 3;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly,
-            com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly.Builder,
-            com.google.cloud.vision.v1p3beta1.NormalizedBoundingPolyOrBuilder>
-        getNormalizedBoundingPolyFieldBuilder() {
-      if (normalizedBoundingPolyBuilder_ == null) {
-        normalizedBoundingPolyBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly,
-                com.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly.Builder,
-                com.google.cloud.vision.v1p3beta1.NormalizedBoundingPolyOrBuilder>(
-                getNormalizedBoundingPoly(), getParentForChildren(), isClean());
-        normalizedBoundingPoly_ = null;
-      }
-      return normalizedBoundingPolyBuilder_;
-    }
-
     private com.google.cloud.vision.v1p3beta1.BoundingPoly boundingPoly_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vision.v1p3beta1.BoundingPoly,
@@ -1741,7 +812,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -1756,7 +827,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -1777,7 +848,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -1800,7 +871,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -1821,7 +892,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -1848,7 +919,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -1869,7 +940,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -1884,7 +955,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -1903,7 +974,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 9;</code>
@@ -1925,112 +996,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
       return boundingPolyBuilder_;
     }
 
-    private int view_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the verbosity of the  product search results.
-     * Optional. Defaults to `BASIC`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchResultsView view = 4;</code>
-     *
-     * @return The enum numeric value on the wire for view.
-     */
-    @java.lang.Override
-    public int getViewValue() {
-      return view_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the verbosity of the  product search results.
-     * Optional. Defaults to `BASIC`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchResultsView view = 4;</code>
-     *
-     * @param value The enum numeric value on the wire for view to set.
-     * @return This builder for chaining.
-     */
-    public Builder setViewValue(int value) {
-
-      view_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the verbosity of the  product search results.
-     * Optional. Defaults to `BASIC`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchResultsView view = 4;</code>
-     *
-     * @return The view.
-     */
-    @java.lang.Override
-    public com.google.cloud.vision.v1p3beta1.ProductSearchResultsView getView() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.vision.v1p3beta1.ProductSearchResultsView result =
-          com.google.cloud.vision.v1p3beta1.ProductSearchResultsView.valueOf(view_);
-      return result == null
-          ? com.google.cloud.vision.v1p3beta1.ProductSearchResultsView.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the verbosity of the  product search results.
-     * Optional. Defaults to `BASIC`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchResultsView view = 4;</code>
-     *
-     * @param value The view to set.
-     * @return This builder for chaining.
-     */
-    public Builder setView(com.google.cloud.vision.v1p3beta1.ProductSearchResultsView value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      view_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Specifies the verbosity of the  product search results.
-     * Optional. Defaults to `BASIC`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchResultsView view = 4;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearView() {
-
-      view_ = 0;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object productSet_ = "";
     /**
      *
      *
      * <pre>
-     * The resource name of a
-     * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for
-     * similar images.
+     * The resource name of a [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for similar images.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
@@ -2054,9 +1025,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of a
-     * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for
-     * similar images.
+     * The resource name of a [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for similar images.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
@@ -2080,9 +1049,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of a
-     * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for
-     * similar images.
+     * The resource name of a [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for similar images.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
@@ -2105,9 +1072,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of a
-     * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for
-     * similar images.
+     * The resource name of a [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for similar images.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
@@ -2126,9 +1091,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The resource name of a
-     * [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for
-     * similar images.
+     * The resource name of a [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] to be searched for similar images.
      * Format is:
      * `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`.
      * </pre>
@@ -2163,8 +1126,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
-     * the first category, and either "homegoods" or "apparel" should be
-     * specified.
+     * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+     * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+     * categories "homegoods", "apparel", and "toys" are still supported but will
+     * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+     * or "toys-v2" for better product search accuracy. It is recommended to
+     * migrate existing products to these categories as well.
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
@@ -2179,8 +1146,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
-     * the first category, and either "homegoods" or "apparel" should be
-     * specified.
+     * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+     * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+     * categories "homegoods", "apparel", and "toys" are still supported but will
+     * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+     * or "toys-v2" for better product search accuracy. It is recommended to
+     * migrate existing products to these categories as well.
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
@@ -2195,8 +1166,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
-     * the first category, and either "homegoods" or "apparel" should be
-     * specified.
+     * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+     * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+     * categories "homegoods", "apparel", and "toys" are still supported but will
+     * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+     * or "toys-v2" for better product search accuracy. It is recommended to
+     * migrate existing products to these categories as well.
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
@@ -2212,8 +1187,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
-     * the first category, and either "homegoods" or "apparel" should be
-     * specified.
+     * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+     * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+     * categories "homegoods", "apparel", and "toys" are still supported but will
+     * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+     * or "toys-v2" for better product search accuracy. It is recommended to
+     * migrate existing products to these categories as well.
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
@@ -2229,8 +1208,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
-     * the first category, and either "homegoods" or "apparel" should be
-     * specified.
+     * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+     * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+     * categories "homegoods", "apparel", and "toys" are still supported but will
+     * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+     * or "toys-v2" for better product search accuracy. It is recommended to
+     * migrate existing products to these categories as well.
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
@@ -2253,8 +1236,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
-     * the first category, and either "homegoods" or "apparel" should be
-     * specified.
+     * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+     * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+     * categories "homegoods", "apparel", and "toys" are still supported but will
+     * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+     * or "toys-v2" for better product search accuracy. It is recommended to
+     * migrate existing products to these categories as well.
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
@@ -2276,8 +1263,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
-     * the first category, and either "homegoods" or "apparel" should be
-     * specified.
+     * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+     * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+     * categories "homegoods", "apparel", and "toys" are still supported but will
+     * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+     * or "toys-v2" for better product search accuracy. It is recommended to
+     * migrate existing products to these categories as well.
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
@@ -2296,8 +1287,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
-     * the first category, and either "homegoods" or "apparel" should be
-     * specified.
+     * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+     * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+     * categories "homegoods", "apparel", and "toys" are still supported but will
+     * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+     * or "toys-v2" for better product search accuracy. It is recommended to
+     * migrate existing products to these categories as well.
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
@@ -2315,8 +1310,12 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
-     * the first category, and either "homegoods" or "apparel" should be
-     * specified.
+     * the first category, and either "homegoods-v2", "apparel-v2", "toys-v2",
+     * "packagedgoods-v1", or "general-v1" should be specified. The legacy
+     * categories "homegoods", "apparel", and "toys" are still supported but will
+     * be deprecated. For new products, please use "homegoods-v2", "apparel-v2",
+     * or "toys-v2" for better product search accuracy. It is recommended to
+     * migrate existing products to these categories as well.
      * </pre>
      *
      * <code>repeated string product_categories = 7;</code>
@@ -2342,9 +1341,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
-     * expressions, where each expression within an OR must have the same key.
+     * expressions, where each expression within an OR must have the same key. An
+     * '=' should be used to connect the key and value.
      * For example, "(color = red OR color = blue) AND brand = Google" is
-     * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+     * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+     * "color: red" is not acceptable because it uses a ':' instead of an '='.
      * </pre>
      *
      * <code>string filter = 8;</code>
@@ -2368,9 +1369,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
-     * expressions, where each expression within an OR must have the same key.
+     * expressions, where each expression within an OR must have the same key. An
+     * '=' should be used to connect the key and value.
      * For example, "(color = red OR color = blue) AND brand = Google" is
-     * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+     * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+     * "color: red" is not acceptable because it uses a ':' instead of an '='.
      * </pre>
      *
      * <code>string filter = 8;</code>
@@ -2394,9 +1397,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
-     * expressions, where each expression within an OR must have the same key.
+     * expressions, where each expression within an OR must have the same key. An
+     * '=' should be used to connect the key and value.
      * For example, "(color = red OR color = blue) AND brand = Google" is
-     * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+     * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+     * "color: red" is not acceptable because it uses a ':' instead of an '='.
      * </pre>
      *
      * <code>string filter = 8;</code>
@@ -2419,9 +1424,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
-     * expressions, where each expression within an OR must have the same key.
+     * expressions, where each expression within an OR must have the same key. An
+     * '=' should be used to connect the key and value.
      * For example, "(color = red OR color = blue) AND brand = Google" is
-     * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+     * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+     * "color: red" is not acceptable because it uses a ':' instead of an '='.
      * </pre>
      *
      * <code>string filter = 8;</code>
@@ -2440,9 +1447,11 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
-     * expressions, where each expression within an OR must have the same key.
+     * expressions, where each expression within an OR must have the same key. An
+     * '=' should be used to connect the key and value.
      * For example, "(color = red OR color = blue) AND brand = Google" is
-     * acceptable, but not "(color = red OR brand = Google)" or "color: red".
+     * acceptable, but "(color = red OR brand = Google)" is not acceptable.
+     * "color: red" is not acceptable because it uses a ':' instead of an '='.
      * </pre>
      *
      * <code>string filter = 8;</code>

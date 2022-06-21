@@ -97,6 +97,8 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -480,7 +482,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsDriverLogLevels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetDriverLogLevels().getMap().containsKey(key);
   }
@@ -523,10 +525,13 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.dataproc.v1.LoggingConfig.Level getDriverLogLevelsOrDefault(
-      java.lang.String key, com.google.cloud.dataproc.v1.LoggingConfig.Level defaultValue) {
+  public /* nullable */ com.google.cloud.dataproc.v1.LoggingConfig.Level
+      getDriverLogLevelsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.dataproc.v1.LoggingConfig.Level defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetDriverLogLevels().getMap();
     return map.containsKey(key)
@@ -550,7 +555,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dataproc.v1.LoggingConfig.Level getDriverLogLevelsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetDriverLogLevels().getMap();
     if (!map.containsKey(key)) {
@@ -597,7 +602,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public int getDriverLogLevelsValueOrDefault(java.lang.String key, int defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetDriverLogLevels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -618,7 +623,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public int getDriverLogLevelsValueOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetDriverLogLevels().getMap();
     if (!map.containsKey(key)) {
@@ -1016,7 +1021,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsDriverLogLevels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetDriverLogLevels().getMap().containsKey(key);
     }
@@ -1059,10 +1064,13 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.dataproc.v1.LoggingConfig.Level getDriverLogLevelsOrDefault(
-        java.lang.String key, com.google.cloud.dataproc.v1.LoggingConfig.Level defaultValue) {
+    public /* nullable */ com.google.cloud.dataproc.v1.LoggingConfig.Level
+        getDriverLogLevelsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.dataproc.v1.LoggingConfig.Level defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetDriverLogLevels().getMap();
@@ -1087,7 +1095,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.LoggingConfig.Level getDriverLogLevelsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetDriverLogLevels().getMap();
@@ -1135,7 +1143,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public int getDriverLogLevelsValueOrDefault(java.lang.String key, int defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetDriverLogLevels().getMap();
@@ -1157,7 +1165,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public int getDriverLogLevelsValueOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetDriverLogLevels().getMap();
@@ -1186,7 +1194,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeDriverLogLevels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableDriverLogLevels().getMutableMap().remove(key);
       return this;
@@ -1214,11 +1222,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder putDriverLogLevels(
         java.lang.String key, com.google.cloud.dataproc.v1.LoggingConfig.Level value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
-      if (value == null) {
-        throw new java.lang.NullPointerException();
-      }
+
       internalGetMutableDriverLogLevels()
           .getMutableMap()
           .put(key, driverLogLevelsValueConverter.doBackward(value));
@@ -1263,8 +1269,9 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putDriverLogLevelsValue(java.lang.String key, int value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
+
       internalGetMutableDriverLogLevels().getMutableMap().put(key, value);
       return this;
     }

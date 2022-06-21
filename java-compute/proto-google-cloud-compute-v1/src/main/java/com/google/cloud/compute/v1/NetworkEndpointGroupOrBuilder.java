@@ -65,7 +65,12 @@ public interface NetworkEndpointGroupOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
-  java.lang.String getAnnotationsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -474,7 +479,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: "asia-northeast3-cloudkms.googleapis.com"
    * </pre>
    *
    * <code>optional string psc_target_service = 269132134;</code>
@@ -486,7 +491,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: "asia-northeast3-cloudkms.googleapis.com"
    * </pre>
    *
    * <code>optional string psc_target_service = 269132134;</code>
@@ -498,7 +503,7 @@ public interface NetworkEndpointGroupOrBuilder
    *
    *
    * <pre>
-   * The target service url used to set up private service connection to a Google API. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+   * The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: "asia-northeast3-cloudkms.googleapis.com"
    * </pre>
    *
    * <code>optional string psc_target_service = 269132134;</code>

@@ -385,7 +385,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
    * <code>string alias_name = 4 [deprecated = true];</code>
    *
    * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
-   *     google/devtools/source/v1/source_context.proto;l=131
+   *     google/devtools/source/v1/source_context.proto;l=129
    * @return Whether the aliasName field is set.
    */
   @java.lang.Deprecated
@@ -402,7 +402,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
    * <code>string alias_name = 4 [deprecated = true];</code>
    *
    * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
-   *     google/devtools/source/v1/source_context.proto;l=131
+   *     google/devtools/source/v1/source_context.proto;l=129
    * @return The aliasName.
    */
   @java.lang.Deprecated
@@ -432,7 +432,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
    * <code>string alias_name = 4 [deprecated = true];</code>
    *
    * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
-   *     google/devtools/source/v1/source_context.proto;l=131
+   *     google/devtools/source/v1/source_context.proto;l=129
    * @return The bytes for aliasName.
    */
   @java.lang.Deprecated
@@ -1309,7 +1309,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      * <code>string alias_name = 4 [deprecated = true];</code>
      *
      * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
-     *     google/devtools/source/v1/source_context.proto;l=131
+     *     google/devtools/source/v1/source_context.proto;l=129
      * @return Whether the aliasName field is set.
      */
     @java.lang.Override
@@ -1327,7 +1327,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      * <code>string alias_name = 4 [deprecated = true];</code>
      *
      * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
-     *     google/devtools/source/v1/source_context.proto;l=131
+     *     google/devtools/source/v1/source_context.proto;l=129
      * @return The aliasName.
      */
     @java.lang.Override
@@ -1358,7 +1358,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      * <code>string alias_name = 4 [deprecated = true];</code>
      *
      * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
-     *     google/devtools/source/v1/source_context.proto;l=131
+     *     google/devtools/source/v1/source_context.proto;l=129
      * @return The bytes for aliasName.
      */
     @java.lang.Override
@@ -1389,7 +1389,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      * <code>string alias_name = 4 [deprecated = true];</code>
      *
      * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
-     *     google/devtools/source/v1/source_context.proto;l=131
+     *     google/devtools/source/v1/source_context.proto;l=129
      * @param value The aliasName to set.
      * @return This builder for chaining.
      */
@@ -1413,7 +1413,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      * <code>string alias_name = 4 [deprecated = true];</code>
      *
      * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
-     *     google/devtools/source/v1/source_context.proto;l=131
+     *     google/devtools/source/v1/source_context.proto;l=129
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1435,7 +1435,7 @@ public final class GerritSourceContext extends com.google.protobuf.GeneratedMess
      * <code>string alias_name = 4 [deprecated = true];</code>
      *
      * @deprecated google.devtools.source.v1.GerritSourceContext.alias_name is deprecated. See
-     *     google/devtools/source/v1/source_context.proto;l=131
+     *     google/devtools/source/v1/source_context.proto;l=129
      * @param value The bytes for aliasName to set.
      * @return This builder for chaining.
      */

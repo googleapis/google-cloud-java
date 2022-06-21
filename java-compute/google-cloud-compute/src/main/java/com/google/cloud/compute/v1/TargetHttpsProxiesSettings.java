@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,8 @@ import javax.annotation.Generated;
  * <p>For example, to set the total timeout of get to 30 seconds:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TargetHttpsProxiesSettings.Builder targetHttpsProxiesSettingsBuilder =
  *     TargetHttpsProxiesSettings.newBuilder();
  * targetHttpsProxiesSettingsBuilder
@@ -123,6 +125,19 @@ public class TargetHttpsProxiesSettings extends ClientSettings<TargetHttpsProxie
   public OperationCallSettings<PatchTargetHttpsProxyRequest, Operation, Operation>
       patchOperationSettings() {
     return ((TargetHttpsProxiesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setCertificateMap. */
+  public UnaryCallSettings<SetCertificateMapTargetHttpsProxyRequest, Operation>
+      setCertificateMapSettings() {
+    return ((TargetHttpsProxiesStubSettings) getStubSettings()).setCertificateMapSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setCertificateMap. */
+  public OperationCallSettings<SetCertificateMapTargetHttpsProxyRequest, Operation, Operation>
+      setCertificateMapOperationSettings() {
+    return ((TargetHttpsProxiesStubSettings) getStubSettings())
+        .setCertificateMapOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setQuicOverride. */
@@ -322,6 +337,19 @@ public class TargetHttpsProxiesSettings extends ClientSettings<TargetHttpsProxie
     public OperationCallSettings.Builder<PatchTargetHttpsProxyRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setCertificateMap. */
+    public UnaryCallSettings.Builder<SetCertificateMapTargetHttpsProxyRequest, Operation>
+        setCertificateMapSettings() {
+      return getStubSettingsBuilder().setCertificateMapSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setCertificateMap. */
+    public OperationCallSettings.Builder<
+            SetCertificateMapTargetHttpsProxyRequest, Operation, Operation>
+        setCertificateMapOperationSettings() {
+      return getStubSettingsBuilder().setCertificateMapOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setQuicOverride. */

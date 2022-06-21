@@ -48,13 +48,17 @@ public final class ImageObjectDetectionPredictionResultProto {
           + "s.proto\"\213\001\n$ImageObjectDetectionPredicti"
           + "onResult\022\013\n\003ids\030\001 \003(\003\022\025\n\rdisplay_names\030\002"
           + " \003(\t\022\023\n\013confidences\030\003 \003(\002\022*\n\006bboxes\030\004 \003("
-          + "\0132\032.google.protobuf.ListValueB\321\001\n=com.go"
+          + "\0132\032.google.protobuf.ListValueB\213\003\n=com.go"
           + "ogle.cloud.aiplatform.v1beta1.schema.pre"
           + "dict.predictionB)ImageObjectDetectionPre"
           + "dictionResultProtoP\001Zcgoogle.golang.org/"
           + "genproto/googleapis/cloud/aiplatform/v1b"
           + "eta1/schema/predict/prediction;predictio"
-          + "nb\006proto3"
+          + "n\252\0029Google.Cloud.AIPlatform.V1Beta1.Sche"
+          + "ma.Predict.Prediction\312\0029Google\\Cloud\\AIP"
+          + "latform\\V1beta1\\Schema\\Predict\\Predictio"
+          + "n\352\002?Google::Cloud::AIPlatform::V1beta1::"
+          + "Schema::Predict::Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RoutersClient routersClient = RoutersClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RoutersSettings routersSettings =
  *     RoutersSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RoutersSettings routersSettings = RoutersSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RoutersClient routersClient = RoutersClient.create(routersSettings);
  * }</pre>
@@ -119,7 +125,6 @@ public class RoutersClient implements BackgroundResource {
    * Constructs an instance of RoutersClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(RoutersSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RoutersClient create(RoutersStub stub) {
     return new RoutersClient(stub);
   }
@@ -133,7 +138,6 @@ public class RoutersClient implements BackgroundResource {
     this.stub = ((RoutersStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RoutersClient(RoutersStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -143,7 +147,6 @@ public class RoutersClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RoutersStub getStub() {
     return stub;
   }
@@ -155,6 +158,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, RoutersScopedList> element :
@@ -180,6 +185,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   AggregatedListRoutersRequest request =
    *       AggregatedListRoutersRequest.newBuilder()
@@ -212,6 +219,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   AggregatedListRoutersRequest request =
    *       AggregatedListRoutersRequest.newBuilder()
@@ -244,6 +253,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   AggregatedListRoutersRequest request =
    *       AggregatedListRoutersRequest.newBuilder()
@@ -257,7 +268,7 @@ public class RoutersClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     RouterAggregatedList response = routersClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, RoutersScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, RoutersScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -282,6 +293,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -313,6 +326,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   DeleteRouterRequest request =
    *       DeleteRouterRequest.newBuilder()
@@ -341,6 +356,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   DeleteRouterRequest request =
    *       DeleteRouterRequest.newBuilder()
@@ -368,6 +385,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   DeleteRouterRequest request =
    *       DeleteRouterRequest.newBuilder()
@@ -394,6 +413,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -425,6 +446,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   GetRouterRequest request =
    *       GetRouterRequest.newBuilder()
@@ -451,6 +474,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   GetRouterRequest request =
    *       GetRouterRequest.newBuilder()
@@ -475,6 +500,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -509,6 +536,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   GetNatMappingInfoRoutersRequest request =
    *       GetNatMappingInfoRoutersRequest.newBuilder()
@@ -542,6 +571,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   GetNatMappingInfoRoutersRequest request =
    *       GetNatMappingInfoRoutersRequest.newBuilder()
@@ -575,6 +606,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   GetNatMappingInfoRoutersRequest request =
    *       GetNatMappingInfoRoutersRequest.newBuilder()
@@ -590,7 +623,7 @@ public class RoutersClient implements BackgroundResource {
    *   while (true) {
    *     VmEndpointNatMappingsList response =
    *         routersClient.getNatMappingInfoCallable().call(request);
-   *     for (VmEndpointNatMappings element : response.getResponsesList()) {
+   *     for (VmEndpointNatMappings element : response.getResultList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -615,6 +648,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -645,6 +680,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   GetRouterStatusRouterRequest request =
    *       GetRouterStatusRouterRequest.newBuilder()
@@ -670,6 +707,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   GetRouterStatusRouterRequest request =
    *       GetRouterStatusRouterRequest.newBuilder()
@@ -697,6 +736,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -729,6 +770,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   InsertRouterRequest request =
    *       InsertRouterRequest.newBuilder()
@@ -758,6 +801,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   InsertRouterRequest request =
    *       InsertRouterRequest.newBuilder()
@@ -786,6 +831,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   InsertRouterRequest request =
    *       InsertRouterRequest.newBuilder()
@@ -811,6 +858,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -837,6 +886,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   ListRoutersRequest request =
    *       ListRoutersRequest.newBuilder()
@@ -868,6 +919,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   ListRoutersRequest request =
    *       ListRoutersRequest.newBuilder()
@@ -898,6 +951,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   ListRoutersRequest request =
    *       ListRoutersRequest.newBuilder()
@@ -911,7 +966,7 @@ public class RoutersClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     RouterList response = routersClient.listCallable().call(request);
-   *     for (Router element : response.getResponsesList()) {
+   *     for (Router element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -936,6 +991,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -971,6 +1028,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   PatchRouterRequest request =
    *       PatchRouterRequest.newBuilder()
@@ -1001,6 +1060,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   PatchRouterRequest request =
    *       PatchRouterRequest.newBuilder()
@@ -1030,6 +1091,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   PatchRouterRequest request =
    *       PatchRouterRequest.newBuilder()
@@ -1057,6 +1120,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1093,6 +1158,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   PreviewRouterRequest request =
    *       PreviewRouterRequest.newBuilder()
@@ -1120,6 +1187,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   PreviewRouterRequest request =
    *       PreviewRouterRequest.newBuilder()
@@ -1148,6 +1217,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1184,6 +1255,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   UpdateRouterRequest request =
    *       UpdateRouterRequest.newBuilder()
@@ -1215,6 +1288,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   UpdateRouterRequest request =
    *       UpdateRouterRequest.newBuilder()
@@ -1245,6 +1320,8 @@ public class RoutersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   UpdateRouterRequest request =
    *       UpdateRouterRequest.newBuilder()

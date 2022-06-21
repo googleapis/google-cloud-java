@@ -506,7 +506,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
    *   while (true) {
    *     TransferProto.ListTransferJobsResponse response =
    *         storageTransferServiceClient.listTransferJobsCallable().call(request);
-   *     for (TransferTypes.TransferJob element : response.getResponsesList()) {
+   *     for (TransferTypes.TransferJob element : response.getTransferJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1115,7 +1115,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
    *   while (true) {
    *     TransferProto.ListAgentPoolsResponse response =
    *         storageTransferServiceClient.listAgentPoolsCallable().call(request);
-   *     for (TransferTypes.AgentPool element : response.getResponsesList()) {
+   *     for (TransferTypes.AgentPool element : response.getAgentPoolsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

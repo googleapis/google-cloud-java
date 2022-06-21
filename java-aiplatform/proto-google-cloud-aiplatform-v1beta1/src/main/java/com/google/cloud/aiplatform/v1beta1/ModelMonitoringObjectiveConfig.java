@@ -314,6 +314,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * The source file is a TFRecord file.
      * "csv"
      * The source file is a CSV file.
+     * "jsonl"
+     * The source file is a JSONL file.
      * </pre>
      *
      * <code>string data_format = 2;</code>
@@ -332,6 +334,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * The source file is a TFRecord file.
      * "csv"
      * The source file is a CSV file.
+     * "jsonl"
+     * The source file is a JSONL file.
      * </pre>
      *
      * <code>string data_format = 2;</code>
@@ -821,6 +825,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * The source file is a TFRecord file.
      * "csv"
      * The source file is a CSV file.
+     * "jsonl"
+     * The source file is a JSONL file.
      * </pre>
      *
      * <code>string data_format = 2;</code>
@@ -850,6 +856,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      * The source file is a TFRecord file.
      * "csv"
      * The source file is a CSV file.
+     * "jsonl"
+     * The source file is a JSONL file.
      * </pre>
      *
      * <code>string data_format = 2;</code>
@@ -2068,6 +2076,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * The source file is a TFRecord file.
        * "csv"
        * The source file is a CSV file.
+       * "jsonl"
+       * The source file is a JSONL file.
        * </pre>
        *
        * <code>string data_format = 2;</code>
@@ -2096,6 +2106,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * The source file is a TFRecord file.
        * "csv"
        * The source file is a CSV file.
+       * "jsonl"
+       * The source file is a JSONL file.
        * </pre>
        *
        * <code>string data_format = 2;</code>
@@ -2124,6 +2136,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * The source file is a TFRecord file.
        * "csv"
        * The source file is a CSV file.
+       * "jsonl"
+       * The source file is a JSONL file.
        * </pre>
        *
        * <code>string data_format = 2;</code>
@@ -2151,6 +2165,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * The source file is a TFRecord file.
        * "csv"
        * The source file is a CSV file.
+       * "jsonl"
+       * The source file is a JSONL file.
        * </pre>
        *
        * <code>string data_format = 2;</code>
@@ -2174,6 +2190,8 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
        * The source file is a TFRecord file.
        * "csv"
        * The source file is a CSV file.
+       * "jsonl"
+       * The source file is a JSONL file.
        * </pre>
        *
        * <code>string data_format = 2;</code>
@@ -2747,6 +2765,47 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      */
     com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreSkewThresholdsOrThrow(
         java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Skew anomaly detection threshold used by all features.
+     * When the per-feature thresholds are not set, this field can be used to
+     * specify a threshold for all features.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+     *
+     * @return Whether the defaultSkewThreshold field is set.
+     */
+    boolean hasDefaultSkewThreshold();
+    /**
+     *
+     *
+     * <pre>
+     * Skew anomaly detection threshold used by all features.
+     * When the per-feature thresholds are not set, this field can be used to
+     * specify a threshold for all features.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+     *
+     * @return The defaultSkewThreshold.
+     */
+    com.google.cloud.aiplatform.v1beta1.ThresholdConfig getDefaultSkewThreshold();
+    /**
+     *
+     *
+     * <pre>
+     * Skew anomaly detection threshold used by all features.
+     * When the per-feature thresholds are not set, this field can be used to
+     * specify a threshold for all features.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+     */
+    com.google.cloud.aiplatform.v1beta1.ThresholdConfigOrBuilder getDefaultSkewThresholdOrBuilder();
   }
   /**
    *
@@ -2842,6 +2901,23 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                     .put(
                         attributionScoreSkewThresholds__.getKey(),
                         attributionScoreSkewThresholds__.getValue());
+                break;
+              }
+            case 50:
+              {
+                com.google.cloud.aiplatform.v1beta1.ThresholdConfig.Builder subBuilder = null;
+                if (defaultSkewThreshold_ != null) {
+                  subBuilder = defaultSkewThreshold_.toBuilder();
+                }
+                defaultSkewThreshold_ =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.ThresholdConfig.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(defaultSkewThreshold_);
+                  defaultSkewThreshold_ = subBuilder.buildPartial();
+                }
+
                 break;
               }
             default:
@@ -3159,6 +3235,61 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       return map.get(key);
     }
 
+    public static final int DEFAULT_SKEW_THRESHOLD_FIELD_NUMBER = 6;
+    private com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultSkewThreshold_;
+    /**
+     *
+     *
+     * <pre>
+     * Skew anomaly detection threshold used by all features.
+     * When the per-feature thresholds are not set, this field can be used to
+     * specify a threshold for all features.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+     *
+     * @return Whether the defaultSkewThreshold field is set.
+     */
+    @java.lang.Override
+    public boolean hasDefaultSkewThreshold() {
+      return defaultSkewThreshold_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Skew anomaly detection threshold used by all features.
+     * When the per-feature thresholds are not set, this field can be used to
+     * specify a threshold for all features.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+     *
+     * @return The defaultSkewThreshold.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getDefaultSkewThreshold() {
+      return defaultSkewThreshold_ == null
+          ? com.google.cloud.aiplatform.v1beta1.ThresholdConfig.getDefaultInstance()
+          : defaultSkewThreshold_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Skew anomaly detection threshold used by all features.
+     * When the per-feature thresholds are not set, this field can be used to
+     * specify a threshold for all features.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ThresholdConfigOrBuilder
+        getDefaultSkewThresholdOrBuilder() {
+      return getDefaultSkewThreshold();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3180,6 +3311,9 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           internalGetAttributionScoreSkewThresholds(),
           AttributionScoreSkewThresholdsDefaultEntryHolder.defaultEntry,
           2);
+      if (defaultSkewThreshold_ != null) {
+        output.writeMessage(6, getDefaultSkewThreshold());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3217,6 +3351,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 2, attributionScoreSkewThresholds__);
       }
+      if (defaultSkewThreshold_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDefaultSkewThreshold());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3243,6 +3381,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       if (!internalGetSkewThresholds().equals(other.internalGetSkewThresholds())) return false;
       if (!internalGetAttributionScoreSkewThresholds()
           .equals(other.internalGetAttributionScoreSkewThresholds())) return false;
+      if (hasDefaultSkewThreshold() != other.hasDefaultSkewThreshold()) return false;
+      if (hasDefaultSkewThreshold()) {
+        if (!getDefaultSkewThreshold().equals(other.getDefaultSkewThreshold())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3261,6 +3403,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       if (!internalGetAttributionScoreSkewThresholds().getMap().isEmpty()) {
         hash = (37 * hash) + ATTRIBUTION_SCORE_SKEW_THRESHOLDS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAttributionScoreSkewThresholds().hashCode();
+      }
+      if (hasDefaultSkewThreshold()) {
+        hash = (37 * hash) + DEFAULT_SKEW_THRESHOLD_FIELD_NUMBER;
+        hash = (53 * hash) + getDefaultSkewThreshold().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3462,6 +3608,12 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         super.clear();
         internalGetMutableSkewThresholds().clear();
         internalGetMutableAttributionScoreSkewThresholds().clear();
+        if (defaultSkewThresholdBuilder_ == null) {
+          defaultSkewThreshold_ = null;
+        } else {
+          defaultSkewThreshold_ = null;
+          defaultSkewThresholdBuilder_ = null;
+        }
         return this;
       }
 
@@ -3506,6 +3658,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         result.skewThresholds_.makeImmutable();
         result.attributionScoreSkewThresholds_ = internalGetAttributionScoreSkewThresholds();
         result.attributionScoreSkewThresholds_.makeImmutable();
+        if (defaultSkewThresholdBuilder_ == null) {
+          result.defaultSkewThreshold_ = defaultSkewThreshold_;
+        } else {
+          result.defaultSkewThreshold_ = defaultSkewThresholdBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -3571,6 +3728,9 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         internalGetMutableSkewThresholds().mergeFrom(other.internalGetSkewThresholds());
         internalGetMutableAttributionScoreSkewThresholds()
             .mergeFrom(other.internalGetAttributionScoreSkewThresholds());
+        if (other.hasDefaultSkewThreshold()) {
+          mergeDefaultSkewThreshold(other.getDefaultSkewThreshold());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4022,6 +4182,215 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         return this;
       }
 
+      private com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultSkewThreshold_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.ThresholdConfig,
+              com.google.cloud.aiplatform.v1beta1.ThresholdConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.ThresholdConfigOrBuilder>
+          defaultSkewThresholdBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Skew anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+       *
+       * @return Whether the defaultSkewThreshold field is set.
+       */
+      public boolean hasDefaultSkewThreshold() {
+        return defaultSkewThresholdBuilder_ != null || defaultSkewThreshold_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Skew anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+       *
+       * @return The defaultSkewThreshold.
+       */
+      public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getDefaultSkewThreshold() {
+        if (defaultSkewThresholdBuilder_ == null) {
+          return defaultSkewThreshold_ == null
+              ? com.google.cloud.aiplatform.v1beta1.ThresholdConfig.getDefaultInstance()
+              : defaultSkewThreshold_;
+        } else {
+          return defaultSkewThresholdBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Skew anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+       */
+      public Builder setDefaultSkewThreshold(
+          com.google.cloud.aiplatform.v1beta1.ThresholdConfig value) {
+        if (defaultSkewThresholdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          defaultSkewThreshold_ = value;
+          onChanged();
+        } else {
+          defaultSkewThresholdBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Skew anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+       */
+      public Builder setDefaultSkewThreshold(
+          com.google.cloud.aiplatform.v1beta1.ThresholdConfig.Builder builderForValue) {
+        if (defaultSkewThresholdBuilder_ == null) {
+          defaultSkewThreshold_ = builderForValue.build();
+          onChanged();
+        } else {
+          defaultSkewThresholdBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Skew anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+       */
+      public Builder mergeDefaultSkewThreshold(
+          com.google.cloud.aiplatform.v1beta1.ThresholdConfig value) {
+        if (defaultSkewThresholdBuilder_ == null) {
+          if (defaultSkewThreshold_ != null) {
+            defaultSkewThreshold_ =
+                com.google.cloud.aiplatform.v1beta1.ThresholdConfig.newBuilder(
+                        defaultSkewThreshold_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            defaultSkewThreshold_ = value;
+          }
+          onChanged();
+        } else {
+          defaultSkewThresholdBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Skew anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+       */
+      public Builder clearDefaultSkewThreshold() {
+        if (defaultSkewThresholdBuilder_ == null) {
+          defaultSkewThreshold_ = null;
+          onChanged();
+        } else {
+          defaultSkewThreshold_ = null;
+          defaultSkewThresholdBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Skew anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ThresholdConfig.Builder
+          getDefaultSkewThresholdBuilder() {
+
+        onChanged();
+        return getDefaultSkewThresholdFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Skew anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ThresholdConfigOrBuilder
+          getDefaultSkewThresholdOrBuilder() {
+        if (defaultSkewThresholdBuilder_ != null) {
+          return defaultSkewThresholdBuilder_.getMessageOrBuilder();
+        } else {
+          return defaultSkewThreshold_ == null
+              ? com.google.cloud.aiplatform.v1beta1.ThresholdConfig.getDefaultInstance()
+              : defaultSkewThreshold_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Skew anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_skew_threshold = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.ThresholdConfig,
+              com.google.cloud.aiplatform.v1beta1.ThresholdConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.ThresholdConfigOrBuilder>
+          getDefaultSkewThresholdFieldBuilder() {
+        if (defaultSkewThresholdBuilder_ == null) {
+          defaultSkewThresholdBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.ThresholdConfig,
+                  com.google.cloud.aiplatform.v1beta1.ThresholdConfig.Builder,
+                  com.google.cloud.aiplatform.v1beta1.ThresholdConfigOrBuilder>(
+                  getDefaultSkewThreshold(), getParentForChildren(), isClean());
+          defaultSkewThreshold_ = null;
+        }
+        return defaultSkewThresholdBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4250,6 +4619,48 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
      */
     com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreDriftThresholdsOrThrow(
         java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Drift anomaly detection threshold used by all features.
+     * When the per-feature thresholds are not set, this field can be used to
+     * specify a threshold for all features.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+     *
+     * @return Whether the defaultDriftThreshold field is set.
+     */
+    boolean hasDefaultDriftThreshold();
+    /**
+     *
+     *
+     * <pre>
+     * Drift anomaly detection threshold used by all features.
+     * When the per-feature thresholds are not set, this field can be used to
+     * specify a threshold for all features.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+     *
+     * @return The defaultDriftThreshold.
+     */
+    com.google.cloud.aiplatform.v1beta1.ThresholdConfig getDefaultDriftThreshold();
+    /**
+     *
+     *
+     * <pre>
+     * Drift anomaly detection threshold used by all features.
+     * When the per-feature thresholds are not set, this field can be used to
+     * specify a threshold for all features.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+     */
+    com.google.cloud.aiplatform.v1beta1.ThresholdConfigOrBuilder
+        getDefaultDriftThresholdOrBuilder();
   }
   /**
    *
@@ -4344,6 +4755,23 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
                     .put(
                         attributionScoreDriftThresholds__.getKey(),
                         attributionScoreDriftThresholds__.getValue());
+                break;
+              }
+            case 42:
+              {
+                com.google.cloud.aiplatform.v1beta1.ThresholdConfig.Builder subBuilder = null;
+                if (defaultDriftThreshold_ != null) {
+                  subBuilder = defaultDriftThreshold_.toBuilder();
+                }
+                defaultDriftThreshold_ =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.ThresholdConfig.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(defaultDriftThreshold_);
+                  defaultDriftThreshold_ = subBuilder.buildPartial();
+                }
+
                 break;
               }
             default:
@@ -4657,6 +5085,61 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       return map.get(key);
     }
 
+    public static final int DEFAULT_DRIFT_THRESHOLD_FIELD_NUMBER = 5;
+    private com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultDriftThreshold_;
+    /**
+     *
+     *
+     * <pre>
+     * Drift anomaly detection threshold used by all features.
+     * When the per-feature thresholds are not set, this field can be used to
+     * specify a threshold for all features.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+     *
+     * @return Whether the defaultDriftThreshold field is set.
+     */
+    @java.lang.Override
+    public boolean hasDefaultDriftThreshold() {
+      return defaultDriftThreshold_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Drift anomaly detection threshold used by all features.
+     * When the per-feature thresholds are not set, this field can be used to
+     * specify a threshold for all features.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+     *
+     * @return The defaultDriftThreshold.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getDefaultDriftThreshold() {
+      return defaultDriftThreshold_ == null
+          ? com.google.cloud.aiplatform.v1beta1.ThresholdConfig.getDefaultInstance()
+          : defaultDriftThreshold_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Drift anomaly detection threshold used by all features.
+     * When the per-feature thresholds are not set, this field can be used to
+     * specify a threshold for all features.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ThresholdConfigOrBuilder
+        getDefaultDriftThresholdOrBuilder() {
+      return getDefaultDriftThreshold();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4678,6 +5161,9 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
           internalGetAttributionScoreDriftThresholds(),
           AttributionScoreDriftThresholdsDefaultEntryHolder.defaultEntry,
           2);
+      if (defaultDriftThreshold_ != null) {
+        output.writeMessage(5, getDefaultDriftThreshold());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4715,6 +5201,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 2, attributionScoreDriftThresholds__);
       }
+      if (defaultDriftThreshold_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDefaultDriftThreshold());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4741,6 +5231,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       if (!internalGetDriftThresholds().equals(other.internalGetDriftThresholds())) return false;
       if (!internalGetAttributionScoreDriftThresholds()
           .equals(other.internalGetAttributionScoreDriftThresholds())) return false;
+      if (hasDefaultDriftThreshold() != other.hasDefaultDriftThreshold()) return false;
+      if (hasDefaultDriftThreshold()) {
+        if (!getDefaultDriftThreshold().equals(other.getDefaultDriftThreshold())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4759,6 +5253,10 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
       if (!internalGetAttributionScoreDriftThresholds().getMap().isEmpty()) {
         hash = (37 * hash) + ATTRIBUTION_SCORE_DRIFT_THRESHOLDS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAttributionScoreDriftThresholds().hashCode();
+      }
+      if (hasDefaultDriftThreshold()) {
+        hash = (37 * hash) + DEFAULT_DRIFT_THRESHOLD_FIELD_NUMBER;
+        hash = (53 * hash) + getDefaultDriftThreshold().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4959,6 +5457,12 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         super.clear();
         internalGetMutableDriftThresholds().clear();
         internalGetMutableAttributionScoreDriftThresholds().clear();
+        if (defaultDriftThresholdBuilder_ == null) {
+          defaultDriftThreshold_ = null;
+        } else {
+          defaultDriftThreshold_ = null;
+          defaultDriftThresholdBuilder_ = null;
+        }
         return this;
       }
 
@@ -5003,6 +5507,11 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         result.driftThresholds_.makeImmutable();
         result.attributionScoreDriftThresholds_ = internalGetAttributionScoreDriftThresholds();
         result.attributionScoreDriftThresholds_.makeImmutable();
+        if (defaultDriftThresholdBuilder_ == null) {
+          result.defaultDriftThreshold_ = defaultDriftThreshold_;
+        } else {
+          result.defaultDriftThreshold_ = defaultDriftThresholdBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -5068,6 +5577,9 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
         internalGetMutableDriftThresholds().mergeFrom(other.internalGetDriftThresholds());
         internalGetMutableAttributionScoreDriftThresholds()
             .mergeFrom(other.internalGetAttributionScoreDriftThresholds());
+        if (other.hasDefaultDriftThreshold()) {
+          mergeDefaultDriftThreshold(other.getDefaultDriftThreshold());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -5510,6 +6022,215 @@ public final class ModelMonitoringObjectiveConfig extends com.google.protobuf.Ge
               values) {
         internalGetMutableAttributionScoreDriftThresholds().getMutableMap().putAll(values);
         return this;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultDriftThreshold_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.ThresholdConfig,
+              com.google.cloud.aiplatform.v1beta1.ThresholdConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.ThresholdConfigOrBuilder>
+          defaultDriftThresholdBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Drift anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+       *
+       * @return Whether the defaultDriftThreshold field is set.
+       */
+      public boolean hasDefaultDriftThreshold() {
+        return defaultDriftThresholdBuilder_ != null || defaultDriftThreshold_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Drift anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+       *
+       * @return The defaultDriftThreshold.
+       */
+      public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getDefaultDriftThreshold() {
+        if (defaultDriftThresholdBuilder_ == null) {
+          return defaultDriftThreshold_ == null
+              ? com.google.cloud.aiplatform.v1beta1.ThresholdConfig.getDefaultInstance()
+              : defaultDriftThreshold_;
+        } else {
+          return defaultDriftThresholdBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Drift anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+       */
+      public Builder setDefaultDriftThreshold(
+          com.google.cloud.aiplatform.v1beta1.ThresholdConfig value) {
+        if (defaultDriftThresholdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          defaultDriftThreshold_ = value;
+          onChanged();
+        } else {
+          defaultDriftThresholdBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Drift anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+       */
+      public Builder setDefaultDriftThreshold(
+          com.google.cloud.aiplatform.v1beta1.ThresholdConfig.Builder builderForValue) {
+        if (defaultDriftThresholdBuilder_ == null) {
+          defaultDriftThreshold_ = builderForValue.build();
+          onChanged();
+        } else {
+          defaultDriftThresholdBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Drift anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+       */
+      public Builder mergeDefaultDriftThreshold(
+          com.google.cloud.aiplatform.v1beta1.ThresholdConfig value) {
+        if (defaultDriftThresholdBuilder_ == null) {
+          if (defaultDriftThreshold_ != null) {
+            defaultDriftThreshold_ =
+                com.google.cloud.aiplatform.v1beta1.ThresholdConfig.newBuilder(
+                        defaultDriftThreshold_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            defaultDriftThreshold_ = value;
+          }
+          onChanged();
+        } else {
+          defaultDriftThresholdBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Drift anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+       */
+      public Builder clearDefaultDriftThreshold() {
+        if (defaultDriftThresholdBuilder_ == null) {
+          defaultDriftThreshold_ = null;
+          onChanged();
+        } else {
+          defaultDriftThreshold_ = null;
+          defaultDriftThresholdBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Drift anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ThresholdConfig.Builder
+          getDefaultDriftThresholdBuilder() {
+
+        onChanged();
+        return getDefaultDriftThresholdFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Drift anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ThresholdConfigOrBuilder
+          getDefaultDriftThresholdOrBuilder() {
+        if (defaultDriftThresholdBuilder_ != null) {
+          return defaultDriftThresholdBuilder_.getMessageOrBuilder();
+        } else {
+          return defaultDriftThreshold_ == null
+              ? com.google.cloud.aiplatform.v1beta1.ThresholdConfig.getDefaultInstance()
+              : defaultDriftThreshold_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Drift anomaly detection threshold used by all features.
+       * When the per-feature thresholds are not set, this field can be used to
+       * specify a threshold for all features.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ThresholdConfig default_drift_threshold = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.ThresholdConfig,
+              com.google.cloud.aiplatform.v1beta1.ThresholdConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.ThresholdConfigOrBuilder>
+          getDefaultDriftThresholdFieldBuilder() {
+        if (defaultDriftThresholdBuilder_ == null) {
+          defaultDriftThresholdBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.ThresholdConfig,
+                  com.google.cloud.aiplatform.v1beta1.ThresholdConfig.Builder,
+                  com.google.cloud.aiplatform.v1beta1.ThresholdConfigOrBuilder>(
+                  getDefaultDriftThreshold(), getParentForChildren(), isClean());
+          defaultDriftThreshold_ = null;
+        }
+        return defaultDriftThresholdBuilder_;
       }
 
       @java.lang.Override

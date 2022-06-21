@@ -387,7 +387,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListAlertPoliciesResponse response =
    *         alertPolicyServiceClient.listAlertPoliciesCallable().call(request);
-   *     for (AlertPolicy element : response.getResponsesList()) {
+   *     for (AlertPolicy element : response.getAlertPoliciesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

@@ -325,7 +325,7 @@ public class GameServerClustersServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListGameServerClustersResponse response =
    *         gameServerClustersServiceClient.listGameServerClustersCallable().call(request);
-   *     for (GameServerCluster element : response.getResponsesList()) {
+   *     for (GameServerCluster element : response.getGameServerClustersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

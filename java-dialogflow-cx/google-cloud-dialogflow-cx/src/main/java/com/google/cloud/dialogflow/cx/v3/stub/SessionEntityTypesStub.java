@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3.stub;
 
+import static com.google.cloud.dialogflow.cx.v3.SessionEntityTypesClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.SessionEntityTypesClient.ListSessionEntityTypesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -27,6 +28,10 @@ import com.google.cloud.dialogflow.cx.v3.ListSessionEntityTypesRequest;
 import com.google.cloud.dialogflow.cx.v3.ListSessionEntityTypesResponse;
 import com.google.cloud.dialogflow.cx.v3.SessionEntityType;
 import com.google.cloud.dialogflow.cx.v3.UpdateSessionEntityTypeRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -67,6 +72,19 @@ public abstract class SessionEntityTypesStub implements BackgroundResource {
 
   public UnaryCallable<DeleteSessionEntityTypeRequest, Empty> deleteSessionEntityTypeCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSessionEntityTypeCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

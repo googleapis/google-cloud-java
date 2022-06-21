@@ -2033,10 +2033,10 @@ public interface ProductOrBuilder
    * following fields are always returned in by default:
    * * [name][google.cloud.retail.v2.Product.name]
    * * [color_info][google.cloud.retail.v2.Product.color_info]
-   * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
+   * The maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * Note: Returning more fields in
-   * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+   * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
    * response payload size and serving latency.
    * </pre>
    *
@@ -2088,10 +2088,10 @@ public interface ProductOrBuilder
    * following fields are always returned in by default:
    * * [name][google.cloud.retail.v2.Product.name]
    * * [color_info][google.cloud.retail.v2.Product.color_info]
-   * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
+   * The maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * Note: Returning more fields in
-   * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+   * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
    * response payload size and serving latency.
    * </pre>
    *
@@ -2143,10 +2143,10 @@ public interface ProductOrBuilder
    * following fields are always returned in by default:
    * * [name][google.cloud.retail.v2.Product.name]
    * * [color_info][google.cloud.retail.v2.Product.color_info]
-   * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
+   * The maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
    * returned.
    * Note: Returning more fields in
-   * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+   * [SearchResponse][google.cloud.retail.v2.SearchResponse] can increase
    * response payload size and serving latency.
    * </pre>
    *

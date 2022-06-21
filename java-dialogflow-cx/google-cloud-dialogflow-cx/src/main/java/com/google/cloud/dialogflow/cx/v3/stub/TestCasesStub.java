@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3.stub;
 
+import static com.google.cloud.dialogflow.cx.v3.TestCasesClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.TestCasesClient.ListTestCaseResultsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.TestCasesClient.ListTestCasesPagedResponse;
 
@@ -47,6 +48,10 @@ import com.google.cloud.dialogflow.cx.v3.RunTestCaseResponse;
 import com.google.cloud.dialogflow.cx.v3.TestCase;
 import com.google.cloud.dialogflow.cx.v3.TestCaseResult;
 import com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -145,6 +150,19 @@ public abstract class TestCasesStub implements BackgroundResource {
 
   public UnaryCallable<GetTestCaseResultRequest, TestCaseResult> getTestCaseResultCallable() {
     throw new UnsupportedOperationException("Not implemented: getTestCaseResultCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
  *     PublicAdvertisedPrefixesClient.create()) {
  *   String project = "project-309310695";
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * PublicAdvertisedPrefixesSettings publicAdvertisedPrefixesSettings =
  *     PublicAdvertisedPrefixesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * PublicAdvertisedPrefixesSettings publicAdvertisedPrefixesSettings =
  *     PublicAdvertisedPrefixesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
@@ -125,7 +131,6 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * Constructs an instance of PublicAdvertisedPrefixesClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(PublicAdvertisedPrefixesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final PublicAdvertisedPrefixesClient create(PublicAdvertisedPrefixesStub stub) {
     return new PublicAdvertisedPrefixesClient(stub);
   }
@@ -141,7 +146,6 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     this.stub = ((PublicAdvertisedPrefixesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected PublicAdvertisedPrefixesClient(PublicAdvertisedPrefixesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -151,7 +155,6 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public PublicAdvertisedPrefixesStub getStub() {
     return stub;
   }
@@ -163,6 +166,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   String project = "project-309310695";
@@ -193,6 +198,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   DeletePublicAdvertisedPrefixeRequest request =
@@ -222,6 +229,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   DeletePublicAdvertisedPrefixeRequest request =
@@ -249,6 +258,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   DeletePublicAdvertisedPrefixeRequest request =
@@ -275,6 +286,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   String project = "project-309310695";
@@ -304,6 +317,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   GetPublicAdvertisedPrefixeRequest request =
@@ -329,6 +344,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   GetPublicAdvertisedPrefixeRequest request =
@@ -356,6 +373,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   String project = "project-309310695";
@@ -388,6 +407,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   InsertPublicAdvertisedPrefixeRequest request =
@@ -418,6 +439,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   InsertPublicAdvertisedPrefixeRequest request =
@@ -446,6 +469,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   InsertPublicAdvertisedPrefixeRequest request =
@@ -472,6 +497,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   String project = "project-309310695";
@@ -498,6 +525,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   ListPublicAdvertisedPrefixesRequest request =
@@ -530,6 +559,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   ListPublicAdvertisedPrefixesRequest request =
@@ -562,6 +593,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   ListPublicAdvertisedPrefixesRequest request =
@@ -576,7 +609,7 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    *   while (true) {
    *     PublicAdvertisedPrefixList response =
    *         publicAdvertisedPrefixesClient.listCallable().call(request);
-   *     for (PublicAdvertisedPrefix element : response.getResponsesList()) {
+   *     for (PublicAdvertisedPrefix element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -602,6 +635,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   String project = "project-309310695";
@@ -641,6 +676,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   PatchPublicAdvertisedPrefixeRequest request =
@@ -672,6 +709,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   PatchPublicAdvertisedPrefixeRequest request =
@@ -701,6 +740,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (PublicAdvertisedPrefixesClient publicAdvertisedPrefixesClient =
    *     PublicAdvertisedPrefixesClient.create()) {
    *   PatchPublicAdvertisedPrefixeRequest request =

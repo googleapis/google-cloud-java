@@ -22,7 +22,9 @@ package com.google.cloud.retail.v2;
  *
  *
  * <pre>
- * Request message for [AddFulfillmentPlaces][] method.
+ * Request message for
+ * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2.AddFulfillmentPlacesRequest}
@@ -692,7 +694,9 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request message for [AddFulfillmentPlaces][] method.
+   * Request message for
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2.AddFulfillmentPlacesRequest}

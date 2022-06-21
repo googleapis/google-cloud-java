@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
  *   String project = "project-309310695";
  *   String sslPolicy = "sslPolicy618174046";
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SslPoliciesSettings sslPoliciesSettings =
  *     SslPoliciesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SslPoliciesSettings sslPoliciesSettings =
  *     SslPoliciesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create(sslPoliciesSettings);
@@ -118,7 +124,6 @@ public class SslPoliciesClient implements BackgroundResource {
    * Constructs an instance of SslPoliciesClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(SslPoliciesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SslPoliciesClient create(SslPoliciesStub stub) {
     return new SslPoliciesClient(stub);
   }
@@ -133,7 +138,6 @@ public class SslPoliciesClient implements BackgroundResource {
     this.stub = ((SslPoliciesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SslPoliciesClient(SslPoliciesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -143,7 +147,6 @@ public class SslPoliciesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SslPoliciesStub getStub() {
     return stub;
   }
@@ -156,6 +159,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   String sslPolicy = "sslPolicy618174046";
@@ -182,6 +187,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   DeleteSslPolicyRequest request =
    *       DeleteSslPolicyRequest.newBuilder()
@@ -210,6 +217,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   DeleteSslPolicyRequest request =
    *       DeleteSslPolicyRequest.newBuilder()
@@ -237,6 +246,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   DeleteSslPolicyRequest request =
    *       DeleteSslPolicyRequest.newBuilder()
@@ -261,6 +272,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   String sslPolicy = "sslPolicy618174046";
@@ -286,6 +299,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   GetSslPolicyRequest request =
    *       GetSslPolicyRequest.newBuilder()
@@ -310,6 +325,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   GetSslPolicyRequest request =
    *       GetSslPolicyRequest.newBuilder()
@@ -334,6 +351,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
@@ -363,6 +382,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   InsertSslPolicyRequest request =
    *       InsertSslPolicyRequest.newBuilder()
@@ -391,6 +412,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   InsertSslPolicyRequest request =
    *       InsertSslPolicyRequest.newBuilder()
@@ -418,6 +441,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   InsertSslPolicyRequest request =
    *       InsertSslPolicyRequest.newBuilder()
@@ -442,6 +467,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   for (SslPolicy element : sslPoliciesClient.list(project).iterateAll()) {
@@ -466,6 +493,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   ListSslPoliciesRequest request =
    *       ListSslPoliciesRequest.newBuilder()
@@ -496,6 +525,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   ListSslPoliciesRequest request =
    *       ListSslPoliciesRequest.newBuilder()
@@ -525,6 +556,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   ListSslPoliciesRequest request =
    *       ListSslPoliciesRequest.newBuilder()
@@ -537,7 +570,7 @@ public class SslPoliciesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     SslPoliciesList response = sslPoliciesClient.listCallable().call(request);
-   *     for (SslPolicy element : response.getResponsesList()) {
+   *     for (SslPolicy element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -561,6 +594,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   SslPoliciesListAvailableFeaturesResponse response =
@@ -584,6 +619,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   ListAvailableFeaturesSslPoliciesRequest request =
    *       ListAvailableFeaturesSslPoliciesRequest.newBuilder()
@@ -614,6 +651,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   ListAvailableFeaturesSslPoliciesRequest request =
    *       ListAvailableFeaturesSslPoliciesRequest.newBuilder()
@@ -644,6 +683,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   String sslPolicy = "sslPolicy618174046";
@@ -677,6 +718,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   PatchSslPolicyRequest request =
    *       PatchSslPolicyRequest.newBuilder()
@@ -705,6 +748,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   PatchSslPolicyRequest request =
    *       PatchSslPolicyRequest.newBuilder()
@@ -732,6 +777,8 @@ public class SslPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   PatchSslPolicyRequest request =
    *       PatchSslPolicyRequest.newBuilder()

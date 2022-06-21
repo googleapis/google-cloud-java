@@ -100,6 +100,8 @@ public interface ClusterOrBuilder
    *
    * <code>int32 initial_node_count = 3 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.initial_node_count is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1426
    * @return The initialNodeCount.
    */
   @java.lang.Deprecated
@@ -123,6 +125,8 @@ public interface ClusterOrBuilder
    *
    * <code>.google.container.v1beta1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.node_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1439
    * @return Whether the nodeConfig field is set.
    */
   @java.lang.Deprecated
@@ -145,6 +149,8 @@ public interface ClusterOrBuilder
    *
    * <code>.google.container.v1beta1.NodeConfig node_config = 4 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.node_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1439
    * @return The nodeConfig.
    */
   @java.lang.Deprecated
@@ -638,7 +644,12 @@ public interface ClusterOrBuilder
    *
    * <code>map&lt;string, string&gt; resource_labels = 15;</code>
    */
-  java.lang.String getResourceLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getResourceLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -1012,6 +1023,8 @@ public interface ClusterOrBuilder
    *
    * <code>bool private_cluster = 28 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.private_cluster is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1561
    * @return The privateCluster.
    */
   @java.lang.Deprecated
@@ -1030,6 +1043,8 @@ public interface ClusterOrBuilder
    *
    * <code>string master_ipv4_cidr_block = 29 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.master_ipv4_cidr_block is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1568
    * @return The masterIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -1047,6 +1062,8 @@ public interface ClusterOrBuilder
    *
    * <code>string master_ipv4_cidr_block = 29 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.master_ipv4_cidr_block is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1568
    * @return The bytes for masterIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -1639,6 +1656,8 @@ public interface ClusterOrBuilder
    *
    * <code>string zone = 101 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1627
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -1654,6 +1673,8 @@ public interface ClusterOrBuilder
    *
    * <code>string zone = 101 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.zone is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1627
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -1775,6 +1796,8 @@ public interface ClusterOrBuilder
    *
    * <code>string current_node_version = 105 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1660
    * @return The currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1792,6 +1815,8 @@ public interface ClusterOrBuilder
    *
    * <code>string current_node_version = 105 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.current_node_version is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1660
    * @return The bytes for currentNodeVersion.
    */
   @java.lang.Deprecated
@@ -1860,6 +1885,8 @@ public interface ClusterOrBuilder
    *
    * <code>string status_message = 108 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1672
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -1875,6 +1902,8 @@ public interface ClusterOrBuilder
    *
    * <code>string status_message = 108 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.status_message is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1672
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -1938,6 +1967,8 @@ public interface ClusterOrBuilder
    *
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1688
    * @return A list containing the instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -1951,6 +1982,8 @@ public interface ClusterOrBuilder
    *
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1688
    * @return The count of instanceGroupUrls.
    */
   @java.lang.Deprecated
@@ -1964,6 +1997,8 @@ public interface ClusterOrBuilder
    *
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1688
    * @param index The index of the element to return.
    * @return The instanceGroupUrls at the given index.
    */
@@ -1978,6 +2013,8 @@ public interface ClusterOrBuilder
    *
    * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.instance_group_urls is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1688
    * @param index The index of the value to return.
    * @return The bytes of the instanceGroupUrls at the given index.
    */
@@ -1994,6 +2031,8 @@ public interface ClusterOrBuilder
    *
    * <code>int32 current_node_count = 112 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.Cluster.current_node_count is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=1692
    * @return The currentNodeCount.
    */
   @java.lang.Deprecated

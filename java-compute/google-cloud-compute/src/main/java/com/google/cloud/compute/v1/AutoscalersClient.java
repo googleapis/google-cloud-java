@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AutoscalersSettings autoscalersSettings =
  *     AutoscalersSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AutoscalersSettings autoscalersSettings =
  *     AutoscalersSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AutoscalersClient autoscalersClient = AutoscalersClient.create(autoscalersSettings);
@@ -120,7 +126,6 @@ public class AutoscalersClient implements BackgroundResource {
    * Constructs an instance of AutoscalersClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(AutoscalersSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AutoscalersClient create(AutoscalersStub stub) {
     return new AutoscalersClient(stub);
   }
@@ -135,7 +140,6 @@ public class AutoscalersClient implements BackgroundResource {
     this.stub = ((AutoscalersStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AutoscalersClient(AutoscalersStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -145,7 +149,6 @@ public class AutoscalersClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AutoscalersStub getStub() {
     return stub;
   }
@@ -157,6 +160,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, AutoscalersScopedList> element :
@@ -182,6 +187,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   AggregatedListAutoscalersRequest request =
    *       AggregatedListAutoscalersRequest.newBuilder()
@@ -215,6 +222,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   AggregatedListAutoscalersRequest request =
    *       AggregatedListAutoscalersRequest.newBuilder()
@@ -247,6 +256,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   AggregatedListAutoscalersRequest request =
    *       AggregatedListAutoscalersRequest.newBuilder()
@@ -261,7 +272,7 @@ public class AutoscalersClient implements BackgroundResource {
    *   while (true) {
    *     AutoscalerAggregatedList response =
    *         autoscalersClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, AutoscalersScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, AutoscalersScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -286,6 +297,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -317,6 +330,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   DeleteAutoscalerRequest request =
    *       DeleteAutoscalerRequest.newBuilder()
@@ -345,6 +360,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   DeleteAutoscalerRequest request =
    *       DeleteAutoscalerRequest.newBuilder()
@@ -372,6 +389,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   DeleteAutoscalerRequest request =
    *       DeleteAutoscalerRequest.newBuilder()
@@ -398,6 +417,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -429,6 +450,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   GetAutoscalerRequest request =
    *       GetAutoscalerRequest.newBuilder()
@@ -455,6 +478,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   GetAutoscalerRequest request =
    *       GetAutoscalerRequest.newBuilder()
@@ -479,6 +504,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -510,6 +537,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   InsertAutoscalerRequest request =
    *       InsertAutoscalerRequest.newBuilder()
@@ -538,6 +567,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   InsertAutoscalerRequest request =
    *       InsertAutoscalerRequest.newBuilder()
@@ -565,6 +596,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   InsertAutoscalerRequest request =
    *       InsertAutoscalerRequest.newBuilder()
@@ -590,6 +623,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -616,6 +651,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   ListAutoscalersRequest request =
    *       ListAutoscalersRequest.newBuilder()
@@ -647,6 +684,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   ListAutoscalersRequest request =
    *       ListAutoscalersRequest.newBuilder()
@@ -677,6 +716,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   ListAutoscalersRequest request =
    *       ListAutoscalersRequest.newBuilder()
@@ -690,7 +731,7 @@ public class AutoscalersClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     AutoscalerList response = autoscalersClient.listCallable().call(request);
-   *     for (Autoscaler element : response.getResponsesList()) {
+   *     for (Autoscaler element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -715,6 +756,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -747,6 +790,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   PatchAutoscalerRequest request =
    *       PatchAutoscalerRequest.newBuilder()
@@ -777,6 +822,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   PatchAutoscalerRequest request =
    *       PatchAutoscalerRequest.newBuilder()
@@ -806,6 +853,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   PatchAutoscalerRequest request =
    *       PatchAutoscalerRequest.newBuilder()
@@ -832,6 +881,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -863,6 +914,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   UpdateAutoscalerRequest request =
    *       UpdateAutoscalerRequest.newBuilder()
@@ -892,6 +945,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   UpdateAutoscalerRequest request =
    *       UpdateAutoscalerRequest.newBuilder()
@@ -920,6 +975,8 @@ public class AutoscalersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
    *   UpdateAutoscalerRequest request =
    *       UpdateAutoscalerRequest.newBuilder()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * VpnGatewaysSettings vpnGatewaysSettings =
  *     VpnGatewaysSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * VpnGatewaysSettings vpnGatewaysSettings =
  *     VpnGatewaysSettings.newBuilder().setEndpoint(myEndpoint).build();
  * VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create(vpnGatewaysSettings);
@@ -120,7 +126,6 @@ public class VpnGatewaysClient implements BackgroundResource {
    * Constructs an instance of VpnGatewaysClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(VpnGatewaysSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final VpnGatewaysClient create(VpnGatewaysStub stub) {
     return new VpnGatewaysClient(stub);
   }
@@ -135,7 +140,6 @@ public class VpnGatewaysClient implements BackgroundResource {
     this.stub = ((VpnGatewaysStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected VpnGatewaysClient(VpnGatewaysStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -145,7 +149,6 @@ public class VpnGatewaysClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public VpnGatewaysStub getStub() {
     return stub;
   }
@@ -157,6 +160,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, VpnGatewaysScopedList> element :
@@ -182,6 +187,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   AggregatedListVpnGatewaysRequest request =
    *       AggregatedListVpnGatewaysRequest.newBuilder()
@@ -215,6 +222,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   AggregatedListVpnGatewaysRequest request =
    *       AggregatedListVpnGatewaysRequest.newBuilder()
@@ -247,6 +256,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   AggregatedListVpnGatewaysRequest request =
    *       AggregatedListVpnGatewaysRequest.newBuilder()
@@ -261,7 +272,7 @@ public class VpnGatewaysClient implements BackgroundResource {
    *   while (true) {
    *     VpnGatewayAggregatedList response =
    *         vpnGatewaysClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, VpnGatewaysScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, VpnGatewaysScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -286,6 +297,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -317,6 +330,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   DeleteVpnGatewayRequest request =
    *       DeleteVpnGatewayRequest.newBuilder()
@@ -345,6 +360,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   DeleteVpnGatewayRequest request =
    *       DeleteVpnGatewayRequest.newBuilder()
@@ -372,6 +389,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   DeleteVpnGatewayRequest request =
    *       DeleteVpnGatewayRequest.newBuilder()
@@ -398,6 +417,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -429,6 +450,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   GetVpnGatewayRequest request =
    *       GetVpnGatewayRequest.newBuilder()
@@ -455,6 +478,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   GetVpnGatewayRequest request =
    *       GetVpnGatewayRequest.newBuilder()
@@ -479,6 +504,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -511,6 +538,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   GetStatusVpnGatewayRequest request =
    *       GetStatusVpnGatewayRequest.newBuilder()
@@ -536,6 +565,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   GetStatusVpnGatewayRequest request =
    *       GetStatusVpnGatewayRequest.newBuilder()
@@ -563,6 +594,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -595,6 +628,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   InsertVpnGatewayRequest request =
    *       InsertVpnGatewayRequest.newBuilder()
@@ -624,6 +659,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   InsertVpnGatewayRequest request =
    *       InsertVpnGatewayRequest.newBuilder()
@@ -652,6 +689,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   InsertVpnGatewayRequest request =
    *       InsertVpnGatewayRequest.newBuilder()
@@ -677,6 +716,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -703,6 +744,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   ListVpnGatewaysRequest request =
    *       ListVpnGatewaysRequest.newBuilder()
@@ -734,6 +777,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   ListVpnGatewaysRequest request =
    *       ListVpnGatewaysRequest.newBuilder()
@@ -764,6 +809,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   ListVpnGatewaysRequest request =
    *       ListVpnGatewaysRequest.newBuilder()
@@ -777,7 +824,7 @@ public class VpnGatewaysClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     VpnGatewayList response = vpnGatewaysClient.listCallable().call(request);
-   *     for (VpnGateway element : response.getResponsesList()) {
+   *     for (VpnGateway element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -802,6 +849,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -844,6 +893,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   SetLabelsVpnGatewayRequest request =
    *       SetLabelsVpnGatewayRequest.newBuilder()
@@ -875,6 +926,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   SetLabelsVpnGatewayRequest request =
    *       SetLabelsVpnGatewayRequest.newBuilder()
@@ -904,6 +957,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   SetLabelsVpnGatewayRequest request =
    *       SetLabelsVpnGatewayRequest.newBuilder()
@@ -930,6 +985,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -970,6 +1027,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   TestIamPermissionsVpnGatewayRequest request =
    *       TestIamPermissionsVpnGatewayRequest.newBuilder()
@@ -997,6 +1056,8 @@ public class VpnGatewaysClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   TestIamPermissionsVpnGatewayRequest request =
    *       TestIamPermissionsVpnGatewayRequest.newBuilder()

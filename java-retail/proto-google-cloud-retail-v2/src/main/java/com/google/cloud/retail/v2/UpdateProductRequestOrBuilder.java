@@ -92,6 +92,10 @@ public interface UpdateProductRequestOrBuilder
    * fields that are neither immutable nor output only) are updated.
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
+   * The attribute key can be updated by setting the mask path as
+   * "attributes.${key_name}". If a key name is present in the mask but not in
+   * the patching product from the request, this key will be deleted after the
+   * update.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -109,6 +113,10 @@ public interface UpdateProductRequestOrBuilder
    * fields that are neither immutable nor output only) are updated.
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
+   * The attribute key can be updated by setting the mask path as
+   * "attributes.${key_name}". If a key name is present in the mask but not in
+   * the patching product from the request, this key will be deleted after the
+   * update.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -126,6 +134,10 @@ public interface UpdateProductRequestOrBuilder
    * fields that are neither immutable nor output only) are updated.
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
+   * The attribute key can be updated by setting the mask path as
+   * "attributes.${key_name}". If a key name is present in the mask but not in
+   * the patching product from the request, this key will be deleted after the
+   * update.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>

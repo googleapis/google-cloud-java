@@ -34,6 +34,8 @@ public interface GetClusterRequestOrBuilder
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.GetClusterRequest.project_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1960
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -49,6 +51,8 @@ public interface GetClusterRequestOrBuilder
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.GetClusterRequest.project_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1960
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -66,6 +70,8 @@ public interface GetClusterRequestOrBuilder
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.GetClusterRequest.zone is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1966
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -82,6 +88,8 @@ public interface GetClusterRequestOrBuilder
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.GetClusterRequest.zone is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1966
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -97,6 +105,8 @@ public interface GetClusterRequestOrBuilder
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.GetClusterRequest.cluster_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1970
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -111,6 +121,8 @@ public interface GetClusterRequestOrBuilder
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.GetClusterRequest.cluster_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1970
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

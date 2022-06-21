@@ -130,7 +130,6 @@ public class WorkflowsClient implements BackgroundResource {
    * Constructs an instance of WorkflowsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(WorkflowsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final WorkflowsClient create(WorkflowsStub stub) {
     return new WorkflowsClient(stub);
   }
@@ -145,7 +144,6 @@ public class WorkflowsClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected WorkflowsClient(WorkflowsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -156,7 +154,6 @@ public class WorkflowsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public WorkflowsStub getStub() {
     return stub;
   }
@@ -306,7 +303,7 @@ public class WorkflowsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListWorkflowsResponse response = workflowsClient.listWorkflowsCallable().call(request);
-   *     for (Workflow element : response.getResponsesList()) {
+   *     for (Workflow element : response.getWorkflowsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

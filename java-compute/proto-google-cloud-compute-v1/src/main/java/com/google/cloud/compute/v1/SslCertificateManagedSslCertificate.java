@@ -117,6 +117,8 @@ public final class SslCertificateManagedSslCertificate
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -425,7 +427,7 @@ public final class SslCertificateManagedSslCertificate
   @java.lang.Override
   public boolean containsDomainStatus(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetDomainStatus().getMap().containsKey(key);
   }
@@ -461,7 +463,7 @@ public final class SslCertificateManagedSslCertificate
   public java.lang.String getDomainStatusOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDomainStatus().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -478,7 +480,7 @@ public final class SslCertificateManagedSslCertificate
   @java.lang.Override
   public java.lang.String getDomainStatusOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDomainStatus().getMap();
     if (!map.containsKey(key)) {
@@ -1066,7 +1068,7 @@ public final class SslCertificateManagedSslCertificate
     @java.lang.Override
     public boolean containsDomainStatus(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetDomainStatus().getMap().containsKey(key);
     }
@@ -1102,7 +1104,7 @@ public final class SslCertificateManagedSslCertificate
     public java.lang.String getDomainStatusOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDomainStatus().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1119,7 +1121,7 @@ public final class SslCertificateManagedSslCertificate
     @java.lang.Override
     public java.lang.String getDomainStatusOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDomainStatus().getMap();
       if (!map.containsKey(key)) {
@@ -1143,7 +1145,7 @@ public final class SslCertificateManagedSslCertificate
      */
     public Builder removeDomainStatus(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableDomainStatus().getMutableMap().remove(key);
       return this;
@@ -1164,11 +1166,12 @@ public final class SslCertificateManagedSslCertificate
      */
     public Builder putDomainStatus(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableDomainStatus().getMutableMap().put(key, value);
       return this;
     }

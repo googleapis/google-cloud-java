@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -42,6 +41,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -79,6 +80,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * MachineTypesSettings machineTypesSettings =
  *     MachineTypesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * MachineTypesSettings machineTypesSettings =
  *     MachineTypesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * MachineTypesClient machineTypesClient = MachineTypesClient.create(machineTypesSettings);
@@ -118,7 +123,6 @@ public class MachineTypesClient implements BackgroundResource {
    * Constructs an instance of MachineTypesClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(MachineTypesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final MachineTypesClient create(MachineTypesStub stub) {
     return new MachineTypesClient(stub);
   }
@@ -133,7 +137,6 @@ public class MachineTypesClient implements BackgroundResource {
     this.stub = ((MachineTypesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected MachineTypesClient(MachineTypesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -143,7 +146,6 @@ public class MachineTypesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MachineTypesStub getStub() {
     return stub;
   }
@@ -155,6 +157,8 @@ public class MachineTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, MachineTypesScopedList> element :
@@ -180,6 +184,8 @@ public class MachineTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
    *   AggregatedListMachineTypesRequest request =
    *       AggregatedListMachineTypesRequest.newBuilder()
@@ -213,6 +219,8 @@ public class MachineTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
    *   AggregatedListMachineTypesRequest request =
    *       AggregatedListMachineTypesRequest.newBuilder()
@@ -245,6 +253,8 @@ public class MachineTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
    *   AggregatedListMachineTypesRequest request =
    *       AggregatedListMachineTypesRequest.newBuilder()
@@ -259,7 +269,7 @@ public class MachineTypesClient implements BackgroundResource {
    *   while (true) {
    *     MachineTypeAggregatedList response =
    *         machineTypesClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, MachineTypesScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, MachineTypesScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -285,6 +295,8 @@ public class MachineTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -316,6 +328,8 @@ public class MachineTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
    *   GetMachineTypeRequest request =
    *       GetMachineTypeRequest.newBuilder()
@@ -342,6 +356,8 @@ public class MachineTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
    *   GetMachineTypeRequest request =
    *       GetMachineTypeRequest.newBuilder()
@@ -366,6 +382,8 @@ public class MachineTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -392,6 +410,8 @@ public class MachineTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
    *   ListMachineTypesRequest request =
    *       ListMachineTypesRequest.newBuilder()
@@ -423,6 +443,8 @@ public class MachineTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
    *   ListMachineTypesRequest request =
    *       ListMachineTypesRequest.newBuilder()
@@ -453,6 +475,8 @@ public class MachineTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (MachineTypesClient machineTypesClient = MachineTypesClient.create()) {
    *   ListMachineTypesRequest request =
    *       ListMachineTypesRequest.newBuilder()
@@ -466,7 +490,7 @@ public class MachineTypesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     MachineTypeList response = machineTypesClient.listCallable().call(request);
-   *     for (MachineType element : response.getResponsesList()) {
+   *     for (MachineType element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

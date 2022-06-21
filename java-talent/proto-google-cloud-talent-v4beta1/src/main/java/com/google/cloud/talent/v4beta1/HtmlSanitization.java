@@ -155,7 +155,7 @@ public enum HtmlSanitization implements com.google.protobuf.ProtocolMessageEnum 
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.talent.v4beta1.CommonProto.getDescriptor().getEnumTypes().get(9);
+    return com.google.cloud.talent.v4beta1.CommonProto.getDescriptor().getEnumTypes().get(8);
   }
 
   private static final HtmlSanitization[] VALUES = values();

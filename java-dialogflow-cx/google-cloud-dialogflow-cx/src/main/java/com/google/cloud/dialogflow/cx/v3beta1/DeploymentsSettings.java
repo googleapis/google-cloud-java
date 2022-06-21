@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3beta1;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.DeploymentsClient.ListDeploymentsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.DeploymentsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -30,6 +31,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.cx.v3beta1.stub.DeploymentsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -81,6 +86,17 @@ public class DeploymentsSettings extends ClientSettings<DeploymentsSettings> {
   /** Returns the object with the settings used for calls to getDeployment. */
   public UnaryCallSettings<GetDeploymentRequest, Deployment> getDeploymentSettings() {
     return ((DeploymentsStubSettings) getStubSettings()).getDeploymentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((DeploymentsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((DeploymentsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final DeploymentsSettings create(DeploymentsStubSettings stub) throws IOException {
@@ -189,6 +205,18 @@ public class DeploymentsSettings extends ClientSettings<DeploymentsSettings> {
     /** Returns the builder for the settings used for calls to getDeployment. */
     public UnaryCallSettings.Builder<GetDeploymentRequest, Deployment> getDeploymentSettings() {
       return getStubSettingsBuilder().getDeploymentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

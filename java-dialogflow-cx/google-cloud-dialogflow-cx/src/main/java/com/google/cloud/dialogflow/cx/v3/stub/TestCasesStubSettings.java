@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3.stub;
 
+import static com.google.cloud.dialogflow.cx.v3.TestCasesClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.TestCasesClient.ListTestCaseResultsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.TestCasesClient.ListTestCasesPagedResponse;
 
@@ -70,6 +71,10 @@ import com.google.cloud.dialogflow.cx.v3.RunTestCaseResponse;
 import com.google.cloud.dialogflow.cx.v3.TestCase;
 import com.google.cloud.dialogflow.cx.v3.TestCaseResult;
 import com.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -152,6 +157,10 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
       listTestCaseResultsSettings;
   private final UnaryCallSettings<GetTestCaseResultRequest, TestCaseResult>
       getTestCaseResultSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListTestCasesRequest, ListTestCasesResponse, TestCase>
       LIST_TEST_CASES_PAGE_STR_DESC =
@@ -229,6 +238,42 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListTestCasesRequest, ListTestCasesResponse, ListTestCasesPagedResponse>
       LIST_TEST_CASES_PAGE_STR_FACT =
@@ -264,6 +309,23 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
                       PageContext.create(
                           callable, LIST_TEST_CASE_RESULTS_PAGE_STR_DESC, request, context);
               return ListTestCaseResultsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -358,6 +420,17 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
     return getTestCaseResultSettings;
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
   public TestCasesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -449,6 +522,8 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
     exportTestCasesOperationSettings = settingsBuilder.exportTestCasesOperationSettings().build();
     listTestCaseResultsSettings = settingsBuilder.listTestCaseResultsSettings().build();
     getTestCaseResultSettings = settingsBuilder.getTestCaseResultSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for TestCasesStubSettings. */
@@ -490,6 +565,10 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
         listTestCaseResultsSettings;
     private final UnaryCallSettings.Builder<GetTestCaseResultRequest, TestCaseResult>
         getTestCaseResultSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -545,6 +624,8 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
       listTestCaseResultsSettings =
           PagedCallSettings.newBuilder(LIST_TEST_CASE_RESULTS_PAGE_STR_FACT);
       getTestCaseResultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -559,7 +640,9 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
               importTestCasesSettings,
               exportTestCasesSettings,
               listTestCaseResultsSettings,
-              getTestCaseResultSettings);
+              getTestCaseResultSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -582,6 +665,8 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
       exportTestCasesOperationSettings = settings.exportTestCasesOperationSettings.toBuilder();
       listTestCaseResultsSettings = settings.listTestCaseResultsSettings.toBuilder();
       getTestCaseResultSettings = settings.getTestCaseResultSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -596,7 +681,9 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
               importTestCasesSettings,
               exportTestCasesSettings,
               listTestCaseResultsSettings,
-              getTestCaseResultSettings);
+              getTestCaseResultSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -670,6 +757,16 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
 
       builder
           .getTestCaseResultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -892,6 +989,18 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
     public UnaryCallSettings.Builder<GetTestCaseResultRequest, TestCaseResult>
         getTestCaseResultSettings() {
       return getTestCaseResultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

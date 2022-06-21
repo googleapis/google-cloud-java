@@ -88,6 +88,8 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -119,7 +121,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
    *
    *
    * <pre>
-   * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+   * A bit indicating if all of the group's per-instance configurations (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
    * </pre>
    *
    * <code>optional bool all_effective = 516540553;</code>
@@ -134,7 +136,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
    *
    *
    * <pre>
-   * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+   * A bit indicating if all of the group's per-instance configurations (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
    * </pre>
    *
    * <code>optional bool all_effective = 516540553;</code>
@@ -507,7 +509,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      *
      *
      * <pre>
-     * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+     * A bit indicating if all of the group's per-instance configurations (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
      * </pre>
      *
      * <code>optional bool all_effective = 516540553;</code>
@@ -522,7 +524,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      *
      *
      * <pre>
-     * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+     * A bit indicating if all of the group's per-instance configurations (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
      * </pre>
      *
      * <code>optional bool all_effective = 516540553;</code>
@@ -537,7 +539,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      *
      *
      * <pre>
-     * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+     * A bit indicating if all of the group's per-instance configurations (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
      * </pre>
      *
      * <code>optional bool all_effective = 516540553;</code>
@@ -555,7 +557,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      *
      *
      * <pre>
-     * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
+     * A bit indicating if all of the group's per-instance configurations (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
      * </pre>
      *
      * <code>optional bool all_effective = 516540553;</code>

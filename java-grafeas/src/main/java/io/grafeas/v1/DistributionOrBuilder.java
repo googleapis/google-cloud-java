@@ -28,11 +28,11 @@ public interface DistributionOrBuilder
    *
    *
    * <pre>
-   * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+   * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
-   * <code>string cpe_uri = 1;</code>
+   * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The cpeUri.
    */
@@ -41,11 +41,11 @@ public interface DistributionOrBuilder
    *
    *
    * <pre>
-   * Required. The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+   * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
    * denoting the package manager version distributing a package.
    * </pre>
    *
-   * <code>string cpe_uri = 1;</code>
+   * <code>string cpe_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for cpeUri.
    */

@@ -106,8 +106,12 @@ public interface CommitmentAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.CommitmentsScopedList&gt; items = 100526016;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.compute.v1.CommitmentsScopedList getItemsOrDefault(
-      java.lang.String key, com.google.cloud.compute.v1.CommitmentsScopedList defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.CommitmentsScopedList defaultValue);
   /**
    *
    *

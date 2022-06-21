@@ -157,44 +157,6 @@ public interface ClientEventOrBuilder
    *
    *
    * <pre>
-   * An event issued when a profile searcher interacts with the application
-   * that implements Cloud Talent Solution.
-   * </pre>
-   *
-   * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-   *
-   * @return Whether the profileEvent field is set.
-   */
-  boolean hasProfileEvent();
-  /**
-   *
-   *
-   * <pre>
-   * An event issued when a profile searcher interacts with the application
-   * that implements Cloud Talent Solution.
-   * </pre>
-   *
-   * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-   *
-   * @return The profileEvent.
-   */
-  com.google.cloud.talent.v4beta1.ProfileEvent getProfileEvent();
-  /**
-   *
-   *
-   * <pre>
-   * An event issued when a profile searcher interacts with the application
-   * that implements Cloud Talent Solution.
-   * </pre>
-   *
-   * <code>.google.cloud.talent.v4beta1.ProfileEvent profile_event = 6;</code>
-   */
-  com.google.cloud.talent.v4beta1.ProfileEventOrBuilder getProfileEventOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Notes about the event provided by recruiters or other users, for example,
    * feedback on why a profile was bookmarked.
    * </pre>

@@ -55,6 +55,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     findingClass_ = 0;
     connections_ = java.util.Collections.emptyList();
     muteInitiator_ = "";
+    processes_ = java.util.Collections.emptyList();
+    compliances_ = java.util.Collections.emptyList();
     description_ = "";
     iamBindings_ = java.util.Collections.emptyList();
     nextSteps_ = "";
@@ -329,6 +331,17 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
               muteInitiator_ = s;
               break;
             }
+          case 242:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                processes_ = new java.util.ArrayList<com.google.cloud.securitycenter.v1.Process>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              processes_.add(
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1.Process.parser(), extensionRegistry));
+              break;
+            }
           case 250:
             {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
@@ -341,6 +354,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.securitycenter.v1.Connection.parser(), extensionRegistry));
               break;
             }
+          case 274:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                compliances_ =
+                    new java.util.ArrayList<com.google.cloud.securitycenter.v1.Compliance>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              compliances_.add(
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1.Compliance.parser(), extensionRegistry));
+              break;
+            }
           case 298:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -348,12 +373,28 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
               description_ = s;
               break;
             }
+          case 306:
+            {
+              com.google.cloud.securitycenter.v1.Exfiltration.Builder subBuilder = null;
+              if (exfiltration_ != null) {
+                subBuilder = exfiltration_.toBuilder();
+              }
+              exfiltration_ =
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1.Exfiltration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(exfiltration_);
+                exfiltration_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 314:
             {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 iamBindings_ =
                     new java.util.ArrayList<com.google.cloud.securitycenter.v1.IamBinding>();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000020;
               }
               iamBindings_.add(
                   input.readMessage(
@@ -383,10 +424,16 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        processes_ = java.util.Collections.unmodifiableList(processes_);
+      }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         connections_ = java.util.Collections.unmodifiableList(connections_);
       }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        compliances_ = java.util.Collections.unmodifiableList(compliances_);
+      }
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         iamBindings_ = java.util.Collections.unmodifiableList(iamBindings_);
       }
       this.unknownFields = unknownFields.build();
@@ -2246,8 +2293,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2272,8 +2319,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2289,8 +2336,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2311,8 +2358,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2559,6 +2606,149 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PROCESSES_FIELD_NUMBER = 30;
+  private java.util.List<com.google.cloud.securitycenter.v1.Process> processes_;
+  /**
+   *
+   *
+   * <pre>
+   * Represents operating system processes associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v1.Process> getProcessesList() {
+    return processes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents operating system processes associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.securitycenter.v1.ProcessOrBuilder>
+      getProcessesOrBuilderList() {
+    return processes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents operating system processes associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+   */
+  @java.lang.Override
+  public int getProcessesCount() {
+    return processes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents operating system processes associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Process getProcesses(int index) {
+    return processes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents operating system processes associated with the Finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ProcessOrBuilder getProcessesOrBuilder(int index) {
+    return processes_.get(index);
+  }
+
+  public static final int COMPLIANCES_FIELD_NUMBER = 34;
+  private java.util.List<com.google.cloud.securitycenter.v1.Compliance> compliances_;
+  /**
+   *
+   *
+   * <pre>
+   * Contains compliance information for security standards associated to the
+   * finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v1.Compliance> getCompliancesList() {
+    return compliances_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains compliance information for security standards associated to the
+   * finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.securitycenter.v1.ComplianceOrBuilder>
+      getCompliancesOrBuilderList() {
+    return compliances_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains compliance information for security standards associated to the
+   * finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+   */
+  @java.lang.Override
+  public int getCompliancesCount() {
+    return compliances_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains compliance information for security standards associated to the
+   * finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Compliance getCompliances(int index) {
+    return compliances_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains compliance information for security standards associated to the
+   * finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ComplianceOrBuilder getCompliancesOrBuilder(int index) {
+    return compliances_.get(index);
+  }
+
   public static final int DESCRIPTION_FIELD_NUMBER = 37;
   private volatile java.lang.Object description_;
   /**
@@ -2606,6 +2796,54 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int EXFILTRATION_FIELD_NUMBER = 38;
+  private com.google.cloud.securitycenter.v1.Exfiltration exfiltration_;
+  /**
+   *
+   *
+   * <pre>
+   * Represents exfiltration associated with the Finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+   *
+   * @return Whether the exfiltration field is set.
+   */
+  @java.lang.Override
+  public boolean hasExfiltration() {
+    return exfiltration_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents exfiltration associated with the Finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+   *
+   * @return The exfiltration.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Exfiltration getExfiltration() {
+    return exfiltration_ == null
+        ? com.google.cloud.securitycenter.v1.Exfiltration.getDefaultInstance()
+        : exfiltration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents exfiltration associated with the Finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ExfiltrationOrBuilder getExfiltrationOrBuilder() {
+    return getExfiltration();
   }
 
   public static final int IAM_BINDINGS_FIELD_NUMBER = 39;
@@ -2804,11 +3042,20 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(muteInitiator_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 28, muteInitiator_);
     }
+    for (int i = 0; i < processes_.size(); i++) {
+      output.writeMessage(30, processes_.get(i));
+    }
     for (int i = 0; i < connections_.size(); i++) {
       output.writeMessage(31, connections_.get(i));
     }
+    for (int i = 0; i < compliances_.size(); i++) {
+      output.writeMessage(34, compliances_.get(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37, description_);
+    }
+    if (exfiltration_ != null) {
+      output.writeMessage(38, getExfiltration());
     }
     for (int i = 0; i < iamBindings_.size(); i++) {
       output.writeMessage(39, iamBindings_.get(i));
@@ -2907,11 +3154,20 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(muteInitiator_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, muteInitiator_);
     }
+    for (int i = 0; i < processes_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, processes_.get(i));
+    }
     for (int i = 0; i < connections_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, connections_.get(i));
     }
+    for (int i = 0; i < compliances_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(34, compliances_.get(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37, description_);
+    }
+    if (exfiltration_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(38, getExfiltration());
     }
     for (int i = 0; i < iamBindings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(39, iamBindings_.get(i));
@@ -2981,7 +3237,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getConnectionsList().equals(other.getConnectionsList())) return false;
     if (!getMuteInitiator().equals(other.getMuteInitiator())) return false;
+    if (!getProcessesList().equals(other.getProcessesList())) return false;
+    if (!getCompliancesList().equals(other.getCompliancesList())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (hasExfiltration() != other.hasExfiltration()) return false;
+    if (hasExfiltration()) {
+      if (!getExfiltration().equals(other.getExfiltration())) return false;
+    }
     if (!getIamBindingsList().equals(other.getIamBindingsList())) return false;
     if (!getNextSteps().equals(other.getNextSteps())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -3061,8 +3323,20 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + MUTE_INITIATOR_FIELD_NUMBER;
     hash = (53 * hash) + getMuteInitiator().hashCode();
+    if (getProcessesCount() > 0) {
+      hash = (37 * hash) + PROCESSES_FIELD_NUMBER;
+      hash = (53 * hash) + getProcessesList().hashCode();
+    }
+    if (getCompliancesCount() > 0) {
+      hash = (37 * hash) + COMPLIANCES_FIELD_NUMBER;
+      hash = (53 * hash) + getCompliancesList().hashCode();
+    }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (hasExfiltration()) {
+      hash = (37 * hash) + EXFILTRATION_FIELD_NUMBER;
+      hash = (53 * hash) + getExfiltration().hashCode();
+    }
     if (getIamBindingsCount() > 0) {
       hash = (37 * hash) + IAM_BINDINGS_FIELD_NUMBER;
       hash = (53 * hash) + getIamBindingsList().hashCode();
@@ -3239,6 +3513,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getConnectionsFieldBuilder();
+        getProcessesFieldBuilder();
+        getCompliancesFieldBuilder();
         getIamBindingsFieldBuilder();
       }
     }
@@ -3324,11 +3600,29 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       muteInitiator_ = "";
 
+      if (processesBuilder_ == null) {
+        processes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      } else {
+        processesBuilder_.clear();
+      }
+      if (compliancesBuilder_ == null) {
+        compliances_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      } else {
+        compliancesBuilder_.clear();
+      }
       description_ = "";
 
+      if (exfiltrationBuilder_ == null) {
+        exfiltration_ = null;
+      } else {
+        exfiltration_ = null;
+        exfiltrationBuilder_ = null;
+      }
       if (iamBindingsBuilder_ == null) {
         iamBindings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         iamBindingsBuilder_.clear();
       }
@@ -3426,11 +3720,34 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.connections_ = connectionsBuilder_.build();
       }
       result.muteInitiator_ = muteInitiator_;
-      result.description_ = description_;
-      if (iamBindingsBuilder_ == null) {
+      if (processesBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0)) {
-          iamBindings_ = java.util.Collections.unmodifiableList(iamBindings_);
+          processes_ = java.util.Collections.unmodifiableList(processes_);
           bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.processes_ = processes_;
+      } else {
+        result.processes_ = processesBuilder_.build();
+      }
+      if (compliancesBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          compliances_ = java.util.Collections.unmodifiableList(compliances_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.compliances_ = compliances_;
+      } else {
+        result.compliances_ = compliancesBuilder_.build();
+      }
+      result.description_ = description_;
+      if (exfiltrationBuilder_ == null) {
+        result.exfiltration_ = exfiltration_;
+      } else {
+        result.exfiltration_ = exfiltrationBuilder_.build();
+      }
+      if (iamBindingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          iamBindings_ = java.util.Collections.unmodifiableList(iamBindings_);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.iamBindings_ = iamBindings_;
       } else {
@@ -3579,15 +3896,72 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         muteInitiator_ = other.muteInitiator_;
         onChanged();
       }
+      if (processesBuilder_ == null) {
+        if (!other.processes_.isEmpty()) {
+          if (processes_.isEmpty()) {
+            processes_ = other.processes_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureProcessesIsMutable();
+            processes_.addAll(other.processes_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.processes_.isEmpty()) {
+          if (processesBuilder_.isEmpty()) {
+            processesBuilder_.dispose();
+            processesBuilder_ = null;
+            processes_ = other.processes_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            processesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getProcessesFieldBuilder()
+                    : null;
+          } else {
+            processesBuilder_.addAllMessages(other.processes_);
+          }
+        }
+      }
+      if (compliancesBuilder_ == null) {
+        if (!other.compliances_.isEmpty()) {
+          if (compliances_.isEmpty()) {
+            compliances_ = other.compliances_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureCompliancesIsMutable();
+            compliances_.addAll(other.compliances_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.compliances_.isEmpty()) {
+          if (compliancesBuilder_.isEmpty()) {
+            compliancesBuilder_.dispose();
+            compliancesBuilder_ = null;
+            compliances_ = other.compliances_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            compliancesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCompliancesFieldBuilder()
+                    : null;
+          } else {
+            compliancesBuilder_.addAllMessages(other.compliances_);
+          }
+        }
+      }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         onChanged();
+      }
+      if (other.hasExfiltration()) {
+        mergeExfiltration(other.getExfiltration());
       }
       if (iamBindingsBuilder_ == null) {
         if (!other.iamBindings_.isEmpty()) {
           if (iamBindings_.isEmpty()) {
             iamBindings_ = other.iamBindings_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureIamBindingsIsMutable();
             iamBindings_.addAll(other.iamBindings_);
@@ -3600,7 +3974,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             iamBindingsBuilder_.dispose();
             iamBindingsBuilder_ = null;
             iamBindings_ = other.iamBindings_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000020);
             iamBindingsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getIamBindingsFieldBuilder()
@@ -6262,8 +6636,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -6288,8 +6662,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -6305,8 +6679,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -6327,8 +6701,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -6357,8 +6731,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -6382,8 +6756,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -6406,8 +6780,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7282,6 +7656,727 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.util.List<com.google.cloud.securitycenter.v1.Process> processes_ =
+        java.util.Collections.emptyList();
+
+    private void ensureProcessesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        processes_ =
+            new java.util.ArrayList<com.google.cloud.securitycenter.v1.Process>(processes_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Process,
+            com.google.cloud.securitycenter.v1.Process.Builder,
+            com.google.cloud.securitycenter.v1.ProcessOrBuilder>
+        processesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.Process> getProcessesList() {
+      if (processesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(processes_);
+      } else {
+        return processesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public int getProcessesCount() {
+      if (processesBuilder_ == null) {
+        return processes_.size();
+      } else {
+        return processesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Process getProcesses(int index) {
+      if (processesBuilder_ == null) {
+        return processes_.get(index);
+      } else {
+        return processesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public Builder setProcesses(int index, com.google.cloud.securitycenter.v1.Process value) {
+      if (processesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProcessesIsMutable();
+        processes_.set(index, value);
+        onChanged();
+      } else {
+        processesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public Builder setProcesses(
+        int index, com.google.cloud.securitycenter.v1.Process.Builder builderForValue) {
+      if (processesBuilder_ == null) {
+        ensureProcessesIsMutable();
+        processes_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        processesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public Builder addProcesses(com.google.cloud.securitycenter.v1.Process value) {
+      if (processesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProcessesIsMutable();
+        processes_.add(value);
+        onChanged();
+      } else {
+        processesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public Builder addProcesses(int index, com.google.cloud.securitycenter.v1.Process value) {
+      if (processesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProcessesIsMutable();
+        processes_.add(index, value);
+        onChanged();
+      } else {
+        processesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public Builder addProcesses(
+        com.google.cloud.securitycenter.v1.Process.Builder builderForValue) {
+      if (processesBuilder_ == null) {
+        ensureProcessesIsMutable();
+        processes_.add(builderForValue.build());
+        onChanged();
+      } else {
+        processesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public Builder addProcesses(
+        int index, com.google.cloud.securitycenter.v1.Process.Builder builderForValue) {
+      if (processesBuilder_ == null) {
+        ensureProcessesIsMutable();
+        processes_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        processesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public Builder addAllProcesses(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v1.Process> values) {
+      if (processesBuilder_ == null) {
+        ensureProcessesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, processes_);
+        onChanged();
+      } else {
+        processesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public Builder clearProcesses() {
+      if (processesBuilder_ == null) {
+        processes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        processesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public Builder removeProcesses(int index) {
+      if (processesBuilder_ == null) {
+        ensureProcessesIsMutable();
+        processes_.remove(index);
+        onChanged();
+      } else {
+        processesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Process.Builder getProcessesBuilder(int index) {
+      return getProcessesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public com.google.cloud.securitycenter.v1.ProcessOrBuilder getProcessesOrBuilder(int index) {
+      if (processesBuilder_ == null) {
+        return processes_.get(index);
+      } else {
+        return processesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public java.util.List<? extends com.google.cloud.securitycenter.v1.ProcessOrBuilder>
+        getProcessesOrBuilderList() {
+      if (processesBuilder_ != null) {
+        return processesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(processes_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Process.Builder addProcessesBuilder() {
+      return getProcessesFieldBuilder()
+          .addBuilder(com.google.cloud.securitycenter.v1.Process.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Process.Builder addProcessesBuilder(int index) {
+      return getProcessesFieldBuilder()
+          .addBuilder(index, com.google.cloud.securitycenter.v1.Process.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents operating system processes associated with the Finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.Process.Builder>
+        getProcessesBuilderList() {
+      return getProcessesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Process,
+            com.google.cloud.securitycenter.v1.Process.Builder,
+            com.google.cloud.securitycenter.v1.ProcessOrBuilder>
+        getProcessesFieldBuilder() {
+      if (processesBuilder_ == null) {
+        processesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.Process,
+                com.google.cloud.securitycenter.v1.Process.Builder,
+                com.google.cloud.securitycenter.v1.ProcessOrBuilder>(
+                processes_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        processes_ = null;
+      }
+      return processesBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.securitycenter.v1.Compliance> compliances_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCompliancesIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        compliances_ =
+            new java.util.ArrayList<com.google.cloud.securitycenter.v1.Compliance>(compliances_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Compliance,
+            com.google.cloud.securitycenter.v1.Compliance.Builder,
+            com.google.cloud.securitycenter.v1.ComplianceOrBuilder>
+        compliancesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.Compliance> getCompliancesList() {
+      if (compliancesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(compliances_);
+      } else {
+        return compliancesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public int getCompliancesCount() {
+      if (compliancesBuilder_ == null) {
+        return compliances_.size();
+      } else {
+        return compliancesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Compliance getCompliances(int index) {
+      if (compliancesBuilder_ == null) {
+        return compliances_.get(index);
+      } else {
+        return compliancesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public Builder setCompliances(int index, com.google.cloud.securitycenter.v1.Compliance value) {
+      if (compliancesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCompliancesIsMutable();
+        compliances_.set(index, value);
+        onChanged();
+      } else {
+        compliancesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public Builder setCompliances(
+        int index, com.google.cloud.securitycenter.v1.Compliance.Builder builderForValue) {
+      if (compliancesBuilder_ == null) {
+        ensureCompliancesIsMutable();
+        compliances_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        compliancesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public Builder addCompliances(com.google.cloud.securitycenter.v1.Compliance value) {
+      if (compliancesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCompliancesIsMutable();
+        compliances_.add(value);
+        onChanged();
+      } else {
+        compliancesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public Builder addCompliances(int index, com.google.cloud.securitycenter.v1.Compliance value) {
+      if (compliancesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCompliancesIsMutable();
+        compliances_.add(index, value);
+        onChanged();
+      } else {
+        compliancesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public Builder addCompliances(
+        com.google.cloud.securitycenter.v1.Compliance.Builder builderForValue) {
+      if (compliancesBuilder_ == null) {
+        ensureCompliancesIsMutable();
+        compliances_.add(builderForValue.build());
+        onChanged();
+      } else {
+        compliancesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public Builder addCompliances(
+        int index, com.google.cloud.securitycenter.v1.Compliance.Builder builderForValue) {
+      if (compliancesBuilder_ == null) {
+        ensureCompliancesIsMutable();
+        compliances_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        compliancesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public Builder addAllCompliances(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v1.Compliance> values) {
+      if (compliancesBuilder_ == null) {
+        ensureCompliancesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, compliances_);
+        onChanged();
+      } else {
+        compliancesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public Builder clearCompliances() {
+      if (compliancesBuilder_ == null) {
+        compliances_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        compliancesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public Builder removeCompliances(int index) {
+      if (compliancesBuilder_ == null) {
+        ensureCompliancesIsMutable();
+        compliances_.remove(index);
+        onChanged();
+      } else {
+        compliancesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Compliance.Builder getCompliancesBuilder(int index) {
+      return getCompliancesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public com.google.cloud.securitycenter.v1.ComplianceOrBuilder getCompliancesOrBuilder(
+        int index) {
+      if (compliancesBuilder_ == null) {
+        return compliances_.get(index);
+      } else {
+        return compliancesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public java.util.List<? extends com.google.cloud.securitycenter.v1.ComplianceOrBuilder>
+        getCompliancesOrBuilderList() {
+      if (compliancesBuilder_ != null) {
+        return compliancesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(compliances_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Compliance.Builder addCompliancesBuilder() {
+      return getCompliancesFieldBuilder()
+          .addBuilder(com.google.cloud.securitycenter.v1.Compliance.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Compliance.Builder addCompliancesBuilder(int index) {
+      return getCompliancesFieldBuilder()
+          .addBuilder(index, com.google.cloud.securitycenter.v1.Compliance.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains compliance information for security standards associated to the
+     * finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Compliance compliances = 34;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.Compliance.Builder>
+        getCompliancesBuilderList() {
+      return getCompliancesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Compliance,
+            com.google.cloud.securitycenter.v1.Compliance.Builder,
+            com.google.cloud.securitycenter.v1.ComplianceOrBuilder>
+        getCompliancesFieldBuilder() {
+      if (compliancesBuilder_ == null) {
+        compliancesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.Compliance,
+                com.google.cloud.securitycenter.v1.Compliance.Builder,
+                com.google.cloud.securitycenter.v1.ComplianceOrBuilder>(
+                compliances_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+        compliances_ = null;
+      }
+      return compliancesBuilder_;
+    }
+
     private java.lang.Object description_ = "";
     /**
      *
@@ -7388,14 +8483,200 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.securitycenter.v1.Exfiltration exfiltration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Exfiltration,
+            com.google.cloud.securitycenter.v1.Exfiltration.Builder,
+            com.google.cloud.securitycenter.v1.ExfiltrationOrBuilder>
+        exfiltrationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Represents exfiltration associated with the Finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+     *
+     * @return Whether the exfiltration field is set.
+     */
+    public boolean hasExfiltration() {
+      return exfiltrationBuilder_ != null || exfiltration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents exfiltration associated with the Finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+     *
+     * @return The exfiltration.
+     */
+    public com.google.cloud.securitycenter.v1.Exfiltration getExfiltration() {
+      if (exfiltrationBuilder_ == null) {
+        return exfiltration_ == null
+            ? com.google.cloud.securitycenter.v1.Exfiltration.getDefaultInstance()
+            : exfiltration_;
+      } else {
+        return exfiltrationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents exfiltration associated with the Finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+     */
+    public Builder setExfiltration(com.google.cloud.securitycenter.v1.Exfiltration value) {
+      if (exfiltrationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        exfiltration_ = value;
+        onChanged();
+      } else {
+        exfiltrationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents exfiltration associated with the Finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+     */
+    public Builder setExfiltration(
+        com.google.cloud.securitycenter.v1.Exfiltration.Builder builderForValue) {
+      if (exfiltrationBuilder_ == null) {
+        exfiltration_ = builderForValue.build();
+        onChanged();
+      } else {
+        exfiltrationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents exfiltration associated with the Finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+     */
+    public Builder mergeExfiltration(com.google.cloud.securitycenter.v1.Exfiltration value) {
+      if (exfiltrationBuilder_ == null) {
+        if (exfiltration_ != null) {
+          exfiltration_ =
+              com.google.cloud.securitycenter.v1.Exfiltration.newBuilder(exfiltration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          exfiltration_ = value;
+        }
+        onChanged();
+      } else {
+        exfiltrationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents exfiltration associated with the Finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+     */
+    public Builder clearExfiltration() {
+      if (exfiltrationBuilder_ == null) {
+        exfiltration_ = null;
+        onChanged();
+      } else {
+        exfiltration_ = null;
+        exfiltrationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents exfiltration associated with the Finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Exfiltration.Builder getExfiltrationBuilder() {
+
+      onChanged();
+      return getExfiltrationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents exfiltration associated with the Finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+     */
+    public com.google.cloud.securitycenter.v1.ExfiltrationOrBuilder getExfiltrationOrBuilder() {
+      if (exfiltrationBuilder_ != null) {
+        return exfiltrationBuilder_.getMessageOrBuilder();
+      } else {
+        return exfiltration_ == null
+            ? com.google.cloud.securitycenter.v1.Exfiltration.getDefaultInstance()
+            : exfiltration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents exfiltration associated with the Finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Exfiltration,
+            com.google.cloud.securitycenter.v1.Exfiltration.Builder,
+            com.google.cloud.securitycenter.v1.ExfiltrationOrBuilder>
+        getExfiltrationFieldBuilder() {
+      if (exfiltrationBuilder_ == null) {
+        exfiltrationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.Exfiltration,
+                com.google.cloud.securitycenter.v1.Exfiltration.Builder,
+                com.google.cloud.securitycenter.v1.ExfiltrationOrBuilder>(
+                getExfiltration(), getParentForChildren(), isClean());
+        exfiltration_ = null;
+      }
+      return exfiltrationBuilder_;
+    }
+
     private java.util.List<com.google.cloud.securitycenter.v1.IamBinding> iamBindings_ =
         java.util.Collections.emptyList();
 
     private void ensureIamBindingsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         iamBindings_ =
             new java.util.ArrayList<com.google.cloud.securitycenter.v1.IamBinding>(iamBindings_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -7611,7 +8892,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder clearIamBindings() {
       if (iamBindingsBuilder_ == null) {
         iamBindings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         iamBindingsBuilder_.clear();
@@ -7734,7 +9015,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.IamBinding,
                 com.google.cloud.securitycenter.v1.IamBinding.Builder,
                 com.google.cloud.securitycenter.v1.IamBindingOrBuilder>(
-                iamBindings_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                iamBindings_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         iamBindings_ = null;
       }
       return iamBindingsBuilder_;

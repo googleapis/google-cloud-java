@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.NetworkEdgeSecurityServicesClient.AggregatedListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -58,7 +57,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurityServicesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -73,7 +72,7 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
                   newBuilder()
               .setFullMethodName(
                   "google.cloud.compute.v1.NetworkEdgeSecurityServices/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -131,7 +130,7 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteNetworkEdgeSecurityServiceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkEdgeSecurityServices/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteNetworkEdgeSecurityServiceRequest>newBuilder()
@@ -187,7 +186,7 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
           ApiMethodDescriptor
               .<GetNetworkEdgeSecurityServiceRequest, NetworkEdgeSecurityService>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkEdgeSecurityServices/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetNetworkEdgeSecurityServiceRequest>newBuilder()
@@ -225,7 +224,7 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertNetworkEdgeSecurityServiceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkEdgeSecurityServices/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertNetworkEdgeSecurityServiceRequest>newBuilder()
@@ -284,7 +283,7 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchNetworkEdgeSecurityServiceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkEdgeSecurityServices/Patch")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchNetworkEdgeSecurityServiceRequest>newBuilder()

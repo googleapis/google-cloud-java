@@ -78,13 +78,17 @@ public final class AutoMLImageClassificationProto {
           + "ssificationMetadata.SuccessfulStopReason"
           + "\"g\n\024SuccessfulStopReason\022&\n\"SUCCESSFUL_S"
           + "TOP_REASON_UNSPECIFIED\020\000\022\022\n\016BUDGET_REACH"
-          + "ED\020\001\022\023\n\017MODEL_CONVERGED\020\002B\316\001\nAcom.google"
+          + "ED\020\001\022\023\n\017MODEL_CONVERGED\020\002B\224\003\nAcom.google"
           + ".cloud.aiplatform.v1beta1.schema.trainin"
           + "gjob.definitionB\036AutoMLImageClassificati"
           + "onProtoP\001Zggoogle.golang.org/genproto/go"
           + "ogleapis/cloud/aiplatform/v1beta1/schema"
-          + "/trainingjob/definition;definitionb\006prot"
-          + "o3"
+          + "/trainingjob/definition;definition\252\002=Goo"
+          + "gle.Cloud.AIPlatform.V1Beta1.Schema.Trai"
+          + "ningJob.Definition\312\002=Google\\Cloud\\AIPlat"
+          + "form\\V1beta1\\Schema\\TrainingJob\\Definiti"
+          + "on\352\002CGoogle::Cloud::AIPlatform::V1beta1:"
+          + ":Schema::TrainingJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -136,8 +136,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only
-   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only one
+   * AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>
@@ -152,8 +152,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only
-   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only one
+   * AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>
@@ -169,8 +169,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only
-   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only one
+   * AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>
@@ -185,8 +185,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only
-   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only one
+   * AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>
@@ -201,8 +201,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only
-   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only one
+   * AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>
@@ -674,8 +674,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -693,8 +693,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -712,8 +712,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -731,8 +731,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -756,8 +756,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -779,8 +779,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -804,8 +804,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -829,8 +829,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -852,8 +852,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -875,8 +875,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -898,8 +898,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -920,8 +920,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -942,8 +942,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -957,8 +957,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -976,8 +976,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -996,8 +996,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -1012,8 +1012,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>
@@ -1028,8 +1028,8 @@ public final class BatchAnnotateFilesRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The list of file annotation requests. Right now we support only
-     * one AnnotateFileRequest in BatchAnnotateFilesRequest.
+     * Required. The list of file annotation requests. Right now we support only one
+     * AnnotateFileRequest in BatchAnnotateFilesRequest.
      * </pre>
      *
      * <code>

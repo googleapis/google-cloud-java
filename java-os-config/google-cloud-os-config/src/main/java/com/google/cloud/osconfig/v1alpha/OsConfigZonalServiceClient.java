@@ -835,7 +835,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListOSPolicyAssignmentsResponse response =
    *         osConfigZonalServiceClient.listOSPolicyAssignmentsCallable().call(request);
-   *     for (OSPolicyAssignment element : response.getResponsesList()) {
+   *     for (OSPolicyAssignment element : response.getOsPolicyAssignmentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1007,7 +1007,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListOSPolicyAssignmentRevisionsResponse response =
    *         osConfigZonalServiceClient.listOSPolicyAssignmentRevisionsCallable().call(request);
-   *     for (OSPolicyAssignment element : response.getResponsesList()) {
+   *     for (OSPolicyAssignment element : response.getOsPolicyAssignmentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1522,7 +1522,8 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListInstanceOSPoliciesCompliancesResponse response =
    *         osConfigZonalServiceClient.listInstanceOSPoliciesCompliancesCallable().call(request);
-   *     for (InstanceOSPoliciesCompliance element : response.getResponsesList()) {
+   *     for (InstanceOSPoliciesCompliance element :
+   *         response.getInstanceOsPoliciesCompliancesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1865,7 +1866,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListOSPolicyAssignmentReportsResponse response =
    *         osConfigZonalServiceClient.listOSPolicyAssignmentReportsCallable().call(request);
-   *     for (OSPolicyAssignmentReport element : response.getResponsesList()) {
+   *     for (OSPolicyAssignmentReport element : response.getOsPolicyAssignmentReportsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2143,7 +2144,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListInventoriesResponse response =
    *         osConfigZonalServiceClient.listInventoriesCallable().call(request);
-   *     for (Inventory element : response.getResponsesList()) {
+   *     for (Inventory element : response.getInventoriesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2429,7 +2430,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListVulnerabilityReportsResponse response =
    *         osConfigZonalServiceClient.listVulnerabilityReportsCallable().call(request);
-   *     for (VulnerabilityReport element : response.getResponsesList()) {
+   *     for (VulnerabilityReport element : response.getVulnerabilityReportsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

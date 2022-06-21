@@ -310,7 +310,7 @@ public class DocumentsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListDocumentsResponse response = documentsClient.listDocumentsCallable().call(request);
-   *     for (Document element : response.getResponsesList()) {
+   *     for (Document element : response.getDocumentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

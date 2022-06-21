@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
  *   String project = "project-309310695";
  *   String instanceTemplate = "instanceTemplate1009541167";
@@ -80,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * InstanceTemplatesSettings instanceTemplatesSettings =
  *     InstanceTemplatesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * InstanceTemplatesSettings instanceTemplatesSettings =
  *     InstanceTemplatesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * InstanceTemplatesClient instanceTemplatesClient =
@@ -122,7 +128,6 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * Constructs an instance of InstanceTemplatesClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(InstanceTemplatesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InstanceTemplatesClient create(InstanceTemplatesStub stub) {
     return new InstanceTemplatesClient(stub);
   }
@@ -137,7 +142,6 @@ public class InstanceTemplatesClient implements BackgroundResource {
     this.stub = ((InstanceTemplatesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected InstanceTemplatesClient(InstanceTemplatesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -147,7 +151,6 @@ public class InstanceTemplatesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public InstanceTemplatesStub getStub() {
     return stub;
   }
@@ -161,6 +164,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String instanceTemplate = "instanceTemplate1009541167";
@@ -191,6 +196,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   DeleteInstanceTemplateRequest request =
    *       DeleteInstanceTemplateRequest.newBuilder()
@@ -221,6 +228,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   DeleteInstanceTemplateRequest request =
    *       DeleteInstanceTemplateRequest.newBuilder()
@@ -249,6 +258,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   DeleteInstanceTemplateRequest request =
    *       DeleteInstanceTemplateRequest.newBuilder()
@@ -274,6 +285,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String instanceTemplate = "instanceTemplate1009541167";
@@ -302,6 +315,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   GetInstanceTemplateRequest request =
    *       GetInstanceTemplateRequest.newBuilder()
@@ -327,6 +342,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   GetInstanceTemplateRequest request =
    *       GetInstanceTemplateRequest.newBuilder()
@@ -352,6 +369,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -380,6 +399,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   GetIamPolicyInstanceTemplateRequest request =
    *       GetIamPolicyInstanceTemplateRequest.newBuilder()
@@ -406,6 +427,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   GetIamPolicyInstanceTemplateRequest request =
    *       GetIamPolicyInstanceTemplateRequest.newBuilder()
@@ -433,6 +456,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
@@ -465,6 +490,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   InsertInstanceTemplateRequest request =
    *       InsertInstanceTemplateRequest.newBuilder()
@@ -496,6 +523,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   InsertInstanceTemplateRequest request =
    *       InsertInstanceTemplateRequest.newBuilder()
@@ -525,6 +554,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   InsertInstanceTemplateRequest request =
    *       InsertInstanceTemplateRequest.newBuilder()
@@ -549,6 +580,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   for (InstanceTemplate element : instanceTemplatesClient.list(project).iterateAll()) {
@@ -573,6 +606,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   ListInstanceTemplatesRequest request =
    *       ListInstanceTemplatesRequest.newBuilder()
@@ -603,6 +638,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   ListInstanceTemplatesRequest request =
    *       ListInstanceTemplatesRequest.newBuilder()
@@ -633,6 +670,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   ListInstanceTemplatesRequest request =
    *       ListInstanceTemplatesRequest.newBuilder()
@@ -645,7 +684,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     InstanceTemplateList response = instanceTemplatesClient.listCallable().call(request);
-   *     for (InstanceTemplate element : response.getResponsesList()) {
+   *     for (InstanceTemplate element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -669,6 +708,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -702,6 +743,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   SetIamPolicyInstanceTemplateRequest request =
    *       SetIamPolicyInstanceTemplateRequest.newBuilder()
@@ -727,6 +770,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   SetIamPolicyInstanceTemplateRequest request =
    *       SetIamPolicyInstanceTemplateRequest.newBuilder()
@@ -751,6 +796,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -785,6 +832,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   TestIamPermissionsInstanceTemplateRequest request =
    *       TestIamPermissionsInstanceTemplateRequest.newBuilder()
@@ -811,6 +860,8 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   TestIamPermissionsInstanceTemplateRequest request =
    *       TestIamPermissionsInstanceTemplateRequest.newBuilder()

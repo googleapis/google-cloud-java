@@ -111,6 +111,8 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -194,7 +196,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsDisks(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetDisks().getMap().containsKey(key);
   }
@@ -234,7 +236,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.PreservedStatePreservedDisk getDisksOrDefault(
       java.lang.String key, com.google.cloud.compute.v1.PreservedStatePreservedDisk defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedDisk> map =
         internalGetDisks().getMap();
@@ -254,7 +256,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.PreservedStatePreservedDisk getDisksOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedDisk> map =
         internalGetDisks().getMap();
@@ -301,7 +303,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
@@ -337,7 +339,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getMetadataOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -354,7 +356,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getMetadataOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     if (!map.containsKey(key)) {
@@ -779,7 +781,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsDisks(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetDisks().getMap().containsKey(key);
     }
@@ -822,7 +824,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         com.google.cloud.compute.v1.PreservedStatePreservedDisk defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedDisk> map =
           internalGetDisks().getMap();
@@ -843,7 +845,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.PreservedStatePreservedDisk getDisksOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedDisk> map =
           internalGetDisks().getMap();
@@ -870,7 +872,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeDisks(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableDisks().getMutableMap().remove(key);
       return this;
@@ -895,11 +897,12 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     public Builder putDisks(
         java.lang.String key, com.google.cloud.compute.v1.PreservedStatePreservedDisk value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableDisks().getMutableMap().put(key, value);
       return this;
     }
@@ -959,7 +962,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
@@ -995,7 +998,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getMetadataOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1012,7 +1015,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getMetadataOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       if (!map.containsKey(key)) {
@@ -1036,7 +1039,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeMetadata(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
@@ -1057,11 +1060,12 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putMetadata(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableMetadata().getMutableMap().put(key, value);
       return this;
     }

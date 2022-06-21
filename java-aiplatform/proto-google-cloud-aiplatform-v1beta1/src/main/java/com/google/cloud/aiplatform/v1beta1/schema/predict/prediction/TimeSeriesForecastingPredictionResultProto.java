@@ -45,13 +45,18 @@ public final class TimeSeriesForecastingPredictionResultProto {
           + "ing.proto\0229google.cloud.aiplatform.v1bet"
           + "a1.schema.predict.prediction\032\034google/api"
           + "/annotations.proto\"6\n%TimeSeriesForecast"
-          + "ingPredictionResult\022\r\n\005value\030\001 \001(\002B\322\001\n=c"
+          + "ingPredictionResult\022\r\n\005value\030\001 \001(\002B\214\003\n=c"
           + "om.google.cloud.aiplatform.v1beta1.schem"
           + "a.predict.predictionB*TimeSeriesForecast"
           + "ingPredictionResultProtoP\001Zcgoogle.golan"
           + "g.org/genproto/googleapis/cloud/aiplatfo"
           + "rm/v1beta1/schema/predict/prediction;pre"
-          + "dictionb\006proto3"
+          + "diction\252\0029Google.Cloud.AIPlatform.V1Beta"
+          + "1.Schema.Predict.Prediction\312\0029Google\\Clo"
+          + "ud\\AIPlatform\\V1beta1\\Schema\\Predict\\Pre"
+          + "diction\352\002?Google::Cloud::AIPlatform::V1b"
+          + "eta1::Schema::Predict::Predictionb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

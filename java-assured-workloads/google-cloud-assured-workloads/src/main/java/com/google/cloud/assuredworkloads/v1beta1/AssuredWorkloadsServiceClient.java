@@ -766,7 +766,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListWorkloadsResponse response =
    *         assuredWorkloadsServiceClient.listWorkloadsCallable().call(request);
-   *     for (Workload element : response.getResponsesList()) {
+   *     for (Workload element : response.getWorkloadsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

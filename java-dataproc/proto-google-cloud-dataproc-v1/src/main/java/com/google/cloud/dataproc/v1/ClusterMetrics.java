@@ -112,6 +112,8 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -185,7 +187,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsHdfsMetrics(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetHdfsMetrics().getMap().containsKey(key);
   }
@@ -220,7 +222,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public long getHdfsMetricsOrDefault(java.lang.String key, long defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetHdfsMetrics().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -237,7 +239,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public long getHdfsMetricsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetHdfsMetrics().getMap();
     if (!map.containsKey(key)) {
@@ -283,7 +285,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsYarnMetrics(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetYarnMetrics().getMap().containsKey(key);
   }
@@ -318,7 +320,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public long getYarnMetricsOrDefault(java.lang.String key, long defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetYarnMetrics().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -335,7 +337,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public long getYarnMetricsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetYarnMetrics().getMap();
     if (!map.containsKey(key)) {
@@ -755,7 +757,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsHdfsMetrics(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetHdfsMetrics().getMap().containsKey(key);
     }
@@ -790,7 +792,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public long getHdfsMetricsOrDefault(java.lang.String key, long defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetHdfsMetrics().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -807,7 +809,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public long getHdfsMetricsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetHdfsMetrics().getMap();
       if (!map.containsKey(key)) {
@@ -831,7 +833,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeHdfsMetrics(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableHdfsMetrics().getMutableMap().remove(key);
       return this;
@@ -852,7 +854,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putHdfsMetrics(java.lang.String key, long value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableHdfsMetrics().getMutableMap().put(key, value);
@@ -912,7 +914,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsYarnMetrics(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetYarnMetrics().getMap().containsKey(key);
     }
@@ -947,7 +949,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public long getYarnMetricsOrDefault(java.lang.String key, long defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetYarnMetrics().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -964,7 +966,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public long getYarnMetricsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetYarnMetrics().getMap();
       if (!map.containsKey(key)) {
@@ -988,7 +990,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeYarnMetrics(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableYarnMetrics().getMutableMap().remove(key);
       return this;
@@ -1009,7 +1011,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putYarnMetrics(java.lang.String key, long value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
 
       internalGetMutableYarnMetrics().getMutableMap().put(key, value);

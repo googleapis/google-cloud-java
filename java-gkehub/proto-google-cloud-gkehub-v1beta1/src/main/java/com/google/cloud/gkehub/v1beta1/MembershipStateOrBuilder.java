@@ -62,7 +62,7 @@ public interface MembershipStateOrBuilder
    * <code>string description = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.gkehub.v1beta1.MembershipState.description is deprecated. See
-   *     google/cloud/gkehub/v1beta1/membership.proto;l=501
+   *     google/cloud/gkehub/v1beta1/membership.proto;l=522
    * @return The description.
    */
   @java.lang.Deprecated
@@ -77,7 +77,7 @@ public interface MembershipStateOrBuilder
    * <code>string description = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.gkehub.v1beta1.MembershipState.description is deprecated. See
-   *     google/cloud/gkehub/v1beta1/membership.proto;l=501
+   *     google/cloud/gkehub/v1beta1/membership.proto;l=522
    * @return The bytes for description.
    */
   @java.lang.Deprecated
@@ -93,7 +93,7 @@ public interface MembershipStateOrBuilder
    * <code>.google.protobuf.Timestamp update_time = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.gkehub.v1beta1.MembershipState.update_time is deprecated. See
-   *     google/cloud/gkehub/v1beta1/membership.proto;l=504
+   *     google/cloud/gkehub/v1beta1/membership.proto;l=525
    * @return Whether the updateTime field is set.
    */
   @java.lang.Deprecated
@@ -108,7 +108,7 @@ public interface MembershipStateOrBuilder
    * <code>.google.protobuf.Timestamp update_time = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.gkehub.v1beta1.MembershipState.update_time is deprecated. See
-   *     google/cloud/gkehub/v1beta1/membership.proto;l=504
+   *     google/cloud/gkehub/v1beta1/membership.proto;l=525
    * @return The updateTime.
    */
   @java.lang.Deprecated

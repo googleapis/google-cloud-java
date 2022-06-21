@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
  *   String project = "project-309310695";
  *   String interconnect = "interconnect-849140594";
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * InterconnectsSettings interconnectsSettings =
  *     InterconnectsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * InterconnectsSettings interconnectsSettings =
  *     InterconnectsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * InterconnectsClient interconnectsClient = InterconnectsClient.create(interconnectsSettings);
@@ -119,7 +125,6 @@ public class InterconnectsClient implements BackgroundResource {
    * Constructs an instance of InterconnectsClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(InterconnectsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InterconnectsClient create(InterconnectsStub stub) {
     return new InterconnectsClient(stub);
   }
@@ -134,7 +139,6 @@ public class InterconnectsClient implements BackgroundResource {
     this.stub = ((InterconnectsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected InterconnectsClient(InterconnectsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -144,7 +148,6 @@ public class InterconnectsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public InterconnectsStub getStub() {
     return stub;
   }
@@ -156,6 +159,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   String project = "project-309310695";
    *   String interconnect = "interconnect-849140594";
@@ -184,6 +189,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   DeleteInterconnectRequest request =
    *       DeleteInterconnectRequest.newBuilder()
@@ -212,6 +219,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   DeleteInterconnectRequest request =
    *       DeleteInterconnectRequest.newBuilder()
@@ -238,6 +247,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   DeleteInterconnectRequest request =
    *       DeleteInterconnectRequest.newBuilder()
@@ -263,6 +274,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   String project = "project-309310695";
    *   String interconnect = "interconnect-849140594";
@@ -291,6 +304,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   GetInterconnectRequest request =
    *       GetInterconnectRequest.newBuilder()
@@ -316,6 +331,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   GetInterconnectRequest request =
    *       GetInterconnectRequest.newBuilder()
@@ -339,6 +356,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   String project = "project-309310695";
    *   String interconnect = "interconnect-849140594";
@@ -368,6 +387,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   GetDiagnosticsInterconnectRequest request =
    *       GetDiagnosticsInterconnectRequest.newBuilder()
@@ -393,6 +414,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   GetDiagnosticsInterconnectRequest request =
    *       GetDiagnosticsInterconnectRequest.newBuilder()
@@ -418,6 +441,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   String project = "project-309310695";
    *   Interconnect interconnectResource = Interconnect.newBuilder().build();
@@ -446,6 +471,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   InsertInterconnectRequest request =
    *       InsertInterconnectRequest.newBuilder()
@@ -474,6 +501,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   InsertInterconnectRequest request =
    *       InsertInterconnectRequest.newBuilder()
@@ -500,6 +529,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   InsertInterconnectRequest request =
    *       InsertInterconnectRequest.newBuilder()
@@ -524,6 +555,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   String project = "project-309310695";
    *   for (Interconnect element : interconnectsClient.list(project).iterateAll()) {
@@ -548,6 +581,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   ListInterconnectsRequest request =
    *       ListInterconnectsRequest.newBuilder()
@@ -578,6 +613,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   ListInterconnectsRequest request =
    *       ListInterconnectsRequest.newBuilder()
@@ -607,6 +644,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   ListInterconnectsRequest request =
    *       ListInterconnectsRequest.newBuilder()
@@ -619,7 +658,7 @@ public class InterconnectsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     InterconnectList response = interconnectsClient.listCallable().call(request);
-   *     for (Interconnect element : response.getResponsesList()) {
+   *     for (Interconnect element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -644,6 +683,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   String project = "project-309310695";
    *   String interconnect = "interconnect-849140594";
@@ -677,6 +718,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   PatchInterconnectRequest request =
    *       PatchInterconnectRequest.newBuilder()
@@ -706,6 +749,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   PatchInterconnectRequest request =
    *       PatchInterconnectRequest.newBuilder()
@@ -734,6 +779,8 @@ public class InterconnectsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   PatchInterconnectRequest request =
    *       PatchInterconnectRequest.newBuilder()

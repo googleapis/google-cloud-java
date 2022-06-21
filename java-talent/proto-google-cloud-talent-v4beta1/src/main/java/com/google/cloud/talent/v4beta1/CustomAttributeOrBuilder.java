@@ -153,8 +153,9 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * If the `filterable` flag is true, custom field values are searchable.
-   * If false, values are not searchable.
+   * If the `filterable` flag is true, the custom field values may be used for
+   * custom attribute filters [JobQuery.custom_attribute_filter][google.cloud.talent.v4beta1.JobQuery.custom_attribute_filter].
+   * If false, these values may not be used for custom attribute filters.
    * Default is false.
    * </pre>
    *
@@ -163,4 +164,20 @@ public interface CustomAttributeOrBuilder
    * @return The filterable.
    */
   boolean getFilterable();
+
+  /**
+   *
+   *
+   * <pre>
+   * If the `keyword_searchable` flag is true, the keywords in custom fields are
+   * searchable by keyword match.
+   * If false, the values are not searchable by keyword match.
+   * Default is false.
+   * </pre>
+   *
+   * <code>bool keyword_searchable = 4;</code>
+   *
+   * @return The keywordSearchable.
+   */
+  boolean getKeywordSearchable();
 }

@@ -317,4 +317,29 @@ public interface VodSessionOrBuilder
    * <code>.google.cloud.video.stitcher.v1.ManifestOptions manifest_options = 9;</code>
    */
   com.google.cloud.video.stitcher.v1.ManifestOptionsOrBuilder getManifestOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generated ID of the VodSession's source media.
+   * </pre>
+   *
+   * <code>string asset_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The assetId.
+   */
+  java.lang.String getAssetId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generated ID of the VodSession's source media.
+   * </pre>
+   *
+   * <code>string asset_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for assetId.
+   */
+  com.google.protobuf.ByteString getAssetIdBytes();
 }

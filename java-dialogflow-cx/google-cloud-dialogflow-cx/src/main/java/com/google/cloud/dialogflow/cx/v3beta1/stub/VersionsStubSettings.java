@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
+import static com.google.cloud.dialogflow.cx.v3beta1.VersionsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.VersionsClient.ListVersionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -55,6 +56,10 @@ import com.google.cloud.dialogflow.cx.v3beta1.ListVersionsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.LoadVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.Version;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -124,6 +129,10 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
       loadVersionOperationSettings;
   private final UnaryCallSettings<CompareVersionsRequest, CompareVersionsResponse>
       compareVersionsSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListVersionsRequest, ListVersionsResponse, Version>
       LIST_VERSIONS_PAGE_STR_DESC =
@@ -161,6 +170,42 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListVersionsRequest, ListVersionsResponse, ListVersionsPagedResponse>
       LIST_VERSIONS_PAGE_STR_FACT =
@@ -175,6 +220,23 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
               PageContext<ListVersionsRequest, ListVersionsResponse, Version> pageContext =
                   PageContext.create(callable, LIST_VERSIONS_PAGE_STR_DESC, request, context);
               return ListVersionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -224,6 +286,17 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
   public UnaryCallSettings<CompareVersionsRequest, CompareVersionsResponse>
       compareVersionsSettings() {
     return compareVersionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public VersionsStub createStub() throws IOException {
@@ -309,6 +382,8 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
     loadVersionSettings = settingsBuilder.loadVersionSettings().build();
     loadVersionOperationSettings = settingsBuilder.loadVersionOperationSettings().build();
     compareVersionsSettings = settingsBuilder.compareVersionsSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for VersionsStubSettings. */
@@ -329,6 +404,10 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
         loadVersionOperationSettings;
     private final UnaryCallSettings.Builder<CompareVersionsRequest, CompareVersionsResponse>
         compareVersionsSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -376,6 +455,8 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
       loadVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       loadVersionOperationSettings = OperationCallSettings.newBuilder();
       compareVersionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -385,7 +466,9 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
               updateVersionSettings,
               deleteVersionSettings,
               loadVersionSettings,
-              compareVersionsSettings);
+              compareVersionsSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -401,6 +484,8 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
       loadVersionSettings = settings.loadVersionSettings.toBuilder();
       loadVersionOperationSettings = settings.loadVersionOperationSettings.toBuilder();
       compareVersionsSettings = settings.compareVersionsSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -410,7 +495,9 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
               updateVersionSettings,
               deleteVersionSettings,
               loadVersionSettings,
-              compareVersionsSettings);
+              compareVersionsSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -459,6 +546,16 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
 
       builder
           .compareVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -581,6 +678,18 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
     public UnaryCallSettings.Builder<CompareVersionsRequest, CompareVersionsResponse>
         compareVersionsSettings() {
       return compareVersionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

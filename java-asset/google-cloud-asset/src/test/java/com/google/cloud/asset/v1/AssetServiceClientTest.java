@@ -111,7 +111,7 @@ public class AssetServiceClientTest {
 
     ExportAssetsRequest request =
         ExportAssetsRequest.newBuilder()
-            .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+            .setParent(FolderName.of("[FOLDER]").toString())
             .setReadTime(Timestamp.newBuilder().build())
             .addAllAssetTypes(new ArrayList<String>())
             .setContentType(ContentType.forNumber(0))
@@ -147,7 +147,7 @@ public class AssetServiceClientTest {
     try {
       ExportAssetsRequest request =
           ExportAssetsRequest.newBuilder()
-              .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+              .setParent(FolderName.of("[FOLDER]").toString())
               .setReadTime(Timestamp.newBuilder().build())
               .addAllAssetTypes(new ArrayList<String>())
               .setContentType(ContentType.forNumber(0))
@@ -173,7 +173,7 @@ public class AssetServiceClientTest {
             .build();
     mockAssetService.addResponse(expectedResponse);
 
-    ResourceName parent = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+    ResourceName parent = FolderName.of("[FOLDER]");
 
     ListAssetsPagedResponse pagedListResponse = client.listAssets(parent);
 
@@ -199,7 +199,7 @@ public class AssetServiceClientTest {
     mockAssetService.addException(exception);
 
     try {
-      ResourceName parent = FeedName.ofProjectFeedName("[PROJECT]", "[FEED]");
+      ResourceName parent = FolderName.of("[FOLDER]");
       client.listAssets(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -261,7 +261,7 @@ public class AssetServiceClientTest {
 
     BatchGetAssetsHistoryRequest request =
         BatchGetAssetsHistoryRequest.newBuilder()
-            .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+            .setParent(FolderName.of("[FOLDER]").toString())
             .addAllAssetNames(new ArrayList<String>())
             .setContentType(ContentType.forNumber(0))
             .setReadTimeWindow(TimeWindow.newBuilder().build())
@@ -296,7 +296,7 @@ public class AssetServiceClientTest {
     try {
       BatchGetAssetsHistoryRequest request =
           BatchGetAssetsHistoryRequest.newBuilder()
-              .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+              .setParent(FolderName.of("[FOLDER]").toString())
               .addAllAssetNames(new ArrayList<String>())
               .setContentType(ContentType.forNumber(0))
               .setReadTimeWindow(TimeWindow.newBuilder().build())
@@ -1449,7 +1449,7 @@ public class AssetServiceClientTest {
 
     BatchGetEffectiveIamPoliciesRequest request =
         BatchGetEffectiveIamPoliciesRequest.newBuilder()
-            .setScope(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+            .setScope(FolderName.of("[FOLDER]").toString())
             .addAllNames(new ArrayList<String>())
             .build();
 
@@ -1478,7 +1478,7 @@ public class AssetServiceClientTest {
     try {
       BatchGetEffectiveIamPoliciesRequest request =
           BatchGetEffectiveIamPoliciesRequest.newBuilder()
-              .setScope(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
+              .setScope(FolderName.of("[FOLDER]").toString())
               .addAllNames(new ArrayList<String>())
               .build();
       client.batchGetEffectiveIamPolicies(request);

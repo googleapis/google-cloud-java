@@ -448,7 +448,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *   while (true) {
    *     ListEnvironmentsResponse response =
    *         environmentsClient.listEnvironmentsCallable().call(request);
-   *     for (Environment element : response.getResponsesList()) {
+   *     for (Environment element : response.getEnvironmentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

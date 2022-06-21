@@ -27,8 +27,7 @@ public interface OnPremClusterOrBuilder
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
-   * example:
+   * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
    * </pre>
@@ -42,8 +41,7 @@ public interface OnPremClusterOrBuilder
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
-   * example:
+   * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
    * </pre>
@@ -81,4 +79,33 @@ public interface OnPremClusterOrBuilder
    * @return The adminCluster.
    */
   boolean getAdminCluster();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The on prem cluster's type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType cluster_type = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for clusterType.
+   */
+  int getClusterTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The on prem cluster's type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType cluster_type = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The clusterType.
+   */
+  com.google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType getClusterType();
 }

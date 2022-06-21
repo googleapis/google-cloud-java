@@ -28,7 +28,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the search engine placement, such as
-   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
    * This field is used to identify the serving configuration name and the set
    * of models that will be used to make the search.
    * </pre>
@@ -43,7 +43,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the search engine placement, such as
-   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
    * This field is used to identify the serving configuration name and the set
    * of models that will be used to make the search.
    * </pre>
@@ -90,6 +90,10 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Raw search query.
+   * If this field is empty, the request is considered a category browsing
+   * request and returned results are based on
+   * [filter][google.cloud.retail.v2.SearchRequest.filter] and
+   * [page_categories][google.cloud.retail.v2.SearchRequest.page_categories].
    * </pre>
    *
    * <code>string query = 3;</code>
@@ -102,6 +106,10 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Raw search query.
+   * If this field is empty, the request is considered a category browsing
+   * request and returned results are based on
+   * [filter][google.cloud.retail.v2.SearchRequest.filter] and
+   * [page_categories][google.cloud.retail.v2.SearchRequest.page_categories].
    * </pre>
    *
    * <code>string query = 3;</code>
@@ -447,7 +455,7 @@ public interface SearchRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=511
+   *     google/cloud/retail/v2/search_service.proto;l=553
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Deprecated
@@ -467,7 +475,7 @@ public interface SearchRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=511
+   *     google/cloud/retail/v2/search_service.proto;l=553
    * @return The dynamicFacetSpec.
    */
   @java.lang.Deprecated
@@ -496,10 +504,10 @@ public interface SearchRequestOrBuilder
    * Boost specification to boost certain products. See more details at this
    * [user guide](https://cloud.google.com/retail/docs/boosting).
    * Notice that if both [ServingConfig.boost_control_ids][] and
-   * [SearchRequest.boost_spec] are set, the boost conditions from both places
-   * are evaluated. If a search request matches multiple boost conditions,
-   * the final boost score is equal to the sum of the boost scores from all
-   * matched boost conditions.
+   * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
+   * are set, the boost conditions from both places are evaluated. If a search
+   * request matches multiple boost conditions, the final boost score is equal
+   * to the sum of the boost scores from all matched boost conditions.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -514,10 +522,10 @@ public interface SearchRequestOrBuilder
    * Boost specification to boost certain products. See more details at this
    * [user guide](https://cloud.google.com/retail/docs/boosting).
    * Notice that if both [ServingConfig.boost_control_ids][] and
-   * [SearchRequest.boost_spec] are set, the boost conditions from both places
-   * are evaluated. If a search request matches multiple boost conditions,
-   * the final boost score is equal to the sum of the boost scores from all
-   * matched boost conditions.
+   * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
+   * are set, the boost conditions from both places are evaluated. If a search
+   * request matches multiple boost conditions, the final boost score is equal
+   * to the sum of the boost scores from all matched boost conditions.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -532,10 +540,10 @@ public interface SearchRequestOrBuilder
    * Boost specification to boost certain products. See more details at this
    * [user guide](https://cloud.google.com/retail/docs/boosting).
    * Notice that if both [ServingConfig.boost_control_ids][] and
-   * [SearchRequest.boost_spec] are set, the boost conditions from both places
-   * are evaluated. If a search request matches multiple boost conditions,
-   * the final boost score is equal to the sum of the boost scores from all
-   * matched boost conditions.
+   * [SearchRequest.boost_spec][google.cloud.retail.v2.SearchRequest.boost_spec]
+   * are set, the boost conditions from both places are evaluated. If a search
+   * request matches multiple boost conditions, the final boost score is equal
+   * to the sum of the boost scores from all matched boost conditions.
    * </pre>
    *
    * <code>.google.cloud.retail.v2.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -615,7 +623,8 @@ public interface SearchRequestOrBuilder
    * * inventory(place_id,price)
    * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
-   *   [Product.inventories.attributes][] map.
+   *   [Product.local_inventories.attributes][google.cloud.retail.v2.LocalInventory.attributes]
+   *   map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -691,7 +700,8 @@ public interface SearchRequestOrBuilder
    * * inventory(place_id,price)
    * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
-   *   [Product.inventories.attributes][] map.
+   *   [Product.local_inventories.attributes][google.cloud.retail.v2.LocalInventory.attributes]
+   *   map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -767,7 +777,8 @@ public interface SearchRequestOrBuilder
    * * inventory(place_id,price)
    * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
-   *   [Product.inventories.attributes][] map.
+   *   [Product.local_inventories.attributes][google.cloud.retail.v2.LocalInventory.attributes]
+   *   map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -844,7 +855,8 @@ public interface SearchRequestOrBuilder
    * * inventory(place_id,price)
    * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
-   *   [Product.inventories.attributes][] map.
+   *   [Product.local_inventories.attributes][google.cloud.retail.v2.LocalInventory.attributes]
+   *   map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -1046,4 +1058,178 @@ public interface SearchRequestOrBuilder
    */
   com.google.cloud.retail.v2.SearchRequest.PersonalizationSpecOrBuilder
       getPersonalizationSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 34;</code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 34;</code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 34;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 34;</code>
+   */
+
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 34;</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * The spell correction specification that specifies the mode under
+   * which spell correction will take effect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.retail.v2.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+   * </code>
+   *
+   * @return Whether the spellCorrectionSpec field is set.
+   */
+  boolean hasSpellCorrectionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The spell correction specification that specifies the mode under
+   * which spell correction will take effect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.retail.v2.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+   * </code>
+   *
+   * @return The spellCorrectionSpec.
+   */
+  com.google.cloud.retail.v2.SearchRequest.SpellCorrectionSpec getSpellCorrectionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * The spell correction specification that specifies the mode under
+   * which spell correction will take effect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.retail.v2.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+   * </code>
+   */
+  com.google.cloud.retail.v2.SearchRequest.SpellCorrectionSpecOrBuilder
+      getSpellCorrectionSpecOrBuilder();
 }

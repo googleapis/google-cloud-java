@@ -112,8 +112,11 @@ public interface PublicDelegatedPrefixAggregatedListOrBuilder
    * map&lt;string, .google.cloud.compute.v1.PublicDelegatedPrefixesScopedList&gt; items = 100526016;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.compute.v1.PublicDelegatedPrefixesScopedList getItemsOrDefault(
       java.lang.String key,
+      /* nullable */
       com.google.cloud.compute.v1.PublicDelegatedPrefixesScopedList defaultValue);
   /**
    *

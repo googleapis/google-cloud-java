@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -41,6 +40,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -78,6 +79,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ZoneOperationsSettings zoneOperationsSettings =
  *     ZoneOperationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -88,6 +91,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ZoneOperationsSettings zoneOperationsSettings =
  *     ZoneOperationsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create(zoneOperationsSettings);
@@ -118,7 +123,6 @@ public class ZoneOperationsClient implements BackgroundResource {
    * Constructs an instance of ZoneOperationsClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(ZoneOperationsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ZoneOperationsClient create(ZoneOperationsStub stub) {
     return new ZoneOperationsClient(stub);
   }
@@ -133,7 +137,6 @@ public class ZoneOperationsClient implements BackgroundResource {
     this.stub = ((ZoneOperationsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ZoneOperationsClient(ZoneOperationsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -143,7 +146,6 @@ public class ZoneOperationsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ZoneOperationsStub getStub() {
     return stub;
   }
@@ -155,6 +157,8 @@ public class ZoneOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -185,6 +189,8 @@ public class ZoneOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
    *   DeleteZoneOperationRequest request =
    *       DeleteZoneOperationRequest.newBuilder()
@@ -210,6 +216,8 @@ public class ZoneOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
    *   DeleteZoneOperationRequest request =
    *       DeleteZoneOperationRequest.newBuilder()
@@ -236,6 +244,8 @@ public class ZoneOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -266,6 +276,8 @@ public class ZoneOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
    *   GetZoneOperationRequest request =
    *       GetZoneOperationRequest.newBuilder()
@@ -291,6 +303,8 @@ public class ZoneOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
    *   GetZoneOperationRequest request =
    *       GetZoneOperationRequest.newBuilder()
@@ -315,6 +329,8 @@ public class ZoneOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -341,6 +357,8 @@ public class ZoneOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
    *   ListZoneOperationsRequest request =
    *       ListZoneOperationsRequest.newBuilder()
@@ -372,6 +390,8 @@ public class ZoneOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
    *   ListZoneOperationsRequest request =
    *       ListZoneOperationsRequest.newBuilder()
@@ -402,6 +422,8 @@ public class ZoneOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
    *   ListZoneOperationsRequest request =
    *       ListZoneOperationsRequest.newBuilder()
@@ -415,7 +437,7 @@ public class ZoneOperationsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     OperationList response = zoneOperationsClient.listCallable().call(request);
-   *     for (Operation element : response.getResponsesList()) {
+   *     for (Operation element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -446,6 +468,8 @@ public class ZoneOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -483,6 +507,8 @@ public class ZoneOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
    *   WaitZoneOperationRequest request =
    *       WaitZoneOperationRequest.newBuilder()
@@ -515,6 +541,8 @@ public class ZoneOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ZoneOperationsClient zoneOperationsClient = ZoneOperationsClient.create()) {
    *   WaitZoneOperationRequest request =
    *       WaitZoneOperationRequest.newBuilder()

@@ -27,6 +27,80 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The external IPv6 address range that is assigned to this subnetwork.
+   * </pre>
+   *
+   * <code>optional string external_ipv6_prefix = 139299190;</code>
+   *
+   * @return Whether the externalIpv6Prefix field is set.
+   */
+  boolean hasExternalIpv6Prefix();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The external IPv6 address range that is assigned to this subnetwork.
+   * </pre>
+   *
+   * <code>optional string external_ipv6_prefix = 139299190;</code>
+   *
+   * @return The externalIpv6Prefix.
+   */
+  java.lang.String getExternalIpv6Prefix();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The external IPv6 address range that is assigned to this subnetwork.
+   * </pre>
+   *
+   * <code>optional string external_ipv6_prefix = 139299190;</code>
+   *
+   * @return The bytes for externalIpv6Prefix.
+   */
+  com.google.protobuf.ByteString getExternalIpv6PrefixBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * </pre>
+   *
+   * <code>optional string internal_ipv6_prefix = 506270056;</code>
+   *
+   * @return Whether the internalIpv6Prefix field is set.
+   */
+  boolean hasInternalIpv6Prefix();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * </pre>
+   *
+   * <code>optional string internal_ipv6_prefix = 506270056;</code>
+   *
+   * @return The internalIpv6Prefix.
+   */
+  java.lang.String getInternalIpv6Prefix();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The internal IPv6 address range that is assigned to this subnetwork.
+   * </pre>
+   *
+   * <code>optional string internal_ipv6_prefix = 506270056;</code>
+   *
+   * @return The bytes for internalIpv6Prefix.
+   */
+  com.google.protobuf.ByteString getInternalIpv6PrefixBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The range of internal addresses that are owned by this subnetwork.
    * </pre>
    *
@@ -64,6 +138,46 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return Whether the ipv6AccessType field is set.
+   */
+  boolean hasIpv6AccessType();
+  /**
+   *
+   *
+   * <pre>
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return The ipv6AccessType.
+   */
+  java.lang.String getIpv6AccessType();
+  /**
+   *
+   *
+   * <pre>
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+   * Check the Ipv6AccessType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   *
+   * @return The bytes for ipv6AccessType.
+   */
+  com.google.protobuf.ByteString getIpv6AccessTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Network URL.
    * </pre>
    *
@@ -96,6 +210,86 @@ public interface UsableSubnetworkOrBuilder
    * @return The bytes for network.
    */
   com.google.protobuf.ByteString getNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Check the Purpose enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string purpose = 316407070;</code>
+   *
+   * @return Whether the purpose field is set.
+   */
+  boolean hasPurpose();
+  /**
+   *
+   *
+   * <pre>
+   * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Check the Purpose enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string purpose = 316407070;</code>
+   *
+   * @return The purpose.
+   */
+  java.lang.String getPurpose();
+  /**
+   *
+   *
+   * <pre>
+   * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Check the Purpose enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string purpose = 316407070;</code>
+   *
+   * @return The bytes for purpose.
+   */
+  com.google.protobuf.ByteString getPurposeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * Check the Role enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string role = 3506294;</code>
+   *
+   * @return Whether the role field is set.
+   */
+  boolean hasRole();
+  /**
+   *
+   *
+   * <pre>
+   * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * Check the Role enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string role = 3506294;</code>
+   *
+   * @return The role.
+   */
+  java.lang.String getRole();
+  /**
+   *
+   *
+   * <pre>
+   * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * Check the Role enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string role = 3506294;</code>
+   *
+   * @return The bytes for role.
+   */
+  com.google.protobuf.ByteString getRoleBytes();
 
   /**
    *
@@ -160,6 +354,46 @@ public interface UsableSubnetworkOrBuilder
    */
   com.google.cloud.compute.v1.UsableSubnetworkSecondaryRangeOrBuilder getSecondaryIpRangesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return Whether the stackType field is set.
+   */
+  boolean hasStackType();
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return The stackType.
+   */
+  java.lang.String getStackType();
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+   * Check the StackType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string stack_type = 425908881;</code>
+   *
+   * @return The bytes for stackType.
+   */
+  com.google.protobuf.ByteString getStackTypeBytes();
 
   /**
    *

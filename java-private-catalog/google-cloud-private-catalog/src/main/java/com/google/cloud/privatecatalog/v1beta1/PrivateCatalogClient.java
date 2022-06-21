@@ -257,7 +257,7 @@ public class PrivateCatalogClient implements BackgroundResource {
    *   while (true) {
    *     SearchCatalogsResponse response =
    *         privateCatalogClient.searchCatalogsCallable().call(request);
-   *     for (Catalog element : response.getResponsesList()) {
+   *     for (Catalog element : response.getCatalogsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -359,7 +359,7 @@ public class PrivateCatalogClient implements BackgroundResource {
    *   while (true) {
    *     SearchProductsResponse response =
    *         privateCatalogClient.searchProductsCallable().call(request);
-   *     for (Product element : response.getResponsesList()) {
+   *     for (Product element : response.getProductsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -461,7 +461,7 @@ public class PrivateCatalogClient implements BackgroundResource {
    *   while (true) {
    *     SearchVersionsResponse response =
    *         privateCatalogClient.searchVersionsCallable().call(request);
-   *     for (Version element : response.getResponsesList()) {
+   *     for (Version element : response.getVersionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

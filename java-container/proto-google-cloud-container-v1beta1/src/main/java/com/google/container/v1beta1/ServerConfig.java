@@ -164,6 +164,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -506,6 +508,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
@@ -671,6 +675,8 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(e)
               .setUnfinishedMessage(this);
@@ -3423,7 +3429,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsWindowsVersionMaps(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetWindowsVersionMaps().getMap().containsKey(key);
   }
@@ -3463,7 +3469,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.container.v1beta1.WindowsVersions getWindowsVersionMapsOrDefault(
       java.lang.String key, com.google.container.v1beta1.WindowsVersions defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions> map =
         internalGetWindowsVersionMaps().getMap();
@@ -3483,7 +3489,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.container.v1beta1.WindowsVersions getWindowsVersionMapsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions> map =
         internalGetWindowsVersionMaps().getMap();
@@ -5175,7 +5181,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsWindowsVersionMaps(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetWindowsVersionMaps().getMap().containsKey(key);
     }
@@ -5215,7 +5221,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.WindowsVersions getWindowsVersionMapsOrDefault(
         java.lang.String key, com.google.container.v1beta1.WindowsVersions defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions> map =
           internalGetWindowsVersionMaps().getMap();
@@ -5235,7 +5241,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.container.v1beta1.WindowsVersions getWindowsVersionMapsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.container.v1beta1.WindowsVersions> map =
           internalGetWindowsVersionMaps().getMap();
@@ -5261,7 +5267,7 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeWindowsVersionMaps(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableWindowsVersionMaps().getMutableMap().remove(key);
       return this;
@@ -5285,11 +5291,12 @@ public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder putWindowsVersionMaps(
         java.lang.String key, com.google.container.v1beta1.WindowsVersions value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableWindowsVersionMaps().getMutableMap().put(key, value);
       return this;
     }
