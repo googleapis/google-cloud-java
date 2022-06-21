@@ -426,6 +426,7 @@ public interface JobConfigOrBuilder
    *
    * <pre>
    * List of output sprite sheets.
+   * Spritesheets require at least one VideoStream in the Jobconfig.
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -436,6 +437,7 @@ public interface JobConfigOrBuilder
    *
    * <pre>
    * List of output sprite sheets.
+   * Spritesheets require at least one VideoStream in the Jobconfig.
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -446,6 +448,7 @@ public interface JobConfigOrBuilder
    *
    * <pre>
    * List of output sprite sheets.
+   * Spritesheets require at least one VideoStream in the Jobconfig.
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -456,6 +459,7 @@ public interface JobConfigOrBuilder
    *
    * <pre>
    * List of output sprite sheets.
+   * Spritesheets require at least one VideoStream in the Jobconfig.
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>
@@ -467,6 +471,7 @@ public interface JobConfigOrBuilder
    *
    * <pre>
    * List of output sprite sheets.
+   * Spritesheets require at least one VideoStream in the Jobconfig.
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1.SpriteSheet sprite_sheets = 9;</code>

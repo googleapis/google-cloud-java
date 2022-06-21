@@ -60,6 +60,7 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -93,6 +94,19 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -117,6 +131,17 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.video.transcoder.v1.ResourcesProto
         .internal_static_google_cloud_video_transcoder_v1_JobTemplate_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 3:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -230,6 +255,108 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
     return getConfig();
   }
 
+  public static final int LABELS_FIELD_NUMBER = 3;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.video.transcoder.v1.ResourcesProto
+                .internal_static_google_cloud_video_transcoder_v1_JobTemplate_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job template. You can use these to organize
+   * and group your job templates.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3;</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job template. You can use these to organize
+   * and group your job templates.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job template. You can use these to organize
+   * and group your job templates.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels associated with this job template. You can use these to organize
+   * and group your job templates.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -250,6 +377,8 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
     if (config_ != null) {
       output.writeMessage(2, getConfig());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 3);
     unknownFields.writeTo(output);
   }
 
@@ -264,6 +393,16 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
     }
     if (config_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getConfig());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, labels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -286,6 +425,7 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
     if (hasConfig()) {
       if (!getConfig().equals(other.getConfig())) return false;
     }
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -302,6 +442,10 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
     if (hasConfig()) {
       hash = (37 * hash) + CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getConfig().hashCode();
+    }
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -421,6 +565,26 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_video_transcoder_v1_JobTemplate_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 3:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 3:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -456,6 +620,7 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
         config_ = null;
         configBuilder_ = null;
       }
+      internalGetMutableLabels().clear();
       return this;
     }
 
@@ -483,12 +648,15 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.transcoder.v1.JobTemplate buildPartial() {
       com.google.cloud.video.transcoder.v1.JobTemplate result =
           new com.google.cloud.video.transcoder.v1.JobTemplate(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       if (configBuilder_ == null) {
         result.config_ = config_;
       } else {
         result.config_ = configBuilder_.build();
       }
+      result.labels_ = internalGetLabels();
+      result.labels_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -546,6 +714,7 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasConfig()) {
         mergeConfig(other.getConfig());
       }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -574,6 +743,8 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -875,6 +1046,171 @@ public final class JobTemplate extends com.google.protobuf.GeneratedMessageV3
         config_ = null;
       }
       return configBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      onChanged();
+      ;
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job template. You can use these to organize
+     * and group your job templates.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3;</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job template. You can use these to organize
+     * and group your job templates.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job template. You can use these to organize
+     * and group your job templates.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job template. You can use these to organize
+     * and group your job templates.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job template. You can use these to organize
+     * and group your job templates.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3;</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job template. You can use these to organize
+     * and group your job templates.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3;</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels associated with this job template. You can use these to organize
+     * and group your job templates.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3;</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      return this;
     }
 
     @java.lang.Override

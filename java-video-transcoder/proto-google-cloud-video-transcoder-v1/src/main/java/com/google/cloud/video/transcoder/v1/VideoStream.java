@@ -8171,7 +8171,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
      * - `vbr` - variable bitrate
-     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -8186,7 +8185,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
      * - `vbr` - variable bitrate
-     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -8201,6 +8199,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Target CRF level. Must be between 10 and 36, where 10 is the highest
      * quality and 36 is the most efficient compression. The default is 21.
+     * **Note:** This field is not supported.
      * </pre>
      *
      * <code>int32 crf_level = 7;</code>
@@ -8696,7 +8695,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
      * - `vbr` - variable bitrate
-     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -8722,7 +8720,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * Specify the `rate_control_mode`. The default is `vbr`.
      * Supported rate control modes:
      * - `vbr` - variable bitrate
-     * - `crf` - constant rate factor
      * </pre>
      *
      * <code>string rate_control_mode = 6;</code>
@@ -8750,6 +8747,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Target CRF level. Must be between 10 and 36, where 10 is the highest
      * quality and 36 is the most efficient compression. The default is 21.
+     * **Note:** This field is not supported.
      * </pre>
      *
      * <code>int32 crf_level = 7;</code>
@@ -9859,7 +9857,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
        * - `vbr` - variable bitrate
-       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -9884,7 +9881,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
        * - `vbr` - variable bitrate
-       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -9909,7 +9905,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
        * - `vbr` - variable bitrate
-       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -9933,7 +9928,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
        * - `vbr` - variable bitrate
-       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -9953,7 +9947,6 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * Specify the `rate_control_mode`. The default is `vbr`.
        * Supported rate control modes:
        * - `vbr` - variable bitrate
-       * - `crf` - constant rate factor
        * </pre>
        *
        * <code>string rate_control_mode = 6;</code>
@@ -9979,6 +9972,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Target CRF level. Must be between 10 and 36, where 10 is the highest
        * quality and 36 is the most efficient compression. The default is 21.
+       * **Note:** This field is not supported.
        * </pre>
        *
        * <code>int32 crf_level = 7;</code>
@@ -9995,6 +9989,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Target CRF level. Must be between 10 and 36, where 10 is the highest
        * quality and 36 is the most efficient compression. The default is 21.
+       * **Note:** This field is not supported.
        * </pre>
        *
        * <code>int32 crf_level = 7;</code>
@@ -10014,6 +10009,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Target CRF level. Must be between 10 and 36, where 10 is the highest
        * quality and 36 is the most efficient compression. The default is 21.
+       * **Note:** This field is not supported.
        * </pre>
        *
        * <code>int32 crf_level = 7;</code>

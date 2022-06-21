@@ -91,6 +91,9 @@ public interface MuxStreamOrBuilder
    * - `fmp4`- the corresponding file extension is `.m4s`
    * - `mp4`
    * - `vtt`
+   * See also:
+   * [Supported input and output
+   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
    * </pre>
    *
    * <code>string container = 3;</code>
@@ -108,6 +111,9 @@ public interface MuxStreamOrBuilder
    * - `fmp4`- the corresponding file extension is `.m4s`
    * - `mp4`
    * - `vtt`
+   * See also:
+   * [Supported input and output
+   * formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
    * </pre>
    *
    * <code>string container = 3;</code>

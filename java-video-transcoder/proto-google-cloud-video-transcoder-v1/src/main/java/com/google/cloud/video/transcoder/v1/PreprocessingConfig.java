@@ -267,6 +267,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Color preprocessing configuration.
+   * **Note:** This configuration is not supported.
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.transcoder.v1.PreprocessingConfig.Color}
@@ -619,6 +620,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Color preprocessing configuration.
+     * **Note:** This configuration is not supported.
      * </pre>
      *
      * Protobuf type {@code google.cloud.video.transcoder.v1.PreprocessingConfig.Color}
@@ -1075,6 +1077,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Denoise preprocessing configuration.
+   * **Note:** This configuration is not supported.
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise}
@@ -1424,6 +1427,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Denoise preprocessing configuration.
+     * **Note:** This configuration is not supported.
      * </pre>
      *
      * Protobuf type {@code google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise}
@@ -1863,6 +1867,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Deblock preprocessing configuration.
+   * **Note:** This configuration is not supported.
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock}
@@ -2172,6 +2177,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Deblock preprocessing configuration.
+     * **Note:** This configuration is not supported.
      * </pre>
      *
      * Protobuf type {@code google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock}
@@ -2538,6 +2544,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Enable boosting high frequency components. The default is `false`.
+     * **Note:** This field is not supported.
      * </pre>
      *
      * <code>bool high_boost = 2;</code>
@@ -2551,6 +2558,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Enable boosting low frequency components. The default is `false`.
+     * **Note:** This field is not supported.
      * </pre>
      *
      * <code>bool low_boost = 3;</code>
@@ -2694,6 +2702,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Enable boosting high frequency components. The default is `false`.
+     * **Note:** This field is not supported.
      * </pre>
      *
      * <code>bool high_boost = 2;</code>
@@ -2712,6 +2721,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Enable boosting low frequency components. The default is `false`.
+     * **Note:** This field is not supported.
      * </pre>
      *
      * <code>bool low_boost = 3;</code>
@@ -3167,6 +3177,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Enable boosting high frequency components. The default is `false`.
+       * **Note:** This field is not supported.
        * </pre>
        *
        * <code>bool high_boost = 2;</code>
@@ -3182,6 +3193,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Enable boosting high frequency components. The default is `false`.
+       * **Note:** This field is not supported.
        * </pre>
        *
        * <code>bool high_boost = 2;</code>
@@ -3200,6 +3212,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Enable boosting high frequency components. The default is `false`.
+       * **Note:** This field is not supported.
        * </pre>
        *
        * <code>bool high_boost = 2;</code>
@@ -3219,6 +3232,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Enable boosting low frequency components. The default is `false`.
+       * **Note:** This field is not supported.
        * </pre>
        *
        * <code>bool low_boost = 3;</code>
@@ -3234,6 +3248,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Enable boosting low frequency components. The default is `false`.
+       * **Note:** This field is not supported.
        * </pre>
        *
        * <code>bool low_boost = 3;</code>
@@ -3252,6 +3267,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * Enable boosting low frequency components. The default is `false`.
+       * **Note:** This field is not supported.
        * </pre>
        *
        * <code>bool low_boost = 3;</code>
