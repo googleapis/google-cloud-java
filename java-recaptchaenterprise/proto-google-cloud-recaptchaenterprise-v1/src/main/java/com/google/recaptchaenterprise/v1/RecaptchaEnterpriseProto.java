@@ -228,7 +228,7 @@ public final class RecaptchaEnterpriseProto {
           + "_assessment\030\006 \001(\0132>.google.cloud.recaptc"
           + "haenterprise.v1.AccountDefenderAssessmen"
           + "t\022p\n\"private_password_leak_verification\030"
-          + "\007 \001(\0132D.google.cloud.recaptchaenterprise"
+          + "\010 \001(\0132D.google.cloud.recaptchaenterprise"
           + ".v1.PrivatePasswordLeakVerification:_\352A\\"
           + "\n-recaptchaenterprise.googleapis.com/Ass"
           + "essment\022+projects/{project}/assessments/"

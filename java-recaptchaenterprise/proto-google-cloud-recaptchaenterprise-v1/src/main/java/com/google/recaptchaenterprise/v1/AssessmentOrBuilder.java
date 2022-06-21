@@ -220,7 +220,7 @@ public interface AssessmentOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
    * </code>
    *
    * @return Whether the privatePasswordLeakVerification field is set.
@@ -234,7 +234,7 @@ public interface AssessmentOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
    * </code>
    *
    * @return The privatePasswordLeakVerification.
@@ -249,7 +249,7 @@ public interface AssessmentOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 7;
+   * .google.cloud.recaptchaenterprise.v1.PrivatePasswordLeakVerification private_password_leak_verification = 8;
    * </code>
    */
   com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerificationOrBuilder
