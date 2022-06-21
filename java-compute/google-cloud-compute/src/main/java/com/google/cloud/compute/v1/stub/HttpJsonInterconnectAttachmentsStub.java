@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.InterconnectAttachmentsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.InterconnectAttachmentsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -61,7 +60,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachmentsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -73,7 +72,7 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
               .<AggregatedListInterconnectAttachmentsRequest, InterconnectAttachmentAggregatedList>
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InterconnectAttachments/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -130,7 +129,7 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteInterconnectAttachmentRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InterconnectAttachments/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteInterconnectAttachmentRequest>newBuilder()
@@ -184,7 +183,7 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
       getMethodDescriptor =
           ApiMethodDescriptor.<GetInterconnectAttachmentRequest, InterconnectAttachment>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InterconnectAttachments/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetInterconnectAttachmentRequest>newBuilder()
@@ -222,7 +221,7 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertInterconnectAttachmentRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InterconnectAttachments/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertInterconnectAttachmentRequest>newBuilder()
@@ -283,7 +282,7 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
           ApiMethodDescriptor
               .<ListInterconnectAttachmentsRequest, InterconnectAttachmentList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InterconnectAttachments/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInterconnectAttachmentsRequest>newBuilder()
@@ -336,7 +335,7 @@ public class HttpJsonInterconnectAttachmentsStub extends InterconnectAttachments
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchInterconnectAttachmentRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InterconnectAttachments/Patch")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchInterconnectAttachmentRequest>newBuilder()

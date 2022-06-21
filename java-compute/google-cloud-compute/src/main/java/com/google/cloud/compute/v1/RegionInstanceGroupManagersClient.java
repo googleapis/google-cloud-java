@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
  *     RegionInstanceGroupManagersClient.create()) {
  *   String project = "project-309310695";
@@ -83,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionInstanceGroupManagersSettings regionInstanceGroupManagersSettings =
  *     RegionInstanceGroupManagersSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -94,6 +98,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionInstanceGroupManagersSettings regionInstanceGroupManagersSettings =
  *     RegionInstanceGroupManagersSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
@@ -126,7 +132,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * Constructs an instance of RegionInstanceGroupManagersClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(RegionInstanceGroupManagersSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionInstanceGroupManagersClient create(
       RegionInstanceGroupManagersStub stub) {
     return new RegionInstanceGroupManagersClient(stub);
@@ -143,7 +148,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     this.stub = ((RegionInstanceGroupManagersStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RegionInstanceGroupManagersClient(RegionInstanceGroupManagersStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -153,7 +157,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegionInstanceGroupManagersStub getStub() {
     return stub;
   }
@@ -174,6 +177,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -233,6 +238,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   AbandonInstancesRegionInstanceGroupManagerRequest request =
@@ -274,6 +281,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   AbandonInstancesRegionInstanceGroupManagerRequest request =
@@ -314,6 +323,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   AbandonInstancesRegionInstanceGroupManagerRequest request =
@@ -344,6 +355,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -394,6 +407,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request =
@@ -426,6 +441,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request =
@@ -458,6 +475,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request =
@@ -482,15 +501,17 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates instances with per-instance configs in this regional managed instance group. Instances
-   * are created using the current instance template. The create instances operation is marked DONE
-   * if the createInstances request is successful. The underlying actions take additional time. You
-   * must separately verify the status of the creating or actions with the listmanagedinstances
-   * method.
+   * Creates instances with per-instance configurations in this regional managed instance group.
+   * Instances are created using the current instance template. The create instances operation is
+   * marked DONE if the createInstances request is successful. The underlying actions take
+   * additional time. You must separately verify the status of the creating or actions with the
+   * listmanagedinstances method.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -538,15 +559,17 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates instances with per-instance configs in this regional managed instance group. Instances
-   * are created using the current instance template. The create instances operation is marked DONE
-   * if the createInstances request is successful. The underlying actions take additional time. You
-   * must separately verify the status of the creating or actions with the listmanagedinstances
-   * method.
+   * Creates instances with per-instance configurations in this regional managed instance group.
+   * Instances are created using the current instance template. The create instances operation is
+   * marked DONE if the createInstances request is successful. The underlying actions take
+   * additional time. You must separately verify the status of the creating or actions with the
+   * listmanagedinstances method.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   CreateInstancesRegionInstanceGroupManagerRequest request =
@@ -574,15 +597,17 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates instances with per-instance configs in this regional managed instance group. Instances
-   * are created using the current instance template. The create instances operation is marked DONE
-   * if the createInstances request is successful. The underlying actions take additional time. You
-   * must separately verify the status of the creating or actions with the listmanagedinstances
-   * method.
+   * Creates instances with per-instance configurations in this regional managed instance group.
+   * Instances are created using the current instance template. The create instances operation is
+   * marked DONE if the createInstances request is successful. The underlying actions take
+   * additional time. You must separately verify the status of the creating or actions with the
+   * listmanagedinstances method.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   CreateInstancesRegionInstanceGroupManagerRequest request =
@@ -609,15 +634,17 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates instances with per-instance configs in this regional managed instance group. Instances
-   * are created using the current instance template. The create instances operation is marked DONE
-   * if the createInstances request is successful. The underlying actions take additional time. You
-   * must separately verify the status of the creating or actions with the listmanagedinstances
-   * method.
+   * Creates instances with per-instance configurations in this regional managed instance group.
+   * Instances are created using the current instance template. The create instances operation is
+   * marked DONE if the createInstances request is successful. The underlying actions take
+   * additional time. You must separately verify the status of the creating or actions with the
+   * listmanagedinstances method.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   CreateInstancesRegionInstanceGroupManagerRequest request =
@@ -648,6 +675,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -683,6 +712,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   DeleteRegionInstanceGroupManagerRequest request =
@@ -713,6 +744,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   DeleteRegionInstanceGroupManagerRequest request =
@@ -741,6 +774,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   DeleteRegionInstanceGroupManagerRequest request =
@@ -776,6 +811,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -834,6 +871,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   DeleteInstancesRegionInstanceGroupManagerRequest request =
@@ -874,6 +913,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   DeleteInstancesRegionInstanceGroupManagerRequest request =
@@ -913,6 +954,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   DeleteInstancesRegionInstanceGroupManagerRequest request =
@@ -938,11 +981,13 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes selected per-instance configs for the managed instance group.
+   * Deletes selected per-instance configurations for the managed instance group.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -989,11 +1034,13 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes selected per-instance configs for the managed instance group.
+   * Deletes selected per-instance configurations for the managed instance group.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request =
@@ -1021,11 +1068,13 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes selected per-instance configs for the managed instance group.
+   * Deletes selected per-instance configurations for the managed instance group.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request =
@@ -1053,11 +1102,13 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes selected per-instance configs for the managed instance group.
+   * Deletes selected per-instance configurations for the managed instance group.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request =
@@ -1087,6 +1138,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -1120,6 +1173,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   GetRegionInstanceGroupManagerRequest request =
@@ -1146,6 +1201,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   GetRegionInstanceGroupManagerRequest request =
@@ -1178,6 +1235,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -1218,6 +1277,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   InsertRegionInstanceGroupManagerRequest request =
@@ -1253,6 +1314,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   InsertRegionInstanceGroupManagerRequest request =
@@ -1286,6 +1349,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   InsertRegionInstanceGroupManagerRequest request =
@@ -1313,6 +1378,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -1344,6 +1411,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ListRegionInstanceGroupManagersRequest request =
@@ -1377,6 +1446,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ListRegionInstanceGroupManagersRequest request =
@@ -1410,6 +1481,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ListRegionInstanceGroupManagersRequest request =
@@ -1425,7 +1498,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   while (true) {
    *     RegionInstanceGroupManagerList response =
    *         regionInstanceGroupManagersClient.listCallable().call(request);
-   *     for (InstanceGroupManager element : response.getResponsesList()) {
+   *     for (InstanceGroupManager element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1451,6 +1524,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -1491,6 +1566,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ListErrorsRegionInstanceGroupManagersRequest request =
@@ -1527,6 +1604,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ListErrorsRegionInstanceGroupManagersRequest request =
@@ -1562,6 +1641,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ListErrorsRegionInstanceGroupManagersRequest request =
@@ -1578,7 +1659,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   while (true) {
    *     RegionInstanceGroupManagersListErrorsResponse response =
    *         regionInstanceGroupManagersClient.listErrorsCallable().call(request);
-   *     for (InstanceManagedByIgmError element : response.getResponsesList()) {
+   *     for (InstanceManagedByIgmError element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1607,6 +1688,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -1646,6 +1729,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ListManagedInstancesRegionInstanceGroupManagersRequest request =
@@ -1683,6 +1768,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ListManagedInstancesRegionInstanceGroupManagersRequest request =
@@ -1720,6 +1807,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ListManagedInstancesRegionInstanceGroupManagersRequest request =
@@ -1736,7 +1825,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   while (true) {
    *     RegionInstanceGroupManagersListInstancesResponse response =
    *         regionInstanceGroupManagersClient.listManagedInstancesCallable().call(request);
-   *     for (ManagedInstance element : response.getResponsesList()) {
+   *     for (ManagedInstance element : response.getManagedInstancesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1758,12 +1847,14 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all of the per-instance configs defined for the managed instance group. The orderBy query
-   * parameter is not supported.
+   * Lists all of the per-instance configurations defined for the managed instance group. The
+   * orderBy query parameter is not supported.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -1797,12 +1888,14 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all of the per-instance configs defined for the managed instance group. The orderBy query
-   * parameter is not supported.
+   * Lists all of the per-instance configurations defined for the managed instance group. The
+   * orderBy query parameter is not supported.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ListPerInstanceConfigsRegionInstanceGroupManagersRequest request =
@@ -1833,12 +1926,14 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all of the per-instance configs defined for the managed instance group. The orderBy query
-   * parameter is not supported.
+   * Lists all of the per-instance configurations defined for the managed instance group. The
+   * orderBy query parameter is not supported.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ListPerInstanceConfigsRegionInstanceGroupManagersRequest request =
@@ -1872,12 +1967,14 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all of the per-instance configs defined for the managed instance group. The orderBy query
-   * parameter is not supported.
+   * Lists all of the per-instance configurations defined for the managed instance group. The
+   * orderBy query parameter is not supported.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ListPerInstanceConfigsRegionInstanceGroupManagersRequest request =
@@ -1894,7 +1991,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   while (true) {
    *     RegionInstanceGroupManagersListInstanceConfigsResp response =
    *         regionInstanceGroupManagersClient.listPerInstanceConfigsCallable().call(request);
-   *     for (PerInstanceConfig element : response.getResponsesList()) {
+   *     for (PerInstanceConfig element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1928,6 +2025,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -1976,6 +2075,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   PatchRegionInstanceGroupManagerRequest request =
@@ -2014,6 +2115,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   PatchRegionInstanceGroupManagerRequest request =
@@ -2050,6 +2153,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   PatchRegionInstanceGroupManagerRequest request =
@@ -2073,12 +2178,14 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inserts or patches per-instance configs for the managed instance group. perInstanceConfig.name
-   * serves as a key used to distinguish whether to perform insert or patch.
+   * Inserts or patches per-instance configurations for the managed instance group.
+   * perInstanceConfig.name serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -2125,12 +2232,14 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inserts or patches per-instance configs for the managed instance group. perInstanceConfig.name
-   * serves as a key used to distinguish whether to perform insert or patch.
+   * Inserts or patches per-instance configurations for the managed instance group.
+   * perInstanceConfig.name serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request =
@@ -2159,12 +2268,14 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inserts or patches per-instance configs for the managed instance group. perInstanceConfig.name
-   * serves as a key used to distinguish whether to perform insert or patch.
+   * Inserts or patches per-instance configurations for the managed instance group.
+   * perInstanceConfig.name serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request =
@@ -2193,12 +2304,14 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inserts or patches per-instance configs for the managed instance group. perInstanceConfig.name
-   * serves as a key used to distinguish whether to perform insert or patch.
+   * Inserts or patches per-instance configurations for the managed instance group.
+   * perInstanceConfig.name serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request =
@@ -2236,6 +2349,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -2292,6 +2407,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   RecreateInstancesRegionInstanceGroupManagerRequest request =
@@ -2331,6 +2448,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   RecreateInstancesRegionInstanceGroupManagerRequest request =
@@ -2371,6 +2490,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   RecreateInstancesRegionInstanceGroupManagerRequest request =
@@ -2407,6 +2528,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -2451,6 +2574,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ResizeRegionInstanceGroupManagerRequest request =
@@ -2488,6 +2613,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ResizeRegionInstanceGroupManagerRequest request =
@@ -2523,6 +2650,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   ResizeRegionInstanceGroupManagerRequest request =
@@ -2552,6 +2681,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -2602,6 +2733,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   SetInstanceTemplateRegionInstanceGroupManagerRequest request =
@@ -2636,6 +2769,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   SetInstanceTemplateRegionInstanceGroupManagerRequest request =
@@ -2670,6 +2805,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   SetInstanceTemplateRegionInstanceGroupManagerRequest request =
@@ -2701,6 +2838,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -2752,6 +2891,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   SetTargetPoolsRegionInstanceGroupManagerRequest request =
@@ -2785,6 +2926,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   SetTargetPoolsRegionInstanceGroupManagerRequest request =
@@ -2817,6 +2960,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   SetTargetPoolsRegionInstanceGroupManagerRequest request =
@@ -2842,12 +2987,14 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inserts or updates per-instance configs for the managed instance group. perInstanceConfig.name
-   * serves as a key used to distinguish whether to perform insert or patch.
+   * Inserts or updates per-instance configurations for the managed instance group.
+   * perInstanceConfig.name serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   String project = "project-309310695";
@@ -2894,12 +3041,14 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inserts or updates per-instance configs for the managed instance group. perInstanceConfig.name
-   * serves as a key used to distinguish whether to perform insert or patch.
+   * Inserts or updates per-instance configurations for the managed instance group.
+   * perInstanceConfig.name serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request =
@@ -2928,12 +3077,14 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inserts or updates per-instance configs for the managed instance group. perInstanceConfig.name
-   * serves as a key used to distinguish whether to perform insert or patch.
+   * Inserts or updates per-instance configurations for the managed instance group.
+   * perInstanceConfig.name serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request =
@@ -2962,12 +3113,14 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Inserts or updates per-instance configs for the managed instance group. perInstanceConfig.name
-   * serves as a key used to distinguish whether to perform insert or patch.
+   * Inserts or updates per-instance configurations for the managed instance group.
+   * perInstanceConfig.name serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient =
    *     RegionInstanceGroupManagersClient.create()) {
    *   UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request =

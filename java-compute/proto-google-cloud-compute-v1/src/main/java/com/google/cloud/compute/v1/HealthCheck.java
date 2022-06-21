@@ -279,6 +279,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -306,7 +308,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+   * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS, HTTP2 or GRPC. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.HealthCheck.Type}
@@ -1218,7 +1220,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+   * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS, HTTP2 or GRPC. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1234,7 +1236,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+   * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS, HTTP2 or GRPC. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -1258,7 +1260,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+   * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS, HTTP2 or GRPC. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -4141,7 +4143,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS, HTTP2 or GRPC. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -4156,7 +4158,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS, HTTP2 or GRPC. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -4179,7 +4181,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS, HTTP2 or GRPC. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -4202,7 +4204,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS, HTTP2 or GRPC. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -4224,7 +4226,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS, HTTP2 or GRPC. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -4242,7 +4244,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+     * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS, HTTP2 or GRPC. Exactly one of the protocol-specific health check fields must be specified, which must match type field.
      * Check the Type enum for the list of possible values.
      * </pre>
      *

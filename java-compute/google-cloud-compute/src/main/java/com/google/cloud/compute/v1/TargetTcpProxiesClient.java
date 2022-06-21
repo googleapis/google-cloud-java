@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
  *   String project = "project-309310695";
  *   String targetTcpProxy = "targetTcpProxy-337144898";
@@ -80,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TargetTcpProxiesSettings targetTcpProxiesSettings =
  *     TargetTcpProxiesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TargetTcpProxiesSettings targetTcpProxiesSettings =
  *     TargetTcpProxiesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TargetTcpProxiesClient targetTcpProxiesClient =
@@ -122,7 +128,6 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * Constructs an instance of TargetTcpProxiesClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(TargetTcpProxiesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetTcpProxiesClient create(TargetTcpProxiesStub stub) {
     return new TargetTcpProxiesClient(stub);
   }
@@ -137,7 +142,6 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     this.stub = ((TargetTcpProxiesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TargetTcpProxiesClient(TargetTcpProxiesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -147,7 +151,6 @@ public class TargetTcpProxiesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TargetTcpProxiesStub getStub() {
     return stub;
   }
@@ -159,6 +162,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetTcpProxy = "targetTcpProxy-337144898";
@@ -187,6 +192,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   DeleteTargetTcpProxyRequest request =
    *       DeleteTargetTcpProxyRequest.newBuilder()
@@ -215,6 +222,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   DeleteTargetTcpProxyRequest request =
    *       DeleteTargetTcpProxyRequest.newBuilder()
@@ -241,6 +250,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   DeleteTargetTcpProxyRequest request =
    *       DeleteTargetTcpProxyRequest.newBuilder()
@@ -266,6 +277,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetTcpProxy = "targetTcpProxy-337144898";
@@ -294,6 +307,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   GetTargetTcpProxyRequest request =
    *       GetTargetTcpProxyRequest.newBuilder()
@@ -319,6 +334,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   GetTargetTcpProxyRequest request =
    *       GetTargetTcpProxyRequest.newBuilder()
@@ -343,6 +360,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   String project = "project-309310695";
    *   TargetTcpProxy targetTcpProxyResource = TargetTcpProxy.newBuilder().build();
@@ -373,6 +392,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   InsertTargetTcpProxyRequest request =
    *       InsertTargetTcpProxyRequest.newBuilder()
@@ -402,6 +423,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   InsertTargetTcpProxyRequest request =
    *       InsertTargetTcpProxyRequest.newBuilder()
@@ -429,6 +452,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   InsertTargetTcpProxyRequest request =
    *       InsertTargetTcpProxyRequest.newBuilder()
@@ -453,6 +478,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   String project = "project-309310695";
    *   for (TargetTcpProxy element : targetTcpProxiesClient.list(project).iterateAll()) {
@@ -477,6 +504,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   ListTargetTcpProxiesRequest request =
    *       ListTargetTcpProxiesRequest.newBuilder()
@@ -507,6 +536,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   ListTargetTcpProxiesRequest request =
    *       ListTargetTcpProxiesRequest.newBuilder()
@@ -537,6 +568,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   ListTargetTcpProxiesRequest request =
    *       ListTargetTcpProxiesRequest.newBuilder()
@@ -549,7 +582,7 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     TargetTcpProxyList response = targetTcpProxiesClient.listCallable().call(request);
-   *     for (TargetTcpProxy element : response.getResponsesList()) {
+   *     for (TargetTcpProxy element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -573,6 +606,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetTcpProxy = "targetTcpProxy-337144898";
@@ -613,6 +648,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   SetBackendServiceTargetTcpProxyRequest request =
    *       SetBackendServiceTargetTcpProxyRequest.newBuilder()
@@ -643,6 +680,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   SetBackendServiceTargetTcpProxyRequest request =
    *       SetBackendServiceTargetTcpProxyRequest.newBuilder()
@@ -671,6 +710,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   SetBackendServiceTargetTcpProxyRequest request =
    *       SetBackendServiceTargetTcpProxyRequest.newBuilder()
@@ -699,6 +740,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetTcpProxy = "targetTcpProxy-337144898";
@@ -738,6 +781,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   SetProxyHeaderTargetTcpProxyRequest request =
    *       SetProxyHeaderTargetTcpProxyRequest.newBuilder()
@@ -768,6 +813,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   SetProxyHeaderTargetTcpProxyRequest request =
    *       SetProxyHeaderTargetTcpProxyRequest.newBuilder()
@@ -796,6 +843,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   SetProxyHeaderTargetTcpProxyRequest request =
    *       SetProxyHeaderTargetTcpProxyRequest.newBuilder()

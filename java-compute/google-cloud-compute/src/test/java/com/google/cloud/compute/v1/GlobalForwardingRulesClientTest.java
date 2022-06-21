@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,6 +170,7 @@ public class GlobalForwardingRulesClientTest {
             .setName("name3373707")
             .setNetwork("network1843485230")
             .setNetworkTier("networkTier-1940629200")
+            .setNoAutomateDnsZone(true)
             .setPortRange("portRange1102895420")
             .addAllPorts(new ArrayList<String>())
             .setPscConnectionId(292082397)

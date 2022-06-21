@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.cloud.compute.v1.InsertTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.ListTargetHttpsProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchTargetHttpsProxyRequest;
+import com.google.cloud.compute.v1.SetCertificateMapTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetQuicOverrideTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetSslPolicyTargetHttpsProxyRequest;
@@ -94,6 +95,17 @@ public abstract class TargetHttpsProxiesStub implements BackgroundResource {
 
   public UnaryCallable<PatchTargetHttpsProxyRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<SetCertificateMapTargetHttpsProxyRequest, Operation, Operation>
+      setCertificateMapOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setCertificateMapOperationCallable()");
+  }
+
+  public UnaryCallable<SetCertificateMapTargetHttpsProxyRequest, Operation>
+      setCertificateMapCallable() {
+    throw new UnsupportedOperationException("Not implemented: setCertificateMapCallable()");
   }
 
   public OperationCallable<SetQuicOverrideTargetHttpsProxyRequest, Operation, Operation>

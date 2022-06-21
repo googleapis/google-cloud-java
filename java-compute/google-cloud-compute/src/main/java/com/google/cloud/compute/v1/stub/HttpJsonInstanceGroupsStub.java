@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.InstanceGroupsClient.AggregatedListPag
 import static com.google.cloud.compute.v1.InstanceGroupsClient.ListInstancesPagedResponse;
 import static com.google.cloud.compute.v1.InstanceGroupsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -66,7 +65,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -75,7 +74,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
       addInstancesMethodDescriptor =
           ApiMethodDescriptor.<AddInstancesInstanceGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroups/AddInstances")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddInstancesInstanceGroupRequest>newBuilder()
@@ -134,7 +133,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
           ApiMethodDescriptor
               .<AggregatedListInstanceGroupsRequest, InstanceGroupAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroups/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListInstanceGroupsRequest>newBuilder()
@@ -190,7 +189,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteInstanceGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroups/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteInstanceGroupRequest>newBuilder()
@@ -242,7 +241,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetInstanceGroupRequest, InstanceGroup>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroups/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetInstanceGroupRequest>newBuilder()
@@ -278,7 +277,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertInstanceGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroups/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertInstanceGroupRequest>newBuilder()
@@ -332,7 +331,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListInstanceGroupsRequest, InstanceGroupList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroups/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInstanceGroupsRequest>newBuilder()
@@ -387,7 +386,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
           ApiMethodDescriptor
               .<ListInstancesInstanceGroupsRequest, InstanceGroupsListInstances>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroups/ListInstances")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInstancesInstanceGroupsRequest>newBuilder()
@@ -447,7 +446,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
       removeInstancesMethodDescriptor =
           ApiMethodDescriptor.<RemoveInstancesInstanceGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroups/RemoveInstances")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveInstancesInstanceGroupRequest>newBuilder()
@@ -504,7 +503,7 @@ public class HttpJsonInstanceGroupsStub extends InstanceGroupsStub {
       setNamedPortsMethodDescriptor =
           ApiMethodDescriptor.<SetNamedPortsInstanceGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceGroups/SetNamedPorts")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetNamedPortsInstanceGroupRequest>newBuilder()

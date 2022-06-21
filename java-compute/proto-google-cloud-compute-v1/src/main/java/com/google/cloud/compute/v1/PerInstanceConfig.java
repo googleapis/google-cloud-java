@@ -120,6 +120,8 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -147,7 +149,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The status of applying this per-instance config on the corresponding managed instance.
+   * The status of applying this per-instance configuration on the corresponding managed instance.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PerInstanceConfig.Status}
@@ -167,7 +169,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The per-instance config is being applied to the instance, but is not yet effective, possibly waiting for the instance to, for example, REFRESH.
+     * The per-instance configuration is being applied to the instance, but is not yet effective, possibly waiting for the instance to, for example, REFRESH.
      * </pre>
      *
      * <code>APPLYING = 352003508;</code>
@@ -177,7 +179,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The per-instance config deletion is being applied on the instance, possibly waiting for the instance to, for example, REFRESH.
+     * The per-instance configuration deletion is being applied on the instance, possibly waiting for the instance to, for example, REFRESH.
      * </pre>
      *
      * <code>DELETING = 528602024;</code>
@@ -187,7 +189,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The per-instance config is effective on the instance, meaning that all disks, ips and metadata specified in this config are attached or set on the instance.
+     * The per-instance configuration is effective on the instance, meaning that all disks, ips and metadata specified in this configuration are attached or set on the instance.
      * </pre>
      *
      * <code>EFFECTIVE = 244201863;</code>
@@ -197,7 +199,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *[Default]* The default status, when no per-instance config exists.
+     * *[Default]* The default status, when no per-instance configuration exists.
      * </pre>
      *
      * <code>NONE = 2402104;</code>
@@ -207,7 +209,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The per-instance config is set on an instance but not been applied yet.
+     * The per-instance configuration is set on an instance but not been applied yet.
      * </pre>
      *
      * <code>UNAPPLIED = 483935140;</code>
@@ -217,7 +219,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The per-instance config has been deleted, but the deletion is not yet applied.
+     * The per-instance configuration has been deleted, but the deletion is not yet applied.
      * </pre>
      *
      * <code>UNAPPLIED_DELETION = 313956873;</code>
@@ -240,7 +242,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The per-instance config is being applied to the instance, but is not yet effective, possibly waiting for the instance to, for example, REFRESH.
+     * The per-instance configuration is being applied to the instance, but is not yet effective, possibly waiting for the instance to, for example, REFRESH.
      * </pre>
      *
      * <code>APPLYING = 352003508;</code>
@@ -250,7 +252,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The per-instance config deletion is being applied on the instance, possibly waiting for the instance to, for example, REFRESH.
+     * The per-instance configuration deletion is being applied on the instance, possibly waiting for the instance to, for example, REFRESH.
      * </pre>
      *
      * <code>DELETING = 528602024;</code>
@@ -260,7 +262,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The per-instance config is effective on the instance, meaning that all disks, ips and metadata specified in this config are attached or set on the instance.
+     * The per-instance configuration is effective on the instance, meaning that all disks, ips and metadata specified in this configuration are attached or set on the instance.
      * </pre>
      *
      * <code>EFFECTIVE = 244201863;</code>
@@ -270,7 +272,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *[Default]* The default status, when no per-instance config exists.
+     * *[Default]* The default status, when no per-instance configuration exists.
      * </pre>
      *
      * <code>NONE = 2402104;</code>
@@ -280,7 +282,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The per-instance config is set on an instance but not been applied yet.
+     * The per-instance configuration is set on an instance but not been applied yet.
      * </pre>
      *
      * <code>UNAPPLIED = 483935140;</code>
@@ -290,7 +292,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The per-instance config has been deleted, but the deletion is not yet applied.
+     * The per-instance configuration has been deleted, but the deletion is not yet applied.
      * </pre>
      *
      * <code>UNAPPLIED_DELETION = 313956873;</code>
@@ -395,7 +397,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
+   * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance configuration or the field needs to be unset.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -410,7 +412,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
+   * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance configuration or the field needs to be unset.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -433,7 +435,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
+   * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance configuration or the field needs to be unset.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -459,7 +461,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
+   * The name of a per-instance configuration and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance configuration with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance configconfiguration for a VM instance that either doesn't exist or is not part of the group will result in an error.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -474,7 +476,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
+   * The name of a per-instance configuration and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance configuration with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance configconfiguration for a VM instance that either doesn't exist or is not part of the group will result in an error.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -497,7 +499,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
+   * The name of a per-instance configuration and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance configuration with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance configconfiguration for a VM instance that either doesn't exist or is not part of the group will result in an error.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -573,7 +575,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The status of applying this per-instance config on the corresponding managed instance.
+   * The status of applying this per-instance configuration on the corresponding managed instance.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -589,7 +591,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The status of applying this per-instance config on the corresponding managed instance.
+   * The status of applying this per-instance configuration on the corresponding managed instance.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -613,7 +615,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The status of applying this per-instance config on the corresponding managed instance.
+   * The status of applying this per-instance configuration on the corresponding managed instance.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1052,7 +1054,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
+     * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance configuration or the field needs to be unset.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1066,7 +1068,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
+     * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance configuration or the field needs to be unset.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1088,7 +1090,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
+     * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance configuration or the field needs to be unset.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1110,7 +1112,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
+     * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance configuration or the field needs to be unset.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1131,7 +1133,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
+     * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance configuration or the field needs to be unset.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1148,7 +1150,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance config or the field needs to be unset.
+     * Fingerprint of this per-instance config. This field can be used in optimistic locking. It is ignored when inserting a per-instance config. An up-to-date fingerprint must be provided in order to update an existing per-instance configuration or the field needs to be unset.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -1172,7 +1174,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
+     * The name of a per-instance configuration and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance configuration with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance configconfiguration for a VM instance that either doesn't exist or is not part of the group will result in an error.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1186,7 +1188,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
+     * The name of a per-instance configuration and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance configuration with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance configconfiguration for a VM instance that either doesn't exist or is not part of the group will result in an error.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1208,7 +1210,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
+     * The name of a per-instance configuration and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance configuration with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance configconfiguration for a VM instance that either doesn't exist or is not part of the group will result in an error.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1230,7 +1232,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
+     * The name of a per-instance configuration and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance configuration with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance configconfiguration for a VM instance that either doesn't exist or is not part of the group will result in an error.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1251,7 +1253,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
+     * The name of a per-instance configuration and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance configuration with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance configconfiguration for a VM instance that either doesn't exist or is not part of the group will result in an error.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1268,7 +1270,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
+     * The name of a per-instance configuration and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance configuration with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance configconfiguration for a VM instance that either doesn't exist or is not part of the group will result in an error.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1479,7 +1481,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The status of applying this per-instance config on the corresponding managed instance.
+     * The status of applying this per-instance configuration on the corresponding managed instance.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1494,7 +1496,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The status of applying this per-instance config on the corresponding managed instance.
+     * The status of applying this per-instance configuration on the corresponding managed instance.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1517,7 +1519,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The status of applying this per-instance config on the corresponding managed instance.
+     * The status of applying this per-instance configuration on the corresponding managed instance.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1540,7 +1542,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The status of applying this per-instance config on the corresponding managed instance.
+     * The status of applying this per-instance configuration on the corresponding managed instance.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1562,7 +1564,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The status of applying this per-instance config on the corresponding managed instance.
+     * The status of applying this per-instance configuration on the corresponding managed instance.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1580,7 +1582,7 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The status of applying this per-instance config on the corresponding managed instance.
+     * The status of applying this per-instance configuration on the corresponding managed instance.
      * Check the Status enum for the list of possible values.
      * </pre>
      *

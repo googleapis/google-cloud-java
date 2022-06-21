@@ -128,12 +128,18 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
               iPAddress_ = s;
               break;
             }
+          case 516375928:
+            {
+              bitField0_ |= 0x00020000;
+              noAutomateDnsZone_ = input.readBool();
+              break;
+            }
           case 854835346:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00100000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00200000) != 0)) {
                 ports_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00100000;
+                mutable_bitField0_ |= 0x00200000;
               }
               ports_.add(s);
               break;
@@ -147,7 +153,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00100000;
+              bitField0_ |= 0x00200000;
               region_ = s;
               break;
             }
@@ -161,31 +167,31 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           case 1473193378:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00080000;
+              bitField0_ |= 0x00100000;
               pscConnectionStatus_ = s;
               break;
             }
           case 1542687882:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x02000000;
+              bitField0_ |= 0x04000000;
               target_ = s;
               break;
             }
           case 1740144634:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00020000;
+              bitField0_ |= 0x00040000;
               portRange_ = s;
               break;
             }
           case 1788397554:
             {
-              if (!((mutable_bitField0_ & 0x02000000) != 0)) {
+              if (!((mutable_bitField0_ & 0x04000000) != 0)) {
                 serviceDirectoryRegistrations_ =
                     new java.util.ArrayList<
                         com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration>();
-                mutable_bitField0_ |= 0x02000000;
+                mutable_bitField0_ |= 0x04000000;
               }
               serviceDirectoryRegistrations_.add(
                   input.readMessage(
@@ -210,7 +216,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
             }
           case -1958308120:
             {
-              bitField0_ |= 0x00040000;
+              bitField0_ |= 0x00080000;
               pscConnectionId_ = input.readUInt64();
               break;
             }
@@ -231,14 +237,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           case -1832345742:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x01000000;
+              bitField0_ |= 0x02000000;
               subnetwork_ = s;
               break;
             }
           case -1415926102:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00800000;
+              bitField0_ |= 0x01000000;
               serviceName_ = s;
               break;
             }
@@ -252,7 +258,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           case -958896302:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00400000;
+              bitField0_ |= 0x00800000;
               serviceLabel_ = s;
               break;
             }
@@ -272,7 +278,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00200000;
+              bitField0_ |= 0x00400000;
               selfLink_ = s;
               break;
             }
@@ -332,13 +338,15 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00100000) != 0)) {
+      if (((mutable_bitField0_ & 0x00200000) != 0)) {
         ports_ = ports_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x02000000) != 0)) {
+      if (((mutable_bitField0_ & 0x04000000) != 0)) {
         serviceDirectoryRegistrations_ =
             java.util.Collections.unmodifiableList(serviceDirectoryRegistrations_);
       }
@@ -1231,7 +1239,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule. If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address: * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true. For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+   * IP address for which this forwarding rule accepts traffic. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the referenced target or backendService. While creating a forwarding rule, specifying an IPAddress is required under the following circumstances: - When the target is set to targetGrpcProxy and validateForProxyless is set to true, the IPAddress should be set to 0.0.0.0. - When the target is a Private Service Connect Google APIs bundle, you must specify an IPAddress. Otherwise, you can optionally specify an IP address that references an existing static (reserved) IP address resource. When omitted, Google Cloud assigns an ephemeral IP address. Use one of the following formats to specify an IP address while creating a forwarding rule: * IP address number, as in `100.1.2.3` * Full resource URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The forwarding rule's target or backendService, and in most cases, also the loadBalancingScheme, determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). When reading an IPAddress, the API always returns the IP address number.
    * </pre>
    *
    * <code>optional string I_p_address = 42976943;</code>
@@ -1246,7 +1254,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule. If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address: * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true. For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+   * IP address for which this forwarding rule accepts traffic. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the referenced target or backendService. While creating a forwarding rule, specifying an IPAddress is required under the following circumstances: - When the target is set to targetGrpcProxy and validateForProxyless is set to true, the IPAddress should be set to 0.0.0.0. - When the target is a Private Service Connect Google APIs bundle, you must specify an IPAddress. Otherwise, you can optionally specify an IP address that references an existing static (reserved) IP address resource. When omitted, Google Cloud assigns an ephemeral IP address. Use one of the following formats to specify an IP address while creating a forwarding rule: * IP address number, as in `100.1.2.3` * Full resource URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The forwarding rule's target or backendService, and in most cases, also the loadBalancingScheme, determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). When reading an IPAddress, the API always returns the IP address number.
    * </pre>
    *
    * <code>optional string I_p_address = 42976943;</code>
@@ -1269,7 +1277,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule. If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address: * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true. For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+   * IP address for which this forwarding rule accepts traffic. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the referenced target or backendService. While creating a forwarding rule, specifying an IPAddress is required under the following circumstances: - When the target is set to targetGrpcProxy and validateForProxyless is set to true, the IPAddress should be set to 0.0.0.0. - When the target is a Private Service Connect Google APIs bundle, you must specify an IPAddress. Otherwise, you can optionally specify an IP address that references an existing static (reserved) IP address resource. When omitted, Google Cloud assigns an ephemeral IP address. Use one of the following formats to specify an IP address while creating a forwarding rule: * IP address number, as in `100.1.2.3` * Full resource URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The forwarding rule's target or backendService, and in most cases, also the loadBalancingScheme, determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). When reading an IPAddress, the API always returns the IP address number.
    * </pre>
    *
    * <code>optional string I_p_address = 42976943;</code>
@@ -1976,7 +1984,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLabels().getMap().containsKey(key);
   }
@@ -2011,7 +2019,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2028,7 +2036,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
@@ -2369,6 +2377,39 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int NO_AUTOMATE_DNS_ZONE_FIELD_NUMBER = 64546991;
+  private boolean noAutomateDnsZone_;
+  /**
+   *
+   *
+   * <pre>
+   * This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field.
+   * </pre>
+   *
+   * <code>optional bool no_automate_dns_zone = 64546991;</code>
+   *
+   * @return Whether the noAutomateDnsZone field is set.
+   */
+  @java.lang.Override
+  public boolean hasNoAutomateDnsZone() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field.
+   * </pre>
+   *
+   * <code>optional bool no_automate_dns_zone = 64546991;</code>
+   *
+   * @return The noAutomateDnsZone.
+   */
+  @java.lang.Override
+  public boolean getNoAutomateDnsZone() {
+    return noAutomateDnsZone_;
+  }
+
   public static final int PORT_RANGE_FIELD_NUMBER = 217518079;
   private volatile java.lang.Object portRange_;
   /**
@@ -2384,7 +2425,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPortRange() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    *
@@ -2509,7 +2550,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPscConnectionId() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
   /**
    *
@@ -2543,7 +2584,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPscConnectionStatus() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
   /**
    *
@@ -2609,7 +2650,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
   /**
    *
@@ -2673,7 +2714,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
   /**
    *
@@ -2821,7 +2862,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasServiceLabel() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
   /**
    *
@@ -2885,7 +2926,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasServiceName() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
   /**
    *
@@ -2949,7 +2990,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSubnetwork() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
   /**
    *
@@ -3007,7 +3048,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTarget() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
   /**
    * <code>optional string target = 192835985;</code>
@@ -3073,25 +3114,28 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 42976943, iPAddress_);
     }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      output.writeBool(64546991, noAutomateDnsZone_);
+    }
     for (int i = 0; i < ports_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 106854418, ports_.getRaw(i));
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeBool(119255164, isMirroringCollector_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 184149172, pscConnectionStatus_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 192835985, target_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 217518079, portRange_);
     }
     for (int i = 0; i < serviceDirectoryRegistrations_.size(); i++) {
@@ -3103,7 +3147,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       output.writeUInt64(292082397, pscConnectionId_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
@@ -3112,16 +3156,16 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 359880149, serviceName_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 363890244, loadBalancingScheme_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 417008874, serviceLabel_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -3130,7 +3174,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(445175796, allPorts_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     for (int i = 0; i < metadataFilters_.size(); i++) {
@@ -3172,6 +3216,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(42976943, iPAddress_);
     }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(64546991, noAutomateDnsZone_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < ports_.size(); i++) {
@@ -3184,21 +3231,21 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(119255164, isMirroringCollector_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(184149172, pscConnectionStatus_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(192835985, target_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(217518079, portRange_);
     }
     for (int i = 0; i < serviceDirectoryRegistrations_.size(); i++) {
@@ -3212,7 +3259,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(292082397, pscConnectionId_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
@@ -3221,17 +3268,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(359880149, serviceName_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(363890244, loadBalancingScheme_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(417008874, serviceLabel_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -3240,7 +3287,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(445175796, allPorts_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     for (int i = 0; i < metadataFilters_.size(); i++) {
@@ -3352,6 +3399,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (hasNetworkTier() != other.hasNetworkTier()) return false;
     if (hasNetworkTier()) {
       if (!getNetworkTier().equals(other.getNetworkTier())) return false;
+    }
+    if (hasNoAutomateDnsZone() != other.hasNoAutomateDnsZone()) return false;
+    if (hasNoAutomateDnsZone()) {
+      if (getNoAutomateDnsZone() != other.getNoAutomateDnsZone()) return false;
     }
     if (hasPortRange() != other.hasPortRange()) return false;
     if (hasPortRange()) {
@@ -3478,6 +3529,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (hasNetworkTier()) {
       hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkTier().hashCode();
+    }
+    if (hasNoAutomateDnsZone()) {
+      hash = (37 * hash) + NO_AUTOMATE_DNS_ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNoAutomateDnsZone());
     }
     if (hasPortRange()) {
       hash = (37 * hash) + PORT_RANGE_FIELD_NUMBER;
@@ -3732,32 +3787,34 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00020000);
       networkTier_ = "";
       bitField0_ = (bitField0_ & ~0x00040000);
-      portRange_ = "";
+      noAutomateDnsZone_ = false;
       bitField0_ = (bitField0_ & ~0x00080000);
-      ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      portRange_ = "";
       bitField0_ = (bitField0_ & ~0x00100000);
-      pscConnectionId_ = 0L;
+      ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00200000);
-      pscConnectionStatus_ = "";
+      pscConnectionId_ = 0L;
       bitField0_ = (bitField0_ & ~0x00400000);
-      region_ = "";
+      pscConnectionStatus_ = "";
       bitField0_ = (bitField0_ & ~0x00800000);
-      selfLink_ = "";
+      region_ = "";
       bitField0_ = (bitField0_ & ~0x01000000);
+      selfLink_ = "";
+      bitField0_ = (bitField0_ & ~0x02000000);
       if (serviceDirectoryRegistrationsBuilder_ == null) {
         serviceDirectoryRegistrations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
       } else {
         serviceDirectoryRegistrationsBuilder_.clear();
       }
       serviceLabel_ = "";
-      bitField0_ = (bitField0_ & ~0x04000000);
-      serviceName_ = "";
       bitField0_ = (bitField0_ & ~0x08000000);
-      subnetwork_ = "";
+      serviceName_ = "";
       bitField0_ = (bitField0_ & ~0x10000000);
-      target_ = "";
+      subnetwork_ = "";
       bitField0_ = (bitField0_ & ~0x20000000);
+      target_ = "";
+      bitField0_ = (bitField0_ & ~0x40000000);
       return this;
     }
 
@@ -3867,54 +3924,58 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       }
       result.networkTier_ = networkTier_;
       if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.noAutomateDnsZone_ = noAutomateDnsZone_;
         to_bitField0_ |= 0x00020000;
       }
-      result.portRange_ = portRange_;
-      if (((bitField0_ & 0x00100000) != 0)) {
-        ports_ = ports_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00100000);
-      }
-      result.ports_ = ports_;
-      if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.pscConnectionId_ = pscConnectionId_;
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         to_bitField0_ |= 0x00040000;
       }
+      result.portRange_ = portRange_;
+      if (((bitField0_ & 0x00200000) != 0)) {
+        ports_ = ports_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00200000);
+      }
+      result.ports_ = ports_;
       if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.pscConnectionId_ = pscConnectionId_;
         to_bitField0_ |= 0x00080000;
       }
-      result.pscConnectionStatus_ = pscConnectionStatus_;
       if (((from_bitField0_ & 0x00800000) != 0)) {
         to_bitField0_ |= 0x00100000;
       }
-      result.region_ = region_;
+      result.pscConnectionStatus_ = pscConnectionStatus_;
       if (((from_bitField0_ & 0x01000000) != 0)) {
         to_bitField0_ |= 0x00200000;
       }
+      result.region_ = region_;
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        to_bitField0_ |= 0x00400000;
+      }
       result.selfLink_ = selfLink_;
       if (serviceDirectoryRegistrationsBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)) {
+        if (((bitField0_ & 0x04000000) != 0)) {
           serviceDirectoryRegistrations_ =
               java.util.Collections.unmodifiableList(serviceDirectoryRegistrations_);
-          bitField0_ = (bitField0_ & ~0x02000000);
+          bitField0_ = (bitField0_ & ~0x04000000);
         }
         result.serviceDirectoryRegistrations_ = serviceDirectoryRegistrations_;
       } else {
         result.serviceDirectoryRegistrations_ = serviceDirectoryRegistrationsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
-        to_bitField0_ |= 0x00400000;
-      }
-      result.serviceLabel_ = serviceLabel_;
       if (((from_bitField0_ & 0x08000000) != 0)) {
         to_bitField0_ |= 0x00800000;
       }
-      result.serviceName_ = serviceName_;
+      result.serviceLabel_ = serviceLabel_;
       if (((from_bitField0_ & 0x10000000) != 0)) {
         to_bitField0_ |= 0x01000000;
       }
-      result.subnetwork_ = subnetwork_;
+      result.serviceName_ = serviceName_;
       if (((from_bitField0_ & 0x20000000) != 0)) {
         to_bitField0_ |= 0x02000000;
+      }
+      result.subnetwork_ = subnetwork_;
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        to_bitField0_ |= 0x04000000;
       }
       result.target_ = target_;
       result.bitField0_ = to_bitField0_;
@@ -4072,15 +4133,18 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         networkTier_ = other.networkTier_;
         onChanged();
       }
+      if (other.hasNoAutomateDnsZone()) {
+        setNoAutomateDnsZone(other.getNoAutomateDnsZone());
+      }
       if (other.hasPortRange()) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         portRange_ = other.portRange_;
         onChanged();
       }
       if (!other.ports_.isEmpty()) {
         if (ports_.isEmpty()) {
           ports_ = other.ports_;
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00200000);
         } else {
           ensurePortsIsMutable();
           ports_.addAll(other.ports_);
@@ -4091,17 +4155,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         setPscConnectionId(other.getPscConnectionId());
       }
       if (other.hasPscConnectionStatus()) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         pscConnectionStatus_ = other.pscConnectionStatus_;
         onChanged();
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         region_ = other.region_;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -4109,7 +4173,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         if (!other.serviceDirectoryRegistrations_.isEmpty()) {
           if (serviceDirectoryRegistrations_.isEmpty()) {
             serviceDirectoryRegistrations_ = other.serviceDirectoryRegistrations_;
-            bitField0_ = (bitField0_ & ~0x02000000);
+            bitField0_ = (bitField0_ & ~0x04000000);
           } else {
             ensureServiceDirectoryRegistrationsIsMutable();
             serviceDirectoryRegistrations_.addAll(other.serviceDirectoryRegistrations_);
@@ -4122,7 +4186,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
             serviceDirectoryRegistrationsBuilder_.dispose();
             serviceDirectoryRegistrationsBuilder_ = null;
             serviceDirectoryRegistrations_ = other.serviceDirectoryRegistrations_;
-            bitField0_ = (bitField0_ & ~0x02000000);
+            bitField0_ = (bitField0_ & ~0x04000000);
             serviceDirectoryRegistrationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getServiceDirectoryRegistrationsFieldBuilder()
@@ -4134,22 +4198,22 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasServiceLabel()) {
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x08000000;
         serviceLabel_ = other.serviceLabel_;
         onChanged();
       }
       if (other.hasServiceName()) {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
         serviceName_ = other.serviceName_;
         onChanged();
       }
       if (other.hasSubnetwork()) {
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x20000000;
         subnetwork_ = other.subnetwork_;
         onChanged();
       }
       if (other.hasTarget()) {
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x40000000;
         target_ = other.target_;
         onChanged();
       }
@@ -4189,7 +4253,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule. If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address: * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true. For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+     * IP address for which this forwarding rule accepts traffic. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the referenced target or backendService. While creating a forwarding rule, specifying an IPAddress is required under the following circumstances: - When the target is set to targetGrpcProxy and validateForProxyless is set to true, the IPAddress should be set to 0.0.0.0. - When the target is a Private Service Connect Google APIs bundle, you must specify an IPAddress. Otherwise, you can optionally specify an IP address that references an existing static (reserved) IP address resource. When omitted, Google Cloud assigns an ephemeral IP address. Use one of the following formats to specify an IP address while creating a forwarding rule: * IP address number, as in `100.1.2.3` * Full resource URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The forwarding rule's target or backendService, and in most cases, also the loadBalancingScheme, determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). When reading an IPAddress, the API always returns the IP address number.
      * </pre>
      *
      * <code>optional string I_p_address = 42976943;</code>
@@ -4203,7 +4267,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule. If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address: * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true. For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+     * IP address for which this forwarding rule accepts traffic. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the referenced target or backendService. While creating a forwarding rule, specifying an IPAddress is required under the following circumstances: - When the target is set to targetGrpcProxy and validateForProxyless is set to true, the IPAddress should be set to 0.0.0.0. - When the target is a Private Service Connect Google APIs bundle, you must specify an IPAddress. Otherwise, you can optionally specify an IP address that references an existing static (reserved) IP address resource. When omitted, Google Cloud assigns an ephemeral IP address. Use one of the following formats to specify an IP address while creating a forwarding rule: * IP address number, as in `100.1.2.3` * Full resource URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The forwarding rule's target or backendService, and in most cases, also the loadBalancingScheme, determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). When reading an IPAddress, the API always returns the IP address number.
      * </pre>
      *
      * <code>optional string I_p_address = 42976943;</code>
@@ -4225,7 +4289,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule. If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address: * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true. For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+     * IP address for which this forwarding rule accepts traffic. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the referenced target or backendService. While creating a forwarding rule, specifying an IPAddress is required under the following circumstances: - When the target is set to targetGrpcProxy and validateForProxyless is set to true, the IPAddress should be set to 0.0.0.0. - When the target is a Private Service Connect Google APIs bundle, you must specify an IPAddress. Otherwise, you can optionally specify an IP address that references an existing static (reserved) IP address resource. When omitted, Google Cloud assigns an ephemeral IP address. Use one of the following formats to specify an IP address while creating a forwarding rule: * IP address number, as in `100.1.2.3` * Full resource URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The forwarding rule's target or backendService, and in most cases, also the loadBalancingScheme, determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). When reading an IPAddress, the API always returns the IP address number.
      * </pre>
      *
      * <code>optional string I_p_address = 42976943;</code>
@@ -4247,7 +4311,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule. If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address: * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true. For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+     * IP address for which this forwarding rule accepts traffic. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the referenced target or backendService. While creating a forwarding rule, specifying an IPAddress is required under the following circumstances: - When the target is set to targetGrpcProxy and validateForProxyless is set to true, the IPAddress should be set to 0.0.0.0. - When the target is a Private Service Connect Google APIs bundle, you must specify an IPAddress. Otherwise, you can optionally specify an IP address that references an existing static (reserved) IP address resource. When omitted, Google Cloud assigns an ephemeral IP address. Use one of the following formats to specify an IP address while creating a forwarding rule: * IP address number, as in `100.1.2.3` * Full resource URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The forwarding rule's target or backendService, and in most cases, also the loadBalancingScheme, determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). When reading an IPAddress, the API always returns the IP address number.
      * </pre>
      *
      * <code>optional string I_p_address = 42976943;</code>
@@ -4268,7 +4332,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule. If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address: * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true. For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+     * IP address for which this forwarding rule accepts traffic. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the referenced target or backendService. While creating a forwarding rule, specifying an IPAddress is required under the following circumstances: - When the target is set to targetGrpcProxy and validateForProxyless is set to true, the IPAddress should be set to 0.0.0.0. - When the target is a Private Service Connect Google APIs bundle, you must specify an IPAddress. Otherwise, you can optionally specify an IP address that references an existing static (reserved) IP address resource. When omitted, Google Cloud assigns an ephemeral IP address. Use one of the following formats to specify an IP address while creating a forwarding rule: * IP address number, as in `100.1.2.3` * Full resource URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The forwarding rule's target or backendService, and in most cases, also the loadBalancingScheme, determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). When reading an IPAddress, the API always returns the IP address number.
      * </pre>
      *
      * <code>optional string I_p_address = 42976943;</code>
@@ -4285,7 +4349,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule. If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address: * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true. For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
+     * IP address for which this forwarding rule accepts traffic. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the referenced target or backendService. While creating a forwarding rule, specifying an IPAddress is required under the following circumstances: - When the target is set to targetGrpcProxy and validateForProxyless is set to true, the IPAddress should be set to 0.0.0.0. - When the target is a Private Service Connect Google APIs bundle, you must specify an IPAddress. Otherwise, you can optionally specify an IP address that references an existing static (reserved) IP address resource. When omitted, Google Cloud assigns an ephemeral IP address. Use one of the following formats to specify an IP address while creating a forwarding rule: * IP address number, as in `100.1.2.3` * Full resource URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The forwarding rule's target or backendService, and in most cases, also the loadBalancingScheme, determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). When reading an IPAddress, the API always returns the IP address number.
      * </pre>
      *
      * <code>optional string I_p_address = 42976943;</code>
@@ -5581,7 +5645,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLabels().getMap().containsKey(key);
     }
@@ -5617,7 +5681,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabelsOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -5634,7 +5698,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
@@ -5658,7 +5722,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
@@ -5679,11 +5743,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
@@ -6548,6 +6613,73 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean noAutomateDnsZone_;
+    /**
+     *
+     *
+     * <pre>
+     * This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field.
+     * </pre>
+     *
+     * <code>optional bool no_automate_dns_zone = 64546991;</code>
+     *
+     * @return Whether the noAutomateDnsZone field is set.
+     */
+    @java.lang.Override
+    public boolean hasNoAutomateDnsZone() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field.
+     * </pre>
+     *
+     * <code>optional bool no_automate_dns_zone = 64546991;</code>
+     *
+     * @return The noAutomateDnsZone.
+     */
+    @java.lang.Override
+    public boolean getNoAutomateDnsZone() {
+      return noAutomateDnsZone_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field.
+     * </pre>
+     *
+     * <code>optional bool no_automate_dns_zone = 64546991;</code>
+     *
+     * @param value The noAutomateDnsZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNoAutomateDnsZone(boolean value) {
+      bitField0_ |= 0x00080000;
+      noAutomateDnsZone_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field.
+     * </pre>
+     *
+     * <code>optional bool no_automate_dns_zone = 64546991;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNoAutomateDnsZone() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      noAutomateDnsZone_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object portRange_ = "";
     /**
      *
@@ -6561,7 +6693,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the portRange field is set.
      */
     public boolean hasPortRange() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -6623,7 +6755,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       portRange_ = value;
       onChanged();
       return this;
@@ -6640,7 +6772,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPortRange() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       portRange_ = getDefaultInstance().getPortRange();
       onChanged();
       return this;
@@ -6662,7 +6794,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       portRange_ = value;
       onChanged();
       return this;
@@ -6672,9 +6804,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePortsIsMutable() {
-      if (!((bitField0_ & 0x00100000) != 0)) {
+      if (!((bitField0_ & 0x00200000) != 0)) {
         ports_ = new com.google.protobuf.LazyStringArrayList(ports_);
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
       }
     }
     /**
@@ -6809,7 +6941,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPorts() {
       ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -6850,7 +6982,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPscConnectionId() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -6880,7 +7012,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPscConnectionId(long value) {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       pscConnectionId_ = value;
       onChanged();
       return this;
@@ -6897,7 +7029,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPscConnectionId() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       pscConnectionId_ = 0L;
       onChanged();
       return this;
@@ -6917,7 +7049,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the pscConnectionStatus field is set.
      */
     public boolean hasPscConnectionStatus() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -6982,7 +7114,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       pscConnectionStatus_ = value;
       onChanged();
       return this;
@@ -7000,7 +7132,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPscConnectionStatus() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       pscConnectionStatus_ = getDefaultInstance().getPscConnectionStatus();
       onChanged();
       return this;
@@ -7023,7 +7155,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       pscConnectionStatus_ = value;
       onChanged();
       return this;
@@ -7042,7 +7174,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -7104,7 +7236,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       region_ = value;
       onChanged();
       return this;
@@ -7121,7 +7253,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -7143,7 +7275,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       region_ = value;
       onChanged();
       return this;
@@ -7162,7 +7294,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -7224,7 +7356,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -7241,7 +7373,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -7263,7 +7395,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -7273,12 +7405,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         serviceDirectoryRegistrations_ = java.util.Collections.emptyList();
 
     private void ensureServiceDirectoryRegistrationsIsMutable() {
-      if (!((bitField0_ & 0x02000000) != 0)) {
+      if (!((bitField0_ & 0x04000000) != 0)) {
         serviceDirectoryRegistrations_ =
             new java.util.ArrayList<
                 com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration>(
                 serviceDirectoryRegistrations_);
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
       }
     }
 
@@ -7529,7 +7661,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     public Builder clearServiceDirectoryRegistrations() {
       if (serviceDirectoryRegistrationsBuilder_ == null) {
         serviceDirectoryRegistrations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         onChanged();
       } else {
         serviceDirectoryRegistrationsBuilder_.clear();
@@ -7678,7 +7810,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration.Builder,
                 com.google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistrationOrBuilder>(
                 serviceDirectoryRegistrations_,
-                ((bitField0_ & 0x02000000) != 0),
+                ((bitField0_ & 0x04000000) != 0),
                 getParentForChildren(),
                 isClean());
         serviceDirectoryRegistrations_ = null;
@@ -7699,7 +7831,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serviceLabel field is set.
      */
     public boolean hasServiceLabel() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
     /**
      *
@@ -7761,7 +7893,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       serviceLabel_ = value;
       onChanged();
       return this;
@@ -7778,7 +7910,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceLabel() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       serviceLabel_ = getDefaultInstance().getServiceLabel();
       onChanged();
       return this;
@@ -7800,7 +7932,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       serviceLabel_ = value;
       onChanged();
       return this;
@@ -7819,7 +7951,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serviceName field is set.
      */
     public boolean hasServiceName() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
@@ -7881,7 +8013,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       serviceName_ = value;
       onChanged();
       return this;
@@ -7898,7 +8030,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServiceName() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       serviceName_ = getDefaultInstance().getServiceName();
       onChanged();
       return this;
@@ -7920,7 +8052,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       serviceName_ = value;
       onChanged();
       return this;
@@ -7939,7 +8071,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the subnetwork field is set.
      */
     public boolean hasSubnetwork() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
     /**
      *
@@ -8001,7 +8133,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       subnetwork_ = value;
       onChanged();
       return this;
@@ -8018,7 +8150,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       subnetwork_ = getDefaultInstance().getSubnetwork();
       onChanged();
       return this;
@@ -8040,7 +8172,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       subnetwork_ = value;
       onChanged();
       return this;
@@ -8053,7 +8185,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the target field is set.
      */
     public boolean hasTarget() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
     /**
      * <code>optional string target = 192835985;</code>
@@ -8097,7 +8229,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       target_ = value;
       onChanged();
       return this;
@@ -8108,7 +8240,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       target_ = getDefaultInstance().getTarget();
       onChanged();
       return this;
@@ -8124,7 +8256,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       target_ = value;
       onChanged();
       return this;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -42,6 +41,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
  *   String project = "project-309310695";
  *   String operation = "operation1662702951";
@@ -79,6 +80,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GlobalOperationsSettings globalOperationsSettings =
  *     GlobalOperationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -90,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GlobalOperationsSettings globalOperationsSettings =
  *     GlobalOperationsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GlobalOperationsClient globalOperationsClient =
@@ -121,7 +126,6 @@ public class GlobalOperationsClient implements BackgroundResource {
    * Constructs an instance of GlobalOperationsClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(GlobalOperationsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GlobalOperationsClient create(GlobalOperationsStub stub) {
     return new GlobalOperationsClient(stub);
   }
@@ -136,7 +140,6 @@ public class GlobalOperationsClient implements BackgroundResource {
     this.stub = ((GlobalOperationsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GlobalOperationsClient(GlobalOperationsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -146,7 +149,6 @@ public class GlobalOperationsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GlobalOperationsStub getStub() {
     return stub;
   }
@@ -158,6 +160,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, OperationsScopedList> element :
@@ -183,6 +187,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   AggregatedListGlobalOperationsRequest request =
    *       AggregatedListGlobalOperationsRequest.newBuilder()
@@ -216,6 +222,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   AggregatedListGlobalOperationsRequest request =
    *       AggregatedListGlobalOperationsRequest.newBuilder()
@@ -248,6 +256,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   AggregatedListGlobalOperationsRequest request =
    *       AggregatedListGlobalOperationsRequest.newBuilder()
@@ -262,7 +272,7 @@ public class GlobalOperationsClient implements BackgroundResource {
    *   while (true) {
    *     OperationAggregatedList response =
    *         globalOperationsClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, OperationsScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, OperationsScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -287,6 +297,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   String project = "project-309310695";
    *   String operation = "operation1662702951";
@@ -314,6 +326,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   DeleteGlobalOperationRequest request =
    *       DeleteGlobalOperationRequest.newBuilder()
@@ -338,6 +352,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   DeleteGlobalOperationRequest request =
    *       DeleteGlobalOperationRequest.newBuilder()
@@ -363,6 +379,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   String project = "project-309310695";
    *   String operation = "operation1662702951";
@@ -387,6 +405,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   GetGlobalOperationRequest request =
    *       GetGlobalOperationRequest.newBuilder()
@@ -411,6 +431,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   GetGlobalOperationRequest request =
    *       GetGlobalOperationRequest.newBuilder()
@@ -434,6 +456,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   String project = "project-309310695";
    *   for (Operation element : globalOperationsClient.list(project).iterateAll()) {
@@ -458,6 +482,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   ListGlobalOperationsRequest request =
    *       ListGlobalOperationsRequest.newBuilder()
@@ -488,6 +514,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   ListGlobalOperationsRequest request =
    *       ListGlobalOperationsRequest.newBuilder()
@@ -517,6 +545,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   ListGlobalOperationsRequest request =
    *       ListGlobalOperationsRequest.newBuilder()
@@ -529,7 +559,7 @@ public class GlobalOperationsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     OperationList response = globalOperationsClient.listCallable().call(request);
-   *     for (Operation element : response.getResponsesList()) {
+   *     for (Operation element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -561,6 +591,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   String project = "project-309310695";
    *   String operation = "operation1662702951";
@@ -593,6 +625,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   WaitGlobalOperationRequest request =
    *       WaitGlobalOperationRequest.newBuilder()
@@ -625,6 +659,8 @@ public class GlobalOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalOperationsClient globalOperationsClient = GlobalOperationsClient.create()) {
    *   WaitGlobalOperationRequest request =
    *       WaitGlobalOperationRequest.newBuilder()

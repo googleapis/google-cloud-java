@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
  *     InterconnectAttachmentsClient.create()) {
  *   String project = "project-309310695";
@@ -84,6 +86,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * InterconnectAttachmentsSettings interconnectAttachmentsSettings =
  *     InterconnectAttachmentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,6 +99,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * InterconnectAttachmentsSettings interconnectAttachmentsSettings =
  *     InterconnectAttachmentsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * InterconnectAttachmentsClient interconnectAttachmentsClient =
@@ -126,7 +132,6 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * Constructs an instance of InterconnectAttachmentsClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(InterconnectAttachmentsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InterconnectAttachmentsClient create(InterconnectAttachmentsStub stub) {
     return new InterconnectAttachmentsClient(stub);
   }
@@ -142,7 +147,6 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     this.stub = ((InterconnectAttachmentsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected InterconnectAttachmentsClient(InterconnectAttachmentsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -152,7 +156,6 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public InterconnectAttachmentsStub getStub() {
     return stub;
   }
@@ -164,6 +167,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   String project = "project-309310695";
@@ -190,6 +195,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   AggregatedListInterconnectAttachmentsRequest request =
@@ -224,6 +231,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   AggregatedListInterconnectAttachmentsRequest request =
@@ -259,6 +268,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   AggregatedListInterconnectAttachmentsRequest request =
@@ -275,7 +286,7 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    *     InterconnectAttachmentAggregatedList response =
    *         interconnectAttachmentsClient.aggregatedListCallable().call(request);
    *     for (Map.Entry<String, InterconnectAttachmentsScopedList> element :
-   *         response.getResponsesList()) {
+   *         response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -301,6 +312,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   String project = "project-309310695";
@@ -334,6 +347,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   DeleteInterconnectAttachmentRequest request =
@@ -364,6 +379,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   DeleteInterconnectAttachmentRequest request =
@@ -392,6 +409,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   DeleteInterconnectAttachmentRequest request =
@@ -419,6 +438,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   String project = "project-309310695";
@@ -452,6 +473,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   GetInterconnectAttachmentRequest request =
@@ -478,6 +501,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   GetInterconnectAttachmentRequest request =
@@ -506,6 +531,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   String project = "project-309310695";
@@ -543,6 +570,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   InsertInterconnectAttachmentRequest request =
@@ -575,6 +604,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   InsertInterconnectAttachmentRequest request =
@@ -605,6 +636,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   InsertInterconnectAttachmentRequest request =
@@ -633,6 +666,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   String project = "project-309310695";
@@ -664,6 +699,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   ListInterconnectAttachmentsRequest request =
@@ -697,6 +734,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   ListInterconnectAttachmentsRequest request =
@@ -730,6 +769,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   ListInterconnectAttachmentsRequest request =
@@ -745,7 +786,7 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    *   while (true) {
    *     InterconnectAttachmentList response =
    *         interconnectAttachmentsClient.listCallable().call(request);
-   *     for (InterconnectAttachment element : response.getResponsesList()) {
+   *     for (InterconnectAttachment element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -771,6 +812,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   String project = "project-309310695";
@@ -814,6 +857,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   PatchInterconnectAttachmentRequest request =
@@ -846,6 +891,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   PatchInterconnectAttachmentRequest request =
@@ -876,6 +923,8 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient =
    *     InterconnectAttachmentsClient.create()) {
    *   PatchInterconnectAttachmentRequest request =

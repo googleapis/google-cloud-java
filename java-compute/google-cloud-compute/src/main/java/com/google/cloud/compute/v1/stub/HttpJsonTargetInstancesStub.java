@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.TargetInstancesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.TargetInstancesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -60,7 +59,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -71,7 +70,7 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
           ApiMethodDescriptor
               .<AggregatedListTargetInstancesRequest, TargetInstanceAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetInstances/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListTargetInstancesRequest>newBuilder()
@@ -127,7 +126,7 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteTargetInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetInstances/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteTargetInstanceRequest>newBuilder()
@@ -179,7 +178,7 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetTargetInstanceRequest, TargetInstance>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetInstances/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetTargetInstanceRequest>newBuilder()
@@ -215,7 +214,7 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertTargetInstanceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetInstances/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertTargetInstanceRequest>newBuilder()
@@ -270,7 +269,7 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListTargetInstancesRequest, TargetInstanceList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetInstances/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTargetInstancesRequest>newBuilder()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.RegionInstanceGroupsClient.ListInstancesPagedResponse;
 import static com.google.cloud.compute.v1.RegionInstanceGroupsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -59,7 +58,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -68,7 +67,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionInstanceGroupRequest, InstanceGroup>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionInstanceGroupRequest>newBuilder()
@@ -104,7 +103,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionInstanceGroupsRequest, RegionInstanceGroupList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionInstanceGroupsRequest>newBuilder()
@@ -160,7 +159,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
               .<ListInstancesRegionInstanceGroupsRequest, RegionInstanceGroupsListInstances>
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups/ListInstances")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -222,7 +221,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
       setNamedPortsMethodDescriptor =
           ApiMethodDescriptor.<SetNamedPortsRegionInstanceGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups/SetNamedPorts")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetNamedPortsRegionInstanceGroupRequest>newBuilder()

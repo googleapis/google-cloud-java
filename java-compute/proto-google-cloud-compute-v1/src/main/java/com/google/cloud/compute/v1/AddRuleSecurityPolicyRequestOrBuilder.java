@@ -117,4 +117,29 @@ public interface AddRuleSecurityPolicyRequestOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder getSecurityPolicyRuleResourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, the request will not be committed.
+   * </pre>
+   *
+   * <code>optional bool validate_only = 242744629;</code>
+   *
+   * @return Whether the validateOnly field is set.
+   */
+  boolean hasValidateOnly();
+  /**
+   *
+   *
+   * <pre>
+   * If true, the request will not be committed.
+   * </pre>
+   *
+   * <code>optional bool validate_only = 242744629;</code>
+   *
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
 }

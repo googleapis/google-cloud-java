@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.FirewallsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -59,7 +58,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonFirewallsStub extends FirewallsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -68,7 +67,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteFirewallRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Firewalls/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteFirewallRequest>newBuilder()
@@ -116,7 +115,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
   private static final ApiMethodDescriptor<GetFirewallRequest, Firewall> getMethodDescriptor =
       ApiMethodDescriptor.<GetFirewallRequest, Firewall>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Firewalls/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetFirewallRequest>newBuilder()
@@ -150,7 +149,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertFirewallRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Firewalls/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertFirewallRequest>newBuilder()
@@ -201,7 +200,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListFirewallsRequest, FirewallList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Firewalls/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListFirewallsRequest>newBuilder()
@@ -252,7 +251,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
   private static final ApiMethodDescriptor<PatchFirewallRequest, Operation> patchMethodDescriptor =
       ApiMethodDescriptor.<PatchFirewallRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Firewalls/Patch")
-          .setHttpMethod(HttpMethods.PATCH)
+          .setHttpMethod("PATCH")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchFirewallRequest>newBuilder()
@@ -304,7 +303,7 @@ public class HttpJsonFirewallsStub extends FirewallsStub {
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateFirewallRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Firewalls/Update")
-              .setHttpMethod(HttpMethods.PUT)
+              .setHttpMethod("PUT")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateFirewallRequest>newBuilder()

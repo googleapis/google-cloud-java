@@ -239,6 +239,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -705,6 +707,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     GENERAL_PURPOSE_T2D(232477166),
     /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
     MEMORY_OPTIMIZED(281753417),
+    /** <code>MEMORY_OPTIMIZED_M3 = 276301372;</code> */
+    MEMORY_OPTIMIZED_M3(276301372),
     /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
     TYPE_UNSPECIFIED(437714322),
     UNRECOGNIZED(-1),
@@ -738,6 +742,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public static final int GENERAL_PURPOSE_T2D_VALUE = 232477166;
     /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
     public static final int MEMORY_OPTIMIZED_VALUE = 281753417;
+    /** <code>MEMORY_OPTIMIZED_M3 = 276301372;</code> */
+    public static final int MEMORY_OPTIMIZED_M3_VALUE = 276301372;
     /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
     public static final int TYPE_UNSPECIFIED_VALUE = 437714322;
 
@@ -785,6 +791,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return GENERAL_PURPOSE_T2D;
         case 281753417:
           return MEMORY_OPTIMIZED;
+        case 276301372:
+          return MEMORY_OPTIMIZED_M3;
         case 437714322:
           return TYPE_UNSPECIFIED;
         default:

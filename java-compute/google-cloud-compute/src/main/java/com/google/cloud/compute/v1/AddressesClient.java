@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AddressesClient addressesClient = AddressesClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AddressesSettings addressesSettings =
  *     AddressesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AddressesSettings addressesSettings =
  *     AddressesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AddressesClient addressesClient = AddressesClient.create(addressesSettings);
@@ -120,7 +126,6 @@ public class AddressesClient implements BackgroundResource {
    * Constructs an instance of AddressesClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(AddressesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AddressesClient create(AddressesStub stub) {
     return new AddressesClient(stub);
   }
@@ -134,7 +139,6 @@ public class AddressesClient implements BackgroundResource {
     this.stub = ((AddressesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AddressesClient(AddressesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -144,7 +148,6 @@ public class AddressesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AddressesStub getStub() {
     return stub;
   }
@@ -156,6 +159,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, AddressesScopedList> element :
@@ -181,6 +186,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   AggregatedListAddressesRequest request =
    *       AggregatedListAddressesRequest.newBuilder()
@@ -213,6 +220,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   AggregatedListAddressesRequest request =
    *       AggregatedListAddressesRequest.newBuilder()
@@ -245,6 +254,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   AggregatedListAddressesRequest request =
    *       AggregatedListAddressesRequest.newBuilder()
@@ -258,7 +269,7 @@ public class AddressesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     AddressAggregatedList response = addressesClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, AddressesScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, AddressesScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -283,6 +294,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -314,6 +327,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   DeleteAddressRequest request =
    *       DeleteAddressRequest.newBuilder()
@@ -342,6 +357,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   DeleteAddressRequest request =
    *       DeleteAddressRequest.newBuilder()
@@ -369,6 +386,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   DeleteAddressRequest request =
    *       DeleteAddressRequest.newBuilder()
@@ -394,6 +413,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -424,6 +445,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   GetAddressRequest request =
    *       GetAddressRequest.newBuilder()
@@ -449,6 +472,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   GetAddressRequest request =
    *       GetAddressRequest.newBuilder()
@@ -473,6 +498,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -504,6 +531,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   InsertAddressRequest request =
    *       InsertAddressRequest.newBuilder()
@@ -532,6 +561,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   InsertAddressRequest request =
    *       InsertAddressRequest.newBuilder()
@@ -559,6 +590,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   InsertAddressRequest request =
    *       InsertAddressRequest.newBuilder()
@@ -584,6 +617,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -610,6 +645,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   ListAddressesRequest request =
    *       ListAddressesRequest.newBuilder()
@@ -641,6 +678,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   ListAddressesRequest request =
    *       ListAddressesRequest.newBuilder()
@@ -671,6 +710,8 @@ public class AddressesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AddressesClient addressesClient = AddressesClient.create()) {
    *   ListAddressesRequest request =
    *       ListAddressesRequest.newBuilder()
@@ -684,7 +725,7 @@ public class AddressesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     AddressList response = addressesClient.listCallable().call(request);
-   *     for (Address element : response.getResponsesList()) {
+   *     for (Address element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

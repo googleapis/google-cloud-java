@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.GlobalForwardingRulesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -60,7 +59,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -69,7 +68,7 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteGlobalForwardingRuleRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteGlobalForwardingRuleRequest>newBuilder()
@@ -119,7 +118,7 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
       getMethodDescriptor =
           ApiMethodDescriptor.<GetGlobalForwardingRuleRequest, ForwardingRule>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetGlobalForwardingRuleRequest>newBuilder()
@@ -154,7 +153,7 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertGlobalForwardingRuleRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertGlobalForwardingRuleRequest>newBuilder()
@@ -207,7 +206,7 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
       listMethodDescriptor =
           ApiMethodDescriptor.<ListGlobalForwardingRulesRequest, ForwardingRuleList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListGlobalForwardingRulesRequest>newBuilder()
@@ -259,7 +258,7 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchGlobalForwardingRuleRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/Patch")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchGlobalForwardingRuleRequest>newBuilder()
@@ -314,7 +313,7 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
       setLabelsMethodDescriptor =
           ApiMethodDescriptor.<SetLabelsGlobalForwardingRuleRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/SetLabels")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsGlobalForwardingRuleRequest>newBuilder()
@@ -365,7 +364,7 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
       setTargetMethodDescriptor =
           ApiMethodDescriptor.<SetTargetGlobalForwardingRuleRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.GlobalForwardingRules/SetTarget")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetTargetGlobalForwardingRuleRequest>newBuilder()

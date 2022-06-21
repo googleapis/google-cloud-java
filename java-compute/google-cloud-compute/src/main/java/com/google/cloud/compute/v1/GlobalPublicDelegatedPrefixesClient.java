@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
  *     GlobalPublicDelegatedPrefixesClient.create()) {
  *   String project = "project-309310695";
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GlobalPublicDelegatedPrefixesSettings globalPublicDelegatedPrefixesSettings =
  *     GlobalPublicDelegatedPrefixesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * GlobalPublicDelegatedPrefixesSettings globalPublicDelegatedPrefixesSettings =
  *     GlobalPublicDelegatedPrefixesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
@@ -125,7 +131,6 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * Constructs an instance of GlobalPublicDelegatedPrefixesClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(GlobalPublicDelegatedPrefixesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GlobalPublicDelegatedPrefixesClient create(
       GlobalPublicDelegatedPrefixesStub stub) {
     return new GlobalPublicDelegatedPrefixesClient(stub);
@@ -143,7 +148,6 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
         ((GlobalPublicDelegatedPrefixesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GlobalPublicDelegatedPrefixesClient(GlobalPublicDelegatedPrefixesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -153,7 +157,6 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GlobalPublicDelegatedPrefixesStub getStub() {
     return stub;
   }
@@ -165,6 +168,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   String project = "project-309310695";
@@ -195,6 +200,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   DeleteGlobalPublicDelegatedPrefixeRequest request =
@@ -224,6 +231,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   DeleteGlobalPublicDelegatedPrefixeRequest request =
@@ -251,6 +260,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   DeleteGlobalPublicDelegatedPrefixeRequest request =
@@ -278,6 +289,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   String project = "project-309310695";
@@ -307,6 +320,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   GetGlobalPublicDelegatedPrefixeRequest request =
@@ -332,6 +347,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   GetGlobalPublicDelegatedPrefixeRequest request =
@@ -359,6 +376,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   String project = "project-309310695";
@@ -393,6 +412,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   InsertGlobalPublicDelegatedPrefixeRequest request =
@@ -423,6 +444,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   InsertGlobalPublicDelegatedPrefixeRequest request =
@@ -451,6 +474,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   InsertGlobalPublicDelegatedPrefixeRequest request =
@@ -478,6 +503,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   String project = "project-309310695";
@@ -504,6 +531,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   ListGlobalPublicDelegatedPrefixesRequest request =
@@ -536,6 +565,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   ListGlobalPublicDelegatedPrefixesRequest request =
@@ -568,6 +599,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   ListGlobalPublicDelegatedPrefixesRequest request =
@@ -582,7 +615,7 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    *   while (true) {
    *     PublicDelegatedPrefixList response =
    *         globalPublicDelegatedPrefixesClient.listCallable().call(request);
-   *     for (PublicDelegatedPrefix element : response.getResponsesList()) {
+   *     for (PublicDelegatedPrefix element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -609,6 +642,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   String project = "project-309310695";
@@ -649,6 +684,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   PatchGlobalPublicDelegatedPrefixeRequest request =
@@ -681,6 +718,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   PatchGlobalPublicDelegatedPrefixeRequest request =
@@ -711,6 +750,8 @@ public class GlobalPublicDelegatedPrefixesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (GlobalPublicDelegatedPrefixesClient globalPublicDelegatedPrefixesClient =
    *     GlobalPublicDelegatedPrefixesClient.create()) {
    *   PatchGlobalPublicDelegatedPrefixeRequest request =

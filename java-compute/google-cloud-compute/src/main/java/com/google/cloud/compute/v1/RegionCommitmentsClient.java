@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionCommitmentsSettings regionCommitmentsSettings =
  *     RegionCommitmentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionCommitmentsSettings regionCommitmentsSettings =
  *     RegionCommitmentsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionCommitmentsClient regionCommitmentsClient =
@@ -124,7 +130,6 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * Constructs an instance of RegionCommitmentsClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(RegionCommitmentsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionCommitmentsClient create(RegionCommitmentsStub stub) {
     return new RegionCommitmentsClient(stub);
   }
@@ -139,7 +144,6 @@ public class RegionCommitmentsClient implements BackgroundResource {
     this.stub = ((RegionCommitmentsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RegionCommitmentsClient(RegionCommitmentsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -149,7 +153,6 @@ public class RegionCommitmentsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegionCommitmentsStub getStub() {
     return stub;
   }
@@ -161,6 +164,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, CommitmentsScopedList> element :
@@ -186,6 +191,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   AggregatedListRegionCommitmentsRequest request =
    *       AggregatedListRegionCommitmentsRequest.newBuilder()
@@ -219,6 +226,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   AggregatedListRegionCommitmentsRequest request =
    *       AggregatedListRegionCommitmentsRequest.newBuilder()
@@ -251,6 +260,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   AggregatedListRegionCommitmentsRequest request =
    *       AggregatedListRegionCommitmentsRequest.newBuilder()
@@ -265,7 +276,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *   while (true) {
    *     CommitmentAggregatedList response =
    *         regionCommitmentsClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, CommitmentsScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, CommitmentsScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -291,6 +302,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -322,6 +335,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   GetRegionCommitmentRequest request =
    *       GetRegionCommitmentRequest.newBuilder()
@@ -348,6 +363,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   GetRegionCommitmentRequest request =
    *       GetRegionCommitmentRequest.newBuilder()
@@ -372,6 +389,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -404,6 +423,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   InsertRegionCommitmentRequest request =
    *       InsertRegionCommitmentRequest.newBuilder()
@@ -433,6 +454,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   InsertRegionCommitmentRequest request =
    *       InsertRegionCommitmentRequest.newBuilder()
@@ -460,6 +483,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   InsertRegionCommitmentRequest request =
    *       InsertRegionCommitmentRequest.newBuilder()
@@ -485,6 +510,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -511,6 +538,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   ListRegionCommitmentsRequest request =
    *       ListRegionCommitmentsRequest.newBuilder()
@@ -542,6 +571,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   ListRegionCommitmentsRequest request =
    *       ListRegionCommitmentsRequest.newBuilder()
@@ -573,6 +604,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   ListRegionCommitmentsRequest request =
    *       ListRegionCommitmentsRequest.newBuilder()
@@ -586,7 +619,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     CommitmentList response = regionCommitmentsClient.listCallable().call(request);
-   *     for (Commitment element : response.getResponsesList()) {
+   *     for (Commitment element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -612,6 +645,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -651,6 +686,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   UpdateRegionCommitmentRequest request =
    *       UpdateRegionCommitmentRequest.newBuilder()
@@ -685,6 +722,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   UpdateRegionCommitmentRequest request =
    *       UpdateRegionCommitmentRequest.newBuilder()
@@ -717,6 +756,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
    *   UpdateRegionCommitmentRequest request =
    *       UpdateRegionCommitmentRequest.newBuilder()

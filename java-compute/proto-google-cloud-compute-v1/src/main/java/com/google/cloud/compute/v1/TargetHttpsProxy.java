@@ -39,6 +39,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
 
   private TargetHttpsProxy() {
     authorizationPolicy_ = "";
+    certificateMap_ = "";
     creationTimestamp_ = "";
     description_ = "";
     fingerprint_ = "";
@@ -85,28 +86,28 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
             break;
           case 26840:
             {
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               id_ = input.readUInt64();
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               name_ = s;
               break;
             }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               creationTimestamp_ = s;
               break;
             }
@@ -120,43 +121,50 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               region_ = s;
+              break;
+            }
+          case 1251710370:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              certificateMap_ = s;
               break;
             }
           case 1877428002:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               fingerprint_ = s;
               break;
             }
           case -2006762640:
             {
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               proxyBind_ = input.readBool();
               break;
             }
           case -1933445590:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00002000;
               sslPolicy_ = s;
               break;
             }
           case -1928365166:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00001000;
               serverTlsPolicy_ = s;
               break;
             }
           case -1366914950:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
                 sslCertificates_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00001000;
+                mutable_bitField0_ |= 0x00002000;
               }
               sslCertificates_.add(s);
               break;
@@ -164,28 +172,28 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
           case -1358801822:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00004000;
               urlMap_ = s;
               break;
             }
           case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               description_ = s;
               break;
             }
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000800;
               selfLink_ = s;
               break;
             }
           case -642349718:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               quicOverride_ = s;
               break;
             }
@@ -200,10 +208,12 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00001000) != 0)) {
+      if (((mutable_bitField0_ & 0x00002000) != 0)) {
         sslCertificates_ = sslCertificates_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -470,6 +480,70 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int CERTIFICATE_MAP_FIELD_NUMBER = 156463796;
+  private volatile java.lang.Object certificateMap_;
+  /**
+   *
+   *
+   * <pre>
+   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+   * </pre>
+   *
+   * <code>optional string certificate_map = 156463796;</code>
+   *
+   * @return Whether the certificateMap field is set.
+   */
+  @java.lang.Override
+  public boolean hasCertificateMap() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+   * </pre>
+   *
+   * <code>optional string certificate_map = 156463796;</code>
+   *
+   * @return The certificateMap.
+   */
+  @java.lang.Override
+  public java.lang.String getCertificateMap() {
+    java.lang.Object ref = certificateMap_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      certificateMap_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+   * </pre>
+   *
+   * <code>optional string certificate_map = 156463796;</code>
+   *
+   * @return The bytes for certificateMap.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCertificateMapBytes() {
+    java.lang.Object ref = certificateMap_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      certificateMap_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
   /**
@@ -485,7 +559,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCreationTimestamp() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -549,7 +623,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDescription() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -613,7 +687,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasFingerprint() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -677,7 +751,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -710,7 +784,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -774,7 +848,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -838,7 +912,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasProxyBind() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -872,7 +946,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasQuicOverride() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -938,7 +1012,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1002,7 +1076,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1066,7 +1140,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServerTlsPolicy() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1191,7 +1265,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSslPolicy() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -1255,7 +1329,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUrlMap() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1318,50 +1392,53 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 33945528, authorizationPolicy_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 156463796, certificateMap_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeBool(286025582, proxyBind_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 295190213, sslPolicy_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 295825266, serverTlsPolicy_);
     }
     for (int i = 0; i < sslCertificates_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 366006543, sslCertificates_.getRaw(i));
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456577197, quicOverride_);
     }
     unknownFields.writeTo(output);
@@ -1373,16 +1450,16 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
@@ -1390,19 +1467,22 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(33945528, authorizationPolicy_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(156463796, certificateMap_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(286025582, proxyBind_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(295190213, sslPolicy_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(295825266, serverTlsPolicy_);
     }
     {
@@ -1413,16 +1493,16 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 5 * getSslCertificatesList().size();
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456577197, quicOverride_);
     }
     size += unknownFields.getSerializedSize();
@@ -1444,6 +1524,10 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     if (hasAuthorizationPolicy() != other.hasAuthorizationPolicy()) return false;
     if (hasAuthorizationPolicy()) {
       if (!getAuthorizationPolicy().equals(other.getAuthorizationPolicy())) return false;
+    }
+    if (hasCertificateMap() != other.hasCertificateMap()) return false;
+    if (hasCertificateMap()) {
+      if (!getCertificateMap().equals(other.getCertificateMap())) return false;
     }
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
@@ -1512,6 +1596,10 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     if (hasAuthorizationPolicy()) {
       hash = (37 * hash) + AUTHORIZATION_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getAuthorizationPolicy().hashCode();
+    }
+    if (hasCertificateMap()) {
+      hash = (37 * hash) + CERTIFICATE_MAP_FIELD_NUMBER;
+      hash = (53 * hash) + getCertificateMap().hashCode();
     }
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
@@ -1716,34 +1804,36 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       super.clear();
       authorizationPolicy_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      creationTimestamp_ = "";
+      certificateMap_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
-      description_ = "";
+      creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      fingerprint_ = "";
+      description_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
-      id_ = 0L;
+      fingerprint_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
-      kind_ = "";
+      id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000020);
-      name_ = "";
+      kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
-      proxyBind_ = false;
+      name_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      quicOverride_ = "";
+      proxyBind_ = false;
       bitField0_ = (bitField0_ & ~0x00000100);
-      region_ = "";
+      quicOverride_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
-      selfLink_ = "";
+      region_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
-      serverTlsPolicy_ = "";
+      selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
-      sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      serverTlsPolicy_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
-      sslPolicy_ = "";
+      sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00002000);
-      urlMap_ = "";
+      sslPolicy_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
+      urlMap_ = "";
+      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
 
@@ -1780,58 +1870,62 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x00000002;
       }
-      result.creationTimestamp_ = creationTimestamp_;
+      result.certificateMap_ = certificateMap_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         to_bitField0_ |= 0x00000004;
       }
-      result.description_ = description_;
+      result.creationTimestamp_ = creationTimestamp_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         to_bitField0_ |= 0x00000008;
       }
-      result.fingerprint_ = fingerprint_;
+      result.description_ = description_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.id_ = id_;
         to_bitField0_ |= 0x00000010;
       }
+      result.fingerprint_ = fingerprint_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000020;
       }
-      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
         to_bitField0_ |= 0x00000040;
       }
-      result.name_ = name_;
+      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.proxyBind_ = proxyBind_;
         to_bitField0_ |= 0x00000080;
       }
+      result.name_ = name_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.proxyBind_ = proxyBind_;
         to_bitField0_ |= 0x00000100;
       }
-      result.quicOverride_ = quicOverride_;
       if (((from_bitField0_ & 0x00000200) != 0)) {
         to_bitField0_ |= 0x00000200;
       }
-      result.region_ = region_;
+      result.quicOverride_ = quicOverride_;
       if (((from_bitField0_ & 0x00000400) != 0)) {
         to_bitField0_ |= 0x00000400;
       }
-      result.selfLink_ = selfLink_;
+      result.region_ = region_;
       if (((from_bitField0_ & 0x00000800) != 0)) {
         to_bitField0_ |= 0x00000800;
       }
-      result.serverTlsPolicy_ = serverTlsPolicy_;
-      if (((bitField0_ & 0x00001000) != 0)) {
-        sslCertificates_ = sslCertificates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00001000);
-      }
-      result.sslCertificates_ = sslCertificates_;
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         to_bitField0_ |= 0x00001000;
       }
-      result.sslPolicy_ = sslPolicy_;
+      result.serverTlsPolicy_ = serverTlsPolicy_;
+      if (((bitField0_ & 0x00002000) != 0)) {
+        sslCertificates_ = sslCertificates_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00002000);
+      }
+      result.sslCertificates_ = sslCertificates_;
       if (((from_bitField0_ & 0x00004000) != 0)) {
         to_bitField0_ |= 0x00002000;
+      }
+      result.sslPolicy_ = sslPolicy_;
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        to_bitField0_ |= 0x00004000;
       }
       result.urlMap_ = urlMap_;
       result.bitField0_ = to_bitField0_;
@@ -1889,18 +1983,23 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         authorizationPolicy_ = other.authorizationPolicy_;
         onChanged();
       }
-      if (other.hasCreationTimestamp()) {
+      if (other.hasCertificateMap()) {
         bitField0_ |= 0x00000002;
+        certificateMap_ = other.certificateMap_;
+        onChanged();
+      }
+      if (other.hasCreationTimestamp()) {
+        bitField0_ |= 0x00000004;
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
       if (other.hasDescription()) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         description_ = other.description_;
         onChanged();
       }
       if (other.hasFingerprint()) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         fingerprint_ = other.fingerprint_;
         onChanged();
       }
@@ -1908,12 +2007,12 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         setId(other.getId());
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         kind_ = other.kind_;
         onChanged();
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         name_ = other.name_;
         onChanged();
       }
@@ -1921,29 +2020,29 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         setProxyBind(other.getProxyBind());
       }
       if (other.hasQuicOverride()) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         quicOverride_ = other.quicOverride_;
         onChanged();
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         region_ = other.region_;
         onChanged();
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         selfLink_ = other.selfLink_;
         onChanged();
       }
       if (other.hasServerTlsPolicy()) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         serverTlsPolicy_ = other.serverTlsPolicy_;
         onChanged();
       }
       if (!other.sslCertificates_.isEmpty()) {
         if (sslCertificates_.isEmpty()) {
           sslCertificates_ = other.sslCertificates_;
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
           ensureSslCertificatesIsMutable();
           sslCertificates_.addAll(other.sslCertificates_);
@@ -1951,12 +2050,12 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         onChanged();
       }
       if (other.hasSslPolicy()) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         sslPolicy_ = other.sslPolicy_;
         onChanged();
       }
       if (other.hasUrlMap()) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         urlMap_ = other.urlMap_;
         onChanged();
       }
@@ -2111,6 +2210,126 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object certificateMap_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+     * </pre>
+     *
+     * <code>optional string certificate_map = 156463796;</code>
+     *
+     * @return Whether the certificateMap field is set.
+     */
+    public boolean hasCertificateMap() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+     * </pre>
+     *
+     * <code>optional string certificate_map = 156463796;</code>
+     *
+     * @return The certificateMap.
+     */
+    public java.lang.String getCertificateMap() {
+      java.lang.Object ref = certificateMap_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        certificateMap_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+     * </pre>
+     *
+     * <code>optional string certificate_map = 156463796;</code>
+     *
+     * @return The bytes for certificateMap.
+     */
+    public com.google.protobuf.ByteString getCertificateMapBytes() {
+      java.lang.Object ref = certificateMap_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        certificateMap_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+     * </pre>
+     *
+     * <code>optional string certificate_map = 156463796;</code>
+     *
+     * @param value The certificateMap to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCertificateMap(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      certificateMap_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+     * </pre>
+     *
+     * <code>optional string certificate_map = 156463796;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCertificateMap() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      certificateMap_ = getDefaultInstance().getCertificateMap();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+     * </pre>
+     *
+     * <code>optional string certificate_map = 156463796;</code>
+     *
+     * @param value The bytes for certificateMap to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCertificateMapBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      certificateMap_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object creationTimestamp_ = "";
     /**
      *
@@ -2124,7 +2343,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the creationTimestamp field is set.
      */
     public boolean hasCreationTimestamp() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2186,7 +2405,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -2203,7 +2422,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCreationTimestamp() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       creationTimestamp_ = getDefaultInstance().getCreationTimestamp();
       onChanged();
       return this;
@@ -2225,7 +2444,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       creationTimestamp_ = value;
       onChanged();
       return this;
@@ -2244,7 +2463,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2306,7 +2525,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
@@ -2323,7 +2542,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
@@ -2345,7 +2564,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       description_ = value;
       onChanged();
       return this;
@@ -2364,7 +2583,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2426,7 +2645,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -2443,7 +2662,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       fingerprint_ = getDefaultInstance().getFingerprint();
       onChanged();
       return this;
@@ -2465,7 +2684,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -2485,7 +2704,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2515,7 +2734,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       id_ = value;
       onChanged();
       return this;
@@ -2532,7 +2751,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       id_ = 0L;
       onChanged();
       return this;
@@ -2551,7 +2770,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2613,7 +2832,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       kind_ = value;
       onChanged();
       return this;
@@ -2630,7 +2849,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -2652,7 +2871,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       kind_ = value;
       onChanged();
       return this;
@@ -2671,7 +2890,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2733,7 +2952,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       name_ = value;
       onChanged();
       return this;
@@ -2750,7 +2969,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2772,7 +2991,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       name_ = value;
       onChanged();
       return this;
@@ -2792,7 +3011,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasProxyBind() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2822,7 +3041,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setProxyBind(boolean value) {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       proxyBind_ = value;
       onChanged();
       return this;
@@ -2839,7 +3058,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearProxyBind() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       proxyBind_ = false;
       onChanged();
       return this;
@@ -2859,7 +3078,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the quicOverride field is set.
      */
     public boolean hasQuicOverride() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2924,7 +3143,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       quicOverride_ = value;
       onChanged();
       return this;
@@ -2942,7 +3161,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearQuicOverride() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       quicOverride_ = getDefaultInstance().getQuicOverride();
       onChanged();
       return this;
@@ -2965,7 +3184,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       quicOverride_ = value;
       onChanged();
       return this;
@@ -2984,7 +3203,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3046,7 +3265,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       region_ = value;
       onChanged();
       return this;
@@ -3063,7 +3282,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -3085,7 +3304,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       region_ = value;
       onChanged();
       return this;
@@ -3104,7 +3323,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3166,7 +3385,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3183,7 +3402,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -3205,7 +3424,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       selfLink_ = value;
       onChanged();
       return this;
@@ -3224,7 +3443,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the serverTlsPolicy field is set.
      */
     public boolean hasServerTlsPolicy() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3286,7 +3505,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       serverTlsPolicy_ = value;
       onChanged();
       return this;
@@ -3303,7 +3522,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServerTlsPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       serverTlsPolicy_ = getDefaultInstance().getServerTlsPolicy();
       onChanged();
       return this;
@@ -3325,7 +3544,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       serverTlsPolicy_ = value;
       onChanged();
       return this;
@@ -3335,9 +3554,9 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSslCertificatesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         sslCertificates_ = new com.google.protobuf.LazyStringArrayList(sslCertificates_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
     /**
@@ -3472,7 +3691,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSslCertificates() {
       sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3512,7 +3731,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the sslPolicy field is set.
      */
     public boolean hasSslPolicy() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -3574,7 +3793,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       sslPolicy_ = value;
       onChanged();
       return this;
@@ -3591,7 +3810,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSslPolicy() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       sslPolicy_ = getDefaultInstance().getSslPolicy();
       onChanged();
       return this;
@@ -3613,7 +3832,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       sslPolicy_ = value;
       onChanged();
       return this;
@@ -3632,7 +3851,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the urlMap field is set.
      */
     public boolean hasUrlMap() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -3694,7 +3913,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       urlMap_ = value;
       onChanged();
       return this;
@@ -3711,7 +3930,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearUrlMap() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       urlMap_ = getDefaultInstance().getUrlMap();
       onChanged();
       return this;
@@ -3733,7 +3952,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       urlMap_ = value;
       onChanged();
       return this;

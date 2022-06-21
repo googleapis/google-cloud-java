@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RegionInstancesClient regionInstancesClient = RegionInstancesClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -77,6 +79,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionInstancesSettings regionInstancesSettings =
  *     RegionInstancesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -88,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionInstancesSettings regionInstancesSettings =
  *     RegionInstancesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionInstancesClient regionInstancesClient =
@@ -119,7 +125,6 @@ public class RegionInstancesClient implements BackgroundResource {
    * Constructs an instance of RegionInstancesClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(RegionInstancesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionInstancesClient create(RegionInstancesStub stub) {
     return new RegionInstancesClient(stub);
   }
@@ -134,7 +139,6 @@ public class RegionInstancesClient implements BackgroundResource {
     this.stub = ((RegionInstancesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RegionInstancesClient(RegionInstancesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -144,7 +148,6 @@ public class RegionInstancesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegionInstancesStub getStub() {
     return stub;
   }
@@ -157,6 +160,8 @@ public class RegionInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstancesClient regionInstancesClient = RegionInstancesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -195,6 +200,8 @@ public class RegionInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstancesClient regionInstancesClient = RegionInstancesClient.create()) {
    *   BulkInsertRegionInstanceRequest request =
    *       BulkInsertRegionInstanceRequest.newBuilder()
@@ -226,6 +233,8 @@ public class RegionInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstancesClient regionInstancesClient = RegionInstancesClient.create()) {
    *   BulkInsertRegionInstanceRequest request =
    *       BulkInsertRegionInstanceRequest.newBuilder()
@@ -255,6 +264,8 @@ public class RegionInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionInstancesClient regionInstancesClient = RegionInstancesClient.create()) {
    *   BulkInsertRegionInstanceRequest request =
    *       BulkInsertRegionInstanceRequest.newBuilder()

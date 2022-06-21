@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ServiceAttachmentsSettings serviceAttachmentsSettings =
  *     ServiceAttachmentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ServiceAttachmentsSettings serviceAttachmentsSettings =
  *     ServiceAttachmentsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ServiceAttachmentsClient serviceAttachmentsClient =
@@ -124,7 +130,6 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * Constructs an instance of ServiceAttachmentsClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(ServiceAttachmentsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ServiceAttachmentsClient create(ServiceAttachmentsStub stub) {
     return new ServiceAttachmentsClient(stub);
   }
@@ -139,7 +144,6 @@ public class ServiceAttachmentsClient implements BackgroundResource {
     this.stub = ((ServiceAttachmentsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ServiceAttachmentsClient(ServiceAttachmentsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -149,7 +153,6 @@ public class ServiceAttachmentsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ServiceAttachmentsStub getStub() {
     return stub;
   }
@@ -162,6 +165,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, ServiceAttachmentsScopedList> element :
@@ -188,6 +193,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   AggregatedListServiceAttachmentsRequest request =
    *       AggregatedListServiceAttachmentsRequest.newBuilder()
@@ -222,6 +229,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   AggregatedListServiceAttachmentsRequest request =
    *       AggregatedListServiceAttachmentsRequest.newBuilder()
@@ -255,6 +264,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   AggregatedListServiceAttachmentsRequest request =
    *       AggregatedListServiceAttachmentsRequest.newBuilder()
@@ -269,8 +280,7 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    *   while (true) {
    *     ServiceAttachmentAggregatedList response =
    *         serviceAttachmentsClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, ServiceAttachmentsScopedList> element :
-   *         response.getResponsesList()) {
+   *     for (Map.Entry<String, ServiceAttachmentsScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -296,6 +306,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -328,6 +340,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   DeleteServiceAttachmentRequest request =
    *       DeleteServiceAttachmentRequest.newBuilder()
@@ -357,6 +371,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   DeleteServiceAttachmentRequest request =
    *       DeleteServiceAttachmentRequest.newBuilder()
@@ -384,6 +400,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   DeleteServiceAttachmentRequest request =
    *       DeleteServiceAttachmentRequest.newBuilder()
@@ -409,6 +427,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -439,6 +459,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   GetServiceAttachmentRequest request =
    *       GetServiceAttachmentRequest.newBuilder()
@@ -464,6 +486,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   GetServiceAttachmentRequest request =
    *       GetServiceAttachmentRequest.newBuilder()
@@ -490,6 +514,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -521,6 +547,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   GetIamPolicyServiceAttachmentRequest request =
    *       GetIamPolicyServiceAttachmentRequest.newBuilder()
@@ -548,6 +576,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   GetIamPolicyServiceAttachmentRequest request =
    *       GetIamPolicyServiceAttachmentRequest.newBuilder()
@@ -575,6 +605,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -608,6 +640,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   InsertServiceAttachmentRequest request =
    *       InsertServiceAttachmentRequest.newBuilder()
@@ -638,6 +672,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   InsertServiceAttachmentRequest request =
    *       InsertServiceAttachmentRequest.newBuilder()
@@ -666,6 +702,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   InsertServiceAttachmentRequest request =
    *       InsertServiceAttachmentRequest.newBuilder()
@@ -691,6 +729,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -718,6 +758,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   ListServiceAttachmentsRequest request =
    *       ListServiceAttachmentsRequest.newBuilder()
@@ -749,6 +791,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   ListServiceAttachmentsRequest request =
    *       ListServiceAttachmentsRequest.newBuilder()
@@ -780,6 +824,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   ListServiceAttachmentsRequest request =
    *       ListServiceAttachmentsRequest.newBuilder()
@@ -793,7 +839,7 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ServiceAttachmentList response = serviceAttachmentsClient.listCallable().call(request);
-   *     for (ServiceAttachment element : response.getResponsesList()) {
+   *     for (ServiceAttachment element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -818,6 +864,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -860,6 +908,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   PatchServiceAttachmentRequest request =
    *       PatchServiceAttachmentRequest.newBuilder()
@@ -891,6 +941,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   PatchServiceAttachmentRequest request =
    *       PatchServiceAttachmentRequest.newBuilder()
@@ -920,6 +972,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   PatchServiceAttachmentRequest request =
    *       PatchServiceAttachmentRequest.newBuilder()
@@ -946,6 +1000,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -986,6 +1042,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   SetIamPolicyServiceAttachmentRequest request =
    *       SetIamPolicyServiceAttachmentRequest.newBuilder()
@@ -1012,6 +1070,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   SetIamPolicyServiceAttachmentRequest request =
    *       SetIamPolicyServiceAttachmentRequest.newBuilder()
@@ -1038,6 +1098,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1078,6 +1140,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   TestIamPermissionsServiceAttachmentRequest request =
    *       TestIamPermissionsServiceAttachmentRequest.newBuilder()
@@ -1105,6 +1169,8 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
    *   TestIamPermissionsServiceAttachmentRequest request =
    *       TestIamPermissionsServiceAttachmentRequest.newBuilder()

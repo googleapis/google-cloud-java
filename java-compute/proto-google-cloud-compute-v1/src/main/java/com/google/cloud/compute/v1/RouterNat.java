@@ -39,6 +39,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
 
   private RouterNat() {
     drainNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    endpointTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     name_ = "";
     natIpAllocateOption_ = "";
     natIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -98,9 +99,9 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
             }
           case 870991802:
             {
-              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000800) != 0)) {
                 rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.RouterNatRule>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000800;
               }
               rules_.add(
                   input.readMessage(
@@ -110,9 +111,9 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
           case 941080690:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 natIps_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000400;
               }
               natIps_.add(s);
               break;
@@ -172,10 +173,10 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
             }
           case -968142294:
             {
-              if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00002000) != 0)) {
                 subnetworks_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.RouterNatSubnetworkToNat>();
-                mutable_bitField0_ |= 0x00001000;
+                mutable_bitField0_ |= 0x00002000;
               }
               subnetworks_.add(
                   input.readMessage(
@@ -188,6 +189,16 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000080;
               natIpAllocateOption_ = s;
+              break;
+            }
+          case -273896838:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                endpointTypes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              endpointTypes_.add(s);
               break;
             }
           case -262339014:
@@ -223,17 +234,22 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
         rules_ = java.util.Collections.unmodifiableList(rules_);
       }
-      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
         natIps_ = natIps_.getUnmodifiableView();
       }
-      if (((mutable_bitField0_ & 0x00001000) != 0)) {
+      if (((mutable_bitField0_ & 0x00002000) != 0)) {
         subnetworks_ = java.util.Collections.unmodifiableList(subnetworks_);
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        endpointTypes_ = endpointTypes_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         drainNatIps_ = drainNatIps_.getUnmodifiableView();
@@ -256,6 +272,162 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.RouterNat.class,
             com.google.cloud.compute.v1.RouterNat.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.RouterNat.EndpointTypes}
+   */
+  public enum EndpointTypes implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ENDPOINT_TYPES = 0;</code>
+     */
+    UNDEFINED_ENDPOINT_TYPES(0),
+    /**
+     *
+     *
+     * <pre>
+     * This is used for Secure Web Gateway endpoints.
+     * </pre>
+     *
+     * <code>ENDPOINT_TYPE_SWG = 159344456;</code>
+     */
+    ENDPOINT_TYPE_SWG(159344456),
+    /**
+     *
+     *
+     * <pre>
+     * This is the default.
+     * </pre>
+     *
+     * <code>ENDPOINT_TYPE_VM = 57095474;</code>
+     */
+    ENDPOINT_TYPE_VM(57095474),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ENDPOINT_TYPES = 0;</code>
+     */
+    public static final int UNDEFINED_ENDPOINT_TYPES_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * This is used for Secure Web Gateway endpoints.
+     * </pre>
+     *
+     * <code>ENDPOINT_TYPE_SWG = 159344456;</code>
+     */
+    public static final int ENDPOINT_TYPE_SWG_VALUE = 159344456;
+    /**
+     *
+     *
+     * <pre>
+     * This is the default.
+     * </pre>
+     *
+     * <code>ENDPOINT_TYPE_VM = 57095474;</code>
+     */
+    public static final int ENDPOINT_TYPE_VM_VALUE = 57095474;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EndpointTypes valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EndpointTypes forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_ENDPOINT_TYPES;
+        case 159344456:
+          return ENDPOINT_TYPE_SWG;
+        case 57095474:
+          return ENDPOINT_TYPE_VM;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EndpointTypes> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EndpointTypes> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<EndpointTypes>() {
+          public EndpointTypes findValueByNumber(int number) {
+            return EndpointTypes.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.RouterNat.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final EndpointTypes[] VALUES = values();
+
+    public static EndpointTypes valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EndpointTypes(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.RouterNat.EndpointTypes)
   }
 
   /**
@@ -393,7 +565,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.RouterNat.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.RouterNat.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final NatIpAllocateOption[] VALUES = values();
@@ -575,7 +747,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.RouterNat.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloud.compute.v1.RouterNat.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final SourceSubnetworkIpRangesToNat[] VALUES = values();
@@ -714,6 +886,71 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getEnableEndpointIndependentMapping() {
     return enableEndpointIndependentMapping_;
+  }
+
+  public static final int ENDPOINT_TYPES_FIELD_NUMBER = 502633807;
+  private com.google.protobuf.LazyStringList endpointTypes_;
+  /**
+   *
+   *
+   * <pre>
+   * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+   * Check the EndpointTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string endpoint_types = 502633807;</code>
+   *
+   * @return A list containing the endpointTypes.
+   */
+  public com.google.protobuf.ProtocolStringList getEndpointTypesList() {
+    return endpointTypes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+   * Check the EndpointTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string endpoint_types = 502633807;</code>
+   *
+   * @return The count of endpointTypes.
+   */
+  public int getEndpointTypesCount() {
+    return endpointTypes_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+   * Check the EndpointTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string endpoint_types = 502633807;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The endpointTypes at the given index.
+   */
+  public java.lang.String getEndpointTypes(int index) {
+    return endpointTypes_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+   * Check the EndpointTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string endpoint_types = 502633807;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the endpointTypes at the given index.
+   */
+  public com.google.protobuf.ByteString getEndpointTypesBytes(int index) {
+    return endpointTypes_.getByteString(index);
   }
 
   public static final int ICMP_IDLE_TIMEOUT_SEC_FIELD_NUMBER = 3647562;
@@ -1457,6 +1694,10 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 429726845, natIpAllocateOption_);
     }
+    for (int i = 0; i < endpointTypes_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 502633807, endpointTypes_.getRaw(i));
+    }
     for (int i = 0; i < drainNatIps_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 504078535, drainNatIps_.getRaw(i));
     }
@@ -1534,6 +1775,14 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     }
     {
       int dataSize = 0;
+      for (int i = 0; i < endpointTypes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(endpointTypes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getEndpointTypesList().size();
+    }
+    {
+      int dataSize = 0;
       for (int i = 0; i < drainNatIps_.size(); i++) {
         dataSize += computeStringSizeNoTag(drainNatIps_.getRaw(i));
       }
@@ -1575,6 +1824,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       if (getEnableEndpointIndependentMapping() != other.getEnableEndpointIndependentMapping())
         return false;
     }
+    if (!getEndpointTypesList().equals(other.getEndpointTypesList())) return false;
     if (hasIcmpIdleTimeoutSec() != other.hasIcmpIdleTimeoutSec()) return false;
     if (hasIcmpIdleTimeoutSec()) {
       if (getIcmpIdleTimeoutSec() != other.getIcmpIdleTimeoutSec()) return false;
@@ -1650,6 +1900,10 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       hash =
           (53 * hash)
               + com.google.protobuf.Internal.hashBoolean(getEnableEndpointIndependentMapping());
+    }
+    if (getEndpointTypesCount() > 0) {
+      hash = (37 * hash) + ENDPOINT_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + getEndpointTypesList().hashCode();
     }
     if (hasIcmpIdleTimeoutSec()) {
       hash = (37 * hash) + ICMP_IDLE_TIMEOUT_SEC_FIELD_NUMBER;
@@ -1861,46 +2115,48 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       enableEndpointIndependentMapping_ = false;
       bitField0_ = (bitField0_ & ~0x00000004);
-      icmpIdleTimeoutSec_ = 0;
+      endpointTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      icmpIdleTimeoutSec_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000010);
       if (logConfigBuilder_ == null) {
         logConfig_ = null;
       } else {
         logConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
-      maxPortsPerVm_ = 0;
       bitField0_ = (bitField0_ & ~0x00000020);
-      minPortsPerVm_ = 0;
+      maxPortsPerVm_ = 0;
       bitField0_ = (bitField0_ & ~0x00000040);
-      name_ = "";
+      minPortsPerVm_ = 0;
       bitField0_ = (bitField0_ & ~0x00000080);
-      natIpAllocateOption_ = "";
+      name_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
-      natIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      natIpAllocateOption_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
+      natIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
       } else {
         rulesBuilder_.clear();
       }
       sourceSubnetworkIpRangesToNat_ = "";
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (subnetworksBuilder_ == null) {
         subnetworks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
       } else {
         subnetworksBuilder_.clear();
       }
       tcpEstablishedIdleTimeoutSec_ = 0;
-      bitField0_ = (bitField0_ & ~0x00002000);
-      tcpTimeWaitTimeoutSec_ = 0;
       bitField0_ = (bitField0_ & ~0x00004000);
-      tcpTransitoryIdleTimeoutSec_ = 0;
+      tcpTimeWaitTimeoutSec_ = 0;
       bitField0_ = (bitField0_ & ~0x00008000);
-      udpIdleTimeoutSec_ = 0;
+      tcpTransitoryIdleTimeoutSec_ = 0;
       bitField0_ = (bitField0_ & ~0x00010000);
+      udpIdleTimeoutSec_ = 0;
+      bitField0_ = (bitField0_ & ~0x00020000);
       return this;
     }
 
@@ -1943,11 +2199,16 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         result.enableEndpointIndependentMapping_ = enableEndpointIndependentMapping_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        endpointTypes_ = endpointTypes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.endpointTypes_ = endpointTypes_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.icmpIdleTimeoutSec_ = icmpIdleTimeoutSec_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         if (logConfigBuilder_ == null) {
           result.logConfig_ = logConfig_;
         } else {
@@ -1955,62 +2216,62 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         }
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.maxPortsPerVm_ = maxPortsPerVm_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.minPortsPerVm_ = minPortsPerVm_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         to_bitField0_ |= 0x00000040;
       }
       result.name_ = name_;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         to_bitField0_ |= 0x00000080;
       }
       result.natIpAllocateOption_ = natIpAllocateOption_;
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000400) != 0)) {
         natIps_ = natIps_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
       }
       result.natIps_ = natIps_;
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.rules_ = rules_;
       } else {
         result.rules_ = rulesBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         to_bitField0_ |= 0x00000100;
       }
       result.sourceSubnetworkIpRangesToNat_ = sourceSubnetworkIpRangesToNat_;
       if (subnetworksBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           subnetworks_ = java.util.Collections.unmodifiableList(subnetworks_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.subnetworks_ = subnetworks_;
       } else {
         result.subnetworks_ = subnetworksBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.tcpEstablishedIdleTimeoutSec_ = tcpEstablishedIdleTimeoutSec_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.tcpTimeWaitTimeoutSec_ = tcpTimeWaitTimeoutSec_;
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.tcpTransitoryIdleTimeoutSec_ = tcpTransitoryIdleTimeoutSec_;
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.udpIdleTimeoutSec_ = udpIdleTimeoutSec_;
         to_bitField0_ |= 0x00001000;
       }
@@ -2080,6 +2341,16 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEnableEndpointIndependentMapping()) {
         setEnableEndpointIndependentMapping(other.getEnableEndpointIndependentMapping());
       }
+      if (!other.endpointTypes_.isEmpty()) {
+        if (endpointTypes_.isEmpty()) {
+          endpointTypes_ = other.endpointTypes_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureEndpointTypesIsMutable();
+          endpointTypes_.addAll(other.endpointTypes_);
+        }
+        onChanged();
+      }
       if (other.hasIcmpIdleTimeoutSec()) {
         setIcmpIdleTimeoutSec(other.getIcmpIdleTimeoutSec());
       }
@@ -2093,19 +2364,19 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         setMinPortsPerVm(other.getMinPortsPerVm());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         name_ = other.name_;
         onChanged();
       }
       if (other.hasNatIpAllocateOption()) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         natIpAllocateOption_ = other.natIpAllocateOption_;
         onChanged();
       }
       if (!other.natIps_.isEmpty()) {
         if (natIps_.isEmpty()) {
           natIps_ = other.natIps_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureNatIpsIsMutable();
           natIps_.addAll(other.natIps_);
@@ -2116,7 +2387,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -2129,7 +2400,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -2140,7 +2411,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasSourceSubnetworkIpRangesToNat()) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         sourceSubnetworkIpRangesToNat_ = other.sourceSubnetworkIpRangesToNat_;
         onChanged();
       }
@@ -2148,7 +2419,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         if (!other.subnetworks_.isEmpty()) {
           if (subnetworks_.isEmpty()) {
             subnetworks_ = other.subnetworks_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureSubnetworksIsMutable();
             subnetworks_.addAll(other.subnetworks_);
@@ -2161,7 +2432,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
             subnetworksBuilder_.dispose();
             subnetworksBuilder_ = null;
             subnetworks_ = other.subnetworks_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             subnetworksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSubnetworksFieldBuilder()
@@ -2492,6 +2763,183 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.LazyStringList endpointTypes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureEndpointTypesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        endpointTypes_ = new com.google.protobuf.LazyStringArrayList(endpointTypes_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+     * Check the EndpointTypes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string endpoint_types = 502633807;</code>
+     *
+     * @return A list containing the endpointTypes.
+     */
+    public com.google.protobuf.ProtocolStringList getEndpointTypesList() {
+      return endpointTypes_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+     * Check the EndpointTypes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string endpoint_types = 502633807;</code>
+     *
+     * @return The count of endpointTypes.
+     */
+    public int getEndpointTypesCount() {
+      return endpointTypes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+     * Check the EndpointTypes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string endpoint_types = 502633807;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The endpointTypes at the given index.
+     */
+    public java.lang.String getEndpointTypes(int index) {
+      return endpointTypes_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+     * Check the EndpointTypes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string endpoint_types = 502633807;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the endpointTypes at the given index.
+     */
+    public com.google.protobuf.ByteString getEndpointTypesBytes(int index) {
+      return endpointTypes_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+     * Check the EndpointTypes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string endpoint_types = 502633807;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The endpointTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointTypes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureEndpointTypesIsMutable();
+      endpointTypes_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+     * Check the EndpointTypes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string endpoint_types = 502633807;</code>
+     *
+     * @param value The endpointTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEndpointTypes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureEndpointTypesIsMutable();
+      endpointTypes_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+     * Check the EndpointTypes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string endpoint_types = 502633807;</code>
+     *
+     * @param values The endpointTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEndpointTypes(java.lang.Iterable<java.lang.String> values) {
+      ensureEndpointTypesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, endpointTypes_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+     * Check the EndpointTypes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string endpoint_types = 502633807;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEndpointTypes() {
+      endpointTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+     * Check the EndpointTypes enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string endpoint_types = 502633807;</code>
+     *
+     * @param value The bytes of the endpointTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEndpointTypesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureEndpointTypesIsMutable();
+      endpointTypes_.add(value);
+      onChanged();
+      return this;
+    }
+
     private int icmpIdleTimeoutSec_;
     /**
      *
@@ -2506,7 +2954,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasIcmpIdleTimeoutSec() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2536,7 +2984,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setIcmpIdleTimeoutSec(int value) {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       icmpIdleTimeoutSec_ = value;
       onChanged();
       return this;
@@ -2553,7 +3001,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIcmpIdleTimeoutSec() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       icmpIdleTimeoutSec_ = 0;
       onChanged();
       return this;
@@ -2577,7 +3025,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the logConfig field is set.
      */
     public boolean hasLogConfig() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2618,7 +3066,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2638,7 +3086,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2652,7 +3100,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLogConfig(com.google.cloud.compute.v1.RouterNatLogConfig value) {
       if (logConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && logConfig_ != null
             && logConfig_ != com.google.cloud.compute.v1.RouterNatLogConfig.getDefaultInstance()) {
           logConfig_ =
@@ -2666,7 +3114,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2685,7 +3133,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
     /**
@@ -2698,7 +3146,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
      */
     public com.google.cloud.compute.v1.RouterNatLogConfig.Builder getLogConfigBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getLogConfigFieldBuilder().getBuilder();
     }
@@ -2760,7 +3208,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMaxPortsPerVm() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2790,7 +3238,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMaxPortsPerVm(int value) {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       maxPortsPerVm_ = value;
       onChanged();
       return this;
@@ -2807,7 +3255,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxPortsPerVm() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       maxPortsPerVm_ = 0;
       onChanged();
       return this;
@@ -2827,7 +3275,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMinPortsPerVm() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2857,7 +3305,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMinPortsPerVm(int value) {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       minPortsPerVm_ = value;
       onChanged();
       return this;
@@ -2874,7 +3322,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinPortsPerVm() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       minPortsPerVm_ = 0;
       onChanged();
       return this;
@@ -2893,7 +3341,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2955,7 +3403,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -2972,7 +3420,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -2994,7 +3442,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       name_ = value;
       onChanged();
       return this;
@@ -3014,7 +3462,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the natIpAllocateOption field is set.
      */
     public boolean hasNatIpAllocateOption() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3079,7 +3527,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       natIpAllocateOption_ = value;
       onChanged();
       return this;
@@ -3097,7 +3545,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNatIpAllocateOption() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       natIpAllocateOption_ = getDefaultInstance().getNatIpAllocateOption();
       onChanged();
       return this;
@@ -3120,7 +3568,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       natIpAllocateOption_ = value;
       onChanged();
       return this;
@@ -3130,9 +3578,9 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNatIpsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         natIps_ = new com.google.protobuf.LazyStringArrayList(natIps_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -3267,7 +3715,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNatIps() {
       natIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3298,9 +3746,9 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         rules_ = new java.util.ArrayList<com.google.cloud.compute.v1.RouterNatRule>(rules_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -3515,7 +3963,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -3636,7 +4084,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.RouterNatRule,
                 com.google.cloud.compute.v1.RouterNatRule.Builder,
                 com.google.cloud.compute.v1.RouterNatRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;
@@ -3656,7 +4104,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSubnetworkIpRangesToNat field is set.
      */
     public boolean hasSourceSubnetworkIpRangesToNat() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3721,7 +4169,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       sourceSubnetworkIpRangesToNat_ = value;
       onChanged();
       return this;
@@ -3739,7 +4187,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceSubnetworkIpRangesToNat() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       sourceSubnetworkIpRangesToNat_ = getDefaultInstance().getSourceSubnetworkIpRangesToNat();
       onChanged();
       return this;
@@ -3762,7 +4210,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       sourceSubnetworkIpRangesToNat_ = value;
       onChanged();
       return this;
@@ -3772,11 +4220,11 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSubnetworksIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         subnetworks_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.RouterNatSubnetworkToNat>(
                 subnetworks_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -4006,7 +4454,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSubnetworks() {
       if (subnetworksBuilder_ == null) {
         subnetworks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         subnetworksBuilder_.clear();
@@ -4139,7 +4587,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.RouterNatSubnetworkToNat,
                 com.google.cloud.compute.v1.RouterNatSubnetworkToNat.Builder,
                 com.google.cloud.compute.v1.RouterNatSubnetworkToNatOrBuilder>(
-                subnetworks_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
+                subnetworks_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
         subnetworks_ = null;
       }
       return subnetworksBuilder_;
@@ -4159,7 +4607,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTcpEstablishedIdleTimeoutSec() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4189,7 +4637,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTcpEstablishedIdleTimeoutSec(int value) {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       tcpEstablishedIdleTimeoutSec_ = value;
       onChanged();
       return this;
@@ -4206,7 +4654,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTcpEstablishedIdleTimeoutSec() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       tcpEstablishedIdleTimeoutSec_ = 0;
       onChanged();
       return this;
@@ -4226,7 +4674,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTcpTimeWaitTimeoutSec() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4256,7 +4704,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTcpTimeWaitTimeoutSec(int value) {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       tcpTimeWaitTimeoutSec_ = value;
       onChanged();
       return this;
@@ -4273,7 +4721,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTcpTimeWaitTimeoutSec() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       tcpTimeWaitTimeoutSec_ = 0;
       onChanged();
       return this;
@@ -4293,7 +4741,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTcpTransitoryIdleTimeoutSec() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4323,7 +4771,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTcpTransitoryIdleTimeoutSec(int value) {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       tcpTransitoryIdleTimeoutSec_ = value;
       onChanged();
       return this;
@@ -4340,7 +4788,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTcpTransitoryIdleTimeoutSec() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       tcpTransitoryIdleTimeoutSec_ = 0;
       onChanged();
       return this;
@@ -4360,7 +4808,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasUdpIdleTimeoutSec() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4390,7 +4838,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setUdpIdleTimeoutSec(int value) {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       udpIdleTimeoutSec_ = value;
       onChanged();
       return this;
@@ -4407,7 +4855,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUdpIdleTimeoutSec() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       udpIdleTimeoutSec_ = 0;
       onChanged();
       return this;

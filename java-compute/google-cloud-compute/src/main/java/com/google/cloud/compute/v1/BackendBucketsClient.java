@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
  *   String project = "project-309310695";
  *   String backendBucket = "backendBucket713751966";
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BackendBucketsSettings backendBucketsSettings =
  *     BackendBucketsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BackendBucketsSettings backendBucketsSettings =
  *     BackendBucketsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * BackendBucketsClient backendBucketsClient = BackendBucketsClient.create(backendBucketsSettings);
@@ -119,7 +125,6 @@ public class BackendBucketsClient implements BackgroundResource {
    * Constructs an instance of BackendBucketsClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(BackendBucketsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BackendBucketsClient create(BackendBucketsStub stub) {
     return new BackendBucketsClient(stub);
   }
@@ -134,7 +139,6 @@ public class BackendBucketsClient implements BackgroundResource {
     this.stub = ((BackendBucketsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected BackendBucketsClient(BackendBucketsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -144,7 +148,6 @@ public class BackendBucketsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BackendBucketsStub getStub() {
     return stub;
   }
@@ -156,6 +159,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String project = "project-309310695";
    *   String backendBucket = "backendBucket713751966";
@@ -191,6 +196,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   AddSignedUrlKeyBackendBucketRequest request =
    *       AddSignedUrlKeyBackendBucketRequest.newBuilder()
@@ -220,6 +227,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   AddSignedUrlKeyBackendBucketRequest request =
    *       AddSignedUrlKeyBackendBucketRequest.newBuilder()
@@ -247,6 +256,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   AddSignedUrlKeyBackendBucketRequest request =
    *       AddSignedUrlKeyBackendBucketRequest.newBuilder()
@@ -274,6 +285,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String project = "project-309310695";
    *   String backendBucket = "backendBucket713751966";
@@ -302,6 +315,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   DeleteBackendBucketRequest request =
    *       DeleteBackendBucketRequest.newBuilder()
@@ -330,6 +345,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   DeleteBackendBucketRequest request =
    *       DeleteBackendBucketRequest.newBuilder()
@@ -356,6 +373,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   DeleteBackendBucketRequest request =
    *       DeleteBackendBucketRequest.newBuilder()
@@ -380,6 +399,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String project = "project-309310695";
    *   String backendBucket = "backendBucket713751966";
@@ -413,6 +434,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   DeleteSignedUrlKeyBackendBucketRequest request =
    *       DeleteSignedUrlKeyBackendBucketRequest.newBuilder()
@@ -442,6 +465,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   DeleteSignedUrlKeyBackendBucketRequest request =
    *       DeleteSignedUrlKeyBackendBucketRequest.newBuilder()
@@ -469,6 +494,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   DeleteSignedUrlKeyBackendBucketRequest request =
    *       DeleteSignedUrlKeyBackendBucketRequest.newBuilder()
@@ -497,6 +524,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String project = "project-309310695";
    *   String backendBucket = "backendBucket713751966";
@@ -525,6 +554,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   GetBackendBucketRequest request =
    *       GetBackendBucketRequest.newBuilder()
@@ -550,6 +581,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   GetBackendBucketRequest request =
    *       GetBackendBucketRequest.newBuilder()
@@ -574,6 +607,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String project = "project-309310695";
    *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
@@ -603,6 +638,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   InsertBackendBucketRequest request =
    *       InsertBackendBucketRequest.newBuilder()
@@ -632,6 +669,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   InsertBackendBucketRequest request =
    *       InsertBackendBucketRequest.newBuilder()
@@ -659,6 +698,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   InsertBackendBucketRequest request =
    *       InsertBackendBucketRequest.newBuilder()
@@ -683,6 +724,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String project = "project-309310695";
    *   for (BackendBucket element : backendBucketsClient.list(project).iterateAll()) {
@@ -707,6 +750,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   ListBackendBucketsRequest request =
    *       ListBackendBucketsRequest.newBuilder()
@@ -737,6 +782,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   ListBackendBucketsRequest request =
    *       ListBackendBucketsRequest.newBuilder()
@@ -767,6 +814,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   ListBackendBucketsRequest request =
    *       ListBackendBucketsRequest.newBuilder()
@@ -779,7 +828,7 @@ public class BackendBucketsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     BackendBucketList response = backendBucketsClient.listCallable().call(request);
-   *     for (BackendBucket element : response.getResponsesList()) {
+   *     for (BackendBucket element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -804,6 +853,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String project = "project-309310695";
    *   String backendBucket = "backendBucket713751966";
@@ -837,6 +888,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   PatchBackendBucketRequest request =
    *       PatchBackendBucketRequest.newBuilder()
@@ -866,6 +919,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   PatchBackendBucketRequest request =
    *       PatchBackendBucketRequest.newBuilder()
@@ -894,6 +949,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   PatchBackendBucketRequest request =
    *       PatchBackendBucketRequest.newBuilder()
@@ -919,6 +976,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String project = "project-309310695";
    *   String backendBucket = "backendBucket713751966";
@@ -957,6 +1016,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   SetEdgeSecurityPolicyBackendBucketRequest request =
    *       SetEdgeSecurityPolicyBackendBucketRequest.newBuilder()
@@ -986,6 +1047,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   SetEdgeSecurityPolicyBackendBucketRequest request =
    *       SetEdgeSecurityPolicyBackendBucketRequest.newBuilder()
@@ -1013,6 +1076,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   SetEdgeSecurityPolicyBackendBucketRequest request =
    *       SetEdgeSecurityPolicyBackendBucketRequest.newBuilder()
@@ -1040,6 +1105,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String project = "project-309310695";
    *   String backendBucket = "backendBucket713751966";
@@ -1072,6 +1139,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   UpdateBackendBucketRequest request =
    *       UpdateBackendBucketRequest.newBuilder()
@@ -1101,6 +1170,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   UpdateBackendBucketRequest request =
    *       UpdateBackendBucketRequest.newBuilder()
@@ -1128,6 +1199,8 @@ public class BackendBucketsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   UpdateBackendBucketRequest request =
    *       UpdateBackendBucketRequest.newBuilder()

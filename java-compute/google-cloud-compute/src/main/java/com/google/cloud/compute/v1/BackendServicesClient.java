@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
  *   String project = "project-309310695";
  *   String backendService = "backendService-1884714623";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BackendServicesSettings backendServicesSettings =
  *     BackendServicesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,6 +96,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BackendServicesSettings backendServicesSettings =
  *     BackendServicesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * BackendServicesClient backendServicesClient =
@@ -123,7 +129,6 @@ public class BackendServicesClient implements BackgroundResource {
    * Constructs an instance of BackendServicesClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(BackendServicesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BackendServicesClient create(BackendServicesStub stub) {
     return new BackendServicesClient(stub);
   }
@@ -138,7 +143,6 @@ public class BackendServicesClient implements BackgroundResource {
     this.stub = ((BackendServicesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected BackendServicesClient(BackendServicesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -148,7 +152,6 @@ public class BackendServicesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BackendServicesStub getStub() {
     return stub;
   }
@@ -160,6 +163,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -195,6 +200,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   AddSignedUrlKeyBackendServiceRequest request =
    *       AddSignedUrlKeyBackendServiceRequest.newBuilder()
@@ -224,6 +231,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   AddSignedUrlKeyBackendServiceRequest request =
    *       AddSignedUrlKeyBackendServiceRequest.newBuilder()
@@ -251,6 +260,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   AddSignedUrlKeyBackendServiceRequest request =
    *       AddSignedUrlKeyBackendServiceRequest.newBuilder()
@@ -279,6 +290,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, BackendServicesScopedList> element :
@@ -305,6 +318,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   AggregatedListBackendServicesRequest request =
    *       AggregatedListBackendServicesRequest.newBuilder()
@@ -339,6 +354,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   AggregatedListBackendServicesRequest request =
    *       AggregatedListBackendServicesRequest.newBuilder()
@@ -372,6 +389,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   AggregatedListBackendServicesRequest request =
    *       AggregatedListBackendServicesRequest.newBuilder()
@@ -386,7 +405,7 @@ public class BackendServicesClient implements BackgroundResource {
    *   while (true) {
    *     BackendServiceAggregatedList response =
    *         backendServicesClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, BackendServicesScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, BackendServicesScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -411,6 +430,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -439,6 +460,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   DeleteBackendServiceRequest request =
    *       DeleteBackendServiceRequest.newBuilder()
@@ -467,6 +490,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   DeleteBackendServiceRequest request =
    *       DeleteBackendServiceRequest.newBuilder()
@@ -493,6 +518,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   DeleteBackendServiceRequest request =
    *       DeleteBackendServiceRequest.newBuilder()
@@ -517,6 +544,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -550,6 +579,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   DeleteSignedUrlKeyBackendServiceRequest request =
    *       DeleteSignedUrlKeyBackendServiceRequest.newBuilder()
@@ -579,6 +610,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   DeleteSignedUrlKeyBackendServiceRequest request =
    *       DeleteSignedUrlKeyBackendServiceRequest.newBuilder()
@@ -606,6 +639,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   DeleteSignedUrlKeyBackendServiceRequest request =
    *       DeleteSignedUrlKeyBackendServiceRequest.newBuilder()
@@ -633,6 +668,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -660,6 +697,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   GetBackendServiceRequest request =
    *       GetBackendServiceRequest.newBuilder()
@@ -684,6 +723,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   GetBackendServiceRequest request =
    *       GetBackendServiceRequest.newBuilder()
@@ -708,6 +749,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -745,6 +788,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   GetHealthBackendServiceRequest request =
    *       GetHealthBackendServiceRequest.newBuilder()
@@ -771,6 +816,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   GetHealthBackendServiceRequest request =
    *       GetHealthBackendServiceRequest.newBuilder()
@@ -798,6 +845,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   BackendService backendServiceResource = BackendService.newBuilder().build();
@@ -827,6 +876,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   InsertBackendServiceRequest request =
    *       InsertBackendServiceRequest.newBuilder()
@@ -856,6 +907,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   InsertBackendServiceRequest request =
    *       InsertBackendServiceRequest.newBuilder()
@@ -883,6 +936,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   InsertBackendServiceRequest request =
    *       InsertBackendServiceRequest.newBuilder()
@@ -907,6 +962,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   for (BackendService element : backendServicesClient.list(project).iterateAll()) {
@@ -931,6 +988,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   ListBackendServicesRequest request =
    *       ListBackendServicesRequest.newBuilder()
@@ -961,6 +1020,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   ListBackendServicesRequest request =
    *       ListBackendServicesRequest.newBuilder()
@@ -991,6 +1052,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   ListBackendServicesRequest request =
    *       ListBackendServicesRequest.newBuilder()
@@ -1003,7 +1066,7 @@ public class BackendServicesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     BackendServiceList response = backendServicesClient.listCallable().call(request);
-   *     for (BackendService element : response.getResponsesList()) {
+   *     for (BackendService element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1029,6 +1092,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -1063,6 +1128,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   PatchBackendServiceRequest request =
    *       PatchBackendServiceRequest.newBuilder()
@@ -1094,6 +1161,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   PatchBackendServiceRequest request =
    *       PatchBackendServiceRequest.newBuilder()
@@ -1123,6 +1192,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   PatchBackendServiceRequest request =
    *       PatchBackendServiceRequest.newBuilder()
@@ -1148,6 +1219,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -1186,6 +1259,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   SetEdgeSecurityPolicyBackendServiceRequest request =
    *       SetEdgeSecurityPolicyBackendServiceRequest.newBuilder()
@@ -1215,6 +1290,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   SetEdgeSecurityPolicyBackendServiceRequest request =
    *       SetEdgeSecurityPolicyBackendServiceRequest.newBuilder()
@@ -1242,6 +1319,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   SetEdgeSecurityPolicyBackendServiceRequest request =
    *       SetEdgeSecurityPolicyBackendServiceRequest.newBuilder()
@@ -1270,6 +1349,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -1309,6 +1390,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   SetSecurityPolicyBackendServiceRequest request =
    *       SetSecurityPolicyBackendServiceRequest.newBuilder()
@@ -1339,6 +1422,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   SetSecurityPolicyBackendServiceRequest request =
    *       SetSecurityPolicyBackendServiceRequest.newBuilder()
@@ -1367,6 +1452,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   SetSecurityPolicyBackendServiceRequest request =
    *       SetSecurityPolicyBackendServiceRequest.newBuilder()
@@ -1395,6 +1482,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String project = "project-309310695";
    *   String backendService = "backendService-1884714623";
@@ -1428,6 +1517,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   UpdateBackendServiceRequest request =
    *       UpdateBackendServiceRequest.newBuilder()
@@ -1458,6 +1549,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   UpdateBackendServiceRequest request =
    *       UpdateBackendServiceRequest.newBuilder()
@@ -1486,6 +1579,8 @@ public class BackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   UpdateBackendServiceRequest request =
    *       UpdateBackendServiceRequest.newBuilder()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
  *   String project = "project-309310695";
  *   String securityPolicy = "securityPolicy-788621166";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SecurityPoliciesSettings securityPoliciesSettings =
  *     SecurityPoliciesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,6 +96,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * SecurityPoliciesSettings securityPoliciesSettings =
  *     SecurityPoliciesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * SecurityPoliciesClient securityPoliciesClient =
@@ -123,7 +129,6 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * Constructs an instance of SecurityPoliciesClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(SecurityPoliciesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SecurityPoliciesClient create(SecurityPoliciesStub stub) {
     return new SecurityPoliciesClient(stub);
   }
@@ -138,7 +143,6 @@ public class SecurityPoliciesClient implements BackgroundResource {
     this.stub = ((SecurityPoliciesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected SecurityPoliciesClient(SecurityPoliciesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -148,7 +152,6 @@ public class SecurityPoliciesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SecurityPoliciesStub getStub() {
     return stub;
   }
@@ -160,6 +163,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   String securityPolicy = "securityPolicy-788621166";
@@ -194,12 +199,15 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   AddRuleSecurityPolicyRequest request =
    *       AddRuleSecurityPolicyRequest.newBuilder()
    *           .setProject("project-309310695")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   Operation response = securityPoliciesClient.addRuleAsync(request).get();
    * }
@@ -222,12 +230,15 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   AddRuleSecurityPolicyRequest request =
    *       AddRuleSecurityPolicyRequest.newBuilder()
    *           .setProject("project-309310695")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   OperationFuture<Operation, Operation> future =
    *       securityPoliciesClient.addRuleOperationCallable().futureCall(request);
@@ -248,12 +259,15 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   AddRuleSecurityPolicyRequest request =
    *       AddRuleSecurityPolicyRequest.newBuilder()
    *           .setProject("project-309310695")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<Operation> future = securityPoliciesClient.addRuleCallable().futureCall(request);
    *   // Do something.
@@ -273,6 +287,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, SecurityPoliciesScopedList> element :
@@ -299,6 +315,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   AggregatedListSecurityPoliciesRequest request =
    *       AggregatedListSecurityPoliciesRequest.newBuilder()
@@ -333,6 +351,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   AggregatedListSecurityPoliciesRequest request =
    *       AggregatedListSecurityPoliciesRequest.newBuilder()
@@ -366,6 +386,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   AggregatedListSecurityPoliciesRequest request =
    *       AggregatedListSecurityPoliciesRequest.newBuilder()
@@ -380,7 +402,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *   while (true) {
    *     SecurityPoliciesAggregatedList response =
    *         securityPoliciesClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, SecurityPoliciesScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, SecurityPoliciesScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -405,6 +427,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   String securityPolicy = "securityPolicy-788621166";
@@ -433,6 +457,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   DeleteSecurityPolicyRequest request =
    *       DeleteSecurityPolicyRequest.newBuilder()
@@ -461,6 +487,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   DeleteSecurityPolicyRequest request =
    *       DeleteSecurityPolicyRequest.newBuilder()
@@ -487,6 +515,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   DeleteSecurityPolicyRequest request =
    *       DeleteSecurityPolicyRequest.newBuilder()
@@ -511,6 +541,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   String securityPolicy = "securityPolicy-788621166";
@@ -538,6 +570,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   GetSecurityPolicyRequest request =
    *       GetSecurityPolicyRequest.newBuilder()
@@ -562,6 +596,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   GetSecurityPolicyRequest request =
    *       GetSecurityPolicyRequest.newBuilder()
@@ -585,6 +621,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   String securityPolicy = "securityPolicy-788621166";
@@ -612,6 +650,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   GetRuleSecurityPolicyRequest request =
    *       GetRuleSecurityPolicyRequest.newBuilder()
@@ -637,6 +677,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   GetRuleSecurityPolicyRequest request =
    *       GetRuleSecurityPolicyRequest.newBuilder()
@@ -662,6 +704,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
@@ -691,12 +735,15 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   InsertSecurityPolicyRequest request =
    *       InsertSecurityPolicyRequest.newBuilder()
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   Operation response = securityPoliciesClient.insertAsync(request).get();
    * }
@@ -719,12 +766,15 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   InsertSecurityPolicyRequest request =
    *       InsertSecurityPolicyRequest.newBuilder()
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   OperationFuture<Operation, Operation> future =
    *       securityPoliciesClient.insertOperationCallable().futureCall(request);
@@ -745,12 +795,15 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   InsertSecurityPolicyRequest request =
    *       InsertSecurityPolicyRequest.newBuilder()
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setSecurityPolicyResource(SecurityPolicy.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<Operation> future = securityPoliciesClient.insertCallable().futureCall(request);
    *   // Do something.
@@ -769,6 +822,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   for (SecurityPolicy element : securityPoliciesClient.list(project).iterateAll()) {
@@ -793,6 +848,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   ListSecurityPoliciesRequest request =
    *       ListSecurityPoliciesRequest.newBuilder()
@@ -823,6 +880,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   ListSecurityPoliciesRequest request =
    *       ListSecurityPoliciesRequest.newBuilder()
@@ -853,6 +912,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   ListSecurityPoliciesRequest request =
    *       ListSecurityPoliciesRequest.newBuilder()
@@ -865,7 +926,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     SecurityPolicyList response = securityPoliciesClient.listCallable().call(request);
-   *     for (SecurityPolicy element : response.getResponsesList()) {
+   *     for (SecurityPolicy element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -889,6 +950,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   SecurityPoliciesListPreconfiguredExpressionSetsResponse response =
@@ -915,6 +978,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   ListPreconfiguredExpressionSetsSecurityPoliciesRequest request =
    *       ListPreconfiguredExpressionSetsSecurityPoliciesRequest.newBuilder()
@@ -946,6 +1011,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   ListPreconfiguredExpressionSetsSecurityPoliciesRequest request =
    *       ListPreconfiguredExpressionSetsSecurityPoliciesRequest.newBuilder()
@@ -979,6 +1046,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   String securityPolicy = "securityPolicy-788621166";
@@ -1013,6 +1082,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   PatchSecurityPolicyRequest request =
    *       PatchSecurityPolicyRequest.newBuilder()
@@ -1044,6 +1115,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   PatchSecurityPolicyRequest request =
    *       PatchSecurityPolicyRequest.newBuilder()
@@ -1073,6 +1146,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   PatchSecurityPolicyRequest request =
    *       PatchSecurityPolicyRequest.newBuilder()
@@ -1098,6 +1173,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   String securityPolicy = "securityPolicy-788621166";
@@ -1132,6 +1209,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   PatchRuleSecurityPolicyRequest request =
    *       PatchRuleSecurityPolicyRequest.newBuilder()
@@ -1139,6 +1218,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   Operation response = securityPoliciesClient.patchRuleAsync(request).get();
    * }
@@ -1161,6 +1241,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   PatchRuleSecurityPolicyRequest request =
    *       PatchRuleSecurityPolicyRequest.newBuilder()
@@ -1168,6 +1250,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   OperationFuture<Operation, Operation> future =
    *       securityPoliciesClient.patchRuleOperationCallable().futureCall(request);
@@ -1188,6 +1271,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   PatchRuleSecurityPolicyRequest request =
    *       PatchRuleSecurityPolicyRequest.newBuilder()
@@ -1195,6 +1280,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setSecurityPolicy("securityPolicy-788621166")
    *           .setSecurityPolicyRuleResource(SecurityPolicyRule.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<Operation> future = securityPoliciesClient.patchRuleCallable().futureCall(request);
    *   // Do something.
@@ -1213,6 +1299,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
    *   String securityPolicy = "securityPolicy-788621166";
@@ -1241,6 +1329,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   RemoveRuleSecurityPolicyRequest request =
    *       RemoveRuleSecurityPolicyRequest.newBuilder()
@@ -1269,6 +1359,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   RemoveRuleSecurityPolicyRequest request =
    *       RemoveRuleSecurityPolicyRequest.newBuilder()
@@ -1295,6 +1387,8 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   RemoveRuleSecurityPolicyRequest request =
    *       RemoveRuleSecurityPolicyRequest.newBuilder()

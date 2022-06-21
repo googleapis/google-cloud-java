@@ -2407,6 +2407,9 @@
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
+            "SetCertificateMap": {
+              "methods": ["setCertificateMapAsync", "setCertificateMapAsync", "setCertificateMapOperationCallable", "setCertificateMapCallable"]
+            },
             "SetQuicOverride": {
               "methods": ["setQuicOverrideAsync", "setQuicOverrideAsync", "setQuicOverrideOperationCallable", "setQuicOverrideCallable"]
             },
@@ -2508,6 +2511,9 @@
             },
             "SetBackendService": {
               "methods": ["setBackendServiceAsync", "setBackendServiceAsync", "setBackendServiceOperationCallable", "setBackendServiceCallable"]
+            },
+            "SetCertificateMap": {
+              "methods": ["setCertificateMapAsync", "setCertificateMapAsync", "setCertificateMapOperationCallable", "setCertificateMapCallable"]
             },
             "SetProxyHeader": {
               "methods": ["setProxyHeaderAsync", "setProxyHeaderAsync", "setProxyHeaderOperationCallable", "setProxyHeaderCallable"]

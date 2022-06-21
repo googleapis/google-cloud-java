@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
  *   String project = "project-309310695";
  *   String urlMap = "urlMap-836780691";
@@ -80,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * UrlMapsSettings urlMapsSettings =
  *     UrlMapsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -90,6 +94,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * UrlMapsSettings urlMapsSettings = UrlMapsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * UrlMapsClient urlMapsClient = UrlMapsClient.create(urlMapsSettings);
  * }</pre>
@@ -118,7 +124,6 @@ public class UrlMapsClient implements BackgroundResource {
    * Constructs an instance of UrlMapsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(UrlMapsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final UrlMapsClient create(UrlMapsStub stub) {
     return new UrlMapsClient(stub);
   }
@@ -132,7 +137,6 @@ public class UrlMapsClient implements BackgroundResource {
     this.stub = ((UrlMapsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected UrlMapsClient(UrlMapsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -142,7 +146,6 @@ public class UrlMapsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public UrlMapsStub getStub() {
     return stub;
   }
@@ -155,6 +158,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, UrlMapsScopedList> element :
@@ -181,6 +186,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   AggregatedListUrlMapsRequest request =
    *       AggregatedListUrlMapsRequest.newBuilder()
@@ -214,6 +221,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   AggregatedListUrlMapsRequest request =
    *       AggregatedListUrlMapsRequest.newBuilder()
@@ -247,6 +256,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   AggregatedListUrlMapsRequest request =
    *       AggregatedListUrlMapsRequest.newBuilder()
@@ -260,7 +271,7 @@ public class UrlMapsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     UrlMapsAggregatedList response = urlMapsClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, UrlMapsScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, UrlMapsScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -285,6 +296,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "project-309310695";
    *   String urlMap = "urlMap-836780691";
@@ -309,6 +322,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   DeleteUrlMapRequest request =
    *       DeleteUrlMapRequest.newBuilder()
@@ -336,6 +351,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   DeleteUrlMapRequest request =
    *       DeleteUrlMapRequest.newBuilder()
@@ -362,6 +379,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   DeleteUrlMapRequest request =
    *       DeleteUrlMapRequest.newBuilder()
@@ -387,6 +406,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "project-309310695";
    *   String urlMap = "urlMap-836780691";
@@ -412,6 +433,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   GetUrlMapRequest request =
    *       GetUrlMapRequest.newBuilder()
@@ -437,6 +460,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   GetUrlMapRequest request =
    *       GetUrlMapRequest.newBuilder()
@@ -460,6 +485,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "project-309310695";
    *   UrlMap urlMapResource = UrlMap.newBuilder().build();
@@ -488,6 +515,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   InsertUrlMapRequest request =
    *       InsertUrlMapRequest.newBuilder()
@@ -515,6 +544,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   InsertUrlMapRequest request =
    *       InsertUrlMapRequest.newBuilder()
@@ -541,6 +572,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   InsertUrlMapRequest request =
    *       InsertUrlMapRequest.newBuilder()
@@ -567,6 +600,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "project-309310695";
    *   String urlMap = "urlMap-836780691";
@@ -602,6 +637,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   InvalidateCacheUrlMapRequest request =
    *       InvalidateCacheUrlMapRequest.newBuilder()
@@ -633,6 +670,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   InvalidateCacheUrlMapRequest request =
    *       InvalidateCacheUrlMapRequest.newBuilder()
@@ -662,6 +701,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   InvalidateCacheUrlMapRequest request =
    *       InvalidateCacheUrlMapRequest.newBuilder()
@@ -687,6 +728,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "project-309310695";
    *   for (UrlMap element : urlMapsClient.list(project).iterateAll()) {
@@ -710,6 +753,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   ListUrlMapsRequest request =
    *       ListUrlMapsRequest.newBuilder()
@@ -740,6 +785,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   ListUrlMapsRequest request =
    *       ListUrlMapsRequest.newBuilder()
@@ -769,6 +816,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   ListUrlMapsRequest request =
    *       ListUrlMapsRequest.newBuilder()
@@ -781,7 +830,7 @@ public class UrlMapsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     UrlMapList response = urlMapsClient.listCallable().call(request);
-   *     for (UrlMap element : response.getResponsesList()) {
+   *     for (UrlMap element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -806,6 +855,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "project-309310695";
    *   String urlMap = "urlMap-836780691";
@@ -838,6 +889,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   PatchUrlMapRequest request =
    *       PatchUrlMapRequest.newBuilder()
@@ -867,6 +920,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   PatchUrlMapRequest request =
    *       PatchUrlMapRequest.newBuilder()
@@ -895,6 +950,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   PatchUrlMapRequest request =
    *       PatchUrlMapRequest.newBuilder()
@@ -920,6 +977,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "project-309310695";
    *   String urlMap = "urlMap-836780691";
@@ -951,6 +1010,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   UpdateUrlMapRequest request =
    *       UpdateUrlMapRequest.newBuilder()
@@ -979,6 +1040,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   UpdateUrlMapRequest request =
    *       UpdateUrlMapRequest.newBuilder()
@@ -1006,6 +1069,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   UpdateUrlMapRequest request =
    *       UpdateUrlMapRequest.newBuilder()
@@ -1032,6 +1097,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "project-309310695";
    *   String urlMap = "urlMap-836780691";
@@ -1066,6 +1133,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   ValidateUrlMapRequest request =
    *       ValidateUrlMapRequest.newBuilder()
@@ -1092,6 +1161,8 @@ public class UrlMapsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   ValidateUrlMapRequest request =
    *       ValidateUrlMapRequest.newBuilder()

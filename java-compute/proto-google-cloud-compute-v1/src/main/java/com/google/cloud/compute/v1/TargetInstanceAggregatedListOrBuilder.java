@@ -107,8 +107,12 @@ public interface TargetInstanceAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.TargetInstancesScopedList&gt; items = 100526016;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.compute.v1.TargetInstancesScopedList getItemsOrDefault(
-      java.lang.String key, com.google.cloud.compute.v1.TargetInstancesScopedList defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.TargetInstancesScopedList defaultValue);
   /**
    *
    *

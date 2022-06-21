@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.SslPoliciesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -60,7 +59,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -69,7 +68,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteSslPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslPolicies/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSslPolicyRequest>newBuilder()
@@ -117,7 +116,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
   private static final ApiMethodDescriptor<GetSslPolicyRequest, SslPolicy> getMethodDescriptor =
       ApiMethodDescriptor.<GetSslPolicyRequest, SslPolicy>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.SslPolicies/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetSslPolicyRequest>newBuilder()
@@ -151,7 +150,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertSslPolicyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslPolicies/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertSslPolicyRequest>newBuilder()
@@ -202,7 +201,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListSslPoliciesRequest, SslPoliciesList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslPolicies/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListSslPoliciesRequest>newBuilder()
@@ -257,7 +256,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
               .<ListAvailableFeaturesSslPoliciesRequest, SslPoliciesListAvailableFeaturesResponse>
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.SslPolicies/ListAvailableFeatures")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListAvailableFeaturesSslPoliciesRequest>newBuilder()
@@ -309,7 +308,7 @@ public class HttpJsonSslPoliciesStub extends SslPoliciesStub {
   private static final ApiMethodDescriptor<PatchSslPolicyRequest, Operation> patchMethodDescriptor =
       ApiMethodDescriptor.<PatchSslPolicyRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.SslPolicies/Patch")
-          .setHttpMethod(HttpMethods.PATCH)
+          .setHttpMethod("PATCH")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchSslPolicyRequest>newBuilder()

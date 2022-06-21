@@ -145,6 +145,8 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -357,7 +359,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
+   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Scheduling.OnHostMaintenance}
@@ -953,7 +955,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
+   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
    * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
@@ -969,7 +971,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
+   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
    * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
@@ -993,7 +995,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
+   * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
    * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
@@ -2414,7 +2416,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -2429,7 +2431,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -2452,7 +2454,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -2475,7 +2477,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -2497,7 +2499,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
@@ -2515,7 +2517,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM availability policies.
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
      * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *

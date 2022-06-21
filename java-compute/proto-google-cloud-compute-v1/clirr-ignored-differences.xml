@@ -16,4 +16,9 @@
     <className>com/google/cloud/compute/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+   <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/compute/v1/*PolicyRequest*</className>
+    <method>boolean hasParentId(*)</method>
+  </difference>
 </differences>

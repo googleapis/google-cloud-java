@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -80,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionDisksSettings regionDisksSettings =
  *     RegionDisksSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -90,6 +94,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionDisksSettings regionDisksSettings =
  *     RegionDisksSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionDisksClient regionDisksClient = RegionDisksClient.create(regionDisksSettings);
@@ -119,7 +125,6 @@ public class RegionDisksClient implements BackgroundResource {
    * Constructs an instance of RegionDisksClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(RegionDisksSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionDisksClient create(RegionDisksStub stub) {
     return new RegionDisksClient(stub);
   }
@@ -134,7 +139,6 @@ public class RegionDisksClient implements BackgroundResource {
     this.stub = ((RegionDisksStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RegionDisksClient(RegionDisksStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -144,7 +148,6 @@ public class RegionDisksClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegionDisksStub getStub() {
     return stub;
   }
@@ -157,6 +160,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -201,6 +206,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   AddResourcePoliciesRegionDiskRequest request =
    *       AddResourcePoliciesRegionDiskRequest.newBuilder()
@@ -233,6 +240,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   AddResourcePoliciesRegionDiskRequest request =
    *       AddResourcePoliciesRegionDiskRequest.newBuilder()
@@ -263,6 +272,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   AddResourcePoliciesRegionDiskRequest request =
    *       AddResourcePoliciesRegionDiskRequest.newBuilder()
@@ -294,6 +305,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -331,6 +344,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   CreateSnapshotRegionDiskRequest request =
    *       CreateSnapshotRegionDiskRequest.newBuilder()
@@ -363,6 +378,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   CreateSnapshotRegionDiskRequest request =
    *       CreateSnapshotRegionDiskRequest.newBuilder()
@@ -393,6 +410,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   CreateSnapshotRegionDiskRequest request =
    *       CreateSnapshotRegionDiskRequest.newBuilder()
@@ -421,6 +440,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -454,6 +475,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   DeleteRegionDiskRequest request =
    *       DeleteRegionDiskRequest.newBuilder()
@@ -484,6 +507,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   DeleteRegionDiskRequest request =
    *       DeleteRegionDiskRequest.newBuilder()
@@ -513,6 +538,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   DeleteRegionDiskRequest request =
    *       DeleteRegionDiskRequest.newBuilder()
@@ -538,6 +565,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -568,6 +597,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   GetRegionDiskRequest request =
    *       GetRegionDiskRequest.newBuilder()
@@ -593,6 +624,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   GetRegionDiskRequest request =
    *       GetRegionDiskRequest.newBuilder()
@@ -618,6 +651,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -649,6 +684,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   GetIamPolicyRegionDiskRequest request =
    *       GetIamPolicyRegionDiskRequest.newBuilder()
@@ -676,6 +713,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   GetIamPolicyRegionDiskRequest request =
    *       GetIamPolicyRegionDiskRequest.newBuilder()
@@ -702,6 +741,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -734,6 +775,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   InsertRegionDiskRequest request =
    *       InsertRegionDiskRequest.newBuilder()
@@ -764,6 +807,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   InsertRegionDiskRequest request =
    *       InsertRegionDiskRequest.newBuilder()
@@ -793,6 +838,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   InsertRegionDiskRequest request =
    *       InsertRegionDiskRequest.newBuilder()
@@ -819,6 +866,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -845,6 +894,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   ListRegionDisksRequest request =
    *       ListRegionDisksRequest.newBuilder()
@@ -876,6 +927,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   ListRegionDisksRequest request =
    *       ListRegionDisksRequest.newBuilder()
@@ -906,6 +959,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   ListRegionDisksRequest request =
    *       ListRegionDisksRequest.newBuilder()
@@ -919,7 +974,7 @@ public class RegionDisksClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     DiskList response = regionDisksClient.listCallable().call(request);
-   *     for (Disk element : response.getResponsesList()) {
+   *     for (Disk element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -943,6 +998,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -986,6 +1043,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   RemoveResourcePoliciesRegionDiskRequest request =
    *       RemoveResourcePoliciesRegionDiskRequest.newBuilder()
@@ -1017,6 +1076,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   RemoveResourcePoliciesRegionDiskRequest request =
    *       RemoveResourcePoliciesRegionDiskRequest.newBuilder()
@@ -1046,6 +1107,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   RemoveResourcePoliciesRegionDiskRequest request =
    *       RemoveResourcePoliciesRegionDiskRequest.newBuilder()
@@ -1075,6 +1138,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1116,6 +1181,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   ResizeRegionDiskRequest request =
    *       ResizeRegionDiskRequest.newBuilder()
@@ -1145,6 +1212,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   ResizeRegionDiskRequest request =
    *       ResizeRegionDiskRequest.newBuilder()
@@ -1173,6 +1242,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   ResizeRegionDiskRequest request =
    *       ResizeRegionDiskRequest.newBuilder()
@@ -1199,6 +1270,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1238,6 +1311,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   SetIamPolicyRegionDiskRequest request =
    *       SetIamPolicyRegionDiskRequest.newBuilder()
@@ -1264,6 +1339,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   SetIamPolicyRegionDiskRequest request =
    *       SetIamPolicyRegionDiskRequest.newBuilder()
@@ -1289,6 +1366,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1330,6 +1409,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   SetLabelsRegionDiskRequest request =
    *       SetLabelsRegionDiskRequest.newBuilder()
@@ -1360,6 +1441,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   SetLabelsRegionDiskRequest request =
    *       SetLabelsRegionDiskRequest.newBuilder()
@@ -1388,6 +1471,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   SetLabelsRegionDiskRequest request =
    *       SetLabelsRegionDiskRequest.newBuilder()
@@ -1414,6 +1499,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -1454,6 +1541,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   TestIamPermissionsRegionDiskRequest request =
    *       TestIamPermissionsRegionDiskRequest.newBuilder()
@@ -1481,6 +1570,8 @@ public class RegionDisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
    *   TestIamPermissionsRegionDiskRequest request =
    *       TestIamPermissionsRegionDiskRequest.newBuilder()

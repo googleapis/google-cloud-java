@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.UrlMapsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.UrlMapsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -65,7 +64,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonUrlMapsStub extends UrlMapsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -74,7 +73,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListUrlMapsRequest, UrlMapsAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.UrlMaps/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListUrlMapsRequest>newBuilder()
@@ -129,7 +128,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   private static final ApiMethodDescriptor<DeleteUrlMapRequest, Operation> deleteMethodDescriptor =
       ApiMethodDescriptor.<DeleteUrlMapRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/Delete")
-          .setHttpMethod(HttpMethods.DELETE)
+          .setHttpMethod("DELETE")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<DeleteUrlMapRequest>newBuilder()
@@ -177,7 +176,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   private static final ApiMethodDescriptor<GetUrlMapRequest, UrlMap> getMethodDescriptor =
       ApiMethodDescriptor.<GetUrlMapRequest, UrlMap>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetUrlMapRequest>newBuilder()
@@ -210,7 +209,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   private static final ApiMethodDescriptor<InsertUrlMapRequest, Operation> insertMethodDescriptor =
       ApiMethodDescriptor.<InsertUrlMapRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/Insert")
-          .setHttpMethod(HttpMethods.POST)
+          .setHttpMethod("POST")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<InsertUrlMapRequest>newBuilder()
@@ -261,7 +260,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
       invalidateCacheMethodDescriptor =
           ApiMethodDescriptor.<InvalidateCacheUrlMapRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.UrlMaps/InvalidateCache")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InvalidateCacheUrlMapRequest>newBuilder()
@@ -314,7 +313,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   private static final ApiMethodDescriptor<ListUrlMapsRequest, UrlMapList> listMethodDescriptor =
       ApiMethodDescriptor.<ListUrlMapsRequest, UrlMapList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/List")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListUrlMapsRequest>newBuilder()
@@ -362,7 +361,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   private static final ApiMethodDescriptor<PatchUrlMapRequest, Operation> patchMethodDescriptor =
       ApiMethodDescriptor.<PatchUrlMapRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/Patch")
-          .setHttpMethod(HttpMethods.PATCH)
+          .setHttpMethod("PATCH")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<PatchUrlMapRequest>newBuilder()
@@ -413,7 +412,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
   private static final ApiMethodDescriptor<UpdateUrlMapRequest, Operation> updateMethodDescriptor =
       ApiMethodDescriptor.<UpdateUrlMapRequest, Operation>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.UrlMaps/Update")
-          .setHttpMethod(HttpMethods.PUT)
+          .setHttpMethod("PUT")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<UpdateUrlMapRequest>newBuilder()
@@ -465,7 +464,7 @@ public class HttpJsonUrlMapsStub extends UrlMapsStub {
       validateMethodDescriptor =
           ApiMethodDescriptor.<ValidateUrlMapRequest, UrlMapsValidateResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.UrlMaps/Validate")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ValidateUrlMapRequest>newBuilder()

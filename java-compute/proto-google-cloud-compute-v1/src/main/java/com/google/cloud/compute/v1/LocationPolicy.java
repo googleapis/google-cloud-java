@@ -37,7 +37,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private LocationPolicy() {}
+  private LocationPolicy() {
+    targetShape_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -69,6 +71,13 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
+          case -1585996902:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              targetShape_ = s;
+              break;
+            }
           case -987579662:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -97,6 +106,8 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -131,6 +142,186 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.LocationPolicy.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Strategy for distributing VMs across zones in a region.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.LocationPolicy.TargetShape}
+   */
+  public enum TargetShape implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TARGET_SHAPE = 0;</code>
+     */
+    UNDEFINED_TARGET_SHAPE(0),
+    /**
+     *
+     *
+     * <pre>
+     * GCE picks zones for creating VM instances to fulfill the requested number of VMs within present resource constraints and to maximize utilization of unused zonal reservations. Recommended for batch workloads that do not require high availability.
+     * </pre>
+     *
+     * <code>ANY = 64972;</code>
+     */
+    ANY(64972),
+    /**
+     *
+     *
+     * <pre>
+     * GCE always selects a single zone for all the VMs, optimizing for resource quotas, available reservations and general capacity. Recommended for batch workloads that cannot tollerate distribution over multiple zones. This the default shape in Bulk Insert and Capacity Advisor APIs.
+     * </pre>
+     *
+     * <code>ANY_SINGLE_ZONE = 61100880;</code>
+     */
+    ANY_SINGLE_ZONE(61100880),
+    /**
+     *
+     *
+     * <pre>
+     * GCE prioritizes acquisition of resources, scheduling VMs in zones where resources are available while distributing VMs as evenly as possible across allowed zones to minimize the impact of zonal failure. Recommended for highly available serving workloads.
+     * </pre>
+     *
+     * <code>BALANCED = 468409608;</code>
+     */
+    BALANCED(468409608),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TARGET_SHAPE = 0;</code>
+     */
+    public static final int UNDEFINED_TARGET_SHAPE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * GCE picks zones for creating VM instances to fulfill the requested number of VMs within present resource constraints and to maximize utilization of unused zonal reservations. Recommended for batch workloads that do not require high availability.
+     * </pre>
+     *
+     * <code>ANY = 64972;</code>
+     */
+    public static final int ANY_VALUE = 64972;
+    /**
+     *
+     *
+     * <pre>
+     * GCE always selects a single zone for all the VMs, optimizing for resource quotas, available reservations and general capacity. Recommended for batch workloads that cannot tollerate distribution over multiple zones. This the default shape in Bulk Insert and Capacity Advisor APIs.
+     * </pre>
+     *
+     * <code>ANY_SINGLE_ZONE = 61100880;</code>
+     */
+    public static final int ANY_SINGLE_ZONE_VALUE = 61100880;
+    /**
+     *
+     *
+     * <pre>
+     * GCE prioritizes acquisition of resources, scheduling VMs in zones where resources are available while distributing VMs as evenly as possible across allowed zones to minimize the impact of zonal failure. Recommended for highly available serving workloads.
+     * </pre>
+     *
+     * <code>BALANCED = 468409608;</code>
+     */
+    public static final int BALANCED_VALUE = 468409608;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TargetShape valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TargetShape forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_TARGET_SHAPE;
+        case 64972:
+          return ANY;
+        case 61100880:
+          return ANY_SINGLE_ZONE;
+        case 468409608:
+          return BALANCED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TargetShape> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TargetShape> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TargetShape>() {
+          public TargetShape findValueByNumber(int number) {
+            return TargetShape.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.LocationPolicy.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final TargetShape[] VALUES = values();
+
+    public static TargetShape valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TargetShape(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.LocationPolicy.TargetShape)
+  }
+
+  private int bitField0_;
   public static final int LOCATIONS_FIELD_NUMBER = 413423454;
 
   private static final class LocationsDefaultEntryHolder {
@@ -177,7 +368,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean containsLocations(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetLocations().getMap().containsKey(key);
   }
@@ -217,7 +408,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.LocationPolicyLocation getLocationsOrDefault(
       java.lang.String key, com.google.cloud.compute.v1.LocationPolicyLocation defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.LocationPolicyLocation> map =
         internalGetLocations().getMap();
@@ -237,7 +428,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.LocationPolicyLocation getLocationsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.LocationPolicyLocation> map =
         internalGetLocations().getMap();
@@ -245,6 +436,73 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int TARGET_SHAPE_FIELD_NUMBER = 338621299;
+  private volatile java.lang.Object targetShape_;
+  /**
+   *
+   *
+   * <pre>
+   * Strategy for distributing VMs across zones in a region.
+   * Check the TargetShape enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_shape = 338621299;</code>
+   *
+   * @return Whether the targetShape field is set.
+   */
+  @java.lang.Override
+  public boolean hasTargetShape() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Strategy for distributing VMs across zones in a region.
+   * Check the TargetShape enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_shape = 338621299;</code>
+   *
+   * @return The targetShape.
+   */
+  @java.lang.Override
+  public java.lang.String getTargetShape() {
+    java.lang.Object ref = targetShape_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      targetShape_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Strategy for distributing VMs across zones in a region.
+   * Check the TargetShape enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_shape = 338621299;</code>
+   *
+   * @return The bytes for targetShape.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTargetShapeBytes() {
+    java.lang.Object ref = targetShape_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      targetShape_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -261,6 +519,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 338621299, targetShape_);
+    }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLocations(), LocationsDefaultEntryHolder.defaultEntry, 413423454);
     unknownFields.writeTo(output);
@@ -272,6 +533,9 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(338621299, targetShape_);
+    }
     for (java.util.Map.Entry<java.lang.String, com.google.cloud.compute.v1.LocationPolicyLocation>
         entry : internalGetLocations().getMap().entrySet()) {
       com.google.protobuf.MapEntry<
@@ -301,6 +565,10 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.compute.v1.LocationPolicy) obj;
 
     if (!internalGetLocations().equals(other.internalGetLocations())) return false;
+    if (hasTargetShape() != other.hasTargetShape()) return false;
+    if (hasTargetShape()) {
+      if (!getTargetShape().equals(other.getTargetShape())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -315,6 +583,10 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLocations().getMap().isEmpty()) {
       hash = (37 * hash) + LOCATIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLocations().hashCode();
+    }
+    if (hasTargetShape()) {
+      hash = (37 * hash) + TARGET_SHAPE_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetShape().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -482,6 +754,8 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       internalGetMutableLocations().clear();
+      targetShape_ = "";
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -510,8 +784,14 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.LocationPolicy result =
           new com.google.cloud.compute.v1.LocationPolicy(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.locations_ = internalGetLocations();
       result.locations_.makeImmutable();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
+      result.targetShape_ = targetShape_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -562,6 +842,11 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.compute.v1.LocationPolicy other) {
       if (other == com.google.cloud.compute.v1.LocationPolicy.getDefaultInstance()) return this;
       internalGetMutableLocations().mergeFrom(other.internalGetLocations());
+      if (other.hasTargetShape()) {
+        bitField0_ |= 0x00000002;
+        targetShape_ = other.targetShape_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -638,7 +923,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean containsLocations(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetLocations().getMap().containsKey(key);
     }
@@ -680,7 +965,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.LocationPolicyLocation getLocationsOrDefault(
         java.lang.String key, com.google.cloud.compute.v1.LocationPolicyLocation defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.LocationPolicyLocation> map =
           internalGetLocations().getMap();
@@ -701,7 +986,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.LocationPolicyLocation getLocationsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.LocationPolicyLocation> map =
           internalGetLocations().getMap();
@@ -728,7 +1013,7 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder removeLocations(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableLocations().getMutableMap().remove(key);
       return this;
@@ -753,11 +1038,12 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder putLocations(
         java.lang.String key, com.google.cloud.compute.v1.LocationPolicyLocation value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableLocations().getMutableMap().put(key, value);
       return this;
     }
@@ -776,6 +1062,132 @@ public final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.compute.v1.LocationPolicyLocation>
             values) {
       internalGetMutableLocations().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private java.lang.Object targetShape_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Strategy for distributing VMs across zones in a region.
+     * Check the TargetShape enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_shape = 338621299;</code>
+     *
+     * @return Whether the targetShape field is set.
+     */
+    public boolean hasTargetShape() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy for distributing VMs across zones in a region.
+     * Check the TargetShape enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_shape = 338621299;</code>
+     *
+     * @return The targetShape.
+     */
+    public java.lang.String getTargetShape() {
+      java.lang.Object ref = targetShape_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        targetShape_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy for distributing VMs across zones in a region.
+     * Check the TargetShape enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_shape = 338621299;</code>
+     *
+     * @return The bytes for targetShape.
+     */
+    public com.google.protobuf.ByteString getTargetShapeBytes() {
+      java.lang.Object ref = targetShape_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        targetShape_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy for distributing VMs across zones in a region.
+     * Check the TargetShape enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_shape = 338621299;</code>
+     *
+     * @param value The targetShape to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetShape(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      targetShape_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy for distributing VMs across zones in a region.
+     * Check the TargetShape enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_shape = 338621299;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetShape() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      targetShape_ = getDefaultInstance().getTargetShape();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Strategy for distributing VMs across zones in a region.
+     * Check the TargetShape enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_shape = 338621299;</code>
+     *
+     * @param value The bytes for targetShape to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetShapeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      targetShape_ = value;
+      onChanged();
       return this;
     }
 

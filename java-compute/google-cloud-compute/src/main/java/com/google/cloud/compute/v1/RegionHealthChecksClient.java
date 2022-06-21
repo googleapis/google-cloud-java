@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionHealthChecksSettings regionHealthChecksSettings =
  *     RegionHealthChecksSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,6 +96,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionHealthChecksSettings regionHealthChecksSettings =
  *     RegionHealthChecksSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionHealthChecksClient regionHealthChecksClient =
@@ -123,7 +129,6 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * Constructs an instance of RegionHealthChecksClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(RegionHealthChecksSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionHealthChecksClient create(RegionHealthChecksStub stub) {
     return new RegionHealthChecksClient(stub);
   }
@@ -138,7 +143,6 @@ public class RegionHealthChecksClient implements BackgroundResource {
     this.stub = ((RegionHealthChecksStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RegionHealthChecksClient(RegionHealthChecksStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -148,7 +152,6 @@ public class RegionHealthChecksClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegionHealthChecksStub getStub() {
     return stub;
   }
@@ -160,6 +163,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -191,6 +196,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   DeleteRegionHealthCheckRequest request =
    *       DeleteRegionHealthCheckRequest.newBuilder()
@@ -220,6 +227,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   DeleteRegionHealthCheckRequest request =
    *       DeleteRegionHealthCheckRequest.newBuilder()
@@ -247,6 +256,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   DeleteRegionHealthCheckRequest request =
    *       DeleteRegionHealthCheckRequest.newBuilder()
@@ -273,6 +284,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -304,6 +317,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   GetRegionHealthCheckRequest request =
    *       GetRegionHealthCheckRequest.newBuilder()
@@ -330,6 +345,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   GetRegionHealthCheckRequest request =
    *       GetRegionHealthCheckRequest.newBuilder()
@@ -354,6 +371,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -386,6 +405,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   InsertRegionHealthCheckRequest request =
    *       InsertRegionHealthCheckRequest.newBuilder()
@@ -415,6 +436,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   InsertRegionHealthCheckRequest request =
    *       InsertRegionHealthCheckRequest.newBuilder()
@@ -442,6 +465,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   InsertRegionHealthCheckRequest request =
    *       InsertRegionHealthCheckRequest.newBuilder()
@@ -467,6 +492,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -493,6 +520,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   ListRegionHealthChecksRequest request =
    *       ListRegionHealthChecksRequest.newBuilder()
@@ -524,6 +553,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   ListRegionHealthChecksRequest request =
    *       ListRegionHealthChecksRequest.newBuilder()
@@ -555,6 +586,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   ListRegionHealthChecksRequest request =
    *       ListRegionHealthChecksRequest.newBuilder()
@@ -568,7 +601,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     HealthCheckList response = regionHealthChecksClient.listCallable().call(request);
-   *     for (HealthCheck element : response.getResponsesList()) {
+   *     for (HealthCheck element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -593,6 +626,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -631,6 +666,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   PatchRegionHealthCheckRequest request =
    *       PatchRegionHealthCheckRequest.newBuilder()
@@ -662,6 +699,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   PatchRegionHealthCheckRequest request =
    *       PatchRegionHealthCheckRequest.newBuilder()
@@ -691,6 +730,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   PatchRegionHealthCheckRequest request =
    *       PatchRegionHealthCheckRequest.newBuilder()
@@ -717,6 +758,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -754,6 +797,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   UpdateRegionHealthCheckRequest request =
    *       UpdateRegionHealthCheckRequest.newBuilder()
@@ -784,6 +829,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   UpdateRegionHealthCheckRequest request =
    *       UpdateRegionHealthCheckRequest.newBuilder()
@@ -812,6 +859,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   UpdateRegionHealthCheckRequest request =
    *       UpdateRegionHealthCheckRequest.newBuilder()

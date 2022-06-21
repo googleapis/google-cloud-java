@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.NetworkEndpointGroupsClient.Aggregated
 import static com.google.cloud.compute.v1.NetworkEndpointGroupsClient.ListNetworkEndpointsPagedResponse;
 import static com.google.cloud.compute.v1.NetworkEndpointGroupsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -67,7 +66,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -79,7 +78,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
               .<AggregatedListNetworkEndpointGroupsRequest, NetworkEndpointGroupAggregatedList>
                   newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -139,7 +138,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
               .<AttachNetworkEndpointsNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName(
                   "google.cloud.compute.v1.NetworkEndpointGroups/AttachNetworkEndpoints")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -199,7 +198,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteNetworkEndpointGroupRequest>newBuilder()
@@ -254,7 +253,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
               .<DetachNetworkEndpointsNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName(
                   "google.cloud.compute.v1.NetworkEndpointGroups/DetachNetworkEndpoints")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -314,7 +313,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
       getMethodDescriptor =
           ApiMethodDescriptor.<GetNetworkEndpointGroupRequest, NetworkEndpointGroup>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetNetworkEndpointGroupRequest>newBuilder()
@@ -350,7 +349,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertNetworkEndpointGroupRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertNetworkEndpointGroupRequest>newBuilder()
@@ -407,7 +406,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
           ApiMethodDescriptor
               .<ListNetworkEndpointGroupsRequest, NetworkEndpointGroupList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListNetworkEndpointGroupsRequest>newBuilder()
@@ -466,7 +465,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                   newBuilder()
               .setFullMethodName(
                   "google.cloud.compute.v1.NetworkEndpointGroups/ListNetworkEndpoints")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -531,7 +530,7 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
           ApiMethodDescriptor
               .<TestIamPermissionsNetworkEndpointGroupRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NetworkEndpointGroups/TestIamPermissions")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter

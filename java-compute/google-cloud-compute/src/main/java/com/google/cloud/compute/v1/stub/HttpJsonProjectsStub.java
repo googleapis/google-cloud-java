@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.ProjectsClient.GetXpnResourcesPagedResponse;
 import static com.google.cloud.compute.v1.ProjectsClient.ListXpnHostsPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -68,7 +67,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonProjectsStub extends ProjectsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -77,7 +76,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
       disableXpnHostMethodDescriptor =
           ApiMethodDescriptor.<DisableXpnHostProjectRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Projects/DisableXpnHost")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DisableXpnHostProjectRequest>newBuilder()
@@ -125,7 +124,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
       disableXpnResourceMethodDescriptor =
           ApiMethodDescriptor.<DisableXpnResourceProjectRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Projects/DisableXpnResource")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DisableXpnResourceProjectRequest>newBuilder()
@@ -178,7 +177,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
       enableXpnHostMethodDescriptor =
           ApiMethodDescriptor.<EnableXpnHostProjectRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Projects/EnableXpnHost")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<EnableXpnHostProjectRequest>newBuilder()
@@ -226,7 +225,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
       enableXpnResourceMethodDescriptor =
           ApiMethodDescriptor.<EnableXpnResourceProjectRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Projects/EnableXpnResource")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<EnableXpnResourceProjectRequest>newBuilder()
@@ -278,7 +277,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
   private static final ApiMethodDescriptor<GetProjectRequest, Project> getMethodDescriptor =
       ApiMethodDescriptor.<GetProjectRequest, Project>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.Projects/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetProjectRequest>newBuilder()
@@ -311,7 +310,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
       getXpnHostMethodDescriptor =
           ApiMethodDescriptor.<GetXpnHostProjectRequest, Project>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Projects/GetXpnHost")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetXpnHostProjectRequest>newBuilder()
@@ -344,7 +343,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
       getXpnResourcesMethodDescriptor =
           ApiMethodDescriptor.<GetXpnResourcesProjectsRequest, ProjectsGetXpnResources>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Projects/GetXpnResources")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetXpnResourcesProjectsRequest>newBuilder()
@@ -396,7 +395,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
       listXpnHostsMethodDescriptor =
           ApiMethodDescriptor.<ListXpnHostsProjectsRequest, XpnHostList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Projects/ListXpnHosts")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListXpnHostsProjectsRequest>newBuilder()
@@ -453,7 +452,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
       moveDiskMethodDescriptor =
           ApiMethodDescriptor.<MoveDiskProjectRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Projects/MoveDisk")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<MoveDiskProjectRequest>newBuilder()
@@ -506,7 +505,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
       moveInstanceMethodDescriptor =
           ApiMethodDescriptor.<MoveInstanceProjectRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Projects/MoveInstance")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<MoveInstanceProjectRequest>newBuilder()
@@ -559,7 +558,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
       setCommonInstanceMetadataMethodDescriptor =
           ApiMethodDescriptor.<SetCommonInstanceMetadataProjectRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Projects/SetCommonInstanceMetadata")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetCommonInstanceMetadataProjectRequest>newBuilder()
@@ -610,7 +609,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
       setDefaultNetworkTierMethodDescriptor =
           ApiMethodDescriptor.<SetDefaultNetworkTierProjectRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Projects/SetDefaultNetworkTier")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetDefaultNetworkTierProjectRequest>newBuilder()
@@ -663,7 +662,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
       setUsageExportBucketMethodDescriptor =
           ApiMethodDescriptor.<SetUsageExportBucketProjectRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.Projects/SetUsageExportBucket")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetUsageExportBucketProjectRequest>newBuilder()

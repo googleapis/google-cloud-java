@@ -96,6 +96,8 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -129,7 +131,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
    *
    *
    * <pre>
-   * The list of per-instance configs to insert or patch on this managed instance group.
+   * The list of per-instance configurations to insert or patch on this managed instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -143,7 +145,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
    *
    *
    * <pre>
-   * The list of per-instance configs to insert or patch on this managed instance group.
+   * The list of per-instance configurations to insert or patch on this managed instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -158,7 +160,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
    *
    *
    * <pre>
-   * The list of per-instance configs to insert or patch on this managed instance group.
+   * The list of per-instance configurations to insert or patch on this managed instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -172,7 +174,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
    *
    *
    * <pre>
-   * The list of per-instance configs to insert or patch on this managed instance group.
+   * The list of per-instance configurations to insert or patch on this managed instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -186,7 +188,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
    *
    *
    * <pre>
-   * The list of per-instance configs to insert or patch on this managed instance group.
+   * The list of per-instance configurations to insert or patch on this managed instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -602,7 +604,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -620,7 +622,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -637,7 +639,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -654,7 +656,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -678,7 +680,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -699,7 +701,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -722,7 +724,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -746,7 +748,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -767,7 +769,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -788,7 +790,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -809,7 +811,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -829,7 +831,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -849,7 +851,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -863,7 +865,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -881,7 +883,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -899,7 +901,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -913,7 +915,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
@@ -928,7 +930,7 @@ public final class InstanceGroupManagersPatchPerInstanceConfigsReq
      *
      *
      * <pre>
-     * The list of per-instance configs to insert or patch on this managed instance group.
+     * The list of per-instance configurations to insert or patch on this managed instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import com.google.cloud.compute.v1.InsertTargetSslProxyRequest;
 import com.google.cloud.compute.v1.ListTargetSslProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SetBackendServiceTargetSslProxyRequest;
+import com.google.cloud.compute.v1.SetCertificateMapTargetSslProxyRequest;
 import com.google.cloud.compute.v1.SetProxyHeaderTargetSslProxyRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetSslProxyRequest;
 import com.google.cloud.compute.v1.SetSslPolicyTargetSslProxyRequest;
@@ -82,6 +83,17 @@ public abstract class TargetSslProxiesStub implements BackgroundResource {
   public UnaryCallable<SetBackendServiceTargetSslProxyRequest, Operation>
       setBackendServiceCallable() {
     throw new UnsupportedOperationException("Not implemented: setBackendServiceCallable()");
+  }
+
+  public OperationCallable<SetCertificateMapTargetSslProxyRequest, Operation, Operation>
+      setCertificateMapOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setCertificateMapOperationCallable()");
+  }
+
+  public UnaryCallable<SetCertificateMapTargetSslProxyRequest, Operation>
+      setCertificateMapCallable() {
+    throw new UnsupportedOperationException("Not implemented: setCertificateMapCallable()");
   }
 
   public OperationCallable<SetProxyHeaderTargetSslProxyRequest, Operation, Operation>

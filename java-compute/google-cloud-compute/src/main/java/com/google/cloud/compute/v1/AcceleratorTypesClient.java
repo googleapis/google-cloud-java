@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -44,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -82,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AcceleratorTypesSettings acceleratorTypesSettings =
  *     AcceleratorTypesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +96,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AcceleratorTypesSettings acceleratorTypesSettings =
  *     AcceleratorTypesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * AcceleratorTypesClient acceleratorTypesClient =
@@ -124,7 +129,6 @@ public class AcceleratorTypesClient implements BackgroundResource {
    * Constructs an instance of AcceleratorTypesClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(AcceleratorTypesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AcceleratorTypesClient create(AcceleratorTypesStub stub) {
     return new AcceleratorTypesClient(stub);
   }
@@ -139,7 +143,6 @@ public class AcceleratorTypesClient implements BackgroundResource {
     this.stub = ((AcceleratorTypesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AcceleratorTypesClient(AcceleratorTypesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -149,7 +152,6 @@ public class AcceleratorTypesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AcceleratorTypesStub getStub() {
     return stub;
   }
@@ -161,6 +163,8 @@ public class AcceleratorTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, AcceleratorTypesScopedList> element :
@@ -186,6 +190,8 @@ public class AcceleratorTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create()) {
    *   AggregatedListAcceleratorTypesRequest request =
    *       AggregatedListAcceleratorTypesRequest.newBuilder()
@@ -219,6 +225,8 @@ public class AcceleratorTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create()) {
    *   AggregatedListAcceleratorTypesRequest request =
    *       AggregatedListAcceleratorTypesRequest.newBuilder()
@@ -251,6 +259,8 @@ public class AcceleratorTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create()) {
    *   AggregatedListAcceleratorTypesRequest request =
    *       AggregatedListAcceleratorTypesRequest.newBuilder()
@@ -265,7 +275,7 @@ public class AcceleratorTypesClient implements BackgroundResource {
    *   while (true) {
    *     AcceleratorTypeAggregatedList response =
    *         acceleratorTypesClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, AcceleratorTypesScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, AcceleratorTypesScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -290,6 +300,8 @@ public class AcceleratorTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -320,6 +332,8 @@ public class AcceleratorTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create()) {
    *   GetAcceleratorTypeRequest request =
    *       GetAcceleratorTypeRequest.newBuilder()
@@ -345,6 +359,8 @@ public class AcceleratorTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create()) {
    *   GetAcceleratorTypeRequest request =
    *       GetAcceleratorTypeRequest.newBuilder()
@@ -369,6 +385,8 @@ public class AcceleratorTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -395,6 +413,8 @@ public class AcceleratorTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create()) {
    *   ListAcceleratorTypesRequest request =
    *       ListAcceleratorTypesRequest.newBuilder()
@@ -426,6 +446,8 @@ public class AcceleratorTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create()) {
    *   ListAcceleratorTypesRequest request =
    *       ListAcceleratorTypesRequest.newBuilder()
@@ -457,6 +479,8 @@ public class AcceleratorTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create()) {
    *   ListAcceleratorTypesRequest request =
    *       ListAcceleratorTypesRequest.newBuilder()
@@ -470,7 +494,7 @@ public class AcceleratorTypesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     AcceleratorTypeList response = acceleratorTypesClient.listCallable().call(request);
-   *     for (AcceleratorType element : response.getResponsesList()) {
+   *     for (AcceleratorType element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

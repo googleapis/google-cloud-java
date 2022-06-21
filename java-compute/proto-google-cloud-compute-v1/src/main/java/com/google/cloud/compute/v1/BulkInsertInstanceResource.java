@@ -161,6 +161,8 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -482,7 +484,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
   @java.lang.Override
   public boolean containsPerInstanceProperties(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetPerInstanceProperties().getMap().containsKey(key);
   }
@@ -531,7 +533,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
           com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties
               defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String,
@@ -554,7 +556,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
   public com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties
       getPerInstancePropertiesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<
             java.lang.String,
@@ -1846,7 +1848,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
     @java.lang.Override
     public boolean containsPerInstanceProperties(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetPerInstanceProperties().getMap().containsKey(key);
     }
@@ -1895,7 +1897,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties
                 defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -1918,7 +1920,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
     public com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties
         getPerInstancePropertiesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<
               java.lang.String,
@@ -1947,7 +1949,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      */
     public Builder removePerInstanceProperties(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutablePerInstanceProperties().getMutableMap().remove(key);
       return this;
@@ -1975,11 +1977,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
         java.lang.String key,
         com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutablePerInstanceProperties().getMutableMap().put(key, value);
       return this;
     }

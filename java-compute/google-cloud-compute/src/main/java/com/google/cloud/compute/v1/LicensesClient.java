@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (LicensesClient licensesClient = LicensesClient.create()) {
  *   String project = "project-309310695";
  *   String license = "license166757441";
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * LicensesSettings licensesSettings =
  *     LicensesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * LicensesSettings licensesSettings =
  *     LicensesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * LicensesClient licensesClient = LicensesClient.create(licensesSettings);
@@ -118,7 +124,6 @@ public class LicensesClient implements BackgroundResource {
    * Constructs an instance of LicensesClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(LicensesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final LicensesClient create(LicensesStub stub) {
     return new LicensesClient(stub);
   }
@@ -132,7 +137,6 @@ public class LicensesClient implements BackgroundResource {
     this.stub = ((LicensesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected LicensesClient(LicensesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -142,7 +146,6 @@ public class LicensesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public LicensesStub getStub() {
     return stub;
   }
@@ -155,6 +158,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   String project = "project-309310695";
    *   String license = "license166757441";
@@ -180,6 +185,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   DeleteLicenseRequest request =
    *       DeleteLicenseRequest.newBuilder()
@@ -208,6 +215,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   DeleteLicenseRequest request =
    *       DeleteLicenseRequest.newBuilder()
@@ -235,6 +244,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   DeleteLicenseRequest request =
    *       DeleteLicenseRequest.newBuilder()
@@ -260,6 +271,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   String project = "project-309310695";
    *   String license = "license166757441";
@@ -285,6 +298,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   GetLicenseRequest request =
    *       GetLicenseRequest.newBuilder()
@@ -310,6 +325,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   GetLicenseRequest request =
    *       GetLicenseRequest.newBuilder()
@@ -335,6 +352,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -361,6 +380,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   GetIamPolicyLicenseRequest request =
    *       GetIamPolicyLicenseRequest.newBuilder()
@@ -388,6 +409,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   GetIamPolicyLicenseRequest request =
    *       GetIamPolicyLicenseRequest.newBuilder()
@@ -413,6 +436,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   String project = "project-309310695";
    *   License licenseResource = License.newBuilder().build();
@@ -442,6 +467,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   InsertLicenseRequest request =
    *       InsertLicenseRequest.newBuilder()
@@ -470,6 +497,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   InsertLicenseRequest request =
    *       InsertLicenseRequest.newBuilder()
@@ -497,6 +526,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   InsertLicenseRequest request =
    *       InsertLicenseRequest.newBuilder()
@@ -526,6 +557,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   String project = "project-309310695";
    *   for (License element : licensesClient.list(project).iterateAll()) {
@@ -554,6 +587,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   ListLicensesRequest request =
    *       ListLicensesRequest.newBuilder()
@@ -589,6 +624,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   ListLicensesRequest request =
    *       ListLicensesRequest.newBuilder()
@@ -623,6 +660,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   ListLicensesRequest request =
    *       ListLicensesRequest.newBuilder()
@@ -635,7 +674,7 @@ public class LicensesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     LicensesListResponse response = licensesClient.listCallable().call(request);
-   *     for (License element : response.getResponsesList()) {
+   *     for (License element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -661,6 +700,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -696,6 +737,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   SetIamPolicyLicenseRequest request =
    *       SetIamPolicyLicenseRequest.newBuilder()
@@ -723,6 +766,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   SetIamPolicyLicenseRequest request =
    *       SetIamPolicyLicenseRequest.newBuilder()
@@ -749,6 +794,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   String project = "project-309310695";
    *   String resource = "resource-341064690";
@@ -784,6 +831,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   TestIamPermissionsLicenseRequest request =
    *       TestIamPermissionsLicenseRequest.newBuilder()
@@ -812,6 +861,8 @@ public class LicensesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (LicensesClient licensesClient = LicensesClient.create()) {
    *   TestIamPermissionsLicenseRequest request =
    *       TestIamPermissionsLicenseRequest.newBuilder()

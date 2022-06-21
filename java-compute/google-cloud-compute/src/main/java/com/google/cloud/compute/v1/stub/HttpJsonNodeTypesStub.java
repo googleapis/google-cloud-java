@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.NodeTypesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.NodeTypesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -54,7 +53,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonNodeTypesStub extends NodeTypesStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
@@ -62,7 +61,7 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListNodeTypesRequest, NodeTypeAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTypes/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListNodeTypesRequest>newBuilder()
@@ -117,7 +116,7 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
   private static final ApiMethodDescriptor<GetNodeTypeRequest, NodeType> getMethodDescriptor =
       ApiMethodDescriptor.<GetNodeTypeRequest, NodeType>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.NodeTypes/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetNodeTypeRequest>newBuilder()
@@ -152,7 +151,7 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListNodeTypesRequest, NodeTypeList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.NodeTypes/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListNodeTypesRequest>newBuilder()

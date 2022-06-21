@@ -116,6 +116,61 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
+   * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+   * Check the EndpointTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string endpoint_types = 502633807;</code>
+   *
+   * @return A list containing the endpointTypes.
+   */
+  java.util.List<java.lang.String> getEndpointTypesList();
+  /**
+   *
+   *
+   * <pre>
+   * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+   * Check the EndpointTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string endpoint_types = 502633807;</code>
+   *
+   * @return The count of endpointTypes.
+   */
+  int getEndpointTypesCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+   * Check the EndpointTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string endpoint_types = 502633807;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The endpointTypes at the given index.
+   */
+  java.lang.String getEndpointTypes(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of NAT-ted endpoint types supported by the Nat Gateway. If the list is empty, then it will be equivalent to include ENDPOINT_TYPE_VM
+   * Check the EndpointTypes enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string endpoint_types = 502633807;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the endpointTypes at the given index.
+   */
+  com.google.protobuf.ByteString getEndpointTypesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Timeout (in seconds) for ICMP connections. Defaults to 30s if not set.
    * </pre>
    *

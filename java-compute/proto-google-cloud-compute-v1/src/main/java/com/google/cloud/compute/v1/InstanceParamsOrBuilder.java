@@ -65,8 +65,12 @@ public interface InstanceParamsOrBuilder
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
    */
+
+  /* nullable */
   java.lang.String getResourceManagerTagsOrDefault(
-      java.lang.String key, java.lang.String defaultValue);
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

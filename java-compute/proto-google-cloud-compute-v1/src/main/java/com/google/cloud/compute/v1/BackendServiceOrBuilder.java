@@ -27,7 +27,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
@@ -39,7 +39,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
@@ -1292,6 +1292,57 @@ public interface BackendServiceOrBuilder
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+   * </pre>
+   *
+   * <code>repeated string service_bindings = 133581016;</code>
+   *
+   * @return A list containing the serviceBindings.
+   */
+  java.util.List<java.lang.String> getServiceBindingsList();
+  /**
+   *
+   *
+   * <pre>
+   * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+   * </pre>
+   *
+   * <code>repeated string service_bindings = 133581016;</code>
+   *
+   * @return The count of serviceBindings.
+   */
+  int getServiceBindingsCount();
+  /**
+   *
+   *
+   * <pre>
+   * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+   * </pre>
+   *
+   * <code>repeated string service_bindings = 133581016;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The serviceBindings at the given index.
+   */
+  java.lang.String getServiceBindings(int index);
+  /**
+   *
+   *
+   * <pre>
+   * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+   * </pre>
+   *
+   * <code>repeated string service_bindings = 133581016;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the serviceBindings at the given index.
+   */
+  com.google.protobuf.ByteString getServiceBindingsBytes(int index);
 
   /**
    *

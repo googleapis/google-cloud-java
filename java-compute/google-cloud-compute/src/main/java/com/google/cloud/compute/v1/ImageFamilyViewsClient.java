@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.compute.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.stub.ImageFamilyViewsStub;
@@ -33,6 +32,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ImageFamilyViewsClient imageFamilyViewsClient = ImageFamilyViewsClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -71,6 +72,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ImageFamilyViewsSettings imageFamilyViewsSettings =
  *     ImageFamilyViewsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -82,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ImageFamilyViewsSettings imageFamilyViewsSettings =
  *     ImageFamilyViewsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ImageFamilyViewsClient imageFamilyViewsClient =
@@ -113,7 +118,6 @@ public class ImageFamilyViewsClient implements BackgroundResource {
    * Constructs an instance of ImageFamilyViewsClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(ImageFamilyViewsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ImageFamilyViewsClient create(ImageFamilyViewsStub stub) {
     return new ImageFamilyViewsClient(stub);
   }
@@ -128,7 +132,6 @@ public class ImageFamilyViewsClient implements BackgroundResource {
     this.stub = ((ImageFamilyViewsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ImageFamilyViewsClient(ImageFamilyViewsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -138,7 +141,6 @@ public class ImageFamilyViewsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ImageFamilyViewsStub getStub() {
     return stub;
   }
@@ -151,6 +153,8 @@ public class ImageFamilyViewsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageFamilyViewsClient imageFamilyViewsClient = ImageFamilyViewsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -182,6 +186,8 @@ public class ImageFamilyViewsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageFamilyViewsClient imageFamilyViewsClient = ImageFamilyViewsClient.create()) {
    *   GetImageFamilyViewRequest request =
    *       GetImageFamilyViewRequest.newBuilder()
@@ -208,6 +214,8 @@ public class ImageFamilyViewsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ImageFamilyViewsClient imageFamilyViewsClient = ImageFamilyViewsClient.create()) {
    *   GetImageFamilyViewRequest request =
    *       GetImageFamilyViewRequest.newBuilder()

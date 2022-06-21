@@ -57,6 +57,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     region_ = "";
     securityPolicy_ = "";
     selfLink_ = "";
+    serviceBindings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     sessionAffinity_ = "";
   }
 
@@ -233,6 +234,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00010000;
               localityLbPolicy_ = s;
+              break;
+            }
+          case 1068648130:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField1_ & 0x00000004) != 0)) {
+                serviceBindings_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField1_ |= 0x00000004;
+              }
+              serviceBindings_.add(s);
               break;
             }
           case 1111570338:
@@ -493,11 +504,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000100) != 0)) {
         customRequestHeaders_ = customRequestHeaders_.getUnmodifiableView();
+      }
+      if (((mutable_bitField1_ & 0x00000004) != 0)) {
+        serviceBindings_ = serviceBindings_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00100000) != 0)) {
         localityLbPolicies_ = java.util.Collections.unmodifiableList(localityLbPolicies_);
@@ -1571,7 +1587,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
@@ -1586,7 +1602,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
@@ -3476,6 +3492,67 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SERVICE_BINDINGS_FIELD_NUMBER = 133581016;
+  private com.google.protobuf.LazyStringList serviceBindings_;
+  /**
+   *
+   *
+   * <pre>
+   * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+   * </pre>
+   *
+   * <code>repeated string service_bindings = 133581016;</code>
+   *
+   * @return A list containing the serviceBindings.
+   */
+  public com.google.protobuf.ProtocolStringList getServiceBindingsList() {
+    return serviceBindings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+   * </pre>
+   *
+   * <code>repeated string service_bindings = 133581016;</code>
+   *
+   * @return The count of serviceBindings.
+   */
+  public int getServiceBindingsCount() {
+    return serviceBindings_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+   * </pre>
+   *
+   * <code>repeated string service_bindings = 133581016;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The serviceBindings at the given index.
+   */
+  public java.lang.String getServiceBindings(int index) {
+    return serviceBindings_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+   * </pre>
+   *
+   * <code>repeated string service_bindings = 133581016;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the serviceBindings at the given index.
+   */
+  public com.google.protobuf.ByteString getServiceBindingsBytes(int index) {
+    return serviceBindings_.getByteString(index);
+  }
+
   public static final int SESSION_AFFINITY_FIELD_NUMBER = 463888561;
   private volatile java.lang.Object sessionAffinity_;
   /**
@@ -3666,6 +3743,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 131431487, localityLbPolicy_);
     }
+    for (int i = 0; i < serviceBindings_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 133581016, serviceBindings_.getRaw(i));
+    }
     if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
@@ -3798,6 +3879,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00010000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(131431487, localityLbPolicy_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < serviceBindings_.size(); i++) {
+        dataSize += computeStringSizeNoTag(serviceBindings_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getServiceBindingsList().size();
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
@@ -4025,6 +4114,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
     }
+    if (!getServiceBindingsList().equals(other.getServiceBindingsList())) return false;
     if (hasSessionAffinity() != other.hasSessionAffinity()) return false;
     if (hasSessionAffinity()) {
       if (!getSessionAffinity().equals(other.getSessionAffinity())) return false;
@@ -4183,6 +4273,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (getServiceBindingsCount() > 0) {
+      hash = (37 * hash) + SERVICE_BINDINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceBindingsList().hashCode();
     }
     if (hasSessionAffinity()) {
       hash = (37 * hash) + SESSION_AFFINITY_FIELD_NUMBER;
@@ -4476,16 +4570,18 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       bitField1_ = (bitField1_ & ~0x00000001);
       selfLink_ = "";
       bitField1_ = (bitField1_ & ~0x00000002);
-      sessionAffinity_ = "";
+      serviceBindings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField1_ = (bitField1_ & ~0x00000004);
+      sessionAffinity_ = "";
+      bitField1_ = (bitField1_ & ~0x00000008);
       if (subsettingBuilder_ == null) {
         subsetting_ = null;
       } else {
         subsettingBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000008);
-      timeoutSec_ = 0;
       bitField1_ = (bitField1_ & ~0x00000010);
+      timeoutSec_ = 0;
+      bitField1_ = (bitField1_ & ~0x00000020);
       return this;
     }
 
@@ -4709,11 +4805,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x10000000;
       }
       result.selfLink_ = selfLink_;
-      if (((from_bitField1_ & 0x00000004) != 0)) {
+      if (((bitField1_ & 0x00000004) != 0)) {
+        serviceBindings_ = serviceBindings_.getUnmodifiableView();
+        bitField1_ = (bitField1_ & ~0x00000004);
+      }
+      result.serviceBindings_ = serviceBindings_;
+      if (((from_bitField1_ & 0x00000008) != 0)) {
         to_bitField0_ |= 0x20000000;
       }
       result.sessionAffinity_ = sessionAffinity_;
-      if (((from_bitField1_ & 0x00000008) != 0)) {
+      if (((from_bitField1_ & 0x00000010) != 0)) {
         if (subsettingBuilder_ == null) {
           result.subsetting_ = subsetting_;
         } else {
@@ -4721,7 +4822,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         }
         to_bitField0_ |= 0x40000000;
       }
-      if (((from_bitField1_ & 0x00000010) != 0)) {
+      if (((from_bitField1_ & 0x00000020) != 0)) {
         result.timeoutSec_ = timeoutSec_;
         to_bitField0_ |= 0x80000000;
       }
@@ -4974,8 +5075,18 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         selfLink_ = other.selfLink_;
         onChanged();
       }
+      if (!other.serviceBindings_.isEmpty()) {
+        if (serviceBindings_.isEmpty()) {
+          serviceBindings_ = other.serviceBindings_;
+          bitField1_ = (bitField1_ & ~0x00000004);
+        } else {
+          ensureServiceBindingsIsMutable();
+          serviceBindings_.addAll(other.serviceBindings_);
+        }
+        onChanged();
+      }
       if (other.hasSessionAffinity()) {
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000008;
         sessionAffinity_ = other.sessionAffinity_;
         onChanged();
       }
@@ -5022,7 +5133,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
@@ -5037,7 +5148,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
@@ -5052,7 +5163,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
@@ -5070,7 +5181,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is one day (86,400). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Lifetime of cookies in seconds. This setting is applicable to external and internal HTTP(S) load balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>optional int32 affinity_cookie_ttl_sec = 369996954;</code>
@@ -10337,6 +10448,174 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.LazyStringList serviceBindings_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureServiceBindingsIsMutable() {
+      if (!((bitField1_ & 0x00000004) != 0)) {
+        serviceBindings_ = new com.google.protobuf.LazyStringArrayList(serviceBindings_);
+        bitField1_ |= 0x00000004;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+     * </pre>
+     *
+     * <code>repeated string service_bindings = 133581016;</code>
+     *
+     * @return A list containing the serviceBindings.
+     */
+    public com.google.protobuf.ProtocolStringList getServiceBindingsList() {
+      return serviceBindings_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+     * </pre>
+     *
+     * <code>repeated string service_bindings = 133581016;</code>
+     *
+     * @return The count of serviceBindings.
+     */
+    public int getServiceBindingsCount() {
+      return serviceBindings_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+     * </pre>
+     *
+     * <code>repeated string service_bindings = 133581016;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The serviceBindings at the given index.
+     */
+    public java.lang.String getServiceBindings(int index) {
+      return serviceBindings_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+     * </pre>
+     *
+     * <code>repeated string service_bindings = 133581016;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the serviceBindings at the given index.
+     */
+    public com.google.protobuf.ByteString getServiceBindingsBytes(int index) {
+      return serviceBindings_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+     * </pre>
+     *
+     * <code>repeated string service_bindings = 133581016;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The serviceBindings to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceBindings(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureServiceBindingsIsMutable();
+      serviceBindings_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+     * </pre>
+     *
+     * <code>repeated string service_bindings = 133581016;</code>
+     *
+     * @param value The serviceBindings to add.
+     * @return This builder for chaining.
+     */
+    public Builder addServiceBindings(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureServiceBindingsIsMutable();
+      serviceBindings_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+     * </pre>
+     *
+     * <code>repeated string service_bindings = 133581016;</code>
+     *
+     * @param values The serviceBindings to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllServiceBindings(java.lang.Iterable<java.lang.String> values) {
+      ensureServiceBindingsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceBindings_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+     * </pre>
+     *
+     * <code>repeated string service_bindings = 133581016;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceBindings() {
+      serviceBindings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField1_ = (bitField1_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
+     * </pre>
+     *
+     * <code>repeated string service_bindings = 133581016;</code>
+     *
+     * @param value The bytes of the serviceBindings to add.
+     * @return This builder for chaining.
+     */
+    public Builder addServiceBindingsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureServiceBindingsIsMutable();
+      serviceBindings_.add(value);
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object sessionAffinity_ = "";
     /**
      *
@@ -10351,7 +10630,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sessionAffinity field is set.
      */
     public boolean hasSessionAffinity() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
     /**
      *
@@ -10416,7 +10695,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       sessionAffinity_ = value;
       onChanged();
       return this;
@@ -10434,7 +10713,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSessionAffinity() {
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000008);
       sessionAffinity_ = getDefaultInstance().getSessionAffinity();
       onChanged();
       return this;
@@ -10457,7 +10736,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       sessionAffinity_ = value;
       onChanged();
       return this;
@@ -10475,7 +10754,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the subsetting field is set.
      */
     public boolean hasSubsetting() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
     /**
      * <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code>
@@ -10502,7 +10781,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         subsettingBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
@@ -10513,13 +10792,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         subsettingBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
     public Builder mergeSubsetting(com.google.cloud.compute.v1.Subsetting value) {
       if (subsettingBuilder_ == null) {
-        if (((bitField1_ & 0x00000008) != 0)
+        if (((bitField1_ & 0x00000010) != 0)
             && subsetting_ != null
             && subsetting_ != com.google.cloud.compute.v1.Subsetting.getDefaultInstance()) {
           subsetting_ =
@@ -10533,7 +10812,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         subsettingBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
@@ -10544,12 +10823,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         subsettingBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000010);
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
     public com.google.cloud.compute.v1.Subsetting.Builder getSubsettingBuilder() {
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       onChanged();
       return getSubsettingFieldBuilder().getBuilder();
     }
@@ -10595,7 +10874,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTimeoutSec() {
-      return ((bitField1_ & 0x00000010) != 0);
+      return ((bitField1_ & 0x00000020) != 0);
     }
     /**
      *
@@ -10625,7 +10904,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTimeoutSec(int value) {
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
       timeoutSec_ = value;
       onChanged();
       return this;
@@ -10642,7 +10921,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeoutSec() {
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000020);
       timeoutSec_ = 0;
       onChanged();
       return this;

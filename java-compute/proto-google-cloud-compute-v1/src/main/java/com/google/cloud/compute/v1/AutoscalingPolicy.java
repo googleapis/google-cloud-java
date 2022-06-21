@@ -195,6 +195,8 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -889,7 +891,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public boolean containsScalingSchedules(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetScalingSchedules().getMap().containsKey(key);
   }
@@ -934,7 +936,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
       java.lang.String key,
       com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
         map = internalGetScalingSchedules().getMap();
@@ -955,7 +957,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule getScalingSchedulesOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
         map = internalGetScalingSchedules().getMap();
@@ -2947,7 +2949,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public boolean containsScalingSchedules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetScalingSchedules().getMap().containsKey(key);
     }
@@ -2993,7 +2995,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
             java.lang.String key,
             com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
           map = internalGetScalingSchedules().getMap();
@@ -3014,7 +3016,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule getScalingSchedulesOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule>
           map = internalGetScalingSchedules().getMap();
@@ -3041,7 +3043,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      */
     public Builder removeScalingSchedules(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableScalingSchedules().getMutableMap().remove(key);
       return this;
@@ -3067,11 +3069,12 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
     public Builder putScalingSchedules(
         java.lang.String key, com.google.cloud.compute.v1.AutoscalingPolicyScalingSchedule value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableScalingSchedules().getMutableMap().put(key, value);
       return this;
     }

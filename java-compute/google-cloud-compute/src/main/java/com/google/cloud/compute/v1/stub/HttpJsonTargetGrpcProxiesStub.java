@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.TargetGrpcProxiesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -58,7 +57,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -67,7 +66,7 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteTargetGrpcProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteTargetGrpcProxyRequest>newBuilder()
@@ -117,7 +116,7 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetTargetGrpcProxyRequest, TargetGrpcProxy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetTargetGrpcProxyRequest>newBuilder()
@@ -152,7 +151,7 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertTargetGrpcProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertTargetGrpcProxyRequest>newBuilder()
@@ -205,7 +204,7 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListTargetGrpcProxiesRequest, TargetGrpcProxyList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTargetGrpcProxiesRequest>newBuilder()
@@ -257,7 +256,7 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchTargetGrpcProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetGrpcProxies/Patch")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchTargetGrpcProxyRequest>newBuilder()

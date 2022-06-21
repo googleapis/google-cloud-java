@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.TargetHttpsProxiesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.TargetHttpsProxiesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -42,6 +41,7 @@ import com.google.cloud.compute.v1.ListTargetHttpsProxiesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchTargetHttpsProxyRequest;
+import com.google.cloud.compute.v1.SetCertificateMapTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetQuicOverrideTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetSslCertificatesTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.SetSslPolicyTargetHttpsProxyRequest;
@@ -65,7 +65,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -76,7 +76,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
           ApiMethodDescriptor
               .<AggregatedListTargetHttpsProxiesRequest, TargetHttpsProxyAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListTargetHttpsProxiesRequest>newBuilder()
@@ -132,7 +132,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteTargetHttpsProxyRequest>newBuilder()
@@ -182,7 +182,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetTargetHttpsProxyRequest, TargetHttpsProxy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetTargetHttpsProxyRequest>newBuilder()
@@ -217,7 +217,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertTargetHttpsProxyRequest>newBuilder()
@@ -270,7 +270,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListTargetHttpsProxiesRequest, TargetHttpsProxyList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListTargetHttpsProxiesRequest>newBuilder()
@@ -322,7 +322,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/Patch")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchTargetHttpsProxyRequest>newBuilder()
@@ -373,11 +373,68 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<SetCertificateMapTargetHttpsProxyRequest, Operation>
+      setCertificateMapMethodDescriptor =
+          ApiMethodDescriptor.<SetCertificateMapTargetHttpsProxyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/SetCertificateMap")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<SetCertificateMapTargetHttpsProxyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/targetHttpsProxies/{targetHttpsProxy}/setCertificateMap",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetCertificateMapTargetHttpsProxyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetHttpsProxy", request.getTargetHttpsProxy());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetCertificateMapTargetHttpsProxyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "targetHttpsProxiesSetCertificateMapRequestResource",
+                                      request
+                                          .getTargetHttpsProxiesSetCertificateMapRequestResource()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetCertificateMapTargetHttpsProxyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<SetQuicOverrideTargetHttpsProxyRequest, Operation>
       setQuicOverrideMethodDescriptor =
           ApiMethodDescriptor.<SetQuicOverrideTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/SetQuicOverride")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetQuicOverrideTargetHttpsProxyRequest>newBuilder()
@@ -433,7 +490,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
       setSslCertificatesMethodDescriptor =
           ApiMethodDescriptor.<SetSslCertificatesTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/SetSslCertificates")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter
@@ -490,7 +547,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
       setSslPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetSslPolicyTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/SetSslPolicy")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetSslPolicyTargetHttpsProxyRequest>newBuilder()
@@ -545,7 +602,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
       setUrlMapMethodDescriptor =
           ApiMethodDescriptor.<SetUrlMapTargetHttpsProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.TargetHttpsProxies/SetUrlMap")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetUrlMapTargetHttpsProxyRequest>newBuilder()
@@ -613,6 +670,10 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
   private final UnaryCallable<PatchTargetHttpsProxyRequest, Operation> patchCallable;
   private final OperationCallable<PatchTargetHttpsProxyRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<SetCertificateMapTargetHttpsProxyRequest, Operation>
+      setCertificateMapCallable;
+  private final OperationCallable<SetCertificateMapTargetHttpsProxyRequest, Operation, Operation>
+      setCertificateMapOperationCallable;
   private final UnaryCallable<SetQuicOverrideTargetHttpsProxyRequest, Operation>
       setQuicOverrideCallable;
   private final OperationCallable<SetQuicOverrideTargetHttpsProxyRequest, Operation, Operation>
@@ -707,6 +768,12 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
             .setMethodDescriptor(patchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<SetCertificateMapTargetHttpsProxyRequest, Operation>
+        setCertificateMapTransportSettings =
+            HttpJsonCallSettings.<SetCertificateMapTargetHttpsProxyRequest, Operation>newBuilder()
+                .setMethodDescriptor(setCertificateMapMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<SetQuicOverrideTargetHttpsProxyRequest, Operation>
         setQuicOverrideTransportSettings =
             HttpJsonCallSettings.<SetQuicOverrideTargetHttpsProxyRequest, Operation>newBuilder()
@@ -773,6 +840,17 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.setCertificateMapCallable =
+        callableFactory.createUnaryCallable(
+            setCertificateMapTransportSettings,
+            settings.setCertificateMapSettings(),
+            clientContext);
+    this.setCertificateMapOperationCallable =
+        callableFactory.createOperationCallable(
+            setCertificateMapTransportSettings,
+            settings.setCertificateMapOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setQuicOverrideCallable =
         callableFactory.createUnaryCallable(
             setQuicOverrideTransportSettings, settings.setQuicOverrideSettings(), clientContext);
@@ -825,6 +903,7 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(setCertificateMapMethodDescriptor);
     methodDescriptors.add(setQuicOverrideMethodDescriptor);
     methodDescriptors.add(setSslCertificatesMethodDescriptor);
     methodDescriptors.add(setSslPolicyMethodDescriptor);
@@ -890,6 +969,18 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
   public OperationCallable<PatchTargetHttpsProxyRequest, Operation, Operation>
       patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetCertificateMapTargetHttpsProxyRequest, Operation>
+      setCertificateMapCallable() {
+    return setCertificateMapCallable;
+  }
+
+  @Override
+  public OperationCallable<SetCertificateMapTargetHttpsProxyRequest, Operation, Operation>
+      setCertificateMapOperationCallable() {
+    return setCertificateMapOperationCallable;
   }
 
   @Override

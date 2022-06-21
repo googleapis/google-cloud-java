@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NodeGroupsSettings nodeGroupsSettings =
  *     NodeGroupsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NodeGroupsSettings nodeGroupsSettings =
  *     NodeGroupsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create(nodeGroupsSettings);
@@ -120,7 +126,6 @@ public class NodeGroupsClient implements BackgroundResource {
    * Constructs an instance of NodeGroupsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(NodeGroupsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NodeGroupsClient create(NodeGroupsStub stub) {
     return new NodeGroupsClient(stub);
   }
@@ -134,7 +139,6 @@ public class NodeGroupsClient implements BackgroundResource {
     this.stub = ((NodeGroupsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected NodeGroupsClient(NodeGroupsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -144,7 +148,6 @@ public class NodeGroupsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public NodeGroupsStub getStub() {
     return stub;
   }
@@ -156,6 +159,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -197,6 +202,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   AddNodesNodeGroupRequest request =
    *       AddNodesNodeGroupRequest.newBuilder()
@@ -227,6 +234,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   AddNodesNodeGroupRequest request =
    *       AddNodesNodeGroupRequest.newBuilder()
@@ -255,6 +264,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   AddNodesNodeGroupRequest request =
    *       AddNodesNodeGroupRequest.newBuilder()
@@ -282,6 +293,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, NodeGroupsScopedList> element :
@@ -308,6 +321,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   AggregatedListNodeGroupsRequest request =
    *       AggregatedListNodeGroupsRequest.newBuilder()
@@ -341,6 +356,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   AggregatedListNodeGroupsRequest request =
    *       AggregatedListNodeGroupsRequest.newBuilder()
@@ -374,6 +391,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   AggregatedListNodeGroupsRequest request =
    *       AggregatedListNodeGroupsRequest.newBuilder()
@@ -387,7 +406,7 @@ public class NodeGroupsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     NodeGroupAggregatedList response = nodeGroupsClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, NodeGroupsScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, NodeGroupsScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -412,6 +431,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -443,6 +464,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   DeleteNodeGroupRequest request =
    *       DeleteNodeGroupRequest.newBuilder()
@@ -471,6 +494,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   DeleteNodeGroupRequest request =
    *       DeleteNodeGroupRequest.newBuilder()
@@ -498,6 +523,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   DeleteNodeGroupRequest request =
    *       DeleteNodeGroupRequest.newBuilder()
@@ -523,6 +550,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -564,6 +593,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   DeleteNodesNodeGroupRequest request =
    *       DeleteNodesNodeGroupRequest.newBuilder()
@@ -595,6 +626,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   DeleteNodesNodeGroupRequest request =
    *       DeleteNodesNodeGroupRequest.newBuilder()
@@ -624,6 +657,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   DeleteNodesNodeGroupRequest request =
    *       DeleteNodesNodeGroupRequest.newBuilder()
@@ -652,6 +687,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -683,6 +720,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   GetNodeGroupRequest request =
    *       GetNodeGroupRequest.newBuilder()
@@ -709,6 +748,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   GetNodeGroupRequest request =
    *       GetNodeGroupRequest.newBuilder()
@@ -734,6 +775,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -765,6 +808,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   GetIamPolicyNodeGroupRequest request =
    *       GetIamPolicyNodeGroupRequest.newBuilder()
@@ -792,6 +837,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   GetIamPolicyNodeGroupRequest request =
    *       GetIamPolicyNodeGroupRequest.newBuilder()
@@ -817,6 +864,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -852,6 +901,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   InsertNodeGroupRequest request =
    *       InsertNodeGroupRequest.newBuilder()
@@ -881,6 +932,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   InsertNodeGroupRequest request =
    *       InsertNodeGroupRequest.newBuilder()
@@ -909,6 +962,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   InsertNodeGroupRequest request =
    *       InsertNodeGroupRequest.newBuilder()
@@ -936,6 +991,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -963,6 +1020,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   ListNodeGroupsRequest request =
    *       ListNodeGroupsRequest.newBuilder()
@@ -995,6 +1054,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   ListNodeGroupsRequest request =
    *       ListNodeGroupsRequest.newBuilder()
@@ -1026,6 +1087,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   ListNodeGroupsRequest request =
    *       ListNodeGroupsRequest.newBuilder()
@@ -1039,7 +1102,7 @@ public class NodeGroupsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     NodeGroupList response = nodeGroupsClient.listCallable().call(request);
-   *     for (NodeGroup element : response.getResponsesList()) {
+   *     for (NodeGroup element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1063,6 +1126,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1096,6 +1161,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   ListNodesNodeGroupsRequest request =
    *       ListNodesNodeGroupsRequest.newBuilder()
@@ -1128,6 +1195,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   ListNodesNodeGroupsRequest request =
    *       ListNodesNodeGroupsRequest.newBuilder()
@@ -1161,6 +1230,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   ListNodesNodeGroupsRequest request =
    *       ListNodesNodeGroupsRequest.newBuilder()
@@ -1175,7 +1246,7 @@ public class NodeGroupsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     NodeGroupsListNodes response = nodeGroupsClient.listNodesCallable().call(request);
-   *     for (NodeGroupNode element : response.getResponsesList()) {
+   *     for (NodeGroupNode element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1199,6 +1270,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1234,6 +1307,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   PatchNodeGroupRequest request =
    *       PatchNodeGroupRequest.newBuilder()
@@ -1263,6 +1338,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   PatchNodeGroupRequest request =
    *       PatchNodeGroupRequest.newBuilder()
@@ -1291,6 +1368,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   PatchNodeGroupRequest request =
    *       PatchNodeGroupRequest.newBuilder()
@@ -1317,6 +1396,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1355,6 +1436,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   SetIamPolicyNodeGroupRequest request =
    *       SetIamPolicyNodeGroupRequest.newBuilder()
@@ -1381,6 +1464,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   SetIamPolicyNodeGroupRequest request =
    *       SetIamPolicyNodeGroupRequest.newBuilder()
@@ -1406,6 +1491,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1448,6 +1535,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   SetNodeTemplateNodeGroupRequest request =
    *       SetNodeTemplateNodeGroupRequest.newBuilder()
@@ -1479,6 +1568,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   SetNodeTemplateNodeGroupRequest request =
    *       SetNodeTemplateNodeGroupRequest.newBuilder()
@@ -1508,6 +1599,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   SetNodeTemplateNodeGroupRequest request =
    *       SetNodeTemplateNodeGroupRequest.newBuilder()
@@ -1535,6 +1628,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1575,6 +1670,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   TestIamPermissionsNodeGroupRequest request =
    *       TestIamPermissionsNodeGroupRequest.newBuilder()
@@ -1602,6 +1699,8 @@ public class NodeGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   TestIamPermissionsNodeGroupRequest request =
    *       TestIamPermissionsNodeGroupRequest.newBuilder()

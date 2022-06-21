@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (DisksClient disksClient = DisksClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DisksSettings disksSettings =
  *     DisksSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * DisksSettings disksSettings = DisksSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DisksClient disksClient = DisksClient.create(disksSettings);
  * }</pre>
@@ -119,7 +125,6 @@ public class DisksClient implements BackgroundResource {
    * Constructs an instance of DisksClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(DisksSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final DisksClient create(DisksStub stub) {
     return new DisksClient(stub);
   }
@@ -133,7 +138,6 @@ public class DisksClient implements BackgroundResource {
     this.stub = ((DisksStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected DisksClient(DisksStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -143,7 +147,6 @@ public class DisksClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DisksStub getStub() {
     return stub;
   }
@@ -156,6 +159,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -199,6 +204,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   AddResourcePoliciesDiskRequest request =
    *       AddResourcePoliciesDiskRequest.newBuilder()
@@ -231,6 +238,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   AddResourcePoliciesDiskRequest request =
    *       AddResourcePoliciesDiskRequest.newBuilder()
@@ -261,6 +270,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   AddResourcePoliciesDiskRequest request =
    *       AddResourcePoliciesDiskRequest.newBuilder()
@@ -289,6 +300,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, DisksScopedList> element :
@@ -314,6 +327,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   AggregatedListDisksRequest request =
    *       AggregatedListDisksRequest.newBuilder()
@@ -346,6 +361,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   AggregatedListDisksRequest request =
    *       AggregatedListDisksRequest.newBuilder()
@@ -378,6 +395,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   AggregatedListDisksRequest request =
    *       AggregatedListDisksRequest.newBuilder()
@@ -391,7 +410,7 @@ public class DisksClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     DiskAggregatedList response = disksClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, DisksScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, DisksScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -418,6 +437,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -455,6 +476,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   CreateSnapshotDiskRequest request =
    *       CreateSnapshotDiskRequest.newBuilder()
@@ -488,6 +511,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   CreateSnapshotDiskRequest request =
    *       CreateSnapshotDiskRequest.newBuilder()
@@ -519,6 +544,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   CreateSnapshotDiskRequest request =
    *       CreateSnapshotDiskRequest.newBuilder()
@@ -548,6 +575,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -577,6 +606,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   DeleteDiskRequest request =
    *       DeleteDiskRequest.newBuilder()
@@ -607,6 +638,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   DeleteDiskRequest request =
    *       DeleteDiskRequest.newBuilder()
@@ -636,6 +669,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   DeleteDiskRequest request =
    *       DeleteDiskRequest.newBuilder()
@@ -662,6 +697,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -689,6 +726,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   GetDiskRequest request =
    *       GetDiskRequest.newBuilder()
@@ -715,6 +754,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   GetDiskRequest request =
    *       GetDiskRequest.newBuilder()
@@ -740,6 +781,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -771,6 +814,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   GetIamPolicyDiskRequest request =
    *       GetIamPolicyDiskRequest.newBuilder()
@@ -798,6 +843,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   GetIamPolicyDiskRequest request =
    *       GetIamPolicyDiskRequest.newBuilder()
@@ -826,6 +873,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -860,6 +909,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   InsertDiskRequest request =
    *       InsertDiskRequest.newBuilder()
@@ -892,6 +943,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   InsertDiskRequest request =
    *       InsertDiskRequest.newBuilder()
@@ -923,6 +976,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   InsertDiskRequest request =
    *       InsertDiskRequest.newBuilder()
@@ -949,6 +1004,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -975,6 +1032,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   ListDisksRequest request =
    *       ListDisksRequest.newBuilder()
@@ -1006,6 +1065,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   ListDisksRequest request =
    *       ListDisksRequest.newBuilder()
@@ -1036,6 +1097,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   ListDisksRequest request =
    *       ListDisksRequest.newBuilder()
@@ -1049,7 +1112,7 @@ public class DisksClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     DiskList response = disksClient.listCallable().call(request);
-   *     for (Disk element : response.getResponsesList()) {
+   *     for (Disk element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1073,6 +1136,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1116,6 +1181,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   RemoveResourcePoliciesDiskRequest request =
    *       RemoveResourcePoliciesDiskRequest.newBuilder()
@@ -1147,6 +1214,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   RemoveResourcePoliciesDiskRequest request =
    *       RemoveResourcePoliciesDiskRequest.newBuilder()
@@ -1176,6 +1245,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   RemoveResourcePoliciesDiskRequest request =
    *       RemoveResourcePoliciesDiskRequest.newBuilder()
@@ -1205,6 +1276,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1240,6 +1313,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   ResizeDiskRequest request =
    *       ResizeDiskRequest.newBuilder()
@@ -1269,6 +1344,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   ResizeDiskRequest request =
    *       ResizeDiskRequest.newBuilder()
@@ -1297,6 +1374,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   ResizeDiskRequest request =
    *       ResizeDiskRequest.newBuilder()
@@ -1323,6 +1402,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1361,6 +1442,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   SetIamPolicyDiskRequest request =
    *       SetIamPolicyDiskRequest.newBuilder()
@@ -1387,6 +1470,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   SetIamPolicyDiskRequest request =
    *       SetIamPolicyDiskRequest.newBuilder()
@@ -1413,6 +1498,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1452,6 +1539,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   SetLabelsDiskRequest request =
    *       SetLabelsDiskRequest.newBuilder()
@@ -1482,6 +1571,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   SetLabelsDiskRequest request =
    *       SetLabelsDiskRequest.newBuilder()
@@ -1511,6 +1602,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   SetLabelsDiskRequest request =
    *       SetLabelsDiskRequest.newBuilder()
@@ -1537,6 +1630,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1576,6 +1671,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   TestIamPermissionsDiskRequest request =
    *       TestIamPermissionsDiskRequest.newBuilder()
@@ -1602,6 +1699,8 @@ public class DisksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (DisksClient disksClient = DisksClient.create()) {
    *   TestIamPermissionsDiskRequest request =
    *       TestIamPermissionsDiskRequest.newBuilder()

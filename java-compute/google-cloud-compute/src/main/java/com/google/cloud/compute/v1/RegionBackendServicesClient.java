@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RegionBackendServicesClient regionBackendServicesClient =
  *     RegionBackendServicesClient.create()) {
  *   String project = "project-309310695";
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionBackendServicesSettings regionBackendServicesSettings =
  *     RegionBackendServicesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionBackendServicesSettings regionBackendServicesSettings =
  *     RegionBackendServicesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionBackendServicesClient regionBackendServicesClient =
@@ -124,7 +130,6 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * Constructs an instance of RegionBackendServicesClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(RegionBackendServicesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionBackendServicesClient create(RegionBackendServicesStub stub) {
     return new RegionBackendServicesClient(stub);
   }
@@ -139,7 +144,6 @@ public class RegionBackendServicesClient implements BackgroundResource {
     this.stub = ((RegionBackendServicesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RegionBackendServicesClient(RegionBackendServicesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -149,7 +153,6 @@ public class RegionBackendServicesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegionBackendServicesStub getStub() {
     return stub;
   }
@@ -161,6 +164,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   String project = "project-309310695";
@@ -194,6 +199,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   DeleteRegionBackendServiceRequest request =
@@ -224,6 +231,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   DeleteRegionBackendServiceRequest request =
@@ -252,6 +261,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   DeleteRegionBackendServiceRequest request =
@@ -279,6 +290,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   String project = "project-309310695";
@@ -310,6 +323,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   GetRegionBackendServiceRequest request =
@@ -336,6 +351,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   GetRegionBackendServiceRequest request =
@@ -362,6 +379,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   String project = "project-309310695";
@@ -403,6 +422,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   GetHealthRegionBackendServiceRequest request =
@@ -430,6 +451,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   GetHealthRegionBackendServiceRequest request =
@@ -459,6 +482,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   String project = "project-309310695";
@@ -493,6 +518,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   InsertRegionBackendServiceRequest request =
@@ -524,6 +551,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   InsertRegionBackendServiceRequest request =
@@ -553,6 +582,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   InsertRegionBackendServiceRequest request =
@@ -581,6 +612,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   String project = "project-309310695";
@@ -610,6 +643,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   ListRegionBackendServicesRequest request =
@@ -643,6 +678,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   ListRegionBackendServicesRequest request =
@@ -677,6 +714,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   ListRegionBackendServicesRequest request =
@@ -691,7 +730,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     BackendServiceList response = regionBackendServicesClient.listCallable().call(request);
-   *     for (BackendService element : response.getResponsesList()) {
+   *     for (BackendService element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -717,6 +756,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   String project = "project-309310695";
@@ -757,6 +798,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   PatchRegionBackendServiceRequest request =
@@ -790,6 +833,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   PatchRegionBackendServiceRequest request =
@@ -821,6 +866,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   PatchRegionBackendServiceRequest request =
@@ -849,6 +896,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   String project = "project-309310695";
@@ -888,6 +937,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   UpdateRegionBackendServiceRequest request =
@@ -920,6 +971,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   UpdateRegionBackendServiceRequest request =
@@ -950,6 +1003,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionBackendServicesClient regionBackendServicesClient =
    *     RegionBackendServicesClient.create()) {
    *   UpdateRegionBackendServiceRequest request =

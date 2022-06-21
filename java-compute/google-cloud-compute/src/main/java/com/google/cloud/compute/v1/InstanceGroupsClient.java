@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * InstanceGroupsSettings instanceGroupsSettings =
  *     InstanceGroupsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * InstanceGroupsSettings instanceGroupsSettings =
  *     InstanceGroupsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create(instanceGroupsSettings);
@@ -121,7 +127,6 @@ public class InstanceGroupsClient implements BackgroundResource {
    * Constructs an instance of InstanceGroupsClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(InstanceGroupsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InstanceGroupsClient create(InstanceGroupsStub stub) {
     return new InstanceGroupsClient(stub);
   }
@@ -136,7 +141,6 @@ public class InstanceGroupsClient implements BackgroundResource {
     this.stub = ((InstanceGroupsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected InstanceGroupsClient(InstanceGroupsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -146,7 +150,6 @@ public class InstanceGroupsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public InstanceGroupsStub getStub() {
     return stub;
   }
@@ -159,6 +162,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -202,6 +207,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   AddInstancesInstanceGroupRequest request =
    *       AddInstancesInstanceGroupRequest.newBuilder()
@@ -234,6 +241,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   AddInstancesInstanceGroupRequest request =
    *       AddInstancesInstanceGroupRequest.newBuilder()
@@ -264,6 +273,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   AddInstancesInstanceGroupRequest request =
    *       AddInstancesInstanceGroupRequest.newBuilder()
@@ -291,6 +302,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, InstanceGroupsScopedList> element :
@@ -316,6 +329,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   AggregatedListInstanceGroupsRequest request =
    *       AggregatedListInstanceGroupsRequest.newBuilder()
@@ -349,6 +364,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   AggregatedListInstanceGroupsRequest request =
    *       AggregatedListInstanceGroupsRequest.newBuilder()
@@ -381,6 +398,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   AggregatedListInstanceGroupsRequest request =
    *       AggregatedListInstanceGroupsRequest.newBuilder()
@@ -395,7 +414,7 @@ public class InstanceGroupsClient implements BackgroundResource {
    *   while (true) {
    *     InstanceGroupAggregatedList response =
    *         instanceGroupsClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, InstanceGroupsScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, InstanceGroupsScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -422,6 +441,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -455,6 +476,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   DeleteInstanceGroupRequest request =
    *       DeleteInstanceGroupRequest.newBuilder()
@@ -486,6 +509,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   DeleteInstanceGroupRequest request =
    *       DeleteInstanceGroupRequest.newBuilder()
@@ -515,6 +540,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   DeleteInstanceGroupRequest request =
    *       DeleteInstanceGroupRequest.newBuilder()
@@ -542,6 +569,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -574,6 +603,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   GetInstanceGroupRequest request =
    *       GetInstanceGroupRequest.newBuilder()
@@ -601,6 +632,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   GetInstanceGroupRequest request =
    *       GetInstanceGroupRequest.newBuilder()
@@ -626,6 +659,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -659,6 +694,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   InsertInstanceGroupRequest request =
    *       InsertInstanceGroupRequest.newBuilder()
@@ -689,6 +726,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   InsertInstanceGroupRequest request =
    *       InsertInstanceGroupRequest.newBuilder()
@@ -717,6 +756,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   InsertInstanceGroupRequest request =
    *       InsertInstanceGroupRequest.newBuilder()
@@ -744,6 +785,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -772,6 +815,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   ListInstanceGroupsRequest request =
    *       ListInstanceGroupsRequest.newBuilder()
@@ -805,6 +850,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   ListInstanceGroupsRequest request =
    *       ListInstanceGroupsRequest.newBuilder()
@@ -838,6 +885,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   ListInstanceGroupsRequest request =
    *       ListInstanceGroupsRequest.newBuilder()
@@ -851,7 +900,7 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     InstanceGroupList response = instanceGroupsClient.listCallable().call(request);
-   *     for (InstanceGroup element : response.getResponsesList()) {
+   *     for (InstanceGroup element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -871,11 +920,14 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the specified instance group. The orderBy query parameter is not
-   * supported.
+   * supported. The filter query parameter is supported, but only for expressions that use `eq`
+   * (equal) or `ne` (not equal) operators.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -918,11 +970,14 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the specified instance group. The orderBy query parameter is not
-   * supported.
+   * supported. The filter query parameter is supported, but only for expressions that use `eq`
+   * (equal) or `ne` (not equal) operators.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   ListInstancesInstanceGroupsRequest request =
    *       ListInstancesInstanceGroupsRequest.newBuilder()
@@ -955,11 +1010,14 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the specified instance group. The orderBy query parameter is not
-   * supported.
+   * supported. The filter query parameter is supported, but only for expressions that use `eq`
+   * (equal) or `ne` (not equal) operators.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   ListInstancesInstanceGroupsRequest request =
    *       ListInstancesInstanceGroupsRequest.newBuilder()
@@ -991,11 +1049,14 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the instances in the specified instance group. The orderBy query parameter is not
-   * supported.
+   * supported. The filter query parameter is supported, but only for expressions that use `eq`
+   * (equal) or `ne` (not equal) operators.
    *
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   ListInstancesInstanceGroupsRequest request =
    *       ListInstancesInstanceGroupsRequest.newBuilder()
@@ -1013,7 +1074,7 @@ public class InstanceGroupsClient implements BackgroundResource {
    *   while (true) {
    *     InstanceGroupsListInstances response =
    *         instanceGroupsClient.listInstancesCallable().call(request);
-   *     for (InstanceWithNamedPorts element : response.getResponsesList()) {
+   *     for (InstanceWithNamedPorts element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1041,6 +1102,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1088,6 +1151,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   RemoveInstancesInstanceGroupRequest request =
    *       RemoveInstancesInstanceGroupRequest.newBuilder()
@@ -1122,6 +1187,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   RemoveInstancesInstanceGroupRequest request =
    *       RemoveInstancesInstanceGroupRequest.newBuilder()
@@ -1154,6 +1221,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   RemoveInstancesInstanceGroupRequest request =
    *       RemoveInstancesInstanceGroupRequest.newBuilder()
@@ -1183,6 +1252,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1226,6 +1297,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   SetNamedPortsInstanceGroupRequest request =
    *       SetNamedPortsInstanceGroupRequest.newBuilder()
@@ -1257,6 +1330,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   SetNamedPortsInstanceGroupRequest request =
    *       SetNamedPortsInstanceGroupRequest.newBuilder()
@@ -1286,6 +1361,8 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   SetNamedPortsInstanceGroupRequest request =
    *       SetNamedPortsInstanceGroupRequest.newBuilder()

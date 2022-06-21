@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -42,6 +41,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -79,6 +80,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NodeTypesSettings nodeTypesSettings =
  *     NodeTypesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +92,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NodeTypesSettings nodeTypesSettings =
  *     NodeTypesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * NodeTypesClient nodeTypesClient = NodeTypesClient.create(nodeTypesSettings);
@@ -118,7 +123,6 @@ public class NodeTypesClient implements BackgroundResource {
    * Constructs an instance of NodeTypesClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(NodeTypesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NodeTypesClient create(NodeTypesStub stub) {
     return new NodeTypesClient(stub);
   }
@@ -132,7 +136,6 @@ public class NodeTypesClient implements BackgroundResource {
     this.stub = ((NodeTypesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected NodeTypesClient(NodeTypesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -142,7 +145,6 @@ public class NodeTypesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public NodeTypesStub getStub() {
     return stub;
   }
@@ -154,6 +156,8 @@ public class NodeTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, NodeTypesScopedList> element :
@@ -179,6 +183,8 @@ public class NodeTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
    *   AggregatedListNodeTypesRequest request =
    *       AggregatedListNodeTypesRequest.newBuilder()
@@ -211,6 +217,8 @@ public class NodeTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
    *   AggregatedListNodeTypesRequest request =
    *       AggregatedListNodeTypesRequest.newBuilder()
@@ -243,6 +251,8 @@ public class NodeTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
    *   AggregatedListNodeTypesRequest request =
    *       AggregatedListNodeTypesRequest.newBuilder()
@@ -256,7 +266,7 @@ public class NodeTypesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     NodeTypeAggregatedList response = nodeTypesClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, NodeTypesScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, NodeTypesScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -282,6 +292,8 @@ public class NodeTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -313,6 +325,8 @@ public class NodeTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
    *   GetNodeTypeRequest request =
    *       GetNodeTypeRequest.newBuilder()
@@ -339,6 +353,8 @@ public class NodeTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
    *   GetNodeTypeRequest request =
    *       GetNodeTypeRequest.newBuilder()
@@ -363,6 +379,8 @@ public class NodeTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -389,6 +407,8 @@ public class NodeTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
    *   ListNodeTypesRequest request =
    *       ListNodeTypesRequest.newBuilder()
@@ -420,6 +440,8 @@ public class NodeTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
    *   ListNodeTypesRequest request =
    *       ListNodeTypesRequest.newBuilder()
@@ -450,6 +472,8 @@ public class NodeTypesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTypesClient nodeTypesClient = NodeTypesClient.create()) {
    *   ListNodeTypesRequest request =
    *       ListNodeTypesRequest.newBuilder()
@@ -463,7 +487,7 @@ public class NodeTypesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     NodeTypeList response = nodeTypesClient.listCallable().call(request);
-   *     for (NodeType element : response.getResponsesList()) {
+   *     for (NodeType element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

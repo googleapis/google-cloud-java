@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RoutesClient routesClient = RoutesClient.create()) {
  *   String project = "project-309310695";
  *   String route = "route108704329";
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RoutesSettings routesSettings =
  *     RoutesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RoutesSettings routesSettings = RoutesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RoutesClient routesClient = RoutesClient.create(routesSettings);
  * }</pre>
@@ -117,7 +123,6 @@ public class RoutesClient implements BackgroundResource {
    * Constructs an instance of RoutesClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(RoutesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RoutesClient create(RoutesStub stub) {
     return new RoutesClient(stub);
   }
@@ -131,7 +136,6 @@ public class RoutesClient implements BackgroundResource {
     this.stub = ((RoutesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RoutesClient(RoutesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -141,7 +145,6 @@ public class RoutesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RoutesStub getStub() {
     return stub;
   }
@@ -153,6 +156,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   String project = "project-309310695";
    *   String route = "route108704329";
@@ -177,6 +182,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   DeleteRouteRequest request =
    *       DeleteRouteRequest.newBuilder()
@@ -204,6 +211,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   DeleteRouteRequest request =
    *       DeleteRouteRequest.newBuilder()
@@ -230,6 +239,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   DeleteRouteRequest request =
    *       DeleteRouteRequest.newBuilder()
@@ -255,6 +266,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   String project = "project-309310695";
    *   String route = "route108704329";
@@ -280,6 +293,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   GetRouteRequest request =
    *       GetRouteRequest.newBuilder()
@@ -305,6 +320,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   GetRouteRequest request =
    *       GetRouteRequest.newBuilder()
@@ -328,6 +345,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   String project = "project-309310695";
    *   Route routeResource = Route.newBuilder().build();
@@ -353,6 +372,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   InsertRouteRequest request =
    *       InsertRouteRequest.newBuilder()
@@ -380,6 +401,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   InsertRouteRequest request =
    *       InsertRouteRequest.newBuilder()
@@ -406,6 +429,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   InsertRouteRequest request =
    *       InsertRouteRequest.newBuilder()
@@ -430,6 +455,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   String project = "project-309310695";
    *   for (Route element : routesClient.list(project).iterateAll()) {
@@ -453,6 +480,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   ListRoutesRequest request =
    *       ListRoutesRequest.newBuilder()
@@ -483,6 +512,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   ListRoutesRequest request =
    *       ListRoutesRequest.newBuilder()
@@ -512,6 +543,8 @@ public class RoutesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   ListRoutesRequest request =
    *       ListRoutesRequest.newBuilder()
@@ -524,7 +557,7 @@ public class RoutesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     RouteList response = routesClient.listCallable().call(request);
-   *     for (Route element : response.getResponsesList()) {
+   *     for (Route element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

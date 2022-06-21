@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TargetInstancesSettings targetInstancesSettings =
  *     TargetInstancesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TargetInstancesSettings targetInstancesSettings =
  *     TargetInstancesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TargetInstancesClient targetInstancesClient =
@@ -124,7 +130,6 @@ public class TargetInstancesClient implements BackgroundResource {
    * Constructs an instance of TargetInstancesClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(TargetInstancesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetInstancesClient create(TargetInstancesStub stub) {
     return new TargetInstancesClient(stub);
   }
@@ -139,7 +144,6 @@ public class TargetInstancesClient implements BackgroundResource {
     this.stub = ((TargetInstancesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TargetInstancesClient(TargetInstancesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -149,7 +153,6 @@ public class TargetInstancesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TargetInstancesStub getStub() {
     return stub;
   }
@@ -161,6 +164,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, TargetInstancesScopedList> element :
@@ -186,6 +191,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   AggregatedListTargetInstancesRequest request =
    *       AggregatedListTargetInstancesRequest.newBuilder()
@@ -219,6 +226,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   AggregatedListTargetInstancesRequest request =
    *       AggregatedListTargetInstancesRequest.newBuilder()
@@ -251,6 +260,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   AggregatedListTargetInstancesRequest request =
    *       AggregatedListTargetInstancesRequest.newBuilder()
@@ -265,7 +276,7 @@ public class TargetInstancesClient implements BackgroundResource {
    *   while (true) {
    *     TargetInstanceAggregatedList response =
    *         targetInstancesClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, TargetInstancesScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, TargetInstancesScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -290,6 +301,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -321,6 +334,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   DeleteTargetInstanceRequest request =
    *       DeleteTargetInstanceRequest.newBuilder()
@@ -350,6 +365,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   DeleteTargetInstanceRequest request =
    *       DeleteTargetInstanceRequest.newBuilder()
@@ -377,6 +394,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   DeleteTargetInstanceRequest request =
    *       DeleteTargetInstanceRequest.newBuilder()
@@ -403,6 +422,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -434,6 +455,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   GetTargetInstanceRequest request =
    *       GetTargetInstanceRequest.newBuilder()
@@ -460,6 +483,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   GetTargetInstanceRequest request =
    *       GetTargetInstanceRequest.newBuilder()
@@ -485,6 +510,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -518,6 +545,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   InsertTargetInstanceRequest request =
    *       InsertTargetInstanceRequest.newBuilder()
@@ -548,6 +577,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   InsertTargetInstanceRequest request =
    *       InsertTargetInstanceRequest.newBuilder()
@@ -576,6 +607,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   InsertTargetInstanceRequest request =
    *       InsertTargetInstanceRequest.newBuilder()
@@ -601,6 +634,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -627,6 +662,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   ListTargetInstancesRequest request =
    *       ListTargetInstancesRequest.newBuilder()
@@ -658,6 +695,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   ListTargetInstancesRequest request =
    *       ListTargetInstancesRequest.newBuilder()
@@ -689,6 +728,8 @@ public class TargetInstancesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   ListTargetInstancesRequest request =
    *       ListTargetInstancesRequest.newBuilder()
@@ -702,7 +743,7 @@ public class TargetInstancesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     TargetInstanceList response = targetInstancesClient.listCallable().call(request);
-   *     for (TargetInstance element : response.getResponsesList()) {
+   *     for (TargetInstance element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

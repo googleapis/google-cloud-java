@@ -71,8 +71,12 @@ public interface PreservedStateOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.PreservedStatePreservedDisk&gt; disks = 95594102;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.compute.v1.PreservedStatePreservedDisk getDisksOrDefault(
-      java.lang.String key, com.google.cloud.compute.v1.PreservedStatePreservedDisk defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.PreservedStatePreservedDisk defaultValue);
   /**
    *
    *
@@ -127,7 +131,12 @@ public interface PreservedStateOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 86866735;</code>
    */
-  java.lang.String getMetadataOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

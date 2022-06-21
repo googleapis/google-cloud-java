@@ -64,6 +64,43 @@ public interface TargetHttpsProxyOrBuilder
    *
    *
    * <pre>
+   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+   * </pre>
+   *
+   * <code>optional string certificate_map = 156463796;</code>
+   *
+   * @return Whether the certificateMap field is set.
+   */
+  boolean hasCertificateMap();
+  /**
+   *
+   *
+   * <pre>
+   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+   * </pre>
+   *
+   * <code>optional string certificate_map = 156463796;</code>
+   *
+   * @return The certificateMap.
+   */
+  java.lang.String getCertificateMap();
+  /**
+   *
+   *
+   * <pre>
+   * URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored.
+   * </pre>
+   *
+   * <code>optional string certificate_map = 156463796;</code>
+   *
+   * @return The bytes for certificateMap.
+   */
+  com.google.protobuf.ByteString getCertificateMapBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *

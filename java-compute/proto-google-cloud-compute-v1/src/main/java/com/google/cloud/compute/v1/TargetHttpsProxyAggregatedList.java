@@ -156,6 +156,8 @@ public final class TargetHttpsProxyAggregatedList extends com.google.protobuf.Ge
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -306,7 +308,7 @@ public final class TargetHttpsProxyAggregatedList extends com.google.protobuf.Ge
   @java.lang.Override
   public boolean containsItems(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetItems().getMap().containsKey(key);
   }
@@ -348,7 +350,7 @@ public final class TargetHttpsProxyAggregatedList extends com.google.protobuf.Ge
   public com.google.cloud.compute.v1.TargetHttpsProxiesScopedList getItemsOrDefault(
       java.lang.String key, com.google.cloud.compute.v1.TargetHttpsProxiesScopedList defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.TargetHttpsProxiesScopedList> map =
         internalGetItems().getMap();
@@ -369,7 +371,7 @@ public final class TargetHttpsProxyAggregatedList extends com.google.protobuf.Ge
   public com.google.cloud.compute.v1.TargetHttpsProxiesScopedList getItemsOrThrow(
       java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, com.google.cloud.compute.v1.TargetHttpsProxiesScopedList> map =
         internalGetItems().getMap();
@@ -1360,7 +1362,7 @@ public final class TargetHttpsProxyAggregatedList extends com.google.protobuf.Ge
     @java.lang.Override
     public boolean containsItems(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetItems().getMap().containsKey(key);
     }
@@ -1403,7 +1405,7 @@ public final class TargetHttpsProxyAggregatedList extends com.google.protobuf.Ge
         java.lang.String key,
         com.google.cloud.compute.v1.TargetHttpsProxiesScopedList defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.TargetHttpsProxiesScopedList>
           map = internalGetItems().getMap();
@@ -1424,7 +1426,7 @@ public final class TargetHttpsProxyAggregatedList extends com.google.protobuf.Ge
     public com.google.cloud.compute.v1.TargetHttpsProxiesScopedList getItemsOrThrow(
         java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, com.google.cloud.compute.v1.TargetHttpsProxiesScopedList>
           map = internalGetItems().getMap();
@@ -1451,7 +1453,7 @@ public final class TargetHttpsProxyAggregatedList extends com.google.protobuf.Ge
      */
     public Builder removeItems(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableItems().getMutableMap().remove(key);
       return this;
@@ -1476,11 +1478,12 @@ public final class TargetHttpsProxyAggregatedList extends com.google.protobuf.Ge
     public Builder putItems(
         java.lang.String key, com.google.cloud.compute.v1.TargetHttpsProxiesScopedList value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableItems().getMutableMap().put(key, value);
       return this;
     }

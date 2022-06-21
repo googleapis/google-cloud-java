@@ -61,6 +61,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -83,6 +84,12 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
+              break;
+            }
+          case 1941957032:
+            {
+              bitField0_ |= 0x00000001;
+              validateOnly_ = input.readBool();
               break;
             }
           case -1073419750:
@@ -112,6 +119,8 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -135,6 +144,7 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.AddRuleSecurityPolicyRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
   private volatile java.lang.Object project_;
   /**
@@ -292,6 +302,39 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     return getSecurityPolicyRuleResource();
   }
 
+  public static final int VALIDATE_ONLY_FIELD_NUMBER = 242744629;
+  private boolean validateOnly_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, the request will not be committed.
+   * </pre>
+   *
+   * <code>optional bool validate_only = 242744629;</code>
+   *
+   * @return Whether the validateOnly field is set.
+   */
+  @java.lang.Override
+  public boolean hasValidateOnly() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If true, the request will not be committed.
+   * </pre>
+   *
+   * <code>optional bool validate_only = 242744629;</code>
+   *
+   * @return The validateOnly.
+   */
+  @java.lang.Override
+  public boolean getValidateOnly() {
+    return validateOnly_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -312,6 +355,9 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(242744629, validateOnly_);
+    }
     if (securityPolicyRuleResource_ != null) {
       output.writeMessage(402693443, getSecurityPolicyRuleResource());
     }
@@ -329,6 +375,9 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(242744629, validateOnly_);
     }
     if (securityPolicyRuleResource_ != null) {
       size +=
@@ -358,6 +407,10 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
       if (!getSecurityPolicyRuleResource().equals(other.getSecurityPolicyRuleResource()))
         return false;
     }
+    if (hasValidateOnly() != other.hasValidateOnly()) return false;
+    if (hasValidateOnly()) {
+      if (getValidateOnly() != other.getValidateOnly()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -376,6 +429,10 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     if (hasSecurityPolicyRuleResource()) {
       hash = (37 * hash) + SECURITY_POLICY_RULE_RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getSecurityPolicyRuleResource().hashCode();
+    }
+    if (hasValidateOnly()) {
+      hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -533,6 +590,8 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
         securityPolicyRuleResource_ = null;
         securityPolicyRuleResourceBuilder_ = null;
       }
+      validateOnly_ = false;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -560,6 +619,8 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
     public com.google.cloud.compute.v1.AddRuleSecurityPolicyRequest buildPartial() {
       com.google.cloud.compute.v1.AddRuleSecurityPolicyRequest result =
           new com.google.cloud.compute.v1.AddRuleSecurityPolicyRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.project_ = project_;
       result.securityPolicy_ = securityPolicy_;
       if (securityPolicyRuleResourceBuilder_ == null) {
@@ -567,6 +628,11 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
       } else {
         result.securityPolicyRuleResource_ = securityPolicyRuleResourceBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.validateOnly_ = validateOnly_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -628,6 +694,9 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
       if (other.hasSecurityPolicyRuleResource()) {
         mergeSecurityPolicyRuleResource(other.getSecurityPolicyRuleResource());
       }
+      if (other.hasValidateOnly()) {
+        setValidateOnly(other.getValidateOnly());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -657,6 +726,8 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object project_ = "";
     /**
@@ -1086,6 +1157,73 @@ public final class AddRuleSecurityPolicyRequest extends com.google.protobuf.Gene
         securityPolicyRuleResource_ = null;
       }
       return securityPolicyRuleResourceBuilder_;
+    }
+
+    private boolean validateOnly_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, the request will not be committed.
+     * </pre>
+     *
+     * <code>optional bool validate_only = 242744629;</code>
+     *
+     * @return Whether the validateOnly field is set.
+     */
+    @java.lang.Override
+    public boolean hasValidateOnly() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, the request will not be committed.
+     * </pre>
+     *
+     * <code>optional bool validate_only = 242744629;</code>
+     *
+     * @return The validateOnly.
+     */
+    @java.lang.Override
+    public boolean getValidateOnly() {
+      return validateOnly_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, the request will not be committed.
+     * </pre>
+     *
+     * <code>optional bool validate_only = 242744629;</code>
+     *
+     * @param value The validateOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValidateOnly(boolean value) {
+      bitField0_ |= 0x00000001;
+      validateOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, the request will not be committed.
+     * </pre>
+     *
+     * <code>optional bool validate_only = 242744629;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearValidateOnly() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      validateOnly_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

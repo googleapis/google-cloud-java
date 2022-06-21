@@ -77,8 +77,11 @@ public interface StatefulPolicyPreservedStateOrBuilder
    * map&lt;string, .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice&gt; disks = 95594102;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice getDisksOrDefault(
       java.lang.String key,
+      /* nullable */
       com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice defaultValue);
   /**
    *

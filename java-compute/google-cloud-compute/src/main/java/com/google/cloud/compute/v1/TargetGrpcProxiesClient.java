@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
  *   String project = "project-309310695";
  *   String targetGrpcProxy = "targetGrpcProxy1045500511";
@@ -80,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TargetGrpcProxiesSettings targetGrpcProxiesSettings =
  *     TargetGrpcProxiesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * TargetGrpcProxiesSettings targetGrpcProxiesSettings =
  *     TargetGrpcProxiesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * TargetGrpcProxiesClient targetGrpcProxiesClient =
@@ -122,7 +128,6 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * Constructs an instance of TargetGrpcProxiesClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(TargetGrpcProxiesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final TargetGrpcProxiesClient create(TargetGrpcProxiesStub stub) {
     return new TargetGrpcProxiesClient(stub);
   }
@@ -137,7 +142,6 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     this.stub = ((TargetGrpcProxiesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected TargetGrpcProxiesClient(TargetGrpcProxiesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -147,7 +151,6 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public TargetGrpcProxiesStub getStub() {
     return stub;
   }
@@ -159,6 +162,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetGrpcProxy = "targetGrpcProxy1045500511";
@@ -187,6 +192,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   DeleteTargetGrpcProxyRequest request =
    *       DeleteTargetGrpcProxyRequest.newBuilder()
@@ -215,6 +222,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   DeleteTargetGrpcProxyRequest request =
    *       DeleteTargetGrpcProxyRequest.newBuilder()
@@ -241,6 +250,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   DeleteTargetGrpcProxyRequest request =
    *       DeleteTargetGrpcProxyRequest.newBuilder()
@@ -265,6 +276,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetGrpcProxy = "targetGrpcProxy1045500511";
@@ -292,6 +305,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   GetTargetGrpcProxyRequest request =
    *       GetTargetGrpcProxyRequest.newBuilder()
@@ -316,6 +331,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   GetTargetGrpcProxyRequest request =
    *       GetTargetGrpcProxyRequest.newBuilder()
@@ -340,6 +357,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   String project = "project-309310695";
    *   TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
@@ -370,6 +389,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   InsertTargetGrpcProxyRequest request =
    *       InsertTargetGrpcProxyRequest.newBuilder()
@@ -399,6 +420,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   InsertTargetGrpcProxyRequest request =
    *       InsertTargetGrpcProxyRequest.newBuilder()
@@ -426,6 +449,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   InsertTargetGrpcProxyRequest request =
    *       InsertTargetGrpcProxyRequest.newBuilder()
@@ -450,6 +475,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   String project = "project-309310695";
    *   for (TargetGrpcProxy element : targetGrpcProxiesClient.list(project).iterateAll()) {
@@ -474,6 +501,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   ListTargetGrpcProxiesRequest request =
    *       ListTargetGrpcProxiesRequest.newBuilder()
@@ -504,6 +533,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   ListTargetGrpcProxiesRequest request =
    *       ListTargetGrpcProxiesRequest.newBuilder()
@@ -534,6 +565,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   ListTargetGrpcProxiesRequest request =
    *       ListTargetGrpcProxiesRequest.newBuilder()
@@ -546,7 +579,7 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     TargetGrpcProxyList response = targetGrpcProxiesClient.listCallable().call(request);
-   *     for (TargetGrpcProxy element : response.getResponsesList()) {
+   *     for (TargetGrpcProxy element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -571,6 +604,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   String project = "project-309310695";
    *   String targetGrpcProxy = "targetGrpcProxy1045500511";
@@ -606,6 +641,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   PatchTargetGrpcProxyRequest request =
    *       PatchTargetGrpcProxyRequest.newBuilder()
@@ -636,6 +673,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   PatchTargetGrpcProxyRequest request =
    *       PatchTargetGrpcProxyRequest.newBuilder()
@@ -664,6 +703,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   PatchTargetGrpcProxyRequest request =
    *       PatchTargetGrpcProxyRequest.newBuilder()

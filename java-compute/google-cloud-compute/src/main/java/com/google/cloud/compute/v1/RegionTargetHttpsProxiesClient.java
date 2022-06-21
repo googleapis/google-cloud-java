@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
  *     RegionTargetHttpsProxiesClient.create()) {
  *   String project = "project-309310695";
@@ -83,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionTargetHttpsProxiesSettings regionTargetHttpsProxiesSettings =
  *     RegionTargetHttpsProxiesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -94,6 +98,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionTargetHttpsProxiesSettings regionTargetHttpsProxiesSettings =
  *     RegionTargetHttpsProxiesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
@@ -126,7 +132,6 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * Constructs an instance of RegionTargetHttpsProxiesClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(RegionTargetHttpsProxiesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionTargetHttpsProxiesClient create(RegionTargetHttpsProxiesStub stub) {
     return new RegionTargetHttpsProxiesClient(stub);
   }
@@ -142,7 +147,6 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
     this.stub = ((RegionTargetHttpsProxiesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RegionTargetHttpsProxiesClient(RegionTargetHttpsProxiesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -152,7 +156,6 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegionTargetHttpsProxiesStub getStub() {
     return stub;
   }
@@ -164,6 +167,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   String project = "project-309310695";
@@ -197,6 +202,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   DeleteRegionTargetHttpsProxyRequest request =
@@ -227,6 +234,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   DeleteRegionTargetHttpsProxyRequest request =
@@ -255,6 +264,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   DeleteRegionTargetHttpsProxyRequest request =
@@ -283,6 +294,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   String project = "project-309310695";
@@ -316,6 +329,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   GetRegionTargetHttpsProxyRequest request =
@@ -343,6 +358,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   GetRegionTargetHttpsProxyRequest request =
@@ -370,6 +387,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   String project = "project-309310695";
@@ -406,6 +425,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   InsertRegionTargetHttpsProxyRequest request =
@@ -437,6 +458,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   InsertRegionTargetHttpsProxyRequest request =
@@ -466,6 +489,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   InsertRegionTargetHttpsProxyRequest request =
@@ -494,6 +519,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   String project = "project-309310695";
@@ -526,6 +553,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   ListRegionTargetHttpsProxiesRequest request =
@@ -559,6 +588,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   ListRegionTargetHttpsProxiesRequest request =
@@ -593,6 +624,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   ListRegionTargetHttpsProxiesRequest request =
@@ -607,7 +640,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     TargetHttpsProxyList response = regionTargetHttpsProxiesClient.listCallable().call(request);
-   *     for (TargetHttpsProxy element : response.getResponsesList()) {
+   *     for (TargetHttpsProxy element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -633,6 +666,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   String project = "project-309310695";
@@ -675,6 +710,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   PatchRegionTargetHttpsProxyRequest request =
@@ -707,6 +744,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   PatchRegionTargetHttpsProxyRequest request =
@@ -737,6 +776,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   PatchRegionTargetHttpsProxyRequest request =
@@ -765,6 +806,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   String project = "project-309310695";
@@ -816,6 +859,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   SetSslCertificatesRegionTargetHttpsProxyRequest request =
@@ -848,6 +893,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   SetSslCertificatesRegionTargetHttpsProxyRequest request =
@@ -879,6 +926,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   SetSslCertificatesRegionTargetHttpsProxyRequest request =
@@ -909,6 +958,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   String project = "project-309310695";
@@ -950,6 +1001,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   SetUrlMapRegionTargetHttpsProxyRequest request =
@@ -981,6 +1034,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   SetUrlMapRegionTargetHttpsProxyRequest request =
@@ -1010,6 +1065,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient =
    *     RegionTargetHttpsProxiesClient.create()) {
    *   SetUrlMapRegionTargetHttpsProxyRequest request =

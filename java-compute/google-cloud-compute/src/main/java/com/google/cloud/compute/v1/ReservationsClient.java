@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
  *   String project = "project-309310695";
  *   String zone = "zone3744684";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ReservationsSettings reservationsSettings =
  *     ReservationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * ReservationsSettings reservationsSettings =
  *     ReservationsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ReservationsClient reservationsClient = ReservationsClient.create(reservationsSettings);
@@ -120,7 +126,6 @@ public class ReservationsClient implements BackgroundResource {
    * Constructs an instance of ReservationsClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(ReservationsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ReservationsClient create(ReservationsStub stub) {
     return new ReservationsClient(stub);
   }
@@ -135,7 +140,6 @@ public class ReservationsClient implements BackgroundResource {
     this.stub = ((ReservationsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ReservationsClient(ReservationsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -145,7 +149,6 @@ public class ReservationsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ReservationsStub getStub() {
     return stub;
   }
@@ -157,6 +160,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, ReservationsScopedList> element :
@@ -182,6 +187,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   AggregatedListReservationsRequest request =
    *       AggregatedListReservationsRequest.newBuilder()
@@ -215,6 +222,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   AggregatedListReservationsRequest request =
    *       AggregatedListReservationsRequest.newBuilder()
@@ -247,6 +256,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   AggregatedListReservationsRequest request =
    *       AggregatedListReservationsRequest.newBuilder()
@@ -261,7 +272,7 @@ public class ReservationsClient implements BackgroundResource {
    *   while (true) {
    *     ReservationAggregatedList response =
    *         reservationsClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, ReservationsScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, ReservationsScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -286,6 +297,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -317,6 +330,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   DeleteReservationRequest request =
    *       DeleteReservationRequest.newBuilder()
@@ -345,6 +360,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   DeleteReservationRequest request =
    *       DeleteReservationRequest.newBuilder()
@@ -372,6 +389,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   DeleteReservationRequest request =
    *       DeleteReservationRequest.newBuilder()
@@ -397,6 +416,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -427,6 +448,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   GetReservationRequest request =
    *       GetReservationRequest.newBuilder()
@@ -452,6 +475,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   GetReservationRequest request =
    *       GetReservationRequest.newBuilder()
@@ -477,6 +502,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -508,6 +535,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   GetIamPolicyReservationRequest request =
    *       GetIamPolicyReservationRequest.newBuilder()
@@ -535,6 +564,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   GetIamPolicyReservationRequest request =
    *       GetIamPolicyReservationRequest.newBuilder()
@@ -560,6 +591,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -591,6 +624,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   InsertReservationRequest request =
    *       InsertReservationRequest.newBuilder()
@@ -619,6 +654,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   InsertReservationRequest request =
    *       InsertReservationRequest.newBuilder()
@@ -646,6 +683,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   InsertReservationRequest request =
    *       InsertReservationRequest.newBuilder()
@@ -672,6 +711,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -699,6 +740,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   ListReservationsRequest request =
    *       ListReservationsRequest.newBuilder()
@@ -731,6 +774,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   ListReservationsRequest request =
    *       ListReservationsRequest.newBuilder()
@@ -762,6 +807,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   ListReservationsRequest request =
    *       ListReservationsRequest.newBuilder()
@@ -775,7 +822,7 @@ public class ReservationsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ReservationList response = reservationsClient.listCallable().call(request);
-   *     for (Reservation element : response.getResponsesList()) {
+   *     for (Reservation element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -800,6 +847,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -842,6 +891,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   ResizeReservationRequest request =
    *       ResizeReservationRequest.newBuilder()
@@ -872,6 +923,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   ResizeReservationRequest request =
    *       ResizeReservationRequest.newBuilder()
@@ -901,6 +954,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   ResizeReservationRequest request =
    *       ResizeReservationRequest.newBuilder()
@@ -927,6 +982,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -965,6 +1022,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   SetIamPolicyReservationRequest request =
    *       SetIamPolicyReservationRequest.newBuilder()
@@ -991,6 +1050,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   SetIamPolicyReservationRequest request =
    *       SetIamPolicyReservationRequest.newBuilder()
@@ -1016,6 +1077,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1056,6 +1119,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   TestIamPermissionsReservationRequest request =
    *       TestIamPermissionsReservationRequest.newBuilder()
@@ -1083,6 +1148,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   TestIamPermissionsReservationRequest request =
    *       TestIamPermissionsReservationRequest.newBuilder()
@@ -1110,6 +1177,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "project-309310695";
    *   String zone = "zone3744684";
@@ -1145,6 +1214,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   UpdateReservationRequest request =
    *       UpdateReservationRequest.newBuilder()
@@ -1176,6 +1247,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   UpdateReservationRequest request =
    *       UpdateReservationRequest.newBuilder()
@@ -1206,6 +1279,8 @@ public class ReservationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   UpdateReservationRequest request =
    *       UpdateReservationRequest.newBuilder()

@@ -216,6 +216,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -811,6 +813,16 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * A regional internal IP address range reserved for Serverless.
+     * </pre>
+     *
+     * <code>SERVERLESS = 270492508;</code>
+     */
+    SERVERLESS(270492508),
+    /**
+     *
+     *
+     * <pre>
      * A private network IP address that can be shared by multiple Internal Load Balancer forwarding rules.
      * </pre>
      *
@@ -894,6 +906,16 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * A regional internal IP address range reserved for Serverless.
+     * </pre>
+     *
+     * <code>SERVERLESS = 270492508;</code>
+     */
+    public static final int SERVERLESS_VALUE = 270492508;
+    /**
+     *
+     *
+     * <pre>
      * A private network IP address that can be shared by multiple Internal Load Balancer forwarding rules.
      * </pre>
      *
@@ -947,6 +969,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
           return NAT_AUTO;
         case 48134724:
           return PRIVATE_SERVICE_CONNECT;
+        case 270492508:
+          return SERVERLESS;
         case 294447572:
           return SHARED_LOADBALANCER_VIP;
         case 400800170:

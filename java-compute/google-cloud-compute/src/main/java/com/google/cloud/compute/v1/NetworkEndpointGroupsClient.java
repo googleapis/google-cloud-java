@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
  *     NetworkEndpointGroupsClient.create()) {
  *   String project = "project-309310695";
@@ -84,6 +86,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NetworkEndpointGroupsSettings networkEndpointGroupsSettings =
  *     NetworkEndpointGroupsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -95,6 +99,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NetworkEndpointGroupsSettings networkEndpointGroupsSettings =
  *     NetworkEndpointGroupsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * NetworkEndpointGroupsClient networkEndpointGroupsClient =
@@ -126,7 +132,6 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * Constructs an instance of NetworkEndpointGroupsClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(NetworkEndpointGroupsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NetworkEndpointGroupsClient create(NetworkEndpointGroupsStub stub) {
     return new NetworkEndpointGroupsClient(stub);
   }
@@ -141,7 +146,6 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     this.stub = ((NetworkEndpointGroupsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected NetworkEndpointGroupsClient(NetworkEndpointGroupsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -151,7 +155,6 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public NetworkEndpointGroupsStub getStub() {
     return stub;
   }
@@ -163,6 +166,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -189,6 +194,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   AggregatedListNetworkEndpointGroupsRequest request =
@@ -223,6 +230,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   AggregatedListNetworkEndpointGroupsRequest request =
@@ -257,6 +266,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   AggregatedListNetworkEndpointGroupsRequest request =
@@ -272,8 +283,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *   while (true) {
    *     NetworkEndpointGroupAggregatedList response =
    *         networkEndpointGroupsClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, NetworkEndpointGroupsScopedList> element :
-   *         response.getResponsesList()) {
+   *     for (Map.Entry<String, NetworkEndpointGroupsScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -299,6 +309,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -350,6 +362,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   AttachNetworkEndpointsNetworkEndpointGroupRequest request =
@@ -382,6 +396,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   AttachNetworkEndpointsNetworkEndpointGroupRequest request =
@@ -413,6 +429,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   AttachNetworkEndpointsNetworkEndpointGroupRequest request =
@@ -445,6 +463,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -482,6 +502,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   DeleteNetworkEndpointGroupRequest request =
@@ -514,6 +536,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   DeleteNetworkEndpointGroupRequest request =
@@ -544,6 +568,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   DeleteNetworkEndpointGroupRequest request =
@@ -571,6 +597,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -622,6 +650,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   DetachNetworkEndpointsNetworkEndpointGroupRequest request =
@@ -654,6 +684,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   DetachNetworkEndpointsNetworkEndpointGroupRequest request =
@@ -685,6 +717,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   DetachNetworkEndpointsNetworkEndpointGroupRequest request =
@@ -716,6 +750,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -751,6 +787,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   GetNetworkEndpointGroupRequest request =
@@ -778,6 +816,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   GetNetworkEndpointGroupRequest request =
@@ -805,6 +845,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -842,6 +884,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   InsertNetworkEndpointGroupRequest request =
@@ -873,6 +917,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   InsertNetworkEndpointGroupRequest request =
@@ -902,6 +948,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   InsertNetworkEndpointGroupRequest request =
@@ -930,6 +978,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -960,6 +1010,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   ListNetworkEndpointGroupsRequest request =
@@ -993,6 +1045,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   ListNetworkEndpointGroupsRequest request =
@@ -1027,6 +1081,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   ListNetworkEndpointGroupsRequest request =
@@ -1042,7 +1098,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *   while (true) {
    *     NetworkEndpointGroupList response =
    *         networkEndpointGroupsClient.listCallable().call(request);
-   *     for (NetworkEndpointGroup element : response.getResponsesList()) {
+   *     for (NetworkEndpointGroup element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1067,6 +1123,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -1118,6 +1176,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   ListNetworkEndpointsNetworkEndpointGroupsRequest request =
@@ -1155,6 +1215,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   ListNetworkEndpointsNetworkEndpointGroupsRequest request =
@@ -1192,6 +1254,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   ListNetworkEndpointsNetworkEndpointGroupsRequest request =
@@ -1210,7 +1274,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *   while (true) {
    *     NetworkEndpointGroupsListNetworkEndpoints response =
    *         networkEndpointGroupsClient.listNetworkEndpointsCallable().call(request);
-   *     for (NetworkEndpointWithHealthStatus element : response.getResponsesList()) {
+   *     for (NetworkEndpointWithHealthStatus element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1237,6 +1301,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -1278,6 +1344,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   TestIamPermissionsNetworkEndpointGroupRequest request =
@@ -1306,6 +1374,8 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient =
    *     NetworkEndpointGroupsClient.create()) {
    *   TestIamPermissionsNetworkEndpointGroupRequest request =

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.VpnTunnelsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.VpnTunnelsClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -60,7 +59,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -69,7 +68,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
       aggregatedListMethodDescriptor =
           ApiMethodDescriptor.<AggregatedListVpnTunnelsRequest, VpnTunnelAggregatedList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnTunnels/AggregatedList")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AggregatedListVpnTunnelsRequest>newBuilder()
@@ -125,7 +124,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteVpnTunnelRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnTunnels/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteVpnTunnelRequest>newBuilder()
@@ -175,7 +174,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
   private static final ApiMethodDescriptor<GetVpnTunnelRequest, VpnTunnel> getMethodDescriptor =
       ApiMethodDescriptor.<GetVpnTunnelRequest, VpnTunnel>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.VpnTunnels/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetVpnTunnelRequest>newBuilder()
@@ -210,7 +209,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertVpnTunnelRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnTunnels/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertVpnTunnelRequest>newBuilder()
@@ -263,7 +262,7 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListVpnTunnelsRequest, VpnTunnelList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.VpnTunnels/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListVpnTunnelsRequest>newBuilder()

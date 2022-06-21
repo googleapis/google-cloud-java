@@ -107,8 +107,12 @@ public interface InstanceGroupAggregatedListOrBuilder
    * <code>map&lt;string, .google.cloud.compute.v1.InstanceGroupsScopedList&gt; items = 100526016;
    * </code>
    */
+
+  /* nullable */
   com.google.cloud.compute.v1.InstanceGroupsScopedList getItemsOrDefault(
-      java.lang.String key, com.google.cloud.compute.v1.InstanceGroupsScopedList defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.compute.v1.InstanceGroupsScopedList defaultValue);
   /**
    *
    *

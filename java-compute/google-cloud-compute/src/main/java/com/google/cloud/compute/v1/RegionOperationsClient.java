@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -41,6 +40,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -80,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionOperationsSettings regionOperationsSettings =
  *     RegionOperationsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +94,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionOperationsSettings regionOperationsSettings =
  *     RegionOperationsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionOperationsClient regionOperationsClient =
@@ -122,7 +127,6 @@ public class RegionOperationsClient implements BackgroundResource {
    * Constructs an instance of RegionOperationsClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(RegionOperationsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionOperationsClient create(RegionOperationsStub stub) {
     return new RegionOperationsClient(stub);
   }
@@ -137,7 +141,6 @@ public class RegionOperationsClient implements BackgroundResource {
     this.stub = ((RegionOperationsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RegionOperationsClient(RegionOperationsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -147,7 +150,6 @@ public class RegionOperationsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegionOperationsStub getStub() {
     return stub;
   }
@@ -159,6 +161,8 @@ public class RegionOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -191,6 +195,8 @@ public class RegionOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
    *   DeleteRegionOperationRequest request =
    *       DeleteRegionOperationRequest.newBuilder()
@@ -216,6 +222,8 @@ public class RegionOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
    *   DeleteRegionOperationRequest request =
    *       DeleteRegionOperationRequest.newBuilder()
@@ -242,6 +250,8 @@ public class RegionOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -272,6 +282,8 @@ public class RegionOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
    *   GetRegionOperationRequest request =
    *       GetRegionOperationRequest.newBuilder()
@@ -297,6 +309,8 @@ public class RegionOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
    *   GetRegionOperationRequest request =
    *       GetRegionOperationRequest.newBuilder()
@@ -321,6 +335,8 @@ public class RegionOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -347,6 +363,8 @@ public class RegionOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
    *   ListRegionOperationsRequest request =
    *       ListRegionOperationsRequest.newBuilder()
@@ -378,6 +396,8 @@ public class RegionOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
    *   ListRegionOperationsRequest request =
    *       ListRegionOperationsRequest.newBuilder()
@@ -408,6 +428,8 @@ public class RegionOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
    *   ListRegionOperationsRequest request =
    *       ListRegionOperationsRequest.newBuilder()
@@ -421,7 +443,7 @@ public class RegionOperationsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     OperationList response = regionOperationsClient.listCallable().call(request);
-   *     for (Operation element : response.getResponsesList()) {
+   *     for (Operation element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -453,6 +475,8 @@ public class RegionOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -491,6 +515,8 @@ public class RegionOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
    *   WaitRegionOperationRequest request =
    *       WaitRegionOperationRequest.newBuilder()
@@ -524,6 +550,8 @@ public class RegionOperationsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionOperationsClient regionOperationsClient = RegionOperationsClient.create()) {
    *   WaitRegionOperationRequest request =
    *       WaitRegionOperationRequest.newBuilder()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.PublicAdvertisedPrefixesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -58,7 +57,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefixesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -67,7 +66,7 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeletePublicAdvertisedPrefixeRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeletePublicAdvertisedPrefixeRequest>newBuilder()
@@ -121,7 +120,7 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
           ApiMethodDescriptor
               .<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetPublicAdvertisedPrefixeRequest>newBuilder()
@@ -158,7 +157,7 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertPublicAdvertisedPrefixeRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertPublicAdvertisedPrefixeRequest>newBuilder()
@@ -213,7 +212,7 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
           ApiMethodDescriptor
               .<ListPublicAdvertisedPrefixesRequest, PublicAdvertisedPrefixList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListPublicAdvertisedPrefixesRequest>newBuilder()
@@ -265,7 +264,7 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchPublicAdvertisedPrefixeRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.PublicAdvertisedPrefixes/Patch")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchPublicAdvertisedPrefixeRequest>newBuilder()

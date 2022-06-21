@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionBackendServicesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -61,7 +60,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -70,7 +69,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionBackendServiceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionBackendServiceRequest>newBuilder()
@@ -122,7 +121,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionBackendServiceRequest, BackendService>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionBackendServiceRequest>newBuilder()
@@ -160,7 +159,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
           ApiMethodDescriptor
               .<GetHealthRegionBackendServiceRequest, BackendServiceGroupHealth>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/GetHealth")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetHealthRegionBackendServiceRequest>newBuilder()
@@ -201,7 +200,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionBackendServiceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionBackendServiceRequest>newBuilder()
@@ -256,7 +255,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionBackendServicesRequest, BackendServiceList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionBackendServicesRequest>newBuilder()
@@ -309,7 +308,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
       patchMethodDescriptor =
           ApiMethodDescriptor.<PatchRegionBackendServiceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/Patch")
-              .setHttpMethod(HttpMethods.PATCH)
+              .setHttpMethod("PATCH")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<PatchRegionBackendServiceRequest>newBuilder()
@@ -366,7 +365,7 @@ public class HttpJsonRegionBackendServicesStub extends RegionBackendServicesStub
       updateMethodDescriptor =
           ApiMethodDescriptor.<UpdateRegionBackendServiceRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionBackendServices/Update")
-              .setHttpMethod(HttpMethods.PUT)
+              .setHttpMethod("PUT")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateRegionBackendServiceRequest>newBuilder()

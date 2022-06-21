@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NodeTemplatesSettings nodeTemplatesSettings =
  *     NodeTemplatesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NodeTemplatesSettings nodeTemplatesSettings =
  *     NodeTemplatesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create(nodeTemplatesSettings);
@@ -121,7 +127,6 @@ public class NodeTemplatesClient implements BackgroundResource {
    * Constructs an instance of NodeTemplatesClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(NodeTemplatesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NodeTemplatesClient create(NodeTemplatesStub stub) {
     return new NodeTemplatesClient(stub);
   }
@@ -136,7 +141,6 @@ public class NodeTemplatesClient implements BackgroundResource {
     this.stub = ((NodeTemplatesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected NodeTemplatesClient(NodeTemplatesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -146,7 +150,6 @@ public class NodeTemplatesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public NodeTemplatesStub getStub() {
     return stub;
   }
@@ -158,6 +161,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, NodeTemplatesScopedList> element :
@@ -183,6 +188,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   AggregatedListNodeTemplatesRequest request =
    *       AggregatedListNodeTemplatesRequest.newBuilder()
@@ -216,6 +223,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   AggregatedListNodeTemplatesRequest request =
    *       AggregatedListNodeTemplatesRequest.newBuilder()
@@ -248,6 +257,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   AggregatedListNodeTemplatesRequest request =
    *       AggregatedListNodeTemplatesRequest.newBuilder()
@@ -262,7 +273,7 @@ public class NodeTemplatesClient implements BackgroundResource {
    *   while (true) {
    *     NodeTemplateAggregatedList response =
    *         nodeTemplatesClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, NodeTemplatesScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, NodeTemplatesScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -287,6 +298,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -318,6 +331,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   DeleteNodeTemplateRequest request =
    *       DeleteNodeTemplateRequest.newBuilder()
@@ -347,6 +362,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   DeleteNodeTemplateRequest request =
    *       DeleteNodeTemplateRequest.newBuilder()
@@ -374,6 +391,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   DeleteNodeTemplateRequest request =
    *       DeleteNodeTemplateRequest.newBuilder()
@@ -400,6 +419,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -431,6 +452,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   GetNodeTemplateRequest request =
    *       GetNodeTemplateRequest.newBuilder()
@@ -457,6 +480,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   GetNodeTemplateRequest request =
    *       GetNodeTemplateRequest.newBuilder()
@@ -482,6 +507,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -513,6 +540,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   GetIamPolicyNodeTemplateRequest request =
    *       GetIamPolicyNodeTemplateRequest.newBuilder()
@@ -540,6 +569,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   GetIamPolicyNodeTemplateRequest request =
    *       GetIamPolicyNodeTemplateRequest.newBuilder()
@@ -566,6 +597,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -599,6 +632,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   InsertNodeTemplateRequest request =
    *       InsertNodeTemplateRequest.newBuilder()
@@ -629,6 +664,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   InsertNodeTemplateRequest request =
    *       InsertNodeTemplateRequest.newBuilder()
@@ -657,6 +694,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   InsertNodeTemplateRequest request =
    *       InsertNodeTemplateRequest.newBuilder()
@@ -682,6 +721,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -708,6 +749,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   ListNodeTemplatesRequest request =
    *       ListNodeTemplatesRequest.newBuilder()
@@ -739,6 +782,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   ListNodeTemplatesRequest request =
    *       ListNodeTemplatesRequest.newBuilder()
@@ -769,6 +814,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   ListNodeTemplatesRequest request =
    *       ListNodeTemplatesRequest.newBuilder()
@@ -782,7 +829,7 @@ public class NodeTemplatesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     NodeTemplateList response = nodeTemplatesClient.listCallable().call(request);
-   *     for (NodeTemplate element : response.getResponsesList()) {
+   *     for (NodeTemplate element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -806,6 +853,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -846,6 +895,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   SetIamPolicyNodeTemplateRequest request =
    *       SetIamPolicyNodeTemplateRequest.newBuilder()
@@ -872,6 +923,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   SetIamPolicyNodeTemplateRequest request =
    *       SetIamPolicyNodeTemplateRequest.newBuilder()
@@ -897,6 +950,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -937,6 +992,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   TestIamPermissionsNodeTemplateRequest request =
    *       TestIamPermissionsNodeTemplateRequest.newBuilder()
@@ -964,6 +1021,8 @@ public class NodeTemplatesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   TestIamPermissionsNodeTemplateRequest request =
    *       TestIamPermissionsNodeTemplateRequest.newBuilder()

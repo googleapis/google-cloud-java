@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionTargetHttpProxiesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -58,7 +57,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxiesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -67,7 +66,7 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionTargetHttpProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionTargetHttpProxyRequest>newBuilder()
@@ -119,7 +118,7 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
       getMethodDescriptor =
           ApiMethodDescriptor.<GetRegionTargetHttpProxyRequest, TargetHttpProxy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetRegionTargetHttpProxyRequest>newBuilder()
@@ -155,7 +154,7 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionTargetHttpProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionTargetHttpProxyRequest>newBuilder()
@@ -210,7 +209,7 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
       listMethodDescriptor =
           ApiMethodDescriptor.<ListRegionTargetHttpProxiesRequest, TargetHttpProxyList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListRegionTargetHttpProxiesRequest>newBuilder()
@@ -263,7 +262,7 @@ public class HttpJsonRegionTargetHttpProxiesStub extends RegionTargetHttpProxies
       setUrlMapMethodDescriptor =
           ApiMethodDescriptor.<SetUrlMapRegionTargetHttpProxyRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionTargetHttpProxies/SetUrlMap")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetUrlMapRegionTargetHttpProxyRequest>newBuilder()

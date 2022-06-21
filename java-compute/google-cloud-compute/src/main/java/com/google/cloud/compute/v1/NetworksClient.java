@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (NetworksClient networksClient = NetworksClient.create()) {
  *   String project = "project-309310695";
  *   String network = "network1843485230";
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NetworksSettings networksSettings =
  *     NetworksSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -89,6 +93,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * NetworksSettings networksSettings =
  *     NetworksSettings.newBuilder().setEndpoint(myEndpoint).build();
  * NetworksClient networksClient = NetworksClient.create(networksSettings);
@@ -118,7 +124,6 @@ public class NetworksClient implements BackgroundResource {
    * Constructs an instance of NetworksClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(NetworksSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final NetworksClient create(NetworksStub stub) {
     return new NetworksClient(stub);
   }
@@ -132,7 +137,6 @@ public class NetworksClient implements BackgroundResource {
     this.stub = ((NetworksStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected NetworksClient(NetworksStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -142,7 +146,6 @@ public class NetworksClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public NetworksStub getStub() {
     return stub;
   }
@@ -154,6 +157,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String project = "project-309310695";
    *   String network = "network1843485230";
@@ -187,6 +192,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   AddPeeringNetworkRequest request =
    *       AddPeeringNetworkRequest.newBuilder()
@@ -216,6 +223,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   AddPeeringNetworkRequest request =
    *       AddPeeringNetworkRequest.newBuilder()
@@ -243,6 +252,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   AddPeeringNetworkRequest request =
    *       AddPeeringNetworkRequest.newBuilder()
@@ -268,6 +279,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String project = "project-309310695";
    *   String network = "network1843485230";
@@ -292,6 +305,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   DeleteNetworkRequest request =
    *       DeleteNetworkRequest.newBuilder()
@@ -319,6 +334,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   DeleteNetworkRequest request =
    *       DeleteNetworkRequest.newBuilder()
@@ -345,6 +362,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   DeleteNetworkRequest request =
    *       DeleteNetworkRequest.newBuilder()
@@ -369,6 +388,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String project = "project-309310695";
    *   String network = "network1843485230";
@@ -393,6 +414,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   GetNetworkRequest request =
    *       GetNetworkRequest.newBuilder()
@@ -417,6 +440,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   GetNetworkRequest request =
    *       GetNetworkRequest.newBuilder()
@@ -440,6 +465,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String project = "project-309310695";
    *   String network = "network1843485230";
@@ -469,6 +496,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   GetEffectiveFirewallsNetworkRequest request =
    *       GetEffectiveFirewallsNetworkRequest.newBuilder()
@@ -495,6 +524,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   GetEffectiveFirewallsNetworkRequest request =
    *       GetEffectiveFirewallsNetworkRequest.newBuilder()
@@ -521,6 +552,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String project = "project-309310695";
    *   Network networkResource = Network.newBuilder().build();
@@ -549,6 +582,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   InsertNetworkRequest request =
    *       InsertNetworkRequest.newBuilder()
@@ -576,6 +611,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   InsertNetworkRequest request =
    *       InsertNetworkRequest.newBuilder()
@@ -602,6 +639,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   InsertNetworkRequest request =
    *       InsertNetworkRequest.newBuilder()
@@ -626,6 +665,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String project = "project-309310695";
    *   for (Network element : networksClient.list(project).iterateAll()) {
@@ -649,6 +690,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   ListNetworksRequest request =
    *       ListNetworksRequest.newBuilder()
@@ -679,6 +722,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   ListNetworksRequest request =
    *       ListNetworksRequest.newBuilder()
@@ -708,6 +753,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   ListNetworksRequest request =
    *       ListNetworksRequest.newBuilder()
@@ -720,7 +767,7 @@ public class NetworksClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     NetworkList response = networksClient.listCallable().call(request);
-   *     for (Network element : response.getResponsesList()) {
+   *     for (Network element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -744,6 +791,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String project = "project-309310695";
    *   String network = "network1843485230";
@@ -774,6 +823,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   ListPeeringRoutesNetworksRequest request =
    *       ListPeeringRoutesNetworksRequest.newBuilder()
@@ -809,6 +860,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   ListPeeringRoutesNetworksRequest request =
    *       ListPeeringRoutesNetworksRequest.newBuilder()
@@ -844,6 +897,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   ListPeeringRoutesNetworksRequest request =
    *       ListPeeringRoutesNetworksRequest.newBuilder()
@@ -861,7 +916,7 @@ public class NetworksClient implements BackgroundResource {
    *   while (true) {
    *     ExchangedPeeringRoutesList response =
    *         networksClient.listPeeringRoutesCallable().call(request);
-   *     for (ExchangedPeeringRoute element : response.getResponsesList()) {
+   *     for (ExchangedPeeringRoute element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -887,6 +942,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String project = "project-309310695";
    *   String network = "network1843485230";
@@ -919,6 +976,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   PatchNetworkRequest request =
    *       PatchNetworkRequest.newBuilder()
@@ -948,6 +1007,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   PatchNetworkRequest request =
    *       PatchNetworkRequest.newBuilder()
@@ -976,6 +1037,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   PatchNetworkRequest request =
    *       PatchNetworkRequest.newBuilder()
@@ -1001,6 +1064,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String project = "project-309310695";
    *   String network = "network1843485230";
@@ -1038,6 +1103,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   RemovePeeringNetworkRequest request =
    *       RemovePeeringNetworkRequest.newBuilder()
@@ -1068,6 +1135,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   RemovePeeringNetworkRequest request =
    *       RemovePeeringNetworkRequest.newBuilder()
@@ -1096,6 +1165,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   RemovePeeringNetworkRequest request =
    *       RemovePeeringNetworkRequest.newBuilder()
@@ -1122,6 +1193,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String project = "project-309310695";
    *   String network = "network1843485230";
@@ -1150,6 +1223,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   SwitchToCustomModeNetworkRequest request =
    *       SwitchToCustomModeNetworkRequest.newBuilder()
@@ -1178,6 +1253,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   SwitchToCustomModeNetworkRequest request =
    *       SwitchToCustomModeNetworkRequest.newBuilder()
@@ -1204,6 +1281,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   SwitchToCustomModeNetworkRequest request =
    *       SwitchToCustomModeNetworkRequest.newBuilder()
@@ -1231,6 +1310,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String project = "project-309310695";
    *   String network = "network1843485230";
@@ -1270,6 +1351,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   UpdatePeeringNetworkRequest request =
    *       UpdatePeeringNetworkRequest.newBuilder()
@@ -1302,6 +1385,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   UpdatePeeringNetworkRequest request =
    *       UpdatePeeringNetworkRequest.newBuilder()
@@ -1332,6 +1417,8 @@ public class NetworksClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   UpdatePeeringNetworkRequest request =
    *       UpdatePeeringNetworkRequest.newBuilder()

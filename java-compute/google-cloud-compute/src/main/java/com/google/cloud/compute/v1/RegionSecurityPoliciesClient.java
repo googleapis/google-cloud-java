@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
  *     RegionSecurityPoliciesClient.create()) {
  *   String project = "project-309310695";
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionSecurityPoliciesSettings regionSecurityPoliciesSettings =
  *     RegionSecurityPoliciesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,6 +97,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionSecurityPoliciesSettings regionSecurityPoliciesSettings =
  *     RegionSecurityPoliciesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionSecurityPoliciesClient regionSecurityPoliciesClient =
@@ -124,7 +130,6 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * Constructs an instance of RegionSecurityPoliciesClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(RegionSecurityPoliciesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionSecurityPoliciesClient create(RegionSecurityPoliciesStub stub) {
     return new RegionSecurityPoliciesClient(stub);
   }
@@ -140,7 +145,6 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
     this.stub = ((RegionSecurityPoliciesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RegionSecurityPoliciesClient(RegionSecurityPoliciesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -150,7 +154,6 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegionSecurityPoliciesStub getStub() {
     return stub;
   }
@@ -162,6 +165,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
@@ -195,6 +200,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   DeleteRegionSecurityPolicyRequest request =
@@ -225,6 +232,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   DeleteRegionSecurityPolicyRequest request =
@@ -253,6 +262,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   DeleteRegionSecurityPolicyRequest request =
@@ -280,6 +291,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
@@ -311,6 +324,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   GetRegionSecurityPolicyRequest request =
@@ -337,6 +352,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   GetRegionSecurityPolicyRequest request =
@@ -363,6 +380,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
@@ -396,6 +415,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   InsertRegionSecurityPolicyRequest request =
@@ -427,6 +448,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   InsertRegionSecurityPolicyRequest request =
@@ -456,6 +479,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   InsertRegionSecurityPolicyRequest request =
@@ -484,6 +509,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
@@ -515,6 +542,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   ListRegionSecurityPoliciesRequest request =
@@ -547,6 +576,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   ListRegionSecurityPoliciesRequest request =
@@ -580,6 +611,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   ListRegionSecurityPoliciesRequest request =
@@ -594,7 +627,7 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     SecurityPolicyList response = regionSecurityPoliciesClient.listCallable().call(request);
-   *     for (SecurityPolicy element : response.getResponsesList()) {
+   *     for (SecurityPolicy element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -618,6 +651,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   String project = "project-309310695";
@@ -656,6 +691,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   PatchRegionSecurityPolicyRequest request =
@@ -687,6 +724,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   PatchRegionSecurityPolicyRequest request =
@@ -716,6 +755,8 @@ public class RegionSecurityPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionSecurityPoliciesClient regionSecurityPoliciesClient =
    *     RegionSecurityPoliciesClient.create()) {
    *   PatchRegionSecurityPolicyRequest request =

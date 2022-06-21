@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
  *     RegionNetworkEndpointGroupsClient.create()) {
  *   String project = "project-309310695";
@@ -83,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionNetworkEndpointGroupsSettings regionNetworkEndpointGroupsSettings =
  *     RegionNetworkEndpointGroupsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -94,6 +98,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * RegionNetworkEndpointGroupsSettings regionNetworkEndpointGroupsSettings =
  *     RegionNetworkEndpointGroupsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
@@ -126,7 +132,6 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * Constructs an instance of RegionNetworkEndpointGroupsClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(RegionNetworkEndpointGroupsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final RegionNetworkEndpointGroupsClient create(
       RegionNetworkEndpointGroupsStub stub) {
     return new RegionNetworkEndpointGroupsClient(stub);
@@ -143,7 +148,6 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
     this.stub = ((RegionNetworkEndpointGroupsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected RegionNetworkEndpointGroupsClient(RegionNetworkEndpointGroupsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -153,7 +157,6 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public RegionNetworkEndpointGroupsStub getStub() {
     return stub;
   }
@@ -166,6 +169,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -204,6 +209,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   DeleteRegionNetworkEndpointGroupRequest request =
@@ -235,6 +242,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   DeleteRegionNetworkEndpointGroupRequest request =
@@ -264,6 +273,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   DeleteRegionNetworkEndpointGroupRequest request =
@@ -292,6 +303,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -328,6 +341,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   GetRegionNetworkEndpointGroupRequest request =
@@ -355,6 +370,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   GetRegionNetworkEndpointGroupRequest request =
@@ -383,6 +400,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -420,6 +439,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   InsertRegionNetworkEndpointGroupRequest request =
@@ -451,6 +472,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   InsertRegionNetworkEndpointGroupRequest request =
@@ -480,6 +503,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   InsertRegionNetworkEndpointGroupRequest request =
@@ -508,6 +533,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   String project = "project-309310695";
@@ -541,6 +568,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   ListRegionNetworkEndpointGroupsRequest request =
@@ -575,6 +604,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   ListRegionNetworkEndpointGroupsRequest request =
@@ -609,6 +640,8 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient =
    *     RegionNetworkEndpointGroupsClient.create()) {
    *   ListRegionNetworkEndpointGroupsRequest request =
@@ -624,7 +657,7 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *   while (true) {
    *     NetworkEndpointGroupList response =
    *         regionNetworkEndpointGroupsClient.listCallable().call(request);
-   *     for (NetworkEndpointGroup element : response.getResponsesList()) {
+   *     for (NetworkEndpointGroup element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

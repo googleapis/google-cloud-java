@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionDisksClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -67,7 +66,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonRegionDisksStub extends RegionDisksStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -76,7 +75,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
       addResourcePoliciesMethodDescriptor =
           ApiMethodDescriptor.<AddResourcePoliciesRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/AddResourcePolicies")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<AddResourcePoliciesRegionDiskRequest>newBuilder()
@@ -132,7 +131,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
       createSnapshotMethodDescriptor =
           ApiMethodDescriptor.<CreateSnapshotRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/CreateSnapshot")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<CreateSnapshotRegionDiskRequest>newBuilder()
@@ -186,7 +185,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteRegionDiskRequest>newBuilder()
@@ -236,7 +235,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
   private static final ApiMethodDescriptor<GetRegionDiskRequest, Disk> getMethodDescriptor =
       ApiMethodDescriptor.<GetRegionDiskRequest, Disk>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.RegionDisks/Get")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<GetRegionDiskRequest>newBuilder()
@@ -271,7 +270,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyRegionDiskRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/GetIamPolicy")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyRegionDiskRequest>newBuilder()
@@ -312,7 +311,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertRegionDiskRequest>newBuilder()
@@ -368,7 +367,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
   private static final ApiMethodDescriptor<ListRegionDisksRequest, DiskList> listMethodDescriptor =
       ApiMethodDescriptor.<ListRegionDisksRequest, DiskList>newBuilder()
           .setFullMethodName("google.cloud.compute.v1.RegionDisks/List")
-          .setHttpMethod(HttpMethods.GET)
+          .setHttpMethod("GET")
           .setType(ApiMethodDescriptor.MethodType.UNARY)
           .setRequestFormatter(
               ProtoMessageRequestFormatter.<ListRegionDisksRequest>newBuilder()
@@ -418,7 +417,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
       removeResourcePoliciesMethodDescriptor =
           ApiMethodDescriptor.<RemoveResourcePoliciesRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/RemoveResourcePolicies")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<RemoveResourcePoliciesRegionDiskRequest>newBuilder()
@@ -475,7 +474,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
       resizeMethodDescriptor =
           ApiMethodDescriptor.<ResizeRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/Resize")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ResizeRegionDiskRequest>newBuilder()
@@ -531,7 +530,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyRegionDiskRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/SetIamPolicy")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyRegionDiskRequest>newBuilder()
@@ -571,7 +570,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
       setLabelsMethodDescriptor =
           ApiMethodDescriptor.<SetLabelsRegionDiskRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/SetLabels")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetLabelsRegionDiskRequest>newBuilder()
@@ -629,7 +628,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
           ApiMethodDescriptor
               .<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.RegionDisks/TestIamPermissions")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<TestIamPermissionsRegionDiskRequest>newBuilder()

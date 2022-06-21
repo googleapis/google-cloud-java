@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.InstanceTemplatesClient.ListPagedResponse;
 
-import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -62,7 +61,7 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
 public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -71,7 +70,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
       deleteMethodDescriptor =
           ApiMethodDescriptor.<DeleteInstanceTemplateRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/Delete")
-              .setHttpMethod(HttpMethods.DELETE)
+              .setHttpMethod("DELETE")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteInstanceTemplateRequest>newBuilder()
@@ -121,7 +120,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
       getMethodDescriptor =
           ApiMethodDescriptor.<GetInstanceTemplateRequest, InstanceTemplate>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/Get")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetInstanceTemplateRequest>newBuilder()
@@ -156,7 +155,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
       getIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<GetIamPolicyInstanceTemplateRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/GetIamPolicy")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetIamPolicyInstanceTemplateRequest>newBuilder()
@@ -196,7 +195,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
       insertMethodDescriptor =
           ApiMethodDescriptor.<InsertInstanceTemplateRequest, Operation>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/Insert")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<InsertInstanceTemplateRequest>newBuilder()
@@ -249,7 +248,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
       listMethodDescriptor =
           ApiMethodDescriptor.<ListInstanceTemplatesRequest, InstanceTemplateList>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/List")
-              .setHttpMethod(HttpMethods.GET)
+              .setHttpMethod("GET")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInstanceTemplatesRequest>newBuilder()
@@ -301,7 +300,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
       setIamPolicyMethodDescriptor =
           ApiMethodDescriptor.<SetIamPolicyInstanceTemplateRequest, Policy>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/SetIamPolicy")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<SetIamPolicyInstanceTemplateRequest>newBuilder()
@@ -342,7 +341,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
           ApiMethodDescriptor
               .<TestIamPermissionsInstanceTemplateRequest, TestPermissionsResponse>newBuilder()
               .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/TestIamPermissions")
-              .setHttpMethod(HttpMethods.POST)
+              .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
                   ProtoMessageRequestFormatter

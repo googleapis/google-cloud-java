@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
  *   String project = "project-309310695";
  *   String region = "region-934795532";
@@ -81,6 +83,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * VpnTunnelsSettings vpnTunnelsSettings =
  *     VpnTunnelsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +95,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * VpnTunnelsSettings vpnTunnelsSettings =
  *     VpnTunnelsSettings.newBuilder().setEndpoint(myEndpoint).build();
  * VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create(vpnTunnelsSettings);
@@ -120,7 +126,6 @@ public class VpnTunnelsClient implements BackgroundResource {
    * Constructs an instance of VpnTunnelsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(VpnTunnelsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final VpnTunnelsClient create(VpnTunnelsStub stub) {
     return new VpnTunnelsClient(stub);
   }
@@ -134,7 +139,6 @@ public class VpnTunnelsClient implements BackgroundResource {
     this.stub = ((VpnTunnelsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected VpnTunnelsClient(VpnTunnelsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -144,7 +148,6 @@ public class VpnTunnelsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public VpnTunnelsStub getStub() {
     return stub;
   }
@@ -156,6 +159,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   String project = "project-309310695";
    *   for (Map.Entry<String, VpnTunnelsScopedList> element :
@@ -181,6 +186,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   AggregatedListVpnTunnelsRequest request =
    *       AggregatedListVpnTunnelsRequest.newBuilder()
@@ -213,6 +220,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   AggregatedListVpnTunnelsRequest request =
    *       AggregatedListVpnTunnelsRequest.newBuilder()
@@ -245,6 +254,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   AggregatedListVpnTunnelsRequest request =
    *       AggregatedListVpnTunnelsRequest.newBuilder()
@@ -258,7 +269,7 @@ public class VpnTunnelsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     VpnTunnelAggregatedList response = vpnTunnelsClient.aggregatedListCallable().call(request);
-   *     for (Map.Entry<String, VpnTunnelsScopedList> element : response.getResponsesList()) {
+   *     for (Map.Entry<String, VpnTunnelsScopedList> element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -283,6 +294,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -314,6 +327,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   DeleteVpnTunnelRequest request =
    *       DeleteVpnTunnelRequest.newBuilder()
@@ -342,6 +357,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   DeleteVpnTunnelRequest request =
    *       DeleteVpnTunnelRequest.newBuilder()
@@ -369,6 +386,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   DeleteVpnTunnelRequest request =
    *       DeleteVpnTunnelRequest.newBuilder()
@@ -395,6 +414,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -426,6 +447,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   GetVpnTunnelRequest request =
    *       GetVpnTunnelRequest.newBuilder()
@@ -452,6 +475,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   GetVpnTunnelRequest request =
    *       GetVpnTunnelRequest.newBuilder()
@@ -477,6 +502,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -509,6 +536,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   InsertVpnTunnelRequest request =
    *       InsertVpnTunnelRequest.newBuilder()
@@ -538,6 +567,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   InsertVpnTunnelRequest request =
    *       InsertVpnTunnelRequest.newBuilder()
@@ -566,6 +597,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   InsertVpnTunnelRequest request =
    *       InsertVpnTunnelRequest.newBuilder()
@@ -591,6 +624,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   String project = "project-309310695";
    *   String region = "region-934795532";
@@ -617,6 +652,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   ListVpnTunnelsRequest request =
    *       ListVpnTunnelsRequest.newBuilder()
@@ -648,6 +685,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   ListVpnTunnelsRequest request =
    *       ListVpnTunnelsRequest.newBuilder()
@@ -678,6 +717,8 @@ public class VpnTunnelsClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (VpnTunnelsClient vpnTunnelsClient = VpnTunnelsClient.create()) {
    *   ListVpnTunnelsRequest request =
    *       ListVpnTunnelsRequest.newBuilder()
@@ -691,7 +732,7 @@ public class VpnTunnelsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     VpnTunnelList response = vpnTunnelsClient.listCallable().call(request);
-   *     for (VpnTunnel element : response.getResponsesList()) {
+   *     for (VpnTunnel element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

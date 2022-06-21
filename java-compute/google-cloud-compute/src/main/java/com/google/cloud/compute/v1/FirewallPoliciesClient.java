@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
  *   String firewallPolicy = "firewallPolicy1819692626";
  *   FirewallPolicy response = firewallPoliciesClient.get(firewallPolicy);
@@ -79,6 +81,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * FirewallPoliciesSettings firewallPoliciesSettings =
  *     FirewallPoliciesSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -90,6 +94,8 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * FirewallPoliciesSettings firewallPoliciesSettings =
  *     FirewallPoliciesSettings.newBuilder().setEndpoint(myEndpoint).build();
  * FirewallPoliciesClient firewallPoliciesClient =
@@ -121,7 +127,6 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * Constructs an instance of FirewallPoliciesClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(FirewallPoliciesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final FirewallPoliciesClient create(FirewallPoliciesStub stub) {
     return new FirewallPoliciesClient(stub);
   }
@@ -136,7 +141,6 @@ public class FirewallPoliciesClient implements BackgroundResource {
     this.stub = ((FirewallPoliciesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected FirewallPoliciesClient(FirewallPoliciesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -146,7 +150,6 @@ public class FirewallPoliciesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FirewallPoliciesStub getStub() {
     return stub;
   }
@@ -158,6 +161,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
    *   FirewallPolicyAssociation firewallPolicyAssociationResource =
@@ -190,6 +195,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   AddAssociationFirewallPolicyRequest request =
    *       AddAssociationFirewallPolicyRequest.newBuilder()
@@ -219,6 +226,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   AddAssociationFirewallPolicyRequest request =
    *       AddAssociationFirewallPolicyRequest.newBuilder()
@@ -246,6 +255,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   AddAssociationFirewallPolicyRequest request =
    *       AddAssociationFirewallPolicyRequest.newBuilder()
@@ -273,6 +284,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
    *   FirewallPolicyRule firewallPolicyRuleResource = FirewallPolicyRule.newBuilder().build();
@@ -302,6 +315,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   AddRuleFirewallPolicyRequest request =
    *       AddRuleFirewallPolicyRequest.newBuilder()
@@ -330,6 +345,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   AddRuleFirewallPolicyRequest request =
    *       AddRuleFirewallPolicyRequest.newBuilder()
@@ -356,6 +373,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   AddRuleFirewallPolicyRequest request =
    *       AddRuleFirewallPolicyRequest.newBuilder()
@@ -380,6 +399,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
    *   Operation response = firewallPoliciesClient.cloneRulesAsync(firewallPolicy).get();
@@ -402,6 +423,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   CloneRulesFirewallPolicyRequest request =
    *       CloneRulesFirewallPolicyRequest.newBuilder()
@@ -430,6 +453,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   CloneRulesFirewallPolicyRequest request =
    *       CloneRulesFirewallPolicyRequest.newBuilder()
@@ -456,6 +481,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   CloneRulesFirewallPolicyRequest request =
    *       CloneRulesFirewallPolicyRequest.newBuilder()
@@ -480,6 +507,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
    *   Operation response = firewallPoliciesClient.deleteAsync(firewallPolicy).get();
@@ -502,6 +531,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   DeleteFirewallPolicyRequest request =
    *       DeleteFirewallPolicyRequest.newBuilder()
@@ -529,6 +560,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   DeleteFirewallPolicyRequest request =
    *       DeleteFirewallPolicyRequest.newBuilder()
@@ -554,6 +587,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   DeleteFirewallPolicyRequest request =
    *       DeleteFirewallPolicyRequest.newBuilder()
@@ -577,6 +612,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
    *   FirewallPolicy response = firewallPoliciesClient.get(firewallPolicy);
@@ -599,6 +636,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   GetFirewallPolicyRequest request =
    *       GetFirewallPolicyRequest.newBuilder()
@@ -622,6 +661,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   GetFirewallPolicyRequest request =
    *       GetFirewallPolicyRequest.newBuilder()
@@ -644,6 +685,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
    *   FirewallPolicyAssociation response = firewallPoliciesClient.getAssociation(firewallPolicy);
@@ -666,6 +709,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   GetAssociationFirewallPolicyRequest request =
    *       GetAssociationFirewallPolicyRequest.newBuilder()
@@ -691,6 +736,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   GetAssociationFirewallPolicyRequest request =
    *       GetAssociationFirewallPolicyRequest.newBuilder()
@@ -717,6 +764,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String resource = "resource-341064690";
    *   Policy response = firewallPoliciesClient.getIamPolicy(resource);
@@ -740,6 +789,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   GetIamPolicyFirewallPolicyRequest request =
    *       GetIamPolicyFirewallPolicyRequest.newBuilder()
@@ -765,6 +816,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   GetIamPolicyFirewallPolicyRequest request =
    *       GetIamPolicyFirewallPolicyRequest.newBuilder()
@@ -788,6 +841,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
    *   FirewallPolicyRule response = firewallPoliciesClient.getRule(firewallPolicy);
@@ -810,6 +865,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   GetRuleFirewallPolicyRequest request =
    *       GetRuleFirewallPolicyRequest.newBuilder()
@@ -834,6 +891,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   GetRuleFirewallPolicyRequest request =
    *       GetRuleFirewallPolicyRequest.newBuilder()
@@ -858,6 +917,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String parentId = "parentId1175162725";
    *   FirewallPolicy firewallPolicyResource = FirewallPolicy.newBuilder().build();
@@ -889,6 +950,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   InsertFirewallPolicyRequest request =
    *       InsertFirewallPolicyRequest.newBuilder()
@@ -917,6 +980,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   InsertFirewallPolicyRequest request =
    *       InsertFirewallPolicyRequest.newBuilder()
@@ -943,6 +1008,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   InsertFirewallPolicyRequest request =
    *       InsertFirewallPolicyRequest.newBuilder()
@@ -967,6 +1034,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   for (FirewallPolicy element : firewallPoliciesClient.list().iterateAll()) {
    *     // doThingsWith(element);
@@ -989,6 +1058,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   ListFirewallPoliciesRequest request =
    *       ListFirewallPoliciesRequest.newBuilder()
@@ -1019,6 +1090,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   ListFirewallPoliciesRequest request =
    *       ListFirewallPoliciesRequest.newBuilder()
@@ -1049,6 +1122,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   ListFirewallPoliciesRequest request =
    *       ListFirewallPoliciesRequest.newBuilder()
@@ -1061,7 +1136,7 @@ public class FirewallPoliciesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     FirewallPolicyList response = firewallPoliciesClient.listCallable().call(request);
-   *     for (FirewallPolicy element : response.getResponsesList()) {
+   *     for (FirewallPolicy element : response.getItemsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1085,6 +1160,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   FirewallPoliciesListAssociationsResponse response = firewallPoliciesClient.listAssociations();
    * }
@@ -1106,6 +1183,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   ListAssociationsFirewallPolicyRequest request =
    *       ListAssociationsFirewallPolicyRequest.newBuilder()
@@ -1131,6 +1210,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   ListAssociationsFirewallPolicyRequest request =
    *       ListAssociationsFirewallPolicyRequest.newBuilder()
@@ -1156,6 +1237,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
    *   String parentId = "parentId1175162725";
@@ -1184,6 +1267,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   MoveFirewallPolicyRequest request =
    *       MoveFirewallPolicyRequest.newBuilder()
@@ -1211,6 +1296,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   MoveFirewallPolicyRequest request =
    *       MoveFirewallPolicyRequest.newBuilder()
@@ -1237,6 +1324,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   MoveFirewallPolicyRequest request =
    *       MoveFirewallPolicyRequest.newBuilder()
@@ -1261,6 +1350,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
    *   FirewallPolicy firewallPolicyResource = FirewallPolicy.newBuilder().build();
@@ -1290,6 +1381,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   PatchFirewallPolicyRequest request =
    *       PatchFirewallPolicyRequest.newBuilder()
@@ -1318,6 +1411,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   PatchFirewallPolicyRequest request =
    *       PatchFirewallPolicyRequest.newBuilder()
@@ -1344,6 +1439,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   PatchFirewallPolicyRequest request =
    *       PatchFirewallPolicyRequest.newBuilder()
@@ -1368,6 +1465,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
    *   FirewallPolicyRule firewallPolicyRuleResource = FirewallPolicyRule.newBuilder().build();
@@ -1397,6 +1496,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   PatchRuleFirewallPolicyRequest request =
    *       PatchRuleFirewallPolicyRequest.newBuilder()
@@ -1426,6 +1527,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   PatchRuleFirewallPolicyRequest request =
    *       PatchRuleFirewallPolicyRequest.newBuilder()
@@ -1453,6 +1556,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   PatchRuleFirewallPolicyRequest request =
    *       PatchRuleFirewallPolicyRequest.newBuilder()
@@ -1478,6 +1583,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
    *   Operation response = firewallPoliciesClient.removeAssociationAsync(firewallPolicy).get();
@@ -1502,6 +1609,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   RemoveAssociationFirewallPolicyRequest request =
    *       RemoveAssociationFirewallPolicyRequest.newBuilder()
@@ -1530,6 +1639,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   RemoveAssociationFirewallPolicyRequest request =
    *       RemoveAssociationFirewallPolicyRequest.newBuilder()
@@ -1556,6 +1667,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   RemoveAssociationFirewallPolicyRequest request =
    *       RemoveAssociationFirewallPolicyRequest.newBuilder()
@@ -1582,6 +1695,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
    *   Operation response = firewallPoliciesClient.removeRuleAsync(firewallPolicy).get();
@@ -1604,6 +1719,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   RemoveRuleFirewallPolicyRequest request =
    *       RemoveRuleFirewallPolicyRequest.newBuilder()
@@ -1632,6 +1749,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   RemoveRuleFirewallPolicyRequest request =
    *       RemoveRuleFirewallPolicyRequest.newBuilder()
@@ -1658,6 +1777,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   RemoveRuleFirewallPolicyRequest request =
    *       RemoveRuleFirewallPolicyRequest.newBuilder()
@@ -1682,6 +1803,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String resource = "resource-341064690";
    *   GlobalOrganizationSetPolicyRequest globalOrganizationSetPolicyRequestResource =
@@ -1714,6 +1837,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   SetIamPolicyFirewallPolicyRequest request =
    *       SetIamPolicyFirewallPolicyRequest.newBuilder()
@@ -1739,6 +1864,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   SetIamPolicyFirewallPolicyRequest request =
    *       SetIamPolicyFirewallPolicyRequest.newBuilder()
@@ -1763,6 +1890,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String resource = "resource-341064690";
    *   TestPermissionsRequest testPermissionsRequestResource =
@@ -1793,6 +1922,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   TestIamPermissionsFirewallPolicyRequest request =
    *       TestIamPermissionsFirewallPolicyRequest.newBuilder()
@@ -1818,6 +1949,8 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   TestIamPermissionsFirewallPolicyRequest request =
    *       TestIamPermissionsFirewallPolicyRequest.newBuilder()

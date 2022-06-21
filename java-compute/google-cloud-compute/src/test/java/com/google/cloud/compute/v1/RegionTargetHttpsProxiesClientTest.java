@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,6 +153,7 @@ public class RegionTargetHttpsProxiesClientTest {
     TargetHttpsProxy expectedResponse =
         TargetHttpsProxy.newBuilder()
             .setAuthorizationPolicy("authorizationPolicy1042707211")
+            .setCertificateMap("certificateMap1494413381")
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setFingerprint("fingerprint-1375934236")
