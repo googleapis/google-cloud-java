@@ -132,36 +132,36 @@ public interface FunnelFilterExpressionOrBuilder
    *
    *
    * <pre>
-   * A primitive funnel filter.
+   * A funnel filter for a dimension or metric.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+   * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
    *
-   * @return Whether the funnelFilter field is set.
+   * @return Whether the funnelFieldFilter field is set.
    */
-  boolean hasFunnelFilter();
+  boolean hasFunnelFieldFilter();
   /**
    *
    *
    * <pre>
-   * A primitive funnel filter.
+   * A funnel filter for a dimension or metric.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+   * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
    *
-   * @return The funnelFilter.
+   * @return The funnelFieldFilter.
    */
-  com.google.analytics.data.v1alpha.FunnelFilter getFunnelFilter();
+  com.google.analytics.data.v1alpha.FunnelFieldFilter getFunnelFieldFilter();
   /**
    *
    *
    * <pre>
-   * A primitive funnel filter.
+   * A funnel filter for a dimension or metric.
    * </pre>
    *
-   * <code>.google.analytics.data.v1alpha.FunnelFilter funnel_filter = 4;</code>
+   * <code>.google.analytics.data.v1alpha.FunnelFieldFilter funnel_field_filter = 4;</code>
    */
-  com.google.analytics.data.v1alpha.FunnelFilterOrBuilder getFunnelFilterOrBuilder();
+  com.google.analytics.data.v1alpha.FunnelFieldFilterOrBuilder getFunnelFieldFilterOrBuilder();
 
   /**
    *

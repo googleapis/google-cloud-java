@@ -232,9 +232,9 @@ public final class ReportingApiProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_analytics_data_v1alpha_FunnelFilterExpressionList_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_analytics_data_v1alpha_FunnelFilter_descriptor;
+      internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_analytics_data_v1alpha_FunnelFilter_fieldAccessorTable;
+      internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_analytics_data_v1alpha_FunnelEventFilter_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -499,91 +499,92 @@ public final class ReportingApiProto {
           + "terScopingB\017\n\rone_parameterB\014\n\none_filte"
           + "r\"Y\n\035SegmentParameterFilterScoping\022 \n\023in"
           + "_any_n_day_period\030\001 \001(\003H\000\210\001\001B\026\n\024_in_any_"
-          + "n_day_period\"\247\003\n\026FunnelFilterExpression\022"
+          + "n_day_period\"\262\003\n\026FunnelFilterExpression\022"
           + "N\n\tand_group\030\001 \001(\01329.google.analytics.da"
           + "ta.v1alpha.FunnelFilterExpressionListH\000\022"
           + "M\n\010or_group\030\002 \001(\01329.google.analytics.dat"
           + "a.v1alpha.FunnelFilterExpressionListH\000\022O"
           + "\n\016not_expression\030\003 \001(\01325.google.analytic"
           + "s.data.v1alpha.FunnelFilterExpressionH\000\022"
-          + "D\n\rfunnel_filter\030\004 \001(\0132+.google.analytic"
-          + "s.data.v1alpha.FunnelFilterH\000\022O\n\023funnel_"
-          + "event_filter\030\005 \001(\01320.google.analytics.da"
-          + "ta.v1alpha.FunnelEventFilterH\000B\006\n\004expr\"h"
-          + "\n\032FunnelFilterExpressionList\022J\n\013expressi"
-          + "ons\030\001 \003(\01325.google.analytics.data.v1alph"
-          + "a.FunnelFilterExpression\"\315\002\n\014FunnelFilte"
-          + "r\022\022\n\nfield_name\030\001 \001(\t\022D\n\rstring_filter\030\004"
-          + " \001(\0132+.google.analytics.data.v1alpha.Str"
-          + "ingFilterH\000\022E\n\016in_list_filter\030\005 \001(\0132+.go"
-          + "ogle.analytics.data.v1alpha.InListFilter"
-          + "H\000\022F\n\016numeric_filter\030\006 \001(\0132,.google.anal"
-          + "ytics.data.v1alpha.NumericFilterH\000\022F\n\016be"
-          + "tween_filter\030\007 \001(\0132,.google.analytics.da"
-          + "ta.v1alpha.BetweenFilterH\000B\014\n\none_filter"
-          + "\"\323\001\n\021FunnelEventFilter\022\027\n\nevent_name\030\001 \001"
-          + "(\tH\000\210\001\001\022o\n\"funnel_parameter_filter_expre"
-          + "ssion\030\002 \001(\0132>.google.analytics.data.v1al"
-          + "pha.FunnelParameterFilterExpressionH\001\210\001\001"
-          + "B\r\n\013_event_nameB%\n#_funnel_parameter_fil"
-          + "ter_expression\"\215\003\n\037FunnelParameterFilter"
-          + "Expression\022W\n\tand_group\030\001 \001(\0132B.google.a"
-          + "nalytics.data.v1alpha.FunnelParameterFil"
-          + "terExpressionListH\000\022V\n\010or_group\030\002 \001(\0132B."
-          + "google.analytics.data.v1alpha.FunnelPara"
-          + "meterFilterExpressionListH\000\022X\n\016not_expre"
-          + "ssion\030\003 \001(\0132>.google.analytics.data.v1al"
-          + "pha.FunnelParameterFilterExpressionH\000\022W\n"
-          + "\027funnel_parameter_filter\030\004 \001(\01324.google."
-          + "analytics.data.v1alpha.FunnelParameterFi"
-          + "lterH\000B\006\n\004expr\"z\n#FunnelParameterFilterE"
-          + "xpressionList\022S\n\013expressions\030\001 \003(\0132>.goo"
-          + "gle.analytics.data.v1alpha.FunnelParamet"
-          + "erFilterExpression\"\222\003\n\025FunnelParameterFi"
-          + "lter\022\036\n\024event_parameter_name\030\001 \001(\tH\000\022\035\n\023"
-          + "item_parameter_name\030\002 \001(\tH\000\022D\n\rstring_fi"
-          + "lter\030\004 \001(\0132+.google.analytics.data.v1alp"
-          + "ha.StringFilterH\001\022E\n\016in_list_filter\030\005 \001("
-          + "\0132+.google.analytics.data.v1alpha.InList"
-          + "FilterH\001\022F\n\016numeric_filter\030\006 \001(\0132,.googl"
-          + "e.analytics.data.v1alpha.NumericFilterH\001"
-          + "\022F\n\016between_filter\030\007 \001(\0132,.google.analyt"
-          + "ics.data.v1alpha.BetweenFilterH\001B\017\n\rone_"
-          + "parameterB\014\n\none_filter\"e\n\026FunnelRespons"
-          + "eMetadata\022K\n\022sampling_metadatas\030\001 \003(\0132/."
-          + "google.analytics.data.v1alpha.SamplingMe"
-          + "tadata\"K\n\020SamplingMetadata\022\032\n\022samples_re"
-          + "ad_count\030\001 \001(\003\022\033\n\023sampling_space_size\030\002 "
-          + "\001(\003*\257\001\n\023UserCriteriaScoping\022%\n!USER_CRIT"
-          + "ERIA_SCOPING_UNSPECIFIED\020\000\022#\n\037USER_CRITE"
-          + "RIA_WITHIN_SAME_EVENT\020\001\022%\n!USER_CRITERIA"
-          + "_WITHIN_SAME_SESSION\020\002\022%\n!USER_CRITERIA_"
-          + "ACROSS_ALL_SESSIONS\020\003*|\n\025UserExclusionDu"
-          + "ration\022\'\n#USER_EXCLUSION_DURATION_UNSPEC"
-          + "IFIED\020\000\022\034\n\030USER_EXCLUSION_TEMPORARY\020\001\022\034\n"
-          + "\030USER_EXCLUSION_PERMANENT\020\002*\224\001\n\026SessionC"
-          + "riteriaScoping\022(\n$SESSION_CRITERIA_SCOPI"
-          + "NG_UNSPECIFIED\020\000\022&\n\"SESSION_CRITERIA_WIT"
-          + "HIN_SAME_EVENT\020\001\022(\n$SESSION_CRITERIA_WIT"
-          + "HIN_SAME_SESSION\020\002*\210\001\n\030SessionExclusionD"
-          + "uration\022*\n&SESSION_EXCLUSION_DURATION_UN"
-          + "SPECIFIED\020\000\022\037\n\033SESSION_EXCLUSION_TEMPORA"
-          + "RY\020\001\022\037\n\033SESSION_EXCLUSION_PERMANENT\020\002*d\n"
-          + "\024EventCriteriaScoping\022&\n\"EVENT_CRITERIA_"
-          + "SCOPING_UNSPECIFIED\020\000\022$\n EVENT_CRITERIA_"
-          + "WITHIN_SAME_EVENT\020\001*a\n\026EventExclusionDur"
-          + "ation\022(\n$EVENT_EXCLUSION_DURATION_UNSPEC"
-          + "IFIED\020\000\022\035\n\031EVENT_EXCLUSION_PERMANENT\020\001*\201"
-          + "\002\n\nMetricType\022\033\n\027METRIC_TYPE_UNSPECIFIED"
-          + "\020\000\022\020\n\014TYPE_INTEGER\020\001\022\016\n\nTYPE_FLOAT\020\002\022\020\n\014"
-          + "TYPE_SECONDS\020\004\022\025\n\021TYPE_MILLISECONDS\020\005\022\020\n"
-          + "\014TYPE_MINUTES\020\006\022\016\n\nTYPE_HOURS\020\007\022\021\n\rTYPE_"
-          + "STANDARD\020\010\022\021\n\rTYPE_CURRENCY\020\t\022\r\n\tTYPE_FE"
-          + "ET\020\n\022\016\n\nTYPE_MILES\020\013\022\017\n\013TYPE_METERS\020\014\022\023\n"
-          + "\017TYPE_KILOMETERS\020\rB{\n!com.google.analyti"
-          + "cs.data.v1alphaB\021ReportingApiProtoP\001ZAgo"
-          + "ogle.golang.org/genproto/googleapis/anal"
-          + "ytics/data/v1alpha;datab\006proto3"
+          + "O\n\023funnel_field_filter\030\004 \001(\01320.google.an"
+          + "alytics.data.v1alpha.FunnelFieldFilterH\000"
+          + "\022O\n\023funnel_event_filter\030\005 \001(\01320.google.a"
+          + "nalytics.data.v1alpha.FunnelEventFilterH"
+          + "\000B\006\n\004expr\"h\n\032FunnelFilterExpressionList\022"
+          + "J\n\013expressions\030\001 \003(\01325.google.analytics."
+          + "data.v1alpha.FunnelFilterExpression\"\322\002\n\021"
+          + "FunnelFieldFilter\022\022\n\nfield_name\030\001 \001(\t\022D\n"
+          + "\rstring_filter\030\004 \001(\0132+.google.analytics."
+          + "data.v1alpha.StringFilterH\000\022E\n\016in_list_f"
+          + "ilter\030\005 \001(\0132+.google.analytics.data.v1al"
+          + "pha.InListFilterH\000\022F\n\016numeric_filter\030\006 \001"
+          + "(\0132,.google.analytics.data.v1alpha.Numer"
+          + "icFilterH\000\022F\n\016between_filter\030\007 \001(\0132,.goo"
+          + "gle.analytics.data.v1alpha.BetweenFilter"
+          + "H\000B\014\n\none_filter\"\323\001\n\021FunnelEventFilter\022\027"
+          + "\n\nevent_name\030\001 \001(\tH\000\210\001\001\022o\n\"funnel_parame"
+          + "ter_filter_expression\030\002 \001(\0132>.google.ana"
+          + "lytics.data.v1alpha.FunnelParameterFilte"
+          + "rExpressionH\001\210\001\001B\r\n\013_event_nameB%\n#_funn"
+          + "el_parameter_filter_expression\"\215\003\n\037Funne"
+          + "lParameterFilterExpression\022W\n\tand_group\030"
+          + "\001 \001(\0132B.google.analytics.data.v1alpha.Fu"
+          + "nnelParameterFilterExpressionListH\000\022V\n\010o"
+          + "r_group\030\002 \001(\0132B.google.analytics.data.v1"
+          + "alpha.FunnelParameterFilterExpressionLis"
+          + "tH\000\022X\n\016not_expression\030\003 \001(\0132>.google.ana"
+          + "lytics.data.v1alpha.FunnelParameterFilte"
+          + "rExpressionH\000\022W\n\027funnel_parameter_filter"
+          + "\030\004 \001(\01324.google.analytics.data.v1alpha.F"
+          + "unnelParameterFilterH\000B\006\n\004expr\"z\n#Funnel"
+          + "ParameterFilterExpressionList\022S\n\013express"
+          + "ions\030\001 \003(\0132>.google.analytics.data.v1alp"
+          + "ha.FunnelParameterFilterExpression\"\222\003\n\025F"
+          + "unnelParameterFilter\022\036\n\024event_parameter_"
+          + "name\030\001 \001(\tH\000\022\035\n\023item_parameter_name\030\002 \001("
+          + "\tH\000\022D\n\rstring_filter\030\004 \001(\0132+.google.anal"
+          + "ytics.data.v1alpha.StringFilterH\001\022E\n\016in_"
+          + "list_filter\030\005 \001(\0132+.google.analytics.dat"
+          + "a.v1alpha.InListFilterH\001\022F\n\016numeric_filt"
+          + "er\030\006 \001(\0132,.google.analytics.data.v1alpha"
+          + ".NumericFilterH\001\022F\n\016between_filter\030\007 \001(\013"
+          + "2,.google.analytics.data.v1alpha.Between"
+          + "FilterH\001B\017\n\rone_parameterB\014\n\none_filter\""
+          + "e\n\026FunnelResponseMetadata\022K\n\022sampling_me"
+          + "tadatas\030\001 \003(\0132/.google.analytics.data.v1"
+          + "alpha.SamplingMetadata\"K\n\020SamplingMetada"
+          + "ta\022\032\n\022samples_read_count\030\001 \001(\003\022\033\n\023sampli"
+          + "ng_space_size\030\002 \001(\003*\257\001\n\023UserCriteriaScop"
+          + "ing\022%\n!USER_CRITERIA_SCOPING_UNSPECIFIED"
+          + "\020\000\022#\n\037USER_CRITERIA_WITHIN_SAME_EVENT\020\001\022"
+          + "%\n!USER_CRITERIA_WITHIN_SAME_SESSION\020\002\022%"
+          + "\n!USER_CRITERIA_ACROSS_ALL_SESSIONS\020\003*|\n"
+          + "\025UserExclusionDuration\022\'\n#USER_EXCLUSION"
+          + "_DURATION_UNSPECIFIED\020\000\022\034\n\030USER_EXCLUSIO"
+          + "N_TEMPORARY\020\001\022\034\n\030USER_EXCLUSION_PERMANEN"
+          + "T\020\002*\224\001\n\026SessionCriteriaScoping\022(\n$SESSIO"
+          + "N_CRITERIA_SCOPING_UNSPECIFIED\020\000\022&\n\"SESS"
+          + "ION_CRITERIA_WITHIN_SAME_EVENT\020\001\022(\n$SESS"
+          + "ION_CRITERIA_WITHIN_SAME_SESSION\020\002*\210\001\n\030S"
+          + "essionExclusionDuration\022*\n&SESSION_EXCLU"
+          + "SION_DURATION_UNSPECIFIED\020\000\022\037\n\033SESSION_E"
+          + "XCLUSION_TEMPORARY\020\001\022\037\n\033SESSION_EXCLUSIO"
+          + "N_PERMANENT\020\002*d\n\024EventCriteriaScoping\022&\n"
+          + "\"EVENT_CRITERIA_SCOPING_UNSPECIFIED\020\000\022$\n"
+          + " EVENT_CRITERIA_WITHIN_SAME_EVENT\020\001*a\n\026E"
+          + "ventExclusionDuration\022(\n$EVENT_EXCLUSION"
+          + "_DURATION_UNSPECIFIED\020\000\022\035\n\031EVENT_EXCLUSI"
+          + "ON_PERMANENT\020\001*\201\002\n\nMetricType\022\033\n\027METRIC_"
+          + "TYPE_UNSPECIFIED\020\000\022\020\n\014TYPE_INTEGER\020\001\022\016\n\n"
+          + "TYPE_FLOAT\020\002\022\020\n\014TYPE_SECONDS\020\004\022\025\n\021TYPE_M"
+          + "ILLISECONDS\020\005\022\020\n\014TYPE_MINUTES\020\006\022\016\n\nTYPE_"
+          + "HOURS\020\007\022\021\n\rTYPE_STANDARD\020\010\022\021\n\rTYPE_CURRE"
+          + "NCY\020\t\022\r\n\tTYPE_FEET\020\n\022\016\n\nTYPE_MILES\020\013\022\017\n\013"
+          + "TYPE_METERS\020\014\022\023\n\017TYPE_KILOMETERS\020\rB{\n!co"
+          + "m.google.analytics.data.v1alphaB\021Reporti"
+          + "ngApiProtoP\001ZAgoogle.golang.org/genproto"
+          + "/googleapis/analytics/data/v1alpha;datab"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1023,7 +1024,12 @@ public final class ReportingApiProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_FunnelFilterExpression_descriptor,
             new java.lang.String[] {
-              "AndGroup", "OrGroup", "NotExpression", "FunnelFilter", "FunnelEventFilter", "Expr",
+              "AndGroup",
+              "OrGroup",
+              "NotExpression",
+              "FunnelFieldFilter",
+              "FunnelEventFilter",
+              "Expr",
             });
     internal_static_google_analytics_data_v1alpha_FunnelFilterExpressionList_descriptor =
         getDescriptor().getMessageTypes().get(48);
@@ -1033,11 +1039,11 @@ public final class ReportingApiProto {
             new java.lang.String[] {
               "Expressions",
             });
-    internal_static_google_analytics_data_v1alpha_FunnelFilter_descriptor =
+    internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_descriptor =
         getDescriptor().getMessageTypes().get(49);
-    internal_static_google_analytics_data_v1alpha_FunnelFilter_fieldAccessorTable =
+    internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_analytics_data_v1alpha_FunnelFilter_descriptor,
+            internal_static_google_analytics_data_v1alpha_FunnelFieldFilter_descriptor,
             new java.lang.String[] {
               "FieldName",
               "StringFilter",
