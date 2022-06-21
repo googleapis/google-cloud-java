@@ -115,6 +115,7 @@ public class ModelServiceClientTest {
     UploadModelResponse expectedResponse =
         UploadModelResponse.newBuilder()
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -164,6 +165,7 @@ public class ModelServiceClientTest {
     UploadModelResponse expectedResponse =
         UploadModelResponse.newBuilder()
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+            .setModelVersionId("modelVersionId-2006125846")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
