@@ -18,25 +18,12 @@ package com.google.datastore.v1.client;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.fail;
 
-import com.google.api.client.auth.oauth2.Credential;
-import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
-import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpRequestInitializer;
-import com.google.api.client.http.HttpStatusCodes;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.LowLevelHttpRequest;
-import com.google.api.client.http.LowLevelHttpResponse;
-import com.google.api.client.testing.http.MockHttpTransport;
-import com.google.api.client.testing.http.MockLowLevelHttpRequest;
-import com.google.api.client.testing.http.MockLowLevelHttpResponse;
-import com.google.api.client.testing.util.TestableByteArrayInputStream;
-import com.google.common.collect.Iterables;
 import com.google.datastore.v1.AllocateIdsRequest;
 import com.google.datastore.v1.AllocateIdsResponse;
 import com.google.datastore.v1.BeginTransactionRequest;
@@ -53,16 +40,15 @@ import com.google.datastore.v1.RollbackRequest;
 import com.google.datastore.v1.RollbackResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
+import com.google.datastore.v1.client.testing.MockCredential;
+import com.google.datastore.v1.client.testing.MockDatastoreFactory;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Message;
 import com.google.rpc.Code;
-import com.google.rpc.Status;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.SocketTimeoutException;
-import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -290,7 +276,7 @@ public class DatastoreClientTest {
     AllocateIdsResponse response = AllocateIdsResponse.newBuilder().build();
     mockClient.setNextResponse(response);
     assertEquals(response, datastore.allocateIds(request));
-    assertEquals("magic", mockClient.lastCookies.get(0));
+    assertEquals("magic", mockClient.getLastCookies().get(0));
   }
 
   @Test
@@ -361,10 +347,10 @@ public class DatastoreClientTest {
     Object[] callArgs = {request};
     assertEquals(response, call.invoke(datastore, callArgs));
 
-    assertEquals("/v1/projects/project-id:" + methodName, mockClient.lastPath);
-    assertEquals("application/x-protobuf", mockClient.lastMimeType);
-    assertEquals("2", mockClient.lastApiFormatHeaderValue);
-    assertArrayEquals(request.toByteArray(), mockClient.lastBody);
+    assertEquals("/v1/projects/project-id:" + methodName, mockClient.getLastPath());
+    assertEquals("application/x-protobuf", mockClient.getLastMimeType());
+    assertEquals("2", mockClient.getLastApiFormatHeaderValue());
+    assertArrayEquals(request.toByteArray(), mockClient.getLastBody());
     assertEquals(1, datastore.getRpcCount());
 
     datastore.resetRpcCount();
@@ -408,98 +394,5 @@ public class DatastoreClientTest {
     }
 
     assertEquals(3, datastore.getRpcCount());
-  }
-
-  private static class MockCredential extends Credential {
-    MockCredential() {
-      super(
-          new AccessMethod() {
-            @Override
-            public void intercept(HttpRequest request, String accessToken) throws IOException {}
-
-            @Override
-            public String getAccessTokenFromRequest(HttpRequest request) {
-              return "MockAccessToken";
-            }
-          });
-    }
-  }
-
-  private static class MockDatastoreFactory extends DatastoreFactory {
-    int nextStatus;
-    Message nextResponse;
-    Status nextError;
-    IOException nextException;
-
-    String lastPath;
-    String lastMimeType;
-    byte[] lastBody;
-    List<String> lastCookies;
-    String lastApiFormatHeaderValue;
-
-    void setNextResponse(Message response) {
-      nextStatus = HttpStatusCodes.STATUS_CODE_OK;
-      nextResponse = response;
-      nextError = null;
-      nextException = null;
-    }
-
-    void setNextError(int status, Code code, String message) {
-      nextStatus = status;
-      nextResponse = null;
-      nextError = makeErrorContent(message, code);
-      nextException = null;
-    }
-
-    void setNextException(IOException exception) {
-      nextStatus = 0;
-      nextResponse = null;
-      nextError = null;
-      nextException = exception;
-    }
-
-    @Override
-    public HttpRequestFactory makeClient(DatastoreOptions options) {
-      HttpTransport transport =
-          new MockHttpTransport() {
-            @Override
-            public LowLevelHttpRequest buildRequest(String method, String url) {
-              return new MockLowLevelHttpRequest(url) {
-                @Override
-                public LowLevelHttpResponse execute() throws IOException {
-                  lastPath = new GenericUrl(getUrl()).getRawPath();
-                  lastMimeType = getContentType();
-                  lastCookies = getHeaderValues("Cookie");
-                  lastApiFormatHeaderValue =
-                      Iterables.getOnlyElement(getHeaderValues("X-Goog-Api-Format-Version"));
-                  ByteArrayOutputStream out = new ByteArrayOutputStream();
-                  getStreamingContent().writeTo(out);
-                  lastBody = out.toByteArray();
-                  if (nextException != null) {
-                    throw nextException;
-                  }
-                  MockLowLevelHttpResponse response =
-                      new MockLowLevelHttpResponse()
-                          .setStatusCode(nextStatus)
-                          .setContentType("application/x-protobuf");
-                  if (nextError != null) {
-                    assertNull(nextResponse);
-                    response.setContent(new TestableByteArrayInputStream(nextError.toByteArray()));
-                  } else {
-                    response.setContent(
-                        new TestableByteArrayInputStream(nextResponse.toByteArray()));
-                  }
-                  return response;
-                }
-              };
-            }
-          };
-      Credential credential = options.getCredential();
-      return transport.createRequestFactory(credential);
-    }
-  }
-
-  private static Status makeErrorContent(String message, Code code) {
-    return Status.newBuilder().setCode(code.getNumber()).setMessage(message).build();
   }
 }

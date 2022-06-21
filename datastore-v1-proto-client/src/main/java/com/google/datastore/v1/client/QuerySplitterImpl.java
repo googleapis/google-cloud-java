@@ -17,6 +17,7 @@ package com.google.datastore.v1.client;
 
 import static com.google.datastore.v1.client.DatastoreHelper.makeAndFilter;
 
+import com.google.api.core.BetaApi;
 import com.google.datastore.v1.EntityResult;
 import com.google.datastore.v1.Filter;
 import com.google.datastore.v1.Key;
@@ -29,11 +30,14 @@ import com.google.datastore.v1.PropertyReference;
 import com.google.datastore.v1.Query;
 import com.google.datastore.v1.QueryResultBatch;
 import com.google.datastore.v1.QueryResultBatch.MoreResultsType;
+import com.google.datastore.v1.ReadOptions;
 import com.google.datastore.v1.RunQueryRequest;
+import com.google.protobuf.Timestamp;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
+import javax.annotation.Nullable;
 
 /**
  * Provides the ability to split a query into multiple shards using Cloud Datastore.
@@ -63,7 +67,24 @@ final class QuerySplitterImpl implements QuerySplitter {
   public List<Query> getSplits(
       Query query, PartitionId partition, int numSplits, Datastore datastore)
       throws DatastoreException, IllegalArgumentException {
+    return getSplitsInternal(query, partition, numSplits, datastore, null);
+  }
 
+  @BetaApi
+  @Override
+  public List<Query> getSplits(
+      Query query, PartitionId partition, int numSplits, Datastore datastore, Timestamp readTime)
+      throws DatastoreException, IllegalArgumentException {
+    return getSplitsInternal(query, partition, numSplits, datastore, readTime);
+  }
+
+  private List<Query> getSplitsInternal(
+      Query query,
+      PartitionId partition,
+      int numSplits,
+      Datastore datastore,
+      @Nullable Timestamp readTime)
+      throws DatastoreException, IllegalArgumentException {
     List<Query> splits = new ArrayList<Query>(numSplits);
     if (numSplits == 1) {
       splits.add(query);
@@ -72,7 +93,7 @@ final class QuerySplitterImpl implements QuerySplitter {
     validateQuery(query);
     validateSplitSize(numSplits);
 
-    List<Key> scatterKeys = getScatterKeys(numSplits, query, partition, datastore);
+    List<Key> scatterKeys = getScatterKeys(numSplits, query, partition, datastore, readTime);
     Key lastKey = null;
     for (Key nextKey : getSplitKey(scatterKeys, numSplits)) {
       splits.add(createSplit(lastKey, nextKey, query));
@@ -182,10 +203,15 @@ final class QuerySplitterImpl implements QuerySplitter {
    * @param query the user query.
    * @param partition the partition to run the query in.
    * @param datastore the datastore containing the data.
+   * @param readTime read time at which to get the split keys from the datastore.
    * @throws DatastoreException if there was an error when executing the datastore query.
    */
   private List<Key> getScatterKeys(
-      int numSplits, Query query, PartitionId partition, Datastore datastore)
+      int numSplits,
+      Query query,
+      PartitionId partition,
+      Datastore datastore,
+      @Nullable Timestamp readTime)
       throws DatastoreException {
     Query.Builder scatterPointQuery = createScatterQuery(query, numSplits);
 
@@ -193,12 +219,12 @@ final class QuerySplitterImpl implements QuerySplitter {
 
     QueryResultBatch batch;
     do {
-      RunQueryRequest scatterRequest =
-          RunQueryRequest.newBuilder()
-              .setPartitionId(partition)
-              .setQuery(scatterPointQuery)
-              .build();
-      batch = datastore.runQuery(scatterRequest).getBatch();
+      RunQueryRequest.Builder scatterRequest =
+          RunQueryRequest.newBuilder().setPartitionId(partition).setQuery(scatterPointQuery);
+      if (readTime != null) {
+        scatterRequest.setReadOptions(ReadOptions.newBuilder().setReadTime(readTime).build());
+      }
+      batch = datastore.runQuery(scatterRequest.build()).getBatch();
       for (EntityResult result : batch.getEntityResultsList()) {
         keySplits.add(result.getEntity().getKey());
       }

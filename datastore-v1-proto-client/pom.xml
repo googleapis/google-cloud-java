@@ -83,6 +83,11 @@
       <artifactId>protobuf-java</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+
     <!-- Test dependencies. -->
     <dependency>
       <groupId>junit</groupId>
