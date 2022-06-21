@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.8.0](https://github.com/googleapis/java-core/compare/v2.7.1...v2.8.0) (2022-06-21)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-core/issues/1440)) ([#836](https://github.com/googleapis/java-core/issues/836)) ([8826d9b](https://github.com/googleapis/java-core/commit/8826d9bc05eb9e4a54c40e8578de85ed79c50e99))
+
+
+### Dependencies
+
+* update dependency com.google.api-client:google-api-client-bom to v1.35.1 ([#843](https://github.com/googleapis/java-core/issues/843)) ([9ffe0c5](https://github.com/googleapis/java-core/commit/9ffe0c5b25761abf7ff1bea091aa1db057dff2d0))
+* update dependency com.google.api:api-common to v2.2.1 ([#844](https://github.com/googleapis/java-core/issues/844)) ([69dde56](https://github.com/googleapis/java-core/commit/69dde5641546b678a385b1ed3a2c7a020f81d285))
+* update dependency com.google.api:gax-bom to v2.18.2 ([#849](https://github.com/googleapis/java-core/issues/849)) ([11764b0](https://github.com/googleapis/java-core/commit/11764b04629c5bfbc9b0d68174782cc126dc1646))
+* update dependency com.google.api.grpc:proto-google-common-protos to v2.9.0 ([#846](https://github.com/googleapis/java-core/issues/846)) ([5dced6d](https://github.com/googleapis/java-core/commit/5dced6d25ce0f3e7587d7ac1f6f3713f3b2a18c2))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.4.0 ([#838](https://github.com/googleapis/java-core/issues/838)) ([b0a7afe](https://github.com/googleapis/java-core/commit/b0a7afe342a5e15436d439b9cc1e3c58f894ab66))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.4.1 ([#848](https://github.com/googleapis/java-core/issues/848)) ([8260997](https://github.com/googleapis/java-core/commit/826099767b0aabe0db26eff2f612f0847b451366))
+* update dependency com.google.errorprone:error_prone_annotations to v2.14.0 ([#839](https://github.com/googleapis/java-core/issues/839)) ([3459fb6](https://github.com/googleapis/java-core/commit/3459fb668557b982cef5682ce47d3c978b83d69c))
+* update dependency com.google.http-client:google-http-client-bom to v1.42.0 ([#845](https://github.com/googleapis/java-core/issues/845)) ([2d2c873](https://github.com/googleapis/java-core/commit/2d2c873e274b26f4687d569cc3b8ae58c3c5ed54))
+* update dependency com.google.protobuf:protobuf-bom to v3.21.0 ([#840](https://github.com/googleapis/java-core/issues/840)) ([037da15](https://github.com/googleapis/java-core/commit/037da15b2aed1719e768ba5b4e001caf25952adc))
+* update dependency com.google.protobuf:protobuf-bom to v3.21.1 ([#841](https://github.com/googleapis/java-core/issues/841)) ([04b8862](https://github.com/googleapis/java-core/commit/04b886224128f1525ad8398815dc62dac87680af))
+* update dependency io.grpc:grpc-bom to v1.47.0 ([#842](https://github.com/googleapis/java-core/issues/842)) ([40984e2](https://github.com/googleapis/java-core/commit/40984e23242ba954b6ca741ca3f02ec89e92ae57))
+
 ### [2.7.1](https://github.com/googleapis/java-core/compare/v2.7.0...v2.7.1) (2022-05-19)
 
 
