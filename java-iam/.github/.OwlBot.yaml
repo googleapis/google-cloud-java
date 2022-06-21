@@ -31,5 +31,5 @@ deep-copy-regex:
   dest: "/owl-bot-staging/v1/proto-google-iam-v1/src"
 - source: "/google/iam/v2beta/google-cloud-iam-v2beta-java/grpc-google-cloud-iam-v2beta-java/src"
   dest: "/owl-bot-staging/v2beta/grpc-google-iam-v2beta/src"
-- source: "google/iam/v2beta/google-cloud-iam-v2beta-java/proto-google-cloud-iam-v2beta-java/src"
+- source: "/google/iam/v2beta/google-cloud-iam-v2beta-java/proto-google-cloud-iam-v2beta-java/src"
   dest: "/owl-bot-staging/v2beta/proto-google-iam-v2beta/src"
