@@ -63,7 +63,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-errorreporting</artifactId>
-  <version>0.123.1-beta</version>
+  <version>0.123.2-beta</version>
 </dependency>
 
 ```
@@ -78,13 +78,13 @@ implementation 'com.google.cloud:google-cloud-errorreporting'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-errorreporting:0.123.1-beta'
+implementation 'com.google.cloud:google-cloud-errorreporting:0.123.2-beta'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.123.1-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.123.2-beta"
 ```
 
 ## Authentication
