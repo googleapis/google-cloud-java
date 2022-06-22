@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.123.2](https://github.com/googleapis/java-errorreporting/compare/v0.123.1...v0.123.2) (2022-06-22)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.8.0 ([#878](https://github.com/googleapis/java-errorreporting/issues/878)) ([f064558](https://github.com/googleapis/java-errorreporting/commit/f064558d630acbd181ae9dc17cc67b6951515e88))
+
 ### [0.123.1](https://github.com/googleapis/java-errorreporting/compare/v0.123.0...v0.123.1) (2022-05-19)
 
 
