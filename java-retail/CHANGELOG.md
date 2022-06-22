@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.3](https://github.com/googleapis/java-retail/compare/v2.2.2...v2.2.3) (2022-06-22)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.4 ([#467](https://github.com/googleapis/java-retail/issues/467)) ([f9b3845](https://github.com/googleapis/java-retail/commit/f9b38451284e889e22af87683b4fb1023e584e71))
+
 ## [2.2.2](https://github.com/googleapis/java-retail/compare/v2.2.1...v2.2.2) (2022-06-21)
 
 
