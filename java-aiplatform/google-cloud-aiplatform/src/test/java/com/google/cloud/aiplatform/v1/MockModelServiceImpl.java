@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,6 +121,28 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   }
 
   @Override
+  public void listModelVersions(
+      ListModelVersionsRequest request,
+      StreamObserver<ListModelVersionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListModelVersionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListModelVersionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListModelVersions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListModelVersionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateModel(UpdateModelRequest request, StreamObserver<Model> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Model) {
@@ -156,6 +178,48 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
                   "Unrecognized response type %s for method DeleteModel, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteModelVersion(
+      DeleteModelVersionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteModelVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void mergeVersionAliases(
+      MergeVersionAliasesRequest request, StreamObserver<Model> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Model) {
+      requests.add(request);
+      responseObserver.onNext(((Model) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MergeVersionAliases, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Model.class.getName(),
                   Exception.class.getName())));
     }
   }

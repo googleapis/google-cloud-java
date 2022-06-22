@@ -28,6 +28,10 @@ public final class ModelMonitoringProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_fieldAccessorTable;
@@ -99,92 +103,102 @@ public final class ModelMonitoringProto {
       "\n6google/cloud/aiplatform/v1beta1/model_"
           + "monitoring.proto\022\037google.cloud.aiplatfor"
           + "m.v1beta1\032\031google/api/resource.proto\032(go"
-          + "ogle/cloud/aiplatform/v1beta1/io.proto\"\205"
-          + "\025\n\036ModelMonitoringObjectiveConfig\022i\n\020tra"
-          + "ining_dataset\030\001 \001(\0132O.google.cloud.aipla"
-          + "tform.v1beta1.ModelMonitoringObjectiveCo"
-          + "nfig.TrainingDataset\022\230\001\n)training_predic"
-          + "tion_skew_detection_config\030\002 \001(\0132e.googl"
-          + "e.cloud.aiplatform.v1beta1.ModelMonitori"
-          + "ngObjectiveConfig.TrainingPredictionSkew"
-          + "DetectionConfig\022\211\001\n!prediction_drift_det"
-          + "ection_config\030\003 \001(\0132^.google.cloud.aipla"
-          + "tform.v1beta1.ModelMonitoringObjectiveCo"
-          + "nfig.PredictionDriftDetectionConfig\022m\n\022e"
-          + "xplanation_config\030\005 \001(\0132Q.google.cloud.a"
-          + "iplatform.v1beta1.ModelMonitoringObjecti"
-          + "veConfig.ExplanationConfig\032\352\002\n\017TrainingD"
-          + "ataset\0229\n\007dataset\030\003 \001(\tB&\372A#\n!aiplatform"
-          + ".googleapis.com/DatasetH\000\022@\n\ngcs_source\030"
-          + "\004 \001(\0132*.google.cloud.aiplatform.v1beta1."
-          + "GcsSourceH\000\022J\n\017bigquery_source\030\005 \001(\0132/.g"
-          + "oogle.cloud.aiplatform.v1beta1.BigQueryS"
-          + "ourceH\000\022\023\n\013data_format\030\002 \001(\t\022\024\n\014target_f"
-          + "ield\030\006 \001(\t\022T\n\031logging_sampling_strategy\030"
-          + "\007 \001(\01321.google.cloud.aiplatform.v1beta1."
-          + "SamplingStrategyB\r\n\013data_source\032\326\004\n%Trai"
-          + "ningPredictionSkewDetectionConfig\022\222\001\n\017sk"
-          + "ew_thresholds\030\001 \003(\0132y.google.cloud.aipla"
-          + "tform.v1beta1.ModelMonitoringObjectiveCo"
-          + "nfig.TrainingPredictionSkewDetectionConf"
-          + "ig.SkewThresholdsEntry\022\265\001\n!attribution_s"
-          + "core_skew_thresholds\030\002 \003(\0132\211\001.google.clo"
-          + "ud.aiplatform.v1beta1.ModelMonitoringObj"
-          + "ectiveConfig.TrainingPredictionSkewDetec"
-          + "tionConfig.AttributionScoreSkewThreshold"
-          + "sEntry\032g\n\023SkewThresholdsEntry\022\013\n\003key\030\001 \001"
-          + "(\t\022?\n\005value\030\002 \001(\01320.google.cloud.aiplatf"
-          + "orm.v1beta1.ThresholdConfig:\0028\001\032w\n#Attri"
-          + "butionScoreSkewThresholdsEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022?\n\005value\030\002 \001(\01320.google.cloud.aiplat"
-          + "form.v1beta1.ThresholdConfig:\0028\001\032\307\004\n\036Pre"
-          + "dictionDriftDetectionConfig\022\215\001\n\020drift_th"
-          + "resholds\030\001 \003(\0132s.google.cloud.aiplatform"
-          + ".v1beta1.ModelMonitoringObjectiveConfig."
-          + "PredictionDriftDetectionConfig.DriftThre"
-          + "sholdsEntry\022\260\001\n\"attribution_score_drift_"
-          + "thresholds\030\002 \003(\0132\203\001.google.cloud.aiplatf"
-          + "orm.v1beta1.ModelMonitoringObjectiveConf"
-          + "ig.PredictionDriftDetectionConfig.Attrib"
-          + "utionScoreDriftThresholdsEntry\032h\n\024DriftT"
-          + "hresholdsEntry\022\013\n\003key\030\001 \001(\t\022?\n\005value\030\002 \001"
-          + "(\01320.google.cloud.aiplatform.v1beta1.Thr"
-          + "esholdConfig:\0028\001\032x\n$AttributionScoreDrif"
-          + "tThresholdsEntry\022\013\n\003key\030\001 \001(\t\022?\n\005value\030\002"
-          + " \001(\01320.google.cloud.aiplatform.v1beta1.T"
-          + "hresholdConfig:\0028\001\032\321\004\n\021ExplanationConfig"
-          + "\022!\n\031enable_feature_attributes\030\001 \001(\010\022\203\001\n\024"
-          + "explanation_baseline\030\002 \001(\0132e.google.clou"
+          + "ogle/cloud/aiplatform/v1beta1/io.proto\"\354"
+          + "\001\n\025ModelMonitoringConfig\022Z\n\021objective_co"
+          + "nfigs\030\003 \003(\0132?.google.cloud.aiplatform.v1"
+          + "beta1.ModelMonitoringObjectiveConfig\022Q\n\014"
+          + "alert_config\030\002 \001(\0132;.google.cloud.aiplat"
+          + "form.v1beta1.ModelMonitoringAlertConfig\022"
+          + "$\n\034analysis_instance_schema_uri\030\004 \001(\t\"\252\026"
+          + "\n\036ModelMonitoringObjectiveConfig\022i\n\020trai"
+          + "ning_dataset\030\001 \001(\0132O.google.cloud.aiplat"
+          + "form.v1beta1.ModelMonitoringObjectiveCon"
+          + "fig.TrainingDataset\022\230\001\n)training_predict"
+          + "ion_skew_detection_config\030\002 \001(\0132e.google"
+          + ".cloud.aiplatform.v1beta1.ModelMonitorin"
+          + "gObjectiveConfig.TrainingPredictionSkewD"
+          + "etectionConfig\022\211\001\n!prediction_drift_dete"
+          + "ction_config\030\003 \001(\0132^.google.cloud.aiplat"
+          + "form.v1beta1.ModelMonitoringObjectiveCon"
+          + "fig.PredictionDriftDetectionConfig\022m\n\022ex"
+          + "planation_config\030\005 \001(\0132Q.google.cloud.ai"
+          + "platform.v1beta1.ModelMonitoringObjectiv"
+          + "eConfig.ExplanationConfig\032\352\002\n\017TrainingDa"
+          + "taset\0229\n\007dataset\030\003 \001(\tB&\372A#\n!aiplatform."
+          + "googleapis.com/DatasetH\000\022@\n\ngcs_source\030\004"
+          + " \001(\0132*.google.cloud.aiplatform.v1beta1.G"
+          + "csSourceH\000\022J\n\017bigquery_source\030\005 \001(\0132/.go"
+          + "ogle.cloud.aiplatform.v1beta1.BigQuerySo"
+          + "urceH\000\022\023\n\013data_format\030\002 \001(\t\022\024\n\014target_fi"
+          + "eld\030\006 \001(\t\022T\n\031logging_sampling_strategy\030\007"
+          + " \001(\01321.google.cloud.aiplatform.v1beta1.S"
+          + "amplingStrategyB\r\n\013data_source\032\250\005\n%Train"
+          + "ingPredictionSkewDetectionConfig\022\222\001\n\017ske"
+          + "w_thresholds\030\001 \003(\0132y.google.cloud.aiplat"
+          + "form.v1beta1.ModelMonitoringObjectiveCon"
+          + "fig.TrainingPredictionSkewDetectionConfi"
+          + "g.SkewThresholdsEntry\022\265\001\n!attribution_sc"
+          + "ore_skew_thresholds\030\002 \003(\0132\211\001.google.clou"
           + "d.aiplatform.v1beta1.ModelMonitoringObje"
-          + "ctiveConfig.ExplanationConfig.Explanatio"
-          + "nBaseline\032\222\003\n\023ExplanationBaseline\022>\n\003gcs"
-          + "\030\002 \001(\0132/.google.cloud.aiplatform.v1beta1"
-          + ".GcsDestinationH\000\022H\n\010bigquery\030\003 \001(\01324.go"
-          + "ogle.cloud.aiplatform.v1beta1.BigQueryDe"
-          + "stinationH\000\022\221\001\n\021prediction_format\030\001 \001(\0162"
-          + "v.google.cloud.aiplatform.v1beta1.ModelM"
-          + "onitoringObjectiveConfig.ExplanationConf"
-          + "ig.ExplanationBaseline.PredictionFormat\""
-          + "N\n\020PredictionFormat\022!\n\035PREDICTION_FORMAT"
-          + "_UNSPECIFIED\020\000\022\t\n\005JSONL\020\002\022\014\n\010BIGQUERY\020\003B"
-          + "\r\n\013destination\"\322\001\n\032ModelMonitoringAlertC"
-          + "onfig\022j\n\022email_alert_config\030\001 \001(\0132L.goog"
-          + "le.cloud.aiplatform.v1beta1.ModelMonitor"
-          + "ingAlertConfig.EmailAlertConfigH\000\022\026\n\016ena"
-          + "ble_logging\030\002 \001(\010\032\'\n\020EmailAlertConfig\022\023\n"
-          + "\013user_emails\030\001 \003(\tB\007\n\005alert\"/\n\017Threshold"
-          + "Config\022\017\n\005value\030\001 \001(\001H\000B\013\n\tthreshold\"\241\001\n"
-          + "\020SamplingStrategy\022b\n\024random_sample_confi"
-          + "g\030\001 \001(\0132D.google.cloud.aiplatform.v1beta"
-          + "1.SamplingStrategy.RandomSampleConfig\032)\n"
-          + "\022RandomSampleConfig\022\023\n\013sample_rate\030\001 \001(\001"
-          + "B\361\001\n#com.google.cloud.aiplatform.v1beta1"
-          + "B\024ModelMonitoringProtoP\001ZIgoogle.golang."
-          + "org/genproto/googleapis/cloud/aiplatform"
-          + "/v1beta1;aiplatform\252\002\037Google.Cloud.AIPla"
-          + "tform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\"
-          + "V1beta1\352\002\"Google::Cloud::AIPlatform::V1b"
-          + "eta1b\006proto3"
+          + "ctiveConfig.TrainingPredictionSkewDetect"
+          + "ionConfig.AttributionScoreSkewThresholds"
+          + "Entry\022P\n\026default_skew_threshold\030\006 \001(\01320."
+          + "google.cloud.aiplatform.v1beta1.Threshol"
+          + "dConfig\032g\n\023SkewThresholdsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022?\n\005value\030\002 \001(\01320.google.cloud.aiplat"
+          + "form.v1beta1.ThresholdConfig:\0028\001\032w\n#Attr"
+          + "ibutionScoreSkewThresholdsEntry\022\013\n\003key\030\001"
+          + " \001(\t\022?\n\005value\030\002 \001(\01320.google.cloud.aipla"
+          + "tform.v1beta1.ThresholdConfig:\0028\001\032\232\005\n\036Pr"
+          + "edictionDriftDetectionConfig\022\215\001\n\020drift_t"
+          + "hresholds\030\001 \003(\0132s.google.cloud.aiplatfor"
+          + "m.v1beta1.ModelMonitoringObjectiveConfig"
+          + ".PredictionDriftDetectionConfig.DriftThr"
+          + "esholdsEntry\022\260\001\n\"attribution_score_drift"
+          + "_thresholds\030\002 \003(\0132\203\001.google.cloud.aiplat"
+          + "form.v1beta1.ModelMonitoringObjectiveCon"
+          + "fig.PredictionDriftDetectionConfig.Attri"
+          + "butionScoreDriftThresholdsEntry\022Q\n\027defau"
+          + "lt_drift_threshold\030\005 \001(\01320.google.cloud."
+          + "aiplatform.v1beta1.ThresholdConfig\032h\n\024Dr"
+          + "iftThresholdsEntry\022\013\n\003key\030\001 \001(\t\022?\n\005value"
+          + "\030\002 \001(\01320.google.cloud.aiplatform.v1beta1"
+          + ".ThresholdConfig:\0028\001\032x\n$AttributionScore"
+          + "DriftThresholdsEntry\022\013\n\003key\030\001 \001(\t\022?\n\005val"
+          + "ue\030\002 \001(\01320.google.cloud.aiplatform.v1bet"
+          + "a1.ThresholdConfig:\0028\001\032\321\004\n\021ExplanationCo"
+          + "nfig\022!\n\031enable_feature_attributes\030\001 \001(\010\022"
+          + "\203\001\n\024explanation_baseline\030\002 \001(\0132e.google."
+          + "cloud.aiplatform.v1beta1.ModelMonitoring"
+          + "ObjectiveConfig.ExplanationConfig.Explan"
+          + "ationBaseline\032\222\003\n\023ExplanationBaseline\022>\n"
+          + "\003gcs\030\002 \001(\0132/.google.cloud.aiplatform.v1b"
+          + "eta1.GcsDestinationH\000\022H\n\010bigquery\030\003 \001(\0132"
+          + "4.google.cloud.aiplatform.v1beta1.BigQue"
+          + "ryDestinationH\000\022\221\001\n\021prediction_format\030\001 "
+          + "\001(\0162v.google.cloud.aiplatform.v1beta1.Mo"
+          + "delMonitoringObjectiveConfig.Explanation"
+          + "Config.ExplanationBaseline.PredictionFor"
+          + "mat\"N\n\020PredictionFormat\022!\n\035PREDICTION_FO"
+          + "RMAT_UNSPECIFIED\020\000\022\t\n\005JSONL\020\002\022\014\n\010BIGQUER"
+          + "Y\020\003B\r\n\013destination\"\322\001\n\032ModelMonitoringAl"
+          + "ertConfig\022j\n\022email_alert_config\030\001 \001(\0132L."
+          + "google.cloud.aiplatform.v1beta1.ModelMon"
+          + "itoringAlertConfig.EmailAlertConfigH\000\022\026\n"
+          + "\016enable_logging\030\002 \001(\010\032\'\n\020EmailAlertConfi"
+          + "g\022\023\n\013user_emails\030\001 \003(\tB\007\n\005alert\"/\n\017Thres"
+          + "holdConfig\022\017\n\005value\030\001 \001(\001H\000B\013\n\tthreshold"
+          + "\"\241\001\n\020SamplingStrategy\022b\n\024random_sample_c"
+          + "onfig\030\001 \001(\0132D.google.cloud.aiplatform.v1"
+          + "beta1.SamplingStrategy.RandomSampleConfi"
+          + "g\032)\n\022RandomSampleConfig\022\023\n\013sample_rate\030\001"
+          + " \001(\001B\361\001\n#com.google.cloud.aiplatform.v1b"
+          + "eta1B\024ModelMonitoringProtoP\001ZIgoogle.gol"
+          + "ang.org/genproto/googleapis/cloud/aiplat"
+          + "form/v1beta1;aiplatform\252\002\037Google.Cloud.A"
+          + "IPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlatf"
+          + "orm\\V1beta1\352\002\"Google::Cloud::AIPlatform:"
+          + ":V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -193,8 +207,16 @@ public final class ModelMonitoringProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.IoProto.getDescriptor(),
             });
-    internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringConfig_descriptor,
+            new java.lang.String[] {
+              "ObjectiveConfigs", "AlertConfig", "AnalysisInstanceSchemaUri",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_descriptor =
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_descriptor,
@@ -228,7 +250,7 @@ public final class ModelMonitoringProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_TrainingPredictionSkewDetectionConfig_descriptor,
             new java.lang.String[] {
-              "SkewThresholds", "AttributionScoreSkewThresholds",
+              "SkewThresholds", "AttributionScoreSkewThresholds", "DefaultSkewThreshold",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_TrainingPredictionSkewDetectionConfig_SkewThresholdsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_TrainingPredictionSkewDetectionConfig_descriptor
@@ -258,7 +280,7 @@ public final class ModelMonitoringProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_PredictionDriftDetectionConfig_descriptor,
             new java.lang.String[] {
-              "DriftThresholds", "AttributionScoreDriftThresholds",
+              "DriftThresholds", "AttributionScoreDriftThresholds", "DefaultDriftThreshold",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_PredictionDriftDetectionConfig_DriftThresholdsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_PredictionDriftDetectionConfig_descriptor
@@ -301,7 +323,7 @@ public final class ModelMonitoringProto {
               "Gcs", "Bigquery", "PredictionFormat", "Destination",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringAlertConfig_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringAlertConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringAlertConfig_descriptor,
@@ -319,7 +341,7 @@ public final class ModelMonitoringProto {
               "UserEmails",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ThresholdConfig_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_aiplatform_v1beta1_ThresholdConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ThresholdConfig_descriptor,
@@ -327,7 +349,7 @@ public final class ModelMonitoringProto {
               "Value", "Threshold",
             });
     internal_static_google_cloud_aiplatform_v1beta1_SamplingStrategy_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_aiplatform_v1beta1_SamplingStrategy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_SamplingStrategy_descriptor,

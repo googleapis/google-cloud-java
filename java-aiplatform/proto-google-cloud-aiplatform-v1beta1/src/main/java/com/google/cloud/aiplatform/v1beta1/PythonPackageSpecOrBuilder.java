@@ -192,4 +192,61 @@ public interface PythonPackageSpecOrBuilder
    * @return The bytes of the args at the given index.
    */
   com.google.protobuf.ByteString getArgsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.EnvVar> getEnvList();
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EnvVar getEnv(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+   */
+  int getEnvCount();
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.EnvVarOrBuilder>
+      getEnvOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Environment variables to be passed to the python module.
+   * Maximum limit is 100.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EnvVarOrBuilder getEnvOrBuilder(int index);
 }

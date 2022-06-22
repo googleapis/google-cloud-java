@@ -82,6 +82,8 @@ public interface BatchPredictionJobOrBuilder
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
+   * The model resource name may contain version id or version alias to specify
+   * the version, if no version is specified, the default version will be used.
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -98,6 +100,8 @@ public interface BatchPredictionJobOrBuilder
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
+   * The model resource name may contain version id or version alias to specify
+   * the version, if no version is specified, the default version will be used.
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -1098,4 +1102,49 @@ public interface BatchPredictionJobOrBuilder
    * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 24;</code>
    */
   com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Model monitoring config will be used for analysis model behaviors, based on
+   * the input and output to the batch prediction job, as well as the provided
+   * training dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+   * </code>
+   *
+   * @return Whether the modelMonitoringConfig field is set.
+   */
+  boolean hasModelMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Model monitoring config will be used for analysis model behaviors, based on
+   * the input and output to the batch prediction job, as well as the provided
+   * training dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+   * </code>
+   *
+   * @return The modelMonitoringConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig getModelMonitoringConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Model monitoring config will be used for analysis model behaviors, based on
+   * the input and output to the batch prediction job, as well as the provided
+   * training dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfigOrBuilder
+      getModelMonitoringConfigOrBuilder();
 }

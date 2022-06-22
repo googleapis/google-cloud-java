@@ -39,6 +39,7 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
 
   private UploadModelResponse() {
     model_ = "";
+    modelVersionId_ = "";
   }
 
   @java.lang.Override
@@ -75,6 +76,13 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
               java.lang.String s = input.readStringRequireUtf8();
 
               model_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              modelVersionId_ = s;
               break;
             }
           default:
@@ -164,6 +172,55 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int MODEL_VERSION_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object modelVersionId_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The version ID of the model that is uploaded.
+   * </pre>
+   *
+   * <code>string model_version_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The modelVersionId.
+   */
+  @java.lang.Override
+  public java.lang.String getModelVersionId() {
+    java.lang.Object ref = modelVersionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelVersionId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The version ID of the model that is uploaded.
+   * </pre>
+   *
+   * <code>string model_version_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for modelVersionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelVersionIdBytes() {
+    java.lang.Object ref = modelVersionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      modelVersionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -181,6 +238,9 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, model_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelVersionId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -192,6 +252,9 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, model_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelVersionId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -210,6 +273,7 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
         (com.google.cloud.aiplatform.v1.UploadModelResponse) obj;
 
     if (!getModel().equals(other.getModel())) return false;
+    if (!getModelVersionId().equals(other.getModelVersionId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -223,6 +287,8 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
+    hash = (37 * hash) + MODEL_VERSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getModelVersionId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -370,6 +436,8 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
       super.clear();
       model_ = "";
 
+      modelVersionId_ = "";
+
       return this;
     }
 
@@ -398,6 +466,7 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
       com.google.cloud.aiplatform.v1.UploadModelResponse result =
           new com.google.cloud.aiplatform.v1.UploadModelResponse(this);
       result.model_ = model_;
+      result.modelVersionId_ = modelVersionId_;
       onBuilt();
       return result;
     }
@@ -450,6 +519,10 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getModel().isEmpty()) {
         model_ = other.model_;
+        onChanged();
+      }
+      if (!other.getModelVersionId().isEmpty()) {
+        modelVersionId_ = other.modelVersionId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -589,6 +662,112 @@ public final class UploadModelResponse extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
 
       model_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object modelVersionId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The version ID of the model that is uploaded.
+     * </pre>
+     *
+     * <code>string model_version_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The modelVersionId.
+     */
+    public java.lang.String getModelVersionId() {
+      java.lang.Object ref = modelVersionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelVersionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The version ID of the model that is uploaded.
+     * </pre>
+     *
+     * <code>string model_version_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for modelVersionId.
+     */
+    public com.google.protobuf.ByteString getModelVersionIdBytes() {
+      java.lang.Object ref = modelVersionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelVersionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The version ID of the model that is uploaded.
+     * </pre>
+     *
+     * <code>string model_version_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The modelVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      modelVersionId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The version ID of the model that is uploaded.
+     * </pre>
+     *
+     * <code>string model_version_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModelVersionId() {
+
+      modelVersionId_ = getDefaultInstance().getModelVersionId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The version ID of the model that is uploaded.
+     * </pre>
+     *
+     * <code>string model_version_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for modelVersionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelVersionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      modelVersionId_ = value;
       onChanged();
       return this;
     }

@@ -98,4 +98,39 @@ public interface ExplanationSpecOverrideOrBuilder
    * <code>.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverride metadata = 2;</code>
    */
   com.google.cloud.aiplatform.v1beta1.ExplanationMetadataOverrideOrBuilder getMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The example-based explanations parameter overrides.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+   *
+   * @return Whether the examplesOverride field is set.
+   */
+  boolean hasExamplesOverride();
+  /**
+   *
+   *
+   * <pre>
+   * The example-based explanations parameter overrides.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+   *
+   * @return The examplesOverride.
+   */
+  com.google.cloud.aiplatform.v1beta1.ExamplesOverride getExamplesOverride();
+  /**
+   *
+   *
+   * <pre>
+   * The example-based explanations parameter overrides.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExamplesOverride examples_override = 3;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ExamplesOverrideOrBuilder getExamplesOverrideOrBuilder();
 }

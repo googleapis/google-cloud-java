@@ -26,5 +26,6 @@ java.common_templates(
         ".kokoro/build.sh",
         ".kokoro/nightly/samples.cfg",
         ".kokoro/presubmit/samples.cfg",
+        ".github/CODEOWNERS"
     ]
 )

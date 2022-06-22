@@ -61,12 +61,17 @@ public final class AutoMLVideoActionRecognitionProto {
           + "Type\022\032\n\026MODEL_TYPE_UNSPECIFIED\020\000\022\t\n\005CLOU"
           + "D\020\001\022\026\n\022MOBILE_VERSATILE_1\020\002\022\035\n\031MOBILE_JE"
           + "TSON_VERSATILE_1\020\003\022\034\n\030MOBILE_CORAL_VERSA"
-          + "TILE_1\020\004B\321\001\nAcom.google.cloud.aiplatform"
+          + "TILE_1\020\004B\227\003\nAcom.google.cloud.aiplatform"
           + ".v1beta1.schema.trainingjob.definitionB!"
           + "AutoMLVideoActionRecognitionProtoP\001Zggoo"
           + "gle.golang.org/genproto/googleapis/cloud"
           + "/aiplatform/v1beta1/schema/trainingjob/d"
-          + "efinition;definitionb\006proto3"
+          + "efinition;definition\252\002=Google.Cloud.AIPl"
+          + "atform.V1Beta1.Schema.TrainingJob.Defini"
+          + "tion\312\002=Google\\Cloud\\AIPlatform\\V1beta1\\S"
+          + "chema\\TrainingJob\\Definition\352\002CGoogle::C"
+          + "loud::AIPlatform::V1beta1::Schema::Train"
+          + "ingJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

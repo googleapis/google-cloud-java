@@ -214,6 +214,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
    * Updatable fields:
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
+   *   * `online_serving_config.scaling`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -238,6 +239,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
    * Updatable fields:
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
+   *   * `online_serving_config.scaling`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -262,6 +264,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
    * Updatable fields:
    *   * `labels`
    *   * `online_serving_config.fixed_node_count`
+   *   * `online_serving_config.scaling`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -881,6 +884,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -904,6 +908,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -933,6 +938,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -964,6 +970,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -992,6 +999,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1025,6 +1033,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1054,6 +1063,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1077,6 +1087,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1104,6 +1115,7 @@ public final class UpdateFeaturestoreRequest extends com.google.protobuf.Generat
      * Updatable fields:
      *   * `labels`
      *   * `online_serving_config.fixed_node_count`
+     *   * `online_serving_config.scaling`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

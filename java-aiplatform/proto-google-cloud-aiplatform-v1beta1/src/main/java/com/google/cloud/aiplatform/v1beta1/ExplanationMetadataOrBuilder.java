@@ -284,4 +284,29 @@ public interface ExplanationMetadataOrBuilder
    * @return The bytes for featureAttributionsSchemaUri.
    */
   com.google.protobuf.ByteString getFeatureAttributionsSchemaUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the source to generate embeddings for example based explanations.
+   * </pre>
+   *
+   * <code>string latent_space_source = 5;</code>
+   *
+   * @return The latentSpaceSource.
+   */
+  java.lang.String getLatentSpaceSource();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the source to generate embeddings for example based explanations.
+   * </pre>
+   *
+   * <code>string latent_space_source = 5;</code>
+   *
+   * @return The bytes for latentSpaceSource.
+   */
+  com.google.protobuf.ByteString getLatentSpaceSourceBytes();
 }

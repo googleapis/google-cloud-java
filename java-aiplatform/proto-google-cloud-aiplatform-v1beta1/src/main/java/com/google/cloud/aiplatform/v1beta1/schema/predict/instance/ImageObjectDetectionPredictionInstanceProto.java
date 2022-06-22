@@ -46,12 +46,17 @@ public final class ImageObjectDetectionPredictionInstanceProto {
           + "schema.predict.instance\032\034google/api/anno"
           + "tations.proto\"L\n&ImageObjectDetectionPre"
           + "dictionInstance\022\017\n\007content\030\001 \001(\t\022\021\n\tmime"
-          + "_type\030\002 \001(\tB\315\001\n;com.google.cloud.aiplatf"
+          + "_type\030\002 \001(\tB\201\003\n;com.google.cloud.aiplatf"
           + "orm.v1beta1.schema.predict.instanceB+Ima"
           + "geObjectDetectionPredictionInstanceProto"
           + "P\001Z_google.golang.org/genproto/googleapi"
           + "s/cloud/aiplatform/v1beta1/schema/predic"
-          + "t/instance;instanceb\006proto3"
+          + "t/instance;instance\252\0027Google.Cloud.AIPla"
+          + "tform.V1Beta1.Schema.Predict.Instance\312\0027"
+          + "Google\\Cloud\\AIPlatform\\V1beta1\\Schema\\P"
+          + "redict\\Instance\352\002=Google::Cloud::AIPlatf"
+          + "orm::V1beta1::Schema::Predict::Instanceb"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

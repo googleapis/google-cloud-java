@@ -165,6 +165,53 @@ public final class ModelServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ListModelVersionsRequest,
+          com.google.cloud.aiplatform.v1.ListModelVersionsResponse>
+      getListModelVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListModelVersions",
+      requestType = com.google.cloud.aiplatform.v1.ListModelVersionsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.ListModelVersionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ListModelVersionsRequest,
+          com.google.cloud.aiplatform.v1.ListModelVersionsResponse>
+      getListModelVersionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.ListModelVersionsRequest,
+            com.google.cloud.aiplatform.v1.ListModelVersionsResponse>
+        getListModelVersionsMethod;
+    if ((getListModelVersionsMethod = ModelServiceGrpc.getListModelVersionsMethod) == null) {
+      synchronized (ModelServiceGrpc.class) {
+        if ((getListModelVersionsMethod = ModelServiceGrpc.getListModelVersionsMethod) == null) {
+          ModelServiceGrpc.getListModelVersionsMethod =
+              getListModelVersionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.ListModelVersionsRequest,
+                          com.google.cloud.aiplatform.v1.ListModelVersionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListModelVersions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ListModelVersionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ListModelVersionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelServiceMethodDescriptorSupplier("ListModelVersions"))
+                      .build();
+        }
+      }
+    }
+    return getListModelVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.UpdateModelRequest, com.google.cloud.aiplatform.v1.Model>
       getUpdateModelMethod;
 
@@ -246,6 +293,100 @@ public final class ModelServiceGrpc {
       }
     }
     return getDeleteModelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.DeleteModelVersionRequest,
+          com.google.longrunning.Operation>
+      getDeleteModelVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteModelVersion",
+      requestType = com.google.cloud.aiplatform.v1.DeleteModelVersionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.DeleteModelVersionRequest,
+          com.google.longrunning.Operation>
+      getDeleteModelVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.DeleteModelVersionRequest,
+            com.google.longrunning.Operation>
+        getDeleteModelVersionMethod;
+    if ((getDeleteModelVersionMethod = ModelServiceGrpc.getDeleteModelVersionMethod) == null) {
+      synchronized (ModelServiceGrpc.class) {
+        if ((getDeleteModelVersionMethod = ModelServiceGrpc.getDeleteModelVersionMethod) == null) {
+          ModelServiceGrpc.getDeleteModelVersionMethod =
+              getDeleteModelVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.DeleteModelVersionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteModelVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.DeleteModelVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelServiceMethodDescriptorSupplier("DeleteModelVersion"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteModelVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest,
+          com.google.cloud.aiplatform.v1.Model>
+      getMergeVersionAliasesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MergeVersionAliases",
+      requestType = com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.Model.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest,
+          com.google.cloud.aiplatform.v1.Model>
+      getMergeVersionAliasesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest,
+            com.google.cloud.aiplatform.v1.Model>
+        getMergeVersionAliasesMethod;
+    if ((getMergeVersionAliasesMethod = ModelServiceGrpc.getMergeVersionAliasesMethod) == null) {
+      synchronized (ModelServiceGrpc.class) {
+        if ((getMergeVersionAliasesMethod = ModelServiceGrpc.getMergeVersionAliasesMethod)
+            == null) {
+          ModelServiceGrpc.getMergeVersionAliasesMethod =
+              getMergeVersionAliasesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest,
+                          com.google.cloud.aiplatform.v1.Model>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "MergeVersionAliases"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.Model.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelServiceMethodDescriptorSupplier("MergeVersionAliases"))
+                      .build();
+        }
+      }
+    }
+    return getMergeVersionAliasesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -630,6 +771,21 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Lists versions of the specified model.
+     * </pre>
+     */
+    public void listModelVersions(
+        com.google.cloud.aiplatform.v1.ListModelVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListModelVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListModelVersionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a Model.
      * </pre>
      */
@@ -655,6 +811,37 @@ public final class ModelServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteModelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Model version.
+     * Model version can only be deleted if there are no [DeployedModels][]
+     * created from it. Deleting the only version in the Model is not allowed. Use
+     * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for deleting the Model instead.
+     * </pre>
+     */
+    public void deleteModelVersion(
+        com.google.cloud.aiplatform.v1.DeleteModelVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteModelVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Merges a set of aliases for a Model version.
+     * </pre>
+     */
+    public void mergeVersionAliases(
+        com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Model> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getMergeVersionAliasesMethod(), responseObserver);
     }
 
     /**
@@ -772,6 +959,13 @@ public final class ModelServiceGrpc {
                       com.google.cloud.aiplatform.v1.ListModelsResponse>(
                       this, METHODID_LIST_MODELS)))
           .addMethod(
+              getListModelVersionsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.ListModelVersionsRequest,
+                      com.google.cloud.aiplatform.v1.ListModelVersionsResponse>(
+                      this, METHODID_LIST_MODEL_VERSIONS)))
+          .addMethod(
               getUpdateModelMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -783,6 +977,18 @@ public final class ModelServiceGrpc {
                   new MethodHandlers<
                       com.google.cloud.aiplatform.v1.DeleteModelRequest,
                       com.google.longrunning.Operation>(this, METHODID_DELETE_MODEL)))
+          .addMethod(
+              getDeleteModelVersionMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.DeleteModelVersionRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DELETE_MODEL_VERSION)))
+          .addMethod(
+              getMergeVersionAliasesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest,
+                      com.google.cloud.aiplatform.v1.Model>(this, METHODID_MERGE_VERSION_ALIASES)))
           .addMethod(
               getExportModelMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -895,6 +1101,23 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Lists versions of the specified model.
+     * </pre>
+     */
+    public void listModelVersions(
+        com.google.cloud.aiplatform.v1.ListModelVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListModelVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListModelVersionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a Model.
      * </pre>
      */
@@ -922,6 +1145,41 @@ public final class ModelServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteModelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Model version.
+     * Model version can only be deleted if there are no [DeployedModels][]
+     * created from it. Deleting the only version in the Model is not allowed. Use
+     * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for deleting the Model instead.
+     * </pre>
+     */
+    public void deleteModelVersion(
+        com.google.cloud.aiplatform.v1.DeleteModelVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteModelVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Merges a set of aliases for a Model version.
+     * </pre>
+     */
+    public void mergeVersionAliases(
+        com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Model> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMergeVersionAliasesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1093,6 +1351,19 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Lists versions of the specified model.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListModelVersionsResponse listModelVersions(
+        com.google.cloud.aiplatform.v1.ListModelVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a Model.
      * </pre>
      */
@@ -1116,6 +1387,35 @@ public final class ModelServiceGrpc {
         com.google.cloud.aiplatform.v1.DeleteModelRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Model version.
+     * Model version can only be deleted if there are no [DeployedModels][]
+     * created from it. Deleting the only version in the Model is not allowed. Use
+     * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for deleting the Model instead.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteModelVersion(
+        com.google.cloud.aiplatform.v1.DeleteModelVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteModelVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Merges a set of aliases for a Model version.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.Model mergeVersionAliases(
+        com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMergeVersionAliasesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1263,6 +1563,20 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Lists versions of the specified model.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.ListModelVersionsResponse>
+        listModelVersions(com.google.cloud.aiplatform.v1.ListModelVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListModelVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a Model.
      * </pre>
      */
@@ -1286,6 +1600,35 @@ public final class ModelServiceGrpc {
         deleteModel(com.google.cloud.aiplatform.v1.DeleteModelRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteModelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Model version.
+     * Model version can only be deleted if there are no [DeployedModels][]
+     * created from it. Deleting the only version in the Model is not allowed. Use
+     * [DeleteModel][google.cloud.aiplatform.v1.ModelService.DeleteModel] for deleting the Model instead.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteModelVersion(com.google.cloud.aiplatform.v1.DeleteModelVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteModelVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Merges a set of aliases for a Model version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.aiplatform.v1.Model>
+        mergeVersionAliases(com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMergeVersionAliasesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1379,14 +1722,17 @@ public final class ModelServiceGrpc {
   private static final int METHODID_UPLOAD_MODEL = 0;
   private static final int METHODID_GET_MODEL = 1;
   private static final int METHODID_LIST_MODELS = 2;
-  private static final int METHODID_UPDATE_MODEL = 3;
-  private static final int METHODID_DELETE_MODEL = 4;
-  private static final int METHODID_EXPORT_MODEL = 5;
-  private static final int METHODID_IMPORT_MODEL_EVALUATION = 6;
-  private static final int METHODID_GET_MODEL_EVALUATION = 7;
-  private static final int METHODID_LIST_MODEL_EVALUATIONS = 8;
-  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 9;
-  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 10;
+  private static final int METHODID_LIST_MODEL_VERSIONS = 3;
+  private static final int METHODID_UPDATE_MODEL = 4;
+  private static final int METHODID_DELETE_MODEL = 5;
+  private static final int METHODID_DELETE_MODEL_VERSION = 6;
+  private static final int METHODID_MERGE_VERSION_ALIASES = 7;
+  private static final int METHODID_EXPORT_MODEL = 8;
+  private static final int METHODID_IMPORT_MODEL_EVALUATION = 9;
+  private static final int METHODID_GET_MODEL_EVALUATION = 10;
+  private static final int METHODID_LIST_MODEL_EVALUATIONS = 11;
+  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 12;
+  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1421,6 +1767,13 @@ public final class ModelServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListModelsResponse>)
                   responseObserver);
           break;
+        case METHODID_LIST_MODEL_VERSIONS:
+          serviceImpl.listModelVersions(
+              (com.google.cloud.aiplatform.v1.ListModelVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.ListModelVersionsResponse>)
+                  responseObserver);
+          break;
         case METHODID_UPDATE_MODEL:
           serviceImpl.updateModel(
               (com.google.cloud.aiplatform.v1.UpdateModelRequest) request,
@@ -1430,6 +1783,16 @@ public final class ModelServiceGrpc {
           serviceImpl.deleteModel(
               (com.google.cloud.aiplatform.v1.DeleteModelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_MODEL_VERSION:
+          serviceImpl.deleteModelVersion(
+              (com.google.cloud.aiplatform.v1.DeleteModelVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_MERGE_VERSION_ALIASES:
+          serviceImpl.mergeVersionAliases(
+              (com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Model>) responseObserver);
           break;
         case METHODID_EXPORT_MODEL:
           serviceImpl.exportModel(
@@ -1535,8 +1898,11 @@ public final class ModelServiceGrpc {
                       .addMethod(getUploadModelMethod())
                       .addMethod(getGetModelMethod())
                       .addMethod(getListModelsMethod())
+                      .addMethod(getListModelVersionsMethod())
                       .addMethod(getUpdateModelMethod())
                       .addMethod(getDeleteModelMethod())
+                      .addMethod(getDeleteModelVersionMethod())
+                      .addMethod(getMergeVersionAliasesMethod())
                       .addMethod(getExportModelMethod())
                       .addMethod(getImportModelEvaluationMethod())
                       .addMethod(getGetModelEvaluationMethod())

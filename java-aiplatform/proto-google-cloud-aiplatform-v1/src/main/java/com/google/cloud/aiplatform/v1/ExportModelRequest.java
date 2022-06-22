@@ -1624,6 +1624,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The resource name of the Model to export.
+   * The resource name may contain version id or version alias to specify the
+   * version, if no version is specified, the default version will be exported.
    * </pre>
    *
    * <code>
@@ -1649,6 +1651,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. The resource name of the Model to export.
+   * The resource name may contain version id or version alias to specify the
+   * version, if no version is specified, the default version will be exported.
    * </pre>
    *
    * <code>
@@ -2077,6 +2081,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the Model to export.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be exported.
      * </pre>
      *
      * <code>
@@ -2101,6 +2107,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the Model to export.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be exported.
      * </pre>
      *
      * <code>
@@ -2125,6 +2133,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the Model to export.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be exported.
      * </pre>
      *
      * <code>
@@ -2148,6 +2158,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the Model to export.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be exported.
      * </pre>
      *
      * <code>
@@ -2167,6 +2179,8 @@ public final class ExportModelRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. The resource name of the Model to export.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be exported.
      * </pre>
      *
      * <code>

@@ -52,6 +52,31 @@ public interface ModelEvaluationOrBuilder
    *
    *
    * <pre>
+   * The display name of the ModelEvaluation.
+   * </pre>
+   *
+   * <code>string display_name = 10;</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the ModelEvaluation.
+   * </pre>
+   *
+   * <code>string display_name = 10;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Points to a YAML file stored on Google Cloud Storage describing the
    * [metrics][google.cloud.aiplatform.v1.ModelEvaluation.metrics] of this ModelEvaluation. The schema is
    * defined as an OpenAPI 3.0.2 [Schema
@@ -409,4 +434,48 @@ public interface ModelEvaluationOrBuilder
    */
   com.google.cloud.aiplatform.v1.ModelEvaluation.ModelEvaluationExplanationSpecOrBuilder
       getExplanationSpecsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The metadata of the ModelEvaluation.
+   * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+   * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+   * "evaluation_dataset_path".
+   * </pre>
+   *
+   * <code>.google.protobuf.Value metadata = 11;</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * The metadata of the ModelEvaluation.
+   * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+   * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+   * "evaluation_dataset_path".
+   * </pre>
+   *
+   * <code>.google.protobuf.Value metadata = 11;</code>
+   *
+   * @return The metadata.
+   */
+  com.google.protobuf.Value getMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * The metadata of the ModelEvaluation.
+   * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+   * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+   * "evaluation_dataset_path".
+   * </pre>
+   *
+   * <code>.google.protobuf.Value metadata = 11;</code>
+   */
+  com.google.protobuf.ValueOrBuilder getMetadataOrBuilder();
 }

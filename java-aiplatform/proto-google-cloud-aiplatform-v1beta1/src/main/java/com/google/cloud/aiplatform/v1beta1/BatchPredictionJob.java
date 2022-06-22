@@ -382,6 +382,23 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
 
               break;
             }
+          case 210:
+            {
+              com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig.Builder subBuilder = null;
+              if (modelMonitoringConfig_ != null) {
+                subBuilder = modelMonitoringConfig_.toBuilder();
+              }
+              modelMonitoringConfig_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(modelMonitoringConfig_);
+                modelMonitoringConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 226:
             {
               com.google.cloud.aiplatform.v1beta1.UnmanagedContainerModel.Builder subBuilder = null;
@@ -5456,6 +5473,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
+   * The model resource name may contain version id or version alias to specify
+   * the version, if no version is specified, the default version will be used.
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -5483,6 +5502,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
    * Starting this job has no impact on any existing deployments of the Model
    * and their resources.
    * Exactly one of model and unmanaged_container_model must be set.
+   * The model resource name may contain version id or version alias to specify
+   * the version, if no version is specified, the default version will be used.
    * </pre>
    *
    * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -6815,6 +6836,64 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     return getEncryptionSpec();
   }
 
+  public static final int MODEL_MONITORING_CONFIG_FIELD_NUMBER = 26;
+  private com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig modelMonitoringConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Model monitoring config will be used for analysis model behaviors, based on
+   * the input and output to the batch prediction job, as well as the provided
+   * training dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+   * </code>
+   *
+   * @return Whether the modelMonitoringConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasModelMonitoringConfig() {
+    return modelMonitoringConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Model monitoring config will be used for analysis model behaviors, based on
+   * the input and output to the batch prediction job, as well as the provided
+   * training dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+   * </code>
+   *
+   * @return The modelMonitoringConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig getModelMonitoringConfig() {
+    return modelMonitoringConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig.getDefaultInstance()
+        : modelMonitoringConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Model monitoring config will be used for analysis model behaviors, based on
+   * the input and output to the batch prediction job, as well as the provided
+   * training dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfigOrBuilder
+      getModelMonitoringConfigOrBuilder() {
+    return getModelMonitoringConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6893,6 +6972,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
     if (explanationSpec_ != null) {
       output.writeMessage(25, getExplanationSpec());
+    }
+    if (modelMonitoringConfig_ != null) {
+      output.writeMessage(26, getModelMonitoringConfig());
     }
     if (unmanagedContainerModel_ != null) {
       output.writeMessage(28, getUnmanagedContainerModel());
@@ -6986,6 +7068,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     }
     if (explanationSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getExplanationSpec());
+    }
+    if (modelMonitoringConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(26, getModelMonitoringConfig());
     }
     if (unmanagedContainerModel_ != null) {
       size +=
@@ -7088,6 +7174,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
+    if (hasModelMonitoringConfig() != other.hasModelMonitoringConfig()) return false;
+    if (hasModelMonitoringConfig()) {
+      if (!getModelMonitoringConfig().equals(other.getModelMonitoringConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -7184,6 +7274,10 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
     if (hasEncryptionSpec()) {
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
+    }
+    if (hasModelMonitoringConfig()) {
+      hash = (37 * hash) + MODEL_MONITORING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getModelMonitoringConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -7473,6 +7567,12 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         encryptionSpec_ = null;
         encryptionSpecBuilder_ = null;
       }
+      if (modelMonitoringConfigBuilder_ == null) {
+        modelMonitoringConfig_ = null;
+      } else {
+        modelMonitoringConfig_ = null;
+        modelMonitoringConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -7598,6 +7698,11 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         result.encryptionSpec_ = encryptionSpec_;
       } else {
         result.encryptionSpec_ = encryptionSpecBuilder_.build();
+      }
+      if (modelMonitoringConfigBuilder_ == null) {
+        result.modelMonitoringConfig_ = modelMonitoringConfig_;
+      } else {
+        result.modelMonitoringConfig_ = modelMonitoringConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -7750,6 +7855,9 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (other.hasModelMonitoringConfig()) {
+        mergeModelMonitoringConfig(other.getModelMonitoringConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -8005,6 +8113,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
+     * The model resource name may contain version id or version alias to specify
+     * the version, if no version is specified, the default version will be used.
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -8031,6 +8141,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
+     * The model resource name may contain version id or version alias to specify
+     * the version, if no version is specified, the default version will be used.
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -8057,6 +8169,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
+     * The model resource name may contain version id or version alias to specify
+     * the version, if no version is specified, the default version will be used.
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -8082,6 +8196,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
+     * The model resource name may contain version id or version alias to specify
+     * the version, if no version is specified, the default version will be used.
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -8103,6 +8219,8 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
      * Exactly one of model and unmanaged_container_model must be set.
+     * The model resource name may contain version id or version alias to specify
+     * the version, if no version is specified, the default version will be used.
      * </pre>
      *
      * <code>string model = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -12673,6 +12791,224 @@ public final class BatchPredictionJob extends com.google.protobuf.GeneratedMessa
         encryptionSpec_ = null;
       }
       return encryptionSpecBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig modelMonitoringConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig,
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfigOrBuilder>
+        modelMonitoringConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Model monitoring config will be used for analysis model behaviors, based on
+     * the input and output to the batch prediction job, as well as the provided
+     * training dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+     * </code>
+     *
+     * @return Whether the modelMonitoringConfig field is set.
+     */
+    public boolean hasModelMonitoringConfig() {
+      return modelMonitoringConfigBuilder_ != null || modelMonitoringConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model monitoring config will be used for analysis model behaviors, based on
+     * the input and output to the batch prediction job, as well as the provided
+     * training dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+     * </code>
+     *
+     * @return The modelMonitoringConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig getModelMonitoringConfig() {
+      if (modelMonitoringConfigBuilder_ == null) {
+        return modelMonitoringConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig.getDefaultInstance()
+            : modelMonitoringConfig_;
+      } else {
+        return modelMonitoringConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model monitoring config will be used for analysis model behaviors, based on
+     * the input and output to the batch prediction job, as well as the provided
+     * training dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+     * </code>
+     */
+    public Builder setModelMonitoringConfig(
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig value) {
+      if (modelMonitoringConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelMonitoringConfig_ = value;
+        onChanged();
+      } else {
+        modelMonitoringConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model monitoring config will be used for analysis model behaviors, based on
+     * the input and output to the batch prediction job, as well as the provided
+     * training dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+     * </code>
+     */
+    public Builder setModelMonitoringConfig(
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig.Builder builderForValue) {
+      if (modelMonitoringConfigBuilder_ == null) {
+        modelMonitoringConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        modelMonitoringConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model monitoring config will be used for analysis model behaviors, based on
+     * the input and output to the batch prediction job, as well as the provided
+     * training dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+     * </code>
+     */
+    public Builder mergeModelMonitoringConfig(
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig value) {
+      if (modelMonitoringConfigBuilder_ == null) {
+        if (modelMonitoringConfig_ != null) {
+          modelMonitoringConfig_ =
+              com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig.newBuilder(
+                      modelMonitoringConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          modelMonitoringConfig_ = value;
+        }
+        onChanged();
+      } else {
+        modelMonitoringConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model monitoring config will be used for analysis model behaviors, based on
+     * the input and output to the batch prediction job, as well as the provided
+     * training dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+     * </code>
+     */
+    public Builder clearModelMonitoringConfig() {
+      if (modelMonitoringConfigBuilder_ == null) {
+        modelMonitoringConfig_ = null;
+        onChanged();
+      } else {
+        modelMonitoringConfig_ = null;
+        modelMonitoringConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model monitoring config will be used for analysis model behaviors, based on
+     * the input and output to the batch prediction job, as well as the provided
+     * training dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig.Builder
+        getModelMonitoringConfigBuilder() {
+
+      onChanged();
+      return getModelMonitoringConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model monitoring config will be used for analysis model behaviors, based on
+     * the input and output to the batch prediction job, as well as the provided
+     * training dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfigOrBuilder
+        getModelMonitoringConfigOrBuilder() {
+      if (modelMonitoringConfigBuilder_ != null) {
+        return modelMonitoringConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return modelMonitoringConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig.getDefaultInstance()
+            : modelMonitoringConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model monitoring config will be used for analysis model behaviors, based on
+     * the input and output to the batch prediction job, as well as the provided
+     * training dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig model_monitoring_config = 26;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig,
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfigOrBuilder>
+        getModelMonitoringConfigFieldBuilder() {
+      if (modelMonitoringConfigBuilder_ == null) {
+        modelMonitoringConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig,
+                com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.ModelMonitoringConfigOrBuilder>(
+                getModelMonitoringConfig(), getParentForChildren(), isClean());
+        modelMonitoringConfig_ = null;
+      }
+      return modelMonitoringConfigBuilder_;
     }
 
     @java.lang.Override

@@ -46,12 +46,17 @@ public final class TabularClassificationPredictionResultProto {
           + "1.schema.predict.prediction\032\034google/api/"
           + "annotations.proto\"H\n%TabularClassificati"
           + "onPredictionResult\022\017\n\007classes\030\001 \003(\t\022\016\n\006s"
-          + "cores\030\002 \003(\002B\322\001\n=com.google.cloud.aiplatf"
+          + "cores\030\002 \003(\002B\214\003\n=com.google.cloud.aiplatf"
           + "orm.v1beta1.schema.predict.predictionB*T"
           + "abularClassificationPredictionResultProt"
           + "oP\001Zcgoogle.golang.org/genproto/googleap"
           + "is/cloud/aiplatform/v1beta1/schema/predi"
-          + "ct/prediction;predictionb\006proto3"
+          + "ct/prediction;prediction\252\0029Google.Cloud."
+          + "AIPlatform.V1Beta1.Schema.Predict.Predic"
+          + "tion\312\0029Google\\Cloud\\AIPlatform\\V1beta1\\S"
+          + "chema\\Predict\\Prediction\352\002?Google::Cloud"
+          + "::AIPlatform::V1beta1::Schema::Predict::"
+          + "Predictionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

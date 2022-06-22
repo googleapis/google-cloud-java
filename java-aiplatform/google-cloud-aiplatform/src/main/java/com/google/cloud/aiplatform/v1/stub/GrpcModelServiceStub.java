@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,10 @@
 
 package com.google.cloud.aiplatform.v1.stub;
 
+import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1.ModelServiceClient.ListModelsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -28,6 +30,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.DeleteModelRequest;
+import com.google.cloud.aiplatform.v1.DeleteModelVersionRequest;
 import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1.ExportModelOperationMetadata;
 import com.google.cloud.aiplatform.v1.ExportModelRequest;
@@ -40,8 +43,11 @@ import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationsRequest;
 import com.google.cloud.aiplatform.v1.ListModelEvaluationsResponse;
+import com.google.cloud.aiplatform.v1.ListModelVersionsRequest;
+import com.google.cloud.aiplatform.v1.ListModelVersionsResponse;
 import com.google.cloud.aiplatform.v1.ListModelsRequest;
 import com.google.cloud.aiplatform.v1.ListModelsResponse;
+import com.google.cloud.aiplatform.v1.MergeVersionAliasesRequest;
 import com.google.cloud.aiplatform.v1.Model;
 import com.google.cloud.aiplatform.v1.ModelEvaluation;
 import com.google.cloud.aiplatform.v1.ModelEvaluationSlice;
@@ -49,7 +55,16 @@ import com.google.cloud.aiplatform.v1.UpdateModelRequest;
 import com.google.cloud.aiplatform.v1.UploadModelOperationMetadata;
 import com.google.cloud.aiplatform.v1.UploadModelRequest;
 import com.google.cloud.aiplatform.v1.UploadModelResponse;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableMap;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -92,6 +107,17 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListModelVersionsRequest, ListModelVersionsResponse>
+      listModelVersionsMethodDescriptor =
+          MethodDescriptor.<ListModelVersionsRequest, ListModelVersionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.ModelService/ListModelVersions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListModelVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListModelVersionsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<UpdateModelRequest, Model> updateModelMethodDescriptor =
       MethodDescriptor.<UpdateModelRequest, Model>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -107,6 +133,26 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<DeleteModelVersionRequest, Operation>
+      deleteModelVersionMethodDescriptor =
+          MethodDescriptor.<DeleteModelVersionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.ModelService/DeleteModelVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteModelVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<MergeVersionAliasesRequest, Model>
+      mergeVersionAliasesMethodDescriptor =
+          MethodDescriptor.<MergeVersionAliasesRequest, Model>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.ModelService/MergeVersionAliases")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(MergeVersionAliasesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<ExportModelRequest, Operation> exportModelMethodDescriptor =
       MethodDescriptor.<ExportModelRequest, Operation>newBuilder()
@@ -172,6 +218,52 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(ListModelEvaluationSlicesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.iam.v1.IAMPolicy/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<UploadModelRequest, Operation> uploadModelCallable;
   private final OperationCallable<
           UploadModelRequest, UploadModelResponse, UploadModelOperationMetadata>
@@ -179,10 +271,18 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   private final UnaryCallable<GetModelRequest, Model> getModelCallable;
   private final UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable;
   private final UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable;
+  private final UnaryCallable<ListModelVersionsRequest, ListModelVersionsResponse>
+      listModelVersionsCallable;
+  private final UnaryCallable<ListModelVersionsRequest, ListModelVersionsPagedResponse>
+      listModelVersionsPagedCallable;
   private final UnaryCallable<UpdateModelRequest, Model> updateModelCallable;
   private final UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable;
   private final OperationCallable<DeleteModelRequest, Empty, DeleteOperationMetadata>
       deleteModelOperationCallable;
+  private final UnaryCallable<DeleteModelVersionRequest, Operation> deleteModelVersionCallable;
+  private final OperationCallable<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+      deleteModelVersionOperationCallable;
+  private final UnaryCallable<MergeVersionAliasesRequest, Model> mergeVersionAliasesCallable;
   private final UnaryCallable<ExportModelRequest, Operation> exportModelCallable;
   private final OperationCallable<
           ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
@@ -202,6 +302,14 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   private final UnaryCallable<
           ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesPagedCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -275,6 +383,17 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ListModelVersionsRequest, ListModelVersionsResponse>
+        listModelVersionsTransportSettings =
+            GrpcCallSettings.<ListModelVersionsRequest, ListModelVersionsResponse>newBuilder()
+                .setMethodDescriptor(listModelVersionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<UpdateModelRequest, Model> updateModelTransportSettings =
         GrpcCallSettings.<UpdateModelRequest, Model>newBuilder()
             .setMethodDescriptor(updateModelMethodDescriptor)
@@ -288,6 +407,26 @@ public class GrpcModelServiceStub extends ModelServiceStub {
     GrpcCallSettings<DeleteModelRequest, Operation> deleteModelTransportSettings =
         GrpcCallSettings.<DeleteModelRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteModelVersionRequest, Operation> deleteModelVersionTransportSettings =
+        GrpcCallSettings.<DeleteModelVersionRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteModelVersionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<MergeVersionAliasesRequest, Model> mergeVersionAliasesTransportSettings =
+        GrpcCallSettings.<MergeVersionAliasesRequest, Model>newBuilder()
+            .setMethodDescriptor(mergeVersionAliasesMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
@@ -361,6 +500,57 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
+                    })
+                .build();
 
     this.uploadModelCallable =
         callableFactory.createUnaryCallable(
@@ -380,6 +570,16 @@ public class GrpcModelServiceStub extends ModelServiceStub {
     this.listModelsPagedCallable =
         callableFactory.createPagedCallable(
             listModelsTransportSettings, settings.listModelsSettings(), clientContext);
+    this.listModelVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listModelVersionsTransportSettings,
+            settings.listModelVersionsSettings(),
+            clientContext);
+    this.listModelVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listModelVersionsTransportSettings,
+            settings.listModelVersionsSettings(),
+            clientContext);
     this.updateModelCallable =
         callableFactory.createUnaryCallable(
             updateModelTransportSettings, settings.updateModelSettings(), clientContext);
@@ -392,6 +592,22 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             settings.deleteModelOperationSettings(),
             clientContext,
             operationsStub);
+    this.deleteModelVersionCallable =
+        callableFactory.createUnaryCallable(
+            deleteModelVersionTransportSettings,
+            settings.deleteModelVersionSettings(),
+            clientContext);
+    this.deleteModelVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteModelVersionTransportSettings,
+            settings.deleteModelVersionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.mergeVersionAliasesCallable =
+        callableFactory.createUnaryCallable(
+            mergeVersionAliasesTransportSettings,
+            settings.mergeVersionAliasesSettings(),
+            clientContext);
     this.exportModelCallable =
         callableFactory.createUnaryCallable(
             exportModelTransportSettings, settings.exportModelSettings(), clientContext);
@@ -436,6 +652,26 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             listModelEvaluationSlicesTransportSettings,
             settings.listModelEvaluationSlicesSettings(),
             clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -472,6 +708,18 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   }
 
   @Override
+  public UnaryCallable<ListModelVersionsRequest, ListModelVersionsResponse>
+      listModelVersionsCallable() {
+    return listModelVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListModelVersionsRequest, ListModelVersionsPagedResponse>
+      listModelVersionsPagedCallable() {
+    return listModelVersionsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
     return updateModelCallable;
   }
@@ -485,6 +733,22 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   public OperationCallable<DeleteModelRequest, Empty, DeleteOperationMetadata>
       deleteModelOperationCallable() {
     return deleteModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteModelVersionRequest, Operation> deleteModelVersionCallable() {
+    return deleteModelVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
+      deleteModelVersionOperationCallable() {
+    return deleteModelVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<MergeVersionAliasesRequest, Model> mergeVersionAliasesCallable() {
+    return mergeVersionAliasesCallable;
   }
 
   @Override
@@ -537,6 +801,38 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   public UnaryCallable<ListModelEvaluationSlicesRequest, ListModelEvaluationSlicesPagedResponse>
       listModelEvaluationSlicesPagedCallable() {
     return listModelEvaluationSlicesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

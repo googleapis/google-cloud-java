@@ -46,12 +46,17 @@ public final class VideoActionRecognitionPredictionParamsProto {
           + "schema.predict.params\032\034google/api/annota"
           + "tions.proto\"_\n&VideoActionRecognitionPre"
           + "dictionParams\022\034\n\024confidence_threshold\030\001 "
-          + "\001(\002\022\027\n\017max_predictions\030\002 \001(\005B\307\001\n9com.goo"
+          + "\001(\002\022\027\n\017max_predictions\030\002 \001(\005B\365\002\n9com.goo"
           + "gle.cloud.aiplatform.v1beta1.schema.pred"
           + "ict.paramsB+VideoActionRecognitionPredic"
           + "tionParamsProtoP\001Z[google.golang.org/gen"
           + "proto/googleapis/cloud/aiplatform/v1beta"
-          + "1/schema/predict/params;paramsb\006proto3"
+          + "1/schema/predict/params;params\252\0025Google."
+          + "Cloud.AIPlatform.V1Beta1.Schema.Predict."
+          + "Params\312\0025Google\\Cloud\\AIPlatform\\V1beta1"
+          + "\\Schema\\Predict\\Params\352\002;Google::Cloud::"
+          + "AIPlatform::V1beta1::Schema::Predict::Pa"
+          + "ramsb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

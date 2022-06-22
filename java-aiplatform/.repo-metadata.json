@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-aiplatform",
   "api_id": "aiplatform.googleapis.com",
   "requires_billing": true,
-  "library_type": "GAPIC_AUTO",
-  "codeowner_team": "@googleapis/ml-apis"
+  "library_type": "GAPIC_AUTO"
 }

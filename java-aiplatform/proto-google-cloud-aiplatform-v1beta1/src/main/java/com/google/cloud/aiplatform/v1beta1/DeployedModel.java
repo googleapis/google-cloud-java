@@ -460,8 +460,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the Model that this is the deployment of. Note that the Model
-   * may be in a different location than the DeployedModel's Endpoint.
+   * Required. The resource name of the Model that this is the deployment of. Note that
+   * the Model may be in a different location than the DeployedModel's Endpoint.
+   * The resource name may contain version id or version alias to specify the
+   * version, if no version is specified, the default version will be deployed.
    * </pre>
    *
    * <code>
@@ -486,8 +488,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The name of the Model that this is the deployment of. Note that the Model
-   * may be in a different location than the DeployedModel's Endpoint.
+   * Required. The resource name of the Model that this is the deployment of. Note that
+   * the Model may be in a different location than the DeployedModel's Endpoint.
+   * The resource name may contain version id or version alias to specify the
+   * version, if no version is specified, the default version will be deployed.
    * </pre>
    *
    * <code>
@@ -2045,8 +2049,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Model that this is the deployment of. Note that the Model
-     * may be in a different location than the DeployedModel's Endpoint.
+     * Required. The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>
@@ -2070,8 +2076,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Model that this is the deployment of. Note that the Model
-     * may be in a different location than the DeployedModel's Endpoint.
+     * Required. The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>
@@ -2095,8 +2103,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Model that this is the deployment of. Note that the Model
-     * may be in a different location than the DeployedModel's Endpoint.
+     * Required. The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>
@@ -2119,8 +2129,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Model that this is the deployment of. Note that the Model
-     * may be in a different location than the DeployedModel's Endpoint.
+     * Required. The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>
@@ -2139,8 +2151,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The name of the Model that this is the deployment of. Note that the Model
-     * may be in a different location than the DeployedModel's Endpoint.
+     * Required. The resource name of the Model that this is the deployment of. Note that
+     * the Model may be in a different location than the DeployedModel's Endpoint.
+     * The resource name may contain version id or version alias to specify the
+     * version, if no version is specified, the default version will be deployed.
      * </pre>
      *
      * <code>

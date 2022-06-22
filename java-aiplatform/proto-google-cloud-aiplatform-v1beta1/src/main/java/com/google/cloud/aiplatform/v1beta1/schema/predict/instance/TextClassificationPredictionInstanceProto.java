@@ -46,12 +46,16 @@ public final class TextClassificationPredictionInstanceProto {
           + "ema.predict.instance\032\034google/api/annotat"
           + "ions.proto\"J\n$TextClassificationPredicti"
           + "onInstance\022\017\n\007content\030\001 \001(\t\022\021\n\tmime_type"
-          + "\030\002 \001(\tB\313\001\n;com.google.cloud.aiplatform.v"
+          + "\030\002 \001(\tB\377\002\n;com.google.cloud.aiplatform.v"
           + "1beta1.schema.predict.instanceB)TextClas"
           + "sificationPredictionInstanceProtoP\001Z_goo"
           + "gle.golang.org/genproto/googleapis/cloud"
           + "/aiplatform/v1beta1/schema/predict/insta"
-          + "nce;instanceb\006proto3"
+          + "nce;instance\252\0027Google.Cloud.AIPlatform.V"
+          + "1Beta1.Schema.Predict.Instance\312\0027Google\\"
+          + "Cloud\\AIPlatform\\V1beta1\\Schema\\Predict\\"
+          + "Instance\352\002=Google::Cloud::AIPlatform::V1"
+          + "beta1::Schema::Predict::Instanceb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

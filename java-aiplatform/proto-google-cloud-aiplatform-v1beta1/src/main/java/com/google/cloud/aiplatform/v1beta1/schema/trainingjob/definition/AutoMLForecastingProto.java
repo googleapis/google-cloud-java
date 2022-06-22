@@ -139,12 +139,17 @@ public final class AutoMLForecastingProto {
           + "mn_name\030\001 \001(\tB\027\n\025transformation_detail\032-"
           + "\n\013Granularity\022\014\n\004unit\030\001 \001(\t\022\020\n\010quantity\030"
           + "\002 \001(\003\"@\n\031AutoMlForecastingMetadata\022#\n\033tr"
-          + "ain_cost_milli_node_hours\030\001 \001(\003B\306\001\nAcom."
+          + "ain_cost_milli_node_hours\030\001 \001(\003B\214\003\nAcom."
           + "google.cloud.aiplatform.v1beta1.schema.t"
           + "rainingjob.definitionB\026AutoMLForecasting"
           + "ProtoP\001Zggoogle.golang.org/genproto/goog"
           + "leapis/cloud/aiplatform/v1beta1/schema/t"
-          + "rainingjob/definition;definitionb\006proto3"
+          + "rainingjob/definition;definition\252\002=Googl"
+          + "e.Cloud.AIPlatform.V1Beta1.Schema.Traini"
+          + "ngJob.Definition\312\002=Google\\Cloud\\AIPlatfo"
+          + "rm\\V1beta1\\Schema\\TrainingJob\\Definition"
+          + "\352\002CGoogle::Cloud::AIPlatform::V1beta1::S"
+          + "chema::TrainingJob::Definitionb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

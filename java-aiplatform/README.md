@@ -45,13 +45,13 @@ implementation 'com.google.cloud:google-cloud-aiplatform'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-aiplatform:2.9.7'
+implementation 'com.google.cloud:google-cloud-aiplatform:2.9.8'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-aiplatform" % "2.9.7"
+libraryDependencies += "com.google.cloud" % "google-cloud-aiplatform" % "2.9.8"
 ```
 
 ## Authentication

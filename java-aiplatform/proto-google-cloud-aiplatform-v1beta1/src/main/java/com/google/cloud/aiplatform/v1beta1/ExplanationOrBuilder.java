@@ -139,4 +139,76 @@ public interface ExplanationOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.AttributionOrBuilder getAttributionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of the nearest neighbors for example-based explanations.
+   * For models deployed with the examples explanations feature enabled, the
+   * attributions field is empty and instead the neighbors field is populated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.Neighbor> getNeighborsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of the nearest neighbors for example-based explanations.
+   * For models deployed with the examples explanations feature enabled, the
+   * attributions field is empty and instead the neighbors field is populated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Neighbor getNeighbors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of the nearest neighbors for example-based explanations.
+   * For models deployed with the examples explanations feature enabled, the
+   * attributions field is empty and instead the neighbors field is populated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getNeighborsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of the nearest neighbors for example-based explanations.
+   * For models deployed with the examples explanations feature enabled, the
+   * attributions field is empty and instead the neighbors field is populated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.NeighborOrBuilder>
+      getNeighborsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of the nearest neighbors for example-based explanations.
+   * For models deployed with the examples explanations feature enabled, the
+   * attributions field is empty and instead the neighbors field is populated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Neighbor neighbors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.NeighborOrBuilder getNeighborsOrBuilder(int index);
 }

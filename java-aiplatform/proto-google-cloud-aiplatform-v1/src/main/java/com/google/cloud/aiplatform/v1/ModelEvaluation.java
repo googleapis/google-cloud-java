@@ -40,6 +40,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
 
   private ModelEvaluation() {
     name_ = "";
+    displayName_ = "";
     metricsSchemaUri_ = "";
     sliceDimensions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     dataItemSchemaUri_ = "";
@@ -174,6 +175,27 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
                       com.google.cloud.aiplatform.v1.ModelEvaluation.ModelEvaluationExplanationSpec
                           .parser(),
                       extensionRegistry));
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              displayName_ = s;
+              break;
+            }
+          case 90:
+            {
+              com.google.protobuf.Value.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ = input.readMessage(com.google.protobuf.Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -1281,6 +1303,55 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 10;
+  private volatile java.lang.Object displayName_;
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the ModelEvaluation.
+   * </pre>
+   *
+   * <code>string display_name = 10;</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the ModelEvaluation.
+   * </pre>
+   *
+   * <code>string display_name = 10;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int METRICS_SCHEMA_URI_FIELD_NUMBER = 2;
   private volatile java.lang.Object metricsSchemaUri_;
   /**
@@ -1780,6 +1851,61 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     return explanationSpecs_.get(index);
   }
 
+  public static final int METADATA_FIELD_NUMBER = 11;
+  private com.google.protobuf.Value metadata_;
+  /**
+   *
+   *
+   * <pre>
+   * The metadata of the ModelEvaluation.
+   * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+   * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+   * "evaluation_dataset_path".
+   * </pre>
+   *
+   * <code>.google.protobuf.Value metadata = 11;</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadata() {
+    return metadata_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metadata of the ModelEvaluation.
+   * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+   * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+   * "evaluation_dataset_path".
+   * </pre>
+   *
+   * <code>.google.protobuf.Value metadata = 11;</code>
+   *
+   * @return The metadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Value getMetadata() {
+    return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metadata of the ModelEvaluation.
+   * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+   * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+   * "evaluation_dataset_path".
+   * </pre>
+   *
+   * <code>.google.protobuf.Value metadata = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.ValueOrBuilder getMetadataOrBuilder() {
+    return getMetadata();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1820,6 +1946,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     }
     for (int i = 0; i < explanationSpecs_.size(); i++) {
       output.writeMessage(9, explanationSpecs_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, displayName_);
+    }
+    if (metadata_ != null) {
+      output.writeMessage(11, getMetadata());
     }
     unknownFields.writeTo(output);
   }
@@ -1862,6 +1994,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     for (int i = 0; i < explanationSpecs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, explanationSpecs_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, displayName_);
+    }
+    if (metadata_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getMetadata());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1879,6 +2017,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         (com.google.cloud.aiplatform.v1.ModelEvaluation) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getMetricsSchemaUri().equals(other.getMetricsSchemaUri())) return false;
     if (hasMetrics() != other.hasMetrics()) return false;
     if (hasMetrics()) {
@@ -1896,6 +2035,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       if (!getModelExplanation().equals(other.getModelExplanation())) return false;
     }
     if (!getExplanationSpecsList().equals(other.getExplanationSpecsList())) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata().equals(other.getMetadata())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1909,6 +2052,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + METRICS_SCHEMA_URI_FIELD_NUMBER;
     hash = (53 * hash) + getMetricsSchemaUri().hashCode();
     if (hasMetrics()) {
@@ -1934,6 +2079,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
     if (getExplanationSpecsCount() > 0) {
       hash = (37 * hash) + EXPLANATION_SPECS_FIELD_NUMBER;
       hash = (53 * hash) + getExplanationSpecsList().hashCode();
+    }
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2085,6 +2234,8 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       super.clear();
       name_ = "";
 
+      displayName_ = "";
+
       metricsSchemaUri_ = "";
 
       if (metricsBuilder_ == null) {
@@ -2117,6 +2268,12 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       } else {
         explanationSpecsBuilder_.clear();
       }
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -2146,6 +2303,7 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
           new com.google.cloud.aiplatform.v1.ModelEvaluation(this);
       int from_bitField0_ = bitField0_;
       result.name_ = name_;
+      result.displayName_ = displayName_;
       result.metricsSchemaUri_ = metricsSchemaUri_;
       if (metricsBuilder_ == null) {
         result.metrics_ = metrics_;
@@ -2177,6 +2335,11 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         result.explanationSpecs_ = explanationSpecs_;
       } else {
         result.explanationSpecs_ = explanationSpecsBuilder_.build();
+      }
+      if (metadataBuilder_ == null) {
+        result.metadata_ = metadata_;
+      } else {
+        result.metadata_ = metadataBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2229,6 +2392,10 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.aiplatform.v1.ModelEvaluation.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        onChanged();
+      }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
         onChanged();
       }
       if (!other.getMetricsSchemaUri().isEmpty()) {
@@ -2288,6 +2455,9 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
             explanationSpecsBuilder_.addAllMessages(other.explanationSpecs_);
           }
         }
+      }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2422,6 +2592,112 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the ModelEvaluation.
+     * </pre>
+     *
+     * <code>string display_name = 10;</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the ModelEvaluation.
+     * </pre>
+     *
+     * <code>string display_name = 10;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the ModelEvaluation.
+     * </pre>
+     *
+     * <code>string display_name = 10;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      displayName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the ModelEvaluation.
+     * </pre>
+     *
+     * <code>string display_name = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+
+      displayName_ = getDefaultInstance().getDisplayName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the ModelEvaluation.
+     * </pre>
+     *
+     * <code>string display_name = 10;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      displayName_ = value;
       onChanged();
       return this;
     }
@@ -4056,6 +4332,212 @@ public final class ModelEvaluation extends com.google.protobuf.GeneratedMessageV
         explanationSpecs_ = null;
       }
       return explanationSpecsBuilder_;
+    }
+
+    private com.google.protobuf.Value metadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        metadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The metadata of the ModelEvaluation.
+     * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+     * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+     * "evaluation_dataset_path".
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 11;</code>
+     *
+     * @return Whether the metadata field is set.
+     */
+    public boolean hasMetadata() {
+      return metadataBuilder_ != null || metadata_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata of the ModelEvaluation.
+     * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+     * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+     * "evaluation_dataset_path".
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 11;</code>
+     *
+     * @return The metadata.
+     */
+    public com.google.protobuf.Value getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata of the ModelEvaluation.
+     * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+     * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+     * "evaluation_dataset_path".
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 11;</code>
+     */
+    public Builder setMetadata(com.google.protobuf.Value value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata of the ModelEvaluation.
+     * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+     * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+     * "evaluation_dataset_path".
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 11;</code>
+     */
+    public Builder setMetadata(com.google.protobuf.Value.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata of the ModelEvaluation.
+     * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+     * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+     * "evaluation_dataset_path".
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 11;</code>
+     */
+    public Builder mergeMetadata(com.google.protobuf.Value value) {
+      if (metadataBuilder_ == null) {
+        if (metadata_ != null) {
+          metadata_ =
+              com.google.protobuf.Value.newBuilder(metadata_).mergeFrom(value).buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata of the ModelEvaluation.
+     * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+     * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+     * "evaluation_dataset_path".
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 11;</code>
+     */
+    public Builder clearMetadata() {
+      if (metadataBuilder_ == null) {
+        metadata_ = null;
+        onChanged();
+      } else {
+        metadata_ = null;
+        metadataBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata of the ModelEvaluation.
+     * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+     * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+     * "evaluation_dataset_path".
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 11;</code>
+     */
+    public com.google.protobuf.Value.Builder getMetadataBuilder() {
+
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata of the ModelEvaluation.
+     * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+     * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+     * "evaluation_dataset_path".
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 11;</code>
+     */
+    public com.google.protobuf.ValueOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata of the ModelEvaluation.
+     * For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
+     * structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
+     * "evaluation_dataset_path".
+     * </pre>
+     *
+     * <code>.google.protobuf.Value metadata = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Value,
+                com.google.protobuf.Value.Builder,
+                com.google.protobuf.ValueOrBuilder>(
+                getMetadata(), getParentForChildren(), isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
     }
 
     @java.lang.Override
