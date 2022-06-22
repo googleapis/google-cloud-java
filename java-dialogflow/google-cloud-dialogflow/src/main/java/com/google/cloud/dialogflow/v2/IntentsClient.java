@@ -387,7 +387,7 @@ public class IntentsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListIntentsResponse response = intentsClient.listIntentsCallable().call(request);
-   *     for (Intent element : response.getResponsesList()) {
+   *     for (Intent element : response.getIntentsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

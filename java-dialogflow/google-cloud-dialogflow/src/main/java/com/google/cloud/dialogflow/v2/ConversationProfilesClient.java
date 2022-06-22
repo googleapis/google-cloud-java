@@ -346,7 +346,7 @@ public class ConversationProfilesClient implements BackgroundResource {
    *   while (true) {
    *     ListConversationProfilesResponse response =
    *         conversationProfilesClient.listConversationProfilesCallable().call(request);
-   *     for (ConversationProfile element : response.getResponsesList()) {
+   *     for (ConversationProfile element : response.getConversationProfilesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

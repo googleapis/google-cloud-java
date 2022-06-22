@@ -319,7 +319,7 @@ public class KnowledgeBasesClient implements BackgroundResource {
    *   while (true) {
    *     ListKnowledgeBasesResponse response =
    *         knowledgeBasesClient.listKnowledgeBasesCallable().call(request);
-   *     for (KnowledgeBase element : response.getResponsesList()) {
+   *     for (KnowledgeBase element : response.getKnowledgeBasesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

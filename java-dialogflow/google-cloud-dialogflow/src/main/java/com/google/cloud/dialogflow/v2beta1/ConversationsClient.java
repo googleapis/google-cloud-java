@@ -542,7 +542,7 @@ public class ConversationsClient implements BackgroundResource {
    *   while (true) {
    *     ListConversationsResponse response =
    *         conversationsClient.listConversationsCallable().call(request);
-   *     for (Conversation element : response.getResponsesList()) {
+   *     for (Conversation element : response.getConversationsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1057,7 +1057,7 @@ public class ConversationsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListMessagesResponse response = conversationsClient.listMessagesCallable().call(request);
-   *     for (Message element : response.getResponsesList()) {
+   *     for (Message element : response.getMessagesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

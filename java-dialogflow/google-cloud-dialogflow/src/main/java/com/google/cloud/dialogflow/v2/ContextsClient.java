@@ -286,7 +286,7 @@ public class ContextsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListContextsResponse response = contextsClient.listContextsCallable().call(request);
-   *     for (Context element : response.getResponsesList()) {
+   *     for (Context element : response.getContextsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

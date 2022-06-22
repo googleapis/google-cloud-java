@@ -315,7 +315,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *   while (true) {
    *     ListSessionEntityTypesResponse response =
    *         sessionEntityTypesClient.listSessionEntityTypesCallable().call(request);
-   *     for (SessionEntityType element : response.getResponsesList()) {
+   *     for (SessionEntityType element : response.getSessionEntityTypesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

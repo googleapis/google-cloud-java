@@ -527,7 +527,7 @@ public class ParticipantsClient implements BackgroundResource {
    *   while (true) {
    *     ListParticipantsResponse response =
    *         participantsClient.listParticipantsCallable().call(request);
-   *     for (Participant element : response.getResponsesList()) {
+   *     for (Participant element : response.getParticipantsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1433,7 +1433,7 @@ public class ParticipantsClient implements BackgroundResource {
    *   while (true) {
    *     ListSuggestionsResponse response =
    *         participantsClient.listSuggestionsCallable().call(request);
-   *     for (Suggestion element : response.getResponsesList()) {
+   *     for (Suggestion element : response.getSuggestionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

@@ -586,7 +586,7 @@ public class ConversationDatasetsClient implements BackgroundResource {
    *   while (true) {
    *     ListConversationDatasetsResponse response =
    *         conversationDatasetsClient.listConversationDatasetsCallable().call(request);
-   *     for (ConversationDataset element : response.getResponsesList()) {
+   *     for (ConversationDataset element : response.getConversationDatasetsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
