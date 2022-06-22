@@ -12,7 +12,7 @@ jobs:
         code-suggester --version
     - uses: actions/checkout@v3
       with:
-        repository: 'googleapis/google-cloud-java'
+        repository: 'suztomo/google-cloud-java'
         token: ${{ secrets.GITHUB_TOKEN }}
     - run: |
         echo "This is a new file from pull request." >> NEW_FILE.md
