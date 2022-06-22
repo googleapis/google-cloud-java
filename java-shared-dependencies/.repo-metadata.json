@@ -1,7 +1,7 @@
 {
   "api_shortname": "google-cloud-shared-dependencies",
   "name_pretty": "Google Cloud Shared Dependencies BOM",
-  "client_documentation": "n/a",
+  "client_documentation": "https://github.com/googleapis/java-shared-dependencies",
   "release_level": "stable",
   "language": "java",
   "repo": "googleapis/java-shared-dependencies",
