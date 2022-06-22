@@ -11,6 +11,7 @@
 
 # export GOOGLE_CLOUD_JAVA_DIR=$HOME/google-cloud-java-subject
 # export GOOGLEAPIS_DIR=$HOME/googleapis
+# export GOOGLEAPIS_COMMIT_FILE=googleapis_commit.txt
 
 set -ef
 
@@ -40,6 +41,11 @@ if [ ! -d "$GOOGLE_CLOUD_JAVA_DIR" ]; then
   exit 1
 fi
 
+if [ -z "${GOOGLEAPIS_COMMIT_FILE}" ]; then
+  echo "GOOGLEAPIS_COMMIT_FILE is not set"
+  exit 1
+fi
+
 echo "Operating in ${GOOGLE_CLOUD_JAVA_DIR}"
 cd $GOOGLE_CLOUD_JAVA_DIR
 git config user.email "google-cloud-java-automation[bot]@users.noreply.github.com"
@@ -60,6 +66,11 @@ git pull
 commit_range="${start_commit}..${end_commit}"
 
 googleapis_commits=$(git log --format=%H "$commit_range" |tac)
+
+if [ -z "${googleapis_commits}" ]; then
+  echo "Ensure the commit exists in ${GOOGLEAPIS_DIR}"
+  exit 1
+fi
 
 commit_message_dir=$(mktemp -d -t commit-messages-XXXXX)
 for googleapis_commit in ${googleapis_commits}; do
@@ -110,11 +121,11 @@ function generate_gapic_libraries() {
     index=$((index+1))
 
     # Only for debugging
-    # if [ "$module" != "java-aiplatform" ]; then
-      # if [ $index -ge 10 ]; then
-        # break
-      # fi
-    #fi
+    if [ "$module" != "java-aiplatform" ]; then
+      if [ $index -ge 10 ]; then
+        break
+      fi
+    fi
   done
 }
 
@@ -124,6 +135,9 @@ for googleapis_commit in ${googleapis_commits}; do
   echo `date` ": Generating GAPIC Java libraries (${commit_count}): $googleapis_commit"
   generate_gapic_libraries "$googleapis_commit"
   commit_message_file="${commit_message_dir}/${googleapis_commit}.message.txt"
+
+  # Record the last commit this script run with
+  echo "${googleapis_commit}" > "${GOOGLEAPIS_COMMIT_FILE}"
   git add --all
   git commit --file="${commit_message_file}" --allow-empty
   commit_count=$((commit_count + 1))
