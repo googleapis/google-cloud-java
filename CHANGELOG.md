@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.9.0](https://github.com/googleapis/java-datastore/compare/v2.8.0...v2.9.0) (2022-06-22)
+
+
+### Features
+
+* support readTime in Datastore query splitter. ([#763](https://github.com/googleapis/java-datastore/issues/763)) ([61758e0](https://github.com/googleapis/java-datastore/commit/61758e02c30c8410dd397d0cc77c987332c4f11c))
+
+
+### Documentation
+
+* **sample:** clean up README for native image sample ([#771](https://github.com/googleapis/java-datastore/issues/771)) ([7358aa3](https://github.com/googleapis/java-datastore/commit/7358aa34ec9d3d52aae3195fea718ef748ab22b1))
+
+
+### Dependencies
+
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.12 ([#773](https://github.com/googleapis/java-datastore/issues/773)) ([cab7e54](https://github.com/googleapis/java-datastore/commit/cab7e54359a4fad5fca23b89a9cf52f95e53e19e))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.12 ([#774](https://github.com/googleapis/java-datastore/issues/774)) ([496c1bc](https://github.com/googleapis/java-datastore/commit/496c1bcb4c7343fd8330629f82ca9f96fb1a9acc))
+
 ## [2.8.0](https://github.com/googleapis/java-datastore/compare/v2.7.0...v2.8.0) (2022-06-09)
 
 
