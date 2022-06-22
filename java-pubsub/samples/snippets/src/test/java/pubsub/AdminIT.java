@@ -20,6 +20,17 @@ import static com.google.common.truth.Truth.assertThat;
 import static junit.framework.TestCase.assertNotNull;
 
 import com.google.api.gax.rpc.NotFoundException;
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.DatasetId;
+import com.google.cloud.bigquery.DatasetInfo;
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.StandardTableDefinition;
+import com.google.cloud.bigquery.TableDefinition;
+import com.google.cloud.bigquery.TableId;
+import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.pubsub.v1.SubscriptionName;
@@ -48,6 +59,10 @@ public class AdminIT {
   private static final String exactlyOnceSubscriptionId =
       "iam-exactly-once-subscription-" + _suffix;
   private static final String pushEndpoint = "https://my-test-project.appspot.com/push";
+  private static final String bigqueryDatasetId =
+      "java_samples_data_set" + _suffix.replace("-", "_");
+  private static final String bigquerySubscriptionId = "iam-bigquery-subscription-" + _suffix;
+  private static final String bigqueryTableId = "java_samples_table_" + _suffix;
 
   private static final TopicName topicName = TopicName.of(projectId, topicId);
   private static final SubscriptionName pullSubscriptionName =
@@ -79,6 +94,9 @@ public class AdminIT {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     System.setOut(out);
+
+    // Create table for BigQuery subscription.
+    createBigQueryTable();
   }
 
   @After
@@ -102,7 +120,37 @@ public class AdminIT {
     } catch (NotFoundException ignored) {
       // ignore this as resources may not have been created
     }
+
+    // Delete BigQuery table.
+    deleteBigQueryTable();
+
     System.setOut(null);
+  }
+
+  private void createBigQueryTable() throws Exception {
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+    DatasetInfo datasetInfo = DatasetInfo.newBuilder(projectId, bigqueryDatasetId).build();
+    bigquery.create(datasetInfo);
+
+    Schema schema =
+        Schema.of(
+            Field.of("data", StandardSQLTypeName.STRING),
+            Field.of("message_id", StandardSQLTypeName.STRING),
+            Field.of("attributes", StandardSQLTypeName.STRING),
+            Field.of("subscription_name", StandardSQLTypeName.STRING),
+            Field.of("publish_time", StandardSQLTypeName.TIMESTAMP));
+
+    TableId tableId = TableId.of(projectId, bigqueryDatasetId, bigqueryTableId);
+    TableDefinition tableDefinition = StandardTableDefinition.of(schema);
+    TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
+
+    bigquery.create(tableInfo);
+  }
+
+  private void deleteBigQueryTable() throws Exception {
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+    DatasetId datasetId = DatasetId.of(projectId, bigqueryDatasetId);
+    bigquery.delete(datasetId, BigQuery.DatasetDeleteOption.deleteContents());
   }
 
   @Test
@@ -209,11 +257,20 @@ public class AdminIT {
     assertThat(bout.toString()).contains("enable_exactly_once_delivery=true");
 
     bout.reset();
+    // Test create a BigQuery subscription
+    String bigqueryTablePath = String.join(".", projectId, bigqueryDatasetId, bigqueryTableId);
+    CreateBigQuerySubscriptionExample.createBigQuerySubscription(
+        projectId, topicId, bigquerySubscriptionId, bigqueryTablePath);
+    assertThat(bout.toString()).contains("Created a BigQuery subscription:");
+    assertThat(bout.toString()).contains(bigqueryTablePath);
+
+    bout.reset();
     // Test delete subscription.
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, pullSubscriptionId);
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, pushSubscriptionId);
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, orderedSubscriptionId);
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, exactlyOnceSubscriptionId);
+    DeleteSubscriptionExample.deleteSubscriptionExample(projectId, bigquerySubscriptionId);
     assertThat(bout.toString()).contains("Deleted subscription.");
 
     bout.reset();
