@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.13.4](https://github.com/googleapis/java-bigquery/compare/v2.13.3...v2.13.4) (2022-06-22)
+
+
+### Dependencies
+
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.12 ([#2124](https://github.com/googleapis/java-bigquery/issues/2124)) ([4542ce9](https://github.com/googleapis/java-bigquery/commit/4542ce9a51d9756a8a06d0e33cf3a40d1e321ade))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.12 ([#2125](https://github.com/googleapis/java-bigquery/issues/2125)) ([6da965f](https://github.com/googleapis/java-bigquery/commit/6da965f540a2cdb2eaf845301cfbfbf34b9a6866))
+
 ## [2.13.3](https://github.com/googleapis/java-bigquery/compare/v2.13.2...v2.13.3) (2022-06-16)
 
 
