@@ -19,3 +19,12 @@ The coverage report will be in `monorepo/google-cloud-java/CoverageAggregator/ta
 ## Output
 
 See: [monorepo_script_output](https://github.com/googleapis/google-cloud-java/tree/monorepo_script_output) branch.
+
+
+## Note on Cut-over
+
+Googleapis Sync (Hermetic Build)
+
+- Update templates/googleapis_commit.txt to an appropriate value
+- Update templates/.github/workflows/googleapis_hermetic_sync.yaml to point to
+  the main branch.

@@ -48,9 +48,9 @@ cd google-cloud-java
 git add pom.xml
 git commit -am 'feat: create aggregator pom'
 
-cp -r ../../templates/.kokoro ./
-git add .kokoro
-git commit -am 'chore: add kokoro config files'
+cp -r --preserve=all ../../templates/. ./
+git add --all
+git commit -m 'chore: add template files'
 
 # generate coverage report
 mkdir CoverageAggregator
