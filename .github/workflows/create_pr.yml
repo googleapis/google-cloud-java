@@ -17,8 +17,8 @@ jobs:
         echo "This is a new file from pull request." >> NEW_FILE.md
         git config user.email "google-cloud-java-automation[bot]@users.noreply.github.com"
         git config user.name "google-cloud-java-automation"
-        git add --all
-        git commit -m 'build: adding a new file'
+#        git add --all
+#        git commit -m 'build: adding a new file'
     - run: |
         code-suggester pr --upstream-owner=googleapis --upstream-repo=google-cloud-java \
             --title='suztomo code-suggester test' \
