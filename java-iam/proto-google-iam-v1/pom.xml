@@ -21,7 +21,6 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
   </dependencies>
-
   <build>
     <plugins>
       <plugin>

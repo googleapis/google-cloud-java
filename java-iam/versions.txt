@@ -3,3 +3,6 @@
 
 proto-google-iam-v1:1.4.1:1.4.2-SNAPSHOT
 grpc-google-iam-v1:1.4.1:1.4.2-SNAPSHOT
+proto-google-iam-v2beta:1.4.1:1.4.2-SNAPSHOT
+grpc-google-iam-v2beta:1.4.1:1.4.2-SNAPSHOT
+google-iam-policy:1.4.1:1.4.2-SNAPSHOT
