@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/googleapis/java-debugger-client/compare/v1.2.0...v1.2.1) (2022-06-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#195](https://github.com/googleapis/java-debugger-client/issues/195)) ([2e5957b](https://github.com/googleapis/java-debugger-client/commit/2e5957b49395900103191392b068e5574aa22034))
+
 ## [1.2.0](https://github.com/googleapis/java-debugger-client/compare/v1.1.11...v1.2.0) (2022-05-24)
 
 
