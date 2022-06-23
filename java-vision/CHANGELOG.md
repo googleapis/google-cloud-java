@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.3](https://github.com/googleapis/java-vision/compare/v2.1.2...v2.1.3) (2022-06-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#924](https://github.com/googleapis/java-vision/issues/924)) ([a6173af](https://github.com/googleapis/java-vision/commit/a6173afb0ebd3944b3c90fc6defb046415c0a65c))
+
 ## [2.1.2](https://github.com/googleapis/java-vision/compare/v2.1.1...v2.1.2) (2022-06-22)
 
 
