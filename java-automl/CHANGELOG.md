@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.4](https://github.com/googleapis/java-automl/compare/v2.2.3...v2.2.4) (2022-06-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#1167](https://github.com/googleapis/java-automl/issues/1167)) ([98e1cf8](https://github.com/googleapis/java-automl/commit/98e1cf83ffd000aef59e9e47d8594c0f9f2631f5))
+
 ## [2.2.3](https://github.com/googleapis/java-automl/compare/v2.2.2...v2.2.3) (2022-06-22)
 
 
