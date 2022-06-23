@@ -106,6 +106,21 @@ import javax.annotation.Generated;
  *     ConnectionServiceClient.create(connectionServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * ConnectionServiceSettings connectionServiceSettings =
+ *     ConnectionServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             ConnectionServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * ConnectionServiceClient connectionServiceClient =
+ *     ConnectionServiceClient.create(connectionServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
