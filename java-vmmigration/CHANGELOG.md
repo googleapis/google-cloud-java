@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/googleapis/java-vmmigration/compare/v1.1.0...v1.1.1) (2022-06-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#102](https://github.com/googleapis/java-vmmigration/issues/102)) ([5a92fae](https://github.com/googleapis/java-vmmigration/commit/5a92fae4aff42a2eaba439d7b2eccfe94f90dade))
+
 ## [1.1.0](https://github.com/googleapis/java-vmmigration/compare/v1.0.6...v1.1.0) (2022-05-24)
 
 
