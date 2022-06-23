@@ -17,13 +17,13 @@
 package com.google.cloud.automl.v1;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.automl.v1.stub.PredictionServiceStub;
 import com.google.cloud.automl.v1.stub.PredictionServiceStubSettings;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -101,13 +101,29 @@ import javax.annotation.Generated;
  *     PredictionServiceClient.create(predictionServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * PredictionServiceSettings predictionServiceSettings =
+ *     PredictionServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             PredictionServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * PredictionServiceClient predictionServiceClient =
+ *     PredictionServiceClient.create(predictionServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class PredictionServiceClient implements BackgroundResource {
   private final PredictionServiceSettings settings;
   private final PredictionServiceStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of PredictionServiceClient with default settings. */
   public static final PredictionServiceClient create() throws IOException {
@@ -139,13 +155,17 @@ public class PredictionServiceClient implements BackgroundResource {
   protected PredictionServiceClient(PredictionServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((PredictionServiceStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected PredictionServiceClient(PredictionServiceStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final PredictionServiceSettings getSettings() {
@@ -160,8 +180,16 @@ public class PredictionServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
