@@ -20,11 +20,22 @@ The coverage report will be in `monorepo/google-cloud-java/CoverageAggregator/ta
 
 See: [monorepo_script_output](https://github.com/googleapis/google-cloud-java/tree/monorepo_script_output) branch.
 
+### Preparing .github/workflows directory
 
-## Note on Cut-over
+Once the monorepo_script_output branch is updated by monorepo.yaml, create
+a pull request to rename its `.github/rename-to-workflows` to
+`.github/workflows`.
+This additional work is added because we cannot modify workflow
+(googleapis_hermetic_sync.yaml) from another workflow (monorepo.yaml)
+using the default workflow access token ([GitHub Actions permissions](
+https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions)).
 
-Googleapis Sync (Hermetic Build)
+## Note on Cutover
 
-- Update templates/googleapis_commit.txt to an appropriate value
-- Update templates/.github/workflows/googleapis_hermetic_sync.yaml to point to
+### Googleapis Sync (Hermetic Build)
+
+For Day 1 cutover, once we have main branch:
+
+- Update `googleapis_commit.txt` to an appropriate value
+- Update `.github/workflows/googleapis_hermetic_sync.yaml` to point to
   the main branch.
