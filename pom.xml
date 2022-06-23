@@ -131,6 +131,7 @@
     <module>java-websecurityscanner</module>
     <module>java-workflow-executions</module>
 
+    <module>CoverageAggregator</module>
   </modules>
 
   <build>
