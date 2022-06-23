@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.2](https://github.com/googleapis/java-document-ai/compare/v2.5.1...v2.5.2) (2022-06-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#839](https://github.com/googleapis/java-document-ai/issues/839)) ([6ba683e](https://github.com/googleapis/java-document-ai/commit/6ba683ef5dcf4c2df608dc21661677b6f884ae6b))
+
 ## [2.5.1](https://github.com/googleapis/java-document-ai/compare/v2.5.0...v2.5.1) (2022-06-07)
 
 
