@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/googleapis/java-essential-contacts/compare/v2.2.0...v2.2.1) (2022-06-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#229](https://github.com/googleapis/java-essential-contacts/issues/229)) ([9eac5ff](https://github.com/googleapis/java-essential-contacts/commit/9eac5ffcd49b4ca9f8c6b88f86bc57511e28c454))
+
 ## [2.2.0](https://github.com/googleapis/java-essential-contacts/compare/v2.1.11...v2.2.0) (2022-05-24)
 
 
