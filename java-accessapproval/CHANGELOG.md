@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.2](https://github.com/googleapis/java-accessapproval/compare/v2.3.1...v2.3.2) (2022-06-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#753](https://github.com/googleapis/java-accessapproval/issues/753)) ([2a54fe9](https://github.com/googleapis/java-accessapproval/commit/2a54fe9f88afb33fd98016e36bf5dd49756ba92c))
+
 ## [2.3.1](https://github.com/googleapis/java-accessapproval/compare/v2.3.0...v2.3.1) (2022-06-22)
 
 
