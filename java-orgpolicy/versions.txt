@@ -1,0 +1,7 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-orgpolicy:2.2.1:2.2.2-SNAPSHOT
+grpc-google-cloud-orgpolicy-v2:2.2.1:2.2.2-SNAPSHOT
+proto-google-cloud-orgpolicy-v1:2.2.1:2.2.2-SNAPSHOT
+proto-google-cloud-orgpolicy-v2:2.2.1:2.2.2-SNAPSHOT
