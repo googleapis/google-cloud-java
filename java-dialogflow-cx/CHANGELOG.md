@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.1](https://github.com/googleapis/java-dialogflow-cx/compare/v0.13.0...v0.13.1) (2022-06-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#490](https://github.com/googleapis/java-dialogflow-cx/issues/490)) ([652b50a](https://github.com/googleapis/java-dialogflow-cx/commit/652b50a04d455a7013a6f052cc039de25a27b5a2))
+
 ## [0.13.0](https://github.com/googleapis/java-dialogflow-cx/compare/v0.12.1...v0.13.0) (2022-05-19)
 
 
