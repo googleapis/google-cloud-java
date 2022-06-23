@@ -21,6 +21,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
@@ -106,9 +107,16 @@ public class StreamingVideoIntelligenceServiceSettings
     return StreamingVideoIntelligenceServiceStubSettings.defaultCredentialsProviderBuilder();
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
+  /** Returns a builder for the default gRPC ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return StreamingVideoIntelligenceServiceStubSettings.defaultGrpcTransportProviderBuilder();
+  }
+
+  /** Returns a builder for the default REST ChannelProvider for this service. */
+  @BetaApi
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
+    return StreamingVideoIntelligenceServiceStubSettings.defaultHttpJsonTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -120,9 +128,15 @@ public class StreamingVideoIntelligenceServiceSettings
     return StreamingVideoIntelligenceServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
-  /** Returns a new builder for this class. */
+  /** Returns a new gRPC builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
+  }
+
+  /** Returns a new REST builder for this class. */
+  @BetaApi
+  public static Builder newHttpJsonBuilder() {
+    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -161,6 +175,11 @@ public class StreamingVideoIntelligenceServiceSettings
 
     private static Builder createDefault() {
       return new Builder(StreamingVideoIntelligenceServiceStubSettings.newBuilder());
+    }
+
+    @BetaApi
+    private static Builder createHttpJsonDefault() {
+      return new Builder(StreamingVideoIntelligenceServiceStubSettings.newHttpJsonBuilder());
     }
 
     public StreamingVideoIntelligenceServiceStubSettings.Builder getStubSettingsBuilder() {

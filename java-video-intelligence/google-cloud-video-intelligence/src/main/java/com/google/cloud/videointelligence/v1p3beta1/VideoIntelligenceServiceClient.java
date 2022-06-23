@@ -18,13 +18,13 @@ package com.google.cloud.videointelligence.v1p3beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.videointelligence.v1p3beta1.stub.VideoIntelligenceServiceStub;
 import com.google.cloud.videointelligence.v1p3beta1.stub.VideoIntelligenceServiceStubSettings;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -100,6 +100,21 @@ import javax.annotation.Generated;
  *     VideoIntelligenceServiceClient.create(videoIntelligenceServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * VideoIntelligenceServiceSettings videoIntelligenceServiceSettings =
+ *     VideoIntelligenceServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             VideoIntelligenceServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * VideoIntelligenceServiceClient videoIntelligenceServiceClient =
+ *     VideoIntelligenceServiceClient.create(videoIntelligenceServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
@@ -107,7 +122,8 @@ import javax.annotation.Generated;
 public class VideoIntelligenceServiceClient implements BackgroundResource {
   private final VideoIntelligenceServiceSettings settings;
   private final VideoIntelligenceServiceStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of VideoIntelligenceServiceClient with default settings. */
   public static final VideoIntelligenceServiceClient create() throws IOException {
@@ -141,13 +157,17 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
       throws IOException {
     this.settings = settings;
     this.stub = ((VideoIntelligenceServiceStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected VideoIntelligenceServiceClient(VideoIntelligenceServiceStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final VideoIntelligenceServiceSettings getSettings() {
@@ -162,8 +182,16 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
