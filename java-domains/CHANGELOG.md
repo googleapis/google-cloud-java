@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/googleapis/java-domains/compare/v0.6.0...v0.6.1) (2022-06-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#235](https://github.com/googleapis/java-domains/issues/235)) ([00e6814](https://github.com/googleapis/java-domains/commit/00e6814c01557acbdb9717d198f7386b570fe870))
+
 ## [0.6.0](https://github.com/googleapis/java-domains/compare/v0.5.6...v0.6.0) (2022-05-24)
 
 
