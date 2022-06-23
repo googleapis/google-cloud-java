@@ -26,6 +26,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesResponse;
 import com.google.cloud.aiplatform.v1beta1.DeleteModelRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteModelVersionRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
@@ -167,6 +169,13 @@ public abstract class ModelServiceStub implements BackgroundResource {
   public UnaryCallable<ImportModelEvaluationRequest, ModelEvaluation>
       importModelEvaluationCallable() {
     throw new UnsupportedOperationException("Not implemented: importModelEvaluationCallable()");
+  }
+
+  public UnaryCallable<
+          BatchImportModelEvaluationSlicesRequest, BatchImportModelEvaluationSlicesResponse>
+      batchImportModelEvaluationSlicesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchImportModelEvaluationSlicesCallable()");
   }
 
   public UnaryCallable<GetModelEvaluationRequest, ModelEvaluation> getModelEvaluationCallable() {

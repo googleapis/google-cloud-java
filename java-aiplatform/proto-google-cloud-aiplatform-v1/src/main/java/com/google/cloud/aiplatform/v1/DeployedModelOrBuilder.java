@@ -167,6 +167,31 @@ public interface DeployedModelOrBuilder
    *
    *
    * <pre>
+   * Output only. The version ID of the model that is deployed.
+   * </pre>
+   *
+   * <code>string model_version_id = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The modelVersionId.
+   */
+  java.lang.String getModelVersionId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The version ID of the model that is deployed.
+   * </pre>
+   *
+   * <code>string model_version_id = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for modelVersionId.
+   */
+  com.google.protobuf.ByteString getModelVersionIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The display name of the DeployedModel. If not provided upon creation,
    * the Model's display_name is used.
    * </pre>

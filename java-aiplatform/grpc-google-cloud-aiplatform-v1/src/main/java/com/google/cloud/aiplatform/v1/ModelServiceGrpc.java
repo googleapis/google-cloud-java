@@ -481,6 +481,59 @@ public final class ModelServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest,
+          com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse>
+      getBatchImportModelEvaluationSlicesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchImportModelEvaluationSlices",
+      requestType = com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest,
+          com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse>
+      getBatchImportModelEvaluationSlicesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest,
+            com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse>
+        getBatchImportModelEvaluationSlicesMethod;
+    if ((getBatchImportModelEvaluationSlicesMethod =
+            ModelServiceGrpc.getBatchImportModelEvaluationSlicesMethod)
+        == null) {
+      synchronized (ModelServiceGrpc.class) {
+        if ((getBatchImportModelEvaluationSlicesMethod =
+                ModelServiceGrpc.getBatchImportModelEvaluationSlicesMethod)
+            == null) {
+          ModelServiceGrpc.getBatchImportModelEvaluationSlicesMethod =
+              getBatchImportModelEvaluationSlicesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest,
+                          com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchImportModelEvaluationSlices"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1
+                                  .BatchImportModelEvaluationSlicesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelServiceMethodDescriptorSupplier(
+                              "BatchImportModelEvaluationSlices"))
+                      .build();
+        }
+      }
+    }
+    return getBatchImportModelEvaluationSlicesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.GetModelEvaluationRequest,
           com.google.cloud.aiplatform.v1.ModelEvaluation>
       getGetModelEvaluationMethod;
@@ -879,6 +932,22 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Imports a list of externally generated ModelEvaluationSlice.
+     * </pre>
+     */
+    public void batchImportModelEvaluationSlices(
+        com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchImportModelEvaluationSlicesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a ModelEvaluation.
      * </pre>
      */
@@ -1002,6 +1071,13 @@ public final class ModelServiceGrpc {
                       com.google.cloud.aiplatform.v1.ImportModelEvaluationRequest,
                       com.google.cloud.aiplatform.v1.ModelEvaluation>(
                       this, METHODID_IMPORT_MODEL_EVALUATION)))
+          .addMethod(
+              getBatchImportModelEvaluationSlicesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest,
+                      com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse>(
+                      this, METHODID_BATCH_IMPORT_MODEL_EVALUATION_SLICES)))
           .addMethod(
               getGetModelEvaluationMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1215,6 +1291,24 @@ public final class ModelServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getImportModelEvaluationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a list of externally generated ModelEvaluationSlice.
+     * </pre>
+     */
+    public void batchImportModelEvaluationSlices(
+        com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchImportModelEvaluationSlicesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1450,6 +1544,20 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Imports a list of externally generated ModelEvaluationSlice.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse
+        batchImportModelEvaluationSlices(
+            com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchImportModelEvaluationSlicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a ModelEvaluation.
      * </pre>
      */
@@ -1664,6 +1772,22 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Imports a list of externally generated ModelEvaluationSlice.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse>
+        batchImportModelEvaluationSlices(
+            com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchImportModelEvaluationSlicesMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a ModelEvaluation.
      * </pre>
      */
@@ -1729,10 +1853,11 @@ public final class ModelServiceGrpc {
   private static final int METHODID_MERGE_VERSION_ALIASES = 7;
   private static final int METHODID_EXPORT_MODEL = 8;
   private static final int METHODID_IMPORT_MODEL_EVALUATION = 9;
-  private static final int METHODID_GET_MODEL_EVALUATION = 10;
-  private static final int METHODID_LIST_MODEL_EVALUATIONS = 11;
-  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 12;
-  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 13;
+  private static final int METHODID_BATCH_IMPORT_MODEL_EVALUATION_SLICES = 10;
+  private static final int METHODID_GET_MODEL_EVALUATION = 11;
+  private static final int METHODID_LIST_MODEL_EVALUATIONS = 12;
+  private static final int METHODID_GET_MODEL_EVALUATION_SLICE = 13;
+  private static final int METHODID_LIST_MODEL_EVALUATION_SLICES = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1803,6 +1928,13 @@ public final class ModelServiceGrpc {
           serviceImpl.importModelEvaluation(
               (com.google.cloud.aiplatform.v1.ImportModelEvaluationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ModelEvaluation>)
+                  responseObserver);
+          break;
+        case METHODID_BATCH_IMPORT_MODEL_EVALUATION_SLICES:
+          serviceImpl.batchImportModelEvaluationSlices(
+              (com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.BatchImportModelEvaluationSlicesResponse>)
                   responseObserver);
           break;
         case METHODID_GET_MODEL_EVALUATION:
@@ -1905,6 +2037,7 @@ public final class ModelServiceGrpc {
                       .addMethod(getMergeVersionAliasesMethod())
                       .addMethod(getExportModelMethod())
                       .addMethod(getImportModelEvaluationMethod())
+                      .addMethod(getBatchImportModelEvaluationSlicesMethod())
                       .addMethod(getGetModelEvaluationMethod())
                       .addMethod(getListModelEvaluationsMethod())
                       .addMethod(getGetModelEvaluationSliceMethod())

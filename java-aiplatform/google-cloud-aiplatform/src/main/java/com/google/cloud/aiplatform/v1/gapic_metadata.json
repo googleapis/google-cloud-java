@@ -565,6 +565,9 @@
         "grpc": {
           "libraryClient": "ModelServiceClient",
           "rpcs": {
+            "BatchImportModelEvaluationSlices": {
+              "methods": ["batchImportModelEvaluationSlices", "batchImportModelEvaluationSlices", "batchImportModelEvaluationSlices", "batchImportModelEvaluationSlicesCallable"]
+            },
             "DeleteModel": {
               "methods": ["deleteModelAsync", "deleteModelAsync", "deleteModelAsync", "deleteModelOperationCallable", "deleteModelCallable"]
             },

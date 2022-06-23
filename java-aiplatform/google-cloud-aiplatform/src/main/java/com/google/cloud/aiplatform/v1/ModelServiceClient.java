@@ -1529,6 +1529,132 @@ public class ModelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Imports a list of externally generated ModelEvaluationSlice.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelEvaluationName parent =
+   *       ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
+   *   List<ModelEvaluationSlice> modelEvaluationSlices = new ArrayList<>();
+   *   BatchImportModelEvaluationSlicesResponse response =
+   *       modelServiceClient.batchImportModelEvaluationSlices(parent, modelEvaluationSlices);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent ModelEvaluation resource. Format:
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
+   * @param modelEvaluationSlices Required. Model evaluation slice resource to be imported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchImportModelEvaluationSlicesResponse batchImportModelEvaluationSlices(
+      ModelEvaluationName parent, List<ModelEvaluationSlice> modelEvaluationSlices) {
+    BatchImportModelEvaluationSlicesRequest request =
+        BatchImportModelEvaluationSlicesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllModelEvaluationSlices(modelEvaluationSlices)
+            .build();
+    return batchImportModelEvaluationSlices(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports a list of externally generated ModelEvaluationSlice.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String parent =
+   *       ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]").toString();
+   *   List<ModelEvaluationSlice> modelEvaluationSlices = new ArrayList<>();
+   *   BatchImportModelEvaluationSlicesResponse response =
+   *       modelServiceClient.batchImportModelEvaluationSlices(parent, modelEvaluationSlices);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent ModelEvaluation resource. Format:
+   *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
+   * @param modelEvaluationSlices Required. Model evaluation slice resource to be imported.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchImportModelEvaluationSlicesResponse batchImportModelEvaluationSlices(
+      String parent, List<ModelEvaluationSlice> modelEvaluationSlices) {
+    BatchImportModelEvaluationSlicesRequest request =
+        BatchImportModelEvaluationSlicesRequest.newBuilder()
+            .setParent(parent)
+            .addAllModelEvaluationSlices(modelEvaluationSlices)
+            .build();
+    return batchImportModelEvaluationSlices(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports a list of externally generated ModelEvaluationSlice.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   BatchImportModelEvaluationSlicesRequest request =
+   *       BatchImportModelEvaluationSlicesRequest.newBuilder()
+   *           .setParent(
+   *               ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
+   *                   .toString())
+   *           .addAllModelEvaluationSlices(new ArrayList<ModelEvaluationSlice>())
+   *           .build();
+   *   BatchImportModelEvaluationSlicesResponse response =
+   *       modelServiceClient.batchImportModelEvaluationSlices(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchImportModelEvaluationSlicesResponse batchImportModelEvaluationSlices(
+      BatchImportModelEvaluationSlicesRequest request) {
+    return batchImportModelEvaluationSlicesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports a list of externally generated ModelEvaluationSlice.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   BatchImportModelEvaluationSlicesRequest request =
+   *       BatchImportModelEvaluationSlicesRequest.newBuilder()
+   *           .setParent(
+   *               ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]")
+   *                   .toString())
+   *           .addAllModelEvaluationSlices(new ArrayList<ModelEvaluationSlice>())
+   *           .build();
+   *   ApiFuture<BatchImportModelEvaluationSlicesResponse> future =
+   *       modelServiceClient.batchImportModelEvaluationSlicesCallable().futureCall(request);
+   *   // Do something.
+   *   BatchImportModelEvaluationSlicesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchImportModelEvaluationSlicesRequest, BatchImportModelEvaluationSlicesResponse>
+      batchImportModelEvaluationSlicesCallable() {
+    return stub.batchImportModelEvaluationSlicesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets a ModelEvaluation.
    *
    * <p>Sample code:

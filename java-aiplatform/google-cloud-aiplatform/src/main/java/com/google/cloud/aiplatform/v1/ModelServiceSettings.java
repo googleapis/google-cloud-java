@@ -166,6 +166,14 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     return ((ModelServiceStubSettings) getStubSettings()).importModelEvaluationSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchImportModelEvaluationSlices. */
+  public UnaryCallSettings<
+          BatchImportModelEvaluationSlicesRequest, BatchImportModelEvaluationSlicesResponse>
+      batchImportModelEvaluationSlicesSettings() {
+    return ((ModelServiceStubSettings) getStubSettings())
+        .batchImportModelEvaluationSlicesSettings();
+  }
+
   /** Returns the object with the settings used for calls to getModelEvaluation. */
   public UnaryCallSettings<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationSettings() {
@@ -400,6 +408,13 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     public UnaryCallSettings.Builder<ImportModelEvaluationRequest, ModelEvaluation>
         importModelEvaluationSettings() {
       return getStubSettingsBuilder().importModelEvaluationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchImportModelEvaluationSlices. */
+    public UnaryCallSettings.Builder<
+            BatchImportModelEvaluationSlicesRequest, BatchImportModelEvaluationSlicesResponse>
+        batchImportModelEvaluationSlicesSettings() {
+      return getStubSettingsBuilder().batchImportModelEvaluationSlicesSettings();
     }
 
     /** Returns the builder for the settings used for calls to getModelEvaluation. */

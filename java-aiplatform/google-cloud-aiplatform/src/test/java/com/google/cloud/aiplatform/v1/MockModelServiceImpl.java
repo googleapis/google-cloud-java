@@ -266,6 +266,28 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   }
 
   @Override
+  public void batchImportModelEvaluationSlices(
+      BatchImportModelEvaluationSlicesRequest request,
+      StreamObserver<BatchImportModelEvaluationSlicesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchImportModelEvaluationSlicesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchImportModelEvaluationSlicesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchImportModelEvaluationSlices, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchImportModelEvaluationSlicesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getModelEvaluation(
       GetModelEvaluationRequest request, StreamObserver<ModelEvaluation> responseObserver) {
     Object response = responses.poll();

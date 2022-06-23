@@ -1178,6 +1178,94 @@ public class ModelServiceClientTest {
   }
 
   @Test
+  public void batchImportModelEvaluationSlicesTest() throws Exception {
+    BatchImportModelEvaluationSlicesResponse expectedResponse =
+        BatchImportModelEvaluationSlicesResponse.newBuilder()
+            .addAllImportedModelEvaluationSlices(new ArrayList<String>())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    ModelEvaluationName parent =
+        ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
+    List<ModelEvaluationSlice> modelEvaluationSlices = new ArrayList<>();
+
+    BatchImportModelEvaluationSlicesResponse actualResponse =
+        client.batchImportModelEvaluationSlices(parent, modelEvaluationSlices);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchImportModelEvaluationSlicesRequest actualRequest =
+        ((BatchImportModelEvaluationSlicesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(modelEvaluationSlices, actualRequest.getModelEvaluationSlicesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchImportModelEvaluationSlicesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      ModelEvaluationName parent =
+          ModelEvaluationName.of("[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]");
+      List<ModelEvaluationSlice> modelEvaluationSlices = new ArrayList<>();
+      client.batchImportModelEvaluationSlices(parent, modelEvaluationSlices);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchImportModelEvaluationSlicesTest2() throws Exception {
+    BatchImportModelEvaluationSlicesResponse expectedResponse =
+        BatchImportModelEvaluationSlicesResponse.newBuilder()
+            .addAllImportedModelEvaluationSlices(new ArrayList<String>())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    List<ModelEvaluationSlice> modelEvaluationSlices = new ArrayList<>();
+
+    BatchImportModelEvaluationSlicesResponse actualResponse =
+        client.batchImportModelEvaluationSlices(parent, modelEvaluationSlices);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchImportModelEvaluationSlicesRequest actualRequest =
+        ((BatchImportModelEvaluationSlicesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(modelEvaluationSlices, actualRequest.getModelEvaluationSlicesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchImportModelEvaluationSlicesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<ModelEvaluationSlice> modelEvaluationSlices = new ArrayList<>();
+      client.batchImportModelEvaluationSlices(parent, modelEvaluationSlices);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getModelEvaluationTest() throws Exception {
     ModelEvaluation expectedResponse =
         ModelEvaluation.newBuilder()

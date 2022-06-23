@@ -112,6 +112,14 @@ public final class ModelServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ImportModelEvaluationRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_BatchImportModelEvaluationSlicesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_BatchImportModelEvaluationSlicesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_BatchImportModelEvaluationSlicesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_BatchImportModelEvaluationSlicesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_GetModelEvaluationRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_GetModelEvaluationRequest_fieldAccessorTable;
@@ -225,123 +233,138 @@ public final class ModelServiceProto {
           + "7\n\006parent\030\001 \001(\tB\'\340A\002\372A!\n\037aiplatform.goog"
           + "leapis.com/Model\022O\n\020model_evaluation\030\002 \001"
           + "(\01320.google.cloud.aiplatform.v1beta1.Mod"
-          + "elEvaluationB\003\340A\002\"\\\n\031GetModelEvaluationR"
-          + "equest\022?\n\004name\030\001 \001(\tB1\340A\002\372A+\n)aiplatform"
-          + ".googleapis.com/ModelEvaluation\"\274\001\n\033List"
-          + "ModelEvaluationsRequest\0227\n\006parent\030\001 \001(\tB"
-          + "\'\340A\002\372A!\n\037aiplatform.googleapis.com/Model"
-          + "\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\np"
-          + "age_token\030\004 \001(\t\022-\n\tread_mask\030\005 \001(\0132\032.goo"
-          + "gle.protobuf.FieldMask\"\204\001\n\034ListModelEval"
-          + "uationsResponse\022K\n\021model_evaluations\030\001 \003"
-          + "(\01320.google.cloud.aiplatform.v1beta1.Mod"
-          + "elEvaluation\022\027\n\017next_page_token\030\002 \001(\t\"f\n"
-          + "\036GetModelEvaluationSliceRequest\022D\n\004name\030"
-          + "\001 \001(\tB6\340A\002\372A0\n.aiplatform.googleapis.com"
-          + "/ModelEvaluationSlice\"\313\001\n ListModelEvalu"
-          + "ationSlicesRequest\022A\n\006parent\030\001 \001(\tB1\340A\002\372"
-          + "A+\n)aiplatform.googleapis.com/ModelEvalu"
-          + "ation\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005"
-          + "\022\022\n\npage_token\030\004 \001(\t\022-\n\tread_mask\030\005 \001(\0132"
-          + "\032.google.protobuf.FieldMask\"\224\001\n!ListMode"
-          + "lEvaluationSlicesResponse\022V\n\027model_evalu"
-          + "ation_slices\030\001 \003(\01325.google.cloud.aiplat"
-          + "form.v1beta1.ModelEvaluationSlice\022\027\n\017nex"
-          + "t_page_token\030\002 \001(\t2\262\033\n\014ModelService\022\352\001\n\013"
-          + "UploadModel\0223.google.cloud.aiplatform.v1"
-          + "beta1.UploadModelRequest\032\035.google.longru"
-          + "nning.Operation\"\206\001\202\323\344\223\002;\"6/v1beta1/{pare"
-          + "nt=projects/*/locations/*}/models:upload"
-          + ":\001*\332A\014parent,model\312A3\n\023UploadModelRespon"
-          + "se\022\034UploadModelOperationMetadata\022\244\001\n\010Get"
-          + "Model\0220.google.cloud.aiplatform.v1beta1."
-          + "GetModelRequest\032&.google.cloud.aiplatfor"
-          + "m.v1beta1.Model\">\202\323\344\223\0021\022//v1beta1/{name="
-          + "projects/*/locations/*/models/*}\332A\004name\022"
-          + "\267\001\n\nListModels\0222.google.cloud.aiplatform"
-          + ".v1beta1.ListModelsRequest\0323.google.clou"
-          + "d.aiplatform.v1beta1.ListModelsResponse\""
-          + "@\202\323\344\223\0021\022//v1beta1/{parent=projects/*/loc"
-          + "ations/*}/models\332A\006parent\022\327\001\n\021ListModelV"
-          + "ersions\0229.google.cloud.aiplatform.v1beta"
-          + "1.ListModelVersionsRequest\032:.google.clou"
-          + "d.aiplatform.v1beta1.ListModelVersionsRe"
-          + "sponse\"K\202\323\344\223\002>\022</v1beta1/{name=projects/"
-          + "*/locations/*/models/*}:listVersions\332A\004n"
-          + "ame\022\304\001\n\013UpdateModel\0223.google.cloud.aipla"
-          + "tform.v1beta1.UpdateModelRequest\032&.googl"
-          + "e.cloud.aiplatform.v1beta1.Model\"X\202\323\344\223\002>"
-          + "25/v1beta1/{model.name=projects/*/locati"
-          + "ons/*/models/*}:\005model\332A\021model,update_ma"
-          + "sk\022\252\002\n\030UpdateExplanationDataset\022@.google"
-          + ".cloud.aiplatform.v1beta1.UpdateExplanat"
-          + "ionDatasetRequest\032\035.google.longrunning.O"
-          + "peration\"\254\001\202\323\344\223\002N\"I/v1beta1/{model=proje"
-          + "cts/*/locations/*/models/*}:updateExplan"
-          + "ationDataset:\001*\332A\005model\312AM\n UpdateExplan"
-          + "ationDatasetResponse\022)UpdateExplanationD"
-          + "atasetOperationMetadata\022\324\001\n\013DeleteModel\022"
-          + "3.google.cloud.aiplatform.v1beta1.Delete"
-          + "ModelRequest\032\035.google.longrunning.Operat"
-          + "ion\"q\202\323\344\223\0021*//v1beta1/{name=projects/*/l"
-          + "ocations/*/models/*}\332A\004name\312A0\n\025google.p"
-          + "rotobuf.Empty\022\027DeleteOperationMetadata\022\360"
-          + "\001\n\022DeleteModelVersion\022:.google.cloud.aip"
-          + "latform.v1beta1.DeleteModelVersionReques"
-          + "t\032\035.google.longrunning.Operation\"\177\202\323\344\223\002?"
-          + "*=/v1beta1/{name=projects/*/locations/*/"
-          + "models/*}:deleteVersion\332A\004name\312A0\n\025googl"
-          + "e.protobuf.Empty\022\027DeleteOperationMetadat"
-          + "a\022\341\001\n\023MergeVersionAliases\022;.google.cloud"
-          + ".aiplatform.v1beta1.MergeVersionAliasesR"
-          + "equest\032&.google.cloud.aiplatform.v1beta1"
-          + ".Model\"e\202\323\344\223\002H\"C/v1beta1/{name=projects/"
-          + "*/locations/*/models/*}:mergeVersionAlia"
-          + "ses:\001*\332A\024name,version_aliases\022\360\001\n\013Export"
-          + "Model\0223.google.cloud.aiplatform.v1beta1."
-          + "ExportModelRequest\032\035.google.longrunning."
-          + "Operation\"\214\001\202\323\344\223\002;\"6/v1beta1/{name=proje"
-          + "cts/*/locations/*/models/*}:export:\001*\332A\022"
-          + "name,output_config\312A3\n\023ExportModelRespon"
-          + "se\022\034ExportModelOperationMetadata\022\363\001\n\025Imp"
-          + "ortModelEvaluation\022=.google.cloud.aiplat"
-          + "form.v1beta1.ImportModelEvaluationReques"
-          + "t\0320.google.cloud.aiplatform.v1beta1.Mode"
-          + "lEvaluation\"i\202\323\344\223\002I\"D/v1beta1/{parent=pr"
-          + "ojects/*/locations/*/models/*}/evaluatio"
-          + "ns:import:\001*\332A\027parent,model_evaluation\022\320"
-          + "\001\n\022GetModelEvaluation\022:.google.cloud.aip"
-          + "latform.v1beta1.GetModelEvaluationReques"
-          + "t\0320.google.cloud.aiplatform.v1beta1.Mode"
-          + "lEvaluation\"L\202\323\344\223\002?\022=/v1beta1/{name=proj"
-          + "ects/*/locations/*/models/*/evaluations/"
-          + "*}\332A\004name\022\343\001\n\024ListModelEvaluations\022<.goo"
-          + "gle.cloud.aiplatform.v1beta1.ListModelEv"
-          + "aluationsRequest\032=.google.cloud.aiplatfo"
-          + "rm.v1beta1.ListModelEvaluationsResponse\""
-          + "N\202\323\344\223\002?\022=/v1beta1/{parent=projects/*/loc"
-          + "ations/*/models/*}/evaluations\332A\006parent\022"
-          + "\350\001\n\027GetModelEvaluationSlice\022?.google.clo"
-          + "ud.aiplatform.v1beta1.GetModelEvaluation"
-          + "SliceRequest\0325.google.cloud.aiplatform.v"
-          + "1beta1.ModelEvaluationSlice\"U\202\323\344\223\002H\022F/v1"
-          + "beta1/{name=projects/*/locations/*/model"
-          + "s/*/evaluations/*/slices/*}\332A\004name\022\373\001\n\031L"
-          + "istModelEvaluationSlices\022A.google.cloud."
-          + "aiplatform.v1beta1.ListModelEvaluationSl"
-          + "icesRequest\032B.google.cloud.aiplatform.v1"
-          + "beta1.ListModelEvaluationSlicesResponse\""
-          + "W\202\323\344\223\002H\022F/v1beta1/{parent=projects/*/loc"
-          + "ations/*/models/*/evaluations/*}/slices\332"
-          + "A\006parent\032M\312A\031aiplatform.googleapis.com\322A"
-          + ".https://www.googleapis.com/auth/cloud-p"
-          + "latformB\356\001\n#com.google.cloud.aiplatform."
-          + "v1beta1B\021ModelServiceProtoP\001ZIgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/aiplat"
-          + "form/v1beta1;aiplatform\252\002\037Google.Cloud.A"
-          + "IPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlatf"
-          + "orm\\V1beta1\352\002\"Google::Cloud::AIPlatform:"
-          + ":V1beta1b\006proto3"
+          + "elEvaluationB\003\340A\002\"\311\001\n\'BatchImportModelEv"
+          + "aluationSlicesRequest\022A\n\006parent\030\001 \001(\tB1\340"
+          + "A\002\372A+\n)aiplatform.googleapis.com/ModelEv"
+          + "aluation\022[\n\027model_evaluation_slices\030\002 \003("
+          + "\01325.google.cloud.aiplatform.v1beta1.Mode"
+          + "lEvaluationSliceB\003\340A\002\"Y\n(BatchImportMode"
+          + "lEvaluationSlicesResponse\022-\n imported_mo"
+          + "del_evaluation_slices\030\001 \003(\tB\003\340A\003\"\\\n\031GetM"
+          + "odelEvaluationRequest\022?\n\004name\030\001 \001(\tB1\340A\002"
+          + "\372A+\n)aiplatform.googleapis.com/ModelEval"
+          + "uation\"\274\001\n\033ListModelEvaluationsRequest\0227"
+          + "\n\006parent\030\001 \001(\tB\'\340A\002\372A!\n\037aiplatform.googl"
+          + "eapis.com/Model\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_"
+          + "size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022-\n\tread_m"
+          + "ask\030\005 \001(\0132\032.google.protobuf.FieldMask\"\204\001"
+          + "\n\034ListModelEvaluationsResponse\022K\n\021model_"
+          + "evaluations\030\001 \003(\01320.google.cloud.aiplatf"
+          + "orm.v1beta1.ModelEvaluation\022\027\n\017next_page"
+          + "_token\030\002 \001(\t\"f\n\036GetModelEvaluationSliceR"
+          + "equest\022D\n\004name\030\001 \001(\tB6\340A\002\372A0\n.aiplatform"
+          + ".googleapis.com/ModelEvaluationSlice\"\313\001\n"
+          + " ListModelEvaluationSlicesRequest\022A\n\006par"
+          + "ent\030\001 \001(\tB1\340A\002\372A+\n)aiplatform.googleapis"
+          + ".com/ModelEvaluation\022\016\n\006filter\030\002 \001(\t\022\021\n\t"
+          + "page_size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022-\n\tr"
+          + "ead_mask\030\005 \001(\0132\032.google.protobuf.FieldMa"
+          + "sk\"\224\001\n!ListModelEvaluationSlicesResponse"
+          + "\022V\n\027model_evaluation_slices\030\001 \003(\01325.goog"
+          + "le.cloud.aiplatform.v1beta1.ModelEvaluat"
+          + "ionSlice\022\027\n\017next_page_token\030\002 \001(\t2\354\035\n\014Mo"
+          + "delService\022\352\001\n\013UploadModel\0223.google.clou"
+          + "d.aiplatform.v1beta1.UploadModelRequest\032"
+          + "\035.google.longrunning.Operation\"\206\001\202\323\344\223\002;\""
+          + "6/v1beta1/{parent=projects/*/locations/*"
+          + "}/models:upload:\001*\332A\014parent,model\312A3\n\023Up"
+          + "loadModelResponse\022\034UploadModelOperationM"
+          + "etadata\022\244\001\n\010GetModel\0220.google.cloud.aipl"
+          + "atform.v1beta1.GetModelRequest\032&.google."
+          + "cloud.aiplatform.v1beta1.Model\">\202\323\344\223\0021\022/"
+          + "/v1beta1/{name=projects/*/locations/*/mo"
+          + "dels/*}\332A\004name\022\267\001\n\nListModels\0222.google.c"
+          + "loud.aiplatform.v1beta1.ListModelsReques"
+          + "t\0323.google.cloud.aiplatform.v1beta1.List"
+          + "ModelsResponse\"@\202\323\344\223\0021\022//v1beta1/{parent"
+          + "=projects/*/locations/*}/models\332A\006parent"
+          + "\022\327\001\n\021ListModelVersions\0229.google.cloud.ai"
+          + "platform.v1beta1.ListModelVersionsReques"
+          + "t\032:.google.cloud.aiplatform.v1beta1.List"
+          + "ModelVersionsResponse\"K\202\323\344\223\002>\022</v1beta1/"
+          + "{name=projects/*/locations/*/models/*}:l"
+          + "istVersions\332A\004name\022\304\001\n\013UpdateModel\0223.goo"
+          + "gle.cloud.aiplatform.v1beta1.UpdateModel"
+          + "Request\032&.google.cloud.aiplatform.v1beta"
+          + "1.Model\"X\202\323\344\223\002>25/v1beta1/{model.name=pr"
+          + "ojects/*/locations/*/models/*}:\005model\332A\021"
+          + "model,update_mask\022\252\002\n\030UpdateExplanationD"
+          + "ataset\022@.google.cloud.aiplatform.v1beta1"
+          + ".UpdateExplanationDatasetRequest\032\035.googl"
+          + "e.longrunning.Operation\"\254\001\202\323\344\223\002N\"I/v1bet"
+          + "a1/{model=projects/*/locations/*/models/"
+          + "*}:updateExplanationDataset:\001*\332A\005model\312A"
+          + "M\n UpdateExplanationDatasetResponse\022)Upd"
+          + "ateExplanationDatasetOperationMetadata\022\324"
+          + "\001\n\013DeleteModel\0223.google.cloud.aiplatform"
+          + ".v1beta1.DeleteModelRequest\032\035.google.lon"
+          + "grunning.Operation\"q\202\323\344\223\0021*//v1beta1/{na"
+          + "me=projects/*/locations/*/models/*}\332A\004na"
+          + "me\312A0\n\025google.protobuf.Empty\022\027DeleteOper"
+          + "ationMetadata\022\360\001\n\022DeleteModelVersion\022:.g"
+          + "oogle.cloud.aiplatform.v1beta1.DeleteMod"
+          + "elVersionRequest\032\035.google.longrunning.Op"
+          + "eration\"\177\202\323\344\223\002?*=/v1beta1/{name=projects"
+          + "/*/locations/*/models/*}:deleteVersion\332A"
+          + "\004name\312A0\n\025google.protobuf.Empty\022\027DeleteO"
+          + "perationMetadata\022\341\001\n\023MergeVersionAliases"
+          + "\022;.google.cloud.aiplatform.v1beta1.Merge"
+          + "VersionAliasesRequest\032&.google.cloud.aip"
+          + "latform.v1beta1.Model\"e\202\323\344\223\002H\"C/v1beta1/"
+          + "{name=projects/*/locations/*/models/*}:m"
+          + "ergeVersionAliases:\001*\332A\024name,version_ali"
+          + "ases\022\360\001\n\013ExportModel\0223.google.cloud.aipl"
+          + "atform.v1beta1.ExportModelRequest\032\035.goog"
+          + "le.longrunning.Operation\"\214\001\202\323\344\223\002;\"6/v1be"
+          + "ta1/{name=projects/*/locations/*/models/"
+          + "*}:export:\001*\332A\022name,output_config\312A3\n\023Ex"
+          + "portModelResponse\022\034ExportModelOperationM"
+          + "etadata\022\363\001\n\025ImportModelEvaluation\022=.goog"
+          + "le.cloud.aiplatform.v1beta1.ImportModelE"
+          + "valuationRequest\0320.google.cloud.aiplatfo"
+          + "rm.v1beta1.ModelEvaluation\"i\202\323\344\223\002I\"D/v1b"
+          + "eta1/{parent=projects/*/locations/*/mode"
+          + "ls/*}/evaluations:import:\001*\332A\027parent,mod"
+          + "el_evaluation\022\267\002\n BatchImportModelEvalua"
+          + "tionSlices\022H.google.cloud.aiplatform.v1b"
+          + "eta1.BatchImportModelEvaluationSlicesReq"
+          + "uest\032I.google.cloud.aiplatform.v1beta1.B"
+          + "atchImportModelEvaluationSlicesResponse\""
+          + "~\202\323\344\223\002W\"R/v1beta1/{parent=projects/*/loc"
+          + "ations/*/models/*/evaluations/*}/slices:"
+          + "batchImport:\001*\332A\036parent,model_evaluation"
+          + "_slices\022\320\001\n\022GetModelEvaluation\022:.google."
+          + "cloud.aiplatform.v1beta1.GetModelEvaluat"
+          + "ionRequest\0320.google.cloud.aiplatform.v1b"
+          + "eta1.ModelEvaluation\"L\202\323\344\223\002?\022=/v1beta1/{"
+          + "name=projects/*/locations/*/models/*/eva"
+          + "luations/*}\332A\004name\022\343\001\n\024ListModelEvaluati"
+          + "ons\022<.google.cloud.aiplatform.v1beta1.Li"
+          + "stModelEvaluationsRequest\032=.google.cloud"
+          + ".aiplatform.v1beta1.ListModelEvaluations"
+          + "Response\"N\202\323\344\223\002?\022=/v1beta1/{parent=proje"
+          + "cts/*/locations/*/models/*}/evaluations\332"
+          + "A\006parent\022\350\001\n\027GetModelEvaluationSlice\022?.g"
+          + "oogle.cloud.aiplatform.v1beta1.GetModelE"
+          + "valuationSliceRequest\0325.google.cloud.aip"
+          + "latform.v1beta1.ModelEvaluationSlice\"U\202\323"
+          + "\344\223\002H\022F/v1beta1/{name=projects/*/location"
+          + "s/*/models/*/evaluations/*/slices/*}\332A\004n"
+          + "ame\022\373\001\n\031ListModelEvaluationSlices\022A.goog"
+          + "le.cloud.aiplatform.v1beta1.ListModelEva"
+          + "luationSlicesRequest\032B.google.cloud.aipl"
+          + "atform.v1beta1.ListModelEvaluationSlices"
+          + "Response\"W\202\323\344\223\002H\022F/v1beta1/{parent=proje"
+          + "cts/*/locations/*/models/*/evaluations/*"
+          + "}/slices\332A\006parent\032M\312A\031aiplatform.googlea"
+          + "pis.com\322A.https://www.googleapis.com/aut"
+          + "h/cloud-platformB\356\001\n#com.google.cloud.ai"
+          + "platform.v1beta1B\021ModelServiceProtoP\001ZIg"
+          + "oogle.golang.org/genproto/googleapis/clo"
+          + "ud/aiplatform/v1beta1;aiplatform\252\002\037Googl"
+          + "e.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clou"
+          + "d\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AI"
+          + "Platform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -528,8 +551,24 @@ public final class ModelServiceProto {
             new java.lang.String[] {
               "Parent", "ModelEvaluation",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_GetModelEvaluationRequest_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_BatchImportModelEvaluationSlicesRequest_descriptor =
         getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_aiplatform_v1beta1_BatchImportModelEvaluationSlicesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_BatchImportModelEvaluationSlicesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ModelEvaluationSlices",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_BatchImportModelEvaluationSlicesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(20);
+    internal_static_google_cloud_aiplatform_v1beta1_BatchImportModelEvaluationSlicesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_BatchImportModelEvaluationSlicesResponse_descriptor,
+            new java.lang.String[] {
+              "ImportedModelEvaluationSlices",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GetModelEvaluationRequest_descriptor =
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_aiplatform_v1beta1_GetModelEvaluationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GetModelEvaluationRequest_descriptor,
@@ -537,7 +576,7 @@ public final class ModelServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListModelEvaluationsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_aiplatform_v1beta1_ListModelEvaluationsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListModelEvaluationsRequest_descriptor,
@@ -545,7 +584,7 @@ public final class ModelServiceProto {
               "Parent", "Filter", "PageSize", "PageToken", "ReadMask",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListModelEvaluationsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_aiplatform_v1beta1_ListModelEvaluationsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListModelEvaluationsResponse_descriptor,
@@ -553,7 +592,7 @@ public final class ModelServiceProto {
               "ModelEvaluations", "NextPageToken",
             });
     internal_static_google_cloud_aiplatform_v1beta1_GetModelEvaluationSliceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_aiplatform_v1beta1_GetModelEvaluationSliceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GetModelEvaluationSliceRequest_descriptor,
@@ -561,7 +600,7 @@ public final class ModelServiceProto {
               "Name",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListModelEvaluationSlicesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_aiplatform_v1beta1_ListModelEvaluationSlicesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListModelEvaluationSlicesRequest_descriptor,
@@ -569,7 +608,7 @@ public final class ModelServiceProto {
               "Parent", "Filter", "PageSize", "PageToken", "ReadMask",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ListModelEvaluationSlicesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_aiplatform_v1beta1_ListModelEvaluationSlicesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ListModelEvaluationSlicesResponse_descriptor,
