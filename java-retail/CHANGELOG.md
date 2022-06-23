@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.4](https://github.com/googleapis/java-retail/compare/v2.2.3...v2.2.4) (2022-06-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#470](https://github.com/googleapis/java-retail/issues/470)) ([ce87e1c](https://github.com/googleapis/java-retail/commit/ce87e1cfd8c4aa537730d287a39bede78f50801f))
+
 ## [2.2.3](https://github.com/googleapis/java-retail/compare/v2.2.2...v2.2.3) (2022-06-22)
 
 
