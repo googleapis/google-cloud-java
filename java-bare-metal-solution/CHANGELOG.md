@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/googleapis/java-bare-metal-solution/compare/v0.2.0...v0.2.1) (2022-06-23)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#35](https://github.com/googleapis/java-bare-metal-solution/issues/35)) ([d9dd769](https://github.com/googleapis/java-bare-metal-solution/commit/d9dd769e161ce3c07136d088fbb466414a5f445f))
+
 ## [0.2.0](https://github.com/googleapis/java-bare-metal-solution/compare/v0.1.1...v0.2.0) (2022-05-24)
 
 
