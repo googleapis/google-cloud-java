@@ -103,6 +103,20 @@ import javax.annotation.Generated;
  * MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create(metricsV1Beta3Settings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * MetricsV1Beta3Settings metricsV1Beta3Settings =
+ *     MetricsV1Beta3Settings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             MetricsV1Beta3Settings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * MetricsV1Beta3Client metricsV1Beta3Client = MetricsV1Beta3Client.create(metricsV1Beta3Settings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi

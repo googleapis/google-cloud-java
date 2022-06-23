@@ -105,6 +105,20 @@ import javax.annotation.Generated;
  * JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create(jobsV1Beta3Settings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * JobsV1Beta3Settings jobsV1Beta3Settings =
+ *     JobsV1Beta3Settings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             JobsV1Beta3Settings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * JobsV1Beta3Client jobsV1Beta3Client = JobsV1Beta3Client.create(jobsV1Beta3Settings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
