@@ -17,13 +17,13 @@
 package com.google.cloud.optimization.v1;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.optimization.v1.stub.FleetRoutingStub;
 import com.google.cloud.optimization.v1.stub.FleetRoutingStubSettings;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -120,13 +120,28 @@ import javax.annotation.Generated;
  * FleetRoutingClient fleetRoutingClient = FleetRoutingClient.create(fleetRoutingSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * FleetRoutingSettings fleetRoutingSettings =
+ *     FleetRoutingSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             FleetRoutingSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * FleetRoutingClient fleetRoutingClient = FleetRoutingClient.create(fleetRoutingSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class FleetRoutingClient implements BackgroundResource {
   private final FleetRoutingSettings settings;
   private final FleetRoutingStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of FleetRoutingClient with default settings. */
   public static final FleetRoutingClient create() throws IOException {
@@ -157,13 +172,17 @@ public class FleetRoutingClient implements BackgroundResource {
   protected FleetRoutingClient(FleetRoutingSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((FleetRoutingStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected FleetRoutingClient(FleetRoutingStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final FleetRoutingSettings getSettings() {
@@ -178,8 +197,16 @@ public class FleetRoutingClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
