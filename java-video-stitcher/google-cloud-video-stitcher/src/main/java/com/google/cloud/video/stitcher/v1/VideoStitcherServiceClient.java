@@ -435,7 +435,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListCdnKeysResponse response =
    *         videoStitcherServiceClient.listCdnKeysCallable().call(request);
-   *     for (CdnKey element : response.getResponsesList()) {
+   *     for (CdnKey element : response.getCdnKeysList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1107,7 +1107,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListVodStitchDetailsResponse response =
    *         videoStitcherServiceClient.listVodStitchDetailsCallable().call(request);
-   *     for (VodStitchDetail element : response.getResponsesList()) {
+   *     for (VodStitchDetail element : response.getVodStitchDetailsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1386,7 +1386,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListVodAdTagDetailsResponse response =
    *         videoStitcherServiceClient.listVodAdTagDetailsCallable().call(request);
-   *     for (VodAdTagDetail element : response.getResponsesList()) {
+   *     for (VodAdTagDetail element : response.getVodAdTagDetailsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1663,7 +1663,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListLiveAdTagDetailsResponse response =
    *         videoStitcherServiceClient.listLiveAdTagDetailsCallable().call(request);
-   *     for (LiveAdTagDetail element : response.getResponsesList()) {
+   *     for (LiveAdTagDetail element : response.getLiveAdTagDetailsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2065,7 +2065,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListSlatesResponse response = videoStitcherServiceClient.listSlatesCallable().call(request);
-   *     for (Slate element : response.getResponsesList()) {
+   *     for (Slate element : response.getSlatesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2387,15 +2387,6 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *
    * @param parent Required. The project and location in which the live session should be created,
    *     in the form of `projects/{project_number}/locations/{location}`.
-   *     <p>Valid locations:
-   *     <ul>
-   *       <li>`-` (Video Stitcher API will pick a location that is closest to the caller.)
-   *       <li>`us-east1`
-   *       <li>`us-west1`
-   *       <li>`us-central1`
-   *       <li>`europe-west1`
-   *     </ul>
-   *
    * @param liveSession Required. Parameters for creating a live session.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2427,15 +2418,6 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *
    * @param parent Required. The project and location in which the live session should be created,
    *     in the form of `projects/{project_number}/locations/{location}`.
-   *     <p>Valid locations:
-   *     <ul>
-   *       <li>`-` (Video Stitcher API will pick a location that is closest to the caller.)
-   *       <li>`us-east1`
-   *       <li>`us-west1`
-   *       <li>`us-central1`
-   *       <li>`europe-west1`
-   *     </ul>
-   *
    * @param liveSession Required. Parameters for creating a live session.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

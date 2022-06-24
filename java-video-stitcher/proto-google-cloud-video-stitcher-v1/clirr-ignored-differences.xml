@@ -16,4 +16,14 @@
     <className>com/google/cloud/video/stitcher/v1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/cloud/video/stitcher/v1/LiveSession$StitchingPolicy</className>
+    <field>COMPLETE_POD</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/video/stitcher/v1/LiveSession$StitchingPolicy</className>
+    <field>COMPLETE_POD_VALUE</field>
+  </difference>
 </differences>

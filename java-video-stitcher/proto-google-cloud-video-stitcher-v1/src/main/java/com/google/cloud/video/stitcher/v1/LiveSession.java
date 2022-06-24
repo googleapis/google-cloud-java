@@ -44,6 +44,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     defaultAdTagId_ = "";
     defaultSlateId_ = "";
     stitchingPolicy_ = 0;
+    streamId_ = "";
   }
 
   @java.lang.Override
@@ -172,6 +173,13 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 90:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              streamId_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -256,16 +264,6 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Finishes stitching the current pod before returning to content.
-     * </pre>
-     *
-     * <code>COMPLETE_POD = 2;</code>
-     */
-    COMPLETE_POD(2),
-    /**
-     *
-     *
-     * <pre>
      * Cuts an ad short and returns to content in the middle of the ad.
      * </pre>
      *
@@ -295,16 +293,6 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      * <code>COMPLETE_AD = 1;</code>
      */
     public static final int COMPLETE_AD_VALUE = 1;
-    /**
-     *
-     *
-     * <pre>
-     * Finishes stitching the current pod before returning to content.
-     * </pre>
-     *
-     * <code>COMPLETE_POD = 2;</code>
-     */
-    public static final int COMPLETE_POD_VALUE = 2;
     /**
      *
      *
@@ -344,8 +332,6 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
           return STITCHING_POLICY_UNSPECIFIED;
         case 1:
           return COMPLETE_AD;
-        case 2:
-          return COMPLETE_POD;
         case 3:
           return CUT_CURRENT;
         default:
@@ -1014,6 +1000,55 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     return getManifestOptions();
   }
 
+  public static final int STREAM_ID_FIELD_NUMBER = 11;
+  private volatile java.lang.Object streamId_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generated ID of the LiveSession's source stream.
+   * </pre>
+   *
+   * <code>string stream_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The streamId.
+   */
+  @java.lang.Override
+  public java.lang.String getStreamId() {
+    java.lang.Object ref = streamId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      streamId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generated ID of the LiveSession's source stream.
+   * </pre>
+   *
+   * <code>string stream_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for streamId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStreamIdBytes() {
+    java.lang.Object ref = streamId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      streamId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1058,6 +1093,9 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     }
     if (manifestOptions_ != null) {
       output.writeMessage(10, getManifestOptions());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(streamId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, streamId_);
     }
     unknownFields.writeTo(output);
   }
@@ -1116,6 +1154,9 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     if (manifestOptions_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getManifestOptions());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(streamId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, streamId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1145,6 +1186,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
     if (hasManifestOptions()) {
       if (!getManifestOptions().equals(other.getManifestOptions())) return false;
     }
+    if (!getStreamId().equals(other.getStreamId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1182,6 +1224,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + MANIFEST_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getManifestOptions().hashCode();
     }
+    hash = (37 * hash) + STREAM_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getStreamId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1373,6 +1417,8 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
         manifestOptions_ = null;
         manifestOptionsBuilder_ = null;
       }
+      streamId_ = "";
+
       return this;
     }
 
@@ -1417,6 +1463,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.manifestOptions_ = manifestOptionsBuilder_.build();
       }
+      result.streamId_ = streamId_;
       onBuilt();
       return result;
     }
@@ -1496,6 +1543,10 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasManifestOptions()) {
         mergeManifestOptions(other.getManifestOptions());
+      }
+      if (!other.getStreamId().isEmpty()) {
+        streamId_ = other.streamId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2834,6 +2885,112 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
         manifestOptions_ = null;
       }
       return manifestOptionsBuilder_;
+    }
+
+    private java.lang.Object streamId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated ID of the LiveSession's source stream.
+     * </pre>
+     *
+     * <code>string stream_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The streamId.
+     */
+    public java.lang.String getStreamId() {
+      java.lang.Object ref = streamId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        streamId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated ID of the LiveSession's source stream.
+     * </pre>
+     *
+     * <code>string stream_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for streamId.
+     */
+    public com.google.protobuf.ByteString getStreamIdBytes() {
+      java.lang.Object ref = streamId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        streamId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated ID of the LiveSession's source stream.
+     * </pre>
+     *
+     * <code>string stream_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The streamId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      streamId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated ID of the LiveSession's source stream.
+     * </pre>
+     *
+     * <code>string stream_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStreamId() {
+
+      streamId_ = getDefaultInstance().getStreamId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated ID of the LiveSession's source stream.
+     * </pre>
+     *
+     * <code>string stream_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for streamId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      streamId_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

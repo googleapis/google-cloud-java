@@ -42,6 +42,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     playUri_ = "";
     sourceUri_ = "";
     adTagUri_ = "";
+    assetId_ = "";
   }
 
   @java.lang.Override
@@ -155,6 +156,13 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
                 manifestOptions_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              assetId_ = s;
               break;
             }
           default:
@@ -660,6 +668,55 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     return getManifestOptions();
   }
 
+  public static final int ASSET_ID_FIELD_NUMBER = 10;
+  private volatile java.lang.Object assetId_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generated ID of the VodSession's source media.
+   * </pre>
+   *
+   * <code>string asset_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The assetId.
+   */
+  @java.lang.Override
+  public java.lang.String getAssetId() {
+    java.lang.Object ref = assetId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      assetId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The generated ID of the VodSession's source media.
+   * </pre>
+   *
+   * <code>string asset_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for assetId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAssetIdBytes() {
+    java.lang.Object ref = assetId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      assetId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -696,6 +753,9 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     }
     if (manifestOptions_ != null) {
       output.writeMessage(9, getManifestOptions());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assetId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, assetId_);
     }
     unknownFields.writeTo(output);
   }
@@ -737,6 +797,9 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     if (manifestOptions_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getManifestOptions());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assetId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, assetId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -767,6 +830,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
     if (hasManifestOptions()) {
       if (!getManifestOptions().equals(other.getManifestOptions())) return false;
     }
+    if (!getAssetId().equals(other.getAssetId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -800,6 +864,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + MANIFEST_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getManifestOptions().hashCode();
     }
+    hash = (37 * hash) + ASSET_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getAssetId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -988,6 +1054,8 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         manifestOptions_ = null;
         manifestOptionsBuilder_ = null;
       }
+      assetId_ = "";
+
       return this;
     }
 
@@ -1033,6 +1101,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.manifestOptions_ = manifestOptionsBuilder_.build();
       }
+      result.assetId_ = assetId_;
       onBuilt();
       return result;
     }
@@ -1107,6 +1176,10 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasManifestOptions()) {
         mergeManifestOptions(other.getManifestOptions());
+      }
+      if (!other.getAssetId().isEmpty()) {
+        assetId_ = other.assetId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2241,6 +2314,112 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
         manifestOptions_ = null;
       }
       return manifestOptionsBuilder_;
+    }
+
+    private java.lang.Object assetId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated ID of the VodSession's source media.
+     * </pre>
+     *
+     * <code>string asset_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The assetId.
+     */
+    public java.lang.String getAssetId() {
+      java.lang.Object ref = assetId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        assetId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated ID of the VodSession's source media.
+     * </pre>
+     *
+     * <code>string asset_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for assetId.
+     */
+    public com.google.protobuf.ByteString getAssetIdBytes() {
+      java.lang.Object ref = assetId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        assetId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated ID of the VodSession's source media.
+     * </pre>
+     *
+     * <code>string asset_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The assetId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssetId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      assetId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated ID of the VodSession's source media.
+     * </pre>
+     *
+     * <code>string asset_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAssetId() {
+
+      assetId_ = getDefaultInstance().getAssetId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The generated ID of the VodSession's source media.
+     * </pre>
+     *
+     * <code>string asset_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for assetId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssetIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      assetId_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

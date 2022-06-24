@@ -464,6 +464,7 @@ public class VideoStitcherServiceClientTest {
             .putAllAdTagMacroMap(new HashMap<String, String>())
             .setClientAdTracking(true)
             .setManifestOptions(ManifestOptions.newBuilder().build())
+            .setAssetId("assetId-704776149")
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -512,6 +513,7 @@ public class VideoStitcherServiceClientTest {
             .putAllAdTagMacroMap(new HashMap<String, String>())
             .setClientAdTracking(true)
             .setManifestOptions(ManifestOptions.newBuilder().build())
+            .setAssetId("assetId-704776149")
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -560,6 +562,7 @@ public class VideoStitcherServiceClientTest {
             .putAllAdTagMacroMap(new HashMap<String, String>())
             .setClientAdTracking(true)
             .setManifestOptions(ManifestOptions.newBuilder().build())
+            .setAssetId("assetId-704776149")
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -605,6 +608,7 @@ public class VideoStitcherServiceClientTest {
             .putAllAdTagMacroMap(new HashMap<String, String>())
             .setClientAdTracking(true)
             .setManifestOptions(ManifestOptions.newBuilder().build())
+            .setAssetId("assetId-704776149")
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -1544,6 +1548,7 @@ public class VideoStitcherServiceClientTest {
             .setClientAdTracking(true)
             .setDefaultSlateId("defaultSlateId-122056941")
             .setManifestOptions(ManifestOptions.newBuilder().build())
+            .setStreamId("streamId1790933179")
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -1593,6 +1598,7 @@ public class VideoStitcherServiceClientTest {
             .setClientAdTracking(true)
             .setDefaultSlateId("defaultSlateId-122056941")
             .setManifestOptions(ManifestOptions.newBuilder().build())
+            .setStreamId("streamId1790933179")
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -1642,6 +1648,7 @@ public class VideoStitcherServiceClientTest {
             .setClientAdTracking(true)
             .setDefaultSlateId("defaultSlateId-122056941")
             .setManifestOptions(ManifestOptions.newBuilder().build())
+            .setStreamId("streamId1790933179")
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
@@ -1688,6 +1695,7 @@ public class VideoStitcherServiceClientTest {
             .setClientAdTracking(true)
             .setDefaultSlateId("defaultSlateId-122056941")
             .setManifestOptions(ManifestOptions.newBuilder().build())
+            .setStreamId("streamId1790933179")
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
