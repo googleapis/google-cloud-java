@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.DeploymentsClient.ListDeploymentsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.DeploymentsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -27,6 +28,9 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.httpjson.GaxHttpJsonProperties;
+import com.google.api.gax.httpjson.HttpJsonTransportChannel;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
@@ -44,6 +48,10 @@ import com.google.cloud.dialogflow.cx.v3beta1.Deployment;
 import com.google.cloud.dialogflow.cx.v3beta1.GetDeploymentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListDeploymentsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListDeploymentsResponse;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -101,6 +109,10 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
           ListDeploymentsRequest, ListDeploymentsResponse, ListDeploymentsPagedResponse>
       listDeploymentsSettings;
   private final UnaryCallSettings<GetDeploymentRequest, Deployment> getDeploymentSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<
           ListDeploymentsRequest, ListDeploymentsResponse, Deployment>
@@ -141,6 +153,42 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListDeploymentsRequest, ListDeploymentsResponse, ListDeploymentsPagedResponse>
       LIST_DEPLOYMENTS_PAGE_STR_FACT =
@@ -158,6 +206,23 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to listDeployments. */
   public PagedCallSettings<
           ListDeploymentsRequest, ListDeploymentsResponse, ListDeploymentsPagedResponse>
@@ -170,11 +235,27 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
     return getDeploymentSettings;
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
   public DeploymentsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcDeploymentsStub.create(this);
+    }
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
+      return HttpJsonDeploymentsStub.create(this);
     }
     throw new UnsupportedOperationException(
         String.format(
@@ -208,10 +289,17 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
         .setUseJwtAccessWithScope(true);
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
+  /** Returns a builder for the default gRPC ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return InstantiatingGrpcChannelProvider.newBuilder()
         .setMaxInboundMessageSize(Integer.MAX_VALUE);
+  }
+
+  /** Returns a builder for the default REST ChannelProvider for this service. */
+  @BetaApi
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
+    return InstantiatingHttpJsonChannelProvider.newBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -219,7 +307,7 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
   }
 
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
-  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+  public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
             "gapic", GaxProperties.getLibraryVersion(DeploymentsStubSettings.class))
@@ -227,9 +315,28 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  /** Returns a new builder for this class. */
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
+  public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(DeploymentsStubSettings.class))
+        .setTransportToken(
+            GaxHttpJsonProperties.getHttpJsonTokenName(),
+            GaxHttpJsonProperties.getHttpJsonVersion());
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return DeploymentsStubSettings.defaultGrpcApiClientHeaderProviderBuilder();
+  }
+
+  /** Returns a new gRPC builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
+  }
+
+  /** Returns a new REST builder for this class. */
+  public static Builder newHttpJsonBuilder() {
+    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -247,6 +354,8 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
 
     listDeploymentsSettings = settingsBuilder.listDeploymentsSettings().build();
     getDeploymentSettings = settingsBuilder.getDeploymentSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for DeploymentsStubSettings. */
@@ -256,6 +365,10 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
             ListDeploymentsRequest, ListDeploymentsResponse, ListDeploymentsPagedResponse>
         listDeploymentsSettings;
     private final UnaryCallSettings.Builder<GetDeploymentRequest, Deployment> getDeploymentSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -296,10 +409,15 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
 
       listDeploymentsSettings = PagedCallSettings.newBuilder(LIST_DEPLOYMENTS_PAGE_STR_FACT);
       getDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listDeploymentsSettings, getDeploymentSettings);
+              listDeploymentsSettings,
+              getDeploymentSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -308,10 +426,15 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
 
       listDeploymentsSettings = settings.listDeploymentsSettings.toBuilder();
       getDeploymentSettings = settings.getDeploymentSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listDeploymentsSettings, getDeploymentSettings);
+              listDeploymentsSettings,
+              getDeploymentSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -327,6 +450,19 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
       return initDefaults(builder);
     }
 
+    private static Builder createHttpJsonDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
     private static Builder initDefaults(Builder builder) {
       builder
           .listDeploymentsSettings()
@@ -335,6 +471,16 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
 
       builder
           .getDeploymentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -366,6 +512,18 @@ public class DeploymentsStubSettings extends StubSettings<DeploymentsStubSetting
     /** Returns the builder for the settings used for calls to getDeployment. */
     public UnaryCallSettings.Builder<GetDeploymentRequest, Deployment> getDeploymentSettings() {
       return getDeploymentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

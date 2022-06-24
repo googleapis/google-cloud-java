@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
+import static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettingsServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.SecuritySettingsServiceClient.ListSecuritySettingsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -28,6 +29,10 @@ import com.google.cloud.dialogflow.cx.v3beta1.ListSecuritySettingsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListSecuritySettingsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateSecuritySettingsRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -67,6 +72,19 @@ public abstract class SecuritySettingsServiceStub implements BackgroundResource 
 
   public UnaryCallable<DeleteSecuritySettingsRequest, Empty> deleteSecuritySettingsCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSecuritySettingsCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

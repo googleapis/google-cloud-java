@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.cx.v3;
 
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListContinuousTestResultsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListEnvironmentsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.LookupEnvironmentHistoryPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -25,6 +26,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
@@ -33,6 +35,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.cx.v3.stub.EnvironmentsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
@@ -156,6 +162,17 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     return ((EnvironmentsStubSettings) getStubSettings()).deployFlowOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).getLocationSettings();
+  }
+
   public static final EnvironmentsSettings create(EnvironmentsStubSettings stub)
       throws IOException {
     return new EnvironmentsSettings.Builder(stub.toBuilder()).build();
@@ -181,9 +198,16 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     return EnvironmentsStubSettings.defaultCredentialsProviderBuilder();
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
+  /** Returns a builder for the default gRPC ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return EnvironmentsStubSettings.defaultGrpcTransportProviderBuilder();
+  }
+
+  /** Returns a builder for the default REST ChannelProvider for this service. */
+  @BetaApi
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
+    return EnvironmentsStubSettings.defaultHttpJsonTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -195,9 +219,15 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     return EnvironmentsStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
-  /** Returns a new builder for this class. */
+  /** Returns a new gRPC builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
+  }
+
+  /** Returns a new REST builder for this class. */
+  @BetaApi
+  public static Builder newHttpJsonBuilder() {
+    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -235,6 +265,11 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
 
     private static Builder createDefault() {
       return new Builder(EnvironmentsStubSettings.newBuilder());
+    }
+
+    @BetaApi
+    private static Builder createHttpJsonDefault() {
+      return new Builder(EnvironmentsStubSettings.newHttpJsonBuilder());
     }
 
     public EnvironmentsStubSettings.Builder getStubSettingsBuilder() {
@@ -334,6 +369,18 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     public OperationCallSettings.Builder<DeployFlowRequest, DeployFlowResponse, DeployFlowMetadata>
         deployFlowOperationSettings() {
       return getStubSettingsBuilder().deployFlowOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

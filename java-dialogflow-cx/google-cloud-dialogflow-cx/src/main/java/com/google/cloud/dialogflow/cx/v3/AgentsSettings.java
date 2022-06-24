@@ -17,12 +17,14 @@
 package com.google.cloud.dialogflow.cx.v3;
 
 import static com.google.cloud.dialogflow.cx.v3.AgentsClient.ListAgentsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3.AgentsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
@@ -31,6 +33,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.cx.v3.stub.AgentsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
@@ -132,6 +138,17 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     return ((AgentsStubSettings) getStubSettings()).getAgentValidationResultSettings();
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((AgentsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((AgentsStubSettings) getStubSettings()).getLocationSettings();
+  }
+
   public static final AgentsSettings create(AgentsStubSettings stub) throws IOException {
     return new AgentsSettings.Builder(stub.toBuilder()).build();
   }
@@ -156,9 +173,16 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     return AgentsStubSettings.defaultCredentialsProviderBuilder();
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
+  /** Returns a builder for the default gRPC ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return AgentsStubSettings.defaultGrpcTransportProviderBuilder();
+  }
+
+  /** Returns a builder for the default REST ChannelProvider for this service. */
+  @BetaApi
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
+    return AgentsStubSettings.defaultHttpJsonTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -170,9 +194,15 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     return AgentsStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
-  /** Returns a new builder for this class. */
+  /** Returns a new gRPC builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
+  }
+
+  /** Returns a new REST builder for this class. */
+  @BetaApi
+  public static Builder newHttpJsonBuilder() {
+    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -210,6 +240,11 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
 
     private static Builder createDefault() {
       return new Builder(AgentsStubSettings.newBuilder());
+    }
+
+    @BetaApi
+    private static Builder createHttpJsonDefault() {
+      return new Builder(AgentsStubSettings.newHttpJsonBuilder());
     }
 
     public AgentsStubSettings.Builder getStubSettingsBuilder() {
@@ -286,6 +321,18 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     public UnaryCallSettings.Builder<GetAgentValidationResultRequest, AgentValidationResult>
         getAgentValidationResultSettings() {
       return getStubSettingsBuilder().getAgentValidationResultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

@@ -839,7 +839,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indiciates whether the agent is locked for changes. If the agent is locked,
+   * Indicates whether the agent is locked for changes. If the agent is locked,
    * modifications to the agent will be rejected except for [RestoreAgent][].
    * </pre>
    *
@@ -2945,7 +2945,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indiciates whether the agent is locked for changes. If the agent is locked,
+     * Indicates whether the agent is locked for changes. If the agent is locked,
      * modifications to the agent will be rejected except for [RestoreAgent][].
      * </pre>
      *
@@ -2961,7 +2961,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indiciates whether the agent is locked for changes. If the agent is locked,
+     * Indicates whether the agent is locked for changes. If the agent is locked,
      * modifications to the agent will be rejected except for [RestoreAgent][].
      * </pre>
      *
@@ -2980,7 +2980,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indiciates whether the agent is locked for changes. If the agent is locked,
+     * Indicates whether the agent is locked for changes. If the agent is locked,
      * modifications to the agent will be rejected except for [RestoreAgent][].
      * </pre>
      *

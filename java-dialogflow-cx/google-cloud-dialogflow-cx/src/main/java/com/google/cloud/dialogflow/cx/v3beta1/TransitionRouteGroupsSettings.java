@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3beta1;
 
+import static com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupsClient.ListTransitionRouteGroupsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -23,6 +24,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
@@ -30,6 +32,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.cx.v3beta1.stub.TransitionRouteGroupsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -112,6 +118,17 @@ public class TransitionRouteGroupsSettings extends ClientSettings<TransitionRout
         .deleteTransitionRouteGroupSettings();
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((TransitionRouteGroupsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((TransitionRouteGroupsStubSettings) getStubSettings()).getLocationSettings();
+  }
+
   public static final TransitionRouteGroupsSettings create(TransitionRouteGroupsStubSettings stub)
       throws IOException {
     return new TransitionRouteGroupsSettings.Builder(stub.toBuilder()).build();
@@ -137,9 +154,16 @@ public class TransitionRouteGroupsSettings extends ClientSettings<TransitionRout
     return TransitionRouteGroupsStubSettings.defaultCredentialsProviderBuilder();
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
+  /** Returns a builder for the default gRPC ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return TransitionRouteGroupsStubSettings.defaultGrpcTransportProviderBuilder();
+  }
+
+  /** Returns a builder for the default REST ChannelProvider for this service. */
+  @BetaApi
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
+    return TransitionRouteGroupsStubSettings.defaultHttpJsonTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -151,9 +175,15 @@ public class TransitionRouteGroupsSettings extends ClientSettings<TransitionRout
     return TransitionRouteGroupsStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
-  /** Returns a new builder for this class. */
+  /** Returns a new gRPC builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
+  }
+
+  /** Returns a new REST builder for this class. */
+  @BetaApi
+  public static Builder newHttpJsonBuilder() {
+    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -192,6 +222,11 @@ public class TransitionRouteGroupsSettings extends ClientSettings<TransitionRout
 
     private static Builder createDefault() {
       return new Builder(TransitionRouteGroupsStubSettings.newBuilder());
+    }
+
+    @BetaApi
+    private static Builder createHttpJsonDefault() {
+      return new Builder(TransitionRouteGroupsStubSettings.newHttpJsonBuilder());
     }
 
     public TransitionRouteGroupsStubSettings.Builder getStubSettingsBuilder() {
@@ -241,6 +276,18 @@ public class TransitionRouteGroupsSettings extends ClientSettings<TransitionRout
     public UnaryCallSettings.Builder<DeleteTransitionRouteGroupRequest, Empty>
         deleteTransitionRouteGroupSettings() {
       return getStubSettingsBuilder().deleteTransitionRouteGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

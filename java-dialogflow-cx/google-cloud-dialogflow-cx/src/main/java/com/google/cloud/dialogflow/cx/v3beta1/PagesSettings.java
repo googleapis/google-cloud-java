@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3beta1;
 
+import static com.google.cloud.dialogflow.cx.v3beta1.PagesClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3beta1.PagesClient.ListPagesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -23,6 +24,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
@@ -30,6 +32,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.cx.v3beta1.stub.PagesStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -98,6 +104,17 @@ public class PagesSettings extends ClientSettings<PagesSettings> {
     return ((PagesStubSettings) getStubSettings()).deletePageSettings();
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((PagesStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((PagesStubSettings) getStubSettings()).getLocationSettings();
+  }
+
   public static final PagesSettings create(PagesStubSettings stub) throws IOException {
     return new PagesSettings.Builder(stub.toBuilder()).build();
   }
@@ -122,9 +139,16 @@ public class PagesSettings extends ClientSettings<PagesSettings> {
     return PagesStubSettings.defaultCredentialsProviderBuilder();
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
+  /** Returns a builder for the default gRPC ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return PagesStubSettings.defaultGrpcTransportProviderBuilder();
+  }
+
+  /** Returns a builder for the default REST ChannelProvider for this service. */
+  @BetaApi
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
+    return PagesStubSettings.defaultHttpJsonTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -136,9 +160,15 @@ public class PagesSettings extends ClientSettings<PagesSettings> {
     return PagesStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
-  /** Returns a new builder for this class. */
+  /** Returns a new gRPC builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
+  }
+
+  /** Returns a new REST builder for this class. */
+  @BetaApi
+  public static Builder newHttpJsonBuilder() {
+    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -176,6 +206,11 @@ public class PagesSettings extends ClientSettings<PagesSettings> {
 
     private static Builder createDefault() {
       return new Builder(PagesStubSettings.newBuilder());
+    }
+
+    @BetaApi
+    private static Builder createHttpJsonDefault() {
+      return new Builder(PagesStubSettings.newHttpJsonBuilder());
     }
 
     public PagesStubSettings.Builder getStubSettingsBuilder() {
@@ -218,6 +253,18 @@ public class PagesSettings extends ClientSettings<PagesSettings> {
     /** Returns the builder for the settings used for calls to deletePage. */
     public UnaryCallSettings.Builder<DeletePageRequest, Empty> deletePageSettings() {
       return getStubSettingsBuilder().deletePageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

@@ -396,7 +396,7 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
-   * Indiciates whether the agent is locked for changes. If the agent is locked,
+   * Indicates whether the agent is locked for changes. If the agent is locked,
    * modifications to the agent will be rejected except for [RestoreAgent][].
    * </pre>
    *

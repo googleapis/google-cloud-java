@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.cx.v3.stub;
 
+import static com.google.cloud.dialogflow.cx.v3.WebhooksClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.WebhooksClient.ListWebhooksPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -27,6 +28,10 @@ import com.google.cloud.dialogflow.cx.v3.ListWebhooksRequest;
 import com.google.cloud.dialogflow.cx.v3.ListWebhooksResponse;
 import com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest;
 import com.google.cloud.dialogflow.cx.v3.Webhook;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -61,6 +66,19 @@ public abstract class WebhooksStub implements BackgroundResource {
 
   public UnaryCallable<DeleteWebhookRequest, Empty> deleteWebhookCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteWebhookCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

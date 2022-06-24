@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.cx.v3.stub;
 
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListContinuousTestResultsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListEnvironmentsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.cx.v3.EnvironmentsClient.LookupEnvironmentHistoryPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -40,6 +41,10 @@ import com.google.cloud.dialogflow.cx.v3.RunContinuousTestMetadata;
 import com.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest;
 import com.google.cloud.dialogflow.cx.v3.RunContinuousTestResponse;
 import com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -56,7 +61,11 @@ import javax.annotation.Generated;
 public abstract class EnvironmentsStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {
-    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
   }
 
   public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
@@ -137,6 +146,19 @@ public abstract class EnvironmentsStub implements BackgroundResource {
 
   public UnaryCallable<DeployFlowRequest, Operation> deployFlowCallable() {
     throw new UnsupportedOperationException("Not implemented: deployFlowCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

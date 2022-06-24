@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.cx.v3beta1.stub;
 
 import static com.google.cloud.dialogflow.cx.v3beta1.IntentsClient.ListIntentsPagedResponse;
+import static com.google.cloud.dialogflow.cx.v3beta1.IntentsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -28,6 +29,10 @@ import com.google.cloud.dialogflow.cx.v3beta1.Intent;
 import com.google.cloud.dialogflow.cx.v3beta1.ListIntentsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListIntentsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateIntentRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -63,6 +68,19 @@ public abstract class IntentsStub implements BackgroundResource {
 
   public UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteIntentCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override
