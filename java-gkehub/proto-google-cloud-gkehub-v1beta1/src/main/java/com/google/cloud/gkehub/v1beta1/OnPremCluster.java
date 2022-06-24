@@ -39,6 +39,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
 
   private OnPremCluster() {
     resourceLink_ = "";
+    clusterType_ = 0;
   }
 
   @java.lang.Override
@@ -87,6 +88,13 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
               adminCluster_ = input.readBool();
               break;
             }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+
+              clusterType_ = rawValue;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -123,14 +131,214 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.v1beta1.OnPremCluster.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * ClusterType describes on prem cluster's type.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType}
+   */
+  public enum ClusterType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The ClusterType is not set.
+     * </pre>
+     *
+     * <code>CLUSTERTYPE_UNSPECIFIED = 0;</code>
+     */
+    CLUSTERTYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The ClusterType is bootstrap cluster.
+     * </pre>
+     *
+     * <code>BOOTSTRAP = 1;</code>
+     */
+    BOOTSTRAP(1),
+    /**
+     *
+     *
+     * <pre>
+     * The ClusterType is baremetal hybrid cluster.
+     * </pre>
+     *
+     * <code>HYBRID = 2;</code>
+     */
+    HYBRID(2),
+    /**
+     *
+     *
+     * <pre>
+     * The ClusterType is baremetal standalone cluster.
+     * </pre>
+     *
+     * <code>STANDALONE = 3;</code>
+     */
+    STANDALONE(3),
+    /**
+     *
+     *
+     * <pre>
+     * The ClusterType is user cluster.
+     * </pre>
+     *
+     * <code>USER = 4;</code>
+     */
+    USER(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The ClusterType is not set.
+     * </pre>
+     *
+     * <code>CLUSTERTYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CLUSTERTYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The ClusterType is bootstrap cluster.
+     * </pre>
+     *
+     * <code>BOOTSTRAP = 1;</code>
+     */
+    public static final int BOOTSTRAP_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The ClusterType is baremetal hybrid cluster.
+     * </pre>
+     *
+     * <code>HYBRID = 2;</code>
+     */
+    public static final int HYBRID_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The ClusterType is baremetal standalone cluster.
+     * </pre>
+     *
+     * <code>STANDALONE = 3;</code>
+     */
+    public static final int STANDALONE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The ClusterType is user cluster.
+     * </pre>
+     *
+     * <code>USER = 4;</code>
+     */
+    public static final int USER_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ClusterType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ClusterType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CLUSTERTYPE_UNSPECIFIED;
+        case 1:
+          return BOOTSTRAP;
+        case 2:
+          return HYBRID;
+        case 3:
+          return STANDALONE;
+        case 4:
+          return USER;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ClusterType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ClusterType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ClusterType>() {
+          public ClusterType findValueByNumber(int number) {
+            return ClusterType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.gkehub.v1beta1.OnPremCluster.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ClusterType[] VALUES = values();
+
+    public static ClusterType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ClusterType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType)
+  }
+
   public static final int RESOURCE_LINK_FIELD_NUMBER = 1;
   private volatile java.lang.Object resourceLink_;
   /**
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
-   * example:
+   * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
    * </pre>
@@ -155,8 +363,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
-   * example:
+   * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
    *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
    * </pre>
@@ -216,6 +423,48 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
     return adminCluster_;
   }
 
+  public static final int CLUSTER_TYPE_FIELD_NUMBER = 4;
+  private int clusterType_;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The on prem cluster's type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType cluster_type = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for clusterType.
+   */
+  @java.lang.Override
+  public int getClusterTypeValue() {
+    return clusterType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The on prem cluster's type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType cluster_type = 4 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The clusterType.
+   */
+  @java.lang.Override
+  public com.google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType getClusterType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType result =
+        com.google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType.valueOf(clusterType_);
+    return result == null
+        ? com.google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -239,6 +488,11 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
     if (adminCluster_ != false) {
       output.writeBool(3, adminCluster_);
     }
+    if (clusterType_
+        != com.google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType.CLUSTERTYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, clusterType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -256,6 +510,11 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (adminCluster_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, adminCluster_);
+    }
+    if (clusterType_
+        != com.google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType.CLUSTERTYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, clusterType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -276,6 +535,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
     if (!getResourceLink().equals(other.getResourceLink())) return false;
     if (getClusterMissing() != other.getClusterMissing()) return false;
     if (getAdminCluster() != other.getAdminCluster()) return false;
+    if (clusterType_ != other.clusterType_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -293,6 +553,8 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getClusterMissing());
     hash = (37 * hash) + ADMIN_CLUSTER_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAdminCluster());
+    hash = (37 * hash) + CLUSTER_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + clusterType_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -444,6 +706,8 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
 
       adminCluster_ = false;
 
+      clusterType_ = 0;
+
       return this;
     }
 
@@ -474,6 +738,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
       result.resourceLink_ = resourceLink_;
       result.clusterMissing_ = clusterMissing_;
       result.adminCluster_ = adminCluster_;
+      result.clusterType_ = clusterType_;
       onBuilt();
       return result;
     }
@@ -533,6 +798,9 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
       if (other.getAdminCluster() != false) {
         setAdminCluster(other.getAdminCluster());
       }
+      if (other.clusterType_ != 0) {
+        setClusterTypeValue(other.getClusterTypeValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -567,8 +835,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
-     * example:
+     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
      * </pre>
@@ -592,8 +859,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
-     * example:
+     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
      * </pre>
@@ -617,8 +883,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
-     * example:
+     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
      * </pre>
@@ -641,8 +906,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
-     * example:
+     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
      * </pre>
@@ -661,8 +925,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For
-     * example:
+     * Immutable. Self-link of the GCP resource for the GKE On-Prem cluster. For example:
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/vmwareClusters/my-cluster
      *  //gkeonprem.googleapis.com/projects/my-project/locations/us-west1-a/bareMetalClusters/my-cluster
      * </pre>
@@ -789,6 +1052,109 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAdminCluster() {
 
       adminCluster_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int clusterType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The on prem cluster's type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType cluster_type = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for clusterType.
+     */
+    @java.lang.Override
+    public int getClusterTypeValue() {
+      return clusterType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The on prem cluster's type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType cluster_type = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for clusterType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClusterTypeValue(int value) {
+
+      clusterType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The on prem cluster's type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType cluster_type = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The clusterType.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType getClusterType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType result =
+          com.google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType.valueOf(clusterType_);
+      return result == null
+          ? com.google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The on prem cluster's type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType cluster_type = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The clusterType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClusterType(com.google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      clusterType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The on prem cluster's type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkehub.v1beta1.OnPremCluster.ClusterType cluster_type = 4 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClusterType() {
+
+      clusterType_ = 0;
       onChanged();
       return this;
     }

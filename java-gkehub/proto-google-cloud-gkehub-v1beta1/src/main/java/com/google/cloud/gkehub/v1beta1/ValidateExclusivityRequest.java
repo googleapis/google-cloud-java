@@ -136,11 +136,13 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The parent (project and location) where the Memberships will be
-   * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent (project and location) where the Memberships will be created.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -160,11 +162,13 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The parent (project and location) where the Memberships will be
-   * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent (project and location) where the Memberships will be created.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -187,8 +191,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. The YAML of the membership CR in the cluster. Empty if the
-   * membership CR does not exist.
+   * Optional. The YAML of the membership CR in the cluster. Empty if the membership
+   * CR does not exist.
    * </pre>
    *
    * <code>string cr_manifest = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -211,8 +215,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. The YAML of the membership CR in the cluster. Empty if the
-   * membership CR does not exist.
+   * Optional. The YAML of the membership CR in the cluster. Empty if the membership
+   * CR does not exist.
    * </pre>
    *
    * <code>string cr_manifest = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -238,9 +242,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The intended membership name under the `parent`. This method only
-   * does validation in anticipation of a CreateMembership call with the same
-   * name.
+   * Required. The intended membership name under the `parent`. This method only does
+   * validation in anticipation of a CreateMembership call with the same name.
    * </pre>
    *
    * <code>string intended_membership = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -263,9 +266,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The intended membership name under the `parent`. This method only
-   * does validation in anticipation of a CreateMembership call with the same
-   * name.
+   * Required. The intended membership name under the `parent`. This method only does
+   * validation in anticipation of a CreateMembership call with the same name.
    * </pre>
    *
    * <code>string intended_membership = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -642,11 +644,13 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The parent (project and location) where the Memberships will be
-     * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent (project and location) where the Memberships will be created.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -665,11 +669,13 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The parent (project and location) where the Memberships will be
-     * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent (project and location) where the Memberships will be created.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -688,11 +694,13 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The parent (project and location) where the Memberships will be
-     * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent (project and location) where the Memberships will be created.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -710,11 +718,13 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The parent (project and location) where the Memberships will be
-     * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent (project and location) where the Memberships will be created.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -728,11 +738,13 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The parent (project and location) where the Memberships will be
-     * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent (project and location) where the Memberships will be created.
+     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -753,8 +765,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The YAML of the membership CR in the cluster. Empty if the
-     * membership CR does not exist.
+     * Optional. The YAML of the membership CR in the cluster. Empty if the membership
+     * CR does not exist.
      * </pre>
      *
      * <code>string cr_manifest = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -776,8 +788,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The YAML of the membership CR in the cluster. Empty if the
-     * membership CR does not exist.
+     * Optional. The YAML of the membership CR in the cluster. Empty if the membership
+     * CR does not exist.
      * </pre>
      *
      * <code>string cr_manifest = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -799,8 +811,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The YAML of the membership CR in the cluster. Empty if the
-     * membership CR does not exist.
+     * Optional. The YAML of the membership CR in the cluster. Empty if the membership
+     * CR does not exist.
      * </pre>
      *
      * <code>string cr_manifest = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -821,8 +833,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The YAML of the membership CR in the cluster. Empty if the
-     * membership CR does not exist.
+     * Optional. The YAML of the membership CR in the cluster. Empty if the membership
+     * CR does not exist.
      * </pre>
      *
      * <code>string cr_manifest = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -839,8 +851,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. The YAML of the membership CR in the cluster. Empty if the
-     * membership CR does not exist.
+     * Optional. The YAML of the membership CR in the cluster. Empty if the membership
+     * CR does not exist.
      * </pre>
      *
      * <code>string cr_manifest = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -864,9 +876,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The intended membership name under the `parent`. This method only
-     * does validation in anticipation of a CreateMembership call with the same
-     * name.
+     * Required. The intended membership name under the `parent`. This method only does
+     * validation in anticipation of a CreateMembership call with the same name.
      * </pre>
      *
      * <code>string intended_membership = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -888,9 +899,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The intended membership name under the `parent`. This method only
-     * does validation in anticipation of a CreateMembership call with the same
-     * name.
+     * Required. The intended membership name under the `parent`. This method only does
+     * validation in anticipation of a CreateMembership call with the same name.
      * </pre>
      *
      * <code>string intended_membership = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -912,9 +922,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The intended membership name under the `parent`. This method only
-     * does validation in anticipation of a CreateMembership call with the same
-     * name.
+     * Required. The intended membership name under the `parent`. This method only does
+     * validation in anticipation of a CreateMembership call with the same name.
      * </pre>
      *
      * <code>string intended_membership = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -935,9 +944,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The intended membership name under the `parent`. This method only
-     * does validation in anticipation of a CreateMembership call with the same
-     * name.
+     * Required. The intended membership name under the `parent`. This method only does
+     * validation in anticipation of a CreateMembership call with the same name.
      * </pre>
      *
      * <code>string intended_membership = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -954,9 +962,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The intended membership name under the `parent`. This method only
-     * does validation in anticipation of a CreateMembership call with the same
-     * name.
+     * Required. The intended membership name under the `parent`. This method only does
+     * validation in anticipation of a CreateMembership call with the same name.
      * </pre>
      *
      * <code>string intended_membership = 3 [(.google.api.field_behavior) = REQUIRED];</code>

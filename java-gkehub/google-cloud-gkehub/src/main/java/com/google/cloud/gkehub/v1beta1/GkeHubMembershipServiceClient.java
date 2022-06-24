@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -29,9 +30,17 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkehub.v1beta1.stub.GkeHubMembershipServiceStub;
 import com.google.cloud.gkehub.v1beta1.stub.GkeHubMembershipServiceStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -59,7 +68,7 @@ import javax.annotation.Generated;
  * // It may require modifications to work in your environment.
  * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
  *     GkeHubMembershipServiceClient.create()) {
- *   String name = "name3373707";
+ *   MembershipName name = MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]");
  *   Membership response = gkeHubMembershipServiceClient.getMembership(name);
  * }
  * }</pre>
@@ -115,6 +124,21 @@ import javax.annotation.Generated;
  *     GkeHubMembershipServiceClient.create(gkeHubMembershipServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * GkeHubMembershipServiceSettings gkeHubMembershipServiceSettings =
+ *     GkeHubMembershipServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             GkeHubMembershipServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+ *     GkeHubMembershipServiceClient.create(gkeHubMembershipServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
@@ -122,7 +146,8 @@ import javax.annotation.Generated;
 public class GkeHubMembershipServiceClient implements BackgroundResource {
   private final GkeHubMembershipServiceSettings settings;
   private final GkeHubMembershipServiceStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of GkeHubMembershipServiceClient with default settings. */
   public static final GkeHubMembershipServiceClient create() throws IOException {
@@ -142,7 +167,6 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * Constructs an instance of GkeHubMembershipServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(GkeHubMembershipServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GkeHubMembershipServiceClient create(GkeHubMembershipServiceStub stub) {
     return new GkeHubMembershipServiceClient(stub);
   }
@@ -156,21 +180,23 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
       throws IOException {
     this.settings = settings;
     this.stub = ((GkeHubMembershipServiceStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GkeHubMembershipServiceClient(GkeHubMembershipServiceStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final GkeHubMembershipServiceSettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GkeHubMembershipServiceStub getStub() {
     return stub;
   }
@@ -179,8 +205,16 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -194,7 +228,38 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
-   *   String parent = "parent-995424086";
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Membership element :
+   *       gkeHubMembershipServiceClient.listMemberships(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent (project and location) where the Memberships will be listed.
+   *     Specified in the format `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMembershipsPagedResponse listMemberships(LocationName parent) {
+    ListMembershipsRequest request =
+        ListMembershipsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMemberships(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Memberships in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Membership element :
    *       gkeHubMembershipServiceClient.listMemberships(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -224,7 +289,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   ListMembershipsRequest request =
    *       ListMembershipsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -257,7 +322,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   ListMembershipsRequest request =
    *       ListMembershipsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -290,7 +355,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   ListMembershipsRequest request =
    *       ListMembershipsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -299,7 +364,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListMembershipsResponse response =
    *         gkeHubMembershipServiceClient.listMembershipsCallable().call(request);
-   *     for (Membership element : response.getResponsesList()) {
+   *     for (Membership element : response.getResourcesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -328,7 +393,33 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
-   *   String name = "name3373707";
+   *   MembershipName name = MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]");
+   *   Membership response = gkeHubMembershipServiceClient.getMembership(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Membership resource name in the format
+   *     `projects/&#42;/locations/&#42;/memberships/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Membership getMembership(MembershipName name) {
+    GetMembershipRequest request =
+        GetMembershipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMembership(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a Membership.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   String name = MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString();
    *   Membership response = gkeHubMembershipServiceClient.getMembership(name);
    * }
    * }</pre>
@@ -354,7 +445,9 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   GetMembershipRequest request =
-   *       GetMembershipRequest.newBuilder().setName("name3373707").build();
+   *       GetMembershipRequest.newBuilder()
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .build();
    *   Membership response = gkeHubMembershipServiceClient.getMembership(request);
    * }
    * }</pre>
@@ -378,7 +471,9 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
    *   GetMembershipRequest request =
-   *       GetMembershipRequest.newBuilder().setName("name3373707").build();
+   *       GetMembershipRequest.newBuilder()
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .build();
    *   ApiFuture<Membership> future =
    *       gkeHubMembershipServiceClient.getMembershipCallable().futureCall(request);
    *   // Do something.
@@ -405,7 +500,52 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
-   *   String parent = "parent-995424086";
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Membership resource = Membership.newBuilder().build();
+   *   String membershipId = "membershipId517665681";
+   *   Membership response =
+   *       gkeHubMembershipServiceClient.createMembershipAsync(parent, resource, membershipId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent (project and location) where the Memberships will be
+   *     created. Specified in the format `projects/&#42;/locations/&#42;`.
+   * @param resource Required. The membership to create.
+   * @param membershipId Required. Client chosen ID for the membership. `membership_id` must be a
+   *     valid RFC 1123 compliant DNS label:
+   *     <p>1. At most 63 characters in length 2. It must consist of lower case alphanumeric
+   *     characters or `-` 3. It must start and end with an alphanumeric character
+   *     <p>Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]&#42;[a-z0-9])?`, with a maximum
+   *     length of 63 characters.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Membership, OperationMetadata> createMembershipAsync(
+      LocationName parent, Membership resource, String membershipId) {
+    CreateMembershipRequest request =
+        CreateMembershipRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setResource(resource)
+            .setMembershipId(membershipId)
+            .build();
+    return createMembershipAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * register other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Membership resource = Membership.newBuilder().build();
    *   String membershipId = "membershipId517665681";
    *   Membership response =
@@ -452,7 +592,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   CreateMembershipRequest request =
    *       CreateMembershipRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setMembershipId("membershipId517665681")
    *           .setResource(Membership.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -486,7 +626,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   CreateMembershipRequest request =
    *       CreateMembershipRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setMembershipId("membershipId517665681")
    *           .setResource(Membership.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -520,7 +660,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   CreateMembershipRequest request =
    *       CreateMembershipRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setMembershipId("membershipId517665681")
    *           .setResource(Membership.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -551,7 +691,38 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
-   *   String name = "name3373707";
+   *   MembershipName name = MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]");
+   *   gkeHubMembershipServiceClient.deleteMembershipAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Membership resource name in the format
+   *     `projects/&#42;/locations/&#42;/memberships/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteMembershipAsync(
+      MembershipName name) {
+    DeleteMembershipRequest request =
+        DeleteMembershipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteMembershipAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes a Membership.
+   *
+   * <p>&#42;&#42;This is currently only supported for GKE clusters on Google Cloud&#42;&#42;. To
+   * unregister other clusters, follow the instructions at
+   * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   String name = MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString();
    *   gkeHubMembershipServiceClient.deleteMembershipAsync(name).get();
    * }
    * }</pre>
@@ -582,7 +753,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   DeleteMembershipRequest request =
    *       DeleteMembershipRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setRequestId("requestId693933066")
    *           .build();
    *   gkeHubMembershipServiceClient.deleteMembershipAsync(request).get();
@@ -614,7 +785,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   DeleteMembershipRequest request =
    *       DeleteMembershipRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
@@ -646,7 +817,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   DeleteMembershipRequest request =
    *       DeleteMembershipRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =
@@ -671,7 +842,49 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    * // It may require modifications to work in your environment.
    * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
    *     GkeHubMembershipServiceClient.create()) {
-   *   String name = "name3373707";
+   *   MembershipName name = MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]");
+   *   Membership resource = Membership.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Membership response =
+   *       gkeHubMembershipServiceClient.updateMembershipAsync(name, resource, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The membership resource name in the format:
+   *     `projects/[project_id]/locations/global/memberships/[membership_id]`
+   * @param resource Required. Only fields specified in update_mask are updated. If you specify a
+   *     field in the update_mask but don't specify its value here that field will be deleted. If
+   *     you are updating a map field, set the value of a key to null or empty string to delete the
+   *     key from the map. It's not possible to update a key's value to the empty string. If you
+   *     specify the update_mask to be a special path "&#42;", fully replaces all user-modifiable
+   *     fields to match `resource`.
+   * @param updateMask Required. Mask of fields to update. At least one field path must be specified
+   *     in this mask.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Membership, OperationMetadata> updateMembershipAsync(
+      MembershipName name, Membership resource, FieldMask updateMask) {
+    UpdateMembershipRequest request =
+        UpdateMembershipRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setResource(resource)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateMembershipAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing Membership.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   String name = MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString();
    *   Membership resource = Membership.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
    *   Membership response =
@@ -715,7 +928,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   UpdateMembershipRequest request =
    *       UpdateMembershipRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setResource(Membership.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -745,7 +958,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   UpdateMembershipRequest request =
    *       UpdateMembershipRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setResource(Membership.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -775,7 +988,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   UpdateMembershipRequest request =
    *       UpdateMembershipRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setResource(Membership.newBuilder().build())
    *           .setRequestId("requestId693933066")
@@ -807,7 +1020,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   GenerateConnectManifestRequest request =
    *       GenerateConnectManifestRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setConnectAgent(ConnectAgent.newBuilder().build())
    *           .setVersion("version351608024")
    *           .setIsUpgrade(true)
@@ -843,7 +1056,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   GenerateConnectManifestRequest request =
    *       GenerateConnectManifestRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setConnectAgent(ConnectAgent.newBuilder().build())
    *           .setVersion("version351608024")
    *           .setIsUpgrade(true)
@@ -876,7 +1089,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   ValidateExclusivityRequest request =
    *       ValidateExclusivityRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setCrManifest("crManifest-1971077186")
    *           .setIntendedMembership("intendedMembership-2074920351")
    *           .build();
@@ -906,7 +1119,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   ValidateExclusivityRequest request =
    *       ValidateExclusivityRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setCrManifest("crManifest-1971077186")
    *           .setIntendedMembership("intendedMembership-2074920351")
    *           .build();
@@ -944,7 +1157,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   GenerateExclusivityManifestRequest request =
    *       GenerateExclusivityManifestRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setCrdManifest("crdManifest1401188132")
    *           .setCrManifest("crManifest-1971077186")
    *           .build();
@@ -983,7 +1196,7 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
    *     GkeHubMembershipServiceClient.create()) {
    *   GenerateExclusivityManifestRequest request =
    *       GenerateExclusivityManifestRequest.newBuilder()
-   *           .setName("name3373707")
+   *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setCrdManifest("crdManifest1401188132")
    *           .setCrManifest("crManifest-1971077186")
    *           .build();
@@ -998,6 +1211,335 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
           GenerateExclusivityManifestRequest, GenerateExclusivityManifestResponse>
       generateExclusivityManifestCallable() {
     return stub.generateExclusivityManifestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : gkeHubMembershipServiceClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       gkeHubMembershipServiceClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response =
+   *         gkeHubMembershipServiceClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = gkeHubMembershipServiceClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future =
+   *       gkeHubMembershipServiceClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = gkeHubMembershipServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       gkeHubMembershipServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = gkeHubMembershipServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       gkeHubMembershipServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response =
+   *       gkeHubMembershipServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
+   *     GkeHubMembershipServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       gkeHubMembershipServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override
@@ -1104,6 +1646,82 @@ public class GkeHubMembershipServiceClient implements BackgroundResource {
     protected ListMembershipsFixedSizeCollection createCollection(
         List<ListMembershipsPage> pages, int collectionSize) {
       return new ListMembershipsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

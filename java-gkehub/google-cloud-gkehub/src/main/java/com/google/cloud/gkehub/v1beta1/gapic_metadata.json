@@ -11,10 +11,10 @@
           "libraryClient": "GkeHubMembershipServiceClient",
           "rpcs": {
             "CreateMembership": {
-              "methods": ["createMembershipAsync", "createMembershipAsync", "createMembershipOperationCallable", "createMembershipCallable"]
+              "methods": ["createMembershipAsync", "createMembershipAsync", "createMembershipAsync", "createMembershipOperationCallable", "createMembershipCallable"]
             },
             "DeleteMembership": {
-              "methods": ["deleteMembershipAsync", "deleteMembershipAsync", "deleteMembershipOperationCallable", "deleteMembershipCallable"]
+              "methods": ["deleteMembershipAsync", "deleteMembershipAsync", "deleteMembershipAsync", "deleteMembershipOperationCallable", "deleteMembershipCallable"]
             },
             "GenerateConnectManifest": {
               "methods": ["generateConnectManifest", "generateConnectManifestCallable"]
@@ -22,14 +22,29 @@
             "GenerateExclusivityManifest": {
               "methods": ["generateExclusivityManifest", "generateExclusivityManifestCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetMembership": {
-              "methods": ["getMembership", "getMembership", "getMembershipCallable"]
+              "methods": ["getMembership", "getMembership", "getMembership", "getMembershipCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListMemberships": {
-              "methods": ["listMemberships", "listMemberships", "listMembershipsPagedCallable", "listMembershipsCallable"]
+              "methods": ["listMemberships", "listMemberships", "listMemberships", "listMembershipsPagedCallable", "listMembershipsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateMembership": {
-              "methods": ["updateMembershipAsync", "updateMembershipAsync", "updateMembershipOperationCallable", "updateMembershipCallable"]
+              "methods": ["updateMembershipAsync", "updateMembershipAsync", "updateMembershipAsync", "updateMembershipOperationCallable", "updateMembershipCallable"]
             },
             "ValidateExclusivity": {
               "methods": ["validateExclusivity", "validateExclusivityCallable"]

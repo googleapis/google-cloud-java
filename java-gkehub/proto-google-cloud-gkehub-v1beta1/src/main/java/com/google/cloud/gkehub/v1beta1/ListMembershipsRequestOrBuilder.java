@@ -27,11 +27,13 @@ public interface ListMembershipsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project and location) where the Memberships will be
-   * listed. Specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent (project and location) where the Memberships will be listed.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -40,11 +42,13 @@ public interface ListMembershipsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project and location) where the Memberships will be
-   * listed. Specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent (project and location) where the Memberships will be listed.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -54,9 +58,9 @@ public interface ListMembershipsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. When requesting a 'page' of resources, `page_size` specifies
-   * number of resources to return. If unspecified or set to 0, all resources
-   * will be returned.
+   * Optional. When requesting a 'page' of resources, `page_size` specifies number of
+   * resources to return. If unspecified or set to 0, all resources will
+   * be returned.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98,8 +102,8 @@ public interface ListMembershipsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Lists Memberships that match the filter expression, following the
-   * syntax outlined in https://google.aip.dev/160.
+   * Optional. Lists Memberships that match the filter expression, following the syntax
+   * outlined in https://google.aip.dev/160.
    * Examples:
    *   - Name is `bar` in project `foo-proj` and location `global`:
    *       name = "projects/foo-proj/locations/global/membership/bar"
@@ -120,8 +124,8 @@ public interface ListMembershipsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Lists Memberships that match the filter expression, following the
-   * syntax outlined in https://google.aip.dev/160.
+   * Optional. Lists Memberships that match the filter expression, following the syntax
+   * outlined in https://google.aip.dev/160.
    * Examples:
    *   - Name is `bar` in project `foo-proj` and location `global`:
    *       name = "projects/foo-proj/locations/global/membership/bar"

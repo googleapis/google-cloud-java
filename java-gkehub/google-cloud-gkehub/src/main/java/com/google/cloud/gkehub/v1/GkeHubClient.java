@@ -18,8 +18,8 @@ package com.google.cloud.gkehub.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -31,7 +31,6 @@ import com.google.cloud.gkehub.v1.stub.GkeHubStub;
 import com.google.cloud.gkehub.v1.stub.GkeHubStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -116,13 +115,28 @@ import javax.annotation.Generated;
  * GkeHubClient gkeHubClient = GkeHubClient.create(gkeHubSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * GkeHubSettings gkeHubSettings =
+ *     GkeHubSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             GkeHubSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * GkeHubClient gkeHubClient = GkeHubClient.create(gkeHubSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class GkeHubClient implements BackgroundResource {
   private final GkeHubSettings settings;
   private final GkeHubStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of GkeHubClient with default settings. */
   public static final GkeHubClient create() throws IOException {
@@ -141,7 +155,6 @@ public class GkeHubClient implements BackgroundResource {
    * Constructs an instance of GkeHubClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(GkeHubSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GkeHubClient create(GkeHubStub stub) {
     return new GkeHubClient(stub);
   }
@@ -153,21 +166,23 @@ public class GkeHubClient implements BackgroundResource {
   protected GkeHubClient(GkeHubSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((GkeHubStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GkeHubClient(GkeHubStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final GkeHubSettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GkeHubStub getStub() {
     return stub;
   }
@@ -176,8 +191,16 @@ public class GkeHubClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -318,7 +341,7 @@ public class GkeHubClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListMembershipsResponse response = gkeHubClient.listMembershipsCallable().call(request);
-   *     for (Membership element : response.getResponsesList()) {
+   *     for (Membership element : response.getResourcesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -473,7 +496,7 @@ public class GkeHubClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListFeaturesResponse response = gkeHubClient.listFeaturesCallable().call(request);
-   *     for (Feature element : response.getResponsesList()) {
+   *     for (Feature element : response.getResourcesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

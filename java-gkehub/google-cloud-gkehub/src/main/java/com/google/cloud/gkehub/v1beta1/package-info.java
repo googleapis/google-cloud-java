@@ -38,7 +38,7 @@
  * // It may require modifications to work in your environment.
  * try (GkeHubMembershipServiceClient gkeHubMembershipServiceClient =
  *     GkeHubMembershipServiceClient.create()) {
- *   String name = "name3373707";
+ *   MembershipName name = MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]");
  *   Membership response = gkeHubMembershipServiceClient.getMembership(name);
  * }
  * }</pre>

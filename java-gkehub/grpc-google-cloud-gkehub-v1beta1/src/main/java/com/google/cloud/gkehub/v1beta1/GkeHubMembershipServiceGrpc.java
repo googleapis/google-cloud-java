@@ -22,8 +22,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * The GKE Hub MembershipService handles the registration of many Kubernetes
- * clusters to Google Cloud, represented with the
- * [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
+ * clusters to Google Cloud, represented with the [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
  * GKE Hub is currently only available in the global region.
  * **Membership management may be non-trivial:** it is recommended to use one
  * of the Google-provided client libraries or tools where possible when working
@@ -477,8 +476,7 @@ public final class GkeHubMembershipServiceGrpc {
    *
    * <pre>
    * The GKE Hub MembershipService handles the registration of many Kubernetes
-   * clusters to Google Cloud, represented with the
-   * [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
+   * clusters to Google Cloud, represented with the [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
    * GKE Hub is currently only available in the global region.
    * **Membership management may be non-trivial:** it is recommended to use one
    * of the Google-provided client libraries or tools where possible when working
@@ -686,8 +684,7 @@ public final class GkeHubMembershipServiceGrpc {
    *
    * <pre>
    * The GKE Hub MembershipService handles the registration of many Kubernetes
-   * clusters to Google Cloud, represented with the
-   * [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
+   * clusters to Google Cloud, represented with the [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
    * GKE Hub is currently only available in the global region.
    * **Membership management may be non-trivial:** it is recommended to use one
    * of the Google-provided client libraries or tools where possible when working
@@ -863,8 +860,7 @@ public final class GkeHubMembershipServiceGrpc {
    *
    * <pre>
    * The GKE Hub MembershipService handles the registration of many Kubernetes
-   * clusters to Google Cloud, represented with the
-   * [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
+   * clusters to Google Cloud, represented with the [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
    * GKE Hub is currently only available in the global region.
    * **Membership management may be non-trivial:** it is recommended to use one
    * of the Google-provided client libraries or tools where possible when working
@@ -1013,8 +1009,7 @@ public final class GkeHubMembershipServiceGrpc {
    *
    * <pre>
    * The GKE Hub MembershipService handles the registration of many Kubernetes
-   * clusters to Google Cloud, represented with the
-   * [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
+   * clusters to Google Cloud, represented with the [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
    * GKE Hub is currently only available in the global region.
    * **Membership management may be non-trivial:** it is recommended to use one
    * of the Google-provided client libraries or tools where possible when working
