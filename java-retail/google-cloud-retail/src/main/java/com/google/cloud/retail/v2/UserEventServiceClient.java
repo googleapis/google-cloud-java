@@ -18,13 +18,13 @@ package com.google.cloud.retail.v2;
 
 import com.google.api.HttpBody;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2.stub.UserEventServiceStub;
 import com.google.cloud.retail.v2.stub.UserEventServiceStubSettings;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -100,13 +100,29 @@ import javax.annotation.Generated;
  *     UserEventServiceClient.create(userEventServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * UserEventServiceSettings userEventServiceSettings =
+ *     UserEventServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             UserEventServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * UserEventServiceClient userEventServiceClient =
+ *     UserEventServiceClient.create(userEventServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class UserEventServiceClient implements BackgroundResource {
   private final UserEventServiceSettings settings;
   private final UserEventServiceStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of UserEventServiceClient with default settings. */
   public static final UserEventServiceClient create() throws IOException {
@@ -138,13 +154,17 @@ public class UserEventServiceClient implements BackgroundResource {
   protected UserEventServiceClient(UserEventServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((UserEventServiceStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected UserEventServiceClient(UserEventServiceStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final UserEventServiceSettings getSettings() {
@@ -159,8 +179,16 @@ public class UserEventServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -17,13 +17,13 @@
 package com.google.cloud.retail.v2;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2.stub.CompletionServiceStub;
 import com.google.cloud.retail.v2.stub.CompletionServiceStubSettings;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -107,13 +107,29 @@ import javax.annotation.Generated;
  *     CompletionServiceClient.create(completionServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * CompletionServiceSettings completionServiceSettings =
+ *     CompletionServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             CompletionServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * CompletionServiceClient completionServiceClient =
+ *     CompletionServiceClient.create(completionServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class CompletionServiceClient implements BackgroundResource {
   private final CompletionServiceSettings settings;
   private final CompletionServiceStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of CompletionServiceClient with default settings. */
   public static final CompletionServiceClient create() throws IOException {
@@ -145,13 +161,17 @@ public class CompletionServiceClient implements BackgroundResource {
   protected CompletionServiceClient(CompletionServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((CompletionServiceStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected CompletionServiceClient(CompletionServiceStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final CompletionServiceSettings getSettings() {
@@ -166,8 +186,16 @@ public class CompletionServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
