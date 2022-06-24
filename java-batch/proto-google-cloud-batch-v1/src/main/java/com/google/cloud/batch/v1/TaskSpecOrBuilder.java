@@ -209,7 +209,7 @@ public interface TaskSpecOrBuilder
    * Lifecycle management schema when any task in a task group is failed.
    * The valid size of lifecycle policies are [0, 10].
    * For each lifecycle policy, when the condition is met,
-   * the action in that policy will be executed.
+   * the action in that policy will execute.
    * If there are multiple policies that the task execution result matches,
    * we use the action from the first matched policy. If task execution result
    * does not meet with any of the defined lifecycle policy, we consider it as
@@ -227,7 +227,7 @@ public interface TaskSpecOrBuilder
    * Lifecycle management schema when any task in a task group is failed.
    * The valid size of lifecycle policies are [0, 10].
    * For each lifecycle policy, when the condition is met,
-   * the action in that policy will be executed.
+   * the action in that policy will execute.
    * If there are multiple policies that the task execution result matches,
    * we use the action from the first matched policy. If task execution result
    * does not meet with any of the defined lifecycle policy, we consider it as
@@ -245,7 +245,7 @@ public interface TaskSpecOrBuilder
    * Lifecycle management schema when any task in a task group is failed.
    * The valid size of lifecycle policies are [0, 10].
    * For each lifecycle policy, when the condition is met,
-   * the action in that policy will be executed.
+   * the action in that policy will execute.
    * If there are multiple policies that the task execution result matches,
    * we use the action from the first matched policy. If task execution result
    * does not meet with any of the defined lifecycle policy, we consider it as
@@ -263,7 +263,7 @@ public interface TaskSpecOrBuilder
    * Lifecycle management schema when any task in a task group is failed.
    * The valid size of lifecycle policies are [0, 10].
    * For each lifecycle policy, when the condition is met,
-   * the action in that policy will be executed.
+   * the action in that policy will execute.
    * If there are multiple policies that the task execution result matches,
    * we use the action from the first matched policy. If task execution result
    * does not meet with any of the defined lifecycle policy, we consider it as
@@ -282,7 +282,7 @@ public interface TaskSpecOrBuilder
    * Lifecycle management schema when any task in a task group is failed.
    * The valid size of lifecycle policies are [0, 10].
    * For each lifecycle policy, when the condition is met,
-   * the action in that policy will be executed.
+   * the action in that policy will execute.
    * If there are multiple policies that the task execution result matches,
    * we use the action from the first matched policy. If task execution result
    * does not meet with any of the defined lifecycle policy, we consider it as

@@ -188,8 +188,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job is submitted into a ResourcePool and waiting
-     * for resource allocation.
+     * Job is admitted (validated and persisted) and waiting for resources.
      * </pre>
      *
      * <code>QUEUED = 1;</code>
@@ -258,8 +257,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job is submitted into a ResourcePool and waiting
-     * for resource allocation.
+     * Job is admitted (validated and persisted) and waiting for resources.
      * </pre>
      *
      * <code>QUEUED = 1;</code>
@@ -2991,10 +2989,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The duration of time the Job is in status
-   * RUNNING. Once the Job completes (i.e. the Job status is either
-   * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-   * to complete.
+   * The duration of time that the Job spent in status RUNNING.
    * </pre>
    *
    * <code>.google.protobuf.Duration run_duration = 5;</code>
@@ -3009,10 +3004,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The duration of time the Job is in status
-   * RUNNING. Once the Job completes (i.e. the Job status is either
-   * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-   * to complete.
+   * The duration of time that the Job spent in status RUNNING.
    * </pre>
    *
    * <code>.google.protobuf.Duration run_duration = 5;</code>
@@ -3027,10 +3019,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The duration of time the Job is in status
-   * RUNNING. Once the Job completes (i.e. the Job status is either
-   * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-   * to complete.
+   * The duration of time that the Job spent in status RUNNING.
    * </pre>
    *
    * <code>.google.protobuf.Duration run_duration = 5;</code>
@@ -4120,10 +4109,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of time the Job is in status
-     * RUNNING. Once the Job completes (i.e. the Job status is either
-     * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-     * to complete.
+     * The duration of time that the Job spent in status RUNNING.
      * </pre>
      *
      * <code>.google.protobuf.Duration run_duration = 5;</code>
@@ -4137,10 +4123,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of time the Job is in status
-     * RUNNING. Once the Job completes (i.e. the Job status is either
-     * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-     * to complete.
+     * The duration of time that the Job spent in status RUNNING.
      * </pre>
      *
      * <code>.google.protobuf.Duration run_duration = 5;</code>
@@ -4160,10 +4143,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of time the Job is in status
-     * RUNNING. Once the Job completes (i.e. the Job status is either
-     * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-     * to complete.
+     * The duration of time that the Job spent in status RUNNING.
      * </pre>
      *
      * <code>.google.protobuf.Duration run_duration = 5;</code>
@@ -4185,10 +4165,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of time the Job is in status
-     * RUNNING. Once the Job completes (i.e. the Job status is either
-     * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-     * to complete.
+     * The duration of time that the Job spent in status RUNNING.
      * </pre>
      *
      * <code>.google.protobuf.Duration run_duration = 5;</code>
@@ -4207,10 +4184,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of time the Job is in status
-     * RUNNING. Once the Job completes (i.e. the Job status is either
-     * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-     * to complete.
+     * The duration of time that the Job spent in status RUNNING.
      * </pre>
      *
      * <code>.google.protobuf.Duration run_duration = 5;</code>
@@ -4234,10 +4208,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of time the Job is in status
-     * RUNNING. Once the Job completes (i.e. the Job status is either
-     * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-     * to complete.
+     * The duration of time that the Job spent in status RUNNING.
      * </pre>
      *
      * <code>.google.protobuf.Duration run_duration = 5;</code>
@@ -4257,10 +4228,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of time the Job is in status
-     * RUNNING. Once the Job completes (i.e. the Job status is either
-     * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-     * to complete.
+     * The duration of time that the Job spent in status RUNNING.
      * </pre>
      *
      * <code>.google.protobuf.Duration run_duration = 5;</code>
@@ -4274,10 +4242,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of time the Job is in status
-     * RUNNING. Once the Job completes (i.e. the Job status is either
-     * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-     * to complete.
+     * The duration of time that the Job spent in status RUNNING.
      * </pre>
      *
      * <code>.google.protobuf.Duration run_duration = 5;</code>
@@ -4295,10 +4260,7 @@ public final class JobStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The duration of time the Job is in status
-     * RUNNING. Once the Job completes (i.e. the Job status is either
-     * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-     * to complete.
+     * The duration of time that the Job spent in status RUNNING.
      * </pre>
      *
      * <code>.google.protobuf.Duration run_duration = 5;</code>

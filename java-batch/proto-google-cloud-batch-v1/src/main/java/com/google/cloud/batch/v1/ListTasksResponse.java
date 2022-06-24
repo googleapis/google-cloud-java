@@ -22,7 +22,7 @@ package com.google.cloud.batch.v1;
  *
  *
  * <pre>
- * ListAssignedTasks Response.
+ * ListTasks Response.
  * </pre>
  *
  * Protobuf type {@code google.cloud.batch.v1.ListTasksResponse}
@@ -510,7 +510,7 @@ public final class ListTasksResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * ListAssignedTasks Response.
+   * ListTasks Response.
    * </pre>
    *
    * Protobuf type {@code google.cloud.batch.v1.ListTasksResponse}

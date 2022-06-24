@@ -53,7 +53,7 @@ public interface LogsPolicyOrBuilder
    *
    * <pre>
    * The path to which logs are saved when the destination = PATH. This can be a
-   * local filepath on the VM, or under the mount point of a Persistent Disk or
+   * local file path on the VM, or under the mount point of a Persistent Disk or
    * Filestore, or a Cloud Storage path.
    * </pre>
    *
@@ -67,7 +67,7 @@ public interface LogsPolicyOrBuilder
    *
    * <pre>
    * The path to which logs are saved when the destination = PATH. This can be a
-   * local filepath on the VM, or under the mount point of a Persistent Disk or
+   * local file path on the VM, or under the mount point of a Persistent Disk or
    * Filestore, or a Cloud Storage path.
    * </pre>
    *

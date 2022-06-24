@@ -156,7 +156,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Logs are saved to a path.
+     * Logs are saved to a file path.
      * </pre>
      *
      * <code>PATH = 2;</code>
@@ -189,7 +189,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Logs are saved to a path.
+     * Logs are saved to a file path.
      * </pre>
      *
      * <code>PATH = 2;</code>
@@ -322,7 +322,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The path to which logs are saved when the destination = PATH. This can be a
-   * local filepath on the VM, or under the mount point of a Persistent Disk or
+   * local file path on the VM, or under the mount point of a Persistent Disk or
    * Filestore, or a Cloud Storage path.
    * </pre>
    *
@@ -347,7 +347,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The path to which logs are saved when the destination = PATH. This can be a
-   * local filepath on the VM, or under the mount point of a Persistent Disk or
+   * local file path on the VM, or under the mount point of a Persistent Disk or
    * Filestore, or a Cloud Storage path.
    * </pre>
    *
@@ -798,7 +798,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The path to which logs are saved when the destination = PATH. This can be a
-     * local filepath on the VM, or under the mount point of a Persistent Disk or
+     * local file path on the VM, or under the mount point of a Persistent Disk or
      * Filestore, or a Cloud Storage path.
      * </pre>
      *
@@ -822,7 +822,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The path to which logs are saved when the destination = PATH. This can be a
-     * local filepath on the VM, or under the mount point of a Persistent Disk or
+     * local file path on the VM, or under the mount point of a Persistent Disk or
      * Filestore, or a Cloud Storage path.
      * </pre>
      *
@@ -846,7 +846,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The path to which logs are saved when the destination = PATH. This can be a
-     * local filepath on the VM, or under the mount point of a Persistent Disk or
+     * local file path on the VM, or under the mount point of a Persistent Disk or
      * Filestore, or a Cloud Storage path.
      * </pre>
      *
@@ -869,7 +869,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The path to which logs are saved when the destination = PATH. This can be a
-     * local filepath on the VM, or under the mount point of a Persistent Disk or
+     * local file path on the VM, or under the mount point of a Persistent Disk or
      * Filestore, or a Cloud Storage path.
      * </pre>
      *
@@ -888,7 +888,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The path to which logs are saved when the destination = PATH. This can be a
-     * local filepath on the VM, or under the mount point of a Persistent Disk or
+     * local file path on the VM, or under the mount point of a Persistent Disk or
      * Filestore, or a Cloud Storage path.
      * </pre>
      *

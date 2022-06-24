@@ -264,12 +264,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Job name.
-   * It must have the format of "projects/&#42;&#47;locations/&#42;&#47;jobs/&#42;".
-   * For example: "projects/123456/locations/us-west1/jobs/job01".
+   * Output only. Job name.
+   * For example: "projects/123456/locations/us-central1/jobs/job01".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -289,12 +288,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Job name.
-   * It must have the format of "projects/&#42;&#47;locations/&#42;&#47;jobs/&#42;".
-   * For example: "projects/123456/locations/us-west1/jobs/job01".
+   * Output only. Job name.
+   * For example: "projects/123456/locations/us-central1/jobs/job01".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -368,7 +366,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Priority of the Job.
    * The valid value range is [0, 100).
-   * A job with higher priority value will be scheduled to run earlier.
+   * A job with higher priority value is more likely to run earlier if all other
+   * requirements are satisfied.
    * </pre>
    *
    * <code>int64 priority = 3;</code>
@@ -696,10 +695,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When the Job was created.
+   * Output only. When the Job was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -711,10 +711,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When the Job was created.
+   * Output only. When the Job was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -726,10 +727,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When the Job was created.
+   * Output only. When the Job was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -742,10 +744,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The last time the Job was updated.
+   * Output only. The last time the Job was updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -757,10 +760,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The last time the Job was updated.
+   * Output only. The last time the Job was updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -772,10 +776,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The last time the Job was updated.
+   * Output only. The last time the Job was updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -1540,12 +1545,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job name.
-     * It must have the format of "projects/&#42;&#47;locations/&#42;&#47;jobs/&#42;".
-     * For example: "projects/123456/locations/us-west1/jobs/job01".
+     * Output only. Job name.
+     * For example: "projects/123456/locations/us-central1/jobs/job01".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The name.
      */
@@ -1564,12 +1568,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job name.
-     * It must have the format of "projects/&#42;&#47;locations/&#42;&#47;jobs/&#42;".
-     * For example: "projects/123456/locations/us-west1/jobs/job01".
+     * Output only. Job name.
+     * For example: "projects/123456/locations/us-central1/jobs/job01".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for name.
      */
@@ -1588,12 +1591,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job name.
-     * It must have the format of "projects/&#42;&#47;locations/&#42;&#47;jobs/&#42;".
-     * For example: "projects/123456/locations/us-west1/jobs/job01".
+     * Output only. Job name.
+     * For example: "projects/123456/locations/us-central1/jobs/job01".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1611,12 +1613,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job name.
-     * It must have the format of "projects/&#42;&#47;locations/&#42;&#47;jobs/&#42;".
-     * For example: "projects/123456/locations/us-west1/jobs/job01".
+     * Output only. Job name.
+     * For example: "projects/123456/locations/us-central1/jobs/job01".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1630,12 +1631,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job name.
-     * It must have the format of "projects/&#42;&#47;locations/&#42;&#47;jobs/&#42;".
-     * For example: "projects/123456/locations/us-west1/jobs/job01".
+     * Output only. Job name.
+     * For example: "projects/123456/locations/us-central1/jobs/job01".
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1764,7 +1764,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Priority of the Job.
      * The valid value range is [0, 100).
-     * A job with higher priority value will be scheduled to run earlier.
+     * A job with higher priority value is more likely to run earlier if all other
+     * requirements are satisfied.
      * </pre>
      *
      * <code>int64 priority = 3;</code>
@@ -1781,7 +1782,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Priority of the Job.
      * The valid value range is [0, 100).
-     * A job with higher priority value will be scheduled to run earlier.
+     * A job with higher priority value is more likely to run earlier if all other
+     * requirements are satisfied.
      * </pre>
      *
      * <code>int64 priority = 3;</code>
@@ -1801,7 +1803,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Priority of the Job.
      * The valid value range is [0, 100).
-     * A job with higher priority value will be scheduled to run earlier.
+     * A job with higher priority value is more likely to run earlier if all other
+     * requirements are satisfied.
      * </pre>
      *
      * <code>int64 priority = 3;</code>
@@ -2815,10 +2818,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the Job was created.
+     * Output only. When the Job was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -2829,10 +2834,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the Job was created.
+     * Output only. When the Job was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -2849,10 +2856,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the Job was created.
+     * Output only. When the Job was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2871,10 +2880,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the Job was created.
+     * Output only. When the Job was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -2890,10 +2901,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the Job was created.
+     * Output only. When the Job was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2914,10 +2927,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the Job was created.
+     * Output only. When the Job was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2934,10 +2949,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the Job was created.
+     * Output only. When the Job was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
 
@@ -2948,10 +2965,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the Job was created.
+     * Output only. When the Job was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -2966,10 +2985,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the Job was created.
+     * Output only. When the Job was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -2998,10 +3019,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last time the Job was updated.
+     * Output only. The last time the Job was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the updateTime field is set.
      */
@@ -3012,10 +3035,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last time the Job was updated.
+     * Output only. The last time the Job was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The updateTime.
      */
@@ -3032,10 +3057,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last time the Job was updated.
+     * Output only. The last time the Job was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -3054,10 +3081,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last time the Job was updated.
+     * Output only. The last time the Job was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
@@ -3073,10 +3102,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last time the Job was updated.
+     * Output only. The last time the Job was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -3097,10 +3128,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last time the Job was updated.
+     * Output only. The last time the Job was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -3117,10 +3150,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last time the Job was updated.
+     * Output only. The last time the Job was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
 
@@ -3131,10 +3166,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last time the Job was updated.
+     * Output only. The last time the Job was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -3149,10 +3186,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The last time the Job was updated.
+     * Output only. The last time the Job was updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

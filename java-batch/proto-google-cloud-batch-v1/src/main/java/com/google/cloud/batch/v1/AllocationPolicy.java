@@ -383,8 +383,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs,
-     * for example, zones/us-central1-a, regions/us-west1.
-     * First location in the list should be a region.
+     * First location in the list must be a region.
+     * for example,
+     * ["regions/us-central1"] allow VMs in region us-central1,
+     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+     * us-central1-a.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -397,8 +400,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs,
-     * for example, zones/us-central1-a, regions/us-west1.
-     * First location in the list should be a region.
+     * First location in the list must be a region.
+     * for example,
+     * ["regions/us-central1"] allow VMs in region us-central1,
+     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+     * us-central1-a.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -411,8 +417,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs,
-     * for example, zones/us-central1-a, regions/us-west1.
-     * First location in the list should be a region.
+     * First location in the list must be a region.
+     * for example,
+     * ["regions/us-central1"] allow VMs in region us-central1,
+     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+     * us-central1-a.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -426,8 +435,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs,
-     * for example, zones/us-central1-a, regions/us-west1.
-     * First location in the list should be a region.
+     * First location in the list must be a region.
+     * for example,
+     * ["regions/us-central1"] allow VMs in region us-central1,
+     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+     * us-central1-a.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -437,16 +449,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getAllowedLocationsBytes(int index);
   }
-  /**
-   *
-   *
-   * <pre>
-   * Be consistent with LocationPolicy in
-   * //cloud/cluster/api/mixer_instances.proto.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.batch.v1.AllocationPolicy.LocationPolicy}
-   */
+  /** Protobuf type {@code google.cloud.batch.v1.AllocationPolicy.LocationPolicy} */
   public static final class LocationPolicy extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.batch.v1.AllocationPolicy.LocationPolicy)
@@ -547,8 +550,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs,
-     * for example, zones/us-central1-a, regions/us-west1.
-     * First location in the list should be a region.
+     * First location in the list must be a region.
+     * for example,
+     * ["regions/us-central1"] allow VMs in region us-central1,
+     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+     * us-central1-a.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -563,8 +569,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs,
-     * for example, zones/us-central1-a, regions/us-west1.
-     * First location in the list should be a region.
+     * First location in the list must be a region.
+     * for example,
+     * ["regions/us-central1"] allow VMs in region us-central1,
+     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+     * us-central1-a.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -579,8 +588,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs,
-     * for example, zones/us-central1-a, regions/us-west1.
-     * First location in the list should be a region.
+     * First location in the list must be a region.
+     * for example,
+     * ["regions/us-central1"] allow VMs in region us-central1,
+     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+     * us-central1-a.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -596,8 +608,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A list of allowed location names represented by internal URLs,
-     * for example, zones/us-central1-a, regions/us-west1.
-     * First location in the list should be a region.
+     * First location in the list must be a region.
+     * for example,
+     * ["regions/us-central1"] allow VMs in region us-central1,
+     * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+     * us-central1-a.
      * </pre>
      *
      * <code>repeated string allowed_locations = 1;</code>
@@ -777,16 +792,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     *
-     *
-     * <pre>
-     * Be consistent with LocationPolicy in
-     * //cloud/cluster/api/mixer_instances.proto.
-     * </pre>
-     *
-     * Protobuf type {@code google.cloud.batch.v1.AllocationPolicy.LocationPolicy}
-     */
+    /** Protobuf type {@code google.cloud.batch.v1.AllocationPolicy.LocationPolicy} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -967,8 +973,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs,
-       * for example, zones/us-central1-a, regions/us-west1.
-       * First location in the list should be a region.
+       * First location in the list must be a region.
+       * for example,
+       * ["regions/us-central1"] allow VMs in region us-central1,
+       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+       * us-central1-a.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -983,8 +992,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs,
-       * for example, zones/us-central1-a, regions/us-west1.
-       * First location in the list should be a region.
+       * First location in the list must be a region.
+       * for example,
+       * ["regions/us-central1"] allow VMs in region us-central1,
+       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+       * us-central1-a.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -999,8 +1011,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs,
-       * for example, zones/us-central1-a, regions/us-west1.
-       * First location in the list should be a region.
+       * First location in the list must be a region.
+       * for example,
+       * ["regions/us-central1"] allow VMs in region us-central1,
+       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+       * us-central1-a.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1016,8 +1031,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs,
-       * for example, zones/us-central1-a, regions/us-west1.
-       * First location in the list should be a region.
+       * First location in the list must be a region.
+       * for example,
+       * ["regions/us-central1"] allow VMs in region us-central1,
+       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+       * us-central1-a.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1033,8 +1051,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs,
-       * for example, zones/us-central1-a, regions/us-west1.
-       * First location in the list should be a region.
+       * First location in the list must be a region.
+       * for example,
+       * ["regions/us-central1"] allow VMs in region us-central1,
+       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+       * us-central1-a.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1057,8 +1078,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs,
-       * for example, zones/us-central1-a, regions/us-west1.
-       * First location in the list should be a region.
+       * First location in the list must be a region.
+       * for example,
+       * ["regions/us-central1"] allow VMs in region us-central1,
+       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+       * us-central1-a.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1080,8 +1104,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs,
-       * for example, zones/us-central1-a, regions/us-west1.
-       * First location in the list should be a region.
+       * First location in the list must be a region.
+       * for example,
+       * ["regions/us-central1"] allow VMs in region us-central1,
+       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+       * us-central1-a.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1100,8 +1127,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs,
-       * for example, zones/us-central1-a, regions/us-west1.
-       * First location in the list should be a region.
+       * First location in the list must be a region.
+       * for example,
+       * ["regions/us-central1"] allow VMs in region us-central1,
+       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+       * us-central1-a.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -1119,8 +1149,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * A list of allowed location names represented by internal URLs,
-       * for example, zones/us-central1-a, regions/us-west1.
-       * First location in the list should be a region.
+       * First location in the list must be a region.
+       * for example,
+       * ["regions/us-central1"] allow VMs in region us-central1,
+       * ["regions/us-central1", "zones/us-central1-a"] only allow VMs in zone
+       * us-central1-a.
        * </pre>
        *
        * <code>repeated string allowed_locations = 1;</code>
@@ -4639,6 +4672,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * The minimum CPU platform.
      * See
      * `https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform`.
+     * Not yet implemented.
      * </pre>
      *
      * <code>string min_cpu_platform = 3;</code>
@@ -4653,6 +4687,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * The minimum CPU platform.
      * See
      * `https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform`.
+     * Not yet implemented.
      * </pre>
      *
      * <code>string min_cpu_platform = 3;</code>
@@ -4693,6 +4728,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
+     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -4703,6 +4739,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
+     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -4713,6 +4750,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
+     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -4723,6 +4761,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
+     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -4734,6 +4773,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
+     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5005,6 +5045,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * The minimum CPU platform.
      * See
      * `https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform`.
+     * Not yet implemented.
      * </pre>
      *
      * <code>string min_cpu_platform = 3;</code>
@@ -5030,6 +5071,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * The minimum CPU platform.
      * See
      * `https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform`.
+     * Not yet implemented.
      * </pre>
      *
      * <code>string min_cpu_platform = 3;</code>
@@ -5096,6 +5138,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
+     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5110,6 +5153,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
+     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5124,6 +5168,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
+     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5137,6 +5182,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
+     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5150,6 +5196,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The accelerators attached to each VM instance.
+     * Not yet implemented.
      * </pre>
      *
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -5823,6 +5870,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * `https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform`.
+       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -5847,6 +5895,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * `https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform`.
+       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -5871,6 +5920,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * `https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform`.
+       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -5894,6 +5944,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * `https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform`.
+       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -5913,6 +5964,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * The minimum CPU platform.
        * See
        * `https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform`.
+       * Not yet implemented.
        * </pre>
        *
        * <code>string min_cpu_platform = 3;</code>
@@ -6054,6 +6106,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6071,6 +6124,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6087,6 +6141,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6103,6 +6158,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6126,6 +6182,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6147,6 +6204,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6169,6 +6227,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6192,6 +6251,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6212,6 +6272,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6233,6 +6294,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6254,6 +6316,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6273,6 +6336,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6292,6 +6356,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6305,6 +6370,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6322,6 +6388,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6340,6 +6407,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6355,6 +6423,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>
@@ -6370,6 +6439,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * The accelerators attached to each VM instance.
+       * Not yet implemented.
        * </pre>
        *
        * <code>repeated .google.cloud.batch.v1.AllocationPolicy.Accelerator accelerators = 5;</code>

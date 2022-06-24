@@ -4,3 +4,5 @@
 google-cloud-batch:0.1.1:0.1.2-SNAPSHOT
 proto-google-cloud-batch-v1:0.1.1:0.1.2-SNAPSHOT
 grpc-google-cloud-batch-v1:0.1.1:0.1.2-SNAPSHOT
+proto-google-cloud-batch-v1alpha:0.1.1:0.1.2-SNAPSHOT
+grpc-google-cloud-batch-v1alpha:0.1.1:0.1.2-SNAPSHOT

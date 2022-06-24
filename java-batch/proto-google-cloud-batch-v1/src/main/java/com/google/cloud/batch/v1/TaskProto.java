@@ -152,10 +152,12 @@ public final class TaskProto {
           + "p}/tasks/{task}\"\205\001\n\013Environment\022D\n\tvaria"
           + "bles\030\001 \003(\01321.google.cloud.batch.v1.Envir"
           + "onment.VariablesEntry\0320\n\016VariablesEntry\022"
-          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001Bj\n\031com.g"
-          + "oogle.cloud.batch.v1B\tTaskProtoP\001Z:googl"
-          + "e.golang.org/genproto/googleapis/cloud/b"
-          + "atch/v1;batch\242\002\003GCBb\006proto3"
+          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\265\001\n\031com."
+          + "google.cloud.batch.v1B\tTaskProtoP\001Z:goog"
+          + "le.golang.org/genproto/googleapis/cloud/"
+          + "batch/v1;batch\242\002\003GCB\252\002\025Google.Cloud.Batc"
+          + "h.V1\312\002\025Google\\Cloud\\Batch\\V1\352\002\030Google::C"
+          + "loud::Batch::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

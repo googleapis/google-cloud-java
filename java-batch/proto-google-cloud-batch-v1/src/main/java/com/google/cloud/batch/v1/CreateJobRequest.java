@@ -150,7 +150,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The parent resource name where the Job will be created.
-   * Format: projects/{project}/locations/{location}
+   * Pattern: "projects/{project}/locations/{location}"
    * </pre>
    *
    * <code>
@@ -176,7 +176,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The parent resource name where the Job will be created.
-   * Format: projects/{project}/locations/{location}
+   * Pattern: "projects/{project}/locations/{location}"
    * </pre>
    *
    * <code>
@@ -756,7 +756,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The parent resource name where the Job will be created.
-     * Format: projects/{project}/locations/{location}
+     * Pattern: "projects/{project}/locations/{location}"
      * </pre>
      *
      * <code>
@@ -781,7 +781,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The parent resource name where the Job will be created.
-     * Format: projects/{project}/locations/{location}
+     * Pattern: "projects/{project}/locations/{location}"
      * </pre>
      *
      * <code>
@@ -806,7 +806,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The parent resource name where the Job will be created.
-     * Format: projects/{project}/locations/{location}
+     * Pattern: "projects/{project}/locations/{location}"
      * </pre>
      *
      * <code>
@@ -830,7 +830,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The parent resource name where the Job will be created.
-     * Format: projects/{project}/locations/{location}
+     * Pattern: "projects/{project}/locations/{location}"
      * </pre>
      *
      * <code>
@@ -850,7 +850,7 @@ public final class CreateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The parent resource name where the Job will be created.
-     * Format: projects/{project}/locations/{location}
+     * Pattern: "projects/{project}/locations/{location}"
      * </pre>
      *
      * <code>

@@ -27,7 +27,9 @@ public interface ListTasksRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Path of the TaskGroup from which Tasks are being requested.
+   * Required. Name of a TaskGroup from which Tasks are being requested.
+   * Pattern:
+   * "projects/{project}/locations/{location}/jobs/{job}/taskGroups/{task_group}"
    * </pre>
    *
    * <code>
@@ -41,7 +43,9 @@ public interface ListTasksRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Path of the TaskGroup from which Tasks are being requested.
+   * Required. Name of a TaskGroup from which Tasks are being requested.
+   * Pattern:
+   * "projects/{project}/locations/{location}/jobs/{job}/taskGroups/{task_group}"
    * </pre>
    *
    * <code>

@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Google Cloud Batch Service.
+ * Google Batch Service.
  * The service manages user submitted batch jobs and allocates Google Compute
  * Engine VM instances to run the jobs.
  * </pre>
@@ -324,7 +324,7 @@ public final class BatchServiceGrpc {
    *
    *
    * <pre>
-   * Google Cloud Batch Service.
+   * Google Batch Service.
    * The service manages user submitted batch jobs and allocates Google Compute
    * Engine VM instances to run the jobs.
    * </pre>
@@ -374,7 +374,7 @@ public final class BatchServiceGrpc {
      *
      *
      * <pre>
-     * List all Jobs for a project.
+     * List all Jobs for a project within a region.
      * </pre>
      */
     public void listJobs(
@@ -456,7 +456,7 @@ public final class BatchServiceGrpc {
    *
    *
    * <pre>
-   * Google Cloud Batch Service.
+   * Google Batch Service.
    * The service manages user submitted batch jobs and allocates Google Compute
    * Engine VM instances to run the jobs.
    * </pre>
@@ -518,7 +518,7 @@ public final class BatchServiceGrpc {
      *
      *
      * <pre>
-     * List all Jobs for a project.
+     * List all Jobs for a project within a region.
      * </pre>
      */
     public void listJobs(
@@ -561,7 +561,7 @@ public final class BatchServiceGrpc {
    *
    *
    * <pre>
-   * Google Cloud Batch Service.
+   * Google Batch Service.
    * The service manages user submitted batch jobs and allocates Google Compute
    * Engine VM instances to run the jobs.
    * </pre>
@@ -620,7 +620,7 @@ public final class BatchServiceGrpc {
      *
      *
      * <pre>
-     * List all Jobs for a project.
+     * List all Jobs for a project within a region.
      * </pre>
      */
     public com.google.cloud.batch.v1.ListJobsResponse listJobs(
@@ -660,7 +660,7 @@ public final class BatchServiceGrpc {
    *
    *
    * <pre>
-   * Google Cloud Batch Service.
+   * Google Batch Service.
    * The service manages user submitted batch jobs and allocates Google Compute
    * Engine VM instances to run the jobs.
    * </pre>
@@ -720,7 +720,7 @@ public final class BatchServiceGrpc {
      *
      *
      * <pre>
-     * List all Jobs for a project.
+     * List all Jobs for a project within a region.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

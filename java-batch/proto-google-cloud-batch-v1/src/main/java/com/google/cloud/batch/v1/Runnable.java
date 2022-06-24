@@ -2530,7 +2530,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Script file path.
+     * Script file path on the host VM.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -2542,7 +2542,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Script file path.
+     * Script file path on the host VM.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -2554,7 +2554,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Script file path.
+     * Script file path on the host VM.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -2754,7 +2754,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Script file path.
+     * Script file path on the host VM.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -2768,7 +2768,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Script file path.
+     * Script file path on the host VM.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -2795,7 +2795,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Script file path.
+     * Script file path on the host VM.
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -3275,7 +3275,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Script file path.
+       * Script file path on the host VM.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3290,7 +3290,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Script file path.
+       * Script file path on the host VM.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3318,7 +3318,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Script file path.
+       * Script file path on the host VM.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3346,7 +3346,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Script file path.
+       * Script file path on the host VM.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3367,7 +3367,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Script file path.
+       * Script file path on the host VM.
        * </pre>
        *
        * <code>string path = 1;</code>
@@ -3386,7 +3386,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Script file path.
+       * Script file path on the host VM.
        * </pre>
        *
        * <code>string path = 1;</code>

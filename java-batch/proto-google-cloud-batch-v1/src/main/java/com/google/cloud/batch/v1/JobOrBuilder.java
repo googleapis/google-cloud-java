@@ -27,12 +27,11 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Job name.
-   * It must have the format of "projects/&#42;&#47;locations/&#42;&#47;jobs/&#42;".
-   * For example: "projects/123456/locations/us-west1/jobs/job01".
+   * Output only. Job name.
+   * For example: "projects/123456/locations/us-central1/jobs/job01".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -41,12 +40,11 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Job name.
-   * It must have the format of "projects/&#42;&#47;locations/&#42;&#47;jobs/&#42;".
-   * For example: "projects/123456/locations/us-west1/jobs/job01".
+   * Output only. Job name.
+   * For example: "projects/123456/locations/us-central1/jobs/job01".
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -83,7 +81,8 @@ public interface JobOrBuilder
    * <pre>
    * Priority of the Job.
    * The valid value range is [0, 100).
-   * A job with higher priority value will be scheduled to run earlier.
+   * A job with higher priority value is more likely to run earlier if all other
+   * requirements are satisfied.
    * </pre>
    *
    * <code>int64 priority = 3;</code>
@@ -335,10 +334,11 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * When the Job was created.
+   * Output only. When the Job was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -347,10 +347,11 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * When the Job was created.
+   * Output only. When the Job was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -359,10 +360,11 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * When the Job was created.
+   * Output only. When the Job was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -370,10 +372,11 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * The last time the Job was updated.
+   * Output only. The last time the Job was updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -382,10 +385,11 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * The last time the Job was updated.
+   * Output only. The last time the Job was updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -394,10 +398,11 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * The last time the Job was updated.
+   * Output only. The last time the Job was updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 

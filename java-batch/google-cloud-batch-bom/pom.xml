@@ -74,8 +74,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-batch-v1alpha</artifactId>
+        <version>0.1.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-batch-v1alpha:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-batch-v1</artifactId>
         <version>0.1.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-batch-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-batch-v1alpha</artifactId>
+        <version>0.1.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-batch-v1alpha:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

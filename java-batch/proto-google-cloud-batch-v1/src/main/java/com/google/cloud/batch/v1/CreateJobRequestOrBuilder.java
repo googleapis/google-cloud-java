@@ -28,7 +28,7 @@ public interface CreateJobRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name where the Job will be created.
-   * Format: projects/{project}/locations/{location}
+   * Pattern: "projects/{project}/locations/{location}"
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateJobRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource name where the Job will be created.
-   * Format: projects/{project}/locations/{location}
+   * Pattern: "projects/{project}/locations/{location}"
    * </pre>
    *
    * <code>

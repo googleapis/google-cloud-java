@@ -48,7 +48,11 @@ import javax.annotation.Generated;
 public abstract class BatchServiceStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {
-    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
   }
 
   public UnaryCallable<CreateJobRequest, Job> createJobCallable() {

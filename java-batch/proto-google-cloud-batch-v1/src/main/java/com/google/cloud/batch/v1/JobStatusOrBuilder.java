@@ -175,10 +175,7 @@ public interface JobStatusOrBuilder
    *
    *
    * <pre>
-   * The duration of time the Job is in status
-   * RUNNING. Once the Job completes (i.e. the Job status is either
-   * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-   * to complete.
+   * The duration of time that the Job spent in status RUNNING.
    * </pre>
    *
    * <code>.google.protobuf.Duration run_duration = 5;</code>
@@ -190,10 +187,7 @@ public interface JobStatusOrBuilder
    *
    *
    * <pre>
-   * The duration of time the Job is in status
-   * RUNNING. Once the Job completes (i.e. the Job status is either
-   * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-   * to complete.
+   * The duration of time that the Job spent in status RUNNING.
    * </pre>
    *
    * <code>.google.protobuf.Duration run_duration = 5;</code>
@@ -205,10 +199,7 @@ public interface JobStatusOrBuilder
    *
    *
    * <pre>
-   * The duration of time the Job is in status
-   * RUNNING. Once the Job completes (i.e. the Job status is either
-   * SUCCEEDED/FAILED) the run duration represents the time it took the Job
-   * to complete.
+   * The duration of time that the Job spent in status RUNNING.
    * </pre>
    *
    * <code>.google.protobuf.Duration run_duration = 5;</code>

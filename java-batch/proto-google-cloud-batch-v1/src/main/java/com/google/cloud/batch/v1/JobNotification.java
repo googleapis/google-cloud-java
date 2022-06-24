@@ -372,7 +372,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Message details.
-   * Describe a list of attributes this message should have.
+   * Describe the attribute that a message should have.
    * Without specified message attributes, no message will be sent by default.
    * </pre>
    *
@@ -773,7 +773,7 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Message details.
-     * Describe a list of attributes this message should have.
+     * Describe the attribute that a message should have.
      * Without specified message attributes, no message will be sent by default.
      * </pre>
      *
@@ -1277,10 +1277,10 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The Pub/Sub topic where notifications like the job state changes
-   * will be published. This topic should be an existing topic in the same
-   * project with the job and billings will be charged to this project. If no
-   * topic is specified, there will be no Pub/Sub messages sent. Topic
-   * format is `projects/{project}/topics/{topic}`.
+   * will be published. This topic exist in the same project as the job
+   * and billings will be charged to this project.
+   * If not specified, no Pub/Sub messages will be sent.
+   * Topic format: `projects/{project}/topics/{topic}`.
    * </pre>
    *
    * <code>string pubsub_topic = 1;</code>
@@ -1304,10 +1304,10 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The Pub/Sub topic where notifications like the job state changes
-   * will be published. This topic should be an existing topic in the same
-   * project with the job and billings will be charged to this project. If no
-   * topic is specified, there will be no Pub/Sub messages sent. Topic
-   * format is `projects/{project}/topics/{topic}`.
+   * will be published. This topic exist in the same project as the job
+   * and billings will be charged to this project.
+   * If not specified, no Pub/Sub messages will be sent.
+   * Topic format: `projects/{project}/topics/{topic}`.
    * </pre>
    *
    * <code>string pubsub_topic = 1;</code>
@@ -1333,9 +1333,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The message caters the message attributes configuration will to be sent
-   * to this Pub/Sub topic. Without this field, there is no message being sent
-   * by default.
+   * The attribute requirements of messages to be sent to this Pub/Sub topic.
+   * Without this field, no message will be sent.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.JobNotification.Message message = 2;</code>
@@ -1350,9 +1349,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The message caters the message attributes configuration will to be sent
-   * to this Pub/Sub topic. Without this field, there is no message being sent
-   * by default.
+   * The attribute requirements of messages to be sent to this Pub/Sub topic.
+   * Without this field, no message will be sent.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.JobNotification.Message message = 2;</code>
@@ -1369,9 +1367,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The message caters the message attributes configuration will to be sent
-   * to this Pub/Sub topic. Without this field, there is no message being sent
-   * by default.
+   * The attribute requirements of messages to be sent to this Pub/Sub topic.
+   * Without this field, no message will be sent.
    * </pre>
    *
    * <code>.google.cloud.batch.v1.JobNotification.Message message = 2;</code>
@@ -1731,10 +1728,10 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The Pub/Sub topic where notifications like the job state changes
-     * will be published. This topic should be an existing topic in the same
-     * project with the job and billings will be charged to this project. If no
-     * topic is specified, there will be no Pub/Sub messages sent. Topic
-     * format is `projects/{project}/topics/{topic}`.
+     * will be published. This topic exist in the same project as the job
+     * and billings will be charged to this project.
+     * If not specified, no Pub/Sub messages will be sent.
+     * Topic format: `projects/{project}/topics/{topic}`.
      * </pre>
      *
      * <code>string pubsub_topic = 1;</code>
@@ -1757,10 +1754,10 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The Pub/Sub topic where notifications like the job state changes
-     * will be published. This topic should be an existing topic in the same
-     * project with the job and billings will be charged to this project. If no
-     * topic is specified, there will be no Pub/Sub messages sent. Topic
-     * format is `projects/{project}/topics/{topic}`.
+     * will be published. This topic exist in the same project as the job
+     * and billings will be charged to this project.
+     * If not specified, no Pub/Sub messages will be sent.
+     * Topic format: `projects/{project}/topics/{topic}`.
      * </pre>
      *
      * <code>string pubsub_topic = 1;</code>
@@ -1783,10 +1780,10 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The Pub/Sub topic where notifications like the job state changes
-     * will be published. This topic should be an existing topic in the same
-     * project with the job and billings will be charged to this project. If no
-     * topic is specified, there will be no Pub/Sub messages sent. Topic
-     * format is `projects/{project}/topics/{topic}`.
+     * will be published. This topic exist in the same project as the job
+     * and billings will be charged to this project.
+     * If not specified, no Pub/Sub messages will be sent.
+     * Topic format: `projects/{project}/topics/{topic}`.
      * </pre>
      *
      * <code>string pubsub_topic = 1;</code>
@@ -1808,10 +1805,10 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The Pub/Sub topic where notifications like the job state changes
-     * will be published. This topic should be an existing topic in the same
-     * project with the job and billings will be charged to this project. If no
-     * topic is specified, there will be no Pub/Sub messages sent. Topic
-     * format is `projects/{project}/topics/{topic}`.
+     * will be published. This topic exist in the same project as the job
+     * and billings will be charged to this project.
+     * If not specified, no Pub/Sub messages will be sent.
+     * Topic format: `projects/{project}/topics/{topic}`.
      * </pre>
      *
      * <code>string pubsub_topic = 1;</code>
@@ -1829,10 +1826,10 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The Pub/Sub topic where notifications like the job state changes
-     * will be published. This topic should be an existing topic in the same
-     * project with the job and billings will be charged to this project. If no
-     * topic is specified, there will be no Pub/Sub messages sent. Topic
-     * format is `projects/{project}/topics/{topic}`.
+     * will be published. This topic exist in the same project as the job
+     * and billings will be charged to this project.
+     * If not specified, no Pub/Sub messages will be sent.
+     * Topic format: `projects/{project}/topics/{topic}`.
      * </pre>
      *
      * <code>string pubsub_topic = 1;</code>
@@ -1861,9 +1858,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message caters the message attributes configuration will to be sent
-     * to this Pub/Sub topic. Without this field, there is no message being sent
-     * by default.
+     * The attribute requirements of messages to be sent to this Pub/Sub topic.
+     * Without this field, no message will be sent.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.JobNotification.Message message = 2;</code>
@@ -1877,9 +1873,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message caters the message attributes configuration will to be sent
-     * to this Pub/Sub topic. Without this field, there is no message being sent
-     * by default.
+     * The attribute requirements of messages to be sent to this Pub/Sub topic.
+     * Without this field, no message will be sent.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.JobNotification.Message message = 2;</code>
@@ -1899,9 +1894,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message caters the message attributes configuration will to be sent
-     * to this Pub/Sub topic. Without this field, there is no message being sent
-     * by default.
+     * The attribute requirements of messages to be sent to this Pub/Sub topic.
+     * Without this field, no message will be sent.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.JobNotification.Message message = 2;</code>
@@ -1923,9 +1917,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message caters the message attributes configuration will to be sent
-     * to this Pub/Sub topic. Without this field, there is no message being sent
-     * by default.
+     * The attribute requirements of messages to be sent to this Pub/Sub topic.
+     * Without this field, no message will be sent.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.JobNotification.Message message = 2;</code>
@@ -1945,9 +1938,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message caters the message attributes configuration will to be sent
-     * to this Pub/Sub topic. Without this field, there is no message being sent
-     * by default.
+     * The attribute requirements of messages to be sent to this Pub/Sub topic.
+     * Without this field, no message will be sent.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.JobNotification.Message message = 2;</code>
@@ -1973,9 +1965,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message caters the message attributes configuration will to be sent
-     * to this Pub/Sub topic. Without this field, there is no message being sent
-     * by default.
+     * The attribute requirements of messages to be sent to this Pub/Sub topic.
+     * Without this field, no message will be sent.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.JobNotification.Message message = 2;</code>
@@ -1995,9 +1986,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message caters the message attributes configuration will to be sent
-     * to this Pub/Sub topic. Without this field, there is no message being sent
-     * by default.
+     * The attribute requirements of messages to be sent to this Pub/Sub topic.
+     * Without this field, no message will be sent.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.JobNotification.Message message = 2;</code>
@@ -2011,9 +2001,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message caters the message attributes configuration will to be sent
-     * to this Pub/Sub topic. Without this field, there is no message being sent
-     * by default.
+     * The attribute requirements of messages to be sent to this Pub/Sub topic.
+     * Without this field, no message will be sent.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.JobNotification.Message message = 2;</code>
@@ -2031,9 +2020,8 @@ public final class JobNotification extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The message caters the message attributes configuration will to be sent
-     * to this Pub/Sub topic. Without this field, there is no message being sent
-     * by default.
+     * The attribute requirements of messages to be sent to this Pub/Sub topic.
+     * Without this field, no message will be sent.
      * </pre>
      *
      * <code>.google.cloud.batch.v1.JobNotification.Message message = 2;</code>

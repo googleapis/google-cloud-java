@@ -30,7 +30,7 @@ public interface TaskGroupOrBuilder
    * Output only. TaskGroup name.
    * The system generates this field based on parent Job name.
    * For example:
-   * "projects/123456/locations/us-west1/jobs/job01/taskGroups/default-group".
+   * "projects/123456/locations/us-west1/jobs/job01/taskGroups/group01".
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -45,7 +45,7 @@ public interface TaskGroupOrBuilder
    * Output only. TaskGroup name.
    * The system generates this field based on parent Job name.
    * For example:
-   * "projects/123456/locations/us-west1/jobs/job01/taskGroups/default-group".
+   * "projects/123456/locations/us-west1/jobs/job01/taskGroups/group01".
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -216,7 +216,7 @@ public interface TaskGroupOrBuilder
    *
    *
    * <pre>
-   * Max number of tasks that can be run on a node at the same time.
+   * Max number of tasks that can be run on a VM at the same time.
    * If not specified, the system will decide a value based on available
    * compute resources on a VM and task requirements.
    * </pre>
@@ -247,7 +247,7 @@ public interface TaskGroupOrBuilder
    *
    * <pre>
    * When true, Batch will configure SSH to allow passwordless login between
-   * VMs for the user running the Batch tasks.
+   * VMs running the Batch tasks in the same TaskGroup.
    * </pre>
    *
    * <code>bool permissive_ssh = 12;</code>
