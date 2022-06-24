@@ -19,6 +19,7 @@ package com.google.cloud.assuredworkloads.v1;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -30,7 +31,6 @@ import com.google.cloud.assuredworkloads.v1.stub.AssuredWorkloadsServiceStub;
 import com.google.cloud.assuredworkloads.v1.stub.AssuredWorkloadsServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -107,13 +107,29 @@ import javax.annotation.Generated;
  *     AssuredWorkloadsServiceClient.create(assuredWorkloadsServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * AssuredWorkloadsServiceSettings assuredWorkloadsServiceSettings =
+ *     AssuredWorkloadsServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             AssuredWorkloadsServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+ *     AssuredWorkloadsServiceClient.create(assuredWorkloadsServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class AssuredWorkloadsServiceClient implements BackgroundResource {
   private final AssuredWorkloadsServiceSettings settings;
   private final AssuredWorkloadsServiceStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of AssuredWorkloadsServiceClient with default settings. */
   public static final AssuredWorkloadsServiceClient create() throws IOException {
@@ -146,13 +162,17 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
       throws IOException {
     this.settings = settings;
     this.stub = ((AssuredWorkloadsServiceStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected AssuredWorkloadsServiceClient(AssuredWorkloadsServiceStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final AssuredWorkloadsServiceSettings getSettings() {
@@ -167,8 +187,16 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
