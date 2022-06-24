@@ -116,6 +116,20 @@ import javax.annotation.Generated;
  * SchemaServiceClient schemaServiceClient = SchemaServiceClient.create(schemaServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * SchemaServiceSettings schemaServiceSettings =
+ *     SchemaServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             SchemaServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * SchemaServiceClient schemaServiceClient = SchemaServiceClient.create(schemaServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
@@ -531,7 +545,7 @@ public class SchemaServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListSchemasResponse response = schemaServiceClient.listSchemasCallable().call(request);
-   *     for (Schema element : response.getResponsesList()) {
+   *     for (Schema element : response.getSchemasList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -825,7 +839,7 @@ public class SchemaServiceClient implements BackgroundResource {
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -854,7 +868,7 @@ public class SchemaServiceClient implements BackgroundResource {
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -881,7 +895,7 @@ public class SchemaServiceClient implements BackgroundResource {
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = schemaServiceClient.getIamPolicy(request);
@@ -908,7 +922,7 @@ public class SchemaServiceClient implements BackgroundResource {
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = schemaServiceClient.getIamPolicyCallable().futureCall(request);
@@ -938,7 +952,7 @@ public class SchemaServiceClient implements BackgroundResource {
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = schemaServiceClient.testIamPermissions(request);
@@ -969,7 +983,7 @@ public class SchemaServiceClient implements BackgroundResource {
    * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

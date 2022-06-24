@@ -21,12 +21,15 @@ import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSubscriptions
 import static com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.testing.LocalChannelProvider;
-import com.google.api.gax.grpc.testing.MockGrpcService;
-import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.httpjson.GaxHttpJsonProperties;
+import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.pubsub.v1.stub.HttpJsonPublisherStub;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
@@ -36,24 +39,17 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
-import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.DetachSubscriptionRequest;
 import com.google.pubsub.v1.DetachSubscriptionResponse;
-import com.google.pubsub.v1.GetTopicRequest;
-import com.google.pubsub.v1.ListTopicSnapshotsRequest;
 import com.google.pubsub.v1.ListTopicSnapshotsResponse;
-import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
-import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.MessageStoragePolicy;
 import com.google.pubsub.v1.ProjectName;
-import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.SchemaName;
@@ -62,13 +58,11 @@ import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.Topic;
 import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.UpdateTopicRequest;
-import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -78,44 +72,37 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @Generated("by gapic-generator-java")
-public class TopicAdminClientTest {
-  private static MockIAMPolicy mockIAMPolicy;
-  private static MockPublisher mockPublisher;
-  private static MockServiceHelper mockServiceHelper;
-  private LocalChannelProvider channelProvider;
-  private TopicAdminClient client;
+public class TopicAdminClientHttpJsonTest {
+  private static MockHttpService mockService;
+  private static TopicAdminClient client;
 
   @BeforeClass
-  public static void startStaticServer() {
-    mockPublisher = new MockPublisher();
-    mockIAMPolicy = new MockIAMPolicy();
-    mockServiceHelper =
-        new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockPublisher, mockIAMPolicy));
-    mockServiceHelper.start();
-  }
-
-  @AfterClass
-  public static void stopServer() {
-    mockServiceHelper.stop();
-  }
-
-  @Before
-  public void setUp() throws IOException {
-    mockServiceHelper.reset();
-    channelProvider = mockServiceHelper.createChannelProvider();
+  public static void startStaticServer() throws IOException {
+    mockService =
+        new MockHttpService(
+            HttpJsonPublisherStub.getMethodDescriptors(), TopicAdminSettings.getDefaultEndpoint());
     TopicAdminSettings settings =
-        TopicAdminSettings.newBuilder()
-            .setTransportChannelProvider(channelProvider)
+        TopicAdminSettings.newHttpJsonBuilder()
+            .setTransportChannelProvider(
+                TopicAdminSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = TopicAdminClient.create(settings);
   }
 
+  @AfterClass
+  public static void stopServer() {
+    client.close();
+  }
+
+  @Before
+  public void setUp() {}
+
   @After
   public void tearDown() throws Exception {
-    client.close();
+    mockService.reset();
   }
 
   @Test
@@ -130,28 +117,34 @@ public class TopicAdminClientTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
     Topic actualResponse = client.createTopic(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    Topic actualRequest = ((Topic) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createTopicExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
@@ -174,31 +167,37 @@ public class TopicAdminClientTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "projects/project-7550/topics/topic-7550";
 
     Topic actualResponse = client.createTopic(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    Topic actualRequest = ((Topic) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createTopicExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "projects/project-7550/topics/topic-7550";
       client.createTopic(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -218,38 +217,61 @@ public class TopicAdminClientTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     UpdateTopicRequest request =
         UpdateTopicRequest.newBuilder()
-            .setTopic(Topic.newBuilder().build())
+            .setTopic(
+                Topic.newBuilder()
+                    .setName(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
+                    .putAllLabels(new HashMap<String, String>())
+                    .setMessageStoragePolicy(MessageStoragePolicy.newBuilder().build())
+                    .setKmsKeyName("kmsKeyName412586233")
+                    .setSchemaSettings(SchemaSettings.newBuilder().build())
+                    .setSatisfiesPzs(true)
+                    .setMessageRetentionDuration(Duration.newBuilder().build())
+                    .build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
 
     Topic actualResponse = client.updateTopic(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateTopicRequest actualRequest = ((UpdateTopicRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getTopic(), actualRequest.getTopic());
-    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateTopicExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       UpdateTopicRequest request =
           UpdateTopicRequest.newBuilder()
-              .setTopic(Topic.newBuilder().build())
+              .setTopic(
+                  Topic.newBuilder()
+                      .setName(TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString())
+                      .putAllLabels(new HashMap<String, String>())
+                      .setMessageStoragePolicy(MessageStoragePolicy.newBuilder().build())
+                      .setKmsKeyName("kmsKeyName412586233")
+                      .setSchemaSettings(SchemaSettings.newBuilder().build())
+                      .setSatisfiesPzs(true)
+                      .setMessageRetentionDuration(Duration.newBuilder().build())
+                      .build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       client.updateTopic(request);
@@ -263,7 +285,7 @@ public class TopicAdminClientTest {
   public void publishTest() throws Exception {
     PublishResponse expectedResponse =
         PublishResponse.newBuilder().addAllMessageIds(new ArrayList<String>()).build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     List<PubsubMessage> messages = new ArrayList<>();
@@ -271,22 +293,27 @@ public class TopicAdminClientTest {
     PublishResponse actualResponse = client.publish(topic, messages);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    PublishRequest actualRequest = ((PublishRequest) actualRequests.get(0));
 
-    Assert.assertEquals(topic.toString(), actualRequest.getTopic());
-    Assert.assertEquals(messages, actualRequest.getMessagesList());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void publishExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
@@ -302,33 +329,38 @@ public class TopicAdminClientTest {
   public void publishTest2() throws Exception {
     PublishResponse expectedResponse =
         PublishResponse.newBuilder().addAllMessageIds(new ArrayList<String>()).build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String topic = "topic110546223";
+    String topic = "projects/project-2486/topics/topic-2486";
     List<PubsubMessage> messages = new ArrayList<>();
 
     PublishResponse actualResponse = client.publish(topic, messages);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    PublishRequest actualRequest = ((PublishRequest) actualRequests.get(0));
 
-    Assert.assertEquals(topic, actualRequest.getTopic());
-    Assert.assertEquals(messages, actualRequest.getMessagesList());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void publishExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String topic = "topic110546223";
+      String topic = "projects/project-2486/topics/topic-2486";
       List<PubsubMessage> messages = new ArrayList<>();
       client.publish(topic, messages);
       Assert.fail("No exception raised");
@@ -349,28 +381,34 @@ public class TopicAdminClientTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
     Topic actualResponse = client.getTopic(topic);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetTopicRequest actualRequest = ((GetTopicRequest) actualRequests.get(0));
 
-    Assert.assertEquals(topic.toString(), actualRequest.getTopic());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getTopicExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
@@ -393,31 +431,37 @@ public class TopicAdminClientTest {
             .setSatisfiesPzs(true)
             .setMessageRetentionDuration(Duration.newBuilder().build())
             .build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String topic = "topic110546223";
+    String topic = "projects/project-2486/topics/topic-2486";
 
     Topic actualResponse = client.getTopic(topic);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetTopicRequest actualRequest = ((GetTopicRequest) actualRequests.get(0));
 
-    Assert.assertEquals(topic, actualRequest.getTopic());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getTopicExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String topic = "topic110546223";
+      String topic = "projects/project-2486/topics/topic-2486";
       client.getTopic(topic);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -433,7 +477,7 @@ public class TopicAdminClientTest {
             .setNextPageToken("")
             .addAllTopics(Arrays.asList(responsesElement))
             .build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     ProjectName project = ProjectName.of("[PROJECT]");
 
@@ -444,21 +488,27 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTopicsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListTopicsRequest actualRequest = ((ListTopicsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(project.toString(), actualRequest.getProject());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listTopicsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ProjectName project = ProjectName.of("[PROJECT]");
@@ -477,9 +527,9 @@ public class TopicAdminClientTest {
             .setNextPageToken("")
             .addAllTopics(Arrays.asList(responsesElement))
             .build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String project = "project-309310695";
+    String project = "projects/project-7934";
 
     ListTopicsPagedResponse pagedListResponse = client.listTopics(project);
 
@@ -488,24 +538,30 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTopicsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListTopicsRequest actualRequest = ((ListTopicsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(project, actualRequest.getProject());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listTopicsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String project = "project-309310695";
+      String project = "projects/project-7934";
       client.listTopics(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -521,7 +577,7 @@ public class TopicAdminClientTest {
             .setNextPageToken("")
             .addAllSubscriptions(Arrays.asList(responsesElement))
             .build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
@@ -532,22 +588,27 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSubscriptionsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListTopicSubscriptionsRequest actualRequest =
-        ((ListTopicSubscriptionsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(topic.toString(), actualRequest.getTopic());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listTopicSubscriptionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
@@ -566,9 +627,9 @@ public class TopicAdminClientTest {
             .setNextPageToken("")
             .addAllSubscriptions(Arrays.asList(responsesElement))
             .build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String topic = "topic110546223";
+    String topic = "projects/project-2486/topics/topic-2486";
 
     ListTopicSubscriptionsPagedResponse pagedListResponse = client.listTopicSubscriptions(topic);
 
@@ -577,25 +638,30 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSubscriptionsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListTopicSubscriptionsRequest actualRequest =
-        ((ListTopicSubscriptionsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(topic, actualRequest.getTopic());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listTopicSubscriptionsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String topic = "topic110546223";
+      String topic = "projects/project-2486/topics/topic-2486";
       client.listTopicSubscriptions(topic);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -611,7 +677,7 @@ public class TopicAdminClientTest {
             .setNextPageToken("")
             .addAllSnapshots(Arrays.asList(responsesElement))
             .build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
@@ -622,21 +688,27 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSnapshotsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListTopicSnapshotsRequest actualRequest = ((ListTopicSnapshotsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(topic.toString(), actualRequest.getTopic());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listTopicSnapshotsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
@@ -655,9 +727,9 @@ public class TopicAdminClientTest {
             .setNextPageToken("")
             .addAllSnapshots(Arrays.asList(responsesElement))
             .build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String topic = "topic110546223";
+    String topic = "projects/project-2486/topics/topic-2486";
 
     ListTopicSnapshotsPagedResponse pagedListResponse = client.listTopicSnapshots(topic);
 
@@ -666,24 +738,30 @@ public class TopicAdminClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSnapshotsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListTopicSnapshotsRequest actualRequest = ((ListTopicSnapshotsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(topic, actualRequest.getTopic());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listTopicSnapshotsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String topic = "topic110546223";
+      String topic = "projects/project-2486/topics/topic-2486";
       client.listTopicSnapshots(topic);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -694,27 +772,33 @@ public class TopicAdminClientTest {
   @Test
   public void deleteTopicTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
 
     client.deleteTopic(topic);
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteTopicRequest actualRequest = ((DeleteTopicRequest) actualRequests.get(0));
 
-    Assert.assertEquals(topic.toString(), actualRequest.getTopic());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteTopicExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
@@ -728,30 +812,36 @@ public class TopicAdminClientTest {
   @Test
   public void deleteTopicTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String topic = "topic110546223";
+    String topic = "projects/project-2486/topics/topic-2486";
 
     client.deleteTopic(topic);
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteTopicRequest actualRequest = ((DeleteTopicRequest) actualRequests.get(0));
 
-    Assert.assertEquals(topic, actualRequest.getTopic());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteTopicExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String topic = "topic110546223";
+      String topic = "projects/project-2486/topics/topic-2486";
       client.deleteTopic(topic);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -762,7 +852,7 @@ public class TopicAdminClientTest {
   @Test
   public void detachSubscriptionTest() throws Exception {
     DetachSubscriptionResponse expectedResponse = DetachSubscriptionResponse.newBuilder().build();
-    mockPublisher.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DetachSubscriptionRequest request =
         DetachSubscriptionRequest.newBuilder()
@@ -772,21 +862,27 @@ public class TopicAdminClientTest {
     DetachSubscriptionResponse actualResponse = client.detachSubscription(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DetachSubscriptionRequest actualRequest = ((DetachSubscriptionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getSubscription(), actualRequest.getSubscription());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void detachSubscriptionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockPublisher.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DetachSubscriptionRequest request =
@@ -809,7 +905,7 @@ public class TopicAdminClientTest {
             .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
-    mockIAMPolicy.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
@@ -821,23 +917,27 @@ public class TopicAdminClientTest {
     Policy actualResponse = client.setIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    SetIamPolicyRequest actualRequest = ((SetIamPolicyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getResource(), actualRequest.getResource());
-    Assert.assertEquals(request.getPolicy(), actualRequest.getPolicy());
-    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void setIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       SetIamPolicyRequest request =
@@ -862,7 +962,7 @@ public class TopicAdminClientTest {
             .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
-    mockIAMPolicy.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
@@ -873,22 +973,27 @@ public class TopicAdminClientTest {
     Policy actualResponse = client.getIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getResource(), actualRequest.getResource());
-    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       GetIamPolicyRequest request =
@@ -907,7 +1012,7 @@ public class TopicAdminClientTest {
   public void testIamPermissionsTest() throws Exception {
     TestIamPermissionsResponse expectedResponse =
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
-    mockIAMPolicy.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
@@ -918,22 +1023,27 @@ public class TopicAdminClientTest {
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockIAMPolicy.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    TestIamPermissionsRequest actualRequest = ((TestIamPermissionsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getResource(), actualRequest.getResource());
-    Assert.assertEquals(request.getPermissionsList(), actualRequest.getPermissionsList());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void testIamPermissionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       TestIamPermissionsRequest request =

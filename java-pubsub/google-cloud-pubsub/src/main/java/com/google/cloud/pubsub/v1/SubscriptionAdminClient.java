@@ -142,6 +142,21 @@ import javax.annotation.Generated;
  *     SubscriptionAdminClient.create(subscriptionAdminSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * SubscriptionAdminSettings subscriptionAdminSettings =
+ *     SubscriptionAdminSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             SubscriptionAdminSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * SubscriptionAdminClient subscriptionAdminClient =
+ *     SubscriptionAdminClient.create(subscriptionAdminSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
@@ -1091,7 +1106,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *   while (true) {
    *     ListSubscriptionsResponse response =
    *         subscriptionAdminClient.listSubscriptionsCallable().call(request);
-   *     for (Subscription element : response.getResponsesList()) {
+   *     for (Subscription element : response.getSubscriptionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2383,7 +2398,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *   while (true) {
    *     ListSnapshotsResponse response =
    *         subscriptionAdminClient.listSnapshotsCallable().call(request);
-   *     for (Snapshot element : response.getResponsesList()) {
+   *     for (Snapshot element : response.getSnapshotsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -3114,7 +3129,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3174,7 +3189,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3201,7 +3216,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = subscriptionAdminClient.getIamPolicy(request);
@@ -3253,7 +3268,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = subscriptionAdminClient.getIamPolicyCallable().futureCall(request);
@@ -3283,7 +3298,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = subscriptionAdminClient.testIamPermissions(request);
@@ -3352,7 +3367,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =

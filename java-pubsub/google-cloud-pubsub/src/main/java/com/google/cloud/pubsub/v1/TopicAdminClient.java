@@ -121,6 +121,20 @@ import javax.annotation.Generated;
  * TopicAdminClient topicAdminClient = TopicAdminClient.create(topicAdminSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * TopicAdminSettings topicAdminSettings =
+ *     TopicAdminSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             TopicAdminSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * TopicAdminClient topicAdminClient = TopicAdminClient.create(topicAdminSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
@@ -731,7 +745,7 @@ public class TopicAdminClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTopicsResponse response = topicAdminClient.listTopicsCallable().call(request);
-   *     for (Topic element : response.getResponsesList()) {
+   *     for (Topic element : response.getTopicsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -912,7 +926,7 @@ public class TopicAdminClient implements BackgroundResource {
    *   while (true) {
    *     ListTopicSubscriptionsResponse response =
    *         topicAdminClient.listTopicSubscriptionsCallable().call(request);
-   *     for (String element : response.getResponsesList()) {
+   *     for (String element : response.getSubscriptionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1080,7 +1094,7 @@ public class TopicAdminClient implements BackgroundResource {
    *   while (true) {
    *     ListTopicSnapshotsResponse response =
    *         topicAdminClient.listTopicSnapshotsCallable().call(request);
-   *     for (String element : response.getResponsesList()) {
+   *     for (String element : response.getSnapshotsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1305,7 +1319,7 @@ public class TopicAdminClient implements BackgroundResource {
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1365,7 +1379,7 @@ public class TopicAdminClient implements BackgroundResource {
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -1392,7 +1406,7 @@ public class TopicAdminClient implements BackgroundResource {
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = topicAdminClient.getIamPolicy(request);
@@ -1444,7 +1458,7 @@ public class TopicAdminClient implements BackgroundResource {
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = topicAdminClient.getIamPolicyCallable().futureCall(request);
@@ -1474,7 +1488,7 @@ public class TopicAdminClient implements BackgroundResource {
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = topicAdminClient.testIamPermissions(request);
@@ -1543,7 +1557,7 @@ public class TopicAdminClient implements BackgroundResource {
    * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource(SchemaName.of("[PROJECT]", "[SCHEMA]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
