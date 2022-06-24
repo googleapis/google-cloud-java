@@ -14,3 +14,4 @@ jobs:
         .kokoro/sync_with_googleapis.sh monorepo_script_output
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
