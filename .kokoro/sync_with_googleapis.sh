@@ -16,6 +16,8 @@ fi
 
 BASEDIR=$(dirname "$0")
 
+BAZEL_VERSION=5.2.0
+
 WORKSPACE=$(mktemp -d -t workspace-XXXXX)
 export GOOGLEAPIS_DIR="${WORKSPACE}/googleapis"
 export GOOGLE_CLOUD_JAVA_DIR="${WORKSPACE}/google-cloud-java"
@@ -23,7 +25,12 @@ export GOOGLEAPIS_COMMIT_FILE=googleapis_commit.txt
 
 pushd "$WORKSPACE"
 
-git clone https://github.com/googleapis/googleapis
+BAZEL_DOWNLOAD_URL="https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-linux-x86_64"
+curl "${BAZEL_DOWNLOAD_URL}" --output bazel
+chmod 755 bazel
+export PATH=$WORKSPACE:$PATH
+
+git clone --branch master https://github.com/googleapis/googleapis
 git clone --branch "${pr_destination}" https://github.com/googleapis/google-cloud-java
 
 pushd "${GOOGLE_CLOUD_JAVA_DIR}"

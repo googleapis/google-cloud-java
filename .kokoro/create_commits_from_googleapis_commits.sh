@@ -122,6 +122,9 @@ function generate_gapic_libraries() {
   done
 }
 
+echo "$(date): Generating GAPIC Java libraries using Bazel: $(which bazel)"
+bazel version
+
 commit_count=0
 # The list is sorted: the oldest comes first
 for googleapis_commit in ${googleapis_commits}; do
