@@ -54,6 +54,37 @@ for library in s.get_staging_dirs():
     s.replace('**/OsLoginServiceClientTest.java',
               'import com.google.cloud.oslogin.common.ProjectName;',
               'import com.google.cloud.oslogin.v1.ProjectName;')
+
+    # put any special-case replacements here
+    s.replace('**/OsLoginServiceClientHttpJsonTest.java', 'PosixAccountName', 'ProjectName')
+    s.replace('**/OsLoginServiceClientHttpJsonTest.java', 'SshPublicKeyName',
+              'FingerprintName')
+    s.replace('**/OsLoginServiceClientHttpJsonTest.java', 'PosixAccountName',
+              'ProjectName')
+    s.replace('**/OsLoginServiceClientHttpJsonTest.java', 'SshPublicKeyName',
+              'FingerprintName')
+
+    # Copy of Resource name helper classes from v1 and import replacements
+
+    s.replace('**/OsLoginServiceClientHttpJsonTest.java',
+              'import com.google.cloud.oslogin.common.FingerprintName;',
+              'import com.google.cloud.oslogin.v1.FingerprintName;')
+    s.replace('**/OsLoginServiceClientHttpJsonTest.java',
+              'import com.google.cloud.oslogin.common.UserName;',
+              'import com.google.cloud.oslogin.v1.UserName;')
+    s.replace('**/OsLoginServiceClientHttpJsonTest.java',
+              'import com.google.cloud.oslogin.common.ProjectName;',
+              'import com.google.cloud.oslogin.v1.ProjectName;')
+    s.replace('**/OsLoginServiceClientHttpJsonTest.java',
+              'import com.google.cloud.oslogin.common.FingerprintName;',
+              'import com.google.cloud.oslogin.v1.FingerprintName;')
+    s.replace('**/OsLoginServiceClientHttpJsonTest.java',
+              'import com.google.cloud.oslogin.common.UserName;',
+              'import com.google.cloud.oslogin.v1.UserName;')
+    s.replace('**/OsLoginServiceClientHttpJsonTest.java',
+              'import com.google.cloud.oslogin.common.ProjectName;',
+              'import com.google.cloud.oslogin.v1.ProjectName;')
+
     s.move(library)
 
 s.remove_staging_dirs()
