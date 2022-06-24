@@ -32,25 +32,25 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
+import com.google.analytics.admin.v1alpha.stub.HttpJsonAnalyticsAdminServiceStub;
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.testing.LocalChannelProvider;
-import com.google.api.gax.grpc.testing.MockGrpcService;
-import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.httpjson.GaxHttpJsonProperties;
+import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
-import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.BoolValue;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
-import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -60,42 +60,38 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @Generated("by gapic-generator-java")
-public class AnalyticsAdminServiceClientTest {
-  private static MockAnalyticsAdminService mockAnalyticsAdminService;
-  private static MockServiceHelper mockServiceHelper;
-  private LocalChannelProvider channelProvider;
-  private AnalyticsAdminServiceClient client;
+public class AnalyticsAdminServiceClientHttpJsonTest {
+  private static MockHttpService mockService;
+  private static AnalyticsAdminServiceClient client;
 
   @BeforeClass
-  public static void startStaticServer() {
-    mockAnalyticsAdminService = new MockAnalyticsAdminService();
-    mockServiceHelper =
-        new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockAnalyticsAdminService));
-    mockServiceHelper.start();
-  }
-
-  @AfterClass
-  public static void stopServer() {
-    mockServiceHelper.stop();
-  }
-
-  @Before
-  public void setUp() throws IOException {
-    mockServiceHelper.reset();
-    channelProvider = mockServiceHelper.createChannelProvider();
+  public static void startStaticServer() throws IOException {
+    mockService =
+        new MockHttpService(
+            HttpJsonAnalyticsAdminServiceStub.getMethodDescriptors(),
+            AnalyticsAdminServiceSettings.getDefaultEndpoint());
     AnalyticsAdminServiceSettings settings =
-        AnalyticsAdminServiceSettings.newBuilder()
-            .setTransportChannelProvider(channelProvider)
+        AnalyticsAdminServiceSettings.newHttpJsonBuilder()
+            .setTransportChannelProvider(
+                AnalyticsAdminServiceSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = AnalyticsAdminServiceClient.create(settings);
   }
 
+  @AfterClass
+  public static void stopServer() {
+    client.close();
+  }
+
+  @Before
+  public void setUp() {}
+
   @After
   public void tearDown() throws Exception {
-    client.close();
+    mockService.reset();
   }
 
   @Test
@@ -109,28 +105,34 @@ public class AnalyticsAdminServiceClientTest {
             .setRegionCode("regionCode-1991004415")
             .setDeleted(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     AccountName name = AccountName.of("[ACCOUNT]");
 
     Account actualResponse = client.getAccount(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetAccountRequest actualRequest = ((GetAccountRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getAccountExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       AccountName name = AccountName.of("[ACCOUNT]");
@@ -152,31 +154,37 @@ public class AnalyticsAdminServiceClientTest {
             .setRegionCode("regionCode-1991004415")
             .setDeleted(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "accounts/account-3500";
 
     Account actualResponse = client.getAccount(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetAccountRequest actualRequest = ((GetAccountRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getAccountExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "accounts/account-3500";
       client.getAccount(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -192,7 +200,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllAccounts(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     ListAccountsRequest request =
         ListAccountsRequest.newBuilder()
@@ -208,23 +216,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getAccountsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListAccountsRequest actualRequest = ((ListAccountsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
-    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
-    Assert.assertEquals(request.getShowDeleted(), actualRequest.getShowDeleted());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listAccountsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ListAccountsRequest request =
@@ -243,27 +255,33 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteAccountTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     AccountName name = AccountName.of("[ACCOUNT]");
 
     client.deleteAccount(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteAccountRequest actualRequest = ((DeleteAccountRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteAccountExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       AccountName name = AccountName.of("[ACCOUNT]");
@@ -277,30 +295,36 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteAccountTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "accounts/account-3500";
 
     client.deleteAccount(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteAccountRequest actualRequest = ((DeleteAccountRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteAccountExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "accounts/account-3500";
       client.deleteAccount(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -319,33 +343,54 @@ public class AnalyticsAdminServiceClientTest {
             .setRegionCode("regionCode-1991004415")
             .setDeleted(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    Account account = Account.newBuilder().build();
+    Account account =
+        Account.newBuilder()
+            .setName(AccountName.of("[ACCOUNT]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setRegionCode("regionCode-1991004415")
+            .setDeleted(true)
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     Account actualResponse = client.updateAccount(account, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateAccountRequest actualRequest = ((UpdateAccountRequest) actualRequests.get(0));
 
-    Assert.assertEquals(account, actualRequest.getAccount());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateAccountExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      Account account = Account.newBuilder().build();
+      Account account =
+          Account.newBuilder()
+              .setName(AccountName.of("[ACCOUNT]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setDisplayName("displayName1714148973")
+              .setRegionCode("regionCode-1991004415")
+              .setDeleted(true)
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAccount(account, updateMask);
       Assert.fail("No exception raised");
@@ -360,7 +405,7 @@ public class AnalyticsAdminServiceClientTest {
         ProvisionAccountTicketResponse.newBuilder()
             .setAccountTicketId("accountTicketId-1576709484")
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     ProvisionAccountTicketRequest request =
         ProvisionAccountTicketRequest.newBuilder()
@@ -371,23 +416,27 @@ public class AnalyticsAdminServiceClientTest {
     ProvisionAccountTicketResponse actualResponse = client.provisionAccountTicket(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ProvisionAccountTicketRequest actualRequest =
-        ((ProvisionAccountTicketRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getAccount(), actualRequest.getAccount());
-    Assert.assertEquals(request.getRedirectUri(), actualRequest.getRedirectUri());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void provisionAccountTicketExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ProvisionAccountTicketRequest request =
@@ -410,7 +459,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllAccountSummaries(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     ListAccountSummariesRequest request =
         ListAccountSummariesRequest.newBuilder()
@@ -425,23 +474,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getAccountSummariesList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListAccountSummariesRequest actualRequest =
-        ((ListAccountSummariesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
-    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listAccountSummariesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ListAccountSummariesRequest request =
@@ -473,28 +526,34 @@ public class AnalyticsAdminServiceClientTest {
             .setExpireTime(Timestamp.newBuilder().build())
             .setAccount(AccountName.of("[ACCOUNT]").toString())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName name = PropertyName.of("[PROPERTY]");
 
     Property actualResponse = client.getProperty(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetPropertyRequest actualRequest = ((GetPropertyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getPropertyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName name = PropertyName.of("[PROPERTY]");
@@ -522,31 +581,37 @@ public class AnalyticsAdminServiceClientTest {
             .setExpireTime(Timestamp.newBuilder().build())
             .setAccount(AccountName.of("[ACCOUNT]").toString())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-7337";
 
     Property actualResponse = client.getProperty(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetPropertyRequest actualRequest = ((GetPropertyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getPropertyExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-7337";
       client.getProperty(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -562,7 +627,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllProperties(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     ListPropertiesRequest request =
         ListPropertiesRequest.newBuilder()
@@ -579,24 +644,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getPropertiesList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListPropertiesRequest actualRequest = ((ListPropertiesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
-    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
-    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
-    Assert.assertEquals(request.getShowDeleted(), actualRequest.getShowDeleted());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listPropertiesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ListPropertiesRequest request =
@@ -630,28 +698,34 @@ public class AnalyticsAdminServiceClientTest {
             .setExpireTime(Timestamp.newBuilder().build())
             .setAccount(AccountName.of("[ACCOUNT]").toString())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     Property property = Property.newBuilder().build();
 
     Property actualResponse = client.createProperty(property);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreatePropertyRequest actualRequest = ((CreatePropertyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(property, actualRequest.getProperty());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createPropertyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       Property property = Property.newBuilder().build();
@@ -679,28 +753,34 @@ public class AnalyticsAdminServiceClientTest {
             .setExpireTime(Timestamp.newBuilder().build())
             .setAccount(AccountName.of("[ACCOUNT]").toString())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName name = PropertyName.of("[PROPERTY]");
 
     Property actualResponse = client.deleteProperty(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeletePropertyRequest actualRequest = ((DeletePropertyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deletePropertyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName name = PropertyName.of("[PROPERTY]");
@@ -728,31 +808,37 @@ public class AnalyticsAdminServiceClientTest {
             .setExpireTime(Timestamp.newBuilder().build())
             .setAccount(AccountName.of("[ACCOUNT]").toString())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-7337";
 
     Property actualResponse = client.deleteProperty(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeletePropertyRequest actualRequest = ((DeletePropertyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deletePropertyExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-7337";
       client.deleteProperty(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -777,33 +863,66 @@ public class AnalyticsAdminServiceClientTest {
             .setExpireTime(Timestamp.newBuilder().build())
             .setAccount(AccountName.of("[ACCOUNT]").toString())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    Property property = Property.newBuilder().build();
+    Property property =
+        Property.newBuilder()
+            .setName(PropertyName.of("[PROPERTY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setParent("parent-995424086")
+            .setDisplayName("displayName1714148973")
+            .setIndustryCategory(IndustryCategory.forNumber(0))
+            .setTimeZone("timeZone-2077180903")
+            .setCurrencyCode("currencyCode1004773790")
+            .setServiceLevel(ServiceLevel.forNumber(0))
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setAccount(AccountName.of("[ACCOUNT]").toString())
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     Property actualResponse = client.updateProperty(property, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdatePropertyRequest actualRequest = ((UpdatePropertyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(property, actualRequest.getProperty());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updatePropertyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      Property property = Property.newBuilder().build();
+      Property property =
+          Property.newBuilder()
+              .setName(PropertyName.of("[PROPERTY]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setParent("parent-995424086")
+              .setDisplayName("displayName1714148973")
+              .setIndustryCategory(IndustryCategory.forNumber(0))
+              .setTimeZone("timeZone-2077180903")
+              .setCurrencyCode("currencyCode1004773790")
+              .setServiceLevel(ServiceLevel.forNumber(0))
+              .setDeleteTime(Timestamp.newBuilder().build())
+              .setExpireTime(Timestamp.newBuilder().build())
+              .setAccount(AccountName.of("[ACCOUNT]").toString())
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateProperty(property, updateMask);
       Assert.fail("No exception raised");
@@ -820,28 +939,34 @@ public class AnalyticsAdminServiceClientTest {
             .setEmailAddress("emailAddress-1070931784")
             .addAllDirectRoles(new ArrayList<String>())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
 
     UserLink actualResponse = client.getUserLink(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetUserLinkRequest actualRequest = ((GetUserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getUserLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
@@ -860,31 +985,37 @@ public class AnalyticsAdminServiceClientTest {
             .setEmailAddress("emailAddress-1070931784")
             .addAllDirectRoles(new ArrayList<String>())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "accounts/account-2326/userLinks/userLink-2326";
 
     UserLink actualResponse = client.getUserLink(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetUserLinkRequest actualRequest = ((GetUserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getUserLinkExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "accounts/account-2326/userLinks/userLink-2326";
       client.getUserLink(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -896,7 +1027,7 @@ public class AnalyticsAdminServiceClientTest {
   public void batchGetUserLinksTest() throws Exception {
     BatchGetUserLinksResponse expectedResponse =
         BatchGetUserLinksResponse.newBuilder().addAllUserLinks(new ArrayList<UserLink>()).build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     BatchGetUserLinksRequest request =
         BatchGetUserLinksRequest.newBuilder()
@@ -907,22 +1038,27 @@ public class AnalyticsAdminServiceClientTest {
     BatchGetUserLinksResponse actualResponse = client.batchGetUserLinks(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    BatchGetUserLinksRequest actualRequest = ((BatchGetUserLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
-    Assert.assertEquals(request.getNamesList(), actualRequest.getNamesList());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void batchGetUserLinksExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       BatchGetUserLinksRequest request =
@@ -945,7 +1081,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllUserLinks(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     AccountName parent = AccountName.of("[ACCOUNT]");
 
@@ -956,21 +1092,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getUserLinksList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListUserLinksRequest actualRequest = ((ListUserLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listUserLinksExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       AccountName parent = AccountName.of("[ACCOUNT]");
@@ -989,7 +1131,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllUserLinks(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
 
@@ -1000,21 +1142,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getUserLinksList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListUserLinksRequest actualRequest = ((ListUserLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listUserLinksExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -1033,9 +1181,9 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllUserLinks(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "accounts/account-4811";
 
     ListUserLinksPagedResponse pagedListResponse = client.listUserLinks(parent);
 
@@ -1044,24 +1192,30 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getUserLinksList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListUserLinksRequest actualRequest = ((ListUserLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listUserLinksExceptionTest3() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "accounts/account-4811";
       client.listUserLinks(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1077,7 +1231,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllUserLinks(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     AuditUserLinksRequest request =
         AuditUserLinksRequest.newBuilder()
@@ -1093,23 +1247,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getUserLinksList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    AuditUserLinksRequest actualRequest = ((AuditUserLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
-    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
-    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void auditUserLinksExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       AuditUserLinksRequest request =
@@ -1133,7 +1291,7 @@ public class AnalyticsAdminServiceClientTest {
             .setEmailAddress("emailAddress-1070931784")
             .addAllDirectRoles(new ArrayList<String>())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     AccountName parent = AccountName.of("[ACCOUNT]");
     UserLink userLink = UserLink.newBuilder().build();
@@ -1141,22 +1299,27 @@ public class AnalyticsAdminServiceClientTest {
     UserLink actualResponse = client.createUserLink(parent, userLink);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateUserLinkRequest actualRequest = ((CreateUserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(userLink, actualRequest.getUserLink());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createUserLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       AccountName parent = AccountName.of("[ACCOUNT]");
@@ -1176,7 +1339,7 @@ public class AnalyticsAdminServiceClientTest {
             .setEmailAddress("emailAddress-1070931784")
             .addAllDirectRoles(new ArrayList<String>())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
     UserLink userLink = UserLink.newBuilder().build();
@@ -1184,22 +1347,27 @@ public class AnalyticsAdminServiceClientTest {
     UserLink actualResponse = client.createUserLink(parent, userLink);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateUserLinkRequest actualRequest = ((CreateUserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(userLink, actualRequest.getUserLink());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createUserLinkExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -1219,33 +1387,38 @@ public class AnalyticsAdminServiceClientTest {
             .setEmailAddress("emailAddress-1070931784")
             .addAllDirectRoles(new ArrayList<String>())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "accounts/account-4811";
     UserLink userLink = UserLink.newBuilder().build();
 
     UserLink actualResponse = client.createUserLink(parent, userLink);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateUserLinkRequest actualRequest = ((CreateUserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(userLink, actualRequest.getUserLink());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createUserLinkExceptionTest3() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "accounts/account-4811";
       UserLink userLink = UserLink.newBuilder().build();
       client.createUserLink(parent, userLink);
       Assert.fail("No exception raised");
@@ -1260,7 +1433,7 @@ public class AnalyticsAdminServiceClientTest {
         BatchCreateUserLinksResponse.newBuilder()
             .addAllUserLinks(new ArrayList<UserLink>())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     BatchCreateUserLinksRequest request =
         BatchCreateUserLinksRequest.newBuilder()
@@ -1272,24 +1445,27 @@ public class AnalyticsAdminServiceClientTest {
     BatchCreateUserLinksResponse actualResponse = client.batchCreateUserLinks(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    BatchCreateUserLinksRequest actualRequest =
-        ((BatchCreateUserLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
-    Assert.assertEquals(request.getNotifyNewUsers(), actualRequest.getNotifyNewUsers());
-    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void batchCreateUserLinksExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       BatchCreateUserLinksRequest request =
@@ -1313,31 +1489,47 @@ public class AnalyticsAdminServiceClientTest {
             .setEmailAddress("emailAddress-1070931784")
             .addAllDirectRoles(new ArrayList<String>())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    UserLink userLink = UserLink.newBuilder().build();
+    UserLink userLink =
+        UserLink.newBuilder()
+            .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+            .setEmailAddress("emailAddress-1070931784")
+            .addAllDirectRoles(new ArrayList<String>())
+            .build();
 
     UserLink actualResponse = client.updateUserLink(userLink);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateUserLinkRequest actualRequest = ((UpdateUserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(userLink, actualRequest.getUserLink());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateUserLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      UserLink userLink = UserLink.newBuilder().build();
+      UserLink userLink =
+          UserLink.newBuilder()
+              .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+              .setEmailAddress("emailAddress-1070931784")
+              .addAllDirectRoles(new ArrayList<String>())
+              .build();
       client.updateUserLink(userLink);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1351,7 +1543,7 @@ public class AnalyticsAdminServiceClientTest {
         BatchUpdateUserLinksResponse.newBuilder()
             .addAllUserLinks(new ArrayList<UserLink>())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     BatchUpdateUserLinksRequest request =
         BatchUpdateUserLinksRequest.newBuilder()
@@ -1362,23 +1554,27 @@ public class AnalyticsAdminServiceClientTest {
     BatchUpdateUserLinksResponse actualResponse = client.batchUpdateUserLinks(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    BatchUpdateUserLinksRequest actualRequest =
-        ((BatchUpdateUserLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
-    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void batchUpdateUserLinksExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       BatchUpdateUserLinksRequest request =
@@ -1396,27 +1592,33 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteUserLinkTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
 
     client.deleteUserLink(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteUserLinkRequest actualRequest = ((DeleteUserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteUserLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
@@ -1430,30 +1632,36 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteUserLinkTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "accounts/account-2326/userLinks/userLink-2326";
 
     client.deleteUserLink(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteUserLinkRequest actualRequest = ((DeleteUserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteUserLinkExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "accounts/account-2326/userLinks/userLink-2326";
       client.deleteUserLink(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1464,7 +1672,7 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void batchDeleteUserLinksTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     BatchDeleteUserLinksRequest request =
         BatchDeleteUserLinksRequest.newBuilder()
@@ -1474,23 +1682,27 @@ public class AnalyticsAdminServiceClientTest {
 
     client.batchDeleteUserLinks(request);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    BatchDeleteUserLinksRequest actualRequest =
-        ((BatchDeleteUserLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
-    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void batchDeleteUserLinksExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       BatchDeleteUserLinksRequest request =
@@ -1513,7 +1725,7 @@ public class AnalyticsAdminServiceClientTest {
             .setProject("project-309310695")
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
     FirebaseLink firebaseLink = FirebaseLink.newBuilder().build();
@@ -1521,22 +1733,27 @@ public class AnalyticsAdminServiceClientTest {
     FirebaseLink actualResponse = client.createFirebaseLink(parent, firebaseLink);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateFirebaseLinkRequest actualRequest = ((CreateFirebaseLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(firebaseLink, actualRequest.getFirebaseLink());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createFirebaseLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -1556,33 +1773,38 @@ public class AnalyticsAdminServiceClientTest {
             .setProject("project-309310695")
             .setCreateTime(Timestamp.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
     FirebaseLink firebaseLink = FirebaseLink.newBuilder().build();
 
     FirebaseLink actualResponse = client.createFirebaseLink(parent, firebaseLink);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateFirebaseLinkRequest actualRequest = ((CreateFirebaseLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(firebaseLink, actualRequest.getFirebaseLink());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createFirebaseLinkExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       FirebaseLink firebaseLink = FirebaseLink.newBuilder().build();
       client.createFirebaseLink(parent, firebaseLink);
       Assert.fail("No exception raised");
@@ -1594,27 +1816,33 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteFirebaseLinkTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     FirebaseLinkName name = FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]");
 
     client.deleteFirebaseLink(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteFirebaseLinkRequest actualRequest = ((DeleteFirebaseLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteFirebaseLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       FirebaseLinkName name = FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]");
@@ -1628,30 +1856,36 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteFirebaseLinkTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-2649/firebaseLinks/firebaseLink-2649";
 
     client.deleteFirebaseLink(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteFirebaseLinkRequest actualRequest = ((DeleteFirebaseLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteFirebaseLinkExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-2649/firebaseLinks/firebaseLink-2649";
       client.deleteFirebaseLink(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1667,7 +1901,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllFirebaseLinks(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
 
@@ -1678,21 +1912,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getFirebaseLinksList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListFirebaseLinksRequest actualRequest = ((ListFirebaseLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listFirebaseLinksExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -1711,9 +1951,9 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllFirebaseLinks(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
 
     ListFirebaseLinksPagedResponse pagedListResponse = client.listFirebaseLinks(parent);
 
@@ -1722,24 +1962,30 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getFirebaseLinksList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListFirebaseLinksRequest actualRequest = ((ListFirebaseLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listFirebaseLinksExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       client.listFirebaseLinks(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1754,28 +2000,34 @@ public class AnalyticsAdminServiceClientTest {
             .setName(GlobalSiteTagName.of("[PROPERTY]", "[DATA_STREAM]").toString())
             .setSnippet("snippet-2061635299")
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     GlobalSiteTagName name = GlobalSiteTagName.of("[PROPERTY]", "[DATA_STREAM]");
 
     GlobalSiteTag actualResponse = client.getGlobalSiteTag(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetGlobalSiteTagRequest actualRequest = ((GetGlobalSiteTagRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getGlobalSiteTagExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       GlobalSiteTagName name = GlobalSiteTagName.of("[PROPERTY]", "[DATA_STREAM]");
@@ -1793,31 +2045,37 @@ public class AnalyticsAdminServiceClientTest {
             .setName(GlobalSiteTagName.of("[PROPERTY]", "[DATA_STREAM]").toString())
             .setSnippet("snippet-2061635299")
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-1615/dataStreams/dataStream-1615/globalSiteTag";
 
     GlobalSiteTag actualResponse = client.getGlobalSiteTag(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetGlobalSiteTagRequest actualRequest = ((GetGlobalSiteTagRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getGlobalSiteTagExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-1615/dataStreams/dataStream-1615/globalSiteTag";
       client.getGlobalSiteTag(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1837,7 +2095,7 @@ public class AnalyticsAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCreatorEmailAddress("creatorEmailAddress67752708")
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
     GoogleAdsLink googleAdsLink = GoogleAdsLink.newBuilder().build();
@@ -1845,22 +2103,27 @@ public class AnalyticsAdminServiceClientTest {
     GoogleAdsLink actualResponse = client.createGoogleAdsLink(parent, googleAdsLink);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateGoogleAdsLinkRequest actualRequest = ((CreateGoogleAdsLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(googleAdsLink, actualRequest.getGoogleAdsLink());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createGoogleAdsLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -1884,33 +2147,38 @@ public class AnalyticsAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCreatorEmailAddress("creatorEmailAddress67752708")
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
     GoogleAdsLink googleAdsLink = GoogleAdsLink.newBuilder().build();
 
     GoogleAdsLink actualResponse = client.createGoogleAdsLink(parent, googleAdsLink);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateGoogleAdsLinkRequest actualRequest = ((CreateGoogleAdsLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(googleAdsLink, actualRequest.getGoogleAdsLink());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createGoogleAdsLinkExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       GoogleAdsLink googleAdsLink = GoogleAdsLink.newBuilder().build();
       client.createGoogleAdsLink(parent, googleAdsLink);
       Assert.fail("No exception raised");
@@ -1931,33 +2199,56 @@ public class AnalyticsAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCreatorEmailAddress("creatorEmailAddress67752708")
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    GoogleAdsLink googleAdsLink = GoogleAdsLink.newBuilder().build();
+    GoogleAdsLink googleAdsLink =
+        GoogleAdsLink.newBuilder()
+            .setName(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
+            .setCustomerId("customerId-1581184615")
+            .setCanManageClients(true)
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCreatorEmailAddress("creatorEmailAddress67752708")
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     GoogleAdsLink actualResponse = client.updateGoogleAdsLink(googleAdsLink, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateGoogleAdsLinkRequest actualRequest = ((UpdateGoogleAdsLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(googleAdsLink, actualRequest.getGoogleAdsLink());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateGoogleAdsLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      GoogleAdsLink googleAdsLink = GoogleAdsLink.newBuilder().build();
+      GoogleAdsLink googleAdsLink =
+          GoogleAdsLink.newBuilder()
+              .setName(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
+              .setCustomerId("customerId-1581184615")
+              .setCanManageClients(true)
+              .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setCreatorEmailAddress("creatorEmailAddress67752708")
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateGoogleAdsLink(googleAdsLink, updateMask);
       Assert.fail("No exception raised");
@@ -1969,27 +2260,33 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteGoogleAdsLinkTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     GoogleAdsLinkName name = GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]");
 
     client.deleteGoogleAdsLink(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteGoogleAdsLinkRequest actualRequest = ((DeleteGoogleAdsLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteGoogleAdsLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       GoogleAdsLinkName name = GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]");
@@ -2003,30 +2300,36 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteGoogleAdsLinkTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-1267/googleAdsLinks/googleAdsLink-1267";
 
     client.deleteGoogleAdsLink(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteGoogleAdsLinkRequest actualRequest = ((DeleteGoogleAdsLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteGoogleAdsLinkExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-1267/googleAdsLinks/googleAdsLink-1267";
       client.deleteGoogleAdsLink(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2042,7 +2345,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllGoogleAdsLinks(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
 
@@ -2053,21 +2356,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getGoogleAdsLinksList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListGoogleAdsLinksRequest actualRequest = ((ListGoogleAdsLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listGoogleAdsLinksExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -2086,9 +2395,9 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllGoogleAdsLinks(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
 
     ListGoogleAdsLinksPagedResponse pagedListResponse = client.listGoogleAdsLinks(parent);
 
@@ -2097,24 +2406,30 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getGoogleAdsLinksList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListGoogleAdsLinksRequest actualRequest = ((ListGoogleAdsLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listGoogleAdsLinksExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       client.listGoogleAdsLinks(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2133,29 +2448,34 @@ public class AnalyticsAdminServiceClientTest {
             .setSharingWithGoogleProductsEnabled(true)
             .setSharingWithOthersEnabled(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DataSharingSettingsName name = DataSharingSettingsName.of("[ACCOUNT]");
 
     DataSharingSettings actualResponse = client.getDataSharingSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetDataSharingSettingsRequest actualRequest =
-        ((GetDataSharingSettingsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getDataSharingSettingsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DataSharingSettingsName name = DataSharingSettingsName.of("[ACCOUNT]");
@@ -2177,32 +2497,37 @@ public class AnalyticsAdminServiceClientTest {
             .setSharingWithGoogleProductsEnabled(true)
             .setSharingWithOthersEnabled(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "accounts/account-7122/dataSharingSettings";
 
     DataSharingSettings actualResponse = client.getDataSharingSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetDataSharingSettingsRequest actualRequest =
-        ((GetDataSharingSettingsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getDataSharingSettingsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "accounts/account-7122/dataSharingSettings";
       client.getDataSharingSettings(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2221,7 +2546,7 @@ public class AnalyticsAdminServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setSecretValue("secretValue-2044460895")
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     MeasurementProtocolSecretName name =
         MeasurementProtocolSecretName.of(
@@ -2230,22 +2555,27 @@ public class AnalyticsAdminServiceClientTest {
     MeasurementProtocolSecret actualResponse = client.getMeasurementProtocolSecret(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetMeasurementProtocolSecretRequest actualRequest =
-        ((GetMeasurementProtocolSecretRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getMeasurementProtocolSecretExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       MeasurementProtocolSecretName name =
@@ -2269,32 +2599,39 @@ public class AnalyticsAdminServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setSecretValue("secretValue-2044460895")
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name =
+        "properties/propertie-6357/dataStreams/dataStream-6357/measurementProtocolSecrets/measurementProtocolSecret-6357";
 
     MeasurementProtocolSecret actualResponse = client.getMeasurementProtocolSecret(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetMeasurementProtocolSecretRequest actualRequest =
-        ((GetMeasurementProtocolSecretRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getMeasurementProtocolSecretExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name =
+          "properties/propertie-6357/dataStreams/dataStream-6357/measurementProtocolSecrets/measurementProtocolSecret-6357";
       client.getMeasurementProtocolSecret(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2310,7 +2647,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllMeasurementProtocolSecrets(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
 
@@ -2323,22 +2660,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(
         expectedResponse.getMeasurementProtocolSecretsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListMeasurementProtocolSecretsRequest actualRequest =
-        ((ListMeasurementProtocolSecretsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listMeasurementProtocolSecretsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
@@ -2357,9 +2699,9 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllMeasurementProtocolSecrets(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-9651/dataStreams/dataStream-9651";
 
     ListMeasurementProtocolSecretsPagedResponse pagedListResponse =
         client.listMeasurementProtocolSecrets(parent);
@@ -2370,25 +2712,30 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(
         expectedResponse.getMeasurementProtocolSecretsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListMeasurementProtocolSecretsRequest actualRequest =
-        ((ListMeasurementProtocolSecretsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listMeasurementProtocolSecretsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-9651/dataStreams/dataStream-9651";
       client.listMeasurementProtocolSecrets(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2407,7 +2754,7 @@ public class AnalyticsAdminServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setSecretValue("secretValue-2044460895")
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
     MeasurementProtocolSecret measurementProtocolSecret =
@@ -2417,23 +2764,27 @@ public class AnalyticsAdminServiceClientTest {
         client.createMeasurementProtocolSecret(parent, measurementProtocolSecret);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateMeasurementProtocolSecretRequest actualRequest =
-        ((CreateMeasurementProtocolSecretRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(measurementProtocolSecret, actualRequest.getMeasurementProtocolSecret());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createMeasurementProtocolSecretExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
@@ -2457,9 +2808,9 @@ public class AnalyticsAdminServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setSecretValue("secretValue-2044460895")
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-9651/dataStreams/dataStream-9651";
     MeasurementProtocolSecret measurementProtocolSecret =
         MeasurementProtocolSecret.newBuilder().build();
 
@@ -2467,26 +2818,30 @@ public class AnalyticsAdminServiceClientTest {
         client.createMeasurementProtocolSecret(parent, measurementProtocolSecret);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateMeasurementProtocolSecretRequest actualRequest =
-        ((CreateMeasurementProtocolSecretRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(measurementProtocolSecret, actualRequest.getMeasurementProtocolSecret());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createMeasurementProtocolSecretExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-9651/dataStreams/dataStream-9651";
       MeasurementProtocolSecret measurementProtocolSecret =
           MeasurementProtocolSecret.newBuilder().build();
       client.createMeasurementProtocolSecret(parent, measurementProtocolSecret);
@@ -2499,7 +2854,7 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteMeasurementProtocolSecretTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     MeasurementProtocolSecretName name =
         MeasurementProtocolSecretName.of(
@@ -2507,22 +2862,27 @@ public class AnalyticsAdminServiceClientTest {
 
     client.deleteMeasurementProtocolSecret(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteMeasurementProtocolSecretRequest actualRequest =
-        ((DeleteMeasurementProtocolSecretRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteMeasurementProtocolSecretExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       MeasurementProtocolSecretName name =
@@ -2538,31 +2898,38 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteMeasurementProtocolSecretTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name =
+        "properties/propertie-6357/dataStreams/dataStream-6357/measurementProtocolSecrets/measurementProtocolSecret-6357";
 
     client.deleteMeasurementProtocolSecret(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteMeasurementProtocolSecretRequest actualRequest =
-        ((DeleteMeasurementProtocolSecretRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteMeasurementProtocolSecretExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name =
+          "properties/propertie-6357/dataStreams/dataStream-6357/measurementProtocolSecrets/measurementProtocolSecret-6357";
       client.deleteMeasurementProtocolSecret(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2581,37 +2948,55 @@ public class AnalyticsAdminServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setSecretValue("secretValue-2044460895")
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     MeasurementProtocolSecret measurementProtocolSecret =
-        MeasurementProtocolSecret.newBuilder().build();
+        MeasurementProtocolSecret.newBuilder()
+            .setName(
+                MeasurementProtocolSecretName.of(
+                        "[PROPERTY]", "[DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setSecretValue("secretValue-2044460895")
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     MeasurementProtocolSecret actualResponse =
         client.updateMeasurementProtocolSecret(measurementProtocolSecret, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateMeasurementProtocolSecretRequest actualRequest =
-        ((UpdateMeasurementProtocolSecretRequest) actualRequests.get(0));
 
-    Assert.assertEquals(measurementProtocolSecret, actualRequest.getMeasurementProtocolSecret());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateMeasurementProtocolSecretExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       MeasurementProtocolSecret measurementProtocolSecret =
-          MeasurementProtocolSecret.newBuilder().build();
+          MeasurementProtocolSecret.newBuilder()
+              .setName(
+                  MeasurementProtocolSecretName.of(
+                          "[PROPERTY]", "[DATA_STREAM]", "[MEASUREMENT_PROTOCOL_SECRET]")
+                      .toString())
+              .setDisplayName("displayName1714148973")
+              .setSecretValue("secretValue-2044460895")
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateMeasurementProtocolSecret(measurementProtocolSecret, updateMask);
       Assert.fail("No exception raised");
@@ -2624,7 +3009,7 @@ public class AnalyticsAdminServiceClientTest {
   public void acknowledgeUserDataCollectionTest() throws Exception {
     AcknowledgeUserDataCollectionResponse expectedResponse =
         AcknowledgeUserDataCollectionResponse.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     AcknowledgeUserDataCollectionRequest request =
         AcknowledgeUserDataCollectionRequest.newBuilder()
@@ -2636,23 +3021,27 @@ public class AnalyticsAdminServiceClientTest {
         client.acknowledgeUserDataCollection(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    AcknowledgeUserDataCollectionRequest actualRequest =
-        ((AcknowledgeUserDataCollectionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getProperty(), actualRequest.getProperty());
-    Assert.assertEquals(request.getAcknowledgement(), actualRequest.getAcknowledgement());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void acknowledgeUserDataCollectionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       AcknowledgeUserDataCollectionRequest request =
@@ -2675,7 +3064,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllChangeHistoryEvents(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     SearchChangeHistoryEventsRequest request =
         SearchChangeHistoryEventsRequest.newBuilder()
@@ -2698,30 +3087,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getChangeHistoryEventsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    SearchChangeHistoryEventsRequest actualRequest =
-        ((SearchChangeHistoryEventsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getAccount(), actualRequest.getAccount());
-    Assert.assertEquals(request.getProperty(), actualRequest.getProperty());
-    Assert.assertEquals(request.getResourceTypeList(), actualRequest.getResourceTypeList());
-    Assert.assertEquals(request.getActionList(), actualRequest.getActionList());
-    Assert.assertEquals(request.getActorEmailList(), actualRequest.getActorEmailList());
-    Assert.assertEquals(request.getEarliestChangeTime(), actualRequest.getEarliestChangeTime());
-    Assert.assertEquals(request.getLatestChangeTime(), actualRequest.getLatestChangeTime());
-    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
-    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void searchChangeHistoryEventsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       SearchChangeHistoryEventsRequest request =
@@ -2751,29 +3137,34 @@ public class AnalyticsAdminServiceClientTest {
             .setState(GoogleSignalsState.forNumber(0))
             .setConsent(GoogleSignalsConsent.forNumber(0))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     GoogleSignalsSettingsName name = GoogleSignalsSettingsName.of("[PROPERTY]");
 
     GoogleSignalsSettings actualResponse = client.getGoogleSignalsSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetGoogleSignalsSettingsRequest actualRequest =
-        ((GetGoogleSignalsSettingsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getGoogleSignalsSettingsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       GoogleSignalsSettingsName name = GoogleSignalsSettingsName.of("[PROPERTY]");
@@ -2792,32 +3183,37 @@ public class AnalyticsAdminServiceClientTest {
             .setState(GoogleSignalsState.forNumber(0))
             .setConsent(GoogleSignalsConsent.forNumber(0))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-7279/googleSignalsSettings";
 
     GoogleSignalsSettings actualResponse = client.getGoogleSignalsSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetGoogleSignalsSettingsRequest actualRequest =
-        ((GetGoogleSignalsSettingsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getGoogleSignalsSettingsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-7279/googleSignalsSettings";
       client.getGoogleSignalsSettings(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -2833,35 +3229,49 @@ public class AnalyticsAdminServiceClientTest {
             .setState(GoogleSignalsState.forNumber(0))
             .setConsent(GoogleSignalsConsent.forNumber(0))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    GoogleSignalsSettings googleSignalsSettings = GoogleSignalsSettings.newBuilder().build();
+    GoogleSignalsSettings googleSignalsSettings =
+        GoogleSignalsSettings.newBuilder()
+            .setName(GoogleSignalsSettingsName.of("[PROPERTY]").toString())
+            .setState(GoogleSignalsState.forNumber(0))
+            .setConsent(GoogleSignalsConsent.forNumber(0))
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     GoogleSignalsSettings actualResponse =
         client.updateGoogleSignalsSettings(googleSignalsSettings, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateGoogleSignalsSettingsRequest actualRequest =
-        ((UpdateGoogleSignalsSettingsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(googleSignalsSettings, actualRequest.getGoogleSignalsSettings());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateGoogleSignalsSettingsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      GoogleSignalsSettings googleSignalsSettings = GoogleSignalsSettings.newBuilder().build();
+      GoogleSignalsSettings googleSignalsSettings =
+          GoogleSignalsSettings.newBuilder()
+              .setName(GoogleSignalsSettingsName.of("[PROPERTY]").toString())
+              .setState(GoogleSignalsState.forNumber(0))
+              .setConsent(GoogleSignalsConsent.forNumber(0))
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateGoogleSignalsSettings(googleSignalsSettings, updateMask);
       Assert.fail("No exception raised");
@@ -2880,7 +3290,7 @@ public class AnalyticsAdminServiceClientTest {
             .setDeletable(true)
             .setCustom(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
     ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
@@ -2888,23 +3298,27 @@ public class AnalyticsAdminServiceClientTest {
     ConversionEvent actualResponse = client.createConversionEvent(parent, conversionEvent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateConversionEventRequest actualRequest =
-        ((CreateConversionEventRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(conversionEvent, actualRequest.getConversionEvent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createConversionEventExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -2926,34 +3340,38 @@ public class AnalyticsAdminServiceClientTest {
             .setDeletable(true)
             .setCustom(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
     ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
 
     ConversionEvent actualResponse = client.createConversionEvent(parent, conversionEvent);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateConversionEventRequest actualRequest =
-        ((CreateConversionEventRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(conversionEvent, actualRequest.getConversionEvent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createConversionEventExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
       client.createConversionEvent(parent, conversionEvent);
       Assert.fail("No exception raised");
@@ -2972,28 +3390,34 @@ public class AnalyticsAdminServiceClientTest {
             .setDeletable(true)
             .setCustom(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     ConversionEventName name = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]");
 
     ConversionEvent actualResponse = client.getConversionEvent(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetConversionEventRequest actualRequest = ((GetConversionEventRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getConversionEventExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ConversionEventName name = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]");
@@ -3014,31 +3438,37 @@ public class AnalyticsAdminServiceClientTest {
             .setDeletable(true)
             .setCustom(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-4144/conversionEvents/conversionEvent-4144";
 
     ConversionEvent actualResponse = client.getConversionEvent(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetConversionEventRequest actualRequest = ((GetConversionEventRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getConversionEventExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-4144/conversionEvents/conversionEvent-4144";
       client.getConversionEvent(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3049,28 +3479,33 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteConversionEventTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     ConversionEventName name = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]");
 
     client.deleteConversionEvent(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteConversionEventRequest actualRequest =
-        ((DeleteConversionEventRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteConversionEventExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ConversionEventName name = ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]");
@@ -3084,31 +3519,36 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteConversionEventTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-4144/conversionEvents/conversionEvent-4144";
 
     client.deleteConversionEvent(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteConversionEventRequest actualRequest =
-        ((DeleteConversionEventRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteConversionEventExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-4144/conversionEvents/conversionEvent-4144";
       client.deleteConversionEvent(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3124,7 +3564,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllConversionEvents(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
 
@@ -3135,22 +3575,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getConversionEventsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListConversionEventsRequest actualRequest =
-        ((ListConversionEventsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listConversionEventsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -3169,9 +3614,9 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllConversionEvents(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
 
     ListConversionEventsPagedResponse pagedListResponse = client.listConversionEvents(parent);
 
@@ -3180,25 +3625,30 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getConversionEventsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListConversionEventsRequest actualRequest =
-        ((ListConversionEventsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listConversionEventsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       client.listConversionEvents(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3220,7 +3670,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
             .setCostDataSharingEnabled(BoolValue.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DisplayVideo360AdvertiserLinkName name =
         DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]");
@@ -3228,22 +3678,27 @@ public class AnalyticsAdminServiceClientTest {
     DisplayVideo360AdvertiserLink actualResponse = client.getDisplayVideo360AdvertiserLink(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetDisplayVideo360AdvertiserLinkRequest actualRequest =
-        ((GetDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getDisplayVideo360AdvertiserLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DisplayVideo360AdvertiserLinkName name =
@@ -3269,32 +3724,39 @@ public class AnalyticsAdminServiceClientTest {
             .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
             .setCostDataSharingEnabled(BoolValue.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name =
+        "properties/propertie-7275/displayVideo360AdvertiserLinks/displayVideo360AdvertiserLink-7275";
 
     DisplayVideo360AdvertiserLink actualResponse = client.getDisplayVideo360AdvertiserLink(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetDisplayVideo360AdvertiserLinkRequest actualRequest =
-        ((GetDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getDisplayVideo360AdvertiserLinkExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name =
+          "properties/propertie-7275/displayVideo360AdvertiserLinks/displayVideo360AdvertiserLink-7275";
       client.getDisplayVideo360AdvertiserLink(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3311,7 +3773,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllDisplayVideo360AdvertiserLinks(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
 
@@ -3325,22 +3787,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(
         expectedResponse.getDisplayVideo360AdvertiserLinksList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListDisplayVideo360AdvertiserLinksRequest actualRequest =
-        ((ListDisplayVideo360AdvertiserLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listDisplayVideo360AdvertiserLinksExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -3360,9 +3827,9 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllDisplayVideo360AdvertiserLinks(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
 
     ListDisplayVideo360AdvertiserLinksPagedResponse pagedListResponse =
         client.listDisplayVideo360AdvertiserLinks(parent);
@@ -3374,25 +3841,30 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(
         expectedResponse.getDisplayVideo360AdvertiserLinksList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListDisplayVideo360AdvertiserLinksRequest actualRequest =
-        ((ListDisplayVideo360AdvertiserLinksRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listDisplayVideo360AdvertiserLinksExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       client.listDisplayVideo360AdvertiserLinks(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3414,7 +3886,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
             .setCostDataSharingEnabled(BoolValue.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
     DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
@@ -3424,24 +3896,27 @@ public class AnalyticsAdminServiceClientTest {
         client.createDisplayVideo360AdvertiserLink(parent, displayVideo360AdvertiserLink);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateDisplayVideo360AdvertiserLinkRequest actualRequest =
-        ((CreateDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(
-        displayVideo360AdvertiserLink, actualRequest.getDisplayVideo360AdvertiserLink());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createDisplayVideo360AdvertiserLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -3468,9 +3943,9 @@ public class AnalyticsAdminServiceClientTest {
             .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
             .setCostDataSharingEnabled(BoolValue.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
     DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
         DisplayVideo360AdvertiserLink.newBuilder().build();
 
@@ -3478,27 +3953,30 @@ public class AnalyticsAdminServiceClientTest {
         client.createDisplayVideo360AdvertiserLink(parent, displayVideo360AdvertiserLink);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateDisplayVideo360AdvertiserLinkRequest actualRequest =
-        ((CreateDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(
-        displayVideo360AdvertiserLink, actualRequest.getDisplayVideo360AdvertiserLink());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createDisplayVideo360AdvertiserLinkExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
           DisplayVideo360AdvertiserLink.newBuilder().build();
       client.createDisplayVideo360AdvertiserLink(parent, displayVideo360AdvertiserLink);
@@ -3511,29 +3989,34 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteDisplayVideo360AdvertiserLinkTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DisplayVideo360AdvertiserLinkName name =
         DisplayVideo360AdvertiserLinkName.of("[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]");
 
     client.deleteDisplayVideo360AdvertiserLink(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteDisplayVideo360AdvertiserLinkRequest actualRequest =
-        ((DeleteDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteDisplayVideo360AdvertiserLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DisplayVideo360AdvertiserLinkName name =
@@ -3548,31 +4031,38 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteDisplayVideo360AdvertiserLinkTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name =
+        "properties/propertie-7275/displayVideo360AdvertiserLinks/displayVideo360AdvertiserLink-7275";
 
     client.deleteDisplayVideo360AdvertiserLink(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteDisplayVideo360AdvertiserLinkRequest actualRequest =
-        ((DeleteDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteDisplayVideo360AdvertiserLinkExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name =
+          "properties/propertie-7275/displayVideo360AdvertiserLinks/displayVideo360AdvertiserLink-7275";
       client.deleteDisplayVideo360AdvertiserLink(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3594,38 +4084,61 @@ public class AnalyticsAdminServiceClientTest {
             .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
             .setCostDataSharingEnabled(BoolValue.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
-        DisplayVideo360AdvertiserLink.newBuilder().build();
+        DisplayVideo360AdvertiserLink.newBuilder()
+            .setName(
+                DisplayVideo360AdvertiserLinkName.of(
+                        "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+                    .toString())
+            .setAdvertiserId("advertiserId550061990")
+            .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+            .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+            .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+            .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     DisplayVideo360AdvertiserLink actualResponse =
         client.updateDisplayVideo360AdvertiserLink(displayVideo360AdvertiserLink, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateDisplayVideo360AdvertiserLinkRequest actualRequest =
-        ((UpdateDisplayVideo360AdvertiserLinkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(
-        displayVideo360AdvertiserLink, actualRequest.getDisplayVideo360AdvertiserLink());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateDisplayVideo360AdvertiserLinkExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DisplayVideo360AdvertiserLink displayVideo360AdvertiserLink =
-          DisplayVideo360AdvertiserLink.newBuilder().build();
+          DisplayVideo360AdvertiserLink.newBuilder()
+              .setName(
+                  DisplayVideo360AdvertiserLinkName.of(
+                          "[PROPERTY]", "[DISPLAY_VIDEO_360_ADVERTISER_LINK]")
+                      .toString())
+              .setAdvertiserId("advertiserId550061990")
+              .setAdvertiserDisplayName("advertiserDisplayName1594116162")
+              .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
+              .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
+              .setCostDataSharingEnabled(BoolValue.newBuilder().build())
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDisplayVideo360AdvertiserLink(displayVideo360AdvertiserLink, updateMask);
       Assert.fail("No exception raised");
@@ -3650,7 +4163,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
             .setCostDataSharingEnabled(BoolValue.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DisplayVideo360AdvertiserLinkProposalName name =
         DisplayVideo360AdvertiserLinkProposalName.of(
@@ -3660,22 +4173,27 @@ public class AnalyticsAdminServiceClientTest {
         client.getDisplayVideo360AdvertiserLinkProposal(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
-        ((GetDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getDisplayVideo360AdvertiserLinkProposalExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DisplayVideo360AdvertiserLinkProposalName name =
@@ -3704,33 +4222,40 @@ public class AnalyticsAdminServiceClientTest {
             .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
             .setCostDataSharingEnabled(BoolValue.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name =
+        "properties/propertie-8473/displayVideo360AdvertiserLinkProposals/displayVideo360AdvertiserLinkProposal-8473";
 
     DisplayVideo360AdvertiserLinkProposal actualResponse =
         client.getDisplayVideo360AdvertiserLinkProposal(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
-        ((GetDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getDisplayVideo360AdvertiserLinkProposalExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name =
+          "properties/propertie-8473/displayVideo360AdvertiserLinkProposals/displayVideo360AdvertiserLinkProposal-8473";
       client.getDisplayVideo360AdvertiserLinkProposal(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3747,7 +4272,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllDisplayVideo360AdvertiserLinkProposals(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
 
@@ -3761,22 +4286,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(
         expectedResponse.getDisplayVideo360AdvertiserLinkProposalsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListDisplayVideo360AdvertiserLinkProposalsRequest actualRequest =
-        ((ListDisplayVideo360AdvertiserLinkProposalsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listDisplayVideo360AdvertiserLinkProposalsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -3796,9 +4326,9 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllDisplayVideo360AdvertiserLinkProposals(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
 
     ListDisplayVideo360AdvertiserLinkProposalsPagedResponse pagedListResponse =
         client.listDisplayVideo360AdvertiserLinkProposals(parent);
@@ -3810,25 +4340,30 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(
         expectedResponse.getDisplayVideo360AdvertiserLinkProposalsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListDisplayVideo360AdvertiserLinkProposalsRequest actualRequest =
-        ((ListDisplayVideo360AdvertiserLinkProposalsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listDisplayVideo360AdvertiserLinkProposalsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       client.listDisplayVideo360AdvertiserLinkProposals(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3852,7 +4387,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
             .setCostDataSharingEnabled(BoolValue.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
     DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal =
@@ -3863,25 +4398,27 @@ public class AnalyticsAdminServiceClientTest {
             parent, displayVideo360AdvertiserLinkProposal);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
-        ((CreateDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(
-        displayVideo360AdvertiserLinkProposal,
-        actualRequest.getDisplayVideo360AdvertiserLinkProposal());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createDisplayVideo360AdvertiserLinkProposalExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -3911,9 +4448,9 @@ public class AnalyticsAdminServiceClientTest {
             .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
             .setCostDataSharingEnabled(BoolValue.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
     DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal =
         DisplayVideo360AdvertiserLinkProposal.newBuilder().build();
 
@@ -3922,28 +4459,30 @@ public class AnalyticsAdminServiceClientTest {
             parent, displayVideo360AdvertiserLinkProposal);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
-        ((CreateDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(
-        displayVideo360AdvertiserLinkProposal,
-        actualRequest.getDisplayVideo360AdvertiserLinkProposal());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createDisplayVideo360AdvertiserLinkProposalExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       DisplayVideo360AdvertiserLinkProposal displayVideo360AdvertiserLinkProposal =
           DisplayVideo360AdvertiserLinkProposal.newBuilder().build();
       client.createDisplayVideo360AdvertiserLinkProposal(
@@ -3957,7 +4496,7 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteDisplayVideo360AdvertiserLinkProposalTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DisplayVideo360AdvertiserLinkProposalName name =
         DisplayVideo360AdvertiserLinkProposalName.of(
@@ -3965,22 +4504,27 @@ public class AnalyticsAdminServiceClientTest {
 
     client.deleteDisplayVideo360AdvertiserLinkProposal(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
-        ((DeleteDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteDisplayVideo360AdvertiserLinkProposalExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DisplayVideo360AdvertiserLinkProposalName name =
@@ -3996,31 +4540,38 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteDisplayVideo360AdvertiserLinkProposalTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name =
+        "properties/propertie-8473/displayVideo360AdvertiserLinkProposals/displayVideo360AdvertiserLinkProposal-8473";
 
     client.deleteDisplayVideo360AdvertiserLinkProposal(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
-        ((DeleteDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteDisplayVideo360AdvertiserLinkProposalExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name =
+          "properties/propertie-8473/displayVideo360AdvertiserLinkProposals/displayVideo360AdvertiserLinkProposal-8473";
       client.deleteDisplayVideo360AdvertiserLinkProposal(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4034,7 +4585,7 @@ public class AnalyticsAdminServiceClientTest {
         ApproveDisplayVideo360AdvertiserLinkProposalResponse.newBuilder()
             .setDisplayVideo360AdvertiserLink(DisplayVideo360AdvertiserLink.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     ApproveDisplayVideo360AdvertiserLinkProposalRequest request =
         ApproveDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
@@ -4048,22 +4599,27 @@ public class AnalyticsAdminServiceClientTest {
         client.approveDisplayVideo360AdvertiserLinkProposal(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ApproveDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
-        ((ApproveDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void approveDisplayVideo360AdvertiserLinkProposalExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ApproveDisplayVideo360AdvertiserLinkProposalRequest request =
@@ -4096,7 +4652,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCampaignDataSharingEnabled(BoolValue.newBuilder().build())
             .setCostDataSharingEnabled(BoolValue.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     CancelDisplayVideo360AdvertiserLinkProposalRequest request =
         CancelDisplayVideo360AdvertiserLinkProposalRequest.newBuilder()
@@ -4110,22 +4666,27 @@ public class AnalyticsAdminServiceClientTest {
         client.cancelDisplayVideo360AdvertiserLinkProposal(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CancelDisplayVideo360AdvertiserLinkProposalRequest actualRequest =
-        ((CancelDisplayVideo360AdvertiserLinkProposalRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void cancelDisplayVideo360AdvertiserLinkProposalExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       CancelDisplayVideo360AdvertiserLinkProposalRequest request =
@@ -4152,7 +4713,7 @@ public class AnalyticsAdminServiceClientTest {
             .setDescription("description-1724546052")
             .setDisallowAdsPersonalization(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
     CustomDimension customDimension = CustomDimension.newBuilder().build();
@@ -4160,23 +4721,27 @@ public class AnalyticsAdminServiceClientTest {
     CustomDimension actualResponse = client.createCustomDimension(parent, customDimension);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateCustomDimensionRequest actualRequest =
-        ((CreateCustomDimensionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(customDimension, actualRequest.getCustomDimension());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createCustomDimensionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -4198,34 +4763,38 @@ public class AnalyticsAdminServiceClientTest {
             .setDescription("description-1724546052")
             .setDisallowAdsPersonalization(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
     CustomDimension customDimension = CustomDimension.newBuilder().build();
 
     CustomDimension actualResponse = client.createCustomDimension(parent, customDimension);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateCustomDimensionRequest actualRequest =
-        ((CreateCustomDimensionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(customDimension, actualRequest.getCustomDimension());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createCustomDimensionExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       CustomDimension customDimension = CustomDimension.newBuilder().build();
       client.createCustomDimension(parent, customDimension);
       Assert.fail("No exception raised");
@@ -4244,34 +4813,52 @@ public class AnalyticsAdminServiceClientTest {
             .setDescription("description-1724546052")
             .setDisallowAdsPersonalization(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    CustomDimension customDimension = CustomDimension.newBuilder().build();
+    CustomDimension customDimension =
+        CustomDimension.newBuilder()
+            .setName(CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]").toString())
+            .setParameterName("parameterName-379607596")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setDisallowAdsPersonalization(true)
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     CustomDimension actualResponse = client.updateCustomDimension(customDimension, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateCustomDimensionRequest actualRequest =
-        ((UpdateCustomDimensionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(customDimension, actualRequest.getCustomDimension());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateCustomDimensionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      CustomDimension customDimension = CustomDimension.newBuilder().build();
+      CustomDimension customDimension =
+          CustomDimension.newBuilder()
+              .setName(CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]").toString())
+              .setParameterName("parameterName-379607596")
+              .setDisplayName("displayName1714148973")
+              .setDescription("description-1724546052")
+              .setDisallowAdsPersonalization(true)
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCustomDimension(customDimension, updateMask);
       Assert.fail("No exception raised");
@@ -4288,7 +4875,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllCustomDimensions(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
 
@@ -4299,22 +4886,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getCustomDimensionsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListCustomDimensionsRequest actualRequest =
-        ((ListCustomDimensionsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listCustomDimensionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -4333,9 +4925,9 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllCustomDimensions(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
 
     ListCustomDimensionsPagedResponse pagedListResponse = client.listCustomDimensions(parent);
 
@@ -4344,25 +4936,30 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getCustomDimensionsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListCustomDimensionsRequest actualRequest =
-        ((ListCustomDimensionsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listCustomDimensionsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       client.listCustomDimensions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4373,28 +4970,33 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void archiveCustomDimensionTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     CustomDimensionName name = CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]");
 
     client.archiveCustomDimension(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ArchiveCustomDimensionRequest actualRequest =
-        ((ArchiveCustomDimensionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void archiveCustomDimensionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       CustomDimensionName name = CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]");
@@ -4408,31 +5010,36 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void archiveCustomDimensionTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-447/customDimensions/customDimension-447";
 
     client.archiveCustomDimension(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ArchiveCustomDimensionRequest actualRequest =
-        ((ArchiveCustomDimensionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void archiveCustomDimensionExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-447/customDimensions/customDimension-447";
       client.archiveCustomDimension(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4450,28 +5057,34 @@ public class AnalyticsAdminServiceClientTest {
             .setDescription("description-1724546052")
             .setDisallowAdsPersonalization(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     CustomDimensionName name = CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]");
 
     CustomDimension actualResponse = client.getCustomDimension(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetCustomDimensionRequest actualRequest = ((GetCustomDimensionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getCustomDimensionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       CustomDimensionName name = CustomDimensionName.of("[PROPERTY]", "[CUSTOM_DIMENSION]");
@@ -4492,31 +5105,37 @@ public class AnalyticsAdminServiceClientTest {
             .setDescription("description-1724546052")
             .setDisallowAdsPersonalization(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-447/customDimensions/customDimension-447";
 
     CustomDimension actualResponse = client.getCustomDimension(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetCustomDimensionRequest actualRequest = ((GetCustomDimensionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getCustomDimensionExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-447/customDimensions/customDimension-447";
       client.getCustomDimension(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4534,7 +5153,7 @@ public class AnalyticsAdminServiceClientTest {
             .setDescription("description-1724546052")
             .addAllRestrictedMetricType(new ArrayList<CustomMetric.RestrictedMetricType>())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
     CustomMetric customMetric = CustomMetric.newBuilder().build();
@@ -4542,22 +5161,27 @@ public class AnalyticsAdminServiceClientTest {
     CustomMetric actualResponse = client.createCustomMetric(parent, customMetric);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateCustomMetricRequest actualRequest = ((CreateCustomMetricRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(customMetric, actualRequest.getCustomMetric());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createCustomMetricExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -4579,33 +5203,38 @@ public class AnalyticsAdminServiceClientTest {
             .setDescription("description-1724546052")
             .addAllRestrictedMetricType(new ArrayList<CustomMetric.RestrictedMetricType>())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
     CustomMetric customMetric = CustomMetric.newBuilder().build();
 
     CustomMetric actualResponse = client.createCustomMetric(parent, customMetric);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateCustomMetricRequest actualRequest = ((CreateCustomMetricRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(customMetric, actualRequest.getCustomMetric());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createCustomMetricExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       CustomMetric customMetric = CustomMetric.newBuilder().build();
       client.createCustomMetric(parent, customMetric);
       Assert.fail("No exception raised");
@@ -4624,33 +5253,52 @@ public class AnalyticsAdminServiceClientTest {
             .setDescription("description-1724546052")
             .addAllRestrictedMetricType(new ArrayList<CustomMetric.RestrictedMetricType>())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    CustomMetric customMetric = CustomMetric.newBuilder().build();
+    CustomMetric customMetric =
+        CustomMetric.newBuilder()
+            .setName(CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]").toString())
+            .setParameterName("parameterName-379607596")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllRestrictedMetricType(new ArrayList<CustomMetric.RestrictedMetricType>())
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     CustomMetric actualResponse = client.updateCustomMetric(customMetric, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateCustomMetricRequest actualRequest = ((UpdateCustomMetricRequest) actualRequests.get(0));
 
-    Assert.assertEquals(customMetric, actualRequest.getCustomMetric());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateCustomMetricExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      CustomMetric customMetric = CustomMetric.newBuilder().build();
+      CustomMetric customMetric =
+          CustomMetric.newBuilder()
+              .setName(CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]").toString())
+              .setParameterName("parameterName-379607596")
+              .setDisplayName("displayName1714148973")
+              .setDescription("description-1724546052")
+              .addAllRestrictedMetricType(new ArrayList<CustomMetric.RestrictedMetricType>())
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCustomMetric(customMetric, updateMask);
       Assert.fail("No exception raised");
@@ -4667,7 +5315,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllCustomMetrics(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
 
@@ -4678,21 +5326,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getCustomMetricsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListCustomMetricsRequest actualRequest = ((ListCustomMetricsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listCustomMetricsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -4711,9 +5365,9 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllCustomMetrics(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
 
     ListCustomMetricsPagedResponse pagedListResponse = client.listCustomMetrics(parent);
 
@@ -4722,24 +5376,30 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getCustomMetricsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListCustomMetricsRequest actualRequest = ((ListCustomMetricsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listCustomMetricsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       client.listCustomMetrics(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4750,27 +5410,33 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void archiveCustomMetricTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     CustomMetricName name = CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]");
 
     client.archiveCustomMetric(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ArchiveCustomMetricRequest actualRequest = ((ArchiveCustomMetricRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void archiveCustomMetricExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       CustomMetricName name = CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]");
@@ -4784,30 +5450,36 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void archiveCustomMetricTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-2999/customMetrics/customMetric-2999";
 
     client.archiveCustomMetric(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ArchiveCustomMetricRequest actualRequest = ((ArchiveCustomMetricRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void archiveCustomMetricExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-2999/customMetrics/customMetric-2999";
       client.archiveCustomMetric(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4825,28 +5497,34 @@ public class AnalyticsAdminServiceClientTest {
             .setDescription("description-1724546052")
             .addAllRestrictedMetricType(new ArrayList<CustomMetric.RestrictedMetricType>())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     CustomMetricName name = CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]");
 
     CustomMetric actualResponse = client.getCustomMetric(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetCustomMetricRequest actualRequest = ((GetCustomMetricRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getCustomMetricExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       CustomMetricName name = CustomMetricName.of("[PROPERTY]", "[CUSTOM_METRIC]");
@@ -4867,31 +5545,37 @@ public class AnalyticsAdminServiceClientTest {
             .setDescription("description-1724546052")
             .addAllRestrictedMetricType(new ArrayList<CustomMetric.RestrictedMetricType>())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-2999/customMetrics/customMetric-2999";
 
     CustomMetric actualResponse = client.getCustomMetric(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetCustomMetricRequest actualRequest = ((GetCustomMetricRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getCustomMetricExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-2999/customMetrics/customMetric-2999";
       client.getCustomMetric(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4906,29 +5590,34 @@ public class AnalyticsAdminServiceClientTest {
             .setName(DataRetentionSettingsName.of("[PROPERTY]").toString())
             .setResetUserDataOnNewActivity(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DataRetentionSettingsName name = DataRetentionSettingsName.of("[PROPERTY]");
 
     DataRetentionSettings actualResponse = client.getDataRetentionSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetDataRetentionSettingsRequest actualRequest =
-        ((GetDataRetentionSettingsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getDataRetentionSettingsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DataRetentionSettingsName name = DataRetentionSettingsName.of("[PROPERTY]");
@@ -4946,32 +5635,37 @@ public class AnalyticsAdminServiceClientTest {
             .setName(DataRetentionSettingsName.of("[PROPERTY]").toString())
             .setResetUserDataOnNewActivity(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-2463/dataRetentionSettings";
 
     DataRetentionSettings actualResponse = client.getDataRetentionSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetDataRetentionSettingsRequest actualRequest =
-        ((GetDataRetentionSettingsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getDataRetentionSettingsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-2463/dataRetentionSettings";
       client.getDataRetentionSettings(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -4986,35 +5680,47 @@ public class AnalyticsAdminServiceClientTest {
             .setName(DataRetentionSettingsName.of("[PROPERTY]").toString())
             .setResetUserDataOnNewActivity(true)
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    DataRetentionSettings dataRetentionSettings = DataRetentionSettings.newBuilder().build();
+    DataRetentionSettings dataRetentionSettings =
+        DataRetentionSettings.newBuilder()
+            .setName(DataRetentionSettingsName.of("[PROPERTY]").toString())
+            .setResetUserDataOnNewActivity(true)
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     DataRetentionSettings actualResponse =
         client.updateDataRetentionSettings(dataRetentionSettings, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateDataRetentionSettingsRequest actualRequest =
-        ((UpdateDataRetentionSettingsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(dataRetentionSettings, actualRequest.getDataRetentionSettings());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateDataRetentionSettingsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      DataRetentionSettings dataRetentionSettings = DataRetentionSettings.newBuilder().build();
+      DataRetentionSettings dataRetentionSettings =
+          DataRetentionSettings.newBuilder()
+              .setName(DataRetentionSettingsName.of("[PROPERTY]").toString())
+              .setResetUserDataOnNewActivity(true)
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataRetentionSettings(dataRetentionSettings, updateMask);
       Assert.fail("No exception raised");
@@ -5032,7 +5738,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
     DataStream dataStream = DataStream.newBuilder().build();
@@ -5040,22 +5746,27 @@ public class AnalyticsAdminServiceClientTest {
     DataStream actualResponse = client.createDataStream(parent, dataStream);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateDataStreamRequest actualRequest = ((CreateDataStreamRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(dataStream, actualRequest.getDataStream());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createDataStreamExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -5076,33 +5787,38 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
     DataStream dataStream = DataStream.newBuilder().build();
 
     DataStream actualResponse = client.createDataStream(parent, dataStream);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateDataStreamRequest actualRequest = ((CreateDataStreamRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(dataStream, actualRequest.getDataStream());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createDataStreamExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       DataStream dataStream = DataStream.newBuilder().build();
       client.createDataStream(parent, dataStream);
       Assert.fail("No exception raised");
@@ -5114,27 +5830,33 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteDataStreamTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DataStreamName name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
 
     client.deleteDataStream(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteDataStreamRequest actualRequest = ((DeleteDataStreamRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteDataStreamExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DataStreamName name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
@@ -5148,30 +5870,36 @@ public class AnalyticsAdminServiceClientTest {
   @Test
   public void deleteDataStreamTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-9806/dataStreams/dataStream-9806";
 
     client.deleteDataStream(name);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteDataStreamRequest actualRequest = ((DeleteDataStreamRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteDataStreamExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-9806/dataStreams/dataStream-9806";
       client.deleteDataStream(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -5188,33 +5916,50 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    DataStream dataStream = DataStream.newBuilder().build();
+    DataStream dataStream =
+        DataStream.newBuilder()
+            .setName(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     DataStream actualResponse = client.updateDataStream(dataStream, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateDataStreamRequest actualRequest = ((UpdateDataStreamRequest) actualRequests.get(0));
 
-    Assert.assertEquals(dataStream, actualRequest.getDataStream());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateDataStreamExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      DataStream dataStream = DataStream.newBuilder().build();
+      DataStream dataStream =
+          DataStream.newBuilder()
+              .setName(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+              .setDisplayName("displayName1714148973")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataStream(dataStream, updateMask);
       Assert.fail("No exception raised");
@@ -5231,7 +5976,7 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllDataStreams(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
 
@@ -5242,21 +5987,27 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDataStreamsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListDataStreamsRequest actualRequest = ((ListDataStreamsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listDataStreamsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       PropertyName parent = PropertyName.of("[PROPERTY]");
@@ -5275,9 +6026,9 @@ public class AnalyticsAdminServiceClientTest {
             .setNextPageToken("")
             .addAllDataStreams(Arrays.asList(responsesElement))
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "properties/propertie-2024";
 
     ListDataStreamsPagedResponse pagedListResponse = client.listDataStreams(parent);
 
@@ -5286,24 +6037,30 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getDataStreamsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListDataStreamsRequest actualRequest = ((ListDataStreamsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listDataStreamsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "properties/propertie-2024";
       client.listDataStreams(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -5320,28 +6077,34 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     DataStreamName name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
 
     DataStream actualResponse = client.getDataStream(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetDataStreamRequest actualRequest = ((GetDataStreamRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getDataStreamExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       DataStreamName name = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
@@ -5361,31 +6124,37 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
-    mockAnalyticsAdminService.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "properties/propertie-9806/dataStreams/dataStream-9806";
 
     DataStream actualResponse = client.getDataStream(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetDataStreamRequest actualRequest = ((GetDataStreamRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getDataStreamExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAnalyticsAdminService.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "properties/propertie-9806/dataStreams/dataStream-9806";
       client.getDataStream(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

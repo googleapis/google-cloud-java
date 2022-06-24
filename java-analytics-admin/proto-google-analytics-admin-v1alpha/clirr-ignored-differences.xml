@@ -107,4 +107,25 @@
     <className>com/google/analytics/admin/v1alpha/MeasurementProtocolSecretName*</className>
     <method>* *WebDataStream*(*)</method>
   </difference>
+
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/analytics/admin/v1alpha/CustomDimensionName</className>
+    <method>* of(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/analytics/admin/v1alpha/CustomDimensionName</className>
+    <method>* format(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/analytics/admin/v1alpha/CustomMetricName</className>
+    <method>* of(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7004</differenceType>
+    <className>com/google/analytics/admin/v1alpha/CustomMetricName</className>
+    <method>* format(*)</method>
+  </difference>
 </differences>

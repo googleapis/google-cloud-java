@@ -29,22 +29,30 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
 public class CustomDimensionName implements ResourceName {
-  private static final PathTemplate PROPERTY =
-      PathTemplate.createWithoutUrlEncoding("properties/{property}/customDimensions");
+  private static final PathTemplate PROPERTY_CUSTOM_DIMENSION =
+      PathTemplate.createWithoutUrlEncoding(
+          "properties/{property}/customDimensions/{custom_dimension}");
   private volatile Map<String, String> fieldValuesMap;
   private final String property;
+  private final String customDimension;
 
   @Deprecated
   protected CustomDimensionName() {
     property = null;
+    customDimension = null;
   }
 
   private CustomDimensionName(Builder builder) {
     property = Preconditions.checkNotNull(builder.getProperty());
+    customDimension = Preconditions.checkNotNull(builder.getCustomDimension());
   }
 
   public String getProperty() {
     return property;
+  }
+
+  public String getCustomDimension() {
+    return customDimension;
   }
 
   public static Builder newBuilder() {
@@ -55,12 +63,16 @@ public class CustomDimensionName implements ResourceName {
     return new Builder(this);
   }
 
-  public static CustomDimensionName of(String property) {
-    return newBuilder().setProperty(property).build();
+  public static CustomDimensionName of(String property, String customDimension) {
+    return newBuilder().setProperty(property).setCustomDimension(customDimension).build();
   }
 
-  public static String format(String property) {
-    return newBuilder().setProperty(property).build().toString();
+  public static String format(String property, String customDimension) {
+    return newBuilder()
+        .setProperty(property)
+        .setCustomDimension(customDimension)
+        .build()
+        .toString();
   }
 
   public static CustomDimensionName parse(String formattedString) {
@@ -68,9 +80,9 @@ public class CustomDimensionName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PROPERTY.validatedMatch(
+        PROPERTY_CUSTOM_DIMENSION.validatedMatch(
             formattedString, "CustomDimensionName.parse: formattedString not in valid format");
-    return of(matchMap.get("property"));
+    return of(matchMap.get("property"), matchMap.get("custom_dimension"));
   }
 
   public static List<CustomDimensionName> parseList(List<String> formattedStrings) {
@@ -94,7 +106,7 @@ public class CustomDimensionName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROPERTY.matches(formattedString);
+    return PROPERTY_CUSTOM_DIMENSION.matches(formattedString);
   }
 
   @Override
@@ -105,6 +117,9 @@ public class CustomDimensionName implements ResourceName {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
           if (property != null) {
             fieldMapBuilder.put("property", property);
+          }
+          if (customDimension != null) {
+            fieldMapBuilder.put("custom_dimension", customDimension);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -119,7 +134,8 @@ public class CustomDimensionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROPERTY.instantiate("property", property);
+    return PROPERTY_CUSTOM_DIMENSION.instantiate(
+        "property", property, "custom_dimension", customDimension);
   }
 
   @Override
@@ -129,7 +145,8 @@ public class CustomDimensionName implements ResourceName {
     }
     if (o != null || getClass() == o.getClass()) {
       CustomDimensionName that = ((CustomDimensionName) o);
-      return Objects.equals(this.property, that.property);
+      return Objects.equals(this.property, that.property)
+          && Objects.equals(this.customDimension, that.customDimension);
     }
     return false;
   }
@@ -139,12 +156,15 @@ public class CustomDimensionName implements ResourceName {
     int h = 1;
     h *= 1000003;
     h ^= Objects.hashCode(property);
+    h *= 1000003;
+    h ^= Objects.hashCode(customDimension);
     return h;
   }
 
-  /** Builder for properties/{property}/customDimensions. */
+  /** Builder for properties/{property}/customDimensions/{custom_dimension}. */
   public static class Builder {
     private String property;
+    private String customDimension;
 
     protected Builder() {}
 
@@ -152,13 +172,23 @@ public class CustomDimensionName implements ResourceName {
       return property;
     }
 
+    public String getCustomDimension() {
+      return customDimension;
+    }
+
     public Builder setProperty(String property) {
       this.property = property;
       return this;
     }
 
+    public Builder setCustomDimension(String customDimension) {
+      this.customDimension = customDimension;
+      return this;
+    }
+
     private Builder(CustomDimensionName customDimensionName) {
       this.property = customDimensionName.property;
+      this.customDimension = customDimensionName.customDimension;
     }
 
     public CustomDimensionName build() {
