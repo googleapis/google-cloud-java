@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-datalabeling</artifactId>
-      <version>0.123.0</version>
+      <version>0.123.1</version>
     </dependency>
 
     <dependency>
