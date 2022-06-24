@@ -100,6 +100,20 @@ import javax.annotation.Generated;
  * AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * AdaptationSettings adaptationSettings =
+ *     AdaptationSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             AdaptationSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * AdaptationClient adaptationClient = AdaptationClient.create(adaptationSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
