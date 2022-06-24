@@ -99,6 +99,20 @@ import javax.annotation.Generated;
  * ParticipantsClient participantsClient = ParticipantsClient.create(participantsSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * ParticipantsSettings participantsSettings =
+ *     ParticipantsSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             ParticipantsSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * ParticipantsClient participantsClient = ParticipantsClient.create(participantsSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
