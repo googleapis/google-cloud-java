@@ -497,6 +497,47 @@ public interface InputDataConfigOrBuilder
    */
   com.google.protobuf.ByteString getAnnotationSchemaUriBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Only applicable to Datasets that have SavedQueries.
+   * The ID of a SavedQuery (annotation set) under the Dataset specified by
+   * [dataset_id][google.cloud.aiplatform.v1.InputDataConfig.dataset_id] used for filtering Annotations for training.
+   * Only Annotations that are associated with this SavedQuery are used in
+   * respectively training. When used in conjunction with
+   * [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter], the Annotations used for training are filtered by
+   * both [saved_query_id][google.cloud.aiplatform.v1.InputDataConfig.saved_query_id] and [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter].
+   * Only one of [saved_query_id][google.cloud.aiplatform.v1.InputDataConfig.saved_query_id] and [annotation_schema_uri][google.cloud.aiplatform.v1.InputDataConfig.annotation_schema_uri] should be
+   * specified as both of them represent the same thing: problem type.
+   * </pre>
+   *
+   * <code>string saved_query_id = 7;</code>
+   *
+   * @return The savedQueryId.
+   */
+  java.lang.String getSavedQueryId();
+  /**
+   *
+   *
+   * <pre>
+   * Only applicable to Datasets that have SavedQueries.
+   * The ID of a SavedQuery (annotation set) under the Dataset specified by
+   * [dataset_id][google.cloud.aiplatform.v1.InputDataConfig.dataset_id] used for filtering Annotations for training.
+   * Only Annotations that are associated with this SavedQuery are used in
+   * respectively training. When used in conjunction with
+   * [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter], the Annotations used for training are filtered by
+   * both [saved_query_id][google.cloud.aiplatform.v1.InputDataConfig.saved_query_id] and [annotations_filter][google.cloud.aiplatform.v1.InputDataConfig.annotations_filter].
+   * Only one of [saved_query_id][google.cloud.aiplatform.v1.InputDataConfig.saved_query_id] and [annotation_schema_uri][google.cloud.aiplatform.v1.InputDataConfig.annotation_schema_uri] should be
+   * specified as both of them represent the same thing: problem type.
+   * </pre>
+   *
+   * <code>string saved_query_id = 7;</code>
+   *
+   * @return The bytes for savedQueryId.
+   */
+  com.google.protobuf.ByteString getSavedQueryIdBytes();
+
   public com.google.cloud.aiplatform.v1.InputDataConfig.SplitCase getSplitCase();
 
   public com.google.cloud.aiplatform.v1.InputDataConfig.DestinationCase getDestinationCase();

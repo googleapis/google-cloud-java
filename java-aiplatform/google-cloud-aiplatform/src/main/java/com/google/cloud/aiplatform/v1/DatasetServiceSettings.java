@@ -20,6 +20,7 @@ import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListAnnotation
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListDataItemsPagedResponse;
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListDatasetsPagedResponse;
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListSavedQueriesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -150,6 +151,13 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
   public PagedCallSettings<ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
       listDataItemsSettings() {
     return ((DatasetServiceStubSettings) getStubSettings()).listDataItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSavedQueries. */
+  public PagedCallSettings<
+          ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+      listSavedQueriesSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).listSavedQueriesSettings();
   }
 
   /** Returns the object with the settings used for calls to getAnnotationSpec. */
@@ -357,6 +365,13 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
             ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
         listDataItemsSettings() {
       return getStubSettingsBuilder().listDataItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSavedQueries. */
+    public PagedCallSettings.Builder<
+            ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+        listSavedQueriesSettings() {
+      return getStubSettingsBuilder().listSavedQueriesSettings();
     }
 
     /** Returns the builder for the settings used for calls to getAnnotationSpec. */

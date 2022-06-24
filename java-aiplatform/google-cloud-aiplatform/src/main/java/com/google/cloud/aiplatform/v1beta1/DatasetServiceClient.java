@@ -1216,6 +1216,167 @@ public class DatasetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists SavedQueries in a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   for (SavedQuery element : datasetServiceClient.listSavedQueries(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Dataset to list SavedQueries from. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSavedQueriesPagedResponse listSavedQueries(DatasetName parent) {
+    ListSavedQueriesRequest request =
+        ListSavedQueriesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSavedQueries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists SavedQueries in a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   String parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString();
+   *   for (SavedQuery element : datasetServiceClient.listSavedQueries(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Dataset to list SavedQueries from. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSavedQueriesPagedResponse listSavedQueries(String parent) {
+    ListSavedQueriesRequest request =
+        ListSavedQueriesRequest.newBuilder().setParent(parent).build();
+    return listSavedQueries(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists SavedQueries in a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   ListSavedQueriesRequest request =
+   *       ListSavedQueriesRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (SavedQuery element : datasetServiceClient.listSavedQueries(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSavedQueriesPagedResponse listSavedQueries(ListSavedQueriesRequest request) {
+    return listSavedQueriesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists SavedQueries in a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   ListSavedQueriesRequest request =
+   *       ListSavedQueriesRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<SavedQuery> future =
+   *       datasetServiceClient.listSavedQueriesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SavedQuery element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesPagedResponse>
+      listSavedQueriesPagedCallable() {
+    return stub.listSavedQueriesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists SavedQueries in a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   ListSavedQueriesRequest request =
+   *       ListSavedQueriesRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListSavedQueriesResponse response =
+   *         datasetServiceClient.listSavedQueriesCallable().call(request);
+   *     for (SavedQuery element : response.getSavedQueriesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
+      listSavedQueriesCallable() {
+    return stub.listSavedQueriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets an AnnotationSpec.
    *
    * <p>Sample code:
@@ -1991,6 +2152,83 @@ public class DatasetServiceClient implements BackgroundResource {
     protected ListDataItemsFixedSizeCollection createCollection(
         List<ListDataItemsPage> pages, int collectionSize) {
       return new ListDataItemsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSavedQueriesPagedResponse
+      extends AbstractPagedListResponse<
+          ListSavedQueriesRequest,
+          ListSavedQueriesResponse,
+          SavedQuery,
+          ListSavedQueriesPage,
+          ListSavedQueriesFixedSizeCollection> {
+
+    public static ApiFuture<ListSavedQueriesPagedResponse> createAsync(
+        PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery> context,
+        ApiFuture<ListSavedQueriesResponse> futureResponse) {
+      ApiFuture<ListSavedQueriesPage> futurePage =
+          ListSavedQueriesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSavedQueriesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSavedQueriesPagedResponse(ListSavedQueriesPage page) {
+      super(page, ListSavedQueriesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSavedQueriesPage
+      extends AbstractPage<
+          ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery, ListSavedQueriesPage> {
+
+    private ListSavedQueriesPage(
+        PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery> context,
+        ListSavedQueriesResponse response) {
+      super(context, response);
+    }
+
+    private static ListSavedQueriesPage createEmptyPage() {
+      return new ListSavedQueriesPage(null, null);
+    }
+
+    @Override
+    protected ListSavedQueriesPage createPage(
+        PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery> context,
+        ListSavedQueriesResponse response) {
+      return new ListSavedQueriesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSavedQueriesPage> createPageAsync(
+        PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery> context,
+        ApiFuture<ListSavedQueriesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSavedQueriesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSavedQueriesRequest,
+          ListSavedQueriesResponse,
+          SavedQuery,
+          ListSavedQueriesPage,
+          ListSavedQueriesFixedSizeCollection> {
+
+    private ListSavedQueriesFixedSizeCollection(
+        List<ListSavedQueriesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSavedQueriesFixedSizeCollection createEmptyCollection() {
+      return new ListSavedQueriesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSavedQueriesFixedSizeCollection createCollection(
+        List<ListSavedQueriesPage> pages, int collectionSize) {
+      return new ListSavedQueriesFixedSizeCollection(pages, collectionSize);
     }
   }
 

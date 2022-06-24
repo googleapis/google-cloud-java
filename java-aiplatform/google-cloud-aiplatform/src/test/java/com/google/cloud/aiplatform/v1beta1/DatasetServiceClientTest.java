@@ -20,6 +20,7 @@ import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListAnnot
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDataItemsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDatasetsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListSavedQueriesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -811,6 +812,94 @@ public class DatasetServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listDataItems(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSavedQueriesTest() throws Exception {
+    SavedQuery responsesElement = SavedQuery.newBuilder().build();
+    ListSavedQueriesResponse expectedResponse =
+        ListSavedQueriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSavedQueries(Arrays.asList(responsesElement))
+            .build();
+    mockDatasetService.addResponse(expectedResponse);
+
+    DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+
+    ListSavedQueriesPagedResponse pagedListResponse = client.listSavedQueries(parent);
+
+    List<SavedQuery> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSavedQueriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSavedQueriesRequest actualRequest = ((ListSavedQueriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSavedQueriesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+      client.listSavedQueries(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSavedQueriesTest2() throws Exception {
+    SavedQuery responsesElement = SavedQuery.newBuilder().build();
+    ListSavedQueriesResponse expectedResponse =
+        ListSavedQueriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSavedQueries(Arrays.asList(responsesElement))
+            .build();
+    mockDatasetService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSavedQueriesPagedResponse pagedListResponse = client.listSavedQueries(parent);
+
+    List<SavedQuery> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSavedQueriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSavedQueriesRequest actualRequest = ((ListSavedQueriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSavedQueriesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSavedQueries(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

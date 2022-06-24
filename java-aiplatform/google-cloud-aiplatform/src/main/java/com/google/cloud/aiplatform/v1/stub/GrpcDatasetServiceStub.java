@@ -20,6 +20,7 @@ import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListAnnotation
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListDataItemsPagedResponse;
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListDatasetsPagedResponse;
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListSavedQueriesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -48,6 +49,8 @@ import com.google.cloud.aiplatform.v1.ListDataItemsRequest;
 import com.google.cloud.aiplatform.v1.ListDataItemsResponse;
 import com.google.cloud.aiplatform.v1.ListDatasetsRequest;
 import com.google.cloud.aiplatform.v1.ListDatasetsResponse;
+import com.google.cloud.aiplatform.v1.ListSavedQueriesRequest;
+import com.google.cloud.aiplatform.v1.ListSavedQueriesResponse;
 import com.google.cloud.aiplatform.v1.UpdateDatasetRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -151,6 +154,17 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(ListDataItemsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListSavedQueriesRequest, ListSavedQueriesResponse>
+      listSavedQueriesMethodDescriptor =
+          MethodDescriptor.<ListSavedQueriesRequest, ListSavedQueriesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1.DatasetService/ListSavedQueries")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSavedQueriesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSavedQueriesResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetAnnotationSpecRequest, AnnotationSpec>
       getAnnotationSpecMethodDescriptor =
           MethodDescriptor.<GetAnnotationSpecRequest, AnnotationSpec>newBuilder()
@@ -240,6 +254,10 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
   private final UnaryCallable<ListDataItemsRequest, ListDataItemsResponse> listDataItemsCallable;
   private final UnaryCallable<ListDataItemsRequest, ListDataItemsPagedResponse>
       listDataItemsPagedCallable;
+  private final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
+      listSavedQueriesCallable;
+  private final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesPagedResponse>
+      listSavedQueriesPagedCallable;
   private final UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable;
   private final UnaryCallable<ListAnnotationsRequest, ListAnnotationsResponse>
       listAnnotationsCallable;
@@ -378,6 +396,17 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ListSavedQueriesRequest, ListSavedQueriesResponse>
+        listSavedQueriesTransportSettings =
+            GrpcCallSettings.<ListSavedQueriesRequest, ListSavedQueriesResponse>newBuilder()
+                .setMethodDescriptor(listSavedQueriesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecTransportSettings =
         GrpcCallSettings.<GetAnnotationSpecRequest, AnnotationSpec>newBuilder()
             .setMethodDescriptor(getAnnotationSpecMethodDescriptor)
@@ -505,6 +534,12 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
     this.listDataItemsPagedCallable =
         callableFactory.createPagedCallable(
             listDataItemsTransportSettings, settings.listDataItemsSettings(), clientContext);
+    this.listSavedQueriesCallable =
+        callableFactory.createUnaryCallable(
+            listSavedQueriesTransportSettings, settings.listSavedQueriesSettings(), clientContext);
+    this.listSavedQueriesPagedCallable =
+        callableFactory.createPagedCallable(
+            listSavedQueriesTransportSettings, settings.listSavedQueriesSettings(), clientContext);
     this.getAnnotationSpecCallable =
         callableFactory.createUnaryCallable(
             getAnnotationSpecTransportSettings,
@@ -618,6 +653,18 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
   public UnaryCallable<ListDataItemsRequest, ListDataItemsPagedResponse>
       listDataItemsPagedCallable() {
     return listDataItemsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
+      listSavedQueriesCallable() {
+    return listSavedQueriesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesPagedResponse>
+      listSavedQueriesPagedCallable() {
+    return listSavedQueriesPagedCallable;
   }
 
   @Override

@@ -20,6 +20,7 @@ import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListAnnot
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDataItemsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDatasetsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListSavedQueriesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -69,6 +70,9 @@ import com.google.cloud.aiplatform.v1beta1.ListDataItemsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListDataItemsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListDatasetsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListDatasetsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListSavedQueriesRequest;
+import com.google.cloud.aiplatform.v1beta1.ListSavedQueriesResponse;
+import com.google.cloud.aiplatform.v1beta1.SavedQuery;
 import com.google.cloud.aiplatform.v1beta1.UpdateDatasetRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -153,6 +157,9 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
   private final PagedCallSettings<
           ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
       listDataItemsSettings;
+  private final PagedCallSettings<
+          ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+      listSavedQueriesSettings;
   private final UnaryCallSettings<GetAnnotationSpecRequest, AnnotationSpec>
       getAnnotationSpecSettings;
   private final PagedCallSettings<
@@ -236,6 +243,45 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               return payload.getDataItemsList() == null
                   ? ImmutableList.<DataItem>of()
                   : payload.getDataItemsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery>
+      LIST_SAVED_QUERIES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSavedQueriesRequest injectToken(
+                ListSavedQueriesRequest payload, String token) {
+              return ListSavedQueriesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSavedQueriesRequest injectPageSize(
+                ListSavedQueriesRequest payload, int pageSize) {
+              return ListSavedQueriesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSavedQueriesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSavedQueriesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SavedQuery> extractResources(ListSavedQueriesResponse payload) {
+              return payload.getSavedQueriesList() == null
+                  ? ImmutableList.<SavedQuery>of()
+                  : payload.getSavedQueriesList();
             }
           };
 
@@ -349,6 +395,25 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           };
 
   private static final PagedListResponseFactory<
+          ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+      LIST_SAVED_QUERIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>() {
+            @Override
+            public ApiFuture<ListSavedQueriesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse> callable,
+                ListSavedQueriesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSavedQueriesResponse> futureResponse) {
+              PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SAVED_QUERIES_PAGE_STR_DESC, request, context);
+              return ListSavedQueriesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListAnnotationsRequest, ListAnnotationsResponse, ListAnnotationsPagedResponse>
       LIST_ANNOTATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -446,6 +511,13 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
   public PagedCallSettings<ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
       listDataItemsSettings() {
     return listDataItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSavedQueries. */
+  public PagedCallSettings<
+          ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+      listSavedQueriesSettings() {
+    return listSavedQueriesSettings;
   }
 
   /** Returns the object with the settings used for calls to getAnnotationSpec. */
@@ -574,6 +646,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     exportDataSettings = settingsBuilder.exportDataSettings().build();
     exportDataOperationSettings = settingsBuilder.exportDataOperationSettings().build();
     listDataItemsSettings = settingsBuilder.listDataItemsSettings().build();
+    listSavedQueriesSettings = settingsBuilder.listSavedQueriesSettings().build();
     getAnnotationSpecSettings = settingsBuilder.getAnnotationSpecSettings().build();
     listAnnotationsSettings = settingsBuilder.listAnnotationsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
@@ -610,6 +683,9 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     private final PagedCallSettings.Builder<
             ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
         listDataItemsSettings;
+    private final PagedCallSettings.Builder<
+            ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+        listSavedQueriesSettings;
     private final UnaryCallSettings.Builder<GetAnnotationSpecRequest, AnnotationSpec>
         getAnnotationSpecSettings;
     private final PagedCallSettings.Builder<
@@ -672,6 +748,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       exportDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       exportDataOperationSettings = OperationCallSettings.newBuilder();
       listDataItemsSettings = PagedCallSettings.newBuilder(LIST_DATA_ITEMS_PAGE_STR_FACT);
+      listSavedQueriesSettings = PagedCallSettings.newBuilder(LIST_SAVED_QUERIES_PAGE_STR_FACT);
       getAnnotationSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAnnotationsSettings = PagedCallSettings.newBuilder(LIST_ANNOTATIONS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
@@ -690,6 +767,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               importDataSettings,
               exportDataSettings,
               listDataItemsSettings,
+              listSavedQueriesSettings,
               getAnnotationSpecSettings,
               listAnnotationsSettings,
               listLocationsSettings,
@@ -715,6 +793,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
       exportDataSettings = settings.exportDataSettings.toBuilder();
       exportDataOperationSettings = settings.exportDataOperationSettings.toBuilder();
       listDataItemsSettings = settings.listDataItemsSettings.toBuilder();
+      listSavedQueriesSettings = settings.listSavedQueriesSettings.toBuilder();
       getAnnotationSpecSettings = settings.getAnnotationSpecSettings.toBuilder();
       listAnnotationsSettings = settings.listAnnotationsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
@@ -733,6 +812,7 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
               importDataSettings,
               exportDataSettings,
               listDataItemsSettings,
+              listSavedQueriesSettings,
               getAnnotationSpecSettings,
               listAnnotationsSettings,
               listLocationsSettings,
@@ -795,6 +875,11 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
           .listDataItemsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listSavedQueriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getAnnotationSpecSettings()
@@ -1023,6 +1108,13 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
             ListDataItemsRequest, ListDataItemsResponse, ListDataItemsPagedResponse>
         listDataItemsSettings() {
       return listDataItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSavedQueries. */
+    public PagedCallSettings.Builder<
+            ListSavedQueriesRequest, ListSavedQueriesResponse, ListSavedQueriesPagedResponse>
+        listSavedQueriesSettings() {
+      return listSavedQueriesSettings;
     }
 
     /** Returns the builder for the settings used for calls to getAnnotationSpec. */

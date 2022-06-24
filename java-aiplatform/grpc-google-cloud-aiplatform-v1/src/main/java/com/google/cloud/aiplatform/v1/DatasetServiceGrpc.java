@@ -390,6 +390,53 @@ public final class DatasetServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ListSavedQueriesRequest,
+          com.google.cloud.aiplatform.v1.ListSavedQueriesResponse>
+      getListSavedQueriesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSavedQueries",
+      requestType = com.google.cloud.aiplatform.v1.ListSavedQueriesRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.ListSavedQueriesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ListSavedQueriesRequest,
+          com.google.cloud.aiplatform.v1.ListSavedQueriesResponse>
+      getListSavedQueriesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.ListSavedQueriesRequest,
+            com.google.cloud.aiplatform.v1.ListSavedQueriesResponse>
+        getListSavedQueriesMethod;
+    if ((getListSavedQueriesMethod = DatasetServiceGrpc.getListSavedQueriesMethod) == null) {
+      synchronized (DatasetServiceGrpc.class) {
+        if ((getListSavedQueriesMethod = DatasetServiceGrpc.getListSavedQueriesMethod) == null) {
+          DatasetServiceGrpc.getListSavedQueriesMethod =
+              getListSavedQueriesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.ListSavedQueriesRequest,
+                          com.google.cloud.aiplatform.v1.ListSavedQueriesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSavedQueries"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ListSavedQueriesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ListSavedQueriesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatasetServiceMethodDescriptorSupplier("ListSavedQueries"))
+                      .build();
+        }
+      }
+    }
+    return getListSavedQueriesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.GetAnnotationSpecRequest,
           com.google.cloud.aiplatform.v1.AnnotationSpec>
       getGetAnnotationSpecMethod;
@@ -648,6 +695,21 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Lists SavedQueries in a Dataset.
+     * </pre>
+     */
+    public void listSavedQueries(
+        com.google.cloud.aiplatform.v1.ListSavedQueriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListSavedQueriesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSavedQueriesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an AnnotationSpec.
      * </pre>
      */
@@ -727,6 +789,13 @@ public final class DatasetServiceGrpc {
                       com.google.cloud.aiplatform.v1.ListDataItemsRequest,
                       com.google.cloud.aiplatform.v1.ListDataItemsResponse>(
                       this, METHODID_LIST_DATA_ITEMS)))
+          .addMethod(
+              getListSavedQueriesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.aiplatform.v1.ListSavedQueriesRequest,
+                      com.google.cloud.aiplatform.v1.ListSavedQueriesResponse>(
+                      this, METHODID_LIST_SAVED_QUERIES)))
           .addMethod(
               getGetAnnotationSpecMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -884,6 +953,23 @@ public final class DatasetServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDataItemsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists SavedQueries in a Dataset.
+     * </pre>
+     */
+    public void listSavedQueries(
+        com.google.cloud.aiplatform.v1.ListSavedQueriesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListSavedQueriesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSavedQueriesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1051,6 +1137,19 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Lists SavedQueries in a Dataset.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListSavedQueriesResponse listSavedQueries(
+        com.google.cloud.aiplatform.v1.ListSavedQueriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSavedQueriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an AnnotationSpec.
      * </pre>
      */
@@ -1206,6 +1305,20 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Lists SavedQueries in a Dataset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.ListSavedQueriesResponse>
+        listSavedQueries(com.google.cloud.aiplatform.v1.ListSavedQueriesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSavedQueriesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an AnnotationSpec.
      * </pre>
      */
@@ -1239,8 +1352,9 @@ public final class DatasetServiceGrpc {
   private static final int METHODID_IMPORT_DATA = 5;
   private static final int METHODID_EXPORT_DATA = 6;
   private static final int METHODID_LIST_DATA_ITEMS = 7;
-  private static final int METHODID_GET_ANNOTATION_SPEC = 8;
-  private static final int METHODID_LIST_ANNOTATIONS = 9;
+  private static final int METHODID_LIST_SAVED_QUERIES = 8;
+  private static final int METHODID_GET_ANNOTATION_SPEC = 9;
+  private static final int METHODID_LIST_ANNOTATIONS = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1301,6 +1415,12 @@ public final class DatasetServiceGrpc {
           serviceImpl.listDataItems(
               (com.google.cloud.aiplatform.v1.ListDataItemsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListDataItemsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SAVED_QUERIES:
+          serviceImpl.listSavedQueries(
+              (com.google.cloud.aiplatform.v1.ListSavedQueriesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListSavedQueriesResponse>)
                   responseObserver);
           break;
         case METHODID_GET_ANNOTATION_SPEC:
@@ -1387,6 +1507,7 @@ public final class DatasetServiceGrpc {
                       .addMethod(getImportDataMethod())
                       .addMethod(getExportDataMethod())
                       .addMethod(getListDataItemsMethod())
+                      .addMethod(getListSavedQueriesMethod())
                       .addMethod(getGetAnnotationSpecMethod())
                       .addMethod(getListAnnotationsMethod())
                       .build();

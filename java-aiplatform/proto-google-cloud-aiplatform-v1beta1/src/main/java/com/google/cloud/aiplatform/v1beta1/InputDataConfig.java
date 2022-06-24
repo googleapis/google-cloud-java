@@ -42,6 +42,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     datasetId_ = "";
     annotationsFilter_ = "";
     annotationSchemaUri_ = "";
+    savedQueryId_ = "";
   }
 
   @java.lang.Override
@@ -155,6 +156,13 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
               java.lang.String s = input.readStringRequireUtf8();
 
               annotationsFilter_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              savedQueryId_ = s;
               break;
             }
           case 66:
@@ -1021,6 +1029,71 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int SAVED_QUERY_ID_FIELD_NUMBER = 7;
+  private volatile java.lang.Object savedQueryId_;
+  /**
+   *
+   *
+   * <pre>
+   * Only applicable to Datasets that have SavedQueries.
+   * The ID of a SavedQuery (annotation set) under the Dataset specified by
+   * [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id] used for filtering Annotations for training.
+   * Only Annotations that are associated with this SavedQuery are used in
+   * respectively training. When used in conjunction with
+   * [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter], the Annotations used for training are filtered by
+   * both [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter].
+   * Only one of [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotation_schema_uri][google.cloud.aiplatform.v1beta1.InputDataConfig.annotation_schema_uri] should be
+   * specified as both of them represent the same thing: problem type.
+   * </pre>
+   *
+   * <code>string saved_query_id = 7;</code>
+   *
+   * @return The savedQueryId.
+   */
+  @java.lang.Override
+  public java.lang.String getSavedQueryId() {
+    java.lang.Object ref = savedQueryId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      savedQueryId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Only applicable to Datasets that have SavedQueries.
+   * The ID of a SavedQuery (annotation set) under the Dataset specified by
+   * [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id] used for filtering Annotations for training.
+   * Only Annotations that are associated with this SavedQuery are used in
+   * respectively training. When used in conjunction with
+   * [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter], the Annotations used for training are filtered by
+   * both [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter].
+   * Only one of [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotation_schema_uri][google.cloud.aiplatform.v1beta1.InputDataConfig.annotation_schema_uri] should be
+   * specified as both of them represent the same thing: problem type.
+   * </pre>
+   *
+   * <code>string saved_query_id = 7;</code>
+   *
+   * @return The bytes for savedQueryId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSavedQueryIdBytes() {
+    java.lang.Object ref = savedQueryId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      savedQueryId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1052,6 +1125,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationsFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, annotationsFilter_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(savedQueryId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, savedQueryId_);
     }
     if (destinationCase_ == 8) {
       output.writeMessage(8, (com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_);
@@ -1101,6 +1177,9 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(annotationsFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, annotationsFilter_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(savedQueryId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, savedQueryId_);
+    }
     if (destinationCase_ == 8) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1138,6 +1217,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     if (!getDatasetId().equals(other.getDatasetId())) return false;
     if (!getAnnotationsFilter().equals(other.getAnnotationsFilter())) return false;
     if (!getAnnotationSchemaUri().equals(other.getAnnotationSchemaUri())) return false;
+    if (!getSavedQueryId().equals(other.getSavedQueryId())) return false;
     if (!getSplitCase().equals(other.getSplitCase())) return false;
     switch (splitCase_) {
       case 2:
@@ -1186,6 +1266,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getAnnotationsFilter().hashCode();
     hash = (37 * hash) + ANNOTATION_SCHEMA_URI_FIELD_NUMBER;
     hash = (53 * hash) + getAnnotationSchemaUri().hashCode();
+    hash = (37 * hash) + SAVED_QUERY_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getSavedQueryId().hashCode();
     switch (splitCase_) {
       case 2:
         hash = (37 * hash) + FRACTION_SPLIT_FIELD_NUMBER;
@@ -1374,6 +1456,8 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
 
       annotationSchemaUri_ = "";
 
+      savedQueryId_ = "";
+
       splitCase_ = 0;
       split_ = null;
       destinationCase_ = 0;
@@ -1457,6 +1541,7 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       result.datasetId_ = datasetId_;
       result.annotationsFilter_ = annotationsFilter_;
       result.annotationSchemaUri_ = annotationSchemaUri_;
+      result.savedQueryId_ = savedQueryId_;
       result.splitCase_ = splitCase_;
       result.destinationCase_ = destinationCase_;
       onBuilt();
@@ -1519,6 +1604,10 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getAnnotationSchemaUri().isEmpty()) {
         annotationSchemaUri_ = other.annotationSchemaUri_;
+        onChanged();
+      }
+      if (!other.getSavedQueryId().isEmpty()) {
+        savedQueryId_ = other.savedQueryId_;
         onChanged();
       }
       switch (other.getSplitCase()) {
@@ -3854,6 +3943,152 @@ public final class InputDataConfig extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
 
       annotationSchemaUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object savedQueryId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Only applicable to Datasets that have SavedQueries.
+     * The ID of a SavedQuery (annotation set) under the Dataset specified by
+     * [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id] used for filtering Annotations for training.
+     * Only Annotations that are associated with this SavedQuery are used in
+     * respectively training. When used in conjunction with
+     * [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter], the Annotations used for training are filtered by
+     * both [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter].
+     * Only one of [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotation_schema_uri][google.cloud.aiplatform.v1beta1.InputDataConfig.annotation_schema_uri] should be
+     * specified as both of them represent the same thing: problem type.
+     * </pre>
+     *
+     * <code>string saved_query_id = 7;</code>
+     *
+     * @return The savedQueryId.
+     */
+    public java.lang.String getSavedQueryId() {
+      java.lang.Object ref = savedQueryId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        savedQueryId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only applicable to Datasets that have SavedQueries.
+     * The ID of a SavedQuery (annotation set) under the Dataset specified by
+     * [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id] used for filtering Annotations for training.
+     * Only Annotations that are associated with this SavedQuery are used in
+     * respectively training. When used in conjunction with
+     * [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter], the Annotations used for training are filtered by
+     * both [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter].
+     * Only one of [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotation_schema_uri][google.cloud.aiplatform.v1beta1.InputDataConfig.annotation_schema_uri] should be
+     * specified as both of them represent the same thing: problem type.
+     * </pre>
+     *
+     * <code>string saved_query_id = 7;</code>
+     *
+     * @return The bytes for savedQueryId.
+     */
+    public com.google.protobuf.ByteString getSavedQueryIdBytes() {
+      java.lang.Object ref = savedQueryId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        savedQueryId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only applicable to Datasets that have SavedQueries.
+     * The ID of a SavedQuery (annotation set) under the Dataset specified by
+     * [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id] used for filtering Annotations for training.
+     * Only Annotations that are associated with this SavedQuery are used in
+     * respectively training. When used in conjunction with
+     * [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter], the Annotations used for training are filtered by
+     * both [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter].
+     * Only one of [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotation_schema_uri][google.cloud.aiplatform.v1beta1.InputDataConfig.annotation_schema_uri] should be
+     * specified as both of them represent the same thing: problem type.
+     * </pre>
+     *
+     * <code>string saved_query_id = 7;</code>
+     *
+     * @param value The savedQueryId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSavedQueryId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      savedQueryId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only applicable to Datasets that have SavedQueries.
+     * The ID of a SavedQuery (annotation set) under the Dataset specified by
+     * [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id] used for filtering Annotations for training.
+     * Only Annotations that are associated with this SavedQuery are used in
+     * respectively training. When used in conjunction with
+     * [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter], the Annotations used for training are filtered by
+     * both [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter].
+     * Only one of [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotation_schema_uri][google.cloud.aiplatform.v1beta1.InputDataConfig.annotation_schema_uri] should be
+     * specified as both of them represent the same thing: problem type.
+     * </pre>
+     *
+     * <code>string saved_query_id = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSavedQueryId() {
+
+      savedQueryId_ = getDefaultInstance().getSavedQueryId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Only applicable to Datasets that have SavedQueries.
+     * The ID of a SavedQuery (annotation set) under the Dataset specified by
+     * [dataset_id][google.cloud.aiplatform.v1beta1.InputDataConfig.dataset_id] used for filtering Annotations for training.
+     * Only Annotations that are associated with this SavedQuery are used in
+     * respectively training. When used in conjunction with
+     * [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter], the Annotations used for training are filtered by
+     * both [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotations_filter][google.cloud.aiplatform.v1beta1.InputDataConfig.annotations_filter].
+     * Only one of [saved_query_id][google.cloud.aiplatform.v1beta1.InputDataConfig.saved_query_id] and [annotation_schema_uri][google.cloud.aiplatform.v1beta1.InputDataConfig.annotation_schema_uri] should be
+     * specified as both of them represent the same thing: problem type.
+     * </pre>
+     *
+     * <code>string saved_query_id = 7;</code>
+     *
+     * @param value The bytes for savedQueryId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSavedQueryIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      savedQueryId_ = value;
       onChanged();
       return this;
     }

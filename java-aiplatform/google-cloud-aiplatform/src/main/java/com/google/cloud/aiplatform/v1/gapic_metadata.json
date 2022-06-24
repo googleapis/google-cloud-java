@@ -46,6 +46,9 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "ListSavedQueries": {
+              "methods": ["listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueriesPagedCallable", "listSavedQueriesCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },

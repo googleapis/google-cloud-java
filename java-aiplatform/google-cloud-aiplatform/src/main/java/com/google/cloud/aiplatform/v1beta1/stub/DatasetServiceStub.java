@@ -20,6 +20,7 @@ import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListAnnot
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDataItemsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDatasetsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListSavedQueriesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -45,6 +46,8 @@ import com.google.cloud.aiplatform.v1beta1.ListDataItemsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListDataItemsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListDatasetsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListDatasetsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListSavedQueriesRequest;
+import com.google.cloud.aiplatform.v1beta1.ListSavedQueriesResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateDatasetRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -133,6 +136,16 @@ public abstract class DatasetServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListDataItemsRequest, ListDataItemsResponse> listDataItemsCallable() {
     throw new UnsupportedOperationException("Not implemented: listDataItemsCallable()");
+  }
+
+  public UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesPagedResponse>
+      listSavedQueriesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSavedQueriesPagedCallable()");
+  }
+
+  public UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
+      listSavedQueriesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSavedQueriesCallable()");
   }
 
   public UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {
