@@ -19,6 +19,7 @@ package com.google.cloud.channel.v1;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -30,7 +31,6 @@ import com.google.cloud.channel.v1.stub.CloudChannelServiceStub;
 import com.google.cloud.channel.v1.stub.CloudChannelServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -120,13 +120,29 @@ import javax.annotation.Generated;
  *     CloudChannelServiceClient.create(cloudChannelServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * CloudChannelServiceSettings cloudChannelServiceSettings =
+ *     CloudChannelServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             CloudChannelServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * CloudChannelServiceClient cloudChannelServiceClient =
+ *     CloudChannelServiceClient.create(cloudChannelServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class CloudChannelServiceClient implements BackgroundResource {
   private final CloudChannelServiceSettings settings;
   private final CloudChannelServiceStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of CloudChannelServiceClient with default settings. */
   public static final CloudChannelServiceClient create() throws IOException {
@@ -158,13 +174,17 @@ public class CloudChannelServiceClient implements BackgroundResource {
   protected CloudChannelServiceClient(CloudChannelServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((CloudChannelServiceStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected CloudChannelServiceClient(CloudChannelServiceStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final CloudChannelServiceSettings getSettings() {
@@ -179,8 +199,16 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
