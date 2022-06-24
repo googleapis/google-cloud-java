@@ -16,7 +16,6 @@
 
 package com.google.cloud.debugger.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.debugger.v2.stub.Controller2Stub;
@@ -113,6 +112,20 @@ import javax.annotation.Generated;
  * Controller2Client controller2Client = Controller2Client.create(controller2Settings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * Controller2Settings controller2Settings =
+ *     Controller2Settings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             Controller2Settings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * Controller2Client controller2Client = Controller2Client.create(controller2Settings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
@@ -137,7 +150,6 @@ public class Controller2Client implements BackgroundResource {
    * Constructs an instance of Controller2Client, using the given stub for making calls. This is for
    * advanced usage - prefer using create(Controller2Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final Controller2Client create(Controller2Stub stub) {
     return new Controller2Client(stub);
   }
@@ -152,7 +164,6 @@ public class Controller2Client implements BackgroundResource {
     this.stub = ((Controller2StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected Controller2Client(Controller2Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -162,7 +173,6 @@ public class Controller2Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public Controller2Stub getStub() {
     return stub;
   }

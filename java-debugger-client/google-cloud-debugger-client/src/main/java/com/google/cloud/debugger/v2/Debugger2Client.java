@@ -16,7 +16,6 @@
 
 package com.google.cloud.debugger.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.debugger.v2.stub.Debugger2Stub;
@@ -113,6 +112,20 @@ import javax.annotation.Generated;
  * Debugger2Client debugger2Client = Debugger2Client.create(debugger2Settings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * Debugger2Settings debugger2Settings =
+ *     Debugger2Settings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             Debugger2Settings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * Debugger2Client debugger2Client = Debugger2Client.create(debugger2Settings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
@@ -137,7 +150,6 @@ public class Debugger2Client implements BackgroundResource {
    * Constructs an instance of Debugger2Client, using the given stub for making calls. This is for
    * advanced usage - prefer using create(Debugger2Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final Debugger2Client create(Debugger2Stub stub) {
     return new Debugger2Client(stub);
   }
@@ -151,7 +163,6 @@ public class Debugger2Client implements BackgroundResource {
     this.stub = ((Debugger2StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected Debugger2Client(Debugger2Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -161,7 +172,6 @@ public class Debugger2Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public Debugger2Stub getStub() {
     return stub;
   }

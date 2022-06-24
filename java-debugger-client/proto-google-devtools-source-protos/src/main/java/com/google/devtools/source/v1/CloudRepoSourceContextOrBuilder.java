@@ -105,7 +105,7 @@ public interface CloudRepoSourceContextOrBuilder
    * <code>string alias_name = 3 [deprecated = true];</code>
    *
    * @deprecated google.devtools.source.v1.CloudRepoSourceContext.alias_name is deprecated. See
-   *     google/devtools/source/v1/source_context.proto;l=97
+   *     google/devtools/source/v1/source_context.proto;l=95
    * @return Whether the aliasName field is set.
    */
   @java.lang.Deprecated
@@ -120,7 +120,7 @@ public interface CloudRepoSourceContextOrBuilder
    * <code>string alias_name = 3 [deprecated = true];</code>
    *
    * @deprecated google.devtools.source.v1.CloudRepoSourceContext.alias_name is deprecated. See
-   *     google/devtools/source/v1/source_context.proto;l=97
+   *     google/devtools/source/v1/source_context.proto;l=95
    * @return The aliasName.
    */
   @java.lang.Deprecated
@@ -135,7 +135,7 @@ public interface CloudRepoSourceContextOrBuilder
    * <code>string alias_name = 3 [deprecated = true];</code>
    *
    * @deprecated google.devtools.source.v1.CloudRepoSourceContext.alias_name is deprecated. See
-   *     google/devtools/source/v1/source_context.proto;l=97
+   *     google/devtools/source/v1/source_context.proto;l=95
    * @return The bytes for aliasName.
    */
   @java.lang.Deprecated
