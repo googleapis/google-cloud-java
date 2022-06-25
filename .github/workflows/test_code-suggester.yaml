@@ -1,7 +1,7 @@
 name: Googleapis Sync (Hermetic Build)
 on:
   workflow_dispatch:
-  # pull_request:
+  pull_request:
 jobs:
   create-pull-request:
     name: Create pull request for recent googleapis changes
@@ -10,15 +10,33 @@ jobs:
     - uses: actions/checkout@v3
       with:
         repository: 'googleapis/google-cloud-java'
-    - run: |
+    - name: Prepare workspace
+      run: |
         mkdir -p "${WORKSPACE}"
-        .kokoro/sync_with_googleapis.sh monorepo_script_output
+        git clone --quiet --depth 1 --branch monorepo_script_output \
+            https://github.com/googleapis/google-cloud-java \
+            "${WORKSPACE}/google-cloud-java"
+        cd "${WORKSPACE}/google-cloud-java"
       env:
         WORKSPACE: /tmp/googleapis-sync
         GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
-    # To make some change so that code-suggester can create a new commit.
-    - run: |
+    - name: Commit some changes to monorepo_script_output-googleapis-sync
+      run: |
+        echo "Hello, monorepo!" >> README.md
+        git config user.email "yoshi-code-bot[bot]@users.noreply.github.com"
+        git config user.name "yoshi-code-bot"
+        git checkout -b monorepo_script_output-googleapis-sync
+        git add --all
+        git commit -m 'chore: adding a line to README.md before code-suggester'
+      working-directory: /tmp/googleapis-sync/google-cloud-java
+    - name: Create some changes for code-suggester
+      run: |
         date > /tmp/googleapis-sync/google-cloud-java/googleapis-sync.timestamp.txt
+    - name: Check any diff
+      run: |
+        git status
+        git diff
+      working-directory: /tmp/googleapis-sync/google-cloud-java
     - uses: googleapis/code-suggester@v3
       env:
         ACCESS_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
