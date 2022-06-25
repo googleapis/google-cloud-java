@@ -1,4 +1,4 @@
-name: Code Suggester TEst
+name: GH comand test
 on:
   workflow_dispatch:
 #  pull_request:
@@ -26,7 +26,7 @@ jobs:
         git config user.email "yoshi-code-bot[bot]@users.noreply.github.com"
         git config user.name "yoshi-code-bot"
         git add --all
-        # git commit -m 'chore: adding a line to README.md before code-suggester'
+        git commit -m 'chore: adding a line to README.md before code-suggester'
       working-directory: /tmp/googleapis-sync/google-cloud-java
     - name: Create some changes for code-suggester
       run: |
@@ -38,20 +38,12 @@ jobs:
         git status
         git diff
       working-directory: /tmp/googleapis-sync/google-cloud-java
-    - uses: googleapis/code-suggester@v3
+    - name: Prepare workspace
+      run: |
+        gh pr create --title='chore: googleapis change propagation via hermetic build' \
+            --description='googleapis change propagation via hermetic build' \
+            --base=monorepo_script_output
       env:
-        ACCESS_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
-      with:
-        command: pr
-        upstream_owner: googleapis
-        upstream_repo: google-cloud-java
-        description: 'googleapis change propagation via hermetic build'
-        title: 'chore: googleapis change propagation via hermetic build'
-        message: 'chore: googleapis change propagation mark'
-        branch: my-branch
-        # Upon main branch cutover, change it to main
-        primary: monorepo_script_output
-        force: true
-        # This needs to match the 'google-cloud-java' directory in the
-        #  WORKSPACE in the previous step
-        git_dir: /tmp/googleapis-sync/google-cloud-java
+        WORKSPACE: /tmp/googleapis-sync/google-cloud-java
+        GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+
