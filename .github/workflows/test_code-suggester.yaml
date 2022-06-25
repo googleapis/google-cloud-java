@@ -48,8 +48,7 @@ jobs:
         description: 'googleapis change propagation via hermetic build'
         title: 'chore: googleapis change propagation via hermetic build'
         message: 'chore: googleapis change propagation mark'
-        # Upon main branch cutover, change it to 'googleapis-sync'
-        # branch: monorepo_script_output
+        branch: my-branch
         # Upon main branch cutover, change it to main
         primary: monorepo_script_output
         force: true
