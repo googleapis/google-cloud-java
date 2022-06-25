@@ -16,15 +16,17 @@ fi
 
 BASEDIR=$(dirname "$0")
 
-BAZEL_VERSION=5.2.0
+if [ -z "${WORKSPACE}" ]; then
+  export WORKSPACE=$(mktemp -d -t workspace-XXXXX)
+fi
 
-WORKSPACE=$(mktemp -d -t workspace-XXXXX)
 export GOOGLEAPIS_DIR="${WORKSPACE}/googleapis"
 export GOOGLE_CLOUD_JAVA_DIR="${WORKSPACE}/google-cloud-java"
 export GOOGLEAPIS_COMMIT_FILE=googleapis_commit.txt
 
 pushd "$WORKSPACE"
 
+BAZEL_VERSION=5.2.0
 BAZEL_DOWNLOAD_URL="https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-linux-x86_64"
 curl "${BAZEL_DOWNLOAD_URL}" --output bazel
 chmod 755 bazel
@@ -43,22 +45,22 @@ else
   echo "$(date): start_commit: ${start_commit}"
 fi
 
-branch_name="googleapis-sync-${WORKSPACE}"
+branch_name="googleapis-sync-$(date '+%Y%m%d-%H%M')"
 git checkout -b "${branch_name}"
 
 echo "$(date): Creating commits based on googleapis's ${start_commit} to origin/master"
 
 "${BASEDIR}/create_commits_from_googleapis_commits.sh" "${start_commit}" origin/master
 
-echo "$(date): Pushing commits to remote branch ${branch_name}"
+# echo "$(date): Pushing commits to remote branch ${branch_name}"
 
-git push -u origin "${branch_name}"
+# git push -u origin "${branch_name}"
 
-echo "$(date): Creating pull request"
+# echo "$(date): Creating pull request"
 
 # This reads GITHUB_TOKEN environment variable
-gh pr create --title="googleapis sync: $(date '+%Y%m%d %H:%M')" \
-    --base "${pr_destination}"
+#gh pr create --title="googleapis sync: $(date '+%Y%m%d %H:%M')" \
+#    --base "${pr_destination}"
 
 
 
