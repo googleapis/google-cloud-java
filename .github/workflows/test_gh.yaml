@@ -53,7 +53,7 @@ jobs:
         gh pr create --title='chore: googleapis change propagation via hermetic build' \
             --body='googleapis change propagation via hermetic build' \
             --base=monorepo_script_output \
-            --head=origin_with_auth:monorepo_googleapis_change
+            --head=monorepo_googleapis_change
       working-directory: /tmp/googleapis-sync/google-cloud-java
       env:
         GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
