@@ -25,6 +25,9 @@ jobs:
         echo "Hello, monorepo!" >> README.md
         git config user.email "yoshi-code-bot[bot]@users.noreply.github.com"
         git config user.name "yoshi-code-bot"
+        
+        git checkout -b monorepo_googleapis_change
+        
         git add --all
         git commit -m 'chore: adding a line to README.md before code-suggester'
       working-directory: /tmp/googleapis-sync/google-cloud-java
@@ -38,11 +41,19 @@ jobs:
         git status
         git diff
       working-directory: /tmp/googleapis-sync/google-cloud-java
-    - name: Prepare workspace
+    - name: Push changes to remote
+      run: |
+        git remote add origin_with_auth https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+        git push -f --set-upstream origin_with_auth monorepo_googleapis_change
+      working-directory: /tmp/googleapis-sync/google-cloud-java
+      env:
+        GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+    - name: Create pull request
       run: |
         gh pr create --title='chore: googleapis change propagation via hermetic build' \
             --body='googleapis change propagation via hermetic build' \
-            --base=monorepo_script_output
+            --base=monorepo_script_output \
+            --head=origin_with_auth:monorepo_googleapis_change
       working-directory: /tmp/googleapis-sync/google-cloud-java
       env:
         GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
