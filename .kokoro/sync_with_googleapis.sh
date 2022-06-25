@@ -32,8 +32,8 @@ curl "${BAZEL_DOWNLOAD_URL}" --output bazel
 chmod 755 bazel
 export PATH=$WORKSPACE:$PATH
 
-git clone --branch master https://github.com/googleapis/googleapis
-git clone --branch "${pr_destination}" https://github.com/googleapis/google-cloud-java
+git clone --quiet --branch master https://github.com/googleapis/googleapis
+git clone --quiet --branch "${pr_destination}" https://github.com/googleapis/google-cloud-java
 
 pushd "${GOOGLE_CLOUD_JAVA_DIR}"
 start_commit=$(cat "${GOOGLEAPIS_COMMIT_FILE}")
@@ -45,7 +45,7 @@ else
   echo "$(date): start_commit: ${start_commit}"
 fi
 
-branch_name="googleapis-sync-$(date '+%Y%m%d-%H%M')"
+branch_name="monorepo_script_output-googleapis-sync"
 git checkout -b "${branch_name}"
 
 echo "$(date): Creating commits based on googleapis's ${start_commit} to origin/master"
