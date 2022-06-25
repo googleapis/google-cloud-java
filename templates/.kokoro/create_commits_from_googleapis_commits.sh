@@ -9,6 +9,7 @@
 # monorepo that correspond to the googleapis commits in between the
 # two commits.
 
+# The following environment variables are needed. The values are examples:
 # export GOOGLE_CLOUD_JAVA_DIR=$HOME/google-cloud-java-subject
 # export GOOGLEAPIS_DIR=$HOME/googleapis
 # export GOOGLEAPIS_COMMIT_FILE=googleapis_commit.txt
@@ -48,9 +49,8 @@ if [ -z "${GOOGLEAPIS_COMMIT_FILE}" ]; then
 fi
 
 echo "Operating in ${GOOGLE_CLOUD_JAVA_DIR}"
+
 cd "$GOOGLE_CLOUD_JAVA_DIR"
-git config user.email "google-cloud-java-automation[bot]@users.noreply.github.com"
-git config user.name "google-cloud-java-automation"
 
 OWLBOT_VERSION=latest
 
