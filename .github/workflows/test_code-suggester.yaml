@@ -25,13 +25,14 @@ jobs:
         echo "Hello, monorepo!" >> README.md
         git config user.email "yoshi-code-bot[bot]@users.noreply.github.com"
         git config user.name "yoshi-code-bot"
-        git checkout -b monorepo_script_output-googleapis-sync
         git add --all
         git commit -m 'chore: adding a line to README.md before code-suggester'
       working-directory: /tmp/googleapis-sync/google-cloud-java
     - name: Create some changes for code-suggester
       run: |
-        date > /tmp/googleapis-sync/google-cloud-java/googleapis-sync.timestamp.txt
+        date > googleapis-sync.timestamp.txt
+        git add --all
+      working-directory: /tmp/googleapis-sync/google-cloud-java
     - name: Check any diff
       run: |
         git status
