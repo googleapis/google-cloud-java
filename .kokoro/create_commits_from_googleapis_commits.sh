@@ -48,9 +48,8 @@ if [ -z "${GOOGLEAPIS_COMMIT_FILE}" ]; then
 fi
 
 echo "Operating in ${GOOGLE_CLOUD_JAVA_DIR}"
+
 cd "$GOOGLE_CLOUD_JAVA_DIR"
-git config user.email "yoshi-code-bot[bot]@users.noreply.github.com"
-git config user.name "yoshi-code-bot"
 
 OWLBOT_VERSION=latest
 
@@ -121,9 +120,6 @@ function generate_gapic_libraries() {
     index=$((index+1))
   done
 }
-
-echo "$(date): Generating GAPIC Java libraries using Bazel: $(which bazel)"
-bazel version
 
 commit_count=0
 # The list is sorted: the oldest comes first
