@@ -13,5 +13,28 @@ jobs:
     - run: |
         .kokoro/sync_with_googleapis.sh monorepo_script_output
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+        WORKSPACE: /tmp/googleapis-sync
+        GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+    # To make some change so that code-suggester can create a new commit.
+    - run: |
+        date > /tmp/googleapis-sync/google-cloud-java/googleapis-sync.timestamp.txt
+    - uses: googleapis/code-suggester@v3
+      env:
+        ACCESS_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+      with:
+        command: pr
+        upstream_owner: googleapis
+        upstream_repo: google-cloud-java
+        description: 'googleapis change propagation via hermetic build'
+        title: 'chore: googleapis change propagation via hermetic build'
+        message: 'chore: googleapis change propagation mark'
+        # Upon main branch cutover, change it to 'googleapis-sync'
+        branch: monorepo_script_output-googleapis-sync
+        # Upon main branch cutover, change it to main
+        primary: monorepo_script_output
+        force: true
+        # No need to create fork in another account
+        fork: false
+        # This needs to match the 'google-cloud-java' directory in the
+        #  WORKSPACE in the previous step
+        git_dir: '/tmp/googleapis-sync/google-cloud-java'

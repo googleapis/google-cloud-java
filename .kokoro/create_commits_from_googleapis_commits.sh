@@ -49,8 +49,8 @@ fi
 
 echo "Operating in ${GOOGLE_CLOUD_JAVA_DIR}"
 cd "$GOOGLE_CLOUD_JAVA_DIR"
-git config user.email "google-cloud-java-automation[bot]@users.noreply.github.com"
-git config user.name "google-cloud-java-automation"
+git config user.email "yoshi-code-bot[bot]@users.noreply.github.com"
+git config user.name "yoshi-code-bot"
 
 OWLBOT_VERSION=latest
 
