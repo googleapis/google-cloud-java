@@ -1,7 +1,7 @@
 name: GH comand test
 on:
   workflow_dispatch:
-#  pull_request:
+  pull_request:
 jobs:
   create-pull-request:
     name: Create pull request for changes
