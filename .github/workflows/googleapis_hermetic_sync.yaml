@@ -11,6 +11,7 @@ jobs:
       with:
         repository: 'googleapis/google-cloud-java'
     - run: |
+        mkdir -p "${WORKSPACE}"
         .kokoro/sync_with_googleapis.sh monorepo_script_output
       env:
         WORKSPACE: /tmp/googleapis-sync
