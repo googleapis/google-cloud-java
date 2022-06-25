@@ -312,7 +312,10 @@ public class LoggingHandler extends Handler {
     }
     if (logEntry != null) {
       try {
-        Iterable<LogEntry> logEntries = ImmutableList.of(logEntry);
+        Iterable<LogEntry> logEntries =
+            redirectToStdout
+                ? Instrumentation.populateInstrumentationInfo(ImmutableList.of(logEntry)).y()
+                : ImmutableList.of(logEntry);
         if (autoPopulateMetadata) {
           logEntries =
               logging.populateMetadata(

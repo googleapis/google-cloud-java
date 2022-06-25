@@ -44,6 +44,7 @@ public class LoggingTest {
   private static final String ORGANIZATION_NAME = "organization";
   private static final String BILLING_NAME = "billing";
   private static final Boolean DONT_AUTO_POPULATE_METADATA = false;
+  private static final Boolean DO_PARTIAL_SUCCESS = false;
 
   @Test
   public void testListOption() {
@@ -114,6 +115,10 @@ public class LoggingTest {
     writeOption = WriteOption.autoPopulateMetadata(DONT_AUTO_POPULATE_METADATA);
     assertEquals(DONT_AUTO_POPULATE_METADATA, writeOption.getValue());
     assertEquals(WriteOption.OptionType.AUTO_POPULATE_METADATA, writeOption.getOptionType());
+
+    writeOption = WriteOption.partialSuccess(DO_PARTIAL_SUCCESS);
+    assertEquals(DO_PARTIAL_SUCCESS, writeOption.getValue());
+    assertEquals(WriteOption.OptionType.PARTIAL_SUCCESS, writeOption.getOptionType());
   }
 
   @Test

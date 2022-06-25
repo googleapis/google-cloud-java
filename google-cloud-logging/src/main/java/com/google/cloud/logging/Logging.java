@@ -71,7 +71,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
       RESOURCE,
       LABELS,
       LOG_DESTINATION,
-      AUTO_POPULATE_METADATA;
+      AUTO_POPULATE_METADATA,
+      PARTIAL_SUCCESS;
 
       @SuppressWarnings("unchecked")
       <T> T get(Map<Option.OptionType, ?> options) {
@@ -122,6 +123,15 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
      */
     public static WriteOption autoPopulateMetadata(boolean autoPopulateMetadata) {
       return new WriteOption(OptionType.AUTO_POPULATE_METADATA, autoPopulateMetadata);
+    }
+
+    /**
+     * Returns an option to set partialSuccess flag. See {@link
+     * https://cloud.google.com/logging/docs/reference/v2/rest/v2/entries/write#body.request_body.FIELDS.partial_success}
+     * for more details.
+     */
+    public static WriteOption partialSuccess(boolean partialSuccess) {
+      return new WriteOption(OptionType.PARTIAL_SUCCESS, partialSuccess);
     }
   }
 

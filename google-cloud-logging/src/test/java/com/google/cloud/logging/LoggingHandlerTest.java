@@ -201,6 +201,7 @@ public class LoggingHandlerTest {
 
   @Before
   public void setUp() {
+    Instrumentation.setInstrumentationStatus(true);
     logging = EasyMock.createMock(Logging.class);
     options = EasyMock.createMock(LoggingOptions.class);
     expect(options.getProjectId()).andStubReturn(PROJECT);

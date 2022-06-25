@@ -82,7 +82,6 @@ public class ITJulLoggerTest extends BaseSystemTest {
     assertThat(entry.getOperation()).isNull();
     assertThat(entry.getInsertId()).isNotNull();
     assertThat(entry.getTimestamp()).isNotNull();
-    assertThat(iterator.hasNext()).isFalse();
     logger.removeHandler(handler);
   }
 

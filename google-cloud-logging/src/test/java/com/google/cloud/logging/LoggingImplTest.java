@@ -252,6 +252,7 @@ public class LoggingImplTest {
 
   @Before
   public void setUp() {
+    Instrumentation.setInstrumentationStatus(true);
     rpcFactoryMock = EasyMock.createStrictMock(LoggingRpcFactory.class);
     loggingRpcMock = EasyMock.createStrictMock(LoggingRpc.class);
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(LoggingOptions.class)))
@@ -2286,6 +2287,42 @@ public class LoggingImplTest {
       thread.join();
     }
     assertSame(0, exceptions.get());
+  }
+
+  @Test
+  public void testDiagnosticInfoWithNoPartialSuccess() {
+    testDiagnosticInfoGeneration(false);
+  }
+
+  @Test
+  public void testDiagnosticInfoWithPartialSuccess() {
+    testDiagnosticInfoGeneration(true);
+  }
+
+  private void testDiagnosticInfoGeneration(boolean addPartialSuccessOption) {
+    Instrumentation.setInstrumentationStatus(false);
+    LogEntry json_entry =
+        LogEntry.newBuilder(
+                InstrumentationTest.generateInstrumentationPayload(
+                    Instrumentation.JAVA_LIBRARY_NAME_PREFIX,
+                    Instrumentation.getLibraryVersion(Instrumentation.class.getClass())))
+            .setLogName(Instrumentation.INSTRUMENTATION_LOG_NAME)
+            .build();
+    WriteLogEntriesRequest request =
+        WriteLogEntriesRequest.newBuilder()
+            .addAllEntries(
+                Iterables.transform(
+                    ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2, json_entry),
+                    LogEntry.toPbFunction(PROJECT)))
+            .setPartialSuccess(true)
+            .build();
+    WriteLogEntriesResponse response = WriteLogEntriesResponse.newBuilder().build();
+    EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    logging.write(
+        ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2),
+        WriteOption.partialSuccess(addPartialSuccessOption));
   }
 
   private void testDeleteByDestination(

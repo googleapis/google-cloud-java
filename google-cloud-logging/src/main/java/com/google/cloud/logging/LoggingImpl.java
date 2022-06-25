@@ -23,6 +23,7 @@ import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_TOKEN;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LABELS;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LOG_DESTINATION;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LOG_NAME;
+import static com.google.cloud.logging.Logging.WriteOption.OptionType.PARTIAL_SUCCESS;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.RESOURCE;
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -39,6 +40,7 @@ import com.google.cloud.BaseService;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.PageImpl;
+import com.google.cloud.Tuple;
 import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
@@ -92,7 +94,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
-
   protected static final String RESOURCE_NAME_FORMAT = "projects/%s/traces/%s";
   private static final int FLUSH_WAIT_TIMEOUT_SECONDS = 6;
   private final LoggingRpc rpc;
@@ -774,6 +775,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       builder.putAllLabels(labels);
     }
 
+    builder.setPartialSuccess(Boolean.TRUE.equals(PARTIAL_SUCCESS.get(options)));
     builder.addAllEntries(Iterables.transform(logEntries, LogEntry.toPbFunction(projectId)));
     return builder.build();
   }
@@ -851,6 +853,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
       final Boolean logingOptionsPopulateFlag = getOptions().getAutoPopulateMetadata();
       final Boolean writeOptionPopulateFlga =
           WriteOption.OptionType.AUTO_POPULATE_METADATA.get(writeOptions);
+      Tuple<Boolean, Iterable<LogEntry>> pair =
+          Instrumentation.populateInstrumentationInfo(logEntries);
+      logEntries = pair.y();
 
       if (writeOptionPopulateFlga == Boolean.TRUE
           || (writeOptionPopulateFlga == null && logingOptionsPopulateFlag == Boolean.TRUE)) {
@@ -858,8 +863,9 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         logEntries =
             populateMetadata(logEntries, sharedResourceMetadata, this.getClass().getName());
       }
-
-      writeLogEntries(logEntries, options);
+      // Add partialSuccess option always for request containing instrumentation data
+      writeLogEntries(
+          logEntries, pair.x() ? Instrumentation.addPartialSuccessOption(options) : options);
       if (flushSeverity != null) {
         for (LogEntry logEntry : logEntries) {
           // flush pending writes if log severity at or above flush severity
