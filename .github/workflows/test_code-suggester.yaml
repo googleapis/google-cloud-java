@@ -26,7 +26,7 @@ jobs:
         git config user.email "yoshi-code-bot[bot]@users.noreply.github.com"
         git config user.name "yoshi-code-bot"
         git add --all
-        git commit -m 'chore: adding a line to README.md before code-suggester'
+        # git commit -m 'chore: adding a line to README.md before code-suggester'
       working-directory: /tmp/googleapis-sync/google-cloud-java
     - name: Create some changes for code-suggester
       run: |
