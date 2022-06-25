@@ -41,7 +41,7 @@ jobs:
     - name: Prepare workspace
       run: |
         gh pr create --title='chore: googleapis change propagation via hermetic build' \
-            --description='googleapis change propagation via hermetic build' \
+            --body='googleapis change propagation via hermetic build' \
             --base=monorepo_script_output
       env:
         WORKSPACE: /tmp/googleapis-sync/google-cloud-java
