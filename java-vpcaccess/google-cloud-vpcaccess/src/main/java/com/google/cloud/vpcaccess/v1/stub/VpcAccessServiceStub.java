@@ -43,7 +43,11 @@ import javax.annotation.Generated;
 public abstract class VpcAccessServiceStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {
-    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
   }
 
   public OperationCallable<CreateConnectorRequest, Connector, OperationMetadata>
