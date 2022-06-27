@@ -13,8 +13,8 @@ jobs:
     - name: Setup workspace
       run: |
         mkdir -p "${WORKSPACE}"
-        git config user.email "yoshi-code-bot[bot]@users.noreply.github.com"
-        git config user.name "yoshi-code-bot"
+        git config user.email "cloud-java-bot[bot]@users.noreply.github.com"
+        git config user.name "cloud-java-bot"
         
         git clone --quiet --branch "${BASE_BRANCH}" --depth 1 \
             https://github.com/googleapis/google-cloud-java \
@@ -46,6 +46,6 @@ jobs:
             --head=monorepo_googleapis_change
       working-directory: /tmp/googleapis-sync/google-cloud-java
       env:
-        GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # Note for cutover to main: update this to main
         BASE_BRANCH: monorepo_script_output
