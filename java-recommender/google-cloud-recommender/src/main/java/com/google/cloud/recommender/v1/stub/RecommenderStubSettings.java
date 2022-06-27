@@ -45,8 +45,11 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommender.v1.GetInsightRequest;
+import com.google.cloud.recommender.v1.GetInsightTypeConfigRequest;
 import com.google.cloud.recommender.v1.GetRecommendationRequest;
+import com.google.cloud.recommender.v1.GetRecommenderConfigRequest;
 import com.google.cloud.recommender.v1.Insight;
+import com.google.cloud.recommender.v1.InsightTypeConfig;
 import com.google.cloud.recommender.v1.ListInsightsRequest;
 import com.google.cloud.recommender.v1.ListInsightsResponse;
 import com.google.cloud.recommender.v1.ListRecommendationsRequest;
@@ -56,6 +59,9 @@ import com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest;
 import com.google.cloud.recommender.v1.Recommendation;
+import com.google.cloud.recommender.v1.RecommenderConfig;
+import com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest;
+import com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -121,6 +127,14 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       markRecommendationSucceededSettings;
   private final UnaryCallSettings<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedSettings;
+  private final UnaryCallSettings<GetRecommenderConfigRequest, RecommenderConfig>
+      getRecommenderConfigSettings;
+  private final UnaryCallSettings<UpdateRecommenderConfigRequest, RecommenderConfig>
+      updateRecommenderConfigSettings;
+  private final UnaryCallSettings<GetInsightTypeConfigRequest, InsightTypeConfig>
+      getInsightTypeConfigSettings;
+  private final UnaryCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+      updateInsightTypeConfigSettings;
 
   private static final PagedListDescriptor<ListInsightsRequest, ListInsightsResponse, Insight>
       LIST_INSIGHTS_PAGE_STR_DESC =
@@ -282,6 +296,30 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     return markRecommendationFailedSettings;
   }
 
+  /** Returns the object with the settings used for calls to getRecommenderConfig. */
+  public UnaryCallSettings<GetRecommenderConfigRequest, RecommenderConfig>
+      getRecommenderConfigSettings() {
+    return getRecommenderConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateRecommenderConfig. */
+  public UnaryCallSettings<UpdateRecommenderConfigRequest, RecommenderConfig>
+      updateRecommenderConfigSettings() {
+    return updateRecommenderConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getInsightTypeConfig. */
+  public UnaryCallSettings<GetInsightTypeConfigRequest, InsightTypeConfig>
+      getInsightTypeConfigSettings() {
+    return getInsightTypeConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateInsightTypeConfig. */
+  public UnaryCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+      updateInsightTypeConfigSettings() {
+    return updateInsightTypeConfigSettings;
+  }
+
   public RecommenderStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -397,6 +435,10 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     markRecommendationSucceededSettings =
         settingsBuilder.markRecommendationSucceededSettings().build();
     markRecommendationFailedSettings = settingsBuilder.markRecommendationFailedSettings().build();
+    getRecommenderConfigSettings = settingsBuilder.getRecommenderConfigSettings().build();
+    updateRecommenderConfigSettings = settingsBuilder.updateRecommenderConfigSettings().build();
+    getInsightTypeConfigSettings = settingsBuilder.getInsightTypeConfigSettings().build();
+    updateInsightTypeConfigSettings = settingsBuilder.updateInsightTypeConfigSettings().build();
   }
 
   /** Builder for RecommenderStubSettings. */
@@ -421,6 +463,14 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
         markRecommendationSucceededSettings;
     private final UnaryCallSettings.Builder<MarkRecommendationFailedRequest, Recommendation>
         markRecommendationFailedSettings;
+    private final UnaryCallSettings.Builder<GetRecommenderConfigRequest, RecommenderConfig>
+        getRecommenderConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateRecommenderConfigRequest, RecommenderConfig>
+        updateRecommenderConfigSettings;
+    private final UnaryCallSettings.Builder<GetInsightTypeConfigRequest, InsightTypeConfig>
+        getInsightTypeConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+        updateInsightTypeConfigSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -434,6 +484,7 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -461,6 +512,8 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -480,6 +533,10 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       markRecommendationClaimedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       markRecommendationSucceededSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       markRecommendationFailedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getRecommenderConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateRecommenderConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getInsightTypeConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateInsightTypeConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -490,7 +547,11 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
               getRecommendationSettings,
               markRecommendationClaimedSettings,
               markRecommendationSucceededSettings,
-              markRecommendationFailedSettings);
+              markRecommendationFailedSettings,
+              getRecommenderConfigSettings,
+              updateRecommenderConfigSettings,
+              getInsightTypeConfigSettings,
+              updateInsightTypeConfigSettings);
       initDefaults(this);
     }
 
@@ -506,6 +567,10 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       markRecommendationSucceededSettings =
           settings.markRecommendationSucceededSettings.toBuilder();
       markRecommendationFailedSettings = settings.markRecommendationFailedSettings.toBuilder();
+      getRecommenderConfigSettings = settings.getRecommenderConfigSettings.toBuilder();
+      updateRecommenderConfigSettings = settings.updateRecommenderConfigSettings.toBuilder();
+      getInsightTypeConfigSettings = settings.getInsightTypeConfigSettings.toBuilder();
+      updateInsightTypeConfigSettings = settings.updateInsightTypeConfigSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -516,7 +581,11 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
               getRecommendationSettings,
               markRecommendationClaimedSettings,
               markRecommendationSucceededSettings,
-              markRecommendationFailedSettings);
+              markRecommendationFailedSettings,
+              getRecommenderConfigSettings,
+              updateRecommenderConfigSettings,
+              getInsightTypeConfigSettings,
+              updateInsightTypeConfigSettings);
     }
 
     private static Builder createDefault() {
@@ -586,6 +655,26 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
+      builder
+          .getRecommenderConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateRecommenderConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getInsightTypeConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateInsightTypeConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -653,6 +742,30 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     public UnaryCallSettings.Builder<MarkRecommendationFailedRequest, Recommendation>
         markRecommendationFailedSettings() {
       return markRecommendationFailedSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getRecommenderConfig. */
+    public UnaryCallSettings.Builder<GetRecommenderConfigRequest, RecommenderConfig>
+        getRecommenderConfigSettings() {
+      return getRecommenderConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRecommenderConfig. */
+    public UnaryCallSettings.Builder<UpdateRecommenderConfigRequest, RecommenderConfig>
+        updateRecommenderConfigSettings() {
+      return updateRecommenderConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getInsightTypeConfig. */
+    public UnaryCallSettings.Builder<GetInsightTypeConfigRequest, InsightTypeConfig>
+        getInsightTypeConfigSettings() {
+      return getInsightTypeConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateInsightTypeConfig. */
+    public UnaryCallSettings.Builder<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+        updateInsightTypeConfigSettings() {
+      return updateInsightTypeConfigSettings;
     }
 
     @Override

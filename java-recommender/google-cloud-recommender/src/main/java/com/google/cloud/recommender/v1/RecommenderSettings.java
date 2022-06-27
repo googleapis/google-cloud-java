@@ -118,6 +118,30 @@ public class RecommenderSettings extends ClientSettings<RecommenderSettings> {
     return ((RecommenderStubSettings) getStubSettings()).markRecommendationFailedSettings();
   }
 
+  /** Returns the object with the settings used for calls to getRecommenderConfig. */
+  public UnaryCallSettings<GetRecommenderConfigRequest, RecommenderConfig>
+      getRecommenderConfigSettings() {
+    return ((RecommenderStubSettings) getStubSettings()).getRecommenderConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateRecommenderConfig. */
+  public UnaryCallSettings<UpdateRecommenderConfigRequest, RecommenderConfig>
+      updateRecommenderConfigSettings() {
+    return ((RecommenderStubSettings) getStubSettings()).updateRecommenderConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getInsightTypeConfig. */
+  public UnaryCallSettings<GetInsightTypeConfigRequest, InsightTypeConfig>
+      getInsightTypeConfigSettings() {
+    return ((RecommenderStubSettings) getStubSettings()).getInsightTypeConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateInsightTypeConfig. */
+  public UnaryCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+      updateInsightTypeConfigSettings() {
+    return ((RecommenderStubSettings) getStubSettings()).updateInsightTypeConfigSettings();
+  }
+
   public static final RecommenderSettings create(RecommenderStubSettings stub) throws IOException {
     return new RecommenderSettings.Builder(stub.toBuilder()).build();
   }
@@ -281,6 +305,30 @@ public class RecommenderSettings extends ClientSettings<RecommenderSettings> {
     public UnaryCallSettings.Builder<MarkRecommendationFailedRequest, Recommendation>
         markRecommendationFailedSettings() {
       return getStubSettingsBuilder().markRecommendationFailedSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRecommenderConfig. */
+    public UnaryCallSettings.Builder<GetRecommenderConfigRequest, RecommenderConfig>
+        getRecommenderConfigSettings() {
+      return getStubSettingsBuilder().getRecommenderConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateRecommenderConfig. */
+    public UnaryCallSettings.Builder<UpdateRecommenderConfigRequest, RecommenderConfig>
+        updateRecommenderConfigSettings() {
+      return getStubSettingsBuilder().updateRecommenderConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getInsightTypeConfig. */
+    public UnaryCallSettings.Builder<GetInsightTypeConfigRequest, InsightTypeConfig>
+        getInsightTypeConfigSettings() {
+      return getStubSettingsBuilder().getInsightTypeConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateInsightTypeConfig. */
+    public UnaryCallSettings.Builder<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+        updateInsightTypeConfigSettings() {
+      return getStubSettingsBuilder().updateInsightTypeConfigSettings();
     }
 
     @Override

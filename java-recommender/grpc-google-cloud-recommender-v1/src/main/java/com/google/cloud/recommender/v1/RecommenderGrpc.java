@@ -420,6 +420,204 @@ public final class RecommenderGrpc {
     return getMarkRecommendationFailedMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.GetRecommenderConfigRequest,
+          com.google.cloud.recommender.v1.RecommenderConfig>
+      getGetRecommenderConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRecommenderConfig",
+      requestType = com.google.cloud.recommender.v1.GetRecommenderConfigRequest.class,
+      responseType = com.google.cloud.recommender.v1.RecommenderConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.GetRecommenderConfigRequest,
+          com.google.cloud.recommender.v1.RecommenderConfig>
+      getGetRecommenderConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.recommender.v1.GetRecommenderConfigRequest,
+            com.google.cloud.recommender.v1.RecommenderConfig>
+        getGetRecommenderConfigMethod;
+    if ((getGetRecommenderConfigMethod = RecommenderGrpc.getGetRecommenderConfigMethod) == null) {
+      synchronized (RecommenderGrpc.class) {
+        if ((getGetRecommenderConfigMethod = RecommenderGrpc.getGetRecommenderConfigMethod)
+            == null) {
+          RecommenderGrpc.getGetRecommenderConfigMethod =
+              getGetRecommenderConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.recommender.v1.GetRecommenderConfigRequest,
+                          com.google.cloud.recommender.v1.RecommenderConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetRecommenderConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.GetRecommenderConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.RecommenderConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecommenderMethodDescriptorSupplier("GetRecommenderConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetRecommenderConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest,
+          com.google.cloud.recommender.v1.RecommenderConfig>
+      getUpdateRecommenderConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateRecommenderConfig",
+      requestType = com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest.class,
+      responseType = com.google.cloud.recommender.v1.RecommenderConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest,
+          com.google.cloud.recommender.v1.RecommenderConfig>
+      getUpdateRecommenderConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest,
+            com.google.cloud.recommender.v1.RecommenderConfig>
+        getUpdateRecommenderConfigMethod;
+    if ((getUpdateRecommenderConfigMethod = RecommenderGrpc.getUpdateRecommenderConfigMethod)
+        == null) {
+      synchronized (RecommenderGrpc.class) {
+        if ((getUpdateRecommenderConfigMethod = RecommenderGrpc.getUpdateRecommenderConfigMethod)
+            == null) {
+          RecommenderGrpc.getUpdateRecommenderConfigMethod =
+              getUpdateRecommenderConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest,
+                          com.google.cloud.recommender.v1.RecommenderConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateRecommenderConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.RecommenderConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecommenderMethodDescriptorSupplier("UpdateRecommenderConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateRecommenderConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.GetInsightTypeConfigRequest,
+          com.google.cloud.recommender.v1.InsightTypeConfig>
+      getGetInsightTypeConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetInsightTypeConfig",
+      requestType = com.google.cloud.recommender.v1.GetInsightTypeConfigRequest.class,
+      responseType = com.google.cloud.recommender.v1.InsightTypeConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.GetInsightTypeConfigRequest,
+          com.google.cloud.recommender.v1.InsightTypeConfig>
+      getGetInsightTypeConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.recommender.v1.GetInsightTypeConfigRequest,
+            com.google.cloud.recommender.v1.InsightTypeConfig>
+        getGetInsightTypeConfigMethod;
+    if ((getGetInsightTypeConfigMethod = RecommenderGrpc.getGetInsightTypeConfigMethod) == null) {
+      synchronized (RecommenderGrpc.class) {
+        if ((getGetInsightTypeConfigMethod = RecommenderGrpc.getGetInsightTypeConfigMethod)
+            == null) {
+          RecommenderGrpc.getGetInsightTypeConfigMethod =
+              getGetInsightTypeConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.recommender.v1.GetInsightTypeConfigRequest,
+                          com.google.cloud.recommender.v1.InsightTypeConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetInsightTypeConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.GetInsightTypeConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.InsightTypeConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecommenderMethodDescriptorSupplier("GetInsightTypeConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetInsightTypeConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest,
+          com.google.cloud.recommender.v1.InsightTypeConfig>
+      getUpdateInsightTypeConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateInsightTypeConfig",
+      requestType = com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest.class,
+      responseType = com.google.cloud.recommender.v1.InsightTypeConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest,
+          com.google.cloud.recommender.v1.InsightTypeConfig>
+      getUpdateInsightTypeConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest,
+            com.google.cloud.recommender.v1.InsightTypeConfig>
+        getUpdateInsightTypeConfigMethod;
+    if ((getUpdateInsightTypeConfigMethod = RecommenderGrpc.getUpdateInsightTypeConfigMethod)
+        == null) {
+      synchronized (RecommenderGrpc.class) {
+        if ((getUpdateInsightTypeConfigMethod = RecommenderGrpc.getUpdateInsightTypeConfigMethod)
+            == null) {
+          RecommenderGrpc.getUpdateInsightTypeConfigMethod =
+              getUpdateInsightTypeConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest,
+                          com.google.cloud.recommender.v1.InsightTypeConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateInsightTypeConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.InsightTypeConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecommenderMethodDescriptorSupplier("UpdateInsightTypeConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateInsightTypeConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static RecommenderStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<RecommenderStub> factory =
@@ -620,6 +818,70 @@ public final class RecommenderGrpc {
           getMarkRecommendationFailedMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested Recommender Config. There is only one instance of the
+     * config for each Recommender.
+     * </pre>
+     */
+    public void getRecommenderConfig(
+        com.google.cloud.recommender.v1.GetRecommenderConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.RecommenderConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetRecommenderConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Recommender Config. This will create a new revision of the
+     * config.
+     * </pre>
+     */
+    public void updateRecommenderConfig(
+        com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.RecommenderConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateRecommenderConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested InsightTypeConfig. There is only one instance of the
+     * config for each InsightType.
+     * </pre>
+     */
+    public void getInsightTypeConfig(
+        com.google.cloud.recommender.v1.GetInsightTypeConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.InsightTypeConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetInsightTypeConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an InsightTypeConfig change. This will create a new revision of the
+     * config.
+     * </pre>
+     */
+    public void updateInsightTypeConfig(
+        com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.InsightTypeConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateInsightTypeConfigMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -678,6 +940,34 @@ public final class RecommenderGrpc {
                       com.google.cloud.recommender.v1.MarkRecommendationFailedRequest,
                       com.google.cloud.recommender.v1.Recommendation>(
                       this, METHODID_MARK_RECOMMENDATION_FAILED)))
+          .addMethod(
+              getGetRecommenderConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.recommender.v1.GetRecommenderConfigRequest,
+                      com.google.cloud.recommender.v1.RecommenderConfig>(
+                      this, METHODID_GET_RECOMMENDER_CONFIG)))
+          .addMethod(
+              getUpdateRecommenderConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest,
+                      com.google.cloud.recommender.v1.RecommenderConfig>(
+                      this, METHODID_UPDATE_RECOMMENDER_CONFIG)))
+          .addMethod(
+              getGetInsightTypeConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.recommender.v1.GetInsightTypeConfigRequest,
+                      com.google.cloud.recommender.v1.InsightTypeConfig>(
+                      this, METHODID_GET_INSIGHT_TYPE_CONFIG)))
+          .addMethod(
+              getUpdateInsightTypeConfigMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest,
+                      com.google.cloud.recommender.v1.InsightTypeConfig>(
+                      this, METHODID_UPDATE_INSIGHT_TYPE_CONFIG)))
           .build();
     }
   }
@@ -865,6 +1155,78 @@ public final class RecommenderGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested Recommender Config. There is only one instance of the
+     * config for each Recommender.
+     * </pre>
+     */
+    public void getRecommenderConfig(
+        com.google.cloud.recommender.v1.GetRecommenderConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.RecommenderConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRecommenderConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Recommender Config. This will create a new revision of the
+     * config.
+     * </pre>
+     */
+    public void updateRecommenderConfig(
+        com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.RecommenderConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateRecommenderConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested InsightTypeConfig. There is only one instance of the
+     * config for each InsightType.
+     * </pre>
+     */
+    public void getInsightTypeConfig(
+        com.google.cloud.recommender.v1.GetInsightTypeConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.InsightTypeConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetInsightTypeConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an InsightTypeConfig change. This will create a new revision of the
+     * config.
+     * </pre>
+     */
+    public void updateInsightTypeConfig(
+        com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.InsightTypeConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateInsightTypeConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1022,6 +1384,62 @@ public final class RecommenderGrpc {
         com.google.cloud.recommender.v1.MarkRecommendationFailedRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMarkRecommendationFailedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested Recommender Config. There is only one instance of the
+     * config for each Recommender.
+     * </pre>
+     */
+    public com.google.cloud.recommender.v1.RecommenderConfig getRecommenderConfig(
+        com.google.cloud.recommender.v1.GetRecommenderConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRecommenderConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Recommender Config. This will create a new revision of the
+     * config.
+     * </pre>
+     */
+    public com.google.cloud.recommender.v1.RecommenderConfig updateRecommenderConfig(
+        com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRecommenderConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested InsightTypeConfig. There is only one instance of the
+     * config for each InsightType.
+     * </pre>
+     */
+    public com.google.cloud.recommender.v1.InsightTypeConfig getInsightTypeConfig(
+        com.google.cloud.recommender.v1.GetInsightTypeConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInsightTypeConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an InsightTypeConfig change. This will create a new revision of the
+     * config.
+     * </pre>
+     */
+    public com.google.cloud.recommender.v1.InsightTypeConfig updateInsightTypeConfig(
+        com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInsightTypeConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -1192,6 +1610,68 @@ public final class RecommenderGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMarkRecommendationFailedMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested Recommender Config. There is only one instance of the
+     * config for each Recommender.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.recommender.v1.RecommenderConfig>
+        getRecommenderConfig(com.google.cloud.recommender.v1.GetRecommenderConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRecommenderConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Recommender Config. This will create a new revision of the
+     * config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.recommender.v1.RecommenderConfig>
+        updateRecommenderConfig(
+            com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateRecommenderConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the requested InsightTypeConfig. There is only one instance of the
+     * config for each InsightType.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.recommender.v1.InsightTypeConfig>
+        getInsightTypeConfig(com.google.cloud.recommender.v1.GetInsightTypeConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetInsightTypeConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an InsightTypeConfig change. This will create a new revision of the
+     * config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.recommender.v1.InsightTypeConfig>
+        updateInsightTypeConfig(
+            com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateInsightTypeConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSIGHTS = 0;
@@ -1202,6 +1682,10 @@ public final class RecommenderGrpc {
   private static final int METHODID_MARK_RECOMMENDATION_CLAIMED = 5;
   private static final int METHODID_MARK_RECOMMENDATION_SUCCEEDED = 6;
   private static final int METHODID_MARK_RECOMMENDATION_FAILED = 7;
+  private static final int METHODID_GET_RECOMMENDER_CONFIG = 8;
+  private static final int METHODID_UPDATE_RECOMMENDER_CONFIG = 9;
+  private static final int METHODID_GET_INSIGHT_TYPE_CONFIG = 10;
+  private static final int METHODID_UPDATE_INSIGHT_TYPE_CONFIG = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1267,6 +1751,30 @@ public final class RecommenderGrpc {
           serviceImpl.markRecommendationFailed(
               (com.google.cloud.recommender.v1.MarkRecommendationFailedRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Recommendation>)
+                  responseObserver);
+          break;
+        case METHODID_GET_RECOMMENDER_CONFIG:
+          serviceImpl.getRecommenderConfig(
+              (com.google.cloud.recommender.v1.GetRecommenderConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.RecommenderConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_RECOMMENDER_CONFIG:
+          serviceImpl.updateRecommenderConfig(
+              (com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.RecommenderConfig>)
+                  responseObserver);
+          break;
+        case METHODID_GET_INSIGHT_TYPE_CONFIG:
+          serviceImpl.getInsightTypeConfig(
+              (com.google.cloud.recommender.v1.GetInsightTypeConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.InsightTypeConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_INSIGHT_TYPE_CONFIG:
+          serviceImpl.updateInsightTypeConfig(
+              (com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.InsightTypeConfig>)
                   responseObserver);
           break;
         default:
@@ -1341,6 +1849,10 @@ public final class RecommenderGrpc {
                       .addMethod(getMarkRecommendationClaimedMethod())
                       .addMethod(getMarkRecommendationSucceededMethod())
                       .addMethod(getMarkRecommendationFailedMethod())
+                      .addMethod(getGetRecommenderConfigMethod())
+                      .addMethod(getUpdateRecommenderConfigMethod())
+                      .addMethod(getGetInsightTypeConfigMethod())
+                      .addMethod(getUpdateInsightTypeConfigMethod())
                       .build();
         }
       }

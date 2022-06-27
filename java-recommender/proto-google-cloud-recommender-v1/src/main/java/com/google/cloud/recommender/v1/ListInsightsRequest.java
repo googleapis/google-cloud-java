@@ -213,9 +213,9 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The maximum number of results to return from this request.  Non-positive
-   * values are ignored. If not specified, the server will determine the number
-   * of results to return.
+   * Optional. The maximum number of results to return from this request.
+   * Non-positive values are ignored. If not specified, the server will
+   * determine the number of results to return.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -233,10 +233,10 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. If present, retrieves the next batch of results from the preceding call to
-   * this method. `page_token` must be the value of `next_page_token` from the
-   * previous response. The values of other method parameters must be identical
-   * to those in the previous call.
+   * Optional. If present, retrieves the next batch of results from the
+   * preceding call to this method. `page_token` must be the value of
+   * `next_page_token` from the previous response. The values of other method
+   * parameters must be identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -259,10 +259,10 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. If present, retrieves the next batch of results from the preceding call to
-   * this method. `page_token` must be the value of `next_page_token` from the
-   * previous response. The values of other method parameters must be identical
-   * to those in the previous call.
+   * Optional. If present, retrieves the next batch of results from the
+   * preceding call to this method. `page_token` must be the value of
+   * `next_page_token` from the previous response. The values of other method
+   * parameters must be identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -889,9 +889,9 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The maximum number of results to return from this request.  Non-positive
-     * values are ignored. If not specified, the server will determine the number
-     * of results to return.
+     * Optional. The maximum number of results to return from this request.
+     * Non-positive values are ignored. If not specified, the server will
+     * determine the number of results to return.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -906,9 +906,9 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The maximum number of results to return from this request.  Non-positive
-     * values are ignored. If not specified, the server will determine the number
-     * of results to return.
+     * Optional. The maximum number of results to return from this request.
+     * Non-positive values are ignored. If not specified, the server will
+     * determine the number of results to return.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -926,9 +926,9 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The maximum number of results to return from this request.  Non-positive
-     * values are ignored. If not specified, the server will determine the number
-     * of results to return.
+     * Optional. The maximum number of results to return from this request.
+     * Non-positive values are ignored. If not specified, the server will
+     * determine the number of results to return.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -947,10 +947,10 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. If present, retrieves the next batch of results from the preceding call to
-     * this method. `page_token` must be the value of `next_page_token` from the
-     * previous response. The values of other method parameters must be identical
-     * to those in the previous call.
+     * Optional. If present, retrieves the next batch of results from the
+     * preceding call to this method. `page_token` must be the value of
+     * `next_page_token` from the previous response. The values of other method
+     * parameters must be identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -972,10 +972,10 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. If present, retrieves the next batch of results from the preceding call to
-     * this method. `page_token` must be the value of `next_page_token` from the
-     * previous response. The values of other method parameters must be identical
-     * to those in the previous call.
+     * Optional. If present, retrieves the next batch of results from the
+     * preceding call to this method. `page_token` must be the value of
+     * `next_page_token` from the previous response. The values of other method
+     * parameters must be identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -997,10 +997,10 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. If present, retrieves the next batch of results from the preceding call to
-     * this method. `page_token` must be the value of `next_page_token` from the
-     * previous response. The values of other method parameters must be identical
-     * to those in the previous call.
+     * Optional. If present, retrieves the next batch of results from the
+     * preceding call to this method. `page_token` must be the value of
+     * `next_page_token` from the previous response. The values of other method
+     * parameters must be identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1021,10 +1021,10 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. If present, retrieves the next batch of results from the preceding call to
-     * this method. `page_token` must be the value of `next_page_token` from the
-     * previous response. The values of other method parameters must be identical
-     * to those in the previous call.
+     * Optional. If present, retrieves the next batch of results from the
+     * preceding call to this method. `page_token` must be the value of
+     * `next_page_token` from the previous response. The values of other method
+     * parameters must be identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1041,10 +1041,10 @@ public final class ListInsightsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. If present, retrieves the next batch of results from the preceding call to
-     * this method. `page_token` must be the value of `next_page_token` from the
-     * previous response. The values of other method parameters must be identical
-     * to those in the previous call.
+     * Optional. If present, retrieves the next batch of results from the
+     * preceding call to this method. `page_token` must be the value of
+     * `next_page_token` from the previous response. The values of other method
+     * parameters must be identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommender.v1.stub.RecommenderStub;
 import com.google.cloud.recommender.v1.stub.RecommenderStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -1628,6 +1629,454 @@ public class RecommenderClient implements BackgroundResource {
   public final UnaryCallable<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedCallable() {
     return stub.markRecommendationFailedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested Recommender Config. There is only one instance of the config for each
+   * Recommender.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   RecommenderConfigName name =
+   *       RecommenderConfigName.ofProjectLocationRecommenderName(
+   *           "[PROJECT]", "[LOCATION]", "[RECOMMENDER]");
+   *   RecommenderConfig response = recommenderClient.getRecommenderConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the Recommendation Config to get.
+   *     <p>Acceptable formats:
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecommenderConfig getRecommenderConfig(RecommenderConfigName name) {
+    GetRecommenderConfigRequest request =
+        GetRecommenderConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getRecommenderConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested Recommender Config. There is only one instance of the config for each
+   * Recommender.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   String name =
+   *       RecommenderConfigName.ofProjectLocationRecommenderName(
+   *               "[PROJECT]", "[LOCATION]", "[RECOMMENDER]")
+   *           .toString();
+   *   RecommenderConfig response = recommenderClient.getRecommenderConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the Recommendation Config to get.
+   *     <p>Acceptable formats:
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecommenderConfig getRecommenderConfig(String name) {
+    GetRecommenderConfigRequest request =
+        GetRecommenderConfigRequest.newBuilder().setName(name).build();
+    return getRecommenderConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested Recommender Config. There is only one instance of the config for each
+   * Recommender.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   GetRecommenderConfigRequest request =
+   *       GetRecommenderConfigRequest.newBuilder()
+   *           .setName(
+   *               RecommenderConfigName.ofProjectLocationRecommenderName(
+   *                       "[PROJECT]", "[LOCATION]", "[RECOMMENDER]")
+   *                   .toString())
+   *           .build();
+   *   RecommenderConfig response = recommenderClient.getRecommenderConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecommenderConfig getRecommenderConfig(GetRecommenderConfigRequest request) {
+    return getRecommenderConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested Recommender Config. There is only one instance of the config for each
+   * Recommender.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   GetRecommenderConfigRequest request =
+   *       GetRecommenderConfigRequest.newBuilder()
+   *           .setName(
+   *               RecommenderConfigName.ofProjectLocationRecommenderName(
+   *                       "[PROJECT]", "[LOCATION]", "[RECOMMENDER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RecommenderConfig> future =
+   *       recommenderClient.getRecommenderConfigCallable().futureCall(request);
+   *   // Do something.
+   *   RecommenderConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRecommenderConfigRequest, RecommenderConfig>
+      getRecommenderConfigCallable() {
+    return stub.getRecommenderConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Recommender Config. This will create a new revision of the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   RecommenderConfig recommenderConfig = RecommenderConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   RecommenderConfig response =
+   *       recommenderClient.updateRecommenderConfig(recommenderConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param recommenderConfig Required. The RecommenderConfig to update.
+   * @param updateMask The list of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecommenderConfig updateRecommenderConfig(
+      RecommenderConfig recommenderConfig, FieldMask updateMask) {
+    UpdateRecommenderConfigRequest request =
+        UpdateRecommenderConfigRequest.newBuilder()
+            .setRecommenderConfig(recommenderConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateRecommenderConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Recommender Config. This will create a new revision of the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   UpdateRecommenderConfigRequest request =
+   *       UpdateRecommenderConfigRequest.newBuilder()
+   *           .setRecommenderConfig(RecommenderConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   RecommenderConfig response = recommenderClient.updateRecommenderConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RecommenderConfig updateRecommenderConfig(UpdateRecommenderConfigRequest request) {
+    return updateRecommenderConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Recommender Config. This will create a new revision of the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   UpdateRecommenderConfigRequest request =
+   *       UpdateRecommenderConfigRequest.newBuilder()
+   *           .setRecommenderConfig(RecommenderConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<RecommenderConfig> future =
+   *       recommenderClient.updateRecommenderConfigCallable().futureCall(request);
+   *   // Do something.
+   *   RecommenderConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateRecommenderConfigRequest, RecommenderConfig>
+      updateRecommenderConfigCallable() {
+    return stub.updateRecommenderConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested InsightTypeConfig. There is only one instance of the config for each
+   * InsightType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightTypeConfigName name =
+   *       InsightTypeConfigName.ofProjectLocationInsightTypeName(
+   *           "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]");
+   *   InsightTypeConfig response = recommenderClient.getInsightTypeConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the InsightTypeConfig to get.
+   *     <p>Acceptable formats:
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InsightTypeConfig getInsightTypeConfig(InsightTypeConfigName name) {
+    GetInsightTypeConfigRequest request =
+        GetInsightTypeConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getInsightTypeConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested InsightTypeConfig. There is only one instance of the config for each
+   * InsightType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   String name =
+   *       InsightTypeConfigName.ofProjectLocationInsightTypeName(
+   *               "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]")
+   *           .toString();
+   *   InsightTypeConfig response = recommenderClient.getInsightTypeConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the InsightTypeConfig to get.
+   *     <p>Acceptable formats:
+   *     <ul>
+   *       <li>`projects/[PROJECT_NUMBER]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`projects/[PROJECT_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InsightTypeConfig getInsightTypeConfig(String name) {
+    GetInsightTypeConfigRequest request =
+        GetInsightTypeConfigRequest.newBuilder().setName(name).build();
+    return getInsightTypeConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested InsightTypeConfig. There is only one instance of the config for each
+   * InsightType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   GetInsightTypeConfigRequest request =
+   *       GetInsightTypeConfigRequest.newBuilder()
+   *           .setName(
+   *               InsightTypeConfigName.ofProjectLocationInsightTypeName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   InsightTypeConfig response = recommenderClient.getInsightTypeConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InsightTypeConfig getInsightTypeConfig(GetInsightTypeConfigRequest request) {
+    return getInsightTypeConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the requested InsightTypeConfig. There is only one instance of the config for each
+   * InsightType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   GetInsightTypeConfigRequest request =
+   *       GetInsightTypeConfigRequest.newBuilder()
+   *           .setName(
+   *               InsightTypeConfigName.ofProjectLocationInsightTypeName(
+   *                       "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<InsightTypeConfig> future =
+   *       recommenderClient.getInsightTypeConfigCallable().futureCall(request);
+   *   // Do something.
+   *   InsightTypeConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetInsightTypeConfigRequest, InsightTypeConfig>
+      getInsightTypeConfigCallable() {
+    return stub.getInsightTypeConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an InsightTypeConfig change. This will create a new revision of the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   InsightTypeConfig insightTypeConfig = InsightTypeConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   InsightTypeConfig response =
+   *       recommenderClient.updateInsightTypeConfig(insightTypeConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param insightTypeConfig Required. The InsightTypeConfig to update.
+   * @param updateMask The list of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InsightTypeConfig updateInsightTypeConfig(
+      InsightTypeConfig insightTypeConfig, FieldMask updateMask) {
+    UpdateInsightTypeConfigRequest request =
+        UpdateInsightTypeConfigRequest.newBuilder()
+            .setInsightTypeConfig(insightTypeConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateInsightTypeConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an InsightTypeConfig change. This will create a new revision of the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   UpdateInsightTypeConfigRequest request =
+   *       UpdateInsightTypeConfigRequest.newBuilder()
+   *           .setInsightTypeConfig(InsightTypeConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   InsightTypeConfig response = recommenderClient.updateInsightTypeConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final InsightTypeConfig updateInsightTypeConfig(UpdateInsightTypeConfigRequest request) {
+    return updateInsightTypeConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an InsightTypeConfig change. This will create a new revision of the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   UpdateInsightTypeConfigRequest request =
+   *       UpdateInsightTypeConfigRequest.newBuilder()
+   *           .setInsightTypeConfig(InsightTypeConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<InsightTypeConfig> future =
+   *       recommenderClient.updateInsightTypeConfigCallable().futureCall(request);
+   *   // Do something.
+   *   InsightTypeConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+      updateInsightTypeConfigCallable() {
+    return stub.updateInsightTypeConfigCallable();
   }
 
   @Override

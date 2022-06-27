@@ -32,8 +32,11 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.recommender.v1.GetInsightRequest;
+import com.google.cloud.recommender.v1.GetInsightTypeConfigRequest;
 import com.google.cloud.recommender.v1.GetRecommendationRequest;
+import com.google.cloud.recommender.v1.GetRecommenderConfigRequest;
 import com.google.cloud.recommender.v1.Insight;
+import com.google.cloud.recommender.v1.InsightTypeConfig;
 import com.google.cloud.recommender.v1.ListInsightsRequest;
 import com.google.cloud.recommender.v1.ListInsightsResponse;
 import com.google.cloud.recommender.v1.ListRecommendationsRequest;
@@ -43,6 +46,9 @@ import com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest;
 import com.google.cloud.recommender.v1.Recommendation;
+import com.google.cloud.recommender.v1.RecommenderConfig;
+import com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest;
+import com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -378,6 +384,164 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetRecommenderConfigRequest, RecommenderConfig>
+      getRecommenderConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetRecommenderConfigRequest, RecommenderConfig>newBuilder()
+              .setFullMethodName("google.cloud.recommender.v1.Recommender/GetRecommenderConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetRecommenderConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/recommenders/*/config}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRecommenderConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=organizations/*/locations/*/recommenders/*/config}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRecommenderConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RecommenderConfig>newBuilder()
+                      .setDefaultInstance(RecommenderConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateRecommenderConfigRequest, RecommenderConfig>
+      updateRecommenderConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateRecommenderConfigRequest, RecommenderConfig>newBuilder()
+              .setFullMethodName("google.cloud.recommender.v1.Recommender/UpdateRecommenderConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateRecommenderConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{recommenderConfig.name=projects/*/locations/*/recommenders/*/config}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRecommenderConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "recommenderConfig.name",
+                                request.getRecommenderConfig().getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{recommenderConfig.name=organizations/*/locations/*/recommenders/*/config}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRecommenderConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("recommenderConfig", request.getRecommenderConfig()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RecommenderConfig>newBuilder()
+                      .setDefaultInstance(RecommenderConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetInsightTypeConfigRequest, InsightTypeConfig>
+      getInsightTypeConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetInsightTypeConfigRequest, InsightTypeConfig>newBuilder()
+              .setFullMethodName("google.cloud.recommender.v1.Recommender/GetInsightTypeConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetInsightTypeConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/insightTypes/*/config}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetInsightTypeConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=organizations/*/locations/*/insightTypes/*/config}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetInsightTypeConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<InsightTypeConfig>newBuilder()
+                      .setDefaultInstance(InsightTypeConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+      updateInsightTypeConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateInsightTypeConfigRequest, InsightTypeConfig>newBuilder()
+              .setFullMethodName("google.cloud.recommender.v1.Recommender/UpdateInsightTypeConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateInsightTypeConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{insightTypeConfig.name=projects/*/locations/*/insightTypes/*/config}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateInsightTypeConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "insightTypeConfig.name",
+                                request.getInsightTypeConfig().getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{insightTypeConfig.name=organizations/*/locations/*/insightTypes/*/config}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateInsightTypeConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("insightTypeConfig", request.getInsightTypeConfig()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<InsightTypeConfig>newBuilder()
+                      .setDefaultInstance(InsightTypeConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable;
   private final UnaryCallable<ListInsightsRequest, ListInsightsPagedResponse>
       listInsightsPagedCallable;
@@ -394,6 +558,14 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
       markRecommendationSucceededCallable;
   private final UnaryCallable<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedCallable;
+  private final UnaryCallable<GetRecommenderConfigRequest, RecommenderConfig>
+      getRecommenderConfigCallable;
+  private final UnaryCallable<UpdateRecommenderConfigRequest, RecommenderConfig>
+      updateRecommenderConfigCallable;
+  private final UnaryCallable<GetInsightTypeConfigRequest, InsightTypeConfig>
+      getInsightTypeConfigCallable;
+  private final UnaryCallable<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+      updateInsightTypeConfigCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -483,6 +655,30 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                 .setMethodDescriptor(markRecommendationFailedMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<GetRecommenderConfigRequest, RecommenderConfig>
+        getRecommenderConfigTransportSettings =
+            HttpJsonCallSettings.<GetRecommenderConfigRequest, RecommenderConfig>newBuilder()
+                .setMethodDescriptor(getRecommenderConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<UpdateRecommenderConfigRequest, RecommenderConfig>
+        updateRecommenderConfigTransportSettings =
+            HttpJsonCallSettings.<UpdateRecommenderConfigRequest, RecommenderConfig>newBuilder()
+                .setMethodDescriptor(updateRecommenderConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<GetInsightTypeConfigRequest, InsightTypeConfig>
+        getInsightTypeConfigTransportSettings =
+            HttpJsonCallSettings.<GetInsightTypeConfigRequest, InsightTypeConfig>newBuilder()
+                .setMethodDescriptor(getInsightTypeConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+        updateInsightTypeConfigTransportSettings =
+            HttpJsonCallSettings.<UpdateInsightTypeConfigRequest, InsightTypeConfig>newBuilder()
+                .setMethodDescriptor(updateInsightTypeConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.listInsightsCallable =
         callableFactory.createUnaryCallable(
@@ -528,6 +724,26 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
             markRecommendationFailedTransportSettings,
             settings.markRecommendationFailedSettings(),
             clientContext);
+    this.getRecommenderConfigCallable =
+        callableFactory.createUnaryCallable(
+            getRecommenderConfigTransportSettings,
+            settings.getRecommenderConfigSettings(),
+            clientContext);
+    this.updateRecommenderConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateRecommenderConfigTransportSettings,
+            settings.updateRecommenderConfigSettings(),
+            clientContext);
+    this.getInsightTypeConfigCallable =
+        callableFactory.createUnaryCallable(
+            getInsightTypeConfigTransportSettings,
+            settings.getInsightTypeConfigSettings(),
+            clientContext);
+    this.updateInsightTypeConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateInsightTypeConfigTransportSettings,
+            settings.updateInsightTypeConfigSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -544,6 +760,10 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
     methodDescriptors.add(markRecommendationClaimedMethodDescriptor);
     methodDescriptors.add(markRecommendationSucceededMethodDescriptor);
     methodDescriptors.add(markRecommendationFailedMethodDescriptor);
+    methodDescriptors.add(getRecommenderConfigMethodDescriptor);
+    methodDescriptors.add(updateRecommenderConfigMethodDescriptor);
+    methodDescriptors.add(getInsightTypeConfigMethodDescriptor);
+    methodDescriptors.add(updateInsightTypeConfigMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -600,6 +820,30 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
   public UnaryCallable<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedCallable() {
     return markRecommendationFailedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRecommenderConfigRequest, RecommenderConfig>
+      getRecommenderConfigCallable() {
+    return getRecommenderConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRecommenderConfigRequest, RecommenderConfig>
+      updateRecommenderConfigCallable() {
+    return updateRecommenderConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetInsightTypeConfigRequest, InsightTypeConfig>
+      getInsightTypeConfigCallable() {
+    return getInsightTypeConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateInsightTypeConfigRequest, InsightTypeConfig>
+      updateInsightTypeConfigCallable() {
+    return updateInsightTypeConfigCallable;
   }
 
   @Override

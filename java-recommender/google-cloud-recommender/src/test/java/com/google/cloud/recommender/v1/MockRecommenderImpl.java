@@ -225,4 +225,88 @@ public class MockRecommenderImpl extends RecommenderImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getRecommenderConfig(
+      GetRecommenderConfigRequest request, StreamObserver<RecommenderConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RecommenderConfig) {
+      requests.add(request);
+      responseObserver.onNext(((RecommenderConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRecommenderConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RecommenderConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateRecommenderConfig(
+      UpdateRecommenderConfigRequest request, StreamObserver<RecommenderConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RecommenderConfig) {
+      requests.add(request);
+      responseObserver.onNext(((RecommenderConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateRecommenderConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RecommenderConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getInsightTypeConfig(
+      GetInsightTypeConfigRequest request, StreamObserver<InsightTypeConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof InsightTypeConfig) {
+      requests.add(request);
+      responseObserver.onNext(((InsightTypeConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetInsightTypeConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  InsightTypeConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateInsightTypeConfig(
+      UpdateInsightTypeConfigRequest request, StreamObserver<InsightTypeConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof InsightTypeConfig) {
+      requests.add(request);
+      responseObserver.onNext(((InsightTypeConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateInsightTypeConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  InsightTypeConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }
