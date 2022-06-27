@@ -241,7 +241,7 @@ public interface SearchJobsResponseOrBuilder
    * <pre>
    * An estimation of the number of jobs that match the specified query.
    * This number isn't guaranteed to be accurate. For accurate results,
-   * see [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size].
+   * see [SearchJobsResponse.total_size][google.cloud.talent.v4beta1.SearchJobsResponse.total_size].
    * </pre>
    *
    * <code>int32 estimated_total_size = 5;</code>
@@ -254,9 +254,7 @@ public interface SearchJobsResponseOrBuilder
    *
    *
    * <pre>
-   * The precise result count, which is available only if the client set
-   * [SearchJobsRequest.require_precise_result_size][google.cloud.talent.v4beta1.SearchJobsRequest.require_precise_result_size] to `true`, or if the
-   * response is the last page of results. Otherwise, the value is `-1`.
+   * The precise result count with limit 100,000.
    * </pre>
    *
    * <code>int32 total_size = 6;</code>

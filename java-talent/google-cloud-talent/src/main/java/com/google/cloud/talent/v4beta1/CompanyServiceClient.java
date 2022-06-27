@@ -99,6 +99,20 @@ import javax.annotation.Generated;
  * CompanyServiceClient companyServiceClient = CompanyServiceClient.create(companyServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * CompanyServiceSettings companyServiceSettings =
+ *     CompanyServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             CompanyServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * CompanyServiceClient companyServiceClient = CompanyServiceClient.create(companyServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
@@ -763,7 +777,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListCompaniesResponse response = companyServiceClient.listCompaniesCallable().call(request);
-   *     for (Company element : response.getResponsesList()) {
+   *     for (Company element : response.getCompaniesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

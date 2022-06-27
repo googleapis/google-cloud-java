@@ -949,7 +949,7 @@ public interface JobOrBuilder
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    *
    * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-   *     google/cloud/talent/v4beta1/job.proto;l=277
+   *     google/cloud/talent/v4beta1/job.proto;l=275
    * @return The enum numeric value on the wire for visibility.
    */
   @java.lang.Deprecated
@@ -966,7 +966,7 @@ public interface JobOrBuilder
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    *
    * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-   *     google/cloud/talent/v4beta1/job.proto;l=277
+   *     google/cloud/talent/v4beta1/job.proto;l=275
    * @return The visibility.
    */
   @java.lang.Deprecated

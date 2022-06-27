@@ -43,20 +43,18 @@ public final class TenantResourceProto {
       "\n(google/cloud/talent/v4beta1/tenant.pro"
           + "to\022\033google.cloud.talent.v4beta1\032\037google/"
           + "api/field_behavior.proto\032\031google/api/res"
-          + "ource.proto\032\037google/protobuf/timestamp.p"
-          + "roto\032\034google/api/annotations.proto\"\303\002\n\006T"
-          + "enant\022\014\n\004name\030\001 \001(\t\022\030\n\013external_id\030\002 \001(\t"
-          + "B\003\340A\002\022E\n\nusage_type\030\003 \001(\01621.google.cloud"
-          + ".talent.v4beta1.Tenant.DataUsageType\0224\n,"
-          + "keyword_searchable_profile_custom_attrib"
-          + "utes\030\004 \003(\t\"N\n\rDataUsageType\022\037\n\033DATA_USAG"
-          + "E_TYPE_UNSPECIFIED\020\000\022\016\n\nAGGREGATED\020\001\022\014\n\010"
-          + "ISOLATED\020\002:D\352AA\n\032jobs.googleapis.com/Ten"
-          + "ant\022#projects/{project}/tenants/{tenant}"
-          + "B\201\001\n\037com.google.cloud.talent.v4beta1B\023Te"
-          + "nantResourceProtoP\001ZAgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/talent/v4beta1;"
-          + "talent\242\002\003CTSb\006proto3"
+          + "ource.proto\"\303\002\n\006Tenant\022\014\n\004name\030\001 \001(\t\022\030\n\013"
+          + "external_id\030\002 \001(\tB\003\340A\002\022E\n\nusage_type\030\003 \001"
+          + "(\01621.google.cloud.talent.v4beta1.Tenant."
+          + "DataUsageType\0224\n,keyword_searchable_prof"
+          + "ile_custom_attributes\030\004 \003(\t\"N\n\rDataUsage"
+          + "Type\022\037\n\033DATA_USAGE_TYPE_UNSPECIFIED\020\000\022\016\n"
+          + "\nAGGREGATED\020\001\022\014\n\010ISOLATED\020\002:D\352AA\n\032jobs.g"
+          + "oogleapis.com/Tenant\022#projects/{project}"
+          + "/tenants/{tenant}B\201\001\n\037com.google.cloud.t"
+          + "alent.v4beta1B\023TenantResourceProtoP\001ZAgo"
+          + "ogle.golang.org/genproto/googleapis/clou"
+          + "d/talent/v4beta1;talent\242\002\003CTSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -64,8 +62,6 @@ public final class TenantResourceProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
-              com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_talent_v4beta1_Tenant_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -83,8 +79,6 @@ public final class TenantResourceProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

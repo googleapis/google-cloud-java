@@ -99,6 +99,20 @@ import javax.annotation.Generated;
  * TenantServiceClient tenantServiceClient = TenantServiceClient.create(tenantServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * TenantServiceSettings tenantServiceSettings =
+ *     TenantServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             TenantServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * TenantServiceClient tenantServiceClient = TenantServiceClient.create(tenantServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
@@ -665,7 +679,7 @@ public class TenantServiceClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTenantsResponse response = tenantServiceClient.listTenantsCallable().call(request);
-   *     for (Tenant element : response.getResponsesList()) {
+   *     for (Tenant element : response.getTenantsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

@@ -52,16 +52,18 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * CLDR region code of the country/region of the address. This is used
-   * to address ambiguity of the user-input location, for example, "Liverpool"
-   * against "Liverpool, NY, US" or "Liverpool, UK".
-   * Set this field to bias location resolution toward a specific country
-   * or territory. If this field is not set, application behavior is biased
-   * toward the United States by default.
+   * CLDR region code of the country/region. This field may be used in two ways:
+   * 1) If telecommute preference is not set, this field is used address
+   * ambiguity of the user-input address. For example, "Liverpool" may refer to
+   * "Liverpool, NY, US" or "Liverpool, UK". This region code biases the
+   * address resolution toward a specific country or territory. If this field is
+   * not set, address resolution is biased toward the United States by default.
+   * 2) If telecommute preference is set to TELECOMMUTE_ALLOWED, the
+   * telecommute location filter will be limited to the region specified in this
+   * field. If this field is not set, the telecommute job locations will not be
    * See
-   * https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
+   * https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/territory_information.html
    * for details. Example: "CH" for Switzerland.
-   * Note that this filter is not applicable for Profile Search related queries.
    * </pre>
    *
    * <code>string region_code = 2;</code>
@@ -73,16 +75,18 @@ public interface LocationFilterOrBuilder
    *
    *
    * <pre>
-   * CLDR region code of the country/region of the address. This is used
-   * to address ambiguity of the user-input location, for example, "Liverpool"
-   * against "Liverpool, NY, US" or "Liverpool, UK".
-   * Set this field to bias location resolution toward a specific country
-   * or territory. If this field is not set, application behavior is biased
-   * toward the United States by default.
+   * CLDR region code of the country/region. This field may be used in two ways:
+   * 1) If telecommute preference is not set, this field is used address
+   * ambiguity of the user-input address. For example, "Liverpool" may refer to
+   * "Liverpool, NY, US" or "Liverpool, UK". This region code biases the
+   * address resolution toward a specific country or territory. If this field is
+   * not set, address resolution is biased toward the United States by default.
+   * 2) If telecommute preference is set to TELECOMMUTE_ALLOWED, the
+   * telecommute location filter will be limited to the region specified in this
+   * field. If this field is not set, the telecommute job locations will not be
    * See
-   * https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html
+   * https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/territory_information.html
    * for details. Example: "CH" for Switzerland.
-   * Note that this filter is not applicable for Profile Search related queries.
    * </pre>
    *
    * <code>string region_code = 2;</code>
@@ -150,13 +154,15 @@ public interface LocationFilterOrBuilder
    * <pre>
    * Allows the client to return jobs without a
    * set location, specifically, telecommuting jobs (telecommuting is considered
-   * by the service as a special location.
+   * by the service as a special location).
    * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region] indicates if a job permits telecommuting.
    * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
    * telecommuting jobs are searched, and [address][google.cloud.talent.v4beta1.LocationFilter.address] and [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are
    * ignored. If not set or set to
-   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], telecommute job are not
-   * searched.
+   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], the telecommute status of
+   * the jobs is ignored. Jobs that have [PostingRegion.TELECOMMUTE][google.cloud.talent.v4beta1.PostingRegion.TELECOMMUTE] and have
+   * additional [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] may still be matched based on other location
+   * filters using [address][google.cloud.talent.v4beta1.LocationFilter.address] or [latlng][].
    * This filter can be used by itself to search exclusively for telecommuting
    * jobs, or it can be combined with another location
    * filter to search for a combination of job locations,
@@ -179,13 +185,15 @@ public interface LocationFilterOrBuilder
    * <pre>
    * Allows the client to return jobs without a
    * set location, specifically, telecommuting jobs (telecommuting is considered
-   * by the service as a special location.
+   * by the service as a special location).
    * [Job.posting_region][google.cloud.talent.v4beta1.Job.posting_region] indicates if a job permits telecommuting.
    * If this field is set to [TelecommutePreference.TELECOMMUTE_ALLOWED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_ALLOWED],
    * telecommuting jobs are searched, and [address][google.cloud.talent.v4beta1.LocationFilter.address] and [lat_lng][google.cloud.talent.v4beta1.LocationFilter.lat_lng] are
    * ignored. If not set or set to
-   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], telecommute job are not
-   * searched.
+   * [TelecommutePreference.TELECOMMUTE_EXCLUDED][google.cloud.talent.v4beta1.LocationFilter.TelecommutePreference.TELECOMMUTE_EXCLUDED], the telecommute status of
+   * the jobs is ignored. Jobs that have [PostingRegion.TELECOMMUTE][google.cloud.talent.v4beta1.PostingRegion.TELECOMMUTE] and have
+   * additional [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] may still be matched based on other location
+   * filters using [address][google.cloud.talent.v4beta1.LocationFilter.address] or [latlng][].
    * This filter can be used by itself to search exclusively for telecommuting
    * jobs, or it can be combined with another location
    * filter to search for a combination of job locations,
@@ -209,7 +217,6 @@ public interface LocationFilterOrBuilder
    * <pre>
    * Whether to apply negation to the filter so profiles matching the filter
    * are excluded.
-   * Currently only supported in profile search.
    * </pre>
    *
    * <code>bool negated = 6;</code>

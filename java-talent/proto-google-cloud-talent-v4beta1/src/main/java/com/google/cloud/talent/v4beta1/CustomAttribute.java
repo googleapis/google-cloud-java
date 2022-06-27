@@ -110,6 +110,11 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
               filterable_ = input.readBool();
               break;
             }
+          case 32:
+            {
+              keywordSearchable_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -305,8 +310,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * If the `filterable` flag is true, custom field values are searchable.
-   * If false, values are not searchable.
+   * If the `filterable` flag is true, the custom field values may be used for
+   * custom attribute filters [JobQuery.custom_attribute_filter][google.cloud.talent.v4beta1.JobQuery.custom_attribute_filter].
+   * If false, these values may not be used for custom attribute filters.
    * Default is false.
    * </pre>
    *
@@ -317,6 +323,27 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public boolean getFilterable() {
     return filterable_;
+  }
+
+  public static final int KEYWORD_SEARCHABLE_FIELD_NUMBER = 4;
+  private boolean keywordSearchable_;
+  /**
+   *
+   *
+   * <pre>
+   * If the `keyword_searchable` flag is true, the keywords in custom fields are
+   * searchable by keyword match.
+   * If false, the values are not searchable by keyword match.
+   * Default is false.
+   * </pre>
+   *
+   * <code>bool keyword_searchable = 4;</code>
+   *
+   * @return The keywordSearchable.
+   */
+  @java.lang.Override
+  public boolean getKeywordSearchable() {
+    return keywordSearchable_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -346,6 +373,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     }
     if (filterable_ != false) {
       output.writeBool(3, filterable_);
+    }
+    if (keywordSearchable_ != false) {
+      output.writeBool(4, keywordSearchable_);
     }
     unknownFields.writeTo(output);
   }
@@ -380,6 +410,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     if (filterable_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, filterable_);
     }
+    if (keywordSearchable_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, keywordSearchable_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -399,6 +432,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     if (!getStringValuesList().equals(other.getStringValuesList())) return false;
     if (!getLongValuesList().equals(other.getLongValuesList())) return false;
     if (getFilterable() != other.getFilterable()) return false;
+    if (getKeywordSearchable() != other.getKeywordSearchable()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -420,6 +454,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     }
     hash = (37 * hash) + FILTERABLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFilterable());
+    hash = (37 * hash) + KEYWORD_SEARCHABLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getKeywordSearchable());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -571,6 +607,8 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       bitField0_ = (bitField0_ & ~0x00000002);
       filterable_ = false;
 
+      keywordSearchable_ = false;
+
       return this;
     }
 
@@ -610,6 +648,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       }
       result.longValues_ = longValues_;
       result.filterable_ = filterable_;
+      result.keywordSearchable_ = keywordSearchable_;
       onBuilt();
       return result;
     }
@@ -682,6 +721,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
       }
       if (other.getFilterable() != false) {
         setFilterable(other.getFilterable());
+      }
+      if (other.getKeywordSearchable() != false) {
+        setKeywordSearchable(other.getKeywordSearchable());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1097,8 +1139,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * If the `filterable` flag is true, custom field values are searchable.
-     * If false, values are not searchable.
+     * If the `filterable` flag is true, the custom field values may be used for
+     * custom attribute filters [JobQuery.custom_attribute_filter][google.cloud.talent.v4beta1.JobQuery.custom_attribute_filter].
+     * If false, these values may not be used for custom attribute filters.
      * Default is false.
      * </pre>
      *
@@ -1114,8 +1157,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * If the `filterable` flag is true, custom field values are searchable.
-     * If false, values are not searchable.
+     * If the `filterable` flag is true, the custom field values may be used for
+     * custom attribute filters [JobQuery.custom_attribute_filter][google.cloud.talent.v4beta1.JobQuery.custom_attribute_filter].
+     * If false, these values may not be used for custom attribute filters.
      * Default is false.
      * </pre>
      *
@@ -1134,8 +1178,9 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * If the `filterable` flag is true, custom field values are searchable.
-     * If false, values are not searchable.
+     * If the `filterable` flag is true, the custom field values may be used for
+     * custom attribute filters [JobQuery.custom_attribute_filter][google.cloud.talent.v4beta1.JobQuery.custom_attribute_filter].
+     * If false, these values may not be used for custom attribute filters.
      * Default is false.
      * </pre>
      *
@@ -1146,6 +1191,67 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
     public Builder clearFilterable() {
 
       filterable_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean keywordSearchable_;
+    /**
+     *
+     *
+     * <pre>
+     * If the `keyword_searchable` flag is true, the keywords in custom fields are
+     * searchable by keyword match.
+     * If false, the values are not searchable by keyword match.
+     * Default is false.
+     * </pre>
+     *
+     * <code>bool keyword_searchable = 4;</code>
+     *
+     * @return The keywordSearchable.
+     */
+    @java.lang.Override
+    public boolean getKeywordSearchable() {
+      return keywordSearchable_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the `keyword_searchable` flag is true, the keywords in custom fields are
+     * searchable by keyword match.
+     * If false, the values are not searchable by keyword match.
+     * Default is false.
+     * </pre>
+     *
+     * <code>bool keyword_searchable = 4;</code>
+     *
+     * @param value The keywordSearchable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeywordSearchable(boolean value) {
+
+      keywordSearchable_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If the `keyword_searchable` flag is true, the keywords in custom fields are
+     * searchable by keyword match.
+     * If false, the values are not searchable by keyword match.
+     * Default is false.
+     * </pre>
+     *
+     * <code>bool keyword_searchable = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKeywordSearchable() {
+
+      keywordSearchable_ = false;
       onChanged();
       return this;
     }
