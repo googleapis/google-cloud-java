@@ -177,5 +177,67 @@ public interface AppendRowsResponseOrBuilder
    */
   com.google.cloud.bigquery.storage.v1.TableSchemaOrBuilder getUpdatedSchemaOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * If a request failed due to corrupted rows, no rows in the batch will be
+   * appended. The API will return row level error info, so that the caller can
+   * remove the bad rows and retry the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+   */
+  java.util.List<com.google.cloud.bigquery.storage.v1.RowError> getRowErrorsList();
+  /**
+   *
+   *
+   * <pre>
+   * If a request failed due to corrupted rows, no rows in the batch will be
+   * appended. The API will return row level error info, so that the caller can
+   * remove the bad rows and retry the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+   */
+  com.google.cloud.bigquery.storage.v1.RowError getRowErrors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * If a request failed due to corrupted rows, no rows in the batch will be
+   * appended. The API will return row level error info, so that the caller can
+   * remove the bad rows and retry the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+   */
+  int getRowErrorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * If a request failed due to corrupted rows, no rows in the batch will be
+   * appended. The API will return row level error info, so that the caller can
+   * remove the bad rows and retry the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+   */
+  java.util.List<? extends com.google.cloud.bigquery.storage.v1.RowErrorOrBuilder>
+      getRowErrorsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * If a request failed due to corrupted rows, no rows in the batch will be
+   * appended. The API will return row level error info, so that the caller can
+   * remove the bad rows and retry the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+   */
+  com.google.cloud.bigquery.storage.v1.RowErrorOrBuilder getRowErrorsOrBuilder(int index);
+
   public com.google.cloud.bigquery.storage.v1.AppendRowsResponse.ResponseCase getResponseCase();
 }

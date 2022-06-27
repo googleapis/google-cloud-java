@@ -37,7 +37,9 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     super(builder);
   }
 
-  private AppendRowsResponse() {}
+  private AppendRowsResponse() {
+    rowErrors_ = java.util.Collections.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -58,6 +60,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -121,6 +124,18 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
 
               break;
             }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                rowErrors_ =
+                    new java.util.ArrayList<com.google.cloud.bigquery.storage.v1.RowError>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              rowErrors_.add(
+                  input.readMessage(
+                      com.google.cloud.bigquery.storage.v1.RowError.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -137,6 +152,9 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        rowErrors_ = java.util.Collections.unmodifiableList(rowErrors_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -1185,6 +1203,85 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     return getUpdatedSchema();
   }
 
+  public static final int ROW_ERRORS_FIELD_NUMBER = 4;
+  private java.util.List<com.google.cloud.bigquery.storage.v1.RowError> rowErrors_;
+  /**
+   *
+   *
+   * <pre>
+   * If a request failed due to corrupted rows, no rows in the batch will be
+   * appended. The API will return row level error info, so that the caller can
+   * remove the bad rows and retry the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.bigquery.storage.v1.RowError> getRowErrorsList() {
+    return rowErrors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If a request failed due to corrupted rows, no rows in the batch will be
+   * appended. The API will return row level error info, so that the caller can
+   * remove the bad rows and retry the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.bigquery.storage.v1.RowErrorOrBuilder>
+      getRowErrorsOrBuilderList() {
+    return rowErrors_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If a request failed due to corrupted rows, no rows in the batch will be
+   * appended. The API will return row level error info, so that the caller can
+   * remove the bad rows and retry the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+   */
+  @java.lang.Override
+  public int getRowErrorsCount() {
+    return rowErrors_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If a request failed due to corrupted rows, no rows in the batch will be
+   * appended. The API will return row level error info, so that the caller can
+   * remove the bad rows and retry the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.RowError getRowErrors(int index) {
+    return rowErrors_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If a request failed due to corrupted rows, no rows in the batch will be
+   * appended. The API will return row level error info, so that the caller can
+   * remove the bad rows and retry the request.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.RowErrorOrBuilder getRowErrorsOrBuilder(int index) {
+    return rowErrors_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1209,6 +1306,9 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     if (updatedSchema_ != null) {
       output.writeMessage(3, getUpdatedSchema());
     }
+    for (int i = 0; i < rowErrors_.size(); i++) {
+      output.writeMessage(4, rowErrors_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1231,6 +1331,9 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     if (updatedSchema_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getUpdatedSchema());
     }
+    for (int i = 0; i < rowErrors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, rowErrors_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1251,6 +1354,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     if (hasUpdatedSchema()) {
       if (!getUpdatedSchema().equals(other.getUpdatedSchema())) return false;
     }
+    if (!getRowErrorsList().equals(other.getRowErrorsList())) return false;
     if (!getResponseCase().equals(other.getResponseCase())) return false;
     switch (responseCase_) {
       case 1:
@@ -1276,6 +1380,10 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     if (hasUpdatedSchema()) {
       hash = (37 * hash) + UPDATED_SCHEMA_FIELD_NUMBER;
       hash = (53 * hash) + getUpdatedSchema().hashCode();
+    }
+    if (getRowErrorsCount() > 0) {
+      hash = (37 * hash) + ROW_ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getRowErrorsList().hashCode();
     }
     switch (responseCase_) {
       case 1:
@@ -1429,7 +1537,9 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getRowErrorsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1440,6 +1550,12 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       } else {
         updatedSchema_ = null;
         updatedSchemaBuilder_ = null;
+      }
+      if (rowErrorsBuilder_ == null) {
+        rowErrors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        rowErrorsBuilder_.clear();
       }
       responseCase_ = 0;
       response_ = null;
@@ -1470,6 +1586,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.bigquery.storage.v1.AppendRowsResponse buildPartial() {
       com.google.cloud.bigquery.storage.v1.AppendRowsResponse result =
           new com.google.cloud.bigquery.storage.v1.AppendRowsResponse(this);
+      int from_bitField0_ = bitField0_;
       if (responseCase_ == 1) {
         if (appendResultBuilder_ == null) {
           result.response_ = response_;
@@ -1488,6 +1605,15 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         result.updatedSchema_ = updatedSchema_;
       } else {
         result.updatedSchema_ = updatedSchemaBuilder_.build();
+      }
+      if (rowErrorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          rowErrors_ = java.util.Collections.unmodifiableList(rowErrors_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.rowErrors_ = rowErrors_;
+      } else {
+        result.rowErrors_ = rowErrorsBuilder_.build();
       }
       result.responseCase_ = responseCase_;
       onBuilt();
@@ -1542,6 +1668,33 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         return this;
       if (other.hasUpdatedSchema()) {
         mergeUpdatedSchema(other.getUpdatedSchema());
+      }
+      if (rowErrorsBuilder_ == null) {
+        if (!other.rowErrors_.isEmpty()) {
+          if (rowErrors_.isEmpty()) {
+            rowErrors_ = other.rowErrors_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureRowErrorsIsMutable();
+            rowErrors_.addAll(other.rowErrors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.rowErrors_.isEmpty()) {
+          if (rowErrorsBuilder_.isEmpty()) {
+            rowErrorsBuilder_.dispose();
+            rowErrorsBuilder_ = null;
+            rowErrors_ = other.rowErrors_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            rowErrorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRowErrorsFieldBuilder()
+                    : null;
+          } else {
+            rowErrorsBuilder_.addAllMessages(other.rowErrors_);
+          }
+        }
       }
       switch (other.getResponseCase()) {
         case APPEND_RESULT:
@@ -1602,6 +1755,8 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.storage.v1.AppendRowsResponse.AppendResult,
@@ -2355,6 +2510,393 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         updatedSchema_ = null;
       }
       return updatedSchemaBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.bigquery.storage.v1.RowError> rowErrors_ =
+        java.util.Collections.emptyList();
+
+    private void ensureRowErrorsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        rowErrors_ =
+            new java.util.ArrayList<com.google.cloud.bigquery.storage.v1.RowError>(rowErrors_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.bigquery.storage.v1.RowError,
+            com.google.cloud.bigquery.storage.v1.RowError.Builder,
+            com.google.cloud.bigquery.storage.v1.RowErrorOrBuilder>
+        rowErrorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public java.util.List<com.google.cloud.bigquery.storage.v1.RowError> getRowErrorsList() {
+      if (rowErrorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(rowErrors_);
+      } else {
+        return rowErrorsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public int getRowErrorsCount() {
+      if (rowErrorsBuilder_ == null) {
+        return rowErrors_.size();
+      } else {
+        return rowErrorsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1.RowError getRowErrors(int index) {
+      if (rowErrorsBuilder_ == null) {
+        return rowErrors_.get(index);
+      } else {
+        return rowErrorsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public Builder setRowErrors(int index, com.google.cloud.bigquery.storage.v1.RowError value) {
+      if (rowErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRowErrorsIsMutable();
+        rowErrors_.set(index, value);
+        onChanged();
+      } else {
+        rowErrorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public Builder setRowErrors(
+        int index, com.google.cloud.bigquery.storage.v1.RowError.Builder builderForValue) {
+      if (rowErrorsBuilder_ == null) {
+        ensureRowErrorsIsMutable();
+        rowErrors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        rowErrorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public Builder addRowErrors(com.google.cloud.bigquery.storage.v1.RowError value) {
+      if (rowErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRowErrorsIsMutable();
+        rowErrors_.add(value);
+        onChanged();
+      } else {
+        rowErrorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public Builder addRowErrors(int index, com.google.cloud.bigquery.storage.v1.RowError value) {
+      if (rowErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRowErrorsIsMutable();
+        rowErrors_.add(index, value);
+        onChanged();
+      } else {
+        rowErrorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public Builder addRowErrors(
+        com.google.cloud.bigquery.storage.v1.RowError.Builder builderForValue) {
+      if (rowErrorsBuilder_ == null) {
+        ensureRowErrorsIsMutable();
+        rowErrors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        rowErrorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public Builder addRowErrors(
+        int index, com.google.cloud.bigquery.storage.v1.RowError.Builder builderForValue) {
+      if (rowErrorsBuilder_ == null) {
+        ensureRowErrorsIsMutable();
+        rowErrors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        rowErrorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public Builder addAllRowErrors(
+        java.lang.Iterable<? extends com.google.cloud.bigquery.storage.v1.RowError> values) {
+      if (rowErrorsBuilder_ == null) {
+        ensureRowErrorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, rowErrors_);
+        onChanged();
+      } else {
+        rowErrorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public Builder clearRowErrors() {
+      if (rowErrorsBuilder_ == null) {
+        rowErrors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        rowErrorsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public Builder removeRowErrors(int index) {
+      if (rowErrorsBuilder_ == null) {
+        ensureRowErrorsIsMutable();
+        rowErrors_.remove(index);
+        onChanged();
+      } else {
+        rowErrorsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1.RowError.Builder getRowErrorsBuilder(int index) {
+      return getRowErrorsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1.RowErrorOrBuilder getRowErrorsOrBuilder(int index) {
+      if (rowErrorsBuilder_ == null) {
+        return rowErrors_.get(index);
+      } else {
+        return rowErrorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public java.util.List<? extends com.google.cloud.bigquery.storage.v1.RowErrorOrBuilder>
+        getRowErrorsOrBuilderList() {
+      if (rowErrorsBuilder_ != null) {
+        return rowErrorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(rowErrors_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1.RowError.Builder addRowErrorsBuilder() {
+      return getRowErrorsFieldBuilder()
+          .addBuilder(com.google.cloud.bigquery.storage.v1.RowError.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public com.google.cloud.bigquery.storage.v1.RowError.Builder addRowErrorsBuilder(int index) {
+      return getRowErrorsFieldBuilder()
+          .addBuilder(index, com.google.cloud.bigquery.storage.v1.RowError.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If a request failed due to corrupted rows, no rows in the batch will be
+     * appended. The API will return row level error info, so that the caller can
+     * remove the bad rows and retry the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
+     */
+    public java.util.List<com.google.cloud.bigquery.storage.v1.RowError.Builder>
+        getRowErrorsBuilderList() {
+      return getRowErrorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.bigquery.storage.v1.RowError,
+            com.google.cloud.bigquery.storage.v1.RowError.Builder,
+            com.google.cloud.bigquery.storage.v1.RowErrorOrBuilder>
+        getRowErrorsFieldBuilder() {
+      if (rowErrorsBuilder_ == null) {
+        rowErrorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.bigquery.storage.v1.RowError,
+                com.google.cloud.bigquery.storage.v1.RowError.Builder,
+                com.google.cloud.bigquery.storage.v1.RowErrorOrBuilder>(
+                rowErrors_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        rowErrors_ = null;
+      }
+      return rowErrorsBuilder_;
     }
 
     @java.lang.Override

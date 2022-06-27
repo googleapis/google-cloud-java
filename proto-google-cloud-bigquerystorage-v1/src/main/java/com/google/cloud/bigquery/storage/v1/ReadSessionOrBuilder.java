@@ -98,7 +98,7 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Immutable. Data format of the output data.
+   * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not supported.
    * </pre>
    *
    * <code>
@@ -112,7 +112,7 @@ public interface ReadSessionOrBuilder
    *
    *
    * <pre>
-   * Immutable. Data format of the output data.
+   * Immutable. Data format of the output data. DATA_FORMAT_UNSPECIFIED not supported.
    * </pre>
    *
    * <code>

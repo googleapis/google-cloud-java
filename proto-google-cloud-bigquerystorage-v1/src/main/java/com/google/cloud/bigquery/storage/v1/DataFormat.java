@@ -28,7 +28,15 @@ package com.google.cloud.bigquery.storage.v1;
  * Protobuf enum {@code google.cloud.bigquery.storage.v1.DataFormat}
  */
 public enum DataFormat implements com.google.protobuf.ProtocolMessageEnum {
-  /** <code>DATA_FORMAT_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Data format is unspecified.
+   * </pre>
+   *
+   * <code>DATA_FORMAT_UNSPECIFIED = 0;</code>
+   */
   DATA_FORMAT_UNSPECIFIED(0),
   /**
    *
@@ -55,7 +63,15 @@ public enum DataFormat implements com.google.protobuf.ProtocolMessageEnum {
   UNRECOGNIZED(-1),
   ;
 
-  /** <code>DATA_FORMAT_UNSPECIFIED = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Data format is unspecified.
+   * </pre>
+   *
+   * <code>DATA_FORMAT_UNSPECIFIED = 0;</code>
+   */
   public static final int DATA_FORMAT_UNSPECIFIED_VALUE = 0;
   /**
    *

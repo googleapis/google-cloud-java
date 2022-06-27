@@ -174,7 +174,10 @@ public class BigQueryWriteClientTest {
   @Test
   public void appendRowsTest() throws Exception {
     AppendRowsResponse expectedResponse =
-        AppendRowsResponse.newBuilder().setUpdatedSchema(TableSchema.newBuilder().build()).build();
+        AppendRowsResponse.newBuilder()
+            .setUpdatedSchema(TableSchema.newBuilder().build())
+            .addAllRowErrors(new ArrayList<RowError>())
+            .build();
     mockBigQueryWrite.addResponse(expectedResponse);
     AppendRowsRequest request =
         AppendRowsRequest.newBuilder()

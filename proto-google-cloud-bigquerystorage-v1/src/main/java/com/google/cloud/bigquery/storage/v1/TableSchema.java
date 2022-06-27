@@ -22,7 +22,9 @@ package com.google.cloud.bigquery.storage.v1;
  *
  *
  * <pre>
- * Schema of a table.
+ * Schema of a table. This schema is a subset of
+ * google.cloud.bigquery.v2.TableSchema containing information necessary to
+ * generate valid message to write to BigQuery.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.storage.v1.TableSchema}
@@ -359,7 +361,9 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Schema of a table.
+   * Schema of a table. This schema is a subset of
+   * google.cloud.bigquery.v2.TableSchema containing information necessary to
+   * generate valid message to write to BigQuery.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.storage.v1.TableSchema}
