@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -31,7 +32,6 @@ import com.google.cloud.workflows.v1.stub.WorkflowsStub;
 import com.google.cloud.workflows.v1.stub.WorkflowsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -104,13 +104,28 @@ import javax.annotation.Generated;
  * WorkflowsClient workflowsClient = WorkflowsClient.create(workflowsSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * WorkflowsSettings workflowsSettings =
+ *     WorkflowsSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             WorkflowsSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * WorkflowsClient workflowsClient = WorkflowsClient.create(workflowsSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class WorkflowsClient implements BackgroundResource {
   private final WorkflowsSettings settings;
   private final WorkflowsStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of WorkflowsClient with default settings. */
   public static final WorkflowsClient create() throws IOException {
@@ -129,7 +144,6 @@ public class WorkflowsClient implements BackgroundResource {
    * Constructs an instance of WorkflowsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(WorkflowsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final WorkflowsClient create(WorkflowsStub stub) {
     return new WorkflowsClient(stub);
   }
@@ -141,21 +155,23 @@ public class WorkflowsClient implements BackgroundResource {
   protected WorkflowsClient(WorkflowsSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((WorkflowsStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected WorkflowsClient(WorkflowsStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final WorkflowsSettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public WorkflowsStub getStub() {
     return stub;
   }
@@ -164,8 +180,17 @@ public class WorkflowsClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -305,7 +330,7 @@ public class WorkflowsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListWorkflowsResponse response = workflowsClient.listWorkflowsCallable().call(request);
-   *     for (Workflow element : response.getResponsesList()) {
+   *     for (Workflow element : response.getWorkflowsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
