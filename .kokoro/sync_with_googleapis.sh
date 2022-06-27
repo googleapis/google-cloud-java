@@ -47,4 +47,4 @@ echo "$(date): Creating commits based on googleapis's ${start_commit} to origin/
 
 "${BASEDIR}/create_commits_from_googleapis_commits.sh" "${start_commit}" origin/master
 
-echo "$(date): Finished creating commits in ${GOOGLE_CLOUD_JAVA_DIR}"
+echo "$(date): Now ${GOOGLE_CLOUD_JAVA_DIR} has the commits."
