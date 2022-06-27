@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/googleapis/java-workflow-executions/compare/v2.2.0...v2.2.1) (2022-06-27)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#316](https://github.com/googleapis/java-workflow-executions/issues/316)) ([97b5bf2](https://github.com/googleapis/java-workflow-executions/commit/97b5bf2361bacd4c7e3633b7205d640cd22913d4))
+
 ## [2.2.0](https://github.com/googleapis/java-workflow-executions/compare/v2.1.7...v2.2.0) (2022-05-19)
 
 
