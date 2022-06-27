@@ -1,14 +1,14 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-vision:2.1.4:2.1.4
-grpc-google-cloud-vision-v1p3beta1:0.88.4:0.88.4
-grpc-google-cloud-vision-v1p1beta1:0.88.4:0.88.4
-grpc-google-cloud-vision-v1p4beta1:0.88.4:0.88.4
-grpc-google-cloud-vision-v1p2beta1:2.1.4:2.1.4
-grpc-google-cloud-vision-v1:2.1.4:2.1.4
-proto-google-cloud-vision-v1p4beta1:0.88.4:0.88.4
-proto-google-cloud-vision-v1:2.1.4:2.1.4
-proto-google-cloud-vision-v1p1beta1:0.88.4:0.88.4
-proto-google-cloud-vision-v1p3beta1:0.88.4:0.88.4
-proto-google-cloud-vision-v1p2beta1:2.1.4:2.1.4
+google-cloud-vision:2.1.4:2.1.5-SNAPSHOT
+grpc-google-cloud-vision-v1p3beta1:0.88.4:0.88.5-SNAPSHOT
+grpc-google-cloud-vision-v1p1beta1:0.88.4:0.88.5-SNAPSHOT
+grpc-google-cloud-vision-v1p4beta1:0.88.4:0.88.5-SNAPSHOT
+grpc-google-cloud-vision-v1p2beta1:2.1.4:2.1.5-SNAPSHOT
+grpc-google-cloud-vision-v1:2.1.4:2.1.5-SNAPSHOT
+proto-google-cloud-vision-v1p4beta1:0.88.4:0.88.5-SNAPSHOT
+proto-google-cloud-vision-v1:2.1.4:2.1.5-SNAPSHOT
+proto-google-cloud-vision-v1p1beta1:0.88.4:0.88.5-SNAPSHOT
+proto-google-cloud-vision-v1p3beta1:0.88.4:0.88.5-SNAPSHOT
+proto-google-cloud-vision-v1p2beta1:2.1.4:2.1.5-SNAPSHOT
