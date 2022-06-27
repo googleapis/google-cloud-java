@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.10.0](https://github.com/googleapis/java-logging/compare/v3.9.0...v3.10.0) (2022-06-25)
+
+
+### Features
+
+* Add support for library instrumentation ([#979](https://github.com/googleapis/java-logging/issues/979)) ([2749974](https://github.com/googleapis/java-logging/commit/27499744f37a5fddcc2d6825c69481374e78829c))
+
+
+### Documentation
+
+* **sample:** update README for native image sample ([#974](https://github.com/googleapis/java-logging/issues/974)) ([1512487](https://github.com/googleapis/java-logging/commit/1512487e60141ed5c61a3a60fcca29f52f4ec141))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#980](https://github.com/googleapis/java-logging/issues/980)) ([18acf1f](https://github.com/googleapis/java-logging/commit/18acf1f64d836ca3fb1b8f4b558ef21d728c391f))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.12 ([#976](https://github.com/googleapis/java-logging/issues/976)) ([01d3213](https://github.com/googleapis/java-logging/commit/01d3213b9e010c3ae3843e5a05bbd01b2961b454))
+
 ## [3.9.0](https://github.com/googleapis/java-logging/compare/v3.8.0...v3.9.0) (2022-05-19)
 
 
