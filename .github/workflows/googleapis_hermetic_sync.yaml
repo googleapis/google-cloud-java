@@ -10,31 +10,42 @@ jobs:
     - uses: actions/checkout@v3
       with:
         repository: 'googleapis/google-cloud-java'
-    - run: |
-        .kokoro/sync_with_googleapis.sh monorepo_script_output
+    - name: Setup workspace
+      run: |
+        mkdir -p "${WORKSPACE}"
+        git config user.email "cloud-java-bot[bot]@users.noreply.github.com"
+        git config user.name "cloud-java-bot"
+        
+        git clone --quiet --branch "${BASE_BRANCH}" --depth 1 \
+            https://github.com/googleapis/google-cloud-java \
+            "${WORKSPACE}/google-cloud-java"
+        cd "${WORKSPACE}/google-cloud-java"
+        # This should match the branch name we push to remote in the following steps
+        git checkout -b monorepo_googleapis_change
       env:
         WORKSPACE: /tmp/googleapis-sync
-        GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
-    # To make some change so that code-suggester can create a new commit.
-    - run: |
-        date > /tmp/googleapis-sync/google-cloud-java/googleapis-sync.timestamp.txt
-    - uses: googleapis/code-suggester@v3
+        # Note for cutover to main: update this to main
+        BASE_BRANCH: monorepo_script_output
+    - name: Propagate googleapis commits to google-cloud-java
+      run: |
+        .kokoro/sync_with_googleapis.sh
       env:
-        ACCESS_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
-      with:
-        command: pr
-        upstream_owner: googleapis
-        upstream_repo: google-cloud-java
-        description: 'googleapis change propagation via hermetic build'
-        title: 'chore: googleapis change propagation via hermetic build'
-        message: 'chore: googleapis change propagation mark'
-        # Upon main branch cutover, change it to 'googleapis-sync'
-        branch: monorepo_script_output-googleapis-sync
-        # Upon main branch cutover, change it to main
-        primary: monorepo_script_output
-        force: true
-        # No need to create fork in another account
-        fork: false
-        # This needs to match the 'google-cloud-java' directory in the
-        #  WORKSPACE in the previous step
-        git_dir: '/tmp/googleapis-sync/google-cloud-java'
+        WORKSPACE: /tmp/googleapis-sync
+        GOOGLE_CLOUD_JAVA_DIR: /tmp/googleapis-sync/google-cloud-java
+    - name: Push changes to remote repository
+      run: |
+        git remote add origin_with_auth \
+            https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}.git
+        git push -f --set-upstream origin_with_auth monorepo_googleapis_change
+      working-directory: /tmp/googleapis-sync/google-cloud-java
+    - name: Create pull request
+      run: |
+        gh pr create --title='chore: googleapis change propagation via hermetic build' \
+            --body='googleapis change propagation via hermetic build' \
+            --base="${BASE_BRANCH}" \
+            --head=monorepo_googleapis_change
+      working-directory: /tmp/googleapis-sync/google-cloud-java
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Note for cutover to main: update this to main
+        BASE_BRANCH: monorepo_script_output

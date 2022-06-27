@@ -52,15 +52,4 @@ echo "$(date): Creating commits based on googleapis's ${start_commit} to origin/
 
 "${BASEDIR}/create_commits_from_googleapis_commits.sh" "${start_commit}" origin/master
 
-# echo "$(date): Pushing commits to remote branch ${branch_name}"
-
-# git push -u origin "${branch_name}"
-
-# echo "$(date): Creating pull request"
-
-# This reads GITHUB_TOKEN environment variable
-#gh pr create --title="googleapis sync: $(date '+%Y%m%d %H:%M')" \
-#    --base "${pr_destination}"
-
-
-
+echo "$(date): Now ${GOOGLE_CLOUD_JAVA_DIR} has the commits."
