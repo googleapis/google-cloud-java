@@ -20,6 +20,7 @@ package com.google.cloud.redis.v1.samples;
 import com.google.cloud.redis.v1.CloudRedisClient;
 import com.google.cloud.redis.v1.DeleteInstanceRequest;
 import com.google.cloud.redis.v1.InstanceName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteInstance {
 

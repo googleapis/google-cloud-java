@@ -19,6 +19,7 @@ package com.google.cloud.redis.v1beta1.samples;
 // [START redis_v1beta1_generated_cloudredisclient_deleteinstance_string_sync]
 import com.google.cloud.redis.v1beta1.CloudRedisClient;
 import com.google.cloud.redis.v1beta1.InstanceName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteInstanceString {
 

@@ -16,8 +16,7 @@
 
 package com.google.cloud.redis.v1.samples;
 
-// [START
-// redis_v1_generated_cloudredisclient_reschedulemaintenance_stringreschedulemaintenancerequestrescheduletypetimestamp_sync]
+// [START redis_v1_generated_cloudredisclient_reschedulemaintenance_stringreschedulemaintenancerequestrescheduletypetimestamp_sync]
 import com.google.cloud.redis.v1.CloudRedisClient;
 import com.google.cloud.redis.v1.Instance;
 import com.google.cloud.redis.v1.InstanceName;
@@ -45,5 +44,4 @@ public class SyncRescheduleMaintenanceStringReschedulemaintenancerequestreschedu
     }
   }
 }
-// [END
-// redis_v1_generated_cloudredisclient_reschedulemaintenance_stringreschedulemaintenancerequestrescheduletypetimestamp_sync]
+// [END redis_v1_generated_cloudredisclient_reschedulemaintenance_stringreschedulemaintenancerequestrescheduletypetimestamp_sync]
