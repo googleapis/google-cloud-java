@@ -19,6 +19,7 @@ package com.google.cloud.vmmigration.v1.samples;
 // [START vmmigration_v1_generated_vmmigrationclient_deleteutilizationreport_string_sync]
 import com.google.cloud.vmmigration.v1.UtilizationReportName;
 import com.google.cloud.vmmigration.v1.VmMigrationClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteUtilizationReportString {
 

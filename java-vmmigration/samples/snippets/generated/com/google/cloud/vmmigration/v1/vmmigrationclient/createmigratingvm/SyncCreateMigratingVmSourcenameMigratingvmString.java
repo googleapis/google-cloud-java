@@ -16,8 +16,7 @@
 
 package com.google.cloud.vmmigration.v1.samples;
 
-// [START
-// vmmigration_v1_generated_vmmigrationclient_createmigratingvm_sourcenamemigratingvmstring_sync]
+// [START vmmigration_v1_generated_vmmigrationclient_createmigratingvm_sourcenamemigratingvmstring_sync]
 import com.google.cloud.vmmigration.v1.MigratingVm;
 import com.google.cloud.vmmigration.v1.SourceName;
 import com.google.cloud.vmmigration.v1.VmMigrationClient;
@@ -40,5 +39,4 @@ public class SyncCreateMigratingVmSourcenameMigratingvmString {
     }
   }
 }
-// [END
-// vmmigration_v1_generated_vmmigrationclient_createmigratingvm_sourcenamemigratingvmstring_sync]
+// [END vmmigration_v1_generated_vmmigrationclient_createmigratingvm_sourcenamemigratingvmstring_sync]

@@ -16,8 +16,7 @@
 
 package com.google.cloud.vmmigration.v1.samples;
 
-// [START
-// vmmigration_v1_generated_vmmigrationclient_updatetargetproject_targetprojectfieldmask_sync]
+// [START vmmigration_v1_generated_vmmigrationclient_updatetargetproject_targetprojectfieldmask_sync]
 import com.google.cloud.vmmigration.v1.TargetProject;
 import com.google.cloud.vmmigration.v1.VmMigrationClient;
 import com.google.protobuf.FieldMask;

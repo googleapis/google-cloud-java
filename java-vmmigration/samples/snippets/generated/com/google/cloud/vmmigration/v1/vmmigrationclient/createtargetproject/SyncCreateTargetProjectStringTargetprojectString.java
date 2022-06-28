@@ -16,8 +16,7 @@
 
 package com.google.cloud.vmmigration.v1.samples;
 
-// [START
-// vmmigration_v1_generated_vmmigrationclient_createtargetproject_stringtargetprojectstring_sync]
+// [START vmmigration_v1_generated_vmmigrationclient_createtargetproject_stringtargetprojectstring_sync]
 import com.google.cloud.vmmigration.v1.LocationName;
 import com.google.cloud.vmmigration.v1.TargetProject;
 import com.google.cloud.vmmigration.v1.VmMigrationClient;
@@ -40,5 +39,4 @@ public class SyncCreateTargetProjectStringTargetprojectString {
     }
   }
 }
-// [END
-// vmmigration_v1_generated_vmmigrationclient_createtargetproject_stringtargetprojectstring_sync]
+// [END vmmigration_v1_generated_vmmigrationclient_createtargetproject_stringtargetprojectstring_sync]

@@ -16,10 +16,10 @@
 
 package com.google.cloud.vmmigration.v1.samples;
 
-// [START
-// vmmigration_v1_generated_vmmigrationclient_deleteutilizationreport_utilizationreportname_sync]
+// [START vmmigration_v1_generated_vmmigrationclient_deleteutilizationreport_utilizationreportname_sync]
 import com.google.cloud.vmmigration.v1.UtilizationReportName;
 import com.google.cloud.vmmigration.v1.VmMigrationClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteUtilizationReportUtilizationreportname {
 
@@ -37,5 +37,4 @@ public class SyncDeleteUtilizationReportUtilizationreportname {
     }
   }
 }
-// [END
-// vmmigration_v1_generated_vmmigrationclient_deleteutilizationreport_utilizationreportname_sync]
+// [END vmmigration_v1_generated_vmmigrationclient_deleteutilizationreport_utilizationreportname_sync]

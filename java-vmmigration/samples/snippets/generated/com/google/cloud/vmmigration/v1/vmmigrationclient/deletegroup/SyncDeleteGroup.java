@@ -20,6 +20,7 @@ package com.google.cloud.vmmigration.v1.samples;
 import com.google.cloud.vmmigration.v1.DeleteGroupRequest;
 import com.google.cloud.vmmigration.v1.GroupName;
 import com.google.cloud.vmmigration.v1.VmMigrationClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteGroup {
 

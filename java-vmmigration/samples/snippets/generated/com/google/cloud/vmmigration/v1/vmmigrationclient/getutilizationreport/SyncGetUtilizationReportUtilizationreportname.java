@@ -16,8 +16,7 @@
 
 package com.google.cloud.vmmigration.v1.samples;
 
-// [START
-// vmmigration_v1_generated_vmmigrationclient_getutilizationreport_utilizationreportname_sync]
+// [START vmmigration_v1_generated_vmmigrationclient_getutilizationreport_utilizationreportname_sync]
 import com.google.cloud.vmmigration.v1.UtilizationReport;
 import com.google.cloud.vmmigration.v1.UtilizationReportName;
 import com.google.cloud.vmmigration.v1.VmMigrationClient;

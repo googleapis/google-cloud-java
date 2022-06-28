@@ -16,8 +16,7 @@
 
 package com.google.cloud.vmmigration.v1.samples;
 
-// [START
-// vmmigration_v1_generated_vmmigrationclient_createdatacenterconnector_stringdatacenterconnectorstring_sync]
+// [START vmmigration_v1_generated_vmmigrationclient_createdatacenterconnector_stringdatacenterconnectorstring_sync]
 import com.google.cloud.vmmigration.v1.DatacenterConnector;
 import com.google.cloud.vmmigration.v1.SourceName;
 import com.google.cloud.vmmigration.v1.VmMigrationClient;
@@ -43,5 +42,4 @@ public class SyncCreateDatacenterConnectorStringDatacenterconnectorString {
     }
   }
 }
-// [END
-// vmmigration_v1_generated_vmmigrationclient_createdatacenterconnector_stringdatacenterconnectorstring_sync]
+// [END vmmigration_v1_generated_vmmigrationclient_createdatacenterconnector_stringdatacenterconnectorstring_sync]

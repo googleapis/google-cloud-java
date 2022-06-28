@@ -16,8 +16,7 @@
 
 package com.google.cloud.vmmigration.v1.samples;
 
-// [START
-// vmmigration_v1_generated_vmmigrationclient_createclonejob_migratingvmnameclonejobstring_sync]
+// [START vmmigration_v1_generated_vmmigrationclient_createclonejob_migratingvmnameclonejobstring_sync]
 import com.google.cloud.vmmigration.v1.CloneJob;
 import com.google.cloud.vmmigration.v1.MigratingVmName;
 import com.google.cloud.vmmigration.v1.VmMigrationClient;
@@ -40,5 +39,4 @@ public class SyncCreateCloneJobMigratingvmnameClonejobString {
     }
   }
 }
-// [END
-// vmmigration_v1_generated_vmmigrationclient_createclonejob_migratingvmnameclonejobstring_sync]
+// [END vmmigration_v1_generated_vmmigrationclient_createclonejob_migratingvmnameclonejobstring_sync]

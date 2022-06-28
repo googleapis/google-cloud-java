@@ -16,8 +16,7 @@
 
 package com.google.cloud.vmmigration.v1.samples;
 
-// [START
-// vmmigration_v1_generated_vmmigrationclient_createutilizationreport_stringutilizationreportstring_sync]
+// [START vmmigration_v1_generated_vmmigrationclient_createutilizationreport_stringutilizationreportstring_sync]
 import com.google.cloud.vmmigration.v1.SourceName;
 import com.google.cloud.vmmigration.v1.UtilizationReport;
 import com.google.cloud.vmmigration.v1.VmMigrationClient;
@@ -42,5 +41,4 @@ public class SyncCreateUtilizationReportStringUtilizationreportString {
     }
   }
 }
-// [END
-// vmmigration_v1_generated_vmmigrationclient_createutilizationreport_stringutilizationreportstring_sync]
+// [END vmmigration_v1_generated_vmmigrationclient_createutilizationreport_stringutilizationreportstring_sync]
