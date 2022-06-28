@@ -16,8 +16,7 @@
 
 package com.google.cloud.videointelligence.v1p2beta1.samples;
 
-// [START
-// videointelligence_v1p2beta1_generated_videointelligenceserviceclient_create_setendpoint_sync]
+// [START videointelligence_v1p2beta1_generated_videointelligenceserviceclient_create_setendpoint_sync]
 import com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceClient;
 import com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceSettings;
 import com.google.cloud.videointelligence.v1p2beta1.myEndpoint;
@@ -37,5 +36,4 @@ public class SyncCreateSetEndpoint {
         VideoIntelligenceServiceClient.create(videoIntelligenceServiceSettings);
   }
 }
-// [END
-// videointelligence_v1p2beta1_generated_videointelligenceserviceclient_create_setendpoint_sync]
+// [END videointelligence_v1p2beta1_generated_videointelligenceserviceclient_create_setendpoint_sync]

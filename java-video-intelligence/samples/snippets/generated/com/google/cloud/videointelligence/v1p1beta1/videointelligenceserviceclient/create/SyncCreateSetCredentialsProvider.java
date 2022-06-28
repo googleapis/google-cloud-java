@@ -16,8 +16,7 @@
 
 package com.google.cloud.videointelligence.v1p1beta1.samples;
 
-// [START
-// videointelligence_v1p1beta1_generated_videointelligenceserviceclient_create_setcredentialsprovider_sync]
+// [START videointelligence_v1p1beta1_generated_videointelligenceserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceClient;
 import com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceSettings;
@@ -40,5 +39,4 @@ public class SyncCreateSetCredentialsProvider {
         VideoIntelligenceServiceClient.create(videoIntelligenceServiceSettings);
   }
 }
-// [END
-// videointelligence_v1p1beta1_generated_videointelligenceserviceclient_create_setcredentialsprovider_sync]
+// [END videointelligence_v1p1beta1_generated_videointelligenceserviceclient_create_setcredentialsprovider_sync]

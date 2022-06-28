@@ -16,8 +16,7 @@
 
 package com.google.cloud.videointelligence.v1p3beta1.samples;
 
-// [START
-// videointelligence_v1p3beta1_generated_videointelligenceserviceclient_annotatevideo_lro_async]
+// [START videointelligence_v1p3beta1_generated_videointelligenceserviceclient_annotatevideo_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoProgress;
 import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoRequest;
@@ -55,5 +54,4 @@ public class AsyncAnnotateVideoLRO {
     }
   }
 }
-// [END
-// videointelligence_v1p3beta1_generated_videointelligenceserviceclient_annotatevideo_lro_async]
+// [END videointelligence_v1p3beta1_generated_videointelligenceserviceclient_annotatevideo_lro_async]

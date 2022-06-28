@@ -16,8 +16,7 @@
 
 package com.google.cloud.videointelligence.v1p3beta1.samples;
 
-// [START
-// videointelligence_v1p3beta1_generated_streamingvideointelligenceserviceclient_streamingannotatevideo_async]
+// [START videointelligence_v1p3beta1_generated_streamingvideointelligenceserviceclient_streamingannotatevideo_async]
 import com.google.api.gax.rpc.BidiStream;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse;
@@ -44,5 +43,4 @@ public class AsyncStreamingAnnotateVideo {
     }
   }
 }
-// [END
-// videointelligence_v1p3beta1_generated_streamingvideointelligenceserviceclient_streamingannotatevideo_async]
+// [END videointelligence_v1p3beta1_generated_streamingvideointelligenceserviceclient_streamingannotatevideo_async]

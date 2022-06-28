@@ -16,8 +16,7 @@
 
 package com.google.cloud.videointelligence.v1p3beta1.samples;
 
-// [START
-// videointelligence_v1p3beta1_generated_videointelligenceserviceclient_annotatevideo_stringlistfeature_sync]
+// [START videointelligence_v1p3beta1_generated_videointelligenceserviceclient_annotatevideo_stringlistfeature_sync]
 import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoResponse;
 import com.google.cloud.videointelligence.v1p3beta1.Feature;
 import com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceClient;
@@ -42,5 +41,4 @@ public class SyncAnnotateVideoStringListfeature {
     }
   }
 }
-// [END
-// videointelligence_v1p3beta1_generated_videointelligenceserviceclient_annotatevideo_stringlistfeature_sync]
+// [END videointelligence_v1p3beta1_generated_videointelligenceserviceclient_annotatevideo_stringlistfeature_sync]

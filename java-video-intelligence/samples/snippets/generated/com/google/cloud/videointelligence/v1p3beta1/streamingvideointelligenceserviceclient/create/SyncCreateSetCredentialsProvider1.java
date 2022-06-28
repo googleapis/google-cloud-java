@@ -16,8 +16,7 @@
 
 package com.google.cloud.videointelligence.v1p3beta1.samples;
 
-// [START
-// videointelligence_v1p3beta1_generated_streamingvideointelligenceserviceclient_create_setcredentialsprovider1_sync]
+// [START videointelligence_v1p3beta1_generated_streamingvideointelligenceserviceclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceClient;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceSettings;
 
@@ -40,5 +39,4 @@ public class SyncCreateSetCredentialsProvider1 {
         StreamingVideoIntelligenceServiceClient.create(streamingVideoIntelligenceServiceSettings);
   }
 }
-// [END
-// videointelligence_v1p3beta1_generated_streamingvideointelligenceserviceclient_create_setcredentialsprovider1_sync]
+// [END videointelligence_v1p3beta1_generated_streamingvideointelligenceserviceclient_create_setcredentialsprovider1_sync]

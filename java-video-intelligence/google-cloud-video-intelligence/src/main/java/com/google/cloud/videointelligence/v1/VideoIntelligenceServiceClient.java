@@ -16,6 +16,7 @@
 
 package com.google.cloud.videointelligence.v1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
@@ -188,6 +189,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
+  @BetaApi
   public final OperationsClient getHttpJsonOperationsClient() {
     return httpJsonOperationsClient;
   }

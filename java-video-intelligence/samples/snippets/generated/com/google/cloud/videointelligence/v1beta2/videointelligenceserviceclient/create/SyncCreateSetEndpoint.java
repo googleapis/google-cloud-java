@@ -16,8 +16,7 @@
 
 package com.google.cloud.videointelligence.v1beta2.samples;
 
-// [START
-// videointelligence_v1beta2_generated_videointelligenceserviceclient_create_setendpoint_sync]
+// [START videointelligence_v1beta2_generated_videointelligenceserviceclient_create_setendpoint_sync]
 import com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceClient;
 import com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceSettings;
 import com.google.cloud.videointelligence.v1beta2.myEndpoint;

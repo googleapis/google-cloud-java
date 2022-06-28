@@ -16,8 +16,7 @@
 
 package com.google.cloud.videointelligence.v1beta2.stub.samples;
 
-// [START
-// videointelligence_v1beta2_generated_videointelligenceservicestubsettings_annotatevideo_sync]
+// [START videointelligence_v1beta2_generated_videointelligenceservicestubsettings_annotatevideo_sync]
 import com.google.cloud.videointelligence.v1beta2.stub.VideoIntelligenceServiceStubSettings;
 import java.time.Duration;
 
