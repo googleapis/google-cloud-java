@@ -40,4 +40,4 @@ deep-copy-regex:
 - source: "/google/cloud/notebooks/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-notebooks/src"
 
- api_name: notebooks
+api-name: notebooks

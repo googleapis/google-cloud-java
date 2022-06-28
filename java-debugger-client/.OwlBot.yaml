@@ -30,4 +30,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/google-cloud-debugger-client/src"
 - source: "/google/devtools/source/v1/google-devtools-source-v1-java/proto-google-devtools-source-v1-java/src"
   dest: "/owl-bot-staging/v1/proto-google-devtools-source-protos/src"
- api_name: clouddebugger
+api-name: clouddebugger

@@ -25,4 +25,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-gke-connect-gateway-$1/src"
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-gke-connect-gateway/src"
- api_name: connectgateway
+api-name: connectgateway

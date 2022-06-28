@@ -29,4 +29,4 @@ deep-copy-regex:
 - source: "/google/cloud/gaming/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-game-servers/src"
 
- api_name: gameservices
+api-name: gameservices

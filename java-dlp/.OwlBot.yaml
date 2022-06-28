@@ -44,4 +44,4 @@ deep-copy-regex:
 - source: "/google/privacy/dlp/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-dlp/src"
 
- api_name: dlp
+api-name: dlp

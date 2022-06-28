@@ -28,4 +28,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-data-fusion-$1/src"
 - source: "/google/cloud/datafusion/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-data-fusion/src"
- api_name: datafusion
+api-name: datafusion

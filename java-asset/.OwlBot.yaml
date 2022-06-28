@@ -31,4 +31,5 @@ deep-copy-regex:
 - source: "/google/cloud/asset/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-asset/src"
 
- api_name: cloudasset
+
+api-name: cloudasset

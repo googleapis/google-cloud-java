@@ -37,4 +37,4 @@ deep-copy-regex:
 - source: "/google/cloud/speech/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-speech/src"
 
- api_name: speech
+api-name: speech

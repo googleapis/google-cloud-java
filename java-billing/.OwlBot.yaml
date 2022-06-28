@@ -26,4 +26,4 @@ deep-copy-regex:
 - source: "/google/cloud/billing/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-billing/src"
 
- api_name: cloudbilling
+api-name: cloudbilling

@@ -28,4 +28,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-network-security-$1/src"
 - source: "/google/cloud/networksecurity/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-network-security/src"
- api_name: networksecurity
+api-name: networksecurity

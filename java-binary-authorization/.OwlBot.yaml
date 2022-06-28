@@ -25,4 +25,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-binary-authorization-$1/src"
 - source: "/google/cloud/binaryauthorization/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-binary-authorization/src"
- api_name: binaryauthorization
+api-name: binaryauthorization

@@ -28,4 +28,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-dataflow-$1/src"
 - source: "/google/dataflow/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-dataflow/src"
- api_name: dataflow
+api-name: dataflow

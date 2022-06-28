@@ -29,4 +29,4 @@ deep-copy-regex:
 - source: "/google/cloud/recaptchaenterprise/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-recaptchaenterprise/src"
 
- api_name: recaptchaenterprise
+api-name: recaptchaenterprise

@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/websecurityscanner/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-websecurityscanner/src"
 
- api_name: websecurityscanner
+api-name: websecurityscanner

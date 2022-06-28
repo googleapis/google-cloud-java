@@ -33,4 +33,4 @@ deep-copy-regex:
 - source: "/google/cloud/tasks/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-tasks/src"
 
- api_name: cloudtasks
+api-name: cloudtasks

@@ -25,4 +25,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-essential-contacts-$1/src"
 - source: "/google/cloud/essentialcontacts/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-essential-contacts/src"
- api_name: essentialcontacts
+api-name: essentialcontacts

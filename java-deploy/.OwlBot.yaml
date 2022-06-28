@@ -28,4 +28,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-deploy-$1/src"
 - source: "/google/cloud/deploy/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-deploy/src"
- api_name: clouddeploy
+api-name: clouddeploy

@@ -26,4 +26,4 @@ deep-copy-regex:
 - source: "/google/cloud/assuredworkloads/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-assured-workloads/src"
 
- api_name: assuredworkloads
+api-name: assuredworkloads

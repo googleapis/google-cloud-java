@@ -31,4 +31,4 @@ deep-copy-regex:
 - source: "/google/cloud/datalabeling/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-datalabeling/src"
 
- api_name: datalabeling
+api-name: datalabeling

@@ -26,4 +26,4 @@ deep-copy-regex:
 - source: "/google/analytics/data/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-analytics-data/src"
 
- api_name: analyticsdata
+api-name: analyticsdata

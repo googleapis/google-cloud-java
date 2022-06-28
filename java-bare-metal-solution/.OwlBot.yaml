@@ -29,4 +29,4 @@ deep-copy-regex:
 - source: "/google/cloud/baremetalsolution/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-bare-metal-solution/src"
 
- api_name: baremetalsolution
+api-name: baremetalsolution

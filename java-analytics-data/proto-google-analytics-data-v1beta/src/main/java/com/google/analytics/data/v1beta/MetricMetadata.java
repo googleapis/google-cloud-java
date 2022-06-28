@@ -363,7 +363,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.analytics.data.v1beta.MetricMetadata.BlockedReason)
   }
 
-  public static final int API_NAME_FIELD_NUMBER = 1;
+  public static final int api-name_FIELD_NUMBER = 1;
   private volatile java.lang.Object apiName_;
   /**
    *
@@ -373,7 +373,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
    * `eventCount`.
    * </pre>
    *
-   * <code>string api_name = 1;</code>
+   * <code>string api-name = 1;</code>
    *
    * @return The apiName.
    */
@@ -397,7 +397,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
    * `eventCount`.
    * </pre>
    *
-   * <code>string api_name = 1;</code>
+   * <code>string api-name = 1;</code>
    *
    * @return The bytes for apiName.
    */
@@ -514,7 +514,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DEPRECATED_API_NAMES_FIELD_NUMBER = 4;
+  public static final int DEPRECATED_api-nameS_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList deprecatedApiNames_;
   /**
    *
@@ -526,7 +526,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
    * available only by `apiName`.
    * </pre>
    *
-   * <code>repeated string deprecated_api_names = 4;</code>
+   * <code>repeated string deprecated_api-names = 4;</code>
    *
    * @return A list containing the deprecatedApiNames.
    */
@@ -543,7 +543,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
    * available only by `apiName`.
    * </pre>
    *
-   * <code>repeated string deprecated_api_names = 4;</code>
+   * <code>repeated string deprecated_api-names = 4;</code>
    *
    * @return The count of deprecatedApiNames.
    */
@@ -560,7 +560,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
    * available only by `apiName`.
    * </pre>
    *
-   * <code>repeated string deprecated_api_names = 4;</code>
+   * <code>repeated string deprecated_api-names = 4;</code>
    *
    * @param index The index of the element to return.
    * @return The deprecatedApiNames at the given index.
@@ -578,7 +578,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
    * available only by `apiName`.
    * </pre>
    *
-   * <code>repeated string deprecated_api_names = 4;</code>
+   * <code>repeated string deprecated_api-names = 4;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the deprecatedApiNames at the given index.
@@ -1014,14 +1014,14 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + API_NAME_FIELD_NUMBER;
+    hash = (37 * hash) + api-name_FIELD_NUMBER;
     hash = (53 * hash) + getApiName().hashCode();
     hash = (37 * hash) + UI_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getUiName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     if (getDeprecatedApiNamesCount() > 0) {
-      hash = (37 * hash) + DEPRECATED_API_NAMES_FIELD_NUMBER;
+      hash = (37 * hash) + DEPRECATED_api-nameS_FIELD_NUMBER;
       hash = (53 * hash) + getDeprecatedApiNamesList().hashCode();
     }
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -1380,7 +1380,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * `eventCount`.
      * </pre>
      *
-     * <code>string api_name = 1;</code>
+     * <code>string api-name = 1;</code>
      *
      * @return The apiName.
      */
@@ -1403,7 +1403,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * `eventCount`.
      * </pre>
      *
-     * <code>string api_name = 1;</code>
+     * <code>string api-name = 1;</code>
      *
      * @return The bytes for apiName.
      */
@@ -1426,7 +1426,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * `eventCount`.
      * </pre>
      *
-     * <code>string api_name = 1;</code>
+     * <code>string api-name = 1;</code>
      *
      * @param value The apiName to set.
      * @return This builder for chaining.
@@ -1448,7 +1448,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * `eventCount`.
      * </pre>
      *
-     * <code>string api_name = 1;</code>
+     * <code>string api-name = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -1466,7 +1466,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * `eventCount`.
      * </pre>
      *
-     * <code>string api_name = 1;</code>
+     * <code>string api-name = 1;</code>
      *
      * @param value The bytes for apiName to set.
      * @return This builder for chaining.
@@ -1718,7 +1718,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * available only by `apiName`.
      * </pre>
      *
-     * <code>repeated string deprecated_api_names = 4;</code>
+     * <code>repeated string deprecated_api-names = 4;</code>
      *
      * @return A list containing the deprecatedApiNames.
      */
@@ -1735,7 +1735,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * available only by `apiName`.
      * </pre>
      *
-     * <code>repeated string deprecated_api_names = 4;</code>
+     * <code>repeated string deprecated_api-names = 4;</code>
      *
      * @return The count of deprecatedApiNames.
      */
@@ -1752,7 +1752,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * available only by `apiName`.
      * </pre>
      *
-     * <code>repeated string deprecated_api_names = 4;</code>
+     * <code>repeated string deprecated_api-names = 4;</code>
      *
      * @param index The index of the element to return.
      * @return The deprecatedApiNames at the given index.
@@ -1770,7 +1770,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * available only by `apiName`.
      * </pre>
      *
-     * <code>repeated string deprecated_api_names = 4;</code>
+     * <code>repeated string deprecated_api-names = 4;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the deprecatedApiNames at the given index.
@@ -1788,7 +1788,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * available only by `apiName`.
      * </pre>
      *
-     * <code>repeated string deprecated_api_names = 4;</code>
+     * <code>repeated string deprecated_api-names = 4;</code>
      *
      * @param index The index to set the value at.
      * @param value The deprecatedApiNames to set.
@@ -1813,7 +1813,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * available only by `apiName`.
      * </pre>
      *
-     * <code>repeated string deprecated_api_names = 4;</code>
+     * <code>repeated string deprecated_api-names = 4;</code>
      *
      * @param value The deprecatedApiNames to add.
      * @return This builder for chaining.
@@ -1837,7 +1837,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * available only by `apiName`.
      * </pre>
      *
-     * <code>repeated string deprecated_api_names = 4;</code>
+     * <code>repeated string deprecated_api-names = 4;</code>
      *
      * @param values The deprecatedApiNames to add.
      * @return This builder for chaining.
@@ -1858,7 +1858,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * available only by `apiName`.
      * </pre>
      *
-     * <code>repeated string deprecated_api_names = 4;</code>
+     * <code>repeated string deprecated_api-names = 4;</code>
      *
      * @return This builder for chaining.
      */
@@ -1878,7 +1878,7 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * available only by `apiName`.
      * </pre>
      *
-     * <code>repeated string deprecated_api_names = 4;</code>
+     * <code>repeated string deprecated_api-names = 4;</code>
      *
      * @param value The bytes of the deprecatedApiNames to add.
      * @return This builder for chaining.

@@ -26,4 +26,4 @@ deep-copy-regex:
 - source: "/google/cloud/security/privateca/v.*/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-security-private-ca/src"
 
- api_name: privateca
+api-name: privateca

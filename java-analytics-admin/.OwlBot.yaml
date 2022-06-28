@@ -26,4 +26,4 @@ deep-copy-regex:
 - source: "/google/analytics/admin/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-analytics-admin/src"
 
- api_name: analyticsadmin
+api-name: analyticsadmin

@@ -29,4 +29,4 @@ deep-copy-regex:
 - source: "/google/cloud/video/livestream/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-live-stream/src"
 
- api_name: livestream
+api-name: livestream

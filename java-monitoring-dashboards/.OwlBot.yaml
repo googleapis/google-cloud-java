@@ -29,4 +29,4 @@ deep-copy-regex:
 - source: "/google/monitoring/dashboard/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-monitoring-dashboard/src"
 
- api_name: monitoring-dashboards
+api-name: monitoring-dashboards

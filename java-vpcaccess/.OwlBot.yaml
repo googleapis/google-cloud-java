@@ -25,4 +25,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-vpcaccess-$1/src"
 - source: "/google/cloud/vpcaccess/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-vpcaccess/src"
- api_name: vpcaccess
+api-name: vpcaccess

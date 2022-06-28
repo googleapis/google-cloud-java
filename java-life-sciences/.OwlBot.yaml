@@ -25,4 +25,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-life-sciences-$1/src"
 - source: "/google/cloud/lifesciences/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-life-sciences/src"
- api_name: lifesciences
+api-name: lifesciences

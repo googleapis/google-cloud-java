@@ -25,4 +25,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-service-usage-$1/src"
 - source: "/google/api/serviceusage/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-service-usage/src"
- api_name: serviceusage
+api-name: serviceusage

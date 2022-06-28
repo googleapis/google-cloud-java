@@ -38,4 +38,4 @@ deep-copy-regex:
 - source: "/google/cloud/vision/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-vision/src"
 
- api_name: vision
+api-name: vision

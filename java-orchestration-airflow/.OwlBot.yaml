@@ -28,4 +28,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-orchestration-airflow-$1/src"
 - source: "/google/cloud/orchestration/airflow/service/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-orchestration-airflow/src"
- api_name: orchestration-airflow
+api-name: orchestration-airflow

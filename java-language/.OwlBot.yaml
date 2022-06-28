@@ -26,4 +26,4 @@ deep-copy-regex:
 - source: "/google/cloud/language/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-language/src"
 
- api_name: language
+api-name: language

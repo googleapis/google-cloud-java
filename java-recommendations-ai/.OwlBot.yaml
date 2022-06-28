@@ -29,4 +29,4 @@ deep-copy-regex:
 - source: "/google/cloud/recommendationengine/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-recommendations-ai/src"
 
- api_name: recommendationengine
+api-name: recommendationengine

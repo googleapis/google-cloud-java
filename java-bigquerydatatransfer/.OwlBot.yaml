@@ -74,4 +74,4 @@ deep-copy-regex:
 - source: "/google/cloud/bigquery/datatransfer/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-bigquerydatatransfer/src"
 
- api_name: bigquerydatatransfer
+api-name: bigquerydatatransfer

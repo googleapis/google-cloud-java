@@ -29,4 +29,4 @@ deep-copy-regex:
 - source: "/google/cloud/webrisk/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-webrisk/src"
 
- api_name: webrisk
+api-name: webrisk

@@ -32,4 +32,4 @@ deep-copy-regex:
 - source: "/google/cloud/texttospeech/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-texttospeech/src"
 
- api_name: texttospeech
+api-name: texttospeech

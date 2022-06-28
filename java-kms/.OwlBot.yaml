@@ -34,4 +34,4 @@ deep-copy-regex:
 - source: "/google/cloud/kms/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-kms/src"
 
- api_name: cloudkms
+api-name: cloudkms

@@ -26,4 +26,4 @@ deep-copy-regex:
 - source: "/google/area120/tables/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-area120-tables/src"
 
- api_name: area120tables
+api-name: area120tables

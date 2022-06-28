@@ -29,4 +29,4 @@ deep-copy-regex:
 - source: "/google/cloud/redis/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-redis/src"
 
- api_name: redis
+api-name: redis

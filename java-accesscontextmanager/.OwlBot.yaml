@@ -29,4 +29,4 @@ deep-copy-regex:
 - source: "/google/identity/accesscontextmanager/type/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/type/proto-google-identity-accesscontextmanager-type/src"
 
- api_name: accesscontextmanager
+api-name: accesscontextmanager

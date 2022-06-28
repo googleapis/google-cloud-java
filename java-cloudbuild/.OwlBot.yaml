@@ -26,4 +26,4 @@ deep-copy-regex:
 - source: "/google/devtools/cloudbuild/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-build/src"
 
- api_name: cloudbuild
+api-name: cloudbuild

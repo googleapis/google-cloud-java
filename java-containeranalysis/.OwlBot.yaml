@@ -32,4 +32,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/v1/grpc-google-cloud-containeranalysis-v1/src"
 - source: "/google/devtools/containeranalysis/v1/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/v1/google-cloud-containeranalysis/src"
- api_name: containeranalysis
+api-name: containeranalysis

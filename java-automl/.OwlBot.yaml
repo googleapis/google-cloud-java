@@ -26,4 +26,4 @@ deep-copy-regex:
 - source: "/google/cloud/automl/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-automl/src"
 
- api_name: automl
+api-name: automl

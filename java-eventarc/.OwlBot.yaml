@@ -28,4 +28,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-eventarc-$1/src"
 - source: "/google/cloud/eventarc/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-eventarc/src"
- api_name: eventarc
+api-name: eventarc

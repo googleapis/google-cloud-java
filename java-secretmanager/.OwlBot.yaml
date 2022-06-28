@@ -35,4 +35,4 @@ deep-copy-regex:
 - source: "/google/cloud/secretmanager/(v\\d)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-secretmanager/src"
 
- api_name: secretmanager
+api-name: secretmanager

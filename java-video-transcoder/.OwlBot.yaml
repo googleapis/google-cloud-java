@@ -29,4 +29,4 @@ deep-copy-regex:
 - source: "/google/cloud/video/transcoder/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-video-transcoder/src"
 
- api_name: transcoder
+api-name: transcoder

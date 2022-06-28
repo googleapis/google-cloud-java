@@ -26,4 +26,4 @@ deep-copy-regex:
 - source: "/google/devtools/artifactregistry/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-artifact-registry/src"
 
- api_name: artifactregistry
+api-name: artifactregistry

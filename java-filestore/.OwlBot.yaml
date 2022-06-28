@@ -28,4 +28,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-filestore-$1/src"
 - source: "/google/cloud/filestore/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-filestore/src"
- api_name: file
+api-name: file

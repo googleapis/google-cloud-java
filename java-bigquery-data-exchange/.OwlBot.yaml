@@ -29,4 +29,4 @@ deep-copy-regex:
 - source: "/google/cloud/bigquery/dataexchange/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-bigquery-data-exchange/src"
 
- api_name: analyticshub
+api-name: analyticshub

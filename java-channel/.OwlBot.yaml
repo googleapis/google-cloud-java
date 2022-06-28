@@ -26,4 +26,4 @@ deep-copy-regex:
 - source: "/google/cloud/channel/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-channel/src"
 
- api_name: cloudchannel
+api-name: cloudchannel
