@@ -72,4 +72,63 @@ public interface AbortInfoOrBuilder
    * @return The bytes for resourceUri.
    */
   com.google.protobuf.ByteString getResourceUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of project IDs that the user has specified in the request but does
+   * not have permission to access network configs. Analysis is aborted in this
+   * case with the PERMISSION_DENIED cause.
+   * </pre>
+   *
+   * <code>repeated string projects_missing_permission = 3;</code>
+   *
+   * @return A list containing the projectsMissingPermission.
+   */
+  java.util.List<java.lang.String> getProjectsMissingPermissionList();
+  /**
+   *
+   *
+   * <pre>
+   * List of project IDs that the user has specified in the request but does
+   * not have permission to access network configs. Analysis is aborted in this
+   * case with the PERMISSION_DENIED cause.
+   * </pre>
+   *
+   * <code>repeated string projects_missing_permission = 3;</code>
+   *
+   * @return The count of projectsMissingPermission.
+   */
+  int getProjectsMissingPermissionCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of project IDs that the user has specified in the request but does
+   * not have permission to access network configs. Analysis is aborted in this
+   * case with the PERMISSION_DENIED cause.
+   * </pre>
+   *
+   * <code>repeated string projects_missing_permission = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The projectsMissingPermission at the given index.
+   */
+  java.lang.String getProjectsMissingPermission(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of project IDs that the user has specified in the request but does
+   * not have permission to access network configs. Analysis is aborted in this
+   * case with the PERMISSION_DENIED cause.
+   * </pre>
+   *
+   * <code>repeated string projects_missing_permission = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the projectsMissingPermission at the given index.
+   */
+  com.google.protobuf.ByteString getProjectsMissingPermissionBytes(int index);
 }

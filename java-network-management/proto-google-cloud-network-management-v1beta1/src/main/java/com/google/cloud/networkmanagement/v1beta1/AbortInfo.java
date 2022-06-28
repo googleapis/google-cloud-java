@@ -40,6 +40,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
   private AbortInfo() {
     cause_ = 0;
     resourceUri_ = "";
+    projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -61,6 +62,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -85,6 +87,16 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
               resourceUri_ = s;
               break;
             }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                projectsMissingPermission_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              projectsMissingPermission_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -101,6 +113,9 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        projectsMissingPermission_ = projectsMissingPermission_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -661,6 +676,75 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PROJECTS_MISSING_PERMISSION_FIELD_NUMBER = 3;
+  private com.google.protobuf.LazyStringList projectsMissingPermission_;
+  /**
+   *
+   *
+   * <pre>
+   * List of project IDs that the user has specified in the request but does
+   * not have permission to access network configs. Analysis is aborted in this
+   * case with the PERMISSION_DENIED cause.
+   * </pre>
+   *
+   * <code>repeated string projects_missing_permission = 3;</code>
+   *
+   * @return A list containing the projectsMissingPermission.
+   */
+  public com.google.protobuf.ProtocolStringList getProjectsMissingPermissionList() {
+    return projectsMissingPermission_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of project IDs that the user has specified in the request but does
+   * not have permission to access network configs. Analysis is aborted in this
+   * case with the PERMISSION_DENIED cause.
+   * </pre>
+   *
+   * <code>repeated string projects_missing_permission = 3;</code>
+   *
+   * @return The count of projectsMissingPermission.
+   */
+  public int getProjectsMissingPermissionCount() {
+    return projectsMissingPermission_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of project IDs that the user has specified in the request but does
+   * not have permission to access network configs. Analysis is aborted in this
+   * case with the PERMISSION_DENIED cause.
+   * </pre>
+   *
+   * <code>repeated string projects_missing_permission = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The projectsMissingPermission at the given index.
+   */
+  public java.lang.String getProjectsMissingPermission(int index) {
+    return projectsMissingPermission_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of project IDs that the user has specified in the request but does
+   * not have permission to access network configs. Analysis is aborted in this
+   * case with the PERMISSION_DENIED cause.
+   * </pre>
+   *
+   * <code>repeated string projects_missing_permission = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the projectsMissingPermission at the given index.
+   */
+  public com.google.protobuf.ByteString getProjectsMissingPermissionBytes(int index) {
+    return projectsMissingPermission_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -683,6 +767,10 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceUri_);
     }
+    for (int i = 0; i < projectsMissingPermission_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 3, projectsMissingPermission_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -699,6 +787,14 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceUri_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < projectsMissingPermission_.size(); i++) {
+        dataSize += computeStringSizeNoTag(projectsMissingPermission_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getProjectsMissingPermissionList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -718,6 +814,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
 
     if (cause_ != other.cause_) return false;
     if (!getResourceUri().equals(other.getResourceUri())) return false;
+    if (!getProjectsMissingPermissionList().equals(other.getProjectsMissingPermissionList()))
+      return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -733,6 +831,10 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + cause_;
     hash = (37 * hash) + RESOURCE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getResourceUri().hashCode();
+    if (getProjectsMissingPermissionCount() > 0) {
+      hash = (37 * hash) + PROJECTS_MISSING_PERMISSION_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectsMissingPermissionList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -882,6 +984,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
 
       resourceUri_ = "";
 
+      projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -909,8 +1013,14 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1beta1.AbortInfo buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.AbortInfo result =
           new com.google.cloud.networkmanagement.v1beta1.AbortInfo(this);
+      int from_bitField0_ = bitField0_;
       result.cause_ = cause_;
       result.resourceUri_ = resourceUri_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        projectsMissingPermission_ = projectsMissingPermission_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.projectsMissingPermission_ = projectsMissingPermission_;
       onBuilt();
       return result;
     }
@@ -968,6 +1078,16 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
         resourceUri_ = other.resourceUri_;
         onChanged();
       }
+      if (!other.projectsMissingPermission_.isEmpty()) {
+        if (projectsMissingPermission_.isEmpty()) {
+          projectsMissingPermission_ = other.projectsMissingPermission_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureProjectsMissingPermissionIsMutable();
+          projectsMissingPermission_.addAll(other.projectsMissingPermission_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -997,6 +1117,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
+    private int bitField0_;
 
     private int cause_ = 0;
     /**
@@ -1193,6 +1315,193 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       resourceUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList projectsMissingPermission_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureProjectsMissingPermissionIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        projectsMissingPermission_ =
+            new com.google.protobuf.LazyStringArrayList(projectsMissingPermission_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of project IDs that the user has specified in the request but does
+     * not have permission to access network configs. Analysis is aborted in this
+     * case with the PERMISSION_DENIED cause.
+     * </pre>
+     *
+     * <code>repeated string projects_missing_permission = 3;</code>
+     *
+     * @return A list containing the projectsMissingPermission.
+     */
+    public com.google.protobuf.ProtocolStringList getProjectsMissingPermissionList() {
+      return projectsMissingPermission_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of project IDs that the user has specified in the request but does
+     * not have permission to access network configs. Analysis is aborted in this
+     * case with the PERMISSION_DENIED cause.
+     * </pre>
+     *
+     * <code>repeated string projects_missing_permission = 3;</code>
+     *
+     * @return The count of projectsMissingPermission.
+     */
+    public int getProjectsMissingPermissionCount() {
+      return projectsMissingPermission_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of project IDs that the user has specified in the request but does
+     * not have permission to access network configs. Analysis is aborted in this
+     * case with the PERMISSION_DENIED cause.
+     * </pre>
+     *
+     * <code>repeated string projects_missing_permission = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The projectsMissingPermission at the given index.
+     */
+    public java.lang.String getProjectsMissingPermission(int index) {
+      return projectsMissingPermission_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of project IDs that the user has specified in the request but does
+     * not have permission to access network configs. Analysis is aborted in this
+     * case with the PERMISSION_DENIED cause.
+     * </pre>
+     *
+     * <code>repeated string projects_missing_permission = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the projectsMissingPermission at the given index.
+     */
+    public com.google.protobuf.ByteString getProjectsMissingPermissionBytes(int index) {
+      return projectsMissingPermission_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of project IDs that the user has specified in the request but does
+     * not have permission to access network configs. Analysis is aborted in this
+     * case with the PERMISSION_DENIED cause.
+     * </pre>
+     *
+     * <code>repeated string projects_missing_permission = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The projectsMissingPermission to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProjectsMissingPermission(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProjectsMissingPermissionIsMutable();
+      projectsMissingPermission_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of project IDs that the user has specified in the request but does
+     * not have permission to access network configs. Analysis is aborted in this
+     * case with the PERMISSION_DENIED cause.
+     * </pre>
+     *
+     * <code>repeated string projects_missing_permission = 3;</code>
+     *
+     * @param value The projectsMissingPermission to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProjectsMissingPermission(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProjectsMissingPermissionIsMutable();
+      projectsMissingPermission_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of project IDs that the user has specified in the request but does
+     * not have permission to access network configs. Analysis is aborted in this
+     * case with the PERMISSION_DENIED cause.
+     * </pre>
+     *
+     * <code>repeated string projects_missing_permission = 3;</code>
+     *
+     * @param values The projectsMissingPermission to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllProjectsMissingPermission(java.lang.Iterable<java.lang.String> values) {
+      ensureProjectsMissingPermissionIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, projectsMissingPermission_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of project IDs that the user has specified in the request but does
+     * not have permission to access network configs. Analysis is aborted in this
+     * case with the PERMISSION_DENIED cause.
+     * </pre>
+     *
+     * <code>repeated string projects_missing_permission = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProjectsMissingPermission() {
+      projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of project IDs that the user has specified in the request but does
+     * not have permission to access network configs. Analysis is aborted in this
+     * case with the PERMISSION_DENIED cause.
+     * </pre>
+     *
+     * <code>repeated string projects_missing_permission = 3;</code>
+     *
+     * @param value The bytes of the projectsMissingPermission to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProjectsMissingPermissionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureProjectsMissingPermissionIsMutable();
+      projectsMissingPermission_.add(value);
       onChanged();
       return this;
     }
