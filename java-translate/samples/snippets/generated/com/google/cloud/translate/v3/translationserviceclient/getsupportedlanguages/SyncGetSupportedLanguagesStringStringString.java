@@ -16,8 +16,7 @@
 
 package com.google.cloud.translate.v3.samples;
 
-// [START
-// translation_v3_generated_translationserviceclient_getsupportedlanguages_stringstringstring_sync]
+// [START translation_v3_generated_translationserviceclient_getsupportedlanguages_stringstringstring_sync]
 import com.google.cloud.translate.v3.LocationName;
 import com.google.cloud.translate.v3.SupportedLanguages;
 import com.google.cloud.translate.v3.TranslationServiceClient;
@@ -40,5 +39,4 @@ public class SyncGetSupportedLanguagesStringStringString {
     }
   }
 }
-// [END
-// translation_v3_generated_translationserviceclient_getsupportedlanguages_stringstringstring_sync]
+// [END translation_v3_generated_translationserviceclient_getsupportedlanguages_stringstringstring_sync]

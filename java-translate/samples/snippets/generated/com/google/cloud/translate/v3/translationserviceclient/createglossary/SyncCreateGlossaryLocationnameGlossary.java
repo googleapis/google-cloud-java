@@ -16,8 +16,7 @@
 
 package com.google.cloud.translate.v3.samples;
 
-// [START
-// translation_v3_generated_translationserviceclient_createglossary_locationnameglossary_sync]
+// [START translation_v3_generated_translationserviceclient_createglossary_locationnameglossary_sync]
 import com.google.cloud.translate.v3.Glossary;
 import com.google.cloud.translate.v3.LocationName;
 import com.google.cloud.translate.v3.TranslationServiceClient;
