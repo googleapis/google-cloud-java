@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.iam.v1;
+package com.google.cloud.batch.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.iam.v1.IAMPolicyGrpc.IAMPolicyImplBase;

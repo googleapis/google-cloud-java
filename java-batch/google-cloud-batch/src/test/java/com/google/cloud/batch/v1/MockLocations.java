@@ -14,46 +14,46 @@
  * limitations under the License.
  */
 
-package com.google.cloud.location;
+package com.google.cloud.batch.v1;
 
 import com.google.api.core.BetaApi;
-import com.google.cloud.location.LocationsGrpc.LocationsImplBase;
+import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.protobuf.AbstractMessage;
-import java.util.ArrayList;
-import java.util.LinkedList;
+import io.grpc.ServerServiceDefinition;
 import java.util.List;
-import java.util.Queue;
 import javax.annotation.Generated;
 
 @BetaApi
 @Generated("by gapic-generator-java")
-public class MockLocationsImpl extends LocationsImplBase {
-  private List<AbstractMessage> requests;
-  private Queue<Object> responses;
+public class MockLocations implements MockGrpcService {
+  private final MockLocationsImpl serviceImpl;
 
-  public MockLocationsImpl() {
-    requests = new ArrayList<>();
-    responses = new LinkedList<>();
+  public MockLocations() {
+    serviceImpl = new MockLocationsImpl();
   }
 
+  @Override
   public List<AbstractMessage> getRequests() {
-    return requests;
+    return serviceImpl.getRequests();
   }
 
+  @Override
   public void addResponse(AbstractMessage response) {
-    responses.add(response);
+    serviceImpl.addResponse(response);
   }
 
-  public void setResponses(List<AbstractMessage> responses) {
-    this.responses = new LinkedList<Object>(responses);
-  }
-
+  @Override
   public void addException(Exception exception) {
-    responses.add(exception);
+    serviceImpl.addException(exception);
   }
 
+  @Override
+  public ServerServiceDefinition getServiceDefinition() {
+    return serviceImpl.bindService();
+  }
+
+  @Override
   public void reset() {
-    requests = new ArrayList<>();
-    responses = new LinkedList<>();
+    serviceImpl.reset();
   }
 }
