@@ -16,8 +16,7 @@
 
 package com.google.cloud.asset.v1p1beta1.samples;
 
-// [START
-// asset_v1p1beta1_generated_assetserviceclient_searchallresources_stringstringliststring_sync]
+// [START asset_v1p1beta1_generated_assetserviceclient_searchallresources_stringstringliststring_sync]
 import com.google.cloud.asset.v1p1beta1.AssetServiceClient;
 import com.google.cloud.asset.v1p1beta1.StandardResourceMetadata;
 import java.util.ArrayList;

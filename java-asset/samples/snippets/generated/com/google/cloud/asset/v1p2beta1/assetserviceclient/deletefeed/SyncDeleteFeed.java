@@ -20,6 +20,7 @@ package com.google.cloud.asset.v1p2beta1.samples;
 import com.google.cloud.asset.v1p2beta1.AssetServiceClient;
 import com.google.cloud.asset.v1p2beta1.DeleteFeedRequest;
 import com.google.cloud.asset.v1p2beta1.FeedName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteFeed {
 

@@ -183,6 +183,7 @@ public class AssetServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
+  @BetaApi
   public final OperationsClient getHttpJsonOperationsClient() {
     return httpJsonOperationsClient;
   }

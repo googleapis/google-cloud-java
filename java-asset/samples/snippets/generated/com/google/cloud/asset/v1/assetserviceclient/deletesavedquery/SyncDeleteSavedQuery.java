@@ -20,6 +20,7 @@ package com.google.cloud.asset.v1.samples;
 import com.google.cloud.asset.v1.AssetServiceClient;
 import com.google.cloud.asset.v1.DeleteSavedQueryRequest;
 import com.google.cloud.asset.v1.SavedQueryName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteSavedQuery {
 
