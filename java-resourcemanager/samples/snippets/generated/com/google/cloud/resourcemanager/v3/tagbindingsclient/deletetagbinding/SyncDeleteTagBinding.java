@@ -20,6 +20,7 @@ package com.google.cloud.resourcemanager.v3.samples;
 import com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest;
 import com.google.cloud.resourcemanager.v3.TagBindingName;
 import com.google.cloud.resourcemanager.v3.TagBindingsClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteTagBinding {
 

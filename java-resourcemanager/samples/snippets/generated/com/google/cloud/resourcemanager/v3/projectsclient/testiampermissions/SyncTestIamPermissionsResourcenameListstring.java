@@ -16,8 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.samples;
 
-// [START
-// resourcemanager_v3_generated_projectsclient_testiampermissions_resourcenameliststring_sync]
+// [START resourcemanager_v3_generated_projectsclient_testiampermissions_resourcenameliststring_sync]
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.resourcemanager.v3.ProjectName;
 import com.google.cloud.resourcemanager.v3.ProjectsClient;
