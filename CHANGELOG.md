@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [0.125.0](https://github.com/googleapis/java-logging-logback/compare/v0.124.3...v0.125.0) (2022-06-28)
+
+
+### Features
+
+* Add support for library instrumentation ([#789](https://github.com/googleapis/java-logging-logback/issues/789)) ([3a08dac](https://github.com/googleapis/java-logging-logback/commit/3a08dac0971b3f9566652a5e14e1d6555d0c133b))
+
 ## [0.124.3](https://github.com/googleapis/java-logging-logback/compare/v0.124.2...v0.124.3) (2022-06-27)
 
 
