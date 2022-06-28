@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_usereventserviceclient_create_setcredentialsprovider1_sync]
+// [START recommendationengine_v1beta1_generated_usereventserviceclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.recommendationengine.v1beta1.UserEventServiceClient;
 import com.google.cloud.recommendationengine.v1beta1.UserEventServiceSettings;
 
@@ -39,5 +38,4 @@ public class SyncCreateSetCredentialsProvider1 {
         UserEventServiceClient.create(userEventServiceSettings);
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_usereventserviceclient_create_setcredentialsprovider1_sync]
+// [END recommendationengine_v1beta1_generated_usereventserviceclient_create_setcredentialsprovider1_sync]

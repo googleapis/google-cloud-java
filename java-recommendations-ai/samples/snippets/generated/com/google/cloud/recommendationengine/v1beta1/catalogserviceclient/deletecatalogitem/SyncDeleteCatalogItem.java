@@ -20,6 +20,7 @@ package com.google.cloud.recommendationengine.v1beta1.samples;
 import com.google.cloud.recommendationengine.v1beta1.CatalogItemPathName;
 import com.google.cloud.recommendationengine.v1beta1.CatalogServiceClient;
 import com.google.cloud.recommendationengine.v1beta1.DeleteCatalogItemRequest;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteCatalogItem {
 

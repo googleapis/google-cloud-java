@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_usereventserviceclient_importuserevents_eventstorenamestringinputconfigimporterrorsconfig_sync]
+// [START recommendationengine_v1beta1_generated_usereventserviceclient_importuserevents_eventstorenamestringinputconfigimporterrorsconfig_sync]
 import com.google.cloud.recommendationengine.v1beta1.EventStoreName;
 import com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig;
 import com.google.cloud.recommendationengine.v1beta1.ImportUserEventsResponse;
@@ -47,5 +46,4 @@ public class SyncImportUserEventsEventstorenameStringInputconfigImporterrorsconf
     }
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_usereventserviceclient_importuserevents_eventstorenamestringinputconfigimporterrorsconfig_sync]
+// [END recommendationengine_v1beta1_generated_usereventserviceclient_importuserevents_eventstorenamestringinputconfigimporterrorsconfig_sync]

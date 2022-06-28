@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_predictionapikeyregistryclient_listpredictionapikeyregistrations_paged_async]
+// [START recommendationengine_v1beta1_generated_predictionapikeyregistryclient_listpredictionapikeyregistrations_paged_async]
 import com.google.cloud.recommendationengine.v1beta1.EventStoreName;
 import com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsRequest;
 import com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsResponse;
@@ -63,5 +62,4 @@ public class AsyncListPredictionApiKeyRegistrationsPaged {
     }
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_predictionapikeyregistryclient_listpredictionapikeyregistrations_paged_async]
+// [END recommendationengine_v1beta1_generated_predictionapikeyregistryclient_listpredictionapikeyregistrations_paged_async]

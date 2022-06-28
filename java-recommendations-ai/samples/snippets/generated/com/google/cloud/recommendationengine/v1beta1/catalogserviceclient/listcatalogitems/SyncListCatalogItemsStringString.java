@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_catalogserviceclient_listcatalogitems_stringstring_sync]
+// [START recommendationengine_v1beta1_generated_catalogserviceclient_listcatalogitems_stringstring_sync]
 import com.google.cloud.recommendationengine.v1beta1.CatalogItem;
 import com.google.cloud.recommendationengine.v1beta1.CatalogName;
 import com.google.cloud.recommendationengine.v1beta1.CatalogServiceClient;
@@ -41,5 +40,4 @@ public class SyncListCatalogItemsStringString {
     }
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_catalogserviceclient_listcatalogitems_stringstring_sync]
+// [END recommendationengine_v1beta1_generated_catalogserviceclient_listcatalogitems_stringstring_sync]

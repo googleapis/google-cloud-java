@@ -16,10 +16,10 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_predictionapikeyregistryclient_deletepredictionapikeyregistration_predictionapikeyregistrationname_sync]
+// [START recommendationengine_v1beta1_generated_predictionapikeyregistryclient_deletepredictionapikeyregistration_predictionapikeyregistrationname_sync]
 import com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistrationName;
 import com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistryClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeletePredictionApiKeyRegistrationPredictionapikeyregistrationname {
 
@@ -44,5 +44,4 @@ public class SyncDeletePredictionApiKeyRegistrationPredictionapikeyregistrationn
     }
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_predictionapikeyregistryclient_deletepredictionapikeyregistration_predictionapikeyregistrationname_sync]
+// [END recommendationengine_v1beta1_generated_predictionapikeyregistryclient_deletepredictionapikeyregistration_predictionapikeyregistrationname_sync]

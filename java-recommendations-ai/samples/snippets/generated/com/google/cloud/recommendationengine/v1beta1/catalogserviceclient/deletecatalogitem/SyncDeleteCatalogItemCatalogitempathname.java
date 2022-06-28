@@ -16,10 +16,10 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_catalogserviceclient_deletecatalogitem_catalogitempathname_sync]
+// [START recommendationengine_v1beta1_generated_catalogserviceclient_deletecatalogitem_catalogitempathname_sync]
 import com.google.cloud.recommendationengine.v1beta1.CatalogItemPathName;
 import com.google.cloud.recommendationengine.v1beta1.CatalogServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteCatalogItemCatalogitempathname {
 
@@ -37,5 +37,4 @@ public class SyncDeleteCatalogItemCatalogitempathname {
     }
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_catalogserviceclient_deletecatalogitem_catalogitempathname_sync]
+// [END recommendationengine_v1beta1_generated_catalogserviceclient_deletecatalogitem_catalogitempathname_sync]

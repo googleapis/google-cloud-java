@@ -19,6 +19,7 @@ package com.google.cloud.recommendationengine.v1beta1.samples;
 // [START recommendationengine_v1beta1_generated_catalogserviceclient_deletecatalogitem_string_sync]
 import com.google.cloud.recommendationengine.v1beta1.CatalogItemPathName;
 import com.google.cloud.recommendationengine.v1beta1.CatalogServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteCatalogItemString {
 

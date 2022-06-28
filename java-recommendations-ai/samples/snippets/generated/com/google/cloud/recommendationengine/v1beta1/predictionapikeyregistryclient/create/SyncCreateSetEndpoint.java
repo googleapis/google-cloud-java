@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_predictionapikeyregistryclient_create_setendpoint_sync]
+// [START recommendationengine_v1beta1_generated_predictionapikeyregistryclient_create_setendpoint_sync]
 import com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistryClient;
 import com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistrySettings;
 import com.google.cloud.recommendationengine.v1beta1.myEndpoint;
@@ -37,5 +36,4 @@ public class SyncCreateSetEndpoint {
         PredictionApiKeyRegistryClient.create(predictionApiKeyRegistrySettings);
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_predictionapikeyregistryclient_create_setendpoint_sync]
+// [END recommendationengine_v1beta1_generated_predictionapikeyregistryclient_create_setendpoint_sync]

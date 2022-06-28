@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_predictionserviceclient_predict_stringuserevent_sync]
+// [START recommendationengine_v1beta1_generated_predictionserviceclient_predict_stringuserevent_sync]
 import com.google.cloud.recommendationengine.v1beta1.PlacementName;
 import com.google.cloud.recommendationengine.v1beta1.PredictionServiceClient;
 import com.google.cloud.recommendationengine.v1beta1.UserEvent;

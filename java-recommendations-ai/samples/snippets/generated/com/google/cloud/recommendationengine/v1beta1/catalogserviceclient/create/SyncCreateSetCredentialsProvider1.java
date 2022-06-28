@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_catalogserviceclient_create_setcredentialsprovider1_sync]
+// [START recommendationengine_v1beta1_generated_catalogserviceclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.recommendationengine.v1beta1.CatalogServiceClient;
 import com.google.cloud.recommendationengine.v1beta1.CatalogServiceSettings;
 
@@ -38,5 +37,4 @@ public class SyncCreateSetCredentialsProvider1 {
     CatalogServiceClient catalogServiceClient = CatalogServiceClient.create(catalogServiceSettings);
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_catalogserviceclient_create_setcredentialsprovider1_sync]
+// [END recommendationengine_v1beta1_generated_catalogserviceclient_create_setcredentialsprovider1_sync]

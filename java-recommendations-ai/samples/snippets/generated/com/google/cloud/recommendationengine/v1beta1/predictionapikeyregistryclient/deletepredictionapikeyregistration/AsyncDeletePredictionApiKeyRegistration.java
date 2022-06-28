@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_predictionapikeyregistryclient_deletepredictionapikeyregistration_async]
+// [START recommendationengine_v1beta1_generated_predictionapikeyregistryclient_deletepredictionapikeyregistration_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.recommendationengine.v1beta1.DeletePredictionApiKeyRegistrationRequest;
 import com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistrationName;
@@ -55,5 +54,4 @@ public class AsyncDeletePredictionApiKeyRegistration {
     }
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_predictionapikeyregistryclient_deletepredictionapikeyregistration_async]
+// [END recommendationengine_v1beta1_generated_predictionapikeyregistryclient_deletepredictionapikeyregistration_async]

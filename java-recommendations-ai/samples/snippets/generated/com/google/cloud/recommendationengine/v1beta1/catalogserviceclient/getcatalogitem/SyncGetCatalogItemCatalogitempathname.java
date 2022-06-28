@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_catalogserviceclient_getcatalogitem_catalogitempathname_sync]
+// [START recommendationengine_v1beta1_generated_catalogserviceclient_getcatalogitem_catalogitempathname_sync]
 import com.google.cloud.recommendationengine.v1beta1.CatalogItem;
 import com.google.cloud.recommendationengine.v1beta1.CatalogItemPathName;
 import com.google.cloud.recommendationengine.v1beta1.CatalogServiceClient;
@@ -38,5 +37,4 @@ public class SyncGetCatalogItemCatalogitempathname {
     }
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_catalogserviceclient_getcatalogitem_catalogitempathname_sync]
+// [END recommendationengine_v1beta1_generated_catalogserviceclient_getcatalogitem_catalogitempathname_sync]

@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_predictionapikeyregistryclient_listpredictionapikeyregistrations_async]
+// [START recommendationengine_v1beta1_generated_predictionapikeyregistryclient_listpredictionapikeyregistrations_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.recommendationengine.v1beta1.EventStoreName;
 import com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsRequest;
@@ -54,5 +53,4 @@ public class AsyncListPredictionApiKeyRegistrations {
     }
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_predictionapikeyregistryclient_listpredictionapikeyregistrations_async]
+// [END recommendationengine_v1beta1_generated_predictionapikeyregistryclient_listpredictionapikeyregistrations_async]

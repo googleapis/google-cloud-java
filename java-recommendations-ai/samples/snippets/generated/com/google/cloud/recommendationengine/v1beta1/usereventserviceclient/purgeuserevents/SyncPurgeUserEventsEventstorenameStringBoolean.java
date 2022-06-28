@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_usereventserviceclient_purgeuserevents_eventstorenamestringboolean_sync]
+// [START recommendationengine_v1beta1_generated_usereventserviceclient_purgeuserevents_eventstorenamestringboolean_sync]
 import com.google.cloud.recommendationengine.v1beta1.EventStoreName;
 import com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse;
 import com.google.cloud.recommendationengine.v1beta1.UserEventServiceClient;
@@ -41,5 +40,4 @@ public class SyncPurgeUserEventsEventstorenameStringBoolean {
     }
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_usereventserviceclient_purgeuserevents_eventstorenamestringboolean_sync]
+// [END recommendationengine_v1beta1_generated_usereventserviceclient_purgeuserevents_eventstorenamestringboolean_sync]

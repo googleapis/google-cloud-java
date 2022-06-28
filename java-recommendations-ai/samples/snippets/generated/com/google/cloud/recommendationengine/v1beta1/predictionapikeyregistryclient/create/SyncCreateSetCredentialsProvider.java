@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_predictionapikeyregistryclient_create_setcredentialsprovider_sync]
+// [START recommendationengine_v1beta1_generated_predictionapikeyregistryclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistryClient;
 import com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistrySettings;
@@ -40,5 +39,4 @@ public class SyncCreateSetCredentialsProvider {
         PredictionApiKeyRegistryClient.create(predictionApiKeyRegistrySettings);
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_predictionapikeyregistryclient_create_setcredentialsprovider_sync]
+// [END recommendationengine_v1beta1_generated_predictionapikeyregistryclient_create_setcredentialsprovider_sync]

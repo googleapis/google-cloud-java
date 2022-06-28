@@ -16,8 +16,7 @@
 
 package com.google.cloud.recommendationengine.v1beta1.samples;
 
-// [START
-// recommendationengine_v1beta1_generated_catalogserviceclient_importcatalogitems_stringstringinputconfigimporterrorsconfig_sync]
+// [START recommendationengine_v1beta1_generated_catalogserviceclient_importcatalogitems_stringstringinputconfigimporterrorsconfig_sync]
 import com.google.cloud.recommendationengine.v1beta1.CatalogName;
 import com.google.cloud.recommendationengine.v1beta1.CatalogServiceClient;
 import com.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsResponse;
@@ -46,5 +45,4 @@ public class SyncImportCatalogItemsStringStringInputconfigImporterrorsconfig {
     }
   }
 }
-// [END
-// recommendationengine_v1beta1_generated_catalogserviceclient_importcatalogitems_stringstringinputconfigimporterrorsconfig_sync]
+// [END recommendationengine_v1beta1_generated_catalogserviceclient_importcatalogitems_stringstringinputconfigimporterrorsconfig_sync]
