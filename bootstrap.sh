@@ -38,7 +38,7 @@ do
   sed -i '/image/d' .OwlBot.yaml
   text=$(grep '^.*api_shortname.*' .repo-metadata.json)
   text=$(echo "$text" | sed 's/\"//g; s/\,//g' )
-  text=${text/api_shortname/api_name}
+  text=${text/api_shortname/api-name}
   echo -e "\n" $text>> .OwlBot.yaml      
 
   cd ../google-cloud-java
