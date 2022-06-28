@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/java-bare-metal-solution/compare/v0.2.1...v0.3.0) (2022-06-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* add support for new API methods
+
+### Features
+
+* add support for new API methods ([dddec9a](https://github.com/googleapis/java-bare-metal-solution/commit/dddec9a2ac639a03fea3e610dc09806f13d56f0b))
+* Enable REST transport for most of Java and Go clients ([dddec9a](https://github.com/googleapis/java-bare-metal-solution/commit/dddec9a2ac639a03fea3e610dc09806f13d56f0b))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#34](https://github.com/googleapis/java-bare-metal-solution/issues/34)) ([dddec9a](https://github.com/googleapis/java-bare-metal-solution/commit/dddec9a2ac639a03fea3e610dc09806f13d56f0b))
+
 ## [0.2.1](https://github.com/googleapis/java-bare-metal-solution/compare/v0.2.0...v0.2.1) (2022-06-23)
 
 
