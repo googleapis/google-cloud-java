@@ -20,6 +20,7 @@ package com.google.cloud.filestore.v1beta1.samples;
 import com.google.cloud.filestore.v1beta1.BackupName;
 import com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient;
 import com.google.cloud.filestore.v1beta1.DeleteBackupRequest;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteBackup {
 

@@ -16,8 +16,7 @@
 
 package com.google.cloud.filestore.v1beta1.samples;
 
-// [START
-// filestore_v1beta1_generated_cloudfilestoremanagerclient_createinstance_locationnameinstancestring_sync]
+// [START filestore_v1beta1_generated_cloudfilestoremanagerclient_createinstance_locationnameinstancestring_sync]
 import com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient;
 import com.google.cloud.filestore.v1beta1.Instance;
 import com.google.cloud.filestore.v1beta1.LocationName;
@@ -41,5 +40,4 @@ public class SyncCreateInstanceLocationnameInstanceString {
     }
   }
 }
-// [END
-// filestore_v1beta1_generated_cloudfilestoremanagerclient_createinstance_locationnameinstancestring_sync]
+// [END filestore_v1beta1_generated_cloudfilestoremanagerclient_createinstance_locationnameinstancestring_sync]

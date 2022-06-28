@@ -20,6 +20,7 @@ package com.google.cloud.filestore.v1beta1.samples;
 import com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient;
 import com.google.cloud.filestore.v1beta1.DeleteInstanceRequest;
 import com.google.cloud.filestore.v1beta1.InstanceName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteInstance {
 
