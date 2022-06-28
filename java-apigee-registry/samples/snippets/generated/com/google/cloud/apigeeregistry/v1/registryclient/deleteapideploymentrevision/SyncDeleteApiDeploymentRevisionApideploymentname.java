@@ -16,8 +16,7 @@
 
 package com.google.cloud.apigeeregistry.v1.samples;
 
-// [START
-// apigeeregistry_v1_generated_registryclient_deleteapideploymentrevision_apideploymentname_sync]
+// [START apigeeregistry_v1_generated_registryclient_deleteapideploymentrevision_apideploymentname_sync]
 import com.google.cloud.apigeeregistry.v1.ApiDeployment;
 import com.google.cloud.apigeeregistry.v1.ApiDeploymentName;
 import com.google.cloud.apigeeregistry.v1.RegistryClient;
@@ -38,5 +37,4 @@ public class SyncDeleteApiDeploymentRevisionApideploymentname {
     }
   }
 }
-// [END
-// apigeeregistry_v1_generated_registryclient_deleteapideploymentrevision_apideploymentname_sync]
+// [END apigeeregistry_v1_generated_registryclient_deleteapideploymentrevision_apideploymentname_sync]

@@ -19,6 +19,7 @@ package com.google.cloud.apigeeregistry.v1.samples;
 // [START apigeeregistry_v1_generated_registryclient_deleteapispec_string_sync]
 import com.google.cloud.apigeeregistry.v1.ApiSpecName;
 import com.google.cloud.apigeeregistry.v1.RegistryClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteApiSpecString {
 

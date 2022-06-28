@@ -20,6 +20,7 @@ package com.google.cloud.apigeeregistry.v1.samples;
 import com.google.cloud.apigeeregistry.v1.ArtifactName;
 import com.google.cloud.apigeeregistry.v1.DeleteArtifactRequest;
 import com.google.cloud.apigeeregistry.v1.RegistryClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteArtifact {
 

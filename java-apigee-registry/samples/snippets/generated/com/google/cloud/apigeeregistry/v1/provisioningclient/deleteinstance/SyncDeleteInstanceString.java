@@ -19,6 +19,7 @@ package com.google.cloud.apigeeregistry.v1.samples;
 // [START apigeeregistry_v1_generated_provisioningclient_deleteinstance_string_sync]
 import com.google.cloud.apigeeregistry.v1.InstanceName;
 import com.google.cloud.apigeeregistry.v1.ProvisioningClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteInstanceString {
 

@@ -20,6 +20,7 @@ package com.google.cloud.apigeeregistry.v1.samples;
 import com.google.cloud.apigeeregistry.v1.ApiDeploymentName;
 import com.google.cloud.apigeeregistry.v1.DeleteApiDeploymentRequest;
 import com.google.cloud.apigeeregistry.v1.RegistryClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteApiDeployment {
 

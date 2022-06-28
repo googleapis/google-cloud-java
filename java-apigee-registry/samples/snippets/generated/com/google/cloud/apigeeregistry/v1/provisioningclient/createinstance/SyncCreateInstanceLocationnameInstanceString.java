@@ -16,8 +16,7 @@
 
 package com.google.cloud.apigeeregistry.v1.samples;
 
-// [START
-// apigeeregistry_v1_generated_provisioningclient_createinstance_locationnameinstancestring_sync]
+// [START apigeeregistry_v1_generated_provisioningclient_createinstance_locationnameinstancestring_sync]
 import com.google.cloud.apigeeregistry.v1.Instance;
 import com.google.cloud.apigeeregistry.v1.LocationName;
 import com.google.cloud.apigeeregistry.v1.ProvisioningClient;
@@ -40,5 +39,4 @@ public class SyncCreateInstanceLocationnameInstanceString {
     }
   }
 }
-// [END
-// apigeeregistry_v1_generated_provisioningclient_createinstance_locationnameinstancestring_sync]
+// [END apigeeregistry_v1_generated_provisioningclient_createinstance_locationnameinstancestring_sync]

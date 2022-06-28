@@ -16,8 +16,7 @@
 
 package com.google.cloud.apigeeregistry.v1.samples;
 
-// [START
-// apigeeregistry_v1_generated_registryclient_updateapideployment_apideploymentfieldmask_sync]
+// [START apigeeregistry_v1_generated_registryclient_updateapideployment_apideploymentfieldmask_sync]
 import com.google.cloud.apigeeregistry.v1.ApiDeployment;
 import com.google.cloud.apigeeregistry.v1.RegistryClient;
 import com.google.protobuf.FieldMask;

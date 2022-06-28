@@ -16,8 +16,7 @@
 
 package com.google.cloud.apigeeregistry.v1.samples;
 
-// [START
-// apigeeregistry_v1_generated_registryclient_createartifact_apideploymentnameartifactstring_sync]
+// [START apigeeregistry_v1_generated_registryclient_createartifact_apideploymentnameartifactstring_sync]
 import com.google.cloud.apigeeregistry.v1.ApiDeploymentName;
 import com.google.cloud.apigeeregistry.v1.Artifact;
 import com.google.cloud.apigeeregistry.v1.RegistryClient;
@@ -40,5 +39,4 @@ public class SyncCreateArtifactApideploymentnameArtifactString {
     }
   }
 }
-// [END
-// apigeeregistry_v1_generated_registryclient_createartifact_apideploymentnameartifactstring_sync]
+// [END apigeeregistry_v1_generated_registryclient_createartifact_apideploymentnameartifactstring_sync]
