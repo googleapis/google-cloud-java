@@ -27,64 +27,9 @@ public interface ProductSearchResultsOrBuilder
    *
    *
    * <pre>
-   * Product category.
-   * [Deprecated] Use `product_category`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
-   *
-   * @return The enum numeric value on the wire for category.
-   */
-  int getCategoryValue();
-  /**
-   *
-   *
-   * <pre>
-   * Product category.
-   * [Deprecated] Use `product_category`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
-   *
-   * @return The category.
-   */
-  com.google.cloud.vision.v1p3beta1.ProductSearchCategory getCategory();
-
-  /**
-   *
-   *
-   * <pre>
-   * Product category.
-   * Supported values are `bag` and `shoe`.
-   * [Deprecated] `product_category` is provided in each Product.
-   * </pre>
-   *
-   * <code>string product_category = 4;</code>
-   *
-   * @return The productCategory.
-   */
-  java.lang.String getProductCategory();
-  /**
-   *
-   *
-   * <pre>
-   * Product category.
-   * Supported values are `bag` and `shoe`.
-   * [Deprecated] `product_category` is provided in each Product.
-   * </pre>
-   *
-   * <code>string product_category = 4;</code>
-   *
-   * @return The bytes for productCategory.
-   */
-  com.google.protobuf.ByteString getProductCategoryBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Timestamp of the index which provided these results. Changes made after
-   * this time are not reflected in the current results.
+   * Timestamp of the index which provided these results. Products added to the
+   * product set and products removed from the product set after this time are
+   * not reflected in the current results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -96,8 +41,9 @@ public interface ProductSearchResultsOrBuilder
    *
    *
    * <pre>
-   * Timestamp of the index which provided these results. Changes made after
-   * this time are not reflected in the current results.
+   * Timestamp of the index which provided these results. Products added to the
+   * product set and products removed from the product set after this time are
+   * not reflected in the current results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -109,73 +55,14 @@ public interface ProductSearchResultsOrBuilder
    *
    *
    * <pre>
-   * Timestamp of the index which provided these results. Changes made after
-   * this time are not reflected in the current results.
+   * Timestamp of the index which provided these results. Products added to the
+   * product set and products removed from the product set after this time are
+   * not reflected in the current results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
    */
   com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * List of detected products.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-   * </code>
-   */
-  java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo>
-      getProductsList();
-  /**
-   *
-   *
-   * <pre>
-   * List of detected products.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-   * </code>
-   */
-  com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo getProducts(int index);
-  /**
-   *
-   *
-   * <pre>
-   * List of detected products.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-   * </code>
-   */
-  int getProductsCount();
-  /**
-   *
-   *
-   * <pre>
-   * List of detected products.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-   * </code>
-   */
-  java.util.List<
-          ? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder>
-      getProductsOrBuilderList();
-  /**
-   *
-   *
-   * <pre>
-   * List of detected products.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-   * </code>
-   */
-  com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder getProductsOrBuilder(
-      int index);
 
   /**
    *
@@ -229,4 +116,85 @@ public interface ProductSearchResultsOrBuilder
    */
   com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder getResultsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of results grouped by products detected in the query image. Each entry
+   * corresponds to one bounding polygon in the query image, and contains the
+   * matching products specific to that region. There may be duplicate product
+   * matches in the union of all the per-product results.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
+   */
+  java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult>
+      getProductGroupedResultsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of results grouped by products detected in the query image. Each entry
+   * corresponds to one bounding polygon in the query image, and contains the
+   * matching products specific to that region. There may be duplicate product
+   * matches in the union of all the per-product results.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
+   */
+  com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult getProductGroupedResults(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of results grouped by products detected in the query image. Each entry
+   * corresponds to one bounding polygon in the query image, and contains the
+   * matching products specific to that region. There may be duplicate product
+   * matches in the union of all the per-product results.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
+   */
+  int getProductGroupedResultsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of results grouped by products detected in the query image. Each entry
+   * corresponds to one bounding polygon in the query image, and contains the
+   * matching products specific to that region. There may be duplicate product
+   * matches in the union of all the per-product results.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResultOrBuilder>
+      getProductGroupedResultsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of results grouped by products detected in the query image. Each entry
+   * corresponds to one bounding polygon in the query image, and contains the
+   * matching products specific to that region. There may be duplicate product
+   * matches in the union of all the per-product results.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
+   */
+  com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResultOrBuilder
+      getProductGroupedResultsOrBuilder(int index);
 }

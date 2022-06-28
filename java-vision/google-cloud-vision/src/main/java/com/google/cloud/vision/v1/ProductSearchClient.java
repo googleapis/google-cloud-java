@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -27,12 +28,10 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.vision.v1.stub.ProductSearchStub;
 import com.google.cloud.vision.v1.stub.ProductSearchStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -120,208 +119,28 @@ import javax.annotation.Generated;
  * ProductSearchClient productSearchClient = ProductSearchClient.create(productSearchSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * ProductSearchSettings productSearchSettings =
+ *     ProductSearchSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             ProductSearchSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * ProductSearchClient productSearchClient = ProductSearchClient.create(productSearchSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class ProductSearchClient implements BackgroundResource {
   private final ProductSearchSettings settings;
   private final ProductSearchStub stub;
-  private final OperationsClient operationsClient;
-
-  private static final PathTemplate LOCATION_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}");
-
-  private static final PathTemplate PRODUCT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/products/{product}");
-
-  private static final PathTemplate PRODUCT_SET_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/productSets/{product_set}");
-
-  private static final PathTemplate REFERENCE_IMAGE_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/locations/{location}/products/{product}/referenceImages/{reference_image}");
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a location resource.
-   *
-   * @deprecated Use the {@link LocationName} class instead.
-   */
-  @Deprecated
-  public static final String formatLocationName(String project, String location) {
-    return LOCATION_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a product resource.
-   *
-   * @deprecated Use the {@link ProductName} class instead.
-   */
-  @Deprecated
-  public static final String formatProductName(String project, String location, String product) {
-    return PRODUCT_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location,
-        "product", product);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a product_set resource.
-   *
-   * @deprecated Use the {@link ProductSetName} class instead.
-   */
-  @Deprecated
-  public static final String formatProductSetName(
-      String project, String location, String productSet) {
-    return PRODUCT_SET_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location,
-        "product_set", productSet);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a reference_image resource.
-   *
-   * @deprecated Use the {@link ReferenceImageName} class instead.
-   */
-  @Deprecated
-  public static final String formatReferenceImageName(
-      String project, String location, String product, String referenceImage) {
-    return REFERENCE_IMAGE_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location,
-        "product", product,
-        "reference_image", referenceImage);
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a location resource.
-   *
-   * @deprecated Use the {@link LocationName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromLocationName(String locationName) {
-    return LOCATION_PATH_TEMPLATE.parse(locationName).get("project");
-  }
-
-  /**
-   * Parses the location from the given fully-qualified path which represents a location resource.
-   *
-   * @deprecated Use the {@link LocationName} class instead.
-   */
-  @Deprecated
-  public static final String parseLocationFromLocationName(String locationName) {
-    return LOCATION_PATH_TEMPLATE.parse(locationName).get("location");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a product resource.
-   *
-   * @deprecated Use the {@link ProductName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromProductName(String productName) {
-    return PRODUCT_PATH_TEMPLATE.parse(productName).get("project");
-  }
-
-  /**
-   * Parses the location from the given fully-qualified path which represents a product resource.
-   *
-   * @deprecated Use the {@link ProductName} class instead.
-   */
-  @Deprecated
-  public static final String parseLocationFromProductName(String productName) {
-    return PRODUCT_PATH_TEMPLATE.parse(productName).get("location");
-  }
-
-  /**
-   * Parses the product from the given fully-qualified path which represents a product resource.
-   *
-   * @deprecated Use the {@link ProductName} class instead.
-   */
-  @Deprecated
-  public static final String parseProductFromProductName(String productName) {
-    return PRODUCT_PATH_TEMPLATE.parse(productName).get("product");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a product_set resource.
-   *
-   * @deprecated Use the {@link ProductSetName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromProductSetName(String productSetName) {
-    return PRODUCT_SET_PATH_TEMPLATE.parse(productSetName).get("project");
-  }
-
-  /**
-   * Parses the location from the given fully-qualified path which represents a product_set
-   * resource.
-   *
-   * @deprecated Use the {@link ProductSetName} class instead.
-   */
-  @Deprecated
-  public static final String parseLocationFromProductSetName(String productSetName) {
-    return PRODUCT_SET_PATH_TEMPLATE.parse(productSetName).get("location");
-  }
-
-  /**
-   * Parses the product_set from the given fully-qualified path which represents a product_set
-   * resource.
-   *
-   * @deprecated Use the {@link ProductSetName} class instead.
-   */
-  @Deprecated
-  public static final String parseProductSetFromProductSetName(String productSetName) {
-    return PRODUCT_SET_PATH_TEMPLATE.parse(productSetName).get("product_set");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a reference_image
-   * resource.
-   *
-   * @deprecated Use the {@link ReferenceImageName} class instead.
-   */
-  @Deprecated
-  public static final String parseProjectFromReferenceImageName(String referenceImageName) {
-    return REFERENCE_IMAGE_PATH_TEMPLATE.parse(referenceImageName).get("project");
-  }
-
-  /**
-   * Parses the location from the given fully-qualified path which represents a reference_image
-   * resource.
-   *
-   * @deprecated Use the {@link ReferenceImageName} class instead.
-   */
-  @Deprecated
-  public static final String parseLocationFromReferenceImageName(String referenceImageName) {
-    return REFERENCE_IMAGE_PATH_TEMPLATE.parse(referenceImageName).get("location");
-  }
-
-  /**
-   * Parses the product from the given fully-qualified path which represents a reference_image
-   * resource.
-   *
-   * @deprecated Use the {@link ReferenceImageName} class instead.
-   */
-  @Deprecated
-  public static final String parseProductFromReferenceImageName(String referenceImageName) {
-    return REFERENCE_IMAGE_PATH_TEMPLATE.parse(referenceImageName).get("product");
-  }
-
-  /**
-   * Parses the reference_image from the given fully-qualified path which represents a
-   * reference_image resource.
-   *
-   * @deprecated Use the {@link ReferenceImageName} class instead.
-   */
-  @Deprecated
-  public static final String parseReferenceImageFromReferenceImageName(String referenceImageName) {
-    return REFERENCE_IMAGE_PATH_TEMPLATE.parse(referenceImageName).get("reference_image");
-  }
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of ProductSearchClient with default settings. */
   public static final ProductSearchClient create() throws IOException {
@@ -341,7 +160,6 @@ public class ProductSearchClient implements BackgroundResource {
    * Constructs an instance of ProductSearchClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(ProductSearchSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ProductSearchClient create(ProductSearchStub stub) {
     return new ProductSearchClient(stub);
   }
@@ -354,21 +172,23 @@ public class ProductSearchClient implements BackgroundResource {
   protected ProductSearchClient(ProductSearchSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((ProductSearchStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ProductSearchClient(ProductSearchStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final ProductSearchSettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ProductSearchStub getStub() {
     return stub;
   }
@@ -377,8 +197,17 @@ public class ProductSearchClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -696,7 +525,7 @@ public class ProductSearchClient implements BackgroundResource {
    *   while (true) {
    *     ListProductSetsResponse response =
    *         productSearchClient.listProductSetsCallable().call(request);
-   *     for (ProductSet element : response.getResponsesList()) {
+   *     for (ProductSet element : response.getProductSetsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1373,7 +1202,7 @@ public class ProductSearchClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListProductsResponse response = productSearchClient.listProductsCallable().call(request);
-   *     for (Product element : response.getResponsesList()) {
+   *     for (Product element : response.getProductsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2257,7 +2086,7 @@ public class ProductSearchClient implements BackgroundResource {
    *   while (true) {
    *     ListReferenceImagesResponse response =
    *         productSearchClient.listReferenceImagesCallable().call(request);
-   *     for (ReferenceImage element : response.getResponsesList()) {
+   *     for (ReferenceImage element : response.getReferenceImagesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2981,7 +2810,7 @@ public class ProductSearchClient implements BackgroundResource {
    *   while (true) {
    *     ListProductsInProductSetResponse response =
    *         productSearchClient.listProductsInProductSetCallable().call(request);
-   *     for (Product element : response.getResponsesList()) {
+   *     for (Product element : response.getProductsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

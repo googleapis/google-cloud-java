@@ -40,10 +40,6 @@ public final class GeometryProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1p3beta1_BoundingPoly_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_vision_v1p3beta1_NormalizedBoundingPoly_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_vision_v1p3beta1_NormalizedBoundingPoly_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vision_v1p3beta1_Position_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vision_v1p3beta1_Position_fieldAccessorTable;
@@ -57,28 +53,22 @@ public final class GeometryProto {
   static {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/vision/v1p3beta1/geometry"
-          + ".proto\022\035google.cloud.vision.v1p3beta1\032\034g"
-          + "oogle/api/annotations.proto\"\036\n\006Vertex\022\t\n"
-          + "\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\"(\n\020NormalizedVertex\022"
-          + "\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"\225\001\n\014BoundingPoly\0227"
-          + "\n\010vertices\030\001 \003(\0132%.google.cloud.vision.v"
-          + "1p3beta1.Vertex\022L\n\023normalized_vertices\030\002"
-          + " \003(\0132/.google.cloud.vision.v1p3beta1.Nor"
-          + "malizedVertex\"[\n\026NormalizedBoundingPoly\022"
-          + "A\n\010vertices\030\001 \003(\0132/.google.cloud.vision."
-          + "v1p3beta1.NormalizedVertex\"+\n\010Position\022\t"
-          + "\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002B|\n!com.g"
-          + "oogle.cloud.vision.v1p3beta1B\rGeometryPr"
-          + "otoP\001ZCgoogle.golang.org/genproto/google"
-          + "apis/cloud/vision/v1p3beta1;vision\370\001\001b\006p"
-          + "roto3"
+          + ".proto\022\035google.cloud.vision.v1p3beta1\"\036\n"
+          + "\006Vertex\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\"(\n\020Normali"
+          + "zedVertex\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"\225\001\n\014Boun"
+          + "dingPoly\0227\n\010vertices\030\001 \003(\0132%.google.clou"
+          + "d.vision.v1p3beta1.Vertex\022L\n\023normalized_"
+          + "vertices\030\002 \003(\0132/.google.cloud.vision.v1p"
+          + "3beta1.NormalizedVertex\"+\n\010Position\022\t\n\001x"
+          + "\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002B\203\001\n!com.goo"
+          + "gle.cloud.vision.v1p3beta1B\rGeometryProt"
+          + "oP\001ZCgoogle.golang.org/genproto/googleap"
+          + "is/cloud/vision/v1p3beta1;vision\370\001\001\242\002\004GC"
+          + "VNb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.api.AnnotationsProto.getDescriptor(),
-            });
+            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
     internal_static_google_cloud_vision_v1p3beta1_Vertex_descriptor =
         getDescriptor().getMessageTypes().get(0);
     internal_static_google_cloud_vision_v1p3beta1_Vertex_fieldAccessorTable =
@@ -103,23 +93,14 @@ public final class GeometryProto {
             new java.lang.String[] {
               "Vertices", "NormalizedVertices",
             });
-    internal_static_google_cloud_vision_v1p3beta1_NormalizedBoundingPoly_descriptor =
-        getDescriptor().getMessageTypes().get(3);
-    internal_static_google_cloud_vision_v1p3beta1_NormalizedBoundingPoly_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_vision_v1p3beta1_NormalizedBoundingPoly_descriptor,
-            new java.lang.String[] {
-              "Vertices",
-            });
     internal_static_google_cloud_vision_v1p3beta1_Position_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_vision_v1p3beta1_Position_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vision_v1p3beta1_Position_descriptor,
             new java.lang.String[] {
               "X", "Y", "Z",
             });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

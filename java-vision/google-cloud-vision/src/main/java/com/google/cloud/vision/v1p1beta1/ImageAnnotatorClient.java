@@ -92,6 +92,20 @@ import javax.annotation.Generated;
  * ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create(imageAnnotatorSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * ImageAnnotatorSettings imageAnnotatorSettings =
+ *     ImageAnnotatorSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             ImageAnnotatorSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create(imageAnnotatorSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
@@ -118,7 +132,6 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * Constructs an instance of ImageAnnotatorClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(ImageAnnotatorSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ImageAnnotatorClient create(ImageAnnotatorStub stub) {
     return new ImageAnnotatorClient(stub);
   }
@@ -133,7 +146,6 @@ public class ImageAnnotatorClient implements BackgroundResource {
     this.stub = ((ImageAnnotatorStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ImageAnnotatorClient(ImageAnnotatorStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -143,7 +155,6 @@ public class ImageAnnotatorClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ImageAnnotatorStub getStub() {
     return stub;
   }

@@ -38,10 +38,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
   }
 
   private ProductSearchResults() {
-    category_ = 0;
-    productCategory_ = "";
-    products_ = java.util.Collections.emptyList();
     results_ = java.util.Collections.emptyList();
+    productGroupedResults_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -74,13 +72,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
           case 0:
             done = true;
             break;
-          case 8:
-            {
-              int rawValue = input.readEnum();
-
-              category_ = rawValue;
-              break;
-            }
           case 18:
             {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
@@ -96,38 +87,31 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
 
               break;
             }
-          case 26:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                products_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              products_.add(
-                  input.readMessage(
-                      com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case 34:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              productCategory_ = s;
-              break;
-            }
           case 42:
             {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 results_ =
                     new java.util.ArrayList<
                         com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               results_.add(
                   input.readMessage(
                       com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 50:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                productGroupedResults_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              productGroupedResults_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.parser(),
                       extensionRegistry));
               break;
             }
@@ -148,10 +132,10 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        products_ = java.util.Collections.unmodifiableList(products_);
+        results_ = java.util.Collections.unmodifiableList(results_);
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        results_ = java.util.Collections.unmodifiableList(results_);
+        productGroupedResults_ = java.util.Collections.unmodifiableList(productGroupedResults_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -171,1013 +155,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
         .ensureFieldAccessorsInitialized(
             com.google.cloud.vision.v1p3beta1.ProductSearchResults.class,
             com.google.cloud.vision.v1p3beta1.ProductSearchResults.Builder.class);
-  }
-
-  public interface ProductInfoOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * Product ID.
-     * </pre>
-     *
-     * <code>string product_id = 1;</code>
-     *
-     * @return The productId.
-     */
-    java.lang.String getProductId();
-    /**
-     *
-     *
-     * <pre>
-     * Product ID.
-     * </pre>
-     *
-     * <code>string product_id = 1;</code>
-     *
-     * @return The bytes for productId.
-     */
-    com.google.protobuf.ByteString getProductIdBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * The URI of the image which matched the query image.
-     * This field is returned only if `view` is set to `FULL` in
-     * the request.
-     * </pre>
-     *
-     * <code>string image_uri = 2;</code>
-     *
-     * @return The imageUri.
-     */
-    java.lang.String getImageUri();
-    /**
-     *
-     *
-     * <pre>
-     * The URI of the image which matched the query image.
-     * This field is returned only if `view` is set to `FULL` in
-     * the request.
-     * </pre>
-     *
-     * <code>string image_uri = 2;</code>
-     *
-     * @return The bytes for imageUri.
-     */
-    com.google.protobuf.ByteString getImageUriBytes();
-
-    /**
-     *
-     *
-     * <pre>
-     * A confidence level on the match, ranging from 0 (no confidence) to
-     * 1 (full confidence).
-     * This field is returned only if `view` is set to `FULL` in
-     * the request.
-     * </pre>
-     *
-     * <code>float score = 3;</code>
-     *
-     * @return The score.
-     */
-    float getScore();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Information about a product.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo}
-   */
-  public static final class ProductInfo extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo)
-      ProductInfoOrBuilder {
-    private static final long serialVersionUID = 0L;
-    // Use ProductInfo.newBuilder() to construct.
-    private ProductInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private ProductInfo() {
-      productId_ = "";
-      imageUri_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new ProductInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
-      return this.unknownFields;
-    }
-
-    private ProductInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                productId_ = s;
-                break;
-              }
-            case 18:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                imageUri_ = s;
-                break;
-              }
-            case 29:
-              {
-                score_ = input.readFloat();
-                break;
-              }
-            default:
-              {
-                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchProto
-          .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_ProductInfo_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchProto
-          .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_ProductInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.class,
-              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.Builder.class);
-    }
-
-    public static final int PRODUCT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object productId_;
-    /**
-     *
-     *
-     * <pre>
-     * Product ID.
-     * </pre>
-     *
-     * <code>string product_id = 1;</code>
-     *
-     * @return The productId.
-     */
-    @java.lang.Override
-    public java.lang.String getProductId() {
-      java.lang.Object ref = productId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        productId_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Product ID.
-     * </pre>
-     *
-     * <code>string product_id = 1;</code>
-     *
-     * @return The bytes for productId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getProductIdBytes() {
-      java.lang.Object ref = productId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        productId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int IMAGE_URI_FIELD_NUMBER = 2;
-    private volatile java.lang.Object imageUri_;
-    /**
-     *
-     *
-     * <pre>
-     * The URI of the image which matched the query image.
-     * This field is returned only if `view` is set to `FULL` in
-     * the request.
-     * </pre>
-     *
-     * <code>string image_uri = 2;</code>
-     *
-     * @return The imageUri.
-     */
-    @java.lang.Override
-    public java.lang.String getImageUri() {
-      java.lang.Object ref = imageUri_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        imageUri_ = s;
-        return s;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The URI of the image which matched the query image.
-     * This field is returned only if `view` is set to `FULL` in
-     * the request.
-     * </pre>
-     *
-     * <code>string image_uri = 2;</code>
-     *
-     * @return The bytes for imageUri.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getImageUriBytes() {
-      java.lang.Object ref = imageUri_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        imageUri_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SCORE_FIELD_NUMBER = 3;
-    private float score_;
-    /**
-     *
-     *
-     * <pre>
-     * A confidence level on the match, ranging from 0 (no confidence) to
-     * 1 (full confidence).
-     * This field is returned only if `view` is set to `FULL` in
-     * the request.
-     * </pre>
-     *
-     * <code>float score = 3;</code>
-     *
-     * @return The score.
-     */
-    @java.lang.Override
-    public float getScore() {
-      return score_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, productId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, imageUri_);
-      }
-      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
-        output.writeFloat(3, score_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, productId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUri_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, imageUri_);
-      }
-      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
-        size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, score_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj instanceof com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo other =
-          (com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo) obj;
-
-      if (!getProductId().equals(other.getProductId())) return false;
-      if (!getImageUri().equals(other.getImageUri())) return false;
-      if (java.lang.Float.floatToIntBits(getScore())
-          != java.lang.Float.floatToIntBits(other.getScore())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProductId().hashCode();
-      hash = (37 * hash) + IMAGE_URI_FIELD_NUMBER;
-      hash = (53 * hash) + getImageUri().hashCode();
-      hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo parseFrom(
-        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo parseFrom(
-        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo parseFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Information about a product.
-     * </pre>
-     *
-     * Protobuf type {@code google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo)
-        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.vision.v1p3beta1.ProductSearchProto
-            .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_ProductInfo_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.vision.v1p3beta1.ProductSearchProto
-            .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_ProductInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.class,
-                com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.Builder.class);
-      }
-
-      // Construct using
-      // com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        productId_ = "";
-
-        imageUri_ = "";
-
-        score_ = 0F;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.vision.v1p3beta1.ProductSearchProto
-            .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_ProductInfo_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo
-          getDefaultInstanceForType() {
-        return com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo
-            .getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo build() {
-        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo buildPartial() {
-        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo result =
-            new com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo(this);
-        result.productId_ = productId_;
-        result.imageUri_ = imageUri_;
-        result.score_ = score_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo) {
-          return mergeFrom(
-              (com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo other) {
-        if (other
-            == com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo
-                .getDefaultInstance()) return this;
-        if (!other.getProductId().isEmpty()) {
-          productId_ = other.productId_;
-          onChanged();
-        }
-        if (!other.getImageUri().isEmpty()) {
-          imageUri_ = other.imageUri_;
-          onChanged();
-        }
-        if (other.getScore() != 0F) {
-          setScore(other.getScore());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage =
-              (com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo)
-                  e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object productId_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * Product ID.
-       * </pre>
-       *
-       * <code>string product_id = 1;</code>
-       *
-       * @return The productId.
-       */
-      public java.lang.String getProductId() {
-        java.lang.Object ref = productId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          productId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Product ID.
-       * </pre>
-       *
-       * <code>string product_id = 1;</code>
-       *
-       * @return The bytes for productId.
-       */
-      public com.google.protobuf.ByteString getProductIdBytes() {
-        java.lang.Object ref = productId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          productId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Product ID.
-       * </pre>
-       *
-       * <code>string product_id = 1;</code>
-       *
-       * @param value The productId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setProductId(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-
-        productId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Product ID.
-       * </pre>
-       *
-       * <code>string product_id = 1;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearProductId() {
-
-        productId_ = getDefaultInstance().getProductId();
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * Product ID.
-       * </pre>
-       *
-       * <code>string product_id = 1;</code>
-       *
-       * @param value The bytes for productId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setProductIdBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
-        productId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object imageUri_ = "";
-      /**
-       *
-       *
-       * <pre>
-       * The URI of the image which matched the query image.
-       * This field is returned only if `view` is set to `FULL` in
-       * the request.
-       * </pre>
-       *
-       * <code>string image_uri = 2;</code>
-       *
-       * @return The imageUri.
-       */
-      public java.lang.String getImageUri() {
-        java.lang.Object ref = imageUri_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          imageUri_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The URI of the image which matched the query image.
-       * This field is returned only if `view` is set to `FULL` in
-       * the request.
-       * </pre>
-       *
-       * <code>string image_uri = 2;</code>
-       *
-       * @return The bytes for imageUri.
-       */
-      public com.google.protobuf.ByteString getImageUriBytes() {
-        java.lang.Object ref = imageUri_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          imageUri_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The URI of the image which matched the query image.
-       * This field is returned only if `view` is set to `FULL` in
-       * the request.
-       * </pre>
-       *
-       * <code>string image_uri = 2;</code>
-       *
-       * @param value The imageUri to set.
-       * @return This builder for chaining.
-       */
-      public Builder setImageUri(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-
-        imageUri_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The URI of the image which matched the query image.
-       * This field is returned only if `view` is set to `FULL` in
-       * the request.
-       * </pre>
-       *
-       * <code>string image_uri = 2;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearImageUri() {
-
-        imageUri_ = getDefaultInstance().getImageUri();
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * The URI of the image which matched the query image.
-       * This field is returned only if `view` is set to `FULL` in
-       * the request.
-       * </pre>
-       *
-       * <code>string image_uri = 2;</code>
-       *
-       * @param value The bytes for imageUri to set.
-       * @return This builder for chaining.
-       */
-      public Builder setImageUriBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
-        imageUri_ = value;
-        onChanged();
-        return this;
-      }
-
-      private float score_;
-      /**
-       *
-       *
-       * <pre>
-       * A confidence level on the match, ranging from 0 (no confidence) to
-       * 1 (full confidence).
-       * This field is returned only if `view` is set to `FULL` in
-       * the request.
-       * </pre>
-       *
-       * <code>float score = 3;</code>
-       *
-       * @return The score.
-       */
-      @java.lang.Override
-      public float getScore() {
-        return score_;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A confidence level on the match, ranging from 0 (no confidence) to
-       * 1 (full confidence).
-       * This field is returned only if `view` is set to `FULL` in
-       * the request.
-       * </pre>
-       *
-       * <code>float score = 3;</code>
-       *
-       * @param value The score to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScore(float value) {
-
-        score_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       *
-       *
-       * <pre>
-       * A confidence level on the match, ranging from 0 (no confidence) to
-       * 1 (full confidence).
-       * This field is returned only if `view` is set to `FULL` in
-       * the request.
-       * </pre>
-       *
-       * <code>float score = 3;</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearScore() {
-
-        score_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo)
-    private static final com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE = new com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo();
-    }
-
-    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ProductInfo> PARSER =
-        new com.google.protobuf.AbstractParser<ProductInfo>() {
-          @java.lang.Override
-          public ProductInfo parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return new ProductInfo(input, extensionRegistry);
-          }
-        };
-
-    public static com.google.protobuf.Parser<ProductInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ProductInfo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
   }
 
   public interface ResultOrBuilder
@@ -1226,8 +203,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * <pre>
      * A confidence level on the match, ranging from 0 (no confidence) to
      * 1 (full confidence).
-     * This field is returned only if `view` is set to `FULL` in
-     * the request.
      * </pre>
      *
      * <code>float score = 2;</code>
@@ -1435,8 +410,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      * <pre>
      * A confidence level on the match, ranging from 0 (no confidence) to
      * 1 (full confidence).
-     * This field is returned only if `view` is set to `FULL` in
-     * the request.
      * </pre>
      *
      * <code>float score = 2;</code>
@@ -2062,8 +1035,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * <pre>
        * A confidence level on the match, ranging from 0 (no confidence) to
        * 1 (full confidence).
-       * This field is returned only if `view` is set to `FULL` in
-       * the request.
        * </pre>
        *
        * <code>float score = 2;</code>
@@ -2080,8 +1051,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * <pre>
        * A confidence level on the match, ranging from 0 (no confidence) to
        * 1 (full confidence).
-       * This field is returned only if `view` is set to `FULL` in
-       * the request.
        * </pre>
        *
        * <code>float score = 2;</code>
@@ -2101,8 +1070,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
        * <pre>
        * A confidence level on the match, ranging from 0 (no confidence) to
        * 1 (full confidence).
-       * This field is returned only if `view` is set to `FULL` in
-       * the request.
        * </pre>
        *
        * <code>float score = 2;</code>
@@ -2282,96 +1249,3219 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int CATEGORY_FIELD_NUMBER = 1;
-  private int category_;
-  /**
-   *
-   *
-   * <pre>
-   * Product category.
-   * [Deprecated] Use `product_category`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
-   *
-   * @return The enum numeric value on the wire for category.
-   */
-  @java.lang.Override
-  public int getCategoryValue() {
-    return category_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Product category.
-   * [Deprecated] Use `product_category`.
-   * </pre>
-   *
-   * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
-   *
-   * @return The category.
-   */
-  @java.lang.Override
-  public com.google.cloud.vision.v1p3beta1.ProductSearchCategory getCategory() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.vision.v1p3beta1.ProductSearchCategory result =
-        com.google.cloud.vision.v1p3beta1.ProductSearchCategory.valueOf(category_);
-    return result == null
-        ? com.google.cloud.vision.v1p3beta1.ProductSearchCategory.UNRECOGNIZED
-        : result;
-  }
+  public interface ObjectAnnotationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation)
+      com.google.protobuf.MessageOrBuilder {
 
-  public static final int PRODUCT_CATEGORY_FIELD_NUMBER = 4;
-  private volatile java.lang.Object productCategory_;
+    /**
+     *
+     *
+     * <pre>
+     * Object ID that should align with EntityAnnotation mid.
+     * </pre>
+     *
+     * <code>string mid = 1;</code>
+     *
+     * @return The mid.
+     */
+    java.lang.String getMid();
+    /**
+     *
+     *
+     * <pre>
+     * Object ID that should align with EntityAnnotation mid.
+     * </pre>
+     *
+     * <code>string mid = 1;</code>
+     *
+     * @return The bytes for mid.
+     */
+    com.google.protobuf.ByteString getMidBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * information, see
+     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2;</code>
+     *
+     * @return The languageCode.
+     */
+    java.lang.String getLanguageCode();
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * information, see
+     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2;</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    com.google.protobuf.ByteString getLanguageCodeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Object name, expressed in its `language_code` language.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Object name, expressed in its `language_code` language.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Score of the result. Range [0, 1].
+     * </pre>
+     *
+     * <code>float score = 4;</code>
+     *
+     * @return The score.
+     */
+    float getScore();
+  }
   /**
    *
    *
    * <pre>
-   * Product category.
-   * Supported values are `bag` and `shoe`.
-   * [Deprecated] `product_category` is provided in each Product.
+   * Prediction for what the object in the bounding box is.
    * </pre>
    *
-   * <code>string product_category = 4;</code>
-   *
-   * @return The productCategory.
+   * Protobuf type {@code google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation}
    */
-  @java.lang.Override
-  public java.lang.String getProductCategory() {
-    java.lang.Object ref = productCategory_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      productCategory_ = s;
-      return s;
+  public static final class ObjectAnnotation extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation)
+      ObjectAnnotationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ObjectAnnotation.newBuilder() to construct.
+    private ObjectAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ObjectAnnotation() {
+      mid_ = "";
+      languageCode_ = "";
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ObjectAnnotation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private ObjectAnnotation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                mid_ = s;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                languageCode_ = s;
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
+                break;
+              }
+            case 37:
+              {
+                score_ = input.readFloat();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchProto
+          .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_ObjectAnnotation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchProto
+          .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_ObjectAnnotation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.class,
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.Builder
+                  .class);
+    }
+
+    public static final int MID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object mid_;
+    /**
+     *
+     *
+     * <pre>
+     * Object ID that should align with EntityAnnotation mid.
+     * </pre>
+     *
+     * <code>string mid = 1;</code>
+     *
+     * @return The mid.
+     */
+    @java.lang.Override
+    public java.lang.String getMid() {
+      java.lang.Object ref = mid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mid_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Object ID that should align with EntityAnnotation mid.
+     * </pre>
+     *
+     * <code>string mid = 1;</code>
+     *
+     * @return The bytes for mid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMidBytes() {
+      java.lang.Object ref = mid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        mid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LANGUAGE_CODE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object languageCode_;
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * information, see
+     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2;</code>
+     *
+     * @return The languageCode.
+     */
+    @java.lang.Override
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+     * information, see
+     * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2;</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object name_;
+    /**
+     *
+     *
+     * <pre>
+     * Object name, expressed in its `language_code` language.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Object name, expressed in its `language_code` language.
+     * </pre>
+     *
+     * <code>string name = 3;</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 4;
+    private float score_;
+    /**
+     *
+     *
+     * <pre>
+     * Score of the result. Range [0, 1].
+     * </pre>
+     *
+     * <code>float score = 4;</code>
+     *
+     * @return The score.
+     */
+    @java.lang.Override
+    public float getScore() {
+      return score_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, languageCode_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
+      }
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
+        output.writeFloat(4, score_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, languageCode_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
+      }
+      if (java.lang.Float.floatToRawIntBits(score_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, score_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation other =
+          (com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation) obj;
+
+      if (!getMid().equals(other.getMid())) return false;
+      if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+      if (!getName().equals(other.getName())) return false;
+      if (java.lang.Float.floatToIntBits(getScore())
+          != java.lang.Float.floatToIntBits(other.getScore())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MID_FIELD_NUMBER;
+      hash = (53 * hash) + getMid().hashCode();
+      hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguageCode().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Prediction for what the object in the bounding box is.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation)
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vision.v1p3beta1.ProductSearchProto
+            .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_ObjectAnnotation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vision.v1p3beta1.ProductSearchProto
+            .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_ObjectAnnotation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.class,
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        mid_ = "";
+
+        languageCode_ = "";
+
+        name_ = "";
+
+        score_ = 0F;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vision.v1p3beta1.ProductSearchProto
+            .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_ObjectAnnotation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+          getDefaultInstanceForType() {
+        return com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation build() {
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+          buildPartial() {
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation result =
+            new com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation(this);
+        result.mid_ = mid_;
+        result.languageCode_ = languageCode_;
+        result.name_ = name_;
+        result.score_ = score_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation) {
+          return mergeFrom(
+              (com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation other) {
+        if (other
+            == com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+                .getDefaultInstance()) return this;
+        if (!other.getMid().isEmpty()) {
+          mid_ = other.mid_;
+          onChanged();
+        }
+        if (!other.getLanguageCode().isEmpty()) {
+          languageCode_ = other.languageCode_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (other.getScore() != 0F) {
+          setScore(other.getScore());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation parsedMessage =
+            null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object mid_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Object ID that should align with EntityAnnotation mid.
+       * </pre>
+       *
+       * <code>string mid = 1;</code>
+       *
+       * @return The mid.
+       */
+      public java.lang.String getMid() {
+        java.lang.Object ref = mid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object ID that should align with EntityAnnotation mid.
+       * </pre>
+       *
+       * <code>string mid = 1;</code>
+       *
+       * @return The bytes for mid.
+       */
+      public com.google.protobuf.ByteString getMidBytes() {
+        java.lang.Object ref = mid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          mid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object ID that should align with EntityAnnotation mid.
+       * </pre>
+       *
+       * <code>string mid = 1;</code>
+       *
+       * @param value The mid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMid(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        mid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object ID that should align with EntityAnnotation mid.
+       * </pre>
+       *
+       * <code>string mid = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMid() {
+
+        mid_ = getDefaultInstance().getMid();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object ID that should align with EntityAnnotation mid.
+       * </pre>
+       *
+       * <code>string mid = 1;</code>
+       *
+       * @param value The bytes for mid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMidBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        mid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object languageCode_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * information, see
+       * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string language_code = 2;</code>
+       *
+       * @return The languageCode.
+       */
+      public java.lang.String getLanguageCode() {
+        java.lang.Object ref = languageCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          languageCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * information, see
+       * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string language_code = 2;</code>
+       *
+       * @return The bytes for languageCode.
+       */
+      public com.google.protobuf.ByteString getLanguageCodeBytes() {
+        java.lang.Object ref = languageCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          languageCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * information, see
+       * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string language_code = 2;</code>
+       *
+       * @param value The languageCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLanguageCode(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        languageCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * information, see
+       * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string language_code = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLanguageCode() {
+
+        languageCode_ = getDefaultInstance().getLanguageCode();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+       * information, see
+       * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string language_code = 2;</code>
+       *
+       * @param value The bytes for languageCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        languageCode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Object name, expressed in its `language_code` language.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object name, expressed in its `language_code` language.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object name, expressed in its `language_code` language.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object name, expressed in its `language_code` language.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Object name, expressed in its `language_code` language.
+       * </pre>
+       *
+       * <code>string name = 3;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private float score_;
+      /**
+       *
+       *
+       * <pre>
+       * Score of the result. Range [0, 1].
+       * </pre>
+       *
+       * <code>float score = 4;</code>
+       *
+       * @return The score.
+       */
+      @java.lang.Override
+      public float getScore() {
+        return score_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Score of the result. Range [0, 1].
+       * </pre>
+       *
+       * <code>float score = 4;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(float value) {
+
+        score_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Score of the result. Range [0, 1].
+       * </pre>
+       *
+       * <code>float score = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+
+        score_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation)
+    private static final com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation();
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ObjectAnnotation> PARSER =
+        new com.google.protobuf.AbstractParser<ObjectAnnotation>() {
+          @java.lang.Override
+          public ObjectAnnotation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ObjectAnnotation(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<ObjectAnnotation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ObjectAnnotation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
     }
   }
+
+  public interface GroupedResultOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The bounding polygon around the product detected in the query image.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+     *
+     * @return Whether the boundingPoly field is set.
+     */
+    boolean hasBoundingPoly();
+    /**
+     *
+     *
+     * <pre>
+     * The bounding polygon around the product detected in the query image.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+     *
+     * @return The boundingPoly.
+     */
+    com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPoly();
+    /**
+     *
+     *
+     * <pre>
+     * The bounding polygon around the product detected in the query image.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+     */
+    com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of results, one for each product match.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;</code>
+     */
+    java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result> getResultsList();
+    /**
+     *
+     *
+     * <pre>
+     * List of results, one for each product match.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;</code>
+     */
+    com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result getResults(int index);
+    /**
+     *
+     *
+     * <pre>
+     * List of results, one for each product match.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;</code>
+     */
+    int getResultsCount();
+    /**
+     *
+     *
+     * <pre>
+     * List of results, one for each product match.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;</code>
+     */
+    java.util.List<? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder>
+        getResultsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * List of results, one for each product match.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;</code>
+     */
+    com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder getResultsOrBuilder(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation>
+        getObjectAnnotationsList();
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation getObjectAnnotations(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    int getObjectAnnotationsCount();
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotationOrBuilder>
+        getObjectAnnotationsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotationOrBuilder
+        getObjectAnnotationsOrBuilder(int index);
+  }
   /**
    *
    *
    * <pre>
-   * Product category.
-   * Supported values are `bag` and `shoe`.
-   * [Deprecated] `product_category` is provided in each Product.
+   * Information about the products similar to a single product in a query
+   * image.
    * </pre>
    *
-   * <code>string product_category = 4;</code>
-   *
-   * @return The bytes for productCategory.
+   * Protobuf type {@code google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult}
    */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getProductCategoryBytes() {
-    java.lang.Object ref = productCategory_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      productCategory_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
+  public static final class GroupedResult extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult)
+      GroupedResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use GroupedResult.newBuilder() to construct.
+    private GroupedResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GroupedResult() {
+      results_ = java.util.Collections.emptyList();
+      objectAnnotations_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new GroupedResult();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private GroupedResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.cloud.vision.v1p3beta1.BoundingPoly.Builder subBuilder = null;
+                if (boundingPoly_ != null) {
+                  subBuilder = boundingPoly_.toBuilder();
+                }
+                boundingPoly_ =
+                    input.readMessage(
+                        com.google.cloud.vision.v1p3beta1.BoundingPoly.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(boundingPoly_);
+                  boundingPoly_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            case 18:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  results_ =
+                      new java.util.ArrayList<
+                          com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                results_.add(
+                    input.readMessage(
+                        com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.parser(),
+                        extensionRegistry));
+                break;
+              }
+            case 26:
+              {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  objectAnnotations_ =
+                      new java.util.ArrayList<
+                          com.google.cloud.vision.v1p3beta1.ProductSearchResults
+                              .ObjectAnnotation>();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                objectAnnotations_.add(
+                    input.readMessage(
+                        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+                            .parser(),
+                        extensionRegistry));
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          results_ = java.util.Collections.unmodifiableList(results_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchProto
+          .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_GroupedResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchProto
+          .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_GroupedResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.class,
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.Builder.class);
+    }
+
+    public static final int BOUNDING_POLY_FIELD_NUMBER = 1;
+    private com.google.cloud.vision.v1p3beta1.BoundingPoly boundingPoly_;
+    /**
+     *
+     *
+     * <pre>
+     * The bounding polygon around the product detected in the query image.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+     *
+     * @return Whether the boundingPoly field is set.
+     */
+    @java.lang.Override
+    public boolean hasBoundingPoly() {
+      return boundingPoly_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The bounding polygon around the product detected in the query image.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+     *
+     * @return The boundingPoly.
+     */
+    @java.lang.Override
+    public com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPoly() {
+      return boundingPoly_ == null
+          ? com.google.cloud.vision.v1p3beta1.BoundingPoly.getDefaultInstance()
+          : boundingPoly_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The bounding polygon around the product detected in the query image.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
+      return getBoundingPoly();
+    }
+
+    public static final int RESULTS_FIELD_NUMBER = 2;
+    private java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result> results_;
+    /**
+     *
+     *
+     * <pre>
+     * List of results, one for each product match.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result>
+        getResultsList() {
+      return results_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results, one for each product match.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder>
+        getResultsOrBuilderList() {
+      return results_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results, one for each product match.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;</code>
+     */
+    @java.lang.Override
+    public int getResultsCount() {
+      return results_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results, one for each product match.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result getResults(int index) {
+      return results_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results, one for each product match.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder
+        getResultsOrBuilder(int index) {
+      return results_.get(index);
+    }
+
+    public static final int OBJECT_ANNOTATIONS_FIELD_NUMBER = 3;
+    private java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation>
+        objectAnnotations_;
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation>
+        getObjectAnnotationsList() {
+      return objectAnnotations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotationOrBuilder>
+        getObjectAnnotationsOrBuilderList() {
+      return objectAnnotations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public int getObjectAnnotationsCount() {
+      return objectAnnotations_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+        getObjectAnnotations(int index) {
+      return objectAnnotations_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of generic predictions for the object in the bounding box.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotationOrBuilder
+        getObjectAnnotationsOrBuilder(int index) {
+      return objectAnnotations_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (boundingPoly_ != null) {
+        output.writeMessage(1, getBoundingPoly());
+      }
+      for (int i = 0; i < results_.size(); i++) {
+        output.writeMessage(2, results_.get(i));
+      }
+      for (int i = 0; i < objectAnnotations_.size(); i++) {
+        output.writeMessage(3, objectAnnotations_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (boundingPoly_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBoundingPoly());
+      }
+      for (int i = 0; i < results_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, results_.get(i));
+      }
+      for (int i = 0; i < objectAnnotations_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, objectAnnotations_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult other =
+          (com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult) obj;
+
+      if (hasBoundingPoly() != other.hasBoundingPoly()) return false;
+      if (hasBoundingPoly()) {
+        if (!getBoundingPoly().equals(other.getBoundingPoly())) return false;
+      }
+      if (!getResultsList().equals(other.getResultsList())) return false;
+      if (!getObjectAnnotationsList().equals(other.getObjectAnnotationsList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBoundingPoly()) {
+        hash = (37 * hash) + BOUNDING_POLY_FIELD_NUMBER;
+        hash = (53 * hash) + getBoundingPoly().hashCode();
+      }
+      if (getResultsCount() > 0) {
+        hash = (37 * hash) + RESULTS_FIELD_NUMBER;
+        hash = (53 * hash) + getResultsList().hashCode();
+      }
+      if (getObjectAnnotationsCount() > 0) {
+        hash = (37 * hash) + OBJECT_ANNOTATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getObjectAnnotationsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the products similar to a single product in a query
+     * image.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult)
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vision.v1p3beta1.ProductSearchProto
+            .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_GroupedResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vision.v1p3beta1.ProductSearchProto
+            .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_GroupedResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.class,
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getResultsFieldBuilder();
+          getObjectAnnotationsFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (boundingPolyBuilder_ == null) {
+          boundingPoly_ = null;
+        } else {
+          boundingPoly_ = null;
+          boundingPolyBuilder_ = null;
+        }
+        if (resultsBuilder_ == null) {
+          results_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          resultsBuilder_.clear();
+        }
+        if (objectAnnotationsBuilder_ == null) {
+          objectAnnotations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          objectAnnotationsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vision.v1p3beta1.ProductSearchProto
+            .internal_static_google_cloud_vision_v1p3beta1_ProductSearchResults_GroupedResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult
+          getDefaultInstanceForType() {
+        return com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult build() {
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult buildPartial() {
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult result =
+            new com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult(this);
+        int from_bitField0_ = bitField0_;
+        if (boundingPolyBuilder_ == null) {
+          result.boundingPoly_ = boundingPoly_;
+        } else {
+          result.boundingPoly_ = boundingPolyBuilder_.build();
+        }
+        if (resultsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            results_ = java.util.Collections.unmodifiableList(results_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.results_ = results_;
+        } else {
+          result.results_ = resultsBuilder_.build();
+        }
+        if (objectAnnotationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.objectAnnotations_ = objectAnnotations_;
+        } else {
+          result.objectAnnotations_ = objectAnnotationsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult) {
+          return mergeFrom(
+              (com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult other) {
+        if (other
+            == com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult
+                .getDefaultInstance()) return this;
+        if (other.hasBoundingPoly()) {
+          mergeBoundingPoly(other.getBoundingPoly());
+        }
+        if (resultsBuilder_ == null) {
+          if (!other.results_.isEmpty()) {
+            if (results_.isEmpty()) {
+              results_ = other.results_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureResultsIsMutable();
+              results_.addAll(other.results_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.results_.isEmpty()) {
+            if (resultsBuilder_.isEmpty()) {
+              resultsBuilder_.dispose();
+              resultsBuilder_ = null;
+              results_ = other.results_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              resultsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getResultsFieldBuilder()
+                      : null;
+            } else {
+              resultsBuilder_.addAllMessages(other.results_);
+            }
+          }
+        }
+        if (objectAnnotationsBuilder_ == null) {
+          if (!other.objectAnnotations_.isEmpty()) {
+            if (objectAnnotations_.isEmpty()) {
+              objectAnnotations_ = other.objectAnnotations_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureObjectAnnotationsIsMutable();
+              objectAnnotations_.addAll(other.objectAnnotations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.objectAnnotations_.isEmpty()) {
+            if (objectAnnotationsBuilder_.isEmpty()) {
+              objectAnnotationsBuilder_.dispose();
+              objectAnnotationsBuilder_ = null;
+              objectAnnotations_ = other.objectAnnotations_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              objectAnnotationsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getObjectAnnotationsFieldBuilder()
+                      : null;
+            } else {
+              objectAnnotationsBuilder_.addAllMessages(other.objectAnnotations_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.vision.v1p3beta1.BoundingPoly boundingPoly_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.vision.v1p3beta1.BoundingPoly,
+              com.google.cloud.vision.v1p3beta1.BoundingPoly.Builder,
+              com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder>
+          boundingPolyBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The bounding polygon around the product detected in the query image.
+       * </pre>
+       *
+       * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+       *
+       * @return Whether the boundingPoly field is set.
+       */
+      public boolean hasBoundingPoly() {
+        return boundingPolyBuilder_ != null || boundingPoly_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The bounding polygon around the product detected in the query image.
+       * </pre>
+       *
+       * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+       *
+       * @return The boundingPoly.
+       */
+      public com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPoly() {
+        if (boundingPolyBuilder_ == null) {
+          return boundingPoly_ == null
+              ? com.google.cloud.vision.v1p3beta1.BoundingPoly.getDefaultInstance()
+              : boundingPoly_;
+        } else {
+          return boundingPolyBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The bounding polygon around the product detected in the query image.
+       * </pre>
+       *
+       * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+       */
+      public Builder setBoundingPoly(com.google.cloud.vision.v1p3beta1.BoundingPoly value) {
+        if (boundingPolyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          boundingPoly_ = value;
+          onChanged();
+        } else {
+          boundingPolyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The bounding polygon around the product detected in the query image.
+       * </pre>
+       *
+       * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+       */
+      public Builder setBoundingPoly(
+          com.google.cloud.vision.v1p3beta1.BoundingPoly.Builder builderForValue) {
+        if (boundingPolyBuilder_ == null) {
+          boundingPoly_ = builderForValue.build();
+          onChanged();
+        } else {
+          boundingPolyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The bounding polygon around the product detected in the query image.
+       * </pre>
+       *
+       * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+       */
+      public Builder mergeBoundingPoly(com.google.cloud.vision.v1p3beta1.BoundingPoly value) {
+        if (boundingPolyBuilder_ == null) {
+          if (boundingPoly_ != null) {
+            boundingPoly_ =
+                com.google.cloud.vision.v1p3beta1.BoundingPoly.newBuilder(boundingPoly_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            boundingPoly_ = value;
+          }
+          onChanged();
+        } else {
+          boundingPolyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The bounding polygon around the product detected in the query image.
+       * </pre>
+       *
+       * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+       */
+      public Builder clearBoundingPoly() {
+        if (boundingPolyBuilder_ == null) {
+          boundingPoly_ = null;
+          onChanged();
+        } else {
+          boundingPoly_ = null;
+          boundingPolyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The bounding polygon around the product detected in the query image.
+       * </pre>
+       *
+       * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+       */
+      public com.google.cloud.vision.v1p3beta1.BoundingPoly.Builder getBoundingPolyBuilder() {
+
+        onChanged();
+        return getBoundingPolyFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The bounding polygon around the product detected in the query image.
+       * </pre>
+       *
+       * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+       */
+      public com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
+        if (boundingPolyBuilder_ != null) {
+          return boundingPolyBuilder_.getMessageOrBuilder();
+        } else {
+          return boundingPoly_ == null
+              ? com.google.cloud.vision.v1p3beta1.BoundingPoly.getDefaultInstance()
+              : boundingPoly_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The bounding polygon around the product detected in the query image.
+       * </pre>
+       *
+       * <code>.google.cloud.vision.v1p3beta1.BoundingPoly bounding_poly = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.vision.v1p3beta1.BoundingPoly,
+              com.google.cloud.vision.v1p3beta1.BoundingPoly.Builder,
+              com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder>
+          getBoundingPolyFieldBuilder() {
+        if (boundingPolyBuilder_ == null) {
+          boundingPolyBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.vision.v1p3beta1.BoundingPoly,
+                  com.google.cloud.vision.v1p3beta1.BoundingPoly.Builder,
+                  com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder>(
+                  getBoundingPoly(), getParentForChildren(), isClean());
+          boundingPoly_ = null;
+        }
+        return boundingPolyBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result>
+          results_ = java.util.Collections.emptyList();
+
+      private void ensureResultsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          results_ =
+              new java.util.ArrayList<
+                  com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result>(results_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result,
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.Builder,
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder>
+          resultsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result>
+          getResultsList() {
+        if (resultsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(results_);
+        } else {
+          return resultsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public int getResultsCount() {
+        if (resultsBuilder_ == null) {
+          return results_.size();
+        } else {
+          return resultsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result getResults(int index) {
+        if (resultsBuilder_ == null) {
+          return results_.get(index);
+        } else {
+          return resultsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public Builder setResults(
+          int index, com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result value) {
+        if (resultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultsIsMutable();
+          results_.set(index, value);
+          onChanged();
+        } else {
+          resultsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public Builder setResults(
+          int index,
+          com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.Builder builderForValue) {
+        if (resultsBuilder_ == null) {
+          ensureResultsIsMutable();
+          results_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          resultsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public Builder addResults(
+          com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result value) {
+        if (resultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultsIsMutable();
+          results_.add(value);
+          onChanged();
+        } else {
+          resultsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public Builder addResults(
+          int index, com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result value) {
+        if (resultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureResultsIsMutable();
+          results_.add(index, value);
+          onChanged();
+        } else {
+          resultsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public Builder addResults(
+          com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.Builder builderForValue) {
+        if (resultsBuilder_ == null) {
+          ensureResultsIsMutable();
+          results_.add(builderForValue.build());
+          onChanged();
+        } else {
+          resultsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public Builder addResults(
+          int index,
+          com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.Builder builderForValue) {
+        if (resultsBuilder_ == null) {
+          ensureResultsIsMutable();
+          results_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          resultsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public Builder addAllResults(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result>
+              values) {
+        if (resultsBuilder_ == null) {
+          ensureResultsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, results_);
+          onChanged();
+        } else {
+          resultsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public Builder clearResults() {
+        if (resultsBuilder_ == null) {
+          results_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          resultsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public Builder removeResults(int index) {
+        if (resultsBuilder_ == null) {
+          ensureResultsIsMutable();
+          results_.remove(index);
+          onChanged();
+        } else {
+          resultsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.Builder
+          getResultsBuilder(int index) {
+        return getResultsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder
+          getResultsOrBuilder(int index) {
+        if (resultsBuilder_ == null) {
+          return results_.get(index);
+        } else {
+          return resultsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder>
+          getResultsOrBuilderList() {
+        if (resultsBuilder_ != null) {
+          return resultsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(results_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.Builder
+          addResultsBuilder() {
+        return getResultsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.Builder
+          addResultsBuilder(int index) {
+        return getResultsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of results, one for each product match.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 2;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.Builder>
+          getResultsBuilderList() {
+        return getResultsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result,
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.Builder,
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder>
+          getResultsFieldBuilder() {
+        if (resultsBuilder_ == null) {
+          resultsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result,
+                  com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.Builder,
+                  com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder>(
+                  results_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          results_ = null;
+        }
+        return resultsBuilder_;
+      }
+
+      private java.util.List<
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation>
+          objectAnnotations_ = java.util.Collections.emptyList();
+
+      private void ensureObjectAnnotationsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          objectAnnotations_ =
+              new java.util.ArrayList<
+                  com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation>(
+                  objectAnnotations_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation,
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.Builder,
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotationOrBuilder>
+          objectAnnotationsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation>
+          getObjectAnnotationsList() {
+        if (objectAnnotationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(objectAnnotations_);
+        } else {
+          return objectAnnotationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public int getObjectAnnotationsCount() {
+        if (objectAnnotationsBuilder_ == null) {
+          return objectAnnotations_.size();
+        } else {
+          return objectAnnotationsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+          getObjectAnnotations(int index) {
+        if (objectAnnotationsBuilder_ == null) {
+          return objectAnnotations_.get(index);
+        } else {
+          return objectAnnotationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder setObjectAnnotations(
+          int index,
+          com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation value) {
+        if (objectAnnotationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.set(index, value);
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder setObjectAnnotations(
+          int index,
+          com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.Builder
+              builderForValue) {
+        if (objectAnnotationsBuilder_ == null) {
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder addObjectAnnotations(
+          com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation value) {
+        if (objectAnnotationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.add(value);
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder addObjectAnnotations(
+          int index,
+          com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation value) {
+        if (objectAnnotationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.add(index, value);
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder addObjectAnnotations(
+          com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.Builder
+              builderForValue) {
+        if (objectAnnotationsBuilder_ == null) {
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder addObjectAnnotations(
+          int index,
+          com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.Builder
+              builderForValue) {
+        if (objectAnnotationsBuilder_ == null) {
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder addAllObjectAnnotations(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation>
+              values) {
+        if (objectAnnotationsBuilder_ == null) {
+          ensureObjectAnnotationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, objectAnnotations_);
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder clearObjectAnnotations() {
+        if (objectAnnotationsBuilder_ == null) {
+          objectAnnotations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public Builder removeObjectAnnotations(int index) {
+        if (objectAnnotationsBuilder_ == null) {
+          ensureObjectAnnotationsIsMutable();
+          objectAnnotations_.remove(index);
+          onChanged();
+        } else {
+          objectAnnotationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.Builder
+          getObjectAnnotationsBuilder(int index) {
+        return getObjectAnnotationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotationOrBuilder
+          getObjectAnnotationsOrBuilder(int index) {
+        if (objectAnnotationsBuilder_ == null) {
+          return objectAnnotations_.get(index);
+        } else {
+          return objectAnnotationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotationOrBuilder>
+          getObjectAnnotationsOrBuilderList() {
+        if (objectAnnotationsBuilder_ != null) {
+          return objectAnnotationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(objectAnnotations_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.Builder
+          addObjectAnnotationsBuilder() {
+        return getObjectAnnotationsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.Builder
+          addObjectAnnotationsBuilder(int index) {
+        return getObjectAnnotationsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of generic predictions for the object in the bounding box.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation object_annotations = 3;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.Builder>
+          getObjectAnnotationsBuilderList() {
+        return getObjectAnnotationsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation,
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.Builder,
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotationOrBuilder>
+          getObjectAnnotationsFieldBuilder() {
+        if (objectAnnotationsBuilder_ == null) {
+          objectAnnotationsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation,
+                  com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotation.Builder,
+                  com.google.cloud.vision.v1p3beta1.ProductSearchResults.ObjectAnnotationOrBuilder>(
+                  objectAnnotations_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          objectAnnotations_ = null;
+        }
+        return objectAnnotationsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult)
+    private static final com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult();
+    }
+
+    public static com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GroupedResult> PARSER =
+        new com.google.protobuf.AbstractParser<GroupedResult>() {
+          @java.lang.Override
+          public GroupedResult parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new GroupedResult(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<GroupedResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GroupedResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
     }
   }
 
@@ -2381,8 +4471,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Timestamp of the index which provided these results. Changes made after
-   * this time are not reflected in the current results.
+   * Timestamp of the index which provided these results. Products added to the
+   * product set and products removed from the product set after this time are
+   * not reflected in the current results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -2397,8 +4488,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Timestamp of the index which provided these results. Changes made after
-   * this time are not reflected in the current results.
+   * Timestamp of the index which provided these results. Products added to the
+   * product set and products removed from the product set after this time are
+   * not reflected in the current results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -2413,8 +4505,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Timestamp of the index which provided these results. Changes made after
-   * this time are not reflected in the current results.
+   * Timestamp of the index which provided these results. Products added to the
+   * product set and products removed from the product set after this time are
+   * not reflected in the current results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -2422,84 +4515,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder() {
     return getIndexTime();
-  }
-
-  public static final int PRODUCTS_FIELD_NUMBER = 3;
-  private java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo>
-      products_;
-  /**
-   *
-   *
-   * <pre>
-   * List of detected products.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo>
-      getProductsList() {
-    return products_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * List of detected products.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<
-          ? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder>
-      getProductsOrBuilderList() {
-    return products_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * List of detected products.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-   * </code>
-   */
-  @java.lang.Override
-  public int getProductsCount() {
-    return products_.size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * List of detected products.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo getProducts(int index) {
-    return products_.get(index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * List of detected products.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder
-      getProductsOrBuilder(int index) {
-    return products_.get(index);
   }
 
   public static final int RESULTS_FIELD_NUMBER = 5;
@@ -2574,6 +4589,105 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     return results_.get(index);
   }
 
+  public static final int PRODUCT_GROUPED_RESULTS_FIELD_NUMBER = 6;
+  private java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult>
+      productGroupedResults_;
+  /**
+   *
+   *
+   * <pre>
+   * List of results grouped by products detected in the query image. Each entry
+   * corresponds to one bounding polygon in the query image, and contains the
+   * matching products specific to that region. There may be duplicate product
+   * matches in the union of all the per-product results.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult>
+      getProductGroupedResultsList() {
+    return productGroupedResults_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of results grouped by products detected in the query image. Each entry
+   * corresponds to one bounding polygon in the query image, and contains the
+   * matching products specific to that region. There may be duplicate product
+   * matches in the union of all the per-product results.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResultOrBuilder>
+      getProductGroupedResultsOrBuilderList() {
+    return productGroupedResults_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of results grouped by products detected in the query image. Each entry
+   * corresponds to one bounding polygon in the query image, and contains the
+   * matching products specific to that region. There may be duplicate product
+   * matches in the union of all the per-product results.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public int getProductGroupedResultsCount() {
+    return productGroupedResults_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of results grouped by products detected in the query image. Each entry
+   * corresponds to one bounding polygon in the query image, and contains the
+   * matching products specific to that region. There may be duplicate product
+   * matches in the union of all the per-product results.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult
+      getProductGroupedResults(int index) {
+    return productGroupedResults_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of results grouped by products detected in the query image. Each entry
+   * corresponds to one bounding polygon in the query image, and contains the
+   * matching products specific to that region. There may be duplicate product
+   * matches in the union of all the per-product results.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResultOrBuilder
+      getProductGroupedResultsOrBuilder(int index) {
+    return productGroupedResults_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2588,23 +4702,14 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (category_
-        != com.google.cloud.vision.v1p3beta1.ProductSearchCategory
-            .PRODUCT_SEARCH_CATEGORY_UNSPECIFIED
-            .getNumber()) {
-      output.writeEnum(1, category_);
-    }
     if (indexTime_ != null) {
       output.writeMessage(2, getIndexTime());
     }
-    for (int i = 0; i < products_.size(); i++) {
-      output.writeMessage(3, products_.get(i));
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productCategory_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, productCategory_);
-    }
     for (int i = 0; i < results_.size(); i++) {
       output.writeMessage(5, results_.get(i));
+    }
+    for (int i = 0; i < productGroupedResults_.size(); i++) {
+      output.writeMessage(6, productGroupedResults_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -2615,23 +4720,16 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     if (size != -1) return size;
 
     size = 0;
-    if (category_
-        != com.google.cloud.vision.v1p3beta1.ProductSearchCategory
-            .PRODUCT_SEARCH_CATEGORY_UNSPECIFIED
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, category_);
-    }
     if (indexTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getIndexTime());
     }
-    for (int i = 0; i < products_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, products_.get(i));
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productCategory_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, productCategory_);
-    }
     for (int i = 0; i < results_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, results_.get(i));
+    }
+    for (int i = 0; i < productGroupedResults_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, productGroupedResults_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2649,14 +4747,12 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     com.google.cloud.vision.v1p3beta1.ProductSearchResults other =
         (com.google.cloud.vision.v1p3beta1.ProductSearchResults) obj;
 
-    if (category_ != other.category_) return false;
-    if (!getProductCategory().equals(other.getProductCategory())) return false;
     if (hasIndexTime() != other.hasIndexTime()) return false;
     if (hasIndexTime()) {
       if (!getIndexTime().equals(other.getIndexTime())) return false;
     }
-    if (!getProductsList().equals(other.getProductsList())) return false;
     if (!getResultsList().equals(other.getResultsList())) return false;
+    if (!getProductGroupedResultsList().equals(other.getProductGroupedResultsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2668,21 +4764,17 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
-    hash = (53 * hash) + category_;
-    hash = (37 * hash) + PRODUCT_CATEGORY_FIELD_NUMBER;
-    hash = (53 * hash) + getProductCategory().hashCode();
     if (hasIndexTime()) {
       hash = (37 * hash) + INDEX_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getIndexTime().hashCode();
     }
-    if (getProductsCount() > 0) {
-      hash = (37 * hash) + PRODUCTS_FIELD_NUMBER;
-      hash = (53 * hash) + getProductsList().hashCode();
-    }
     if (getResultsCount() > 0) {
       hash = (37 * hash) + RESULTS_FIELD_NUMBER;
       hash = (53 * hash) + getResultsList().hashCode();
+    }
+    if (getProductGroupedResultsCount() > 0) {
+      hash = (37 * hash) + PRODUCT_GROUPED_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getProductGroupedResultsList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2825,35 +4917,31 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getProductsFieldBuilder();
         getResultsFieldBuilder();
+        getProductGroupedResultsFieldBuilder();
       }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      category_ = 0;
-
-      productCategory_ = "";
-
       if (indexTimeBuilder_ == null) {
         indexTime_ = null;
       } else {
         indexTime_ = null;
         indexTimeBuilder_ = null;
       }
-      if (productsBuilder_ == null) {
-        products_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      } else {
-        productsBuilder_.clear();
-      }
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         resultsBuilder_.clear();
+      }
+      if (productGroupedResultsBuilder_ == null) {
+        productGroupedResults_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        productGroupedResultsBuilder_.clear();
       }
       return this;
     }
@@ -2883,30 +4971,28 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       com.google.cloud.vision.v1p3beta1.ProductSearchResults result =
           new com.google.cloud.vision.v1p3beta1.ProductSearchResults(this);
       int from_bitField0_ = bitField0_;
-      result.category_ = category_;
-      result.productCategory_ = productCategory_;
       if (indexTimeBuilder_ == null) {
         result.indexTime_ = indexTime_;
       } else {
         result.indexTime_ = indexTimeBuilder_.build();
       }
-      if (productsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          products_ = java.util.Collections.unmodifiableList(products_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.products_ = products_;
-      } else {
-        result.products_ = productsBuilder_.build();
-      }
       if (resultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           results_ = java.util.Collections.unmodifiableList(results_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.results_ = results_;
       } else {
         result.results_ = resultsBuilder_.build();
+      }
+      if (productGroupedResultsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          productGroupedResults_ = java.util.Collections.unmodifiableList(productGroupedResults_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.productGroupedResults_ = productGroupedResults_;
+      } else {
+        result.productGroupedResults_ = productGroupedResultsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -2958,48 +5044,14 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     public Builder mergeFrom(com.google.cloud.vision.v1p3beta1.ProductSearchResults other) {
       if (other == com.google.cloud.vision.v1p3beta1.ProductSearchResults.getDefaultInstance())
         return this;
-      if (other.category_ != 0) {
-        setCategoryValue(other.getCategoryValue());
-      }
-      if (!other.getProductCategory().isEmpty()) {
-        productCategory_ = other.productCategory_;
-        onChanged();
-      }
       if (other.hasIndexTime()) {
         mergeIndexTime(other.getIndexTime());
-      }
-      if (productsBuilder_ == null) {
-        if (!other.products_.isEmpty()) {
-          if (products_.isEmpty()) {
-            products_ = other.products_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureProductsIsMutable();
-            products_.addAll(other.products_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.products_.isEmpty()) {
-          if (productsBuilder_.isEmpty()) {
-            productsBuilder_.dispose();
-            productsBuilder_ = null;
-            products_ = other.products_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            productsBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getProductsFieldBuilder()
-                    : null;
-          } else {
-            productsBuilder_.addAllMessages(other.products_);
-          }
-        }
       }
       if (resultsBuilder_ == null) {
         if (!other.results_.isEmpty()) {
           if (results_.isEmpty()) {
             results_ = other.results_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureResultsIsMutable();
             results_.addAll(other.results_);
@@ -3012,13 +5064,40 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
             resultsBuilder_.dispose();
             resultsBuilder_ = null;
             results_ = other.results_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             resultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResultsFieldBuilder()
                     : null;
           } else {
             resultsBuilder_.addAllMessages(other.results_);
+          }
+        }
+      }
+      if (productGroupedResultsBuilder_ == null) {
+        if (!other.productGroupedResults_.isEmpty()) {
+          if (productGroupedResults_.isEmpty()) {
+            productGroupedResults_ = other.productGroupedResults_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureProductGroupedResultsIsMutable();
+            productGroupedResults_.addAll(other.productGroupedResults_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.productGroupedResults_.isEmpty()) {
+          if (productGroupedResultsBuilder_.isEmpty()) {
+            productGroupedResultsBuilder_.dispose();
+            productGroupedResultsBuilder_ = null;
+            productGroupedResults_ = other.productGroupedResults_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            productGroupedResultsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getProductGroupedResultsFieldBuilder()
+                    : null;
+          } else {
+            productGroupedResultsBuilder_.addAllMessages(other.productGroupedResults_);
           }
         }
       }
@@ -3054,220 +5133,6 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
 
     private int bitField0_;
 
-    private int category_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * Product category.
-     * [Deprecated] Use `product_category`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
-     *
-     * @return The enum numeric value on the wire for category.
-     */
-    @java.lang.Override
-    public int getCategoryValue() {
-      return category_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Product category.
-     * [Deprecated] Use `product_category`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
-     *
-     * @param value The enum numeric value on the wire for category to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCategoryValue(int value) {
-
-      category_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Product category.
-     * [Deprecated] Use `product_category`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
-     *
-     * @return The category.
-     */
-    @java.lang.Override
-    public com.google.cloud.vision.v1p3beta1.ProductSearchCategory getCategory() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.vision.v1p3beta1.ProductSearchCategory result =
-          com.google.cloud.vision.v1p3beta1.ProductSearchCategory.valueOf(category_);
-      return result == null
-          ? com.google.cloud.vision.v1p3beta1.ProductSearchCategory.UNRECOGNIZED
-          : result;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Product category.
-     * [Deprecated] Use `product_category`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
-     *
-     * @param value The category to set.
-     * @return This builder for chaining.
-     */
-    public Builder setCategory(com.google.cloud.vision.v1p3beta1.ProductSearchCategory value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      category_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Product category.
-     * [Deprecated] Use `product_category`.
-     * </pre>
-     *
-     * <code>.google.cloud.vision.v1p3beta1.ProductSearchCategory category = 1;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearCategory() {
-
-      category_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object productCategory_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Product category.
-     * Supported values are `bag` and `shoe`.
-     * [Deprecated] `product_category` is provided in each Product.
-     * </pre>
-     *
-     * <code>string product_category = 4;</code>
-     *
-     * @return The productCategory.
-     */
-    public java.lang.String getProductCategory() {
-      java.lang.Object ref = productCategory_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        productCategory_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Product category.
-     * Supported values are `bag` and `shoe`.
-     * [Deprecated] `product_category` is provided in each Product.
-     * </pre>
-     *
-     * <code>string product_category = 4;</code>
-     *
-     * @return The bytes for productCategory.
-     */
-    public com.google.protobuf.ByteString getProductCategoryBytes() {
-      java.lang.Object ref = productCategory_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        productCategory_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Product category.
-     * Supported values are `bag` and `shoe`.
-     * [Deprecated] `product_category` is provided in each Product.
-     * </pre>
-     *
-     * <code>string product_category = 4;</code>
-     *
-     * @param value The productCategory to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProductCategory(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      productCategory_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Product category.
-     * Supported values are `bag` and `shoe`.
-     * [Deprecated] `product_category` is provided in each Product.
-     * </pre>
-     *
-     * <code>string product_category = 4;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearProductCategory() {
-
-      productCategory_ = getDefaultInstance().getProductCategory();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Product category.
-     * Supported values are `bag` and `shoe`.
-     * [Deprecated] `product_category` is provided in each Product.
-     * </pre>
-     *
-     * <code>string product_category = 4;</code>
-     *
-     * @param value The bytes for productCategory to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProductCategoryBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      productCategory_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.Timestamp indexTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3278,8 +5143,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Timestamp of the index which provided these results. Changes made after
-     * this time are not reflected in the current results.
+     * Timestamp of the index which provided these results. Products added to the
+     * product set and products removed from the product set after this time are
+     * not reflected in the current results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -3293,8 +5159,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Timestamp of the index which provided these results. Changes made after
-     * this time are not reflected in the current results.
+     * Timestamp of the index which provided these results. Products added to the
+     * product set and products removed from the product set after this time are
+     * not reflected in the current results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -3312,8 +5179,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Timestamp of the index which provided these results. Changes made after
-     * this time are not reflected in the current results.
+     * Timestamp of the index which provided these results. Products added to the
+     * product set and products removed from the product set after this time are
+     * not reflected in the current results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -3335,8 +5203,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Timestamp of the index which provided these results. Changes made after
-     * this time are not reflected in the current results.
+     * Timestamp of the index which provided these results. Products added to the
+     * product set and products removed from the product set after this time are
+     * not reflected in the current results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -3355,8 +5224,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Timestamp of the index which provided these results. Changes made after
-     * this time are not reflected in the current results.
+     * Timestamp of the index which provided these results. Products added to the
+     * product set and products removed from the product set after this time are
+     * not reflected in the current results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -3380,8 +5250,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Timestamp of the index which provided these results. Changes made after
-     * this time are not reflected in the current results.
+     * Timestamp of the index which provided these results. Products added to the
+     * product set and products removed from the product set after this time are
+     * not reflected in the current results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -3401,8 +5272,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Timestamp of the index which provided these results. Changes made after
-     * this time are not reflected in the current results.
+     * Timestamp of the index which provided these results. Products added to the
+     * product set and products removed from the product set after this time are
+     * not reflected in the current results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -3416,8 +5288,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Timestamp of the index which provided these results. Changes made after
-     * this time are not reflected in the current results.
+     * Timestamp of the index which provided these results. Products added to the
+     * product set and products removed from the product set after this time are
+     * not reflected in the current results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -3433,8 +5306,9 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Timestamp of the index which provided these results. Changes made after
-     * this time are not reflected in the current results.
+     * Timestamp of the index which provided these results. Products added to the
+     * product set and products removed from the product set after this time are
+     * not reflected in the current results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 2;</code>
@@ -3456,408 +5330,15 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
       return indexTimeBuilder_;
     }
 
-    private java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo>
-        products_ = java.util.Collections.emptyList();
-
-    private void ensureProductsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        products_ =
-            new java.util.ArrayList<
-                com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo>(products_);
-        bitField0_ |= 0x00000001;
-      }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo,
-            com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.Builder,
-            com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder>
-        productsBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo>
-        getProductsList() {
-      if (productsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(products_);
-      } else {
-        return productsBuilder_.getMessageList();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public int getProductsCount() {
-      if (productsBuilder_ == null) {
-        return products_.size();
-      } else {
-        return productsBuilder_.getCount();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo getProducts(
-        int index) {
-      if (productsBuilder_ == null) {
-        return products_.get(index);
-      } else {
-        return productsBuilder_.getMessage(index);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public Builder setProducts(
-        int index, com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo value) {
-      if (productsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureProductsIsMutable();
-        products_.set(index, value);
-        onChanged();
-      } else {
-        productsBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public Builder setProducts(
-        int index,
-        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.Builder
-            builderForValue) {
-      if (productsBuilder_ == null) {
-        ensureProductsIsMutable();
-        products_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        productsBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public Builder addProducts(
-        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo value) {
-      if (productsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureProductsIsMutable();
-        products_.add(value);
-        onChanged();
-      } else {
-        productsBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public Builder addProducts(
-        int index, com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo value) {
-      if (productsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureProductsIsMutable();
-        products_.add(index, value);
-        onChanged();
-      } else {
-        productsBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public Builder addProducts(
-        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.Builder
-            builderForValue) {
-      if (productsBuilder_ == null) {
-        ensureProductsIsMutable();
-        products_.add(builderForValue.build());
-        onChanged();
-      } else {
-        productsBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public Builder addProducts(
-        int index,
-        com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.Builder
-            builderForValue) {
-      if (productsBuilder_ == null) {
-        ensureProductsIsMutable();
-        products_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        productsBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public Builder addAllProducts(
-        java.lang.Iterable<
-                ? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo>
-            values) {
-      if (productsBuilder_ == null) {
-        ensureProductsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, products_);
-        onChanged();
-      } else {
-        productsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public Builder clearProducts() {
-      if (productsBuilder_ == null) {
-        products_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-      } else {
-        productsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public Builder removeProducts(int index) {
-      if (productsBuilder_ == null) {
-        ensureProductsIsMutable();
-        products_.remove(index);
-        onChanged();
-      } else {
-        productsBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.Builder
-        getProductsBuilder(int index) {
-      return getProductsFieldBuilder().getBuilder(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder
-        getProductsOrBuilder(int index) {
-      if (productsBuilder_ == null) {
-        return products_.get(index);
-      } else {
-        return productsBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public java.util.List<
-            ? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder>
-        getProductsOrBuilderList() {
-      if (productsBuilder_ != null) {
-        return productsBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(products_);
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.Builder
-        addProductsBuilder() {
-      return getProductsFieldBuilder()
-          .addBuilder(
-              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo
-                  .getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.Builder
-        addProductsBuilder(int index) {
-      return getProductsFieldBuilder()
-          .addBuilder(
-              index,
-              com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo
-                  .getDefaultInstance());
-    }
-    /**
-     *
-     *
-     * <pre>
-     * List of detected products.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
-     * </code>
-     */
-    public java.util.List<
-            com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.Builder>
-        getProductsBuilderList() {
-      return getProductsFieldBuilder().getBuilderList();
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo,
-            com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.Builder,
-            com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder>
-        getProductsFieldBuilder() {
-      if (productsBuilder_ == null) {
-        productsBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo,
-                com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo.Builder,
-                com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder>(
-                products_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
-        products_ = null;
-      }
-      return productsBuilder_;
-    }
-
     private java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result> results_ =
         java.util.Collections.emptyList();
 
     private void ensureResultsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         results_ =
             new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result>(
                 results_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
       }
     }
 
@@ -4079,7 +5560,7 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     public Builder clearResults() {
       if (resultsBuilder_ == null) {
         results_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         resultsBuilder_.clear();
@@ -4209,10 +5690,479 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
                 com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result,
                 com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result.Builder,
                 com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder>(
-                results_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                results_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
         results_ = null;
       }
       return resultsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult>
+        productGroupedResults_ = java.util.Collections.emptyList();
+
+    private void ensureProductGroupedResultsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        productGroupedResults_ =
+            new java.util.ArrayList<
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult>(
+                productGroupedResults_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult,
+            com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.Builder,
+            com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResultOrBuilder>
+        productGroupedResultsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult>
+        getProductGroupedResultsList() {
+      if (productGroupedResultsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(productGroupedResults_);
+      } else {
+        return productGroupedResultsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public int getProductGroupedResultsCount() {
+      if (productGroupedResultsBuilder_ == null) {
+        return productGroupedResults_.size();
+      } else {
+        return productGroupedResultsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult
+        getProductGroupedResults(int index) {
+      if (productGroupedResultsBuilder_ == null) {
+        return productGroupedResults_.get(index);
+      } else {
+        return productGroupedResultsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public Builder setProductGroupedResults(
+        int index, com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult value) {
+      if (productGroupedResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductGroupedResultsIsMutable();
+        productGroupedResults_.set(index, value);
+        onChanged();
+      } else {
+        productGroupedResultsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public Builder setProductGroupedResults(
+        int index,
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.Builder
+            builderForValue) {
+      if (productGroupedResultsBuilder_ == null) {
+        ensureProductGroupedResultsIsMutable();
+        productGroupedResults_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        productGroupedResultsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public Builder addProductGroupedResults(
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult value) {
+      if (productGroupedResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductGroupedResultsIsMutable();
+        productGroupedResults_.add(value);
+        onChanged();
+      } else {
+        productGroupedResultsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public Builder addProductGroupedResults(
+        int index, com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult value) {
+      if (productGroupedResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductGroupedResultsIsMutable();
+        productGroupedResults_.add(index, value);
+        onChanged();
+      } else {
+        productGroupedResultsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public Builder addProductGroupedResults(
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.Builder
+            builderForValue) {
+      if (productGroupedResultsBuilder_ == null) {
+        ensureProductGroupedResultsIsMutable();
+        productGroupedResults_.add(builderForValue.build());
+        onChanged();
+      } else {
+        productGroupedResultsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public Builder addProductGroupedResults(
+        int index,
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.Builder
+            builderForValue) {
+      if (productGroupedResultsBuilder_ == null) {
+        ensureProductGroupedResultsIsMutable();
+        productGroupedResults_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        productGroupedResultsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public Builder addAllProductGroupedResults(
+        java.lang.Iterable<
+                ? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult>
+            values) {
+      if (productGroupedResultsBuilder_ == null) {
+        ensureProductGroupedResultsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, productGroupedResults_);
+        onChanged();
+      } else {
+        productGroupedResultsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public Builder clearProductGroupedResults() {
+      if (productGroupedResultsBuilder_ == null) {
+        productGroupedResults_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        productGroupedResultsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public Builder removeProductGroupedResults(int index) {
+      if (productGroupedResultsBuilder_ == null) {
+        ensureProductGroupedResultsIsMutable();
+        productGroupedResults_.remove(index);
+        onChanged();
+      } else {
+        productGroupedResultsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.Builder
+        getProductGroupedResultsBuilder(int index) {
+      return getProductGroupedResultsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResultOrBuilder
+        getProductGroupedResultsOrBuilder(int index) {
+      if (productGroupedResultsBuilder_ == null) {
+        return productGroupedResults_.get(index);
+      } else {
+        return productGroupedResultsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResultOrBuilder>
+        getProductGroupedResultsOrBuilderList() {
+      if (productGroupedResultsBuilder_ != null) {
+        return productGroupedResultsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(productGroupedResults_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.Builder
+        addProductGroupedResultsBuilder() {
+      return getProductGroupedResultsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.Builder
+        addProductGroupedResultsBuilder(int index) {
+      return getProductGroupedResultsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of results grouped by products detected in the query image. Each entry
+     * corresponds to one bounding polygon in the query image, and contains the
+     * matching products specific to that region. There may be duplicate product
+     * matches in the union of all the per-product results.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.Builder>
+        getProductGroupedResultsBuilderList() {
+      return getProductGroupedResultsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult,
+            com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.Builder,
+            com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResultOrBuilder>
+        getProductGroupedResultsFieldBuilder() {
+      if (productGroupedResultsBuilder_ == null) {
+        productGroupedResultsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult,
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResult.Builder,
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.GroupedResultOrBuilder>(
+                productGroupedResults_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        productGroupedResults_ = null;
+      }
+      return productGroupedResultsBuilder_;
     }
 
     @java.lang.Override

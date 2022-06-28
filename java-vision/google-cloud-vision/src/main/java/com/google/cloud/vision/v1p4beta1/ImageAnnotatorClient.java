@@ -18,13 +18,13 @@ package com.google.cloud.vision.v1p4beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.vision.v1p4beta1.stub.ImageAnnotatorStub;
 import com.google.cloud.vision.v1p4beta1.stub.ImageAnnotatorStubSettings;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -96,6 +96,20 @@ import javax.annotation.Generated;
  * ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create(imageAnnotatorSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * ImageAnnotatorSettings imageAnnotatorSettings =
+ *     ImageAnnotatorSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             ImageAnnotatorSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create(imageAnnotatorSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
@@ -103,7 +117,8 @@ import javax.annotation.Generated;
 public class ImageAnnotatorClient implements BackgroundResource {
   private final ImageAnnotatorSettings settings;
   private final ImageAnnotatorStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of ImageAnnotatorClient with default settings. */
   public static final ImageAnnotatorClient create() throws IOException {
@@ -123,7 +138,6 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * Constructs an instance of ImageAnnotatorClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(ImageAnnotatorSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ImageAnnotatorClient create(ImageAnnotatorStub stub) {
     return new ImageAnnotatorClient(stub);
   }
@@ -136,21 +150,23 @@ public class ImageAnnotatorClient implements BackgroundResource {
   protected ImageAnnotatorClient(ImageAnnotatorSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((ImageAnnotatorStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ImageAnnotatorClient(ImageAnnotatorStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final ImageAnnotatorSettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ImageAnnotatorStub getStub() {
     return stub;
   }
@@ -159,8 +175,17 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
