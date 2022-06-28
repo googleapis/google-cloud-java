@@ -16,10 +16,10 @@
 
 package com.google.cloud.certificatemanager.v1.samples;
 
-// [START
-// certificatemanager_v1_generated_certificatemanagerclient_deletednsauthorization_string_sync]
+// [START certificatemanager_v1_generated_certificatemanagerclient_deletednsauthorization_string_sync]
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.cloud.certificatemanager.v1.DnsAuthorizationName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteDnsAuthorizationString {
 

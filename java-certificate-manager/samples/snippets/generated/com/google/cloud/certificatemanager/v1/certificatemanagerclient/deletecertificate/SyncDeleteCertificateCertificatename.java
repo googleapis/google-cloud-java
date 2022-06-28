@@ -16,10 +16,10 @@
 
 package com.google.cloud.certificatemanager.v1.samples;
 
-// [START
-// certificatemanager_v1_generated_certificatemanagerclient_deletecertificate_certificatename_sync]
+// [START certificatemanager_v1_generated_certificatemanagerclient_deletecertificate_certificatename_sync]
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.cloud.certificatemanager.v1.CertificateName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteCertificateCertificatename {
 
@@ -36,5 +36,4 @@ public class SyncDeleteCertificateCertificatename {
     }
   }
 }
-// [END
-// certificatemanager_v1_generated_certificatemanagerclient_deletecertificate_certificatename_sync]
+// [END certificatemanager_v1_generated_certificatemanagerclient_deletecertificate_certificatename_sync]

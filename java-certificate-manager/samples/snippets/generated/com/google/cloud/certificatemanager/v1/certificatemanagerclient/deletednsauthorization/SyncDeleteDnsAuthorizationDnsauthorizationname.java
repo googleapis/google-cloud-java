@@ -16,10 +16,10 @@
 
 package com.google.cloud.certificatemanager.v1.samples;
 
-// [START
-// certificatemanager_v1_generated_certificatemanagerclient_deletednsauthorization_dnsauthorizationname_sync]
+// [START certificatemanager_v1_generated_certificatemanagerclient_deletednsauthorization_dnsauthorizationname_sync]
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.cloud.certificatemanager.v1.DnsAuthorizationName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteDnsAuthorizationDnsauthorizationname {
 
@@ -37,5 +37,4 @@ public class SyncDeleteDnsAuthorizationDnsauthorizationname {
     }
   }
 }
-// [END
-// certificatemanager_v1_generated_certificatemanagerclient_deletednsauthorization_dnsauthorizationname_sync]
+// [END certificatemanager_v1_generated_certificatemanagerclient_deletednsauthorization_dnsauthorizationname_sync]

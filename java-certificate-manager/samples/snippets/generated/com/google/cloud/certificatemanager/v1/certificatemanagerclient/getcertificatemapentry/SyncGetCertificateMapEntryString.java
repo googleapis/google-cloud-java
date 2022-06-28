@@ -16,8 +16,7 @@
 
 package com.google.cloud.certificatemanager.v1.samples;
 
-// [START
-// certificatemanager_v1_generated_certificatemanagerclient_getcertificatemapentry_string_sync]
+// [START certificatemanager_v1_generated_certificatemanagerclient_getcertificatemapentry_string_sync]
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.cloud.certificatemanager.v1.CertificateMapEntry;
 import com.google.cloud.certificatemanager.v1.CertificateMapEntryName;

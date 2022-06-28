@@ -19,6 +19,7 @@ package com.google.cloud.certificatemanager.v1.samples;
 // [START certificatemanager_v1_generated_certificatemanagerclient_deletecertificatemap_string_sync]
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.cloud.certificatemanager.v1.CertificateMapName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteCertificateMapString {
 

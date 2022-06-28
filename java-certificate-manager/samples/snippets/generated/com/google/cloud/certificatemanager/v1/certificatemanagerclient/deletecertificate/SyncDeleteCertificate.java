@@ -20,6 +20,7 @@ package com.google.cloud.certificatemanager.v1.samples;
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.cloud.certificatemanager.v1.CertificateName;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateRequest;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteCertificate {
 

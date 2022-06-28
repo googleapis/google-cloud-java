@@ -16,8 +16,7 @@
 
 package com.google.cloud.certificatemanager.v1.samples;
 
-// [START
-// certificatemanager_v1_generated_certificatemanagerclient_create_setcredentialsprovider1_sync]
+// [START certificatemanager_v1_generated_certificatemanagerclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.cloud.certificatemanager.v1.CertificateManagerSettings;
 
@@ -39,5 +38,4 @@ public class SyncCreateSetCredentialsProvider1 {
         CertificateManagerClient.create(certificateManagerSettings);
   }
 }
-// [END
-// certificatemanager_v1_generated_certificatemanagerclient_create_setcredentialsprovider1_sync]
+// [END certificatemanager_v1_generated_certificatemanagerclient_create_setcredentialsprovider1_sync]

@@ -20,6 +20,7 @@ package com.google.cloud.certificatemanager.v1.samples;
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest;
 import com.google.cloud.certificatemanager.v1.DnsAuthorizationName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteDnsAuthorization {
 

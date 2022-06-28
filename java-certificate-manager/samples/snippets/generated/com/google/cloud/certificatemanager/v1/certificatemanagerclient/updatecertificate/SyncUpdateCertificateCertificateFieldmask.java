@@ -16,8 +16,7 @@
 
 package com.google.cloud.certificatemanager.v1.samples;
 
-// [START
-// certificatemanager_v1_generated_certificatemanagerclient_updatecertificate_certificatefieldmask_sync]
+// [START certificatemanager_v1_generated_certificatemanagerclient_updatecertificate_certificatefieldmask_sync]
 import com.google.cloud.certificatemanager.v1.Certificate;
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.protobuf.FieldMask;
@@ -39,5 +38,4 @@ public class SyncUpdateCertificateCertificateFieldmask {
     }
   }
 }
-// [END
-// certificatemanager_v1_generated_certificatemanagerclient_updatecertificate_certificatefieldmask_sync]
+// [END certificatemanager_v1_generated_certificatemanagerclient_updatecertificate_certificatefieldmask_sync]

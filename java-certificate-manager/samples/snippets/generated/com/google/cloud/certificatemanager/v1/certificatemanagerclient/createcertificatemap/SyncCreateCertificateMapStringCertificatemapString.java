@@ -16,8 +16,7 @@
 
 package com.google.cloud.certificatemanager.v1.samples;
 
-// [START
-// certificatemanager_v1_generated_certificatemanagerclient_createcertificatemap_stringcertificatemapstring_sync]
+// [START certificatemanager_v1_generated_certificatemanagerclient_createcertificatemap_stringcertificatemapstring_sync]
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.cloud.certificatemanager.v1.CertificateMap;
 import com.google.cloud.certificatemanager.v1.LocationName;
@@ -42,5 +41,4 @@ public class SyncCreateCertificateMapStringCertificatemapString {
     }
   }
 }
-// [END
-// certificatemanager_v1_generated_certificatemanagerclient_createcertificatemap_stringcertificatemapstring_sync]
+// [END certificatemanager_v1_generated_certificatemanagerclient_createcertificatemap_stringcertificatemapstring_sync]

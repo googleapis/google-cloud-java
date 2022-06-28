@@ -16,8 +16,7 @@
 
 package com.google.cloud.certificatemanager.v1.samples;
 
-// [START
-// certificatemanager_v1_generated_certificatemanagerclient_updatecertificatemapentry_lro_async]
+// [START certificatemanager_v1_generated_certificatemanagerclient_updatecertificatemapentry_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.cloud.certificatemanager.v1.CertificateMapEntry;
@@ -47,5 +46,4 @@ public class AsyncUpdateCertificateMapEntryLRO {
     }
   }
 }
-// [END
-// certificatemanager_v1_generated_certificatemanagerclient_updatecertificatemapentry_lro_async]
+// [END certificatemanager_v1_generated_certificatemanagerclient_updatecertificatemapentry_lro_async]

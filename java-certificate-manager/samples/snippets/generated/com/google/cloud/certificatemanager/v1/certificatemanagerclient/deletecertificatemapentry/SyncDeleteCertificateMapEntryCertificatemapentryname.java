@@ -16,10 +16,10 @@
 
 package com.google.cloud.certificatemanager.v1.samples;
 
-// [START
-// certificatemanager_v1_generated_certificatemanagerclient_deletecertificatemapentry_certificatemapentryname_sync]
+// [START certificatemanager_v1_generated_certificatemanagerclient_deletecertificatemapentry_certificatemapentryname_sync]
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.cloud.certificatemanager.v1.CertificateMapEntryName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteCertificateMapEntryCertificatemapentryname {
 
@@ -38,5 +38,4 @@ public class SyncDeleteCertificateMapEntryCertificatemapentryname {
     }
   }
 }
-// [END
-// certificatemanager_v1_generated_certificatemanagerclient_deletecertificatemapentry_certificatemapentryname_sync]
+// [END certificatemanager_v1_generated_certificatemanagerclient_deletecertificatemapentry_certificatemapentryname_sync]

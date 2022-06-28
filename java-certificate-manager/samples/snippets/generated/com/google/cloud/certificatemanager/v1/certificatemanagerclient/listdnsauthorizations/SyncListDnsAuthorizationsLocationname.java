@@ -16,8 +16,7 @@
 
 package com.google.cloud.certificatemanager.v1.samples;
 
-// [START
-// certificatemanager_v1_generated_certificatemanagerclient_listdnsauthorizations_locationname_sync]
+// [START certificatemanager_v1_generated_certificatemanagerclient_listdnsauthorizations_locationname_sync]
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.cloud.certificatemanager.v1.DnsAuthorization;
 import com.google.cloud.certificatemanager.v1.LocationName;
@@ -40,5 +39,4 @@ public class SyncListDnsAuthorizationsLocationname {
     }
   }
 }
-// [END
-// certificatemanager_v1_generated_certificatemanagerclient_listdnsauthorizations_locationname_sync]
+// [END certificatemanager_v1_generated_certificatemanagerclient_listdnsauthorizations_locationname_sync]

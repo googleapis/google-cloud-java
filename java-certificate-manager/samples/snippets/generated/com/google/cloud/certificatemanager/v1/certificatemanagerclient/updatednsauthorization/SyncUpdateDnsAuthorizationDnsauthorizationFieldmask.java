@@ -16,8 +16,7 @@
 
 package com.google.cloud.certificatemanager.v1.samples;
 
-// [START
-// certificatemanager_v1_generated_certificatemanagerclient_updatednsauthorization_dnsauthorizationfieldmask_sync]
+// [START certificatemanager_v1_generated_certificatemanagerclient_updatednsauthorization_dnsauthorizationfieldmask_sync]
 import com.google.cloud.certificatemanager.v1.CertificateManagerClient;
 import com.google.cloud.certificatemanager.v1.DnsAuthorization;
 import com.google.protobuf.FieldMask;
@@ -39,5 +38,4 @@ public class SyncUpdateDnsAuthorizationDnsauthorizationFieldmask {
     }
   }
 }
-// [END
-// certificatemanager_v1_generated_certificatemanagerclient_updatednsauthorization_dnsauthorizationfieldmask_sync]
+// [END certificatemanager_v1_generated_certificatemanagerclient_updatednsauthorization_dnsauthorizationfieldmask_sync]
