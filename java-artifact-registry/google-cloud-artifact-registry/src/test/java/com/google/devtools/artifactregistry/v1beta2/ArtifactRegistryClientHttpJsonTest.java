@@ -23,14 +23,16 @@ import static com.google.devtools.artifactregistry.v1beta2.ArtifactRegistryClien
 import static com.google.devtools.artifactregistry.v1beta2.ArtifactRegistryClient.ListVersionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GaxGrpcProperties;
-import com.google.api.gax.grpc.testing.LocalChannelProvider;
-import com.google.api.gax.grpc.testing.MockGrpcService;
-import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.httpjson.GaxHttpJsonProperties;
+import com.google.api.gax.httpjson.testing.MockHttpService;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.devtools.artifactregistry.v1beta2.stub.HttpJsonArtifactRegistryStub;
 import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -40,20 +42,17 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
-import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
-import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -64,41 +63,38 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @Generated("by gapic-generator-java")
-public class ArtifactRegistryClientTest {
-  private static MockArtifactRegistry mockArtifactRegistry;
-  private static MockServiceHelper mockServiceHelper;
-  private LocalChannelProvider channelProvider;
-  private ArtifactRegistryClient client;
+public class ArtifactRegistryClientHttpJsonTest {
+  private static MockHttpService mockService;
+  private static ArtifactRegistryClient client;
 
   @BeforeClass
-  public static void startStaticServer() {
-    mockArtifactRegistry = new MockArtifactRegistry();
-    mockServiceHelper =
-        new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockArtifactRegistry));
-    mockServiceHelper.start();
-  }
-
-  @AfterClass
-  public static void stopServer() {
-    mockServiceHelper.stop();
-  }
-
-  @Before
-  public void setUp() throws IOException {
-    mockServiceHelper.reset();
-    channelProvider = mockServiceHelper.createChannelProvider();
+  public static void startStaticServer() throws IOException {
+    mockService =
+        new MockHttpService(
+            HttpJsonArtifactRegistryStub.getMethodDescriptors(),
+            ArtifactRegistrySettings.getDefaultEndpoint());
     ArtifactRegistrySettings settings =
-        ArtifactRegistrySettings.newBuilder()
-            .setTransportChannelProvider(channelProvider)
+        ArtifactRegistrySettings.newHttpJsonBuilder()
+            .setTransportChannelProvider(
+                ArtifactRegistrySettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(mockService)
+                    .build())
             .setCredentialsProvider(NoCredentialsProvider.create())
             .build();
     client = ArtifactRegistryClient.create(settings);
   }
 
+  @AfterClass
+  public static void stopServer() {
+    client.close();
+  }
+
+  @Before
+  public void setUp() {}
+
   @After
   public void tearDown() throws Exception {
-    client.close();
+    mockService.reset();
   }
 
   @Test
@@ -114,40 +110,48 @@ public class ArtifactRegistryClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockArtifactRegistry.addResponse(resultOperation);
+    mockService.addResponse(resultOperation);
 
     ImportAptArtifactsRequest request =
-        ImportAptArtifactsRequest.newBuilder().setParent("parent-995424086").build();
+        ImportAptArtifactsRequest.newBuilder()
+            .setParent(
+                "projects/project-9015/locations/location-9015/repositories/repositorie-9015")
+            .build();
 
     ImportAptArtifactsResponse actualResponse = client.importAptArtifactsAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ImportAptArtifactsRequest actualRequest = ((ImportAptArtifactsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getGcsSource(), actualRequest.getGcsSource());
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void importAptArtifactsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ImportAptArtifactsRequest request =
-          ImportAptArtifactsRequest.newBuilder().setParent("parent-995424086").build();
+          ImportAptArtifactsRequest.newBuilder()
+              .setParent(
+                  "projects/project-9015/locations/location-9015/repositories/repositorie-9015")
+              .build();
       client.importAptArtifactsAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -164,40 +168,48 @@ public class ArtifactRegistryClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockArtifactRegistry.addResponse(resultOperation);
+    mockService.addResponse(resultOperation);
 
     ImportYumArtifactsRequest request =
-        ImportYumArtifactsRequest.newBuilder().setParent("parent-995424086").build();
+        ImportYumArtifactsRequest.newBuilder()
+            .setParent(
+                "projects/project-9015/locations/location-9015/repositories/repositorie-9015")
+            .build();
 
     ImportYumArtifactsResponse actualResponse = client.importYumArtifactsAsync(request).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ImportYumArtifactsRequest actualRequest = ((ImportYumArtifactsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getGcsSource(), actualRequest.getGcsSource());
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void importYumArtifactsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ImportYumArtifactsRequest request =
-          ImportYumArtifactsRequest.newBuilder().setParent("parent-995424086").build();
+          ImportYumArtifactsRequest.newBuilder()
+              .setParent(
+                  "projects/project-9015/locations/location-9015/repositories/repositorie-9015")
+              .build();
       client.importYumArtifactsAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -209,7 +221,7 @@ public class ArtifactRegistryClientTest {
             .setNextPageToken("")
             .addAllRepositories(Arrays.asList(responsesElement))
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
@@ -220,21 +232,27 @@ public class ArtifactRegistryClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getRepositoriesList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListRepositoriesRequest actualRequest = ((ListRepositoriesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listRepositoriesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -253,9 +271,9 @@ public class ArtifactRegistryClientTest {
             .setNextPageToken("")
             .addAllRepositories(Arrays.asList(responsesElement))
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "projects/project-5833/locations/location-5833";
 
     ListRepositoriesPagedResponse pagedListResponse = client.listRepositories(parent);
 
@@ -264,24 +282,30 @@ public class ArtifactRegistryClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getRepositoriesList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListRepositoriesRequest actualRequest = ((ListRepositoriesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listRepositoriesExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "projects/project-5833/locations/location-5833";
       client.listRepositories(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -300,28 +324,34 @@ public class ArtifactRegistryClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
 
     Repository actualResponse = client.getRepository(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetRepositoryRequest actualRequest = ((GetRepositoryRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getRepositoryExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
@@ -343,31 +373,37 @@ public class ArtifactRegistryClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "projects/project-4840/locations/location-4840/repositories/repositorie-4840";
 
     Repository actualResponse = client.getRepository(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetRepositoryRequest actualRequest = ((GetRepositoryRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getRepositoryExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "projects/project-4840/locations/location-4840/repositories/repositorie-4840";
       client.getRepository(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -392,7 +428,7 @@ public class ArtifactRegistryClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockArtifactRegistry.addResponse(resultOperation);
+    mockService.addResponse(resultOperation);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     Repository repository = Repository.newBuilder().build();
@@ -402,23 +438,27 @@ public class ArtifactRegistryClientTest {
         client.createRepositoryAsync(parent, repository, repositoryId).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateRepositoryRequest actualRequest = ((CreateRepositoryRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(repository, actualRequest.getRepository());
-    Assert.assertEquals(repositoryId, actualRequest.getRepositoryId());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createRepositoryExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -427,9 +467,6 @@ public class ArtifactRegistryClientTest {
       client.createRepositoryAsync(parent, repository, repositoryId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -450,9 +487,9 @@ public class ArtifactRegistryClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockArtifactRegistry.addResponse(resultOperation);
+    mockService.addResponse(resultOperation);
 
-    String parent = "parent-995424086";
+    String parent = "projects/project-5833/locations/location-5833";
     Repository repository = Repository.newBuilder().build();
     String repositoryId = "repositoryId2113747461";
 
@@ -460,34 +497,35 @@ public class ArtifactRegistryClientTest {
         client.createRepositoryAsync(parent, repository, repositoryId).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateRepositoryRequest actualRequest = ((CreateRepositoryRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(repository, actualRequest.getRepository());
-    Assert.assertEquals(repositoryId, actualRequest.getRepositoryId());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createRepositoryExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "projects/project-5833/locations/location-5833";
       Repository repository = Repository.newBuilder().build();
       String repositoryId = "repositoryId2113747461";
       client.createRepositoryAsync(parent, repository, repositoryId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -502,33 +540,54 @@ public class ArtifactRegistryClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    Repository repository = Repository.newBuilder().build();
+    Repository repository =
+        Repository.newBuilder()
+            .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     Repository actualResponse = client.updateRepository(repository, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateRepositoryRequest actualRequest = ((UpdateRepositoryRequest) actualRequests.get(0));
 
-    Assert.assertEquals(repository, actualRequest.getRepository());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateRepositoryExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      Repository repository = Repository.newBuilder().build();
+      Repository repository =
+          Repository.newBuilder()
+              .setName(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setDescription("description-1724546052")
+              .putAllLabels(new HashMap<String, String>())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setKmsKeyName("kmsKeyName412586233")
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateRepository(repository, updateMask);
       Assert.fail("No exception raised");
@@ -546,36 +605,39 @@ public class ArtifactRegistryClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockArtifactRegistry.addResponse(resultOperation);
+    mockService.addResponse(resultOperation);
 
     RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
 
     client.deleteRepositoryAsync(name).get();
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteRepositoryRequest actualRequest = ((DeleteRepositoryRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteRepositoryExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
       client.deleteRepositoryAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -588,36 +650,39 @@ public class ArtifactRegistryClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockArtifactRegistry.addResponse(resultOperation);
+    mockService.addResponse(resultOperation);
 
-    String name = "name3373707";
+    String name = "projects/project-4840/locations/location-4840/repositories/repositorie-4840";
 
     client.deleteRepositoryAsync(name).get();
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteRepositoryRequest actualRequest = ((DeleteRepositoryRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteRepositoryExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "projects/project-4840/locations/location-4840/repositories/repositorie-4840";
       client.deleteRepositoryAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -629,9 +694,9 @@ public class ArtifactRegistryClientTest {
             .setNextPageToken("")
             .addAllPackages(Arrays.asList(responsesElement))
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "projects/project-9015/locations/location-9015/repositories/repositorie-9015";
 
     ListPackagesPagedResponse pagedListResponse = client.listPackages(parent);
 
@@ -640,24 +705,30 @@ public class ArtifactRegistryClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getPackagesList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListPackagesRequest actualRequest = ((ListPackagesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listPackagesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "projects/project-9015/locations/location-9015/repositories/repositorie-9015";
       client.listPackages(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -674,31 +745,39 @@ public class ArtifactRegistryClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name =
+        "projects/project-639/locations/location-639/repositories/repositorie-639/packages/package-639";
 
     Package actualResponse = client.getPackage(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetPackageRequest actualRequest = ((GetPackageRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getPackageExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name =
+          "projects/project-639/locations/location-639/repositories/repositorie-639/packages/package-639";
       client.getPackage(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -715,36 +794,41 @@ public class ArtifactRegistryClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockArtifactRegistry.addResponse(resultOperation);
+    mockService.addResponse(resultOperation);
 
-    String name = "name3373707";
+    String name =
+        "projects/project-639/locations/location-639/repositories/repositorie-639/packages/package-639";
 
     client.deletePackageAsync(name).get();
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeletePackageRequest actualRequest = ((DeletePackageRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deletePackageExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name =
+          "projects/project-639/locations/location-639/repositories/repositorie-639/packages/package-639";
       client.deletePackageAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -756,9 +840,10 @@ public class ArtifactRegistryClientTest {
             .setNextPageToken("")
             .addAllVersions(Arrays.asList(responsesElement))
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent =
+        "projects/project-5394/locations/location-5394/repositories/repositorie-5394/packages/package-5394";
 
     ListVersionsPagedResponse pagedListResponse = client.listVersions(parent);
 
@@ -767,24 +852,31 @@ public class ArtifactRegistryClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getVersionsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListVersionsRequest actualRequest = ((ListVersionsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listVersionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent =
+          "projects/project-5394/locations/location-5394/repositories/repositorie-5394/packages/package-5394";
       client.listVersions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -803,31 +895,39 @@ public class ArtifactRegistryClientTest {
             .addAllRelatedTags(new ArrayList<Tag>())
             .setMetadata(Struct.newBuilder().build())
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name =
+        "projects/project-9642/locations/location-9642/repositories/repositorie-9642/packages/package-9642/versions/version-9642";
 
     Version actualResponse = client.getVersion(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetVersionRequest actualRequest = ((GetVersionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getVersionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name =
+          "projects/project-9642/locations/location-9642/repositories/repositorie-9642/packages/package-9642/versions/version-9642";
       client.getVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -844,36 +944,41 @@ public class ArtifactRegistryClientTest {
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
-    mockArtifactRegistry.addResponse(resultOperation);
+    mockService.addResponse(resultOperation);
 
-    String name = "name3373707";
+    String name =
+        "projects/project-9642/locations/location-9642/repositories/repositorie-9642/packages/package-9642/versions/version-9642";
 
     client.deleteVersionAsync(name).get();
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteVersionRequest actualRequest = ((DeleteVersionRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteVersionExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name =
+          "projects/project-9642/locations/location-9642/repositories/repositorie-9642/packages/package-9642/versions/version-9642";
       client.deleteVersionAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -885,9 +990,9 @@ public class ArtifactRegistryClientTest {
             .setNextPageToken("")
             .addAllFiles(Arrays.asList(responsesElement))
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent = "projects/project-9015/locations/location-9015/repositories/repositorie-9015";
 
     ListFilesPagedResponse pagedListResponse = client.listFiles(parent);
 
@@ -896,24 +1001,30 @@ public class ArtifactRegistryClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getFilesList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListFilesRequest actualRequest = ((ListFilesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listFilesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent = "projects/project-9015/locations/location-9015/repositories/repositorie-9015";
       client.listFiles(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -932,31 +1043,39 @@ public class ArtifactRegistryClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setOwner("owner106164915")
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name =
+        "projects/project-3631/locations/location-3631/repositories/repositorie-3631/files/file-3631";
 
     File actualResponse = client.getFile(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetFileRequest actualRequest = ((GetFileRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getFileExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name =
+          "projects/project-3631/locations/location-3631/repositories/repositorie-3631/files/file-3631";
       client.getFile(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -972,9 +1091,10 @@ public class ArtifactRegistryClientTest {
             .setNextPageToken("")
             .addAllTags(Arrays.asList(responsesElement))
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent =
+        "projects/project-5394/locations/location-5394/repositories/repositorie-5394/packages/package-5394";
 
     ListTagsPagedResponse pagedListResponse = client.listTags(parent);
 
@@ -983,24 +1103,31 @@ public class ArtifactRegistryClientTest {
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTagsList().get(0), resources.get(0));
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    ListTagsRequest actualRequest = ((ListTagsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void listTagsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent =
+          "projects/project-5394/locations/location-5394/repositories/repositorie-5394/packages/package-5394";
       client.listTags(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1012,31 +1139,39 @@ public class ArtifactRegistryClientTest {
   public void getTagTest() throws Exception {
     Tag expectedResponse =
         Tag.newBuilder().setName("name3373707").setVersion("version351608024").build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name =
+        "projects/project-5748/locations/location-5748/repositories/repositorie-5748/packages/package-5748/tags/tag-5748";
 
     Tag actualResponse = client.getTag(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetTagRequest actualRequest = ((GetTagRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getTagExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name =
+          "projects/project-5748/locations/location-5748/repositories/repositorie-5748/packages/package-5748/tags/tag-5748";
       client.getTag(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1048,35 +1183,41 @@ public class ArtifactRegistryClientTest {
   public void createTagTest() throws Exception {
     Tag expectedResponse =
         Tag.newBuilder().setName("name3373707").setVersion("version351608024").build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String parent = "parent-995424086";
+    String parent =
+        "projects/project-5394/locations/location-5394/repositories/repositorie-5394/packages/package-5394";
     Tag tag = Tag.newBuilder().build();
     String tagId = "tagId110119509";
 
     Tag actualResponse = client.createTag(parent, tag, tagId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    CreateTagRequest actualRequest = ((CreateTagRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(tag, actualRequest.getTag());
-    Assert.assertEquals(tagId, actualRequest.getTagId());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void createTagExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String parent = "parent-995424086";
+      String parent =
+          "projects/project-5394/locations/location-5394/repositories/repositorie-5394/packages/package-5394";
       Tag tag = Tag.newBuilder().build();
       String tagId = "tagId110119509";
       client.createTag(parent, tag, tagId);
@@ -1090,33 +1231,48 @@ public class ArtifactRegistryClientTest {
   public void updateTagTest() throws Exception {
     Tag expectedResponse =
         Tag.newBuilder().setName("name3373707").setVersion("version351608024").build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    Tag tag = Tag.newBuilder().build();
+    Tag tag =
+        Tag.newBuilder()
+            .setName(
+                "projects/project-5748/locations/location-5748/repositories/repositorie-5748/packages/package-5748/tags/tag-5748")
+            .setVersion("version351608024")
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     Tag actualResponse = client.updateTag(tag, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateTagRequest actualRequest = ((UpdateTagRequest) actualRequests.get(0));
 
-    Assert.assertEquals(tag, actualRequest.getTag());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateTagExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      Tag tag = Tag.newBuilder().build();
+      Tag tag =
+          Tag.newBuilder()
+              .setName(
+                  "projects/project-5748/locations/location-5748/repositories/repositorie-5748/packages/package-5748/tags/tag-5748")
+              .setVersion("version351608024")
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTag(tag, updateMask);
       Assert.fail("No exception raised");
@@ -1128,30 +1284,38 @@ public class ArtifactRegistryClientTest {
   @Test
   public void deleteTagTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name =
+        "projects/project-5748/locations/location-5748/repositories/repositorie-5748/packages/package-5748/tags/tag-5748";
 
     client.deleteTag(name);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteTagRequest actualRequest = ((DeleteTagRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void deleteTagExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name =
+          "projects/project-5748/locations/location-5748/repositories/repositorie-5748/packages/package-5748/tags/tag-5748";
       client.deleteTag(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1168,7 +1332,7 @@ public class ArtifactRegistryClientTest {
             .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
@@ -1180,23 +1344,27 @@ public class ArtifactRegistryClientTest {
     Policy actualResponse = client.setIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    SetIamPolicyRequest actualRequest = ((SetIamPolicyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getResource(), actualRequest.getResource());
-    Assert.assertEquals(request.getPolicy(), actualRequest.getPolicy());
-    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void setIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       SetIamPolicyRequest request =
@@ -1221,7 +1389,7 @@ public class ArtifactRegistryClientTest {
             .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .setEtag(ByteString.EMPTY)
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
@@ -1232,22 +1400,27 @@ public class ArtifactRegistryClientTest {
     Policy actualResponse = client.getIamPolicy(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getResource(), actualRequest.getResource());
-    Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getIamPolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       GetIamPolicyRequest request =
@@ -1266,7 +1439,7 @@ public class ArtifactRegistryClientTest {
   public void testIamPermissionsTest() throws Exception {
     TestIamPermissionsResponse expectedResponse =
         TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
@@ -1277,22 +1450,27 @@ public class ArtifactRegistryClientTest {
     TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    TestIamPermissionsRequest actualRequest = ((TestIamPermissionsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getResource(), actualRequest.getResource());
-    Assert.assertEquals(request.getPermissionsList(), actualRequest.getPermissionsList());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void testIamPermissionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       TestIamPermissionsRequest request =
@@ -1313,28 +1491,34 @@ public class ArtifactRegistryClientTest {
         ProjectSettings.newBuilder()
             .setName(ProjectSettingsName.of("[PROJECT]").toString())
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
     ProjectSettingsName name = ProjectSettingsName.of("[PROJECT]");
 
     ProjectSettings actualResponse = client.getProjectSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetProjectSettingsRequest actualRequest = ((GetProjectSettingsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name.toString(), actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getProjectSettingsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
       ProjectSettingsName name = ProjectSettingsName.of("[PROJECT]");
@@ -1351,31 +1535,37 @@ public class ArtifactRegistryClientTest {
         ProjectSettings.newBuilder()
             .setName(ProjectSettingsName.of("[PROJECT]").toString())
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    String name = "name3373707";
+    String name = "projects/project-9549/projectSettings";
 
     ProjectSettings actualResponse = client.getProjectSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    GetProjectSettingsRequest actualRequest = ((GetProjectSettingsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, actualRequest.getName());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void getProjectSettingsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      String name = "name3373707";
+      String name = "projects/project-9549/projectSettings";
       client.getProjectSettings(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1389,34 +1579,44 @@ public class ArtifactRegistryClientTest {
         ProjectSettings.newBuilder()
             .setName(ProjectSettingsName.of("[PROJECT]").toString())
             .build();
-    mockArtifactRegistry.addResponse(expectedResponse);
+    mockService.addResponse(expectedResponse);
 
-    ProjectSettings projectSettings = ProjectSettings.newBuilder().build();
+    ProjectSettings projectSettings =
+        ProjectSettings.newBuilder()
+            .setName(ProjectSettingsName.of("[PROJECT]").toString())
+            .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
     ProjectSettings actualResponse = client.updateProjectSettings(projectSettings, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<AbstractMessage> actualRequests = mockArtifactRegistry.getRequests();
+    List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateProjectSettingsRequest actualRequest =
-        ((UpdateProjectSettingsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(projectSettings, actualRequest.getProjectSettings());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
     Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
   public void updateProjectSettingsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockArtifactRegistry.addException(exception);
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
 
     try {
-      ProjectSettings projectSettings = ProjectSettings.newBuilder().build();
+      ProjectSettings projectSettings =
+          ProjectSettings.newBuilder()
+              .setName(ProjectSettingsName.of("[PROJECT]").toString())
+              .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateProjectSettings(projectSettings, updateMask);
       Assert.fail("No exception raised");

@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -36,7 +37,6 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -124,6 +124,21 @@ import javax.annotation.Generated;
  *     ArtifactRegistryClient.create(artifactRegistrySettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * ArtifactRegistrySettings artifactRegistrySettings =
+ *     ArtifactRegistrySettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             ArtifactRegistrySettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * ArtifactRegistryClient artifactRegistryClient =
+ *     ArtifactRegistryClient.create(artifactRegistrySettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
@@ -131,7 +146,8 @@ import javax.annotation.Generated;
 public class ArtifactRegistryClient implements BackgroundResource {
   private final ArtifactRegistrySettings settings;
   private final ArtifactRegistryStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of ArtifactRegistryClient with default settings. */
   public static final ArtifactRegistryClient create() throws IOException {
@@ -151,7 +167,6 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Constructs an instance of ArtifactRegistryClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(ArtifactRegistrySettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ArtifactRegistryClient create(ArtifactRegistryStub stub) {
     return new ArtifactRegistryClient(stub);
   }
@@ -164,21 +179,23 @@ public class ArtifactRegistryClient implements BackgroundResource {
   protected ArtifactRegistryClient(ArtifactRegistrySettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((ArtifactRegistryStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ArtifactRegistryClient(ArtifactRegistryStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final ArtifactRegistrySettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ArtifactRegistryStub getStub() {
     return stub;
   }
@@ -187,8 +204,17 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -481,7 +507,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *   while (true) {
    *     ListRepositoriesResponse response =
    *         artifactRegistryClient.listRepositoriesCallable().call(request);
-   *     for (Repository element : response.getResponsesList()) {
+   *     for (Repository element : response.getRepositoriesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1071,7 +1097,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListPackagesResponse response = artifactRegistryClient.listPackagesCallable().call(request);
-   *     for (Package element : response.getResponsesList()) {
+   *     for (Package element : response.getPackagesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1360,7 +1386,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListVersionsResponse response = artifactRegistryClient.listVersionsCallable().call(request);
-   *     for (Version element : response.getResponsesList()) {
+   *     for (Version element : response.getVersionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1653,7 +1679,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListFilesResponse response = artifactRegistryClient.listFilesCallable().call(request);
-   *     for (File element : response.getResponsesList()) {
+   *     for (File element : response.getFilesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1839,7 +1865,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTagsResponse response = artifactRegistryClient.listTagsCallable().call(request);
-   *     for (Tag element : response.getResponsesList()) {
+   *     for (Tag element : response.getTagsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2159,7 +2185,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectSettingsName.of("[PROJECT]").toString())
+   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2186,7 +2212,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectSettingsName.of("[PROJECT]").toString())
+   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -2212,7 +2238,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectSettingsName.of("[PROJECT]").toString())
+   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = artifactRegistryClient.getIamPolicy(request);
@@ -2238,7 +2264,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectSettingsName.of("[PROJECT]").toString())
+   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = artifactRegistryClient.getIamPolicyCallable().futureCall(request);
@@ -2263,7 +2289,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ProjectSettingsName.of("[PROJECT]").toString())
+   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = artifactRegistryClient.testIamPermissions(request);
@@ -2289,7 +2315,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ProjectSettingsName.of("[PROJECT]").toString())
+   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
