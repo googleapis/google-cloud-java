@@ -19,6 +19,7 @@ package com.google.cloud.apigateway.v1.samples;
 // [START apigateway_v1_generated_apigatewayserviceclient_deleteapi_string_sync]
 import com.google.cloud.apigateway.v1.ApiGatewayServiceClient;
 import com.google.cloud.apigateway.v1.ApiName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteApiString {
 

@@ -16,8 +16,7 @@
 
 package com.google.cloud.apigateway.v1.samples;
 
-// [START
-// apigateway_v1_generated_apigatewayserviceclient_createapiconfig_stringapiconfigstring_sync]
+// [START apigateway_v1_generated_apigatewayserviceclient_createapiconfig_stringapiconfigstring_sync]
 import com.google.cloud.apigateway.v1.ApiConfig;
 import com.google.cloud.apigateway.v1.ApiGatewayServiceClient;
 import com.google.cloud.apigateway.v1.ApiName;

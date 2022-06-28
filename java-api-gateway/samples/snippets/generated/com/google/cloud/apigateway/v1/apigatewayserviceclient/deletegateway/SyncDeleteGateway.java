@@ -20,6 +20,7 @@ package com.google.cloud.apigateway.v1.samples;
 import com.google.cloud.apigateway.v1.ApiGatewayServiceClient;
 import com.google.cloud.apigateway.v1.DeleteGatewayRequest;
 import com.google.cloud.apigateway.v1.GatewayName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteGateway {
 
