@@ -30,6 +30,17 @@ do
   git clone https://github.com/googleapis/${service}.git
   cd  ${service}
   git filter-repo --to-subdirectory-filter ${service}
+
+  # setup owlbot files correctly to match monorepo configuration
+  cp .github/.OwlBot.yaml .OwlBot.yaml
+  rm .github/.OwlBot.lock.yaml
+  sed -i '/docker/d' .OwlBot.yaml
+  sed -i '/image/d' .OwlBot.yaml
+  text=$(grep '^.*api_shortname.*' .repo-metadata.json)
+  text=$(echo "$text" | sed 's/\"//g; s/\,//g' )
+  text=${text/api_shortname/api_name}
+  echo -e "\n" $text>> .OwlBot.yaml      
+
   cd ../google-cloud-java
   git remote add ${service} ../${service}
   git fetch ${service} #--tags
