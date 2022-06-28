@@ -10,17 +10,8 @@
         "grpc": {
           "libraryClient": "BareMetalSolutionClient",
           "rpcs": {
-            "CreateSnapshotSchedulePolicy": {
-              "methods": ["createSnapshotSchedulePolicy", "createSnapshotSchedulePolicy", "createSnapshotSchedulePolicy", "createSnapshotSchedulePolicyCallable"]
-            },
-            "CreateVolumeSnapshot": {
-              "methods": ["createVolumeSnapshot", "createVolumeSnapshot", "createVolumeSnapshot", "createVolumeSnapshotCallable"]
-            },
-            "DeleteSnapshotSchedulePolicy": {
-              "methods": ["deleteSnapshotSchedulePolicy", "deleteSnapshotSchedulePolicy", "deleteSnapshotSchedulePolicy", "deleteSnapshotSchedulePolicyCallable"]
-            },
-            "DeleteVolumeSnapshot": {
-              "methods": ["deleteVolumeSnapshot", "deleteVolumeSnapshot", "deleteVolumeSnapshot", "deleteVolumeSnapshotCallable"]
+            "DetachLun": {
+              "methods": ["detachLunAsync", "detachLunAsync", "detachLunAsync", "detachLunAsync", "detachLunAsync", "detachLunOperationCallable", "detachLunCallable"]
             },
             "GetInstance": {
               "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
@@ -31,14 +22,11 @@
             "GetNetwork": {
               "methods": ["getNetwork", "getNetwork", "getNetwork", "getNetworkCallable"]
             },
-            "GetSnapshotSchedulePolicy": {
-              "methods": ["getSnapshotSchedulePolicy", "getSnapshotSchedulePolicy", "getSnapshotSchedulePolicy", "getSnapshotSchedulePolicyCallable"]
+            "GetNfsShare": {
+              "methods": ["getNfsShare", "getNfsShare", "getNfsShare", "getNfsShareCallable"]
             },
             "GetVolume": {
               "methods": ["getVolume", "getVolume", "getVolume", "getVolumeCallable"]
-            },
-            "GetVolumeSnapshot": {
-              "methods": ["getVolumeSnapshot", "getVolumeSnapshot", "getVolumeSnapshot", "getVolumeSnapshotCallable"]
             },
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
@@ -46,14 +34,14 @@
             "ListLuns": {
               "methods": ["listLuns", "listLuns", "listLuns", "listLunsPagedCallable", "listLunsCallable"]
             },
+            "ListNetworkUsage": {
+              "methods": ["listNetworkUsage", "listNetworkUsage", "listNetworkUsage", "listNetworkUsageCallable"]
+            },
             "ListNetworks": {
               "methods": ["listNetworks", "listNetworks", "listNetworks", "listNetworksPagedCallable", "listNetworksCallable"]
             },
-            "ListSnapshotSchedulePolicies": {
-              "methods": ["listSnapshotSchedulePolicies", "listSnapshotSchedulePolicies", "listSnapshotSchedulePolicies", "listSnapshotSchedulePoliciesPagedCallable", "listSnapshotSchedulePoliciesCallable"]
-            },
-            "ListVolumeSnapshots": {
-              "methods": ["listVolumeSnapshots", "listVolumeSnapshots", "listVolumeSnapshots", "listVolumeSnapshotsPagedCallable", "listVolumeSnapshotsCallable"]
+            "ListNfsShares": {
+              "methods": ["listNfsShares", "listNfsShares", "listNfsShares", "listNfsSharesPagedCallable", "listNfsSharesCallable"]
             },
             "ListVolumes": {
               "methods": ["listVolumes", "listVolumes", "listVolumes", "listVolumesPagedCallable", "listVolumesCallable"]
@@ -61,11 +49,23 @@
             "ResetInstance": {
               "methods": ["resetInstanceAsync", "resetInstanceAsync", "resetInstanceAsync", "resetInstanceOperationCallable", "resetInstanceCallable"]
             },
-            "RestoreVolumeSnapshot": {
-              "methods": ["restoreVolumeSnapshotAsync", "restoreVolumeSnapshotAsync", "restoreVolumeSnapshotAsync", "restoreVolumeSnapshotOperationCallable", "restoreVolumeSnapshotCallable"]
+            "ResizeVolume": {
+              "methods": ["resizeVolumeAsync", "resizeVolumeAsync", "resizeVolumeAsync", "resizeVolumeOperationCallable", "resizeVolumeCallable"]
             },
-            "UpdateSnapshotSchedulePolicy": {
-              "methods": ["updateSnapshotSchedulePolicy", "updateSnapshotSchedulePolicy", "updateSnapshotSchedulePolicyCallable"]
+            "StartInstance": {
+              "methods": ["startInstanceAsync", "startInstanceAsync", "startInstanceAsync", "startInstanceOperationCallable", "startInstanceCallable"]
+            },
+            "StopInstance": {
+              "methods": ["stopInstanceAsync", "stopInstanceAsync", "stopInstanceAsync", "stopInstanceOperationCallable", "stopInstanceCallable"]
+            },
+            "UpdateInstance": {
+              "methods": ["updateInstanceAsync", "updateInstanceAsync", "updateInstanceOperationCallable", "updateInstanceCallable"]
+            },
+            "UpdateNetwork": {
+              "methods": ["updateNetworkAsync", "updateNetworkAsync", "updateNetworkOperationCallable", "updateNetworkCallable"]
+            },
+            "UpdateNfsShare": {
+              "methods": ["updateNfsShareAsync", "updateNfsShareAsync", "updateNfsShareOperationCallable", "updateNfsShareCallable"]
             },
             "UpdateVolume": {
               "methods": ["updateVolumeAsync", "updateVolumeAsync", "updateVolumeOperationCallable", "updateVolumeCallable"]

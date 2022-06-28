@@ -158,14 +158,14 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.cloud.baremetalsolution.v2.BaremetalsolutionProto
+    return com.google.cloud.baremetalsolution.v2.BareMetalSolutionProto
         .internal_static_google_cloud_baremetalsolution_v2_OperationMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.baremetalsolution.v2.BaremetalsolutionProto
+    return com.google.cloud.baremetalsolution.v2.BareMetalSolutionProto
         .internal_static_google_cloud_baremetalsolution_v2_OperationMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.baremetalsolution.v2.OperationMetadata.class,
@@ -725,14 +725,14 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(builder_implements:google.cloud.baremetalsolution.v2.OperationMetadata)
       com.google.cloud.baremetalsolution.v2.OperationMetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.baremetalsolution.v2.BaremetalsolutionProto
+      return com.google.cloud.baremetalsolution.v2.BareMetalSolutionProto
           .internal_static_google_cloud_baremetalsolution_v2_OperationMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.baremetalsolution.v2.BaremetalsolutionProto
+      return com.google.cloud.baremetalsolution.v2.BareMetalSolutionProto
           .internal_static_google_cloud_baremetalsolution_v2_OperationMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.baremetalsolution.v2.OperationMetadata.class,
@@ -783,7 +783,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.cloud.baremetalsolution.v2.BaremetalsolutionProto
+      return com.google.cloud.baremetalsolution.v2.BareMetalSolutionProto
           .internal_static_google_cloud_baremetalsolution_v2_OperationMetadata_descriptor;
     }
 

@@ -135,6 +135,52 @@ public final class BareMetalSolutionGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest,
+          com.google.longrunning.Operation>
+      getUpdateInstanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateInstance",
+      requestType = com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest,
+          com.google.longrunning.Operation>
+      getUpdateInstanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest,
+            com.google.longrunning.Operation>
+        getUpdateInstanceMethod;
+    if ((getUpdateInstanceMethod = BareMetalSolutionGrpc.getUpdateInstanceMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getUpdateInstanceMethod = BareMetalSolutionGrpc.getUpdateInstanceMethod) == null) {
+          BareMetalSolutionGrpc.getUpdateInstanceMethod =
+              getUpdateInstanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateInstance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("UpdateInstance"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateInstanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.baremetalsolution.v2.ResetInstanceRequest,
           com.google.longrunning.Operation>
       getResetInstanceMethod;
@@ -178,6 +224,142 @@ public final class BareMetalSolutionGrpc {
       }
     }
     return getResetInstanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.StartInstanceRequest,
+          com.google.longrunning.Operation>
+      getStartInstanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StartInstance",
+      requestType = com.google.cloud.baremetalsolution.v2.StartInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.StartInstanceRequest,
+          com.google.longrunning.Operation>
+      getStartInstanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.StartInstanceRequest,
+            com.google.longrunning.Operation>
+        getStartInstanceMethod;
+    if ((getStartInstanceMethod = BareMetalSolutionGrpc.getStartInstanceMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getStartInstanceMethod = BareMetalSolutionGrpc.getStartInstanceMethod) == null) {
+          BareMetalSolutionGrpc.getStartInstanceMethod =
+              getStartInstanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.StartInstanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StartInstance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.StartInstanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("StartInstance"))
+                      .build();
+        }
+      }
+    }
+    return getStartInstanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.StopInstanceRequest,
+          com.google.longrunning.Operation>
+      getStopInstanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StopInstance",
+      requestType = com.google.cloud.baremetalsolution.v2.StopInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.StopInstanceRequest,
+          com.google.longrunning.Operation>
+      getStopInstanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.StopInstanceRequest,
+            com.google.longrunning.Operation>
+        getStopInstanceMethod;
+    if ((getStopInstanceMethod = BareMetalSolutionGrpc.getStopInstanceMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getStopInstanceMethod = BareMetalSolutionGrpc.getStopInstanceMethod) == null) {
+          BareMetalSolutionGrpc.getStopInstanceMethod =
+              getStopInstanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.StopInstanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StopInstance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.StopInstanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("StopInstance"))
+                      .build();
+        }
+      }
+    }
+    return getStopInstanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.DetachLunRequest, com.google.longrunning.Operation>
+      getDetachLunMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DetachLun",
+      requestType = com.google.cloud.baremetalsolution.v2.DetachLunRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.DetachLunRequest, com.google.longrunning.Operation>
+      getDetachLunMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.DetachLunRequest,
+            com.google.longrunning.Operation>
+        getDetachLunMethod;
+    if ((getDetachLunMethod = BareMetalSolutionGrpc.getDetachLunMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getDetachLunMethod = BareMetalSolutionGrpc.getDetachLunMethod) == null) {
+          BareMetalSolutionGrpc.getDetachLunMethod =
+              getDetachLunMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.DetachLunRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DetachLun"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.DetachLunRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("DetachLun"))
+                      .build();
+        }
+      }
+    }
+    return getDetachLunMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -320,6 +502,52 @@ public final class BareMetalSolutionGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest,
+          com.google.longrunning.Operation>
+      getResizeVolumeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ResizeVolume",
+      requestType = com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest,
+          com.google.longrunning.Operation>
+      getResizeVolumeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest,
+            com.google.longrunning.Operation>
+        getResizeVolumeMethod;
+    if ((getResizeVolumeMethod = BareMetalSolutionGrpc.getResizeVolumeMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getResizeVolumeMethod = BareMetalSolutionGrpc.getResizeVolumeMethod) == null) {
+          BareMetalSolutionGrpc.getResizeVolumeMethod =
+              getResizeVolumeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ResizeVolume"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("ResizeVolume"))
+                      .build();
+        }
+      }
+    }
+    return getResizeVolumeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.baremetalsolution.v2.ListNetworksRequest,
           com.google.cloud.baremetalsolution.v2.ListNetworksResponse>
       getListNetworksMethod;
@@ -364,6 +592,53 @@ public final class BareMetalSolutionGrpc {
       }
     }
     return getListNetworksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest,
+          com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse>
+      getListNetworkUsageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNetworkUsage",
+      requestType = com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest,
+          com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse>
+      getListNetworkUsageMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest,
+            com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse>
+        getListNetworkUsageMethod;
+    if ((getListNetworkUsageMethod = BareMetalSolutionGrpc.getListNetworkUsageMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getListNetworkUsageMethod = BareMetalSolutionGrpc.getListNetworkUsageMethod) == null) {
+          BareMetalSolutionGrpc.getListNetworkUsageMethod =
+              getListNetworkUsageMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest,
+                          com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNetworkUsage"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("ListNetworkUsage"))
+                      .build();
+        }
+      }
+    }
+    return getListNetworkUsageMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -413,515 +688,49 @@ public final class BareMetalSolutionGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest,
-          com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesResponse>
-      getListSnapshotSchedulePoliciesMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListSnapshotSchedulePolicies",
-      requestType = com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest.class,
-      responseType =
-          com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest,
-          com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesResponse>
-      getListSnapshotSchedulePoliciesMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest,
-            com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesResponse>
-        getListSnapshotSchedulePoliciesMethod;
-    if ((getListSnapshotSchedulePoliciesMethod =
-            BareMetalSolutionGrpc.getListSnapshotSchedulePoliciesMethod)
-        == null) {
-      synchronized (BareMetalSolutionGrpc.class) {
-        if ((getListSnapshotSchedulePoliciesMethod =
-                BareMetalSolutionGrpc.getListSnapshotSchedulePoliciesMethod)
-            == null) {
-          BareMetalSolutionGrpc.getListSnapshotSchedulePoliciesMethod =
-              getListSnapshotSchedulePoliciesMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest,
-                          com.google.cloud.baremetalsolution.v2
-                              .ListSnapshotSchedulePoliciesResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "ListSnapshotSchedulePolicies"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2
-                                  .ListSnapshotSchedulePoliciesRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2
-                                  .ListSnapshotSchedulePoliciesResponse.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new BareMetalSolutionMethodDescriptorSupplier(
-                              "ListSnapshotSchedulePolicies"))
-                      .build();
-        }
-      }
-    }
-    return getListSnapshotSchedulePoliciesMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest,
-          com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-      getGetSnapshotSchedulePolicyMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetSnapshotSchedulePolicy",
-      requestType = com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest.class,
-      responseType = com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest,
-          com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-      getGetSnapshotSchedulePolicyMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest,
-            com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-        getGetSnapshotSchedulePolicyMethod;
-    if ((getGetSnapshotSchedulePolicyMethod =
-            BareMetalSolutionGrpc.getGetSnapshotSchedulePolicyMethod)
-        == null) {
-      synchronized (BareMetalSolutionGrpc.class) {
-        if ((getGetSnapshotSchedulePolicyMethod =
-                BareMetalSolutionGrpc.getGetSnapshotSchedulePolicyMethod)
-            == null) {
-          BareMetalSolutionGrpc.getGetSnapshotSchedulePolicyMethod =
-              getGetSnapshotSchedulePolicyMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest,
-                          com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "GetSnapshotSchedulePolicy"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new BareMetalSolutionMethodDescriptorSupplier(
-                              "GetSnapshotSchedulePolicy"))
-                      .build();
-        }
-      }
-    }
-    return getGetSnapshotSchedulePolicyMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest,
-          com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-      getCreateSnapshotSchedulePolicyMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateSnapshotSchedulePolicy",
-      requestType = com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest.class,
-      responseType = com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest,
-          com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-      getCreateSnapshotSchedulePolicyMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest,
-            com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-        getCreateSnapshotSchedulePolicyMethod;
-    if ((getCreateSnapshotSchedulePolicyMethod =
-            BareMetalSolutionGrpc.getCreateSnapshotSchedulePolicyMethod)
-        == null) {
-      synchronized (BareMetalSolutionGrpc.class) {
-        if ((getCreateSnapshotSchedulePolicyMethod =
-                BareMetalSolutionGrpc.getCreateSnapshotSchedulePolicyMethod)
-            == null) {
-          BareMetalSolutionGrpc.getCreateSnapshotSchedulePolicyMethod =
-              getCreateSnapshotSchedulePolicyMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest,
-                          com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "CreateSnapshotSchedulePolicy"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2
-                                  .CreateSnapshotSchedulePolicyRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new BareMetalSolutionMethodDescriptorSupplier(
-                              "CreateSnapshotSchedulePolicy"))
-                      .build();
-        }
-      }
-    }
-    return getCreateSnapshotSchedulePolicyMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest,
-          com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-      getUpdateSnapshotSchedulePolicyMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateSnapshotSchedulePolicy",
-      requestType = com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest.class,
-      responseType = com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest,
-          com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-      getUpdateSnapshotSchedulePolicyMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest,
-            com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-        getUpdateSnapshotSchedulePolicyMethod;
-    if ((getUpdateSnapshotSchedulePolicyMethod =
-            BareMetalSolutionGrpc.getUpdateSnapshotSchedulePolicyMethod)
-        == null) {
-      synchronized (BareMetalSolutionGrpc.class) {
-        if ((getUpdateSnapshotSchedulePolicyMethod =
-                BareMetalSolutionGrpc.getUpdateSnapshotSchedulePolicyMethod)
-            == null) {
-          BareMetalSolutionGrpc.getUpdateSnapshotSchedulePolicyMethod =
-              getUpdateSnapshotSchedulePolicyMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest,
-                          com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "UpdateSnapshotSchedulePolicy"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2
-                                  .UpdateSnapshotSchedulePolicyRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new BareMetalSolutionMethodDescriptorSupplier(
-                              "UpdateSnapshotSchedulePolicy"))
-                      .build();
-        }
-      }
-    }
-    return getUpdateSnapshotSchedulePolicyMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest,
-          com.google.protobuf.Empty>
-      getDeleteSnapshotSchedulePolicyMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteSnapshotSchedulePolicy",
-      requestType = com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest.class,
-      responseType = com.google.protobuf.Empty.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest,
-          com.google.protobuf.Empty>
-      getDeleteSnapshotSchedulePolicyMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest,
-            com.google.protobuf.Empty>
-        getDeleteSnapshotSchedulePolicyMethod;
-    if ((getDeleteSnapshotSchedulePolicyMethod =
-            BareMetalSolutionGrpc.getDeleteSnapshotSchedulePolicyMethod)
-        == null) {
-      synchronized (BareMetalSolutionGrpc.class) {
-        if ((getDeleteSnapshotSchedulePolicyMethod =
-                BareMetalSolutionGrpc.getDeleteSnapshotSchedulePolicyMethod)
-            == null) {
-          BareMetalSolutionGrpc.getDeleteSnapshotSchedulePolicyMethod =
-              getDeleteSnapshotSchedulePolicyMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest,
-                          com.google.protobuf.Empty>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "DeleteSnapshotSchedulePolicy"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2
-                                  .DeleteSnapshotSchedulePolicyRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.protobuf.Empty.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new BareMetalSolutionMethodDescriptorSupplier(
-                              "DeleteSnapshotSchedulePolicy"))
-                      .build();
-        }
-      }
-    }
-    return getDeleteSnapshotSchedulePolicyMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest,
-          com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-      getCreateVolumeSnapshotMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateVolumeSnapshot",
-      requestType = com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest.class,
-      responseType = com.google.cloud.baremetalsolution.v2.VolumeSnapshot.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest,
-          com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-      getCreateVolumeSnapshotMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest,
-            com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-        getCreateVolumeSnapshotMethod;
-    if ((getCreateVolumeSnapshotMethod = BareMetalSolutionGrpc.getCreateVolumeSnapshotMethod)
-        == null) {
-      synchronized (BareMetalSolutionGrpc.class) {
-        if ((getCreateVolumeSnapshotMethod = BareMetalSolutionGrpc.getCreateVolumeSnapshotMethod)
-            == null) {
-          BareMetalSolutionGrpc.getCreateVolumeSnapshotMethod =
-              getCreateVolumeSnapshotMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest,
-                          com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "CreateVolumeSnapshot"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2.VolumeSnapshot
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new BareMetalSolutionMethodDescriptorSupplier("CreateVolumeSnapshot"))
-                      .build();
-        }
-      }
-    }
-    return getCreateVolumeSnapshotMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest,
+          com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest,
           com.google.longrunning.Operation>
-      getRestoreVolumeSnapshotMethod;
+      getUpdateNetworkMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "RestoreVolumeSnapshot",
-      requestType = com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest.class,
+      fullMethodName = SERVICE_NAME + '/' + "UpdateNetwork",
+      requestType = com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest.class,
       responseType = com.google.longrunning.Operation.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest,
+          com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest,
           com.google.longrunning.Operation>
-      getRestoreVolumeSnapshotMethod() {
+      getUpdateNetworkMethod() {
     io.grpc.MethodDescriptor<
-            com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest,
+            com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest,
             com.google.longrunning.Operation>
-        getRestoreVolumeSnapshotMethod;
-    if ((getRestoreVolumeSnapshotMethod = BareMetalSolutionGrpc.getRestoreVolumeSnapshotMethod)
-        == null) {
+        getUpdateNetworkMethod;
+    if ((getUpdateNetworkMethod = BareMetalSolutionGrpc.getUpdateNetworkMethod) == null) {
       synchronized (BareMetalSolutionGrpc.class) {
-        if ((getRestoreVolumeSnapshotMethod = BareMetalSolutionGrpc.getRestoreVolumeSnapshotMethod)
-            == null) {
-          BareMetalSolutionGrpc.getRestoreVolumeSnapshotMethod =
-              getRestoreVolumeSnapshotMethod =
+        if ((getUpdateNetworkMethod = BareMetalSolutionGrpc.getUpdateNetworkMethod) == null) {
+          BareMetalSolutionGrpc.getUpdateNetworkMethod =
+              getUpdateNetworkMethod =
                   io.grpc.MethodDescriptor
-                      .<com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest,
+                      .<com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest,
                           com.google.longrunning.Operation>
                           newBuilder()
                       .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "RestoreVolumeSnapshot"))
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateNetwork"))
                       .setSampledToLocalTracing(true)
                       .setRequestMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest
+                              com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest
                                   .getDefaultInstance()))
                       .setResponseMarshaller(
                           io.grpc.protobuf.ProtoUtils.marshaller(
                               com.google.longrunning.Operation.getDefaultInstance()))
                       .setSchemaDescriptor(
-                          new BareMetalSolutionMethodDescriptorSupplier("RestoreVolumeSnapshot"))
+                          new BareMetalSolutionMethodDescriptorSupplier("UpdateNetwork"))
                       .build();
         }
       }
     }
-    return getRestoreVolumeSnapshotMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest,
-          com.google.protobuf.Empty>
-      getDeleteVolumeSnapshotMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteVolumeSnapshot",
-      requestType = com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest.class,
-      responseType = com.google.protobuf.Empty.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest,
-          com.google.protobuf.Empty>
-      getDeleteVolumeSnapshotMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest,
-            com.google.protobuf.Empty>
-        getDeleteVolumeSnapshotMethod;
-    if ((getDeleteVolumeSnapshotMethod = BareMetalSolutionGrpc.getDeleteVolumeSnapshotMethod)
-        == null) {
-      synchronized (BareMetalSolutionGrpc.class) {
-        if ((getDeleteVolumeSnapshotMethod = BareMetalSolutionGrpc.getDeleteVolumeSnapshotMethod)
-            == null) {
-          BareMetalSolutionGrpc.getDeleteVolumeSnapshotMethod =
-              getDeleteVolumeSnapshotMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest,
-                          com.google.protobuf.Empty>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "DeleteVolumeSnapshot"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.protobuf.Empty.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new BareMetalSolutionMethodDescriptorSupplier("DeleteVolumeSnapshot"))
-                      .build();
-        }
-      }
-    }
-    return getDeleteVolumeSnapshotMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest,
-          com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-      getGetVolumeSnapshotMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetVolumeSnapshot",
-      requestType = com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest.class,
-      responseType = com.google.cloud.baremetalsolution.v2.VolumeSnapshot.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest,
-          com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-      getGetVolumeSnapshotMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest,
-            com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-        getGetVolumeSnapshotMethod;
-    if ((getGetVolumeSnapshotMethod = BareMetalSolutionGrpc.getGetVolumeSnapshotMethod) == null) {
-      synchronized (BareMetalSolutionGrpc.class) {
-        if ((getGetVolumeSnapshotMethod = BareMetalSolutionGrpc.getGetVolumeSnapshotMethod)
-            == null) {
-          BareMetalSolutionGrpc.getGetVolumeSnapshotMethod =
-              getGetVolumeSnapshotMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest,
-                          com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetVolumeSnapshot"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2.VolumeSnapshot
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new BareMetalSolutionMethodDescriptorSupplier("GetVolumeSnapshot"))
-                      .build();
-        }
-      }
-    }
-    return getGetVolumeSnapshotMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest,
-          com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
-      getListVolumeSnapshotsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListVolumeSnapshots",
-      requestType = com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest.class,
-      responseType = com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest,
-          com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
-      getListVolumeSnapshotsMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest,
-            com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
-        getListVolumeSnapshotsMethod;
-    if ((getListVolumeSnapshotsMethod = BareMetalSolutionGrpc.getListVolumeSnapshotsMethod)
-        == null) {
-      synchronized (BareMetalSolutionGrpc.class) {
-        if ((getListVolumeSnapshotsMethod = BareMetalSolutionGrpc.getListVolumeSnapshotsMethod)
-            == null) {
-          BareMetalSolutionGrpc.getListVolumeSnapshotsMethod =
-              getListVolumeSnapshotsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest,
-                          com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "ListVolumeSnapshots"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new BareMetalSolutionMethodDescriptorSupplier("ListVolumeSnapshots"))
-                      .build();
-        }
-      }
-    }
-    return getListVolumeSnapshotsMethod;
+    return getUpdateNetworkMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1016,6 +825,145 @@ public final class BareMetalSolutionGrpc {
     return getListLunsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.GetNfsShareRequest,
+          com.google.cloud.baremetalsolution.v2.NfsShare>
+      getGetNfsShareMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetNfsShare",
+      requestType = com.google.cloud.baremetalsolution.v2.GetNfsShareRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.NfsShare.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.GetNfsShareRequest,
+          com.google.cloud.baremetalsolution.v2.NfsShare>
+      getGetNfsShareMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.GetNfsShareRequest,
+            com.google.cloud.baremetalsolution.v2.NfsShare>
+        getGetNfsShareMethod;
+    if ((getGetNfsShareMethod = BareMetalSolutionGrpc.getGetNfsShareMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getGetNfsShareMethod = BareMetalSolutionGrpc.getGetNfsShareMethod) == null) {
+          BareMetalSolutionGrpc.getGetNfsShareMethod =
+              getGetNfsShareMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.GetNfsShareRequest,
+                          com.google.cloud.baremetalsolution.v2.NfsShare>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetNfsShare"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.GetNfsShareRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.NfsShare.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("GetNfsShare"))
+                      .build();
+        }
+      }
+    }
+    return getGetNfsShareMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest,
+          com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse>
+      getListNfsSharesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListNfsShares",
+      requestType = com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest.class,
+      responseType = com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest,
+          com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse>
+      getListNfsSharesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest,
+            com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse>
+        getListNfsSharesMethod;
+    if ((getListNfsSharesMethod = BareMetalSolutionGrpc.getListNfsSharesMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getListNfsSharesMethod = BareMetalSolutionGrpc.getListNfsSharesMethod) == null) {
+          BareMetalSolutionGrpc.getListNfsSharesMethod =
+              getListNfsSharesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest,
+                          com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListNfsShares"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("ListNfsShares"))
+                      .build();
+        }
+      }
+    }
+    return getListNfsSharesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest,
+          com.google.longrunning.Operation>
+      getUpdateNfsShareMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateNfsShare",
+      requestType = com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest,
+          com.google.longrunning.Operation>
+      getUpdateNfsShareMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest,
+            com.google.longrunning.Operation>
+        getUpdateNfsShareMethod;
+    if ((getUpdateNfsShareMethod = BareMetalSolutionGrpc.getUpdateNfsShareMethod) == null) {
+      synchronized (BareMetalSolutionGrpc.class) {
+        if ((getUpdateNfsShareMethod = BareMetalSolutionGrpc.getUpdateNfsShareMethod) == null) {
+          BareMetalSolutionGrpc.getUpdateNfsShareMethod =
+              getUpdateNfsShareMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateNfsShare"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BareMetalSolutionMethodDescriptorSupplier("UpdateNfsShare"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateNfsShareMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BareMetalSolutionStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BareMetalSolutionStub> factory =
@@ -1106,6 +1054,20 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Update details of a single server.
+     * </pre>
+     */
+    public void updateInstance(
+        com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform an ungraceful, hard reset on a server. Equivalent to shutting the
      * power off and then turning it back on.
      * </pre>
@@ -1115,6 +1077,47 @@ public final class BareMetalSolutionGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getResetInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a server that was shutdown.
+     * </pre>
+     */
+    public void startInstance(
+        com.google.cloud.baremetalsolution.v2.StartInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStartInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stop a running server.
+     * </pre>
+     */
+    public void stopInstance(
+        com.google.cloud.baremetalsolution.v2.StopInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStopInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detach LUN from Instance.
+     * </pre>
+     */
+    public void detachLun(
+        com.google.cloud.baremetalsolution.v2.DetachLunRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDetachLunMethod(), responseObserver);
     }
 
     /**
@@ -1164,6 +1167,20 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Emergency Volume resize.
+     * </pre>
+     */
+    public void resizeVolume(
+        com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getResizeVolumeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * List network in a given project and location.
      * </pre>
      */
@@ -1173,6 +1190,22 @@ public final class BareMetalSolutionGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListNetworksMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Networks (and used IPs for each Network) in the vendor account
+     * associated with the specified project.
+     * </pre>
+     */
+    public void listNetworkUsage(
+        com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListNetworkUsageMethod(), responseObserver);
     }
 
     /**
@@ -1193,149 +1226,14 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
-     * List snapshot schedule policies in a given project and location.
+     * Update details of a single network.
      * </pre>
      */
-    public void listSnapshotSchedulePolicies(
-        com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getListSnapshotSchedulePoliciesMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get details of a single snapshot schedule policy.
-     * </pre>
-     */
-    public void getSnapshotSchedulePolicy(
-        com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getGetSnapshotSchedulePolicyMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create a snapshot schedule policy in the specified project.
-     * </pre>
-     */
-    public void createSnapshotSchedulePolicy(
-        com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getCreateSnapshotSchedulePolicyMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update a snapshot schedule policy in the specified project.
-     * </pre>
-     */
-    public void updateSnapshotSchedulePolicy(
-        com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getUpdateSnapshotSchedulePolicyMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Delete a named snapshot schedule policy.
-     * </pre>
-     */
-    public void deleteSnapshotSchedulePolicy(
-        com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDeleteSnapshotSchedulePolicyMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create a storage volume snapshot in a containing volume.
-     * </pre>
-     */
-    public void createVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getCreateVolumeSnapshotMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Restore a storage volume snapshot to its containing volume.
-     * </pre>
-     */
-    public void restoreVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest request,
+    public void updateNetwork(
+        com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getRestoreVolumeSnapshotMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a storage volume snapshot for a given volume.
-     * </pre>
-     */
-    public void deleteVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDeleteVolumeSnapshotMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get details of a single storage volume snapshot.
-     * </pre>
-     */
-    public void getVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getGetVolumeSnapshotMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * List storage volume snapshots for given storage volume.
-     * </pre>
-     */
-    public void listVolumeSnapshots(
-        com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getListVolumeSnapshotsMethod(), responseObserver);
+          getUpdateNetworkMethod(), responseObserver);
     }
 
     /**
@@ -1365,6 +1263,50 @@ public final class BareMetalSolutionGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListLunsMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Get details of a single NFS share.
+     * </pre>
+     */
+    public void getNfsShare(
+        com.google.cloud.baremetalsolution.v2.GetNfsShareRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.NfsShare>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetNfsShareMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List NFS shares.
+     * </pre>
+     */
+    public void listNfsShares(
+        com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListNfsSharesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update details of a single NFS share.
+     * </pre>
+     */
+    public void updateNfsShare(
+        com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateNfsShareMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -1382,11 +1324,35 @@ public final class BareMetalSolutionGrpc {
                       com.google.cloud.baremetalsolution.v2.GetInstanceRequest,
                       com.google.cloud.baremetalsolution.v2.Instance>(this, METHODID_GET_INSTANCE)))
           .addMethod(
+              getUpdateInstanceMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UPDATE_INSTANCE)))
+          .addMethod(
               getResetInstanceMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.baremetalsolution.v2.ResetInstanceRequest,
                       com.google.longrunning.Operation>(this, METHODID_RESET_INSTANCE)))
+          .addMethod(
+              getStartInstanceMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.baremetalsolution.v2.StartInstanceRequest,
+                      com.google.longrunning.Operation>(this, METHODID_START_INSTANCE)))
+          .addMethod(
+              getStopInstanceMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.baremetalsolution.v2.StopInstanceRequest,
+                      com.google.longrunning.Operation>(this, METHODID_STOP_INSTANCE)))
+          .addMethod(
+              getDetachLunMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.baremetalsolution.v2.DetachLunRequest,
+                      com.google.longrunning.Operation>(this, METHODID_DETACH_LUN)))
           .addMethod(
               getListVolumesMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1407,6 +1373,12 @@ public final class BareMetalSolutionGrpc {
                       com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest,
                       com.google.longrunning.Operation>(this, METHODID_UPDATE_VOLUME)))
           .addMethod(
+              getResizeVolumeMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest,
+                      com.google.longrunning.Operation>(this, METHODID_RESIZE_VOLUME)))
+          .addMethod(
               getListNetworksMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -1414,78 +1386,24 @@ public final class BareMetalSolutionGrpc {
                       com.google.cloud.baremetalsolution.v2.ListNetworksResponse>(
                       this, METHODID_LIST_NETWORKS)))
           .addMethod(
+              getListNetworkUsageMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest,
+                      com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse>(
+                      this, METHODID_LIST_NETWORK_USAGE)))
+          .addMethod(
               getGetNetworkMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
                       com.google.cloud.baremetalsolution.v2.GetNetworkRequest,
                       com.google.cloud.baremetalsolution.v2.Network>(this, METHODID_GET_NETWORK)))
           .addMethod(
-              getListSnapshotSchedulePoliciesMethod(),
+              getUpdateNetworkMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest,
-                      com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesResponse>(
-                      this, METHODID_LIST_SNAPSHOT_SCHEDULE_POLICIES)))
-          .addMethod(
-              getGetSnapshotSchedulePolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest,
-                      com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>(
-                      this, METHODID_GET_SNAPSHOT_SCHEDULE_POLICY)))
-          .addMethod(
-              getCreateSnapshotSchedulePolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest,
-                      com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>(
-                      this, METHODID_CREATE_SNAPSHOT_SCHEDULE_POLICY)))
-          .addMethod(
-              getUpdateSnapshotSchedulePolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest,
-                      com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>(
-                      this, METHODID_UPDATE_SNAPSHOT_SCHEDULE_POLICY)))
-          .addMethod(
-              getDeleteSnapshotSchedulePolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_SNAPSHOT_SCHEDULE_POLICY)))
-          .addMethod(
-              getCreateVolumeSnapshotMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest,
-                      com.google.cloud.baremetalsolution.v2.VolumeSnapshot>(
-                      this, METHODID_CREATE_VOLUME_SNAPSHOT)))
-          .addMethod(
-              getRestoreVolumeSnapshotMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESTORE_VOLUME_SNAPSHOT)))
-          .addMethod(
-              getDeleteVolumeSnapshotMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_VOLUME_SNAPSHOT)))
-          .addMethod(
-              getGetVolumeSnapshotMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest,
-                      com.google.cloud.baremetalsolution.v2.VolumeSnapshot>(
-                      this, METHODID_GET_VOLUME_SNAPSHOT)))
-          .addMethod(
-              getListVolumeSnapshotsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest,
-                      com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>(
-                      this, METHODID_LIST_VOLUME_SNAPSHOTS)))
+                      com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UPDATE_NETWORK)))
           .addMethod(
               getGetLunMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1499,6 +1417,26 @@ public final class BareMetalSolutionGrpc {
                       com.google.cloud.baremetalsolution.v2.ListLunsRequest,
                       com.google.cloud.baremetalsolution.v2.ListLunsResponse>(
                       this, METHODID_LIST_LUNS)))
+          .addMethod(
+              getGetNfsShareMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.baremetalsolution.v2.GetNfsShareRequest,
+                      com.google.cloud.baremetalsolution.v2.NfsShare>(
+                      this, METHODID_GET_NFS_SHARE)))
+          .addMethod(
+              getListNfsSharesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest,
+                      com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse>(
+                      this, METHODID_LIST_NFS_SHARES)))
+          .addMethod(
+              getUpdateNfsShareMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UPDATE_NFS_SHARE)))
           .build();
     }
   }
@@ -1566,6 +1504,22 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Update details of a single server.
+     * </pre>
+     */
+    public void updateInstance(
+        com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateInstanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform an ungraceful, hard reset on a server. Equivalent to shutting the
      * power off and then turning it back on.
      * </pre>
@@ -1577,6 +1531,52 @@ public final class BareMetalSolutionGrpc {
           getChannel().newCall(getResetInstanceMethod(), getCallOptions()),
           request,
           responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a server that was shutdown.
+     * </pre>
+     */
+    public void startInstance(
+        com.google.cloud.baremetalsolution.v2.StartInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStartInstanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stop a running server.
+     * </pre>
+     */
+    public void stopInstance(
+        com.google.cloud.baremetalsolution.v2.StopInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStopInstanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detach LUN from Instance.
+     * </pre>
+     */
+    public void detachLun(
+        com.google.cloud.baremetalsolution.v2.DetachLunRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDetachLunMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1631,6 +1631,22 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Emergency Volume resize.
+     * </pre>
+     */
+    public void resizeVolume(
+        com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getResizeVolumeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * List network in a given project and location.
      * </pre>
      */
@@ -1640,6 +1656,24 @@ public final class BareMetalSolutionGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListNetworksMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Networks (and used IPs for each Network) in the vendor account
+     * associated with the specified project.
+     * </pre>
+     */
+    public void listNetworkUsage(
+        com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNetworkUsageMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1663,167 +1697,14 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
-     * List snapshot schedule policies in a given project and location.
+     * Update details of a single network.
      * </pre>
      */
-    public void listSnapshotSchedulePolicies(
-        com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListSnapshotSchedulePoliciesMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get details of a single snapshot schedule policy.
-     * </pre>
-     */
-    public void getSnapshotSchedulePolicy(
-        com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetSnapshotSchedulePolicyMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create a snapshot schedule policy in the specified project.
-     * </pre>
-     */
-    public void createSnapshotSchedulePolicy(
-        com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateSnapshotSchedulePolicyMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update a snapshot schedule policy in the specified project.
-     * </pre>
-     */
-    public void updateSnapshotSchedulePolicy(
-        com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateSnapshotSchedulePolicyMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Delete a named snapshot schedule policy.
-     * </pre>
-     */
-    public void deleteSnapshotSchedulePolicy(
-        com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteSnapshotSchedulePolicyMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create a storage volume snapshot in a containing volume.
-     * </pre>
-     */
-    public void createVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateVolumeSnapshotMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Restore a storage volume snapshot to its containing volume.
-     * </pre>
-     */
-    public void restoreVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest request,
+    public void updateNetwork(
+        com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getRestoreVolumeSnapshotMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a storage volume snapshot for a given volume.
-     * </pre>
-     */
-    public void deleteVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteVolumeSnapshotMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get details of a single storage volume snapshot.
-     * </pre>
-     */
-    public void getVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetVolumeSnapshotMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * List storage volume snapshots for given storage volume.
-     * </pre>
-     */
-    public void listVolumeSnapshots(
-        com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListVolumeSnapshotsMethod(), getCallOptions()),
+          getChannel().newCall(getUpdateNetworkMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1855,6 +1736,56 @@ public final class BareMetalSolutionGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListLunsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get details of a single NFS share.
+     * </pre>
+     */
+    public void getNfsShare(
+        com.google.cloud.baremetalsolution.v2.GetNfsShareRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.NfsShare>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetNfsShareMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List NFS shares.
+     * </pre>
+     */
+    public void listNfsShares(
+        com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListNfsSharesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update details of a single NFS share.
+     * </pre>
+     */
+    public void updateNfsShare(
+        com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateNfsShareMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
   }
 
@@ -1914,6 +1845,19 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Update details of a single server.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateInstance(
+        com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform an ungraceful, hard reset on a server. Equivalent to shutting the
      * power off and then turning it back on.
      * </pre>
@@ -1922,6 +1866,45 @@ public final class BareMetalSolutionGrpc {
         com.google.cloud.baremetalsolution.v2.ResetInstanceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getResetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a server that was shutdown.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startInstance(
+        com.google.cloud.baremetalsolution.v2.StartInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stop a running server.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopInstance(
+        com.google.cloud.baremetalsolution.v2.StopInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detach LUN from Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation detachLun(
+        com.google.cloud.baremetalsolution.v2.DetachLunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDetachLunMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1967,6 +1950,19 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Emergency Volume resize.
+     * </pre>
+     */
+    public com.google.longrunning.Operation resizeVolume(
+        com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResizeVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * List network in a given project and location.
      * </pre>
      */
@@ -1974,6 +1970,20 @@ public final class BareMetalSolutionGrpc {
         com.google.cloud.baremetalsolution.v2.ListNetworksRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListNetworksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Networks (and used IPs for each Network) in the vendor account
+     * associated with the specified project.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse listNetworkUsage(
+        com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNetworkUsageMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1993,133 +2003,13 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
-     * List snapshot schedule policies in a given project and location.
+     * Update details of a single network.
      * </pre>
      */
-    public com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesResponse
-        listSnapshotSchedulePolicies(
-            com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest request) {
+    public com.google.longrunning.Operation updateNetwork(
+        com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListSnapshotSchedulePoliciesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get details of a single snapshot schedule policy.
-     * </pre>
-     */
-    public com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy getSnapshotSchedulePolicy(
-        com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetSnapshotSchedulePolicyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create a snapshot schedule policy in the specified project.
-     * </pre>
-     */
-    public com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy
-        createSnapshotSchedulePolicy(
-            com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateSnapshotSchedulePolicyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update a snapshot schedule policy in the specified project.
-     * </pre>
-     */
-    public com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy
-        updateSnapshotSchedulePolicy(
-            com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateSnapshotSchedulePolicyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Delete a named snapshot schedule policy.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteSnapshotSchedulePolicy(
-        com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteSnapshotSchedulePolicyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create a storage volume snapshot in a containing volume.
-     * </pre>
-     */
-    public com.google.cloud.baremetalsolution.v2.VolumeSnapshot createVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateVolumeSnapshotMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Restore a storage volume snapshot to its containing volume.
-     * </pre>
-     */
-    public com.google.longrunning.Operation restoreVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getRestoreVolumeSnapshotMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a storage volume snapshot for a given volume.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteVolumeSnapshotMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get details of a single storage volume snapshot.
-     * </pre>
-     */
-    public com.google.cloud.baremetalsolution.v2.VolumeSnapshot getVolumeSnapshot(
-        com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetVolumeSnapshotMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * List storage volume snapshots for given storage volume.
-     * </pre>
-     */
-    public com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse listVolumeSnapshots(
-        com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListVolumeSnapshotsMethod(), getCallOptions(), request);
+          getChannel(), getUpdateNetworkMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2146,6 +2036,45 @@ public final class BareMetalSolutionGrpc {
         com.google.cloud.baremetalsolution.v2.ListLunsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListLunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get details of a single NFS share.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.NfsShare getNfsShare(
+        com.google.cloud.baremetalsolution.v2.GetNfsShareRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNfsShareMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List NFS shares.
+     * </pre>
+     */
+    public com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse listNfsShares(
+        com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNfsSharesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update details of a single NFS share.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateNfsShare(
+        com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNfsShareMethod(), getCallOptions(), request);
     }
   }
 
@@ -2206,6 +2135,19 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Update details of a single server.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateInstance(com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Perform an ungraceful, hard reset on a server. Equivalent to shutting the
      * power off and then turning it back on.
      * </pre>
@@ -2214,6 +2156,45 @@ public final class BareMetalSolutionGrpc {
         resetInstance(com.google.cloud.baremetalsolution.v2.ResetInstanceRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getResetInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a server that was shutdown.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        startInstance(com.google.cloud.baremetalsolution.v2.StartInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStartInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stop a running server.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        stopInstance(com.google.cloud.baremetalsolution.v2.StopInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStopInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detach LUN from Instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        detachLun(com.google.cloud.baremetalsolution.v2.DetachLunRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDetachLunMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2261,6 +2242,19 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
+     * Emergency Volume resize.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        resizeVolume(com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getResizeVolumeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * List network in a given project and location.
      * </pre>
      */
@@ -2269,6 +2263,21 @@ public final class BareMetalSolutionGrpc {
         listNetworks(com.google.cloud.baremetalsolution.v2.ListNetworksRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListNetworksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Networks (and used IPs for each Network) in the vendor account
+     * associated with the specified project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse>
+        listNetworkUsage(com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNetworkUsageMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2289,146 +2298,13 @@ public final class BareMetalSolutionGrpc {
      *
      *
      * <pre>
-     * List snapshot schedule policies in a given project and location.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesResponse>
-        listSnapshotSchedulePolicies(
-            com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListSnapshotSchedulePoliciesMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get details of a single snapshot schedule policy.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-        getSnapshotSchedulePolicy(
-            com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetSnapshotSchedulePolicyMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create a snapshot schedule policy in the specified project.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-        createSnapshotSchedulePolicy(
-            com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateSnapshotSchedulePolicyMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update a snapshot schedule policy in the specified project.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>
-        updateSnapshotSchedulePolicy(
-            com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateSnapshotSchedulePolicyMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Delete a named snapshot schedule policy.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
-        deleteSnapshotSchedulePolicy(
-            com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteSnapshotSchedulePolicyMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create a storage volume snapshot in a containing volume.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-        createVolumeSnapshot(
-            com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateVolumeSnapshotMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Restore a storage volume snapshot to its containing volume.
+     * Update details of a single network.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
-        restoreVolumeSnapshot(
-            com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest request) {
+        updateNetwork(com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getRestoreVolumeSnapshotMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a storage volume snapshot for a given volume.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
-        deleteVolumeSnapshot(
-            com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteVolumeSnapshotMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get details of a single storage volume snapshot.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.baremetalsolution.v2.VolumeSnapshot>
-        getVolumeSnapshot(com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetVolumeSnapshotMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * List storage volume snapshots for given storage volume.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>
-        listVolumeSnapshots(
-            com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListVolumeSnapshotsMethod(), getCallOptions()), request);
+          getChannel().newCall(getUpdateNetworkMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2458,28 +2334,69 @@ public final class BareMetalSolutionGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListLunsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get details of a single NFS share.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.NfsShare>
+        getNfsShare(com.google.cloud.baremetalsolution.v2.GetNfsShareRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetNfsShareMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List NFS shares.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse>
+        listNfsShares(com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListNfsSharesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update details of a single NFS share.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateNfsShare(com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateNfsShareMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSTANCES = 0;
   private static final int METHODID_GET_INSTANCE = 1;
-  private static final int METHODID_RESET_INSTANCE = 2;
-  private static final int METHODID_LIST_VOLUMES = 3;
-  private static final int METHODID_GET_VOLUME = 4;
-  private static final int METHODID_UPDATE_VOLUME = 5;
-  private static final int METHODID_LIST_NETWORKS = 6;
-  private static final int METHODID_GET_NETWORK = 7;
-  private static final int METHODID_LIST_SNAPSHOT_SCHEDULE_POLICIES = 8;
-  private static final int METHODID_GET_SNAPSHOT_SCHEDULE_POLICY = 9;
-  private static final int METHODID_CREATE_SNAPSHOT_SCHEDULE_POLICY = 10;
-  private static final int METHODID_UPDATE_SNAPSHOT_SCHEDULE_POLICY = 11;
-  private static final int METHODID_DELETE_SNAPSHOT_SCHEDULE_POLICY = 12;
-  private static final int METHODID_CREATE_VOLUME_SNAPSHOT = 13;
-  private static final int METHODID_RESTORE_VOLUME_SNAPSHOT = 14;
-  private static final int METHODID_DELETE_VOLUME_SNAPSHOT = 15;
-  private static final int METHODID_GET_VOLUME_SNAPSHOT = 16;
-  private static final int METHODID_LIST_VOLUME_SNAPSHOTS = 17;
-  private static final int METHODID_GET_LUN = 18;
-  private static final int METHODID_LIST_LUNS = 19;
+  private static final int METHODID_UPDATE_INSTANCE = 2;
+  private static final int METHODID_RESET_INSTANCE = 3;
+  private static final int METHODID_START_INSTANCE = 4;
+  private static final int METHODID_STOP_INSTANCE = 5;
+  private static final int METHODID_DETACH_LUN = 6;
+  private static final int METHODID_LIST_VOLUMES = 7;
+  private static final int METHODID_GET_VOLUME = 8;
+  private static final int METHODID_UPDATE_VOLUME = 9;
+  private static final int METHODID_RESIZE_VOLUME = 10;
+  private static final int METHODID_LIST_NETWORKS = 11;
+  private static final int METHODID_LIST_NETWORK_USAGE = 12;
+  private static final int METHODID_GET_NETWORK = 13;
+  private static final int METHODID_UPDATE_NETWORK = 14;
+  private static final int METHODID_GET_LUN = 15;
+  private static final int METHODID_LIST_LUNS = 16;
+  private static final int METHODID_GET_NFS_SHARE = 17;
+  private static final int METHODID_LIST_NFS_SHARES = 18;
+  private static final int METHODID_UPDATE_NFS_SHARE = 19;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2511,9 +2428,29 @@ public final class BareMetalSolutionGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Instance>)
                   responseObserver);
           break;
+        case METHODID_UPDATE_INSTANCE:
+          serviceImpl.updateInstance(
+              (com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_RESET_INSTANCE:
           serviceImpl.resetInstance(
               (com.google.cloud.baremetalsolution.v2.ResetInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_START_INSTANCE:
+          serviceImpl.startInstance(
+              (com.google.cloud.baremetalsolution.v2.StartInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_STOP_INSTANCE:
+          serviceImpl.stopInstance(
+              (com.google.cloud.baremetalsolution.v2.StopInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DETACH_LUN:
+          serviceImpl.detachLun(
+              (com.google.cloud.baremetalsolution.v2.DetachLunRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_VOLUMES:
@@ -2534,11 +2471,23 @@ public final class BareMetalSolutionGrpc {
               (com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_RESIZE_VOLUME:
+          serviceImpl.resizeVolume(
+              (com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_LIST_NETWORKS:
           serviceImpl.listNetworks(
               (com.google.cloud.baremetalsolution.v2.ListNetworksRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.baremetalsolution.v2.ListNetworksResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_NETWORK_USAGE:
+          serviceImpl.listNetworkUsage(
+              (com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse>)
                   responseObserver);
           break;
         case METHODID_GET_NETWORK:
@@ -2547,67 +2496,10 @@ public final class BareMetalSolutionGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Network>)
                   responseObserver);
           break;
-        case METHODID_LIST_SNAPSHOT_SCHEDULE_POLICIES:
-          serviceImpl.listSnapshotSchedulePolicies(
-              (com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesResponse>)
-                  responseObserver);
-          break;
-        case METHODID_GET_SNAPSHOT_SCHEDULE_POLICY:
-          serviceImpl.getSnapshotSchedulePolicy(
-              (com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>)
-                  responseObserver);
-          break;
-        case METHODID_CREATE_SNAPSHOT_SCHEDULE_POLICY:
-          serviceImpl.createSnapshotSchedulePolicy(
-              (com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>)
-                  responseObserver);
-          break;
-        case METHODID_UPDATE_SNAPSHOT_SCHEDULE_POLICY:
-          serviceImpl.updateSnapshotSchedulePolicy(
-              (com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy>)
-                  responseObserver);
-          break;
-        case METHODID_DELETE_SNAPSHOT_SCHEDULE_POLICY:
-          serviceImpl.deleteSnapshotSchedulePolicy(
-              (com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
-          break;
-        case METHODID_CREATE_VOLUME_SNAPSHOT:
-          serviceImpl.createVolumeSnapshot(
-              (com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.VolumeSnapshot>)
-                  responseObserver);
-          break;
-        case METHODID_RESTORE_VOLUME_SNAPSHOT:
-          serviceImpl.restoreVolumeSnapshot(
-              (com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest) request,
+        case METHODID_UPDATE_NETWORK:
+          serviceImpl.updateNetwork(
+              (com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
-          break;
-        case METHODID_DELETE_VOLUME_SNAPSHOT:
-          serviceImpl.deleteVolumeSnapshot(
-              (com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
-          break;
-        case METHODID_GET_VOLUME_SNAPSHOT:
-          serviceImpl.getVolumeSnapshot(
-              (com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.VolumeSnapshot>)
-                  responseObserver);
-          break;
-        case METHODID_LIST_VOLUME_SNAPSHOTS:
-          serviceImpl.listVolumeSnapshots(
-              (com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse>)
-                  responseObserver);
           break;
         case METHODID_GET_LUN:
           serviceImpl.getLun(
@@ -2620,6 +2512,24 @@ public final class BareMetalSolutionGrpc {
               (com.google.cloud.baremetalsolution.v2.ListLunsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListLunsResponse>)
                   responseObserver);
+          break;
+        case METHODID_GET_NFS_SHARE:
+          serviceImpl.getNfsShare(
+              (com.google.cloud.baremetalsolution.v2.GetNfsShareRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.NfsShare>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_NFS_SHARES:
+          serviceImpl.listNfsShares(
+              (com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_NFS_SHARE:
+          serviceImpl.updateNfsShare(
+              (com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2644,7 +2554,7 @@ public final class BareMetalSolutionGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.google.cloud.baremetalsolution.v2.BaremetalsolutionProto.getDescriptor();
+      return com.google.cloud.baremetalsolution.v2.BareMetalSolutionProto.getDescriptor();
     }
 
     @java.lang.Override
@@ -2687,24 +2597,24 @@ public final class BareMetalSolutionGrpc {
                       .setSchemaDescriptor(new BareMetalSolutionFileDescriptorSupplier())
                       .addMethod(getListInstancesMethod())
                       .addMethod(getGetInstanceMethod())
+                      .addMethod(getUpdateInstanceMethod())
                       .addMethod(getResetInstanceMethod())
+                      .addMethod(getStartInstanceMethod())
+                      .addMethod(getStopInstanceMethod())
+                      .addMethod(getDetachLunMethod())
                       .addMethod(getListVolumesMethod())
                       .addMethod(getGetVolumeMethod())
                       .addMethod(getUpdateVolumeMethod())
+                      .addMethod(getResizeVolumeMethod())
                       .addMethod(getListNetworksMethod())
+                      .addMethod(getListNetworkUsageMethod())
                       .addMethod(getGetNetworkMethod())
-                      .addMethod(getListSnapshotSchedulePoliciesMethod())
-                      .addMethod(getGetSnapshotSchedulePolicyMethod())
-                      .addMethod(getCreateSnapshotSchedulePolicyMethod())
-                      .addMethod(getUpdateSnapshotSchedulePolicyMethod())
-                      .addMethod(getDeleteSnapshotSchedulePolicyMethod())
-                      .addMethod(getCreateVolumeSnapshotMethod())
-                      .addMethod(getRestoreVolumeSnapshotMethod())
-                      .addMethod(getDeleteVolumeSnapshotMethod())
-                      .addMethod(getGetVolumeSnapshotMethod())
-                      .addMethod(getListVolumeSnapshotsMethod())
+                      .addMethod(getUpdateNetworkMethod())
                       .addMethod(getGetLunMethod())
                       .addMethod(getListLunsMethod())
+                      .addMethod(getGetNfsShareMethod())
+                      .addMethod(getListNfsSharesMethod())
+                      .addMethod(getUpdateNfsShareMethod())
                       .build();
         }
       }

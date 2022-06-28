@@ -19,8 +19,7 @@ package com.google.cloud.baremetalsolution.v2;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListInstancesPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListLunsPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListNetworksPagedResponse;
-import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListSnapshotSchedulePoliciesPagedResponse;
-import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumeSnapshotsPagedResponse;
+import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListNfsSharesPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -35,7 +34,6 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
-import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
@@ -185,6 +183,7 @@ public class BareMetalSolutionClientTest {
     Instance expectedResponse =
         Instance.newBuilder()
             .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setId("id3355")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMachineType("machineType-218117087")
@@ -193,6 +192,10 @@ public class BareMetalSolutionClientTest {
             .addAllLuns(new ArrayList<Lun>())
             .addAllNetworks(new ArrayList<Network>())
             .setInteractiveSerialConsoleEnabled(true)
+            .setOsImage("osImage-1203193385")
+            .setPod("pod111173")
+            .setNetworkTemplate("networkTemplate1699249352")
+            .addAllLogicalInterfaces(new ArrayList<LogicalInterface>())
             .build();
     mockBareMetalSolution.addResponse(expectedResponse);
 
@@ -231,6 +234,7 @@ public class BareMetalSolutionClientTest {
     Instance expectedResponse =
         Instance.newBuilder()
             .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setId("id3355")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMachineType("machineType-218117087")
@@ -239,6 +243,10 @@ public class BareMetalSolutionClientTest {
             .addAllLuns(new ArrayList<Lun>())
             .addAllNetworks(new ArrayList<Network>())
             .setInteractiveSerialConsoleEnabled(true)
+            .setOsImage("osImage-1203193385")
+            .setPod("pod111173")
+            .setNetworkTemplate("networkTemplate1699249352")
+            .addAllLogicalInterfaces(new ArrayList<LogicalInterface>())
             .build();
     mockBareMetalSolution.addResponse(expectedResponse);
 
@@ -269,6 +277,68 @@ public class BareMetalSolutionClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateInstanceTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setId("id3355")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMachineType("machineType-218117087")
+            .setHyperthreadingEnabled(true)
+            .putAllLabels(new HashMap<String, String>())
+            .addAllLuns(new ArrayList<Lun>())
+            .addAllNetworks(new ArrayList<Network>())
+            .setInteractiveSerialConsoleEnabled(true)
+            .setOsImage("osImage-1203193385")
+            .setPod("pod111173")
+            .setNetworkTemplate("networkTemplate1699249352")
+            .addAllLogicalInterfaces(new ArrayList<LogicalInterface>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBareMetalSolution.addResponse(resultOperation);
+
+    Instance instance = Instance.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Instance actualResponse = client.updateInstanceAsync(instance, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateInstanceRequest actualRequest = ((UpdateInstanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance, actualRequest.getInstance());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateInstanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      Instance instance = Instance.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateInstanceAsync(instance, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -350,6 +420,426 @@ public class BareMetalSolutionClientTest {
     try {
       String name = "name3373707";
       client.resetInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void startInstanceTest() throws Exception {
+    StartInstanceResponse expectedResponse = StartInstanceResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBareMetalSolution.addResponse(resultOperation);
+
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    StartInstanceResponse actualResponse = client.startInstanceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StartInstanceRequest actualRequest = ((StartInstanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void startInstanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.startInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void startInstanceTest2() throws Exception {
+    StartInstanceResponse expectedResponse = StartInstanceResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBareMetalSolution.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    StartInstanceResponse actualResponse = client.startInstanceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StartInstanceRequest actualRequest = ((StartInstanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void startInstanceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.startInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void stopInstanceTest() throws Exception {
+    StopInstanceResponse expectedResponse = StopInstanceResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBareMetalSolution.addResponse(resultOperation);
+
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    StopInstanceResponse actualResponse = client.stopInstanceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StopInstanceRequest actualRequest = ((StopInstanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void stopInstanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.stopInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void stopInstanceTest2() throws Exception {
+    StopInstanceResponse expectedResponse = StopInstanceResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBareMetalSolution.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    StopInstanceResponse actualResponse = client.stopInstanceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StopInstanceRequest actualRequest = ((StopInstanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void stopInstanceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.stopInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void detachLunTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setId("id3355")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMachineType("machineType-218117087")
+            .setHyperthreadingEnabled(true)
+            .putAllLabels(new HashMap<String, String>())
+            .addAllLuns(new ArrayList<Lun>())
+            .addAllNetworks(new ArrayList<Network>())
+            .setInteractiveSerialConsoleEnabled(true)
+            .setOsImage("osImage-1203193385")
+            .setPod("pod111173")
+            .setNetworkTemplate("networkTemplate1699249352")
+            .addAllLogicalInterfaces(new ArrayList<LogicalInterface>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("detachLunTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBareMetalSolution.addResponse(resultOperation);
+
+    InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    LunName lun = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]");
+
+    Instance actualResponse = client.detachLunAsync(instance, lun).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DetachLunRequest actualRequest = ((DetachLunRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance.toString(), actualRequest.getInstance());
+    Assert.assertEquals(lun.toString(), actualRequest.getLun());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void detachLunExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      LunName lun = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]");
+      client.detachLunAsync(instance, lun).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void detachLunTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setId("id3355")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMachineType("machineType-218117087")
+            .setHyperthreadingEnabled(true)
+            .putAllLabels(new HashMap<String, String>())
+            .addAllLuns(new ArrayList<Lun>())
+            .addAllNetworks(new ArrayList<Network>())
+            .setInteractiveSerialConsoleEnabled(true)
+            .setOsImage("osImage-1203193385")
+            .setPod("pod111173")
+            .setNetworkTemplate("networkTemplate1699249352")
+            .addAllLogicalInterfaces(new ArrayList<LogicalInterface>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("detachLunTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBareMetalSolution.addResponse(resultOperation);
+
+    InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    String lun = "lun107525";
+
+    Instance actualResponse = client.detachLunAsync(instance, lun).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DetachLunRequest actualRequest = ((DetachLunRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance.toString(), actualRequest.getInstance());
+    Assert.assertEquals(lun, actualRequest.getLun());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void detachLunExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      String lun = "lun107525";
+      client.detachLunAsync(instance, lun).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void detachLunTest3() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setId("id3355")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMachineType("machineType-218117087")
+            .setHyperthreadingEnabled(true)
+            .putAllLabels(new HashMap<String, String>())
+            .addAllLuns(new ArrayList<Lun>())
+            .addAllNetworks(new ArrayList<Network>())
+            .setInteractiveSerialConsoleEnabled(true)
+            .setOsImage("osImage-1203193385")
+            .setPod("pod111173")
+            .setNetworkTemplate("networkTemplate1699249352")
+            .addAllLogicalInterfaces(new ArrayList<LogicalInterface>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("detachLunTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBareMetalSolution.addResponse(resultOperation);
+
+    String instance = "instance555127957";
+    LunName lun = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]");
+
+    Instance actualResponse = client.detachLunAsync(instance, lun).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DetachLunRequest actualRequest = ((DetachLunRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance, actualRequest.getInstance());
+    Assert.assertEquals(lun.toString(), actualRequest.getLun());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void detachLunExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      String instance = "instance555127957";
+      LunName lun = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]");
+      client.detachLunAsync(instance, lun).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void detachLunTest4() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setId("id3355")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMachineType("machineType-218117087")
+            .setHyperthreadingEnabled(true)
+            .putAllLabels(new HashMap<String, String>())
+            .addAllLuns(new ArrayList<Lun>())
+            .addAllNetworks(new ArrayList<Network>())
+            .setInteractiveSerialConsoleEnabled(true)
+            .setOsImage("osImage-1203193385")
+            .setPod("pod111173")
+            .setNetworkTemplate("networkTemplate1699249352")
+            .addAllLogicalInterfaces(new ArrayList<LogicalInterface>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("detachLunTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBareMetalSolution.addResponse(resultOperation);
+
+    String instance = "instance555127957";
+    String lun = "lun107525";
+
+    Instance actualResponse = client.detachLunAsync(instance, lun).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DetachLunRequest actualRequest = ((DetachLunRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance, actualRequest.getInstance());
+    Assert.assertEquals(lun, actualRequest.getLun());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void detachLunExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      String instance = "instance555127957";
+      String lun = "lun107525";
+      client.detachLunAsync(instance, lun).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -451,15 +941,16 @@ public class BareMetalSolutionClientTest {
     Volume expectedResponse =
         Volume.newBuilder()
             .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setId("id3355")
             .setRequestedSizeGib(525454387)
             .setCurrentSizeGib(72696456)
+            .setEmergencySizeGib(1936971120)
             .setAutoGrownSizeGib(1245638678)
             .setRemainingSpaceGib(1423108606)
             .setSnapshotReservationDetail(Volume.SnapshotReservationDetail.newBuilder().build())
-            .setSnapshotSchedulePolicy(
-                SnapshotSchedulePolicyName.of(
-                        "[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-                    .toString())
+            .putAllLabels(new HashMap<String, String>())
+            .setSnapshotEnabled(true)
+            .setPod("pod111173")
             .build();
     mockBareMetalSolution.addResponse(expectedResponse);
 
@@ -498,15 +989,16 @@ public class BareMetalSolutionClientTest {
     Volume expectedResponse =
         Volume.newBuilder()
             .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setId("id3355")
             .setRequestedSizeGib(525454387)
             .setCurrentSizeGib(72696456)
+            .setEmergencySizeGib(1936971120)
             .setAutoGrownSizeGib(1245638678)
             .setRemainingSpaceGib(1423108606)
             .setSnapshotReservationDetail(Volume.SnapshotReservationDetail.newBuilder().build())
-            .setSnapshotSchedulePolicy(
-                SnapshotSchedulePolicyName.of(
-                        "[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-                    .toString())
+            .putAllLabels(new HashMap<String, String>())
+            .setSnapshotEnabled(true)
+            .setPod("pod111173")
             .build();
     mockBareMetalSolution.addResponse(expectedResponse);
 
@@ -545,15 +1037,16 @@ public class BareMetalSolutionClientTest {
     Volume expectedResponse =
         Volume.newBuilder()
             .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setId("id3355")
             .setRequestedSizeGib(525454387)
             .setCurrentSizeGib(72696456)
+            .setEmergencySizeGib(1936971120)
             .setAutoGrownSizeGib(1245638678)
             .setRemainingSpaceGib(1423108606)
             .setSnapshotReservationDetail(Volume.SnapshotReservationDetail.newBuilder().build())
-            .setSnapshotSchedulePolicy(
-                SnapshotSchedulePolicyName.of(
-                        "[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-                    .toString())
+            .putAllLabels(new HashMap<String, String>())
+            .setSnapshotEnabled(true)
+            .setPod("pod111173")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -590,6 +1083,124 @@ public class BareMetalSolutionClientTest {
       Volume volume = Volume.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateVolumeAsync(volume, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void resizeVolumeTest() throws Exception {
+    Volume expectedResponse =
+        Volume.newBuilder()
+            .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setId("id3355")
+            .setRequestedSizeGib(525454387)
+            .setCurrentSizeGib(72696456)
+            .setEmergencySizeGib(1936971120)
+            .setAutoGrownSizeGib(1245638678)
+            .setRemainingSpaceGib(1423108606)
+            .setSnapshotReservationDetail(Volume.SnapshotReservationDetail.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSnapshotEnabled(true)
+            .setPod("pod111173")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("resizeVolumeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBareMetalSolution.addResponse(resultOperation);
+
+    VolumeName volume = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+    long sizeGib = 847296130;
+
+    Volume actualResponse = client.resizeVolumeAsync(volume, sizeGib).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResizeVolumeRequest actualRequest = ((ResizeVolumeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(volume.toString(), actualRequest.getVolume());
+    Assert.assertEquals(sizeGib, actualRequest.getSizeGib());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resizeVolumeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      VolumeName volume = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+      long sizeGib = 847296130;
+      client.resizeVolumeAsync(volume, sizeGib).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void resizeVolumeTest2() throws Exception {
+    Volume expectedResponse =
+        Volume.newBuilder()
+            .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setId("id3355")
+            .setRequestedSizeGib(525454387)
+            .setCurrentSizeGib(72696456)
+            .setEmergencySizeGib(1936971120)
+            .setAutoGrownSizeGib(1245638678)
+            .setRemainingSpaceGib(1423108606)
+            .setSnapshotReservationDetail(Volume.SnapshotReservationDetail.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSnapshotEnabled(true)
+            .setPod("pod111173")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("resizeVolumeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBareMetalSolution.addResponse(resultOperation);
+
+    String volume = "volume-810883302";
+    long sizeGib = 847296130;
+
+    Volume actualResponse = client.resizeVolumeAsync(volume, sizeGib).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResizeVolumeRequest actualRequest = ((ResizeVolumeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(volume, actualRequest.getVolume());
+    Assert.assertEquals(sizeGib, actualRequest.getSizeGib());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resizeVolumeExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      String volume = "volume-810883302";
+      long sizeGib = 847296130;
+      client.resizeVolumeAsync(volume, sizeGib).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -687,16 +1298,91 @@ public class BareMetalSolutionClientTest {
   }
 
   @Test
+  public void listNetworkUsageTest() throws Exception {
+    ListNetworkUsageResponse expectedResponse =
+        ListNetworkUsageResponse.newBuilder().addAllNetworks(new ArrayList<NetworkUsage>()).build();
+    mockBareMetalSolution.addResponse(expectedResponse);
+
+    LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListNetworkUsageResponse actualResponse = client.listNetworkUsage(location);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListNetworkUsageRequest actualRequest = ((ListNetworkUsageRequest) actualRequests.get(0));
+
+    Assert.assertEquals(location.toString(), actualRequest.getLocation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listNetworkUsageExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listNetworkUsage(location);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNetworkUsageTest2() throws Exception {
+    ListNetworkUsageResponse expectedResponse =
+        ListNetworkUsageResponse.newBuilder().addAllNetworks(new ArrayList<NetworkUsage>()).build();
+    mockBareMetalSolution.addResponse(expectedResponse);
+
+    String location = "location1901043637";
+
+    ListNetworkUsageResponse actualResponse = client.listNetworkUsage(location);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListNetworkUsageRequest actualRequest = ((ListNetworkUsageRequest) actualRequests.get(0));
+
+    Assert.assertEquals(location, actualRequest.getLocation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listNetworkUsageExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      String location = "location1901043637";
+      client.listNetworkUsage(location);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getNetworkTest() throws Exception {
     Network expectedResponse =
         Network.newBuilder()
             .setName(NetworkName.of("[PROJECT]", "[LOCATION]", "[NETWORK]").toString())
-            .setNetwork("network1843485230")
+            .setId("id3355")
             .setIpAddress("ipAddress1634032845")
             .addAllMacAddress(new ArrayList<String>())
             .setVlanId("vlanId-813989410")
             .setCidr("cidr3053428")
             .setVrf(VRF.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setServicesCidr("servicesCidr377076978")
+            .addAllReservations(new ArrayList<NetworkAddressReservation>())
             .build();
     mockBareMetalSolution.addResponse(expectedResponse);
 
@@ -735,12 +1421,15 @@ public class BareMetalSolutionClientTest {
     Network expectedResponse =
         Network.newBuilder()
             .setName(NetworkName.of("[PROJECT]", "[LOCATION]", "[NETWORK]").toString())
-            .setNetwork("network1843485230")
+            .setId("id3355")
             .setIpAddress("ipAddress1634032845")
             .addAllMacAddress(new ArrayList<String>())
             .setVlanId("vlanId-813989410")
             .setCidr("cidr3053428")
             .setVrf(VRF.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setServicesCidr("servicesCidr377076978")
+            .addAllReservations(new ArrayList<NetworkAddressReservation>())
             .build();
     mockBareMetalSolution.addResponse(expectedResponse);
 
@@ -775,319 +1464,39 @@ public class BareMetalSolutionClientTest {
   }
 
   @Test
-  public void listSnapshotSchedulePoliciesTest() throws Exception {
-    SnapshotSchedulePolicy responsesElement = SnapshotSchedulePolicy.newBuilder().build();
-    ListSnapshotSchedulePoliciesResponse expectedResponse =
-        ListSnapshotSchedulePoliciesResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllSnapshotSchedulePolicies(Arrays.asList(responsesElement))
+  public void updateNetworkTest() throws Exception {
+    Network expectedResponse =
+        Network.newBuilder()
+            .setName(NetworkName.of("[PROJECT]", "[LOCATION]", "[NETWORK]").toString())
+            .setId("id3355")
+            .setIpAddress("ipAddress1634032845")
+            .addAllMacAddress(new ArrayList<String>())
+            .setVlanId("vlanId-813989410")
+            .setCidr("cidr3053428")
+            .setVrf(VRF.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setServicesCidr("servicesCidr377076978")
+            .addAllReservations(new ArrayList<NetworkAddressReservation>())
             .build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-
-    ListSnapshotSchedulePoliciesPagedResponse pagedListResponse =
-        client.listSnapshotSchedulePolicies(parent);
-
-    List<SnapshotSchedulePolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(
-        expectedResponse.getSnapshotSchedulePoliciesList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListSnapshotSchedulePoliciesRequest actualRequest =
-        ((ListSnapshotSchedulePoliciesRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void listSnapshotSchedulePoliciesExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-      client.listSnapshotSchedulePolicies(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listSnapshotSchedulePoliciesTest2() throws Exception {
-    SnapshotSchedulePolicy responsesElement = SnapshotSchedulePolicy.newBuilder().build();
-    ListSnapshotSchedulePoliciesResponse expectedResponse =
-        ListSnapshotSchedulePoliciesResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllSnapshotSchedulePolicies(Arrays.asList(responsesElement))
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateNetworkTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
             .build();
-    mockBareMetalSolution.addResponse(expectedResponse);
+    mockBareMetalSolution.addResponse(resultOperation);
 
-    String parent = "parent-995424086";
-
-    ListSnapshotSchedulePoliciesPagedResponse pagedListResponse =
-        client.listSnapshotSchedulePolicies(parent);
-
-    List<SnapshotSchedulePolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(
-        expectedResponse.getSnapshotSchedulePoliciesList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListSnapshotSchedulePoliciesRequest actualRequest =
-        ((ListSnapshotSchedulePoliciesRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void listSnapshotSchedulePoliciesExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      client.listSnapshotSchedulePolicies(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getSnapshotSchedulePolicyTest() throws Exception {
-    SnapshotSchedulePolicy expectedResponse =
-        SnapshotSchedulePolicy.newBuilder()
-            .setName(
-                SnapshotSchedulePolicyName.of(
-                        "[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-                    .toString())
-            .setDescription("description-1724546052")
-            .addAllSchedules(new ArrayList<SnapshotSchedulePolicy.Schedule>())
-            .build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    SnapshotSchedulePolicyName name =
-        SnapshotSchedulePolicyName.of("[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]");
-
-    SnapshotSchedulePolicy actualResponse = client.getSnapshotSchedulePolicy(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetSnapshotSchedulePolicyRequest actualRequest =
-        ((GetSnapshotSchedulePolicyRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void getSnapshotSchedulePolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      SnapshotSchedulePolicyName name =
-          SnapshotSchedulePolicyName.of("[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]");
-      client.getSnapshotSchedulePolicy(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getSnapshotSchedulePolicyTest2() throws Exception {
-    SnapshotSchedulePolicy expectedResponse =
-        SnapshotSchedulePolicy.newBuilder()
-            .setName(
-                SnapshotSchedulePolicyName.of(
-                        "[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-                    .toString())
-            .setDescription("description-1724546052")
-            .addAllSchedules(new ArrayList<SnapshotSchedulePolicy.Schedule>())
-            .build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    String name = "name3373707";
-
-    SnapshotSchedulePolicy actualResponse = client.getSnapshotSchedulePolicy(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetSnapshotSchedulePolicyRequest actualRequest =
-        ((GetSnapshotSchedulePolicyRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void getSnapshotSchedulePolicyExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.getSnapshotSchedulePolicy(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createSnapshotSchedulePolicyTest() throws Exception {
-    SnapshotSchedulePolicy expectedResponse =
-        SnapshotSchedulePolicy.newBuilder()
-            .setName(
-                SnapshotSchedulePolicyName.of(
-                        "[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-                    .toString())
-            .setDescription("description-1724546052")
-            .addAllSchedules(new ArrayList<SnapshotSchedulePolicy.Schedule>())
-            .build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-    SnapshotSchedulePolicy snapshotSchedulePolicy = SnapshotSchedulePolicy.newBuilder().build();
-    String snapshotSchedulePolicyId = "snapshotSchedulePolicyId1929948040";
-
-    SnapshotSchedulePolicy actualResponse =
-        client.createSnapshotSchedulePolicy(
-            parent, snapshotSchedulePolicy, snapshotSchedulePolicyId);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateSnapshotSchedulePolicyRequest actualRequest =
-        ((CreateSnapshotSchedulePolicyRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(snapshotSchedulePolicy, actualRequest.getSnapshotSchedulePolicy());
-    Assert.assertEquals(snapshotSchedulePolicyId, actualRequest.getSnapshotSchedulePolicyId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void createSnapshotSchedulePolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-      SnapshotSchedulePolicy snapshotSchedulePolicy = SnapshotSchedulePolicy.newBuilder().build();
-      String snapshotSchedulePolicyId = "snapshotSchedulePolicyId1929948040";
-      client.createSnapshotSchedulePolicy(parent, snapshotSchedulePolicy, snapshotSchedulePolicyId);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createSnapshotSchedulePolicyTest2() throws Exception {
-    SnapshotSchedulePolicy expectedResponse =
-        SnapshotSchedulePolicy.newBuilder()
-            .setName(
-                SnapshotSchedulePolicyName.of(
-                        "[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-                    .toString())
-            .setDescription("description-1724546052")
-            .addAllSchedules(new ArrayList<SnapshotSchedulePolicy.Schedule>())
-            .build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-    SnapshotSchedulePolicy snapshotSchedulePolicy = SnapshotSchedulePolicy.newBuilder().build();
-    String snapshotSchedulePolicyId = "snapshotSchedulePolicyId1929948040";
-
-    SnapshotSchedulePolicy actualResponse =
-        client.createSnapshotSchedulePolicy(
-            parent, snapshotSchedulePolicy, snapshotSchedulePolicyId);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateSnapshotSchedulePolicyRequest actualRequest =
-        ((CreateSnapshotSchedulePolicyRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(snapshotSchedulePolicy, actualRequest.getSnapshotSchedulePolicy());
-    Assert.assertEquals(snapshotSchedulePolicyId, actualRequest.getSnapshotSchedulePolicyId());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void createSnapshotSchedulePolicyExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      SnapshotSchedulePolicy snapshotSchedulePolicy = SnapshotSchedulePolicy.newBuilder().build();
-      String snapshotSchedulePolicyId = "snapshotSchedulePolicyId1929948040";
-      client.createSnapshotSchedulePolicy(parent, snapshotSchedulePolicy, snapshotSchedulePolicyId);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void updateSnapshotSchedulePolicyTest() throws Exception {
-    SnapshotSchedulePolicy expectedResponse =
-        SnapshotSchedulePolicy.newBuilder()
-            .setName(
-                SnapshotSchedulePolicyName.of(
-                        "[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-                    .toString())
-            .setDescription("description-1724546052")
-            .addAllSchedules(new ArrayList<SnapshotSchedulePolicy.Schedule>())
-            .build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    SnapshotSchedulePolicy snapshotSchedulePolicy = SnapshotSchedulePolicy.newBuilder().build();
+    Network network = Network.newBuilder().build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
-    SnapshotSchedulePolicy actualResponse =
-        client.updateSnapshotSchedulePolicy(snapshotSchedulePolicy, updateMask);
+    Network actualResponse = client.updateNetworkAsync(network, updateMask).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateSnapshotSchedulePolicyRequest actualRequest =
-        ((UpdateSnapshotSchedulePolicyRequest) actualRequests.get(0));
+    UpdateNetworkRequest actualRequest = ((UpdateNetworkRequest) actualRequests.get(0));
 
-    Assert.assertEquals(snapshotSchedulePolicy, actualRequest.getSnapshotSchedulePolicy());
+    Assert.assertEquals(network, actualRequest.getNetwork());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -1096,543 +1505,19 @@ public class BareMetalSolutionClientTest {
   }
 
   @Test
-  public void updateSnapshotSchedulePolicyExceptionTest() throws Exception {
+  public void updateNetworkExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockBareMetalSolution.addException(exception);
 
     try {
-      SnapshotSchedulePolicy snapshotSchedulePolicy = SnapshotSchedulePolicy.newBuilder().build();
+      Network network = Network.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
-      client.updateSnapshotSchedulePolicy(snapshotSchedulePolicy, updateMask);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteSnapshotSchedulePolicyTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    SnapshotSchedulePolicyName name =
-        SnapshotSchedulePolicyName.of("[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]");
-
-    client.deleteSnapshotSchedulePolicy(name);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteSnapshotSchedulePolicyRequest actualRequest =
-        ((DeleteSnapshotSchedulePolicyRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deleteSnapshotSchedulePolicyExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      SnapshotSchedulePolicyName name =
-          SnapshotSchedulePolicyName.of("[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]");
-      client.deleteSnapshotSchedulePolicy(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteSnapshotSchedulePolicyTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    String name = "name3373707";
-
-    client.deleteSnapshotSchedulePolicy(name);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteSnapshotSchedulePolicyRequest actualRequest =
-        ((DeleteSnapshotSchedulePolicyRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deleteSnapshotSchedulePolicyExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.deleteSnapshotSchedulePolicy(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createVolumeSnapshotTest() throws Exception {
-    VolumeSnapshot expectedResponse =
-        VolumeSnapshot.newBuilder()
-            .setName(
-                VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
-                    .toString())
-            .setDescription("description-1724546052")
-            .setSizeBytes(-1796325715)
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setStorageVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
-            .build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
-    VolumeSnapshot volumeSnapshot = VolumeSnapshot.newBuilder().build();
-
-    VolumeSnapshot actualResponse = client.createVolumeSnapshot(parent, volumeSnapshot);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateVolumeSnapshotRequest actualRequest =
-        ((CreateVolumeSnapshotRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertEquals(volumeSnapshot, actualRequest.getVolumeSnapshot());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void createVolumeSnapshotExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
-      VolumeSnapshot volumeSnapshot = VolumeSnapshot.newBuilder().build();
-      client.createVolumeSnapshot(parent, volumeSnapshot);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createVolumeSnapshotTest2() throws Exception {
-    VolumeSnapshot expectedResponse =
-        VolumeSnapshot.newBuilder()
-            .setName(
-                VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
-                    .toString())
-            .setDescription("description-1724546052")
-            .setSizeBytes(-1796325715)
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setStorageVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
-            .build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-    VolumeSnapshot volumeSnapshot = VolumeSnapshot.newBuilder().build();
-
-    VolumeSnapshot actualResponse = client.createVolumeSnapshot(parent, volumeSnapshot);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    CreateVolumeSnapshotRequest actualRequest =
-        ((CreateVolumeSnapshotRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertEquals(volumeSnapshot, actualRequest.getVolumeSnapshot());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void createVolumeSnapshotExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      VolumeSnapshot volumeSnapshot = VolumeSnapshot.newBuilder().build();
-      client.createVolumeSnapshot(parent, volumeSnapshot);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void restoreVolumeSnapshotTest() throws Exception {
-    VolumeSnapshot expectedResponse =
-        VolumeSnapshot.newBuilder()
-            .setName(
-                VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
-                    .toString())
-            .setDescription("description-1724546052")
-            .setSizeBytes(-1796325715)
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setStorageVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("restoreVolumeSnapshotTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockBareMetalSolution.addResponse(resultOperation);
-
-    VolumeSnapshotName volumeSnapshot =
-        VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
-
-    VolumeSnapshot actualResponse = client.restoreVolumeSnapshotAsync(volumeSnapshot).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    RestoreVolumeSnapshotRequest actualRequest =
-        ((RestoreVolumeSnapshotRequest) actualRequests.get(0));
-
-    Assert.assertEquals(volumeSnapshot.toString(), actualRequest.getVolumeSnapshot());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void restoreVolumeSnapshotExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      VolumeSnapshotName volumeSnapshot =
-          VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
-      client.restoreVolumeSnapshotAsync(volumeSnapshot).get();
+      client.updateNetworkAsync(network, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  public void restoreVolumeSnapshotTest2() throws Exception {
-    VolumeSnapshot expectedResponse =
-        VolumeSnapshot.newBuilder()
-            .setName(
-                VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
-                    .toString())
-            .setDescription("description-1724546052")
-            .setSizeBytes(-1796325715)
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setStorageVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
-            .build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("restoreVolumeSnapshotTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockBareMetalSolution.addResponse(resultOperation);
-
-    String volumeSnapshot = "volumeSnapshot1771857662";
-
-    VolumeSnapshot actualResponse = client.restoreVolumeSnapshotAsync(volumeSnapshot).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    RestoreVolumeSnapshotRequest actualRequest =
-        ((RestoreVolumeSnapshotRequest) actualRequests.get(0));
-
-    Assert.assertEquals(volumeSnapshot, actualRequest.getVolumeSnapshot());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void restoreVolumeSnapshotExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      String volumeSnapshot = "volumeSnapshot1771857662";
-      client.restoreVolumeSnapshotAsync(volumeSnapshot).get();
-      Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
-    }
-  }
-
-  @Test
-  public void deleteVolumeSnapshotTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    VolumeSnapshotName name =
-        VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
-
-    client.deleteVolumeSnapshot(name);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteVolumeSnapshotRequest actualRequest =
-        ((DeleteVolumeSnapshotRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deleteVolumeSnapshotExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      VolumeSnapshotName name =
-          VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
-      client.deleteVolumeSnapshot(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteVolumeSnapshotTest2() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    String name = "name3373707";
-
-    client.deleteVolumeSnapshot(name);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    DeleteVolumeSnapshotRequest actualRequest =
-        ((DeleteVolumeSnapshotRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void deleteVolumeSnapshotExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.deleteVolumeSnapshot(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getVolumeSnapshotTest() throws Exception {
-    VolumeSnapshot expectedResponse =
-        VolumeSnapshot.newBuilder()
-            .setName(
-                VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
-                    .toString())
-            .setDescription("description-1724546052")
-            .setSizeBytes(-1796325715)
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setStorageVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
-            .build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    VolumeSnapshotName name =
-        VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
-
-    VolumeSnapshot actualResponse = client.getVolumeSnapshot(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetVolumeSnapshotRequest actualRequest = ((GetVolumeSnapshotRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void getVolumeSnapshotExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      VolumeSnapshotName name =
-          VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
-      client.getVolumeSnapshot(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void getVolumeSnapshotTest2() throws Exception {
-    VolumeSnapshot expectedResponse =
-        VolumeSnapshot.newBuilder()
-            .setName(
-                VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
-                    .toString())
-            .setDescription("description-1724546052")
-            .setSizeBytes(-1796325715)
-            .setCreateTime(Timestamp.newBuilder().build())
-            .setStorageVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
-            .build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    String name = "name3373707";
-
-    VolumeSnapshot actualResponse = client.getVolumeSnapshot(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    GetVolumeSnapshotRequest actualRequest = ((GetVolumeSnapshotRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void getVolumeSnapshotExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.getVolumeSnapshot(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listVolumeSnapshotsTest() throws Exception {
-    VolumeSnapshot responsesElement = VolumeSnapshot.newBuilder().build();
-    ListVolumeSnapshotsResponse expectedResponse =
-        ListVolumeSnapshotsResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllVolumeSnapshots(Arrays.asList(responsesElement))
-            .build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
-
-    ListVolumeSnapshotsPagedResponse pagedListResponse = client.listVolumeSnapshots(parent);
-
-    List<VolumeSnapshot> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getVolumeSnapshotsList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListVolumeSnapshotsRequest actualRequest = ((ListVolumeSnapshotsRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent.toString(), actualRequest.getParent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void listVolumeSnapshotsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
-      client.listVolumeSnapshots(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listVolumeSnapshotsTest2() throws Exception {
-    VolumeSnapshot responsesElement = VolumeSnapshot.newBuilder().build();
-    ListVolumeSnapshotsResponse expectedResponse =
-        ListVolumeSnapshotsResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllVolumeSnapshots(Arrays.asList(responsesElement))
-            .build();
-    mockBareMetalSolution.addResponse(expectedResponse);
-
-    String parent = "parent-995424086";
-
-    ListVolumeSnapshotsPagedResponse pagedListResponse = client.listVolumeSnapshots(parent);
-
-    List<VolumeSnapshot> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getVolumeSnapshotsList().get(0), resources.get(0));
-
-    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    ListVolumeSnapshotsRequest actualRequest = ((ListVolumeSnapshotsRequest) actualRequests.get(0));
-
-    Assert.assertEquals(parent, actualRequest.getParent());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void listVolumeSnapshotsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockBareMetalSolution.addException(exception);
-
-    try {
-      String parent = "parent-995424086";
-      client.listVolumeSnapshots(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
     }
   }
 
@@ -1641,6 +1526,7 @@ public class BareMetalSolutionClientTest {
     Lun expectedResponse =
         Lun.newBuilder()
             .setName(LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString())
+            .setId("id3355")
             .setSizeGb(2105542105)
             .setStorageVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setShareable(true)
@@ -1684,6 +1570,7 @@ public class BareMetalSolutionClientTest {
     Lun expectedResponse =
         Lun.newBuilder()
             .setName(LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString())
+            .setId("id3355")
             .setSizeGb(2105542105)
             .setStorageVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setShareable(true)
@@ -1807,6 +1694,231 @@ public class BareMetalSolutionClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNfsShareTest() throws Exception {
+    NfsShare expectedResponse =
+        NfsShare.newBuilder()
+            .setName(NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString())
+            .setNfsShareId("nfsShareId-1834781921")
+            .setVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .addAllAllowedClients(new ArrayList<NfsShare.AllowedClient>())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockBareMetalSolution.addResponse(expectedResponse);
+
+    NFSShareName name = NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]");
+
+    NfsShare actualResponse = client.getNfsShare(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetNfsShareRequest actualRequest = ((GetNfsShareRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getNfsShareExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      NFSShareName name = NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]");
+      client.getNfsShare(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNfsShareTest2() throws Exception {
+    NfsShare expectedResponse =
+        NfsShare.newBuilder()
+            .setName(NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString())
+            .setNfsShareId("nfsShareId-1834781921")
+            .setVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .addAllAllowedClients(new ArrayList<NfsShare.AllowedClient>())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    mockBareMetalSolution.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    NfsShare actualResponse = client.getNfsShare(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetNfsShareRequest actualRequest = ((GetNfsShareRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getNfsShareExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getNfsShare(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNfsSharesTest() throws Exception {
+    NfsShare responsesElement = NfsShare.newBuilder().build();
+    ListNfsSharesResponse expectedResponse =
+        ListNfsSharesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNfsShares(Arrays.asList(responsesElement))
+            .build();
+    mockBareMetalSolution.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListNfsSharesPagedResponse pagedListResponse = client.listNfsShares(parent);
+
+    List<NfsShare> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNfsSharesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListNfsSharesRequest actualRequest = ((ListNfsSharesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listNfsSharesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listNfsShares(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listNfsSharesTest2() throws Exception {
+    NfsShare responsesElement = NfsShare.newBuilder().build();
+    ListNfsSharesResponse expectedResponse =
+        ListNfsSharesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNfsShares(Arrays.asList(responsesElement))
+            .build();
+    mockBareMetalSolution.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListNfsSharesPagedResponse pagedListResponse = client.listNfsShares(parent);
+
+    List<NfsShare> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNfsSharesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListNfsSharesRequest actualRequest = ((ListNfsSharesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listNfsSharesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listNfsShares(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateNfsShareTest() throws Exception {
+    NfsShare expectedResponse =
+        NfsShare.newBuilder()
+            .setName(NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString())
+            .setNfsShareId("nfsShareId-1834781921")
+            .setVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .addAllAllowedClients(new ArrayList<NfsShare.AllowedClient>())
+            .putAllLabels(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateNfsShareTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBareMetalSolution.addResponse(resultOperation);
+
+    NfsShare nfsShare = NfsShare.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    NfsShare actualResponse = client.updateNfsShareAsync(nfsShare, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBareMetalSolution.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateNfsShareRequest actualRequest = ((UpdateNfsShareRequest) actualRequests.get(0));
+
+    Assert.assertEquals(nfsShare, actualRequest.getNfsShare());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateNfsShareExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBareMetalSolution.addException(exception);
+
+    try {
+      NfsShare nfsShare = NfsShare.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateNfsShareAsync(nfsShare, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

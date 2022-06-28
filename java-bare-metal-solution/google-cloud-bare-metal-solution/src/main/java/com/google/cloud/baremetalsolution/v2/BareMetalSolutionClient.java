@@ -18,7 +18,9 @@ package com.google.cloud.baremetalsolution.v2;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -30,8 +32,6 @@ import com.google.cloud.baremetalsolution.v2.stub.BareMetalSolutionStub;
 import com.google.cloud.baremetalsolution.v2.stub.BareMetalSolutionStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
-import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
@@ -111,13 +111,29 @@ import javax.annotation.Generated;
  *     BareMetalSolutionClient.create(bareMetalSolutionSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * BareMetalSolutionSettings bareMetalSolutionSettings =
+ *     BareMetalSolutionSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             BareMetalSolutionSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * BareMetalSolutionClient bareMetalSolutionClient =
+ *     BareMetalSolutionClient.create(bareMetalSolutionSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class BareMetalSolutionClient implements BackgroundResource {
   private final BareMetalSolutionSettings settings;
   private final BareMetalSolutionStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of BareMetalSolutionClient with default settings. */
   public static final BareMetalSolutionClient create() throws IOException {
@@ -149,13 +165,17 @@ public class BareMetalSolutionClient implements BackgroundResource {
   protected BareMetalSolutionClient(BareMetalSolutionSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((BareMetalSolutionStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected BareMetalSolutionClient(BareMetalSolutionStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final BareMetalSolutionSettings getSettings() {
@@ -170,8 +190,17 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -242,6 +271,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (Instance element : bareMetalSolutionClient.listInstances(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -271,6 +301,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Instance> future =
    *       bareMetalSolutionClient.listInstancesPagedCallable().futureCall(request);
@@ -301,6 +332,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListInstancesResponse response =
@@ -417,6 +449,116 @@ public class BareMetalSolutionClient implements BackgroundResource {
    */
   public final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return stub.getInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update details of a single server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   Instance instance = Instance.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Instance response = bareMetalSolutionClient.updateInstanceAsync(instance, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param instance Required. The server to update.
+   *     <p>The `name` field is used to identify the instance to update. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}
+   * @param updateMask The list of fields to update. The currently supported fields are: `labels`
+   *     `hyperthreading_enabled` `os_image`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> updateInstanceAsync(
+      Instance instance, FieldMask updateMask) {
+    UpdateInstanceRequest request =
+        UpdateInstanceRequest.newBuilder().setInstance(instance).setUpdateMask(updateMask).build();
+    return updateInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update details of a single server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   UpdateInstanceRequest request =
+   *       UpdateInstanceRequest.newBuilder()
+   *           .setInstance(Instance.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Instance response = bareMetalSolutionClient.updateInstanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> updateInstanceAsync(
+      UpdateInstanceRequest request) {
+    return updateInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update details of a single server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   UpdateInstanceRequest request =
+   *       UpdateInstanceRequest.newBuilder()
+   *           .setInstance(Instance.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       bareMetalSolutionClient.updateInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
+      updateInstanceOperationCallable() {
+    return stub.updateInstanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update details of a single server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   UpdateInstanceRequest request =
+   *       UpdateInstanceRequest.newBuilder()
+   *           .setInstance(Instance.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       bareMetalSolutionClient.updateInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
+    return stub.updateInstanceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -552,6 +694,454 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Starts a server that was shutdown.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   StartInstanceResponse response = bareMetalSolutionClient.startInstanceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StartInstanceResponse, OperationMetadata> startInstanceAsync(
+      InstanceName name) {
+    StartInstanceRequest request =
+        StartInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return startInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts a server that was shutdown.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   StartInstanceResponse response = bareMetalSolutionClient.startInstanceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StartInstanceResponse, OperationMetadata> startInstanceAsync(
+      String name) {
+    StartInstanceRequest request = StartInstanceRequest.newBuilder().setName(name).build();
+    return startInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts a server that was shutdown.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   StartInstanceRequest request =
+   *       StartInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   StartInstanceResponse response = bareMetalSolutionClient.startInstanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StartInstanceResponse, OperationMetadata> startInstanceAsync(
+      StartInstanceRequest request) {
+    return startInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts a server that was shutdown.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   StartInstanceRequest request =
+   *       StartInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   OperationFuture<StartInstanceResponse, OperationMetadata> future =
+   *       bareMetalSolutionClient.startInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   StartInstanceResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StartInstanceRequest, StartInstanceResponse, OperationMetadata>
+      startInstanceOperationCallable() {
+    return stub.startInstanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Starts a server that was shutdown.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   StartInstanceRequest request =
+   *       StartInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       bareMetalSolutionClient.startInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StartInstanceRequest, Operation> startInstanceCallable() {
+    return stub.startInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stop a running server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   StopInstanceResponse response = bareMetalSolutionClient.stopInstanceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StopInstanceResponse, OperationMetadata> stopInstanceAsync(
+      InstanceName name) {
+    StopInstanceRequest request =
+        StopInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return stopInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stop a running server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   StopInstanceResponse response = bareMetalSolutionClient.stopInstanceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StopInstanceResponse, OperationMetadata> stopInstanceAsync(
+      String name) {
+    StopInstanceRequest request = StopInstanceRequest.newBuilder().setName(name).build();
+    return stopInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stop a running server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   StopInstanceRequest request =
+   *       StopInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   StopInstanceResponse response = bareMetalSolutionClient.stopInstanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StopInstanceResponse, OperationMetadata> stopInstanceAsync(
+      StopInstanceRequest request) {
+    return stopInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stop a running server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   StopInstanceRequest request =
+   *       StopInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   OperationFuture<StopInstanceResponse, OperationMetadata> future =
+   *       bareMetalSolutionClient.stopInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   StopInstanceResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StopInstanceRequest, StopInstanceResponse, OperationMetadata>
+      stopInstanceOperationCallable() {
+    return stub.stopInstanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Stop a running server.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   StopInstanceRequest request =
+   *       StopInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       bareMetalSolutionClient.stopInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StopInstanceRequest, Operation> stopInstanceCallable() {
+    return stub.stopInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Detach LUN from Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   LunName lun = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]");
+   *   Instance response = bareMetalSolutionClient.detachLunAsync(instance, lun).get();
+   * }
+   * }</pre>
+   *
+   * @param instance Required. Name of the instance.
+   * @param lun Required. Name of the Lun to detach.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> detachLunAsync(
+      InstanceName instance, LunName lun) {
+    DetachLunRequest request =
+        DetachLunRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .setLun(lun == null ? null : lun.toString())
+            .build();
+    return detachLunAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Detach LUN from Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String lun = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString();
+   *   Instance response = bareMetalSolutionClient.detachLunAsync(instance, lun).get();
+   * }
+   * }</pre>
+   *
+   * @param instance Required. Name of the instance.
+   * @param lun Required. Name of the Lun to detach.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> detachLunAsync(
+      InstanceName instance, String lun) {
+    DetachLunRequest request =
+        DetachLunRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .setLun(lun)
+            .build();
+    return detachLunAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Detach LUN from Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   LunName lun = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]");
+   *   Instance response = bareMetalSolutionClient.detachLunAsync(instance, lun).get();
+   * }
+   * }</pre>
+   *
+   * @param instance Required. Name of the instance.
+   * @param lun Required. Name of the Lun to detach.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> detachLunAsync(
+      String instance, LunName lun) {
+    DetachLunRequest request =
+        DetachLunRequest.newBuilder()
+            .setInstance(instance)
+            .setLun(lun == null ? null : lun.toString())
+            .build();
+    return detachLunAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Detach LUN from Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   String lun = LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString();
+   *   Instance response = bareMetalSolutionClient.detachLunAsync(instance, lun).get();
+   * }
+   * }</pre>
+   *
+   * @param instance Required. Name of the instance.
+   * @param lun Required. Name of the Lun to detach.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> detachLunAsync(
+      String instance, String lun) {
+    DetachLunRequest request =
+        DetachLunRequest.newBuilder().setInstance(instance).setLun(lun).build();
+    return detachLunAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Detach LUN from Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   DetachLunRequest request =
+   *       DetachLunRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setLun(LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString())
+   *           .build();
+   *   Instance response = bareMetalSolutionClient.detachLunAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> detachLunAsync(
+      DetachLunRequest request) {
+    return detachLunOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Detach LUN from Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   DetachLunRequest request =
+   *       DetachLunRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setLun(LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString())
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       bareMetalSolutionClient.detachLunOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DetachLunRequest, Instance, OperationMetadata>
+      detachLunOperationCallable() {
+    return stub.detachLunOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Detach LUN from Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   DetachLunRequest request =
+   *       DetachLunRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setLun(LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = bareMetalSolutionClient.detachLunCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DetachLunRequest, Operation> detachLunCallable() {
+    return stub.detachLunCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * List storage volumes in a given project and location.
    *
    * <p>Sample code:
@@ -618,6 +1208,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (Volume element : bareMetalSolutionClient.listVolumes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -647,6 +1238,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Volume> future =
    *       bareMetalSolutionClient.listVolumesPagedCallable().futureCall(request);
@@ -677,6 +1269,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListVolumesResponse response = bareMetalSolutionClient.listVolumesCallable().call(request);
@@ -813,7 +1406,8 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *     <p>The `name` field is used to identify the volume to update. Format:
    *     projects/{project}/locations/{location}/volumes/{volume}
    * @param updateMask The list of fields to update. The only currently supported fields are:
-   *     `snapshot_auto_delete_behavior` `snapshot_schedule_policy_name`
+   *     `snapshot_auto_delete_behavior` `snapshot_schedule_policy_name` 'labels' 'snapshot_enabled'
+   *     'snapshot_reservation_detail.reserved_space_percent'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Volume, OperationMetadata> updateVolumeAsync(
@@ -905,6 +1499,143 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Emergency Volume resize.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   VolumeName volume = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+   *   long sizeGib = 847296130;
+   *   Volume response = bareMetalSolutionClient.resizeVolumeAsync(volume, sizeGib).get();
+   * }
+   * }</pre>
+   *
+   * @param volume Required. Volume to resize.
+   * @param sizeGib New Volume size, in GiB.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Volume, OperationMetadata> resizeVolumeAsync(
+      VolumeName volume, long sizeGib) {
+    ResizeVolumeRequest request =
+        ResizeVolumeRequest.newBuilder()
+            .setVolume(volume == null ? null : volume.toString())
+            .setSizeGib(sizeGib)
+            .build();
+    return resizeVolumeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Emergency Volume resize.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String volume = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
+   *   long sizeGib = 847296130;
+   *   Volume response = bareMetalSolutionClient.resizeVolumeAsync(volume, sizeGib).get();
+   * }
+   * }</pre>
+   *
+   * @param volume Required. Volume to resize.
+   * @param sizeGib New Volume size, in GiB.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Volume, OperationMetadata> resizeVolumeAsync(
+      String volume, long sizeGib) {
+    ResizeVolumeRequest request =
+        ResizeVolumeRequest.newBuilder().setVolume(volume).setSizeGib(sizeGib).build();
+    return resizeVolumeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Emergency Volume resize.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ResizeVolumeRequest request =
+   *       ResizeVolumeRequest.newBuilder()
+   *           .setVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setSizeGib(847296130)
+   *           .build();
+   *   Volume response = bareMetalSolutionClient.resizeVolumeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Volume, OperationMetadata> resizeVolumeAsync(
+      ResizeVolumeRequest request) {
+    return resizeVolumeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Emergency Volume resize.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ResizeVolumeRequest request =
+   *       ResizeVolumeRequest.newBuilder()
+   *           .setVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setSizeGib(847296130)
+   *           .build();
+   *   OperationFuture<Volume, OperationMetadata> future =
+   *       bareMetalSolutionClient.resizeVolumeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Volume response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ResizeVolumeRequest, Volume, OperationMetadata>
+      resizeVolumeOperationCallable() {
+    return stub.resizeVolumeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Emergency Volume resize.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ResizeVolumeRequest request =
+   *       ResizeVolumeRequest.newBuilder()
+   *           .setVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setSizeGib(847296130)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       bareMetalSolutionClient.resizeVolumeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ResizeVolumeRequest, Operation> resizeVolumeCallable() {
+    return stub.resizeVolumeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * List network in a given project and location.
    *
    * <p>Sample code:
@@ -971,6 +1702,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (Network element : bareMetalSolutionClient.listNetworks(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1000,6 +1732,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Network> future =
    *       bareMetalSolutionClient.listNetworksPagedCallable().futureCall(request);
@@ -1030,6 +1763,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListNetworksResponse response =
@@ -1049,6 +1783,111 @@ public class BareMetalSolutionClient implements BackgroundResource {
    */
   public final UnaryCallable<ListNetworksRequest, ListNetworksResponse> listNetworksCallable() {
     return stub.listNetworksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Networks (and used IPs for each Network) in the vendor account associated with the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ListNetworkUsageResponse response = bareMetalSolutionClient.listNetworkUsage(location);
+   * }
+   * }</pre>
+   *
+   * @param location Required. Parent value (project and location).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNetworkUsageResponse listNetworkUsage(LocationName location) {
+    ListNetworkUsageRequest request =
+        ListNetworkUsageRequest.newBuilder()
+            .setLocation(location == null ? null : location.toString())
+            .build();
+    return listNetworkUsage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Networks (and used IPs for each Network) in the vendor account associated with the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String location = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   ListNetworkUsageResponse response = bareMetalSolutionClient.listNetworkUsage(location);
+   * }
+   * }</pre>
+   *
+   * @param location Required. Parent value (project and location).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNetworkUsageResponse listNetworkUsage(String location) {
+    ListNetworkUsageRequest request =
+        ListNetworkUsageRequest.newBuilder().setLocation(location).build();
+    return listNetworkUsage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Networks (and used IPs for each Network) in the vendor account associated with the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListNetworkUsageRequest request =
+   *       ListNetworkUsageRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ListNetworkUsageResponse response = bareMetalSolutionClient.listNetworkUsage(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNetworkUsageResponse listNetworkUsage(ListNetworkUsageRequest request) {
+    return listNetworkUsageCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all Networks (and used IPs for each Network) in the vendor account associated with the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListNetworkUsageRequest request =
+   *       ListNetworkUsageRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<ListNetworkUsageResponse> future =
+   *       bareMetalSolutionClient.listNetworkUsageCallable().futureCall(request);
+   *   // Do something.
+   *   ListNetworkUsageResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNetworkUsageRequest, ListNetworkUsageResponse>
+      listNetworkUsageCallable() {
+    return stub.listNetworkUsageCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1149,7 +1988,7 @@ public class BareMetalSolutionClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List snapshot schedule policies in a given project and location.
+   * Update details of a single network.
    *
    * <p>Sample code:
    *
@@ -1157,432 +1996,29 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   for (SnapshotSchedulePolicy element :
-   *       bareMetalSolutionClient.listSnapshotSchedulePolicies(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The parent project containing the Snapshot Schedule Policies.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListSnapshotSchedulePoliciesPagedResponse listSnapshotSchedulePolicies(
-      LocationName parent) {
-    ListSnapshotSchedulePoliciesRequest request =
-        ListSnapshotSchedulePoliciesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listSnapshotSchedulePolicies(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * List snapshot schedule policies in a given project and location.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
-   *   for (SnapshotSchedulePolicy element :
-   *       bareMetalSolutionClient.listSnapshotSchedulePolicies(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The parent project containing the Snapshot Schedule Policies.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListSnapshotSchedulePoliciesPagedResponse listSnapshotSchedulePolicies(
-      String parent) {
-    ListSnapshotSchedulePoliciesRequest request =
-        ListSnapshotSchedulePoliciesRequest.newBuilder().setParent(parent).build();
-    return listSnapshotSchedulePolicies(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * List snapshot schedule policies in a given project and location.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   ListSnapshotSchedulePoliciesRequest request =
-   *       ListSnapshotSchedulePoliciesRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   for (SnapshotSchedulePolicy element :
-   *       bareMetalSolutionClient.listSnapshotSchedulePolicies(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListSnapshotSchedulePoliciesPagedResponse listSnapshotSchedulePolicies(
-      ListSnapshotSchedulePoliciesRequest request) {
-    return listSnapshotSchedulePoliciesPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * List snapshot schedule policies in a given project and location.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   ListSnapshotSchedulePoliciesRequest request =
-   *       ListSnapshotSchedulePoliciesRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   ApiFuture<SnapshotSchedulePolicy> future =
-   *       bareMetalSolutionClient.listSnapshotSchedulePoliciesPagedCallable().futureCall(request);
-   *   // Do something.
-   *   for (SnapshotSchedulePolicy element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<
-          ListSnapshotSchedulePoliciesRequest, ListSnapshotSchedulePoliciesPagedResponse>
-      listSnapshotSchedulePoliciesPagedCallable() {
-    return stub.listSnapshotSchedulePoliciesPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * List snapshot schedule policies in a given project and location.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   ListSnapshotSchedulePoliciesRequest request =
-   *       ListSnapshotSchedulePoliciesRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   while (true) {
-   *     ListSnapshotSchedulePoliciesResponse response =
-   *         bareMetalSolutionClient.listSnapshotSchedulePoliciesCallable().call(request);
-   *     for (SnapshotSchedulePolicy element : response.getSnapshotSchedulePoliciesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<
-          ListSnapshotSchedulePoliciesRequest, ListSnapshotSchedulePoliciesResponse>
-      listSnapshotSchedulePoliciesCallable() {
-    return stub.listSnapshotSchedulePoliciesCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Get details of a single snapshot schedule policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   SnapshotSchedulePolicyName name =
-   *       SnapshotSchedulePolicyName.of("[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]");
-   *   SnapshotSchedulePolicy response = bareMetalSolutionClient.getSnapshotSchedulePolicy(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Name of the resource.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SnapshotSchedulePolicy getSnapshotSchedulePolicy(SnapshotSchedulePolicyName name) {
-    GetSnapshotSchedulePolicyRequest request =
-        GetSnapshotSchedulePolicyRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return getSnapshotSchedulePolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Get details of a single snapshot schedule policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   String name =
-   *       SnapshotSchedulePolicyName.of("[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-   *           .toString();
-   *   SnapshotSchedulePolicy response = bareMetalSolutionClient.getSnapshotSchedulePolicy(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Name of the resource.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SnapshotSchedulePolicy getSnapshotSchedulePolicy(String name) {
-    GetSnapshotSchedulePolicyRequest request =
-        GetSnapshotSchedulePolicyRequest.newBuilder().setName(name).build();
-    return getSnapshotSchedulePolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Get details of a single snapshot schedule policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   GetSnapshotSchedulePolicyRequest request =
-   *       GetSnapshotSchedulePolicyRequest.newBuilder()
-   *           .setName(
-   *               SnapshotSchedulePolicyName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-   *                   .toString())
-   *           .build();
-   *   SnapshotSchedulePolicy response = bareMetalSolutionClient.getSnapshotSchedulePolicy(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SnapshotSchedulePolicy getSnapshotSchedulePolicy(
-      GetSnapshotSchedulePolicyRequest request) {
-    return getSnapshotSchedulePolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Get details of a single snapshot schedule policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   GetSnapshotSchedulePolicyRequest request =
-   *       GetSnapshotSchedulePolicyRequest.newBuilder()
-   *           .setName(
-   *               SnapshotSchedulePolicyName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<SnapshotSchedulePolicy> future =
-   *       bareMetalSolutionClient.getSnapshotSchedulePolicyCallable().futureCall(request);
-   *   // Do something.
-   *   SnapshotSchedulePolicy response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      getSnapshotSchedulePolicyCallable() {
-    return stub.getSnapshotSchedulePolicyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Create a snapshot schedule policy in the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
-   *   SnapshotSchedulePolicy snapshotSchedulePolicy = SnapshotSchedulePolicy.newBuilder().build();
-   *   String snapshotSchedulePolicyId = "snapshotSchedulePolicyId1929948040";
-   *   SnapshotSchedulePolicy response =
-   *       bareMetalSolutionClient.createSnapshotSchedulePolicy(
-   *           parent, snapshotSchedulePolicy, snapshotSchedulePolicyId);
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The parent project and location containing the SnapshotSchedulePolicy.
-   * @param snapshotSchedulePolicy Required. The SnapshotSchedulePolicy to create.
-   * @param snapshotSchedulePolicyId Required. Snapshot policy ID
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SnapshotSchedulePolicy createSnapshotSchedulePolicy(
-      LocationName parent,
-      SnapshotSchedulePolicy snapshotSchedulePolicy,
-      String snapshotSchedulePolicyId) {
-    CreateSnapshotSchedulePolicyRequest request =
-        CreateSnapshotSchedulePolicyRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setSnapshotSchedulePolicy(snapshotSchedulePolicy)
-            .setSnapshotSchedulePolicyId(snapshotSchedulePolicyId)
-            .build();
-    return createSnapshotSchedulePolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Create a snapshot schedule policy in the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
-   *   SnapshotSchedulePolicy snapshotSchedulePolicy = SnapshotSchedulePolicy.newBuilder().build();
-   *   String snapshotSchedulePolicyId = "snapshotSchedulePolicyId1929948040";
-   *   SnapshotSchedulePolicy response =
-   *       bareMetalSolutionClient.createSnapshotSchedulePolicy(
-   *           parent, snapshotSchedulePolicy, snapshotSchedulePolicyId);
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The parent project and location containing the SnapshotSchedulePolicy.
-   * @param snapshotSchedulePolicy Required. The SnapshotSchedulePolicy to create.
-   * @param snapshotSchedulePolicyId Required. Snapshot policy ID
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SnapshotSchedulePolicy createSnapshotSchedulePolicy(
-      String parent,
-      SnapshotSchedulePolicy snapshotSchedulePolicy,
-      String snapshotSchedulePolicyId) {
-    CreateSnapshotSchedulePolicyRequest request =
-        CreateSnapshotSchedulePolicyRequest.newBuilder()
-            .setParent(parent)
-            .setSnapshotSchedulePolicy(snapshotSchedulePolicy)
-            .setSnapshotSchedulePolicyId(snapshotSchedulePolicyId)
-            .build();
-    return createSnapshotSchedulePolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Create a snapshot schedule policy in the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   CreateSnapshotSchedulePolicyRequest request =
-   *       CreateSnapshotSchedulePolicyRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-   *           .setSnapshotSchedulePolicy(SnapshotSchedulePolicy.newBuilder().build())
-   *           .setSnapshotSchedulePolicyId("snapshotSchedulePolicyId1929948040")
-   *           .build();
-   *   SnapshotSchedulePolicy response =
-   *       bareMetalSolutionClient.createSnapshotSchedulePolicy(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SnapshotSchedulePolicy createSnapshotSchedulePolicy(
-      CreateSnapshotSchedulePolicyRequest request) {
-    return createSnapshotSchedulePolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Create a snapshot schedule policy in the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   CreateSnapshotSchedulePolicyRequest request =
-   *       CreateSnapshotSchedulePolicyRequest.newBuilder()
-   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-   *           .setSnapshotSchedulePolicy(SnapshotSchedulePolicy.newBuilder().build())
-   *           .setSnapshotSchedulePolicyId("snapshotSchedulePolicyId1929948040")
-   *           .build();
-   *   ApiFuture<SnapshotSchedulePolicy> future =
-   *       bareMetalSolutionClient.createSnapshotSchedulePolicyCallable().futureCall(request);
-   *   // Do something.
-   *   SnapshotSchedulePolicy response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      createSnapshotSchedulePolicyCallable() {
-    return stub.createSnapshotSchedulePolicyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Update a snapshot schedule policy in the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   SnapshotSchedulePolicy snapshotSchedulePolicy = SnapshotSchedulePolicy.newBuilder().build();
+   *   Network network = Network.newBuilder().build();
    *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   SnapshotSchedulePolicy response =
-   *       bareMetalSolutionClient.updateSnapshotSchedulePolicy(snapshotSchedulePolicy, updateMask);
+   *   Network response = bareMetalSolutionClient.updateNetworkAsync(network, updateMask).get();
    * }
    * }</pre>
    *
-   * @param snapshotSchedulePolicy Required. The snapshot schedule policy to update.
-   *     <p>The `name` field is used to identify the snapshot schedule policy to update. Format:
-   *     projects/{project}/locations/global/snapshotSchedulePolicies/{policy}
-   * @param updateMask Required. The list of fields to update.
+   * @param network Required. The network to update.
+   *     <p>The `name` field is used to identify the instance to update. Format:
+   *     projects/{project}/locations/{location}/networks/{network}
+   * @param updateMask The list of fields to update. The only currently supported fields are:
+   *     `labels`, `reservations`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SnapshotSchedulePolicy updateSnapshotSchedulePolicy(
-      SnapshotSchedulePolicy snapshotSchedulePolicy, FieldMask updateMask) {
-    UpdateSnapshotSchedulePolicyRequest request =
-        UpdateSnapshotSchedulePolicyRequest.newBuilder()
-            .setSnapshotSchedulePolicy(snapshotSchedulePolicy)
-            .setUpdateMask(updateMask)
-            .build();
-    return updateSnapshotSchedulePolicy(request);
+  public final OperationFuture<Network, OperationMetadata> updateNetworkAsync(
+      Network network, FieldMask updateMask) {
+    UpdateNetworkRequest request =
+        UpdateNetworkRequest.newBuilder().setNetwork(network).setUpdateMask(updateMask).build();
+    return updateNetworkAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update a snapshot schedule policy in the specified project.
+   * Update details of a single network.
    *
    * <p>Sample code:
    *
@@ -1590,27 +2026,26 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   UpdateSnapshotSchedulePolicyRequest request =
-   *       UpdateSnapshotSchedulePolicyRequest.newBuilder()
-   *           .setSnapshotSchedulePolicy(SnapshotSchedulePolicy.newBuilder().build())
+   *   UpdateNetworkRequest request =
+   *       UpdateNetworkRequest.newBuilder()
+   *           .setNetwork(Network.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
-   *   SnapshotSchedulePolicy response =
-   *       bareMetalSolutionClient.updateSnapshotSchedulePolicy(request);
+   *   Network response = bareMetalSolutionClient.updateNetworkAsync(request).get();
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SnapshotSchedulePolicy updateSnapshotSchedulePolicy(
-      UpdateSnapshotSchedulePolicyRequest request) {
-    return updateSnapshotSchedulePolicyCallable().call(request);
+  public final OperationFuture<Network, OperationMetadata> updateNetworkAsync(
+      UpdateNetworkRequest request) {
+    return updateNetworkOperationCallable().futureCall(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update a snapshot schedule policy in the specified project.
+   * Update details of a single network.
    *
    * <p>Sample code:
    *
@@ -1618,26 +2053,26 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   UpdateSnapshotSchedulePolicyRequest request =
-   *       UpdateSnapshotSchedulePolicyRequest.newBuilder()
-   *           .setSnapshotSchedulePolicy(SnapshotSchedulePolicy.newBuilder().build())
+   *   UpdateNetworkRequest request =
+   *       UpdateNetworkRequest.newBuilder()
+   *           .setNetwork(Network.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
-   *   ApiFuture<SnapshotSchedulePolicy> future =
-   *       bareMetalSolutionClient.updateSnapshotSchedulePolicyCallable().futureCall(request);
+   *   OperationFuture<Network, OperationMetadata> future =
+   *       bareMetalSolutionClient.updateNetworkOperationCallable().futureCall(request);
    *   // Do something.
-   *   SnapshotSchedulePolicy response = future.get();
+   *   Network response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      updateSnapshotSchedulePolicyCallable() {
-    return stub.updateSnapshotSchedulePolicyCallable();
+  public final OperationCallable<UpdateNetworkRequest, Network, OperationMetadata>
+      updateNetworkOperationCallable() {
+    return stub.updateNetworkOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a named snapshot schedule policy.
+   * Update details of a single network.
    *
    * <p>Sample code:
    *
@@ -1645,725 +2080,20 @@ public class BareMetalSolutionClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   SnapshotSchedulePolicyName name =
-   *       SnapshotSchedulePolicyName.of("[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]");
-   *   bareMetalSolutionClient.deleteSnapshotSchedulePolicy(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the snapshot schedule policy to delete.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteSnapshotSchedulePolicy(SnapshotSchedulePolicyName name) {
-    DeleteSnapshotSchedulePolicyRequest request =
-        DeleteSnapshotSchedulePolicyRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteSnapshotSchedulePolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Delete a named snapshot schedule policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   String name =
-   *       SnapshotSchedulePolicyName.of("[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-   *           .toString();
-   *   bareMetalSolutionClient.deleteSnapshotSchedulePolicy(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the snapshot schedule policy to delete.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteSnapshotSchedulePolicy(String name) {
-    DeleteSnapshotSchedulePolicyRequest request =
-        DeleteSnapshotSchedulePolicyRequest.newBuilder().setName(name).build();
-    deleteSnapshotSchedulePolicy(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Delete a named snapshot schedule policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   DeleteSnapshotSchedulePolicyRequest request =
-   *       DeleteSnapshotSchedulePolicyRequest.newBuilder()
-   *           .setName(
-   *               SnapshotSchedulePolicyName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-   *                   .toString())
-   *           .build();
-   *   bareMetalSolutionClient.deleteSnapshotSchedulePolicy(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteSnapshotSchedulePolicy(DeleteSnapshotSchedulePolicyRequest request) {
-    deleteSnapshotSchedulePolicyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Delete a named snapshot schedule policy.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   DeleteSnapshotSchedulePolicyRequest request =
-   *       DeleteSnapshotSchedulePolicyRequest.newBuilder()
-   *           .setName(
-   *               SnapshotSchedulePolicyName.of(
-   *                       "[PROJECT]", "[LOCATION]", "[SNAPSHOT_SCHEDULE_POLICY]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<Empty> future =
-   *       bareMetalSolutionClient.deleteSnapshotSchedulePolicyCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteSnapshotSchedulePolicyRequest, Empty>
-      deleteSnapshotSchedulePolicyCallable() {
-    return stub.deleteSnapshotSchedulePolicyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Create a storage volume snapshot in a containing volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
-   *   VolumeSnapshot volumeSnapshot = VolumeSnapshot.newBuilder().build();
-   *   VolumeSnapshot response =
-   *       bareMetalSolutionClient.createVolumeSnapshot(parent, volumeSnapshot);
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The volume to snapshot.
-   * @param volumeSnapshot Required. The volume snapshot to create. Only the description field may
-   *     be specified.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final VolumeSnapshot createVolumeSnapshot(
-      VolumeName parent, VolumeSnapshot volumeSnapshot) {
-    CreateVolumeSnapshotRequest request =
-        CreateVolumeSnapshotRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setVolumeSnapshot(volumeSnapshot)
-            .build();
-    return createVolumeSnapshot(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Create a storage volume snapshot in a containing volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
-   *   VolumeSnapshot volumeSnapshot = VolumeSnapshot.newBuilder().build();
-   *   VolumeSnapshot response =
-   *       bareMetalSolutionClient.createVolumeSnapshot(parent, volumeSnapshot);
-   * }
-   * }</pre>
-   *
-   * @param parent Required. The volume to snapshot.
-   * @param volumeSnapshot Required. The volume snapshot to create. Only the description field may
-   *     be specified.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final VolumeSnapshot createVolumeSnapshot(String parent, VolumeSnapshot volumeSnapshot) {
-    CreateVolumeSnapshotRequest request =
-        CreateVolumeSnapshotRequest.newBuilder()
-            .setParent(parent)
-            .setVolumeSnapshot(volumeSnapshot)
-            .build();
-    return createVolumeSnapshot(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Create a storage volume snapshot in a containing volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   CreateVolumeSnapshotRequest request =
-   *       CreateVolumeSnapshotRequest.newBuilder()
-   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
-   *           .setVolumeSnapshot(VolumeSnapshot.newBuilder().build())
-   *           .build();
-   *   VolumeSnapshot response = bareMetalSolutionClient.createVolumeSnapshot(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final VolumeSnapshot createVolumeSnapshot(CreateVolumeSnapshotRequest request) {
-    return createVolumeSnapshotCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Create a storage volume snapshot in a containing volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   CreateVolumeSnapshotRequest request =
-   *       CreateVolumeSnapshotRequest.newBuilder()
-   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
-   *           .setVolumeSnapshot(VolumeSnapshot.newBuilder().build())
-   *           .build();
-   *   ApiFuture<VolumeSnapshot> future =
-   *       bareMetalSolutionClient.createVolumeSnapshotCallable().futureCall(request);
-   *   // Do something.
-   *   VolumeSnapshot response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CreateVolumeSnapshotRequest, VolumeSnapshot>
-      createVolumeSnapshotCallable() {
-    return stub.createVolumeSnapshotCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Restore a storage volume snapshot to its containing volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   VolumeSnapshotName volumeSnapshot =
-   *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
-   *   VolumeSnapshot response =
-   *       bareMetalSolutionClient.restoreVolumeSnapshotAsync(volumeSnapshot).get();
-   * }
-   * }</pre>
-   *
-   * @param volumeSnapshot Required. Name of the resource.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<VolumeSnapshot, OperationMetadata> restoreVolumeSnapshotAsync(
-      VolumeSnapshotName volumeSnapshot) {
-    RestoreVolumeSnapshotRequest request =
-        RestoreVolumeSnapshotRequest.newBuilder()
-            .setVolumeSnapshot(volumeSnapshot == null ? null : volumeSnapshot.toString())
-            .build();
-    return restoreVolumeSnapshotAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Restore a storage volume snapshot to its containing volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   String volumeSnapshot =
-   *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]").toString();
-   *   VolumeSnapshot response =
-   *       bareMetalSolutionClient.restoreVolumeSnapshotAsync(volumeSnapshot).get();
-   * }
-   * }</pre>
-   *
-   * @param volumeSnapshot Required. Name of the resource.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<VolumeSnapshot, OperationMetadata> restoreVolumeSnapshotAsync(
-      String volumeSnapshot) {
-    RestoreVolumeSnapshotRequest request =
-        RestoreVolumeSnapshotRequest.newBuilder().setVolumeSnapshot(volumeSnapshot).build();
-    return restoreVolumeSnapshotAsync(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Restore a storage volume snapshot to its containing volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   RestoreVolumeSnapshotRequest request =
-   *       RestoreVolumeSnapshotRequest.newBuilder()
-   *           .setVolumeSnapshot(
-   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
-   *                   .toString())
-   *           .build();
-   *   VolumeSnapshot response = bareMetalSolutionClient.restoreVolumeSnapshotAsync(request).get();
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final OperationFuture<VolumeSnapshot, OperationMetadata> restoreVolumeSnapshotAsync(
-      RestoreVolumeSnapshotRequest request) {
-    return restoreVolumeSnapshotOperationCallable().futureCall(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Restore a storage volume snapshot to its containing volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   RestoreVolumeSnapshotRequest request =
-   *       RestoreVolumeSnapshotRequest.newBuilder()
-   *           .setVolumeSnapshot(
-   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
-   *                   .toString())
-   *           .build();
-   *   OperationFuture<VolumeSnapshot, OperationMetadata> future =
-   *       bareMetalSolutionClient.restoreVolumeSnapshotOperationCallable().futureCall(request);
-   *   // Do something.
-   *   VolumeSnapshot response = future.get();
-   * }
-   * }</pre>
-   */
-  public final OperationCallable<RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
-      restoreVolumeSnapshotOperationCallable() {
-    return stub.restoreVolumeSnapshotOperationCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Restore a storage volume snapshot to its containing volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   RestoreVolumeSnapshotRequest request =
-   *       RestoreVolumeSnapshotRequest.newBuilder()
-   *           .setVolumeSnapshot(
-   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
-   *                   .toString())
+   *   UpdateNetworkRequest request =
+   *       UpdateNetworkRequest.newBuilder()
+   *           .setNetwork(Network.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
-   *       bareMetalSolutionClient.restoreVolumeSnapshotCallable().futureCall(request);
+   *       bareMetalSolutionClient.updateNetworkCallable().futureCall(request);
    *   // Do something.
    *   Operation response = future.get();
    * }
    * }</pre>
    */
-  public final UnaryCallable<RestoreVolumeSnapshotRequest, Operation>
-      restoreVolumeSnapshotCallable() {
-    return stub.restoreVolumeSnapshotCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a storage volume snapshot for a given volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   VolumeSnapshotName name =
-   *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
-   *   bareMetalSolutionClient.deleteVolumeSnapshot(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the snapshot to delete.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteVolumeSnapshot(VolumeSnapshotName name) {
-    DeleteVolumeSnapshotRequest request =
-        DeleteVolumeSnapshotRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    deleteVolumeSnapshot(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a storage volume snapshot for a given volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   String name =
-   *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]").toString();
-   *   bareMetalSolutionClient.deleteVolumeSnapshot(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the snapshot to delete.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteVolumeSnapshot(String name) {
-    DeleteVolumeSnapshotRequest request =
-        DeleteVolumeSnapshotRequest.newBuilder().setName(name).build();
-    deleteVolumeSnapshot(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a storage volume snapshot for a given volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   DeleteVolumeSnapshotRequest request =
-   *       DeleteVolumeSnapshotRequest.newBuilder()
-   *           .setName(
-   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
-   *                   .toString())
-   *           .build();
-   *   bareMetalSolutionClient.deleteVolumeSnapshot(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteVolumeSnapshot(DeleteVolumeSnapshotRequest request) {
-    deleteVolumeSnapshotCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a storage volume snapshot for a given volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   DeleteVolumeSnapshotRequest request =
-   *       DeleteVolumeSnapshotRequest.newBuilder()
-   *           .setName(
-   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<Empty> future =
-   *       bareMetalSolutionClient.deleteVolumeSnapshotCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotCallable() {
-    return stub.deleteVolumeSnapshotCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Get details of a single storage volume snapshot.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   VolumeSnapshotName name =
-   *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]");
-   *   VolumeSnapshot response = bareMetalSolutionClient.getVolumeSnapshot(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Name of the resource.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final VolumeSnapshot getVolumeSnapshot(VolumeSnapshotName name) {
-    GetVolumeSnapshotRequest request =
-        GetVolumeSnapshotRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return getVolumeSnapshot(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Get details of a single storage volume snapshot.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   String name =
-   *       VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]").toString();
-   *   VolumeSnapshot response = bareMetalSolutionClient.getVolumeSnapshot(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Name of the resource.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final VolumeSnapshot getVolumeSnapshot(String name) {
-    GetVolumeSnapshotRequest request = GetVolumeSnapshotRequest.newBuilder().setName(name).build();
-    return getVolumeSnapshot(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Get details of a single storage volume snapshot.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   GetVolumeSnapshotRequest request =
-   *       GetVolumeSnapshotRequest.newBuilder()
-   *           .setName(
-   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
-   *                   .toString())
-   *           .build();
-   *   VolumeSnapshot response = bareMetalSolutionClient.getVolumeSnapshot(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final VolumeSnapshot getVolumeSnapshot(GetVolumeSnapshotRequest request) {
-    return getVolumeSnapshotCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Get details of a single storage volume snapshot.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   GetVolumeSnapshotRequest request =
-   *       GetVolumeSnapshotRequest.newBuilder()
-   *           .setName(
-   *               VolumeSnapshotName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[SNAPSHOT]")
-   *                   .toString())
-   *           .build();
-   *   ApiFuture<VolumeSnapshot> future =
-   *       bareMetalSolutionClient.getVolumeSnapshotCallable().futureCall(request);
-   *   // Do something.
-   *   VolumeSnapshot response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<GetVolumeSnapshotRequest, VolumeSnapshot> getVolumeSnapshotCallable() {
-    return stub.getVolumeSnapshotCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * List storage volume snapshots for given storage volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
-   *   for (VolumeSnapshot element :
-   *       bareMetalSolutionClient.listVolumeSnapshots(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. Parent value for ListVolumesRequest.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListVolumeSnapshotsPagedResponse listVolumeSnapshots(VolumeName parent) {
-    ListVolumeSnapshotsRequest request =
-        ListVolumeSnapshotsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listVolumeSnapshots(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * List storage volume snapshots for given storage volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
-   *   for (VolumeSnapshot element :
-   *       bareMetalSolutionClient.listVolumeSnapshots(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. Parent value for ListVolumesRequest.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListVolumeSnapshotsPagedResponse listVolumeSnapshots(String parent) {
-    ListVolumeSnapshotsRequest request =
-        ListVolumeSnapshotsRequest.newBuilder().setParent(parent).build();
-    return listVolumeSnapshots(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * List storage volume snapshots for given storage volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   ListVolumeSnapshotsRequest request =
-   *       ListVolumeSnapshotsRequest.newBuilder()
-   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   for (VolumeSnapshot element :
-   *       bareMetalSolutionClient.listVolumeSnapshots(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListVolumeSnapshotsPagedResponse listVolumeSnapshots(
-      ListVolumeSnapshotsRequest request) {
-    return listVolumeSnapshotsPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * List storage volume snapshots for given storage volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   ListVolumeSnapshotsRequest request =
-   *       ListVolumeSnapshotsRequest.newBuilder()
-   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   ApiFuture<VolumeSnapshot> future =
-   *       bareMetalSolutionClient.listVolumeSnapshotsPagedCallable().futureCall(request);
-   *   // Do something.
-   *   for (VolumeSnapshot element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsPagedResponse>
-      listVolumeSnapshotsPagedCallable() {
-    return stub.listVolumeSnapshotsPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * List storage volume snapshots for given storage volume.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated for illustrative purposes only.
-   * // It may require modifications to work in your environment.
-   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
-   *   ListVolumeSnapshotsRequest request =
-   *       ListVolumeSnapshotsRequest.newBuilder()
-   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   while (true) {
-   *     ListVolumeSnapshotsResponse response =
-   *         bareMetalSolutionClient.listVolumeSnapshotsCallable().call(request);
-   *     for (VolumeSnapshot element : response.getVolumeSnapshotsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
-      listVolumeSnapshotsCallable() {
-    return stub.listVolumeSnapshotsCallable();
+  public final UnaryCallable<UpdateNetworkRequest, Operation> updateNetworkCallable() {
+    return stub.updateNetworkCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2603,6 +2333,364 @@ public class BareMetalSolutionClient implements BackgroundResource {
    */
   public final UnaryCallable<ListLunsRequest, ListLunsResponse> listLunsCallable() {
     return stub.listLunsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get details of a single NFS share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   NFSShareName name = NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]");
+   *   NfsShare response = bareMetalSolutionClient.getNfsShare(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NfsShare getNfsShare(NFSShareName name) {
+    GetNfsShareRequest request =
+        GetNfsShareRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getNfsShare(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get details of a single NFS share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String name = NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString();
+   *   NfsShare response = bareMetalSolutionClient.getNfsShare(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NfsShare getNfsShare(String name) {
+    GetNfsShareRequest request = GetNfsShareRequest.newBuilder().setName(name).build();
+    return getNfsShare(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get details of a single NFS share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   GetNfsShareRequest request =
+   *       GetNfsShareRequest.newBuilder()
+   *           .setName(NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString())
+   *           .build();
+   *   NfsShare response = bareMetalSolutionClient.getNfsShare(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NfsShare getNfsShare(GetNfsShareRequest request) {
+    return getNfsShareCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get details of a single NFS share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   GetNfsShareRequest request =
+   *       GetNfsShareRequest.newBuilder()
+   *           .setName(NFSShareName.of("[PROJECT]", "[LOCATION]", "[NFS_SHARE]").toString())
+   *           .build();
+   *   ApiFuture<NfsShare> future =
+   *       bareMetalSolutionClient.getNfsShareCallable().futureCall(request);
+   *   // Do something.
+   *   NfsShare response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetNfsShareRequest, NfsShare> getNfsShareCallable() {
+    return stub.getNfsShareCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List NFS shares.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (NfsShare element : bareMetalSolutionClient.listNfsShares(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListNfsSharesRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNfsSharesPagedResponse listNfsShares(LocationName parent) {
+    ListNfsSharesRequest request =
+        ListNfsSharesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listNfsShares(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List NFS shares.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (NfsShare element : bareMetalSolutionClient.listNfsShares(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListNfsSharesRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNfsSharesPagedResponse listNfsShares(String parent) {
+    ListNfsSharesRequest request = ListNfsSharesRequest.newBuilder().setParent(parent).build();
+    return listNfsShares(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List NFS shares.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListNfsSharesRequest request =
+   *       ListNfsSharesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (NfsShare element : bareMetalSolutionClient.listNfsShares(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNfsSharesPagedResponse listNfsShares(ListNfsSharesRequest request) {
+    return listNfsSharesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List NFS shares.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListNfsSharesRequest request =
+   *       ListNfsSharesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<NfsShare> future =
+   *       bareMetalSolutionClient.listNfsSharesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (NfsShare element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNfsSharesRequest, ListNfsSharesPagedResponse>
+      listNfsSharesPagedCallable() {
+    return stub.listNfsSharesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List NFS shares.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   ListNfsSharesRequest request =
+   *       ListNfsSharesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListNfsSharesResponse response =
+   *         bareMetalSolutionClient.listNfsSharesCallable().call(request);
+   *     for (NfsShare element : response.getNfsSharesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNfsSharesRequest, ListNfsSharesResponse> listNfsSharesCallable() {
+    return stub.listNfsSharesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update details of a single NFS share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   NfsShare nfsShare = NfsShare.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   NfsShare response = bareMetalSolutionClient.updateNfsShareAsync(nfsShare, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param nfsShare Required. The NFS share to update.
+   *     <p>The `name` field is used to identify the NFS share to update. Format:
+   *     projects/{project}/locations/{location}/nfsShares/{nfs_share}
+   * @param updateMask The list of fields to update. The only currently supported fields are:
+   *     `labels`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<NfsShare, OperationMetadata> updateNfsShareAsync(
+      NfsShare nfsShare, FieldMask updateMask) {
+    UpdateNfsShareRequest request =
+        UpdateNfsShareRequest.newBuilder().setNfsShare(nfsShare).setUpdateMask(updateMask).build();
+    return updateNfsShareAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update details of a single NFS share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   UpdateNfsShareRequest request =
+   *       UpdateNfsShareRequest.newBuilder()
+   *           .setNfsShare(NfsShare.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   NfsShare response = bareMetalSolutionClient.updateNfsShareAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<NfsShare, OperationMetadata> updateNfsShareAsync(
+      UpdateNfsShareRequest request) {
+    return updateNfsShareOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update details of a single NFS share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   UpdateNfsShareRequest request =
+   *       UpdateNfsShareRequest.newBuilder()
+   *           .setNfsShare(NfsShare.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<NfsShare, OperationMetadata> future =
+   *       bareMetalSolutionClient.updateNfsShareOperationCallable().futureCall(request);
+   *   // Do something.
+   *   NfsShare response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateNfsShareRequest, NfsShare, OperationMetadata>
+      updateNfsShareOperationCallable() {
+    return stub.updateNfsShareOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update details of a single NFS share.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BareMetalSolutionClient bareMetalSolutionClient = BareMetalSolutionClient.create()) {
+   *   UpdateNfsShareRequest request =
+   *       UpdateNfsShareRequest.newBuilder()
+   *           .setNfsShare(NfsShare.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       bareMetalSolutionClient.updateNfsShareCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateNfsShareRequest, Operation> updateNfsShareCallable() {
+    return stub.updateNfsShareCallable();
   }
 
   @Override
@@ -2859,187 +2947,6 @@ public class BareMetalSolutionClient implements BackgroundResource {
     }
   }
 
-  public static class ListSnapshotSchedulePoliciesPagedResponse
-      extends AbstractPagedListResponse<
-          ListSnapshotSchedulePoliciesRequest,
-          ListSnapshotSchedulePoliciesResponse,
-          SnapshotSchedulePolicy,
-          ListSnapshotSchedulePoliciesPage,
-          ListSnapshotSchedulePoliciesFixedSizeCollection> {
-
-    public static ApiFuture<ListSnapshotSchedulePoliciesPagedResponse> createAsync(
-        PageContext<
-                ListSnapshotSchedulePoliciesRequest,
-                ListSnapshotSchedulePoliciesResponse,
-                SnapshotSchedulePolicy>
-            context,
-        ApiFuture<ListSnapshotSchedulePoliciesResponse> futureResponse) {
-      ApiFuture<ListSnapshotSchedulePoliciesPage> futurePage =
-          ListSnapshotSchedulePoliciesPage.createEmptyPage()
-              .createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          input -> new ListSnapshotSchedulePoliciesPagedResponse(input),
-          MoreExecutors.directExecutor());
-    }
-
-    private ListSnapshotSchedulePoliciesPagedResponse(ListSnapshotSchedulePoliciesPage page) {
-      super(page, ListSnapshotSchedulePoliciesFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class ListSnapshotSchedulePoliciesPage
-      extends AbstractPage<
-          ListSnapshotSchedulePoliciesRequest,
-          ListSnapshotSchedulePoliciesResponse,
-          SnapshotSchedulePolicy,
-          ListSnapshotSchedulePoliciesPage> {
-
-    private ListSnapshotSchedulePoliciesPage(
-        PageContext<
-                ListSnapshotSchedulePoliciesRequest,
-                ListSnapshotSchedulePoliciesResponse,
-                SnapshotSchedulePolicy>
-            context,
-        ListSnapshotSchedulePoliciesResponse response) {
-      super(context, response);
-    }
-
-    private static ListSnapshotSchedulePoliciesPage createEmptyPage() {
-      return new ListSnapshotSchedulePoliciesPage(null, null);
-    }
-
-    @Override
-    protected ListSnapshotSchedulePoliciesPage createPage(
-        PageContext<
-                ListSnapshotSchedulePoliciesRequest,
-                ListSnapshotSchedulePoliciesResponse,
-                SnapshotSchedulePolicy>
-            context,
-        ListSnapshotSchedulePoliciesResponse response) {
-      return new ListSnapshotSchedulePoliciesPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<ListSnapshotSchedulePoliciesPage> createPageAsync(
-        PageContext<
-                ListSnapshotSchedulePoliciesRequest,
-                ListSnapshotSchedulePoliciesResponse,
-                SnapshotSchedulePolicy>
-            context,
-        ApiFuture<ListSnapshotSchedulePoliciesResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class ListSnapshotSchedulePoliciesFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          ListSnapshotSchedulePoliciesRequest,
-          ListSnapshotSchedulePoliciesResponse,
-          SnapshotSchedulePolicy,
-          ListSnapshotSchedulePoliciesPage,
-          ListSnapshotSchedulePoliciesFixedSizeCollection> {
-
-    private ListSnapshotSchedulePoliciesFixedSizeCollection(
-        List<ListSnapshotSchedulePoliciesPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static ListSnapshotSchedulePoliciesFixedSizeCollection createEmptyCollection() {
-      return new ListSnapshotSchedulePoliciesFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected ListSnapshotSchedulePoliciesFixedSizeCollection createCollection(
-        List<ListSnapshotSchedulePoliciesPage> pages, int collectionSize) {
-      return new ListSnapshotSchedulePoliciesFixedSizeCollection(pages, collectionSize);
-    }
-  }
-
-  public static class ListVolumeSnapshotsPagedResponse
-      extends AbstractPagedListResponse<
-          ListVolumeSnapshotsRequest,
-          ListVolumeSnapshotsResponse,
-          VolumeSnapshot,
-          ListVolumeSnapshotsPage,
-          ListVolumeSnapshotsFixedSizeCollection> {
-
-    public static ApiFuture<ListVolumeSnapshotsPagedResponse> createAsync(
-        PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
-            context,
-        ApiFuture<ListVolumeSnapshotsResponse> futureResponse) {
-      ApiFuture<ListVolumeSnapshotsPage> futurePage =
-          ListVolumeSnapshotsPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          input -> new ListVolumeSnapshotsPagedResponse(input),
-          MoreExecutors.directExecutor());
-    }
-
-    private ListVolumeSnapshotsPagedResponse(ListVolumeSnapshotsPage page) {
-      super(page, ListVolumeSnapshotsFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class ListVolumeSnapshotsPage
-      extends AbstractPage<
-          ListVolumeSnapshotsRequest,
-          ListVolumeSnapshotsResponse,
-          VolumeSnapshot,
-          ListVolumeSnapshotsPage> {
-
-    private ListVolumeSnapshotsPage(
-        PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
-            context,
-        ListVolumeSnapshotsResponse response) {
-      super(context, response);
-    }
-
-    private static ListVolumeSnapshotsPage createEmptyPage() {
-      return new ListVolumeSnapshotsPage(null, null);
-    }
-
-    @Override
-    protected ListVolumeSnapshotsPage createPage(
-        PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
-            context,
-        ListVolumeSnapshotsResponse response) {
-      return new ListVolumeSnapshotsPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<ListVolumeSnapshotsPage> createPageAsync(
-        PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
-            context,
-        ApiFuture<ListVolumeSnapshotsResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class ListVolumeSnapshotsFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          ListVolumeSnapshotsRequest,
-          ListVolumeSnapshotsResponse,
-          VolumeSnapshot,
-          ListVolumeSnapshotsPage,
-          ListVolumeSnapshotsFixedSizeCollection> {
-
-    private ListVolumeSnapshotsFixedSizeCollection(
-        List<ListVolumeSnapshotsPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static ListVolumeSnapshotsFixedSizeCollection createEmptyCollection() {
-      return new ListVolumeSnapshotsFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected ListVolumeSnapshotsFixedSizeCollection createCollection(
-        List<ListVolumeSnapshotsPage> pages, int collectionSize) {
-      return new ListVolumeSnapshotsFixedSizeCollection(pages, collectionSize);
-    }
-  }
-
   public static class ListLunsPagedResponse
       extends AbstractPagedListResponse<
           ListLunsRequest, ListLunsResponse, Lun, ListLunsPage, ListLunsFixedSizeCollection> {
@@ -3100,6 +3007,82 @@ public class BareMetalSolutionClient implements BackgroundResource {
     protected ListLunsFixedSizeCollection createCollection(
         List<ListLunsPage> pages, int collectionSize) {
       return new ListLunsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListNfsSharesPagedResponse
+      extends AbstractPagedListResponse<
+          ListNfsSharesRequest,
+          ListNfsSharesResponse,
+          NfsShare,
+          ListNfsSharesPage,
+          ListNfsSharesFixedSizeCollection> {
+
+    public static ApiFuture<ListNfsSharesPagedResponse> createAsync(
+        PageContext<ListNfsSharesRequest, ListNfsSharesResponse, NfsShare> context,
+        ApiFuture<ListNfsSharesResponse> futureResponse) {
+      ApiFuture<ListNfsSharesPage> futurePage =
+          ListNfsSharesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListNfsSharesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListNfsSharesPagedResponse(ListNfsSharesPage page) {
+      super(page, ListNfsSharesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListNfsSharesPage
+      extends AbstractPage<
+          ListNfsSharesRequest, ListNfsSharesResponse, NfsShare, ListNfsSharesPage> {
+
+    private ListNfsSharesPage(
+        PageContext<ListNfsSharesRequest, ListNfsSharesResponse, NfsShare> context,
+        ListNfsSharesResponse response) {
+      super(context, response);
+    }
+
+    private static ListNfsSharesPage createEmptyPage() {
+      return new ListNfsSharesPage(null, null);
+    }
+
+    @Override
+    protected ListNfsSharesPage createPage(
+        PageContext<ListNfsSharesRequest, ListNfsSharesResponse, NfsShare> context,
+        ListNfsSharesResponse response) {
+      return new ListNfsSharesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListNfsSharesPage> createPageAsync(
+        PageContext<ListNfsSharesRequest, ListNfsSharesResponse, NfsShare> context,
+        ApiFuture<ListNfsSharesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListNfsSharesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListNfsSharesRequest,
+          ListNfsSharesResponse,
+          NfsShare,
+          ListNfsSharesPage,
+          ListNfsSharesFixedSizeCollection> {
+
+    private ListNfsSharesFixedSizeCollection(List<ListNfsSharesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListNfsSharesFixedSizeCollection createEmptyCollection() {
+      return new ListNfsSharesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListNfsSharesFixedSizeCollection createCollection(
+        List<ListNfsSharesPage> pages, int collectionSize) {
+      return new ListNfsSharesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -19,8 +19,7 @@ package com.google.cloud.baremetalsolution.v2;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListInstancesPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListLunsPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListNetworksPagedResponse;
-import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListSnapshotSchedulePoliciesPagedResponse;
-import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumeSnapshotsPagedResponse;
+import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListNfsSharesPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -28,6 +27,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
@@ -37,7 +37,6 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.baremetalsolution.v2.stub.BareMetalSolutionStubSettings;
 import com.google.longrunning.Operation;
-import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -91,6 +90,17 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
     return ((BareMetalSolutionStubSettings) getStubSettings()).getInstanceSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateInstance. */
+  public UnaryCallSettings<UpdateInstanceRequest, Operation> updateInstanceSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).updateInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateInstance. */
+  public OperationCallSettings<UpdateInstanceRequest, Instance, OperationMetadata>
+      updateInstanceOperationSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).updateInstanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to resetInstance. */
   public UnaryCallSettings<ResetInstanceRequest, Operation> resetInstanceSettings() {
     return ((BareMetalSolutionStubSettings) getStubSettings()).resetInstanceSettings();
@@ -100,6 +110,39 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
   public OperationCallSettings<ResetInstanceRequest, ResetInstanceResponse, OperationMetadata>
       resetInstanceOperationSettings() {
     return ((BareMetalSolutionStubSettings) getStubSettings()).resetInstanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startInstance. */
+  public UnaryCallSettings<StartInstanceRequest, Operation> startInstanceSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).startInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startInstance. */
+  public OperationCallSettings<StartInstanceRequest, StartInstanceResponse, OperationMetadata>
+      startInstanceOperationSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).startInstanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopInstance. */
+  public UnaryCallSettings<StopInstanceRequest, Operation> stopInstanceSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).stopInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopInstance. */
+  public OperationCallSettings<StopInstanceRequest, StopInstanceResponse, OperationMetadata>
+      stopInstanceOperationSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).stopInstanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to detachLun. */
+  public UnaryCallSettings<DetachLunRequest, Operation> detachLunSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).detachLunSettings();
+  }
+
+  /** Returns the object with the settings used for calls to detachLun. */
+  public OperationCallSettings<DetachLunRequest, Instance, OperationMetadata>
+      detachLunOperationSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).detachLunOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listVolumes. */
@@ -124,10 +167,27 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
     return ((BareMetalSolutionStubSettings) getStubSettings()).updateVolumeOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to resizeVolume. */
+  public UnaryCallSettings<ResizeVolumeRequest, Operation> resizeVolumeSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).resizeVolumeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resizeVolume. */
+  public OperationCallSettings<ResizeVolumeRequest, Volume, OperationMetadata>
+      resizeVolumeOperationSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).resizeVolumeOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listNetworks. */
   public PagedCallSettings<ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
       listNetworksSettings() {
     return ((BareMetalSolutionStubSettings) getStubSettings()).listNetworksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listNetworkUsage. */
+  public UnaryCallSettings<ListNetworkUsageRequest, ListNetworkUsageResponse>
+      listNetworkUsageSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).listNetworkUsageSettings();
   }
 
   /** Returns the object with the settings used for calls to getNetwork. */
@@ -135,77 +195,15 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
     return ((BareMetalSolutionStubSettings) getStubSettings()).getNetworkSettings();
   }
 
-  /** Returns the object with the settings used for calls to listSnapshotSchedulePolicies. */
-  public PagedCallSettings<
-          ListSnapshotSchedulePoliciesRequest,
-          ListSnapshotSchedulePoliciesResponse,
-          ListSnapshotSchedulePoliciesPagedResponse>
-      listSnapshotSchedulePoliciesSettings() {
-    return ((BareMetalSolutionStubSettings) getStubSettings())
-        .listSnapshotSchedulePoliciesSettings();
+  /** Returns the object with the settings used for calls to updateNetwork. */
+  public UnaryCallSettings<UpdateNetworkRequest, Operation> updateNetworkSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).updateNetworkSettings();
   }
 
-  /** Returns the object with the settings used for calls to getSnapshotSchedulePolicy. */
-  public UnaryCallSettings<GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      getSnapshotSchedulePolicySettings() {
-    return ((BareMetalSolutionStubSettings) getStubSettings()).getSnapshotSchedulePolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to createSnapshotSchedulePolicy. */
-  public UnaryCallSettings<CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      createSnapshotSchedulePolicySettings() {
-    return ((BareMetalSolutionStubSettings) getStubSettings())
-        .createSnapshotSchedulePolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateSnapshotSchedulePolicy. */
-  public UnaryCallSettings<UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      updateSnapshotSchedulePolicySettings() {
-    return ((BareMetalSolutionStubSettings) getStubSettings())
-        .updateSnapshotSchedulePolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteSnapshotSchedulePolicy. */
-  public UnaryCallSettings<DeleteSnapshotSchedulePolicyRequest, Empty>
-      deleteSnapshotSchedulePolicySettings() {
-    return ((BareMetalSolutionStubSettings) getStubSettings())
-        .deleteSnapshotSchedulePolicySettings();
-  }
-
-  /** Returns the object with the settings used for calls to createVolumeSnapshot. */
-  public UnaryCallSettings<CreateVolumeSnapshotRequest, VolumeSnapshot>
-      createVolumeSnapshotSettings() {
-    return ((BareMetalSolutionStubSettings) getStubSettings()).createVolumeSnapshotSettings();
-  }
-
-  /** Returns the object with the settings used for calls to restoreVolumeSnapshot. */
-  public UnaryCallSettings<RestoreVolumeSnapshotRequest, Operation>
-      restoreVolumeSnapshotSettings() {
-    return ((BareMetalSolutionStubSettings) getStubSettings()).restoreVolumeSnapshotSettings();
-  }
-
-  /** Returns the object with the settings used for calls to restoreVolumeSnapshot. */
-  public OperationCallSettings<RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
-      restoreVolumeSnapshotOperationSettings() {
-    return ((BareMetalSolutionStubSettings) getStubSettings())
-        .restoreVolumeSnapshotOperationSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteVolumeSnapshot. */
-  public UnaryCallSettings<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotSettings() {
-    return ((BareMetalSolutionStubSettings) getStubSettings()).deleteVolumeSnapshotSettings();
-  }
-
-  /** Returns the object with the settings used for calls to getVolumeSnapshot. */
-  public UnaryCallSettings<GetVolumeSnapshotRequest, VolumeSnapshot> getVolumeSnapshotSettings() {
-    return ((BareMetalSolutionStubSettings) getStubSettings()).getVolumeSnapshotSettings();
-  }
-
-  /** Returns the object with the settings used for calls to listVolumeSnapshots. */
-  public PagedCallSettings<
-          ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, ListVolumeSnapshotsPagedResponse>
-      listVolumeSnapshotsSettings() {
-    return ((BareMetalSolutionStubSettings) getStubSettings()).listVolumeSnapshotsSettings();
+  /** Returns the object with the settings used for calls to updateNetwork. */
+  public OperationCallSettings<UpdateNetworkRequest, Network, OperationMetadata>
+      updateNetworkOperationSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).updateNetworkOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getLun. */
@@ -217,6 +215,28 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
   public PagedCallSettings<ListLunsRequest, ListLunsResponse, ListLunsPagedResponse>
       listLunsSettings() {
     return ((BareMetalSolutionStubSettings) getStubSettings()).listLunsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getNfsShare. */
+  public UnaryCallSettings<GetNfsShareRequest, NfsShare> getNfsShareSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).getNfsShareSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listNfsShares. */
+  public PagedCallSettings<ListNfsSharesRequest, ListNfsSharesResponse, ListNfsSharesPagedResponse>
+      listNfsSharesSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).listNfsSharesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateNfsShare. */
+  public UnaryCallSettings<UpdateNfsShareRequest, Operation> updateNfsShareSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).updateNfsShareSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateNfsShare. */
+  public OperationCallSettings<UpdateNfsShareRequest, NfsShare, OperationMetadata>
+      updateNfsShareOperationSettings() {
+    return ((BareMetalSolutionStubSettings) getStubSettings()).updateNfsShareOperationSettings();
   }
 
   public static final BareMetalSolutionSettings create(BareMetalSolutionStubSettings stub)
@@ -244,9 +264,16 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
     return BareMetalSolutionStubSettings.defaultCredentialsProviderBuilder();
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
+  /** Returns a builder for the default gRPC ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return BareMetalSolutionStubSettings.defaultGrpcTransportProviderBuilder();
+  }
+
+  /** Returns a builder for the default REST ChannelProvider for this service. */
+  @BetaApi
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
+    return BareMetalSolutionStubSettings.defaultHttpJsonTransportProviderBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -258,9 +285,15 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
     return BareMetalSolutionStubSettings.defaultApiClientHeaderProviderBuilder();
   }
 
-  /** Returns a new builder for this class. */
+  /** Returns a new gRPC builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
+  }
+
+  /** Returns a new REST builder for this class. */
+  @BetaApi
+  public static Builder newHttpJsonBuilder() {
+    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -300,6 +333,11 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
       return new Builder(BareMetalSolutionStubSettings.newBuilder());
     }
 
+    @BetaApi
+    private static Builder createHttpJsonDefault() {
+      return new Builder(BareMetalSolutionStubSettings.newHttpJsonBuilder());
+    }
+
     public BareMetalSolutionStubSettings.Builder getStubSettingsBuilder() {
       return ((BareMetalSolutionStubSettings.Builder) getStubSettings());
     }
@@ -328,6 +366,17 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
       return getStubSettingsBuilder().getInstanceSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateInstance. */
+    public UnaryCallSettings.Builder<UpdateInstanceRequest, Operation> updateInstanceSettings() {
+      return getStubSettingsBuilder().updateInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateInstance. */
+    public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, OperationMetadata>
+        updateInstanceOperationSettings() {
+      return getStubSettingsBuilder().updateInstanceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to resetInstance. */
     public UnaryCallSettings.Builder<ResetInstanceRequest, Operation> resetInstanceSettings() {
       return getStubSettingsBuilder().resetInstanceSettings();
@@ -338,6 +387,41 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
             ResetInstanceRequest, ResetInstanceResponse, OperationMetadata>
         resetInstanceOperationSettings() {
       return getStubSettingsBuilder().resetInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startInstance. */
+    public UnaryCallSettings.Builder<StartInstanceRequest, Operation> startInstanceSettings() {
+      return getStubSettingsBuilder().startInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startInstance. */
+    public OperationCallSettings.Builder<
+            StartInstanceRequest, StartInstanceResponse, OperationMetadata>
+        startInstanceOperationSettings() {
+      return getStubSettingsBuilder().startInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopInstance. */
+    public UnaryCallSettings.Builder<StopInstanceRequest, Operation> stopInstanceSettings() {
+      return getStubSettingsBuilder().stopInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopInstance. */
+    public OperationCallSettings.Builder<
+            StopInstanceRequest, StopInstanceResponse, OperationMetadata>
+        stopInstanceOperationSettings() {
+      return getStubSettingsBuilder().stopInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to detachLun. */
+    public UnaryCallSettings.Builder<DetachLunRequest, Operation> detachLunSettings() {
+      return getStubSettingsBuilder().detachLunSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to detachLun. */
+    public OperationCallSettings.Builder<DetachLunRequest, Instance, OperationMetadata>
+        detachLunOperationSettings() {
+      return getStubSettingsBuilder().detachLunOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listVolumes. */
@@ -363,6 +447,17 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
       return getStubSettingsBuilder().updateVolumeOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to resizeVolume. */
+    public UnaryCallSettings.Builder<ResizeVolumeRequest, Operation> resizeVolumeSettings() {
+      return getStubSettingsBuilder().resizeVolumeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resizeVolume. */
+    public OperationCallSettings.Builder<ResizeVolumeRequest, Volume, OperationMetadata>
+        resizeVolumeOperationSettings() {
+      return getStubSettingsBuilder().resizeVolumeOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listNetworks. */
     public PagedCallSettings.Builder<
             ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
@@ -370,82 +465,26 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
       return getStubSettingsBuilder().listNetworksSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listNetworkUsage. */
+    public UnaryCallSettings.Builder<ListNetworkUsageRequest, ListNetworkUsageResponse>
+        listNetworkUsageSettings() {
+      return getStubSettingsBuilder().listNetworkUsageSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getNetwork. */
     public UnaryCallSettings.Builder<GetNetworkRequest, Network> getNetworkSettings() {
       return getStubSettingsBuilder().getNetworkSettings();
     }
 
-    /** Returns the builder for the settings used for calls to listSnapshotSchedulePolicies. */
-    public PagedCallSettings.Builder<
-            ListSnapshotSchedulePoliciesRequest,
-            ListSnapshotSchedulePoliciesResponse,
-            ListSnapshotSchedulePoliciesPagedResponse>
-        listSnapshotSchedulePoliciesSettings() {
-      return getStubSettingsBuilder().listSnapshotSchedulePoliciesSettings();
+    /** Returns the builder for the settings used for calls to updateNetwork. */
+    public UnaryCallSettings.Builder<UpdateNetworkRequest, Operation> updateNetworkSettings() {
+      return getStubSettingsBuilder().updateNetworkSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getSnapshotSchedulePolicy. */
-    public UnaryCallSettings.Builder<GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-        getSnapshotSchedulePolicySettings() {
-      return getStubSettingsBuilder().getSnapshotSchedulePolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createSnapshotSchedulePolicy. */
-    public UnaryCallSettings.Builder<CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-        createSnapshotSchedulePolicySettings() {
-      return getStubSettingsBuilder().createSnapshotSchedulePolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateSnapshotSchedulePolicy. */
-    public UnaryCallSettings.Builder<UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-        updateSnapshotSchedulePolicySettings() {
-      return getStubSettingsBuilder().updateSnapshotSchedulePolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteSnapshotSchedulePolicy. */
-    public UnaryCallSettings.Builder<DeleteSnapshotSchedulePolicyRequest, Empty>
-        deleteSnapshotSchedulePolicySettings() {
-      return getStubSettingsBuilder().deleteSnapshotSchedulePolicySettings();
-    }
-
-    /** Returns the builder for the settings used for calls to createVolumeSnapshot. */
-    public UnaryCallSettings.Builder<CreateVolumeSnapshotRequest, VolumeSnapshot>
-        createVolumeSnapshotSettings() {
-      return getStubSettingsBuilder().createVolumeSnapshotSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to restoreVolumeSnapshot. */
-    public UnaryCallSettings.Builder<RestoreVolumeSnapshotRequest, Operation>
-        restoreVolumeSnapshotSettings() {
-      return getStubSettingsBuilder().restoreVolumeSnapshotSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to restoreVolumeSnapshot. */
-    public OperationCallSettings.Builder<
-            RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
-        restoreVolumeSnapshotOperationSettings() {
-      return getStubSettingsBuilder().restoreVolumeSnapshotOperationSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteVolumeSnapshot. */
-    public UnaryCallSettings.Builder<DeleteVolumeSnapshotRequest, Empty>
-        deleteVolumeSnapshotSettings() {
-      return getStubSettingsBuilder().deleteVolumeSnapshotSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to getVolumeSnapshot. */
-    public UnaryCallSettings.Builder<GetVolumeSnapshotRequest, VolumeSnapshot>
-        getVolumeSnapshotSettings() {
-      return getStubSettingsBuilder().getVolumeSnapshotSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to listVolumeSnapshots. */
-    public PagedCallSettings.Builder<
-            ListVolumeSnapshotsRequest,
-            ListVolumeSnapshotsResponse,
-            ListVolumeSnapshotsPagedResponse>
-        listVolumeSnapshotsSettings() {
-      return getStubSettingsBuilder().listVolumeSnapshotsSettings();
+    /** Returns the builder for the settings used for calls to updateNetwork. */
+    public OperationCallSettings.Builder<UpdateNetworkRequest, Network, OperationMetadata>
+        updateNetworkOperationSettings() {
+      return getStubSettingsBuilder().updateNetworkOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getLun. */
@@ -457,6 +496,29 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
     public PagedCallSettings.Builder<ListLunsRequest, ListLunsResponse, ListLunsPagedResponse>
         listLunsSettings() {
       return getStubSettingsBuilder().listLunsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNfsShare. */
+    public UnaryCallSettings.Builder<GetNfsShareRequest, NfsShare> getNfsShareSettings() {
+      return getStubSettingsBuilder().getNfsShareSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listNfsShares. */
+    public PagedCallSettings.Builder<
+            ListNfsSharesRequest, ListNfsSharesResponse, ListNfsSharesPagedResponse>
+        listNfsSharesSettings() {
+      return getStubSettingsBuilder().listNfsSharesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateNfsShare. */
+    public UnaryCallSettings.Builder<UpdateNfsShareRequest, Operation> updateNfsShareSettings() {
+      return getStubSettingsBuilder().updateNfsShareSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateNfsShare. */
+    public OperationCallSettings.Builder<UpdateNfsShareRequest, NfsShare, OperationMetadata>
+        updateNfsShareOperationSettings() {
+      return getStubSettingsBuilder().updateNfsShareOperationSettings();
     }
 
     @Override

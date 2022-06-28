@@ -19,8 +19,7 @@ package com.google.cloud.baremetalsolution.v2.stub;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListInstancesPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListLunsPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListNetworksPagedResponse;
-import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListSnapshotSchedulePoliciesPagedResponse;
-import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumeSnapshotsPagedResponse;
+import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListNfsSharesPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -30,44 +29,44 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest;
-import com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest;
-import com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest;
-import com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest;
+import com.google.cloud.baremetalsolution.v2.DetachLunRequest;
 import com.google.cloud.baremetalsolution.v2.GetInstanceRequest;
 import com.google.cloud.baremetalsolution.v2.GetLunRequest;
 import com.google.cloud.baremetalsolution.v2.GetNetworkRequest;
-import com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest;
+import com.google.cloud.baremetalsolution.v2.GetNfsShareRequest;
 import com.google.cloud.baremetalsolution.v2.GetVolumeRequest;
-import com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest;
 import com.google.cloud.baremetalsolution.v2.Instance;
 import com.google.cloud.baremetalsolution.v2.ListInstancesRequest;
 import com.google.cloud.baremetalsolution.v2.ListInstancesResponse;
 import com.google.cloud.baremetalsolution.v2.ListLunsRequest;
 import com.google.cloud.baremetalsolution.v2.ListLunsResponse;
+import com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest;
+import com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse;
 import com.google.cloud.baremetalsolution.v2.ListNetworksRequest;
 import com.google.cloud.baremetalsolution.v2.ListNetworksResponse;
-import com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest;
-import com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesResponse;
-import com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest;
-import com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse;
+import com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest;
+import com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse;
 import com.google.cloud.baremetalsolution.v2.ListVolumesRequest;
 import com.google.cloud.baremetalsolution.v2.ListVolumesResponse;
 import com.google.cloud.baremetalsolution.v2.Lun;
 import com.google.cloud.baremetalsolution.v2.Network;
+import com.google.cloud.baremetalsolution.v2.NfsShare;
 import com.google.cloud.baremetalsolution.v2.OperationMetadata;
 import com.google.cloud.baremetalsolution.v2.ResetInstanceRequest;
 import com.google.cloud.baremetalsolution.v2.ResetInstanceResponse;
-import com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest;
-import com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy;
-import com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest;
+import com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest;
+import com.google.cloud.baremetalsolution.v2.StartInstanceRequest;
+import com.google.cloud.baremetalsolution.v2.StartInstanceResponse;
+import com.google.cloud.baremetalsolution.v2.StopInstanceRequest;
+import com.google.cloud.baremetalsolution.v2.StopInstanceResponse;
+import com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest;
+import com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest;
+import com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest;
 import com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest;
 import com.google.cloud.baremetalsolution.v2.Volume;
-import com.google.cloud.baremetalsolution.v2.VolumeSnapshot;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
-import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -102,6 +101,17 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<UpdateInstanceRequest, Operation>
+      updateInstanceMethodDescriptor =
+          MethodDescriptor.<UpdateInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/UpdateInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ResetInstanceRequest, Operation>
       resetInstanceMethodDescriptor =
           MethodDescriptor.<ResetInstanceRequest, Operation>newBuilder()
@@ -112,6 +122,34 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   ProtoUtils.marshaller(ResetInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
+  private static final MethodDescriptor<StartInstanceRequest, Operation>
+      startInstanceMethodDescriptor =
+          MethodDescriptor.<StartInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/StartInstance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StartInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<StopInstanceRequest, Operation>
+      stopInstanceMethodDescriptor =
+          MethodDescriptor.<StopInstanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/StopInstance")
+              .setRequestMarshaller(ProtoUtils.marshaller(StopInstanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DetachLunRequest, Operation> detachLunMethodDescriptor =
+      MethodDescriptor.<DetachLunRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/DetachLun")
+          .setRequestMarshaller(ProtoUtils.marshaller(DetachLunRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
 
   private static final MethodDescriptor<ListVolumesRequest, ListVolumesResponse>
       listVolumesMethodDescriptor =
@@ -140,6 +178,15 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ResizeVolumeRequest, Operation>
+      resizeVolumeMethodDescriptor =
+          MethodDescriptor.<ResizeVolumeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/ResizeVolume")
+              .setRequestMarshaller(ProtoUtils.marshaller(ResizeVolumeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListNetworksRequest, ListNetworksResponse>
       listNetworksMethodDescriptor =
           MethodDescriptor.<ListNetworksRequest, ListNetworksResponse>newBuilder()
@@ -150,6 +197,18 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   ProtoUtils.marshaller(ListNetworksResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListNetworkUsageRequest, ListNetworkUsageResponse>
+      listNetworkUsageMethodDescriptor =
+          MethodDescriptor.<ListNetworkUsageRequest, ListNetworkUsageResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/ListNetworkUsage")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListNetworkUsageRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListNetworkUsageResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetNetworkRequest, Network> getNetworkMethodDescriptor =
       MethodDescriptor.<GetNetworkRequest, Network>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -158,122 +217,15 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Network.getDefaultInstance()))
           .build();
 
-  private static final MethodDescriptor<
-          ListSnapshotSchedulePoliciesRequest, ListSnapshotSchedulePoliciesResponse>
-      listSnapshotSchedulePoliciesMethodDescriptor =
-          MethodDescriptor
-              .<ListSnapshotSchedulePoliciesRequest, ListSnapshotSchedulePoliciesResponse>
-                  newBuilder()
+  private static final MethodDescriptor<UpdateNetworkRequest, Operation>
+      updateNetworkMethodDescriptor =
+          MethodDescriptor.<UpdateNetworkRequest, Operation>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(
-                  "google.cloud.baremetalsolution.v2.BareMetalSolution/ListSnapshotSchedulePolicies")
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/UpdateNetwork")
               .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListSnapshotSchedulePoliciesRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListSnapshotSchedulePoliciesResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      getSnapshotSchedulePolicyMethodDescriptor =
-          MethodDescriptor.<GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.baremetalsolution.v2.BareMetalSolution/GetSnapshotSchedulePolicy")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetSnapshotSchedulePolicyRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(SnapshotSchedulePolicy.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      createSnapshotSchedulePolicyMethodDescriptor =
-          MethodDescriptor.<CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.baremetalsolution.v2.BareMetalSolution/CreateSnapshotSchedulePolicy")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateSnapshotSchedulePolicyRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(SnapshotSchedulePolicy.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      updateSnapshotSchedulePolicyMethodDescriptor =
-          MethodDescriptor.<UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.baremetalsolution.v2.BareMetalSolution/UpdateSnapshotSchedulePolicy")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateSnapshotSchedulePolicyRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(SnapshotSchedulePolicy.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteSnapshotSchedulePolicyRequest, Empty>
-      deleteSnapshotSchedulePolicyMethodDescriptor =
-          MethodDescriptor.<DeleteSnapshotSchedulePolicyRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.baremetalsolution.v2.BareMetalSolution/DeleteSnapshotSchedulePolicy")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteSnapshotSchedulePolicyRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<CreateVolumeSnapshotRequest, VolumeSnapshot>
-      createVolumeSnapshotMethodDescriptor =
-          MethodDescriptor.<CreateVolumeSnapshotRequest, VolumeSnapshot>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.baremetalsolution.v2.BareMetalSolution/CreateVolumeSnapshot")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateVolumeSnapshotRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(VolumeSnapshot.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<RestoreVolumeSnapshotRequest, Operation>
-      restoreVolumeSnapshotMethodDescriptor =
-          MethodDescriptor.<RestoreVolumeSnapshotRequest, Operation>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.baremetalsolution.v2.BareMetalSolution/RestoreVolumeSnapshot")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(RestoreVolumeSnapshotRequest.getDefaultInstance()))
+                  ProtoUtils.marshaller(UpdateNetworkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteVolumeSnapshotRequest, Empty>
-      deleteVolumeSnapshotMethodDescriptor =
-          MethodDescriptor.<DeleteVolumeSnapshotRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.baremetalsolution.v2.BareMetalSolution/DeleteVolumeSnapshot")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteVolumeSnapshotRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<GetVolumeSnapshotRequest, VolumeSnapshot>
-      getVolumeSnapshotMethodDescriptor =
-          MethodDescriptor.<GetVolumeSnapshotRequest, VolumeSnapshot>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.baremetalsolution.v2.BareMetalSolution/GetVolumeSnapshot")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetVolumeSnapshotRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(VolumeSnapshot.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
-      listVolumeSnapshotsMethodDescriptor =
-          MethodDescriptor.<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.baremetalsolution.v2.BareMetalSolution/ListVolumeSnapshots")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListVolumeSnapshotsRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListVolumeSnapshotsResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<GetLunRequest, Lun> getLunMethodDescriptor =
@@ -293,13 +245,56 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ListLunsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetNfsShareRequest, NfsShare> getNfsShareMethodDescriptor =
+      MethodDescriptor.<GetNfsShareRequest, NfsShare>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.baremetalsolution.v2.BareMetalSolution/GetNfsShare")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetNfsShareRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(NfsShare.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListNfsSharesRequest, ListNfsSharesResponse>
+      listNfsSharesMethodDescriptor =
+          MethodDescriptor.<ListNfsSharesRequest, ListNfsSharesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/ListNfsShares")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListNfsSharesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListNfsSharesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateNfsShareRequest, Operation>
+      updateNfsShareMethodDescriptor =
+          MethodDescriptor.<UpdateNfsShareRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.baremetalsolution.v2.BareMetalSolution/UpdateNfsShare")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateNfsShareRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable;
   private final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable;
+  private final UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable;
+  private final OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
+      updateInstanceOperationCallable;
   private final UnaryCallable<ResetInstanceRequest, Operation> resetInstanceCallable;
   private final OperationCallable<ResetInstanceRequest, ResetInstanceResponse, OperationMetadata>
       resetInstanceOperationCallable;
+  private final UnaryCallable<StartInstanceRequest, Operation> startInstanceCallable;
+  private final OperationCallable<StartInstanceRequest, StartInstanceResponse, OperationMetadata>
+      startInstanceOperationCallable;
+  private final UnaryCallable<StopInstanceRequest, Operation> stopInstanceCallable;
+  private final OperationCallable<StopInstanceRequest, StopInstanceResponse, OperationMetadata>
+      stopInstanceOperationCallable;
+  private final UnaryCallable<DetachLunRequest, Operation> detachLunCallable;
+  private final OperationCallable<DetachLunRequest, Instance, OperationMetadata>
+      detachLunOperationCallable;
   private final UnaryCallable<ListVolumesRequest, ListVolumesResponse> listVolumesCallable;
   private final UnaryCallable<ListVolumesRequest, ListVolumesPagedResponse>
       listVolumesPagedCallable;
@@ -307,39 +302,28 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   private final UnaryCallable<UpdateVolumeRequest, Operation> updateVolumeCallable;
   private final OperationCallable<UpdateVolumeRequest, Volume, OperationMetadata>
       updateVolumeOperationCallable;
+  private final UnaryCallable<ResizeVolumeRequest, Operation> resizeVolumeCallable;
+  private final OperationCallable<ResizeVolumeRequest, Volume, OperationMetadata>
+      resizeVolumeOperationCallable;
   private final UnaryCallable<ListNetworksRequest, ListNetworksResponse> listNetworksCallable;
   private final UnaryCallable<ListNetworksRequest, ListNetworksPagedResponse>
       listNetworksPagedCallable;
+  private final UnaryCallable<ListNetworkUsageRequest, ListNetworkUsageResponse>
+      listNetworkUsageCallable;
   private final UnaryCallable<GetNetworkRequest, Network> getNetworkCallable;
-  private final UnaryCallable<
-          ListSnapshotSchedulePoliciesRequest, ListSnapshotSchedulePoliciesResponse>
-      listSnapshotSchedulePoliciesCallable;
-  private final UnaryCallable<
-          ListSnapshotSchedulePoliciesRequest, ListSnapshotSchedulePoliciesPagedResponse>
-      listSnapshotSchedulePoliciesPagedCallable;
-  private final UnaryCallable<GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      getSnapshotSchedulePolicyCallable;
-  private final UnaryCallable<CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      createSnapshotSchedulePolicyCallable;
-  private final UnaryCallable<UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      updateSnapshotSchedulePolicyCallable;
-  private final UnaryCallable<DeleteSnapshotSchedulePolicyRequest, Empty>
-      deleteSnapshotSchedulePolicyCallable;
-  private final UnaryCallable<CreateVolumeSnapshotRequest, VolumeSnapshot>
-      createVolumeSnapshotCallable;
-  private final UnaryCallable<RestoreVolumeSnapshotRequest, Operation>
-      restoreVolumeSnapshotCallable;
-  private final OperationCallable<RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
-      restoreVolumeSnapshotOperationCallable;
-  private final UnaryCallable<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotCallable;
-  private final UnaryCallable<GetVolumeSnapshotRequest, VolumeSnapshot> getVolumeSnapshotCallable;
-  private final UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
-      listVolumeSnapshotsCallable;
-  private final UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsPagedResponse>
-      listVolumeSnapshotsPagedCallable;
+  private final UnaryCallable<UpdateNetworkRequest, Operation> updateNetworkCallable;
+  private final OperationCallable<UpdateNetworkRequest, Network, OperationMetadata>
+      updateNetworkOperationCallable;
   private final UnaryCallable<GetLunRequest, Lun> getLunCallable;
   private final UnaryCallable<ListLunsRequest, ListLunsResponse> listLunsCallable;
   private final UnaryCallable<ListLunsRequest, ListLunsPagedResponse> listLunsPagedCallable;
+  private final UnaryCallable<GetNfsShareRequest, NfsShare> getNfsShareCallable;
+  private final UnaryCallable<ListNfsSharesRequest, ListNfsSharesResponse> listNfsSharesCallable;
+  private final UnaryCallable<ListNfsSharesRequest, ListNfsSharesPagedResponse>
+      listNfsSharesPagedCallable;
+  private final UnaryCallable<UpdateNfsShareRequest, Operation> updateNfsShareCallable;
+  private final OperationCallable<UpdateNfsShareRequest, NfsShare, OperationMetadata>
+      updateNfsShareOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -405,6 +389,16 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
+        GrpcCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateInstanceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("instance.name", String.valueOf(request.getInstance().getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<ResetInstanceRequest, Operation> resetInstanceTransportSettings =
         GrpcCallSettings.<ResetInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(resetInstanceMethodDescriptor)
@@ -412,6 +406,36 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                   params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<StartInstanceRequest, Operation> startInstanceTransportSettings =
+        GrpcCallSettings.<StartInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(startInstanceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<StopInstanceRequest, Operation> stopInstanceTransportSettings =
+        GrpcCallSettings.<StopInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(stopInstanceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DetachLunRequest, Operation> detachLunTransportSettings =
+        GrpcCallSettings.<DetachLunRequest, Operation>newBuilder()
+            .setMethodDescriptor(detachLunMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("instance", String.valueOf(request.getInstance()));
                   return params.build();
                 })
             .build();
@@ -445,6 +469,16 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ResizeVolumeRequest, Operation> resizeVolumeTransportSettings =
+        GrpcCallSettings.<ResizeVolumeRequest, Operation>newBuilder()
+            .setMethodDescriptor(resizeVolumeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("volume", String.valueOf(request.getVolume()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksTransportSettings =
         GrpcCallSettings.<ListNetworksRequest, ListNetworksResponse>newBuilder()
             .setMethodDescriptor(listNetworksMethodDescriptor)
@@ -455,6 +489,17 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ListNetworkUsageRequest, ListNetworkUsageResponse>
+        listNetworkUsageTransportSettings =
+            GrpcCallSettings.<ListNetworkUsageRequest, ListNetworkUsageResponse>newBuilder()
+                .setMethodDescriptor(listNetworkUsageMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("location", String.valueOf(request.getLocation()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<GetNetworkRequest, Network> getNetworkTransportSettings =
         GrpcCallSettings.<GetNetworkRequest, Network>newBuilder()
             .setMethodDescriptor(getNetworkMethodDescriptor)
@@ -465,120 +510,16 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   return params.build();
                 })
             .build();
-    GrpcCallSettings<ListSnapshotSchedulePoliciesRequest, ListSnapshotSchedulePoliciesResponse>
-        listSnapshotSchedulePoliciesTransportSettings =
-            GrpcCallSettings
-                .<ListSnapshotSchedulePoliciesRequest, ListSnapshotSchedulePoliciesResponse>
-                    newBuilder()
-                .setMethodDescriptor(listSnapshotSchedulePoliciesMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-        getSnapshotSchedulePolicyTransportSettings =
-            GrpcCallSettings.<GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>newBuilder()
-                .setMethodDescriptor(getSnapshotSchedulePolicyMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-        createSnapshotSchedulePolicyTransportSettings =
-            GrpcCallSettings
-                .<CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>newBuilder()
-                .setMethodDescriptor(createSnapshotSchedulePolicyMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-        updateSnapshotSchedulePolicyTransportSettings =
-            GrpcCallSettings
-                .<UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>newBuilder()
-                .setMethodDescriptor(updateSnapshotSchedulePolicyMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
-                          "snapshot_schedule_policy.name",
-                          String.valueOf(request.getSnapshotSchedulePolicy().getName()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<DeleteSnapshotSchedulePolicyRequest, Empty>
-        deleteSnapshotSchedulePolicyTransportSettings =
-            GrpcCallSettings.<DeleteSnapshotSchedulePolicyRequest, Empty>newBuilder()
-                .setMethodDescriptor(deleteSnapshotSchedulePolicyMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("name", String.valueOf(request.getName()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<CreateVolumeSnapshotRequest, VolumeSnapshot>
-        createVolumeSnapshotTransportSettings =
-            GrpcCallSettings.<CreateVolumeSnapshotRequest, VolumeSnapshot>newBuilder()
-                .setMethodDescriptor(createVolumeSnapshotMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<RestoreVolumeSnapshotRequest, Operation>
-        restoreVolumeSnapshotTransportSettings =
-            GrpcCallSettings.<RestoreVolumeSnapshotRequest, Operation>newBuilder()
-                .setMethodDescriptor(restoreVolumeSnapshotMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("volume_snapshot", String.valueOf(request.getVolumeSnapshot()));
-                      return params.build();
-                    })
-                .build();
-    GrpcCallSettings<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotTransportSettings =
-        GrpcCallSettings.<DeleteVolumeSnapshotRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteVolumeSnapshotMethodDescriptor)
+    GrpcCallSettings<UpdateNetworkRequest, Operation> updateNetworkTransportSettings =
+        GrpcCallSettings.<UpdateNetworkRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateNetworkMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
+                  params.put("network.name", String.valueOf(request.getNetwork().getName()));
                   return params.build();
                 })
             .build();
-    GrpcCallSettings<GetVolumeSnapshotRequest, VolumeSnapshot> getVolumeSnapshotTransportSettings =
-        GrpcCallSettings.<GetVolumeSnapshotRequest, VolumeSnapshot>newBuilder()
-            .setMethodDescriptor(getVolumeSnapshotMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                  params.put("name", String.valueOf(request.getName()));
-                  return params.build();
-                })
-            .build();
-    GrpcCallSettings<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
-        listVolumeSnapshotsTransportSettings =
-            GrpcCallSettings.<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>newBuilder()
-                .setMethodDescriptor(listVolumeSnapshotsMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put("parent", String.valueOf(request.getParent()));
-                      return params.build();
-                    })
-                .build();
     GrpcCallSettings<GetLunRequest, Lun> getLunTransportSettings =
         GrpcCallSettings.<GetLunRequest, Lun>newBuilder()
             .setMethodDescriptor(getLunMethodDescriptor)
@@ -599,6 +540,36 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<GetNfsShareRequest, NfsShare> getNfsShareTransportSettings =
+        GrpcCallSettings.<GetNfsShareRequest, NfsShare>newBuilder()
+            .setMethodDescriptor(getNfsShareMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListNfsSharesRequest, ListNfsSharesResponse> listNfsSharesTransportSettings =
+        GrpcCallSettings.<ListNfsSharesRequest, ListNfsSharesResponse>newBuilder()
+            .setMethodDescriptor(listNfsSharesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateNfsShareRequest, Operation> updateNfsShareTransportSettings =
+        GrpcCallSettings.<UpdateNfsShareRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateNfsShareMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("nfs_share.name", String.valueOf(request.getNfsShare().getName()));
+                  return params.build();
+                })
+            .build();
 
     this.listInstancesCallable =
         callableFactory.createUnaryCallable(
@@ -609,6 +580,15 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
     this.getInstanceCallable =
         callableFactory.createUnaryCallable(
             getInstanceTransportSettings, settings.getInstanceSettings(), clientContext);
+    this.updateInstanceCallable =
+        callableFactory.createUnaryCallable(
+            updateInstanceTransportSettings, settings.updateInstanceSettings(), clientContext);
+    this.updateInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            updateInstanceTransportSettings,
+            settings.updateInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
     this.resetInstanceCallable =
         callableFactory.createUnaryCallable(
             resetInstanceTransportSettings, settings.resetInstanceSettings(), clientContext);
@@ -616,6 +596,33 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
         callableFactory.createOperationCallable(
             resetInstanceTransportSettings,
             settings.resetInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.startInstanceCallable =
+        callableFactory.createUnaryCallable(
+            startInstanceTransportSettings, settings.startInstanceSettings(), clientContext);
+    this.startInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            startInstanceTransportSettings,
+            settings.startInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.stopInstanceCallable =
+        callableFactory.createUnaryCallable(
+            stopInstanceTransportSettings, settings.stopInstanceSettings(), clientContext);
+    this.stopInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            stopInstanceTransportSettings,
+            settings.stopInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.detachLunCallable =
+        callableFactory.createUnaryCallable(
+            detachLunTransportSettings, settings.detachLunSettings(), clientContext);
+    this.detachLunOperationCallable =
+        callableFactory.createOperationCallable(
+            detachLunTransportSettings,
+            settings.detachLunOperationSettings(),
             clientContext,
             operationsStub);
     this.listVolumesCallable =
@@ -636,81 +643,36 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
             settings.updateVolumeOperationSettings(),
             clientContext,
             operationsStub);
+    this.resizeVolumeCallable =
+        callableFactory.createUnaryCallable(
+            resizeVolumeTransportSettings, settings.resizeVolumeSettings(), clientContext);
+    this.resizeVolumeOperationCallable =
+        callableFactory.createOperationCallable(
+            resizeVolumeTransportSettings,
+            settings.resizeVolumeOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listNetworksCallable =
         callableFactory.createUnaryCallable(
             listNetworksTransportSettings, settings.listNetworksSettings(), clientContext);
     this.listNetworksPagedCallable =
         callableFactory.createPagedCallable(
             listNetworksTransportSettings, settings.listNetworksSettings(), clientContext);
+    this.listNetworkUsageCallable =
+        callableFactory.createUnaryCallable(
+            listNetworkUsageTransportSettings, settings.listNetworkUsageSettings(), clientContext);
     this.getNetworkCallable =
         callableFactory.createUnaryCallable(
             getNetworkTransportSettings, settings.getNetworkSettings(), clientContext);
-    this.listSnapshotSchedulePoliciesCallable =
+    this.updateNetworkCallable =
         callableFactory.createUnaryCallable(
-            listSnapshotSchedulePoliciesTransportSettings,
-            settings.listSnapshotSchedulePoliciesSettings(),
-            clientContext);
-    this.listSnapshotSchedulePoliciesPagedCallable =
-        callableFactory.createPagedCallable(
-            listSnapshotSchedulePoliciesTransportSettings,
-            settings.listSnapshotSchedulePoliciesSettings(),
-            clientContext);
-    this.getSnapshotSchedulePolicyCallable =
-        callableFactory.createUnaryCallable(
-            getSnapshotSchedulePolicyTransportSettings,
-            settings.getSnapshotSchedulePolicySettings(),
-            clientContext);
-    this.createSnapshotSchedulePolicyCallable =
-        callableFactory.createUnaryCallable(
-            createSnapshotSchedulePolicyTransportSettings,
-            settings.createSnapshotSchedulePolicySettings(),
-            clientContext);
-    this.updateSnapshotSchedulePolicyCallable =
-        callableFactory.createUnaryCallable(
-            updateSnapshotSchedulePolicyTransportSettings,
-            settings.updateSnapshotSchedulePolicySettings(),
-            clientContext);
-    this.deleteSnapshotSchedulePolicyCallable =
-        callableFactory.createUnaryCallable(
-            deleteSnapshotSchedulePolicyTransportSettings,
-            settings.deleteSnapshotSchedulePolicySettings(),
-            clientContext);
-    this.createVolumeSnapshotCallable =
-        callableFactory.createUnaryCallable(
-            createVolumeSnapshotTransportSettings,
-            settings.createVolumeSnapshotSettings(),
-            clientContext);
-    this.restoreVolumeSnapshotCallable =
-        callableFactory.createUnaryCallable(
-            restoreVolumeSnapshotTransportSettings,
-            settings.restoreVolumeSnapshotSettings(),
-            clientContext);
-    this.restoreVolumeSnapshotOperationCallable =
+            updateNetworkTransportSettings, settings.updateNetworkSettings(), clientContext);
+    this.updateNetworkOperationCallable =
         callableFactory.createOperationCallable(
-            restoreVolumeSnapshotTransportSettings,
-            settings.restoreVolumeSnapshotOperationSettings(),
+            updateNetworkTransportSettings,
+            settings.updateNetworkOperationSettings(),
             clientContext,
             operationsStub);
-    this.deleteVolumeSnapshotCallable =
-        callableFactory.createUnaryCallable(
-            deleteVolumeSnapshotTransportSettings,
-            settings.deleteVolumeSnapshotSettings(),
-            clientContext);
-    this.getVolumeSnapshotCallable =
-        callableFactory.createUnaryCallable(
-            getVolumeSnapshotTransportSettings,
-            settings.getVolumeSnapshotSettings(),
-            clientContext);
-    this.listVolumeSnapshotsCallable =
-        callableFactory.createUnaryCallable(
-            listVolumeSnapshotsTransportSettings,
-            settings.listVolumeSnapshotsSettings(),
-            clientContext);
-    this.listVolumeSnapshotsPagedCallable =
-        callableFactory.createPagedCallable(
-            listVolumeSnapshotsTransportSettings,
-            settings.listVolumeSnapshotsSettings(),
-            clientContext);
     this.getLunCallable =
         callableFactory.createUnaryCallable(
             getLunTransportSettings, settings.getLunSettings(), clientContext);
@@ -720,6 +682,24 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
     this.listLunsPagedCallable =
         callableFactory.createPagedCallable(
             listLunsTransportSettings, settings.listLunsSettings(), clientContext);
+    this.getNfsShareCallable =
+        callableFactory.createUnaryCallable(
+            getNfsShareTransportSettings, settings.getNfsShareSettings(), clientContext);
+    this.listNfsSharesCallable =
+        callableFactory.createUnaryCallable(
+            listNfsSharesTransportSettings, settings.listNfsSharesSettings(), clientContext);
+    this.listNfsSharesPagedCallable =
+        callableFactory.createPagedCallable(
+            listNfsSharesTransportSettings, settings.listNfsSharesSettings(), clientContext);
+    this.updateNfsShareCallable =
+        callableFactory.createUnaryCallable(
+            updateNfsShareTransportSettings, settings.updateNfsShareSettings(), clientContext);
+    this.updateNfsShareOperationCallable =
+        callableFactory.createOperationCallable(
+            updateNfsShareTransportSettings,
+            settings.updateNfsShareOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -746,6 +726,17 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   }
 
   @Override
+  public UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
+    return updateInstanceCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
+      updateInstanceOperationCallable() {
+    return updateInstanceOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ResetInstanceRequest, Operation> resetInstanceCallable() {
     return resetInstanceCallable;
   }
@@ -754,6 +745,39 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   public OperationCallable<ResetInstanceRequest, ResetInstanceResponse, OperationMetadata>
       resetInstanceOperationCallable() {
     return resetInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartInstanceRequest, Operation> startInstanceCallable() {
+    return startInstanceCallable;
+  }
+
+  @Override
+  public OperationCallable<StartInstanceRequest, StartInstanceResponse, OperationMetadata>
+      startInstanceOperationCallable() {
+    return startInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopInstanceRequest, Operation> stopInstanceCallable() {
+    return stopInstanceCallable;
+  }
+
+  @Override
+  public OperationCallable<StopInstanceRequest, StopInstanceResponse, OperationMetadata>
+      stopInstanceOperationCallable() {
+    return stopInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DetachLunRequest, Operation> detachLunCallable() {
+    return detachLunCallable;
+  }
+
+  @Override
+  public OperationCallable<DetachLunRequest, Instance, OperationMetadata>
+      detachLunOperationCallable() {
+    return detachLunOperationCallable;
   }
 
   @Override
@@ -783,6 +807,17 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   }
 
   @Override
+  public UnaryCallable<ResizeVolumeRequest, Operation> resizeVolumeCallable() {
+    return resizeVolumeCallable;
+  }
+
+  @Override
+  public OperationCallable<ResizeVolumeRequest, Volume, OperationMetadata>
+      resizeVolumeOperationCallable() {
+    return resizeVolumeOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ListNetworksRequest, ListNetworksResponse> listNetworksCallable() {
     return listNetworksCallable;
   }
@@ -793,83 +828,25 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   }
 
   @Override
+  public UnaryCallable<ListNetworkUsageRequest, ListNetworkUsageResponse>
+      listNetworkUsageCallable() {
+    return listNetworkUsageCallable;
+  }
+
+  @Override
   public UnaryCallable<GetNetworkRequest, Network> getNetworkCallable() {
     return getNetworkCallable;
   }
 
   @Override
-  public UnaryCallable<ListSnapshotSchedulePoliciesRequest, ListSnapshotSchedulePoliciesResponse>
-      listSnapshotSchedulePoliciesCallable() {
-    return listSnapshotSchedulePoliciesCallable;
+  public UnaryCallable<UpdateNetworkRequest, Operation> updateNetworkCallable() {
+    return updateNetworkCallable;
   }
 
   @Override
-  public UnaryCallable<
-          ListSnapshotSchedulePoliciesRequest, ListSnapshotSchedulePoliciesPagedResponse>
-      listSnapshotSchedulePoliciesPagedCallable() {
-    return listSnapshotSchedulePoliciesPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      getSnapshotSchedulePolicyCallable() {
-    return getSnapshotSchedulePolicyCallable;
-  }
-
-  @Override
-  public UnaryCallable<CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      createSnapshotSchedulePolicyCallable() {
-    return createSnapshotSchedulePolicyCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      updateSnapshotSchedulePolicyCallable() {
-    return updateSnapshotSchedulePolicyCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteSnapshotSchedulePolicyRequest, Empty>
-      deleteSnapshotSchedulePolicyCallable() {
-    return deleteSnapshotSchedulePolicyCallable;
-  }
-
-  @Override
-  public UnaryCallable<CreateVolumeSnapshotRequest, VolumeSnapshot> createVolumeSnapshotCallable() {
-    return createVolumeSnapshotCallable;
-  }
-
-  @Override
-  public UnaryCallable<RestoreVolumeSnapshotRequest, Operation> restoreVolumeSnapshotCallable() {
-    return restoreVolumeSnapshotCallable;
-  }
-
-  @Override
-  public OperationCallable<RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
-      restoreVolumeSnapshotOperationCallable() {
-    return restoreVolumeSnapshotOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotCallable() {
-    return deleteVolumeSnapshotCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetVolumeSnapshotRequest, VolumeSnapshot> getVolumeSnapshotCallable() {
-    return getVolumeSnapshotCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
-      listVolumeSnapshotsCallable() {
-    return listVolumeSnapshotsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsPagedResponse>
-      listVolumeSnapshotsPagedCallable() {
-    return listVolumeSnapshotsPagedCallable;
+  public OperationCallable<UpdateNetworkRequest, Network, OperationMetadata>
+      updateNetworkOperationCallable() {
+    return updateNetworkOperationCallable;
   }
 
   @Override
@@ -885,6 +862,33 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
   @Override
   public UnaryCallable<ListLunsRequest, ListLunsPagedResponse> listLunsPagedCallable() {
     return listLunsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetNfsShareRequest, NfsShare> getNfsShareCallable() {
+    return getNfsShareCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNfsSharesRequest, ListNfsSharesResponse> listNfsSharesCallable() {
+    return listNfsSharesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNfsSharesRequest, ListNfsSharesPagedResponse>
+      listNfsSharesPagedCallable() {
+    return listNfsSharesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateNfsShareRequest, Operation> updateNfsShareCallable() {
+    return updateNfsShareCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateNfsShareRequest, NfsShare, OperationMetadata>
+      updateNfsShareOperationCallable() {
+    return updateNfsShareOperationCallable;
   }
 
   @Override

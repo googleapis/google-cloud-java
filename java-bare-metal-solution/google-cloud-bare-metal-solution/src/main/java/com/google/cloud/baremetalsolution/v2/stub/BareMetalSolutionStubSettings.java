@@ -19,8 +19,7 @@ package com.google.cloud.baremetalsolution.v2.stub;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListInstancesPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListLunsPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListNetworksPagedResponse;
-import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListSnapshotSchedulePoliciesPagedResponse;
-import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumeSnapshotsPagedResponse;
+import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListNfsSharesPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -33,6 +32,9 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.grpc.ProtoOperationTransformers;
+import com.google.api.gax.httpjson.GaxHttpJsonProperties;
+import com.google.api.gax.httpjson.HttpJsonTransportChannel;
+import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
@@ -49,46 +51,46 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.baremetalsolution.v2.CreateSnapshotSchedulePolicyRequest;
-import com.google.cloud.baremetalsolution.v2.CreateVolumeSnapshotRequest;
-import com.google.cloud.baremetalsolution.v2.DeleteSnapshotSchedulePolicyRequest;
-import com.google.cloud.baremetalsolution.v2.DeleteVolumeSnapshotRequest;
+import com.google.cloud.baremetalsolution.v2.DetachLunRequest;
 import com.google.cloud.baremetalsolution.v2.GetInstanceRequest;
 import com.google.cloud.baremetalsolution.v2.GetLunRequest;
 import com.google.cloud.baremetalsolution.v2.GetNetworkRequest;
-import com.google.cloud.baremetalsolution.v2.GetSnapshotSchedulePolicyRequest;
+import com.google.cloud.baremetalsolution.v2.GetNfsShareRequest;
 import com.google.cloud.baremetalsolution.v2.GetVolumeRequest;
-import com.google.cloud.baremetalsolution.v2.GetVolumeSnapshotRequest;
 import com.google.cloud.baremetalsolution.v2.Instance;
 import com.google.cloud.baremetalsolution.v2.ListInstancesRequest;
 import com.google.cloud.baremetalsolution.v2.ListInstancesResponse;
 import com.google.cloud.baremetalsolution.v2.ListLunsRequest;
 import com.google.cloud.baremetalsolution.v2.ListLunsResponse;
+import com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest;
+import com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse;
 import com.google.cloud.baremetalsolution.v2.ListNetworksRequest;
 import com.google.cloud.baremetalsolution.v2.ListNetworksResponse;
-import com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesRequest;
-import com.google.cloud.baremetalsolution.v2.ListSnapshotSchedulePoliciesResponse;
-import com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsRequest;
-import com.google.cloud.baremetalsolution.v2.ListVolumeSnapshotsResponse;
+import com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest;
+import com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse;
 import com.google.cloud.baremetalsolution.v2.ListVolumesRequest;
 import com.google.cloud.baremetalsolution.v2.ListVolumesResponse;
 import com.google.cloud.baremetalsolution.v2.Lun;
 import com.google.cloud.baremetalsolution.v2.Network;
+import com.google.cloud.baremetalsolution.v2.NfsShare;
 import com.google.cloud.baremetalsolution.v2.OperationMetadata;
 import com.google.cloud.baremetalsolution.v2.ResetInstanceRequest;
 import com.google.cloud.baremetalsolution.v2.ResetInstanceResponse;
-import com.google.cloud.baremetalsolution.v2.RestoreVolumeSnapshotRequest;
-import com.google.cloud.baremetalsolution.v2.SnapshotSchedulePolicy;
-import com.google.cloud.baremetalsolution.v2.UpdateSnapshotSchedulePolicyRequest;
+import com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest;
+import com.google.cloud.baremetalsolution.v2.StartInstanceRequest;
+import com.google.cloud.baremetalsolution.v2.StartInstanceResponse;
+import com.google.cloud.baremetalsolution.v2.StopInstanceRequest;
+import com.google.cloud.baremetalsolution.v2.StopInstanceResponse;
+import com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest;
+import com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest;
+import com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest;
 import com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest;
 import com.google.cloud.baremetalsolution.v2.Volume;
-import com.google.cloud.baremetalsolution.v2.VolumeSnapshot;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
-import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -140,49 +142,51 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
       listInstancesSettings;
   private final UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings;
+  private final UnaryCallSettings<UpdateInstanceRequest, Operation> updateInstanceSettings;
+  private final OperationCallSettings<UpdateInstanceRequest, Instance, OperationMetadata>
+      updateInstanceOperationSettings;
   private final UnaryCallSettings<ResetInstanceRequest, Operation> resetInstanceSettings;
   private final OperationCallSettings<
           ResetInstanceRequest, ResetInstanceResponse, OperationMetadata>
       resetInstanceOperationSettings;
+  private final UnaryCallSettings<StartInstanceRequest, Operation> startInstanceSettings;
+  private final OperationCallSettings<
+          StartInstanceRequest, StartInstanceResponse, OperationMetadata>
+      startInstanceOperationSettings;
+  private final UnaryCallSettings<StopInstanceRequest, Operation> stopInstanceSettings;
+  private final OperationCallSettings<StopInstanceRequest, StopInstanceResponse, OperationMetadata>
+      stopInstanceOperationSettings;
+  private final UnaryCallSettings<DetachLunRequest, Operation> detachLunSettings;
+  private final OperationCallSettings<DetachLunRequest, Instance, OperationMetadata>
+      detachLunOperationSettings;
   private final PagedCallSettings<ListVolumesRequest, ListVolumesResponse, ListVolumesPagedResponse>
       listVolumesSettings;
   private final UnaryCallSettings<GetVolumeRequest, Volume> getVolumeSettings;
   private final UnaryCallSettings<UpdateVolumeRequest, Operation> updateVolumeSettings;
   private final OperationCallSettings<UpdateVolumeRequest, Volume, OperationMetadata>
       updateVolumeOperationSettings;
+  private final UnaryCallSettings<ResizeVolumeRequest, Operation> resizeVolumeSettings;
+  private final OperationCallSettings<ResizeVolumeRequest, Volume, OperationMetadata>
+      resizeVolumeOperationSettings;
   private final PagedCallSettings<
           ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
       listNetworksSettings;
+  private final UnaryCallSettings<ListNetworkUsageRequest, ListNetworkUsageResponse>
+      listNetworkUsageSettings;
   private final UnaryCallSettings<GetNetworkRequest, Network> getNetworkSettings;
-  private final PagedCallSettings<
-          ListSnapshotSchedulePoliciesRequest,
-          ListSnapshotSchedulePoliciesResponse,
-          ListSnapshotSchedulePoliciesPagedResponse>
-      listSnapshotSchedulePoliciesSettings;
-  private final UnaryCallSettings<GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      getSnapshotSchedulePolicySettings;
-  private final UnaryCallSettings<CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      createSnapshotSchedulePolicySettings;
-  private final UnaryCallSettings<UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      updateSnapshotSchedulePolicySettings;
-  private final UnaryCallSettings<DeleteSnapshotSchedulePolicyRequest, Empty>
-      deleteSnapshotSchedulePolicySettings;
-  private final UnaryCallSettings<CreateVolumeSnapshotRequest, VolumeSnapshot>
-      createVolumeSnapshotSettings;
-  private final UnaryCallSettings<RestoreVolumeSnapshotRequest, Operation>
-      restoreVolumeSnapshotSettings;
-  private final OperationCallSettings<
-          RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
-      restoreVolumeSnapshotOperationSettings;
-  private final UnaryCallSettings<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotSettings;
-  private final UnaryCallSettings<GetVolumeSnapshotRequest, VolumeSnapshot>
-      getVolumeSnapshotSettings;
-  private final PagedCallSettings<
-          ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, ListVolumeSnapshotsPagedResponse>
-      listVolumeSnapshotsSettings;
+  private final UnaryCallSettings<UpdateNetworkRequest, Operation> updateNetworkSettings;
+  private final OperationCallSettings<UpdateNetworkRequest, Network, OperationMetadata>
+      updateNetworkOperationSettings;
   private final UnaryCallSettings<GetLunRequest, Lun> getLunSettings;
   private final PagedCallSettings<ListLunsRequest, ListLunsResponse, ListLunsPagedResponse>
       listLunsSettings;
+  private final UnaryCallSettings<GetNfsShareRequest, NfsShare> getNfsShareSettings;
+  private final PagedCallSettings<
+          ListNfsSharesRequest, ListNfsSharesResponse, ListNfsSharesPagedResponse>
+      listNfsSharesSettings;
+  private final UnaryCallSettings<UpdateNfsShareRequest, Operation> updateNfsShareSettings;
+  private final OperationCallSettings<UpdateNfsShareRequest, NfsShare, OperationMetadata>
+      updateNfsShareOperationSettings;
 
   private static final PagedListDescriptor<ListInstancesRequest, ListInstancesResponse, Instance>
       LIST_INSTANCES_PAGE_STR_DESC =
@@ -292,95 +296,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
             }
           };
 
-  private static final PagedListDescriptor<
-          ListSnapshotSchedulePoliciesRequest,
-          ListSnapshotSchedulePoliciesResponse,
-          SnapshotSchedulePolicy>
-      LIST_SNAPSHOT_SCHEDULE_POLICIES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListSnapshotSchedulePoliciesRequest,
-              ListSnapshotSchedulePoliciesResponse,
-              SnapshotSchedulePolicy>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListSnapshotSchedulePoliciesRequest injectToken(
-                ListSnapshotSchedulePoliciesRequest payload, String token) {
-              return ListSnapshotSchedulePoliciesRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListSnapshotSchedulePoliciesRequest injectPageSize(
-                ListSnapshotSchedulePoliciesRequest payload, int pageSize) {
-              return ListSnapshotSchedulePoliciesRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListSnapshotSchedulePoliciesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListSnapshotSchedulePoliciesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<SnapshotSchedulePolicy> extractResources(
-                ListSnapshotSchedulePoliciesResponse payload) {
-              return payload.getSnapshotSchedulePoliciesList() == null
-                  ? ImmutableList.<SnapshotSchedulePolicy>of()
-                  : payload.getSnapshotSchedulePoliciesList();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
-      LIST_VOLUME_SNAPSHOTS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListVolumeSnapshotsRequest injectToken(
-                ListVolumeSnapshotsRequest payload, String token) {
-              return ListVolumeSnapshotsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListVolumeSnapshotsRequest injectPageSize(
-                ListVolumeSnapshotsRequest payload, int pageSize) {
-              return ListVolumeSnapshotsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListVolumeSnapshotsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListVolumeSnapshotsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<VolumeSnapshot> extractResources(ListVolumeSnapshotsResponse payload) {
-              return payload.getVolumeSnapshotsList() == null
-                  ? ImmutableList.<VolumeSnapshot>of()
-                  : payload.getVolumeSnapshotsList();
-            }
-          };
-
   private static final PagedListDescriptor<ListLunsRequest, ListLunsResponse, Lun>
       LIST_LUNS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLunsRequest, ListLunsResponse, Lun>() {
@@ -414,6 +329,42 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
               return payload.getLunsList() == null
                   ? ImmutableList.<Lun>of()
                   : payload.getLunsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListNfsSharesRequest, ListNfsSharesResponse, NfsShare>
+      LIST_NFS_SHARES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListNfsSharesRequest, ListNfsSharesResponse, NfsShare>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListNfsSharesRequest injectToken(ListNfsSharesRequest payload, String token) {
+              return ListNfsSharesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListNfsSharesRequest injectPageSize(ListNfsSharesRequest payload, int pageSize) {
+              return ListNfsSharesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListNfsSharesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListNfsSharesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<NfsShare> extractResources(ListNfsSharesResponse payload) {
+              return payload.getNfsSharesList() == null
+                  ? ImmutableList.<NfsShare>of()
+                  : payload.getNfsSharesList();
             }
           };
 
@@ -469,59 +420,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           };
 
   private static final PagedListResponseFactory<
-          ListSnapshotSchedulePoliciesRequest,
-          ListSnapshotSchedulePoliciesResponse,
-          ListSnapshotSchedulePoliciesPagedResponse>
-      LIST_SNAPSHOT_SCHEDULE_POLICIES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListSnapshotSchedulePoliciesRequest,
-              ListSnapshotSchedulePoliciesResponse,
-              ListSnapshotSchedulePoliciesPagedResponse>() {
-            @Override
-            public ApiFuture<ListSnapshotSchedulePoliciesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<
-                        ListSnapshotSchedulePoliciesRequest, ListSnapshotSchedulePoliciesResponse>
-                    callable,
-                ListSnapshotSchedulePoliciesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListSnapshotSchedulePoliciesResponse> futureResponse) {
-              PageContext<
-                      ListSnapshotSchedulePoliciesRequest,
-                      ListSnapshotSchedulePoliciesResponse,
-                      SnapshotSchedulePolicy>
-                  pageContext =
-                      PageContext.create(
-                          callable,
-                          LIST_SNAPSHOT_SCHEDULE_POLICIES_PAGE_STR_DESC,
-                          request,
-                          context);
-              return ListSnapshotSchedulePoliciesPagedResponse.createAsync(
-                  pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, ListVolumeSnapshotsPagedResponse>
-      LIST_VOLUME_SNAPSHOTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListVolumeSnapshotsRequest,
-              ListVolumeSnapshotsResponse,
-              ListVolumeSnapshotsPagedResponse>() {
-            @Override
-            public ApiFuture<ListVolumeSnapshotsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse> callable,
-                ListVolumeSnapshotsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListVolumeSnapshotsResponse> futureResponse) {
-              PageContext<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, VolumeSnapshot>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_VOLUME_SNAPSHOTS_PAGE_STR_DESC, request, context);
-              return ListVolumeSnapshotsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
           ListLunsRequest, ListLunsResponse, ListLunsPagedResponse>
       LIST_LUNS_PAGE_STR_FACT =
           new PagedListResponseFactory<ListLunsRequest, ListLunsResponse, ListLunsPagedResponse>() {
@@ -537,6 +435,23 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListNfsSharesRequest, ListNfsSharesResponse, ListNfsSharesPagedResponse>
+      LIST_NFS_SHARES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListNfsSharesRequest, ListNfsSharesResponse, ListNfsSharesPagedResponse>() {
+            @Override
+            public ApiFuture<ListNfsSharesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListNfsSharesRequest, ListNfsSharesResponse> callable,
+                ListNfsSharesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListNfsSharesResponse> futureResponse) {
+              PageContext<ListNfsSharesRequest, ListNfsSharesResponse, NfsShare> pageContext =
+                  PageContext.create(callable, LIST_NFS_SHARES_PAGE_STR_DESC, request, context);
+              return ListNfsSharesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to listInstances. */
   public PagedCallSettings<ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
       listInstancesSettings() {
@@ -548,6 +463,17 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     return getInstanceSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateInstance. */
+  public UnaryCallSettings<UpdateInstanceRequest, Operation> updateInstanceSettings() {
+    return updateInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateInstance. */
+  public OperationCallSettings<UpdateInstanceRequest, Instance, OperationMetadata>
+      updateInstanceOperationSettings() {
+    return updateInstanceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to resetInstance. */
   public UnaryCallSettings<ResetInstanceRequest, Operation> resetInstanceSettings() {
     return resetInstanceSettings;
@@ -557,6 +483,39 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
   public OperationCallSettings<ResetInstanceRequest, ResetInstanceResponse, OperationMetadata>
       resetInstanceOperationSettings() {
     return resetInstanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startInstance. */
+  public UnaryCallSettings<StartInstanceRequest, Operation> startInstanceSettings() {
+    return startInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startInstance. */
+  public OperationCallSettings<StartInstanceRequest, StartInstanceResponse, OperationMetadata>
+      startInstanceOperationSettings() {
+    return startInstanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopInstance. */
+  public UnaryCallSettings<StopInstanceRequest, Operation> stopInstanceSettings() {
+    return stopInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to stopInstance. */
+  public OperationCallSettings<StopInstanceRequest, StopInstanceResponse, OperationMetadata>
+      stopInstanceOperationSettings() {
+    return stopInstanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to detachLun. */
+  public UnaryCallSettings<DetachLunRequest, Operation> detachLunSettings() {
+    return detachLunSettings;
+  }
+
+  /** Returns the object with the settings used for calls to detachLun. */
+  public OperationCallSettings<DetachLunRequest, Instance, OperationMetadata>
+      detachLunOperationSettings() {
+    return detachLunOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listVolumes. */
@@ -581,10 +540,27 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     return updateVolumeOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to resizeVolume. */
+  public UnaryCallSettings<ResizeVolumeRequest, Operation> resizeVolumeSettings() {
+    return resizeVolumeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resizeVolume. */
+  public OperationCallSettings<ResizeVolumeRequest, Volume, OperationMetadata>
+      resizeVolumeOperationSettings() {
+    return resizeVolumeOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listNetworks. */
   public PagedCallSettings<ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
       listNetworksSettings() {
     return listNetworksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listNetworkUsage. */
+  public UnaryCallSettings<ListNetworkUsageRequest, ListNetworkUsageResponse>
+      listNetworkUsageSettings() {
+    return listNetworkUsageSettings;
   }
 
   /** Returns the object with the settings used for calls to getNetwork. */
@@ -592,72 +568,15 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     return getNetworkSettings;
   }
 
-  /** Returns the object with the settings used for calls to listSnapshotSchedulePolicies. */
-  public PagedCallSettings<
-          ListSnapshotSchedulePoliciesRequest,
-          ListSnapshotSchedulePoliciesResponse,
-          ListSnapshotSchedulePoliciesPagedResponse>
-      listSnapshotSchedulePoliciesSettings() {
-    return listSnapshotSchedulePoliciesSettings;
+  /** Returns the object with the settings used for calls to updateNetwork. */
+  public UnaryCallSettings<UpdateNetworkRequest, Operation> updateNetworkSettings() {
+    return updateNetworkSettings;
   }
 
-  /** Returns the object with the settings used for calls to getSnapshotSchedulePolicy. */
-  public UnaryCallSettings<GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      getSnapshotSchedulePolicySettings() {
-    return getSnapshotSchedulePolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to createSnapshotSchedulePolicy. */
-  public UnaryCallSettings<CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      createSnapshotSchedulePolicySettings() {
-    return createSnapshotSchedulePolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateSnapshotSchedulePolicy. */
-  public UnaryCallSettings<UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-      updateSnapshotSchedulePolicySettings() {
-    return updateSnapshotSchedulePolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteSnapshotSchedulePolicy. */
-  public UnaryCallSettings<DeleteSnapshotSchedulePolicyRequest, Empty>
-      deleteSnapshotSchedulePolicySettings() {
-    return deleteSnapshotSchedulePolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to createVolumeSnapshot. */
-  public UnaryCallSettings<CreateVolumeSnapshotRequest, VolumeSnapshot>
-      createVolumeSnapshotSettings() {
-    return createVolumeSnapshotSettings;
-  }
-
-  /** Returns the object with the settings used for calls to restoreVolumeSnapshot. */
-  public UnaryCallSettings<RestoreVolumeSnapshotRequest, Operation>
-      restoreVolumeSnapshotSettings() {
-    return restoreVolumeSnapshotSettings;
-  }
-
-  /** Returns the object with the settings used for calls to restoreVolumeSnapshot. */
-  public OperationCallSettings<RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
-      restoreVolumeSnapshotOperationSettings() {
-    return restoreVolumeSnapshotOperationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteVolumeSnapshot. */
-  public UnaryCallSettings<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotSettings() {
-    return deleteVolumeSnapshotSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getVolumeSnapshot. */
-  public UnaryCallSettings<GetVolumeSnapshotRequest, VolumeSnapshot> getVolumeSnapshotSettings() {
-    return getVolumeSnapshotSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listVolumeSnapshots. */
-  public PagedCallSettings<
-          ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse, ListVolumeSnapshotsPagedResponse>
-      listVolumeSnapshotsSettings() {
-    return listVolumeSnapshotsSettings;
+  /** Returns the object with the settings used for calls to updateNetwork. */
+  public OperationCallSettings<UpdateNetworkRequest, Network, OperationMetadata>
+      updateNetworkOperationSettings() {
+    return updateNetworkOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to getLun. */
@@ -671,11 +590,38 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     return listLunsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getNfsShare. */
+  public UnaryCallSettings<GetNfsShareRequest, NfsShare> getNfsShareSettings() {
+    return getNfsShareSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listNfsShares. */
+  public PagedCallSettings<ListNfsSharesRequest, ListNfsSharesResponse, ListNfsSharesPagedResponse>
+      listNfsSharesSettings() {
+    return listNfsSharesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateNfsShare. */
+  public UnaryCallSettings<UpdateNfsShareRequest, Operation> updateNfsShareSettings() {
+    return updateNfsShareSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateNfsShare. */
+  public OperationCallSettings<UpdateNfsShareRequest, NfsShare, OperationMetadata>
+      updateNfsShareOperationSettings() {
+    return updateNfsShareOperationSettings;
+  }
+
   public BareMetalSolutionStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcBareMetalSolutionStub.create(this);
+    }
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
+      return HttpJsonBareMetalSolutionStub.create(this);
     }
     throw new UnsupportedOperationException(
         String.format(
@@ -709,10 +655,17 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
         .setUseJwtAccessWithScope(true);
   }
 
-  /** Returns a builder for the default ChannelProvider for this service. */
+  /** Returns a builder for the default gRPC ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return InstantiatingGrpcChannelProvider.newBuilder()
         .setMaxInboundMessageSize(Integer.MAX_VALUE);
+  }
+
+  /** Returns a builder for the default REST ChannelProvider for this service. */
+  @BetaApi
+  public static InstantiatingHttpJsonChannelProvider.Builder
+      defaultHttpJsonTransportProviderBuilder() {
+    return InstantiatingHttpJsonChannelProvider.newBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -720,7 +673,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
   }
 
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
-  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+  public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
             "gapic", GaxProperties.getLibraryVersion(BareMetalSolutionStubSettings.class))
@@ -728,9 +681,28 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  /** Returns a new builder for this class. */
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
+  public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(BareMetalSolutionStubSettings.class))
+        .setTransportToken(
+            GaxHttpJsonProperties.getHttpJsonTokenName(),
+            GaxHttpJsonProperties.getHttpJsonVersion());
+  }
+
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return BareMetalSolutionStubSettings.defaultGrpcApiClientHeaderProviderBuilder();
+  }
+
+  /** Returns a new gRPC builder for this class. */
   public static Builder newBuilder() {
     return Builder.createDefault();
+  }
+
+  /** Returns a new REST builder for this class. */
+  public static Builder newHttpJsonBuilder() {
+    return Builder.createHttpJsonDefault();
   }
 
   /** Returns a new builder for this class. */
@@ -748,32 +720,33 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
 
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
     getInstanceSettings = settingsBuilder.getInstanceSettings().build();
+    updateInstanceSettings = settingsBuilder.updateInstanceSettings().build();
+    updateInstanceOperationSettings = settingsBuilder.updateInstanceOperationSettings().build();
     resetInstanceSettings = settingsBuilder.resetInstanceSettings().build();
     resetInstanceOperationSettings = settingsBuilder.resetInstanceOperationSettings().build();
+    startInstanceSettings = settingsBuilder.startInstanceSettings().build();
+    startInstanceOperationSettings = settingsBuilder.startInstanceOperationSettings().build();
+    stopInstanceSettings = settingsBuilder.stopInstanceSettings().build();
+    stopInstanceOperationSettings = settingsBuilder.stopInstanceOperationSettings().build();
+    detachLunSettings = settingsBuilder.detachLunSettings().build();
+    detachLunOperationSettings = settingsBuilder.detachLunOperationSettings().build();
     listVolumesSettings = settingsBuilder.listVolumesSettings().build();
     getVolumeSettings = settingsBuilder.getVolumeSettings().build();
     updateVolumeSettings = settingsBuilder.updateVolumeSettings().build();
     updateVolumeOperationSettings = settingsBuilder.updateVolumeOperationSettings().build();
+    resizeVolumeSettings = settingsBuilder.resizeVolumeSettings().build();
+    resizeVolumeOperationSettings = settingsBuilder.resizeVolumeOperationSettings().build();
     listNetworksSettings = settingsBuilder.listNetworksSettings().build();
+    listNetworkUsageSettings = settingsBuilder.listNetworkUsageSettings().build();
     getNetworkSettings = settingsBuilder.getNetworkSettings().build();
-    listSnapshotSchedulePoliciesSettings =
-        settingsBuilder.listSnapshotSchedulePoliciesSettings().build();
-    getSnapshotSchedulePolicySettings = settingsBuilder.getSnapshotSchedulePolicySettings().build();
-    createSnapshotSchedulePolicySettings =
-        settingsBuilder.createSnapshotSchedulePolicySettings().build();
-    updateSnapshotSchedulePolicySettings =
-        settingsBuilder.updateSnapshotSchedulePolicySettings().build();
-    deleteSnapshotSchedulePolicySettings =
-        settingsBuilder.deleteSnapshotSchedulePolicySettings().build();
-    createVolumeSnapshotSettings = settingsBuilder.createVolumeSnapshotSettings().build();
-    restoreVolumeSnapshotSettings = settingsBuilder.restoreVolumeSnapshotSettings().build();
-    restoreVolumeSnapshotOperationSettings =
-        settingsBuilder.restoreVolumeSnapshotOperationSettings().build();
-    deleteVolumeSnapshotSettings = settingsBuilder.deleteVolumeSnapshotSettings().build();
-    getVolumeSnapshotSettings = settingsBuilder.getVolumeSnapshotSettings().build();
-    listVolumeSnapshotsSettings = settingsBuilder.listVolumeSnapshotsSettings().build();
+    updateNetworkSettings = settingsBuilder.updateNetworkSettings().build();
+    updateNetworkOperationSettings = settingsBuilder.updateNetworkOperationSettings().build();
     getLunSettings = settingsBuilder.getLunSettings().build();
     listLunsSettings = settingsBuilder.listLunsSettings().build();
+    getNfsShareSettings = settingsBuilder.getNfsShareSettings().build();
+    listNfsSharesSettings = settingsBuilder.listNfsSharesSettings().build();
+    updateNfsShareSettings = settingsBuilder.updateNfsShareSettings().build();
+    updateNfsShareOperationSettings = settingsBuilder.updateNfsShareOperationSettings().build();
   }
 
   /** Builder for BareMetalSolutionStubSettings. */
@@ -783,10 +756,25 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
             ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
         listInstancesSettings;
     private final UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings;
+    private final UnaryCallSettings.Builder<UpdateInstanceRequest, Operation>
+        updateInstanceSettings;
+    private final OperationCallSettings.Builder<UpdateInstanceRequest, Instance, OperationMetadata>
+        updateInstanceOperationSettings;
     private final UnaryCallSettings.Builder<ResetInstanceRequest, Operation> resetInstanceSettings;
     private final OperationCallSettings.Builder<
             ResetInstanceRequest, ResetInstanceResponse, OperationMetadata>
         resetInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<StartInstanceRequest, Operation> startInstanceSettings;
+    private final OperationCallSettings.Builder<
+            StartInstanceRequest, StartInstanceResponse, OperationMetadata>
+        startInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<StopInstanceRequest, Operation> stopInstanceSettings;
+    private final OperationCallSettings.Builder<
+            StopInstanceRequest, StopInstanceResponse, OperationMetadata>
+        stopInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<DetachLunRequest, Operation> detachLunSettings;
+    private final OperationCallSettings.Builder<DetachLunRequest, Instance, OperationMetadata>
+        detachLunOperationSettings;
     private final PagedCallSettings.Builder<
             ListVolumesRequest, ListVolumesResponse, ListVolumesPagedResponse>
         listVolumesSettings;
@@ -794,46 +782,30 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     private final UnaryCallSettings.Builder<UpdateVolumeRequest, Operation> updateVolumeSettings;
     private final OperationCallSettings.Builder<UpdateVolumeRequest, Volume, OperationMetadata>
         updateVolumeOperationSettings;
+    private final UnaryCallSettings.Builder<ResizeVolumeRequest, Operation> resizeVolumeSettings;
+    private final OperationCallSettings.Builder<ResizeVolumeRequest, Volume, OperationMetadata>
+        resizeVolumeOperationSettings;
     private final PagedCallSettings.Builder<
             ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
         listNetworksSettings;
+    private final UnaryCallSettings.Builder<ListNetworkUsageRequest, ListNetworkUsageResponse>
+        listNetworkUsageSettings;
     private final UnaryCallSettings.Builder<GetNetworkRequest, Network> getNetworkSettings;
-    private final PagedCallSettings.Builder<
-            ListSnapshotSchedulePoliciesRequest,
-            ListSnapshotSchedulePoliciesResponse,
-            ListSnapshotSchedulePoliciesPagedResponse>
-        listSnapshotSchedulePoliciesSettings;
-    private final UnaryCallSettings.Builder<
-            GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-        getSnapshotSchedulePolicySettings;
-    private final UnaryCallSettings.Builder<
-            CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-        createSnapshotSchedulePolicySettings;
-    private final UnaryCallSettings.Builder<
-            UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-        updateSnapshotSchedulePolicySettings;
-    private final UnaryCallSettings.Builder<DeleteSnapshotSchedulePolicyRequest, Empty>
-        deleteSnapshotSchedulePolicySettings;
-    private final UnaryCallSettings.Builder<CreateVolumeSnapshotRequest, VolumeSnapshot>
-        createVolumeSnapshotSettings;
-    private final UnaryCallSettings.Builder<RestoreVolumeSnapshotRequest, Operation>
-        restoreVolumeSnapshotSettings;
-    private final OperationCallSettings.Builder<
-            RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
-        restoreVolumeSnapshotOperationSettings;
-    private final UnaryCallSettings.Builder<DeleteVolumeSnapshotRequest, Empty>
-        deleteVolumeSnapshotSettings;
-    private final UnaryCallSettings.Builder<GetVolumeSnapshotRequest, VolumeSnapshot>
-        getVolumeSnapshotSettings;
-    private final PagedCallSettings.Builder<
-            ListVolumeSnapshotsRequest,
-            ListVolumeSnapshotsResponse,
-            ListVolumeSnapshotsPagedResponse>
-        listVolumeSnapshotsSettings;
+    private final UnaryCallSettings.Builder<UpdateNetworkRequest, Operation> updateNetworkSettings;
+    private final OperationCallSettings.Builder<UpdateNetworkRequest, Network, OperationMetadata>
+        updateNetworkOperationSettings;
     private final UnaryCallSettings.Builder<GetLunRequest, Lun> getLunSettings;
     private final PagedCallSettings.Builder<
             ListLunsRequest, ListLunsResponse, ListLunsPagedResponse>
         listLunsSettings;
+    private final UnaryCallSettings.Builder<GetNfsShareRequest, NfsShare> getNfsShareSettings;
+    private final PagedCallSettings.Builder<
+            ListNfsSharesRequest, ListNfsSharesResponse, ListNfsSharesPagedResponse>
+        listNfsSharesSettings;
+    private final UnaryCallSettings.Builder<UpdateNfsShareRequest, Operation>
+        updateNfsShareSettings;
+    private final OperationCallSettings.Builder<UpdateNfsShareRequest, NfsShare, OperationMetadata>
+        updateNfsShareOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -870,52 +842,56 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
 
       listInstancesSettings = PagedCallSettings.newBuilder(LIST_INSTANCES_PAGE_STR_FACT);
       getInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateInstanceOperationSettings = OperationCallSettings.newBuilder();
       resetInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resetInstanceOperationSettings = OperationCallSettings.newBuilder();
+      startInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      startInstanceOperationSettings = OperationCallSettings.newBuilder();
+      stopInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      stopInstanceOperationSettings = OperationCallSettings.newBuilder();
+      detachLunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      detachLunOperationSettings = OperationCallSettings.newBuilder();
       listVolumesSettings = PagedCallSettings.newBuilder(LIST_VOLUMES_PAGE_STR_FACT);
       getVolumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateVolumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateVolumeOperationSettings = OperationCallSettings.newBuilder();
+      resizeVolumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      resizeVolumeOperationSettings = OperationCallSettings.newBuilder();
       listNetworksSettings = PagedCallSettings.newBuilder(LIST_NETWORKS_PAGE_STR_FACT);
+      listNetworkUsageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listSnapshotSchedulePoliciesSettings =
-          PagedCallSettings.newBuilder(LIST_SNAPSHOT_SCHEDULE_POLICIES_PAGE_STR_FACT);
-      getSnapshotSchedulePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      createSnapshotSchedulePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      updateSnapshotSchedulePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteSnapshotSchedulePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      createVolumeSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      restoreVolumeSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      restoreVolumeSnapshotOperationSettings = OperationCallSettings.newBuilder();
-      deleteVolumeSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      getVolumeSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listVolumeSnapshotsSettings =
-          PagedCallSettings.newBuilder(LIST_VOLUME_SNAPSHOTS_PAGE_STR_FACT);
+      updateNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateNetworkOperationSettings = OperationCallSettings.newBuilder();
       getLunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLunsSettings = PagedCallSettings.newBuilder(LIST_LUNS_PAGE_STR_FACT);
+      getNfsShareSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listNfsSharesSettings = PagedCallSettings.newBuilder(LIST_NFS_SHARES_PAGE_STR_FACT);
+      updateNfsShareSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateNfsShareOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listInstancesSettings,
               getInstanceSettings,
+              updateInstanceSettings,
               resetInstanceSettings,
+              startInstanceSettings,
+              stopInstanceSettings,
+              detachLunSettings,
               listVolumesSettings,
               getVolumeSettings,
               updateVolumeSettings,
+              resizeVolumeSettings,
               listNetworksSettings,
+              listNetworkUsageSettings,
               getNetworkSettings,
-              listSnapshotSchedulePoliciesSettings,
-              getSnapshotSchedulePolicySettings,
-              createSnapshotSchedulePolicySettings,
-              updateSnapshotSchedulePolicySettings,
-              deleteSnapshotSchedulePolicySettings,
-              createVolumeSnapshotSettings,
-              restoreVolumeSnapshotSettings,
-              deleteVolumeSnapshotSettings,
-              getVolumeSnapshotSettings,
-              listVolumeSnapshotsSettings,
+              updateNetworkSettings,
               getLunSettings,
-              listLunsSettings);
+              listLunsSettings,
+              getNfsShareSettings,
+              listNfsSharesSettings,
+              updateNfsShareSettings);
       initDefaults(this);
     }
 
@@ -924,55 +900,56 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
 
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
       getInstanceSettings = settings.getInstanceSettings.toBuilder();
+      updateInstanceSettings = settings.updateInstanceSettings.toBuilder();
+      updateInstanceOperationSettings = settings.updateInstanceOperationSettings.toBuilder();
       resetInstanceSettings = settings.resetInstanceSettings.toBuilder();
       resetInstanceOperationSettings = settings.resetInstanceOperationSettings.toBuilder();
+      startInstanceSettings = settings.startInstanceSettings.toBuilder();
+      startInstanceOperationSettings = settings.startInstanceOperationSettings.toBuilder();
+      stopInstanceSettings = settings.stopInstanceSettings.toBuilder();
+      stopInstanceOperationSettings = settings.stopInstanceOperationSettings.toBuilder();
+      detachLunSettings = settings.detachLunSettings.toBuilder();
+      detachLunOperationSettings = settings.detachLunOperationSettings.toBuilder();
       listVolumesSettings = settings.listVolumesSettings.toBuilder();
       getVolumeSettings = settings.getVolumeSettings.toBuilder();
       updateVolumeSettings = settings.updateVolumeSettings.toBuilder();
       updateVolumeOperationSettings = settings.updateVolumeOperationSettings.toBuilder();
+      resizeVolumeSettings = settings.resizeVolumeSettings.toBuilder();
+      resizeVolumeOperationSettings = settings.resizeVolumeOperationSettings.toBuilder();
       listNetworksSettings = settings.listNetworksSettings.toBuilder();
+      listNetworkUsageSettings = settings.listNetworkUsageSettings.toBuilder();
       getNetworkSettings = settings.getNetworkSettings.toBuilder();
-      listSnapshotSchedulePoliciesSettings =
-          settings.listSnapshotSchedulePoliciesSettings.toBuilder();
-      getSnapshotSchedulePolicySettings = settings.getSnapshotSchedulePolicySettings.toBuilder();
-      createSnapshotSchedulePolicySettings =
-          settings.createSnapshotSchedulePolicySettings.toBuilder();
-      updateSnapshotSchedulePolicySettings =
-          settings.updateSnapshotSchedulePolicySettings.toBuilder();
-      deleteSnapshotSchedulePolicySettings =
-          settings.deleteSnapshotSchedulePolicySettings.toBuilder();
-      createVolumeSnapshotSettings = settings.createVolumeSnapshotSettings.toBuilder();
-      restoreVolumeSnapshotSettings = settings.restoreVolumeSnapshotSettings.toBuilder();
-      restoreVolumeSnapshotOperationSettings =
-          settings.restoreVolumeSnapshotOperationSettings.toBuilder();
-      deleteVolumeSnapshotSettings = settings.deleteVolumeSnapshotSettings.toBuilder();
-      getVolumeSnapshotSettings = settings.getVolumeSnapshotSettings.toBuilder();
-      listVolumeSnapshotsSettings = settings.listVolumeSnapshotsSettings.toBuilder();
+      updateNetworkSettings = settings.updateNetworkSettings.toBuilder();
+      updateNetworkOperationSettings = settings.updateNetworkOperationSettings.toBuilder();
       getLunSettings = settings.getLunSettings.toBuilder();
       listLunsSettings = settings.listLunsSettings.toBuilder();
+      getNfsShareSettings = settings.getNfsShareSettings.toBuilder();
+      listNfsSharesSettings = settings.listNfsSharesSettings.toBuilder();
+      updateNfsShareSettings = settings.updateNfsShareSettings.toBuilder();
+      updateNfsShareOperationSettings = settings.updateNfsShareOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listInstancesSettings,
               getInstanceSettings,
+              updateInstanceSettings,
               resetInstanceSettings,
+              startInstanceSettings,
+              stopInstanceSettings,
+              detachLunSettings,
               listVolumesSettings,
               getVolumeSettings,
               updateVolumeSettings,
+              resizeVolumeSettings,
               listNetworksSettings,
+              listNetworkUsageSettings,
               getNetworkSettings,
-              listSnapshotSchedulePoliciesSettings,
-              getSnapshotSchedulePolicySettings,
-              createSnapshotSchedulePolicySettings,
-              updateSnapshotSchedulePolicySettings,
-              deleteSnapshotSchedulePolicySettings,
-              createVolumeSnapshotSettings,
-              restoreVolumeSnapshotSettings,
-              deleteVolumeSnapshotSettings,
-              getVolumeSnapshotSettings,
-              listVolumeSnapshotsSettings,
+              updateNetworkSettings,
               getLunSettings,
-              listLunsSettings);
+              listLunsSettings,
+              getNfsShareSettings,
+              listNfsSharesSettings,
+              updateNfsShareSettings);
     }
 
     private static Builder createDefault() {
@@ -981,6 +958,19 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+      builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
+      builder.setSwitchToMtlsEndpointAllowed(true);
+
+      return initDefaults(builder);
+    }
+
+    private static Builder createHttpJsonDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
@@ -1000,7 +990,27 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .updateInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .resetInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .startInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .stopInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .detachLunSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1020,7 +1030,17 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .resizeVolumeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .listNetworksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listNetworkUsageSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1030,52 +1050,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
-          .listSnapshotSchedulePoliciesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .getSnapshotSchedulePolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .createSnapshotSchedulePolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .updateSnapshotSchedulePolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .deleteSnapshotSchedulePolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .createVolumeSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .restoreVolumeSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .deleteVolumeSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .getVolumeSnapshotSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .listVolumeSnapshotsSettings()
+          .updateNetworkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1090,6 +1065,45 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .getNfsShareSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listNfsSharesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateNfsShareSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .resetInstanceOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1099,6 +1113,77 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(ResetInstanceResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .startInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StartInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(StartInstanceResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .stopInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StopInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(StopInstanceResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .detachLunOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DetachLunRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -1138,15 +1223,63 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
                       .build()));
 
       builder
-          .restoreVolumeSnapshotOperationSettings()
+          .resizeVolumeOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
-                  .<RestoreVolumeSnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .<ResizeVolumeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
                   .build())
           .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(VolumeSnapshot.class))
+              ProtoOperationTransformers.ResponseTransformer.create(Volume.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateNetworkOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateNetworkRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Network.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateNfsShareOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateNfsShareRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(NfsShare.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -1191,6 +1324,19 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
       return getInstanceSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateInstance. */
+    public UnaryCallSettings.Builder<UpdateInstanceRequest, Operation> updateInstanceSettings() {
+      return updateInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, OperationMetadata>
+        updateInstanceOperationSettings() {
+      return updateInstanceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to resetInstance. */
     public UnaryCallSettings.Builder<ResetInstanceRequest, Operation> resetInstanceSettings() {
       return resetInstanceSettings;
@@ -1203,6 +1349,47 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
             ResetInstanceRequest, ResetInstanceResponse, OperationMetadata>
         resetInstanceOperationSettings() {
       return resetInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startInstance. */
+    public UnaryCallSettings.Builder<StartInstanceRequest, Operation> startInstanceSettings() {
+      return startInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            StartInstanceRequest, StartInstanceResponse, OperationMetadata>
+        startInstanceOperationSettings() {
+      return startInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopInstance. */
+    public UnaryCallSettings.Builder<StopInstanceRequest, Operation> stopInstanceSettings() {
+      return stopInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to stopInstance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            StopInstanceRequest, StopInstanceResponse, OperationMetadata>
+        stopInstanceOperationSettings() {
+      return stopInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to detachLun. */
+    public UnaryCallSettings.Builder<DetachLunRequest, Operation> detachLunSettings() {
+      return detachLunSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to detachLun. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DetachLunRequest, Instance, OperationMetadata>
+        detachLunOperationSettings() {
+      return detachLunOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listVolumes. */
@@ -1230,6 +1417,19 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
       return updateVolumeOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to resizeVolume. */
+    public UnaryCallSettings.Builder<ResizeVolumeRequest, Operation> resizeVolumeSettings() {
+      return resizeVolumeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to resizeVolume. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ResizeVolumeRequest, Volume, OperationMetadata>
+        resizeVolumeOperationSettings() {
+      return resizeVolumeOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listNetworks. */
     public PagedCallSettings.Builder<
             ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
@@ -1237,84 +1437,28 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
       return listNetworksSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listNetworkUsage. */
+    public UnaryCallSettings.Builder<ListNetworkUsageRequest, ListNetworkUsageResponse>
+        listNetworkUsageSettings() {
+      return listNetworkUsageSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getNetwork. */
     public UnaryCallSettings.Builder<GetNetworkRequest, Network> getNetworkSettings() {
       return getNetworkSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listSnapshotSchedulePolicies. */
-    public PagedCallSettings.Builder<
-            ListSnapshotSchedulePoliciesRequest,
-            ListSnapshotSchedulePoliciesResponse,
-            ListSnapshotSchedulePoliciesPagedResponse>
-        listSnapshotSchedulePoliciesSettings() {
-      return listSnapshotSchedulePoliciesSettings;
+    /** Returns the builder for the settings used for calls to updateNetwork. */
+    public UnaryCallSettings.Builder<UpdateNetworkRequest, Operation> updateNetworkSettings() {
+      return updateNetworkSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getSnapshotSchedulePolicy. */
-    public UnaryCallSettings.Builder<GetSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-        getSnapshotSchedulePolicySettings() {
-      return getSnapshotSchedulePolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createSnapshotSchedulePolicy. */
-    public UnaryCallSettings.Builder<CreateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-        createSnapshotSchedulePolicySettings() {
-      return createSnapshotSchedulePolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateSnapshotSchedulePolicy. */
-    public UnaryCallSettings.Builder<UpdateSnapshotSchedulePolicyRequest, SnapshotSchedulePolicy>
-        updateSnapshotSchedulePolicySettings() {
-      return updateSnapshotSchedulePolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteSnapshotSchedulePolicy. */
-    public UnaryCallSettings.Builder<DeleteSnapshotSchedulePolicyRequest, Empty>
-        deleteSnapshotSchedulePolicySettings() {
-      return deleteSnapshotSchedulePolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createVolumeSnapshot. */
-    public UnaryCallSettings.Builder<CreateVolumeSnapshotRequest, VolumeSnapshot>
-        createVolumeSnapshotSettings() {
-      return createVolumeSnapshotSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to restoreVolumeSnapshot. */
-    public UnaryCallSettings.Builder<RestoreVolumeSnapshotRequest, Operation>
-        restoreVolumeSnapshotSettings() {
-      return restoreVolumeSnapshotSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to restoreVolumeSnapshot. */
+    /** Returns the builder for the settings used for calls to updateNetwork. */
     @BetaApi(
         "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
-        restoreVolumeSnapshotOperationSettings() {
-      return restoreVolumeSnapshotOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteVolumeSnapshot. */
-    public UnaryCallSettings.Builder<DeleteVolumeSnapshotRequest, Empty>
-        deleteVolumeSnapshotSettings() {
-      return deleteVolumeSnapshotSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getVolumeSnapshot. */
-    public UnaryCallSettings.Builder<GetVolumeSnapshotRequest, VolumeSnapshot>
-        getVolumeSnapshotSettings() {
-      return getVolumeSnapshotSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listVolumeSnapshots. */
-    public PagedCallSettings.Builder<
-            ListVolumeSnapshotsRequest,
-            ListVolumeSnapshotsResponse,
-            ListVolumeSnapshotsPagedResponse>
-        listVolumeSnapshotsSettings() {
-      return listVolumeSnapshotsSettings;
+    public OperationCallSettings.Builder<UpdateNetworkRequest, Network, OperationMetadata>
+        updateNetworkOperationSettings() {
+      return updateNetworkOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getLun. */
@@ -1326,6 +1470,31 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     public PagedCallSettings.Builder<ListLunsRequest, ListLunsResponse, ListLunsPagedResponse>
         listLunsSettings() {
       return listLunsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getNfsShare. */
+    public UnaryCallSettings.Builder<GetNfsShareRequest, NfsShare> getNfsShareSettings() {
+      return getNfsShareSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listNfsShares. */
+    public PagedCallSettings.Builder<
+            ListNfsSharesRequest, ListNfsSharesResponse, ListNfsSharesPagedResponse>
+        listNfsSharesSettings() {
+      return listNfsSharesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateNfsShare. */
+    public UnaryCallSettings.Builder<UpdateNfsShareRequest, Operation> updateNfsShareSettings() {
+      return updateNfsShareSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateNfsShare. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateNfsShareRequest, NfsShare, OperationMetadata>
+        updateNfsShareOperationSettings() {
+      return updateNfsShareOperationSettings;
     }
 
     @Override
