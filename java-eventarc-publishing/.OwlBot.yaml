@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/grpc-google-.*/src"
@@ -30,3 +28,5 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-eventarc-publishing-$1/src"
 - source: "/google/cloud/eventarc/publishing/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-eventarc-publishing/src"
+
+ api_name: eventarcpublishing

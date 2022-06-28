@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 deep-remove-regex:
 - "/grpc-google-cloud-containeranalysis-v1/src"
 - "/google-cloud-containeranalysis/src/.*/java/com/google/cloud/devtools/containeranalysis/v1"
@@ -34,3 +32,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/v1/grpc-google-cloud-containeranalysis-v1/src"
 - source: "/google/devtools/containeranalysis/v1/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/v1/google-cloud-containeranalysis/src"
+ api_name: containeranalysis

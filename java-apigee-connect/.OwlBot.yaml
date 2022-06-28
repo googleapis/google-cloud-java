@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/grpc-google-.*/src"
@@ -27,3 +25,4 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/grpc-google-cloud-apigee-connect-$1/src"
 - source: "/google/cloud/apigeeconnect/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-apigee-connect/src"
+ api_name: apigeeconnect

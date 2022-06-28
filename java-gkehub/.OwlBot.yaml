@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/grpc-google-.*/src"
@@ -50,3 +48,5 @@ deep-copy-regex:
 
 - source: "/google/cloud/gkehub/(v.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/$1/google-cloud-gkehub/src"
+
+ api_name: gkehub
