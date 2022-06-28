@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -31,7 +32,6 @@ import com.google.appengine.v1.stub.InstancesStub;
 import com.google.appengine.v1.stub.InstancesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -102,13 +102,28 @@ import javax.annotation.Generated;
  * InstancesClient instancesClient = InstancesClient.create(instancesSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * InstancesSettings instancesSettings =
+ *     InstancesSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             InstancesSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * InstancesClient instancesClient = InstancesClient.create(instancesSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class InstancesClient implements BackgroundResource {
   private final InstancesSettings settings;
   private final InstancesStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of InstancesClient with default settings. */
   public static final InstancesClient create() throws IOException {
@@ -127,7 +142,6 @@ public class InstancesClient implements BackgroundResource {
    * Constructs an instance of InstancesClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(InstancesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final InstancesClient create(InstancesStub stub) {
     return new InstancesClient(stub);
   }
@@ -139,21 +153,23 @@ public class InstancesClient implements BackgroundResource {
   protected InstancesClient(InstancesSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((InstancesStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected InstancesClient(InstancesStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final InstancesSettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public InstancesStub getStub() {
     return stub;
   }
@@ -162,8 +178,17 @@ public class InstancesClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -251,7 +276,7 @@ public class InstancesClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListInstancesResponse response = instancesClient.listInstancesCallable().call(request);
-   *     for (Instance element : response.getResponsesList()) {
+   *     for (Instance element : response.getInstancesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

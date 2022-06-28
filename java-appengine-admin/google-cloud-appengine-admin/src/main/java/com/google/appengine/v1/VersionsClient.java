@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -31,7 +32,6 @@ import com.google.appengine.v1.stub.VersionsStub;
 import com.google.appengine.v1.stub.VersionsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -106,13 +106,28 @@ import javax.annotation.Generated;
  * VersionsClient versionsClient = VersionsClient.create(versionsSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * VersionsSettings versionsSettings =
+ *     VersionsSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             VersionsSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * VersionsClient versionsClient = VersionsClient.create(versionsSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class VersionsClient implements BackgroundResource {
   private final VersionsSettings settings;
   private final VersionsStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of VersionsClient with default settings. */
   public static final VersionsClient create() throws IOException {
@@ -131,7 +146,6 @@ public class VersionsClient implements BackgroundResource {
    * Constructs an instance of VersionsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(VersionsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final VersionsClient create(VersionsStub stub) {
     return new VersionsClient(stub);
   }
@@ -143,21 +157,23 @@ public class VersionsClient implements BackgroundResource {
   protected VersionsClient(VersionsSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((VersionsStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected VersionsClient(VersionsStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final VersionsSettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public VersionsStub getStub() {
     return stub;
   }
@@ -166,8 +182,17 @@ public class VersionsClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -249,7 +274,7 @@ public class VersionsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListVersionsResponse response = versionsClient.listVersionsCallable().call(request);
-   *     for (Version element : response.getResponsesList()) {
+   *     for (Version element : response.getVersionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

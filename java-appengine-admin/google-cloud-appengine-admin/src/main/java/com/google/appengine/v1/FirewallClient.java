@@ -18,7 +18,6 @@ package com.google.appengine.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -111,6 +110,20 @@ import javax.annotation.Generated;
  * FirewallClient firewallClient = FirewallClient.create(firewallSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * FirewallSettings firewallSettings =
+ *     FirewallSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             FirewallSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * FirewallClient firewallClient = FirewallClient.create(firewallSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
@@ -135,7 +148,6 @@ public class FirewallClient implements BackgroundResource {
    * Constructs an instance of FirewallClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(FirewallSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final FirewallClient create(FirewallStub stub) {
     return new FirewallClient(stub);
   }
@@ -149,7 +161,6 @@ public class FirewallClient implements BackgroundResource {
     this.stub = ((FirewallStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected FirewallClient(FirewallStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -159,7 +170,6 @@ public class FirewallClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FirewallStub getStub() {
     return stub;
   }
@@ -244,7 +254,7 @@ public class FirewallClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListIngressRulesResponse response = firewallClient.listIngressRulesCallable().call(request);
-   *     for (FirewallRule element : response.getResponsesList()) {
+   *     for (FirewallRule element : response.getIngressRulesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

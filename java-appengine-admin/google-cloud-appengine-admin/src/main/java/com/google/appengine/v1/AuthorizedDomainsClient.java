@@ -18,7 +18,6 @@ package com.google.appengine.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -110,6 +109,21 @@ import javax.annotation.Generated;
  *     AuthorizedDomainsClient.create(authorizedDomainsSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * AuthorizedDomainsSettings authorizedDomainsSettings =
+ *     AuthorizedDomainsSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             AuthorizedDomainsSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * AuthorizedDomainsClient authorizedDomainsClient =
+ *     AuthorizedDomainsClient.create(authorizedDomainsSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
@@ -135,7 +149,6 @@ public class AuthorizedDomainsClient implements BackgroundResource {
    * Constructs an instance of AuthorizedDomainsClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(AuthorizedDomainsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AuthorizedDomainsClient create(AuthorizedDomainsStub stub) {
     return new AuthorizedDomainsClient(stub);
   }
@@ -150,7 +163,6 @@ public class AuthorizedDomainsClient implements BackgroundResource {
     this.stub = ((AuthorizedDomainsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AuthorizedDomainsClient(AuthorizedDomainsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -160,7 +172,6 @@ public class AuthorizedDomainsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AuthorizedDomainsStub getStub() {
     return stub;
   }
@@ -245,7 +256,7 @@ public class AuthorizedDomainsClient implements BackgroundResource {
    *   while (true) {
    *     ListAuthorizedDomainsResponse response =
    *         authorizedDomainsClient.listAuthorizedDomainsCallable().call(request);
-   *     for (AuthorizedDomain element : response.getResponsesList()) {
+   *     for (AuthorizedDomain element : response.getDomainsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

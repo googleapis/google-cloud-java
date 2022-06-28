@@ -18,7 +18,6 @@ package com.google.appengine.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -108,6 +107,21 @@ import javax.annotation.Generated;
  *     AuthorizedCertificatesClient.create(authorizedCertificatesSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * AuthorizedCertificatesSettings authorizedCertificatesSettings =
+ *     AuthorizedCertificatesSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             AuthorizedCertificatesSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * AuthorizedCertificatesClient authorizedCertificatesClient =
+ *     AuthorizedCertificatesClient.create(authorizedCertificatesSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
@@ -133,7 +147,6 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
    * Constructs an instance of AuthorizedCertificatesClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(AuthorizedCertificatesSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AuthorizedCertificatesClient create(AuthorizedCertificatesStub stub) {
     return new AuthorizedCertificatesClient(stub);
   }
@@ -149,7 +162,6 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
     this.stub = ((AuthorizedCertificatesStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AuthorizedCertificatesClient(AuthorizedCertificatesStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -159,7 +171,6 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AuthorizedCertificatesStub getStub() {
     return stub;
   }
@@ -253,7 +264,7 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
    *   while (true) {
    *     ListAuthorizedCertificatesResponse response =
    *         authorizedCertificatesClient.listAuthorizedCertificatesCallable().call(request);
-   *     for (AuthorizedCertificate element : response.getResponsesList()) {
+   *     for (AuthorizedCertificate element : response.getCertificatesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
