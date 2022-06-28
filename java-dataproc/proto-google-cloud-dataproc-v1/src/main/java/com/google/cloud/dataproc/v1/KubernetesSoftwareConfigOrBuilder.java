@@ -77,8 +77,12 @@ public interface KubernetesSoftwareConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; component_version = 1;</code>
    */
+
+  /* nullable */
   java.lang.String getComponentVersionOrDefault(
-      java.lang.String key, java.lang.String defaultValue);
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -159,7 +163,12 @@ public interface KubernetesSoftwareConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; properties = 2;</code>
    */
-  java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getPropertiesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

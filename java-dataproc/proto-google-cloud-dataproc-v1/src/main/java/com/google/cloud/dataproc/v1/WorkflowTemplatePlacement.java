@@ -113,6 +113,8 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -793,8 +795,9 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       } else {
         if (placementCase_ == 1) {
           managedClusterBuilder_.mergeFrom(value);
+        } else {
+          managedClusterBuilder_.setMessage(value);
         }
-        managedClusterBuilder_.setMessage(value);
       }
       placementCase_ = 1;
       return this;
@@ -1012,8 +1015,9 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       } else {
         if (placementCase_ == 2) {
           clusterSelectorBuilder_.mergeFrom(value);
+        } else {
+          clusterSelectorBuilder_.setMessage(value);
         }
-        clusterSelectorBuilder_.setMessage(value);
       }
       placementCase_ = 2;
       return this;

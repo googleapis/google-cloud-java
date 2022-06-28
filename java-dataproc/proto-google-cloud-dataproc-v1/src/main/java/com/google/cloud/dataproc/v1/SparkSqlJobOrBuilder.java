@@ -145,7 +145,12 @@ public interface SparkSqlJobOrBuilder
    * <code>map&lt;string, string&gt; script_variables = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  java.lang.String getScriptVariablesOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getScriptVariablesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
@@ -213,7 +218,12 @@ public interface SparkSqlJobOrBuilder
    * <code>map&lt;string, string&gt; properties = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getPropertiesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

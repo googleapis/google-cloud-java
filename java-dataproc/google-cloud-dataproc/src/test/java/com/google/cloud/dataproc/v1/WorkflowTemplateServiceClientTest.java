@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -257,8 +257,8 @@ public class WorkflowTemplateServiceClientTest {
         WorkflowTemplate.newBuilder()
             .setId("id3355")
             .setName(
-                WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-                        "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
+                WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]")
                     .toString())
             .setVersion(351608024)
             .setCreateTime(Timestamp.newBuilder().build())
@@ -272,8 +272,8 @@ public class WorkflowTemplateServiceClientTest {
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
     WorkflowTemplateName name =
-        WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-            "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+        WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+            "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]");
 
     WorkflowTemplate actualResponse = client.getWorkflowTemplate(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -296,8 +296,8 @@ public class WorkflowTemplateServiceClientTest {
 
     try {
       WorkflowTemplateName name =
-          WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-              "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+          WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+              "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]");
       client.getWorkflowTemplate(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -311,8 +311,8 @@ public class WorkflowTemplateServiceClientTest {
         WorkflowTemplate.newBuilder()
             .setId("id3355")
             .setName(
-                WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-                        "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
+                WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]")
                     .toString())
             .setVersion(351608024)
             .setCreateTime(Timestamp.newBuilder().build())
@@ -367,8 +367,8 @@ public class WorkflowTemplateServiceClientTest {
     mockWorkflowTemplateService.addResponse(resultOperation);
 
     WorkflowTemplateName name =
-        WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-            "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+        WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+            "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]");
 
     client.instantiateWorkflowTemplateAsync(name).get();
 
@@ -391,8 +391,8 @@ public class WorkflowTemplateServiceClientTest {
 
     try {
       WorkflowTemplateName name =
-          WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-              "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+          WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+              "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]");
       client.instantiateWorkflowTemplateAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -457,8 +457,8 @@ public class WorkflowTemplateServiceClientTest {
     mockWorkflowTemplateService.addResponse(resultOperation);
 
     WorkflowTemplateName name =
-        WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-            "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+        WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+            "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]");
     Map<String, String> parameters = new HashMap<>();
 
     client.instantiateWorkflowTemplateAsync(name, parameters).get();
@@ -483,8 +483,8 @@ public class WorkflowTemplateServiceClientTest {
 
     try {
       WorkflowTemplateName name =
-          WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-              "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+          WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+              "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]");
       Map<String, String> parameters = new HashMap<>();
       client.instantiateWorkflowTemplateAsync(name, parameters).get();
       Assert.fail("No exception raised");
@@ -685,8 +685,8 @@ public class WorkflowTemplateServiceClientTest {
         WorkflowTemplate.newBuilder()
             .setId("id3355")
             .setName(
-                WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-                        "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]")
+                WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+                        "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]")
                     .toString())
             .setVersion(351608024)
             .setCreateTime(Timestamp.newBuilder().build())
@@ -871,8 +871,8 @@ public class WorkflowTemplateServiceClientTest {
     mockWorkflowTemplateService.addResponse(expectedResponse);
 
     WorkflowTemplateName name =
-        WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-            "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+        WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+            "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]");
 
     client.deleteWorkflowTemplate(name);
 
@@ -895,8 +895,8 @@ public class WorkflowTemplateServiceClientTest {
 
     try {
       WorkflowTemplateName name =
-          WorkflowTemplateName.ofProjectRegionWorkflowTemplateName(
-              "[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+          WorkflowTemplateName.ofProjectLocationWorkflowTemplateName(
+              "[PROJECT]", "[LOCATION]", "[WORKFLOW_TEMPLATE]");
       client.deleteWorkflowTemplate(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

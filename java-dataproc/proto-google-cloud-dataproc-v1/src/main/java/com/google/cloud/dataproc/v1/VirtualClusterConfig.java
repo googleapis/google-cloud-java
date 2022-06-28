@@ -41,7 +41,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
 
   private VirtualClusterConfig() {
     stagingBucket_ = "";
-    tempBucket_ = "";
   }
 
   @java.lang.Override
@@ -78,13 +77,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
               java.lang.String s = input.readStringRequireUtf8();
 
               stagingBucket_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tempBucket_ = s;
               break;
             }
           case 50:
@@ -135,6 +127,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -271,79 +265,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int TEMP_BUCKET_FIELD_NUMBER = 2;
-  private volatile java.lang.Object tempBucket_;
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-   * such as Spark and MapReduce history files.
-   * If you do not specify a temp bucket,
-   * Dataproc will determine a Cloud Storage location (US,
-   * ASIA, or EU) for your cluster's temp bucket according to the
-   * Compute Engine zone where your cluster is deployed, and then create
-   * and manage this project-level, per-location bucket. The default bucket has
-   * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-   * bucket (see
-   * [Dataproc staging and temp
-   * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-   * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
-   * a Cloud Storage bucket.**
-   * </pre>
-   *
-   * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The tempBucket.
-   */
-  @java.lang.Override
-  public java.lang.String getTempBucket() {
-    java.lang.Object ref = tempBucket_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      tempBucket_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-   * such as Spark and MapReduce history files.
-   * If you do not specify a temp bucket,
-   * Dataproc will determine a Cloud Storage location (US,
-   * ASIA, or EU) for your cluster's temp bucket according to the
-   * Compute Engine zone where your cluster is deployed, and then create
-   * and manage this project-level, per-location bucket. The default bucket has
-   * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-   * bucket (see
-   * [Dataproc staging and temp
-   * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-   * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
-   * a Cloud Storage bucket.**
-   * </pre>
-   *
-   * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for tempBucket.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getTempBucketBytes() {
-    java.lang.Object ref = tempBucket_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      tempBucket_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int KUBERNETES_CLUSTER_CONFIG_FIELD_NUMBER = 6;
   /**
    *
@@ -474,9 +395,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stagingBucket_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stagingBucket_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tempBucket_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tempBucket_);
-    }
     if (infrastructureConfigCase_ == 6) {
       output.writeMessage(
           6, (com.google.cloud.dataproc.v1.KubernetesClusterConfig) infrastructureConfig_);
@@ -495,9 +413,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(stagingBucket_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stagingBucket_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tempBucket_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tempBucket_);
     }
     if (infrastructureConfigCase_ == 6) {
       size +=
@@ -525,7 +440,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
         (com.google.cloud.dataproc.v1.VirtualClusterConfig) obj;
 
     if (!getStagingBucket().equals(other.getStagingBucket())) return false;
-    if (!getTempBucket().equals(other.getTempBucket())) return false;
     if (hasAuxiliaryServicesConfig() != other.hasAuxiliaryServicesConfig()) return false;
     if (hasAuxiliaryServicesConfig()) {
       if (!getAuxiliaryServicesConfig().equals(other.getAuxiliaryServicesConfig())) return false;
@@ -551,8 +465,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + STAGING_BUCKET_FIELD_NUMBER;
     hash = (53 * hash) + getStagingBucket().hashCode();
-    hash = (37 * hash) + TEMP_BUCKET_FIELD_NUMBER;
-    hash = (53 * hash) + getTempBucket().hashCode();
     if (hasAuxiliaryServicesConfig()) {
       hash = (37 * hash) + AUXILIARY_SERVICES_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAuxiliaryServicesConfig().hashCode();
@@ -714,8 +626,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       super.clear();
       stagingBucket_ = "";
 
-      tempBucket_ = "";
-
       if (auxiliaryServicesConfigBuilder_ == null) {
         auxiliaryServicesConfig_ = null;
       } else {
@@ -752,7 +662,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       com.google.cloud.dataproc.v1.VirtualClusterConfig result =
           new com.google.cloud.dataproc.v1.VirtualClusterConfig(this);
       result.stagingBucket_ = stagingBucket_;
-      result.tempBucket_ = tempBucket_;
       if (infrastructureConfigCase_ == 6) {
         if (kubernetesClusterConfigBuilder_ == null) {
           result.infrastructureConfig_ = infrastructureConfig_;
@@ -818,10 +727,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getStagingBucket().isEmpty()) {
         stagingBucket_ = other.stagingBucket_;
-        onChanged();
-      }
-      if (!other.getTempBucket().isEmpty()) {
-        tempBucket_ = other.tempBucket_;
         onChanged();
       }
       if (other.hasAuxiliaryServicesConfig()) {
@@ -1038,172 +943,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       return this;
     }
 
-    private java.lang.Object tempBucket_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     * such as Spark and MapReduce history files.
-     * If you do not specify a temp bucket,
-     * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's temp bucket according to the
-     * Compute Engine zone where your cluster is deployed, and then create
-     * and manage this project-level, per-location bucket. The default bucket has
-     * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket (see
-     * [Dataproc staging and temp
-     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
-     * a Cloud Storage bucket.**
-     * </pre>
-     *
-     * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The tempBucket.
-     */
-    public java.lang.String getTempBucket() {
-      java.lang.Object ref = tempBucket_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tempBucket_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     * such as Spark and MapReduce history files.
-     * If you do not specify a temp bucket,
-     * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's temp bucket according to the
-     * Compute Engine zone where your cluster is deployed, and then create
-     * and manage this project-level, per-location bucket. The default bucket has
-     * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket (see
-     * [Dataproc staging and temp
-     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
-     * a Cloud Storage bucket.**
-     * </pre>
-     *
-     * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for tempBucket.
-     */
-    public com.google.protobuf.ByteString getTempBucketBytes() {
-      java.lang.Object ref = tempBucket_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        tempBucket_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     * such as Spark and MapReduce history files.
-     * If you do not specify a temp bucket,
-     * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's temp bucket according to the
-     * Compute Engine zone where your cluster is deployed, and then create
-     * and manage this project-level, per-location bucket. The default bucket has
-     * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket (see
-     * [Dataproc staging and temp
-     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
-     * a Cloud Storage bucket.**
-     * </pre>
-     *
-     * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The tempBucket to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTempBucket(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      tempBucket_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     * such as Spark and MapReduce history files.
-     * If you do not specify a temp bucket,
-     * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's temp bucket according to the
-     * Compute Engine zone where your cluster is deployed, and then create
-     * and manage this project-level, per-location bucket. The default bucket has
-     * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket (see
-     * [Dataproc staging and temp
-     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
-     * a Cloud Storage bucket.**
-     * </pre>
-     *
-     * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearTempBucket() {
-
-      tempBucket_ = getDefaultInstance().getTempBucket();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. A Cloud Storage bucket used to store ephemeral cluster and jobs data,
-     * such as Spark and MapReduce history files.
-     * If you do not specify a temp bucket,
-     * Dataproc will determine a Cloud Storage location (US,
-     * ASIA, or EU) for your cluster's temp bucket according to the
-     * Compute Engine zone where your cluster is deployed, and then create
-     * and manage this project-level, per-location bucket. The default bucket has
-     * a TTL of 90 days, but you can use any TTL (or none) if you specify a
-     * bucket (see
-     * [Dataproc staging and temp
-     * buckets](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)).
-     * **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
-     * a Cloud Storage bucket.**
-     * </pre>
-     *
-     * <code>string temp_bucket = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes for tempBucket to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTempBucketBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      tempBucket_ = value;
-      onChanged();
-      return this;
-    }
-
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.KubernetesClusterConfig,
             com.google.cloud.dataproc.v1.KubernetesClusterConfig.Builder,
@@ -1329,8 +1068,9 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       } else {
         if (infrastructureConfigCase_ == 6) {
           kubernetesClusterConfigBuilder_.mergeFrom(value);
+        } else {
+          kubernetesClusterConfigBuilder_.setMessage(value);
         }
-        kubernetesClusterConfigBuilder_.setMessage(value);
       }
       infrastructureConfigCase_ = 6;
       return this;

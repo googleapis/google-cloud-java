@@ -83,8 +83,11 @@ public interface LoggingConfigOrBuilder
    * <code>map&lt;string, .google.cloud.dataproc.v1.LoggingConfig.Level&gt; driver_log_levels = 2;
    * </code>
    */
+  /* nullable */
   com.google.cloud.dataproc.v1.LoggingConfig.Level getDriverLogLevelsOrDefault(
-      java.lang.String key, com.google.cloud.dataproc.v1.LoggingConfig.Level defaultValue);
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.dataproc.v1.LoggingConfig.Level defaultValue);
   /**
    *
    *

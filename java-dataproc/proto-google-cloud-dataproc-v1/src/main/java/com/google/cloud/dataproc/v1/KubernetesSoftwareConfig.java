@@ -112,6 +112,8 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -190,7 +192,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
   @java.lang.Override
   public boolean containsComponentVersion(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetComponentVersion().getMap().containsKey(key);
   }
@@ -232,7 +234,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
   public java.lang.String getComponentVersionOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetComponentVersion().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -252,7 +254,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
   @java.lang.Override
   public java.lang.String getComponentVersionOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetComponentVersion().getMap();
     if (!map.containsKey(key)) {
@@ -304,7 +306,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
   @java.lang.Override
   public boolean containsProperties(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     return internalGetProperties().getMap().containsKey(key);
   }
@@ -352,7 +354,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
   public java.lang.String getPropertiesOrDefault(
       java.lang.String key, java.lang.String defaultValue) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -375,7 +377,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
   @java.lang.Override
   public java.lang.String getPropertiesOrThrow(java.lang.String key) {
     if (key == null) {
-      throw new java.lang.NullPointerException();
+      throw new NullPointerException("map key");
     }
     java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     if (!map.containsKey(key)) {
@@ -800,7 +802,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public boolean containsComponentVersion(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetComponentVersion().getMap().containsKey(key);
     }
@@ -842,7 +844,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     public java.lang.String getComponentVersionOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetComponentVersion().getMap();
@@ -863,7 +865,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public java.lang.String getComponentVersionOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetComponentVersion().getMap();
@@ -891,7 +893,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      */
     public Builder removeComponentVersion(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableComponentVersion().getMutableMap().remove(key);
       return this;
@@ -915,11 +917,12 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      */
     public Builder putComponentVersion(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableComponentVersion().getMutableMap().put(key, value);
       return this;
     }
@@ -987,7 +990,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public boolean containsProperties(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       return internalGetProperties().getMap().containsKey(key);
     }
@@ -1035,7 +1038,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     public java.lang.String getPropertiesOrDefault(
         java.lang.String key, java.lang.String defaultValue) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1058,7 +1061,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public java.lang.String getPropertiesOrThrow(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       if (!map.containsKey(key)) {
@@ -1088,7 +1091,7 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      */
     public Builder removeProperties(java.lang.String key) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       internalGetMutableProperties().getMutableMap().remove(key);
       return this;
@@ -1115,11 +1118,12 @@ public final class KubernetesSoftwareConfig extends com.google.protobuf.Generate
      */
     public Builder putProperties(java.lang.String key, java.lang.String value) {
       if (key == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map key");
       }
       if (value == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException("map value");
       }
+
       internalGetMutableProperties().getMutableMap().put(key, value);
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.dataproc.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -42,6 +41,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
  *     AutoscalingPolicyServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -81,6 +82,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AutoscalingPolicyServiceSettings autoscalingPolicyServiceSettings =
  *     AutoscalingPolicyServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -92,8 +95,25 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * AutoscalingPolicyServiceSettings autoscalingPolicyServiceSettings =
  *     AutoscalingPolicyServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
+ *     AutoscalingPolicyServiceClient.create(autoscalingPolicyServiceSettings);
+ * }</pre>
+ *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * AutoscalingPolicyServiceSettings autoscalingPolicyServiceSettings =
+ *     AutoscalingPolicyServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             AutoscalingPolicyServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
  * AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
  *     AutoscalingPolicyServiceClient.create(autoscalingPolicyServiceSettings);
  * }</pre>
@@ -124,7 +144,6 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * Constructs an instance of AutoscalingPolicyServiceClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(AutoscalingPolicyServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final AutoscalingPolicyServiceClient create(AutoscalingPolicyServiceStub stub) {
     return new AutoscalingPolicyServiceClient(stub);
   }
@@ -140,7 +159,6 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     this.stub = ((AutoscalingPolicyServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected AutoscalingPolicyServiceClient(AutoscalingPolicyServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -150,7 +168,6 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AutoscalingPolicyServiceStub getStub() {
     return stub;
   }
@@ -162,6 +179,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -202,6 +221,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
@@ -242,6 +263,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -278,6 +301,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   CreateAutoscalingPolicyRequest request =
@@ -303,6 +328,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   CreateAutoscalingPolicyRequest request =
@@ -331,6 +358,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   AutoscalingPolicy policy = AutoscalingPolicy.newBuilder().build();
@@ -356,6 +385,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   UpdateAutoscalingPolicyRequest request =
@@ -382,6 +413,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   UpdateAutoscalingPolicyRequest request =
@@ -407,6 +440,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   AutoscalingPolicyName name =
@@ -446,6 +481,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   String name =
@@ -484,6 +521,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   GetAutoscalingPolicyRequest request =
@@ -511,6 +550,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   GetAutoscalingPolicyRequest request =
@@ -539,6 +580,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -577,6 +620,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
@@ -615,6 +660,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
@@ -651,6 +698,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   ListAutoscalingPoliciesRequest request =
@@ -681,6 +730,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   ListAutoscalingPoliciesRequest request =
@@ -710,6 +761,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   ListAutoscalingPoliciesRequest request =
@@ -721,7 +774,7 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListAutoscalingPoliciesResponse response =
    *         autoscalingPolicyServiceClient.listAutoscalingPoliciesCallable().call(request);
-   *     for (AutoscalingPolicy element : response.getResponsesList()) {
+   *     for (AutoscalingPolicy element : response.getPoliciesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -747,6 +800,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   AutoscalingPolicyName name =
@@ -787,6 +842,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   String name =
@@ -826,6 +883,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   DeleteAutoscalingPolicyRequest request =
@@ -854,6 +913,8 @@ public class AutoscalingPolicyServiceClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
    *     AutoscalingPolicyServiceClient.create()) {
    *   DeleteAutoscalingPolicyRequest request =

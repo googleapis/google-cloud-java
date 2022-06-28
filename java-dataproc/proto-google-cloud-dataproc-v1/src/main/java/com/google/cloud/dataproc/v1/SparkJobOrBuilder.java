@@ -386,7 +386,12 @@ public interface SparkJobOrBuilder
    * <code>map&lt;string, string&gt; properties = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getPropertiesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *

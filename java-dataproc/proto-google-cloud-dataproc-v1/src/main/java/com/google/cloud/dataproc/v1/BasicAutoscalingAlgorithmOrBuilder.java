@@ -107,4 +107,6 @@ public interface BasicAutoscalingAlgorithmOrBuilder
    * </code>
    */
   com.google.protobuf.DurationOrBuilder getCooldownPeriodOrBuilder();
+
+  public com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm.ConfigCase getConfigCase();
 }

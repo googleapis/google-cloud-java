@@ -71,18 +71,20 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
           case 10:
             {
               com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.Builder subBuilder = null;
-              if (yarnConfig_ != null) {
-                subBuilder = yarnConfig_.toBuilder();
+              if (configCase_ == 1) {
+                subBuilder =
+                    ((com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig) config_).toBuilder();
               }
-              yarnConfig_ =
+              config_ =
                   input.readMessage(
                       com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.parser(),
                       extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(yarnConfig_);
-                yarnConfig_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(
+                    (com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig) config_);
+                config_ = subBuilder.buildPartial();
               }
-
+              configCase_ = 1;
               break;
             }
           case 18:
@@ -111,6 +113,8 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -134,8 +138,51 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
             com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm.Builder.class);
   }
 
+  private int configCase_ = 0;
+  private java.lang.Object config_;
+
+  public enum ConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    YARN_CONFIG(1),
+    CONFIG_NOT_SET(0);
+    private final int value;
+
+    private ConfigCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ConfigCase forNumber(int value) {
+      switch (value) {
+        case 1:
+          return YARN_CONFIG;
+        case 0:
+          return CONFIG_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ConfigCase getConfigCase() {
+    return ConfigCase.forNumber(configCase_);
+  }
+
   public static final int YARN_CONFIG_FIELD_NUMBER = 1;
-  private com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig yarnConfig_;
   /**
    *
    *
@@ -151,7 +198,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasYarnConfig() {
-    return yarnConfig_ != null;
+    return configCase_ == 1;
   }
   /**
    *
@@ -168,9 +215,10 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig getYarnConfig() {
-    return yarnConfig_ == null
-        ? com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance()
-        : yarnConfig_;
+    if (configCase_ == 1) {
+      return (com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig) config_;
+    }
+    return com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance();
   }
   /**
    *
@@ -185,7 +233,10 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfigOrBuilder getYarnConfigOrBuilder() {
-    return getYarnConfig();
+    if (configCase_ == 1) {
+      return (com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig) config_;
+    }
+    return com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance();
   }
 
   public static final int COOLDOWN_PERIOD_FIELD_NUMBER = 2;
@@ -259,8 +310,8 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (yarnConfig_ != null) {
-      output.writeMessage(1, getYarnConfig());
+    if (configCase_ == 1) {
+      output.writeMessage(1, (com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig) config_);
     }
     if (cooldownPeriod_ != null) {
       output.writeMessage(2, getCooldownPeriod());
@@ -274,8 +325,10 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (yarnConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getYarnConfig());
+    if (configCase_ == 1) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig) config_);
     }
     if (cooldownPeriod_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCooldownPeriod());
@@ -296,13 +349,17 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm other =
         (com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm) obj;
 
-    if (hasYarnConfig() != other.hasYarnConfig()) return false;
-    if (hasYarnConfig()) {
-      if (!getYarnConfig().equals(other.getYarnConfig())) return false;
-    }
     if (hasCooldownPeriod() != other.hasCooldownPeriod()) return false;
     if (hasCooldownPeriod()) {
       if (!getCooldownPeriod().equals(other.getCooldownPeriod())) return false;
+    }
+    if (!getConfigCase().equals(other.getConfigCase())) return false;
+    switch (configCase_) {
+      case 1:
+        if (!getYarnConfig().equals(other.getYarnConfig())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -315,13 +372,17 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasYarnConfig()) {
-      hash = (37 * hash) + YARN_CONFIG_FIELD_NUMBER;
-      hash = (53 * hash) + getYarnConfig().hashCode();
-    }
     if (hasCooldownPeriod()) {
       hash = (37 * hash) + COOLDOWN_PERIOD_FIELD_NUMBER;
       hash = (53 * hash) + getCooldownPeriod().hashCode();
+    }
+    switch (configCase_) {
+      case 1:
+        hash = (37 * hash) + YARN_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getYarnConfig().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -469,18 +530,14 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (yarnConfigBuilder_ == null) {
-        yarnConfig_ = null;
-      } else {
-        yarnConfig_ = null;
-        yarnConfigBuilder_ = null;
-      }
       if (cooldownPeriodBuilder_ == null) {
         cooldownPeriod_ = null;
       } else {
         cooldownPeriod_ = null;
         cooldownPeriodBuilder_ = null;
       }
+      configCase_ = 0;
+      config_ = null;
       return this;
     }
 
@@ -508,16 +565,19 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     public com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm buildPartial() {
       com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm result =
           new com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm(this);
-      if (yarnConfigBuilder_ == null) {
-        result.yarnConfig_ = yarnConfig_;
-      } else {
-        result.yarnConfig_ = yarnConfigBuilder_.build();
+      if (configCase_ == 1) {
+        if (yarnConfigBuilder_ == null) {
+          result.config_ = config_;
+        } else {
+          result.config_ = yarnConfigBuilder_.build();
+        }
       }
       if (cooldownPeriodBuilder_ == null) {
         result.cooldownPeriod_ = cooldownPeriod_;
       } else {
         result.cooldownPeriod_ = cooldownPeriodBuilder_.build();
       }
+      result.configCase_ = configCase_;
       onBuilt();
       return result;
     }
@@ -568,11 +628,19 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     public Builder mergeFrom(com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm other) {
       if (other == com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm.getDefaultInstance())
         return this;
-      if (other.hasYarnConfig()) {
-        mergeYarnConfig(other.getYarnConfig());
-      }
       if (other.hasCooldownPeriod()) {
         mergeCooldownPeriod(other.getCooldownPeriod());
+      }
+      switch (other.getConfigCase()) {
+        case YARN_CONFIG:
+          {
+            mergeYarnConfig(other.getYarnConfig());
+            break;
+          }
+        case CONFIG_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -604,7 +672,20 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
       return this;
     }
 
-    private com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig yarnConfig_;
+    private int configCase_ = 0;
+    private java.lang.Object config_;
+
+    public ConfigCase getConfigCase() {
+      return ConfigCase.forNumber(configCase_);
+    }
+
+    public Builder clearConfig() {
+      configCase_ = 0;
+      config_ = null;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig,
             com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.Builder,
@@ -623,8 +704,9 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      *
      * @return Whether the yarnConfig field is set.
      */
+    @java.lang.Override
     public boolean hasYarnConfig() {
-      return yarnConfigBuilder_ != null || yarnConfig_ != null;
+      return configCase_ == 1;
     }
     /**
      *
@@ -639,13 +721,18 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      *
      * @return The yarnConfig.
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig getYarnConfig() {
       if (yarnConfigBuilder_ == null) {
-        return yarnConfig_ == null
-            ? com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance()
-            : yarnConfig_;
+        if (configCase_ == 1) {
+          return (com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig) config_;
+        }
+        return com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance();
       } else {
-        return yarnConfigBuilder_.getMessage();
+        if (configCase_ == 1) {
+          return yarnConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance();
       }
     }
     /**
@@ -664,12 +751,12 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
         if (value == null) {
           throw new NullPointerException();
         }
-        yarnConfig_ = value;
+        config_ = value;
         onChanged();
       } else {
         yarnConfigBuilder_.setMessage(value);
       }
-
+      configCase_ = 1;
       return this;
     }
     /**
@@ -686,12 +773,12 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     public Builder setYarnConfig(
         com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.Builder builderForValue) {
       if (yarnConfigBuilder_ == null) {
-        yarnConfig_ = builderForValue.build();
+        config_ = builderForValue.build();
         onChanged();
       } else {
         yarnConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      configCase_ = 1;
       return this;
     }
     /**
@@ -707,19 +794,26 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      */
     public Builder mergeYarnConfig(com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig value) {
       if (yarnConfigBuilder_ == null) {
-        if (yarnConfig_ != null) {
-          yarnConfig_ =
-              com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.newBuilder(yarnConfig_)
+        if (configCase_ == 1
+            && config_
+                != com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance()) {
+          config_ =
+              com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.newBuilder(
+                      (com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig) config_)
                   .mergeFrom(value)
                   .buildPartial();
         } else {
-          yarnConfig_ = value;
+          config_ = value;
         }
         onChanged();
       } else {
-        yarnConfigBuilder_.mergeFrom(value);
+        if (configCase_ == 1) {
+          yarnConfigBuilder_.mergeFrom(value);
+        } else {
+          yarnConfigBuilder_.setMessage(value);
+        }
       }
-
+      configCase_ = 1;
       return this;
     }
     /**
@@ -735,13 +829,18 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      */
     public Builder clearYarnConfig() {
       if (yarnConfigBuilder_ == null) {
-        yarnConfig_ = null;
-        onChanged();
+        if (configCase_ == 1) {
+          configCase_ = 0;
+          config_ = null;
+          onChanged();
+        }
       } else {
-        yarnConfig_ = null;
-        yarnConfigBuilder_ = null;
+        if (configCase_ == 1) {
+          configCase_ = 0;
+          config_ = null;
+        }
+        yarnConfigBuilder_.clear();
       }
-
       return this;
     }
     /**
@@ -756,8 +855,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.Builder getYarnConfigBuilder() {
-
-      onChanged();
       return getYarnConfigFieldBuilder().getBuilder();
     }
     /**
@@ -771,14 +868,16 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * .google.cloud.dataproc.v1.BasicYarnAutoscalingConfig yarn_config = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfigOrBuilder
         getYarnConfigOrBuilder() {
-      if (yarnConfigBuilder_ != null) {
+      if ((configCase_ == 1) && (yarnConfigBuilder_ != null)) {
         return yarnConfigBuilder_.getMessageOrBuilder();
       } else {
-        return yarnConfig_ == null
-            ? com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance()
-            : yarnConfig_;
+        if (configCase_ == 1) {
+          return (com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig) config_;
+        }
+        return com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance();
       }
     }
     /**
@@ -798,14 +897,22 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
             com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfigOrBuilder>
         getYarnConfigFieldBuilder() {
       if (yarnConfigBuilder_ == null) {
+        if (!(configCase_ == 1)) {
+          config_ = com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance();
+        }
         yarnConfigBuilder_ =
             new com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig,
                 com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.Builder,
                 com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfigOrBuilder>(
-                getYarnConfig(), getParentForChildren(), isClean());
-        yarnConfig_ = null;
+                (com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig) config_,
+                getParentForChildren(),
+                isClean());
+        config_ = null;
       }
+      configCase_ = 1;
+      onChanged();
+      ;
       return yarnConfigBuilder_;
     }
 

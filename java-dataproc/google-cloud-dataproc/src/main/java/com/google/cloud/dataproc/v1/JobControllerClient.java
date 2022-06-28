@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -31,7 +32,6 @@ import com.google.cloud.dataproc.v1.stub.JobControllerStub;
 import com.google.cloud.dataproc.v1.stub.JobControllerStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -46,6 +46,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
  *   String projectId = "projectId-894832108";
  *   String region = "region-934795532";
@@ -83,6 +85,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * JobControllerSettings jobControllerSettings =
  *     JobControllerSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,8 +97,24 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * JobControllerSettings jobControllerSettings =
  *     JobControllerSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * JobControllerClient jobControllerClient = JobControllerClient.create(jobControllerSettings);
+ * }</pre>
+ *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * JobControllerSettings jobControllerSettings =
+ *     JobControllerSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             JobControllerSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
  * JobControllerClient jobControllerClient = JobControllerClient.create(jobControllerSettings);
  * }</pre>
  *
@@ -104,7 +124,8 @@ import javax.annotation.Generated;
 public class JobControllerClient implements BackgroundResource {
   private final JobControllerSettings settings;
   private final JobControllerStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of JobControllerClient with default settings. */
   public static final JobControllerClient create() throws IOException {
@@ -124,7 +145,6 @@ public class JobControllerClient implements BackgroundResource {
    * Constructs an instance of JobControllerClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(JobControllerSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final JobControllerClient create(JobControllerStub stub) {
     return new JobControllerClient(stub);
   }
@@ -137,21 +157,23 @@ public class JobControllerClient implements BackgroundResource {
   protected JobControllerClient(JobControllerSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((JobControllerStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected JobControllerClient(JobControllerStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final JobControllerSettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public JobControllerStub getStub() {
     return stub;
   }
@@ -160,8 +182,17 @@ public class JobControllerClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -171,6 +202,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -197,6 +230,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   SubmitJobRequest request =
    *       SubmitJobRequest.newBuilder()
@@ -223,6 +258,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   SubmitJobRequest request =
    *       SubmitJobRequest.newBuilder()
@@ -248,6 +285,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -275,6 +314,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   SubmitJobRequest request =
    *       SubmitJobRequest.newBuilder()
@@ -302,6 +343,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   SubmitJobRequest request =
    *       SubmitJobRequest.newBuilder()
@@ -329,6 +372,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   SubmitJobRequest request =
    *       SubmitJobRequest.newBuilder()
@@ -355,6 +400,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -385,6 +432,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   GetJobRequest request =
    *       GetJobRequest.newBuilder()
@@ -410,6 +459,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   GetJobRequest request =
    *       GetJobRequest.newBuilder()
@@ -434,6 +485,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -460,6 +513,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -500,6 +555,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -530,6 +587,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -559,6 +618,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   ListJobsRequest request =
    *       ListJobsRequest.newBuilder()
@@ -571,7 +632,7 @@ public class JobControllerClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListJobsResponse response = jobControllerClient.listJobsCallable().call(request);
-   *     for (Job element : response.getResponsesList()) {
+   *     for (Job element : response.getJobsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -595,6 +656,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   UpdateJobRequest request =
    *       UpdateJobRequest.newBuilder()
@@ -622,6 +685,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   UpdateJobRequest request =
    *       UpdateJobRequest.newBuilder()
@@ -651,6 +716,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -684,6 +751,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   CancelJobRequest request =
    *       CancelJobRequest.newBuilder()
@@ -712,6 +781,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   CancelJobRequest request =
    *       CancelJobRequest.newBuilder()
@@ -737,6 +808,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   String projectId = "projectId-894832108";
    *   String region = "region-934795532";
@@ -768,6 +841,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   DeleteJobRequest request =
    *       DeleteJobRequest.newBuilder()
@@ -794,6 +869,8 @@ public class JobControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
    *   DeleteJobRequest request =
    *       DeleteJobRequest.newBuilder()

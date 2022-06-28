@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,8 @@
  * <p>Sample for AutoscalingPolicyServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (AutoscalingPolicyServiceClient autoscalingPolicyServiceClient =
  *     AutoscalingPolicyServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
@@ -40,6 +42,8 @@
  * <p>Sample for BatchControllerClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
  *   BatchName name = BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]");
  *   Batch response = batchControllerClient.getBatch(name);
@@ -54,6 +58,8 @@
  * <p>Sample for ClusterControllerClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
  *   String projectId = "projectId-894832108";
  *   String region = "region-934795532";
@@ -69,6 +75,8 @@
  * <p>Sample for JobControllerClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
  *   String projectId = "projectId-894832108";
  *   String region = "region-934795532";
@@ -84,6 +92,8 @@
  * <p>Sample for WorkflowTemplateServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (WorkflowTemplateServiceClient workflowTemplateServiceClient =
  *     WorkflowTemplateServiceClient.create()) {
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");

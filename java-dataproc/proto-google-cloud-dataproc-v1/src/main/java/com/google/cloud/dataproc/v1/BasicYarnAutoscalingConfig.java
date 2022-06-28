@@ -114,6 +114,8 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -316,16 +318,16 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (scaleUpFactor_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(scaleUpFactor_) != 0) {
       output.writeDouble(1, scaleUpFactor_);
     }
-    if (scaleDownFactor_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(scaleDownFactor_) != 0) {
       output.writeDouble(2, scaleDownFactor_);
     }
-    if (scaleUpMinWorkerFraction_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(scaleUpMinWorkerFraction_) != 0) {
       output.writeDouble(3, scaleUpMinWorkerFraction_);
     }
-    if (scaleDownMinWorkerFraction_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(scaleDownMinWorkerFraction_) != 0) {
       output.writeDouble(4, scaleDownMinWorkerFraction_);
     }
     if (gracefulDecommissionTimeout_ != null) {
@@ -340,16 +342,16 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (scaleUpFactor_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(scaleUpFactor_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, scaleUpFactor_);
     }
-    if (scaleDownFactor_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(scaleDownFactor_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, scaleDownFactor_);
     }
-    if (scaleUpMinWorkerFraction_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(scaleUpMinWorkerFraction_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, scaleUpMinWorkerFraction_);
     }
-    if (scaleDownMinWorkerFraction_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(scaleDownMinWorkerFraction_) != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeDoubleSize(4, scaleDownMinWorkerFraction_);
     }

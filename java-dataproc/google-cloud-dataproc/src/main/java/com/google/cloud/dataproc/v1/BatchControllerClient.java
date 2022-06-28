@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -31,7 +32,6 @@ import com.google.cloud.dataproc.v1.stub.BatchControllerStub;
 import com.google.cloud.dataproc.v1.stub.BatchControllerStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -46,6 +46,8 @@ import javax.annotation.Generated;
  * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
  *   BatchName name = BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]");
  *   Batch response = batchControllerClient.getBatch(name);
@@ -82,6 +84,8 @@ import javax.annotation.Generated;
  * <p>To customize credentials:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BatchControllerSettings batchControllerSettings =
  *     BatchControllerSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -93,8 +97,25 @@ import javax.annotation.Generated;
  * <p>To customize the endpoint:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
  * BatchControllerSettings batchControllerSettings =
  *     BatchControllerSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * BatchControllerClient batchControllerClient =
+ *     BatchControllerClient.create(batchControllerSettings);
+ * }</pre>
+ *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * BatchControllerSettings batchControllerSettings =
+ *     BatchControllerSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             BatchControllerSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
  * BatchControllerClient batchControllerClient =
  *     BatchControllerClient.create(batchControllerSettings);
  * }</pre>
@@ -105,7 +126,8 @@ import javax.annotation.Generated;
 public class BatchControllerClient implements BackgroundResource {
   private final BatchControllerSettings settings;
   private final BatchControllerStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of BatchControllerClient with default settings. */
   public static final BatchControllerClient create() throws IOException {
@@ -125,7 +147,6 @@ public class BatchControllerClient implements BackgroundResource {
    * Constructs an instance of BatchControllerClient, using the given stub for making calls. This is
    * for advanced usage - prefer using create(BatchControllerSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final BatchControllerClient create(BatchControllerStub stub) {
     return new BatchControllerClient(stub);
   }
@@ -138,21 +159,23 @@ public class BatchControllerClient implements BackgroundResource {
   protected BatchControllerClient(BatchControllerSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((BatchControllerStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected BatchControllerClient(BatchControllerStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final BatchControllerSettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BatchControllerStub getStub() {
     return stub;
   }
@@ -161,8 +184,17 @@ public class BatchControllerClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -172,6 +204,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Batch batch = Batch.newBuilder().build();
@@ -205,6 +239,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   Batch batch = Batch.newBuilder().build();
@@ -238,6 +274,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   CreateBatchRequest request =
    *       CreateBatchRequest.newBuilder()
@@ -265,6 +303,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   CreateBatchRequest request =
    *       CreateBatchRequest.newBuilder()
@@ -292,6 +332,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   CreateBatchRequest request =
    *       CreateBatchRequest.newBuilder()
@@ -317,6 +359,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   BatchName name = BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]");
    *   Batch response = batchControllerClient.getBatch(name);
@@ -339,6 +383,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   String name = BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]").toString();
    *   Batch response = batchControllerClient.getBatch(name);
@@ -360,6 +406,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   GetBatchRequest request =
    *       GetBatchRequest.newBuilder()
@@ -383,6 +431,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   GetBatchRequest request =
    *       GetBatchRequest.newBuilder()
@@ -405,6 +455,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   for (Batch element : batchControllerClient.listBatches(parent).iterateAll()) {
@@ -431,6 +483,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   for (Batch element : batchControllerClient.listBatches(parent).iterateAll()) {
@@ -454,6 +508,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   ListBatchesRequest request =
    *       ListBatchesRequest.newBuilder()
@@ -481,6 +537,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   ListBatchesRequest request =
    *       ListBatchesRequest.newBuilder()
@@ -509,6 +567,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   ListBatchesRequest request =
    *       ListBatchesRequest.newBuilder()
@@ -518,7 +578,7 @@ public class BatchControllerClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListBatchesResponse response = batchControllerClient.listBatchesCallable().call(request);
-   *     for (Batch element : response.getResponsesList()) {
+   *     for (Batch element : response.getBatchesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -543,6 +603,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   BatchName name = BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]");
    *   batchControllerClient.deleteBatch(name);
@@ -566,6 +628,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   String name = BatchName.of("[PROJECT]", "[LOCATION]", "[BATCH]").toString();
    *   batchControllerClient.deleteBatch(name);
@@ -588,6 +652,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   DeleteBatchRequest request =
    *       DeleteBatchRequest.newBuilder()
@@ -612,6 +678,8 @@ public class BatchControllerClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
    * try (BatchControllerClient batchControllerClient = BatchControllerClient.create()) {
    *   DeleteBatchRequest request =
    *       DeleteBatchRequest.newBuilder()

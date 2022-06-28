@@ -137,6 +137,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -1261,8 +1263,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         if (ttlCase_ == 2) {
           autoDeleteTimeBuilder_.mergeFrom(value);
+        } else {
+          autoDeleteTimeBuilder_.setMessage(value);
         }
-        autoDeleteTimeBuilder_.setMessage(value);
       }
       ttlCase_ = 2;
       return this;
@@ -1502,8 +1505,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV
       } else {
         if (ttlCase_ == 3) {
           autoDeleteTtlBuilder_.mergeFrom(value);
+        } else {
+          autoDeleteTtlBuilder_.setMessage(value);
         }
-        autoDeleteTtlBuilder_.setMessage(value);
       }
       ttlCase_ = 3;
       return this;
