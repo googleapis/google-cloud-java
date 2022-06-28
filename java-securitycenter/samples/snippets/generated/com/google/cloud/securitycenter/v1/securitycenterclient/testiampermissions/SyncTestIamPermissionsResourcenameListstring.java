@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START
-// securitycenter_v1_generated_securitycenterclient_testiampermissions_resourcenameliststring_sync]
+// [START securitycenter_v1_generated_securitycenterclient_testiampermissions_resourcenameliststring_sync]
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import com.google.cloud.securitycenter.v1.SourceName;
@@ -42,5 +41,4 @@ public class SyncTestIamPermissionsResourcenameListstring {
     }
   }
 }
-// [END
-// securitycenter_v1_generated_securitycenterclient_testiampermissions_resourcenameliststring_sync]
+// [END securitycenter_v1_generated_securitycenterclient_testiampermissions_resourcenameliststring_sync]

@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START
-// securitycenter_v1_generated_securitycenterclient_createbigqueryexport_foldernamebigqueryexportstring_sync]
+// [START securitycenter_v1_generated_securitycenterclient_createbigqueryexport_foldernamebigqueryexportstring_sync]
 import com.google.cloud.securitycenter.v1.BigQueryExport;
 import com.google.cloud.securitycenter.v1.FolderName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
@@ -40,5 +39,4 @@ public class SyncCreateBigQueryExportFoldernameBigqueryexportString {
     }
   }
 }
-// [END
-// securitycenter_v1_generated_securitycenterclient_createbigqueryexport_foldernamebigqueryexportstring_sync]
+// [END securitycenter_v1_generated_securitycenterclient_createbigqueryexport_foldernamebigqueryexportstring_sync]

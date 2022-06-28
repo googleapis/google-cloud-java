@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START
-// securitycenter_v1_generated_securitycenterclient_updatenotificationconfig_notificationconfig_sync]
+// [START securitycenter_v1_generated_securitycenterclient_updatenotificationconfig_notificationconfig_sync]
 import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 
@@ -37,5 +36,4 @@ public class SyncUpdateNotificationConfigNotificationconfig {
     }
   }
 }
-// [END
-// securitycenter_v1_generated_securitycenterclient_updatenotificationconfig_notificationconfig_sync]
+// [END securitycenter_v1_generated_securitycenterclient_updatenotificationconfig_notificationconfig_sync]

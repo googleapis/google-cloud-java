@@ -16,10 +16,10 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START
-// securitycenter_v1_generated_securitycenterclient_deletebigqueryexport_bigqueryexportname_sync]
+// [START securitycenter_v1_generated_securitycenterclient_deletebigqueryexport_bigqueryexportname_sync]
 import com.google.cloud.securitycenter.v1.BigQueryExportName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteBigQueryExportBigqueryexportname {
 
@@ -37,5 +37,4 @@ public class SyncDeleteBigQueryExportBigqueryexportname {
     }
   }
 }
-// [END
-// securitycenter_v1_generated_securitycenterclient_deletebigqueryexport_bigqueryexportname_sync]
+// [END securitycenter_v1_generated_securitycenterclient_deletebigqueryexport_bigqueryexportname_sync]

@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START
-// securitycenter_v1_generated_securitycenterclient_createfinding_sourcenamestringfinding_sync]
+// [START securitycenter_v1_generated_securitycenterclient_createfinding_sourcenamestringfinding_sync]
 import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import com.google.cloud.securitycenter.v1.SourceName;

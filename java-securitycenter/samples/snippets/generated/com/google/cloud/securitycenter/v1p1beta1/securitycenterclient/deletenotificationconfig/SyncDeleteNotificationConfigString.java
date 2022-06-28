@@ -16,10 +16,10 @@
 
 package com.google.cloud.securitycenter.v1p1beta1.samples;
 
-// [START
-// securitycenter_v1p1beta1_generated_securitycenterclient_deletenotificationconfig_string_sync]
+// [START securitycenter_v1p1beta1_generated_securitycenterclient_deletenotificationconfig_string_sync]
 import com.google.cloud.securitycenter.v1p1beta1.NotificationConfigName;
 import com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteNotificationConfigString {
 
@@ -36,5 +36,4 @@ public class SyncDeleteNotificationConfigString {
     }
   }
 }
-// [END
-// securitycenter_v1p1beta1_generated_securitycenterclient_deletenotificationconfig_string_sync]
+// [END securitycenter_v1p1beta1_generated_securitycenterclient_deletenotificationconfig_string_sync]

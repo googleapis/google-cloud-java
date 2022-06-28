@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START
-// securitycenter_v1_generated_securitycenterclient_updatebigqueryexport_bigqueryexportfieldmask_sync]
+// [START securitycenter_v1_generated_securitycenterclient_updatebigqueryexport_bigqueryexportfieldmask_sync]
 import com.google.cloud.securitycenter.v1.BigQueryExport;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import com.google.protobuf.FieldMask;
@@ -39,5 +38,4 @@ public class SyncUpdateBigQueryExportBigqueryexportFieldmask {
     }
   }
 }
-// [END
-// securitycenter_v1_generated_securitycenterclient_updatebigqueryexport_bigqueryexportfieldmask_sync]
+// [END securitycenter_v1_generated_securitycenterclient_updatebigqueryexport_bigqueryexportfieldmask_sync]

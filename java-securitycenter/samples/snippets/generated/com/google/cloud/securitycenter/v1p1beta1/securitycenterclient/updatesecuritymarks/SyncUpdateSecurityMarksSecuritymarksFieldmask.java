@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1p1beta1.samples;
 
-// [START
-// securitycenter_v1p1beta1_generated_securitycenterclient_updatesecuritymarks_securitymarksfieldmask_sync]
+// [START securitycenter_v1p1beta1_generated_securitycenterclient_updatesecuritymarks_securitymarksfieldmask_sync]
 import com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient;
 import com.google.cloud.securitycenter.v1p1beta1.SecurityMarks;
 import com.google.protobuf.FieldMask;
@@ -38,5 +37,4 @@ public class SyncUpdateSecurityMarksSecuritymarksFieldmask {
     }
   }
 }
-// [END
-// securitycenter_v1p1beta1_generated_securitycenterclient_updatesecuritymarks_securitymarksfieldmask_sync]
+// [END securitycenter_v1p1beta1_generated_securitycenterclient_updatesecuritymarks_securitymarksfieldmask_sync]

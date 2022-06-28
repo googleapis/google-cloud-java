@@ -20,6 +20,7 @@ package com.google.cloud.securitycenter.v1.samples;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.NotificationConfigName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteNotificationConfig {
 

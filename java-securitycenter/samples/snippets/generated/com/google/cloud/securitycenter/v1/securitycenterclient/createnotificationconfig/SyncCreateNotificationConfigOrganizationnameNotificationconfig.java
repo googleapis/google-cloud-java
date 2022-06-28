@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START
-// securitycenter_v1_generated_securitycenterclient_createnotificationconfig_organizationnamenotificationconfig_sync]
+// [START securitycenter_v1_generated_securitycenterclient_createnotificationconfig_organizationnamenotificationconfig_sync]
 import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
@@ -40,5 +39,4 @@ public class SyncCreateNotificationConfigOrganizationnameNotificationconfig {
     }
   }
 }
-// [END
-// securitycenter_v1_generated_securitycenterclient_createnotificationconfig_organizationnamenotificationconfig_sync]
+// [END securitycenter_v1_generated_securitycenterclient_createnotificationconfig_organizationnamenotificationconfig_sync]

@@ -19,6 +19,7 @@ package com.google.cloud.securitycenter.v1.samples;
 // [START securitycenter_v1_generated_securitycenterclient_deletemuteconfig_string_sync]
 import com.google.cloud.securitycenter.v1.MuteConfigName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteMuteConfigString {
 

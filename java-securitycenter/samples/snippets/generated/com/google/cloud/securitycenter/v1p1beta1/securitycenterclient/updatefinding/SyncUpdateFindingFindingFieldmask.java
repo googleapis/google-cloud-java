@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1p1beta1.samples;
 
-// [START
-// securitycenter_v1p1beta1_generated_securitycenterclient_updatefinding_findingfieldmask_sync]
+// [START securitycenter_v1p1beta1_generated_securitycenterclient_updatefinding_findingfieldmask_sync]
 import com.google.cloud.securitycenter.v1p1beta1.Finding;
 import com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient;
 import com.google.protobuf.FieldMask;

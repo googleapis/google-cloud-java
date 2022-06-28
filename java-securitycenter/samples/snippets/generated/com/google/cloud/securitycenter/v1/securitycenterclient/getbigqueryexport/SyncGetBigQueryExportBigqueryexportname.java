@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START
-// securitycenter_v1_generated_securitycenterclient_getbigqueryexport_bigqueryexportname_sync]
+// [START securitycenter_v1_generated_securitycenterclient_getbigqueryexport_bigqueryexportname_sync]
 import com.google.cloud.securitycenter.v1.BigQueryExport;
 import com.google.cloud.securitycenter.v1.BigQueryExportName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;

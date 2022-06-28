@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1beta1.samples;
 
-// [START
-// securitycenter_v1beta1_generated_securitycenterclient_getorganizationsettings_organizationsettingsname_sync]
+// [START securitycenter_v1beta1_generated_securitycenterclient_getorganizationsettings_organizationsettingsname_sync]
 import com.google.cloud.securitycenter.v1beta1.OrganizationSettings;
 import com.google.cloud.securitycenter.v1beta1.OrganizationSettingsName;
 import com.google.cloud.securitycenter.v1beta1.SecurityCenterClient;
@@ -37,5 +36,4 @@ public class SyncGetOrganizationSettingsOrganizationsettingsname {
     }
   }
 }
-// [END
-// securitycenter_v1beta1_generated_securitycenterclient_getorganizationsettings_organizationsettingsname_sync]
+// [END securitycenter_v1beta1_generated_securitycenterclient_getorganizationsettings_organizationsettingsname_sync]

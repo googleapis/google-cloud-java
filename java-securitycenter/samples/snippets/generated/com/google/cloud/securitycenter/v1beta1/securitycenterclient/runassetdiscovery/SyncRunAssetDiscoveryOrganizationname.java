@@ -16,10 +16,10 @@
 
 package com.google.cloud.securitycenter.v1beta1.samples;
 
-// [START
-// securitycenter_v1beta1_generated_securitycenterclient_runassetdiscovery_organizationname_sync]
+// [START securitycenter_v1beta1_generated_securitycenterclient_runassetdiscovery_organizationname_sync]
 import com.google.cloud.securitycenter.v1beta1.OrganizationName;
 import com.google.cloud.securitycenter.v1beta1.SecurityCenterClient;
+import com.google.protobuf.Empty;
 
 public class SyncRunAssetDiscoveryOrganizationname {
 
@@ -36,5 +36,4 @@ public class SyncRunAssetDiscoveryOrganizationname {
     }
   }
 }
-// [END
-// securitycenter_v1beta1_generated_securitycenterclient_runassetdiscovery_organizationname_sync]
+// [END securitycenter_v1beta1_generated_securitycenterclient_runassetdiscovery_organizationname_sync]

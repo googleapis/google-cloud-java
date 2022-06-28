@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1p1beta1.samples;
 
-// [START
-// securitycenter_v1p1beta1_generated_securitycenterclient_listnotificationconfigs_paged_async]
+// [START securitycenter_v1p1beta1_generated_securitycenterclient_listnotificationconfigs_paged_async]
 import com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsRequest;
 import com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsResponse;
 import com.google.cloud.securitycenter.v1p1beta1.NotificationConfig;

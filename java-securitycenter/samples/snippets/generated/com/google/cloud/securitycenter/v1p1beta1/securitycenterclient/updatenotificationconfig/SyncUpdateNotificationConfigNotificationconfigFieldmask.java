@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1p1beta1.samples;
 
-// [START
-// securitycenter_v1p1beta1_generated_securitycenterclient_updatenotificationconfig_notificationconfigfieldmask_sync]
+// [START securitycenter_v1p1beta1_generated_securitycenterclient_updatenotificationconfig_notificationconfigfieldmask_sync]
 import com.google.cloud.securitycenter.v1p1beta1.NotificationConfig;
 import com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient;
 import com.google.protobuf.FieldMask;
@@ -39,5 +38,4 @@ public class SyncUpdateNotificationConfigNotificationconfigFieldmask {
     }
   }
 }
-// [END
-// securitycenter_v1p1beta1_generated_securitycenterclient_updatenotificationconfig_notificationconfigfieldmask_sync]
+// [END securitycenter_v1p1beta1_generated_securitycenterclient_updatenotificationconfig_notificationconfigfieldmask_sync]

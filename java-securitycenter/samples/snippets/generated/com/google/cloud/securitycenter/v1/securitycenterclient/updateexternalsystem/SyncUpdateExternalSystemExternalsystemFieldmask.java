@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START
-// securitycenter_v1_generated_securitycenterclient_updateexternalsystem_externalsystemfieldmask_sync]
+// [START securitycenter_v1_generated_securitycenterclient_updateexternalsystem_externalsystemfieldmask_sync]
 import com.google.cloud.securitycenter.v1.ExternalSystem;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import com.google.protobuf.FieldMask;
@@ -39,5 +38,4 @@ public class SyncUpdateExternalSystemExternalsystemFieldmask {
     }
   }
 }
-// [END
-// securitycenter_v1_generated_securitycenterclient_updateexternalsystem_externalsystemfieldmask_sync]
+// [END securitycenter_v1_generated_securitycenterclient_updateexternalsystem_externalsystemfieldmask_sync]

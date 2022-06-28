@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1beta1.samples;
 
-// [START
-// securitycenter_v1beta1_generated_securitycenterclient_updatesecuritymarks_securitymarks_sync]
+// [START securitycenter_v1beta1_generated_securitycenterclient_updatesecuritymarks_securitymarks_sync]
 import com.google.cloud.securitycenter.v1beta1.SecurityCenterClient;
 import com.google.cloud.securitycenter.v1beta1.SecurityMarks;
 
@@ -36,5 +35,4 @@ public class SyncUpdateSecurityMarksSecuritymarks {
     }
   }
 }
-// [END
-// securitycenter_v1beta1_generated_securitycenterclient_updatesecuritymarks_securitymarks_sync]
+// [END securitycenter_v1beta1_generated_securitycenterclient_updatesecuritymarks_securitymarks_sync]

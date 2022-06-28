@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START
-// securitycenter_v1_generated_securitycenterclient_createmuteconfig_projectnamemuteconfigstring_sync]
+// [START securitycenter_v1_generated_securitycenterclient_createmuteconfig_projectnamemuteconfigstring_sync]
 import com.google.cloud.securitycenter.v1.MuteConfig;
 import com.google.cloud.securitycenter.v1.ProjectName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
@@ -39,5 +38,4 @@ public class SyncCreateMuteConfigProjectnameMuteconfigString {
     }
   }
 }
-// [END
-// securitycenter_v1_generated_securitycenterclient_createmuteconfig_projectnamemuteconfigstring_sync]
+// [END securitycenter_v1_generated_securitycenterclient_createmuteconfig_projectnamemuteconfigstring_sync]

@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1p1beta1.samples;
 
-// [START
-// securitycenter_v1p1beta1_generated_securitycenterclient_setiampolicy_resourcenamepolicy_sync]
+// [START securitycenter_v1p1beta1_generated_securitycenterclient_setiampolicy_resourcenamepolicy_sync]
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient;
 import com.google.cloud.securitycenter.v1p1beta1.SourceName;
@@ -39,5 +38,4 @@ public class SyncSetIamPolicyResourcenamePolicy {
     }
   }
 }
-// [END
-// securitycenter_v1p1beta1_generated_securitycenterclient_setiampolicy_resourcenamepolicy_sync]
+// [END securitycenter_v1p1beta1_generated_securitycenterclient_setiampolicy_resourcenamepolicy_sync]

@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1p1beta1.samples;
 
-// [START
-// securitycenter_v1p1beta1_generated_securitycenterclient_create_setcredentialsprovider_sync]
+// [START securitycenter_v1p1beta1_generated_securitycenterclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient;
 import com.google.cloud.securitycenter.v1p1beta1.SecurityCenterSettings;

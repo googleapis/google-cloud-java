@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START
-// securitycenter_v1_generated_securitycenterclient_createmuteconfig_foldernamemuteconfig_sync]
+// [START securitycenter_v1_generated_securitycenterclient_createmuteconfig_foldernamemuteconfig_sync]
 import com.google.cloud.securitycenter.v1.FolderName;
 import com.google.cloud.securitycenter.v1.MuteConfig;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;

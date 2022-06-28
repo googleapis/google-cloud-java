@@ -19,6 +19,7 @@ package com.google.cloud.securitycenter.v1beta1.samples;
 // [START securitycenter_v1beta1_generated_securitycenterclient_runassetdiscovery_string_sync]
 import com.google.cloud.securitycenter.v1beta1.OrganizationName;
 import com.google.cloud.securitycenter.v1beta1.SecurityCenterClient;
+import com.google.protobuf.Empty;
 
 public class SyncRunAssetDiscoveryString {
 

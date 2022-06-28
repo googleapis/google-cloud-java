@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START
-// securitycenter_v1_generated_securitycenterclient_setfindingstate_stringfindingstatetimestamp_sync]
+// [START securitycenter_v1_generated_securitycenterclient_setfindingstate_stringfindingstatetimestamp_sync]
 import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.FindingName;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
@@ -42,5 +41,4 @@ public class SyncSetFindingStateStringFindingstateTimestamp {
     }
   }
 }
-// [END
-// securitycenter_v1_generated_securitycenterclient_setfindingstate_stringfindingstatetimestamp_sync]
+// [END securitycenter_v1_generated_securitycenterclient_setfindingstate_stringfindingstatetimestamp_sync]

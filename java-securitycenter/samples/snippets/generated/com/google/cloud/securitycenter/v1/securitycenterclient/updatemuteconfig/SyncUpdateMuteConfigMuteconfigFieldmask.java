@@ -16,8 +16,7 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START
-// securitycenter_v1_generated_securitycenterclient_updatemuteconfig_muteconfigfieldmask_sync]
+// [START securitycenter_v1_generated_securitycenterclient_updatemuteconfig_muteconfigfieldmask_sync]
 import com.google.cloud.securitycenter.v1.MuteConfig;
 import com.google.cloud.securitycenter.v1.SecurityCenterClient;
 import com.google.protobuf.FieldMask;
