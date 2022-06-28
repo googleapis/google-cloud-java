@@ -1,5 +1,28 @@
 # Changelog
 
+## [3.0.0](https://github.com/googleapis/java-vision/compare/v2.1.4...v3.0.0) (2022-06-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* BatchAnnotateImagesRequest.requests is required
+* Product search related messages and enums changed in an incompatible way
+* NormalizedBoundingPoly message removed
+* removed fields from SafeSearchAnnotation message
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([c5d7f0a](https://github.com/googleapis/java-vision/commit/c5d7f0adae7b7a20588847683059108990fc3950))
+
+
+### Bug Fixes
+
+* BatchAnnotateImagesRequest.requests is required ([c5d7f0a](https://github.com/googleapis/java-vision/commit/c5d7f0adae7b7a20588847683059108990fc3950))
+* NormalizedBoundingPoly message removed ([c5d7f0a](https://github.com/googleapis/java-vision/commit/c5d7f0adae7b7a20588847683059108990fc3950))
+* Product search related messages and enums changed in an incompatible way ([c5d7f0a](https://github.com/googleapis/java-vision/commit/c5d7f0adae7b7a20588847683059108990fc3950))
+* removed fields from SafeSearchAnnotation message ([c5d7f0a](https://github.com/googleapis/java-vision/commit/c5d7f0adae7b7a20588847683059108990fc3950))
+* update gapic-generator-java with mock service generation fixes ([#904](https://github.com/googleapis/java-vision/issues/904)) ([c5d7f0a](https://github.com/googleapis/java-vision/commit/c5d7f0adae7b7a20588847683059108990fc3950))
+
 ## [2.1.4](https://github.com/googleapis/java-vision/compare/v2.1.3...v2.1.4) (2022-06-27)
 
 
