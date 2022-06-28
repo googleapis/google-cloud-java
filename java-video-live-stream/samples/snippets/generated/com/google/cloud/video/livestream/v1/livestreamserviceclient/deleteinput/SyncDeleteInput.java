@@ -20,6 +20,7 @@ package com.google.cloud.video.livestream.v1.samples;
 import com.google.cloud.video.livestream.v1.DeleteInputRequest;
 import com.google.cloud.video.livestream.v1.InputName;
 import com.google.cloud.video.livestream.v1.LivestreamServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteInput {
 

@@ -19,6 +19,7 @@ package com.google.cloud.video.livestream.v1.samples;
 // [START livestream_v1_generated_livestreamserviceclient_deletechannel_string_sync]
 import com.google.cloud.video.livestream.v1.ChannelName;
 import com.google.cloud.video.livestream.v1.LivestreamServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteChannelString {
 

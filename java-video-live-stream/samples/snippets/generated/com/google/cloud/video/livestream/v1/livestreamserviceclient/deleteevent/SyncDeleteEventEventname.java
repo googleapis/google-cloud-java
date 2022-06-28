@@ -19,6 +19,7 @@ package com.google.cloud.video.livestream.v1.samples;
 // [START livestream_v1_generated_livestreamserviceclient_deleteevent_eventname_sync]
 import com.google.cloud.video.livestream.v1.EventName;
 import com.google.cloud.video.livestream.v1.LivestreamServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteEventEventname {
 

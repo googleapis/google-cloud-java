@@ -16,8 +16,7 @@
 
 package com.google.cloud.video.livestream.v1.samples;
 
-// [START
-// livestream_v1_generated_livestreamserviceclient_createchannel_locationnamechannelstring_sync]
+// [START livestream_v1_generated_livestreamserviceclient_createchannel_locationnamechannelstring_sync]
 import com.google.cloud.video.livestream.v1.Channel;
 import com.google.cloud.video.livestream.v1.LivestreamServiceClient;
 import com.google.cloud.video.livestream.v1.LocationName;
@@ -40,5 +39,4 @@ public class SyncCreateChannelLocationnameChannelString {
     }
   }
 }
-// [END
-// livestream_v1_generated_livestreamserviceclient_createchannel_locationnamechannelstring_sync]
+// [END livestream_v1_generated_livestreamserviceclient_createchannel_locationnamechannelstring_sync]
