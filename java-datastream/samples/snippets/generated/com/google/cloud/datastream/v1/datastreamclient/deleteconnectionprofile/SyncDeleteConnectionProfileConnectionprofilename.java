@@ -16,10 +16,10 @@
 
 package com.google.cloud.datastream.v1.samples;
 
-// [START
-// datastream_v1_generated_datastreamclient_deleteconnectionprofile_connectionprofilename_sync]
+// [START datastream_v1_generated_datastreamclient_deleteconnectionprofile_connectionprofilename_sync]
 import com.google.cloud.datastream.v1.ConnectionProfileName;
 import com.google.cloud.datastream.v1.DatastreamClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteConnectionProfileConnectionprofilename {
 

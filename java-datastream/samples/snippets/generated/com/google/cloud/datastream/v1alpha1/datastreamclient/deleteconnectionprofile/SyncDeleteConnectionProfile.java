@@ -20,6 +20,7 @@ package com.google.cloud.datastream.v1alpha1.samples;
 import com.google.cloud.datastream.v1alpha1.ConnectionProfileName;
 import com.google.cloud.datastream.v1alpha1.DatastreamClient;
 import com.google.cloud.datastream.v1alpha1.DeleteConnectionProfileRequest;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteConnectionProfile {
 

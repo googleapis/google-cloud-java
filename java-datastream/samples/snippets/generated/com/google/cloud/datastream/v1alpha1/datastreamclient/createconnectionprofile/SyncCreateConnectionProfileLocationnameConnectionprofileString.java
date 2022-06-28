@@ -16,8 +16,7 @@
 
 package com.google.cloud.datastream.v1alpha1.samples;
 
-// [START
-// datastream_v1alpha1_generated_datastreamclient_createconnectionprofile_locationnameconnectionprofilestring_sync]
+// [START datastream_v1alpha1_generated_datastreamclient_createconnectionprofile_locationnameconnectionprofilestring_sync]
 import com.google.cloud.datastream.v1alpha1.ConnectionProfile;
 import com.google.cloud.datastream.v1alpha1.DatastreamClient;
 import com.google.cloud.datastream.v1alpha1.LocationName;
@@ -43,5 +42,4 @@ public class SyncCreateConnectionProfileLocationnameConnectionprofileString {
     }
   }
 }
-// [END
-// datastream_v1alpha1_generated_datastreamclient_createconnectionprofile_locationnameconnectionprofilestring_sync]
+// [END datastream_v1alpha1_generated_datastreamclient_createconnectionprofile_locationnameconnectionprofilestring_sync]

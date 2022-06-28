@@ -16,8 +16,7 @@
 
 package com.google.cloud.datastream.v1.samples;
 
-// [START
-// datastream_v1_generated_datastreamclient_createroute_privateconnectionnameroutestring_sync]
+// [START datastream_v1_generated_datastreamclient_createroute_privateconnectionnameroutestring_sync]
 import com.google.cloud.datastream.v1.DatastreamClient;
 import com.google.cloud.datastream.v1.PrivateConnectionName;
 import com.google.cloud.datastream.v1.Route;

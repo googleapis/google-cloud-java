@@ -16,8 +16,7 @@
 
 package com.google.cloud.datastream.v1.samples;
 
-// [START
-// datastream_v1_generated_datastreamclient_updateconnectionprofile_connectionprofilefieldmask_sync]
+// [START datastream_v1_generated_datastreamclient_updateconnectionprofile_connectionprofilefieldmask_sync]
 import com.google.cloud.datastream.v1.ConnectionProfile;
 import com.google.cloud.datastream.v1.DatastreamClient;
 import com.google.protobuf.FieldMask;
@@ -39,5 +38,4 @@ public class SyncUpdateConnectionProfileConnectionprofileFieldmask {
     }
   }
 }
-// [END
-// datastream_v1_generated_datastreamclient_updateconnectionprofile_connectionprofilefieldmask_sync]
+// [END datastream_v1_generated_datastreamclient_updateconnectionprofile_connectionprofilefieldmask_sync]

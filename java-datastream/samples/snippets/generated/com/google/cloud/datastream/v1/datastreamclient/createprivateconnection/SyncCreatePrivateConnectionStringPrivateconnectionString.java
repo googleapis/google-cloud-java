@@ -16,8 +16,7 @@
 
 package com.google.cloud.datastream.v1.samples;
 
-// [START
-// datastream_v1_generated_datastreamclient_createprivateconnection_stringprivateconnectionstring_sync]
+// [START datastream_v1_generated_datastreamclient_createprivateconnection_stringprivateconnectionstring_sync]
 import com.google.cloud.datastream.v1.DatastreamClient;
 import com.google.cloud.datastream.v1.LocationName;
 import com.google.cloud.datastream.v1.PrivateConnection;
@@ -42,5 +41,4 @@ public class SyncCreatePrivateConnectionStringPrivateconnectionString {
     }
   }
 }
-// [END
-// datastream_v1_generated_datastreamclient_createprivateconnection_stringprivateconnectionstring_sync]
+// [END datastream_v1_generated_datastreamclient_createprivateconnection_stringprivateconnectionstring_sync]

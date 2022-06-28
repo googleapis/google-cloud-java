@@ -20,6 +20,7 @@ package com.google.cloud.datastream.v1alpha1.samples;
 import com.google.cloud.datastream.v1alpha1.DatastreamClient;
 import com.google.cloud.datastream.v1alpha1.DeleteRouteRequest;
 import com.google.cloud.datastream.v1alpha1.RouteName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteRoute {
 

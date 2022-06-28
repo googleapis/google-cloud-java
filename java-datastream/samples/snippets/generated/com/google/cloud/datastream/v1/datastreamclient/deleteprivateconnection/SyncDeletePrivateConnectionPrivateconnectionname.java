@@ -16,10 +16,10 @@
 
 package com.google.cloud.datastream.v1.samples;
 
-// [START
-// datastream_v1_generated_datastreamclient_deleteprivateconnection_privateconnectionname_sync]
+// [START datastream_v1_generated_datastreamclient_deleteprivateconnection_privateconnectionname_sync]
 import com.google.cloud.datastream.v1.DatastreamClient;
 import com.google.cloud.datastream.v1.PrivateConnectionName;
+import com.google.protobuf.Empty;
 
 public class SyncDeletePrivateConnectionPrivateconnectionname {
 

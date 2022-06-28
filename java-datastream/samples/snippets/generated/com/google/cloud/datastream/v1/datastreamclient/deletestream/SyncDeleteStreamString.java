@@ -19,6 +19,7 @@ package com.google.cloud.datastream.v1.samples;
 // [START datastream_v1_generated_datastreamclient_deletestream_string_sync]
 import com.google.cloud.datastream.v1.DatastreamClient;
 import com.google.cloud.datastream.v1.StreamName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteStreamString {
 
