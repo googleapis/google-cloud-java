@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-speech/compare/v2.3.0...v2.4.0) (2022-06-28)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#900](https://github.com/googleapis/java-speech/issues/900)) ([b1f9db5](https://github.com/googleapis/java-speech/commit/b1f9db5c7c1a2ec9aa47fdd143d61ee5c0c82b3e))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#902](https://github.com/googleapis/java-speech/issues/902)) ([cd1f23f](https://github.com/googleapis/java-speech/commit/cd1f23f8e7d14518407acb4692b79f7955072c42))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#899](https://github.com/googleapis/java-speech/issues/899)) ([71dfae1](https://github.com/googleapis/java-speech/commit/71dfae16dc46296b460c3c9d37b634a7bf46ca38))
+* update dependency com.google.cloud:google-cloud-storage to v2.7.1 ([#889](https://github.com/googleapis/java-speech/issues/889)) ([c6b93fd](https://github.com/googleapis/java-speech/commit/c6b93fd4d7524923ad74e142672de7c56c54da82))
+* update dependency com.google.cloud:google-cloud-storage to v2.7.2 ([#891](https://github.com/googleapis/java-speech/issues/891)) ([063902b](https://github.com/googleapis/java-speech/commit/063902bc718f7988857157e91b45316d87508820))
+* update dependency com.google.cloud:google-cloud-storage to v2.8.0 ([#893](https://github.com/googleapis/java-speech/issues/893)) ([97c7cbc](https://github.com/googleapis/java-speech/commit/97c7cbca620221f7632fe0d041b0c5c10cfd118d))
+* update dependency com.google.cloud:google-cloud-storage to v2.8.1 ([#897](https://github.com/googleapis/java-speech/issues/897)) ([b6097e2](https://github.com/googleapis/java-speech/commit/b6097e20ed291b9fd340109dbe546030dcc338ca))
+
 ## [2.3.0](https://github.com/googleapis/java-speech/compare/v2.2.15...v2.3.0) (2022-05-20)
 
 
