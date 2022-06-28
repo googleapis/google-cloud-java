@@ -1,0 +1,18 @@
+{
+  "release-type": "java-yoshi",
+  "separate-pull-requests": false,
+  "include-component-in-tag": true,
+  "packages": {
+    "java-accessapproval": {
+      "component": "java-accessapproval",
+      "bump-minor-pre-major": true
+    },
+    "java-accesscontextmanager": {
+      "component": "java-accesscontextmanager",
+      "bump-minor-pre-major": true
+    }
+  },
+  "plugins": [
+    "maven-workspace"
+  ]
+}

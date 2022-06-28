@@ -1,0 +1,8 @@
+releaseType: java-yoshi
+manifest: true
+handleGHRelease: true
+branches:
+  - releaseType: java-yoshi
+    handleGHRelease: true
+    bumpMinorPreMajor: true
+    branch: monorepo_main
