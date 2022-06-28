@@ -19,6 +19,7 @@ package com.google.cloud.datafusion.v1.samples;
 // [START datafusion_v1_generated_datafusionclient_deleteinstance_string_sync]
 import com.google.cloud.datafusion.v1.DataFusionClient;
 import com.google.cloud.datafusion.v1.InstanceName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteInstanceString {
 

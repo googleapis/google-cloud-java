@@ -20,6 +20,7 @@ package com.google.cloud.datafusion.v1.samples;
 import com.google.cloud.datafusion.v1.DataFusionClient;
 import com.google.cloud.datafusion.v1.DeleteInstanceRequest;
 import com.google.cloud.datafusion.v1.InstanceName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteInstance {
 

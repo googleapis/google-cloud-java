@@ -16,8 +16,7 @@
 
 package com.google.cloud.datafusion.v1beta1.samples;
 
-// [START
-// datafusion_v1beta1_generated_datafusionclient_createinstance_locationnameinstancestring_sync]
+// [START datafusion_v1beta1_generated_datafusionclient_createinstance_locationnameinstancestring_sync]
 import com.google.cloud.datafusion.v1beta1.DataFusionClient;
 import com.google.cloud.datafusion.v1beta1.Instance;
 import com.google.cloud.datafusion.v1beta1.LocationName;
@@ -39,5 +38,4 @@ public class SyncCreateInstanceLocationnameInstanceString {
     }
   }
 }
-// [END
-// datafusion_v1beta1_generated_datafusionclient_createinstance_locationnameinstancestring_sync]
+// [END datafusion_v1beta1_generated_datafusionclient_createinstance_locationnameinstancestring_sync]
