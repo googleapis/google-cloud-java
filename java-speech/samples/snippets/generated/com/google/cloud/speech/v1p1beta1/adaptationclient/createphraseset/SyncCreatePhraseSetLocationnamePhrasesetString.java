@@ -16,8 +16,7 @@
 
 package com.google.cloud.speech.v1p1beta1.samples;
 
-// [START
-// speech_v1p1beta1_generated_adaptationclient_createphraseset_locationnamephrasesetstring_sync]
+// [START speech_v1p1beta1_generated_adaptationclient_createphraseset_locationnamephrasesetstring_sync]
 import com.google.cloud.speech.v1p1beta1.AdaptationClient;
 import com.google.cloud.speech.v1p1beta1.LocationName;
 import com.google.cloud.speech.v1p1beta1.PhraseSet;
@@ -39,5 +38,4 @@ public class SyncCreatePhraseSetLocationnamePhrasesetString {
     }
   }
 }
-// [END
-// speech_v1p1beta1_generated_adaptationclient_createphraseset_locationnamephrasesetstring_sync]
+// [END speech_v1p1beta1_generated_adaptationclient_createphraseset_locationnamephrasesetstring_sync]

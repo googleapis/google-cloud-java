@@ -16,8 +16,7 @@
 
 package com.google.cloud.speech.v1.samples;
 
-// [START
-// speech_v1_generated_speechclient_longrunningrecognize_recognitionconfigrecognitionaudio_sync]
+// [START speech_v1_generated_speechclient_longrunningrecognize_recognitionconfigrecognitionaudio_sync]
 import com.google.cloud.speech.v1.LongRunningRecognizeResponse;
 import com.google.cloud.speech.v1.RecognitionAudio;
 import com.google.cloud.speech.v1.RecognitionConfig;
@@ -40,5 +39,4 @@ public class SyncLongRunningRecognizeRecognitionconfigRecognitionaudio {
     }
   }
 }
-// [END
-// speech_v1_generated_speechclient_longrunningrecognize_recognitionconfigrecognitionaudio_sync]
+// [END speech_v1_generated_speechclient_longrunningrecognize_recognitionconfigrecognitionaudio_sync]

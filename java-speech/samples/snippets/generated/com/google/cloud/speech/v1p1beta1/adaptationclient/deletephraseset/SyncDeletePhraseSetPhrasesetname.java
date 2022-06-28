@@ -19,6 +19,7 @@ package com.google.cloud.speech.v1p1beta1.samples;
 // [START speech_v1p1beta1_generated_adaptationclient_deletephraseset_phrasesetname_sync]
 import com.google.cloud.speech.v1p1beta1.AdaptationClient;
 import com.google.cloud.speech.v1p1beta1.PhraseSetName;
+import com.google.protobuf.Empty;
 
 public class SyncDeletePhraseSetPhrasesetname {
 

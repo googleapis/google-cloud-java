@@ -16,8 +16,7 @@
 
 package com.google.cloud.speech.v1p1beta1.samples;
 
-// [START
-// speech_v1p1beta1_generated_adaptationclient_createcustomclass_locationnamecustomclassstring_sync]
+// [START speech_v1p1beta1_generated_adaptationclient_createcustomclass_locationnamecustomclassstring_sync]
 import com.google.cloud.speech.v1p1beta1.AdaptationClient;
 import com.google.cloud.speech.v1p1beta1.CustomClass;
 import com.google.cloud.speech.v1p1beta1.LocationName;
@@ -39,5 +38,4 @@ public class SyncCreateCustomClassLocationnameCustomclassString {
     }
   }
 }
-// [END
-// speech_v1p1beta1_generated_adaptationclient_createcustomclass_locationnamecustomclassstring_sync]
+// [END speech_v1p1beta1_generated_adaptationclient_createcustomclass_locationnamecustomclassstring_sync]

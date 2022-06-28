@@ -19,6 +19,7 @@ package com.google.cloud.speech.v1.samples;
 // [START speech_v1_generated_adaptationclient_deletecustomclass_string_sync]
 import com.google.cloud.speech.v1.AdaptationClient;
 import com.google.cloud.speech.v1.CustomClassName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteCustomClassString {
 

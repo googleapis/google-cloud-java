@@ -20,6 +20,7 @@ package com.google.cloud.speech.v1.samples;
 import com.google.cloud.speech.v1.AdaptationClient;
 import com.google.cloud.speech.v1.DeletePhraseSetRequest;
 import com.google.cloud.speech.v1.PhraseSetName;
+import com.google.protobuf.Empty;
 
 public class SyncDeletePhraseSet {
 
