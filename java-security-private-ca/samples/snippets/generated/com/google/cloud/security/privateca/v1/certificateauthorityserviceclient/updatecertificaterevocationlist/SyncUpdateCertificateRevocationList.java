@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1.samples;
 
-// [START
-// privateca_v1_generated_certificateauthorityserviceclient_updatecertificaterevocationlist_sync]
+// [START privateca_v1_generated_certificateauthorityserviceclient_updatecertificaterevocationlist_sync]
 import com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient;
 import com.google.cloud.security.privateca.v1.CertificateRevocationList;
 import com.google.cloud.security.privateca.v1.UpdateCertificateRevocationListRequest;
@@ -45,5 +44,4 @@ public class SyncUpdateCertificateRevocationList {
     }
   }
 }
-// [END
-// privateca_v1_generated_certificateauthorityserviceclient_updatecertificaterevocationlist_sync]
+// [END privateca_v1_generated_certificateauthorityserviceclient_updatecertificaterevocationlist_sync]

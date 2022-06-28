@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1.samples;
 
-// [START
-// privateca_v1_generated_certificateauthorityserviceclient_listcertificatetemplates_paged_async]
+// [START privateca_v1_generated_certificateauthorityserviceclient_listcertificatetemplates_paged_async]
 import com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient;
 import com.google.cloud.security.privateca.v1.CertificateTemplate;
 import com.google.cloud.security.privateca.v1.ListCertificateTemplatesRequest;
@@ -60,5 +59,4 @@ public class AsyncListCertificateTemplatesPaged {
     }
   }
 }
-// [END
-// privateca_v1_generated_certificateauthorityserviceclient_listcertificatetemplates_paged_async]
+// [END privateca_v1_generated_certificateauthorityserviceclient_listcertificatetemplates_paged_async]

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.location;
+package com.google.cloud.security.privateca.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.testing.MockGrpcService;

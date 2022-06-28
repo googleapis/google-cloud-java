@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1.samples;
 
-// [START
-// privateca_v1_generated_certificateauthorityserviceclient_deletecertificateauthority_lro_async]
+// [START privateca_v1_generated_certificateauthorityserviceclient_deletecertificateauthority_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.security.privateca.v1.CertificateAuthority;
 import com.google.cloud.security.privateca.v1.CertificateAuthorityName;
@@ -55,5 +54,4 @@ public class AsyncDeleteCertificateAuthorityLRO {
     }
   }
 }
-// [END
-// privateca_v1_generated_certificateauthorityserviceclient_deletecertificateauthority_lro_async]
+// [END privateca_v1_generated_certificateauthorityserviceclient_deletecertificateauthority_lro_async]

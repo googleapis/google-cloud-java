@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1.samples;
 
-// [START
-// privateca_v1_generated_certificateauthorityserviceclient_getcertificatetemplate_string_sync]
+// [START privateca_v1_generated_certificateauthorityserviceclient_getcertificatetemplate_string_sync]
 import com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient;
 import com.google.cloud.security.privateca.v1.CertificateTemplate;
 import com.google.cloud.security.privateca.v1.CertificateTemplateName;

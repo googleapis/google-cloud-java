@@ -19,6 +19,7 @@ package com.google.cloud.security.privateca.v1.samples;
 // [START privateca_v1_generated_certificateauthorityserviceclient_deletecapool_string_sync]
 import com.google.cloud.security.privateca.v1.CaPoolName;
 import com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteCaPoolString {
 

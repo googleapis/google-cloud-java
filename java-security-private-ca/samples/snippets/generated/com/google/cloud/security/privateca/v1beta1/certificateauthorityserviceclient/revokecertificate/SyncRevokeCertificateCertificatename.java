@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1beta1.samples;
 
-// [START
-// privateca_v1beta1_generated_certificateauthorityserviceclient_revokecertificate_certificatename_sync]
+// [START privateca_v1beta1_generated_certificateauthorityserviceclient_revokecertificate_certificatename_sync]
 import com.google.cloud.security.privateca.v1beta1.Certificate;
 import com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient;
 import com.google.cloud.security.privateca.v1beta1.CertificateName;
@@ -39,5 +38,4 @@ public class SyncRevokeCertificateCertificatename {
     }
   }
 }
-// [END
-// privateca_v1beta1_generated_certificateauthorityserviceclient_revokecertificate_certificatename_sync]
+// [END privateca_v1beta1_generated_certificateauthorityserviceclient_revokecertificate_certificatename_sync]

@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1beta1.samples;
 
-// [START
-// privateca_v1beta1_generated_certificateauthorityserviceclient_getreusableconfig_reusableconfigname_sync]
+// [START privateca_v1beta1_generated_certificateauthorityserviceclient_getreusableconfig_reusableconfigname_sync]
 import com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient;
 import com.google.cloud.security.privateca.v1beta1.ReusableConfig;
 import com.google.cloud.security.privateca.v1beta1.ReusableConfigName;
@@ -39,5 +38,4 @@ public class SyncGetReusableConfigReusableconfigname {
     }
   }
 }
-// [END
-// privateca_v1beta1_generated_certificateauthorityserviceclient_getreusableconfig_reusableconfigname_sync]
+// [END privateca_v1beta1_generated_certificateauthorityserviceclient_getreusableconfig_reusableconfigname_sync]

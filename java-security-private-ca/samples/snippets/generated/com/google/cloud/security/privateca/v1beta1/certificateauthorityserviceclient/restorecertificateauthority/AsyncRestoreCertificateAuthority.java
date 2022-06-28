@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1beta1.samples;
 
-// [START
-// privateca_v1beta1_generated_certificateauthorityserviceclient_restorecertificateauthority_async]
+// [START privateca_v1beta1_generated_certificateauthorityserviceclient_restorecertificateauthority_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.security.privateca.v1beta1.CertificateAuthorityName;
 import com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient;
@@ -51,5 +50,4 @@ public class AsyncRestoreCertificateAuthority {
     }
   }
 }
-// [END
-// privateca_v1beta1_generated_certificateauthorityserviceclient_restorecertificateauthority_async]
+// [END privateca_v1beta1_generated_certificateauthorityserviceclient_restorecertificateauthority_async]

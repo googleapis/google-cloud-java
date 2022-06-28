@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1.samples;
 
-// [START
-// privateca_v1_generated_certificateauthorityserviceclient_updatecertificatetemplate_lro_async]
+// [START privateca_v1_generated_certificateauthorityserviceclient_updatecertificatetemplate_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient;
 import com.google.cloud.security.privateca.v1.CertificateTemplate;
@@ -51,5 +50,4 @@ public class AsyncUpdateCertificateTemplateLRO {
     }
   }
 }
-// [END
-// privateca_v1_generated_certificateauthorityserviceclient_updatecertificatetemplate_lro_async]
+// [END privateca_v1_generated_certificateauthorityserviceclient_updatecertificatetemplate_lro_async]

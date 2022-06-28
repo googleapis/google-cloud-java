@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1beta1.samples;
 
-// [START
-// privateca_v1beta1_generated_certificateauthorityserviceclient_getcertificaterevocationlist_async]
+// [START privateca_v1beta1_generated_certificateauthorityserviceclient_getcertificaterevocationlist_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient;
 import com.google.cloud.security.privateca.v1beta1.CertificateRevocationList;
@@ -54,5 +53,4 @@ public class AsyncGetCertificateRevocationList {
     }
   }
 }
-// [END
-// privateca_v1beta1_generated_certificateauthorityserviceclient_getcertificaterevocationlist_async]
+// [END privateca_v1beta1_generated_certificateauthorityserviceclient_getcertificaterevocationlist_async]

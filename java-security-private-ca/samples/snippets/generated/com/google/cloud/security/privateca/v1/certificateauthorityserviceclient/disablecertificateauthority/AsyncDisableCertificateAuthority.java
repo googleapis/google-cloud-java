@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1.samples;
 
-// [START
-// privateca_v1_generated_certificateauthorityserviceclient_disablecertificateauthority_async]
+// [START privateca_v1_generated_certificateauthorityserviceclient_disablecertificateauthority_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.security.privateca.v1.CertificateAuthorityName;
 import com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient;

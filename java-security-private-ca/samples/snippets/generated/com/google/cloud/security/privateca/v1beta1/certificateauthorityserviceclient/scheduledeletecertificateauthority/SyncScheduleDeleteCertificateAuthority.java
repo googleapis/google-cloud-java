@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1beta1.samples;
 
-// [START
-// privateca_v1beta1_generated_certificateauthorityserviceclient_scheduledeletecertificateauthority_sync]
+// [START privateca_v1beta1_generated_certificateauthorityserviceclient_scheduledeletecertificateauthority_sync]
 import com.google.cloud.security.privateca.v1beta1.CertificateAuthority;
 import com.google.cloud.security.privateca.v1beta1.CertificateAuthorityName;
 import com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient;
@@ -46,5 +45,4 @@ public class SyncScheduleDeleteCertificateAuthority {
     }
   }
 }
-// [END
-// privateca_v1beta1_generated_certificateauthorityserviceclient_scheduledeletecertificateauthority_sync]
+// [END privateca_v1beta1_generated_certificateauthorityserviceclient_scheduledeletecertificateauthority_sync]

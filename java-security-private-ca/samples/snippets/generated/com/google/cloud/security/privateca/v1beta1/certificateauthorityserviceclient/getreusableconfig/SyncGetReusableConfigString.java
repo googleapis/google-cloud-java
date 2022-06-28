@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1beta1.samples;
 
-// [START
-// privateca_v1beta1_generated_certificateauthorityserviceclient_getreusableconfig_string_sync]
+// [START privateca_v1beta1_generated_certificateauthorityserviceclient_getreusableconfig_string_sync]
 import com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient;
 import com.google.cloud.security.privateca.v1beta1.ReusableConfig;
 import com.google.cloud.security.privateca.v1beta1.ReusableConfigName;

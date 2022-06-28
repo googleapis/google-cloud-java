@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.iam.v1;
+package com.google.cloud.security.privateca.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.testing.MockGrpcService;

@@ -16,10 +16,10 @@
 
 package com.google.cloud.security.privateca.v1.samples;
 
-// [START
-// privateca_v1_generated_certificateauthorityserviceclient_deletecertificatetemplate_certificatetemplatename_sync]
+// [START privateca_v1_generated_certificateauthorityserviceclient_deletecertificatetemplate_certificatetemplatename_sync]
 import com.google.cloud.security.privateca.v1.CertificateAuthorityServiceClient;
 import com.google.cloud.security.privateca.v1.CertificateTemplateName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteCertificateTemplateCertificatetemplatename {
 
@@ -38,5 +38,4 @@ public class SyncDeleteCertificateTemplateCertificatetemplatename {
     }
   }
 }
-// [END
-// privateca_v1_generated_certificateauthorityserviceclient_deletecertificatetemplate_certificatetemplatename_sync]
+// [END privateca_v1_generated_certificateauthorityserviceclient_deletecertificatetemplate_certificatetemplatename_sync]

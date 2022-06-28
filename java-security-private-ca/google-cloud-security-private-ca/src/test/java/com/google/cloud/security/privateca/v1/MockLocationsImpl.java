@@ -14,9 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.cloud.location;
+package com.google.cloud.security.privateca.v1;
 
 import com.google.api.core.BetaApi;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.location.LocationsGrpc.LocationsImplBase;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;

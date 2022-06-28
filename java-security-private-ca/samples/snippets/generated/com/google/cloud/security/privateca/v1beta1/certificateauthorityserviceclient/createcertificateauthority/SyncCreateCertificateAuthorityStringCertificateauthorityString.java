@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1beta1.samples;
 
-// [START
-// privateca_v1beta1_generated_certificateauthorityserviceclient_createcertificateauthority_stringcertificateauthoritystring_sync]
+// [START privateca_v1beta1_generated_certificateauthorityserviceclient_createcertificateauthority_stringcertificateauthoritystring_sync]
 import com.google.cloud.security.privateca.v1beta1.CertificateAuthority;
 import com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient;
 import com.google.cloud.security.privateca.v1beta1.LocationName;
@@ -44,5 +43,4 @@ public class SyncCreateCertificateAuthorityStringCertificateauthorityString {
     }
   }
 }
-// [END
-// privateca_v1beta1_generated_certificateauthorityserviceclient_createcertificateauthority_stringcertificateauthoritystring_sync]
+// [END privateca_v1beta1_generated_certificateauthorityserviceclient_createcertificateauthority_stringcertificateauthoritystring_sync]

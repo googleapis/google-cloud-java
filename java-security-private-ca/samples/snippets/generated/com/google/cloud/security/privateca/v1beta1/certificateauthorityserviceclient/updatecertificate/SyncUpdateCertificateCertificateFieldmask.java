@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1beta1.samples;
 
-// [START
-// privateca_v1beta1_generated_certificateauthorityserviceclient_updatecertificate_certificatefieldmask_sync]
+// [START privateca_v1beta1_generated_certificateauthorityserviceclient_updatecertificate_certificatefieldmask_sync]
 import com.google.cloud.security.privateca.v1beta1.Certificate;
 import com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient;
 import com.google.protobuf.FieldMask;
@@ -40,5 +39,4 @@ public class SyncUpdateCertificateCertificateFieldmask {
     }
   }
 }
-// [END
-// privateca_v1beta1_generated_certificateauthorityserviceclient_updatecertificate_certificatefieldmask_sync]
+// [END privateca_v1beta1_generated_certificateauthorityserviceclient_updatecertificate_certificatefieldmask_sync]

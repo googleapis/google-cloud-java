@@ -16,8 +16,7 @@
 
 package com.google.cloud.security.privateca.v1beta1.samples;
 
-// [START
-// privateca_v1beta1_generated_certificateauthorityserviceclient_listreusableconfigs_paged_async]
+// [START privateca_v1beta1_generated_certificateauthorityserviceclient_listreusableconfigs_paged_async]
 import com.google.cloud.security.privateca.v1beta1.CertificateAuthorityServiceClient;
 import com.google.cloud.security.privateca.v1beta1.ListReusableConfigsRequest;
 import com.google.cloud.security.privateca.v1beta1.ListReusableConfigsResponse;
@@ -60,5 +59,4 @@ public class AsyncListReusableConfigsPaged {
     }
   }
 }
-// [END
-// privateca_v1beta1_generated_certificateauthorityserviceclient_listreusableconfigs_paged_async]
+// [END privateca_v1beta1_generated_certificateauthorityserviceclient_listreusableconfigs_paged_async]
