@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_conversationprofilesclient_getconversationprofile_conversationprofilename_sync]
+// [START dialogflow_v2beta1_generated_conversationprofilesclient_getconversationprofile_conversationprofilename_sync]
 import com.google.cloud.dialogflow.v2beta1.ConversationProfile;
 import com.google.cloud.dialogflow.v2beta1.ConversationProfileName;
 import com.google.cloud.dialogflow.v2beta1.ConversationProfilesClient;
@@ -40,5 +39,4 @@ public class SyncGetConversationProfileConversationprofilename {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_conversationprofilesclient_getconversationprofile_conversationprofilename_sync]
+// [END dialogflow_v2beta1_generated_conversationprofilesclient_getconversationprofile_conversationprofilename_sync]

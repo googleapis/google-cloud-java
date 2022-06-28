@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_documentsclient_createdocument_knowledgebasenamedocument_sync]
+// [START dialogflow_v2beta1_generated_documentsclient_createdocument_knowledgebasenamedocument_sync]
 import com.google.cloud.dialogflow.v2beta1.Document;
 import com.google.cloud.dialogflow.v2beta1.DocumentsClient;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBaseName;

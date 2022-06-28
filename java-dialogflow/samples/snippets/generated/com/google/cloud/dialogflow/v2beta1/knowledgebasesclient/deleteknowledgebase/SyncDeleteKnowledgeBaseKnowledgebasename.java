@@ -16,10 +16,10 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_knowledgebasesclient_deleteknowledgebase_knowledgebasename_sync]
+// [START dialogflow_v2beta1_generated_knowledgebasesclient_deleteknowledgebase_knowledgebasename_sync]
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBaseName;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteKnowledgeBaseKnowledgebasename {
 
@@ -37,5 +37,4 @@ public class SyncDeleteKnowledgeBaseKnowledgebasename {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_knowledgebasesclient_deleteknowledgebase_knowledgebasename_sync]
+// [END dialogflow_v2beta1_generated_knowledgebasesclient_deleteknowledgebase_knowledgebasename_sync]

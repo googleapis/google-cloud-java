@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2.samples;
 
 // [START dialogflow_v2_generated_conversationmodelsclient_deleteconversationmodel_string_sync]
 import com.google.cloud.dialogflow.v2.ConversationModelsClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteConversationModelString {
 

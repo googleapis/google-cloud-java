@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_sessionentitytypesclient_listsessionentitytypes_sessionname_sync]
+// [START dialogflow_v2beta1_generated_sessionentitytypesclient_listsessionentitytypes_sessionname_sync]
 import com.google.cloud.dialogflow.v2beta1.SessionEntityType;
 import com.google.cloud.dialogflow.v2beta1.SessionEntityTypesClient;
 import com.google.cloud.dialogflow.v2beta1.SessionName;
@@ -40,5 +39,4 @@ public class SyncListSessionEntityTypesSessionname {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_sessionentitytypesclient_listsessionentitytypes_sessionname_sync]
+// [END dialogflow_v2beta1_generated_sessionentitytypesclient_listsessionentitytypes_sessionname_sync]

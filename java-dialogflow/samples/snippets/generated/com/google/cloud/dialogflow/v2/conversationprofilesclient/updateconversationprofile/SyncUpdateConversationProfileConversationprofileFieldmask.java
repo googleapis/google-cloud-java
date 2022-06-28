@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2.samples;
 
-// [START
-// dialogflow_v2_generated_conversationprofilesclient_updateconversationprofile_conversationprofilefieldmask_sync]
+// [START dialogflow_v2_generated_conversationprofilesclient_updateconversationprofile_conversationprofilefieldmask_sync]
 import com.google.cloud.dialogflow.v2.ConversationProfile;
 import com.google.cloud.dialogflow.v2.ConversationProfilesClient;
 import com.google.protobuf.FieldMask;
@@ -40,5 +39,4 @@ public class SyncUpdateConversationProfileConversationprofileFieldmask {
     }
   }
 }
-// [END
-// dialogflow_v2_generated_conversationprofilesclient_updateconversationprofile_conversationprofilefieldmask_sync]
+// [END dialogflow_v2_generated_conversationprofilesclient_updateconversationprofile_conversationprofilefieldmask_sync]

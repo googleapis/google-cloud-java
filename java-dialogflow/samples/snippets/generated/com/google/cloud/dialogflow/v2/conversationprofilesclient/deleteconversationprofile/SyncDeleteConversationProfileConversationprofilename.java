@@ -16,10 +16,10 @@
 
 package com.google.cloud.dialogflow.v2.samples;
 
-// [START
-// dialogflow_v2_generated_conversationprofilesclient_deleteconversationprofile_conversationprofilename_sync]
+// [START dialogflow_v2_generated_conversationprofilesclient_deleteconversationprofile_conversationprofilename_sync]
 import com.google.cloud.dialogflow.v2.ConversationProfileName;
 import com.google.cloud.dialogflow.v2.ConversationProfilesClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteConversationProfileConversationprofilename {
 
@@ -39,5 +39,4 @@ public class SyncDeleteConversationProfileConversationprofilename {
     }
   }
 }
-// [END
-// dialogflow_v2_generated_conversationprofilesclient_deleteconversationprofile_conversationprofilename_sync]
+// [END dialogflow_v2_generated_conversationprofilesclient_deleteconversationprofile_conversationprofilename_sync]

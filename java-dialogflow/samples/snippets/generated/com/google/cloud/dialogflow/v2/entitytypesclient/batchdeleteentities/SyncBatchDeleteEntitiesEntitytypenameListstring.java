@@ -16,10 +16,10 @@
 
 package com.google.cloud.dialogflow.v2.samples;
 
-// [START
-// dialogflow_v2_generated_entitytypesclient_batchdeleteentities_entitytypenameliststring_sync]
+// [START dialogflow_v2_generated_entitytypesclient_batchdeleteentities_entitytypenameliststring_sync]
 import com.google.cloud.dialogflow.v2.EntityTypeName;
 import com.google.cloud.dialogflow.v2.EntityTypesClient;
+import com.google.protobuf.Empty;
 import java.util.ArrayList;
 import java.util.List;
 

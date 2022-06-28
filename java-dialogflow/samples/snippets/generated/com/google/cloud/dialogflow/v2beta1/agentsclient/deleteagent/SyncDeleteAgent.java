@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.v2beta1.samples;
 import com.google.cloud.dialogflow.v2beta1.AgentsClient;
 import com.google.cloud.dialogflow.v2beta1.DeleteAgentRequest;
 import com.google.cloud.dialogflow.v2beta1.ProjectName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteAgent {
 

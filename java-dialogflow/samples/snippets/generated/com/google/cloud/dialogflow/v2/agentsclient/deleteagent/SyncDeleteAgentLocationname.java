@@ -19,6 +19,7 @@ package com.google.cloud.dialogflow.v2.samples;
 // [START dialogflow_v2_generated_agentsclient_deleteagent_locationname_sync]
 import com.google.cloud.dialogflow.v2.AgentsClient;
 import com.google.cloud.dialogflow.v2.LocationName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteAgentLocationname {
 

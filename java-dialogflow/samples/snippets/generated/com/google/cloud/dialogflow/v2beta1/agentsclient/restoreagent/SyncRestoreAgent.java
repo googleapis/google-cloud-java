@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.v2beta1.samples;
 import com.google.cloud.dialogflow.v2beta1.AgentsClient;
 import com.google.cloud.dialogflow.v2beta1.ProjectName;
 import com.google.cloud.dialogflow.v2beta1.RestoreAgentRequest;
+import com.google.protobuf.Empty;
 
 public class SyncRestoreAgent {
 

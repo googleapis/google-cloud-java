@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_entitytypesclient_updateentitytype_entitytypestringfieldmask_sync]
+// [START dialogflow_v2beta1_generated_entitytypesclient_updateentitytype_entitytypestringfieldmask_sync]
 import com.google.cloud.dialogflow.v2beta1.EntityType;
 import com.google.cloud.dialogflow.v2beta1.EntityTypesClient;
 import com.google.protobuf.FieldMask;
@@ -40,5 +39,4 @@ public class SyncUpdateEntityTypeEntitytypeStringFieldmask {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_entitytypesclient_updateentitytype_entitytypestringfieldmask_sync]
+// [END dialogflow_v2beta1_generated_entitytypesclient_updateentitytype_entitytypestringfieldmask_sync]

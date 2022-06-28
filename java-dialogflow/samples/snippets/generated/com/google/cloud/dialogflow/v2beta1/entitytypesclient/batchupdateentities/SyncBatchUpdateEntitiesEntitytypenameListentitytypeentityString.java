@@ -16,11 +16,11 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_entitytypesclient_batchupdateentities_entitytypenamelistentitytypeentitystring_sync]
+// [START dialogflow_v2beta1_generated_entitytypesclient_batchupdateentities_entitytypenamelistentitytypeentitystring_sync]
 import com.google.cloud.dialogflow.v2beta1.EntityType;
 import com.google.cloud.dialogflow.v2beta1.EntityTypeName;
 import com.google.cloud.dialogflow.v2beta1.EntityTypesClient;
+import com.google.protobuf.Empty;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,5 +42,4 @@ public class SyncBatchUpdateEntitiesEntitytypenameListentitytypeentityString {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_entitytypesclient_batchupdateentities_entitytypenamelistentitytypeentitystring_sync]
+// [END dialogflow_v2beta1_generated_entitytypesclient_batchupdateentities_entitytypenamelistentitytypeentitystring_sync]

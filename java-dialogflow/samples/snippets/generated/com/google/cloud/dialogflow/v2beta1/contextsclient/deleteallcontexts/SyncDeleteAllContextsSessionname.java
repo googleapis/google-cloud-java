@@ -19,6 +19,7 @@ package com.google.cloud.dialogflow.v2beta1.samples;
 // [START dialogflow_v2beta1_generated_contextsclient_deleteallcontexts_sessionname_sync]
 import com.google.cloud.dialogflow.v2beta1.ContextsClient;
 import com.google.cloud.dialogflow.v2beta1.SessionName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteAllContextsSessionname {
 

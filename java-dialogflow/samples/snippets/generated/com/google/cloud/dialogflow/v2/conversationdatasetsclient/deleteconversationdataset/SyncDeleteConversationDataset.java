@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.v2.samples;
 import com.google.cloud.dialogflow.v2.ConversationDatasetName;
 import com.google.cloud.dialogflow.v2.ConversationDatasetsClient;
 import com.google.cloud.dialogflow.v2.DeleteConversationDatasetRequest;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteConversationDataset {
 

@@ -19,6 +19,7 @@ package com.google.cloud.dialogflow.v2beta1.samples;
 // [START dialogflow_v2beta1_generated_documentsclient_deletedocument_string_sync]
 import com.google.cloud.dialogflow.v2beta1.DocumentName;
 import com.google.cloud.dialogflow.v2beta1.DocumentsClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteDocumentString {
 

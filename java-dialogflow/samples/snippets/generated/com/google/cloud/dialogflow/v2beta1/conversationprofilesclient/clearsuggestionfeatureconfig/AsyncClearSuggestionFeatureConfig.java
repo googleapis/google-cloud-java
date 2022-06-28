@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_conversationprofilesclient_clearsuggestionfeatureconfig_async]
+// [START dialogflow_v2beta1_generated_conversationprofilesclient_clearsuggestionfeatureconfig_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigRequest;
 import com.google.cloud.dialogflow.v2beta1.ConversationProfilesClient;

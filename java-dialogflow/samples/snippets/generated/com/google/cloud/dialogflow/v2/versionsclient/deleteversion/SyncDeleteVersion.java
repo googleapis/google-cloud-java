@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.v2.samples;
 import com.google.cloud.dialogflow.v2.DeleteVersionRequest;
 import com.google.cloud.dialogflow.v2.VersionName;
 import com.google.cloud.dialogflow.v2.VersionsClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteVersion {
 

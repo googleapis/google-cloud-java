@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.v2beta1.samples;
 import com.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBaseName;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteKnowledgeBase {
 

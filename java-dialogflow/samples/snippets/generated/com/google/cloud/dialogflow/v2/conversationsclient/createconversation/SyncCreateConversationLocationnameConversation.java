@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2.samples;
 
-// [START
-// dialogflow_v2_generated_conversationsclient_createconversation_locationnameconversation_sync]
+// [START dialogflow_v2_generated_conversationsclient_createconversation_locationnameconversation_sync]
 import com.google.cloud.dialogflow.v2.Conversation;
 import com.google.cloud.dialogflow.v2.ConversationsClient;
 import com.google.cloud.dialogflow.v2.LocationName;
@@ -38,5 +37,4 @@ public class SyncCreateConversationLocationnameConversation {
     }
   }
 }
-// [END
-// dialogflow_v2_generated_conversationsclient_createconversation_locationnameconversation_sync]
+// [END dialogflow_v2_generated_conversationsclient_createconversation_locationnameconversation_sync]

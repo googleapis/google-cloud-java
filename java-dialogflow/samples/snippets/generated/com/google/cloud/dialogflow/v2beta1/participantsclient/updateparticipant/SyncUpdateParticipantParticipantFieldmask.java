@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_participantsclient_updateparticipant_participantfieldmask_sync]
+// [START dialogflow_v2beta1_generated_participantsclient_updateparticipant_participantfieldmask_sync]
 import com.google.cloud.dialogflow.v2beta1.Participant;
 import com.google.cloud.dialogflow.v2beta1.ParticipantsClient;
 import com.google.protobuf.FieldMask;

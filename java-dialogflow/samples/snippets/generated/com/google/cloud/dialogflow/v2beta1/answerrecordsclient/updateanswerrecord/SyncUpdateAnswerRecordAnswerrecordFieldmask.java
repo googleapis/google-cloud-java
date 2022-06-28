@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_answerrecordsclient_updateanswerrecord_answerrecordfieldmask_sync]
+// [START dialogflow_v2beta1_generated_answerrecordsclient_updateanswerrecord_answerrecordfieldmask_sync]
 import com.google.cloud.dialogflow.v2beta1.AnswerRecord;
 import com.google.cloud.dialogflow.v2beta1.AnswerRecordsClient;
 import com.google.protobuf.FieldMask;
@@ -38,5 +37,4 @@ public class SyncUpdateAnswerRecordAnswerrecordFieldmask {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_answerrecordsclient_updateanswerrecord_answerrecordfieldmask_sync]
+// [END dialogflow_v2beta1_generated_answerrecordsclient_updateanswerrecord_answerrecordfieldmask_sync]

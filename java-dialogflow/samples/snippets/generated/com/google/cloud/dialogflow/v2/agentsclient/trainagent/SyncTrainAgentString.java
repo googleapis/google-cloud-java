@@ -19,6 +19,7 @@ package com.google.cloud.dialogflow.v2.samples;
 // [START dialogflow_v2_generated_agentsclient_trainagent_string_sync]
 import com.google.cloud.dialogflow.v2.AgentsClient;
 import com.google.cloud.dialogflow.v2.ProjectName;
+import com.google.protobuf.Empty;
 
 public class SyncTrainAgentString {
 

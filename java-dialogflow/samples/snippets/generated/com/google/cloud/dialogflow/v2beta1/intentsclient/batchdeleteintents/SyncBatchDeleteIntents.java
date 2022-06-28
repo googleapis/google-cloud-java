@@ -21,6 +21,7 @@ import com.google.cloud.dialogflow.v2beta1.AgentName;
 import com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest;
 import com.google.cloud.dialogflow.v2beta1.Intent;
 import com.google.cloud.dialogflow.v2beta1.IntentsClient;
+import com.google.protobuf.Empty;
 import java.util.ArrayList;
 
 public class SyncBatchDeleteIntents {

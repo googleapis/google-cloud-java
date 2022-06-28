@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_conversationprofilesclient_clearsuggestionfeatureconfig_lro_async]
+// [START dialogflow_v2beta1_generated_conversationprofilesclient_clearsuggestionfeatureconfig_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationMetadata;
 import com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigRequest;
@@ -48,5 +47,4 @@ public class AsyncClearSuggestionFeatureConfigLRO {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_conversationprofilesclient_clearsuggestionfeatureconfig_lro_async]
+// [END dialogflow_v2beta1_generated_conversationprofilesclient_clearsuggestionfeatureconfig_lro_async]

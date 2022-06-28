@@ -19,6 +19,7 @@ package com.google.cloud.dialogflow.v2beta1.samples;
 // [START dialogflow_v2beta1_generated_knowledgebasesclient_deleteknowledgebase_string_sync]
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBaseName;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteKnowledgeBaseString {
 

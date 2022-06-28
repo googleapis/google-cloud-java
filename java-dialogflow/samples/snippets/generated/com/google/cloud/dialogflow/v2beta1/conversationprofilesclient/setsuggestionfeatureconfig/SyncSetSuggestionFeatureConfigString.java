@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_conversationprofilesclient_setsuggestionfeatureconfig_string_sync]
+// [START dialogflow_v2beta1_generated_conversationprofilesclient_setsuggestionfeatureconfig_string_sync]
 import com.google.cloud.dialogflow.v2beta1.ConversationProfile;
 import com.google.cloud.dialogflow.v2beta1.ConversationProfilesClient;
 
@@ -38,5 +37,4 @@ public class SyncSetSuggestionFeatureConfigString {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_conversationprofilesclient_setsuggestionfeatureconfig_string_sync]
+// [END dialogflow_v2beta1_generated_conversationprofilesclient_setsuggestionfeatureconfig_string_sync]

@@ -19,6 +19,7 @@ package com.google.cloud.dialogflow.v2beta1.samples;
 // [START dialogflow_v2beta1_generated_contextsclient_deletecontext_string_sync]
 import com.google.cloud.dialogflow.v2beta1.ContextName;
 import com.google.cloud.dialogflow.v2beta1.ContextsClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteContextString {
 

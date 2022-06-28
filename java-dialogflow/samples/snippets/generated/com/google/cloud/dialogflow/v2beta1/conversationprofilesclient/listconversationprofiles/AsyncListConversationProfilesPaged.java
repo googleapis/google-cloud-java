@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_conversationprofilesclient_listconversationprofiles_paged_async]
+// [START dialogflow_v2beta1_generated_conversationprofilesclient_listconversationprofiles_paged_async]
 import com.google.cloud.dialogflow.v2beta1.ConversationProfile;
 import com.google.cloud.dialogflow.v2beta1.ConversationProfilesClient;
 import com.google.cloud.dialogflow.v2beta1.ListConversationProfilesRequest;
@@ -58,5 +57,4 @@ public class AsyncListConversationProfilesPaged {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_conversationprofilesclient_listconversationprofiles_paged_async]
+// [END dialogflow_v2beta1_generated_conversationprofilesclient_listconversationprofiles_paged_async]

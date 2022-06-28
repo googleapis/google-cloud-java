@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_participantsclient_analyzecontent_participantnametextinput_sync]
+// [START dialogflow_v2beta1_generated_participantsclient_analyzecontent_participantnametextinput_sync]
 import com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2beta1.ParticipantName;
 import com.google.cloud.dialogflow.v2beta1.ParticipantsClient;
@@ -41,5 +40,4 @@ public class SyncAnalyzeContentParticipantnameTextinput {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_participantsclient_analyzecontent_participantnametextinput_sync]
+// [END dialogflow_v2beta1_generated_participantsclient_analyzecontent_participantnametextinput_sync]

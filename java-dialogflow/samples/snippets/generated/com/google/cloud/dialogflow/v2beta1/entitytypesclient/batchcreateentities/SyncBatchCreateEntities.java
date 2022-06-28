@@ -21,6 +21,7 @@ import com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest;
 import com.google.cloud.dialogflow.v2beta1.EntityType;
 import com.google.cloud.dialogflow.v2beta1.EntityTypeName;
 import com.google.cloud.dialogflow.v2beta1.EntityTypesClient;
+import com.google.protobuf.Empty;
 import java.util.ArrayList;
 
 public class SyncBatchCreateEntities {

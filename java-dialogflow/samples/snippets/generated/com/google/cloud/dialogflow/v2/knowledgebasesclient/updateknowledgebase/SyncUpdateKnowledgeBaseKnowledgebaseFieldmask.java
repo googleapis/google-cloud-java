@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2.samples;
 
-// [START
-// dialogflow_v2_generated_knowledgebasesclient_updateknowledgebase_knowledgebasefieldmask_sync]
+// [START dialogflow_v2_generated_knowledgebasesclient_updateknowledgebase_knowledgebasefieldmask_sync]
 import com.google.cloud.dialogflow.v2.KnowledgeBase;
 import com.google.cloud.dialogflow.v2.KnowledgeBasesClient;
 import com.google.protobuf.FieldMask;
@@ -38,5 +37,4 @@ public class SyncUpdateKnowledgeBaseKnowledgebaseFieldmask {
     }
   }
 }
-// [END
-// dialogflow_v2_generated_knowledgebasesclient_updateknowledgebase_knowledgebasefieldmask_sync]
+// [END dialogflow_v2_generated_knowledgebasesclient_updateknowledgebase_knowledgebasefieldmask_sync]

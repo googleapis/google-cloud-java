@@ -21,6 +21,7 @@ import com.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest;
 import com.google.cloud.dialogflow.v2.EntityType;
 import com.google.cloud.dialogflow.v2.EntityTypeName;
 import com.google.cloud.dialogflow.v2.EntityTypesClient;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.util.ArrayList;
 

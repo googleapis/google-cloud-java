@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_knowledgebasesclient_createknowledgebase_stringknowledgebase_sync]
+// [START dialogflow_v2beta1_generated_knowledgebasesclient_createknowledgebase_stringknowledgebase_sync]
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBase;
 import com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient;
 import com.google.cloud.dialogflow.v2beta1.ProjectName;
@@ -38,5 +37,4 @@ public class SyncCreateKnowledgeBaseStringKnowledgebase {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_knowledgebasesclient_createknowledgebase_stringknowledgebase_sync]
+// [END dialogflow_v2beta1_generated_knowledgebasesclient_createknowledgebase_stringknowledgebase_sync]

@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_entitytypesclient_createentitytype_stringentitytypestring_sync]
+// [START dialogflow_v2beta1_generated_entitytypesclient_createentitytype_stringentitytypestring_sync]
 import com.google.cloud.dialogflow.v2beta1.AgentName;
 import com.google.cloud.dialogflow.v2beta1.EntityType;
 import com.google.cloud.dialogflow.v2beta1.EntityTypesClient;

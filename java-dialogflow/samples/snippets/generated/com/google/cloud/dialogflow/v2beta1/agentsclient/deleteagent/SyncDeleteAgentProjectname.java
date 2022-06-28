@@ -19,6 +19,7 @@ package com.google.cloud.dialogflow.v2beta1.samples;
 // [START dialogflow_v2beta1_generated_agentsclient_deleteagent_projectname_sync]
 import com.google.cloud.dialogflow.v2beta1.AgentsClient;
 import com.google.cloud.dialogflow.v2beta1.ProjectName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteAgentProjectname {
 

@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.v2.samples;
 import com.google.cloud.dialogflow.v2.DeleteSessionEntityTypeRequest;
 import com.google.cloud.dialogflow.v2.SessionEntityTypeName;
 import com.google.cloud.dialogflow.v2.SessionEntityTypesClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteSessionEntityType {
 

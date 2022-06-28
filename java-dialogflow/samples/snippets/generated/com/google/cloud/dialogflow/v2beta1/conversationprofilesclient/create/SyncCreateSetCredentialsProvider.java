@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_conversationprofilesclient_create_setcredentialsprovider_sync]
+// [START dialogflow_v2beta1_generated_conversationprofilesclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.dialogflow.v2beta1.ConversationProfilesClient;
 import com.google.cloud.dialogflow.v2beta1.ConversationProfilesSettings;

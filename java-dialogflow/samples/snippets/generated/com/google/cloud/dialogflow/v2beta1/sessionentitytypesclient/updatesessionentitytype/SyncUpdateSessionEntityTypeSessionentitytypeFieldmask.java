@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_sessionentitytypesclient_updatesessionentitytype_sessionentitytypefieldmask_sync]
+// [START dialogflow_v2beta1_generated_sessionentitytypesclient_updatesessionentitytype_sessionentitytypefieldmask_sync]
 import com.google.cloud.dialogflow.v2beta1.SessionEntityType;
 import com.google.cloud.dialogflow.v2beta1.SessionEntityTypesClient;
 import com.google.protobuf.FieldMask;
@@ -39,5 +38,4 @@ public class SyncUpdateSessionEntityTypeSessionentitytypeFieldmask {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_sessionentitytypesclient_updatesessionentitytype_sessionentitytypefieldmask_sync]
+// [END dialogflow_v2beta1_generated_sessionentitytypesclient_updatesessionentitytype_sessionentitytypefieldmask_sync]

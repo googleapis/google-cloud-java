@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.v2.samples;
 import com.google.cloud.dialogflow.v2.AgentName;
 import com.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest;
 import com.google.cloud.dialogflow.v2.EntityTypesClient;
+import com.google.protobuf.Empty;
 import java.util.ArrayList;
 
 public class SyncBatchDeleteEntityTypes {

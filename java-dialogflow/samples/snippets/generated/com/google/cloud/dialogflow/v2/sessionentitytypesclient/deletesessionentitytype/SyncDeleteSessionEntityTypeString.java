@@ -19,6 +19,7 @@ package com.google.cloud.dialogflow.v2.samples;
 // [START dialogflow_v2_generated_sessionentitytypesclient_deletesessionentitytype_string_sync]
 import com.google.cloud.dialogflow.v2.SessionEntityTypeName;
 import com.google.cloud.dialogflow.v2.SessionEntityTypesClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteSessionEntityTypeString {
 

@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_conversationsclient_completeconversation_conversationname_sync]
+// [START dialogflow_v2beta1_generated_conversationsclient_completeconversation_conversationname_sync]
 import com.google.cloud.dialogflow.v2beta1.Conversation;
 import com.google.cloud.dialogflow.v2beta1.ConversationName;
 import com.google.cloud.dialogflow.v2beta1.ConversationsClient;

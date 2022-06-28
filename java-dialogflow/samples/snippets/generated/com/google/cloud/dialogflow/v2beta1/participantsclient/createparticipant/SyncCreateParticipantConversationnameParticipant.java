@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_participantsclient_createparticipant_conversationnameparticipant_sync]
+// [START dialogflow_v2beta1_generated_participantsclient_createparticipant_conversationnameparticipant_sync]
 import com.google.cloud.dialogflow.v2beta1.ConversationName;
 import com.google.cloud.dialogflow.v2beta1.Participant;
 import com.google.cloud.dialogflow.v2beta1.ParticipantsClient;
@@ -39,5 +38,4 @@ public class SyncCreateParticipantConversationnameParticipant {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_participantsclient_createparticipant_conversationnameparticipant_sync]
+// [END dialogflow_v2beta1_generated_participantsclient_createparticipant_conversationnameparticipant_sync]

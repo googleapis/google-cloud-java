@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2.samples;
 
-// [START
-// dialogflow_v2_generated_conversationmodelsclient_createconversationmodel_stringconversationmodel_sync]
+// [START dialogflow_v2_generated_conversationmodelsclient_createconversationmodel_stringconversationmodel_sync]
 import com.google.cloud.dialogflow.v2.ConversationModel;
 import com.google.cloud.dialogflow.v2.ConversationModelsClient;
 
@@ -38,5 +37,4 @@ public class SyncCreateConversationModelStringConversationmodel {
     }
   }
 }
-// [END
-// dialogflow_v2_generated_conversationmodelsclient_createconversationmodel_stringconversationmodel_sync]
+// [END dialogflow_v2_generated_conversationmodelsclient_createconversationmodel_stringconversationmodel_sync]

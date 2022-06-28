@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.v2.samples;
 import com.google.cloud.dialogflow.v2.AgentsClient;
 import com.google.cloud.dialogflow.v2.ProjectName;
 import com.google.cloud.dialogflow.v2.TrainAgentRequest;
+import com.google.protobuf.Empty;
 
 public class SyncTrainAgent {
 

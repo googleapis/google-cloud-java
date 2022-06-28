@@ -19,6 +19,7 @@ package com.google.cloud.dialogflow.v2.samples;
 // [START dialogflow_v2_generated_versionsclient_deleteversion_versionname_sync]
 import com.google.cloud.dialogflow.v2.VersionName;
 import com.google.cloud.dialogflow.v2.VersionsClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteVersionVersionname {
 

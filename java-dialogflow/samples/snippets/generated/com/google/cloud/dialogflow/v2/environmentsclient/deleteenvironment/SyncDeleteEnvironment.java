@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.v2.samples;
 import com.google.cloud.dialogflow.v2.DeleteEnvironmentRequest;
 import com.google.cloud.dialogflow.v2.EnvironmentName;
 import com.google.cloud.dialogflow.v2.EnvironmentsClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteEnvironment {
 

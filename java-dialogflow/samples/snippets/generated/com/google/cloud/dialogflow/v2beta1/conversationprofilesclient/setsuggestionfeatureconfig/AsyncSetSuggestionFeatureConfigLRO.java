@@ -16,8 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.samples;
 
-// [START
-// dialogflow_v2beta1_generated_conversationprofilesclient_setsuggestionfeatureconfig_lro_async]
+// [START dialogflow_v2beta1_generated_conversationprofilesclient_setsuggestionfeatureconfig_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.dialogflow.v2beta1.ConversationProfile;
 import com.google.cloud.dialogflow.v2beta1.ConversationProfilesClient;
@@ -51,5 +50,4 @@ public class AsyncSetSuggestionFeatureConfigLRO {
     }
   }
 }
-// [END
-// dialogflow_v2beta1_generated_conversationprofilesclient_setsuggestionfeatureconfig_lro_async]
+// [END dialogflow_v2beta1_generated_conversationprofilesclient_setsuggestionfeatureconfig_lro_async]

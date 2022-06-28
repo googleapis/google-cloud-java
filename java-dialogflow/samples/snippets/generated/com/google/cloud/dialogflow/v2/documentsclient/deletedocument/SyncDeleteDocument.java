@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.v2.samples;
 import com.google.cloud.dialogflow.v2.DeleteDocumentRequest;
 import com.google.cloud.dialogflow.v2.DocumentName;
 import com.google.cloud.dialogflow.v2.DocumentsClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteDocument {
 

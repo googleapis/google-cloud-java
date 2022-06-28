@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.v2beta1.samples;
 import com.google.cloud.dialogflow.v2beta1.ConversationProfileName;
 import com.google.cloud.dialogflow.v2beta1.ConversationProfilesClient;
 import com.google.cloud.dialogflow.v2beta1.DeleteConversationProfileRequest;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteConversationProfile {
 

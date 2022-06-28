@@ -20,6 +20,7 @@ package com.google.cloud.dialogflow.v2.samples;
 import com.google.cloud.dialogflow.v2.ContextsClient;
 import com.google.cloud.dialogflow.v2.DeleteAllContextsRequest;
 import com.google.cloud.dialogflow.v2.SessionName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteAllContexts {
 

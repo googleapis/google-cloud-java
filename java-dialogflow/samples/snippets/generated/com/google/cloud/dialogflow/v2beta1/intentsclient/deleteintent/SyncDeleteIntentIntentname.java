@@ -19,6 +19,7 @@ package com.google.cloud.dialogflow.v2beta1.samples;
 // [START dialogflow_v2beta1_generated_intentsclient_deleteintent_intentname_sync]
 import com.google.cloud.dialogflow.v2beta1.IntentName;
 import com.google.cloud.dialogflow.v2beta1.IntentsClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteIntentIntentname {
 

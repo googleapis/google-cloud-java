@@ -19,6 +19,7 @@ package com.google.cloud.dialogflow.v2beta1.samples;
 // [START dialogflow_v2beta1_generated_agentsclient_trainagent_locationname_sync]
 import com.google.cloud.dialogflow.v2beta1.AgentsClient;
 import com.google.cloud.dialogflow.v2beta1.LocationName;
+import com.google.protobuf.Empty;
 
 public class SyncTrainAgentLocationname {
 
