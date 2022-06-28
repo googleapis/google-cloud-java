@@ -20,6 +20,7 @@ package com.google.cloud.channel.v1.samples;
 import com.google.cloud.channel.v1.ChannelPartnerRepricingConfigName;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteChannelPartnerRepricingConfig {
 

@@ -16,10 +16,10 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START
-// channel_v1_generated_cloudchannelserviceclient_deletechannelpartnerrepricingconfig_channelpartnerrepricingconfigname_sync]
+// [START channel_v1_generated_cloudchannelserviceclient_deletechannelpartnerrepricingconfig_channelpartnerrepricingconfigname_sync]
 import com.google.cloud.channel.v1.ChannelPartnerRepricingConfigName;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteChannelPartnerRepricingConfigChannelpartnerrepricingconfigname {
 
@@ -39,5 +39,4 @@ public class SyncDeleteChannelPartnerRepricingConfigChannelpartnerrepricingconfi
     }
   }
 }
-// [END
-// channel_v1_generated_cloudchannelserviceclient_deletechannelpartnerrepricingconfig_channelpartnerrepricingconfigname_sync]
+// [END channel_v1_generated_cloudchannelserviceclient_deletechannelpartnerrepricingconfig_channelpartnerrepricingconfigname_sync]

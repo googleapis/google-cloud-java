@@ -20,6 +20,7 @@ package com.google.cloud.channel.v1.samples;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
 import com.google.cloud.channel.v1.Entitlement;
 import com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest;
+import com.google.protobuf.Empty;
 import java.util.ArrayList;
 
 public class SyncTransferEntitlementsToGoogle {

@@ -16,8 +16,7 @@
 
 package com.google.cloud.channel.v1.samples;
 
-// [START
-// channel_v1_generated_cloudchannelserviceclient_getchannelpartnerrepricingconfig_string_sync]
+// [START channel_v1_generated_cloudchannelserviceclient_getchannelpartnerrepricingconfig_string_sync]
 import com.google.cloud.channel.v1.ChannelPartnerRepricingConfig;
 import com.google.cloud.channel.v1.ChannelPartnerRepricingConfigName;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;

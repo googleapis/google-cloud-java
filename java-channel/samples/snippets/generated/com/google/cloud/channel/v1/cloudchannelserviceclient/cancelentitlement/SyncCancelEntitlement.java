@@ -19,6 +19,7 @@ package com.google.cloud.channel.v1.samples;
 // [START channel_v1_generated_cloudchannelserviceclient_cancelentitlement_sync]
 import com.google.cloud.channel.v1.CancelEntitlementRequest;
 import com.google.cloud.channel.v1.CloudChannelServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncCancelEntitlement {
 
