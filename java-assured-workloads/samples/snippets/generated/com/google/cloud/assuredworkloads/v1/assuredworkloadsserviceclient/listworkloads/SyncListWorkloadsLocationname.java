@@ -16,8 +16,7 @@
 
 package com.google.cloud.assuredworkloads.v1.samples;
 
-// [START
-// assuredworkloads_v1_generated_assuredworkloadsserviceclient_listworkloads_locationname_sync]
+// [START assuredworkloads_v1_generated_assuredworkloadsserviceclient_listworkloads_locationname_sync]
 import com.google.cloud.assuredworkloads.v1.AssuredWorkloadsServiceClient;
 import com.google.cloud.assuredworkloads.v1.LocationName;
 import com.google.cloud.assuredworkloads.v1.Workload;

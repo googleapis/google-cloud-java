@@ -16,8 +16,7 @@
 
 package com.google.cloud.assuredworkloads.v1beta1.samples;
 
-// [START
-// assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_create_setcredentialsprovider_sync]
+// [START assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsServiceClient;
 import com.google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsServiceSettings;
@@ -40,5 +39,4 @@ public class SyncCreateSetCredentialsProvider {
         AssuredWorkloadsServiceClient.create(assuredWorkloadsServiceSettings);
   }
 }
-// [END
-// assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_create_setcredentialsprovider_sync]
+// [END assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_create_setcredentialsprovider_sync]

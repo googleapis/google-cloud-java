@@ -16,10 +16,10 @@
 
 package com.google.cloud.assuredworkloads.v1.samples;
 
-// [START
-// assuredworkloads_v1_generated_assuredworkloadsserviceclient_deleteworkload_workloadname_sync]
+// [START assuredworkloads_v1_generated_assuredworkloadsserviceclient_deleteworkload_workloadname_sync]
 import com.google.cloud.assuredworkloads.v1.AssuredWorkloadsServiceClient;
 import com.google.cloud.assuredworkloads.v1.WorkloadName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteWorkloadWorkloadname {
 
@@ -37,5 +37,4 @@ public class SyncDeleteWorkloadWorkloadname {
     }
   }
 }
-// [END
-// assuredworkloads_v1_generated_assuredworkloadsserviceclient_deleteworkload_workloadname_sync]
+// [END assuredworkloads_v1_generated_assuredworkloadsserviceclient_deleteworkload_workloadname_sync]

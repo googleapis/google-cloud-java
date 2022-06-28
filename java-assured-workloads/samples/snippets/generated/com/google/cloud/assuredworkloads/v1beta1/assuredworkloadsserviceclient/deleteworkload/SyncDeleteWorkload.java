@@ -20,6 +20,7 @@ package com.google.cloud.assuredworkloads.v1beta1.samples;
 import com.google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsServiceClient;
 import com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.WorkloadName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteWorkload {
 

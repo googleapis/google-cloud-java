@@ -16,8 +16,7 @@
 
 package com.google.cloud.assuredworkloads.v1beta1.samples;
 
-// [START
-// assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_getworkload_workloadname_sync]
+// [START assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_getworkload_workloadname_sync]
 import com.google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsServiceClient;
 import com.google.cloud.assuredworkloads.v1beta1.Workload;
 import com.google.cloud.assuredworkloads.v1beta1.WorkloadName;
@@ -38,5 +37,4 @@ public class SyncGetWorkloadWorkloadname {
     }
   }
 }
-// [END
-// assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_getworkload_workloadname_sync]
+// [END assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_getworkload_workloadname_sync]

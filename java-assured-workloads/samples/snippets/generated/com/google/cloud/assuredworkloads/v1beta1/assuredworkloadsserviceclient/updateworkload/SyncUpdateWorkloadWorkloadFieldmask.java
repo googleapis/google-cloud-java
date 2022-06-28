@@ -16,8 +16,7 @@
 
 package com.google.cloud.assuredworkloads.v1beta1.samples;
 
-// [START
-// assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_updateworkload_workloadfieldmask_sync]
+// [START assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_updateworkload_workloadfieldmask_sync]
 import com.google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsServiceClient;
 import com.google.cloud.assuredworkloads.v1beta1.Workload;
 import com.google.protobuf.FieldMask;
@@ -39,5 +38,4 @@ public class SyncUpdateWorkloadWorkloadFieldmask {
     }
   }
 }
-// [END
-// assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_updateworkload_workloadfieldmask_sync]
+// [END assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_updateworkload_workloadfieldmask_sync]

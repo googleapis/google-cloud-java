@@ -16,8 +16,7 @@
 
 package com.google.cloud.assuredworkloads.v1beta1.samples;
 
-// [START
-// assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_listworkloads_paged_async]
+// [START assuredworkloads_v1beta1_generated_assuredworkloadsserviceclient_listworkloads_paged_async]
 import com.google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsServiceClient;
 import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest;
 import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse;
