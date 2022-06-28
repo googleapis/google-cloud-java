@@ -30,7 +30,6 @@ import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.GetPolicyOptions;
-import com.google.iam.v1.MockIAMPolicy;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;

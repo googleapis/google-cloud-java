@@ -14,10 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.iam.v1;
+package com.google.cloud.kms.v1;
 
 import com.google.api.core.BetaApi;
+import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.IAMPolicyGrpc.IAMPolicyImplBase;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
