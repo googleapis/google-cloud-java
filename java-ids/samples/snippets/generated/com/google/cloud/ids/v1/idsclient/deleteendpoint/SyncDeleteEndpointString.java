@@ -19,6 +19,7 @@ package com.google.cloud.ids.v1.samples;
 // [START ids_v1_generated_idsclient_deleteendpoint_string_sync]
 import com.google.cloud.ids.v1.EndpointName;
 import com.google.cloud.ids.v1.IDSClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteEndpointString {
 

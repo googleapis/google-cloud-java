@@ -20,6 +20,7 @@ package com.google.cloud.ids.v1.samples;
 import com.google.cloud.ids.v1.DeleteEndpointRequest;
 import com.google.cloud.ids.v1.EndpointName;
 import com.google.cloud.ids.v1.IDSClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteEndpoint {
 
