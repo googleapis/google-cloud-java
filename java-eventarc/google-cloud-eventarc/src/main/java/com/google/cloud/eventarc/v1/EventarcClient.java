@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -31,7 +32,6 @@ import com.google.cloud.eventarc.v1.stub.EventarcStub;
 import com.google.cloud.eventarc.v1.stub.EventarcStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
@@ -103,13 +103,28 @@ import javax.annotation.Generated;
  * EventarcClient eventarcClient = EventarcClient.create(eventarcSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * EventarcSettings eventarcSettings =
+ *     EventarcSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             EventarcSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * EventarcClient eventarcClient = EventarcClient.create(eventarcSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class EventarcClient implements BackgroundResource {
   private final EventarcSettings settings;
   private final EventarcStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of EventarcClient with default settings. */
   public static final EventarcClient create() throws IOException {
@@ -128,7 +143,6 @@ public class EventarcClient implements BackgroundResource {
    * Constructs an instance of EventarcClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(EventarcSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final EventarcClient create(EventarcStub stub) {
     return new EventarcClient(stub);
   }
@@ -140,21 +154,23 @@ public class EventarcClient implements BackgroundResource {
   protected EventarcClient(EventarcSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((EventarcStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected EventarcClient(EventarcStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final EventarcSettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public EventarcStub getStub() {
     return stub;
   }
@@ -163,8 +179,17 @@ public class EventarcClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -395,7 +420,7 @@ public class EventarcClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTriggersResponse response = eventarcClient.listTriggersCallable().call(request);
-   *     for (Trigger element : response.getResponsesList()) {
+   *     for (Trigger element : response.getTriggersList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1056,7 +1081,7 @@ public class EventarcClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListChannelsResponse response = eventarcClient.listChannelsCallable().call(request);
-   *     for (Channel element : response.getResponsesList()) {
+   *     for (Channel element : response.getChannelsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1463,6 +1488,254 @@ public class EventarcClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Get a single Provider.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ProviderName name = ProviderName.of("[PROJECT]", "[LOCATION]", "[PROVIDER]");
+   *   Provider response = eventarcClient.getProvider(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the provider to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Provider getProvider(ProviderName name) {
+    GetProviderRequest request =
+        GetProviderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getProvider(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single Provider.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   String name = ProviderName.of("[PROJECT]", "[LOCATION]", "[PROVIDER]").toString();
+   *   Provider response = eventarcClient.getProvider(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the provider to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Provider getProvider(String name) {
+    GetProviderRequest request = GetProviderRequest.newBuilder().setName(name).build();
+    return getProvider(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single Provider.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GetProviderRequest request =
+   *       GetProviderRequest.newBuilder()
+   *           .setName(ProviderName.of("[PROJECT]", "[LOCATION]", "[PROVIDER]").toString())
+   *           .build();
+   *   Provider response = eventarcClient.getProvider(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Provider getProvider(GetProviderRequest request) {
+    return getProviderCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a single Provider.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   GetProviderRequest request =
+   *       GetProviderRequest.newBuilder()
+   *           .setName(ProviderName.of("[PROJECT]", "[LOCATION]", "[PROVIDER]").toString())
+   *           .build();
+   *   ApiFuture<Provider> future = eventarcClient.getProviderCallable().futureCall(request);
+   *   // Do something.
+   *   Provider response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetProviderRequest, Provider> getProviderCallable() {
+    return stub.getProviderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List providers.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Provider element : eventarcClient.listProviders(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent of the provider to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProvidersPagedResponse listProviders(LocationName parent) {
+    ListProvidersRequest request =
+        ListProvidersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listProviders(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List providers.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Provider element : eventarcClient.listProviders(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent of the provider to get.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProvidersPagedResponse listProviders(String parent) {
+    ListProvidersRequest request = ListProvidersRequest.newBuilder().setParent(parent).build();
+    return listProviders(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List providers.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ListProvidersRequest request =
+   *       ListProvidersRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Provider element : eventarcClient.listProviders(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProvidersPagedResponse listProviders(ListProvidersRequest request) {
+    return listProvidersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List providers.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ListProvidersRequest request =
+   *       ListProvidersRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Provider> future = eventarcClient.listProvidersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Provider element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListProvidersRequest, ListProvidersPagedResponse>
+      listProvidersPagedCallable() {
+    return stub.listProvidersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List providers.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (EventarcClient eventarcClient = EventarcClient.create()) {
+   *   ListProvidersRequest request =
+   *       ListProvidersRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListProvidersResponse response = eventarcClient.listProvidersCallable().call(request);
+   *     for (Provider element : response.getProvidersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListProvidersRequest, ListProvidersResponse> listProvidersCallable() {
+    return stub.listProvidersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Get a single ChannelConnection.
    *
    * <p>Sample code:
@@ -1702,7 +1975,7 @@ public class EventarcClient implements BackgroundResource {
    *   while (true) {
    *     ListChannelConnectionsResponse response =
    *         eventarcClient.listChannelConnectionsCallable().call(request);
-   *     for (ChannelConnection element : response.getResponsesList()) {
+   *     for (ChannelConnection element : response.getChannelConnectionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2195,6 +2468,82 @@ public class EventarcClient implements BackgroundResource {
     protected ListChannelsFixedSizeCollection createCollection(
         List<ListChannelsPage> pages, int collectionSize) {
       return new ListChannelsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListProvidersPagedResponse
+      extends AbstractPagedListResponse<
+          ListProvidersRequest,
+          ListProvidersResponse,
+          Provider,
+          ListProvidersPage,
+          ListProvidersFixedSizeCollection> {
+
+    public static ApiFuture<ListProvidersPagedResponse> createAsync(
+        PageContext<ListProvidersRequest, ListProvidersResponse, Provider> context,
+        ApiFuture<ListProvidersResponse> futureResponse) {
+      ApiFuture<ListProvidersPage> futurePage =
+          ListProvidersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListProvidersPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListProvidersPagedResponse(ListProvidersPage page) {
+      super(page, ListProvidersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListProvidersPage
+      extends AbstractPage<
+          ListProvidersRequest, ListProvidersResponse, Provider, ListProvidersPage> {
+
+    private ListProvidersPage(
+        PageContext<ListProvidersRequest, ListProvidersResponse, Provider> context,
+        ListProvidersResponse response) {
+      super(context, response);
+    }
+
+    private static ListProvidersPage createEmptyPage() {
+      return new ListProvidersPage(null, null);
+    }
+
+    @Override
+    protected ListProvidersPage createPage(
+        PageContext<ListProvidersRequest, ListProvidersResponse, Provider> context,
+        ListProvidersResponse response) {
+      return new ListProvidersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListProvidersPage> createPageAsync(
+        PageContext<ListProvidersRequest, ListProvidersResponse, Provider> context,
+        ApiFuture<ListProvidersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListProvidersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListProvidersRequest,
+          ListProvidersResponse,
+          Provider,
+          ListProvidersPage,
+          ListProvidersFixedSizeCollection> {
+
+    private ListProvidersFixedSizeCollection(List<ListProvidersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListProvidersFixedSizeCollection createEmptyCollection() {
+      return new ListProvidersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListProvidersFixedSizeCollection createCollection(
+        List<ListProvidersPage> pages, int collectionSize) {
+      return new ListProvidersFixedSizeCollection(pages, collectionSize);
     }
   }
 

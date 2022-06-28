@@ -18,6 +18,7 @@ package com.google.cloud.eventarc.v1.stub;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -33,14 +34,18 @@ import com.google.cloud.eventarc.v1.DeleteChannelRequest;
 import com.google.cloud.eventarc.v1.DeleteTriggerRequest;
 import com.google.cloud.eventarc.v1.GetChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.GetChannelRequest;
+import com.google.cloud.eventarc.v1.GetProviderRequest;
 import com.google.cloud.eventarc.v1.GetTriggerRequest;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsRequest;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsResponse;
 import com.google.cloud.eventarc.v1.ListChannelsRequest;
 import com.google.cloud.eventarc.v1.ListChannelsResponse;
+import com.google.cloud.eventarc.v1.ListProvidersRequest;
+import com.google.cloud.eventarc.v1.ListProvidersResponse;
 import com.google.cloud.eventarc.v1.ListTriggersRequest;
 import com.google.cloud.eventarc.v1.ListTriggersResponse;
 import com.google.cloud.eventarc.v1.OperationMetadata;
+import com.google.cloud.eventarc.v1.Provider;
 import com.google.cloud.eventarc.v1.Trigger;
 import com.google.cloud.eventarc.v1.UpdateChannelRequest;
 import com.google.cloud.eventarc.v1.UpdateTriggerRequest;
@@ -58,7 +63,11 @@ import javax.annotation.Generated;
 public abstract class EventarcStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {
-    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
   }
 
   public UnaryCallable<GetTriggerRequest, Trigger> getTriggerCallable() {
@@ -137,6 +146,19 @@ public abstract class EventarcStub implements BackgroundResource {
 
   public UnaryCallable<DeleteChannelRequest, Operation> deleteChannelCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteChannelCallable()");
+  }
+
+  public UnaryCallable<GetProviderRequest, Provider> getProviderCallable() {
+    throw new UnsupportedOperationException("Not implemented: getProviderCallable()");
+  }
+
+  public UnaryCallable<ListProvidersRequest, ListProvidersPagedResponse>
+      listProvidersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listProvidersPagedCallable()");
+  }
+
+  public UnaryCallable<ListProvidersRequest, ListProvidersResponse> listProvidersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listProvidersCallable()");
   }
 
   public UnaryCallable<GetChannelConnectionRequest, ChannelConnection>

@@ -18,6 +18,7 @@ package com.google.cloud.eventarc.v1.stub;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -37,14 +38,18 @@ import com.google.cloud.eventarc.v1.DeleteChannelRequest;
 import com.google.cloud.eventarc.v1.DeleteTriggerRequest;
 import com.google.cloud.eventarc.v1.GetChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.GetChannelRequest;
+import com.google.cloud.eventarc.v1.GetProviderRequest;
 import com.google.cloud.eventarc.v1.GetTriggerRequest;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsRequest;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsResponse;
 import com.google.cloud.eventarc.v1.ListChannelsRequest;
 import com.google.cloud.eventarc.v1.ListChannelsResponse;
+import com.google.cloud.eventarc.v1.ListProvidersRequest;
+import com.google.cloud.eventarc.v1.ListProvidersResponse;
 import com.google.cloud.eventarc.v1.ListTriggersRequest;
 import com.google.cloud.eventarc.v1.ListTriggersResponse;
 import com.google.cloud.eventarc.v1.OperationMetadata;
+import com.google.cloud.eventarc.v1.Provider;
 import com.google.cloud.eventarc.v1.Trigger;
 import com.google.cloud.eventarc.v1.UpdateChannelRequest;
 import com.google.cloud.eventarc.v1.UpdateTriggerRequest;
@@ -161,6 +166,25 @@ public class GrpcEventarcStub extends EventarcStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetProviderRequest, Provider> getProviderMethodDescriptor =
+      MethodDescriptor.<GetProviderRequest, Provider>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.eventarc.v1.Eventarc/GetProvider")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetProviderRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Provider.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListProvidersRequest, ListProvidersResponse>
+      listProvidersMethodDescriptor =
+          MethodDescriptor.<ListProvidersRequest, ListProvidersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/ListProviders")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListProvidersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListProvidersResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetChannelConnectionRequest, ChannelConnection>
       getChannelConnectionMethodDescriptor =
           MethodDescriptor.<GetChannelConnectionRequest, ChannelConnection>newBuilder()
@@ -230,6 +254,10 @@ public class GrpcEventarcStub extends EventarcStub {
   private final UnaryCallable<DeleteChannelRequest, Operation> deleteChannelCallable;
   private final OperationCallable<DeleteChannelRequest, Channel, OperationMetadata>
       deleteChannelOperationCallable;
+  private final UnaryCallable<GetProviderRequest, Provider> getProviderCallable;
+  private final UnaryCallable<ListProvidersRequest, ListProvidersResponse> listProvidersCallable;
+  private final UnaryCallable<ListProvidersRequest, ListProvidersPagedResponse>
+      listProvidersPagedCallable;
   private final UnaryCallable<GetChannelConnectionRequest, ChannelConnection>
       getChannelConnectionCallable;
   private final UnaryCallable<ListChannelConnectionsRequest, ListChannelConnectionsResponse>
@@ -386,6 +414,26 @@ public class GrpcEventarcStub extends EventarcStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<GetProviderRequest, Provider> getProviderTransportSettings =
+        GrpcCallSettings.<GetProviderRequest, Provider>newBuilder()
+            .setMethodDescriptor(getProviderMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListProvidersRequest, ListProvidersResponse> listProvidersTransportSettings =
+        GrpcCallSettings.<ListProvidersRequest, ListProvidersResponse>newBuilder()
+            .setMethodDescriptor(listProvidersMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<GetChannelConnectionRequest, ChannelConnection>
         getChannelConnectionTransportSettings =
             GrpcCallSettings.<GetChannelConnectionRequest, ChannelConnection>newBuilder()
@@ -504,6 +552,15 @@ public class GrpcEventarcStub extends EventarcStub {
             settings.deleteChannelOperationSettings(),
             clientContext,
             operationsStub);
+    this.getProviderCallable =
+        callableFactory.createUnaryCallable(
+            getProviderTransportSettings, settings.getProviderSettings(), clientContext);
+    this.listProvidersCallable =
+        callableFactory.createUnaryCallable(
+            listProvidersTransportSettings, settings.listProvidersSettings(), clientContext);
+    this.listProvidersPagedCallable =
+        callableFactory.createPagedCallable(
+            listProvidersTransportSettings, settings.listProvidersSettings(), clientContext);
     this.getChannelConnectionCallable =
         callableFactory.createUnaryCallable(
             getChannelConnectionTransportSettings,
@@ -644,6 +701,22 @@ public class GrpcEventarcStub extends EventarcStub {
   public OperationCallable<DeleteChannelRequest, Channel, OperationMetadata>
       deleteChannelOperationCallable() {
     return deleteChannelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetProviderRequest, Provider> getProviderCallable() {
+    return getProviderCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListProvidersRequest, ListProvidersResponse> listProvidersCallable() {
+    return listProvidersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListProvidersRequest, ListProvidersPagedResponse>
+      listProvidersPagedCallable() {
+    return listProvidersPagedCallable;
   }
 
   @Override

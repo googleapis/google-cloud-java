@@ -268,6 +268,47 @@ public class MockEventarcImpl extends EventarcImplBase {
   }
 
   @Override
+  public void getProvider(GetProviderRequest request, StreamObserver<Provider> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Provider) {
+      requests.add(request);
+      responseObserver.onNext(((Provider) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProvider, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Provider.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listProviders(
+      ListProvidersRequest request, StreamObserver<ListProvidersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListProvidersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListProvidersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProviders, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListProvidersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getChannelConnection(
       GetChannelConnectionRequest request, StreamObserver<ChannelConnection> responseObserver) {
     Object response = responses.poll();
