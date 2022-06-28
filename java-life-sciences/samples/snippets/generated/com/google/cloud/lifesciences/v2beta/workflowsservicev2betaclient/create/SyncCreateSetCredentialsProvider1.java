@@ -16,8 +16,7 @@
 
 package com.google.cloud.lifesciences.v2beta.samples;
 
-// [START
-// lifesciences_v2beta_generated_workflowsservicev2betaclient_create_setcredentialsprovider1_sync]
+// [START lifesciences_v2beta_generated_workflowsservicev2betaclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.lifesciences.v2beta.WorkflowsServiceV2BetaClient;
 import com.google.cloud.lifesciences.v2beta.WorkflowsServiceV2BetaSettings;
 
@@ -39,5 +38,4 @@ public class SyncCreateSetCredentialsProvider1 {
         WorkflowsServiceV2BetaClient.create(workflowsServiceV2BetaSettings);
   }
 }
-// [END
-// lifesciences_v2beta_generated_workflowsservicev2betaclient_create_setcredentialsprovider1_sync]
+// [END lifesciences_v2beta_generated_workflowsservicev2betaclient_create_setcredentialsprovider1_sync]

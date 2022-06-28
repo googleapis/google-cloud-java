@@ -16,8 +16,7 @@
 
 package com.google.cloud.lifesciences.v2beta.samples;
 
-// [START
-// lifesciences_v2beta_generated_workflowsservicev2betaclient_create_setcredentialsprovider_sync]
+// [START lifesciences_v2beta_generated_workflowsservicev2betaclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.lifesciences.v2beta.WorkflowsServiceV2BetaClient;
 import com.google.cloud.lifesciences.v2beta.WorkflowsServiceV2BetaSettings;
@@ -40,5 +39,4 @@ public class SyncCreateSetCredentialsProvider {
         WorkflowsServiceV2BetaClient.create(workflowsServiceV2BetaSettings);
   }
 }
-// [END
-// lifesciences_v2beta_generated_workflowsservicev2betaclient_create_setcredentialsprovider_sync]
+// [END lifesciences_v2beta_generated_workflowsservicev2betaclient_create_setcredentialsprovider_sync]
