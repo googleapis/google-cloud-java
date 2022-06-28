@@ -19,6 +19,7 @@ package com.google.cloud.domains.v1alpha2.samples;
 // [START domains_v1alpha2_generated_domainsclient_deleteregistration_registrationname_sync]
 import com.google.cloud.domains.v1alpha2.DomainsClient;
 import com.google.cloud.domains.v1alpha2.RegistrationName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteRegistrationRegistrationname {
 

@@ -16,8 +16,7 @@
 
 package com.google.cloud.domains.v1.samples;
 
-// [START
-// domains_v1_generated_domainsclient_transferdomain_stringregistrationmoneyauthorizationcode_sync]
+// [START domains_v1_generated_domainsclient_transferdomain_stringregistrationmoneyauthorizationcode_sync]
 import com.google.cloud.domains.v1.AuthorizationCode;
 import com.google.cloud.domains.v1.DomainsClient;
 import com.google.cloud.domains.v1.LocationName;
@@ -45,5 +44,4 @@ public class SyncTransferDomainStringRegistrationMoneyAuthorizationcode {
     }
   }
 }
-// [END
-// domains_v1_generated_domainsclient_transferdomain_stringregistrationmoneyauthorizationcode_sync]
+// [END domains_v1_generated_domainsclient_transferdomain_stringregistrationmoneyauthorizationcode_sync]

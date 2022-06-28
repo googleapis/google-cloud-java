@@ -20,6 +20,7 @@ package com.google.cloud.domains.v1.samples;
 import com.google.cloud.domains.v1.DeleteRegistrationRequest;
 import com.google.cloud.domains.v1.DomainsClient;
 import com.google.cloud.domains.v1.RegistrationName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteRegistration {
 

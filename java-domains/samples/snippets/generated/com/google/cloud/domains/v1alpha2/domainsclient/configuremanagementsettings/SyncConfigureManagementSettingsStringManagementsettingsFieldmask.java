@@ -16,8 +16,7 @@
 
 package com.google.cloud.domains.v1alpha2.samples;
 
-// [START
-// domains_v1alpha2_generated_domainsclient_configuremanagementsettings_stringmanagementsettingsfieldmask_sync]
+// [START domains_v1alpha2_generated_domainsclient_configuremanagementsettings_stringmanagementsettingsfieldmask_sync]
 import com.google.cloud.domains.v1alpha2.DomainsClient;
 import com.google.cloud.domains.v1alpha2.ManagementSettings;
 import com.google.cloud.domains.v1alpha2.Registration;
@@ -46,5 +45,4 @@ public class SyncConfigureManagementSettingsStringManagementsettingsFieldmask {
     }
   }
 }
-// [END
-// domains_v1alpha2_generated_domainsclient_configuremanagementsettings_stringmanagementsettingsfieldmask_sync]
+// [END domains_v1alpha2_generated_domainsclient_configuremanagementsettings_stringmanagementsettingsfieldmask_sync]

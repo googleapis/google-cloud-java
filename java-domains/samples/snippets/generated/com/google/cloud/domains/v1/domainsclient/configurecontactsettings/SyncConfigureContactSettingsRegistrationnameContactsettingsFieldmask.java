@@ -16,8 +16,7 @@
 
 package com.google.cloud.domains.v1.samples;
 
-// [START
-// domains_v1_generated_domainsclient_configurecontactsettings_registrationnamecontactsettingsfieldmask_sync]
+// [START domains_v1_generated_domainsclient_configurecontactsettings_registrationnamecontactsettingsfieldmask_sync]
 import com.google.cloud.domains.v1.ContactSettings;
 import com.google.cloud.domains.v1.DomainsClient;
 import com.google.cloud.domains.v1.Registration;
@@ -46,5 +45,4 @@ public class SyncConfigureContactSettingsRegistrationnameContactsettingsFieldmas
     }
   }
 }
-// [END
-// domains_v1_generated_domainsclient_configurecontactsettings_registrationnamecontactsettingsfieldmask_sync]
+// [END domains_v1_generated_domainsclient_configurecontactsettings_registrationnamecontactsettingsfieldmask_sync]

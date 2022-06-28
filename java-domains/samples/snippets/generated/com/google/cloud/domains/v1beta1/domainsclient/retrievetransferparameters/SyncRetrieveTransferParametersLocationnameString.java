@@ -16,8 +16,7 @@
 
 package com.google.cloud.domains.v1beta1.samples;
 
-// [START
-// domains_v1beta1_generated_domainsclient_retrievetransferparameters_locationnamestring_sync]
+// [START domains_v1beta1_generated_domainsclient_retrievetransferparameters_locationnamestring_sync]
 import com.google.cloud.domains.v1beta1.DomainsClient;
 import com.google.cloud.domains.v1beta1.LocationName;
 import com.google.cloud.domains.v1beta1.RetrieveTransferParametersResponse;

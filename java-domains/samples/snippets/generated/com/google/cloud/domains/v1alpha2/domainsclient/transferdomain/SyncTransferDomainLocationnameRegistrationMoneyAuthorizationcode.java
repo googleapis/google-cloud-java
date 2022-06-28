@@ -16,8 +16,7 @@
 
 package com.google.cloud.domains.v1alpha2.samples;
 
-// [START
-// domains_v1alpha2_generated_domainsclient_transferdomain_locationnameregistrationmoneyauthorizationcode_sync]
+// [START domains_v1alpha2_generated_domainsclient_transferdomain_locationnameregistrationmoneyauthorizationcode_sync]
 import com.google.cloud.domains.v1alpha2.AuthorizationCode;
 import com.google.cloud.domains.v1alpha2.DomainsClient;
 import com.google.cloud.domains.v1alpha2.LocationName;
@@ -46,5 +45,4 @@ public class SyncTransferDomainLocationnameRegistrationMoneyAuthorizationcode {
     }
   }
 }
-// [END
-// domains_v1alpha2_generated_domainsclient_transferdomain_locationnameregistrationmoneyauthorizationcode_sync]
+// [END domains_v1alpha2_generated_domainsclient_transferdomain_locationnameregistrationmoneyauthorizationcode_sync]
