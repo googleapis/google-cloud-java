@@ -16,10 +16,10 @@
 
 package com.google.cloud.osconfig.v1alpha.samples;
 
-// [START
-// osconfig_v1alpha_generated_osconfigzonalserviceclient_deleteospolicyassignment_string_sync]
+// [START osconfig_v1alpha_generated_osconfigzonalserviceclient_deleteospolicyassignment_string_sync]
 import com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentName;
 import com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteOSPolicyAssignmentString {
 

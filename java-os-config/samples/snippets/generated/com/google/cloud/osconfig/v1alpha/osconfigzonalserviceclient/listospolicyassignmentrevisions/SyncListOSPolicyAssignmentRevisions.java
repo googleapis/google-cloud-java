@@ -16,8 +16,7 @@
 
 package com.google.cloud.osconfig.v1alpha.samples;
 
-// [START
-// osconfig_v1alpha_generated_osconfigzonalserviceclient_listospolicyassignmentrevisions_sync]
+// [START osconfig_v1alpha_generated_osconfigzonalserviceclient_listospolicyassignmentrevisions_sync]
 import com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsRequest;
 import com.google.cloud.osconfig.v1alpha.OSPolicyAssignment;
 import com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentName;

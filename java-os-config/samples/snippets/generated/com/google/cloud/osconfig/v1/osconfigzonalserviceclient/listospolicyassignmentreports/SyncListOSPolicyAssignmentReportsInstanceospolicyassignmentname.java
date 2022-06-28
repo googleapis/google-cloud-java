@@ -16,8 +16,7 @@
 
 package com.google.cloud.osconfig.v1.samples;
 
-// [START
-// osconfig_v1_generated_osconfigzonalserviceclient_listospolicyassignmentreports_instanceospolicyassignmentname_sync]
+// [START osconfig_v1_generated_osconfigzonalserviceclient_listospolicyassignmentreports_instanceospolicyassignmentname_sync]
 import com.google.cloud.osconfig.v1.InstanceOSPolicyAssignmentName;
 import com.google.cloud.osconfig.v1.OSPolicyAssignmentReport;
 import com.google.cloud.osconfig.v1.OsConfigZonalServiceClient;
@@ -44,5 +43,4 @@ public class SyncListOSPolicyAssignmentReportsInstanceospolicyassignmentname {
     }
   }
 }
-// [END
-// osconfig_v1_generated_osconfigzonalserviceclient_listospolicyassignmentreports_instanceospolicyassignmentname_sync]
+// [END osconfig_v1_generated_osconfigzonalserviceclient_listospolicyassignmentreports_instanceospolicyassignmentname_sync]

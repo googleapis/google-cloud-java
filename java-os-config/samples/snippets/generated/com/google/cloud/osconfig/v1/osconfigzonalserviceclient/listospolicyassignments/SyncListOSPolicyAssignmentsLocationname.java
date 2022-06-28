@@ -16,8 +16,7 @@
 
 package com.google.cloud.osconfig.v1.samples;
 
-// [START
-// osconfig_v1_generated_osconfigzonalserviceclient_listospolicyassignments_locationname_sync]
+// [START osconfig_v1_generated_osconfigzonalserviceclient_listospolicyassignments_locationname_sync]
 import com.google.cloud.osconfig.v1.LocationName;
 import com.google.cloud.osconfig.v1.OSPolicyAssignment;
 import com.google.cloud.osconfig.v1.OsConfigZonalServiceClient;

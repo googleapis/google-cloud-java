@@ -16,8 +16,7 @@
 
 package com.google.cloud.osconfig.v1.samples;
 
-// [START
-// osconfig_v1_generated_osconfigserviceclient_resumepatchdeployment_patchdeploymentname_sync]
+// [START osconfig_v1_generated_osconfigserviceclient_resumepatchdeployment_patchdeploymentname_sync]
 import com.google.cloud.osconfig.v1.OsConfigServiceClient;
 import com.google.cloud.osconfig.v1.PatchDeploymentName;
 import com.google.cloud.osconfig.v1.PatchDeployments;

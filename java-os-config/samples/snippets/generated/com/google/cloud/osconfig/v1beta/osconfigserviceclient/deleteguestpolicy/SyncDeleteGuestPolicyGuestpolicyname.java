@@ -19,6 +19,7 @@ package com.google.cloud.osconfig.v1beta.samples;
 // [START osconfig_v1beta_generated_osconfigserviceclient_deleteguestpolicy_guestpolicyname_sync]
 import com.google.cloud.osconfig.v1beta.GuestPolicyName;
 import com.google.cloud.osconfig.v1beta.OsConfigServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteGuestPolicyGuestpolicyname {
 

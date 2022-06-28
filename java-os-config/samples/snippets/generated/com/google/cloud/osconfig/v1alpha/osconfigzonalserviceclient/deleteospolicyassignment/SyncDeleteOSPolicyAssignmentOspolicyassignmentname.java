@@ -16,10 +16,10 @@
 
 package com.google.cloud.osconfig.v1alpha.samples;
 
-// [START
-// osconfig_v1alpha_generated_osconfigzonalserviceclient_deleteospolicyassignment_ospolicyassignmentname_sync]
+// [START osconfig_v1alpha_generated_osconfigzonalserviceclient_deleteospolicyassignment_ospolicyassignmentname_sync]
 import com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentName;
 import com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteOSPolicyAssignmentOspolicyassignmentname {
 
@@ -38,5 +38,4 @@ public class SyncDeleteOSPolicyAssignmentOspolicyassignmentname {
     }
   }
 }
-// [END
-// osconfig_v1alpha_generated_osconfigzonalserviceclient_deleteospolicyassignment_ospolicyassignmentname_sync]
+// [END osconfig_v1alpha_generated_osconfigzonalserviceclient_deleteospolicyassignment_ospolicyassignmentname_sync]

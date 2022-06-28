@@ -16,8 +16,7 @@
 
 package com.google.cloud.osconfig.v1.samples;
 
-// [START
-// osconfig_v1_generated_osconfigzonalserviceclient_listospolicyassignmentreports_paged_async]
+// [START osconfig_v1_generated_osconfigzonalserviceclient_listospolicyassignmentreports_paged_async]
 import com.google.cloud.osconfig.v1.InstanceOSPolicyAssignmentName;
 import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest;
 import com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse;

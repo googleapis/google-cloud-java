@@ -16,8 +16,7 @@
 
 package com.google.cloud.osconfig.v1alpha.samples;
 
-// [START
-// osconfig_v1alpha_generated_osconfigzonalserviceclient_listinstanceospoliciescompliances_paged_async]
+// [START osconfig_v1alpha_generated_osconfigzonalserviceclient_listinstanceospoliciescompliances_paged_async]
 import com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance;
 import com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesRequest;
 import com.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesResponse;
@@ -60,5 +59,4 @@ public class AsyncListInstanceOSPoliciesCompliancesPaged {
     }
   }
 }
-// [END
-// osconfig_v1alpha_generated_osconfigzonalserviceclient_listinstanceospoliciescompliances_paged_async]
+// [END osconfig_v1alpha_generated_osconfigzonalserviceclient_listinstanceospoliciescompliances_paged_async]

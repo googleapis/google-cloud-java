@@ -16,8 +16,7 @@
 
 package com.google.cloud.osconfig.v1beta.samples;
 
-// [START
-// osconfig_v1beta_generated_osconfigserviceclient_createguestpolicy_projectnameguestpoliciesguestpolicy_sync]
+// [START osconfig_v1beta_generated_osconfigserviceclient_createguestpolicy_projectnameguestpoliciesguestpolicy_sync]
 import com.google.cloud.osconfig.v1beta.GuestPolicies;
 import com.google.cloud.osconfig.v1beta.OsConfigServiceClient;
 import com.google.cloud.osconfig.v1beta.ProjectName;
@@ -39,5 +38,4 @@ public class SyncCreateGuestPolicyProjectnameGuestpoliciesguestpolicy {
     }
   }
 }
-// [END
-// osconfig_v1beta_generated_osconfigserviceclient_createguestpolicy_projectnameguestpoliciesguestpolicy_sync]
+// [END osconfig_v1beta_generated_osconfigserviceclient_createguestpolicy_projectnameguestpoliciesguestpolicy_sync]

@@ -16,8 +16,7 @@
 
 package com.google.cloud.osconfig.v1.samples;
 
-// [START
-// osconfig_v1_generated_osconfigzonalserviceclient_updateospolicyassignment_ospolicyassignmentfieldmask_sync]
+// [START osconfig_v1_generated_osconfigzonalserviceclient_updateospolicyassignment_ospolicyassignmentfieldmask_sync]
 import com.google.cloud.osconfig.v1.OSPolicyAssignment;
 import com.google.cloud.osconfig.v1.OsConfigZonalServiceClient;
 import com.google.protobuf.FieldMask;
@@ -42,5 +41,4 @@ public class SyncUpdateOSPolicyAssignmentOspolicyassignmentFieldmask {
     }
   }
 }
-// [END
-// osconfig_v1_generated_osconfigzonalserviceclient_updateospolicyassignment_ospolicyassignmentfieldmask_sync]
+// [END osconfig_v1_generated_osconfigzonalserviceclient_updateospolicyassignment_ospolicyassignmentfieldmask_sync]

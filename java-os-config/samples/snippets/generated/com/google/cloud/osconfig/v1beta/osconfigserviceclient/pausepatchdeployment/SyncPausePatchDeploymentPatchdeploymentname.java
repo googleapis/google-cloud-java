@@ -16,8 +16,7 @@
 
 package com.google.cloud.osconfig.v1beta.samples;
 
-// [START
-// osconfig_v1beta_generated_osconfigserviceclient_pausepatchdeployment_patchdeploymentname_sync]
+// [START osconfig_v1beta_generated_osconfigserviceclient_pausepatchdeployment_patchdeploymentname_sync]
 import com.google.cloud.osconfig.v1beta.OsConfigServiceClient;
 import com.google.cloud.osconfig.v1beta.PatchDeploymentName;
 import com.google.cloud.osconfig.v1beta.PatchDeployments;
@@ -37,5 +36,4 @@ public class SyncPausePatchDeploymentPatchdeploymentname {
     }
   }
 }
-// [END
-// osconfig_v1beta_generated_osconfigserviceclient_pausepatchdeployment_patchdeploymentname_sync]
+// [END osconfig_v1beta_generated_osconfigserviceclient_pausepatchdeployment_patchdeploymentname_sync]

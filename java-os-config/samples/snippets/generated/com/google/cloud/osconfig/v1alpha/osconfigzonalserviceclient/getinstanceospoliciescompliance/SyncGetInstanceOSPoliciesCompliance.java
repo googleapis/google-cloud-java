@@ -16,8 +16,7 @@
 
 package com.google.cloud.osconfig.v1alpha.samples;
 
-// [START
-// osconfig_v1alpha_generated_osconfigzonalserviceclient_getinstanceospoliciescompliance_sync]
+// [START osconfig_v1alpha_generated_osconfigzonalserviceclient_getinstanceospoliciescompliance_sync]
 import com.google.cloud.osconfig.v1alpha.GetInstanceOSPoliciesComplianceRequest;
 import com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance;
 import com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesComplianceName;

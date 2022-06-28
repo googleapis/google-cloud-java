@@ -16,8 +16,7 @@
 
 package com.google.cloud.osconfig.v1.samples;
 
-// [START
-// osconfig_v1_generated_osconfigserviceclient_createpatchdeployment_stringpatchdeploymentspatchdeploymentstring_sync]
+// [START osconfig_v1_generated_osconfigserviceclient_createpatchdeployment_stringpatchdeploymentspatchdeploymentstring_sync]
 import com.google.cloud.osconfig.v1.OsConfigServiceClient;
 import com.google.cloud.osconfig.v1.PatchDeployments;
 import com.google.cloud.osconfig.v1.ProjectName;
@@ -42,5 +41,4 @@ public class SyncCreatePatchDeploymentStringPatchdeploymentspatchdeploymentStrin
     }
   }
 }
-// [END
-// osconfig_v1_generated_osconfigserviceclient_createpatchdeployment_stringpatchdeploymentspatchdeploymentstring_sync]
+// [END osconfig_v1_generated_osconfigserviceclient_createpatchdeployment_stringpatchdeploymentspatchdeploymentstring_sync]

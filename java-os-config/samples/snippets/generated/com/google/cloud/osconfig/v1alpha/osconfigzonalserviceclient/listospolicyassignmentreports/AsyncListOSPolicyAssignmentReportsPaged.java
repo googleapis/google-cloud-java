@@ -16,8 +16,7 @@
 
 package com.google.cloud.osconfig.v1alpha.samples;
 
-// [START
-// osconfig_v1alpha_generated_osconfigzonalserviceclient_listospolicyassignmentreports_paged_async]
+// [START osconfig_v1alpha_generated_osconfigzonalserviceclient_listospolicyassignmentreports_paged_async]
 import com.google.cloud.osconfig.v1alpha.InstanceOSPolicyAssignmentName;
 import com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsRequest;
 import com.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentReportsResponse;
@@ -62,5 +61,4 @@ public class AsyncListOSPolicyAssignmentReportsPaged {
     }
   }
 }
-// [END
-// osconfig_v1alpha_generated_osconfigzonalserviceclient_listospolicyassignmentreports_paged_async]
+// [END osconfig_v1alpha_generated_osconfigzonalserviceclient_listospolicyassignmentreports_paged_async]

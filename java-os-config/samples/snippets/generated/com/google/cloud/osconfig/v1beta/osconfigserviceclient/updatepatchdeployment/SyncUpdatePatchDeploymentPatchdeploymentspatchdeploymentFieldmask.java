@@ -16,8 +16,7 @@
 
 package com.google.cloud.osconfig.v1beta.samples;
 
-// [START
-// osconfig_v1beta_generated_osconfigserviceclient_updatepatchdeployment_patchdeploymentspatchdeploymentfieldmask_sync]
+// [START osconfig_v1beta_generated_osconfigserviceclient_updatepatchdeployment_patchdeploymentspatchdeploymentfieldmask_sync]
 import com.google.cloud.osconfig.v1beta.OsConfigServiceClient;
 import com.google.cloud.osconfig.v1beta.PatchDeployments;
 import com.google.protobuf.FieldMask;
@@ -41,5 +40,4 @@ public class SyncUpdatePatchDeploymentPatchdeploymentspatchdeploymentFieldmask {
     }
   }
 }
-// [END
-// osconfig_v1beta_generated_osconfigserviceclient_updatepatchdeployment_patchdeploymentspatchdeploymentfieldmask_sync]
+// [END osconfig_v1beta_generated_osconfigserviceclient_updatepatchdeployment_patchdeploymentspatchdeploymentfieldmask_sync]

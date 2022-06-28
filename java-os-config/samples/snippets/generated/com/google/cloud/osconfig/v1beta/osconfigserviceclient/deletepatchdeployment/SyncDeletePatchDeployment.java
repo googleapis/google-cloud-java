@@ -19,6 +19,7 @@ package com.google.cloud.osconfig.v1beta.samples;
 // [START osconfig_v1beta_generated_osconfigserviceclient_deletepatchdeployment_sync]
 import com.google.cloud.osconfig.v1beta.OsConfigServiceClient;
 import com.google.cloud.osconfig.v1beta.PatchDeployments;
+import com.google.protobuf.Empty;
 
 public class SyncDeletePatchDeployment {
 

@@ -20,6 +20,7 @@ package com.google.cloud.osconfig.v1beta.samples;
 import com.google.cloud.osconfig.v1beta.GuestPolicies;
 import com.google.cloud.osconfig.v1beta.GuestPolicyName;
 import com.google.cloud.osconfig.v1beta.OsConfigServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteGuestPolicy {
 

@@ -20,6 +20,7 @@ package com.google.cloud.osconfig.v1alpha.samples;
 import com.google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentName;
 import com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteOSPolicyAssignment {
 

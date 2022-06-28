@@ -20,6 +20,7 @@ package com.google.cloud.osconfig.v1.samples;
 import com.google.cloud.osconfig.v1.OsConfigServiceClient;
 import com.google.cloud.osconfig.v1.PatchDeploymentName;
 import com.google.cloud.osconfig.v1.PatchDeployments;
+import com.google.protobuf.Empty;
 
 public class SyncDeletePatchDeployment {
 
