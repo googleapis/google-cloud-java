@@ -18,7 +18,6 @@ package com.google.cloud.tasks.v2;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -106,6 +105,20 @@ import javax.annotation.Generated;
  * CloudTasksClient cloudTasksClient = CloudTasksClient.create(cloudTasksSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * CloudTasksSettings cloudTasksSettings =
+ *     CloudTasksSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             CloudTasksSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * CloudTasksClient cloudTasksClient = CloudTasksClient.create(cloudTasksSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
@@ -130,7 +143,6 @@ public class CloudTasksClient implements BackgroundResource {
    * Constructs an instance of CloudTasksClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(CloudTasksSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CloudTasksClient create(CloudTasksStub stub) {
     return new CloudTasksClient(stub);
   }
@@ -144,7 +156,6 @@ public class CloudTasksClient implements BackgroundResource {
     this.stub = ((CloudTasksStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CloudTasksClient(CloudTasksStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +165,6 @@ public class CloudTasksClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudTasksStub getStub() {
     return stub;
   }
@@ -300,7 +310,7 @@ public class CloudTasksClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListQueuesResponse response = cloudTasksClient.listQueuesCallable().call(request);
-   *     for (Queue element : response.getResponsesList()) {
+   *     for (Queue element : response.getQueuesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1785,7 +1795,7 @@ public class CloudTasksClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTasksResponse response = cloudTasksClient.listTasksCallable().call(request);
-   *     for (Task element : response.getResponsesList()) {
+   *     for (Task element : response.getTasksList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
