@@ -19,6 +19,7 @@ package com.google.cloud.memcache.v1.samples;
 // [START memcache_v1_generated_cloudmemcacheclient_deleteinstance_string_sync]
 import com.google.cloud.memcache.v1.CloudMemcacheClient;
 import com.google.cloud.memcache.v1.InstanceName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteInstanceString {
 

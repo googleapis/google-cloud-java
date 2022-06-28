@@ -16,8 +16,7 @@
 
 package com.google.cloud.memcache.v1.samples;
 
-// [START
-// memcache_v1_generated_cloudmemcacheclient_applyparameters_instancenameliststringboolean_sync]
+// [START memcache_v1_generated_cloudmemcacheclient_applyparameters_instancenameliststringboolean_sync]
 import com.google.cloud.memcache.v1.CloudMemcacheClient;
 import com.google.cloud.memcache.v1.Instance;
 import com.google.cloud.memcache.v1.InstanceName;
@@ -41,5 +40,4 @@ public class SyncApplyParametersInstancenameListstringBoolean {
     }
   }
 }
-// [END
-// memcache_v1_generated_cloudmemcacheclient_applyparameters_instancenameliststringboolean_sync]
+// [END memcache_v1_generated_cloudmemcacheclient_applyparameters_instancenameliststringboolean_sync]

@@ -16,8 +16,7 @@
 
 package com.google.cloud.memcache.v1beta2.samples;
 
-// [START
-// memcache_v1beta2_generated_cloudmemcacheclient_createinstance_locationnamestringinstance_sync]
+// [START memcache_v1beta2_generated_cloudmemcacheclient_createinstance_locationnamestringinstance_sync]
 import com.google.cloud.memcache.v1beta2.CloudMemcacheClient;
 import com.google.cloud.memcache.v1beta2.Instance;
 import com.google.cloud.memcache.v1beta2.LocationName;
@@ -40,5 +39,4 @@ public class SyncCreateInstanceLocationnameStringInstance {
     }
   }
 }
-// [END
-// memcache_v1beta2_generated_cloudmemcacheclient_createinstance_locationnamestringinstance_sync]
+// [END memcache_v1beta2_generated_cloudmemcacheclient_createinstance_locationnamestringinstance_sync]

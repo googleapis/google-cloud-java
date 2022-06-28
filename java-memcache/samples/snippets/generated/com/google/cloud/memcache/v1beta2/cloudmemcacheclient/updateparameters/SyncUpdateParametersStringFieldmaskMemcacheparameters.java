@@ -16,8 +16,7 @@
 
 package com.google.cloud.memcache.v1beta2.samples;
 
-// [START
-// memcache_v1beta2_generated_cloudmemcacheclient_updateparameters_stringfieldmaskmemcacheparameters_sync]
+// [START memcache_v1beta2_generated_cloudmemcacheclient_updateparameters_stringfieldmaskmemcacheparameters_sync]
 import com.google.cloud.memcache.v1beta2.CloudMemcacheClient;
 import com.google.cloud.memcache.v1beta2.Instance;
 import com.google.cloud.memcache.v1beta2.InstanceName;
@@ -42,5 +41,4 @@ public class SyncUpdateParametersStringFieldmaskMemcacheparameters {
     }
   }
 }
-// [END
-// memcache_v1beta2_generated_cloudmemcacheclient_updateparameters_stringfieldmaskmemcacheparameters_sync]
+// [END memcache_v1beta2_generated_cloudmemcacheclient_updateparameters_stringfieldmaskmemcacheparameters_sync]
