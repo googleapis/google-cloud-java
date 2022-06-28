@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.iam.v1;
+package com.google.cloud.gkehub.v1beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.testing.MockGrpcService;
@@ -25,11 +25,11 @@ import javax.annotation.Generated;
 
 @BetaApi
 @Generated("by gapic-generator-java")
-public class MockIAMPolicy implements MockGrpcService {
-  private final MockIAMPolicyImpl serviceImpl;
+public class MockLocations implements MockGrpcService {
+  private final MockLocationsImpl serviceImpl;
 
-  public MockIAMPolicy() {
-    serviceImpl = new MockIAMPolicyImpl();
+  public MockLocations() {
+    serviceImpl = new MockLocationsImpl();
   }
 
   @Override
