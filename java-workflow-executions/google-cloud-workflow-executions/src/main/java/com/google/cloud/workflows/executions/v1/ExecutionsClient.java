@@ -18,7 +18,6 @@ package com.google.cloud.workflows.executions.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -99,6 +98,20 @@ import javax.annotation.Generated;
  * ExecutionsClient executionsClient = ExecutionsClient.create(executionsSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * ExecutionsSettings executionsSettings =
+ *     ExecutionsSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             ExecutionsSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * ExecutionsClient executionsClient = ExecutionsClient.create(executionsSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
@@ -123,7 +136,6 @@ public class ExecutionsClient implements BackgroundResource {
    * Constructs an instance of ExecutionsClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(ExecutionsSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ExecutionsClient create(ExecutionsStub stub) {
     return new ExecutionsClient(stub);
   }
@@ -137,7 +149,6 @@ public class ExecutionsClient implements BackgroundResource {
     this.stub = ((ExecutionsStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ExecutionsClient(ExecutionsStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -147,7 +158,6 @@ public class ExecutionsClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ExecutionsStub getStub() {
     return stub;
   }
@@ -297,7 +307,7 @@ public class ExecutionsClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListExecutionsResponse response = executionsClient.listExecutionsCallable().call(request);
-   *     for (Execution element : response.getResponsesList()) {
+   *     for (Execution element : response.getExecutionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
