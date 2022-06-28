@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.location;
+package com.google.cloud.dialogflow.cx.v3beta1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.testing.MockGrpcService;
