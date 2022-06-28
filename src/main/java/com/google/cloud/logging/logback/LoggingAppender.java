@@ -25,6 +25,7 @@ import ch.qos.logback.core.util.Loader;
 import com.google.api.core.InternalApi;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.MonitoredResource;
+import com.google.cloud.logging.Instrumentation;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.WriteOption;
@@ -40,7 +41,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -100,6 +100,9 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
       "type.googleapis.com/google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent";
   private static final List<LoggingEventEnhancer> DEFAULT_LOGGING_EVENT_ENHANCERS =
       ImmutableList.<LoggingEventEnhancer>of(new MDCEventEnhancer());
+  public static final String JAVA_LOGBACK_LIBRARY_NAME = "java-logback";
+  private static boolean instrumentationAdded = false;
+  private static Object instrumentationLock = new Object();
 
   private volatile Logging logging;
   private LoggingOptions loggingOptions;
@@ -317,7 +320,16 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
 
   @Override
   protected void append(ILoggingEvent e) {
-    Iterable<LogEntry> entries = Collections.singleton(logEntryFor(e));
+    List<LogEntry> entriesList = new ArrayList<LogEntry>();
+    entriesList.add(logEntryFor(e));
+    // Check if instrumentation was already added - if not, create a log entry with instrumentation
+    // data
+    if (!setInstrumentationStatus(true)) {
+      entriesList.add(
+          Instrumentation.createDiagnosticEntry(
+              JAVA_LOGBACK_LIBRARY_NAME, Instrumentation.getLibraryVersion(LoggingAppender.class)));
+    }
+    Iterable<LogEntry> entries = entriesList;
     if (autoPopulateMetadata) {
       entries =
           getLogging()
@@ -488,6 +500,21 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
         return Severity.ERROR;
       default:
         return Severity.DEFAULT;
+    }
+  }
+
+  /**
+   * The package-private helper method used to set the flag which indicates if instrumentation info
+   * already written or not.
+   *
+   * @returns The value of the flag before it was set.
+   */
+  static boolean setInstrumentationStatus(boolean value) {
+    if (instrumentationAdded == value) return instrumentationAdded;
+    synchronized (instrumentationLock) {
+      boolean current = instrumentationAdded;
+      instrumentationAdded = value;
+      return current;
     }
   }
 }

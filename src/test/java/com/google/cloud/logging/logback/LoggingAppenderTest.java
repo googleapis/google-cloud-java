@@ -22,6 +22,7 @@ import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.expectLastCall;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
+import static org.junit.Assert.assertEquals;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.filter.ThresholdFilter;
@@ -29,15 +30,20 @@ import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.classic.spi.LoggingEvent;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.Timestamp;
+import com.google.cloud.logging.Instrumentation;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.cloud.logging.LoggingEnhancer;
 import com.google.cloud.logging.Payload;
+import com.google.cloud.logging.Payload.JsonPayload;
+import com.google.cloud.logging.Payload.Type;
 import com.google.cloud.logging.Severity;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.protobuf.ListValue;
+import com.google.protobuf.Value;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.time.Instant;
@@ -139,6 +145,7 @@ public class LoggingAppenderTest {
 
   @Before
   public void setUp() {
+    LoggingAppender.setInstrumentationStatus(true);
     logging = EasyMock.createStrictMock(Logging.class);
     loggingAppender = new TestLoggingAppender();
     loggingAppender.setAutoPopulateMetadata(false);
@@ -445,5 +452,71 @@ public class LoggingAppenderTest {
 
     assertThat(Strings.isNullOrEmpty(bout.toString())).isTrue();
     System.setOut(null);
+  }
+
+  @Test
+  public void testFDiagnosticInfoAdded() {
+    LoggingAppender.setInstrumentationStatus(false);
+    Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
+    logging.setFlushSeverity(Severity.ERROR);
+    logging.write(
+        capture(capturedArgument), anyObject(WriteOption.class), anyObject(WriteOption.class));
+    replay(logging);
+    LoggingEvent loggingEvent =
+        createLoggingEvent(Level.ERROR, Timestamp.ofTimeSecondsAndNanos(100000, 0).getSeconds());
+    loggingAppender.start();
+    loggingAppender.doAppend(loggingEvent);
+    verify(logging);
+    int count = 0;
+    int diagnosticRecordCount = 0;
+    for (LogEntry entry : capturedArgument.getValue()) {
+      count++;
+      if (entry.getPayload().getType() == Type.JSON) {
+        JsonPayload payload = entry.<Payload.JsonPayload>getPayload();
+        if (!payload.getData().containsFields(Instrumentation.DIAGNOSTIC_INFO_KEY)) continue;
+        ListValue infoList =
+            payload
+                .getData()
+                .getFieldsOrThrow(Instrumentation.DIAGNOSTIC_INFO_KEY)
+                .getStructValue()
+                .getFieldsOrThrow(Instrumentation.INSTRUMENTATION_SOURCE_KEY)
+                .getListValue();
+        for (Value val : infoList.getValuesList()) {
+          String name =
+              val.getStructValue()
+                  .getFieldsOrThrow(Instrumentation.INSTRUMENTATION_NAME_KEY)
+                  .getStringValue();
+          assertThat(name.startsWith(Instrumentation.JAVA_LIBRARY_NAME_PREFIX)).isTrue();
+          if (name.equals(LoggingAppender.JAVA_LOGBACK_LIBRARY_NAME)) {
+            diagnosticRecordCount++;
+          }
+        }
+      }
+    }
+    assertEquals(count, 2);
+    assertEquals(diagnosticRecordCount, 1);
+  }
+
+  @Test
+  public void testFDiagnosticInfoNotAdded() {
+    logging.setFlushSeverity(Severity.ERROR);
+    Capture<Iterable<LogEntry>> capturedArgument = Capture.newInstance();
+    logging.write(
+        capture(capturedArgument), anyObject(WriteOption.class), anyObject(WriteOption.class));
+    replay(logging);
+    LoggingEvent loggingEvent =
+        createLoggingEvent(Level.WARN, Timestamp.ofTimeSecondsAndNanos(100000, 0).getSeconds());
+    loggingAppender.start();
+    loggingAppender.doAppend(loggingEvent);
+    verify(logging);
+    int count = 0;
+    for (LogEntry entry : capturedArgument.getValue()) {
+      count++;
+      if (entry.getPayload().getType() == Type.JSON) {
+        JsonPayload payload = entry.<Payload.JsonPayload>getPayload();
+        assertThat(payload.getData().containsFields(Instrumentation.DIAGNOSTIC_INFO_KEY)).isFalse();
+      }
+    }
+    assertEquals(count, 1);
   }
 }
