@@ -31,7 +31,7 @@ public interface MetricMetadataOrBuilder
    * `eventCount`.
    * </pre>
    *
-   * <code>string api_name = 1;</code>
+   * <code>string api-name = 1;</code>
    *
    * @return The apiName.
    */
@@ -44,7 +44,7 @@ public interface MetricMetadataOrBuilder
    * `eventCount`.
    * </pre>
    *
-   * <code>string api_name = 1;</code>
+   * <code>string api-name = 1;</code>
    *
    * @return The bytes for apiName.
    */
@@ -112,7 +112,7 @@ public interface MetricMetadataOrBuilder
    * available only by `apiName`.
    * </pre>
    *
-   * <code>repeated string deprecated_api_names = 4;</code>
+   * <code>repeated string deprecated_api-names = 4;</code>
    *
    * @return A list containing the deprecatedApiNames.
    */
@@ -127,7 +127,7 @@ public interface MetricMetadataOrBuilder
    * available only by `apiName`.
    * </pre>
    *
-   * <code>repeated string deprecated_api_names = 4;</code>
+   * <code>repeated string deprecated_api-names = 4;</code>
    *
    * @return The count of deprecatedApiNames.
    */
@@ -142,7 +142,7 @@ public interface MetricMetadataOrBuilder
    * available only by `apiName`.
    * </pre>
    *
-   * <code>repeated string deprecated_api_names = 4;</code>
+   * <code>repeated string deprecated_api-names = 4;</code>
    *
    * @param index The index of the element to return.
    * @return The deprecatedApiNames at the given index.
@@ -158,7 +158,7 @@ public interface MetricMetadataOrBuilder
    * available only by `apiName`.
    * </pre>
    *
-   * <code>repeated string deprecated_api_names = 4;</code>
+   * <code>repeated string deprecated_api-names = 4;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the deprecatedApiNames at the given index.

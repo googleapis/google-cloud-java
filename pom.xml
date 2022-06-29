@@ -132,7 +132,6 @@
     <module>java-game-servers</module>
     <module>java-gke-connect-gateway</module>
     <module>java-gkehub</module>
-    <module>java-grafeas</module>
     <module>java-iam-admin</module>
     <module>java-iamcredentials</module>
     <module>java-ids</module>
