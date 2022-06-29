@@ -70,6 +70,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTracerFactory;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CompositeTracerFactory;
 import com.google.cloud.bigtable.data.v2.stub.metrics.HeaderTracerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.HeaderTracerUnaryCallable;
@@ -194,6 +195,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 RpcMeasureConstants.BIGTABLE_APP_PROFILE_ID,
                 TagValue.create(settings.getAppProfileId()))
             .build();
+    ImmutableMap<String, String> builtinAttributes =
+        ImmutableMap.<String, String>builder()
+            .put("project_id", settings.getProjectId())
+            .put("instance_id", settings.getInstanceId())
+            .put("app_profile", settings.getAppProfileId())
+            .build();
     // Inject Opencensus instrumentation
     builder.setTracerFactory(
         new CompositeTracerFactory(
@@ -218,6 +225,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
                         .build()),
                 // Add OpenCensus Metrics
                 MetricsTracerFactory.create(tagger, stats, attributes),
+                BuiltinMetricsTracerFactory.create(builtinAttributes),
                 // Add user configured tracer
                 settings.getTracerFactory())));
     return builder.build();
@@ -466,7 +474,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         new TracedBatcherUnaryCallable<>(readRowsUserCallable.all());
 
     UnaryCallable<Query, List<RowT>> withHeaderTracer =
-        new HeaderTracerUnaryCallable(tracedBatcher);
+        new HeaderTracerUnaryCallable<>(tracedBatcher);
 
     UnaryCallable<Query, List<RowT>> traced =
         new TracedUnaryCallable<>(withHeaderTracer, clientContext.getTracerFactory(), span);
@@ -594,11 +602,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     SpanName spanName = getSpanName("MutateRows");
 
-    UnaryCallable<BulkMutation, Void> tracedBatcher = new TracedBatcherUnaryCallable<>(userFacing);
+    UnaryCallable<BulkMutation, Void> tracedBatcherUnaryCallable =
+        new TracedBatcherUnaryCallable<>(userFacing);
 
     UnaryCallable<BulkMutation, Void> withHeaderTracer =
-        new HeaderTracerUnaryCallable<>(tracedBatcher);
-
+        new HeaderTracerUnaryCallable<>(tracedBatcherUnaryCallable);
     UnaryCallable<BulkMutation, Void> traced =
         new TracedUnaryCallable<>(withHeaderTracer, clientContext.getTracerFactory(), spanName);
 

@@ -118,14 +118,11 @@ class MetricsTracer extends BigtableTracer {
 
     TagContextBuilder tagCtx =
         newTagCtxBuilder()
-            .putLocal(RpcMeasureConstants.BIGTABLE_STATUS, Util.extractStatus(throwable));
+            .putLocal(
+                RpcMeasureConstants.BIGTABLE_STATUS,
+                TagValue.create(Util.extractStatus(throwable)));
 
     measures.record(tagCtx.build());
-  }
-
-  @Override
-  public void connectionSelected(String s) {
-    // noop: cardinality for connection ids is too high to use as tags
   }
 
   @Override
@@ -171,19 +168,11 @@ class MetricsTracer extends BigtableTracer {
 
     TagContextBuilder tagCtx =
         newTagCtxBuilder()
-            .putLocal(RpcMeasureConstants.BIGTABLE_STATUS, Util.extractStatus(throwable));
+            .putLocal(
+                RpcMeasureConstants.BIGTABLE_STATUS,
+                TagValue.create(Util.extractStatus(throwable)));
 
     measures.record(tagCtx.build());
-  }
-
-  @Override
-  public void lroStartFailed(Throwable throwable) {
-    // noop
-  }
-
-  @Override
-  public void lroStartSucceeded() {
-    // noop
   }
 
   @Override
@@ -193,16 +182,6 @@ class MetricsTracer extends BigtableTracer {
     }
     attemptResponseCount++;
     operationResponseCount++;
-  }
-
-  @Override
-  public void requestSent() {
-    // noop: no operations are client streaming
-  }
-
-  @Override
-  public void batchRequestSent(long elementCount, long requestSize) {
-    // noop
   }
 
   @Override
@@ -222,7 +201,8 @@ class MetricsTracer extends BigtableTracer {
     }
     measures.record(
         newTagCtxBuilder()
-            .putLocal(RpcMeasureConstants.BIGTABLE_STATUS, Util.extractStatus(throwable))
+            .putLocal(
+                RpcMeasureConstants.BIGTABLE_STATUS, TagValue.create(Util.extractStatus(throwable)))
             .build());
   }
 

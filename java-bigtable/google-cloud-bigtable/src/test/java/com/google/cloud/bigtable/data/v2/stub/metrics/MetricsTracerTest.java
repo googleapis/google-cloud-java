@@ -42,7 +42,6 @@ import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
-import com.google.cloud.bigtable.misc_utilities.MethodComparator;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
@@ -59,8 +58,6 @@ import io.opencensus.impl.stats.StatsComponentImpl;
 import io.opencensus.tags.TagKey;
 import io.opencensus.tags.TagValue;
 import io.opencensus.tags.Tags;
-import java.lang.reflect.Method;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -483,15 +480,6 @@ public class MetricsTracerTest {
             INSTANCE_ID,
             APP_PROFILE_ID);
     assertThat(throttledTimeMetric).isAtLeast(throttled);
-  }
-
-  @Test
-  public void testMethodsOverride() {
-    Method[] baseMethods = BigtableTracer.class.getDeclaredMethods();
-    Method[] metricsTracerMethods = MetricsTracer.class.getDeclaredMethods();
-    assertThat(Arrays.asList(metricsTracerMethods))
-        .comparingElementsUsing(MethodComparator.METHOD_CORRESPONDENCE)
-        .containsAtLeastElementsIn(baseMethods);
   }
 
   @SuppressWarnings("unchecked")

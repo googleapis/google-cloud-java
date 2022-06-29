@@ -15,10 +15,19 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.bigtable.v2.CheckAndMutateRowRequest;
+import com.google.bigtable.v2.MutateRowRequest;
+import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.bigtable.v2.ReadModifyWriteRowRequest;
+import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.bigtable.v2.SampleRowKeysRequest;
+import com.google.bigtable.v2.TableName;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.Metadata;
 import io.grpc.Status;
@@ -38,7 +47,8 @@ import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 
 /** Utilities to help integrating with OpenCensus. */
-class Util {
+@InternalApi("For internal use only")
+public class Util {
   static final Metadata.Key<String> ATTEMPT_HEADER_KEY =
       Metadata.Key.of("bigtable-attempt", Metadata.ASCII_STRING_MARSHALLER);
   static final Metadata.Key<String> ATTEMPT_EPOCH_KEY =
@@ -48,14 +58,14 @@ class Util {
       Metadata.Key.of("server-timing", Metadata.ASCII_STRING_MARSHALLER);
   private static final Pattern SERVER_TIMING_HEADER_PATTERN = Pattern.compile(".*dur=(?<dur>\\d+)");
 
-  private static final TagValue OK_STATUS = TagValue.create(StatusCode.Code.OK.toString());
+  static final String TRAILER_KEY = "x-goog-ext-425905942-bin";
 
-  /** Convert an exception into a value that can be used as an OpenCensus tag value. */
-  static TagValue extractStatus(@Nullable Throwable error) {
+  /** Convert an exception into a value that can be used to create an OpenCensus tag value. */
+  static String extractStatus(@Nullable Throwable error) {
     final String statusString;
 
     if (error == null) {
-      return OK_STATUS;
+      return StatusCode.Code.OK.toString();
     } else if (error instanceof CancellationException) {
       statusString = Status.Code.CANCELLED.toString();
     } else if (error instanceof ApiException) {
@@ -68,14 +78,14 @@ class Util {
       statusString = Code.UNKNOWN.toString();
     }
 
-    return TagValue.create(statusString);
+    return statusString;
   }
 
   /**
    * Await the result of the future and convert it into a value that can be used as an OpenCensus
    * tag value.
    */
-  static TagValue extractStatus(Future<?> future) {
+  static TagValue extractStatusFromFuture(Future<?> future) {
     Throwable error = null;
 
     try {
@@ -88,7 +98,25 @@ class Util {
     } catch (RuntimeException e) {
       error = e;
     }
-    return extractStatus(error);
+    return TagValue.create(extractStatus(error));
+  }
+
+  static String extractTableId(Object request) {
+    String tableName = null;
+    if (request instanceof ReadRowsRequest) {
+      tableName = ((ReadRowsRequest) request).getTableName();
+    } else if (request instanceof MutateRowsRequest) {
+      tableName = ((MutateRowsRequest) request).getTableName();
+    } else if (request instanceof MutateRowRequest) {
+      tableName = ((MutateRowRequest) request).getTableName();
+    } else if (request instanceof SampleRowKeysRequest) {
+      tableName = ((SampleRowKeysRequest) request).getTableName();
+    } else if (request instanceof CheckAndMutateRowRequest) {
+      tableName = ((CheckAndMutateRowRequest) request).getTableName();
+    } else if (request instanceof ReadModifyWriteRowRequest) {
+      tableName = ((ReadModifyWriteRowRequest) request).getTableName();
+    }
+    return !Strings.isNullOrEmpty(tableName) ? TableName.parse(tableName).getTable() : "undefined";
   }
 
   /**

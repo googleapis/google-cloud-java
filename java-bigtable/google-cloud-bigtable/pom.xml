@@ -61,6 +61,10 @@
     <!-- NOTE: Dependencies are organized into two groups, production and test.
          Within a group, dependencies are sorted by (groupId, artifactId) -->
 
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigtable-stats</artifactId>
+    </dependency>
     <!-- Production dependencies -->
     <dependency>
       <groupId>com.google.api</groupId>

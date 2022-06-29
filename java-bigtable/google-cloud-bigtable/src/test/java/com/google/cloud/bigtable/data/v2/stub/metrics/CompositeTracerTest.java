@@ -23,6 +23,7 @@ import static org.mockito.Mockito.when;
 
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.ApiTracer.Scope;
+import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.cloud.bigtable.misc_utilities.MethodComparator;
 import com.google.common.collect.ImmutableList;
 import io.grpc.Status;
@@ -118,11 +119,12 @@ public class CompositeTracerTest {
 
   @Test
   public void testAttemptStarted() {
-    compositeTracer.attemptStarted(3);
-    verify(child1, times(1)).attemptStarted(3);
-    verify(child2, times(1)).attemptStarted(3);
-    verify(child3, times(1)).attemptStarted(3);
-    verify(child4, times(1)).attemptStarted(3);
+    ReadRowsRequest request = ReadRowsRequest.getDefaultInstance();
+    compositeTracer.attemptStarted(request, 3);
+    verify(child1, times(1)).attemptStarted(request, 3);
+    verify(child2, times(1)).attemptStarted(request, 3);
+    verify(child3, times(1)).attemptStarted(request, 3);
+    verify(child4, times(1)).attemptStarted(request, 3);
   }
 
   @Test

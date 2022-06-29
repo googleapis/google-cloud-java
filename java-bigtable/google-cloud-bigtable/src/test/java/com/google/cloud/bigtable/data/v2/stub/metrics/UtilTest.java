@@ -30,13 +30,13 @@ import org.junit.runners.JUnit4;
 public class UtilTest {
   @Test
   public void testOk() {
-    TagValue tagValue = Util.extractStatus((Throwable) null);
+    TagValue tagValue = TagValue.create(Util.extractStatus((Throwable) null));
     assertThat(tagValue.asString()).isEqualTo("OK");
   }
 
   @Test
   public void testOkFuture() {
-    TagValue tagValue = Util.extractStatus(Futures.immediateFuture(null));
+    TagValue tagValue = Util.extractStatusFromFuture(Futures.immediateFuture(null));
     assertThat(tagValue.asString()).isEqualTo("OK");
   }
 
@@ -45,7 +45,7 @@ public class UtilTest {
     DeadlineExceededException error =
         new DeadlineExceededException(
             "Deadline exceeded", null, GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED), true);
-    TagValue tagValue = Util.extractStatus(error);
+    TagValue tagValue = TagValue.create(Util.extractStatus(error));
     assertThat(tagValue.asString()).isEqualTo("DEADLINE_EXCEEDED");
   }
 
@@ -54,13 +54,13 @@ public class UtilTest {
     DeadlineExceededException error =
         new DeadlineExceededException(
             "Deadline exceeded", null, GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED), true);
-    TagValue tagValue = Util.extractStatus(Futures.immediateFailedFuture(error));
+    TagValue tagValue = Util.extractStatusFromFuture(Futures.immediateFailedFuture(error));
     assertThat(tagValue.asString()).isEqualTo("DEADLINE_EXCEEDED");
   }
 
   @Test
   public void testCancelledFuture() {
-    TagValue tagValue = Util.extractStatus(Futures.immediateCancelledFuture());
+    TagValue tagValue = Util.extractStatusFromFuture(Futures.immediateCancelledFuture());
     assertThat(tagValue.asString()).isEqualTo("CANCELLED");
   }
 }

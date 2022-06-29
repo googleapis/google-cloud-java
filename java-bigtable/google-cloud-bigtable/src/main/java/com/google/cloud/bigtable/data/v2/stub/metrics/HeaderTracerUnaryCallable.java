@@ -54,7 +54,7 @@ public class HeaderTracerUnaryCallable<RequestT, ResponseT>
   @Override
   public ApiFuture futureCall(RequestT request, ApiCallContext context) {
     // tracer should always be an instance of BigtableTracer
-    if (RpcViews.isGfeMetricsRegistered() && context.getTracer() instanceof BigtableTracer) {
+    if (context.getTracer() instanceof BigtableTracer) {
       final GrpcResponseMetadata responseMetadata = new GrpcResponseMetadata();
       final ApiCallContext contextWithResponseMetadata = responseMetadata.addHandlers(context);
       HeaderTracerUnaryCallback callback =

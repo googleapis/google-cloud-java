@@ -92,9 +92,14 @@ class CompositeTracer extends BigtableTracer {
 
   @Override
   public void attemptStarted(int attemptNumber) {
+    attemptStarted(null, attemptNumber);
+  }
+
+  @Override
+  public void attemptStarted(Object request, int attemptNumber) {
     this.attempt = attemptNumber;
     for (ApiTracer child : children) {
-      child.attemptStarted(attemptNumber);
+      child.attemptStarted(request, attemptNumber);
     }
   }
 
@@ -183,6 +188,34 @@ class CompositeTracer extends BigtableTracer {
   public void batchRequestThrottled(long throttledTimeMs) {
     for (BigtableTracer tracer : bigtableTracers) {
       tracer.batchRequestThrottled(throttledTimeMs);
+    }
+  }
+
+  @Override
+  public void setLocations(String zone, String cluster) {
+    for (BigtableTracer tracer : bigtableTracers) {
+      tracer.setLocations(zone, cluster);
+    }
+  }
+
+  @Override
+  public void onRequest(int requestCount) {
+    for (BigtableTracer tracer : bigtableTracers) {
+      tracer.onRequest(requestCount);
+    }
+  }
+
+  @Override
+  public void disableFlowControl() {
+    for (BigtableTracer tracer : bigtableTracers) {
+      tracer.disableFlowControl();
+    }
+  }
+
+  @Override
+  public void afterResponse(long applicationLatency) {
+    for (BigtableTracer tracer : bigtableTracers) {
+      tracer.afterResponse(applicationLatency);
     }
   }
 }
