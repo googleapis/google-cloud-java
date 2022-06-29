@@ -61,4 +61,14 @@
         <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracerUnaryCallable</className>
         <method>*</method>
     </difference>
+    <!-- InternalApi that was removed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracerStreamingCallable</className>
+    </difference>
+    <!-- InternalApi that was removed -->
+    <difference>
+        <differenceType>8001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/HeaderTracerUnaryCallable</className>
+    </difference>
 </differences>

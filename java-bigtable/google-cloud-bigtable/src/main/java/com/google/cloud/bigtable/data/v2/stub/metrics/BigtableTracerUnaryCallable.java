@@ -34,20 +34,16 @@ import javax.annotation.Nonnull;
  * GrpcResponseMetadata#getMetadata()} returned null, it probably means that the request has never
  * reached GFE, and it'll increment the gfe_header_missing_counter in this case.
  *
- * <p>If GFE metrics are not registered in {@link RpcViews}, skip injecting GrpcResponseMetadata.
- * This is for the case where direct path is enabled, all the requests won't go through GFE and
- * therefore won't have the server-timing header.
- *
  * <p>This class is considered an internal implementation detail and not meant to be used by
  * applications.
  */
 @InternalApi
-public class HeaderTracerUnaryCallable<RequestT, ResponseT>
+public class BigtableTracerUnaryCallable<RequestT, ResponseT>
     extends UnaryCallable<RequestT, ResponseT> {
 
   private final UnaryCallable<RequestT, ResponseT> innerCallable;
 
-  public HeaderTracerUnaryCallable(@Nonnull UnaryCallable<RequestT, ResponseT> innerCallable) {
+  public BigtableTracerUnaryCallable(@Nonnull UnaryCallable<RequestT, ResponseT> innerCallable) {
     this.innerCallable = Preconditions.checkNotNull(innerCallable, "Inner callable must be set");
   }
 

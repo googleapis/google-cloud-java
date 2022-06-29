@@ -28,26 +28,26 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 
 /**
- * This callable will inject a {@link GrpcResponseMetadata} to access the headers and trailers
- * returned by gRPC methods upon completion. The {@link BigtableTracer} will process metrics that
- * were injected in the header/trailer and publish them to OpenCensus. If {@link
- * GrpcResponseMetadata#getMetadata()} returned null, it probably means that the request has never
- * reached GFE, and it'll increment the gfe_header_missing_counter in this case.
+ * This callable will
  *
- * <p>If GFE metrics are not registered in {@link RpcViews}, skip injecting GrpcResponseMetadata.
- * This is for the case where direct path is enabled, all the requests won't go through GFE and
- * therefore won't have the server-timing header.
+ * <p>-inject a {@link GrpcResponseMetadata} to access the headers and trailers returned by gRPC
+ * methods upon completion. The {@link BigtableTracer} will process metrics that were injected in
+ * the header/trailer and publish them to OpenCensus. If {@link GrpcResponseMetadata#getMetadata()}
+ * returned null, it probably means that the request has never reached GFE, and it'll increment the
+ * gfe_header_missing_counter in this case.
+ *
+ * <p>-Call {@link BigtableTracer#onRequest()} to record the request events in a stream.
  *
  * <p>This class is considered an internal implementation detail and not meant to be used by
  * applications.
  */
 @InternalApi
-public class HeaderTracerStreamingCallable<RequestT, ResponseT>
+public class BigtableTracerStreamingCallable<RequestT, ResponseT>
     extends ServerStreamingCallable<RequestT, ResponseT> {
 
   private final ServerStreamingCallable<RequestT, ResponseT> innerCallable;
 
-  public HeaderTracerStreamingCallable(
+  public BigtableTracerStreamingCallable(
       @Nonnull ServerStreamingCallable<RequestT, ResponseT> callable) {
     this.innerCallable = Preconditions.checkNotNull(callable, "Inner callable must be set");
   }

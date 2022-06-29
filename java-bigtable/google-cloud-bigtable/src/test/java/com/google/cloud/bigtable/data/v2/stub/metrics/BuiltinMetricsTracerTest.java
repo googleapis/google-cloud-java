@@ -307,7 +307,10 @@ public class BuiltinMetricsTracerTest {
     stub.mutateRowCallable()
         .call(RowMutation.create(TABLE_ID, "random-row").setCell("cf", "q", "value"));
 
-    verify(statsRecorderWrapper).putRetryCount(retryCount.capture());
+    // onOperationComplete() is called in TracerFinisher which will be called after the mutateRow
+    // call is returned. So there's a race between when the call returns and when the putRetryCount
+    // is called in onOperationCompletion().
+    verify(statsRecorderWrapper, timeout(20)).putRetryCount(retryCount.capture());
 
     assertThat(retryCount.getValue()).isEqualTo(fakeService.getAttemptCounter().get() - 1);
   }
@@ -328,7 +331,7 @@ public class BuiltinMetricsTracerTest {
     // calls releaseWaiters(). onOperationComplete() is called in TracerFinisher which will be
     // called after the mutateRow call is returned. So there's a race between when the call returns
     // and when the record() is called in onOperationCompletion().
-    verify(statsRecorderWrapper, timeout(10).times(fakeService.getAttemptCounter().get() + 1))
+    verify(statsRecorderWrapper, timeout(20).times(fakeService.getAttemptCounter().get() + 1))
         .record(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
     assertThat(zone.getAllValues()).containsExactly(UNDEFINED, UNDEFINED, UNDEFINED, UNDEFINED);
     assertThat(cluster.getAllValues()).containsExactly(UNDEFINED, UNDEFINED, UNDEFINED, UNDEFINED);
