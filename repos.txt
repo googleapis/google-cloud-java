@@ -86,6 +86,7 @@ java-recommendations-ai
 java-recommender
 java-redis
 java-resource-settings
+java-resourcemanager
 java-retail
 java-run
 java-scheduler
