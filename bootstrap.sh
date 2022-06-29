@@ -34,6 +34,7 @@ do
   # setup owlbot files correctly to match monorepo configuration
   cp ${service}/.github/.OwlBot.yaml ${service}/.OwlBot.yaml
   rm ${service}/.github/.OwlBot.lock.yaml
+  rm ${service}/.github/.OwlBot.yaml
   sed -i '/docker/d' ${service}/.OwlBot.yaml
   sed -i '/image/d' ${service}/.OwlBot.yaml
   text=$(grep '^.*api_shortname.*' ${service}/.repo-metadata.json)
@@ -43,6 +44,7 @@ do
 
   cd ../google-cloud-java
   git remote add ${service} ../${service}
+  git config --add secrets.allowed "dest.*src"
   git fetch ${service} #--tags
   EDITOR=true git merge --allow-unrelated-histories ${service}/main
   git remote remove ${service}
