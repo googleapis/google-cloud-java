@@ -112,6 +112,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -148,6 +150,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.GetClusterRequest.project_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1960
    * @return The projectId.
    */
   @java.lang.Override
@@ -174,6 +178,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.GetClusterRequest.project_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1960
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -204,6 +210,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.GetClusterRequest.zone is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1966
    * @return The zone.
    */
   @java.lang.Override
@@ -231,6 +239,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.GetClusterRequest.zone is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1966
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -259,6 +269,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.GetClusterRequest.cluster_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1970
    * @return The clusterId.
    */
   @java.lang.Override
@@ -284,6 +296,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.GetClusterRequest.cluster_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=1970
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -727,6 +741,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.project_id is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1960
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -752,6 +768,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.project_id is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1960
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -777,6 +795,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.project_id is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1960
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -801,6 +821,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.project_id is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1960
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -821,6 +843,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.project_id is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1960
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -849,6 +873,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.zone is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1966
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -875,6 +901,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.zone is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1966
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -901,6 +929,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.zone is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1966
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -926,6 +956,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.zone is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1966
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -947,6 +979,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string zone = 2 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.zone is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1966
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -973,6 +1007,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.cluster_id is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1970
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -997,6 +1033,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.cluster_id is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1970
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1021,6 +1059,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.cluster_id is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1970
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1044,6 +1084,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.cluster_id is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1970
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1063,6 +1105,8 @@ public final class GetClusterRequest extends com.google.protobuf.GeneratedMessag
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1.GetClusterRequest.cluster_id is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=1970
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */

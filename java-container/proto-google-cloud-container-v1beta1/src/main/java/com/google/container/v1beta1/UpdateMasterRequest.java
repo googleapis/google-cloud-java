@@ -120,6 +120,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -157,6 +159,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.container.v1beta1.UpdateMasterRequest.project_id is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2502
    * @return The projectId.
    */
   @java.lang.Override
@@ -184,6 +188,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.container.v1beta1.UpdateMasterRequest.project_id is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2502
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -214,6 +220,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.container.v1beta1.UpdateMasterRequest.zone is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2511
    * @return The zone.
    */
   @java.lang.Override
@@ -241,6 +249,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    *
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.container.v1beta1.UpdateMasterRequest.zone is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2511
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -270,6 +280,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.container.v1beta1.UpdateMasterRequest.cluster_id is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2518
    * @return The clusterId.
    */
   @java.lang.Override
@@ -296,6 +308,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
    * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.container.v1beta1.UpdateMasterRequest.cluster_id is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2518
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -820,6 +834,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.project_id is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2502
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -846,6 +862,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.project_id is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2502
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -872,6 +890,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.project_id is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2502
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -897,6 +917,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.project_id is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2502
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -918,6 +940,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.project_id is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2502
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -946,6 +970,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.zone is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2511
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -972,6 +998,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.zone is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2511
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -998,6 +1026,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.zone is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2511
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1023,6 +1053,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.zone is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2511
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1044,6 +1076,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      *
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.zone is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2511
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1071,6 +1105,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.cluster_id is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2518
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1096,6 +1132,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.cluster_id is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2518
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1121,6 +1159,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.cluster_id is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2518
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1145,6 +1185,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.cluster_id is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2518
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1165,6 +1207,8 @@ public final class UpdateMasterRequest extends com.google.protobuf.GeneratedMess
      * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
      * </code>
      *
+     * @deprecated google.container.v1beta1.UpdateMasterRequest.cluster_id is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2518
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */

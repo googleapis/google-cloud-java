@@ -105,6 +105,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -139,6 +141,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
    *
    * <code>string identity_namespace = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
+   *     See google/container/v1beta1/cluster_service.proto;l=4169
    * @return The identityNamespace.
    */
   @java.lang.Override
@@ -163,6 +167,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
    *
    * <code>string identity_namespace = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
+   *     See google/container/v1beta1/cluster_service.proto;l=4169
    * @return The bytes for identityNamespace.
    */
   @java.lang.Override
@@ -638,6 +644,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      *
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
+     *     See google/container/v1beta1/cluster_service.proto;l=4169
      * @return The identityNamespace.
      */
     @java.lang.Deprecated
@@ -661,6 +669,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      *
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
+     *     See google/container/v1beta1/cluster_service.proto;l=4169
      * @return The bytes for identityNamespace.
      */
     @java.lang.Deprecated
@@ -684,6 +694,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      *
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
+     *     See google/container/v1beta1/cluster_service.proto;l=4169
      * @param value The identityNamespace to set.
      * @return This builder for chaining.
      */
@@ -706,6 +718,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      *
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
+     *     See google/container/v1beta1/cluster_service.proto;l=4169
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -724,6 +738,8 @@ public final class WorkloadIdentityConfig extends com.google.protobuf.GeneratedM
      *
      * <code>string identity_namespace = 1 [deprecated = true];</code>
      *
+     * @deprecated google.container.v1beta1.WorkloadIdentityConfig.identity_namespace is deprecated.
+     *     See google/container/v1beta1/cluster_service.proto;l=4169
      * @param value The bytes for identityNamespace to set.
      * @return This builder for chaining.
      */

@@ -35,6 +35,8 @@ public interface SetLoggingServiceRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.container.v1beta1.SetLoggingServiceRequest.project_id is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2339
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -51,6 +53,8 @@ public interface SetLoggingServiceRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.container.v1beta1.SetLoggingServiceRequest.project_id is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2339
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -68,6 +72,8 @@ public interface SetLoggingServiceRequestOrBuilder
    *
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.container.v1beta1.SetLoggingServiceRequest.zone is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2348
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -84,6 +90,8 @@ public interface SetLoggingServiceRequestOrBuilder
    *
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
+   * @deprecated google.container.v1beta1.SetLoggingServiceRequest.zone is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2348
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -100,6 +108,8 @@ public interface SetLoggingServiceRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.container.v1beta1.SetLoggingServiceRequest.cluster_id is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2355
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -115,6 +125,8 @@ public interface SetLoggingServiceRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
+   * @deprecated google.container.v1beta1.SetLoggingServiceRequest.cluster_id is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2355
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

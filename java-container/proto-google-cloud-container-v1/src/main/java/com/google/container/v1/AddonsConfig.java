@@ -226,6 +226,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
@@ -371,6 +373,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=933
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Override
@@ -392,6 +396,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=933
    * @return The kubernetesDashboard.
    */
   @java.lang.Override
@@ -1718,6 +1724,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3 [deprecated = true];
      * </code>
      *
+     * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=933
      * @return Whether the kubernetesDashboard field is set.
      */
     @java.lang.Deprecated
@@ -1738,6 +1746,8 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3 [deprecated = true];
      * </code>
      *
+     * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
+     *     google/container/v1/cluster_service.proto;l=933
      * @return The kubernetesDashboard.
      */
     @java.lang.Deprecated

@@ -34,6 +34,8 @@ public interface ListOperationsRequestOrBuilder
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.ListOperationsRequest.project_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2386
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -49,6 +51,8 @@ public interface ListOperationsRequestOrBuilder
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.ListOperationsRequest.project_id is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2386
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -66,6 +70,8 @@ public interface ListOperationsRequestOrBuilder
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.ListOperationsRequest.zone is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2392
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -82,6 +88,8 @@ public interface ListOperationsRequestOrBuilder
    *
    * <code>string zone = 2 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1.ListOperationsRequest.zone is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=2392
    * @return The bytes for zone.
    */
   @java.lang.Deprecated

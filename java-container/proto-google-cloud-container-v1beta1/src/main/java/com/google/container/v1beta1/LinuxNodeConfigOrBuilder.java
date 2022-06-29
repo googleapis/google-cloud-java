@@ -109,7 +109,12 @@ public interface LinuxNodeConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
    */
-  java.lang.String getSysctlsOrDefault(java.lang.String key, java.lang.String defaultValue);
+
+  /* nullable */
+  java.lang.String getSysctlsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
   /**
    *
    *
