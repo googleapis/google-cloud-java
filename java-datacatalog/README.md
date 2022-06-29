@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-datacatalog'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-datacatalog:1.8.3'
+implementation 'com.google.cloud:google-cloud-datacatalog:1.8.4'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "1.8.3"
+libraryDependencies += "com.google.cloud" % "google-cloud-datacatalog" % "1.8.4"
 ```
 
 ## Authentication
