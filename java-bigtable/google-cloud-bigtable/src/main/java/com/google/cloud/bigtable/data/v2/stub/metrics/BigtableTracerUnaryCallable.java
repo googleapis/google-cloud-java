@@ -53,8 +53,8 @@ public class BigtableTracerUnaryCallable<RequestT, ResponseT>
     if (context.getTracer() instanceof BigtableTracer) {
       final GrpcResponseMetadata responseMetadata = new GrpcResponseMetadata();
       final ApiCallContext contextWithResponseMetadata = responseMetadata.addHandlers(context);
-      HeaderTracerUnaryCallback callback =
-          new HeaderTracerUnaryCallback((BigtableTracer) context.getTracer(), responseMetadata);
+      BigtableTracerUnaryCallback callback =
+          new BigtableTracerUnaryCallback((BigtableTracer) context.getTracer(), responseMetadata);
       ApiFuture<ResponseT> future = innerCallable.futureCall(request, contextWithResponseMetadata);
       ApiFutures.addCallback(future, callback, MoreExecutors.directExecutor());
       return future;
@@ -63,12 +63,12 @@ public class BigtableTracerUnaryCallable<RequestT, ResponseT>
     }
   }
 
-  class HeaderTracerUnaryCallback<ResponseT> implements ApiFutureCallback<ResponseT> {
+  class BigtableTracerUnaryCallback<ResponseT> implements ApiFutureCallback<ResponseT> {
 
     private final BigtableTracer tracer;
     private final GrpcResponseMetadata responseMetadata;
 
-    HeaderTracerUnaryCallback(BigtableTracer tracer, GrpcResponseMetadata responseMetadata) {
+    BigtableTracerUnaryCallback(BigtableTracer tracer, GrpcResponseMetadata responseMetadata) {
       this.tracer = tracer;
       this.responseMetadata = responseMetadata;
     }

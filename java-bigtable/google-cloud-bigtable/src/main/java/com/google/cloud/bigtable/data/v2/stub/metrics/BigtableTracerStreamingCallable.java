@@ -58,8 +58,8 @@ public class BigtableTracerStreamingCallable<RequestT, ResponseT>
     final GrpcResponseMetadata responseMetadata = new GrpcResponseMetadata();
     // tracer should always be an instance of bigtable tracer
     if (context.getTracer() instanceof BigtableTracer) {
-      HeaderTracerResponseObserver<ResponseT> innerObserver =
-          new HeaderTracerResponseObserver<>(
+      BigtableTracerResponseObserver<ResponseT> innerObserver =
+          new BigtableTracerResponseObserver<>(
               responseObserver, (BigtableTracer) context.getTracer(), responseMetadata);
       innerCallable.call(request, innerObserver, responseMetadata.addHandlers(context));
     } else {
@@ -67,13 +67,13 @@ public class BigtableTracerStreamingCallable<RequestT, ResponseT>
     }
   }
 
-  private class HeaderTracerResponseObserver<ResponseT> implements ResponseObserver<ResponseT> {
+  private class BigtableTracerResponseObserver<ResponseT> implements ResponseObserver<ResponseT> {
 
     private final BigtableTracer tracer;
     private final ResponseObserver<ResponseT> outerObserver;
     private final GrpcResponseMetadata responseMetadata;
 
-    HeaderTracerResponseObserver(
+    BigtableTracerResponseObserver(
         ResponseObserver<ResponseT> observer,
         BigtableTracer tracer,
         GrpcResponseMetadata metadata) {
