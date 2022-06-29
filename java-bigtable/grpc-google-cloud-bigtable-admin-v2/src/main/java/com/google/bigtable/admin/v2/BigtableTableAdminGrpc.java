@@ -258,6 +258,49 @@ public final class BigtableTableAdminGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UndeleteTableRequest, com.google.longrunning.Operation>
+      getUndeleteTableMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UndeleteTable",
+      requestType = com.google.bigtable.admin.v2.UndeleteTableRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UndeleteTableRequest, com.google.longrunning.Operation>
+      getUndeleteTableMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.UndeleteTableRequest, com.google.longrunning.Operation>
+        getUndeleteTableMethod;
+    if ((getUndeleteTableMethod = BigtableTableAdminGrpc.getUndeleteTableMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getUndeleteTableMethod = BigtableTableAdminGrpc.getUndeleteTableMethod) == null) {
+          BigtableTableAdminGrpc.getUndeleteTableMethod =
+              getUndeleteTableMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.UndeleteTableRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UndeleteTable"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.UndeleteTableRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("UndeleteTable"))
+                      .build();
+        }
+      }
+    }
+    return getUndeleteTableMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest,
           com.google.bigtable.admin.v2.Table>
       getModifyColumnFamiliesMethod;
@@ -1139,6 +1182,20 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
+     * Restores a specified table which was accidentally deleted.
+     * </pre>
+     */
+    public void undeleteTable(
+        com.google.bigtable.admin.v2.UndeleteTableRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUndeleteTableMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Performs a series of column family modifications on the specified table.
      * Either all or none of the modifications will occur before this method
      * returns, but data requests received prior to that point may see a table
@@ -1460,6 +1517,12 @@ public final class BigtableTableAdminGrpc {
                       com.google.bigtable.admin.v2.DeleteTableRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_TABLE)))
           .addMethod(
+              getUndeleteTableMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.bigtable.admin.v2.UndeleteTableRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UNDELETE_TABLE)))
+          .addMethod(
               getModifyColumnFamiliesMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -1672,6 +1735,22 @@ public final class BigtableTableAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteTableMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores a specified table which was accidentally deleted.
+     * </pre>
+     */
+    public void undeleteTable(
+        com.google.bigtable.admin.v2.UndeleteTableRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUndeleteTableMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2100,6 +2179,19 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
+     * Restores a specified table which was accidentally deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeleteTable(
+        com.google.bigtable.admin.v2.UndeleteTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeleteTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Performs a series of column family modifications on the specified table.
      * Either all or none of the modifications will occur before this method
      * returns, but data requests received prior to that point may see a table
@@ -2465,6 +2557,19 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
+     * Restores a specified table which was accidentally deleted.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        undeleteTable(com.google.bigtable.admin.v2.UndeleteTableRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUndeleteTableMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Performs a series of column family modifications on the specified table.
      * Either all or none of the modifications will occur before this method
      * returns, but data requests received prior to that point may see a table
@@ -2743,23 +2848,24 @@ public final class BigtableTableAdminGrpc {
   private static final int METHODID_LIST_TABLES = 2;
   private static final int METHODID_GET_TABLE = 3;
   private static final int METHODID_DELETE_TABLE = 4;
-  private static final int METHODID_MODIFY_COLUMN_FAMILIES = 5;
-  private static final int METHODID_DROP_ROW_RANGE = 6;
-  private static final int METHODID_GENERATE_CONSISTENCY_TOKEN = 7;
-  private static final int METHODID_CHECK_CONSISTENCY = 8;
-  private static final int METHODID_SNAPSHOT_TABLE = 9;
-  private static final int METHODID_GET_SNAPSHOT = 10;
-  private static final int METHODID_LIST_SNAPSHOTS = 11;
-  private static final int METHODID_DELETE_SNAPSHOT = 12;
-  private static final int METHODID_CREATE_BACKUP = 13;
-  private static final int METHODID_GET_BACKUP = 14;
-  private static final int METHODID_UPDATE_BACKUP = 15;
-  private static final int METHODID_DELETE_BACKUP = 16;
-  private static final int METHODID_LIST_BACKUPS = 17;
-  private static final int METHODID_RESTORE_TABLE = 18;
-  private static final int METHODID_GET_IAM_POLICY = 19;
-  private static final int METHODID_SET_IAM_POLICY = 20;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 21;
+  private static final int METHODID_UNDELETE_TABLE = 5;
+  private static final int METHODID_MODIFY_COLUMN_FAMILIES = 6;
+  private static final int METHODID_DROP_ROW_RANGE = 7;
+  private static final int METHODID_GENERATE_CONSISTENCY_TOKEN = 8;
+  private static final int METHODID_CHECK_CONSISTENCY = 9;
+  private static final int METHODID_SNAPSHOT_TABLE = 10;
+  private static final int METHODID_GET_SNAPSHOT = 11;
+  private static final int METHODID_LIST_SNAPSHOTS = 12;
+  private static final int METHODID_DELETE_SNAPSHOT = 13;
+  private static final int METHODID_CREATE_BACKUP = 14;
+  private static final int METHODID_GET_BACKUP = 15;
+  private static final int METHODID_UPDATE_BACKUP = 16;
+  private static final int METHODID_DELETE_BACKUP = 17;
+  private static final int METHODID_LIST_BACKUPS = 18;
+  private static final int METHODID_RESTORE_TABLE = 19;
+  private static final int METHODID_GET_IAM_POLICY = 20;
+  private static final int METHODID_SET_IAM_POLICY = 21;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 22;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2803,6 +2909,11 @@ public final class BigtableTableAdminGrpc {
           serviceImpl.deleteTable(
               (com.google.bigtable.admin.v2.DeleteTableRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UNDELETE_TABLE:
+          serviceImpl.undeleteTable(
+              (com.google.bigtable.admin.v2.UndeleteTableRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_MODIFY_COLUMN_FAMILIES:
           serviceImpl.modifyColumnFamilies(
@@ -2965,6 +3076,7 @@ public final class BigtableTableAdminGrpc {
                       .addMethod(getListTablesMethod())
                       .addMethod(getGetTableMethod())
                       .addMethod(getDeleteTableMethod())
+                      .addMethod(getUndeleteTableMethod())
                       .addMethod(getModifyColumnFamiliesMethod())
                       .addMethod(getDropRowRangeMethod())
                       .addMethod(getGenerateConsistencyTokenMethod())

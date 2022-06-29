@@ -63,6 +63,8 @@ import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
+import com.google.bigtable.admin.v2.UndeleteTableMetadata;
+import com.google.bigtable.admin.v2.UndeleteTableRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -115,6 +117,17 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
   /** Returns the object with the settings used for calls to deleteTable. */
   public UnaryCallSettings<DeleteTableRequest, Empty> deleteTableSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).deleteTableSettings();
+  }
+
+  /** Returns the object with the settings used for calls to undeleteTable. */
+  public UnaryCallSettings<UndeleteTableRequest, Operation> undeleteTableSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).undeleteTableSettings();
+  }
+
+  /** Returns the object with the settings used for calls to undeleteTable. */
+  public OperationCallSettings<UndeleteTableRequest, Table, UndeleteTableMetadata>
+      undeleteTableOperationSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).undeleteTableOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to modifyColumnFamilies. */
@@ -355,6 +368,17 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
     /** Returns the builder for the settings used for calls to deleteTable. */
     public UnaryCallSettings.Builder<DeleteTableRequest, Empty> deleteTableSettings() {
       return getStubSettingsBuilder().deleteTableSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to undeleteTable. */
+    public UnaryCallSettings.Builder<UndeleteTableRequest, Operation> undeleteTableSettings() {
+      return getStubSettingsBuilder().undeleteTableSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to undeleteTable. */
+    public OperationCallSettings.Builder<UndeleteTableRequest, Table, UndeleteTableMetadata>
+        undeleteTableOperationSettings() {
+      return getStubSettingsBuilder().undeleteTableOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to modifyColumnFamilies. */

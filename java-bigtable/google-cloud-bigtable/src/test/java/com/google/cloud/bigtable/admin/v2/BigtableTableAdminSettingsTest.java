@@ -24,6 +24,9 @@ import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -130,6 +133,8 @@ public class BigtableTableAdminSettingsTest {
     "deleteBackupSettings",
     "restoreTableSettings",
     "restoreTableOperationSettings",
+    "undeleteTableSettings",
+    "undeleteTableOperationSettings"
   };
 
   @Test
@@ -158,14 +163,14 @@ public class BigtableTableAdminSettingsTest {
     assertThat(defaultSettings.toString()).doesNotContain("totalTimeout=PT13H32M");
     assertThat(settings.toString()).contains("totalTimeout=PT13H32M");
 
-    int nonStaticFields = 0;
-    for (Field field : BigtableTableAdminStubSettings.class.getDeclaredFields()) {
-      if (!Modifier.isStatic(field.getModifiers())) {
-        nonStaticFields++;
-      }
-    }
+    List<String> nonStaticFields =
+        Arrays.stream(BigtableTableAdminStubSettings.class.getDeclaredFields())
+            .filter(field -> !Modifier.isStatic(field.getModifiers()))
+            .map(Field::getName)
+            .collect(Collectors.toList());
+
     // failure will signal about adding a new settings property
-    assertThat(SETTINGS_LIST.length).isEqualTo(nonStaticFields);
+    assertThat(nonStaticFields).containsExactlyElementsIn(SETTINGS_LIST);
   }
 
   void checkToString(BigtableTableAdminSettings settings) {

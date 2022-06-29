@@ -120,6 +120,8 @@ public final class BigtableTableAdminSettings {
         .add("restoreTableSettings", stubSettings.restoreTableSettings())
         .add("restoreTableOperationSettings", stubSettings.restoreTableOperationSettings())
         .add("stubSettings", stubSettings)
+        .add("undeleteTableSettings", stubSettings.undeleteTableSettings())
+        .add("undeleteTableOperationSettings", stubSettings.undeleteTableOperationSettings())
         .toString();
   }
 

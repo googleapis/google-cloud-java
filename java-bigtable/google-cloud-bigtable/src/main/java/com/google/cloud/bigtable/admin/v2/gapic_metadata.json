@@ -145,6 +145,9 @@
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             },
+            "UndeleteTable": {
+              "methods": ["undeleteTableAsync", "undeleteTableAsync", "undeleteTableAsync", "undeleteTableOperationCallable", "undeleteTableCallable"]
+            },
             "UpdateBackup": {
               "methods": ["updateBackup", "updateBackup", "updateBackupCallable"]
             }

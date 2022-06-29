@@ -73,6 +73,11 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
               cpuUtilizationPercent_ = input.readInt32();
               break;
             }
+          case 24:
+            {
+              storageUtilizationGibPerNode_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -130,6 +135,29 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     return cpuUtilizationPercent_;
   }
 
+  public static final int STORAGE_UTILIZATION_GIB_PER_NODE_FIELD_NUMBER = 3;
+  private int storageUtilizationGibPerNode_;
+  /**
+   *
+   *
+   * <pre>
+   * The storage utilization that the Autoscaler should be trying to achieve.
+   * This number is limited between 2560 (2.5TiB) and 5120 (5TiB) for a SSD
+   * cluster and between 8192 (8TiB) and 16384 (16TiB) for an HDD cluster;
+   * otherwise it will return INVALID_ARGUMENT error. If this value is set to 0,
+   * it will be treated as if it were set to the default value: 2560 for SSD,
+   * 8192 for HDD.
+   * </pre>
+   *
+   * <code>int32 storage_utilization_gib_per_node = 3;</code>
+   *
+   * @return The storageUtilizationGibPerNode.
+   */
+  @java.lang.Override
+  public int getStorageUtilizationGibPerNode() {
+    return storageUtilizationGibPerNode_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -147,6 +175,9 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     if (cpuUtilizationPercent_ != 0) {
       output.writeInt32(2, cpuUtilizationPercent_);
     }
+    if (storageUtilizationGibPerNode_ != 0) {
+      output.writeInt32(3, storageUtilizationGibPerNode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -158,6 +189,10 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (cpuUtilizationPercent_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, cpuUtilizationPercent_);
+    }
+    if (storageUtilizationGibPerNode_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(3, storageUtilizationGibPerNode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -176,6 +211,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
         (com.google.bigtable.admin.v2.AutoscalingTargets) obj;
 
     if (getCpuUtilizationPercent() != other.getCpuUtilizationPercent()) return false;
+    if (getStorageUtilizationGibPerNode() != other.getStorageUtilizationGibPerNode()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -189,6 +225,8 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + CPU_UTILIZATION_PERCENT_FIELD_NUMBER;
     hash = (53 * hash) + getCpuUtilizationPercent();
+    hash = (37 * hash) + STORAGE_UTILIZATION_GIB_PER_NODE_FIELD_NUMBER;
+    hash = (53 * hash) + getStorageUtilizationGibPerNode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -336,6 +374,8 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
       super.clear();
       cpuUtilizationPercent_ = 0;
 
+      storageUtilizationGibPerNode_ = 0;
+
       return this;
     }
 
@@ -364,6 +404,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
       com.google.bigtable.admin.v2.AutoscalingTargets result =
           new com.google.bigtable.admin.v2.AutoscalingTargets(this);
       result.cpuUtilizationPercent_ = cpuUtilizationPercent_;
+      result.storageUtilizationGibPerNode_ = storageUtilizationGibPerNode_;
       onBuilt();
       return result;
     }
@@ -416,6 +457,9 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
         return this;
       if (other.getCpuUtilizationPercent() != 0) {
         setCpuUtilizationPercent(other.getCpuUtilizationPercent());
+      }
+      if (other.getStorageUtilizationGibPerNode() != 0) {
+        setStorageUtilizationGibPerNode(other.getStorageUtilizationGibPerNode());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -503,6 +547,73 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     public Builder clearCpuUtilizationPercent() {
 
       cpuUtilizationPercent_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int storageUtilizationGibPerNode_;
+    /**
+     *
+     *
+     * <pre>
+     * The storage utilization that the Autoscaler should be trying to achieve.
+     * This number is limited between 2560 (2.5TiB) and 5120 (5TiB) for a SSD
+     * cluster and between 8192 (8TiB) and 16384 (16TiB) for an HDD cluster;
+     * otherwise it will return INVALID_ARGUMENT error. If this value is set to 0,
+     * it will be treated as if it were set to the default value: 2560 for SSD,
+     * 8192 for HDD.
+     * </pre>
+     *
+     * <code>int32 storage_utilization_gib_per_node = 3;</code>
+     *
+     * @return The storageUtilizationGibPerNode.
+     */
+    @java.lang.Override
+    public int getStorageUtilizationGibPerNode() {
+      return storageUtilizationGibPerNode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The storage utilization that the Autoscaler should be trying to achieve.
+     * This number is limited between 2560 (2.5TiB) and 5120 (5TiB) for a SSD
+     * cluster and between 8192 (8TiB) and 16384 (16TiB) for an HDD cluster;
+     * otherwise it will return INVALID_ARGUMENT error. If this value is set to 0,
+     * it will be treated as if it were set to the default value: 2560 for SSD,
+     * 8192 for HDD.
+     * </pre>
+     *
+     * <code>int32 storage_utilization_gib_per_node = 3;</code>
+     *
+     * @param value The storageUtilizationGibPerNode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStorageUtilizationGibPerNode(int value) {
+
+      storageUtilizationGibPerNode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The storage utilization that the Autoscaler should be trying to achieve.
+     * This number is limited between 2560 (2.5TiB) and 5120 (5TiB) for a SSD
+     * cluster and between 8192 (8TiB) and 16384 (16TiB) for an HDD cluster;
+     * otherwise it will return INVALID_ARGUMENT error. If this value is set to 0,
+     * it will be treated as if it were set to the default value: 2560 for SSD,
+     * 8192 for HDD.
+     * </pre>
+     *
+     * <code>int32 storage_utilization_gib_per_node = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStorageUtilizationGibPerNode() {
+
+      storageUtilizationGibPerNode_ = 0;
       onChanged();
       return this;
     }

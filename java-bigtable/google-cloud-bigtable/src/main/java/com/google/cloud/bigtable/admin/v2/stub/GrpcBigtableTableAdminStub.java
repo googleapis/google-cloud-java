@@ -58,6 +58,8 @@ import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
+import com.google.bigtable.admin.v2.UndeleteTableMetadata;
+import com.google.bigtable.admin.v2.UndeleteTableRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -122,6 +124,16 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTableRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<UndeleteTableRequest, Operation>
+      undeleteTableMethodDescriptor =
+          MethodDescriptor.<UndeleteTableRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/UndeleteTable")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UndeleteTableRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<ModifyColumnFamiliesRequest, Table>
       modifyColumnFamiliesMethodDescriptor =
@@ -294,6 +306,9 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   private final UnaryCallable<ListTablesRequest, ListTablesPagedResponse> listTablesPagedCallable;
   private final UnaryCallable<GetTableRequest, Table> getTableCallable;
   private final UnaryCallable<DeleteTableRequest, Empty> deleteTableCallable;
+  private final UnaryCallable<UndeleteTableRequest, Operation> undeleteTableCallable;
+  private final OperationCallable<UndeleteTableRequest, Table, UndeleteTableMetadata>
+      undeleteTableOperationCallable;
   private final UnaryCallable<ModifyColumnFamiliesRequest, Table> modifyColumnFamiliesCallable;
   private final UnaryCallable<DropRowRangeRequest, Empty> dropRowRangeCallable;
   private final UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
@@ -413,6 +428,16 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
     GrpcCallSettings<DeleteTableRequest, Empty> deleteTableTransportSettings =
         GrpcCallSettings.<DeleteTableRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTableMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UndeleteTableRequest, Operation> undeleteTableTransportSettings =
+        GrpcCallSettings.<UndeleteTableRequest, Operation>newBuilder()
+            .setMethodDescriptor(undeleteTableMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
@@ -621,6 +646,15 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
     this.deleteTableCallable =
         callableFactory.createUnaryCallable(
             deleteTableTransportSettings, settings.deleteTableSettings(), clientContext);
+    this.undeleteTableCallable =
+        callableFactory.createUnaryCallable(
+            undeleteTableTransportSettings, settings.undeleteTableSettings(), clientContext);
+    this.undeleteTableOperationCallable =
+        callableFactory.createOperationCallable(
+            undeleteTableTransportSettings,
+            settings.undeleteTableOperationSettings(),
+            clientContext,
+            operationsStub);
     this.modifyColumnFamiliesCallable =
         callableFactory.createUnaryCallable(
             modifyColumnFamiliesTransportSettings,
@@ -746,6 +780,17 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   @Override
   public UnaryCallable<DeleteTableRequest, Empty> deleteTableCallable() {
     return deleteTableCallable;
+  }
+
+  @Override
+  public UnaryCallable<UndeleteTableRequest, Operation> undeleteTableCallable() {
+    return undeleteTableCallable;
+  }
+
+  @Override
+  public OperationCallable<UndeleteTableRequest, Table, UndeleteTableMetadata>
+      undeleteTableOperationCallable() {
+    return undeleteTableOperationCallable;
   }
 
   @Override

@@ -63,6 +63,8 @@ import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.bigtable.admin.v2.UndeleteTableMetadata;
+import com.google.bigtable.admin.v2.UndeleteTableRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
@@ -938,6 +940,137 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteTableRequest, Empty> deleteTableCallable() {
     return stub.deleteTableCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a specified table which was accidentally deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   TableName name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   Table response = baseBigtableTableAdminClient.undeleteTableAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the table to be restored. Values are of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Table, UndeleteTableMetadata> undeleteTableAsync(TableName name) {
+    UndeleteTableRequest request =
+        UndeleteTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return undeleteTableAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a specified table which was accidentally deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   String name = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   Table response = baseBigtableTableAdminClient.undeleteTableAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the table to be restored. Values are of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Table, UndeleteTableMetadata> undeleteTableAsync(String name) {
+    UndeleteTableRequest request = UndeleteTableRequest.newBuilder().setName(name).build();
+    return undeleteTableAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a specified table which was accidentally deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   UndeleteTableRequest request =
+   *       UndeleteTableRequest.newBuilder()
+   *           .setName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .build();
+   *   Table response = baseBigtableTableAdminClient.undeleteTableAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Table, UndeleteTableMetadata> undeleteTableAsync(
+      UndeleteTableRequest request) {
+    return undeleteTableOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a specified table which was accidentally deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   UndeleteTableRequest request =
+   *       UndeleteTableRequest.newBuilder()
+   *           .setName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .build();
+   *   OperationFuture<Table, UndeleteTableMetadata> future =
+   *       baseBigtableTableAdminClient.undeleteTableOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Table response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UndeleteTableRequest, Table, UndeleteTableMetadata>
+      undeleteTableOperationCallable() {
+    return stub.undeleteTableOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a specified table which was accidentally deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   UndeleteTableRequest request =
+   *       UndeleteTableRequest.newBuilder()
+   *           .setName(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       baseBigtableTableAdminClient.undeleteTableCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UndeleteTableRequest, Operation> undeleteTableCallable() {
+    return stub.undeleteTableCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
