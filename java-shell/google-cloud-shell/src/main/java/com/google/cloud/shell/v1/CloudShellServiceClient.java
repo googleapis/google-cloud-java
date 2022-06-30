@@ -18,13 +18,13 @@ package com.google.cloud.shell.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.shell.v1.stub.CloudShellServiceStub;
 import com.google.cloud.shell.v1.stub.CloudShellServiceStubSettings;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -100,13 +100,29 @@ import javax.annotation.Generated;
  *     CloudShellServiceClient.create(cloudShellServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * CloudShellServiceSettings cloudShellServiceSettings =
+ *     CloudShellServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             CloudShellServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * CloudShellServiceClient cloudShellServiceClient =
+ *     CloudShellServiceClient.create(cloudShellServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class CloudShellServiceClient implements BackgroundResource {
   private final CloudShellServiceSettings settings;
   private final CloudShellServiceStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of CloudShellServiceClient with default settings. */
   public static final CloudShellServiceClient create() throws IOException {
@@ -126,7 +142,6 @@ public class CloudShellServiceClient implements BackgroundResource {
    * Constructs an instance of CloudShellServiceClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(CloudShellServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CloudShellServiceClient create(CloudShellServiceStub stub) {
     return new CloudShellServiceClient(stub);
   }
@@ -139,21 +154,23 @@ public class CloudShellServiceClient implements BackgroundResource {
   protected CloudShellServiceClient(CloudShellServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((CloudShellServiceStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CloudShellServiceClient(CloudShellServiceStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final CloudShellServiceSettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudShellServiceStub getStub() {
     return stub;
   }
@@ -162,8 +179,17 @@ public class CloudShellServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
