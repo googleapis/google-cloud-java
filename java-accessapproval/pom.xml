@@ -81,9 +81,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-
       
-      <!-- Test new -->
       <!-- Test dependencies -->
       <dependency>
         <groupId>junit</groupId>
