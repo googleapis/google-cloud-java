@@ -78,6 +78,7 @@
     </license>
   </licenses>
 
+  <!-- module names -->  
   <modules>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
