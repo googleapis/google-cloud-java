@@ -32,6 +32,7 @@ retry_with_backoff 3 10 \
   mvn clean deploy -B \
     --settings ${MAVEN_SETTINGS_FILE} \
     -DskipTests=true \
+    -Dclirr.skip=true \
     -DperformRelease=true \
     -Dgpg.executable=gpg \
     -Dgpg.passphrase=${GPG_PASSPHRASE} \
