@@ -1,0 +1,13 @@
+{
+  "packages": {
+    ".": {
+      "releaseType": "java-yoshi",
+      "draft": false,
+      "prerelease": false,
+      "bumpMinorPreMajor": false,
+      "bumpPatchForMinorPreMajor": false,
+      "changelogPath": "CHANGELOG.md",
+      "versioning": "default"
+    }
+  }
+}
