@@ -24,7 +24,12 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * <pre>
  * Hierarchical advanced settings for agent/flow/page/fulfillment/parameter.
  * Settings exposed at lower level overrides the settings exposed at higher
- * level.
+ * level. Overriding occurs at the sub-setting level. For example, the
+ * playback_interruption_settings at fulfillment level only overrides the
+ * playback_interruption_settings at the agent level, leaving other settings
+ * at the agent level unchanged.
+ * DTMF settings does not override each other. DTMF settings set at different
+ * levels define DTMF detections running in parallel.
  * Hierarchy: Agent-&gt;Flow-&gt;Page-&gt;Fulfillment/Parameter.
  * </pre>
  *
@@ -1041,7 +1046,12 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Hierarchical advanced settings for agent/flow/page/fulfillment/parameter.
    * Settings exposed at lower level overrides the settings exposed at higher
-   * level.
+   * level. Overriding occurs at the sub-setting level. For example, the
+   * playback_interruption_settings at fulfillment level only overrides the
+   * playback_interruption_settings at the agent level, leaving other settings
+   * at the agent level unchanged.
+   * DTMF settings does not override each other. DTMF settings set at different
+   * levels define DTMF detections running in parallel.
    * Hierarchy: Agent-&gt;Flow-&gt;Page-&gt;Fulfillment/Parameter.
    * </pre>
    *
