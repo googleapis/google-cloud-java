@@ -19,8 +19,8 @@
 
 package io.grafeas.v1;
 
-public final class CvssProto {
-  private CvssProto() {}
+public final class CVSSProto {
+  private CVSSProto() {}
 
   public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
@@ -111,7 +111,7 @@ public final class CvssProto {
           + "PECIFIED\020\000\022\023\n\017SCOPE_UNCHANGED\020\001\022\021\n\rSCOPE"
           + "_CHANGED\020\002\"R\n\006Impact\022\026\n\022IMPACT_UNSPECIFI"
           + "ED\020\000\022\017\n\013IMPACT_HIGH\020\001\022\016\n\nIMPACT_LOW\020\002\022\017\n"
-          + "\013IMPACT_NONE\020\003B\\\n\rio.grafeas.v1B\tCvssPro"
+          + "\013IMPACT_NONE\020\003B\\\n\rio.grafeas.v1B\tCVSSPro"
           + "toP\001Z8google.golang.org/genproto/googlea"
           + "pis/grafeas/v1;grafeas\242\002\003GRAb\006proto3"
     };

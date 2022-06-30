@@ -19,8 +19,8 @@
 
 package io.grafeas.v1;
 
-public final class SlsaProvenanceOuterClass {
-  private SlsaProvenanceOuterClass() {}
+public final class SlsaProvenanceProto {
+  private SlsaProvenanceProto() {}
 
   public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
 
@@ -90,9 +90,9 @@ public final class SlsaProvenanceOuterClass {
           + "\n\003uri\030\001 \001(\t\022?\n\006digest\030\002 \003(\0132/.grafeas.v1"
           + ".SlsaProvenance.Material.DigestEntry\032-\n\013"
           + "DigestEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
-          + "\0028\001BQ\n\rio.grafeas.v1P\001Z8google.golang.or"
-          + "g/genproto/googleapis/grafeas/v1;grafeas"
-          + "\242\002\003GRAb\006proto3"
+          + "\0028\001Bf\n\rio.grafeas.v1B\023SlsaProvenanceProt"
+          + "oP\001Z8google.golang.org/genproto/googleap"
+          + "is/grafeas/v1;grafeas\242\002\003GRAb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

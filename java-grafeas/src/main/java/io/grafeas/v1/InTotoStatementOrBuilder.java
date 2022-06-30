@@ -115,5 +115,20 @@ public interface InTotoStatementOrBuilder
   /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
   io.grafeas.v1.SlsaProvenanceOrBuilder getSlsaProvenanceOrBuilder();
 
+  /**
+   * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
+   *
+   * @return Whether the slsaProvenanceZeroTwo field is set.
+   */
+  boolean hasSlsaProvenanceZeroTwo();
+  /**
+   * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
+   *
+   * @return The slsaProvenanceZeroTwo.
+   */
+  io.grafeas.v1.SlsaProvenanceZeroTwo getSlsaProvenanceZeroTwo();
+  /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
+  io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder getSlsaProvenanceZeroTwoOrBuilder();
+
   public io.grafeas.v1.InTotoStatement.PredicateCase getPredicateCase();
 }

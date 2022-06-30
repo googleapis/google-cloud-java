@@ -172,13 +172,13 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return io.grafeas.v1.CvssProto.internal_static_grafeas_v1_CVSSv3_descriptor;
+    return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSSv3_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.CvssProto.internal_static_grafeas_v1_CVSSv3_fieldAccessorTable
+    return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSSv3_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.grafeas.v1.CVSSv3.class, io.grafeas.v1.CVSSv3.Builder.class);
   }
@@ -1338,13 +1338,13 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(builder_implements:grafeas.v1.CVSSv3)
       io.grafeas.v1.CVSSv3OrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return io.grafeas.v1.CvssProto.internal_static_grafeas_v1_CVSSv3_descriptor;
+      return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSSv3_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.CvssProto.internal_static_grafeas_v1_CVSSv3_fieldAccessorTable
+      return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSSv3_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.CVSSv3.class, io.grafeas.v1.CVSSv3.Builder.class);
     }
@@ -1393,7 +1393,7 @@ public final class CVSSv3 extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return io.grafeas.v1.CvssProto.internal_static_grafeas_v1_CVSSv3_descriptor;
+      return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSSv3_descriptor;
     }
 
     @java.lang.Override

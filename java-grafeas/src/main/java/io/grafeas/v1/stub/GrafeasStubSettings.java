@@ -380,7 +380,6 @@ public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
     return listNoteOccurrencesSettings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GrafeasStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()

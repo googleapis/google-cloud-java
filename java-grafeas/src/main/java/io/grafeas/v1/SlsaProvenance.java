@@ -148,14 +148,13 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return io.grafeas.v1.SlsaProvenanceOuterClass
-        .internal_static_grafeas_v1_SlsaProvenance_descriptor;
+    return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.SlsaProvenanceOuterClass
+    return io.grafeas.v1.SlsaProvenanceProto
         .internal_static_grafeas_v1_SlsaProvenance_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.grafeas.v1.SlsaProvenance.class, io.grafeas.v1.SlsaProvenance.Builder.class);
@@ -461,14 +460,14 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return io.grafeas.v1.SlsaProvenanceOuterClass
+      return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.SlsaProvenanceOuterClass
+      return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.SlsaProvenance.SlsaRecipe.class,
@@ -942,14 +941,14 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(builder_implements:grafeas.v1.SlsaProvenance.SlsaRecipe)
         io.grafeas.v1.SlsaProvenance.SlsaRecipeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 io.grafeas.v1.SlsaProvenance.SlsaRecipe.class,
@@ -996,7 +995,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_SlsaRecipe_descriptor;
       }
 
@@ -2042,14 +2041,14 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return io.grafeas.v1.SlsaProvenanceOuterClass
+      return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.SlsaProvenanceOuterClass
+      return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.SlsaProvenance.SlsaCompleteness.class,
@@ -2307,14 +2306,14 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(builder_implements:grafeas.v1.SlsaProvenance.SlsaCompleteness)
         io.grafeas.v1.SlsaProvenance.SlsaCompletenessOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 io.grafeas.v1.SlsaProvenance.SlsaCompleteness.class,
@@ -2349,7 +2348,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_SlsaCompleteness_descriptor;
       }
 
@@ -2969,14 +2968,14 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return io.grafeas.v1.SlsaProvenanceOuterClass
+      return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.SlsaProvenanceOuterClass
+      return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.SlsaProvenance.SlsaMetadata.class,
@@ -3428,14 +3427,14 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(builder_implements:grafeas.v1.SlsaProvenance.SlsaMetadata)
         io.grafeas.v1.SlsaProvenance.SlsaMetadataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 io.grafeas.v1.SlsaProvenance.SlsaMetadata.class,
@@ -3486,7 +3485,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_SlsaMetadata_descriptor;
       }
 
@@ -4500,14 +4499,14 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return io.grafeas.v1.SlsaProvenanceOuterClass
+      return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.SlsaProvenanceOuterClass
+      return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.SlsaProvenance.SlsaBuilder.class,
@@ -4718,14 +4717,14 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(builder_implements:grafeas.v1.SlsaProvenance.SlsaBuilder)
         io.grafeas.v1.SlsaProvenance.SlsaBuilderOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 io.grafeas.v1.SlsaProvenance.SlsaBuilder.class,
@@ -4756,7 +4755,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_SlsaBuilder_descriptor;
       }
 
@@ -5117,7 +5116,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return io.grafeas.v1.SlsaProvenanceOuterClass
+      return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_Material_descriptor;
     }
 
@@ -5135,7 +5134,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.SlsaProvenanceOuterClass
+      return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_Material_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.SlsaProvenance.Material.class,
@@ -5184,7 +5183,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
     private static final class DigestDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
           com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
-              io.grafeas.v1.SlsaProvenanceOuterClass
+              io.grafeas.v1.SlsaProvenanceProto
                   .internal_static_grafeas_v1_SlsaProvenance_Material_DigestEntry_descriptor,
               com.google.protobuf.WireFormat.FieldType.STRING,
               "",
@@ -5429,7 +5428,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(builder_implements:grafeas.v1.SlsaProvenance.Material)
         io.grafeas.v1.SlsaProvenance.MaterialOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_Material_descriptor;
       }
 
@@ -5456,7 +5455,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_Material_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 io.grafeas.v1.SlsaProvenance.Material.class,
@@ -5488,7 +5487,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return io.grafeas.v1.SlsaProvenanceOuterClass
+        return io.grafeas.v1.SlsaProvenanceProto
             .internal_static_grafeas_v1_SlsaProvenance_Material_descriptor;
       }
 
@@ -6253,14 +6252,13 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(builder_implements:grafeas.v1.SlsaProvenance)
       io.grafeas.v1.SlsaProvenanceOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return io.grafeas.v1.SlsaProvenanceOuterClass
-          .internal_static_grafeas_v1_SlsaProvenance_descriptor;
+      return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.SlsaProvenanceOuterClass
+      return io.grafeas.v1.SlsaProvenanceProto
           .internal_static_grafeas_v1_SlsaProvenance_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.SlsaProvenance.class, io.grafeas.v1.SlsaProvenance.Builder.class);
@@ -6314,8 +6312,7 @@ public final class SlsaProvenance extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return io.grafeas.v1.SlsaProvenanceOuterClass
-          .internal_static_grafeas_v1_SlsaProvenance_descriptor;
+      return io.grafeas.v1.SlsaProvenanceProto.internal_static_grafeas_v1_SlsaProvenance_descriptor;
     }
 
     @java.lang.Override

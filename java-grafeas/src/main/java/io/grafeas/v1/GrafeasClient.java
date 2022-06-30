@@ -18,7 +18,6 @@ package io.grafeas.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -134,7 +133,6 @@ public class GrafeasClient implements BackgroundResource {
    * Constructs an instance of GrafeasClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(GrafeasSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GrafeasClient create(GrafeasStub stub) {
     return new GrafeasClient(stub);
   }
@@ -148,7 +146,6 @@ public class GrafeasClient implements BackgroundResource {
     this.stub = ((GrafeasStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GrafeasClient(GrafeasStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -158,7 +155,6 @@ public class GrafeasClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GrafeasStub getStub() {
     return stub;
   }
@@ -402,7 +398,7 @@ public class GrafeasClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListOccurrencesResponse response = grafeasClient.listOccurrencesCallable().call(request);
-   *     for (Occurrence element : response.getResponsesList()) {
+   *     for (Occurrence element : response.getOccurrencesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1206,7 +1202,7 @@ public class GrafeasClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListNotesResponse response = grafeasClient.listNotesCallable().call(request);
-   *     for (Note element : response.getResponsesList()) {
+   *     for (Note element : response.getNotesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1810,7 +1806,7 @@ public class GrafeasClient implements BackgroundResource {
    *   while (true) {
    *     ListNoteOccurrencesResponse response =
    *         grafeasClient.listNoteOccurrencesCallable().call(request);
-   *     for (Occurrence element : response.getResponsesList()) {
+   *     for (Occurrence element : response.getOccurrencesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();

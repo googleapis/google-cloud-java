@@ -23,9 +23,7 @@ package io.grafeas.v1;
  *
  *
  * <pre>
- * This represents a particular package that is distributed over various
- * channels. E.g., glibc (aka libc6) is distributed by many, at various
- * versions.
+ * PackageNote represents a particular package version.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1.PackageNote}
@@ -43,6 +41,13 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
   private PackageNote() {
     name_ = "";
     distribution_ = java.util.Collections.emptyList();
+    packageType_ = "";
+    cpeUri_ = "";
+    architecture_ = 0;
+    maintainer_ = "";
+    url_ = "";
+    description_ = "";
+    digest_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -92,6 +97,85 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
                   input.readMessage(io.grafeas.v1.Distribution.parser(), extensionRegistry));
               break;
             }
+          case 90:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              packageType_ = s;
+              break;
+            }
+          case 98:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cpeUri_ = s;
+              break;
+            }
+          case 104:
+            {
+              int rawValue = input.readEnum();
+
+              architecture_ = rawValue;
+              break;
+            }
+          case 114:
+            {
+              io.grafeas.v1.Version.Builder subBuilder = null;
+              if (version_ != null) {
+                subBuilder = version_.toBuilder();
+              }
+              version_ = input.readMessage(io.grafeas.v1.Version.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(version_);
+                version_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              maintainer_ = s;
+              break;
+            }
+          case 130:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              url_ = s;
+              break;
+            }
+          case 138:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 146:
+            {
+              io.grafeas.v1.License.Builder subBuilder = null;
+              if (license_ != null) {
+                subBuilder = license_.toBuilder();
+              }
+              license_ = input.readMessage(io.grafeas.v1.License.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(license_);
+                license_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 154:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                digest_ = new java.util.ArrayList<io.grafeas.v1.Digest>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              digest_.add(input.readMessage(io.grafeas.v1.Digest.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -110,6 +194,9 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         distribution_ = java.util.Collections.unmodifiableList(distribution_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        digest_ = java.util.Collections.unmodifiableList(digest_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -134,10 +221,12 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The name of the package.
+   * The name of the package.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The name.
    */
@@ -157,10 +246,12 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The name of the package.
+   * The name of the package.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -183,6 +274,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated.
    * The various channels by which a package is distributed.
    * </pre>
    *
@@ -196,6 +288,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated.
    * The various channels by which a package is distributed.
    * </pre>
    *
@@ -210,6 +303,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated.
    * The various channels by which a package is distributed.
    * </pre>
    *
@@ -223,6 +317,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated.
    * The various channels by which a package is distributed.
    * </pre>
    *
@@ -236,6 +331,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated.
    * The various channels by which a package is distributed.
    * </pre>
    *
@@ -244,6 +340,459 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public io.grafeas.v1.DistributionOrBuilder getDistributionOrBuilder(int index) {
     return distribution_.get(index);
+  }
+
+  public static final int PACKAGE_TYPE_FIELD_NUMBER = 11;
+  private volatile java.lang.Object packageType_;
+  /**
+   *
+   *
+   * <pre>
+   * The type of package; whether native or non native (e.g., ruby gems,
+   * node.js packages, etc.).
+   * </pre>
+   *
+   * <code>string package_type = 11;</code>
+   *
+   * @return The packageType.
+   */
+  @java.lang.Override
+  public java.lang.String getPackageType() {
+    java.lang.Object ref = packageType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      packageType_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type of package; whether native or non native (e.g., ruby gems,
+   * node.js packages, etc.).
+   * </pre>
+   *
+   * <code>string package_type = 11;</code>
+   *
+   * @return The bytes for packageType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPackageTypeBytes() {
+    java.lang.Object ref = packageType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      packageType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CPE_URI_FIELD_NUMBER = 12;
+  private volatile java.lang.Object cpeUri_;
+  /**
+   *
+   *
+   * <pre>
+   * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+   * denoting the package manager version distributing a package.
+   * The cpe_uri will be blank for language packages.
+   * </pre>
+   *
+   * <code>string cpe_uri = 12;</code>
+   *
+   * @return The cpeUri.
+   */
+  @java.lang.Override
+  public java.lang.String getCpeUri() {
+    java.lang.Object ref = cpeUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cpeUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+   * denoting the package manager version distributing a package.
+   * The cpe_uri will be blank for language packages.
+   * </pre>
+   *
+   * <code>string cpe_uri = 12;</code>
+   *
+   * @return The bytes for cpeUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCpeUriBytes() {
+    java.lang.Object ref = cpeUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cpeUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ARCHITECTURE_FIELD_NUMBER = 13;
+  private int architecture_;
+  /**
+   *
+   *
+   * <pre>
+   * The CPU architecture for which packages in this distribution channel were
+   * built. Architecture will be blank for language packages.
+   * </pre>
+   *
+   * <code>.grafeas.v1.Architecture architecture = 13;</code>
+   *
+   * @return The enum numeric value on the wire for architecture.
+   */
+  @java.lang.Override
+  public int getArchitectureValue() {
+    return architecture_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The CPU architecture for which packages in this distribution channel were
+   * built. Architecture will be blank for language packages.
+   * </pre>
+   *
+   * <code>.grafeas.v1.Architecture architecture = 13;</code>
+   *
+   * @return The architecture.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.Architecture getArchitecture() {
+    @SuppressWarnings("deprecation")
+    io.grafeas.v1.Architecture result = io.grafeas.v1.Architecture.valueOf(architecture_);
+    return result == null ? io.grafeas.v1.Architecture.UNRECOGNIZED : result;
+  }
+
+  public static final int VERSION_FIELD_NUMBER = 14;
+  private io.grafeas.v1.Version version_;
+  /**
+   *
+   *
+   * <pre>
+   * The version of the package.
+   * </pre>
+   *
+   * <code>.grafeas.v1.Version version = 14;</code>
+   *
+   * @return Whether the version field is set.
+   */
+  @java.lang.Override
+  public boolean hasVersion() {
+    return version_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The version of the package.
+   * </pre>
+   *
+   * <code>.grafeas.v1.Version version = 14;</code>
+   *
+   * @return The version.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.Version getVersion() {
+    return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The version of the package.
+   * </pre>
+   *
+   * <code>.grafeas.v1.Version version = 14;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.VersionOrBuilder getVersionOrBuilder() {
+    return getVersion();
+  }
+
+  public static final int MAINTAINER_FIELD_NUMBER = 15;
+  private volatile java.lang.Object maintainer_;
+  /**
+   *
+   *
+   * <pre>
+   * A freeform text denoting the maintainer of this package.
+   * </pre>
+   *
+   * <code>string maintainer = 15;</code>
+   *
+   * @return The maintainer.
+   */
+  @java.lang.Override
+  public java.lang.String getMaintainer() {
+    java.lang.Object ref = maintainer_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      maintainer_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A freeform text denoting the maintainer of this package.
+   * </pre>
+   *
+   * <code>string maintainer = 15;</code>
+   *
+   * @return The bytes for maintainer.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMaintainerBytes() {
+    java.lang.Object ref = maintainer_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      maintainer_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int URL_FIELD_NUMBER = 16;
+  private volatile java.lang.Object url_;
+  /**
+   *
+   *
+   * <pre>
+   * The homepage for this package.
+   * </pre>
+   *
+   * <code>string url = 16;</code>
+   *
+   * @return The url.
+   */
+  @java.lang.Override
+  public java.lang.String getUrl() {
+    java.lang.Object ref = url_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      url_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The homepage for this package.
+   * </pre>
+   *
+   * <code>string url = 16;</code>
+   *
+   * @return The bytes for url.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUrlBytes() {
+    java.lang.Object ref = url_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      url_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 17;
+  private volatile java.lang.Object description_;
+  /**
+   *
+   *
+   * <pre>
+   * The description of this package.
+   * </pre>
+   *
+   * <code>string description = 17;</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The description of this package.
+   * </pre>
+   *
+   * <code>string description = 17;</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LICENSE_FIELD_NUMBER = 18;
+  private io.grafeas.v1.License license_;
+  /**
+   *
+   *
+   * <pre>
+   * Licenses that have been declared by the authors of the package.
+   * </pre>
+   *
+   * <code>.grafeas.v1.License license = 18;</code>
+   *
+   * @return Whether the license field is set.
+   */
+  @java.lang.Override
+  public boolean hasLicense() {
+    return license_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Licenses that have been declared by the authors of the package.
+   * </pre>
+   *
+   * <code>.grafeas.v1.License license = 18;</code>
+   *
+   * @return The license.
+   */
+  @java.lang.Override
+  public io.grafeas.v1.License getLicense() {
+    return license_ == null ? io.grafeas.v1.License.getDefaultInstance() : license_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Licenses that have been declared by the authors of the package.
+   * </pre>
+   *
+   * <code>.grafeas.v1.License license = 18;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.LicenseOrBuilder getLicenseOrBuilder() {
+    return getLicense();
+  }
+
+  public static final int DIGEST_FIELD_NUMBER = 19;
+  private java.util.List<io.grafeas.v1.Digest> digest_;
+  /**
+   *
+   *
+   * <pre>
+   * Hash value, typically a file digest, that allows unique
+   * identification a specific package.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+   */
+  @java.lang.Override
+  public java.util.List<io.grafeas.v1.Digest> getDigestList() {
+    return digest_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Hash value, typically a file digest, that allows unique
+   * identification a specific package.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends io.grafeas.v1.DigestOrBuilder> getDigestOrBuilderList() {
+    return digest_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Hash value, typically a file digest, that allows unique
+   * identification a specific package.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+   */
+  @java.lang.Override
+  public int getDigestCount() {
+    return digest_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Hash value, typically a file digest, that allows unique
+   * identification a specific package.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.Digest getDigest(int index) {
+    return digest_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Hash value, typically a file digest, that allows unique
+   * identification a specific package.
+   * </pre>
+   *
+   * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+   */
+  @java.lang.Override
+  public io.grafeas.v1.DigestOrBuilder getDigestOrBuilder(int index) {
+    return digest_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -266,6 +815,33 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < distribution_.size(); i++) {
       output.writeMessage(10, distribution_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(packageType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, packageType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpeUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, cpeUri_);
+    }
+    if (architecture_ != io.grafeas.v1.Architecture.ARCHITECTURE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(13, architecture_);
+    }
+    if (version_ != null) {
+      output.writeMessage(14, getVersion());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(maintainer_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, maintainer_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, url_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, description_);
+    }
+    if (license_ != null) {
+      output.writeMessage(18, getLicense());
+    }
+    for (int i = 0; i < digest_.size(); i++) {
+      output.writeMessage(19, digest_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -280,6 +856,33 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < distribution_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, distribution_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(packageType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, packageType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpeUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, cpeUri_);
+    }
+    if (architecture_ != io.grafeas.v1.Architecture.ARCHITECTURE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, architecture_);
+    }
+    if (version_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getVersion());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(maintainer_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, maintainer_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, url_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, description_);
+    }
+    if (license_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getLicense());
+    }
+    for (int i = 0; i < digest_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, digest_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -298,6 +901,21 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!getDistributionList().equals(other.getDistributionList())) return false;
+    if (!getPackageType().equals(other.getPackageType())) return false;
+    if (!getCpeUri().equals(other.getCpeUri())) return false;
+    if (architecture_ != other.architecture_) return false;
+    if (hasVersion() != other.hasVersion()) return false;
+    if (hasVersion()) {
+      if (!getVersion().equals(other.getVersion())) return false;
+    }
+    if (!getMaintainer().equals(other.getMaintainer())) return false;
+    if (!getUrl().equals(other.getUrl())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (hasLicense() != other.hasLicense()) return false;
+    if (hasLicense()) {
+      if (!getLicense().equals(other.getLicense())) return false;
+    }
+    if (!getDigestList().equals(other.getDigestList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -314,6 +932,30 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
     if (getDistributionCount() > 0) {
       hash = (37 * hash) + DISTRIBUTION_FIELD_NUMBER;
       hash = (53 * hash) + getDistributionList().hashCode();
+    }
+    hash = (37 * hash) + PACKAGE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getPackageType().hashCode();
+    hash = (37 * hash) + CPE_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getCpeUri().hashCode();
+    hash = (37 * hash) + ARCHITECTURE_FIELD_NUMBER;
+    hash = (53 * hash) + architecture_;
+    if (hasVersion()) {
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+    }
+    hash = (37 * hash) + MAINTAINER_FIELD_NUMBER;
+    hash = (53 * hash) + getMaintainer().hashCode();
+    hash = (37 * hash) + URL_FIELD_NUMBER;
+    hash = (53 * hash) + getUrl().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
+    if (hasLicense()) {
+      hash = (37 * hash) + LICENSE_FIELD_NUMBER;
+      hash = (53 * hash) + getLicense().hashCode();
+    }
+    if (getDigestCount() > 0) {
+      hash = (37 * hash) + DIGEST_FIELD_NUMBER;
+      hash = (53 * hash) + getDigestList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -418,9 +1060,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This represents a particular package that is distributed over various
-   * channels. E.g., glibc (aka libc6) is distributed by many, at various
-   * versions.
+   * PackageNote represents a particular package version.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.PackageNote}
@@ -454,6 +1094,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getDistributionFieldBuilder();
+        getDigestFieldBuilder();
       }
     }
 
@@ -467,6 +1108,36 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         distributionBuilder_.clear();
+      }
+      packageType_ = "";
+
+      cpeUri_ = "";
+
+      architecture_ = 0;
+
+      if (versionBuilder_ == null) {
+        version_ = null;
+      } else {
+        version_ = null;
+        versionBuilder_ = null;
+      }
+      maintainer_ = "";
+
+      url_ = "";
+
+      description_ = "";
+
+      if (licenseBuilder_ == null) {
+        license_ = null;
+      } else {
+        license_ = null;
+        licenseBuilder_ = null;
+      }
+      if (digestBuilder_ == null) {
+        digest_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        digestBuilder_.clear();
       }
       return this;
     }
@@ -503,6 +1174,31 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
         result.distribution_ = distribution_;
       } else {
         result.distribution_ = distributionBuilder_.build();
+      }
+      result.packageType_ = packageType_;
+      result.cpeUri_ = cpeUri_;
+      result.architecture_ = architecture_;
+      if (versionBuilder_ == null) {
+        result.version_ = version_;
+      } else {
+        result.version_ = versionBuilder_.build();
+      }
+      result.maintainer_ = maintainer_;
+      result.url_ = url_;
+      result.description_ = description_;
+      if (licenseBuilder_ == null) {
+        result.license_ = license_;
+      } else {
+        result.license_ = licenseBuilder_.build();
+      }
+      if (digestBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          digest_ = java.util.Collections.unmodifiableList(digest_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.digest_ = digest_;
+      } else {
+        result.digest_ = digestBuilder_.build();
       }
       onBuilt();
       return result;
@@ -584,6 +1280,62 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.getPackageType().isEmpty()) {
+        packageType_ = other.packageType_;
+        onChanged();
+      }
+      if (!other.getCpeUri().isEmpty()) {
+        cpeUri_ = other.cpeUri_;
+        onChanged();
+      }
+      if (other.architecture_ != 0) {
+        setArchitectureValue(other.getArchitectureValue());
+      }
+      if (other.hasVersion()) {
+        mergeVersion(other.getVersion());
+      }
+      if (!other.getMaintainer().isEmpty()) {
+        maintainer_ = other.maintainer_;
+        onChanged();
+      }
+      if (!other.getUrl().isEmpty()) {
+        url_ = other.url_;
+        onChanged();
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        onChanged();
+      }
+      if (other.hasLicense()) {
+        mergeLicense(other.getLicense());
+      }
+      if (digestBuilder_ == null) {
+        if (!other.digest_.isEmpty()) {
+          if (digest_.isEmpty()) {
+            digest_ = other.digest_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureDigestIsMutable();
+            digest_.addAll(other.digest_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.digest_.isEmpty()) {
+          if (digestBuilder_.isEmpty()) {
+            digestBuilder_.dispose();
+            digestBuilder_ = null;
+            digest_ = other.digest_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            digestBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDigestFieldBuilder()
+                    : null;
+          } else {
+            digestBuilder_.addAllMessages(other.digest_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -620,10 +1372,12 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The name of the package.
+     * The name of the package.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The name.
      */
@@ -642,10 +1396,12 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The name of the package.
+     * The name of the package.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -664,10 +1420,12 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The name of the package.
+     * The name of the package.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -685,10 +1443,12 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The name of the package.
+     * The name of the package.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -702,10 +1462,12 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The name of the package.
+     * The name of the package.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -741,6 +1503,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -757,6 +1520,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -773,6 +1537,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -789,6 +1554,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -811,6 +1577,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -830,6 +1597,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -852,6 +1620,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -874,6 +1643,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -893,6 +1663,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -912,6 +1683,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -932,6 +1704,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -951,6 +1724,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -970,6 +1744,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -982,6 +1757,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -998,6 +1774,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -1015,6 +1792,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -1028,6 +1806,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -1041,6 +1820,7 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated.
      * The various channels by which a package is distributed.
      * </pre>
      *
@@ -1065,6 +1845,1345 @@ public final class PackageNote extends com.google.protobuf.GeneratedMessageV3
         distribution_ = null;
       }
       return distributionBuilder_;
+    }
+
+    private java.lang.Object packageType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The type of package; whether native or non native (e.g., ruby gems,
+     * node.js packages, etc.).
+     * </pre>
+     *
+     * <code>string package_type = 11;</code>
+     *
+     * @return The packageType.
+     */
+    public java.lang.String getPackageType() {
+      java.lang.Object ref = packageType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        packageType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of package; whether native or non native (e.g., ruby gems,
+     * node.js packages, etc.).
+     * </pre>
+     *
+     * <code>string package_type = 11;</code>
+     *
+     * @return The bytes for packageType.
+     */
+    public com.google.protobuf.ByteString getPackageTypeBytes() {
+      java.lang.Object ref = packageType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        packageType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of package; whether native or non native (e.g., ruby gems,
+     * node.js packages, etc.).
+     * </pre>
+     *
+     * <code>string package_type = 11;</code>
+     *
+     * @param value The packageType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPackageType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      packageType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of package; whether native or non native (e.g., ruby gems,
+     * node.js packages, etc.).
+     * </pre>
+     *
+     * <code>string package_type = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPackageType() {
+
+      packageType_ = getDefaultInstance().getPackageType();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of package; whether native or non native (e.g., ruby gems,
+     * node.js packages, etc.).
+     * </pre>
+     *
+     * <code>string package_type = 11;</code>
+     *
+     * @param value The bytes for packageType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPackageTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      packageType_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object cpeUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+     * denoting the package manager version distributing a package.
+     * The cpe_uri will be blank for language packages.
+     * </pre>
+     *
+     * <code>string cpe_uri = 12;</code>
+     *
+     * @return The cpeUri.
+     */
+    public java.lang.String getCpeUri() {
+      java.lang.Object ref = cpeUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cpeUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+     * denoting the package manager version distributing a package.
+     * The cpe_uri will be blank for language packages.
+     * </pre>
+     *
+     * <code>string cpe_uri = 12;</code>
+     *
+     * @return The bytes for cpeUri.
+     */
+    public com.google.protobuf.ByteString getCpeUriBytes() {
+      java.lang.Object ref = cpeUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cpeUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+     * denoting the package manager version distributing a package.
+     * The cpe_uri will be blank for language packages.
+     * </pre>
+     *
+     * <code>string cpe_uri = 12;</code>
+     *
+     * @param value The cpeUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCpeUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      cpeUri_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+     * denoting the package manager version distributing a package.
+     * The cpe_uri will be blank for language packages.
+     * </pre>
+     *
+     * <code>string cpe_uri = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCpeUri() {
+
+      cpeUri_ = getDefaultInstance().getCpeUri();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The cpe_uri in [CPE format](https://cpe.mitre.org/specification/)
+     * denoting the package manager version distributing a package.
+     * The cpe_uri will be blank for language packages.
+     * </pre>
+     *
+     * <code>string cpe_uri = 12;</code>
+     *
+     * @param value The bytes for cpeUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCpeUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      cpeUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int architecture_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The CPU architecture for which packages in this distribution channel were
+     * built. Architecture will be blank for language packages.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Architecture architecture = 13;</code>
+     *
+     * @return The enum numeric value on the wire for architecture.
+     */
+    @java.lang.Override
+    public int getArchitectureValue() {
+      return architecture_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CPU architecture for which packages in this distribution channel were
+     * built. Architecture will be blank for language packages.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Architecture architecture = 13;</code>
+     *
+     * @param value The enum numeric value on the wire for architecture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArchitectureValue(int value) {
+
+      architecture_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CPU architecture for which packages in this distribution channel were
+     * built. Architecture will be blank for language packages.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Architecture architecture = 13;</code>
+     *
+     * @return The architecture.
+     */
+    @java.lang.Override
+    public io.grafeas.v1.Architecture getArchitecture() {
+      @SuppressWarnings("deprecation")
+      io.grafeas.v1.Architecture result = io.grafeas.v1.Architecture.valueOf(architecture_);
+      return result == null ? io.grafeas.v1.Architecture.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CPU architecture for which packages in this distribution channel were
+     * built. Architecture will be blank for language packages.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Architecture architecture = 13;</code>
+     *
+     * @param value The architecture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArchitecture(io.grafeas.v1.Architecture value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      architecture_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CPU architecture for which packages in this distribution channel were
+     * built. Architecture will be blank for language packages.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Architecture architecture = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearArchitecture() {
+
+      architecture_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private io.grafeas.v1.Version version_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder>
+        versionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The version of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Version version = 14;</code>
+     *
+     * @return Whether the version field is set.
+     */
+    public boolean hasVersion() {
+      return versionBuilder_ != null || version_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Version version = 14;</code>
+     *
+     * @return The version.
+     */
+    public io.grafeas.v1.Version getVersion() {
+      if (versionBuilder_ == null) {
+        return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
+      } else {
+        return versionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Version version = 14;</code>
+     */
+    public Builder setVersion(io.grafeas.v1.Version value) {
+      if (versionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        version_ = value;
+        onChanged();
+      } else {
+        versionBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Version version = 14;</code>
+     */
+    public Builder setVersion(io.grafeas.v1.Version.Builder builderForValue) {
+      if (versionBuilder_ == null) {
+        version_ = builderForValue.build();
+        onChanged();
+      } else {
+        versionBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Version version = 14;</code>
+     */
+    public Builder mergeVersion(io.grafeas.v1.Version value) {
+      if (versionBuilder_ == null) {
+        if (version_ != null) {
+          version_ = io.grafeas.v1.Version.newBuilder(version_).mergeFrom(value).buildPartial();
+        } else {
+          version_ = value;
+        }
+        onChanged();
+      } else {
+        versionBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Version version = 14;</code>
+     */
+    public Builder clearVersion() {
+      if (versionBuilder_ == null) {
+        version_ = null;
+        onChanged();
+      } else {
+        version_ = null;
+        versionBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Version version = 14;</code>
+     */
+    public io.grafeas.v1.Version.Builder getVersionBuilder() {
+
+      onChanged();
+      return getVersionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Version version = 14;</code>
+     */
+    public io.grafeas.v1.VersionOrBuilder getVersionOrBuilder() {
+      if (versionBuilder_ != null) {
+        return versionBuilder_.getMessageOrBuilder();
+      } else {
+        return version_ == null ? io.grafeas.v1.Version.getDefaultInstance() : version_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.Version version = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.Version, io.grafeas.v1.Version.Builder, io.grafeas.v1.VersionOrBuilder>
+        getVersionFieldBuilder() {
+      if (versionBuilder_ == null) {
+        versionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.Version,
+                io.grafeas.v1.Version.Builder,
+                io.grafeas.v1.VersionOrBuilder>(getVersion(), getParentForChildren(), isClean());
+        version_ = null;
+      }
+      return versionBuilder_;
+    }
+
+    private java.lang.Object maintainer_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A freeform text denoting the maintainer of this package.
+     * </pre>
+     *
+     * <code>string maintainer = 15;</code>
+     *
+     * @return The maintainer.
+     */
+    public java.lang.String getMaintainer() {
+      java.lang.Object ref = maintainer_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        maintainer_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A freeform text denoting the maintainer of this package.
+     * </pre>
+     *
+     * <code>string maintainer = 15;</code>
+     *
+     * @return The bytes for maintainer.
+     */
+    public com.google.protobuf.ByteString getMaintainerBytes() {
+      java.lang.Object ref = maintainer_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        maintainer_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A freeform text denoting the maintainer of this package.
+     * </pre>
+     *
+     * <code>string maintainer = 15;</code>
+     *
+     * @param value The maintainer to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaintainer(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      maintainer_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A freeform text denoting the maintainer of this package.
+     * </pre>
+     *
+     * <code>string maintainer = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaintainer() {
+
+      maintainer_ = getDefaultInstance().getMaintainer();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A freeform text denoting the maintainer of this package.
+     * </pre>
+     *
+     * <code>string maintainer = 15;</code>
+     *
+     * @param value The bytes for maintainer to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaintainerBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      maintainer_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object url_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The homepage for this package.
+     * </pre>
+     *
+     * <code>string url = 16;</code>
+     *
+     * @return The url.
+     */
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The homepage for this package.
+     * </pre>
+     *
+     * <code>string url = 16;</code>
+     *
+     * @return The bytes for url.
+     */
+    public com.google.protobuf.ByteString getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The homepage for this package.
+     * </pre>
+     *
+     * <code>string url = 16;</code>
+     *
+     * @param value The url to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUrl(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      url_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The homepage for this package.
+     * </pre>
+     *
+     * <code>string url = 16;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUrl() {
+
+      url_ = getDefaultInstance().getUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The homepage for this package.
+     * </pre>
+     *
+     * <code>string url = 16;</code>
+     *
+     * @param value The bytes for url to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUrlBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      url_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The description of this package.
+     * </pre>
+     *
+     * <code>string description = 17;</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of this package.
+     * </pre>
+     *
+     * <code>string description = 17;</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of this package.
+     * </pre>
+     *
+     * <code>string description = 17;</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of this package.
+     * </pre>
+     *
+     * <code>string description = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The description of this package.
+     * </pre>
+     *
+     * <code>string description = 17;</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private io.grafeas.v1.License license_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.License, io.grafeas.v1.License.Builder, io.grafeas.v1.LicenseOrBuilder>
+        licenseBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Licenses that have been declared by the authors of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.License license = 18;</code>
+     *
+     * @return Whether the license field is set.
+     */
+    public boolean hasLicense() {
+      return licenseBuilder_ != null || license_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Licenses that have been declared by the authors of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.License license = 18;</code>
+     *
+     * @return The license.
+     */
+    public io.grafeas.v1.License getLicense() {
+      if (licenseBuilder_ == null) {
+        return license_ == null ? io.grafeas.v1.License.getDefaultInstance() : license_;
+      } else {
+        return licenseBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Licenses that have been declared by the authors of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.License license = 18;</code>
+     */
+    public Builder setLicense(io.grafeas.v1.License value) {
+      if (licenseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        license_ = value;
+        onChanged();
+      } else {
+        licenseBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Licenses that have been declared by the authors of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.License license = 18;</code>
+     */
+    public Builder setLicense(io.grafeas.v1.License.Builder builderForValue) {
+      if (licenseBuilder_ == null) {
+        license_ = builderForValue.build();
+        onChanged();
+      } else {
+        licenseBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Licenses that have been declared by the authors of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.License license = 18;</code>
+     */
+    public Builder mergeLicense(io.grafeas.v1.License value) {
+      if (licenseBuilder_ == null) {
+        if (license_ != null) {
+          license_ = io.grafeas.v1.License.newBuilder(license_).mergeFrom(value).buildPartial();
+        } else {
+          license_ = value;
+        }
+        onChanged();
+      } else {
+        licenseBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Licenses that have been declared by the authors of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.License license = 18;</code>
+     */
+    public Builder clearLicense() {
+      if (licenseBuilder_ == null) {
+        license_ = null;
+        onChanged();
+      } else {
+        license_ = null;
+        licenseBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Licenses that have been declared by the authors of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.License license = 18;</code>
+     */
+    public io.grafeas.v1.License.Builder getLicenseBuilder() {
+
+      onChanged();
+      return getLicenseFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Licenses that have been declared by the authors of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.License license = 18;</code>
+     */
+    public io.grafeas.v1.LicenseOrBuilder getLicenseOrBuilder() {
+      if (licenseBuilder_ != null) {
+        return licenseBuilder_.getMessageOrBuilder();
+      } else {
+        return license_ == null ? io.grafeas.v1.License.getDefaultInstance() : license_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Licenses that have been declared by the authors of the package.
+     * </pre>
+     *
+     * <code>.grafeas.v1.License license = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            io.grafeas.v1.License, io.grafeas.v1.License.Builder, io.grafeas.v1.LicenseOrBuilder>
+        getLicenseFieldBuilder() {
+      if (licenseBuilder_ == null) {
+        licenseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1.License,
+                io.grafeas.v1.License.Builder,
+                io.grafeas.v1.LicenseOrBuilder>(getLicense(), getParentForChildren(), isClean());
+        license_ = null;
+      }
+      return licenseBuilder_;
+    }
+
+    private java.util.List<io.grafeas.v1.Digest> digest_ = java.util.Collections.emptyList();
+
+    private void ensureDigestIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        digest_ = new java.util.ArrayList<io.grafeas.v1.Digest>(digest_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            io.grafeas.v1.Digest, io.grafeas.v1.Digest.Builder, io.grafeas.v1.DigestOrBuilder>
+        digestBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public java.util.List<io.grafeas.v1.Digest> getDigestList() {
+      if (digestBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(digest_);
+      } else {
+        return digestBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public int getDigestCount() {
+      if (digestBuilder_ == null) {
+        return digest_.size();
+      } else {
+        return digestBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public io.grafeas.v1.Digest getDigest(int index) {
+      if (digestBuilder_ == null) {
+        return digest_.get(index);
+      } else {
+        return digestBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public Builder setDigest(int index, io.grafeas.v1.Digest value) {
+      if (digestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDigestIsMutable();
+        digest_.set(index, value);
+        onChanged();
+      } else {
+        digestBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public Builder setDigest(int index, io.grafeas.v1.Digest.Builder builderForValue) {
+      if (digestBuilder_ == null) {
+        ensureDigestIsMutable();
+        digest_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        digestBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public Builder addDigest(io.grafeas.v1.Digest value) {
+      if (digestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDigestIsMutable();
+        digest_.add(value);
+        onChanged();
+      } else {
+        digestBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public Builder addDigest(int index, io.grafeas.v1.Digest value) {
+      if (digestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDigestIsMutable();
+        digest_.add(index, value);
+        onChanged();
+      } else {
+        digestBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public Builder addDigest(io.grafeas.v1.Digest.Builder builderForValue) {
+      if (digestBuilder_ == null) {
+        ensureDigestIsMutable();
+        digest_.add(builderForValue.build());
+        onChanged();
+      } else {
+        digestBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public Builder addDigest(int index, io.grafeas.v1.Digest.Builder builderForValue) {
+      if (digestBuilder_ == null) {
+        ensureDigestIsMutable();
+        digest_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        digestBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public Builder addAllDigest(java.lang.Iterable<? extends io.grafeas.v1.Digest> values) {
+      if (digestBuilder_ == null) {
+        ensureDigestIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, digest_);
+        onChanged();
+      } else {
+        digestBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public Builder clearDigest() {
+      if (digestBuilder_ == null) {
+        digest_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        digestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public Builder removeDigest(int index) {
+      if (digestBuilder_ == null) {
+        ensureDigestIsMutable();
+        digest_.remove(index);
+        onChanged();
+      } else {
+        digestBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public io.grafeas.v1.Digest.Builder getDigestBuilder(int index) {
+      return getDigestFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public io.grafeas.v1.DigestOrBuilder getDigestOrBuilder(int index) {
+      if (digestBuilder_ == null) {
+        return digest_.get(index);
+      } else {
+        return digestBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public java.util.List<? extends io.grafeas.v1.DigestOrBuilder> getDigestOrBuilderList() {
+      if (digestBuilder_ != null) {
+        return digestBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(digest_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public io.grafeas.v1.Digest.Builder addDigestBuilder() {
+      return getDigestFieldBuilder().addBuilder(io.grafeas.v1.Digest.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public io.grafeas.v1.Digest.Builder addDigestBuilder(int index) {
+      return getDigestFieldBuilder().addBuilder(index, io.grafeas.v1.Digest.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hash value, typically a file digest, that allows unique
+     * identification a specific package.
+     * </pre>
+     *
+     * <code>repeated .grafeas.v1.Digest digest = 19;</code>
+     */
+    public java.util.List<io.grafeas.v1.Digest.Builder> getDigestBuilderList() {
+      return getDigestFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            io.grafeas.v1.Digest, io.grafeas.v1.Digest.Builder, io.grafeas.v1.DigestOrBuilder>
+        getDigestFieldBuilder() {
+      if (digestBuilder_ == null) {
+        digestBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                io.grafeas.v1.Digest, io.grafeas.v1.Digest.Builder, io.grafeas.v1.DigestOrBuilder>(
+                digest_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        digest_ = null;
+      }
+      return digestBuilder_;
     }
 
     @java.lang.Override

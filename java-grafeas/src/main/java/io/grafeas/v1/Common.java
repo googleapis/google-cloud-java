@@ -44,6 +44,18 @@ public final class Common {
       internal_static_grafeas_v1_EnvelopeSignature_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_EnvelopeSignature_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_FileLocation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_FileLocation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_License_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_License_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_Digest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_Digest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -60,14 +72,17 @@ public final class Common {
           + "\001(\014\022\024\n\014payload_type\030\002 \001(\t\0221\n\nsignatures\030"
           + "\003 \003(\0132\035.grafeas.v1.EnvelopeSignature\"/\n\021"
           + "EnvelopeSignature\022\013\n\003sig\030\001 \001(\014\022\r\n\005keyid\030"
-          + "\002 \001(\t*\276\001\n\010NoteKind\022\031\n\025NOTE_KIND_UNSPECIF"
-          + "IED\020\000\022\021\n\rVULNERABILITY\020\001\022\t\n\005BUILD\020\002\022\t\n\005I"
-          + "MAGE\020\003\022\013\n\007PACKAGE\020\004\022\016\n\nDEPLOYMENT\020\005\022\r\n\tD"
-          + "ISCOVERY\020\006\022\017\n\013ATTESTATION\020\007\022\013\n\007UPGRADE\020\010"
-          + "\022\016\n\nCOMPLIANCE\020\t\022\024\n\020DSSE_ATTESTATION\020\nBQ"
-          + "\n\rio.grafeas.v1P\001Z8google.golang.org/gen"
-          + "proto/googleapis/grafeas/v1;grafeas\242\002\003GR"
-          + "Ab\006proto3"
+          + "\002 \001(\t\"!\n\014FileLocation\022\021\n\tfile_path\030\001 \001(\t"
+          + "\"/\n\007License\022\022\n\nexpression\030\001 \001(\t\022\020\n\010comme"
+          + "nts\030\002 \001(\t\",\n\006Digest\022\014\n\004algo\030\001 \001(\t\022\024\n\014dig"
+          + "est_bytes\030\002 \001(\014*\276\001\n\010NoteKind\022\031\n\025NOTE_KIN"
+          + "D_UNSPECIFIED\020\000\022\021\n\rVULNERABILITY\020\001\022\t\n\005BU"
+          + "ILD\020\002\022\t\n\005IMAGE\020\003\022\013\n\007PACKAGE\020\004\022\016\n\nDEPLOYM"
+          + "ENT\020\005\022\r\n\tDISCOVERY\020\006\022\017\n\013ATTESTATION\020\007\022\013\n"
+          + "\007UPGRADE\020\010\022\016\n\nCOMPLIANCE\020\t\022\024\n\020DSSE_ATTES"
+          + "TATION\020\nBQ\n\rio.grafeas.v1P\001Z8google.gola"
+          + "ng.org/genproto/googleapis/grafeas/v1;gr"
+          + "afeas\242\002\003GRAb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -100,6 +115,27 @@ public final class Common {
             internal_static_grafeas_v1_EnvelopeSignature_descriptor,
             new java.lang.String[] {
               "Sig", "Keyid",
+            });
+    internal_static_grafeas_v1_FileLocation_descriptor = getDescriptor().getMessageTypes().get(4);
+    internal_static_grafeas_v1_FileLocation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_FileLocation_descriptor,
+            new java.lang.String[] {
+              "FilePath",
+            });
+    internal_static_grafeas_v1_License_descriptor = getDescriptor().getMessageTypes().get(5);
+    internal_static_grafeas_v1_License_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_License_descriptor,
+            new java.lang.String[] {
+              "Expression", "Comments",
+            });
+    internal_static_grafeas_v1_Digest_descriptor = getDescriptor().getMessageTypes().get(6);
+    internal_static_grafeas_v1_Digest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_Digest_descriptor,
+            new java.lang.String[] {
+              "Algo", "DigestBytes",
             });
   }
 

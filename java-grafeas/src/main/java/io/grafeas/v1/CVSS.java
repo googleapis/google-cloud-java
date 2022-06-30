@@ -25,10 +25,8 @@ package io.grafeas.v1;
  * <pre>
  * Common Vulnerability Scoring System.
  * For details, see https://www.first.org/cvss/specification-document
- * This is a message we will try to use for storing multiple versions of
- * CVSS. The intention is that as new versions of CVSS scores get added, we
- * will be able to modify this message rather than adding new protos for each
- * new version of the score.
+ * This is a message we will try to use for storing various versions of CVSS
+ * rather than making a separate proto for storing a specific version.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1.CVSS}
@@ -184,13 +182,13 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return io.grafeas.v1.CvssProto.internal_static_grafeas_v1_CVSS_descriptor;
+    return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSS_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.CvssProto.internal_static_grafeas_v1_CVSS_fieldAccessorTable
+    return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSS_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.grafeas.v1.CVSS.class, io.grafeas.v1.CVSS.Builder.class);
   }
@@ -1480,10 +1478,8 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Common Vulnerability Scoring System.
    * For details, see https://www.first.org/cvss/specification-document
-   * This is a message we will try to use for storing multiple versions of
-   * CVSS. The intention is that as new versions of CVSS scores get added, we
-   * will be able to modify this message rather than adding new protos for each
-   * new version of the score.
+   * This is a message we will try to use for storing various versions of CVSS
+   * rather than making a separate proto for storing a specific version.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1.CVSS}
@@ -1493,13 +1489,13 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(builder_implements:grafeas.v1.CVSS)
       io.grafeas.v1.CVSSOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return io.grafeas.v1.CvssProto.internal_static_grafeas_v1_CVSS_descriptor;
+      return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSS_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.CvssProto.internal_static_grafeas_v1_CVSS_fieldAccessorTable
+      return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSS_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.CVSS.class, io.grafeas.v1.CVSS.Builder.class);
     }
@@ -1550,7 +1546,7 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return io.grafeas.v1.CvssProto.internal_static_grafeas_v1_CVSS_descriptor;
+      return io.grafeas.v1.CVSSProto.internal_static_grafeas_v1_CVSS_descriptor;
     }
 
     @java.lang.Override

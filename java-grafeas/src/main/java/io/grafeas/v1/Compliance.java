@@ -67,15 +67,16 @@ public final class Compliance {
           + "\021scan_instructions\030\007 \001(\014\032M\n\014CisBenchmark"
           + "\022\025\n\rprofile_level\030\001 \001(\005\022&\n\010severity\030\002 \001("
           + "\0162\024.grafeas.v1.SeverityB\021\n\017compliance_ty"
-          + "pe\"5\n\021ComplianceVersion\022\017\n\007cpe_uri\030\001 \001(\t"
-          + "\022\017\n\007version\030\002 \001(\t\"p\n\024ComplianceOccurrenc"
-          + "e\0229\n\023non_compliant_files\030\002 \003(\0132\034.grafeas"
-          + ".v1.NonCompliantFile\022\035\n\025non_compliance_r"
-          + "eason\030\003 \001(\t\"I\n\020NonCompliantFile\022\014\n\004path\030"
-          + "\001 \001(\t\022\027\n\017display_command\030\002 \001(\t\022\016\n\006reason"
-          + "\030\003 \001(\tBQ\n\rio.grafeas.v1P\001Z8google.golang"
-          + ".org/genproto/googleapis/grafeas/v1;graf"
-          + "eas\242\002\003GRAb\006proto3"
+          + "pe\"Q\n\021ComplianceVersion\022\017\n\007cpe_uri\030\001 \001(\t"
+          + "\022\032\n\022benchmark_document\030\003 \001(\t\022\017\n\007version\030"
+          + "\002 \001(\t\"p\n\024ComplianceOccurrence\0229\n\023non_com"
+          + "pliant_files\030\002 \003(\0132\034.grafeas.v1.NonCompl"
+          + "iantFile\022\035\n\025non_compliance_reason\030\003 \001(\t\""
+          + "I\n\020NonCompliantFile\022\014\n\004path\030\001 \001(\t\022\027\n\017dis"
+          + "play_command\030\002 \001(\t\022\016\n\006reason\030\003 \001(\tBQ\n\rio"
+          + ".grafeas.v1P\001Z8google.golang.org/genprot"
+          + "o/googleapis/grafeas/v1;grafeas\242\002\003GRAb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -111,7 +112,7 @@ public final class Compliance {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_grafeas_v1_ComplianceVersion_descriptor,
             new java.lang.String[] {
-              "CpeUri", "Version",
+              "CpeUri", "BenchmarkDocument", "Version",
             });
     internal_static_grafeas_v1_ComplianceOccurrence_descriptor =
         getDescriptor().getMessageTypes().get(2);
