@@ -1,5 +1,35 @@
 # Changelog
 
+## [2.9.0](https://github.com/googleapis/java-bigtable/compare/v2.8.0...v2.9.0) (2022-06-30)
+
+
+### Features
+
+* add built-in metric constants ([#1243](https://github.com/googleapis/java-bigtable/issues/1243)) ([b1fc00a](https://github.com/googleapis/java-bigtable/commit/b1fc00aa09129185b4e4db8edb9c4af2dbfd1ec8))
+* **generated:** Add storage_utilization_gib_per_node to Autoscaling target ([a4c6621](https://github.com/googleapis/java-bigtable/commit/a4c662153c98f8043059a068a66d784761b7c2cb))
+* **generated:** Cloud Bigtable Undelete Table service and message proto files ([a4c6621](https://github.com/googleapis/java-bigtable/commit/a4c662153c98f8043059a068a66d784761b7c2cb))
+* update tracers to use built in metrics ([#1244](https://github.com/googleapis/java-bigtable/issues/1244)) ([df77560](https://github.com/googleapis/java-bigtable/commit/df77560debadec8b3aecc08e95a58558c418df86))
+
+
+### Bug Fixes
+
+* fix flaky test ([#1293](https://github.com/googleapis/java-bigtable/issues/1293)) ([146c824](https://github.com/googleapis/java-bigtable/commit/146c824962b48b2023ddb93d92e4a61297722f0f))
+* remove the shaded profile from root pom ([#1274](https://github.com/googleapis/java-bigtable/issues/1274)) ([5eafcc3](https://github.com/googleapis/java-bigtable/commit/5eafcc3be3986692e64c95dcfc0d675208f2218c))
+* rename HeaderTracer callables to BigtableTracer callables ([#1276](https://github.com/googleapis/java-bigtable/issues/1276)) ([e0bd6c9](https://github.com/googleapis/java-bigtable/commit/e0bd6c922ed2adfc8d6dddeced84cb87fc9f2e91))
+* rename response observer and callbacks ([#1291](https://github.com/googleapis/java-bigtable/issues/1291)) ([2705a47](https://github.com/googleapis/java-bigtable/commit/2705a477f70247f16401901be9e0cd38733bdd2f))
+
+
+### Documentation
+
+* **sample:** update README for native image sample ([#1281](https://github.com/googleapis/java-bigtable/issues/1281)) ([4a3a2c9](https://github.com/googleapis/java-bigtable/commit/4a3a2c947642678c3011db616ebe7cbaed677f96))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#1285](https://github.com/googleapis/java-bigtable/issues/1285)) ([1dc7787](https://github.com/googleapis/java-bigtable/commit/1dc77879ea51fd397b75020a16728adec72f1b9b))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.12 ([#1283](https://github.com/googleapis/java-bigtable/issues/1283)) ([ba7844a](https://github.com/googleapis/java-bigtable/commit/ba7844acb6a4a3c47f1fc12b426f517b7fe3e55e))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.12 ([#1284](https://github.com/googleapis/java-bigtable/issues/1284)) ([75d0066](https://github.com/googleapis/java-bigtable/commit/75d006601e51263786f38b445a9cc6f08cbee403))
+
 ## [2.8.0](https://github.com/googleapis/java-bigtable/compare/v2.7.0...v2.8.0) (2022-05-27)
 
 
