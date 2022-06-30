@@ -118,6 +118,8 @@
     <module>google-cloud-accessapproval-bom</module>
   </modules>
 
+  
+  <!-- Test new change -->
   <reporting>
     <plugins>
       <plugin>
