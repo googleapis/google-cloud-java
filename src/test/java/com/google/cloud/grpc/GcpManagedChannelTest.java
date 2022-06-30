@@ -55,7 +55,9 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -100,7 +102,7 @@ public final class GcpManagedChannelTest {
 
   private final Handler testLogHandler = new Handler() {
     @Override
-    public void publish(LogRecord record) {
+    public synchronized void publish(LogRecord record) {
       logRecords.add(record);
     }
 
@@ -1223,6 +1225,44 @@ public final class GcpManagedChannelTest {
     // But in the log it must post 0.
     assertThat(lastLogMessage()).isEqualTo(
         poolIndex + ": stat: " + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS + " = 0");
+  }
+
+  @Test
+  public void testStateNotifications() throws InterruptedException {
+    final AtomicBoolean immediateCallbackCalled = new AtomicBoolean();
+    // Test callback is called when state doesn't match.
+    gcpChannel.notifyWhenStateChanged(ConnectivityState.SHUTDOWN, () ->
+        immediateCallbackCalled.set(true));
+
+    TimeUnit.MILLISECONDS.sleep(1);
+
+    assertThat(immediateCallbackCalled.get()).isTrue();
+
+    // Subscribe for notification when leaving IDLE state.
+    final AtomicReference<ConnectivityState> newState = new AtomicReference<>();
+
+    final Runnable callback = new Runnable() {
+      @Override
+      public void run() {
+        ConnectivityState state = gcpChannel.getState(false);
+        newState.set(state);
+        if (state.equals(ConnectivityState.IDLE)) {
+          gcpChannel.notifyWhenStateChanged(ConnectivityState.IDLE, this);
+        }
+      }
+    };
+
+    gcpChannel.notifyWhenStateChanged(ConnectivityState.IDLE, callback);
+
+    // Init connection to move out of the IDLE state.
+    ConnectivityState currentState = gcpChannel.getState(true);
+    // Make sure it was IDLE;
+    assertThat(currentState).isEqualTo(ConnectivityState.IDLE);
+
+    TimeUnit.MILLISECONDS.sleep(5);
+
+    assertThat(newState.get())
+        .isAnyOf(ConnectivityState.CONNECTING, ConnectivityState.TRANSIENT_FAILURE);
   }
 
   static class FakeManagedChannel extends ManagedChannel {
