@@ -44,7 +44,6 @@ branchProtectionRules:
   - "dependencies (8)"
   - "dependencies (11)"
   - "lint"
-  - "clirr"
   - "units (8)"
   - "units (11)"
   - "Kokoro - Test: Integration"
