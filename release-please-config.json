@@ -4,10 +4,10 @@
   "include-component-in-tag": true,
   "packages": {
     "java-accessapproval": {
-      "component": "java-accessapproval"
+      "component": "google-cloud-accessapproval"
     },
     "java-accesscontextmanager": {
-      "component": "java-accesscontextmanager"
+      "component": "google-identity-accesscontextmanager"
     }
   },
   "plugins": [
