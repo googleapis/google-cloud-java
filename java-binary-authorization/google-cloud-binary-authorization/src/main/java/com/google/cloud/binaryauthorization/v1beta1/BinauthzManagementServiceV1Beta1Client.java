@@ -110,6 +110,22 @@ import javax.annotation.Generated;
  *     BinauthzManagementServiceV1Beta1Client.create(binauthzManagementServiceV1Beta1Settings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * BinauthzManagementServiceV1Beta1Settings binauthzManagementServiceV1Beta1Settings =
+ *     BinauthzManagementServiceV1Beta1Settings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             BinauthzManagementServiceV1Beta1Settings.defaultHttpJsonTransportProviderBuilder()
+ *                 .build())
+ *         .build();
+ * BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client =
+ *     BinauthzManagementServiceV1Beta1Client.create(binauthzManagementServiceV1Beta1Settings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi

@@ -92,6 +92,21 @@ import javax.annotation.Generated;
  *     SystemPolicyV1Beta1Client.create(systemPolicyV1Beta1Settings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * SystemPolicyV1Beta1Settings systemPolicyV1Beta1Settings =
+ *     SystemPolicyV1Beta1Settings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             SystemPolicyV1Beta1Settings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * SystemPolicyV1Beta1Client systemPolicyV1Beta1Client =
+ *     SystemPolicyV1Beta1Client.create(systemPolicyV1Beta1Settings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
