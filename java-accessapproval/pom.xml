@@ -83,7 +83,7 @@
       </dependency>
 
       
-      <!-- Test -->
+      <!-- Test new -->
       <!-- Test dependencies -->
       <dependency>
         <groupId>junit</groupId>
