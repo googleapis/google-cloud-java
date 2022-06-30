@@ -39,7 +39,25 @@
  * // This snippet has been automatically generated for illustrative purposes only.
  * // It may require modifications to work in your environment.
  * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
- *   ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
+ *   ResourceName resource =
+ *       new ResourceName() {
+ *         {@literal @}Override
+ *         public Map<String, String> getFieldValuesMap() {
+ *           Map<String, String> fieldValuesMap = new HashMap<>();
+ *           fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+ *           return fieldValuesMap;
+ *         }
+ *
+ *         {@literal @}Override
+ *         public String getFieldValue(String fieldName) {
+ *           return getFieldValuesMap().get(fieldName);
+ *         }
+ *
+ *         {@literal @}Override
+ *         public String toString() {
+ *           return "projects/project-8432/notes/note-8432";
+ *         }
+ *       };
  *   Policy policy = Policy.newBuilder().build();
  *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
  * }

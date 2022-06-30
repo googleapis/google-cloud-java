@@ -16,7 +16,6 @@
 
 package com.google.cloud.devtools.containeranalysis.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.resourcenames.ResourceName;
@@ -57,7 +56,25 @@ import javax.annotation.Generated;
  * // This snippet has been automatically generated for illustrative purposes only.
  * // It may require modifications to work in your environment.
  * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
- *   ResourceName resource = ProjectName.of("[PROJECT]");
+ *   ResourceName resource =
+ *       new ResourceName() {
+ *         {@literal @}Override
+ *         public Map<String, String> getFieldValuesMap() {
+ *           Map<String, String> fieldValuesMap = new HashMap<>();
+ *           fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+ *           return fieldValuesMap;
+ *         }
+ *
+ *         {@literal @}Override
+ *         public String getFieldValue(String fieldName) {
+ *           return getFieldValuesMap().get(fieldName);
+ *         }
+ *
+ *         {@literal @}Override
+ *         public String toString() {
+ *           return "projects/project-8432/notes/note-8432";
+ *         }
+ *       };
  *   Policy policy = Policy.newBuilder().build();
  *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
  * }
@@ -114,6 +131,21 @@ import javax.annotation.Generated;
  *     ContainerAnalysisClient.create(containerAnalysisSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * ContainerAnalysisSettings containerAnalysisSettings =
+ *     ContainerAnalysisSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             ContainerAnalysisSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * ContainerAnalysisClient containerAnalysisClient =
+ *     ContainerAnalysisClient.create(containerAnalysisSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
@@ -147,7 +179,6 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * Constructs an instance of ContainerAnalysisClient, using the given stub for making calls. This
    * is for advanced usage - prefer using create(ContainerAnalysisSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ContainerAnalysisClient create(ContainerAnalysisStub stub) {
     return new ContainerAnalysisClient(stub);
   }
@@ -162,7 +193,6 @@ public class ContainerAnalysisClient implements BackgroundResource {
     this.stub = ((ContainerAnalysisStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ContainerAnalysisClient(ContainerAnalysisStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -172,7 +202,6 @@ public class ContainerAnalysisClient implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ContainerAnalysisStub getStub() {
     return stub;
   }
@@ -192,7 +221,25 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   ResourceName resource = ProjectName.of("[PROJECT]");
+   *   ResourceName resource =
+   *       new ResourceName() {
+   *         {@literal @}Override
+   *         public Map<String, String> getFieldValuesMap() {
+   *           Map<String, String> fieldValuesMap = new HashMap<>();
+   *           fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+   *           return fieldValuesMap;
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String getFieldValue(String fieldName) {
+   *           return getFieldValuesMap().get(fieldName);
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String toString() {
+   *           return "projects/project-8432/notes/note-8432";
+   *         }
+   *       };
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
    * }
@@ -265,7 +312,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource("SetIamPolicyRequest1223629066".toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -297,7 +344,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource("SetIamPolicyRequest1223629066".toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -326,7 +373,25 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   ResourceName resource = ProjectName.of("[PROJECT]");
+   *   ResourceName resource =
+   *       new ResourceName() {
+   *         {@literal @}Override
+   *         public Map<String, String> getFieldValuesMap() {
+   *           Map<String, String> fieldValuesMap = new HashMap<>();
+   *           fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+   *           return fieldValuesMap;
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String getFieldValue(String fieldName) {
+   *           return getFieldValuesMap().get(fieldName);
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String toString() {
+   *           return "projects/project-8432/notes/note-8432";
+   *         }
+   *       };
    *   Policy response = containerAnalysisClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -389,7 +454,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource("GetIamPolicyRequest-1527610370".toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   Policy response = containerAnalysisClient.getIamPolicy(request);
@@ -420,7 +485,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource("GetIamPolicyRequest-1527610370".toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Policy> future = containerAnalysisClient.getIamPolicyCallable().futureCall(request);
@@ -447,7 +512,25 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
-   *   ResourceName resource = ProjectName.of("[PROJECT]");
+   *   ResourceName resource =
+   *       new ResourceName() {
+   *         {@literal @}Override
+   *         public Map<String, String> getFieldValuesMap() {
+   *           Map<String, String> fieldValuesMap = new HashMap<>();
+   *           fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+   *           return fieldValuesMap;
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String getFieldValue(String fieldName) {
+   *           return getFieldValuesMap().get(fieldName);
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String toString() {
+   *           return "projects/project-8432/notes/note-8432";
+   *         }
+   *       };
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       containerAnalysisClient.testIamPermissions(resource, permissions);
@@ -525,7 +608,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource("TestIamPermissionsRequest942398222".toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   TestIamPermissionsResponse response = containerAnalysisClient.testIamPermissions(request);
@@ -555,7 +638,7 @@ public class ContainerAnalysisClient implements BackgroundResource {
    * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
-   *           .setResource(ProjectName.of("[PROJECT]").toString())
+   *           .setResource("TestIamPermissionsRequest942398222".toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
    *   ApiFuture<TestIamPermissionsResponse> future =
