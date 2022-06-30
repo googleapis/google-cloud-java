@@ -87,7 +87,7 @@ public interface JobOrBuilder
    * name as an already-existing Job, the attempt returns the
    * existing Job.
    * The name must match the regular expression
-   * `[a-z]([-a-z0-9]{0,38}[a-z0-9])?`
+   * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
    *
    * <code>string name = 3;</code>
@@ -105,7 +105,7 @@ public interface JobOrBuilder
    * name as an already-existing Job, the attempt returns the
    * existing Job.
    * The name must match the regular expression
-   * `[a-z]([-a-z0-9]{0,38}[a-z0-9])?`
+   * `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
    * </pre>
    *
    * <code>string name = 3;</code>
