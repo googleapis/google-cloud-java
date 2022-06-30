@@ -82,6 +82,8 @@
         <scope>import</scope>
       </dependency>
 
+      
+      <!-- Test -->
       <!-- Test dependencies -->
       <dependency>
         <groupId>junit</groupId>
@@ -171,6 +173,7 @@
             <group>
               <title>SPI packages</title>
               <packages>com.google.cloud.spi*</packages>
+              
             </group>
           </groups>
 
