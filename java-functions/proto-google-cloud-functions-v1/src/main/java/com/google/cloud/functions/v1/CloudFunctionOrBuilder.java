@@ -872,8 +872,9 @@ public interface CloudFunctionOrBuilder
    * If specified, you must also provide an artifact registry repository using
    * the `docker_repository` field that was created with the same KMS crypto
    * key.
-   * The following service accounts need to be granted Cloud KMS crypto key
-   * encrypter/decrypter roles on the key.
+   * The following service accounts need to be granted the role 'Cloud KMS
+   * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
+   * on the Key/KeyRing/Project/Organization (least access preferred).
    * 1. Google Cloud Functions service account
    *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
    *    Required to protect the function's image.
@@ -906,8 +907,9 @@ public interface CloudFunctionOrBuilder
    * If specified, you must also provide an artifact registry repository using
    * the `docker_repository` field that was created with the same KMS crypto
    * key.
-   * The following service accounts need to be granted Cloud KMS crypto key
-   * encrypter/decrypter roles on the key.
+   * The following service accounts need to be granted the role 'Cloud KMS
+   * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
+   * on the Key/KeyRing/Project/Organization (least access preferred).
    * 1. Google Cloud Functions service account
    *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
    *    Required to protect the function's image.
@@ -1210,6 +1212,39 @@ public interface CloudFunctionOrBuilder
    * @return The bytes for dockerRepository.
    */
   com.google.protobuf.ByteString getDockerRepositoryBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Docker Registry to use for this deployment.
+   * If `docker_repository` field is specified, this field will be automatically
+   * set as `ARTIFACT_REGISTRY`.
+   * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+   * This field may be overridden by the backend for eligible deployments.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+   *
+   * @return The enum numeric value on the wire for dockerRegistry.
+   */
+  int getDockerRegistryValue();
+  /**
+   *
+   *
+   * <pre>
+   * Docker Registry to use for this deployment.
+   * If `docker_repository` field is specified, this field will be automatically
+   * set as `ARTIFACT_REGISTRY`.
+   * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+   * This field may be overridden by the backend for eligible deployments.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+   *
+   * @return The dockerRegistry.
+   */
+  com.google.cloud.functions.v1.CloudFunction.DockerRegistry getDockerRegistry();
 
   public com.google.cloud.functions.v1.CloudFunction.SourceCodeCase getSourceCodeCase();
 

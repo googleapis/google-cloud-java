@@ -24,7 +24,6 @@ package com.google.cloud.functions.v1;
  * <pre>
  * Describes a Cloud Function that contains user computation executed in
  * response to an event. It encapsulate function and triggers configurations.
- * Next tag: 36
  * </pre>
  *
  * Protobuf type {@code google.cloud.functions.v1.CloudFunction}
@@ -58,6 +57,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     secretVolumes_ = java.util.Collections.emptyList();
     sourceToken_ = "";
     dockerRepository_ = "";
+    dockerRegistry_ = 0;
   }
 
   @java.lang.Override
@@ -388,6 +388,13 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               dockerRepository_ = s;
+              break;
+            }
+          case 280:
+            {
+              int rawValue = input.readEnum();
+
+              dockerRegistry_ = rawValue;
               break;
             }
           default:
@@ -793,6 +800,173 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.functions.v1.CloudFunction.IngressSettings)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Docker Registry to use for storing function Docker images.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.functions.v1.CloudFunction.DockerRegistry}
+   */
+  public enum DockerRegistry implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>DOCKER_REGISTRY_UNSPECIFIED = 0;</code>
+     */
+    DOCKER_REGISTRY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Docker images will be stored in multi-regional Container Registry
+     * repositories named `gcf`.
+     * </pre>
+     *
+     * <code>CONTAINER_REGISTRY = 1;</code>
+     */
+    CONTAINER_REGISTRY(1),
+    /**
+     *
+     *
+     * <pre>
+     * Docker images will be stored in regional Artifact Registry repositories.
+     * By default, GCF will create and use repositories named `gcf-artifacts`
+     * in every region in which a function is deployed. But the repository to
+     * use can also be specified by the user using the `docker_repository`
+     * field.
+     * </pre>
+     *
+     * <code>ARTIFACT_REGISTRY = 2;</code>
+     */
+    ARTIFACT_REGISTRY(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>DOCKER_REGISTRY_UNSPECIFIED = 0;</code>
+     */
+    public static final int DOCKER_REGISTRY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Docker images will be stored in multi-regional Container Registry
+     * repositories named `gcf`.
+     * </pre>
+     *
+     * <code>CONTAINER_REGISTRY = 1;</code>
+     */
+    public static final int CONTAINER_REGISTRY_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Docker images will be stored in regional Artifact Registry repositories.
+     * By default, GCF will create and use repositories named `gcf-artifacts`
+     * in every region in which a function is deployed. But the repository to
+     * use can also be specified by the user using the `docker_repository`
+     * field.
+     * </pre>
+     *
+     * <code>ARTIFACT_REGISTRY = 2;</code>
+     */
+    public static final int ARTIFACT_REGISTRY_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DockerRegistry valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DockerRegistry forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DOCKER_REGISTRY_UNSPECIFIED;
+        case 1:
+          return CONTAINER_REGISTRY;
+        case 2:
+          return ARTIFACT_REGISTRY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DockerRegistry> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DockerRegistry> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<DockerRegistry>() {
+          public DockerRegistry findValueByNumber(int number) {
+            return DockerRegistry.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.functions.v1.CloudFunction.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final DockerRegistry[] VALUES = values();
+
+    public static DockerRegistry valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DockerRegistry(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.functions.v1.CloudFunction.DockerRegistry)
   }
 
   private int sourceCodeCase_ = 0;
@@ -2233,8 +2407,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    * If specified, you must also provide an artifact registry repository using
    * the `docker_repository` field that was created with the same KMS crypto
    * key.
-   * The following service accounts need to be granted Cloud KMS crypto key
-   * encrypter/decrypter roles on the key.
+   * The following service accounts need to be granted the role 'Cloud KMS
+   * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
+   * on the Key/KeyRing/Project/Organization (least access preferred).
    * 1. Google Cloud Functions service account
    *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
    *    Required to protect the function's image.
@@ -2278,8 +2453,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    * If specified, you must also provide an artifact registry repository using
    * the `docker_repository` field that was created with the same KMS crypto
    * key.
-   * The following service accounts need to be granted Cloud KMS crypto key
-   * encrypter/decrypter roles on the key.
+   * The following service accounts need to be granted the role 'Cloud KMS
+   * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
+   * on the Key/KeyRing/Project/Organization (least access preferred).
    * 1. Google Cloud Functions service account
    *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
    *    Required to protect the function's image.
@@ -2749,6 +2925,52 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DOCKER_REGISTRY_FIELD_NUMBER = 35;
+  private int dockerRegistry_;
+  /**
+   *
+   *
+   * <pre>
+   * Docker Registry to use for this deployment.
+   * If `docker_repository` field is specified, this field will be automatically
+   * set as `ARTIFACT_REGISTRY`.
+   * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+   * This field may be overridden by the backend for eligible deployments.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+   *
+   * @return The enum numeric value on the wire for dockerRegistry.
+   */
+  @java.lang.Override
+  public int getDockerRegistryValue() {
+    return dockerRegistry_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Docker Registry to use for this deployment.
+   * If `docker_repository` field is specified, this field will be automatically
+   * set as `ARTIFACT_REGISTRY`.
+   * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+   * This field may be overridden by the backend for eligible deployments.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+   *
+   * @return The dockerRegistry.
+   */
+  @java.lang.Override
+  public com.google.cloud.functions.v1.CloudFunction.DockerRegistry getDockerRegistry() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.functions.v1.CloudFunction.DockerRegistry result =
+        com.google.cloud.functions.v1.CloudFunction.DockerRegistry.valueOf(dockerRegistry_);
+    return result == null
+        ? com.google.cloud.functions.v1.CloudFunction.DockerRegistry.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2868,6 +3090,11 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dockerRepository_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 34, dockerRepository_);
+    }
+    if (dockerRegistry_
+        != com.google.cloud.functions.v1.CloudFunction.DockerRegistry.DOCKER_REGISTRY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(35, dockerRegistry_);
     }
     unknownFields.writeTo(output);
   }
@@ -3012,6 +3239,11 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dockerRepository_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(34, dockerRepository_);
     }
+    if (dockerRegistry_
+        != com.google.cloud.functions.v1.CloudFunction.DockerRegistry.DOCKER_REGISTRY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(35, dockerRegistry_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3064,6 +3296,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     if (!getSecretVolumesList().equals(other.getSecretVolumesList())) return false;
     if (!getSourceToken().equals(other.getSourceToken())) return false;
     if (!getDockerRepository().equals(other.getDockerRepository())) return false;
+    if (dockerRegistry_ != other.dockerRegistry_) return false;
     if (!getSourceCodeCase().equals(other.getSourceCodeCase())) return false;
     switch (sourceCodeCase_) {
       case 3:
@@ -3168,6 +3401,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getSourceToken().hashCode();
     hash = (37 * hash) + DOCKER_REPOSITORY_FIELD_NUMBER;
     hash = (53 * hash) + getDockerRepository().hashCode();
+    hash = (37 * hash) + DOCKER_REGISTRY_FIELD_NUMBER;
+    hash = (53 * hash) + dockerRegistry_;
     switch (sourceCodeCase_) {
       case 3:
         hash = (37 * hash) + SOURCE_ARCHIVE_URL_FIELD_NUMBER;
@@ -3302,7 +3537,6 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Describes a Cloud Function that contains user computation executed in
    * response to an event. It encapsulate function and triggers configurations.
-   * Next tag: 36
    * </pre>
    *
    * Protobuf type {@code google.cloud.functions.v1.CloudFunction}
@@ -3441,6 +3675,8 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
 
       dockerRepository_ = "";
 
+      dockerRegistry_ = 0;
+
       sourceCodeCase_ = 0;
       sourceCode_ = null;
       triggerCase_ = 0;
@@ -3555,6 +3791,7 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       }
       result.sourceToken_ = sourceToken_;
       result.dockerRepository_ = dockerRepository_;
+      result.dockerRegistry_ = dockerRegistry_;
       result.sourceCodeCase_ = sourceCodeCase_;
       result.triggerCase_ = triggerCase_;
       onBuilt();
@@ -3742,6 +3979,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       if (!other.getDockerRepository().isEmpty()) {
         dockerRepository_ = other.dockerRepository_;
         onChanged();
+      }
+      if (other.dockerRegistry_ != 0) {
+        setDockerRegistryValue(other.getDockerRegistryValue());
       }
       switch (other.getSourceCodeCase()) {
         case SOURCE_ARCHIVE_URL:
@@ -7123,8 +7363,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * If specified, you must also provide an artifact registry repository using
      * the `docker_repository` field that was created with the same KMS crypto
      * key.
-     * The following service accounts need to be granted Cloud KMS crypto key
-     * encrypter/decrypter roles on the key.
+     * The following service accounts need to be granted the role 'Cloud KMS
+     * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
+     * on the Key/KeyRing/Project/Organization (least access preferred).
      * 1. Google Cloud Functions service account
      *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
      *    Required to protect the function's image.
@@ -7167,8 +7408,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * If specified, you must also provide an artifact registry repository using
      * the `docker_repository` field that was created with the same KMS crypto
      * key.
-     * The following service accounts need to be granted Cloud KMS crypto key
-     * encrypter/decrypter roles on the key.
+     * The following service accounts need to be granted the role 'Cloud KMS
+     * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
+     * on the Key/KeyRing/Project/Organization (least access preferred).
      * 1. Google Cloud Functions service account
      *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
      *    Required to protect the function's image.
@@ -7211,8 +7453,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * If specified, you must also provide an artifact registry repository using
      * the `docker_repository` field that was created with the same KMS crypto
      * key.
-     * The following service accounts need to be granted Cloud KMS crypto key
-     * encrypter/decrypter roles on the key.
+     * The following service accounts need to be granted the role 'Cloud KMS
+     * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
+     * on the Key/KeyRing/Project/Organization (least access preferred).
      * 1. Google Cloud Functions service account
      *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
      *    Required to protect the function's image.
@@ -7254,8 +7497,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * If specified, you must also provide an artifact registry repository using
      * the `docker_repository` field that was created with the same KMS crypto
      * key.
-     * The following service accounts need to be granted Cloud KMS crypto key
-     * encrypter/decrypter roles on the key.
+     * The following service accounts need to be granted the role 'Cloud KMS
+     * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
+     * on the Key/KeyRing/Project/Organization (least access preferred).
      * 1. Google Cloud Functions service account
      *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
      *    Required to protect the function's image.
@@ -7293,8 +7537,9 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
      * If specified, you must also provide an artifact registry repository using
      * the `docker_repository` field that was created with the same KMS crypto
      * key.
-     * The following service accounts need to be granted Cloud KMS crypto key
-     * encrypter/decrypter roles on the key.
+     * The following service accounts need to be granted the role 'Cloud KMS
+     * CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)'
+     * on the Key/KeyRing/Project/Organization (least access preferred).
      * 1. Google Cloud Functions service account
      *    (service-{project_number}&#64;gcf-admin-robot.iam.gserviceaccount.com) -
      *    Required to protect the function's image.
@@ -8703,6 +8948,120 @@ public final class CloudFunction extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       dockerRepository_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int dockerRegistry_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Docker Registry to use for this deployment.
+     * If `docker_repository` field is specified, this field will be automatically
+     * set as `ARTIFACT_REGISTRY`.
+     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+     * This field may be overridden by the backend for eligible deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     *
+     * @return The enum numeric value on the wire for dockerRegistry.
+     */
+    @java.lang.Override
+    public int getDockerRegistryValue() {
+      return dockerRegistry_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Docker Registry to use for this deployment.
+     * If `docker_repository` field is specified, this field will be automatically
+     * set as `ARTIFACT_REGISTRY`.
+     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+     * This field may be overridden by the backend for eligible deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     *
+     * @param value The enum numeric value on the wire for dockerRegistry to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDockerRegistryValue(int value) {
+
+      dockerRegistry_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Docker Registry to use for this deployment.
+     * If `docker_repository` field is specified, this field will be automatically
+     * set as `ARTIFACT_REGISTRY`.
+     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+     * This field may be overridden by the backend for eligible deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     *
+     * @return The dockerRegistry.
+     */
+    @java.lang.Override
+    public com.google.cloud.functions.v1.CloudFunction.DockerRegistry getDockerRegistry() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.functions.v1.CloudFunction.DockerRegistry result =
+          com.google.cloud.functions.v1.CloudFunction.DockerRegistry.valueOf(dockerRegistry_);
+      return result == null
+          ? com.google.cloud.functions.v1.CloudFunction.DockerRegistry.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Docker Registry to use for this deployment.
+     * If `docker_repository` field is specified, this field will be automatically
+     * set as `ARTIFACT_REGISTRY`.
+     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+     * This field may be overridden by the backend for eligible deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     *
+     * @param value The dockerRegistry to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDockerRegistry(
+        com.google.cloud.functions.v1.CloudFunction.DockerRegistry value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      dockerRegistry_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Docker Registry to use for this deployment.
+     * If `docker_repository` field is specified, this field will be automatically
+     * set as `ARTIFACT_REGISTRY`.
+     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+     * This field may be overridden by the backend for eligible deployments.
+     * </pre>
+     *
+     * <code>.google.cloud.functions.v1.CloudFunction.DockerRegistry docker_registry = 35;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDockerRegistry() {
+
+      dockerRegistry_ = 0;
       onChanged();
       return this;
     }

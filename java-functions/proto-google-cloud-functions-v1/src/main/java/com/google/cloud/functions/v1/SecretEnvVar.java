@@ -24,8 +24,7 @@ package com.google.cloud.functions.v1;
  * <pre>
  * Configuration for a secret environment variable. It has the information
  * necessary to fetch the secret value from secret manager and expose it as an
- * environment variable. Secret value is not a part of the configuration. Secret
- * values are only fetched when a new clone starts.
+ * environment variable.
  * </pre>
  *
  * Protobuf type {@code google.cloud.functions.v1.SecretEnvVar}
@@ -301,7 +300,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Version of the secret (version number or the string 'latest'). It is
    * recommended to use a numeric version for secret environment variables as
-   * any updates to the secret value is not reflected until new clones start.
+   * any updates to the secret value is not reflected until new instances start.
    * </pre>
    *
    * <code>string version = 4;</code>
@@ -326,7 +325,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Version of the secret (version number or the string 'latest'). It is
    * recommended to use a numeric version for secret environment variables as
-   * any updates to the secret value is not reflected until new clones start.
+   * any updates to the secret value is not reflected until new instances start.
    * </pre>
    *
    * <code>string version = 4;</code>
@@ -538,8 +537,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Configuration for a secret environment variable. It has the information
    * necessary to fetch the secret value from secret manager and expose it as an
-   * environment variable. Secret value is not a part of the configuration. Secret
-   * values are only fetched when a new clone starts.
+   * environment variable.
    * </pre>
    *
    * Protobuf type {@code google.cloud.functions.v1.SecretEnvVar}
@@ -1053,7 +1051,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Version of the secret (version number or the string 'latest'). It is
      * recommended to use a numeric version for secret environment variables as
-     * any updates to the secret value is not reflected until new clones start.
+     * any updates to the secret value is not reflected until new instances start.
      * </pre>
      *
      * <code>string version = 4;</code>
@@ -1077,7 +1075,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Version of the secret (version number or the string 'latest'). It is
      * recommended to use a numeric version for secret environment variables as
-     * any updates to the secret value is not reflected until new clones start.
+     * any updates to the secret value is not reflected until new instances start.
      * </pre>
      *
      * <code>string version = 4;</code>
@@ -1101,7 +1099,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Version of the secret (version number or the string 'latest'). It is
      * recommended to use a numeric version for secret environment variables as
-     * any updates to the secret value is not reflected until new clones start.
+     * any updates to the secret value is not reflected until new instances start.
      * </pre>
      *
      * <code>string version = 4;</code>
@@ -1124,7 +1122,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Version of the secret (version number or the string 'latest'). It is
      * recommended to use a numeric version for secret environment variables as
-     * any updates to the secret value is not reflected until new clones start.
+     * any updates to the secret value is not reflected until new instances start.
      * </pre>
      *
      * <code>string version = 4;</code>
@@ -1143,7 +1141,7 @@ public final class SecretEnvVar extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Version of the secret (version number or the string 'latest'). It is
      * recommended to use a numeric version for secret environment variables as
-     * any updates to the secret value is not reflected until new clones start.
+     * any updates to the secret value is not reflected until new instances start.
      * </pre>
      *
      * <code>string version = 4;</code>

@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -36,7 +37,6 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -111,13 +111,29 @@ import javax.annotation.Generated;
  *     CloudFunctionsServiceClient.create(cloudFunctionsServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * CloudFunctionsServiceSettings cloudFunctionsServiceSettings =
+ *     CloudFunctionsServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             CloudFunctionsServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * CloudFunctionsServiceClient cloudFunctionsServiceClient =
+ *     CloudFunctionsServiceClient.create(cloudFunctionsServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class CloudFunctionsServiceClient implements BackgroundResource {
   private final CloudFunctionsServiceSettings settings;
   private final CloudFunctionsServiceStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of CloudFunctionsServiceClient with default settings. */
   public static final CloudFunctionsServiceClient create() throws IOException {
@@ -137,7 +153,6 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Constructs an instance of CloudFunctionsServiceClient, using the given stub for making calls.
    * This is for advanced usage - prefer using create(CloudFunctionsServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CloudFunctionsServiceClient create(CloudFunctionsServiceStub stub) {
     return new CloudFunctionsServiceClient(stub);
   }
@@ -150,21 +165,23 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   protected CloudFunctionsServiceClient(CloudFunctionsServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((CloudFunctionsServiceStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CloudFunctionsServiceClient(CloudFunctionsServiceStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final CloudFunctionsServiceSettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudFunctionsServiceStub getStub() {
     return stub;
   }
@@ -173,8 +190,17 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -259,7 +285,7 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    *   while (true) {
    *     ListFunctionsResponse response =
    *         cloudFunctionsServiceClient.listFunctionsCallable().call(request);
-   *     for (CloudFunction element : response.getResponsesList()) {
+   *     for (CloudFunction element : response.getFunctionsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -930,7 +956,12 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   GenerateUploadUrlRequest request =
-   *       GenerateUploadUrlRequest.newBuilder().setParent("parent-995424086").build();
+   *       GenerateUploadUrlRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setKmsKeyName(
+   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+   *                   .toString())
+   *           .build();
    *   GenerateUploadUrlResponse response = cloudFunctionsServiceClient.generateUploadUrl(request);
    * }
    * }</pre>
@@ -981,7 +1012,12 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
    *     CloudFunctionsServiceClient.create()) {
    *   GenerateUploadUrlRequest request =
-   *       GenerateUploadUrlRequest.newBuilder().setParent("parent-995424086").build();
+   *       GenerateUploadUrlRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setKmsKeyName(
+   *               CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+   *                   .toString())
+   *           .build();
    *   ApiFuture<GenerateUploadUrlResponse> future =
    *       cloudFunctionsServiceClient.generateUploadUrlCallable().futureCall(request);
    *   // Do something.

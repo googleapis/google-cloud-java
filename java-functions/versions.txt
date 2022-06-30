@@ -4,3 +4,7 @@
 google-cloud-functions:2.4.1:2.4.2-SNAPSHOT
 grpc-google-cloud-functions-v1:2.4.1:2.4.2-SNAPSHOT
 proto-google-cloud-functions-v1:2.4.1:2.4.2-SNAPSHOT
+proto-google-cloud-functions-v2beta:2.4.1:2.4.2-SNAPSHOT
+proto-google-cloud-functions-v2alpha:2.4.1:2.4.2-SNAPSHOT
+grpc-google-cloud-functions-v2beta:2.4.1:2.4.2-SNAPSHOT
+grpc-google-cloud-functions-v2alpha:2.4.1:2.4.2-SNAPSHOT

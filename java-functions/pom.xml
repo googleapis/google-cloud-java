@@ -65,6 +65,26 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-functions-v2alpha</artifactId>
+        <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-functions-v2alpha:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-functions-v2beta</artifactId>
+        <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-functions-v2beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-functions-v2alpha</artifactId>
+        <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-functions-v2alpha:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-functions-v2beta</artifactId>
+        <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-functions-v2beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-functions-v1</artifactId>
         <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-functions-v1:current} -->
       </dependency>
@@ -111,7 +131,11 @@
   <modules>
     <module>google-cloud-functions</module>
     <module>grpc-google-cloud-functions-v1</module>
+    <module>grpc-google-cloud-functions-v2beta</module>
+    <module>grpc-google-cloud-functions-v2alpha</module>
     <module>proto-google-cloud-functions-v1</module>
+    <module>proto-google-cloud-functions-v2beta</module>
+    <module>proto-google-cloud-functions-v2alpha</module>
     <module>google-cloud-functions-bom</module>
   </modules>
 

@@ -175,7 +175,9 @@ public class CloudFunctionsServiceClientTest {
             .setMaxInstances(-330682013)
             .setMinInstances(1491624145)
             .setVpcConnector("vpcConnector2101559652")
-            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .setBuildWorkerPool("buildWorkerPool1011442120")
             .setBuildId("buildId230943785")
             .setBuildName("buildName-1401172455")
@@ -237,7 +239,9 @@ public class CloudFunctionsServiceClientTest {
             .setMaxInstances(-330682013)
             .setMinInstances(1491624145)
             .setVpcConnector("vpcConnector2101559652")
-            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .setBuildWorkerPool("buildWorkerPool1011442120")
             .setBuildId("buildId230943785")
             .setBuildName("buildName-1401172455")
@@ -299,7 +303,9 @@ public class CloudFunctionsServiceClientTest {
             .setMaxInstances(-330682013)
             .setMinInstances(1491624145)
             .setVpcConnector("vpcConnector2101559652")
-            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .setBuildWorkerPool("buildWorkerPool1011442120")
             .setBuildId("buildId230943785")
             .setBuildName("buildName-1401172455")
@@ -372,7 +378,9 @@ public class CloudFunctionsServiceClientTest {
             .setMaxInstances(-330682013)
             .setMinInstances(1491624145)
             .setVpcConnector("vpcConnector2101559652")
-            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .setBuildWorkerPool("buildWorkerPool1011442120")
             .setBuildId("buildId230943785")
             .setBuildName("buildName-1401172455")
@@ -445,7 +453,9 @@ public class CloudFunctionsServiceClientTest {
             .setMaxInstances(-330682013)
             .setMinInstances(1491624145)
             .setVpcConnector("vpcConnector2101559652")
-            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .setBuildWorkerPool("buildWorkerPool1011442120")
             .setBuildId("buildId230943785")
             .setBuildName("buildName-1401172455")
@@ -671,7 +681,12 @@ public class CloudFunctionsServiceClientTest {
     mockCloudFunctionsService.addResponse(expectedResponse);
 
     GenerateUploadUrlRequest request =
-        GenerateUploadUrlRequest.newBuilder().setParent("parent-995424086").build();
+        GenerateUploadUrlRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
+            .build();
 
     GenerateUploadUrlResponse actualResponse = client.generateUploadUrl(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -681,6 +696,7 @@ public class CloudFunctionsServiceClientTest {
     GenerateUploadUrlRequest actualRequest = ((GenerateUploadUrlRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getKmsKeyName(), actualRequest.getKmsKeyName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -694,7 +710,12 @@ public class CloudFunctionsServiceClientTest {
 
     try {
       GenerateUploadUrlRequest request =
-          GenerateUploadUrlRequest.newBuilder().setParent("parent-995424086").build();
+          GenerateUploadUrlRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setKmsKeyName(
+                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                      .toString())
+              .build();
       client.generateUploadUrl(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

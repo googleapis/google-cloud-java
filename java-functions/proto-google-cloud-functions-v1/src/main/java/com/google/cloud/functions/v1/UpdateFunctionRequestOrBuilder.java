@@ -68,7 +68,7 @@ public interface UpdateFunctionRequestOrBuilder
    *
    *
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. The list of fields in `CloudFunction` that have to be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -80,7 +80,7 @@ public interface UpdateFunctionRequestOrBuilder
    *
    *
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. The list of fields in `CloudFunction` that have to be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -92,7 +92,7 @@ public interface UpdateFunctionRequestOrBuilder
    *
    *
    * <pre>
-   * Required list of fields to be updated in this request.
+   * Required. The list of fields in `CloudFunction` that have to be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
