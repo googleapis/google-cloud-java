@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -31,7 +32,6 @@ import com.google.cloud.deploy.v1.stub.CloudDeployStub;
 import com.google.cloud.deploy.v1.stub.CloudDeployStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -105,13 +105,28 @@ import javax.annotation.Generated;
  * CloudDeployClient cloudDeployClient = CloudDeployClient.create(cloudDeploySettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * CloudDeploySettings cloudDeploySettings =
+ *     CloudDeploySettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             CloudDeploySettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * CloudDeployClient cloudDeployClient = CloudDeployClient.create(cloudDeploySettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class CloudDeployClient implements BackgroundResource {
   private final CloudDeploySettings settings;
   private final CloudDeployStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of CloudDeployClient with default settings. */
   public static final CloudDeployClient create() throws IOException {
@@ -130,7 +145,6 @@ public class CloudDeployClient implements BackgroundResource {
    * Constructs an instance of CloudDeployClient, using the given stub for making calls. This is for
    * advanced usage - prefer using create(CloudDeploySettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final CloudDeployClient create(CloudDeployStub stub) {
     return new CloudDeployClient(stub);
   }
@@ -143,21 +157,23 @@ public class CloudDeployClient implements BackgroundResource {
   protected CloudDeployClient(CloudDeploySettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((CloudDeployStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected CloudDeployClient(CloudDeployStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final CloudDeploySettings getSettings() {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudDeployStub getStub() {
     return stub;
   }
@@ -166,8 +182,17 @@ public class CloudDeployClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -314,7 +339,7 @@ public class CloudDeployClient implements BackgroundResource {
    *   while (true) {
    *     ListDeliveryPipelinesResponse response =
    *         cloudDeployClient.listDeliveryPipelinesCallable().call(request);
-   *     for (DeliveryPipeline element : response.getResponsesList()) {
+   *     for (DeliveryPipeline element : response.getDeliveryPipelinesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1020,7 +1045,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListTargetsResponse response = cloudDeployClient.listTargetsCallable().call(request);
-   *     for (Target element : response.getResponsesList()) {
+   *     for (Target element : response.getTargetsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -1689,7 +1714,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListReleasesResponse response = cloudDeployClient.listReleasesCallable().call(request);
-   *     for (Release element : response.getResponsesList()) {
+   *     for (Release element : response.getReleasesList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -2241,7 +2266,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .build();
    *   while (true) {
    *     ListRolloutsResponse response = cloudDeployClient.listRolloutsCallable().call(request);
-   *     for (Rollout element : response.getResponsesList()) {
+   *     for (Rollout element : response.getRolloutsList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
