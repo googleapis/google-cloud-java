@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.0](https://github.com/googleapis/java-batch/compare/v0.1.1...v0.2.0) (2022-06-30)
+
+
+### Features
+
+* add client library BUILD rules, API proto option, v1alpha service config file and service YAML file ([ca7e9fa](https://github.com/googleapis/java-batch/commit/ca7e9fa43e64d378edf2fd0917585ab33135fc81))
+* Enable REST transport for most of Java and Go clients ([#6](https://github.com/googleapis/java-batch/issues/6)) ([ca7e9fa](https://github.com/googleapis/java-batch/commit/ca7e9fa43e64d378edf2fd0917585ab33135fc81))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#13](https://github.com/googleapis/java-batch/issues/13)) ([4ce5e88](https://github.com/googleapis/java-batch/commit/4ce5e884e0a9cc97affd6076846276f9c81ce78b))
+
 ## [0.1.1](https://github.com/googleapis/java-batch/compare/v0.1.0...v0.1.1) (2022-06-23)
 
 
