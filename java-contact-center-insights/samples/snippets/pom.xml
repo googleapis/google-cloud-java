@@ -52,7 +52,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-pubsub</artifactId>
-      <version>1.119.1</version>
+      <version>1.120.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
