@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.15.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.14.2...v2.15.0) (2022-07-01)
+
+
+### Features
+
+* add fields to eventually contain row level errors ([ec3ea29](https://github.com/googleapis/java-bigquerystorage/commit/ec3ea29efae1cf6567055d43219690b3d2db8b5e))
+
+
+### Bug Fixes
+
+* Modify client lib retry policy for CreateWriteStream with longer backoff, more error code and longer overall time ([#1679](https://github.com/googleapis/java-bigquerystorage/issues/1679)) ([ec3ea29](https://github.com/googleapis/java-bigquerystorage/commit/ec3ea29efae1cf6567055d43219690b3d2db8b5e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.3 ([#1678](https://github.com/googleapis/java-bigquerystorage/issues/1678)) ([740f2ae](https://github.com/googleapis/java-bigquerystorage/commit/740f2ae070454fbc2a87fdd7c01c7f90fc3867f3))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.4 ([#1680](https://github.com/googleapis/java-bigquerystorage/issues/1680)) ([de1c8df](https://github.com/googleapis/java-bigquerystorage/commit/de1c8df710b0510d66e91ac42d5d56eba4442bdb))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.6 ([#1684](https://github.com/googleapis/java-bigquerystorage/issues/1684)) ([05cdb38](https://github.com/googleapis/java-bigquerystorage/commit/05cdb380d27ab7484c7f81a0a490a58de67694c6))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.7 ([#1687](https://github.com/googleapis/java-bigquerystorage/issues/1687)) ([8795ae7](https://github.com/googleapis/java-bigquerystorage/commit/8795ae78e55bb4eb651a6e78a2645e3fe8df8d8e))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#1683](https://github.com/googleapis/java-bigquerystorage/issues/1683)) ([2821ee9](https://github.com/googleapis/java-bigquerystorage/commit/2821ee9d6893ce1f2ac68615d99973e2c98e3678))
+
 ## [2.14.2](https://github.com/googleapis/java-bigquerystorage/compare/v2.14.1...v2.14.2) (2022-06-08)
 
 
