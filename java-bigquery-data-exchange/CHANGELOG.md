@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/java-bigquery-data-exchange/compare/v0.2.1...v0.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#25](https://github.com/googleapis/java-bigquery-data-exchange/issues/25)) ([96e8975](https://github.com/googleapis/java-bigquery-data-exchange/commit/96e89758fe9995bc39700d8a8e9668edc018f63b))
+
 ## [0.2.1](https://github.com/googleapis/java-bigquery-data-exchange/compare/v0.2.0...v0.2.1) (2022-06-23)
 
 
