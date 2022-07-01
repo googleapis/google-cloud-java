@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.4.0](https://github.com/googleapis/java-filestore/compare/v1.3.0...v1.4.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#193](https://github.com/googleapis/java-filestore/issues/193)) ([6e81ea4](https://github.com/googleapis/java-filestore/commit/6e81ea4fd3426b7b5b4663f022b2c94568a77ebe))
+* set longer polling timeouts for filestore DeleteInstance and DeleteSnapshot ([#195](https://github.com/googleapis/java-filestore/issues/195)) ([3fccffa](https://github.com/googleapis/java-filestore/commit/3fccffa8e2365ef1e36cee7e9924c54b4b69a2ea))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#197](https://github.com/googleapis/java-filestore/issues/197)) ([d763954](https://github.com/googleapis/java-filestore/commit/d763954171cf80e650615ad6e87fb284f66e3f70))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#192](https://github.com/googleapis/java-filestore/issues/192)) ([bc95dc0](https://github.com/googleapis/java-filestore/commit/bc95dc06e12c9cfe5c2b3fa8c5dcb97cce71ea69))
+
 ## [1.3.0](https://github.com/googleapis/java-filestore/compare/v1.2.1...v1.3.0) (2022-05-24)
 
 
