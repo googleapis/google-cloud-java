@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-video-intelligence/compare/v2.1.0...v2.2.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#920](https://github.com/googleapis/java-video-intelligence/issues/920)) ([808c131](https://github.com/googleapis/java-video-intelligence/commit/808c131cd11cdfeaa2a63073dad2977646cd30ef))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#922](https://github.com/googleapis/java-video-intelligence/issues/922)) ([b1d854d](https://github.com/googleapis/java-video-intelligence/commit/b1d854d364902a3b30ec204ff9909ad04af15b16))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.8.0 ([#918](https://github.com/googleapis/java-video-intelligence/issues/918)) ([4b84302](https://github.com/googleapis/java-video-intelligence/commit/4b84302d2a90a6f9b4f944e3955d3f4a8174a969))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#919](https://github.com/googleapis/java-video-intelligence/issues/919)) ([6edfbd3](https://github.com/googleapis/java-video-intelligence/commit/6edfbd34a3931c608c2b51deb00381c963202ac8))
+* update dependency com.google.cloud:google-cloud-storage to v2.7.0 ([#912](https://github.com/googleapis/java-video-intelligence/issues/912)) ([5d4ed30](https://github.com/googleapis/java-video-intelligence/commit/5d4ed304c0b4da5caf40c0469284b2338694441a))
+
 ## [2.1.0](https://github.com/googleapis/java-video-intelligence/compare/v2.0.27...v2.1.0) (2022-05-19)
 
 
