@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/googleapis/java-deploy/compare/v1.1.1...v1.1.2) (2022-07-01)
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#118](https://github.com/googleapis/java-deploy/issues/118)) ([2482f22](https://github.com/googleapis/java-deploy/commit/2482f22e42e8be1d304a45ad40a12bb1d481de6c))
+
 ## [1.1.1](https://github.com/googleapis/java-deploy/compare/v1.1.0...v1.1.1) (2022-06-23)
 
 
