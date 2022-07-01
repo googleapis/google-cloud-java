@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-iot/compare/v2.2.1...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#734](https://github.com/googleapis/java-iot/issues/734)) ([21fa6cc](https://github.com/googleapis/java-iot/commit/21fa6ccea1a7c7489f374c90fd7354c54b15e925))
+
 ## [2.2.1](https://github.com/googleapis/java-iot/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
