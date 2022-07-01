@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-websecurityscanner/compare/v2.1.1...v2.2.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#703](https://github.com/googleapis/java-websecurityscanner/issues/703)) ([206caf1](https://github.com/googleapis/java-websecurityscanner/commit/206caf16ec6efea09966e214fe9547639687ffae))
+
 ## [2.1.1](https://github.com/googleapis/java-websecurityscanner/compare/v2.1.0...v2.1.1) (2022-06-23)
 
 
