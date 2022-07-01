@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-tasks/compare/v2.2.0...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#690](https://github.com/googleapis/java-tasks/issues/690)) ([3a06bdf](https://github.com/googleapis/java-tasks/commit/3a06bdf6ca4f1ac35b0721f15e2f8a7421185b9f))
+
+
+### Documentation
+
+* **sample:** clean up README for native image sample ([#697](https://github.com/googleapis/java-tasks/issues/697)) ([81677de](https://github.com/googleapis/java-tasks/commit/81677defcf97f51b0e9583e4fbace23eb07fc178))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#701](https://github.com/googleapis/java-tasks/issues/701)) ([52e4d94](https://github.com/googleapis/java-tasks/commit/52e4d94481c94707f8862d13564dd1c39ffcb803))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.12 ([#699](https://github.com/googleapis/java-tasks/issues/699)) ([267d116](https://github.com/googleapis/java-tasks/commit/267d11694a769b425e507a2f823cbba8842c33f7))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.12 ([#700](https://github.com/googleapis/java-tasks/issues/700)) ([f14d923](https://github.com/googleapis/java-tasks/commit/f14d92364771f5e519b8812292f1c4382f806b63))
+
 ## [2.2.0](https://github.com/googleapis/java-tasks/compare/v2.1.11...v2.2.0) (2022-05-19)
 
 
