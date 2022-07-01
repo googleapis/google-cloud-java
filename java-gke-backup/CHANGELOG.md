@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.2.0](https://github.com/googleapis/java-gke-backup/compare/v0.1.0...v0.2.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#22](https://github.com/googleapis/java-gke-backup/issues/22)) ([237759a](https://github.com/googleapis/java-gke-backup/commit/237759a4714aa82cf212dff8457569bd55d52af3))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#25](https://github.com/googleapis/java-gke-backup/issues/25)) ([f925fa2](https://github.com/googleapis/java-gke-backup/commit/f925fa2331058b38ad7c388754f3e6ab5a4c7e00))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#21](https://github.com/googleapis/java-gke-backup/issues/21)) ([377031a](https://github.com/googleapis/java-gke-backup/commit/377031a6d348a75e1763e0e81872f7a5e30c1a45))
+
 ## 0.1.0 (2022-06-09)
 
 
