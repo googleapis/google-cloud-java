@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.34.0](https://github.com/googleapis/java-phishingprotection/compare/v0.33.1...v0.34.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#685](https://github.com/googleapis/java-phishingprotection/issues/685)) ([88bccf9](https://github.com/googleapis/java-phishingprotection/commit/88bccf99d0c9880c670f21f4786cfa1914393457))
+
 ## [0.33.1](https://github.com/googleapis/java-phishingprotection/compare/v0.33.0...v0.33.1) (2022-06-23)
 
 
