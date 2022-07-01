@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-memcache/compare/v2.2.1...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#640](https://github.com/googleapis/java-memcache/issues/640)) ([069f36a](https://github.com/googleapis/java-memcache/commit/069f36a21941a236446fd73da992ba89a8be644f))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#646](https://github.com/googleapis/java-memcache/issues/646)) ([c459a20](https://github.com/googleapis/java-memcache/commit/c459a20eee43179656e43c82523570b97d43ccdd))
+
 ## [2.2.1](https://github.com/googleapis/java-memcache/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
