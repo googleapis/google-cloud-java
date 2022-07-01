@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-gsuite-addons/compare/v2.2.1...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#235](https://github.com/googleapis/java-gsuite-addons/issues/235)) ([9eee3ca](https://github.com/googleapis/java-gsuite-addons/commit/9eee3ca514d9add079b0b78396609ff5ddb0682a))
+
 ## [2.2.1](https://github.com/googleapis/java-gsuite-addons/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
