@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-datastream/compare/v1.0.0...v1.1.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#176](https://github.com/googleapis/java-datastream/issues/176)) ([3e68385](https://github.com/googleapis/java-datastream/commit/3e6838526f2a2e4233767b1ce3032c4c6b5e0086))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#178](https://github.com/googleapis/java-datastream/issues/178)) ([f793baa](https://github.com/googleapis/java-datastream/commit/f793baa8cebcbaa48eadd3ac469a4e4f192e90be))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#175](https://github.com/googleapis/java-datastream/issues/175)) ([4f222a0](https://github.com/googleapis/java-datastream/commit/4f222a0f0cd6a055627c459d81cdfeeb3d1baf26))
+
 ## [1.0.0](https://github.com/googleapis/java-datastream/compare/v0.4.4...v1.0.0) (2022-05-19)
 
 
