@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-gkehub/compare/v1.2.1...v1.3.0) (2022-07-01)
+
+
+### Features
+
+* add ApplianceCluster as a new membershipEndpoint type ([513887b](https://github.com/googleapis/java-gkehub/commit/513887bb1f89d61da43717c4fcb0b841336afdd2))
+* add c++ rules in BUILD file ([513887b](https://github.com/googleapis/java-gkehub/commit/513887bb1f89d61da43717c4fcb0b841336afdd2))
+* add ClusterType field in MembershipEndpoint.OnPremCluster ([513887b](https://github.com/googleapis/java-gkehub/commit/513887bb1f89d61da43717c4fcb0b841336afdd2))
+* add EdgeCluster as a new membershipEndpoint type ([513887b](https://github.com/googleapis/java-gkehub/commit/513887bb1f89d61da43717c4fcb0b841336afdd2))
+* Enable REST transport for most of Java and Go clients ([#237](https://github.com/googleapis/java-gkehub/issues/237)) ([513887b](https://github.com/googleapis/java-gkehub/commit/513887bb1f89d61da43717c4fcb0b841336afdd2))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#249](https://github.com/googleapis/java-gkehub/issues/249)) ([41f6804](https://github.com/googleapis/java-gkehub/commit/41f6804851c718a6714d2d41d0094b1e9cc8136f))
+
 ## [1.2.1](https://github.com/googleapis/java-gkehub/compare/v1.2.0...v1.2.1) (2022-06-23)
 
 
