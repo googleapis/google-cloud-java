@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-orgpolicy/compare/v2.2.1...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#357](https://github.com/googleapis/java-orgpolicy/issues/357)) ([566bc6f](https://github.com/googleapis/java-orgpolicy/commit/566bc6feab9b5483d96cb6cbe0e4d396a431825b))
+
 ## [2.2.1](https://github.com/googleapis/java-orgpolicy/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
