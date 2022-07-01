@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-debugger-client/compare/v1.2.1...v1.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#190](https://github.com/googleapis/java-debugger-client/issues/190)) ([1fa3c0f](https://github.com/googleapis/java-debugger-client/commit/1fa3c0f403b7ead8ec547855947d368b2491f62e))
+
 ## [1.2.1](https://github.com/googleapis/java-debugger-client/compare/v1.2.0...v1.2.1) (2022-06-23)
 
 
