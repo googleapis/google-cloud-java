@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-talent/compare/v2.3.0...v2.4.0) (2022-07-01)
+
+
+### Features
+
+* Add a new operator on companyDisplayNames filter to further support fuzzy match by treating input value as a multi word token ([#788](https://github.com/googleapis/java-talent/issues/788)) ([872f37c](https://github.com/googleapis/java-talent/commit/872f37c10396cad1f1a7e999043154b8b3d00bf7))
+* Add a new option TELECOMMUTE_JOBS_EXCLUDED under enum TelecommutePreference to completely filter out the telecommute jobs in response ([872f37c](https://github.com/googleapis/java-talent/commit/872f37c10396cad1f1a7e999043154b8b3d00bf7))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#794](https://github.com/googleapis/java-talent/issues/794)) ([a631d74](https://github.com/googleapis/java-talent/commit/a631d74d650f2259a1d937db3e0b7b3a2db4d5d3))
+
+
+### Documentation
+
+* Deprecate option TELECOMMUTE_EXCLUDED under enum TelecommutePreference ([872f37c](https://github.com/googleapis/java-talent/commit/872f37c10396cad1f1a7e999043154b8b3d00bf7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#797](https://github.com/googleapis/java-talent/issues/797)) ([e08cf8b](https://github.com/googleapis/java-talent/commit/e08cf8b6f01c77522f052938e2c6b93cb251e4f9))
+
 ## [2.3.0](https://github.com/googleapis/java-talent/compare/v2.2.10...v2.3.0) (2022-05-19)
 
 
