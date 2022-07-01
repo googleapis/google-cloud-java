@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-grafeas/compare/v2.3.1...v2.4.0) (2022-06-30)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([22be2f6](https://github.com/googleapis/java-grafeas/commit/22be2f68312a23b82e9441e8a9da933a4b85fa87))
+* Import of Grafeas from Github ([22be2f6](https://github.com/googleapis/java-grafeas/commit/22be2f68312a23b82e9441e8a9da933a4b85fa87))
+
+
+### Bug Fixes
+
+* Set the transport of grafeas back to grpc only ([#498](https://github.com/googleapis/java-grafeas/issues/498)) ([22be2f6](https://github.com/googleapis/java-grafeas/commit/22be2f68312a23b82e9441e8a9da933a4b85fa87))
+
 ## [2.3.1](https://github.com/googleapis/java-grafeas/compare/v2.3.0...v2.3.1) (2022-06-23)
 
 
