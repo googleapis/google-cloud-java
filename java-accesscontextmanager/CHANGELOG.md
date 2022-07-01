@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/googleapis/java-accesscontextmanager/compare/v1.3.1...v1.4.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#347](https://github.com/googleapis/java-accesscontextmanager/issues/347)) ([2d12ee8](https://github.com/googleapis/java-accesscontextmanager/commit/2d12ee83fedbdd0d7b937acd15ed1a3a89810e4f))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#354](https://github.com/googleapis/java-accesscontextmanager/issues/354)) ([c272baa](https://github.com/googleapis/java-accesscontextmanager/commit/c272baa374006559c73bd50076bd189654fc0843))
+
 ## [1.3.1](https://github.com/googleapis/java-accesscontextmanager/compare/v1.3.0...v1.3.1) (2022-06-23)
 
 
