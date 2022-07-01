@@ -10,26 +10,26 @@ public interface SetLabelsRequestOrBuilder extends
   /**
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.SetLabelsRequest.project_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3104
+   *     See google/container/v1/cluster_service.proto;l=3407
    * @return The projectId.
    */
   @java.lang.Deprecated java.lang.String getProjectId();
   /**
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.SetLabelsRequest.project_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3104
+   *     See google/container/v1/cluster_service.proto;l=3407
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -45,7 +45,7 @@ public interface SetLabelsRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.SetLabelsRequest.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3110
+   *     See google/container/v1/cluster_service.proto;l=3413
    * @return The zone.
    */
   @java.lang.Deprecated java.lang.String getZone();
@@ -59,7 +59,7 @@ public interface SetLabelsRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.SetLabelsRequest.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3110
+   *     See google/container/v1/cluster_service.proto;l=3413
    * @return The bytes for zone.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -73,7 +73,7 @@ public interface SetLabelsRequestOrBuilder extends
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    * @deprecated google.container.v1.SetLabelsRequest.cluster_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3114
+   *     See google/container/v1/cluster_service.proto;l=3417
    * @return The clusterId.
    */
   @java.lang.Deprecated java.lang.String getClusterId();
@@ -85,7 +85,7 @@ public interface SetLabelsRequestOrBuilder extends
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    * @deprecated google.container.v1.SetLabelsRequest.cluster_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3114
+   *     See google/container/v1/cluster_service.proto;l=3417
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -179,7 +179,7 @@ java.lang.String defaultValue);
 
   /**
    * <pre>
-   * The name (project, location, cluster id) of the cluster to set labels.
+   * The name (project, location, cluster name) of the cluster to set labels.
    * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -189,7 +189,7 @@ java.lang.String defaultValue);
   java.lang.String getName();
   /**
    * <pre>
-   * The name (project, location, cluster id) of the cluster to set labels.
+   * The name (project, location, cluster name) of the cluster to set labels.
    * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *

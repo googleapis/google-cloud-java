@@ -119,13 +119,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.ListNodePoolsRequest.project_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2541
+   *     See google/container/v1/cluster_service.proto;l=2679
    * @return The projectId.
    */
   @java.lang.Override
@@ -144,13 +144,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.ListNodePoolsRequest.project_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2541
+   *     See google/container/v1/cluster_service.proto;l=2679
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.ListNodePoolsRequest.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2547
+   *     See google/container/v1/cluster_service.proto;l=2685
    * @return The zone.
    */
   @java.lang.Override
@@ -206,7 +206,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.ListNodePoolsRequest.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2547
+   *     See google/container/v1/cluster_service.proto;l=2685
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -234,7 +234,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    * @deprecated google.container.v1.ListNodePoolsRequest.cluster_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2551
+   *     See google/container/v1/cluster_service.proto;l=2689
    * @return The clusterId.
    */
   @java.lang.Override
@@ -258,7 +258,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    * @deprecated google.container.v1.ListNodePoolsRequest.cluster_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2551
+   *     See google/container/v1/cluster_service.proto;l=2689
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -280,7 +280,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * The parent (project, location, cluster id) where the node pools will be
+   * The parent (project, location, cluster name) where the node pools will be
    * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -302,7 +302,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The parent (project, location, cluster id) where the node pools will be
+   * The parent (project, location, cluster name) where the node pools will be
    * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -685,13 +685,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2541
+     *     See google/container/v1/cluster_service.proto;l=2679
      * @return The projectId.
      */
     @java.lang.Deprecated public java.lang.String getProjectId() {
@@ -709,13 +709,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2541
+     *     See google/container/v1/cluster_service.proto;l=2679
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -734,13 +734,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2541
+     *     See google/container/v1/cluster_service.proto;l=2679
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -757,13 +757,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2541
+     *     See google/container/v1/cluster_service.proto;l=2679
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearProjectId() {
@@ -775,13 +775,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2541
+     *     See google/container/v1/cluster_service.proto;l=2679
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -808,7 +808,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2547
+     *     See google/container/v1/cluster_service.proto;l=2685
      * @return The zone.
      */
     @java.lang.Deprecated public java.lang.String getZone() {
@@ -833,7 +833,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2547
+     *     See google/container/v1/cluster_service.proto;l=2685
      * @return The bytes for zone.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -859,7 +859,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2547
+     *     See google/container/v1/cluster_service.proto;l=2685
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -883,7 +883,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2547
+     *     See google/container/v1/cluster_service.proto;l=2685
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearZone() {
@@ -902,7 +902,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2547
+     *     See google/container/v1/cluster_service.proto;l=2685
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -927,7 +927,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2551
+     *     See google/container/v1/cluster_service.proto;l=2689
      * @return The clusterId.
      */
     @java.lang.Deprecated public java.lang.String getClusterId() {
@@ -950,7 +950,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2551
+     *     See google/container/v1/cluster_service.proto;l=2689
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -974,7 +974,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2551
+     *     See google/container/v1/cluster_service.proto;l=2689
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -996,7 +996,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2551
+     *     See google/container/v1/cluster_service.proto;l=2689
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearClusterId() {
@@ -1013,7 +1013,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.ListNodePoolsRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2551
+     *     See google/container/v1/cluster_service.proto;l=2689
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1032,7 +1032,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * The parent (project, location, cluster id) where the node pools will be
+     * The parent (project, location, cluster name) where the node pools will be
      * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -1053,7 +1053,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The parent (project, location, cluster id) where the node pools will be
+     * The parent (project, location, cluster name) where the node pools will be
      * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -1075,7 +1075,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The parent (project, location, cluster id) where the node pools will be
+     * The parent (project, location, cluster name) where the node pools will be
      * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -1095,7 +1095,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The parent (project, location, cluster id) where the node pools will be
+     * The parent (project, location, cluster name) where the node pools will be
      * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -1110,7 +1110,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The parent (project, location, cluster id) where the node pools will be
+     * The parent (project, location, cluster name) where the node pools will be
      * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *

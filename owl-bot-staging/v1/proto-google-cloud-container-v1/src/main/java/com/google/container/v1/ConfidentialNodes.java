@@ -96,8 +96,7 @@ private static final long serialVersionUID = 0L;
   private boolean enabled_;
   /**
    * <pre>
-   * Whether Confidential Nodes feature is enabled for all nodes in this
-   * cluster.
+   * Whether Confidential Nodes feature is enabled.
    * </pre>
    *
    * <code>bool enabled = 1;</code>
@@ -419,8 +418,7 @@ private static final long serialVersionUID = 0L;
     private boolean enabled_ ;
     /**
      * <pre>
-     * Whether Confidential Nodes feature is enabled for all nodes in this
-     * cluster.
+     * Whether Confidential Nodes feature is enabled.
      * </pre>
      *
      * <code>bool enabled = 1;</code>
@@ -432,8 +430,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether Confidential Nodes feature is enabled for all nodes in this
-     * cluster.
+     * Whether Confidential Nodes feature is enabled.
      * </pre>
      *
      * <code>bool enabled = 1;</code>
@@ -448,8 +445,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether Confidential Nodes feature is enabled for all nodes in this
-     * cluster.
+     * Whether Confidential Nodes feature is enabled.
      * </pre>
      *
      * <code>bool enabled = 1;</code>

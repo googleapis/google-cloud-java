@@ -89,6 +89,11 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
+          case 56: {
+
+            respectPdb_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -128,13 +133,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2948
+   *     See google/container/v1/cluster_service.proto;l=3216
    * @return The projectId.
    */
   @java.lang.Override
@@ -153,13 +158,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2948
+   *     See google/container/v1/cluster_service.proto;l=3216
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -189,7 +194,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2954
+   *     See google/container/v1/cluster_service.proto;l=3222
    * @return The zone.
    */
   @java.lang.Override
@@ -215,7 +220,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2954
+   *     See google/container/v1/cluster_service.proto;l=3222
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -243,7 +248,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2958
+   *     See google/container/v1/cluster_service.proto;l=3226
    * @return The clusterId.
    */
   @java.lang.Override
@@ -267,7 +272,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2958
+   *     See google/container/v1/cluster_service.proto;l=3226
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -295,7 +300,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.node_pool_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2962
+   *     See google/container/v1/cluster_service.proto;l=3230
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -319,7 +324,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.node_pool_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2962
+   *     See google/container/v1/cluster_service.proto;l=3230
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -387,6 +392,22 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int RESPECT_PDB_FIELD_NUMBER = 7;
+  private boolean respectPdb_;
+  /**
+   * <pre>
+   * Option for rollback to ignore the PodDisruptionBudget.
+   * Default value is false.
+   * </pre>
+   *
+   * <code>bool respect_pdb = 7;</code>
+   * @return The respectPdb.
+   */
+  @java.lang.Override
+  public boolean getRespectPdb() {
+    return respectPdb_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -416,6 +437,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
     }
+    if (respectPdb_ != false) {
+      output.writeBool(7, respectPdb_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -439,6 +463,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
+    }
+    if (respectPdb_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, respectPdb_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -465,6 +493,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getNodePoolId())) return false;
     if (!getName()
         .equals(other.getName())) return false;
+    if (getRespectPdb()
+        != other.getRespectPdb()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -486,6 +516,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getNodePoolId().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + RESPECT_PDB_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getRespectPdb());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -635,6 +668,8 @@ private static final long serialVersionUID = 0L;
 
       name_ = "";
 
+      respectPdb_ = false;
+
       return this;
     }
 
@@ -666,6 +701,7 @@ private static final long serialVersionUID = 0L;
       result.clusterId_ = clusterId_;
       result.nodePoolId_ = nodePoolId_;
       result.name_ = name_;
+      result.respectPdb_ = respectPdb_;
       onBuilt();
       return result;
     }
@@ -734,6 +770,9 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
+      if (other.getRespectPdb() != false) {
+        setRespectPdb(other.getRespectPdb());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -767,13 +806,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2948
+     *     See google/container/v1/cluster_service.proto;l=3216
      * @return The projectId.
      */
     @java.lang.Deprecated public java.lang.String getProjectId() {
@@ -791,13 +830,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2948
+     *     See google/container/v1/cluster_service.proto;l=3216
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -816,13 +855,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2948
+     *     See google/container/v1/cluster_service.proto;l=3216
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -839,13 +878,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2948
+     *     See google/container/v1/cluster_service.proto;l=3216
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearProjectId() {
@@ -857,13 +896,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2948
+     *     See google/container/v1/cluster_service.proto;l=3216
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -890,7 +929,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2954
+     *     See google/container/v1/cluster_service.proto;l=3222
      * @return The zone.
      */
     @java.lang.Deprecated public java.lang.String getZone() {
@@ -915,7 +954,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2954
+     *     See google/container/v1/cluster_service.proto;l=3222
      * @return The bytes for zone.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -941,7 +980,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2954
+     *     See google/container/v1/cluster_service.proto;l=3222
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -965,7 +1004,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2954
+     *     See google/container/v1/cluster_service.proto;l=3222
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearZone() {
@@ -984,7 +1023,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2954
+     *     See google/container/v1/cluster_service.proto;l=3222
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1009,7 +1048,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2958
+     *     See google/container/v1/cluster_service.proto;l=3226
      * @return The clusterId.
      */
     @java.lang.Deprecated public java.lang.String getClusterId() {
@@ -1032,7 +1071,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2958
+     *     See google/container/v1/cluster_service.proto;l=3226
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1056,7 +1095,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2958
+     *     See google/container/v1/cluster_service.proto;l=3226
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1078,7 +1117,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2958
+     *     See google/container/v1/cluster_service.proto;l=3226
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearClusterId() {
@@ -1095,7 +1134,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2958
+     *     See google/container/v1/cluster_service.proto;l=3226
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1120,7 +1159,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.node_pool_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2962
+     *     See google/container/v1/cluster_service.proto;l=3230
      * @return The nodePoolId.
      */
     @java.lang.Deprecated public java.lang.String getNodePoolId() {
@@ -1143,7 +1182,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.node_pool_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2962
+     *     See google/container/v1/cluster_service.proto;l=3230
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1167,7 +1206,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.node_pool_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2962
+     *     See google/container/v1/cluster_service.proto;l=3230
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -1189,7 +1228,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.node_pool_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2962
+     *     See google/container/v1/cluster_service.proto;l=3230
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearNodePoolId() {
@@ -1206,7 +1245,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      * @deprecated google.container.v1.RollbackNodePoolUpgradeRequest.node_pool_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2962
+     *     See google/container/v1/cluster_service.proto;l=3230
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -1324,6 +1363,52 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean respectPdb_ ;
+    /**
+     * <pre>
+     * Option for rollback to ignore the PodDisruptionBudget.
+     * Default value is false.
+     * </pre>
+     *
+     * <code>bool respect_pdb = 7;</code>
+     * @return The respectPdb.
+     */
+    @java.lang.Override
+    public boolean getRespectPdb() {
+      return respectPdb_;
+    }
+    /**
+     * <pre>
+     * Option for rollback to ignore the PodDisruptionBudget.
+     * Default value is false.
+     * </pre>
+     *
+     * <code>bool respect_pdb = 7;</code>
+     * @param value The respectPdb to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRespectPdb(boolean value) {
+      
+      respectPdb_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Option for rollback to ignore the PodDisruptionBudget.
+     * Default value is false.
+     * </pre>
+     *
+     * <code>bool respect_pdb = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRespectPdb() {
+      
+      respectPdb_ = false;
       onChanged();
       return this;
     }

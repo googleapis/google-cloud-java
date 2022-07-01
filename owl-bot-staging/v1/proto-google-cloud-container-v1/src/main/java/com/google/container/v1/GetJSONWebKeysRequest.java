@@ -100,7 +100,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * The cluster (project, location, cluster id) to get keys for. Specified in
+   * The cluster (project, location, cluster name) to get keys for. Specified in
    * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The cluster (project, location, cluster id) to get keys for. Specified in
+   * The cluster (project, location, cluster name) to get keys for. Specified in
    * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -456,7 +456,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * The cluster (project, location, cluster id) to get keys for. Specified in
+     * The cluster (project, location, cluster name) to get keys for. Specified in
      * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -477,7 +477,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The cluster (project, location, cluster id) to get keys for. Specified in
+     * The cluster (project, location, cluster name) to get keys for. Specified in
      * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The cluster (project, location, cluster id) to get keys for. Specified in
+     * The cluster (project, location, cluster name) to get keys for. Specified in
      * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -519,7 +519,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The cluster (project, location, cluster id) to get keys for. Specified in
+     * The cluster (project, location, cluster name) to get keys for. Specified in
      * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The cluster (project, location, cluster id) to get keys for. Specified in
+     * The cluster (project, location, cluster name) to get keys for. Specified in
      * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *

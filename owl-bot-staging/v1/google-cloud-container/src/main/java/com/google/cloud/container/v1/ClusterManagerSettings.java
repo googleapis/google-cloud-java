@@ -34,6 +34,7 @@ import com.google.cloud.container.v1.stub.ClusterManagerStubSettings;
 import com.google.container.v1.CancelOperationRequest;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.CompleteIPRotationRequest;
+import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
 import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
@@ -228,6 +229,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
   /** Returns the object with the settings used for calls to deleteNodePool. */
   public UnaryCallSettings<DeleteNodePoolRequest, Operation> deleteNodePoolSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).deleteNodePoolSettings();
+  }
+
+  /** Returns the object with the settings used for calls to completeNodePoolUpgrade. */
+  public UnaryCallSettings<CompleteNodePoolUpgradeRequest, Empty>
+      completeNodePoolUpgradeSettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).completeNodePoolUpgradeSettings();
   }
 
   /** Returns the object with the settings used for calls to rollbackNodePoolUpgrade. */
@@ -503,6 +510,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     /** Returns the builder for the settings used for calls to deleteNodePool. */
     public UnaryCallSettings.Builder<DeleteNodePoolRequest, Operation> deleteNodePoolSettings() {
       return getStubSettingsBuilder().deleteNodePoolSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to completeNodePoolUpgrade. */
+    public UnaryCallSettings.Builder<CompleteNodePoolUpgradeRequest, Empty>
+        completeNodePoolUpgradeSettings() {
+      return getStubSettingsBuilder().completeNodePoolUpgradeSettings();
     }
 
     /** Returns the builder for the settings used for calls to rollbackNodePoolUpgrade. */

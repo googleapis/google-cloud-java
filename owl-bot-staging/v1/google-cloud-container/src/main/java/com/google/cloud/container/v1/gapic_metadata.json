@@ -16,6 +16,9 @@
             "CompleteIPRotation": {
               "methods": ["completeIPRotation", "completeIPRotation", "completeIPRotation", "completeIPRotationCallable"]
             },
+            "CompleteNodePoolUpgrade": {
+              "methods": ["completeNodePoolUpgrade", "completeNodePoolUpgradeCallable"]
+            },
             "CreateCluster": {
               "methods": ["createCluster", "createCluster", "createCluster", "createClusterCallable"]
             },

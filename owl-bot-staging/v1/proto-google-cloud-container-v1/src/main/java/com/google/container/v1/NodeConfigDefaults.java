@@ -103,7 +103,7 @@ private static final long serialVersionUID = 0L;
   private com.google.container.v1.GcfsConfig gcfsConfig_;
   /**
    * <pre>
-   * GCFS (Google Container File System, a.k.a Riptide) options.
+   * GCFS (Google Container File System, a.k.a. Riptide) options.
    * </pre>
    *
    * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * GCFS (Google Container File System, a.k.a Riptide) options.
+   * GCFS (Google Container File System, a.k.a. Riptide) options.
    * </pre>
    *
    * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -127,7 +127,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * GCFS (Google Container File System, a.k.a Riptide) options.
+   * GCFS (Google Container File System, a.k.a. Riptide) options.
    * </pre>
    *
    * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -461,7 +461,7 @@ private static final long serialVersionUID = 0L;
         com.google.container.v1.GcfsConfig, com.google.container.v1.GcfsConfig.Builder, com.google.container.v1.GcfsConfigOrBuilder> gcfsConfigBuilder_;
     /**
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -472,7 +472,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -487,7 +487,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -507,7 +507,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -525,7 +525,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -547,7 +547,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -592,7 +592,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>

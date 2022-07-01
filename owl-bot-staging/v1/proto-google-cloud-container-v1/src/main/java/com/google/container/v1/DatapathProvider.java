@@ -129,7 +129,7 @@ public enum DatapathProvider
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.getDescriptor().getEnumTypes().get(1);
+    return com.google.container.v1.ClusterServiceProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final DatapathProvider[] VALUES = values();

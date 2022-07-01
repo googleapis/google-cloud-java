@@ -10,26 +10,26 @@ public interface UpdateNodePoolRequestOrBuilder extends
   /**
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2007
+   *     See google/container/v1/cluster_service.proto;l=2123
    * @return The projectId.
    */
   @java.lang.Deprecated java.lang.String getProjectId();
   /**
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2007
+   *     See google/container/v1/cluster_service.proto;l=2123
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -45,7 +45,7 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2013
+   *     See google/container/v1/cluster_service.proto;l=2129
    * @return The zone.
    */
   @java.lang.Deprecated java.lang.String getZone();
@@ -59,7 +59,7 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2013
+   *     See google/container/v1/cluster_service.proto;l=2129
    * @return The bytes for zone.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -73,7 +73,7 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2017
+   *     See google/container/v1/cluster_service.proto;l=2133
    * @return The clusterId.
    */
   @java.lang.Deprecated java.lang.String getClusterId();
@@ -85,7 +85,7 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2017
+   *     See google/container/v1/cluster_service.proto;l=2133
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -99,7 +99,7 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2021
+   *     See google/container/v1/cluster_service.proto;l=2137
    * @return The nodePoolId.
    */
   @java.lang.Deprecated java.lang.String getNodePoolId();
@@ -111,7 +111,7 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2021
+   *     See google/container/v1/cluster_service.proto;l=2137
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -310,6 +310,105 @@ public interface UpdateNodePoolRequestOrBuilder extends
 
   /**
    * <pre>
+   * The desired network tags to be applied to all nodes in the node pool.
+   * If this field is not present, the tags will not be changed. Otherwise,
+   * the existing network tags will be *replaced* with the provided tags.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTags tags = 16;</code>
+   * @return Whether the tags field is set.
+   */
+  boolean hasTags();
+  /**
+   * <pre>
+   * The desired network tags to be applied to all nodes in the node pool.
+   * If this field is not present, the tags will not be changed. Otherwise,
+   * the existing network tags will be *replaced* with the provided tags.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTags tags = 16;</code>
+   * @return The tags.
+   */
+  com.google.container.v1.NetworkTags getTags();
+  /**
+   * <pre>
+   * The desired network tags to be applied to all nodes in the node pool.
+   * If this field is not present, the tags will not be changed. Otherwise,
+   * the existing network tags will be *replaced* with the provided tags.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTags tags = 16;</code>
+   */
+  com.google.container.v1.NetworkTagsOrBuilder getTagsOrBuilder();
+
+  /**
+   * <pre>
+   * The desired node taints to be applied to all nodes in the node pool.
+   * If this field is not present, the taints will not be changed. Otherwise,
+   * the existing node taints will be *replaced* with the provided taints.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeTaints taints = 17;</code>
+   * @return Whether the taints field is set.
+   */
+  boolean hasTaints();
+  /**
+   * <pre>
+   * The desired node taints to be applied to all nodes in the node pool.
+   * If this field is not present, the taints will not be changed. Otherwise,
+   * the existing node taints will be *replaced* with the provided taints.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeTaints taints = 17;</code>
+   * @return The taints.
+   */
+  com.google.container.v1.NodeTaints getTaints();
+  /**
+   * <pre>
+   * The desired node taints to be applied to all nodes in the node pool.
+   * If this field is not present, the taints will not be changed. Otherwise,
+   * the existing node taints will be *replaced* with the provided taints.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeTaints taints = 17;</code>
+   */
+  com.google.container.v1.NodeTaintsOrBuilder getTaintsOrBuilder();
+
+  /**
+   * <pre>
+   * The desired node labels to be applied to all nodes in the node pool.
+   * If this field is not present, the labels will not be changed. Otherwise,
+   * the existing node labels will be *replaced* with the provided labels.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeLabels labels = 18;</code>
+   * @return Whether the labels field is set.
+   */
+  boolean hasLabels();
+  /**
+   * <pre>
+   * The desired node labels to be applied to all nodes in the node pool.
+   * If this field is not present, the labels will not be changed. Otherwise,
+   * the existing node labels will be *replaced* with the provided labels.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeLabels labels = 18;</code>
+   * @return The labels.
+   */
+  com.google.container.v1.NodeLabels getLabels();
+  /**
+   * <pre>
+   * The desired node labels to be applied to all nodes in the node pool.
+   * If this field is not present, the labels will not be changed. Otherwise,
+   * the existing node labels will be *replaced* with the provided labels.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeLabels labels = 18;</code>
+   */
+  com.google.container.v1.NodeLabelsOrBuilder getLabelsOrBuilder();
+
+  /**
+   * <pre>
    * Parameters that can be configured on Linux nodes.
    * </pre>
    *
@@ -364,6 +463,33 @@ public interface UpdateNodePoolRequestOrBuilder extends
 
   /**
    * <pre>
+   * Node network config.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+   * @return Whether the nodeNetworkConfig field is set.
+   */
+  boolean hasNodeNetworkConfig();
+  /**
+   * <pre>
+   * Node network config.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+   * @return The nodeNetworkConfig.
+   */
+  com.google.container.v1.NodeNetworkConfig getNodeNetworkConfig();
+  /**
+   * <pre>
+   * Node network config.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+   */
+  com.google.container.v1.NodeNetworkConfigOrBuilder getNodeNetworkConfigOrBuilder();
+
+  /**
+   * <pre>
    * GCFS config.
    * </pre>
    *
@@ -388,6 +514,36 @@ public interface UpdateNodePoolRequestOrBuilder extends
    * <code>.google.container.v1.GcfsConfig gcfs_config = 22;</code>
    */
   com.google.container.v1.GcfsConfigOrBuilder getGcfsConfigOrBuilder();
+
+  /**
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+   * @return Whether the confidentialNodes field is set.
+   */
+  boolean hasConfidentialNodes();
+  /**
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+   * @return The confidentialNodes.
+   */
+  com.google.container.v1.ConfidentialNodes getConfidentialNodes();
+  /**
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+   */
+  com.google.container.v1.ConfidentialNodesOrBuilder getConfidentialNodesOrBuilder();
 
   /**
    * <pre>

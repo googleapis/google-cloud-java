@@ -337,7 +337,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.StatusCondition.code is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3327
+   *     See google/container/v1/cluster_service.proto;l=3652
    * @return The enum numeric value on the wire for code.
    */
   @java.lang.Override @java.lang.Deprecated public int getCodeValue() {
@@ -351,7 +351,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.StatusCondition.code is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3327
+   *     See google/container/v1/cluster_service.proto;l=3652
    * @return The code.
    */
   @java.lang.Override @java.lang.Deprecated public com.google.container.v1.StatusCondition.Code getCode() {
@@ -781,7 +781,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.StatusCondition.code is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3327
+     *     See google/container/v1/cluster_service.proto;l=3652
      * @return The enum numeric value on the wire for code.
      */
     @java.lang.Override @java.lang.Deprecated public int getCodeValue() {
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.StatusCondition.code is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3327
+     *     See google/container/v1/cluster_service.proto;l=3652
      * @param value The enum numeric value on the wire for code to set.
      * @return This builder for chaining.
      */
@@ -813,7 +813,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.StatusCondition.code is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3327
+     *     See google/container/v1/cluster_service.proto;l=3652
      * @return The code.
      */
     @java.lang.Override
@@ -830,7 +830,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.StatusCondition.code is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3327
+     *     See google/container/v1/cluster_service.proto;l=3652
      * @param value The code to set.
      * @return This builder for chaining.
      */
@@ -851,7 +851,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.StatusCondition.Code code = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.StatusCondition.code is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3327
+     *     See google/container/v1/cluster_service.proto;l=3652
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearCode() {

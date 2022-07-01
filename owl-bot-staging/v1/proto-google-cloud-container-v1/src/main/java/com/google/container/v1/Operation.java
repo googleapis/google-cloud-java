@@ -836,7 +836,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.Operation.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1839
+   *     See google/container/v1/cluster_service.proto;l=1955
    * @return The zone.
    */
   @java.lang.Override
@@ -861,7 +861,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.Operation.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1839
+   *     See google/container/v1/cluster_service.proto;l=1955
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -989,7 +989,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @deprecated google.container.v1.Operation.status_message is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1852
+   *     See google/container/v1/cluster_service.proto;l=1968
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -1013,7 +1013,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @deprecated google.container.v1.Operation.status_message is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1852
+   *     See google/container/v1/cluster_service.proto;l=1968
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -2232,7 +2232,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.Operation.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=1839
+     *     See google/container/v1/cluster_service.proto;l=1955
      * @return The zone.
      */
     @java.lang.Deprecated public java.lang.String getZone() {
@@ -2256,7 +2256,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.Operation.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=1839
+     *     See google/container/v1/cluster_service.proto;l=1955
      * @return The bytes for zone.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2281,7 +2281,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.Operation.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=1839
+     *     See google/container/v1/cluster_service.proto;l=1955
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -2304,7 +2304,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.Operation.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=1839
+     *     See google/container/v1/cluster_service.proto;l=1955
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearZone() {
@@ -2322,7 +2322,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.Operation.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=1839
+     *     See google/container/v1/cluster_service.proto;l=1955
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -2591,7 +2591,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @deprecated google.container.v1.Operation.status_message is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=1852
+     *     See google/container/v1/cluster_service.proto;l=1968
      * @return The statusMessage.
      */
     @java.lang.Deprecated public java.lang.String getStatusMessage() {
@@ -2614,7 +2614,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @deprecated google.container.v1.Operation.status_message is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=1852
+     *     See google/container/v1/cluster_service.proto;l=1968
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -2638,7 +2638,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @deprecated google.container.v1.Operation.status_message is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=1852
+     *     See google/container/v1/cluster_service.proto;l=1968
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -2660,7 +2660,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @deprecated google.container.v1.Operation.status_message is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=1852
+     *     See google/container/v1/cluster_service.proto;l=1968
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearStatusMessage() {
@@ -2677,7 +2677,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @deprecated google.container.v1.Operation.status_message is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=1852
+     *     See google/container/v1/cluster_service.proto;l=1968
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */

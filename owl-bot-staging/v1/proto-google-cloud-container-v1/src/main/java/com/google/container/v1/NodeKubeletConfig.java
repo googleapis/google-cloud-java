@@ -79,6 +79,11 @@ private static final long serialVersionUID = 0L;
             cpuCfsQuotaPeriod_ = s;
             break;
           }
+          case 32: {
+
+            podPidsLimit_ = input.readInt64();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -286,6 +291,24 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int POD_PIDS_LIMIT_FIELD_NUMBER = 4;
+  private long podPidsLimit_;
+  /**
+   * <pre>
+   * Set the Pod PID limits. See
+   * https://kubernetes.io/docs/concepts/policy/pid-limiting/#pod-pid-limits
+   * Controls the maximum number of processes allowed to run in a pod. The value
+   * must be greater than or equal to 1024 and less than 4194304.
+   * </pre>
+   *
+   * <code>int64 pod_pids_limit = 4;</code>
+   * @return The podPidsLimit.
+   */
+  @java.lang.Override
+  public long getPodPidsLimit() {
+    return podPidsLimit_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -309,6 +332,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuCfsQuotaPeriod_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, cpuCfsQuotaPeriod_);
     }
+    if (podPidsLimit_ != 0L) {
+      output.writeInt64(4, podPidsLimit_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -327,6 +353,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cpuCfsQuotaPeriod_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, cpuCfsQuotaPeriod_);
+    }
+    if (podPidsLimit_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(4, podPidsLimit_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -352,6 +382,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getCpuCfsQuotaPeriod()
         .equals(other.getCpuCfsQuotaPeriod())) return false;
+    if (getPodPidsLimit()
+        != other.getPodPidsLimit()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -371,6 +403,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + CPU_CFS_QUOTA_PERIOD_FIELD_NUMBER;
     hash = (53 * hash) + getCpuCfsQuotaPeriod().hashCode();
+    hash = (37 * hash) + POD_PIDS_LIMIT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getPodPidsLimit());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -518,6 +553,8 @@ private static final long serialVersionUID = 0L;
       }
       cpuCfsQuotaPeriod_ = "";
 
+      podPidsLimit_ = 0L;
+
       return this;
     }
 
@@ -551,6 +588,7 @@ private static final long serialVersionUID = 0L;
         result.cpuCfsQuota_ = cpuCfsQuotaBuilder_.build();
       }
       result.cpuCfsQuotaPeriod_ = cpuCfsQuotaPeriod_;
+      result.podPidsLimit_ = podPidsLimit_;
       onBuilt();
       return result;
     }
@@ -609,6 +647,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getCpuCfsQuotaPeriod().isEmpty()) {
         cpuCfsQuotaPeriod_ = other.cpuCfsQuotaPeriod_;
         onChanged();
+      }
+      if (other.getPodPidsLimit() != 0L) {
+        setPodPidsLimit(other.getPodPidsLimit());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1100,6 +1141,58 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       cpuCfsQuotaPeriod_ = value;
+      onChanged();
+      return this;
+    }
+
+    private long podPidsLimit_ ;
+    /**
+     * <pre>
+     * Set the Pod PID limits. See
+     * https://kubernetes.io/docs/concepts/policy/pid-limiting/#pod-pid-limits
+     * Controls the maximum number of processes allowed to run in a pod. The value
+     * must be greater than or equal to 1024 and less than 4194304.
+     * </pre>
+     *
+     * <code>int64 pod_pids_limit = 4;</code>
+     * @return The podPidsLimit.
+     */
+    @java.lang.Override
+    public long getPodPidsLimit() {
+      return podPidsLimit_;
+    }
+    /**
+     * <pre>
+     * Set the Pod PID limits. See
+     * https://kubernetes.io/docs/concepts/policy/pid-limiting/#pod-pid-limits
+     * Controls the maximum number of processes allowed to run in a pod. The value
+     * must be greater than or equal to 1024 and less than 4194304.
+     * </pre>
+     *
+     * <code>int64 pod_pids_limit = 4;</code>
+     * @param value The podPidsLimit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPodPidsLimit(long value) {
+      
+      podPidsLimit_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Set the Pod PID limits. See
+     * https://kubernetes.io/docs/concepts/policy/pid-limiting/#pod-pid-limits
+     * Controls the maximum number of processes allowed to run in a pod. The value
+     * must be greater than or equal to 1024 and less than 4194304.
+     * </pre>
+     *
+     * <code>int64 pod_pids_limit = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPodPidsLimit() {
+      
+      podPidsLimit_ = 0L;
       onChanged();
       return this;
     }

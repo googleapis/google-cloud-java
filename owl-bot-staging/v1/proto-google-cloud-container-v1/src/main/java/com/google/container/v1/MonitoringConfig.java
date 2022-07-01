@@ -65,6 +65,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 18: {
+            com.google.container.v1.ManagedPrometheusConfig.Builder subBuilder = null;
+            if (managedPrometheusConfig_ != null) {
+              subBuilder = managedPrometheusConfig_.toBuilder();
+            }
+            managedPrometheusConfig_ = input.readMessage(com.google.container.v1.ManagedPrometheusConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(managedPrometheusConfig_);
+              managedPrometheusConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -137,6 +150,47 @@ private static final long serialVersionUID = 0L;
     return getComponentConfig();
   }
 
+  public static final int MANAGED_PROMETHEUS_CONFIG_FIELD_NUMBER = 2;
+  private com.google.container.v1.ManagedPrometheusConfig managedPrometheusConfig_;
+  /**
+   * <pre>
+   * Enable Google Cloud Managed Service for Prometheus
+   * in the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+   * @return Whether the managedPrometheusConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasManagedPrometheusConfig() {
+    return managedPrometheusConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Enable Google Cloud Managed Service for Prometheus
+   * in the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+   * @return The managedPrometheusConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ManagedPrometheusConfig getManagedPrometheusConfig() {
+    return managedPrometheusConfig_ == null ? com.google.container.v1.ManagedPrometheusConfig.getDefaultInstance() : managedPrometheusConfig_;
+  }
+  /**
+   * <pre>
+   * Enable Google Cloud Managed Service for Prometheus
+   * in the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ManagedPrometheusConfigOrBuilder getManagedPrometheusConfigOrBuilder() {
+    return getManagedPrometheusConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -154,6 +208,9 @@ private static final long serialVersionUID = 0L;
     if (componentConfig_ != null) {
       output.writeMessage(1, getComponentConfig());
     }
+    if (managedPrometheusConfig_ != null) {
+      output.writeMessage(2, getManagedPrometheusConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -166,6 +223,10 @@ private static final long serialVersionUID = 0L;
     if (componentConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getComponentConfig());
+    }
+    if (managedPrometheusConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getManagedPrometheusConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -187,6 +248,11 @@ private static final long serialVersionUID = 0L;
       if (!getComponentConfig()
           .equals(other.getComponentConfig())) return false;
     }
+    if (hasManagedPrometheusConfig() != other.hasManagedPrometheusConfig()) return false;
+    if (hasManagedPrometheusConfig()) {
+      if (!getManagedPrometheusConfig()
+          .equals(other.getManagedPrometheusConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -201,6 +267,10 @@ private static final long serialVersionUID = 0L;
     if (hasComponentConfig()) {
       hash = (37 * hash) + COMPONENT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getComponentConfig().hashCode();
+    }
+    if (hasManagedPrometheusConfig()) {
+      hash = (37 * hash) + MANAGED_PROMETHEUS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getManagedPrometheusConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -345,6 +415,12 @@ private static final long serialVersionUID = 0L;
         componentConfig_ = null;
         componentConfigBuilder_ = null;
       }
+      if (managedPrometheusConfigBuilder_ == null) {
+        managedPrometheusConfig_ = null;
+      } else {
+        managedPrometheusConfig_ = null;
+        managedPrometheusConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -375,6 +451,11 @@ private static final long serialVersionUID = 0L;
         result.componentConfig_ = componentConfig_;
       } else {
         result.componentConfig_ = componentConfigBuilder_.build();
+      }
+      if (managedPrometheusConfigBuilder_ == null) {
+        result.managedPrometheusConfig_ = managedPrometheusConfig_;
+      } else {
+        result.managedPrometheusConfig_ = managedPrometheusConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -426,6 +507,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.google.container.v1.MonitoringConfig.getDefaultInstance()) return this;
       if (other.hasComponentConfig()) {
         mergeComponentConfig(other.getComponentConfig());
+      }
+      if (other.hasManagedPrometheusConfig()) {
+        mergeManagedPrometheusConfig(other.getManagedPrometheusConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -609,6 +693,170 @@ private static final long serialVersionUID = 0L;
         componentConfig_ = null;
       }
       return componentConfigBuilder_;
+    }
+
+    private com.google.container.v1.ManagedPrometheusConfig managedPrometheusConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.container.v1.ManagedPrometheusConfig, com.google.container.v1.ManagedPrometheusConfig.Builder, com.google.container.v1.ManagedPrometheusConfigOrBuilder> managedPrometheusConfigBuilder_;
+    /**
+     * <pre>
+     * Enable Google Cloud Managed Service for Prometheus
+     * in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+     * @return Whether the managedPrometheusConfig field is set.
+     */
+    public boolean hasManagedPrometheusConfig() {
+      return managedPrometheusConfigBuilder_ != null || managedPrometheusConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Enable Google Cloud Managed Service for Prometheus
+     * in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+     * @return The managedPrometheusConfig.
+     */
+    public com.google.container.v1.ManagedPrometheusConfig getManagedPrometheusConfig() {
+      if (managedPrometheusConfigBuilder_ == null) {
+        return managedPrometheusConfig_ == null ? com.google.container.v1.ManagedPrometheusConfig.getDefaultInstance() : managedPrometheusConfig_;
+      } else {
+        return managedPrometheusConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Enable Google Cloud Managed Service for Prometheus
+     * in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+     */
+    public Builder setManagedPrometheusConfig(com.google.container.v1.ManagedPrometheusConfig value) {
+      if (managedPrometheusConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        managedPrometheusConfig_ = value;
+        onChanged();
+      } else {
+        managedPrometheusConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Enable Google Cloud Managed Service for Prometheus
+     * in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+     */
+    public Builder setManagedPrometheusConfig(
+        com.google.container.v1.ManagedPrometheusConfig.Builder builderForValue) {
+      if (managedPrometheusConfigBuilder_ == null) {
+        managedPrometheusConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        managedPrometheusConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Enable Google Cloud Managed Service for Prometheus
+     * in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+     */
+    public Builder mergeManagedPrometheusConfig(com.google.container.v1.ManagedPrometheusConfig value) {
+      if (managedPrometheusConfigBuilder_ == null) {
+        if (managedPrometheusConfig_ != null) {
+          managedPrometheusConfig_ =
+            com.google.container.v1.ManagedPrometheusConfig.newBuilder(managedPrometheusConfig_).mergeFrom(value).buildPartial();
+        } else {
+          managedPrometheusConfig_ = value;
+        }
+        onChanged();
+      } else {
+        managedPrometheusConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Enable Google Cloud Managed Service for Prometheus
+     * in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+     */
+    public Builder clearManagedPrometheusConfig() {
+      if (managedPrometheusConfigBuilder_ == null) {
+        managedPrometheusConfig_ = null;
+        onChanged();
+      } else {
+        managedPrometheusConfig_ = null;
+        managedPrometheusConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Enable Google Cloud Managed Service for Prometheus
+     * in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+     */
+    public com.google.container.v1.ManagedPrometheusConfig.Builder getManagedPrometheusConfigBuilder() {
+      
+      onChanged();
+      return getManagedPrometheusConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Enable Google Cloud Managed Service for Prometheus
+     * in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+     */
+    public com.google.container.v1.ManagedPrometheusConfigOrBuilder getManagedPrometheusConfigOrBuilder() {
+      if (managedPrometheusConfigBuilder_ != null) {
+        return managedPrometheusConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return managedPrometheusConfig_ == null ?
+            com.google.container.v1.ManagedPrometheusConfig.getDefaultInstance() : managedPrometheusConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Enable Google Cloud Managed Service for Prometheus
+     * in the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.container.v1.ManagedPrometheusConfig, com.google.container.v1.ManagedPrometheusConfig.Builder, com.google.container.v1.ManagedPrometheusConfigOrBuilder> 
+        getManagedPrometheusConfigFieldBuilder() {
+      if (managedPrometheusConfigBuilder_ == null) {
+        managedPrometheusConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ManagedPrometheusConfig, com.google.container.v1.ManagedPrometheusConfig.Builder, com.google.container.v1.ManagedPrometheusConfigOrBuilder>(
+                getManagedPrometheusConfig(),
+                getParentForChildren(),
+                isClean());
+        managedPrometheusConfig_ = null;
+      }
+      return managedPrometheusConfigBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

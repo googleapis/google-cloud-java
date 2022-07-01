@@ -44,6 +44,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -69,6 +70,19 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             gpuPartitionSize_ = s;
+            break;
+          }
+          case 42: {
+            com.google.container.v1.GPUSharingConfig.Builder subBuilder = null;
+            if (((bitField0_ & 0x00000001) != 0)) {
+              subBuilder = gpuSharingConfig_.toBuilder();
+            }
+            gpuSharingConfig_ = input.readMessage(com.google.container.v1.GPUSharingConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(gpuSharingConfig_);
+              gpuSharingConfig_ = subBuilder.buildPartial();
+            }
+            bitField0_ |= 0x00000001;
             break;
           }
           default: {
@@ -105,6 +119,7 @@ private static final long serialVersionUID = 0L;
             com.google.container.v1.AcceleratorConfig.class, com.google.container.v1.AcceleratorConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ACCELERATOR_COUNT_FIELD_NUMBER = 1;
   private long acceleratorCount_;
   /**
@@ -218,6 +233,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int GPU_SHARING_CONFIG_FIELD_NUMBER = 5;
+  private com.google.container.v1.GPUSharingConfig gpuSharingConfig_;
+  /**
+   * <pre>
+   * The configuration for GPU sharing options.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+   * @return Whether the gpuSharingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGpuSharingConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * The configuration for GPU sharing options.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+   * @return The gpuSharingConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.GPUSharingConfig getGpuSharingConfig() {
+    return gpuSharingConfig_ == null ? com.google.container.v1.GPUSharingConfig.getDefaultInstance() : gpuSharingConfig_;
+  }
+  /**
+   * <pre>
+   * The configuration for GPU sharing options.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.GPUSharingConfigOrBuilder getGpuSharingConfigOrBuilder() {
+    return gpuSharingConfig_ == null ? com.google.container.v1.GPUSharingConfig.getDefaultInstance() : gpuSharingConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -241,6 +294,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gpuPartitionSize_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getGpuSharingConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -259,6 +315,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gpuPartitionSize_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getGpuSharingConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -281,6 +341,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAcceleratorType())) return false;
     if (!getGpuPartitionSize()
         .equals(other.getGpuPartitionSize())) return false;
+    if (hasGpuSharingConfig() != other.hasGpuSharingConfig()) return false;
+    if (hasGpuSharingConfig()) {
+      if (!getGpuSharingConfig()
+          .equals(other.getGpuSharingConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -299,6 +364,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getAcceleratorType().hashCode();
     hash = (37 * hash) + GPU_PARTITION_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getGpuPartitionSize().hashCode();
+    if (hasGpuSharingConfig()) {
+      hash = (37 * hash) + GPU_SHARING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGpuSharingConfig().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -431,6 +500,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getGpuSharingConfigFieldBuilder();
       }
     }
     @java.lang.Override
@@ -442,6 +512,12 @@ private static final long serialVersionUID = 0L;
 
       gpuPartitionSize_ = "";
 
+      if (gpuSharingConfigBuilder_ == null) {
+        gpuSharingConfig_ = null;
+      } else {
+        gpuSharingConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -468,9 +544,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.container.v1.AcceleratorConfig buildPartial() {
       com.google.container.v1.AcceleratorConfig result = new com.google.container.v1.AcceleratorConfig(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.acceleratorCount_ = acceleratorCount_;
       result.acceleratorType_ = acceleratorType_;
       result.gpuPartitionSize_ = gpuPartitionSize_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (gpuSharingConfigBuilder_ == null) {
+          result.gpuSharingConfig_ = gpuSharingConfig_;
+        } else {
+          result.gpuSharingConfig_ = gpuSharingConfigBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -530,6 +617,9 @@ private static final long serialVersionUID = 0L;
         gpuPartitionSize_ = other.gpuPartitionSize_;
         onChanged();
       }
+      if (other.hasGpuSharingConfig()) {
+        mergeGpuSharingConfig(other.getGpuSharingConfig());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -558,6 +648,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private long acceleratorCount_ ;
     /**
@@ -807,6 +898,162 @@ private static final long serialVersionUID = 0L;
       gpuPartitionSize_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.GPUSharingConfig gpuSharingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.container.v1.GPUSharingConfig, com.google.container.v1.GPUSharingConfig.Builder, com.google.container.v1.GPUSharingConfigOrBuilder> gpuSharingConfigBuilder_;
+    /**
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     * @return Whether the gpuSharingConfig field is set.
+     */
+    public boolean hasGpuSharingConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     * @return The gpuSharingConfig.
+     */
+    public com.google.container.v1.GPUSharingConfig getGpuSharingConfig() {
+      if (gpuSharingConfigBuilder_ == null) {
+        return gpuSharingConfig_ == null ? com.google.container.v1.GPUSharingConfig.getDefaultInstance() : gpuSharingConfig_;
+      } else {
+        return gpuSharingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    public Builder setGpuSharingConfig(com.google.container.v1.GPUSharingConfig value) {
+      if (gpuSharingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gpuSharingConfig_ = value;
+        onChanged();
+      } else {
+        gpuSharingConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    public Builder setGpuSharingConfig(
+        com.google.container.v1.GPUSharingConfig.Builder builderForValue) {
+      if (gpuSharingConfigBuilder_ == null) {
+        gpuSharingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gpuSharingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    public Builder mergeGpuSharingConfig(com.google.container.v1.GPUSharingConfig value) {
+      if (gpuSharingConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0) &&
+            gpuSharingConfig_ != null &&
+            gpuSharingConfig_ != com.google.container.v1.GPUSharingConfig.getDefaultInstance()) {
+          gpuSharingConfig_ =
+            com.google.container.v1.GPUSharingConfig.newBuilder(gpuSharingConfig_).mergeFrom(value).buildPartial();
+        } else {
+          gpuSharingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gpuSharingConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    public Builder clearGpuSharingConfig() {
+      if (gpuSharingConfigBuilder_ == null) {
+        gpuSharingConfig_ = null;
+        onChanged();
+      } else {
+        gpuSharingConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
+      return this;
+    }
+    /**
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    public com.google.container.v1.GPUSharingConfig.Builder getGpuSharingConfigBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getGpuSharingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    public com.google.container.v1.GPUSharingConfigOrBuilder getGpuSharingConfigOrBuilder() {
+      if (gpuSharingConfigBuilder_ != null) {
+        return gpuSharingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gpuSharingConfig_ == null ?
+            com.google.container.v1.GPUSharingConfig.getDefaultInstance() : gpuSharingConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.container.v1.GPUSharingConfig, com.google.container.v1.GPUSharingConfig.Builder, com.google.container.v1.GPUSharingConfigOrBuilder> 
+        getGpuSharingConfigFieldBuilder() {
+      if (gpuSharingConfigBuilder_ == null) {
+        gpuSharingConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.GPUSharingConfig, com.google.container.v1.GPUSharingConfig.Builder, com.google.container.v1.GPUSharingConfigOrBuilder>(
+                getGpuSharingConfig(),
+                getParentForChildren(),
+                isClean());
+        gpuSharingConfig_ = null;
+      }
+      return gpuSharingConfigBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

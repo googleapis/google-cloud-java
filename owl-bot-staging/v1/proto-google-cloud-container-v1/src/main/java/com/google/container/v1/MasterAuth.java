@@ -151,7 +151,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string username = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.MasterAuth.username is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=879
+   *     See google/container/v1/cluster_service.proto;l=951
    * @return The username.
    */
   @java.lang.Override
@@ -180,7 +180,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string username = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.MasterAuth.username is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=879
+   *     See google/container/v1/cluster_service.proto;l=951
    * @return The bytes for username.
    */
   @java.lang.Override
@@ -214,7 +214,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string password = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.MasterAuth.password is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=890
+   *     See google/container/v1/cluster_service.proto;l=962
    * @return The password.
    */
   @java.lang.Override
@@ -244,7 +244,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string password = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.MasterAuth.password is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=890
+   *     See google/container/v1/cluster_service.proto;l=962
    * @return The bytes for password.
    */
   @java.lang.Override
@@ -870,7 +870,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string username = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.MasterAuth.username is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=879
+     *     See google/container/v1/cluster_service.proto;l=951
      * @return The username.
      */
     @java.lang.Deprecated public java.lang.String getUsername() {
@@ -898,7 +898,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string username = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.MasterAuth.username is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=879
+     *     See google/container/v1/cluster_service.proto;l=951
      * @return The bytes for username.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -927,7 +927,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string username = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.MasterAuth.username is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=879
+     *     See google/container/v1/cluster_service.proto;l=951
      * @param value The username to set.
      * @return This builder for chaining.
      */
@@ -954,7 +954,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string username = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.MasterAuth.username is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=879
+     *     See google/container/v1/cluster_service.proto;l=951
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearUsername() {
@@ -976,7 +976,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string username = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.MasterAuth.username is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=879
+     *     See google/container/v1/cluster_service.proto;l=951
      * @param value The bytes for username to set.
      * @return This builder for chaining.
      */
@@ -1007,7 +1007,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string password = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.MasterAuth.password is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=890
+     *     See google/container/v1/cluster_service.proto;l=962
      * @return The password.
      */
     @java.lang.Deprecated public java.lang.String getPassword() {
@@ -1036,7 +1036,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string password = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.MasterAuth.password is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=890
+     *     See google/container/v1/cluster_service.proto;l=962
      * @return The bytes for password.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1066,7 +1066,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string password = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.MasterAuth.password is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=890
+     *     See google/container/v1/cluster_service.proto;l=962
      * @param value The password to set.
      * @return This builder for chaining.
      */
@@ -1094,7 +1094,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string password = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.MasterAuth.password is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=890
+     *     See google/container/v1/cluster_service.proto;l=962
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearPassword() {
@@ -1117,7 +1117,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string password = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.MasterAuth.password is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=890
+     *     See google/container/v1/cluster_service.proto;l=962
      * @param value The bytes for password to set.
      * @return This builder for chaining.
      */

@@ -700,6 +700,37 @@ public final class ClusterManagerGrpc {
     return getDeleteNodePoolMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.container.v1.CompleteNodePoolUpgradeRequest,
+      com.google.protobuf.Empty> getCompleteNodePoolUpgradeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CompleteNodePoolUpgrade",
+      requestType = com.google.container.v1.CompleteNodePoolUpgradeRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.container.v1.CompleteNodePoolUpgradeRequest,
+      com.google.protobuf.Empty> getCompleteNodePoolUpgradeMethod() {
+    io.grpc.MethodDescriptor<com.google.container.v1.CompleteNodePoolUpgradeRequest, com.google.protobuf.Empty> getCompleteNodePoolUpgradeMethod;
+    if ((getCompleteNodePoolUpgradeMethod = ClusterManagerGrpc.getCompleteNodePoolUpgradeMethod) == null) {
+      synchronized (ClusterManagerGrpc.class) {
+        if ((getCompleteNodePoolUpgradeMethod = ClusterManagerGrpc.getCompleteNodePoolUpgradeMethod) == null) {
+          ClusterManagerGrpc.getCompleteNodePoolUpgradeMethod = getCompleteNodePoolUpgradeMethod =
+              io.grpc.MethodDescriptor.<com.google.container.v1.CompleteNodePoolUpgradeRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CompleteNodePoolUpgrade"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.container.v1.CompleteNodePoolUpgradeRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new ClusterManagerMethodDescriptorSupplier("CompleteNodePoolUpgrade"))
+              .build();
+        }
+      }
+    }
+    return getCompleteNodePoolUpgradeMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.google.container.v1.RollbackNodePoolUpgradeRequest,
       com.google.container.v1.Operation> getRollbackNodePoolUpgradeMethod;
 
@@ -1309,6 +1340,17 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
+     * CompleteNodePoolUpgrade will signal an on-going node pool upgrade to
+     * complete.
+     * </pre>
+     */
+    public void completeNodePoolUpgrade(com.google.container.v1.CompleteNodePoolUpgradeRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCompleteNodePoolUpgradeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Rolls back a previously Aborted or Failed NodePool upgrade.
      * This makes no changes if the last upgrade successfully completed.
      * </pre>
@@ -1566,6 +1608,13 @@ public final class ClusterManagerGrpc {
                 com.google.container.v1.DeleteNodePoolRequest,
                 com.google.container.v1.Operation>(
                   this, METHODID_DELETE_NODE_POOL)))
+          .addMethod(
+            getCompleteNodePoolUpgradeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.container.v1.CompleteNodePoolUpgradeRequest,
+                com.google.protobuf.Empty>(
+                  this, METHODID_COMPLETE_NODE_POOL_UPGRADE)))
           .addMethod(
             getRollbackNodePoolUpgradeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1923,6 +1972,18 @@ public final class ClusterManagerGrpc {
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteNodePoolMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * CompleteNodePoolUpgrade will signal an on-going node pool upgrade to
+     * complete.
+     * </pre>
+     */
+    public void completeNodePoolUpgrade(com.google.container.v1.CompleteNodePoolUpgradeRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCompleteNodePoolUpgradeMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2300,6 +2361,17 @@ public final class ClusterManagerGrpc {
     public com.google.container.v1.Operation deleteNodePool(com.google.container.v1.DeleteNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * CompleteNodePoolUpgrade will signal an on-going node pool upgrade to
+     * complete.
+     * </pre>
+     */
+    public com.google.protobuf.Empty completeNodePoolUpgrade(com.google.container.v1.CompleteNodePoolUpgradeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCompleteNodePoolUpgradeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2693,6 +2765,18 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
+     * CompleteNodePoolUpgrade will signal an on-going node pool upgrade to
+     * complete.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> completeNodePoolUpgrade(
+        com.google.container.v1.CompleteNodePoolUpgradeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCompleteNodePoolUpgradeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Rolls back a previously Aborted or Failed NodePool upgrade.
      * This makes no changes if the last upgrade successfully completed.
      * </pre>
@@ -2827,16 +2911,17 @@ public final class ClusterManagerGrpc {
   private static final int METHODID_GET_NODE_POOL = 19;
   private static final int METHODID_CREATE_NODE_POOL = 20;
   private static final int METHODID_DELETE_NODE_POOL = 21;
-  private static final int METHODID_ROLLBACK_NODE_POOL_UPGRADE = 22;
-  private static final int METHODID_SET_NODE_POOL_MANAGEMENT = 23;
-  private static final int METHODID_SET_LABELS = 24;
-  private static final int METHODID_SET_LEGACY_ABAC = 25;
-  private static final int METHODID_START_IPROTATION = 26;
-  private static final int METHODID_COMPLETE_IPROTATION = 27;
-  private static final int METHODID_SET_NODE_POOL_SIZE = 28;
-  private static final int METHODID_SET_NETWORK_POLICY = 29;
-  private static final int METHODID_SET_MAINTENANCE_POLICY = 30;
-  private static final int METHODID_LIST_USABLE_SUBNETWORKS = 31;
+  private static final int METHODID_COMPLETE_NODE_POOL_UPGRADE = 22;
+  private static final int METHODID_ROLLBACK_NODE_POOL_UPGRADE = 23;
+  private static final int METHODID_SET_NODE_POOL_MANAGEMENT = 24;
+  private static final int METHODID_SET_LABELS = 25;
+  private static final int METHODID_SET_LEGACY_ABAC = 26;
+  private static final int METHODID_START_IPROTATION = 27;
+  private static final int METHODID_COMPLETE_IPROTATION = 28;
+  private static final int METHODID_SET_NODE_POOL_SIZE = 29;
+  private static final int METHODID_SET_NETWORK_POLICY = 30;
+  private static final int METHODID_SET_MAINTENANCE_POLICY = 31;
+  private static final int METHODID_LIST_USABLE_SUBNETWORKS = 32;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2942,6 +3027,10 @@ public final class ClusterManagerGrpc {
         case METHODID_DELETE_NODE_POOL:
           serviceImpl.deleteNodePool((com.google.container.v1.DeleteNodePoolRequest) request,
               (io.grpc.stub.StreamObserver<com.google.container.v1.Operation>) responseObserver);
+          break;
+        case METHODID_COMPLETE_NODE_POOL_UPGRADE:
+          serviceImpl.completeNodePoolUpgrade((com.google.container.v1.CompleteNodePoolUpgradeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_ROLLBACK_NODE_POOL_UPGRADE:
           serviceImpl.rollbackNodePoolUpgrade((com.google.container.v1.RollbackNodePoolUpgradeRequest) request,
@@ -3066,6 +3155,7 @@ public final class ClusterManagerGrpc {
               .addMethod(getGetNodePoolMethod())
               .addMethod(getCreateNodePoolMethod())
               .addMethod(getDeleteNodePoolMethod())
+              .addMethod(getCompleteNodePoolUpgradeMethod())
               .addMethod(getRollbackNodePoolUpgradeMethod())
               .addMethod(getSetNodePoolManagementMethod())
               .addMethod(getSetLabelsMethod())

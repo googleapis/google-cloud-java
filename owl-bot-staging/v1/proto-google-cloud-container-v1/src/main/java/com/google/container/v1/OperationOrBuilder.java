@@ -36,7 +36,7 @@ public interface OperationOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.Operation.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1839
+   *     See google/container/v1/cluster_service.proto;l=1955
    * @return The zone.
    */
   @java.lang.Deprecated java.lang.String getZone();
@@ -49,7 +49,7 @@ public interface OperationOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.Operation.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1839
+   *     See google/container/v1/cluster_service.proto;l=1955
    * @return The bytes for zone.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -121,7 +121,7 @@ public interface OperationOrBuilder extends
    *
    * <code>string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @deprecated google.container.v1.Operation.status_message is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1852
+   *     See google/container/v1/cluster_service.proto;l=1968
    * @return The statusMessage.
    */
   @java.lang.Deprecated java.lang.String getStatusMessage();
@@ -133,7 +133,7 @@ public interface OperationOrBuilder extends
    *
    * <code>string status_message = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @deprecated google.container.v1.Operation.status_message is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1852
+   *     See google/container/v1/cluster_service.proto;l=1968
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

@@ -116,4 +116,17 @@ public interface NodeKubeletConfigOrBuilder extends
    */
   com.google.protobuf.ByteString
       getCpuCfsQuotaPeriodBytes();
+
+  /**
+   * <pre>
+   * Set the Pod PID limits. See
+   * https://kubernetes.io/docs/concepts/policy/pid-limiting/#pod-pid-limits
+   * Controls the maximum number of processes allowed to run in a pod. The value
+   * must be greater than or equal to 1024 and less than 4194304.
+   * </pre>
+   *
+   * <code>int64 pod_pids_limit = 4;</code>
+   * @return The podPidsLimit.
+   */
+  long getPodPidsLimit();
 }

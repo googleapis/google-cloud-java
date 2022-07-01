@@ -132,13 +132,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.SetAddonsConfigRequest.project_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2175
+   *     See google/container/v1/cluster_service.proto;l=2313
    * @return The projectId.
    */
   @java.lang.Override
@@ -157,13 +157,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.SetAddonsConfigRequest.project_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2175
+   *     See google/container/v1/cluster_service.proto;l=2313
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -193,7 +193,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.SetAddonsConfigRequest.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2181
+   *     See google/container/v1/cluster_service.proto;l=2319
    * @return The zone.
    */
   @java.lang.Override
@@ -219,7 +219,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.SetAddonsConfigRequest.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2181
+   *     See google/container/v1/cluster_service.proto;l=2319
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -247,7 +247,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    * @deprecated google.container.v1.SetAddonsConfigRequest.cluster_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2185
+   *     See google/container/v1/cluster_service.proto;l=2323
    * @return The clusterId.
    */
   @java.lang.Override
@@ -271,7 +271,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    * @deprecated google.container.v1.SetAddonsConfigRequest.cluster_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2185
+   *     See google/container/v1/cluster_service.proto;l=2323
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -769,13 +769,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2175
+     *     See google/container/v1/cluster_service.proto;l=2313
      * @return The projectId.
      */
     @java.lang.Deprecated public java.lang.String getProjectId() {
@@ -793,13 +793,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2175
+     *     See google/container/v1/cluster_service.proto;l=2313
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -818,13 +818,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2175
+     *     See google/container/v1/cluster_service.proto;l=2313
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -841,13 +841,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2175
+     *     See google/container/v1/cluster_service.proto;l=2313
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearProjectId() {
@@ -859,13 +859,13 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.project_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2175
+     *     See google/container/v1/cluster_service.proto;l=2313
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -892,7 +892,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2181
+     *     See google/container/v1/cluster_service.proto;l=2319
      * @return The zone.
      */
     @java.lang.Deprecated public java.lang.String getZone() {
@@ -917,7 +917,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2181
+     *     See google/container/v1/cluster_service.proto;l=2319
      * @return The bytes for zone.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -943,7 +943,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2181
+     *     See google/container/v1/cluster_service.proto;l=2319
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -967,7 +967,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2181
+     *     See google/container/v1/cluster_service.proto;l=2319
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearZone() {
@@ -986,7 +986,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone = 2 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.zone is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2181
+     *     See google/container/v1/cluster_service.proto;l=2319
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1011,7 +1011,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2185
+     *     See google/container/v1/cluster_service.proto;l=2323
      * @return The clusterId.
      */
     @java.lang.Deprecated public java.lang.String getClusterId() {
@@ -1034,7 +1034,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2185
+     *     See google/container/v1/cluster_service.proto;l=2323
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1058,7 +1058,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2185
+     *     See google/container/v1/cluster_service.proto;l=2323
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1080,7 +1080,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2185
+     *     See google/container/v1/cluster_service.proto;l=2323
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearClusterId() {
@@ -1097,7 +1097,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_id = 3 [deprecated = true];</code>
      * @deprecated google.container.v1.SetAddonsConfigRequest.cluster_id is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=2185
+     *     See google/container/v1/cluster_service.proto;l=2323
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */

@@ -9,7 +9,7 @@ public interface GetJSONWebKeysRequestOrBuilder extends
 
   /**
    * <pre>
-   * The cluster (project, location, cluster id) to get keys for. Specified in
+   * The cluster (project, location, cluster name) to get keys for. Specified in
    * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -19,7 +19,7 @@ public interface GetJSONWebKeysRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * The cluster (project, location, cluster id) to get keys for. Specified in
+   * The cluster (project, location, cluster name) to get keys for. Specified in
    * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *

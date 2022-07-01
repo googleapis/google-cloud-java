@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private BinaryAuthorization() {
+    evaluationMode_ = 0;
   }
 
   @java.lang.Override
@@ -57,6 +58,12 @@ private static final long serialVersionUID = 0L;
             enabled_ = input.readBool();
             break;
           }
+          case 16: {
+            int rawValue = input.readEnum();
+
+            evaluationMode_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -91,6 +98,155 @@ private static final long serialVersionUID = 0L;
             com.google.container.v1.BinaryAuthorization.class, com.google.container.v1.BinaryAuthorization.Builder.class);
   }
 
+  /**
+   * <pre>
+   * Binary Authorization mode of operation.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1.BinaryAuthorization.EvaluationMode}
+   */
+  public enum EvaluationMode
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Default value
+     * </pre>
+     *
+     * <code>EVALUATION_MODE_UNSPECIFIED = 0;</code>
+     */
+    EVALUATION_MODE_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Disable BinaryAuthorization
+     * </pre>
+     *
+     * <code>DISABLED = 1;</code>
+     */
+    DISABLED(1),
+    /**
+     * <pre>
+     * Enforce Kubernetes admission requests with BinaryAuthorization using the
+     * project's singleton policy. This is equivalent to setting the
+     * enabled boolean to true.
+     * </pre>
+     *
+     * <code>PROJECT_SINGLETON_POLICY_ENFORCE = 2;</code>
+     */
+    PROJECT_SINGLETON_POLICY_ENFORCE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Default value
+     * </pre>
+     *
+     * <code>EVALUATION_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int EVALUATION_MODE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Disable BinaryAuthorization
+     * </pre>
+     *
+     * <code>DISABLED = 1;</code>
+     */
+    public static final int DISABLED_VALUE = 1;
+    /**
+     * <pre>
+     * Enforce Kubernetes admission requests with BinaryAuthorization using the
+     * project's singleton policy. This is equivalent to setting the
+     * enabled boolean to true.
+     * </pre>
+     *
+     * <code>PROJECT_SINGLETON_POLICY_ENFORCE = 2;</code>
+     */
+    public static final int PROJECT_SINGLETON_POLICY_ENFORCE_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EvaluationMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EvaluationMode forNumber(int value) {
+      switch (value) {
+        case 0: return EVALUATION_MODE_UNSPECIFIED;
+        case 1: return DISABLED;
+        case 2: return PROJECT_SINGLETON_POLICY_ENFORCE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EvaluationMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        EvaluationMode> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<EvaluationMode>() {
+            public EvaluationMode findValueByNumber(int number) {
+              return EvaluationMode.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.container.v1.BinaryAuthorization.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final EvaluationMode[] VALUES = values();
+
+    public static EvaluationMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EvaluationMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1.BinaryAuthorization.EvaluationMode)
+  }
+
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_;
   /**
@@ -105,6 +261,37 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean getEnabled() {
     return enabled_;
+  }
+
+  public static final int EVALUATION_MODE_FIELD_NUMBER = 2;
+  private int evaluationMode_;
+  /**
+   * <pre>
+   * Mode of operation for binauthz policy evaluation. Currently the only
+   * options are equivalent to enable/disable. If unspecified, defaults to
+   * DISABLED.
+   * </pre>
+   *
+   * <code>.google.container.v1.BinaryAuthorization.EvaluationMode evaluation_mode = 2;</code>
+   * @return The enum numeric value on the wire for evaluationMode.
+   */
+  @java.lang.Override public int getEvaluationModeValue() {
+    return evaluationMode_;
+  }
+  /**
+   * <pre>
+   * Mode of operation for binauthz policy evaluation. Currently the only
+   * options are equivalent to enable/disable. If unspecified, defaults to
+   * DISABLED.
+   * </pre>
+   *
+   * <code>.google.container.v1.BinaryAuthorization.EvaluationMode evaluation_mode = 2;</code>
+   * @return The evaluationMode.
+   */
+  @java.lang.Override public com.google.container.v1.BinaryAuthorization.EvaluationMode getEvaluationMode() {
+    @SuppressWarnings("deprecation")
+    com.google.container.v1.BinaryAuthorization.EvaluationMode result = com.google.container.v1.BinaryAuthorization.EvaluationMode.valueOf(evaluationMode_);
+    return result == null ? com.google.container.v1.BinaryAuthorization.EvaluationMode.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -124,6 +311,9 @@ private static final long serialVersionUID = 0L;
     if (enabled_ != false) {
       output.writeBool(1, enabled_);
     }
+    if (evaluationMode_ != com.google.container.v1.BinaryAuthorization.EvaluationMode.EVALUATION_MODE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(2, evaluationMode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -136,6 +326,10 @@ private static final long serialVersionUID = 0L;
     if (enabled_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, enabled_);
+    }
+    if (evaluationMode_ != com.google.container.v1.BinaryAuthorization.EvaluationMode.EVALUATION_MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(2, evaluationMode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -154,6 +348,7 @@ private static final long serialVersionUID = 0L;
 
     if (getEnabled()
         != other.getEnabled()) return false;
+    if (evaluationMode_ != other.evaluationMode_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -168,6 +363,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getEnabled());
+    hash = (37 * hash) + EVALUATION_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + evaluationMode_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -307,6 +504,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       enabled_ = false;
 
+      evaluationMode_ = 0;
+
       return this;
     }
 
@@ -334,6 +533,7 @@ private static final long serialVersionUID = 0L;
     public com.google.container.v1.BinaryAuthorization buildPartial() {
       com.google.container.v1.BinaryAuthorization result = new com.google.container.v1.BinaryAuthorization(this);
       result.enabled_ = enabled_;
+      result.evaluationMode_ = evaluationMode_;
       onBuilt();
       return result;
     }
@@ -384,6 +584,9 @@ private static final long serialVersionUID = 0L;
       if (other == com.google.container.v1.BinaryAuthorization.getDefaultInstance()) return this;
       if (other.getEnabled() != false) {
         setEnabled(other.getEnabled());
+      }
+      if (other.evaluationMode_ != 0) {
+        setEvaluationModeValue(other.getEvaluationModeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -456,6 +659,90 @@ private static final long serialVersionUID = 0L;
     public Builder clearEnabled() {
       
       enabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int evaluationMode_ = 0;
+    /**
+     * <pre>
+     * Mode of operation for binauthz policy evaluation. Currently the only
+     * options are equivalent to enable/disable. If unspecified, defaults to
+     * DISABLED.
+     * </pre>
+     *
+     * <code>.google.container.v1.BinaryAuthorization.EvaluationMode evaluation_mode = 2;</code>
+     * @return The enum numeric value on the wire for evaluationMode.
+     */
+    @java.lang.Override public int getEvaluationModeValue() {
+      return evaluationMode_;
+    }
+    /**
+     * <pre>
+     * Mode of operation for binauthz policy evaluation. Currently the only
+     * options are equivalent to enable/disable. If unspecified, defaults to
+     * DISABLED.
+     * </pre>
+     *
+     * <code>.google.container.v1.BinaryAuthorization.EvaluationMode evaluation_mode = 2;</code>
+     * @param value The enum numeric value on the wire for evaluationMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationModeValue(int value) {
+      
+      evaluationMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Mode of operation for binauthz policy evaluation. Currently the only
+     * options are equivalent to enable/disable. If unspecified, defaults to
+     * DISABLED.
+     * </pre>
+     *
+     * <code>.google.container.v1.BinaryAuthorization.EvaluationMode evaluation_mode = 2;</code>
+     * @return The evaluationMode.
+     */
+    @java.lang.Override
+    public com.google.container.v1.BinaryAuthorization.EvaluationMode getEvaluationMode() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1.BinaryAuthorization.EvaluationMode result = com.google.container.v1.BinaryAuthorization.EvaluationMode.valueOf(evaluationMode_);
+      return result == null ? com.google.container.v1.BinaryAuthorization.EvaluationMode.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Mode of operation for binauthz policy evaluation. Currently the only
+     * options are equivalent to enable/disable. If unspecified, defaults to
+     * DISABLED.
+     * </pre>
+     *
+     * <code>.google.container.v1.BinaryAuthorization.EvaluationMode evaluation_mode = 2;</code>
+     * @param value The evaluationMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationMode(com.google.container.v1.BinaryAuthorization.EvaluationMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      evaluationMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Mode of operation for binauthz policy evaluation. Currently the only
+     * options are equivalent to enable/disable. If unspecified, defaults to
+     * DISABLED.
+     * </pre>
+     *
+     * <code>.google.container.v1.BinaryAuthorization.EvaluationMode evaluation_mode = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationMode() {
+      
+      evaluationMode_ = 0;
       onChanged();
       return this;
     }

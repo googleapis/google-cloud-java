@@ -1006,4 +1006,45 @@ java.lang.String defaultValue);
    * <code>.google.container.v1.VirtualNIC gvnic = 29;</code>
    */
   com.google.container.v1.VirtualNICOrBuilder getGvnicOrBuilder();
+
+  /**
+   * <pre>
+   * Spot flag for enabling Spot VM, which is a rebrand of
+   * the existing preemptible flag.
+   * </pre>
+   *
+   * <code>bool spot = 32;</code>
+   * @return The spot.
+   */
+  boolean getSpot();
+
+  /**
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 35;</code>
+   * @return Whether the confidentialNodes field is set.
+   */
+  boolean hasConfidentialNodes();
+  /**
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 35;</code>
+   * @return The confidentialNodes.
+   */
+  com.google.container.v1.ConfidentialNodes getConfidentialNodes();
+  /**
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 35;</code>
+   */
+  com.google.container.v1.ConfidentialNodesOrBuilder getConfidentialNodesOrBuilder();
 }

@@ -123,7 +123,7 @@ public enum UpgradeResourceType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.container.v1.ClusterServiceProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final UpgradeResourceType[] VALUES = values();

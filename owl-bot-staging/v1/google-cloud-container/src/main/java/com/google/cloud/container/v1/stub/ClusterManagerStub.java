@@ -23,6 +23,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.container.v1.CancelOperationRequest;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.CompleteIPRotationRequest;
+import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
 import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DeleteClusterRequest;
@@ -160,6 +161,10 @@ public abstract class ClusterManagerStub implements BackgroundResource {
 
   public UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteNodePoolCallable()");
+  }
+
+  public UnaryCallable<CompleteNodePoolUpgradeRequest, Empty> completeNodePoolUpgradeCallable() {
+    throw new UnsupportedOperationException("Not implemented: completeNodePoolUpgradeCallable()");
   }
 
   public UnaryCallable<RollbackNodePoolUpgradeRequest, Operation>

@@ -9,7 +9,7 @@ public interface NodeConfigDefaultsOrBuilder extends
 
   /**
    * <pre>
-   * GCFS (Google Container File System, a.k.a Riptide) options.
+   * GCFS (Google Container File System, a.k.a. Riptide) options.
    * </pre>
    *
    * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -18,7 +18,7 @@ public interface NodeConfigDefaultsOrBuilder extends
   boolean hasGcfsConfig();
   /**
    * <pre>
-   * GCFS (Google Container File System, a.k.a Riptide) options.
+   * GCFS (Google Container File System, a.k.a. Riptide) options.
    * </pre>
    *
    * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -27,7 +27,7 @@ public interface NodeConfigDefaultsOrBuilder extends
   com.google.container.v1.GcfsConfig getGcfsConfig();
   /**
    * <pre>
-   * GCFS (Google Container File System, a.k.a Riptide) options.
+   * GCFS (Google Container File System, a.k.a. Riptide) options.
    * </pre>
    *
    * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>

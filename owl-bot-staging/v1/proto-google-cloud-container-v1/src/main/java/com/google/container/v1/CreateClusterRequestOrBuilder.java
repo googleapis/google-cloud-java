@@ -10,26 +10,26 @@ public interface CreateClusterRequestOrBuilder extends
   /**
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.CreateClusterRequest.project_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1938
+   *     See google/container/v1/cluster_service.proto;l=2054
    * @return The projectId.
    */
   @java.lang.Deprecated java.lang.String getProjectId();
   /**
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    * @deprecated google.container.v1.CreateClusterRequest.project_id is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1938
+   *     See google/container/v1/cluster_service.proto;l=2054
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString
@@ -45,7 +45,7 @@ public interface CreateClusterRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.CreateClusterRequest.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1944
+   *     See google/container/v1/cluster_service.proto;l=2060
    * @return The zone.
    */
   @java.lang.Deprecated java.lang.String getZone();
@@ -59,7 +59,7 @@ public interface CreateClusterRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    * @deprecated google.container.v1.CreateClusterRequest.zone is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=1944
+   *     See google/container/v1/cluster_service.proto;l=2060
    * @return The bytes for zone.
    */
   @java.lang.Deprecated com.google.protobuf.ByteString

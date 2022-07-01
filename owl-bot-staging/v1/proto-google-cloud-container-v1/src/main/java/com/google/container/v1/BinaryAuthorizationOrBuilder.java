@@ -17,4 +17,27 @@ public interface BinaryAuthorizationOrBuilder extends
    * @return The enabled.
    */
   boolean getEnabled();
+
+  /**
+   * <pre>
+   * Mode of operation for binauthz policy evaluation. Currently the only
+   * options are equivalent to enable/disable. If unspecified, defaults to
+   * DISABLED.
+   * </pre>
+   *
+   * <code>.google.container.v1.BinaryAuthorization.EvaluationMode evaluation_mode = 2;</code>
+   * @return The enum numeric value on the wire for evaluationMode.
+   */
+  int getEvaluationModeValue();
+  /**
+   * <pre>
+   * Mode of operation for binauthz policy evaluation. Currently the only
+   * options are equivalent to enable/disable. If unspecified, defaults to
+   * DISABLED.
+   * </pre>
+   *
+   * <code>.google.container.v1.BinaryAuthorization.EvaluationMode evaluation_mode = 2;</code>
+   * @return The evaluationMode.
+   */
+  com.google.container.v1.BinaryAuthorization.EvaluationMode getEvaluationMode();
 }

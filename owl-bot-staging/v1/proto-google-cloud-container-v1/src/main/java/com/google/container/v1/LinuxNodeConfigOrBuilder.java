@@ -12,6 +12,8 @@ public interface LinuxNodeConfigOrBuilder extends
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
    * The following parameters are supported.
+   * net.core.busy_poll
+   * net.core.busy_read
    * net.core.netdev_max_backlog
    * net.core.rmem_max
    * net.core.wmem_default
@@ -31,6 +33,8 @@ public interface LinuxNodeConfigOrBuilder extends
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
    * The following parameters are supported.
+   * net.core.busy_poll
+   * net.core.busy_read
    * net.core.netdev_max_backlog
    * net.core.rmem_max
    * net.core.wmem_default
@@ -57,6 +61,8 @@ public interface LinuxNodeConfigOrBuilder extends
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
    * The following parameters are supported.
+   * net.core.busy_poll
+   * net.core.busy_read
    * net.core.netdev_max_backlog
    * net.core.rmem_max
    * net.core.wmem_default
@@ -77,6 +83,8 @@ public interface LinuxNodeConfigOrBuilder extends
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
    * The following parameters are supported.
+   * net.core.busy_poll
+   * net.core.busy_read
    * net.core.netdev_max_backlog
    * net.core.rmem_max
    * net.core.wmem_default
@@ -101,6 +109,8 @@ java.lang.String defaultValue);
    * The Linux kernel parameters to be applied to the nodes and all pods running
    * on the nodes.
    * The following parameters are supported.
+   * net.core.busy_poll
+   * net.core.busy_read
    * net.core.netdev_max_backlog
    * net.core.rmem_max
    * net.core.wmem_default

@@ -139,6 +139,30 @@ private static final long serialVersionUID = 0L;
      * <code>SYSTEM_COMPONENTS = 1;</code>
      */
     SYSTEM_COMPONENTS(1),
+    /**
+     * <pre>
+     * kube-apiserver
+     * </pre>
+     *
+     * <code>APISERVER = 3;</code>
+     */
+    APISERVER(3),
+    /**
+     * <pre>
+     * kube-scheduler
+     * </pre>
+     *
+     * <code>SCHEDULER = 4;</code>
+     */
+    SCHEDULER(4),
+    /**
+     * <pre>
+     * kube-controller-manager
+     * </pre>
+     *
+     * <code>CONTROLLER_MANAGER = 5;</code>
+     */
+    CONTROLLER_MANAGER(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -158,6 +182,30 @@ private static final long serialVersionUID = 0L;
      * <code>SYSTEM_COMPONENTS = 1;</code>
      */
     public static final int SYSTEM_COMPONENTS_VALUE = 1;
+    /**
+     * <pre>
+     * kube-apiserver
+     * </pre>
+     *
+     * <code>APISERVER = 3;</code>
+     */
+    public static final int APISERVER_VALUE = 3;
+    /**
+     * <pre>
+     * kube-scheduler
+     * </pre>
+     *
+     * <code>SCHEDULER = 4;</code>
+     */
+    public static final int SCHEDULER_VALUE = 4;
+    /**
+     * <pre>
+     * kube-controller-manager
+     * </pre>
+     *
+     * <code>CONTROLLER_MANAGER = 5;</code>
+     */
+    public static final int CONTROLLER_MANAGER_VALUE = 5;
 
 
     public final int getNumber() {
@@ -186,6 +234,9 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 0: return COMPONENT_UNSPECIFIED;
         case 1: return SYSTEM_COMPONENTS;
+        case 3: return APISERVER;
+        case 4: return SCHEDULER;
+        case 5: return CONTROLLER_MANAGER;
         default: return null;
       }
     }

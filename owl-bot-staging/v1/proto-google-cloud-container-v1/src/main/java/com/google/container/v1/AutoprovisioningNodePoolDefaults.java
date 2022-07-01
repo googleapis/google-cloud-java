@@ -357,22 +357,26 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object minCpuPlatform_;
   /**
    * <pre>
-   * Minimum CPU platform to be used for NAP created node pools.
+   * Deprecated. Minimum CPU platform to be used for NAP created node pools.
    * The instance may be scheduled on the specified or newer CPU platform.
    * Applicable values are the friendly names of CPU platforms, such as
    * minCpuPlatform: Intel Haswell or
    * minCpuPlatform: Intel Sandy Bridge. For more
    * information, read [how to specify min CPU
    * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * This field is deprecated, min_cpu_platform should be specified using
+   * cloud.google.com/requested-min-cpu-platform label selector on the pod.
    * To unset the min cpu platform field pass "automatic"
    * as field value.
    * </pre>
    *
-   * <code>string min_cpu_platform = 5;</code>
+   * <code>string min_cpu_platform = 5 [deprecated = true];</code>
+   * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is deprecated.
+   *     See google/container/v1/cluster_service.proto;l=3311
    * @return The minCpuPlatform.
    */
   @java.lang.Override
-  public java.lang.String getMinCpuPlatform() {
+  @java.lang.Deprecated public java.lang.String getMinCpuPlatform() {
     java.lang.Object ref = minCpuPlatform_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -386,22 +390,26 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Minimum CPU platform to be used for NAP created node pools.
+   * Deprecated. Minimum CPU platform to be used for NAP created node pools.
    * The instance may be scheduled on the specified or newer CPU platform.
    * Applicable values are the friendly names of CPU platforms, such as
    * minCpuPlatform: Intel Haswell or
    * minCpuPlatform: Intel Sandy Bridge. For more
    * information, read [how to specify min CPU
    * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * This field is deprecated, min_cpu_platform should be specified using
+   * cloud.google.com/requested-min-cpu-platform label selector on the pod.
    * To unset the min cpu platform field pass "automatic"
    * as field value.
    * </pre>
    *
-   * <code>string min_cpu_platform = 5;</code>
+   * <code>string min_cpu_platform = 5 [deprecated = true];</code>
+   * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is deprecated.
+   *     See google/container/v1/cluster_service.proto;l=3311
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getMinCpuPlatformBytes() {
     java.lang.Object ref = minCpuPlatform_;
     if (ref instanceof java.lang.String) {
@@ -1695,21 +1703,25 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object minCpuPlatform_ = "";
     /**
      * <pre>
-     * Minimum CPU platform to be used for NAP created node pools.
+     * Deprecated. Minimum CPU platform to be used for NAP created node pools.
      * The instance may be scheduled on the specified or newer CPU platform.
      * Applicable values are the friendly names of CPU platforms, such as
      * minCpuPlatform: Intel Haswell or
      * minCpuPlatform: Intel Sandy Bridge. For more
      * information, read [how to specify min CPU
      * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * This field is deprecated, min_cpu_platform should be specified using
+     * cloud.google.com/requested-min-cpu-platform label selector on the pod.
      * To unset the min cpu platform field pass "automatic"
      * as field value.
      * </pre>
      *
-     * <code>string min_cpu_platform = 5;</code>
+     * <code>string min_cpu_platform = 5 [deprecated = true];</code>
+     * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is deprecated.
+     *     See google/container/v1/cluster_service.proto;l=3311
      * @return The minCpuPlatform.
      */
-    public java.lang.String getMinCpuPlatform() {
+    @java.lang.Deprecated public java.lang.String getMinCpuPlatform() {
       java.lang.Object ref = minCpuPlatform_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1723,21 +1735,25 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Minimum CPU platform to be used for NAP created node pools.
+     * Deprecated. Minimum CPU platform to be used for NAP created node pools.
      * The instance may be scheduled on the specified or newer CPU platform.
      * Applicable values are the friendly names of CPU platforms, such as
      * minCpuPlatform: Intel Haswell or
      * minCpuPlatform: Intel Sandy Bridge. For more
      * information, read [how to specify min CPU
      * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * This field is deprecated, min_cpu_platform should be specified using
+     * cloud.google.com/requested-min-cpu-platform label selector on the pod.
      * To unset the min cpu platform field pass "automatic"
      * as field value.
      * </pre>
      *
-     * <code>string min_cpu_platform = 5;</code>
+     * <code>string min_cpu_platform = 5 [deprecated = true];</code>
+     * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is deprecated.
+     *     See google/container/v1/cluster_service.proto;l=3311
      * @return The bytes for minCpuPlatform.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getMinCpuPlatformBytes() {
       java.lang.Object ref = minCpuPlatform_;
       if (ref instanceof String) {
@@ -1752,22 +1768,26 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Minimum CPU platform to be used for NAP created node pools.
+     * Deprecated. Minimum CPU platform to be used for NAP created node pools.
      * The instance may be scheduled on the specified or newer CPU platform.
      * Applicable values are the friendly names of CPU platforms, such as
      * minCpuPlatform: Intel Haswell or
      * minCpuPlatform: Intel Sandy Bridge. For more
      * information, read [how to specify min CPU
      * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * This field is deprecated, min_cpu_platform should be specified using
+     * cloud.google.com/requested-min-cpu-platform label selector on the pod.
      * To unset the min cpu platform field pass "automatic"
      * as field value.
      * </pre>
      *
-     * <code>string min_cpu_platform = 5;</code>
+     * <code>string min_cpu_platform = 5 [deprecated = true];</code>
+     * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is deprecated.
+     *     See google/container/v1/cluster_service.proto;l=3311
      * @param value The minCpuPlatform to set.
      * @return This builder for chaining.
      */
-    public Builder setMinCpuPlatform(
+    @java.lang.Deprecated public Builder setMinCpuPlatform(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1779,21 +1799,25 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Minimum CPU platform to be used for NAP created node pools.
+     * Deprecated. Minimum CPU platform to be used for NAP created node pools.
      * The instance may be scheduled on the specified or newer CPU platform.
      * Applicable values are the friendly names of CPU platforms, such as
      * minCpuPlatform: Intel Haswell or
      * minCpuPlatform: Intel Sandy Bridge. For more
      * information, read [how to specify min CPU
      * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * This field is deprecated, min_cpu_platform should be specified using
+     * cloud.google.com/requested-min-cpu-platform label selector on the pod.
      * To unset the min cpu platform field pass "automatic"
      * as field value.
      * </pre>
      *
-     * <code>string min_cpu_platform = 5;</code>
+     * <code>string min_cpu_platform = 5 [deprecated = true];</code>
+     * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is deprecated.
+     *     See google/container/v1/cluster_service.proto;l=3311
      * @return This builder for chaining.
      */
-    public Builder clearMinCpuPlatform() {
+    @java.lang.Deprecated public Builder clearMinCpuPlatform() {
       
       minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
       onChanged();
@@ -1801,22 +1825,26 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Minimum CPU platform to be used for NAP created node pools.
+     * Deprecated. Minimum CPU platform to be used for NAP created node pools.
      * The instance may be scheduled on the specified or newer CPU platform.
      * Applicable values are the friendly names of CPU platforms, such as
      * minCpuPlatform: Intel Haswell or
      * minCpuPlatform: Intel Sandy Bridge. For more
      * information, read [how to specify min CPU
      * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * This field is deprecated, min_cpu_platform should be specified using
+     * cloud.google.com/requested-min-cpu-platform label selector on the pod.
      * To unset the min cpu platform field pass "automatic"
      * as field value.
      * </pre>
      *
-     * <code>string min_cpu_platform = 5;</code>
+     * <code>string min_cpu_platform = 5 [deprecated = true];</code>
+     * @deprecated google.container.v1.AutoprovisioningNodePoolDefaults.min_cpu_platform is deprecated.
+     *     See google/container/v1/cluster_service.proto;l=3311
      * @param value The bytes for minCpuPlatform to set.
      * @return This builder for chaining.
      */
-    public Builder setMinCpuPlatformBytes(
+    @java.lang.Deprecated public Builder setMinCpuPlatformBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
