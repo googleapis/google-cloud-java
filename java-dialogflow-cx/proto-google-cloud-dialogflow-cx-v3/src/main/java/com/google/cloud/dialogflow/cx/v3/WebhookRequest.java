@@ -24,6 +24,8 @@ package com.google.cloud.dialogflow.cx.v3;
  * <pre>
  * The request message for a webhook call. The request is sent as a JSON object
  * and the field names will be presented in camel cases.
+ * You may see undocumented fields in an actual request. These fields are used
+ * internally by Dialogflow and should be ignored.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.WebhookRequest}
@@ -5409,6 +5411,8 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The request message for a webhook call. The request is sent as a JSON object
    * and the field names will be presented in camel cases.
+   * You may see undocumented fields in an actual request. These fields are used
+   * internally by Dialogflow and should be ignored.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.WebhookRequest}
