@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-ids/compare/v1.1.1...v1.2.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#106](https://github.com/googleapis/java-ids/issues/106)) ([c03b029](https://github.com/googleapis/java-ids/commit/c03b0297d7f3fadb9c5324dcecb0de3152a40dd6))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#112](https://github.com/googleapis/java-ids/issues/112)) ([7e9c640](https://github.com/googleapis/java-ids/commit/7e9c6405018c231c587070327023372fb26d08b5))
+
 ## [1.1.1](https://github.com/googleapis/java-ids/compare/v1.1.0...v1.1.1) (2022-06-23)
 
 
