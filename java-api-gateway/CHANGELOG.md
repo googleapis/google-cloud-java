@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-api-gateway/compare/v2.2.1...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#262](https://github.com/googleapis/java-api-gateway/issues/262)) ([8711f23](https://github.com/googleapis/java-api-gateway/commit/8711f23cf2f91f89f9111e44991774f94ccca853))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#269](https://github.com/googleapis/java-api-gateway/issues/269)) ([e4f63f9](https://github.com/googleapis/java-api-gateway/commit/e4f63f91d3e5d3bb11bfe734831265e66cd9cf85))
+
 ## [2.2.1](https://github.com/googleapis/java-api-gateway/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
