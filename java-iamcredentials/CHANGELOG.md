@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-iamcredentials/compare/v2.2.0...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#693](https://github.com/googleapis/java-iamcredentials/issues/693)) ([f31eb47](https://github.com/googleapis/java-iamcredentials/commit/f31eb4737b1cb5420a7619d8ee3efb01d0444e12))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#692](https://github.com/googleapis/java-iamcredentials/issues/692)) ([48f6dbb](https://github.com/googleapis/java-iamcredentials/commit/48f6dbb4786d6199952d6a885da9bc9a4d7e832d))
+
 ## [2.2.0](https://github.com/googleapis/java-iamcredentials/compare/v2.1.0...v2.2.0) (2022-05-19)
 
 
