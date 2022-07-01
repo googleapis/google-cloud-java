@@ -82,6 +82,7 @@
         <scope>import</scope>
       </dependency>
       
+      <!-- Test dependencies new comment -->
       <!-- Test dependencies -->
       <dependency>
         <groupId>junit</groupId>
