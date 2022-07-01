@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-bigqueryconnection/compare/v2.3.0...v2.4.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#704](https://github.com/googleapis/java-bigqueryconnection/issues/704)) ([c7def69](https://github.com/googleapis/java-bigqueryconnection/commit/c7def693dc869d3b25054dc54ac4a26c3060af86))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#703](https://github.com/googleapis/java-bigqueryconnection/issues/703)) ([a385b7b](https://github.com/googleapis/java-bigqueryconnection/commit/a385b7b3e2610f8a8396fc7a40415eb8b82498bc))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.0 ([#698](https://github.com/googleapis/java-bigqueryconnection/issues/698)) ([f7d48b6](https://github.com/googleapis/java-bigqueryconnection/commit/f7d48b611b134b2dd4cf26f437e4807218207c8f))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.1 ([#699](https://github.com/googleapis/java-bigqueryconnection/issues/699)) ([f631ffb](https://github.com/googleapis/java-bigqueryconnection/commit/f631ffbf8c30388a99d1cab5fbd0c114a912f60e))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.2 ([#705](https://github.com/googleapis/java-bigqueryconnection/issues/705)) ([cbb6f03](https://github.com/googleapis/java-bigqueryconnection/commit/cbb6f03346e8038e4fe5d5baf0f2817d0a3b4dcc))
+
 ## [2.3.0](https://github.com/googleapis/java-bigqueryconnection/compare/v2.2.4...v2.3.0) (2022-05-19)
 
 
