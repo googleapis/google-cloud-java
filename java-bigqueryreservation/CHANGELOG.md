@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-bigqueryreservation/compare/v2.3.1...v2.4.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#676](https://github.com/googleapis/java-bigqueryreservation/issues/676)) ([62c542a](https://github.com/googleapis/java-bigqueryreservation/commit/62c542acc94aebc89c706a873760e5ca70c56e19))
+
 ## [2.3.1](https://github.com/googleapis/java-bigqueryreservation/compare/v2.3.0...v2.3.1) (2022-06-23)
 
 
