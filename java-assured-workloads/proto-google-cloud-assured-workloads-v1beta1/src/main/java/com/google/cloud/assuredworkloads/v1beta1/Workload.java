@@ -484,6 +484,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>CA_REGIONS_AND_SUPPORT = 9;</code>
      */
     CA_REGIONS_AND_SUPPORT(9),
+    /**
+     *
+     *
+     * <pre>
+     * International Traffic in Arms Regulations
+     * </pre>
+     *
+     * <code>ITAR = 10;</code>
+     */
+    ITAR(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -587,6 +597,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>CA_REGIONS_AND_SUPPORT = 9;</code>
      */
     public static final int CA_REGIONS_AND_SUPPORT_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * International Traffic in Arms Regulations
+     * </pre>
+     *
+     * <code>ITAR = 10;</code>
+     */
+    public static final int ITAR_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -632,6 +652,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return EU_REGIONS_AND_SUPPORT;
         case 9:
           return CA_REGIONS_AND_SUPPORT;
+        case 10:
+          return ITAR;
         default:
           return null;
       }
@@ -9583,7 +9605,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=455
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=458
    * @return Whether the il4Settings field is set.
    */
   @java.lang.Override
@@ -9604,7 +9626,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=455
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=458
    * @return The il4Settings.
    */
   @java.lang.Override
@@ -9653,7 +9675,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=464
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=467
    * @return Whether the cjisSettings field is set.
    */
   @java.lang.Override
@@ -9674,7 +9696,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=464
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=467
    * @return The cjisSettings.
    */
   @java.lang.Override
@@ -9723,7 +9745,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
-   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=473
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=476
    * @return Whether the fedrampHighSettings field is set.
    */
   @java.lang.Override
@@ -9744,7 +9766,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
-   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=473
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=476
    * @return The fedrampHighSettings.
    */
   @java.lang.Override
@@ -9796,7 +9818,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=482
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=485
    * @return Whether the fedrampModerateSettings field is set.
    */
   @java.lang.Override
@@ -9817,7 +9839,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=482
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=485
    * @return The fedrampModerateSettings.
    */
   @java.lang.Override
@@ -12360,7 +12382,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=455
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=458
      * @return Whether the il4Settings field is set.
      */
     @java.lang.Override
@@ -12381,7 +12403,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=455
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=458
      * @return The il4Settings.
      */
     @java.lang.Override
@@ -12620,7 +12642,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=464
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=467
      * @return Whether the cjisSettings field is set.
      */
     @java.lang.Override
@@ -12641,7 +12663,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=464
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=467
      * @return The cjisSettings.
      */
     @java.lang.Override
@@ -12880,7 +12902,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is
-     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=473
+     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=476
      * @return Whether the fedrampHighSettings field is set.
      */
     @java.lang.Override
@@ -12901,7 +12923,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is
-     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=473
+     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=476
      * @return The fedrampHighSettings.
      */
     @java.lang.Override
@@ -13146,7 +13168,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=482
+     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=485
      * @return Whether the fedrampModerateSettings field is set.
      */
     @java.lang.Override
@@ -13167,7 +13189,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=482
+     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=485
      * @return The fedrampModerateSettings.
      */
     @java.lang.Override

@@ -388,6 +388,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>CA_REGIONS_AND_SUPPORT = 9;</code>
      */
     CA_REGIONS_AND_SUPPORT(9),
+    /**
+     *
+     *
+     * <pre>
+     * International Traffic in Arms Regulations
+     * </pre>
+     *
+     * <code>ITAR = 10;</code>
+     */
+    ITAR(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -491,6 +501,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>CA_REGIONS_AND_SUPPORT = 9;</code>
      */
     public static final int CA_REGIONS_AND_SUPPORT_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * International Traffic in Arms Regulations
+     * </pre>
+     *
+     * <code>ITAR = 10;</code>
+     */
+    public static final int ITAR_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -536,6 +556,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return EU_REGIONS_AND_SUPPORT;
         case 9:
           return CA_REGIONS_AND_SUPPORT;
+        case 10:
+          return ITAR;
         default:
           return null;
       }
