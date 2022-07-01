@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-speech/compare/v2.4.0...v2.5.0) (2022-07-01)
+
+
+### Features
+
+* java template no longer require clirr ([#1469](https://github.com/googleapis/java-speech/issues/1469)) ([#907](https://github.com/googleapis/java-speech/issues/907)) ([b936042](https://github.com/googleapis/java-speech/commit/b93604296b2ad98759eda03bbe4e3c8a1aae28fd))
+
 ## [2.4.0](https://github.com/googleapis/java-speech/compare/v2.3.0...v2.4.0) (2022-06-28)
 
 
