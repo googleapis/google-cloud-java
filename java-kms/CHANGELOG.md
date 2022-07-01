@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.6.0](https://github.com/googleapis/java-kms/compare/v2.5.3...v2.6.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#801](https://github.com/googleapis/java-kms/issues/801)) ([64f351e](https://github.com/googleapis/java-kms/commit/64f351e96901c359723a7df610dd329cf75ed89c))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#809](https://github.com/googleapis/java-kms/issues/809)) ([8cb34ce](https://github.com/googleapis/java-kms/commit/8cb34cec429b48ed95e0a73a89ba978d2995a778))
+
+
+### Dependencies
+
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.2 ([#807](https://github.com/googleapis/java-kms/issues/807)) ([be24089](https://github.com/googleapis/java-kms/commit/be24089f54fb7c2084d97c208d64fc75f810ae25))
+
 ## [2.5.3](https://github.com/googleapis/java-kms/compare/v2.5.2...v2.5.3) (2022-06-23)
 
 
