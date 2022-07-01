@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.1.0](https://github.com/googleapis/java-optimization/compare/v1.0.0...v1.1.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#54](https://github.com/googleapis/java-optimization/issues/54)) ([e9284c1](https://github.com/googleapis/java-optimization/commit/e9284c1bd63cce756bda321edb3b2e0f9551efae))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#56](https://github.com/googleapis/java-optimization/issues/56)) ([fa19046](https://github.com/googleapis/java-optimization/commit/fa1904610fe7a42131e6802e126eab131b674846))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#53](https://github.com/googleapis/java-optimization/issues/53)) ([9d960a3](https://github.com/googleapis/java-optimization/commit/9d960a304dd3bdcf0c11bce0dbf8d8f9efd30f4d))
+* update dependency com.google.cloud:google-cloud-storage to v2.7.0 ([#49](https://github.com/googleapis/java-optimization/issues/49)) ([a6f9b2c](https://github.com/googleapis/java-optimization/commit/a6f9b2c34d9d2aca9ecc5f17857be55d2b74f11d))
+
 ## [1.0.0](https://github.com/googleapis/java-optimization/compare/v0.1.2...v1.0.0) (2022-05-19)
 
 
