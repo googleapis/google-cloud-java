@@ -4,7 +4,7 @@
   "include-component-in-tag": true,
   "packages": {
     "java-accessapproval": {
-      "component": "google-cloud-accessapproval",
+      "component": "google-cloud-accessapproval"
     },
     "java-accesscontextmanager": {
       "component": "google-identity-accesscontextmanager"
