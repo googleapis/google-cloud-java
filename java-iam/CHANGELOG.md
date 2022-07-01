@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://github.com/googleapis/java-iam/compare/v1.4.1...v1.5.0) (2022-06-30)
+
+
+### Features
+
+* add v2beta client ([#364](https://github.com/googleapis/java-iam/issues/364)) ([0904baa](https://github.com/googleapis/java-iam/commit/0904baa7be7dda2b0c8ec9e68ade548d173761fd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#367](https://github.com/googleapis/java-iam/issues/367)) ([ece5f7d](https://github.com/googleapis/java-iam/commit/ece5f7dda5fcba488f1416593114ba6ab8ab31ef))
+* update dependency com.google.protobuf:protobuf-java to v3.21.2 ([#368](https://github.com/googleapis/java-iam/issues/368)) ([64b6349](https://github.com/googleapis/java-iam/commit/64b6349880792f3a534aa879ca1f0044d25603be))
+
 ## [1.4.1](https://github.com/googleapis/java-iam/compare/v1.4.0...v1.4.1) (2022-06-13)
 
 
