@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.2](https://github.com/googleapis/java-appengine-admin/compare/v2.3.1...v2.3.2) (2022-07-01)
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#243](https://github.com/googleapis/java-appengine-admin/issues/243)) ([965319d](https://github.com/googleapis/java-appengine-admin/commit/965319d280de7ddf072b2acbf5c233725f431653))
+
 ## [2.3.1](https://github.com/googleapis/java-appengine-admin/compare/v2.3.0...v2.3.1) (2022-06-23)
 
 
