@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/googleapis/java-artifact-registry/compare/v1.2.1...v1.2.2) (2022-07-01)
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#266](https://github.com/googleapis/java-artifact-registry/issues/266)) ([bb9ac59](https://github.com/googleapis/java-artifact-registry/commit/bb9ac59d221d8abd2345a19f39247051846d5341))
+
 ## [1.2.1](https://github.com/googleapis/java-artifact-registry/compare/v1.2.0...v1.2.1) (2022-06-23)
 
 
