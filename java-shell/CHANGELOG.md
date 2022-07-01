@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/googleapis/java-shell/compare/v2.2.1...v2.2.2) (2022-07-01)
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#209](https://github.com/googleapis/java-shell/issues/209)) ([f5cc96d](https://github.com/googleapis/java-shell/commit/f5cc96d8a053e09633c1a90dbac0e10e6f7df5fc))
+
 ## [2.2.1](https://github.com/googleapis/java-shell/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
