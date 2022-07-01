@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.14.0](https://github.com/googleapis/java-analytics-data/compare/v0.13.0...v0.14.0) (2022-07-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename the `funnel_filter` field of the `FunnelFilterExpression` type to `funnel_field_filter`
+* rename the type `FunnelFilter` to `FunnelFieldFilter` (#505)
+
+### Features
+
+* Add Java REST transport to analytics, servicecontrol, servicemanagement, serviceusage and langauge APIs ([c864df4](https://github.com/googleapis/java-analytics-data/commit/c864df4d54144195c83948ff695c6c8b671f5807))
+
+
+### Bug Fixes
+
+* rename the `funnel_filter` field of the `FunnelFilterExpression` type to `funnel_field_filter` ([c864df4](https://github.com/googleapis/java-analytics-data/commit/c864df4d54144195c83948ff695c6c8b671f5807))
+* rename the type `FunnelFilter` to `FunnelFieldFilter` ([#505](https://github.com/googleapis/java-analytics-data/issues/505)) ([c864df4](https://github.com/googleapis/java-analytics-data/commit/c864df4d54144195c83948ff695c6c8b671f5807))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#508](https://github.com/googleapis/java-analytics-data/issues/508)) ([14d8684](https://github.com/googleapis/java-analytics-data/commit/14d86842eb1a67b9144fe2c48ac4e6a92689ef69))
+
 ## [0.13.0](https://github.com/googleapis/java-analytics-data/compare/v0.12.0...v0.13.0) (2022-05-19)
 
 
