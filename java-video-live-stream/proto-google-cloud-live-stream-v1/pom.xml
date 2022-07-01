@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-live-stream-v1</artifactId>
-  <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-live-stream-v1:current} -->
+  <version>0.5.0</version><!-- {x-version-update:proto-google-cloud-live-stream-v1:current} -->
   <name>proto-google-cloud-live-stream-v1</name>
   <description>Proto library for google-cloud-live-stream</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-live-stream-parent</artifactId>
-    <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
+    <version>0.5.0</version><!-- {x-version-update:google-cloud-live-stream:current} -->
   </parent>
 <dependencies>
     <dependency>

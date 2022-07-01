@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-live-stream-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
+  <version>0.5.0</version><!-- {x-version-update:google-cloud-live-stream:current} -->
   <name>Google Cloud Live Stream Parent</name>
   <url>https://github.com/googleapis/java-video-live-stream</url>
   <description>
@@ -69,17 +69,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-live-stream</artifactId>
-        <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
+        <version>0.5.0</version><!-- {x-version-update:google-cloud-live-stream:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-live-stream-v1</artifactId>
-        <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-live-stream-v1:current} -->
+        <version>0.5.0</version><!-- {x-version-update:grpc-google-cloud-live-stream-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-live-stream-v1</artifactId>
-        <version>0.4.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-live-stream-v1:current} -->
+        <version>0.5.0</version><!-- {x-version-update:proto-google-cloud-live-stream-v1:current} -->
       </dependency>
 
       <dependency>

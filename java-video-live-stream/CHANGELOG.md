@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.5.0](https://github.com/googleapis/java-video-live-stream/compare/v0.4.0...v0.5.0) (2022-06-30)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#60](https://github.com/googleapis/java-video-live-stream/issues/60)) ([655635d](https://github.com/googleapis/java-video-live-stream/commit/655635df1f618f9b2c4c48f2a8ea991396742c39))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#63](https://github.com/googleapis/java-video-live-stream/issues/63)) ([8f60a02](https://github.com/googleapis/java-video-live-stream/commit/8f60a02c70b96af47064120bf2cd944f7ee8b109))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#59](https://github.com/googleapis/java-video-live-stream/issues/59)) ([5a8f4ce](https://github.com/googleapis/java-video-live-stream/commit/5a8f4ceeecee0e29afbbaeaced60b2097704056d))
+
 ## [0.4.0](https://github.com/googleapis/java-video-live-stream/compare/v0.3.0...v0.4.0) (2022-05-20)
 
 

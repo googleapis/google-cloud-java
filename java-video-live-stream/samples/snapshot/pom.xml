@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-live-stream</artifactId>
-      <version>0.4.1-SNAPSHOT</version>
+      <version>0.5.0</version>
     </dependency>
     <!-- {x-version-update-end} -->
 
