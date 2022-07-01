@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.10.0](https://github.com/googleapis/java-recommendations-ai/compare/v0.9.0...v0.10.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#537](https://github.com/googleapis/java-recommendations-ai/issues/537)) ([e31826f](https://github.com/googleapis/java-recommendations-ai/commit/e31826fbbc0fa6adcebc1dbefd619627b55cd6bd))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#539](https://github.com/googleapis/java-recommendations-ai/issues/539)) ([9707796](https://github.com/googleapis/java-recommendations-ai/commit/97077967d62aeb11cdb96053717a4c9e5e32c8e7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#536](https://github.com/googleapis/java-recommendations-ai/issues/536)) ([12a977b](https://github.com/googleapis/java-recommendations-ai/commit/12a977b470e1313645fe42621e587c5886429593))
+
 ## [0.9.0](https://github.com/googleapis/java-recommendations-ai/compare/v0.8.10...v0.9.0) (2022-05-19)
 
 
