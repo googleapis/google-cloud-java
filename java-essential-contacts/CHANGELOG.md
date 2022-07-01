@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-essential-contacts/compare/v2.2.1...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#230](https://github.com/googleapis/java-essential-contacts/issues/230)) ([ac78f0f](https://github.com/googleapis/java-essential-contacts/commit/ac78f0faa6e0ccf82bfe42f60c41925662be8fc5))
+
 ## [2.2.1](https://github.com/googleapis/java-essential-contacts/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
