@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.120.0](https://github.com/googleapis/java-pubsub/compare/v1.119.1...v1.120.0) (2022-06-30)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#1162](https://github.com/googleapis/java-pubsub/issues/1162)) ([c8ebb13](https://github.com/googleapis/java-pubsub/commit/c8ebb1319b7714c03308d8e7af53912b6b6a0d44))
+
+
+### Documentation
+
+* **sample:** clean up README of native image sample ([#1166](https://github.com/googleapis/java-pubsub/issues/1166)) ([890987c](https://github.com/googleapis/java-pubsub/commit/890987c0b285c9c5a5224f676e070ceefb90fe02))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.5 ([#1172](https://github.com/googleapis/java-pubsub/issues/1172)) ([51f4da0](https://github.com/googleapis/java-pubsub/commit/51f4da048e298e6184e9a6bf931a9f1307534c61))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.6 ([#1175](https://github.com/googleapis/java-pubsub/issues/1175)) ([9385452](https://github.com/googleapis/java-pubsub/commit/938545266b6b15f93fe82aa253b55ca4d4fd7e22))
+* update dependency com.google.cloud:google-cloud-core to v2.8.0 ([#1171](https://github.com/googleapis/java-pubsub/issues/1171)) ([4b7888f](https://github.com/googleapis/java-pubsub/commit/4b7888f582752982e2c9e1fd03472f5172fa9910))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#1173](https://github.com/googleapis/java-pubsub/issues/1173)) ([925be09](https://github.com/googleapis/java-pubsub/commit/925be095bd8a227f4b49d357dcd386b4149a86f9))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.12 ([#1169](https://github.com/googleapis/java-pubsub/issues/1169)) ([e8e93e6](https://github.com/googleapis/java-pubsub/commit/e8e93e6c47e2c0a3546453a3aa23263ff3878a55))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.12 ([#1170](https://github.com/googleapis/java-pubsub/issues/1170)) ([1327e89](https://github.com/googleapis/java-pubsub/commit/1327e89e2e491afe0b05fb458bbea296a8ae101f))
+
 ## [1.119.1](https://github.com/googleapis/java-pubsub/compare/v1.119.0...v1.119.1) (2022-06-06)
 
 
