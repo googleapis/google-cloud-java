@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-vmmigration/compare/v1.1.1...v1.2.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#103](https://github.com/googleapis/java-vmmigration/issues/103)) ([a3f0a99](https://github.com/googleapis/java-vmmigration/commit/a3f0a99f49a7f6c5a5c5d19e43d43b046bd03167))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#109](https://github.com/googleapis/java-vmmigration/issues/109)) ([7b323cc](https://github.com/googleapis/java-vmmigration/commit/7b323cc2f1be2cb092d9fca672f3254d26d6aeea))
+
 ## [1.1.1](https://github.com/googleapis/java-vmmigration/compare/v1.1.0...v1.1.1) (2022-06-23)
 
 
