@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-os-config/compare/v2.4.3...v2.5.0) (2022-07-01)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-os-config/issues/1440)) ([#477](https://github.com/googleapis/java-os-config/issues/477)) ([0891ed6](https://github.com/googleapis/java-os-config/commit/0891ed6362b9592b7fcca6bfd9299e24653a9f3d))
+* Enable REST transport for most of Java and Go clients ([#489](https://github.com/googleapis/java-os-config/issues/489)) ([2be3336](https://github.com/googleapis/java-os-config/commit/2be3336b765ddd818093d536fe5755a00ca08b30))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#491](https://github.com/googleapis/java-os-config/issues/491)) ([8145795](https://github.com/googleapis/java-os-config/commit/8145795ab21617583384b1a2c159cadac337ad21))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#488](https://github.com/googleapis/java-os-config/issues/488)) ([876c3b2](https://github.com/googleapis/java-os-config/commit/876c3b20dbb4d279d658dce2e27ce0459515175c))
+
 ### [2.4.3](https://github.com/googleapis/java-os-config/compare/v2.4.2...v2.4.3) (2022-05-19)
 
 
