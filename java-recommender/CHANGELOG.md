@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-recommender/compare/v2.4.1...v2.5.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#773](https://github.com/googleapis/java-recommender/issues/773)) ([593185e](https://github.com/googleapis/java-recommender/commit/593185e80c76180f9288dacbaaa729e88afb6bdc))
+* Implement configurable recommenders and  update .bazel files ([#778](https://github.com/googleapis/java-recommender/issues/778)) ([c55e269](https://github.com/googleapis/java-recommender/commit/c55e2690ef477116bbcd7f1c5acf6f4ce5352b4d))
+
 ## [2.4.1](https://github.com/googleapis/java-recommender/compare/v2.4.0...v2.4.1) (2022-06-23)
 
 
