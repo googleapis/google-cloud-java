@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-orchestration-airflow/compare/v1.2.0...v1.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#201](https://github.com/googleapis/java-orchestration-airflow/issues/201)) ([5e868ac](https://github.com/googleapis/java-orchestration-airflow/commit/5e868acfec7f4e5b9ba981ade3cfd48bcece0c9b))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#203](https://github.com/googleapis/java-orchestration-airflow/issues/203)) ([3d127b2](https://github.com/googleapis/java-orchestration-airflow/commit/3d127b24906139745a4a552ddf9a1603e7175824))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#200](https://github.com/googleapis/java-orchestration-airflow/issues/200)) ([6abe784](https://github.com/googleapis/java-orchestration-airflow/commit/6abe784a9e773d66ff81152f0629ee8fc4cd5ca4))
+
 ## [1.2.0](https://github.com/googleapis/java-orchestration-airflow/compare/v1.1.7...v1.2.0) (2022-05-19)
 
 
