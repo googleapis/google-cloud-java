@@ -71,8 +71,8 @@ def replace_content_in_readme(content_rows: List[str]) -> None:
       f.write(line)
 
 RELEASE_LEVEL_CONTENT = {
-    "preview": "[![preview][preview-stability]][preview-description]",
-    "stable": "[![stable][stable-stability]][stable-description]"
+  "preview": "[![preview][preview-stability]][preview-description]",
+  "stable": "[![stable][stable-stability]][stable-description]"
 }
 
 def client_row(client: CloudClient) -> str:
@@ -81,9 +81,9 @@ def client_row(client: CloudClient) -> str:
 
 def generate_table_contents(clients: List[CloudClient]) -> List[str]:
   content_rows = [
-      "\n",
-      "| Client | Release Level | Version |\n",
-      "| ------ | ------------- | ------- |\n",
+    "\n",
+    "| Client | Release Level | Version |\n",
+    "| ------ | ------------- | ------- |\n",
   ]
   return content_rows + [client_row(client) for client in clients]
 
@@ -101,36 +101,38 @@ def client_for_repo(repo_slug) -> Optional[CloudClient]:
 def client_for_module(module) -> Optional[CloudClient]:
   with open ('%s/.repo-metadata.json' % module, "r") as metadata_file:
     data = json.load(metadata_file)
+    monorepo_module = data['repo'].replace('googleapis/', '')
+    data['repo'] = 'googleapis/google-cloud-java/tree/main/%s' % monorepo_module
     return CloudClient(data)
 
 # These repositories are not meant as shown as Cloud SDK for Java
 REPO_EXCLUSION = [
-    'java-bigtable-emulator',
-    'java-cloud-bom',
-    'java-conformance-tests',
-    'java-common-protos',
-    'java-core',
-    'java-gcloud-maven-plugin',
-    'java-grafeas',
-    'java-iam',
-    'java-notification',
-    'java-shared-config',
+  'java-bigtable-emulator',
+  'java-cloud-bom',
+  'java-conformance-tests',
+  'java-common-protos',
+  'java-core',
+  'java-gcloud-maven-plugin',
+  'java-grafeas',
+  'java-iam',
+  'java-notification',
+  'java-shared-config',
 ]
 
 LIBRARIES_IN_MONOREPO = glob("java-*")
 
 def allowed_remote_repo(repo) -> bool:
   return (repo['language'].lower() == 'java'
-      and repo['full_name'].startswith('googleapis/java-')
-      and repo['full_name'] not in
+          and repo['full_name'].startswith('googleapis/java-')
+          and repo['full_name'] not in
           [ 'googleapis/%s' % repo for repo in (REPO_EXCLUSION + LIBRARIES_IN_MONOREPO)])
 
 def _fetch_repo_list(page):
   url = "https://api.github.com/search/repositories"
   response = requests.get(url, params = {
-      'q': 'org:googleapis is:public archived:false language:java',
-      'per_page': 100,
-      'page': page,
+    'q': 'org:googleapis is:public archived:false language:java',
+    'per_page': 100,
+    'page': page,
   })
   return response.json()['items']
 
@@ -144,7 +146,7 @@ def all_clients() -> List[CloudClient]:
     clients.extend([client_for_repo(repo['full_name']) for repo in repos if allowed_remote_repo(repo)])
     page += 1
   clients.extend([client_for_module(module) for module in LIBRARIES_IN_MONOREPO if
-      module not in REPO_EXCLUSION])
+                  module not in REPO_EXCLUSION])
 
   return [client for client in clients if client]
 
