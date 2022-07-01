@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/googleapis/java-apigee-registry/compare/v0.1.1...v0.2.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#7](https://github.com/googleapis/java-apigee-registry/issues/7)) ([463630a](https://github.com/googleapis/java-apigee-registry/commit/463630a9abc53132b6d38552784074e95f9a51db))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#14](https://github.com/googleapis/java-apigee-registry/issues/14)) ([6078cde](https://github.com/googleapis/java-apigee-registry/commit/6078cdef003e503b5ea36ab1d5154608b088c02a))
+
 ## [0.1.1](https://github.com/googleapis/java-apigee-registry/compare/v0.1.0...v0.1.1) (2022-06-23)
 
 
