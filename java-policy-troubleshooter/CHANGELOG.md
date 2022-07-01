@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-policy-troubleshooter/compare/v1.1.1...v1.2.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#229](https://github.com/googleapis/java-policy-troubleshooter/issues/229)) ([f1bd6b4](https://github.com/googleapis/java-policy-troubleshooter/commit/f1bd6b41e0dfa4d224a5c92f95d3b96075d80d41))
+
 ## [1.1.1](https://github.com/googleapis/java-policy-troubleshooter/compare/v1.1.0...v1.1.1) (2022-06-23)
 
 
