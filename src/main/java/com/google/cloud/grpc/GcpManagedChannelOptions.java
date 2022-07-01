@@ -20,6 +20,7 @@ import com.google.common.base.Preconditions;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricRegistry;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -64,10 +65,10 @@ public class GcpManagedChannelOptions {
   @Override
   public String toString() {
     return String.format(
-        "{channelPoolOptions: %s, metricsOptions: %s, resiliencyOptions: %s}",
+        "{channelPoolOptions: %s, resiliencyOptions: %s, metricsOptions: %s}",
         getChannelPoolOptions(),
-        getMetricsOptions(),
-        getResiliencyOptions()
+        getResiliencyOptions(),
+        getMetricsOptions()
     );
   }
 
@@ -208,8 +209,9 @@ public class GcpManagedChannelOptions {
     @Override
     public String toString() {
       return String.format(
-          "{maxSize: %d, concurrentStreamsLowWatermark: %d, useRoundRobinOnBind: %s}",
+          "{maxSize: %d, minSize: %d, concurrentStreamsLowWatermark: %d, useRoundRobinOnBind: %s}",
           getMaxSize(),
+          getMinSize(),
           getConcurrentStreamsLowWatermark(),
           isUseRoundRobinOnBind()
       );
