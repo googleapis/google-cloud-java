@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-service-control/compare/v1.2.0...v1.3.0) (2022-07-01)
+
+
+### Features
+
+* Add Java REST transport to analytics, servicecontrol, servicemanagement, serviceusage and langauge APIs ([e5c082d](https://github.com/googleapis/java-service-control/commit/e5c082d34f9c881219cbf66d2424ca74860c9c2f))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#186](https://github.com/googleapis/java-service-control/issues/186)) ([9935da2](https://github.com/googleapis/java-service-control/commit/9935da242d93cd580debb873fb6cc90ebd98be53))
+
 ## [1.2.0](https://github.com/googleapis/java-service-control/compare/v1.1.11...v1.2.0) (2022-05-19)
 
 
