@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-workflows/compare/v2.2.1...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([503cc00](https://github.com/googleapis/java-workflows/commit/503cc00598e94741f72f4e25e82ab2768093350b))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#456](https://github.com/googleapis/java-workflows/issues/456)) ([503cc00](https://github.com/googleapis/java-workflows/commit/503cc00598e94741f72f4e25e82ab2768093350b))
+
 ## [2.2.1](https://github.com/googleapis/java-workflows/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
