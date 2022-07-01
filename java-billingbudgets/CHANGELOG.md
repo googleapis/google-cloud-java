@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-billingbudgets/compare/v2.2.1...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#719](https://github.com/googleapis/java-billingbudgets/issues/719)) ([0cf3479](https://github.com/googleapis/java-billingbudgets/commit/0cf34796671e0b61cfdf928cc5238de1068d4bc4))
+
 ## [2.2.1](https://github.com/googleapis/java-billingbudgets/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
