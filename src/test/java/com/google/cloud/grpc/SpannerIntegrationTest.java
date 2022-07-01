@@ -16,12 +16,29 @@
 
 package com.google.cloud.grpc;
 
+import static com.google.cloud.grpc.GcpMultiEndpointChannel.ME_KEY;
+import static com.google.cloud.spanner.SpannerOptions.CALL_CONTEXT_CONFIGURATOR_KEY;
 import static com.google.common.base.Preconditions.checkState;
 import static com.google.common.truth.Truth.assertThat;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
+import com.google.api.core.ApiFunction;
+import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.FixedTransportChannelProvider;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelRef;
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
+import com.google.cloud.grpc.MetricRegistryTestUtils.FakeMetricRegistry;
+import com.google.cloud.grpc.MetricRegistryTestUtils.MetricsRecord;
+import com.google.cloud.grpc.MetricRegistryTestUtils.PointWithFunction;
+import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseAdminClient;
 import com.google.cloud.spanner.DatabaseClient;
@@ -32,13 +49,17 @@ import com.google.cloud.spanner.InstanceConfig;
 import com.google.cloud.spanner.InstanceConfigId;
 import com.google.cloud.spanner.InstanceId;
 import com.google.cloud.spanner.InstanceInfo;
+import com.google.cloud.spanner.KeySet;
 import com.google.cloud.spanner.Mutation;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.SpannerOptions.CallContextConfigurator;
 import com.google.common.collect.Iterators;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.Empty;
+import com.google.protobuf.util.JsonFormat;
+import com.google.protobuf.util.JsonFormat.Parser;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
 import com.google.spanner.v1.BatchCreateSessionsRequest;
@@ -62,14 +83,24 @@ import com.google.spanner.v1.SpannerGrpc.SpannerBlockingStub;
 import com.google.spanner.v1.SpannerGrpc.SpannerFutureStub;
 import com.google.spanner.v1.SpannerGrpc.SpannerStub;
 import com.google.spanner.v1.TransactionOptions;
+import com.google.spanner.v1.TransactionOptions.ReadOnly;
+import com.google.spanner.v1.TransactionOptions.ReadWrite;
 import com.google.spanner.v1.TransactionSelector;
+import io.grpc.CallOptions;
 import io.grpc.ConnectivityState;
+import io.grpc.Context;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.MethodDescriptor;
 import io.grpc.StatusRuntimeException;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
+import io.opencensus.metrics.LabelValue;
 import java.io.File;
+import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -77,13 +108,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import java.util.function.Function;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
+import javax.annotation.Nullable;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assume;
@@ -114,7 +146,7 @@ public final class SpannerIntegrationTest {
   private static final int MAX_CHANNEL = 3;
   private static final int MAX_STREAM = 2;
 
-  private static final ManagedChannelBuilder builder =
+  private static final ManagedChannelBuilder<?> builder =
       ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);
   private GcpManagedChannel gcpChannel;
   private GcpManagedChannel gcpChannelBRR;
@@ -149,7 +181,7 @@ public final class SpannerIntegrationTest {
 
   private final Handler testLogHandler = new Handler() {
     @Override
-    public void publish(LogRecord record) {
+    public synchronized void publish(LogRecord record) {
       logRecords.add(record);
     }
 
@@ -259,7 +291,7 @@ public final class SpannerIntegrationTest {
     return stub;
   }
 
-  private static void deleteSession(SpannerGrpc.SpannerBlockingStub stub, Session session) {
+  private static void deleteSession(SpannerBlockingStub stub, Session session) {
     if (session != null) {
       stub.deleteSession(DeleteSessionRequest.newBuilder().setName(session.getName()).build());
     }
@@ -316,7 +348,7 @@ public final class SpannerIntegrationTest {
     // Check CreateSession with multiple channels and streams,
     CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE_PATH).build();
     for (int i = 0; i < MAX_CHANNEL * MAX_STREAM; i++) {
-      AsyncResponseObserver<Session> resp = new AsyncResponseObserver<Session>();
+      AsyncResponseObserver<Session> resp = new AsyncResponseObserver<>();
       stub.createSession(req, resp);
       resps.add(resp);
     }
@@ -337,7 +369,7 @@ public final class SpannerIntegrationTest {
       AsyncResponseObserver<Empty> resp = new AsyncResponseObserver<>();
       stub.deleteSession(DeleteSessionRequest.newBuilder().setName(respName).build(), resp);
       // The ChannelRef which is bound with the current affinity key.
-      GcpManagedChannel.ChannelRef currentChannel =
+      ChannelRef currentChannel =
           gcpChannel.affinityKeyToChannelRef.get(respName);
       // Verify the channel is in use.
       assertEquals(1, currentChannel.getActiveStreamsCount());
@@ -387,7 +419,7 @@ public final class SpannerIntegrationTest {
       ListenableFuture<Empty> future =
           stub.deleteSession(DeleteSessionRequest.newBuilder().setName(futureName).build());
       // The ChannelRef which is bound with the current affinity key.
-      GcpManagedChannel.ChannelRef currentChannel =
+      ChannelRef currentChannel =
           gcpChannel.affinityKeyToChannelRef.get(futureName);
       // Verify the channel is in use.
       assertEquals(1, currentChannel.getActiveStreamsCount());
@@ -416,7 +448,7 @@ public final class SpannerIntegrationTest {
                             .withApiConfigJsonFile(configFile)
                             .withOptions(GcpManagedChannelOptions.newBuilder()
                                     .withChannelPoolOptions(
-                                            GcpManagedChannelOptions.GcpChannelPoolOptions.newBuilder()
+                                            GcpChannelPoolOptions.newBuilder()
                                                     .setMaxSize(MAX_CHANNEL)
                                                     .setConcurrentStreamsLowWatermark(MAX_STREAM)
                                                     .setUseRoundRobinOnBind(true)
@@ -429,12 +461,260 @@ public final class SpannerIntegrationTest {
   public void shutdownChannels() {
     testLogger.removeHandler(testLogHandler);
     testLogger.setLevel(Level.INFO);
+    logRecords.clear();
     gcpChannel.shutdownNow();
     gcpChannelBRR.shutdownNow();
   }
 
+  private long getOkCallsCount(
+      FakeMetricRegistry fakeRegistry, String endpoint) {
+    MetricsRecord record = fakeRegistry.pollRecord();
+    List<PointWithFunction<?>> metric =
+        record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_CALLS_COMPLETED);
+    for (PointWithFunction<?> m : metric) {
+      assertThat(m.keys().get(0).getKey()).isEqualTo("result");
+      assertThat(m.keys().get(1).getKey()).isEqualTo("endpoint");
+      if (!m.values().get(0).equals(LabelValue.create(GcpMetricsConstants.RESULT_SUCCESS))) {
+        continue;
+      }
+      if (!m.values().get(1).equals(LabelValue.create(endpoint))) {
+        continue;
+      }
+      return m.value();
+    }
+    fail("Success calls metric is not found for endpoint: " + endpoint);
+    return 0;
+  }
+
+  // For this test we'll create a Spanner client with gRPC-GCP MultiEndpoint feature.
+  //
+  // Imagine we have a multi-region Spanner instance with leader in the us-east4 and follower in the
+  // us-east1 regions.
+  //
+  // We will provide two MultiEndpoint configs: "leader" (having leader region endpoint first and
+  // follower second) and "follower" (having follower region endpoint first and leader second).
+  //
+  // Then we'll make sure the Spanner client uses leader MultiEndpoint as a default one and creates
+  // its sessions there. Then we'll make sure a read request will also use the leader MultiEndpoint
+  // by default.
+  //
+  // Then we'll verify we can use the follower MultiEndpoint when needed by specifying that in
+  // the Spanner context.
+  //
+  // Then we'll update MultiEndpoints configuration by replacing the leader endpoint and renaming
+  // the follower MultiEndpoint. And make sure the new leader endpoint and the previous follower
+  // endpoint are still working as expected when using different MultiEndpoints.
   @Test
-  public void testCreateAndGetSessionBlocking() throws Exception {
+  public void testSpannerMultiEndpointClient() throws IOException, InterruptedException {
+    // Watch debug messages.
+    testLogger.setLevel(Level.FINEST);
+
+    final FakeMetricRegistry fakeRegistry = new FakeMetricRegistry();
+
+    File configFile =
+        new File(SpannerIntegrationTest.class.getClassLoader().getResource(API_FILE).getFile());
+
+    // Leader-first multi-endpoint endpoints.
+    final List<String> leaderEndpoints = new ArrayList<>();
+    // Follower-first multi-endpoint endpoints.
+    final List<String> followerEndpoints = new ArrayList<>();
+    final String leaderEndpoint = "us-east4.googleapis.com:443";
+    final String followerEndpoint = "us-east1.googleapis.com:443";
+    leaderEndpoints.add(leaderEndpoint);
+    leaderEndpoints.add(followerEndpoint);
+    followerEndpoints.add(followerEndpoint);
+    followerEndpoints.add(leaderEndpoint);
+
+    ApiFunction<ManagedChannelBuilder<?>, ManagedChannelBuilder<?>> configurator = input -> input.overrideAuthority(
+        SPANNER_TARGET);
+
+    GcpMultiEndpointOptions leaderOpts = GcpMultiEndpointOptions.newBuilder(leaderEndpoints)
+        .withName("leader")
+        .withChannelConfigurator(configurator)
+        .withRecoveryTimeout(Duration.ofSeconds(3))
+        .build();
+
+    GcpMultiEndpointOptions followerOpts = GcpMultiEndpointOptions.newBuilder(followerEndpoints)
+        .withName("follower")
+        .withChannelConfigurator(configurator)
+        .withRecoveryTimeout(Duration.ofSeconds(3))
+        .build();
+
+    List<GcpMultiEndpointOptions> opts = new ArrayList<>();
+    opts.add(leaderOpts);
+    opts.add(followerOpts);
+
+    Parser parser = JsonFormat.parser();
+    ApiConfig.Builder apiConfig = ApiConfig.newBuilder();
+    Reader reader = Files.newBufferedReader(configFile.toPath(), UTF_8);
+    parser.merge(reader, apiConfig);
+
+    GcpMultiEndpointChannel gcpMultiEndpointChannel = new GcpMultiEndpointChannel(
+        opts,
+        apiConfig.build(),
+        GcpManagedChannelOptions.newBuilder()
+            .withChannelPoolOptions(GcpChannelPoolOptions.newBuilder()
+                .setConcurrentStreamsLowWatermark(0)
+                .setMaxSize(3)
+                .build())
+            .withMetricsOptions(GcpMetricsOptions.newBuilder()
+                .withMetricRegistry(fakeRegistry)
+                .build())
+            .build());
+
+    final int currentIndex = GcpManagedChannel.channelPoolIndex.get();
+    final String followerPoolIndex = String.format("pool-%d", currentIndex);
+    final String leaderPoolIndex = String.format("pool-%d", currentIndex - 1);
+
+    TimeUnit.MILLISECONDS.sleep(200);
+
+    List<String> logMessages = logRecords.stream()
+        .map(LogRecord::getMessage).collect(Collectors.toList());
+
+    // Make sure min channels are created and connections are established right away in both pools.
+    for (String poolIndex : Arrays.asList(leaderPoolIndex, followerPoolIndex)) {
+      for (int i = 0; i < 2; i++) {
+        assertThat(logMessages).contains(
+            poolIndex + ": Channel " + i + " state change detected: null -> IDLE");
+
+        assertThat(logMessages).contains(
+            poolIndex + ": Channel " + i + " state change detected: IDLE -> CONNECTING");
+      }
+    }
+
+    // Make sure endpoint is set as a metric label for each pool.
+    assertThat(logRecords.stream().filter(logRecord ->
+        logRecord.getMessage().matches(
+            leaderPoolIndex + ": Metrics options: \\{namePrefix: \"\", labels: \\[endpoint: " +
+                "\"" + leaderEndpoint + "\"], metricRegistry: .*"
+        )).count()).isEqualTo(1);
+
+    assertThat(logRecords.stream().filter(logRecord ->
+        logRecord.getMessage().matches(
+            followerPoolIndex + ": Metrics options: \\{namePrefix: \"\", labels: \\[endpoint: " +
+                "\"" + followerEndpoint + "\"], metricRegistry: .*"
+        )).count()).isEqualTo(1);
+
+    logRecords.clear();
+
+    TransportChannelProvider channelProvider = FixedTransportChannelProvider.create(
+        GrpcTransportChannel.create(gcpMultiEndpointChannel));
+
+    SpannerOptions.Builder options = SpannerOptions.newBuilder().setProjectId(GCP_PROJECT_ID);
+
+    options.setChannelProvider(channelProvider);
+    // Match channel pool size.
+    options.setNumChannels(3);
+
+    Spanner spanner = options.build().getService();
+    InstanceId instanceId = InstanceId.of(GCP_PROJECT_ID, INSTANCE_ID);
+    DatabaseId databaseId = DatabaseId.of(instanceId, DB_NAME);
+    DatabaseClient databaseClient = spanner.getDatabaseClient(databaseId);
+
+    Runnable readQuery = () -> {
+      try (com.google.cloud.spanner.ResultSet read = databaseClient.singleUse()
+          .read("Users", KeySet.all(), Arrays.asList("UserId", "UserName"))) {
+        int readRows = 0;
+        while (read.next()) {
+          readRows++;
+          assertEquals(USERNAME, read.getCurrentRowAsStruct().getString("UserName"));
+        }
+        assertEquals(1, readRows);
+      }
+    };
+
+    // Make sure leader endpoint is used by default.
+    assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(0);
+    readQuery.run();
+
+    // Wait for sessions creation requests to be completed but no more than 10 seconds.
+    for (int i = 0; i < 20; i++) {
+      TimeUnit.MILLISECONDS.sleep(500);
+      if (getOkCallsCount(fakeRegistry, leaderEndpoint) == 4) {
+        break;
+      }
+    }
+
+    // 3 session creation requests + 1 our read request to the leader endpoint.
+    assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(4);
+
+    // Make sure there were 3 session creation requests in the leader pool only.
+    assertThat(logRecords.stream().filter(logRecord ->
+        logRecord.getMessage().matches(
+            leaderPoolIndex + ": Binding \\d+ key\\(s\\) to channel \\d:.*"
+        )).count()).isEqualTo(3);
+
+    assertThat(logRecords.stream().filter(logRecord ->
+        logRecord.getMessage().matches(
+            followerPoolIndex + ": Binding \\d+ key\\(s\\) to channel \\d:.*"
+        )).count()).isEqualTo(0);
+
+    // Create context for using follower-first multi-endpoint.
+    Function<String, Context> contextFor = meName -> Context.current()
+        .withValue(CALL_CONTEXT_CONFIGURATOR_KEY,
+            new CallContextConfigurator() {
+              @Nullable
+              @Override
+              public <ReqT, RespT> ApiCallContext configure(ApiCallContext context, ReqT request,
+                  MethodDescriptor<ReqT, RespT> method) {
+                return context.merge(GrpcCallContext.createDefault().withCallOptions(
+                    CallOptions.DEFAULT.withOption(ME_KEY, meName)));
+              }
+            });
+
+    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(0);
+    // Use follower, make sure it is used.
+    contextFor.apply("follower").run(readQuery);
+    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(1);
+
+    // Replace leader endpoints.
+    final String newLeaderEndpoint = "us-west1.googleapis.com:443";
+    leaderEndpoints.clear();
+    leaderEndpoints.add(newLeaderEndpoint);
+    leaderEndpoints.add(followerEndpoint);
+    leaderOpts = GcpMultiEndpointOptions.newBuilder(leaderEndpoints)
+        .withName("leader")
+        .withChannelConfigurator(configurator)
+        .build();
+
+    followerEndpoints.clear();
+    followerEndpoints.add(followerEndpoint);
+    followerEndpoints.add(newLeaderEndpoint);
+
+    // Rename follower MultiEndpoint.
+    followerOpts = GcpMultiEndpointOptions.newBuilder(followerEndpoints)
+        .withName("follower-2")
+        .withChannelConfigurator(configurator)
+        .build();
+
+    opts.clear();
+    opts.add(leaderOpts);
+    opts.add(followerOpts);
+
+    gcpMultiEndpointChannel.setMultiEndpoints(opts);
+
+    // As it takes some time to connect to the new leader endpoint, RPC will fall back to the
+    // follower until we connect to leader.
+    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(1);
+    readQuery.run();
+    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(2);
+
+    TimeUnit.MILLISECONDS.sleep(500);
+
+    // Make sure the new leader endpoint is used by default after it is connected.
+    assertThat(getOkCallsCount(fakeRegistry, newLeaderEndpoint)).isEqualTo(0);
+    readQuery.run();
+    assertThat(getOkCallsCount(fakeRegistry, newLeaderEndpoint)).isEqualTo(1);
+
+    // Make sure that the follower endpoint still works if specified.
+    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(2);
+    // Use follower, make sure it is used.
+    contextFor.apply("follower-2").run(readQuery);
+    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(3);
+  }
+
+  @Test
+  public void testCreateAndGetSessionBlocking() {
     SpannerBlockingStub stub = getSpannerBlockingStub();
     CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE_PATH).build();
     // The first MAX_CHANNEL requests (without affinity) should be distributed 1 per channel.
@@ -457,7 +737,7 @@ public final class SpannerIntegrationTest {
   }
 
   @Test
-  public void testBatchCreateSessionsBlocking() throws Exception {
+  public void testBatchCreateSessionsBlocking() {
     int sessionCount = 10;
     SpannerBlockingStub stub = getSpannerBlockingStub();
     BatchCreateSessionsRequest req =
@@ -513,7 +793,7 @@ public final class SpannerIntegrationTest {
                             .setSql("select * FROM Users")
                             .build());
     // The ChannelRef which is bound with the lastSession.
-    GcpManagedChannel.ChannelRef currentChannel =
+    ChannelRef currentChannel =
             gcpChannelBRR.affinityKeyToChannelRef.get(lastSession);
     // Verify the channel is in use.
     assertEquals(1, currentChannel.getActiveStreamsCount());
@@ -581,7 +861,7 @@ public final class SpannerIntegrationTest {
                             .setSql("select * FROM Users")
                             .build());
     // The ChannelRef which is bound with the lastSession.
-    GcpManagedChannel.ChannelRef currentChannel =
+    ChannelRef currentChannel =
             gcpChannel.affinityKeyToChannelRef.get(lastSession);
     // Verify the channel is in use.
     assertEquals(1, currentChannel.getActiveStreamsCount());
@@ -638,7 +918,7 @@ public final class SpannerIntegrationTest {
                   .setSql("select * FROM Users")
                   .build());
       // The ChannelRef which is bound with the current affinity key.
-      GcpManagedChannel.ChannelRef currentChannel =
+      ChannelRef currentChannel =
           gcpChannel.affinityKeyToChannelRef.get(futureName);
       // Verify the channel is in use.
       assertEquals(1, currentChannel.getActiveStreamsCount());
@@ -660,7 +940,7 @@ public final class SpannerIntegrationTest {
           ExecuteSqlRequest.newBuilder().setSession(respName).setSql("select * FROM Users").build(),
           resp);
       // The ChannelRef which is bound with the current affinity key.
-      GcpManagedChannel.ChannelRef currentChannel =
+      ChannelRef currentChannel =
           gcpChannel.affinityKeyToChannelRef.get(respName);
       // Verify the channel is in use.
       assertEquals(1, currentChannel.getActiveStreamsCount());
@@ -678,7 +958,7 @@ public final class SpannerIntegrationTest {
     for (String respName : respNames) {
       TransactionOptions options =
           TransactionOptions.newBuilder()
-              .setReadOnly(TransactionOptions.ReadOnly.getDefaultInstance())
+              .setReadOnly(ReadOnly.getDefaultInstance())
               .build();
       TransactionSelector selector = TransactionSelector.newBuilder().setBegin(options).build();
       AsyncResponseObserver<PartitionResponse> resp = new AsyncResponseObserver<>();
@@ -690,7 +970,7 @@ public final class SpannerIntegrationTest {
               .build(),
           resp);
       // The ChannelRef which is bound with the current affinity key.
-      GcpManagedChannel.ChannelRef currentChannel =
+      ChannelRef currentChannel =
           gcpChannel.affinityKeyToChannelRef.get(respName);
       // Verify the channel is in use.
       assertEquals(1, currentChannel.getActiveStreamsCount());
@@ -707,7 +987,7 @@ public final class SpannerIntegrationTest {
     for (String futureName : futureNames) {
       TransactionOptions options =
           TransactionOptions.newBuilder()
-              .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance())
+              .setReadWrite(ReadWrite.getDefaultInstance())
               .build();
       TransactionSelector selector = TransactionSelector.newBuilder().setBegin(options).build();
       // Will use only one session for the whole batch.
@@ -719,7 +999,7 @@ public final class SpannerIntegrationTest {
                   .addStatements(Statement.newBuilder().setSql("select * FROM Users").build())
                   .build());
       // The ChannelRef which is bound with the current affinity key.
-      GcpManagedChannel.ChannelRef currentChannel =
+      ChannelRef currentChannel =
           gcpChannel.affinityKeyToChannelRef.get(futureName);
       // Verify the channel is in use.
       assertEquals(1, currentChannel.getActiveStreamsCount());
@@ -769,7 +1049,7 @@ public final class SpannerIntegrationTest {
 
     private AsyncResponseObserver() {}
 
-    public RespT get() throws InterruptedException, ExecutionException, TimeoutException {
+    public RespT get() throws InterruptedException {
       finishLatch.await(1, TimeUnit.MINUTES);
       return response;
     }
