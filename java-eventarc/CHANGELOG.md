@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/googleapis/java-eventarc/compare/v1.3.1...v1.3.2) (2022-07-01)
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#188](https://github.com/googleapis/java-eventarc/issues/188)) ([bff1b3f](https://github.com/googleapis/java-eventarc/commit/bff1b3fcf79774ff3eef7ddefcc2173836f19f5e))
+
 ## [1.3.1](https://github.com/googleapis/java-eventarc/compare/v1.3.0...v1.3.1) (2022-06-23)
 
 
