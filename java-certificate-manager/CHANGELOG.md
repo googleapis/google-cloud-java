@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.0](https://github.com/googleapis/java-certificate-manager/compare/v0.3.1...v0.4.0) (2022-06-30)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#48](https://github.com/googleapis/java-certificate-manager/issues/48)) ([f910bef](https://github.com/googleapis/java-certificate-manager/commit/f910bef5e7a3d8651ad105070a10d074c12238cc))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#54](https://github.com/googleapis/java-certificate-manager/issues/54)) ([707eedc](https://github.com/googleapis/java-certificate-manager/commit/707eedc49999e5411f63072242722b16edba5dae))
+
 ## [0.3.1](https://github.com/googleapis/java-certificate-manager/compare/v0.3.0...v0.3.1) (2022-06-23)
 
 
