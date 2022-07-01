@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-storage-transfer/compare/v1.1.0...v1.2.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#159](https://github.com/googleapis/java-storage-transfer/issues/159)) ([fa586fb](https://github.com/googleapis/java-storage-transfer/commit/fa586fbd0acaf83833580a23196b277d29b4d32d))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#162](https://github.com/googleapis/java-storage-transfer/issues/162)) ([b924cd4](https://github.com/googleapis/java-storage-transfer/commit/b924cd4d0b45c51df6f83b54673ff942a6d4322e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#158](https://github.com/googleapis/java-storage-transfer/issues/158)) ([ee69956](https://github.com/googleapis/java-storage-transfer/commit/ee69956f37f8f02b0ab9c94729467856ccc33740))
+
 ## [1.1.0](https://github.com/googleapis/java-storage-transfer/compare/v1.0.5...v1.1.0) (2022-05-24)
 
 
