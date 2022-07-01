@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-scheduler/compare/v2.2.0...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#773](https://github.com/googleapis/java-scheduler/issues/773)) ([499ea4c](https://github.com/googleapis/java-scheduler/commit/499ea4caf29fa8713e4468b34b323582ac7ebbb7))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.119.0 ([#766](https://github.com/googleapis/java-scheduler/issues/766)) ([f50e8cf](https://github.com/googleapis/java-scheduler/commit/f50e8cf230850297e9b219ac0a4736c99391325f))
+* update dependency com.google.cloud:google-cloud-pubsub-bom to v1.119.1 ([#769](https://github.com/googleapis/java-scheduler/issues/769)) ([c0a770e](https://github.com/googleapis/java-scheduler/commit/c0a770e65fe53b2eda747ca9e0dbc4ab494b19e2))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#772](https://github.com/googleapis/java-scheduler/issues/772)) ([56819c7](https://github.com/googleapis/java-scheduler/commit/56819c7a5a7a5b59519b25a699251953992b91d9))
+
 ## [2.2.0](https://github.com/googleapis/java-scheduler/compare/v2.1.23...v2.2.0) (2022-05-23)
 
 
