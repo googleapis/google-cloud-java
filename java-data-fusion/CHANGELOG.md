@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-data-fusion/compare/v1.2.1...v1.3.0) (2022-06-30)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#178](https://github.com/googleapis/java-data-fusion/issues/178)) ([6d6b05f](https://github.com/googleapis/java-data-fusion/commit/6d6b05f58506ba3381283010e3a86cda78b76786))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#184](https://github.com/googleapis/java-data-fusion/issues/184)) ([26fd41b](https://github.com/googleapis/java-data-fusion/commit/26fd41bcc8f6cfc4f132ccf94603d38e0954efb5))
+
 ## [1.2.1](https://github.com/googleapis/java-data-fusion/compare/v1.2.0...v1.2.1) (2022-06-23)
 
 
