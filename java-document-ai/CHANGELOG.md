@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.6.0](https://github.com/googleapis/java-document-ai/compare/v2.5.2...v2.6.0) (2022-06-30)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#840](https://github.com/googleapis/java-document-ai/issues/840)) ([59f99a7](https://github.com/googleapis/java-document-ai/commit/59f99a7d47adc63811367dd1225cbbd3139bb430))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#846](https://github.com/googleapis/java-document-ai/issues/846)) ([7476317](https://github.com/googleapis/java-document-ai/commit/74763178e522484bc29aa1d82450de18dc56613c))
+
 ## [2.5.2](https://github.com/googleapis/java-document-ai/compare/v2.5.1...v2.5.2) (2022-06-23)
 
 
