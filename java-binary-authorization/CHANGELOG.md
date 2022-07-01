@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-binary-authorization/compare/v1.1.1...v1.2.0) (2022-07-01)
+
+
+### Features
+
+* Adds a pod_namespace field to pod events created by Continuous Validation, to distinguish pods with the same name that run in different namespaces ([#227](https://github.com/googleapis/java-binary-authorization/issues/227)) ([4755125](https://github.com/googleapis/java-binary-authorization/commit/4755125936bcf5931ea01e01e9fc6af3a7c1c309))
+* Enable REST transport for most of Java and Go clients ([#230](https://github.com/googleapis/java-binary-authorization/issues/230)) ([ca507e6](https://github.com/googleapis/java-binary-authorization/commit/ca507e6aca8a35467d95038d7554c0c5f357315a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#229](https://github.com/googleapis/java-binary-authorization/issues/229)) ([c5d1f10](https://github.com/googleapis/java-binary-authorization/commit/c5d1f103196a5d538e115d48f3873901fa0a065a))
+* update dependency io.grafeas:grafeas to v2.3.1 ([#231](https://github.com/googleapis/java-binary-authorization/issues/231)) ([7374554](https://github.com/googleapis/java-binary-authorization/commit/73745540d6187af67f8fdd1029485a860c45d7a7))
+
 ### [1.1.1](https://github.com/googleapis/java-binary-authorization/compare/v1.1.0...v1.1.1) (2022-05-26)
 
 
