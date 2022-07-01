@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.6.0](https://github.com/googleapis/java-redis/compare/v2.5.0...v2.6.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#656](https://github.com/googleapis/java-redis/issues/656)) ([05d53ca](https://github.com/googleapis/java-redis/commit/05d53ca8db8b5180a404e390b80f48bb6095aee5))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#659](https://github.com/googleapis/java-redis/issues/659)) ([3d4155f](https://github.com/googleapis/java-redis/commit/3d4155fa00a4227a9e61569ebc41d4743badf92b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#655](https://github.com/googleapis/java-redis/issues/655)) ([b1df9cb](https://github.com/googleapis/java-redis/commit/b1df9cbc0af806dbd2304dd7e87077ce00d766a1))
+
 ## [2.5.0](https://github.com/googleapis/java-redis/compare/v2.4.1...v2.5.0) (2022-05-19)
 
 
