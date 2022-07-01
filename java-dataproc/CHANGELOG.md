@@ -1,5 +1,23 @@
 # Changelog
 
+## [4.0.0](https://github.com/googleapis/java-dataproc/compare/v3.1.2...v4.0.0) (2022-07-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* Remove `temp_bucket` from VirtualClusterConfig, as its value was not used
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([dd6bebb](https://github.com/googleapis/java-dataproc/commit/dd6bebbff4d0f0949d2435b88b801f1353a698b3))
+
+
+### Bug Fixes
+
+* Move `yarn_config` into a `oneof` ([dd6bebb](https://github.com/googleapis/java-dataproc/commit/dd6bebbff4d0f0949d2435b88b801f1353a698b3))
+* Remove `temp_bucket` from VirtualClusterConfig, as its value was not used ([dd6bebb](https://github.com/googleapis/java-dataproc/commit/dd6bebbff4d0f0949d2435b88b801f1353a698b3))
+* update gapic-generator-java with mock service generation fixes ([#833](https://github.com/googleapis/java-dataproc/issues/833)) ([dd6bebb](https://github.com/googleapis/java-dataproc/commit/dd6bebbff4d0f0949d2435b88b801f1353a698b3))
+
 ## [3.1.2](https://github.com/googleapis/java-dataproc/compare/v3.1.1...v3.1.2) (2022-06-23)
 
 
