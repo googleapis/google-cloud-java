@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.0](https://github.com/googleapis/java-mediatranslation/compare/v0.8.1...v0.9.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#658](https://github.com/googleapis/java-mediatranslation/issues/658)) ([b72b7a5](https://github.com/googleapis/java-mediatranslation/commit/b72b7a562bcf3a010d98b9f97806d08dbcebb1ff))
+
 ## [0.8.1](https://github.com/googleapis/java-mediatranslation/compare/v0.8.0...v0.8.1) (2022-06-23)
 
 
