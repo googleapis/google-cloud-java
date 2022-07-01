@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.7.0](https://github.com/googleapis/java-channel/compare/v3.6.1...v3.7.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#311](https://github.com/googleapis/java-channel/issues/311)) ([b2260c8](https://github.com/googleapis/java-channel/commit/b2260c87d95f91517b4cbeb949035936ff875b3c))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#317](https://github.com/googleapis/java-channel/issues/317)) ([d28dd8f](https://github.com/googleapis/java-channel/commit/d28dd8f59e895ca12dff9a7a4640cedd2744c03c))
+
 ## [3.6.1](https://github.com/googleapis/java-channel/compare/v3.6.0...v3.6.1) (2022-06-23)
 
 
