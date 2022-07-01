@@ -1,5 +1,41 @@
 # Changelog
 
+## [3.0.0](https://github.com/googleapis/java-aiplatform/compare/v2.9.8...v3.0.0) (2022-07-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* added packaging options for C#, Ruby, and PHP
+
+### Features
+
+* add BatchImportModelEvaluationSlices API in aiplatform v1 model_service.proto ([#972](https://github.com/googleapis/java-aiplatform/issues/972)) ([3041b97](https://github.com/googleapis/java-aiplatform/commit/3041b97659d2ffccb8ff016ba0939cd1453a82aa))
+* add BatchImportModelEvaluationSlices API in aiplatform v1beta1 model_service.proto ([3041b97](https://github.com/googleapis/java-aiplatform/commit/3041b97659d2ffccb8ff016ba0939cd1453a82aa))
+* add display_name and metadata to ModelEvaluation in aiplatform model_evaluation.proto ([0ae5d15](https://github.com/googleapis/java-aiplatform/commit/0ae5d15dfc9475c113ad97a2973c70a9da8dfdcd))
+* add ListSavedQueries rpc to aiplatform v1 dataset_service.proto ([#975](https://github.com/googleapis/java-aiplatform/issues/975)) ([85be17b](https://github.com/googleapis/java-aiplatform/commit/85be17bbec3e368685f39a8efde69405a239ce5e))
+* add ListSavedQueries rpc to aiplatform v1beta1 dataset_service.proto ([85be17b](https://github.com/googleapis/java-aiplatform/commit/85be17bbec3e368685f39a8efde69405a239ce5e))
+* add model_monitoring_config to BatchPredictionJob in aiplatform v1beta1 batch_prediction_job.proto ([#892](https://github.com/googleapis/java-aiplatform/issues/892)) ([0ae5d15](https://github.com/googleapis/java-aiplatform/commit/0ae5d15dfc9475c113ad97a2973c70a9da8dfdcd))
+* add model_version_id to BatchPredictionJob in aiplatform v1 batch_prediction_job.proto ([3041b97](https://github.com/googleapis/java-aiplatform/commit/3041b97659d2ffccb8ff016ba0939cd1453a82aa))
+* add model_version_id to DeployedModel in aiplatform v1 endpoint.proto ([3041b97](https://github.com/googleapis/java-aiplatform/commit/3041b97659d2ffccb8ff016ba0939cd1453a82aa))
+* add model_version_id to PredictResponse in aiplatform v1 prediction_service.proto ([3041b97](https://github.com/googleapis/java-aiplatform/commit/3041b97659d2ffccb8ff016ba0939cd1453a82aa))
+* add saved_query_id to InputDataConfig in aiplatform v1 training_pipeline.proto ([85be17b](https://github.com/googleapis/java-aiplatform/commit/85be17bbec3e368685f39a8efde69405a239ce5e))
+* add saved_query_id to InputDataConfig in aiplatform v1beta1 training_pipeline.proto ([85be17b](https://github.com/googleapis/java-aiplatform/commit/85be17bbec3e368685f39a8efde69405a239ce5e))
+* add saved_query.proto to aiplatform v1 ([85be17b](https://github.com/googleapis/java-aiplatform/commit/85be17bbec3e368685f39a8efde69405a239ce5e))
+* add saved_query.proto to aiplatform v1beta1 ([85be17b](https://github.com/googleapis/java-aiplatform/commit/85be17bbec3e368685f39a8efde69405a239ce5e))
+* add template_metadata to PipelineJob in aiplatform v1beta1 pipeline_job.proto ([0ae5d15](https://github.com/googleapis/java-aiplatform/commit/0ae5d15dfc9475c113ad97a2973c70a9da8dfdcd))
+* **samples:** add create-featurestore sample ([#948](https://github.com/googleapis/java-aiplatform/issues/948)) ([ac7ca36](https://github.com/googleapis/java-aiplatform/commit/ac7ca36f20c0a0051b262689b1ea7c80a3146721))
+
+
+### Bug Fixes
+
+* added packaging options for C#, Ruby, and PHP ([0ae5d15](https://github.com/googleapis/java-aiplatform/commit/0ae5d15dfc9475c113ad97a2973c70a9da8dfdcd))
+* update gapic-generator-java with mock service generation fixes ([#979](https://github.com/googleapis/java-aiplatform/issues/979)) ([745b9cd](https://github.com/googleapis/java-aiplatform/commit/745b9cdfadf07f37ccf038761345817884a5b5ef))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#973](https://github.com/googleapis/java-aiplatform/issues/973)) ([87b311d](https://github.com/googleapis/java-aiplatform/commit/87b311d47db0b2f0e89cfba5854e41c7d317c360))
+
 ## [2.9.8](https://github.com/googleapis/java-aiplatform/compare/v2.9.7...v2.9.8) (2022-06-21)
 
 
