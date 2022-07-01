@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-profiler/compare/v2.2.0...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#276](https://github.com/googleapis/java-profiler/issues/276)) ([6849389](https://github.com/googleapis/java-profiler/commit/68493894d7d80336882c34b95356eaa1daeab1d2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#275](https://github.com/googleapis/java-profiler/issues/275)) ([d1a166f](https://github.com/googleapis/java-profiler/commit/d1a166f0404a6d5afd34546fbb7152825ed87d3f))
+
 ## [2.2.0](https://github.com/googleapis/java-profiler/compare/v2.1.11...v2.2.0) (2022-05-19)
 
 
