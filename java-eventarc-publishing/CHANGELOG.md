@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/java-eventarc-publishing/compare/v0.2.1...v0.3.0) (2022-06-30)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#86](https://github.com/googleapis/java-eventarc-publishing/issues/86)) ([33a8ccf](https://github.com/googleapis/java-eventarc-publishing/commit/33a8ccf3757a22845e046cf21e0a965e89798673))
+
 ## [0.2.1](https://github.com/googleapis/java-eventarc-publishing/compare/v0.2.0...v0.2.1) (2022-06-23)
 
 
