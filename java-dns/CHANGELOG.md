@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.1](https://github.com/googleapis/java-dns/compare/v2.1.0...v2.1.1) (2022-07-01)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-dns to v1-rev20220518-1.32.1 ([#661](https://github.com/googleapis/java-dns/issues/661)) ([b999a77](https://github.com/googleapis/java-dns/commit/b999a77ad6b70f1b9b1accc2b385f783357fa0ec))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#666](https://github.com/googleapis/java-dns/issues/666)) ([4365360](https://github.com/googleapis/java-dns/commit/43653606d25bb5ea000341b94cae8a7fe1166a16))
+
 ## [2.1.0](https://github.com/googleapis/java-dns/compare/v2.0.9...v2.1.0) (2022-05-19)
 
 
