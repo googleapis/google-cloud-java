@@ -1,5 +1,32 @@
 # Changelog
 
+## [2.7.0](https://github.com/googleapis/java-securitycenter/compare/v2.6.0...v2.7.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#849](https://github.com/googleapis/java-securitycenter/issues/849)) ([2eb2edf](https://github.com/googleapis/java-securitycenter/commit/2eb2edfd80ce43e474d4337b06039f0c5bfc89b6))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#853](https://github.com/googleapis/java-securitycenter/issues/853)) ([26d3646](https://github.com/googleapis/java-securitycenter/commit/26d3646ee2c74d81ce8ec4ff071c11ca4140e538))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.12.0 ([#836](https://github.com/googleapis/java-securitycenter/issues/836)) ([c8dcabf](https://github.com/googleapis/java-securitycenter/commit/c8dcabf1bb533a78cb887f3d53c4e7b13fc07865))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.1 ([#840](https://github.com/googleapis/java-securitycenter/issues/840)) ([d0b018e](https://github.com/googleapis/java-securitycenter/commit/d0b018e2e33adcbdc06df0b4ca9bc59bbba573f9))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.3 ([#844](https://github.com/googleapis/java-securitycenter/issues/844)) ([b487515](https://github.com/googleapis/java-securitycenter/commit/b4875153dbfad101fe9d817f0d581dbd114e9b70))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.4 ([#847](https://github.com/googleapis/java-securitycenter/issues/847)) ([c1e1204](https://github.com/googleapis/java-securitycenter/commit/c1e120467156c331475d1040f941e25f5e213c7b))
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.6 ([#850](https://github.com/googleapis/java-securitycenter/issues/850)) ([3f37ffc](https://github.com/googleapis/java-securitycenter/commit/3f37ffc482a7943d1f93f6fca05bd7110f245742))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.119.0 ([#841](https://github.com/googleapis/java-securitycenter/issues/841)) ([1898c33](https://github.com/googleapis/java-securitycenter/commit/1898c33042ea4a1da43234a12a80c3301fcf02df))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.119.1 ([#843](https://github.com/googleapis/java-securitycenter/issues/843)) ([23d8b4c](https://github.com/googleapis/java-securitycenter/commit/23d8b4cbd2b5e530986b9b2e10b86df520c15f16))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#848](https://github.com/googleapis/java-securitycenter/issues/848)) ([4b71b62](https://github.com/googleapis/java-securitycenter/commit/4b71b6295e2db4e595e62e734c6bad2aa2ce2c0e))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.0 ([#837](https://github.com/googleapis/java-securitycenter/issues/837)) ([0bc9294](https://github.com/googleapis/java-securitycenter/commit/0bc9294d4e68595d7c56389eb3d39e243f97b947))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.1 ([#838](https://github.com/googleapis/java-securitycenter/issues/838)) ([c4f717e](https://github.com/googleapis/java-securitycenter/commit/c4f717eebf0aeff089ff82d1bbcd0c189cd0ae32))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.2 ([#851](https://github.com/googleapis/java-securitycenter/issues/851)) ([56a566b](https://github.com/googleapis/java-securitycenter/commit/56a566b1fb95f91cf065c301d1a89381135aeafa))
+
 ## [2.6.0](https://github.com/googleapis/java-securitycenter/compare/v2.5.6...v2.6.0) (2022-05-19)
 
 
