@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/googleapis/java-area120-tables/compare/v0.6.1...v0.7.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#363](https://github.com/googleapis/java-area120-tables/issues/363)) ([501c792](https://github.com/googleapis/java-area120-tables/commit/501c792047f6cae8283fc4ea6c67fca68b438615))
+
 ## [0.6.1](https://github.com/googleapis/java-area120-tables/compare/v0.6.0...v0.6.1) (2022-06-23)
 
 
