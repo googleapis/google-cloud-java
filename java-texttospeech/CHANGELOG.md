@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-texttospeech/compare/v2.3.1...v2.4.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#705](https://github.com/googleapis/java-texttospeech/issues/705)) ([884b93a](https://github.com/googleapis/java-texttospeech/commit/884b93ac6513141af517a14f235ce29451d9804e))
+
 ## [2.3.1](https://github.com/googleapis/java-texttospeech/compare/v2.3.0...v2.3.1) (2022-06-23)
 
 
