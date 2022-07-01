@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/googleapis/java-video-transcoder/compare/v1.1.0...v1.2.0) (2022-07-01)
+
+
+### Features
+
+* add support for user labels for job and job template ([#352](https://github.com/googleapis/java-video-transcoder/issues/352)) ([018d013](https://github.com/googleapis/java-video-transcoder/commit/018d0133234c871a77736ce840cfd5052a72ecdc))
+* Enable REST transport for most of Java and Go clients ([#354](https://github.com/googleapis/java-video-transcoder/issues/354)) ([a211f55](https://github.com/googleapis/java-video-transcoder/commit/a211f55bc314ee412e9bc220635404cff879c578))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#353](https://github.com/googleapis/java-video-transcoder/issues/353)) ([95938db](https://github.com/googleapis/java-video-transcoder/commit/95938dbcc5cf4e8a0b00935d2aba1c12ed02acfa))
+
 ## [1.1.0](https://github.com/googleapis/java-video-transcoder/compare/v1.0.4...v1.1.0) (2022-05-19)
 
 
