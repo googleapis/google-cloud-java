@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/googleapis/java-datacatalog/compare/v1.8.4...v1.9.0) (2022-07-01)
+
+
+### Features
+
+* java template no longer require clirr ([#1469](https://github.com/googleapis/java-datacatalog/issues/1469)) ([#826](https://github.com/googleapis/java-datacatalog/issues/826)) ([25d1416](https://github.com/googleapis/java-datacatalog/commit/25d1416f720aadc477c9cc952bc862d35ee8b463))
+
 ## [1.8.4](https://github.com/googleapis/java-datacatalog/compare/v1.8.3...v1.8.4) (2022-06-27)
 
 
