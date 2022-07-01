@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.11.0](https://github.com/googleapis/java-analytics-admin/compare/v0.10.2...v0.11.0) (2022-07-01)
+
+
+### Features
+
+* Add Java REST transport to analytics, servicecontrol, servicemanagement, serviceusage and langauge APIs ([0582719](https://github.com/googleapis/java-analytics-admin/commit/05827193641993b64f1280f0cdbd3b68c6c92705))
+
+
+### Bug Fixes
+
+* CustomDimension and CustomMetric resource configuration in Analytics Admin API ([0582719](https://github.com/googleapis/java-analytics-admin/commit/05827193641993b64f1280f0cdbd3b68c6c92705))
+
 ## [0.10.2](https://github.com/googleapis/java-analytics-admin/compare/v0.10.1...v0.10.2) (2022-06-23)
 
 
