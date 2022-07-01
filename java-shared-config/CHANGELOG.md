@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.1](https://github.com/googleapis/java-shared-config/compare/v1.5.0...v1.5.1) (2022-06-30)
+
+
+### Dependencies
+
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.12 ([#482](https://github.com/googleapis/java-shared-config/issues/482)) ([fbfc6dc](https://github.com/googleapis/java-shared-config/commit/fbfc6dc1329faaead3a3114c8599d9267722e7f0))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.12 ([#483](https://github.com/googleapis/java-shared-config/issues/483)) ([336cb78](https://github.com/googleapis/java-shared-config/commit/336cb7827b36583228c9e2b85871ae72f4c55975))
+
 ## [1.5.0](https://github.com/googleapis/java-shared-config/compare/v1.4.0...v1.5.0) (2022-06-10)
 
 
