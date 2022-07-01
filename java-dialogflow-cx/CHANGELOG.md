@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.14.0](https://github.com/googleapis/java-dialogflow-cx/compare/v0.13.1...v0.14.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#488](https://github.com/googleapis/java-dialogflow-cx/issues/488)) ([9d825ad](https://github.com/googleapis/java-dialogflow-cx/commit/9d825adf36d25fa72e98021af96076713253c86b))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#497](https://github.com/googleapis/java-dialogflow-cx/issues/497)) ([5883b34](https://github.com/googleapis/java-dialogflow-cx/commit/5883b34be4ca4bf026301e8b510d5c339cdb3a14))
+
+
+### Documentation
+
+* clarify descriptions of the AdvancedSettings and WebhookRequest data types ([#501](https://github.com/googleapis/java-dialogflow-cx/issues/501)) ([d3fca46](https://github.com/googleapis/java-dialogflow-cx/commit/d3fca4602b86dd8bed02f515141e6cfbdde5cd44))
+* improve comments for protos ([#503](https://github.com/googleapis/java-dialogflow-cx/issues/503)) ([f93ad03](https://github.com/googleapis/java-dialogflow-cx/commit/f93ad03e0b485f35b5195483c8a35e0eb4a5b8c0))
+
 ## [0.13.1](https://github.com/googleapis/java-dialogflow-cx/compare/v0.13.0...v0.13.1) (2022-06-23)
 
 

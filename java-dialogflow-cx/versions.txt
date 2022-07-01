@@ -1,8 +1,8 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-dialogflow-cx:0.13.1:0.13.2-SNAPSHOT
-grpc-google-cloud-dialogflow-cx-v3beta1:0.13.1:0.13.2-SNAPSHOT
-grpc-google-cloud-dialogflow-cx-v3:0.13.1:0.13.2-SNAPSHOT
-proto-google-cloud-dialogflow-cx-v3beta1:0.13.1:0.13.2-SNAPSHOT
-proto-google-cloud-dialogflow-cx-v3:0.13.1:0.13.2-SNAPSHOT
+google-cloud-dialogflow-cx:0.14.0:0.14.0
+grpc-google-cloud-dialogflow-cx-v3beta1:0.14.0:0.14.0
+grpc-google-cloud-dialogflow-cx-v3:0.14.0:0.14.0
+proto-google-cloud-dialogflow-cx-v3beta1:0.14.0:0.14.0
+proto-google-cloud-dialogflow-cx-v3:0.14.0:0.14.0
