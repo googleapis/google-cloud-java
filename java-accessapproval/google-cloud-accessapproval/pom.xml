@@ -82,6 +82,7 @@
     </dependency>
   </dependencies>
 
+  <!-- profile descriptions -->
   <profiles>
     <profile>
       <id>java9</id>
