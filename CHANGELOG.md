@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [0.126.0](https://github.com/googleapis/java-logging-logback/compare/v0.125.0...v0.126.0) (2022-06-30)
+
+
+### Features
+
+* java template no longer require clirr ([#1469](https://github.com/googleapis/java-logging-logback/issues/1469)) ([#791](https://github.com/googleapis/java-logging-logback/issues/791)) ([f1c5cb1](https://github.com/googleapis/java-logging-logback/commit/f1c5cb1c091a3a26a7ced39f97844abc2cf751f1))
+
 ## [0.125.0](https://github.com/googleapis/java-logging-logback/compare/v0.124.3...v0.125.0) (2022-06-28)
 
 
