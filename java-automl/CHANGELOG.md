@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-automl/compare/v2.2.4...v2.3.0) (2022-06-30)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#1168](https://github.com/googleapis/java-automl/issues/1168)) ([42ffff7](https://github.com/googleapis/java-automl/commit/42ffff768e445fc82c64a037fa346cb7d53864ba))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#1174](https://github.com/googleapis/java-automl/issues/1174)) ([aa9f85f](https://github.com/googleapis/java-automl/commit/aa9f85f5217cfad2eeaebfa8d43b1e5c209b2c68))
+
 ## [2.2.4](https://github.com/googleapis/java-automl/compare/v2.2.3...v2.2.4) (2022-06-23)
 
 
