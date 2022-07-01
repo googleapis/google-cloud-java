@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-apigee-connect/compare/v2.2.1...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#181](https://github.com/googleapis/java-apigee-connect/issues/181)) ([de1455c](https://github.com/googleapis/java-apigee-connect/commit/de1455c715adf292e3cf21d2ac4d23892e430c76))
+
 ## [2.2.1](https://github.com/googleapis/java-apigee-connect/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
