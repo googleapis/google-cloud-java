@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.0.0](https://github.com/googleapis/java-assured-workloads/compare/v1.1.0...v2.0.0) (2022-07-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* proto file name is changed from assuredworkloads_v1beta1.proto to assuredworkloads.proto
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#448](https://github.com/googleapis/java-assured-workloads/issues/448)) ([9ccf283](https://github.com/googleapis/java-assured-workloads/commit/9ccf283f7221c66cd31dd479997050b1e827b48c))
+* ITAR June Preview Launch ([#453](https://github.com/googleapis/java-assured-workloads/issues/453)) ([bf926c7](https://github.com/googleapis/java-assured-workloads/commit/bf926c7d26e2cb82b92f9d40a235c71d0ca70772))
+* Removed _v1beta1 suffix from proto file names ([#443](https://github.com/googleapis/java-assured-workloads/issues/443)) ([f034f3d](https://github.com/googleapis/java-assured-workloads/commit/f034f3d6274fe486fc99cbbc37fe4571dc383e55))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#450](https://github.com/googleapis/java-assured-workloads/issues/450)) ([a6c6d15](https://github.com/googleapis/java-assured-workloads/commit/a6c6d1549acfb179c1295d2359064670d52ed1a4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#447](https://github.com/googleapis/java-assured-workloads/issues/447)) ([23477f6](https://github.com/googleapis/java-assured-workloads/commit/23477f60013e1d00dd49bcd91daa6560169dcc3c))
+
 ## [1.1.0](https://github.com/googleapis/java-assured-workloads/compare/v1.0.4...v1.1.0) (2022-05-24)
 
 
