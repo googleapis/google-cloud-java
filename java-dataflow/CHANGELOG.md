@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.7.0](https://github.com/googleapis/java-dataflow/compare/v0.6.1...v0.7.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#182](https://github.com/googleapis/java-dataflow/issues/182)) ([5a7f987](https://github.com/googleapis/java-dataflow/commit/5a7f9877dac7d00bd096d5601fdcfbeea75e41fc))
+
+
+### Documentation
+
+* corrected the Dataflow job name regex ([#190](https://github.com/googleapis/java-dataflow/issues/190)) ([8fbc2f0](https://github.com/googleapis/java-dataflow/commit/8fbc2f0160dfaa95ad2b4244fab8d20e1a819eaa))
+
 ## [0.6.1](https://github.com/googleapis/java-dataflow/compare/v0.6.0...v0.6.1) (2022-06-23)
 
 
