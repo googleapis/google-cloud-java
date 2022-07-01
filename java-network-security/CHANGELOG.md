@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/googleapis/java-network-security/compare/v0.5.0...v0.5.1) (2022-07-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#172](https://github.com/googleapis/java-network-security/issues/172)) ([2981851](https://github.com/googleapis/java-network-security/commit/29818511f8b3bbc43c75e62580899b3109107bb2))
+
 ## [0.5.0](https://github.com/googleapis/java-network-security/compare/v0.4.4...v0.5.0) (2022-05-19)
 
 
