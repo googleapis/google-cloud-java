@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-webrisk/compare/v2.1.1...v2.2.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#669](https://github.com/googleapis/java-webrisk/issues/669)) ([a9b4f58](https://github.com/googleapis/java-webrisk/commit/a9b4f581dfc8b6c5106db0a8ff774456849beb37))
+
 ## [2.1.1](https://github.com/googleapis/java-webrisk/compare/v2.1.0...v2.1.1) (2022-06-23)
 
 
