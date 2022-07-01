@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.5.0](https://github.com/googleapis/java-dlp/compare/v3.4.0...v3.5.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#899](https://github.com/googleapis/java-dlp/issues/899)) ([a9d2cd5](https://github.com/googleapis/java-dlp/commit/a9d2cd55432c73055b1233c5d1e7478eb5b40bb0))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.119.0 ([#892](https://github.com/googleapis/java-dlp/issues/892)) ([ccd229f](https://github.com/googleapis/java-dlp/commit/ccd229f80adfb00d303f47ee9ebdc3de7f856e0d))
+* update dependency com.google.cloud:google-cloud-pubsub to v1.119.1 ([#894](https://github.com/googleapis/java-dlp/issues/894)) ([70ad786](https://github.com/googleapis/java-dlp/commit/70ad78640484d28e3811f1941a5373e233f821e0))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#898](https://github.com/googleapis/java-dlp/issues/898)) ([ff761b3](https://github.com/googleapis/java-dlp/commit/ff761b3373d67e1dc8e66d9fdc1e59cdb73aacad))
+
 ## [3.4.0](https://github.com/googleapis/java-dlp/compare/v3.3.2...v3.4.0) (2022-05-19)
 
 
