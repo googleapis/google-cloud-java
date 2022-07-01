@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.5.0](https://github.com/googleapis/java-cloudbuild/compare/v3.4.1...v3.5.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([9a7011f](https://github.com/googleapis/java-cloudbuild/commit/9a7011f1cce8dd26fd1782c0953cd2c09d3626b1))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#755](https://github.com/googleapis/java-cloudbuild/issues/755)) ([9a7011f](https://github.com/googleapis/java-cloudbuild/commit/9a7011f1cce8dd26fd1782c0953cd2c09d3626b1))
+
 ## [3.4.1](https://github.com/googleapis/java-cloudbuild/compare/v3.4.0...v3.4.1) (2022-06-23)
 
 
