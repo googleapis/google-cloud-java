@@ -1,5 +1,23 @@
 # Changelog
 
+## [4.7.0](https://github.com/googleapis/java-dialogflow/compare/v4.6.0...v4.7.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#941](https://github.com/googleapis/java-dialogflow/issues/941)) ([d6f38e7](https://github.com/googleapis/java-dialogflow/commit/d6f38e7d669e449c7faad49790845c96d513839c))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#943](https://github.com/googleapis/java-dialogflow/issues/943)) ([f7e4206](https://github.com/googleapis/java-dialogflow/commit/f7e4206f5371cd93d7de45d9a6c7ba92c0348ee2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.8.0 ([#939](https://github.com/googleapis/java-dialogflow/issues/939)) ([7f769d0](https://github.com/googleapis/java-dialogflow/commit/7f769d0fd3f821e06c3a9139f2fe74b429184d25))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#940](https://github.com/googleapis/java-dialogflow/issues/940)) ([305b0ac](https://github.com/googleapis/java-dialogflow/commit/305b0ac476b238673e94b54d3102652e9d12db36))
+
 ## [4.6.0](https://github.com/googleapis/java-dialogflow/compare/v4.5.11...v4.6.0) (2022-05-19)
 
 
