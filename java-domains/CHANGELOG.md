@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.7.0](https://github.com/googleapis/java-domains/compare/v0.6.1...v0.7.0) (2022-06-30)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#236](https://github.com/googleapis/java-domains/issues/236)) ([e8a03a0](https://github.com/googleapis/java-domains/commit/e8a03a08d8b0c9cf9e6be1851d63e3f76fe6aaa2))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#242](https://github.com/googleapis/java-domains/issues/242)) ([e0a62e9](https://github.com/googleapis/java-domains/commit/e0a62e94203831df7cde4a95ad20069c0acc7c64))
+
 ## [0.6.1](https://github.com/googleapis/java-domains/compare/v0.6.0...v0.6.1) (2022-06-23)
 
 
