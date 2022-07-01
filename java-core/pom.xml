@@ -153,7 +153,7 @@
     <site.installationModule>google-cloud-core-parent</site.installationModule>
     <gax.version>2.18.3</gax.version>
     <google.api-common.version>2.2.1</google.api-common.version>
-    <google.common-protos.version>2.9.0</google.common-protos.version>
+    <google.common-protos.version>2.9.1</google.common-protos.version>
     <google.iam.version>1.5.0</google.iam.version>
     <google.auth.version>1.7.0</google.auth.version>
     <google.api.version>1.35.2</google.api.version>
