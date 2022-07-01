@@ -379,9 +379,10 @@ public final class GcpManagedChannelTest {
     assertEquals(2, pool.getNumberOfChannels());
     // This was a fallback from non-ready channel 0 to the newly created channel 1.
     assertThat(logRecords.size()).isEqualTo(logCount + 3);
-    assertThat(lastLogMessage(3)).isEqualTo(
-        poolIndex + ": Fallback to newly created channel");
-    assertThat(lastLogLevel(3)).isEqualTo(Level.FINEST);
+    logRecords.forEach(logRecord -> System.out.println(logRecord.getMessage()));
+    assertThat(lastLogMessage()).isEqualTo(
+        poolIndex + ": Fallback to newly created channel 1");
+    assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
     assertFallbacksMetric(fakeRegistry, 1, 0);
 
     // Adding one active stream to channel 1.
@@ -1263,6 +1264,76 @@ public final class GcpManagedChannelTest {
 
     assertThat(newState.get())
         .isAnyOf(ConnectivityState.CONNECTING, ConnectivityState.TRANSIENT_FAILURE);
+  }
+
+  @Test
+  public void testParallelGetChannelRefWontExceedMaxSize() throws InterruptedException {
+    resetGcpChannel();
+    GcpChannelPoolOptions poolOptions = GcpChannelPoolOptions.newBuilder()
+        .setMaxSize(2)
+        .setConcurrentStreamsLowWatermark(0)
+        .build();
+    GcpManagedChannelOptions options = GcpManagedChannelOptions.newBuilder()
+        .withChannelPoolOptions(poolOptions)
+        .build();
+    gcpChannel =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withOptions(options)
+                .build();
+
+    assertThat(gcpChannel.getNumberOfChannels()).isEqualTo(0);
+    assertThat(gcpChannel.getStreamsLowWatermark()).isEqualTo(0);
+
+    for (int i = 0; i < gcpChannel.getMaxSize() - 1; i++) {
+      gcpChannel.getChannelRef(null);
+    }
+
+    assertThat(gcpChannel.getNumberOfChannels()).isEqualTo(gcpChannel.getMaxSize() - 1);
+
+    Runnable requestChannel = () -> gcpChannel.getChannelRef(null);
+
+    int requestCount = gcpChannel.getMaxSize() * 3;
+    ExecutorService exec = Executors.newFixedThreadPool(requestCount);
+    for (int i = 0; i < requestCount; i++) {
+      exec.execute(requestChannel);
+    }
+    exec.shutdown();
+    exec.awaitTermination(100, TimeUnit.MILLISECONDS);
+
+    assertThat(gcpChannel.getNumberOfChannels()).isEqualTo(gcpChannel.getMaxSize());
+  }
+
+  @Test
+  public void testParallelGetChannelRefWontExceedMaxSizeFromTheStart() throws InterruptedException {
+    resetGcpChannel();
+    GcpChannelPoolOptions poolOptions = GcpChannelPoolOptions.newBuilder()
+        .setMaxSize(2)
+        .setConcurrentStreamsLowWatermark(0)
+        .build();
+    GcpManagedChannelOptions options = GcpManagedChannelOptions.newBuilder()
+        .withChannelPoolOptions(poolOptions)
+        .build();
+    gcpChannel =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withOptions(options)
+                .build();
+
+    assertThat(gcpChannel.getNumberOfChannels()).isEqualTo(0);
+    assertThat(gcpChannel.getStreamsLowWatermark()).isEqualTo(0);
+
+    Runnable requestChannel = () -> gcpChannel.getChannelRef(null);
+
+    int requestCount = gcpChannel.getMaxSize() * 3;
+    ExecutorService exec = Executors.newFixedThreadPool(requestCount);
+    for (int i = 0; i < requestCount; i++) {
+      exec.execute(requestChannel);
+    }
+    exec.shutdown();
+    exec.awaitTermination(100, TimeUnit.MILLISECONDS);
+
+    assertThat(gcpChannel.getNumberOfChannels()).isEqualTo(gcpChannel.getMaxSize());
   }
 
   static class FakeManagedChannel extends ManagedChannel {

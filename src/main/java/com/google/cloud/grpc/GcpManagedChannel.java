@@ -990,10 +990,12 @@ public class GcpManagedChannel extends ManagedChannel {
     ChannelRef channelRef;
     if (options.getChannelPoolOptions() != null && options.getChannelPoolOptions().isUseRoundRobinOnBind()) {
       channelRef = getChannelRefRoundRobin();
+      logger.finest(log(
+          "Channel %d picked for bind operation using round-robin.", channelRef.getId()));
     } else {
       channelRef = getChannelRef(null);
+      logger.finest(log("Channel %d picked for bind operation.", channelRef.getId()));
     }
-    logger.finest(log("Channel %d picked for bind operation.", channelRef.getId()));
     return channelRef;
   }
 
@@ -1084,6 +1086,35 @@ public class GcpManagedChannel extends ManagedChannel {
     return channelRef;
   }
 
+  // Returns first newly created channel or null if there are already some channels in the pool.
+  @Nullable
+  private ChannelRef createFirstChannel() {
+    if (!channelRefs.isEmpty()) {
+      return null;
+    }
+    synchronized (this) {
+      if (channelRefs.isEmpty()) {
+        return createNewChannel();
+      }
+    }
+    return null;
+  }
+
+  // Creates new channel if maxSize is not reached.
+  // Returns new channel or null.
+  @Nullable
+  private ChannelRef tryCreateNewChannel() {
+    if (channelRefs.size() >= maxSize) {
+      return null;
+    }
+    synchronized (this) {
+      if (channelRefs.size() < maxSize) {
+        return createNewChannel();
+      }
+    }
+    return null;
+  }
+
   /**
    * Pick a {@link ChannelRef} (and create a new one if necessary). If notReadyFallbackEnabled is
    * true in the {@link GcpResiliencyOptions} then instead of a channel in a non-READY state another
@@ -1091,8 +1122,9 @@ public class GcpManagedChannel extends ManagedChannel {
    * be provided if available.
    */
   private ChannelRef pickLeastBusyChannel(boolean forFallback) {
-    if (channelRefs.isEmpty()) {
-      return createNewChannel();
+    ChannelRef first = createFirstChannel();
+    if (first != null) {
+      return first;
     }
 
     // Pick the least busy channel and the least busy ready and not overloaded channel (this could
@@ -1118,17 +1150,23 @@ public class GcpManagedChannel extends ManagedChannel {
 
     if (!fallbackEnabled) {
       if (channelRefs.size() < maxSize && minStreams >= maxConcurrentStreamsLowWatermark) {
-        return createNewChannel();
+        ChannelRef newChannel = tryCreateNewChannel();
+        if (newChannel != null) {
+          return newChannel;
+        }
       }
       return channelCandidate;
     }
 
     if (channelRefs.size() < maxSize && readyMinStreams >= maxConcurrentStreamsLowWatermark) {
-      if (!forFallback && readyCandidate == null) {
-        logger.finest(log("Fallback to newly created channel"));
-        fallbacksSucceeded.incrementAndGet();
+      ChannelRef newChannel = tryCreateNewChannel();
+      if (newChannel != null) {
+        if (!forFallback && readyCandidate == null) {
+          logger.finest(log("Fallback to newly created channel %d", newChannel.getId()));
+          fallbacksSucceeded.incrementAndGet();
+        }
+        return newChannel;
       }
-      return createNewChannel();
     }
 
     if (readyCandidate != null) {
@@ -1262,7 +1300,7 @@ public class GcpManagedChannel extends ManagedChannel {
   @Override
   public ConnectivityState getState(boolean requestConnection) {
     if (requestConnection && getNumberOfChannels() == 0) {
-      createNewChannel();
+      createFirstChannel();
     }
     int ready = 0;
     int idle = 0;
