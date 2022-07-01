@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-trace/compare/v2.2.0...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#812](https://github.com/googleapis/java-trace/issues/812)) ([30d0122](https://github.com/googleapis/java-trace/commit/30d012223ef1f96cec9b3cb5446146468cde6b67))
+
+
+### Documentation
+
+* **sample:** clean up README for native image sample ([#808](https://github.com/googleapis/java-trace/issues/808)) ([b60afab](https://github.com/googleapis/java-trace/commit/b60afab929b7f5275ebdfef76a383163e98a18ba))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#811](https://github.com/googleapis/java-trace/issues/811)) ([db46126](https://github.com/googleapis/java-trace/commit/db46126eee29ba731a89e692788fa7ae5f7544a8))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.12 ([#809](https://github.com/googleapis/java-trace/issues/809)) ([f35f82d](https://github.com/googleapis/java-trace/commit/f35f82d50961f139c8903296d4e8fca351da10b2))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.12 ([#810](https://github.com/googleapis/java-trace/issues/810)) ([6b2d9d7](https://github.com/googleapis/java-trace/commit/6b2d9d7e800870747e72d48e3c9de25fbebb912e))
+
 ## [2.2.0](https://github.com/googleapis/java-trace/compare/v2.1.11...v2.2.0) (2022-05-19)
 
 
