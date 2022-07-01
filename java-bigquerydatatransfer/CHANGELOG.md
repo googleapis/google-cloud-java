@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.2.6...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#1402](https://github.com/googleapis/java-bigquerydatatransfer/issues/1402)) ([ee7c19b](https://github.com/googleapis/java-bigquerydatatransfer/commit/ee7c19bdc919d01e5f43b471f63b588f7b9a4008))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#1401](https://github.com/googleapis/java-bigquerydatatransfer/issues/1401)) ([20e4915](https://github.com/googleapis/java-bigquerydatatransfer/commit/20e491525db0f385c58e4a64e2c42e81f3cec106))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.2 ([#1404](https://github.com/googleapis/java-bigquerydatatransfer/issues/1404)) ([aaa96ef](https://github.com/googleapis/java-bigquerydatatransfer/commit/aaa96ef086d8503cbd54761f105163fa87b87c63))
+
 ## [2.2.6](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.2.5...v2.2.6) (2022-06-22)
 
 
