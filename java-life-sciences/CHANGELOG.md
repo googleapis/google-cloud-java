@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.5.0](https://github.com/googleapis/java-life-sciences/compare/v0.4.1...v0.5.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#196](https://github.com/googleapis/java-life-sciences/issues/196)) ([ede5b3b](https://github.com/googleapis/java-life-sciences/commit/ede5b3b856dff94aa8ea48687531367f1086ec63))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#202](https://github.com/googleapis/java-life-sciences/issues/202)) ([96e93cb](https://github.com/googleapis/java-life-sciences/commit/96e93cb98baa006b435f0ae057cd59cfc824f056))
+
 ## [0.4.1](https://github.com/googleapis/java-life-sciences/compare/v0.4.0...v0.4.1) (2022-06-23)
 
 
