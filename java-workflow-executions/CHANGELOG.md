@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-workflow-executions/compare/v2.2.1...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#311](https://github.com/googleapis/java-workflow-executions/issues/311)) ([f42b2d0](https://github.com/googleapis/java-workflow-executions/commit/f42b2d0ef1f55cc72e355199a85d981147f829e0))
+* java template no longer require clirr ([#1469](https://github.com/googleapis/java-workflow-executions/issues/1469)) ([#322](https://github.com/googleapis/java-workflow-executions/issues/322)) ([d4785f7](https://github.com/googleapis/java-workflow-executions/commit/d4785f7c4c7df6971b9e72695f95f8aa3c2e8330))
+
 ## [2.2.1](https://github.com/googleapis/java-workflow-executions/compare/v2.2.0...v2.2.1) (2022-06-27)
 
 
