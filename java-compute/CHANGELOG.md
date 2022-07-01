@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.11.0](https://github.com/googleapis/java-compute/compare/v1.10.0...v1.11.0) (2022-06-30)
+
+
+### Features
+
+* Update Compute Engine API to revision 20220526 ([#722](https://github.com/googleapis/java-compute/issues/722)) ([12389d0](https://github.com/googleapis/java-compute/commit/12389d0f9b0ba66954e25ab5454d2c1581aa21db))
+
+
+### Bug Fixes
+
+* **compute:** remove proto3_optional from parent_id ([#712](https://github.com/googleapis/java-compute/issues/712)) ([12389d0](https://github.com/googleapis/java-compute/commit/12389d0f9b0ba66954e25ab5454d2c1581aa21db))
+* **compute:** replace missing REQUIRED for parent_id ([#711](https://github.com/googleapis/java-compute/issues/711)) ([12389d0](https://github.com/googleapis/java-compute/commit/12389d0f9b0ba66954e25ab5454d2c1581aa21db))
+* **compute:** revert proto3_optional, required removal on parent_id ([#714](https://github.com/googleapis/java-compute/issues/714)) ([12389d0](https://github.com/googleapis/java-compute/commit/12389d0f9b0ba66954e25ab5454d2c1581aa21db))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#697](https://github.com/googleapis/java-compute/issues/697)) ([a35c03b](https://github.com/googleapis/java-compute/commit/a35c03ba110f922161914419b4fbbe1d590cf697))
+
 ## [1.10.0](https://github.com/googleapis/java-compute/compare/v1.9.1...v1.10.0) (2022-05-24)
 
 
