@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-game-servers/compare/v2.2.1...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#676](https://github.com/googleapis/java-game-servers/issues/676)) ([aa517be](https://github.com/googleapis/java-game-servers/commit/aa517bef9cb58d15eb22cf80d24fce2d8bd8090d))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#682](https://github.com/googleapis/java-game-servers/issues/682)) ([8866d04](https://github.com/googleapis/java-game-servers/commit/8866d0413d6c4bc33e078971e5c2d38f8016b7d1))
+
 ## [2.2.1](https://github.com/googleapis/java-game-servers/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
