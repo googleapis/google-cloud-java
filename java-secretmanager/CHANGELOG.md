@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-secretmanager/compare/v2.2.0...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#790](https://github.com/googleapis/java-secretmanager/issues/790)) ([d51c8fa](https://github.com/googleapis/java-secretmanager/commit/d51c8fa85243d4b71b805a67141168898542a851))
+
+
+### Documentation
+
+* **sample:** clean up README for native image sample ([#785](https://github.com/googleapis/java-secretmanager/issues/785)) ([67260d7](https://github.com/googleapis/java-secretmanager/commit/67260d74d7c5f05dc08957267ae809eb3ea66281))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#789](https://github.com/googleapis/java-secretmanager/issues/789)) ([71aae1d](https://github.com/googleapis/java-secretmanager/commit/71aae1d94136082ed323a6591e5cfe6a0d02875c))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.0 ([#779](https://github.com/googleapis/java-secretmanager/issues/779)) ([d38f1db](https://github.com/googleapis/java-secretmanager/commit/d38f1dbd5fea21d3edc06045e5c892313a0524b4))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.1 ([#780](https://github.com/googleapis/java-secretmanager/issues/780)) ([6c613da](https://github.com/googleapis/java-secretmanager/commit/6c613daee4f406e501ad92742fc7dae0d4172298))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.2 ([#791](https://github.com/googleapis/java-secretmanager/issues/791)) ([d7d4ea9](https://github.com/googleapis/java-secretmanager/commit/d7d4ea9d26ca5b1fe44d052b8f7c1f5527a1dabc))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.12 ([#787](https://github.com/googleapis/java-secretmanager/issues/787)) ([a2e0e97](https://github.com/googleapis/java-secretmanager/commit/a2e0e977ae70f38c8cf1e61d4245a34ebd0d1af5))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.12 ([#788](https://github.com/googleapis/java-secretmanager/issues/788)) ([8662fe6](https://github.com/googleapis/java-secretmanager/commit/8662fe687369eab23a185eba0bf9a48110d5856b))
+
 ## [2.2.0](https://github.com/googleapis/java-secretmanager/compare/v2.1.7...v2.2.0) (2022-05-19)
 
 
