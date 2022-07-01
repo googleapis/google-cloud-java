@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/googleapis/java-private-catalog/compare/v0.3.1...v0.4.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#190](https://github.com/googleapis/java-private-catalog/issues/190)) ([ec64ba7](https://github.com/googleapis/java-private-catalog/commit/ec64ba7ff7ddce705204090f8df2060eee24955e))
+
 ## [0.3.1](https://github.com/googleapis/java-private-catalog/compare/v0.3.0...v0.3.1) (2022-06-23)
 
 
