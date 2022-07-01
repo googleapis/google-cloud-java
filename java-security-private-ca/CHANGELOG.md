@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-security-private-ca/compare/v2.4.0...v2.5.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#426](https://github.com/googleapis/java-security-private-ca/issues/426)) ([aa33192](https://github.com/googleapis/java-security-private-ca/commit/aa33192a4e1ce895b167b2423f59234d4e83e6fd))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#428](https://github.com/googleapis/java-security-private-ca/issues/428)) ([a80a9f4](https://github.com/googleapis/java-security-private-ca/commit/a80a9f4380f0a81a539002f0030e97470a370ae4))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#425](https://github.com/googleapis/java-security-private-ca/issues/425)) ([d219c1a](https://github.com/googleapis/java-security-private-ca/commit/d219c1a587d2f93ba36c654c5102a08a3139e0a0))
+
 ## [2.4.0](https://github.com/googleapis/java-security-private-ca/compare/v2.3.1...v2.4.0) (2022-05-20)
 
 
