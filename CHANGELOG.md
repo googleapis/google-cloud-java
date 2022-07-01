@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.10.0](https://github.com/googleapis/java-datastore/compare/v2.9.1...v2.10.0) (2022-06-30)
+
+
+### Features
+
+* Enable REST transport for admin client ([#778](https://github.com/googleapis/java-datastore/issues/778)) ([c3290e3](https://github.com/googleapis/java-datastore/commit/c3290e3e32a5309abc8e456bfd584c929d23628c))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#785](https://github.com/googleapis/java-datastore/issues/785)) ([8a12f25](https://github.com/googleapis/java-datastore/commit/8a12f25ece95429a10c1bcae220a678a7c2e3ff1))
+
 ## [2.9.1](https://github.com/googleapis/java-datastore/compare/v2.9.0...v2.9.1) (2022-06-23)
 
 
