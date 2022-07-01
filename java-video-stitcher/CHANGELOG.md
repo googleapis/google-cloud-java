@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/java-video-stitcher/compare/v0.2.1...v0.3.0) (2022-06-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove COMPLETE_POD stitching option
+
+### Features
+
+* add asset_id and stream_id fields to VodSession and LiveSession responses ([ff552c5](https://github.com/googleapis/java-video-stitcher/commit/ff552c5352904f63e7760995afd2642169685cdd))
+
+
+### Bug Fixes
+
+* remove COMPLETE_POD stitching option ([ff552c5](https://github.com/googleapis/java-video-stitcher/commit/ff552c5352904f63e7760995afd2642169685cdd))
+
 ## [0.2.1](https://github.com/googleapis/java-video-stitcher/compare/v0.2.0...v0.2.1) (2022-06-23)
 
 
