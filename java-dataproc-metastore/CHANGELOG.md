@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-dataproc-metastore/compare/v2.3.1...v2.4.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#250](https://github.com/googleapis/java-dataproc-metastore/issues/250)) ([801cded](https://github.com/googleapis/java-dataproc-metastore/commit/801cded57be5f40c3ceeb08b5bd2c6455435f223))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#256](https://github.com/googleapis/java-dataproc-metastore/issues/256)) ([0b256a7](https://github.com/googleapis/java-dataproc-metastore/commit/0b256a733c075995bb2cbca290ec169391943032))
+
 ## [2.3.1](https://github.com/googleapis/java-dataproc-metastore/compare/v2.3.0...v2.3.1) (2022-06-23)
 
 
