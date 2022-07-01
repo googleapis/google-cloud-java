@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.5.0](https://github.com/googleapis/java-resourcemanager/compare/v1.4.0...v1.5.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#794](https://github.com/googleapis/java-resourcemanager/issues/794)) ([96f5078](https://github.com/googleapis/java-resourcemanager/commit/96f507856c2fa9f2fb8f164f7aae103633ceff8a))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#796](https://github.com/googleapis/java-resourcemanager/issues/796)) ([4aadcdd](https://github.com/googleapis/java-resourcemanager/commit/4aadcdd499f4bfc7d1f93c70e3ad55f39dc675c9))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#793](https://github.com/googleapis/java-resourcemanager/issues/793)) ([a3b1cb6](https://github.com/googleapis/java-resourcemanager/commit/a3b1cb6cd5ecd716885aea080eb37b1cf7c530f0))
+
 ## [1.4.0](https://github.com/googleapis/java-resourcemanager/compare/v1.3.2...v1.4.0) (2022-05-19)
 
 
