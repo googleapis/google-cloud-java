@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/googleapis/java-resource-settings/compare/v1.2.1...v1.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#184](https://github.com/googleapis/java-resource-settings/issues/184)) ([ddffe70](https://github.com/googleapis/java-resource-settings/commit/ddffe70c850da4db11e1d0033355933023f79e9f))
+
 ## [1.2.1](https://github.com/googleapis/java-resource-settings/compare/v1.2.0...v1.2.1) (2022-06-23)
 
 
