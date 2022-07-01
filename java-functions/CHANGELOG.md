@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.2](https://github.com/googleapis/java-functions/compare/v2.4.1...v2.4.2) (2022-07-01)
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#424](https://github.com/googleapis/java-functions/issues/424)) ([721c8dc](https://github.com/googleapis/java-functions/commit/721c8dcc1f75feee52a82be47b292bb7d9dad887))
+
 ## [2.4.1](https://github.com/googleapis/java-functions/compare/v2.4.0...v2.4.1) (2022-06-23)
 
 
