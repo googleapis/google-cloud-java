@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/java-run/compare/v0.2.1...v0.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#44](https://github.com/googleapis/java-run/issues/44)) ([49be9b6](https://github.com/googleapis/java-run/commit/49be9b690644e076cff40db82340b805920a2110))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#50](https://github.com/googleapis/java-run/issues/50)) ([11a35d9](https://github.com/googleapis/java-run/commit/11a35d9cffe52eb263801541c9bdd68d08aabbf2))
+
 ## [0.2.1](https://github.com/googleapis/java-run/compare/v0.2.0...v0.2.1) (2022-06-23)
 
 
