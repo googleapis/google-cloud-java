@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://github.com/googleapis/java-bigquerymigration/compare/v0.3.0...v0.4.0) (2022-07-01)
+
+
+### Features
+
+* Add SQL Server dialect to bigquerymigration v2 client library ([8b63a81](https://github.com/googleapis/java-bigquerymigration/commit/8b63a81c45ae9dafd35af5062c6937b26f02eb4d))
+* Enable REST transport for most of Java and Go clients ([#131](https://github.com/googleapis/java-bigquerymigration/issues/131)) ([5177118](https://github.com/googleapis/java-bigquerymigration/commit/517711839022f4d82133d049af796db04035b0f2))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#130](https://github.com/googleapis/java-bigquerymigration/issues/130)) ([be1c61d](https://github.com/googleapis/java-bigquerymigration/commit/be1c61d809b170a6c472bf00c7e126df535fad56))
+
 ## [0.3.0](https://github.com/googleapis/java-bigquerymigration/compare/v0.2.4...v0.3.0) (2022-05-19)
 
 
