@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-vpcaccess/compare/v2.2.1...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([908b1f6](https://github.com/googleapis/java-vpcaccess/commit/908b1f61e9e3c4110317375a7fb142a9b7619a0e))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#206](https://github.com/googleapis/java-vpcaccess/issues/206)) ([908b1f6](https://github.com/googleapis/java-vpcaccess/commit/908b1f61e9e3c4110317375a7fb142a9b7619a0e))
+
 ## [2.2.1](https://github.com/googleapis/java-vpcaccess/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
