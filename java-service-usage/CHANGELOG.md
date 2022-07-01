@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-service-usage/compare/v2.3.0...v2.3.1) (2022-07-01)
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#243](https://github.com/googleapis/java-service-usage/issues/243)) ([abb7bd6](https://github.com/googleapis/java-service-usage/commit/abb7bd686eedcd9bae939086f9bbb8d711a0508a))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#241](https://github.com/googleapis/java-service-usage/issues/241)) ([1ce266a](https://github.com/googleapis/java-service-usage/commit/1ce266a302a6d4a3ddd4ede5be6b6b26d537b854))
+
 ## [2.3.0](https://github.com/googleapis/java-service-usage/compare/v2.2.7...v2.3.0) (2022-05-19)
 
 
