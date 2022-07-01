@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/googleapis/java-containeranalysis/compare/v2.3.1...v2.4.0) (2022-06-30)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#885](https://github.com/googleapis/java-containeranalysis/issues/885)) ([1980b04](https://github.com/googleapis/java-containeranalysis/commit/1980b044a6a5e011e8424f3d785366c7840ac7b4))
+
 ## [2.3.1](https://github.com/googleapis/java-containeranalysis/compare/v2.3.0...v2.3.1) (2022-06-24)
 
 
