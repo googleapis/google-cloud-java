@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-billing/compare/v2.2.1...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#670](https://github.com/googleapis/java-billing/issues/670)) ([d33d68d](https://github.com/googleapis/java-billing/commit/d33d68d367dabc4d8e58aa78d30f238dcd26ddf6))
+
 ## [2.2.1](https://github.com/googleapis/java-billing/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
