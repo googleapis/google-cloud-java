@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.4.0...v2.5.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#611](https://github.com/googleapis/java-monitoring-dashboards/issues/611)) ([b56e004](https://github.com/googleapis/java-monitoring-dashboards/commit/b56e0041deb701cb74f3b849cd464eec1fd4dbbd))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#610](https://github.com/googleapis/java-monitoring-dashboards/issues/610)) ([18af388](https://github.com/googleapis/java-monitoring-dashboards/commit/18af388dd3b0ce38429572fde35a2f23a799a26e))
+
 ## [2.4.0](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.3.0...v2.4.0) (2022-05-19)
 
 
