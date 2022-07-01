@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.2.0](https://github.com/googleapis/java-os-login/compare/v2.1.0...v2.2.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#694](https://github.com/googleapis/java-os-login/issues/694)) ([a72656a](https://github.com/googleapis/java-os-login/commit/a72656a5ffeb0f66ea64ee897932c5d471e615ab))
+
+
+### Bug Fixes
+
+* make java.base fields accessible to fix java 17 runtime errors.  ([#688](https://github.com/googleapis/java-os-login/issues/688)) ([b262f13](https://github.com/googleapis/java-os-login/commit/b262f13c1eefe8c8c0ad8e4b64aeec3f4fa87306))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#693](https://github.com/googleapis/java-os-login/issues/693)) ([22bd8a0](https://github.com/googleapis/java-os-login/commit/22bd8a018899bc055245986f02f0398836e005b9))
+
 ## [2.1.0](https://github.com/googleapis/java-os-login/compare/v2.0.15...v2.1.0) (2022-05-20)
 
 
