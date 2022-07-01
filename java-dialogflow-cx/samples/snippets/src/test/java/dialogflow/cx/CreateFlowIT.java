@@ -68,6 +68,9 @@ public class CreateFlowIT {
       try (FlowsClient flowsClient = FlowsClient.create(flowsSettings)) {
         flowsClient.deleteFlow(newFlowNameRegional);
       }
+
+      // Small delay to prevent reaching quota limit of requests per minute
+      Thread.sleep(250);
     }
   }
 

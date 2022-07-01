@@ -65,7 +65,7 @@ public class PageManagementIT {
   }
 
   @AfterClass
-  public static void tearDown() throws IOException {
+  public static void tearDown() throws IOException, InterruptedException {
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
     String parentPath = "projects/" + PROJECT_ID + "/locations/global";
 
@@ -73,6 +73,9 @@ public class PageManagementIT {
     AgentsClient client = AgentsClient.create(agentsSettings);
 
     client.deleteAgent(parent);
+
+    // Small delay to prevent reaching quota limit of requests per minute
+    Thread.sleep(250);
   }
 
   @Test

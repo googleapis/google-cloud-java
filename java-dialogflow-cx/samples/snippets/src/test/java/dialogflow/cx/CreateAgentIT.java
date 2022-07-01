@@ -43,7 +43,7 @@ public class CreateAgentIT {
   }
 
   @After
-  public void tearDown() throws IOException {
+  public void tearDown() throws IOException, InterruptedException {
     System.setOut(originalOut);
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
 
@@ -51,6 +51,9 @@ public class CreateAgentIT {
     AgentsClient client = AgentsClient.create(agentsSettings);
 
     client.deleteAgent(CreateAgentIT.agentPath);
+
+    // Small delay to prevent reaching quota limit of requests per minute
+    Thread.sleep(250);
   }
 
   @Test

@@ -74,7 +74,7 @@ public class UpdateIntentTest {
   }
 
   @After
-  public void tearDown() throws IOException {
+  public void tearDown() throws IOException, InterruptedException {
     stdOut = null;
     System.setOut(null);
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
@@ -84,6 +84,9 @@ public class UpdateIntentTest {
     AgentsClient client = AgentsClient.create(agentsSettings);
 
     client.deleteAgent(parent);
+
+    // Small delay to prevent reaching quota limit of requests per minute
+    Thread.sleep(250);
   }
 
   @Test

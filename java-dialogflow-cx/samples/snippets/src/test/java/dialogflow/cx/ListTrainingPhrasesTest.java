@@ -40,9 +40,12 @@ public class ListTrainingPhrasesTest {
   }
 
   @After
-  public void tearDown() throws IOException {
+  public void tearDown() throws IOException, InterruptedException {
     stdOut = null;
     System.setOut(null);
+
+    // Small delay to prevent reaching quota limit of requests per minute
+    Thread.sleep(250);
   }
 
   @Test

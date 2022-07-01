@@ -43,8 +43,11 @@ public class ListTestCaseResultsIT {
   }
 
   @After
-  public void tearDown() throws IOException {
+  public void tearDown() throws IOException, InterruptedException {
     System.setOut(originalOut);
+
+    // Small delay to prevent reaching quota limit of requests per minute
+    Thread.sleep(250);
   }
 
   @Test

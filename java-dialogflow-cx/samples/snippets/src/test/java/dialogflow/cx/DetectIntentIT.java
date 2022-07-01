@@ -23,6 +23,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -44,6 +45,12 @@ public class DetectIntentIT {
   private static String SESSION_ID = UUID.randomUUID().toString();
   private static String LANGUAGE_CODE = "en-US";
   private static List<String> TEXTS = Arrays.asList("hello", "book a meeting room");
+
+  @After
+  public void tearDown() throws InterruptedException {
+    // Small delay to prevent reaching quota limit of requests per minute
+    Thread.sleep(250);
+  }
 
   @Test
   public void testDetectIntentGlobal() throws Exception {
