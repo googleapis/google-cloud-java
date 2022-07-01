@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.2](https://github.com/googleapis/java-service-management/compare/v3.1.1...v3.1.2) (2022-07-01)
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#255](https://github.com/googleapis/java-service-management/issues/255)) ([4eee177](https://github.com/googleapis/java-service-management/commit/4eee1773944cefbbc38b3027df16d17e79a79424))
+
 ## [3.1.1](https://github.com/googleapis/java-service-management/compare/v3.1.0...v3.1.1) (2022-06-23)
 
 
