@@ -15,6 +15,8 @@
 """This script is used to synthesize generated parts of this library."""
 
 from typing import List, Optional
+from glob import glob
+import json
 import requests
 
 class CloudClient:
@@ -96,22 +98,32 @@ def client_for_repo(repo_slug) -> Optional[CloudClient]:
 
   return CloudClient(response.json())
 
+def client_for_module(module) -> Optional[CloudClient]:
+  with open ('%s/.repo-metadata.json' % module, "r") as metadata_file:
+    data = json.load(metadata_file)
+    return CloudClient(data)
+
+# These repositories are not meant as shown as Cloud SDK for Java
 REPO_EXCLUSION = [
-    'googleapis/java-bigtable-emulator',
-    'googleapis/java-cloud-bom',
-    'googleapis/java-conformance-tests',
-    'googleapis/java-common-protos',
-    'googleapis/java-core',
-    'googleapis/java-gcloud-maven-plugin',
-    'googleapis/java-grafeas',
-    'googleapis/java-iam',
-    'googleapis/java-notification',
-    'googleapis/java-shared-config',
+    'java-bigtable-emulator',
+    'java-cloud-bom',
+    'java-conformance-tests',
+    'java-common-protos',
+    'java-core',
+    'java-gcloud-maven-plugin',
+    'java-grafeas',
+    'java-iam',
+    'java-notification',
+    'java-shared-config',
 ]
 
-def allowed_repo(repo) -> bool:
-  return repo['language'].lower() == 'java' and repo['full_name'].startswith('googleapis/java-') and repo['full_name'] not in REPO_EXCLUSION
+LIBRARIES_IN_MONOREPO = glob("java-*")
 
+def allowed_remote_repo(repo) -> bool:
+  return (repo['language'].lower() == 'java'
+      and repo['full_name'].startswith('googleapis/java-')
+      and repo['full_name'] not in
+          [ 'googleapis/%s' % repo for repo in (REPO_EXCLUSION + LIBRARIES_IN_MONOREPO)])
 
 def _fetch_repo_list(page):
   url = "https://api.github.com/search/repositories"
@@ -122,7 +134,6 @@ def _fetch_repo_list(page):
   })
   return response.json()['items']
 
-
 def all_clients() -> List[CloudClient]:
   page = 1
   clients = []
@@ -130,8 +141,10 @@ def all_clients() -> List[CloudClient]:
     repos = _fetch_repo_list(page)
     if not repos:
       break
-    clients.extend([client_for_repo(repo['full_name']) for repo in repos if allowed_repo(repo)])
+    clients.extend([client_for_repo(repo['full_name']) for repo in repos if allowed_remote_repo(repo)])
     page += 1
+  clients.extend([client_for_module(module) for module in LIBRARIES_IN_MONOREPO if
+      module not in REPO_EXCLUSION])
 
   return [client for client in clients if client]
 
