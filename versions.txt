@@ -1,7 +1,0 @@
-# Format:
-# module:released-version:current-version
-
-google-cloud-java:0.120.0:0.120.1
-
-
-
