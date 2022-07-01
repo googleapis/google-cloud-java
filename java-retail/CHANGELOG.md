@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/googleapis/java-retail/compare/v2.2.4...v2.3.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#471](https://github.com/googleapis/java-retail/issues/471)) ([d5cd803](https://github.com/googleapis/java-retail/commit/d5cd803431a014def402683310f400f2e7d4b1a6))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#475](https://github.com/googleapis/java-retail/issues/475)) ([5090d6d](https://github.com/googleapis/java-retail/commit/5090d6d63e4d66f916d950274f164c762f59f6ff))
+
 ## [2.2.4](https://github.com/googleapis/java-retail/compare/v2.2.3...v2.2.4) (2022-06-23)
 
 
