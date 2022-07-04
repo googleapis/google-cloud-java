@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2018 Google Inc.
+# Copyright 2019 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,63 +15,111 @@
 
 set -eo pipefail
 
-cd github/google-cloud-java/
+## Get the directory of the build script
+scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
+## cd to the parent directory, i.e. the root of the git repo
+cd ${scriptDir}/..
 
-function client_has_changes() {
-  CLIENT_NAME=$1
-  if [[ ! -z $(git diff master google-cloud-clients/google-cloud-core*) ]]; then
-    echo "true"
-    return
-  fi
+# include common functions
+source ${scriptDir}/common.sh
 
-  if [[ ! -z $(git diff master google-cloud-clients/${CLIENT_NAME}) ]]; then
-    echo "true"
-    return
-  fi
+# Print out Maven & Java version
+mvn -version
+echo ${JOB_TYPE}
 
-  if [[ ! -z $(git diff master google-api-grpc/*${CLIENT_NAME}*) ]]; then
-    echo "true"
-    return
-  fi
+mvn clean install
+# if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
+# if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
+#    export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS})
+# fi
 
-  echo "false"
-}
+# RETURN_CODE=0
+# set +e
 
-# Print out Java version
-java -version
-echo $JOB_TYPE
+# case ${JOB_TYPE} in
+# test)
+#    mvn test -B -ntp -Dclirr.skip=true -Denforcer.skip=true
+#    RETURN_CODE=$?
+#    ;;
+# lint)
+#    mvn com.coveo:fmt-maven-plugin:check -B -ntp
+#    RETURN_CODE=$?
+#    ;;
+# javadoc)
+#    mvn javadoc:javadoc javadoc:test-javadoc -B -ntp
+#    RETURN_CODE=$?
+#    ;;
+# integration)
+#    mvn -B ${INTEGRATION_TEST_ARGS} \
+#      -ntp \
+#      -Penable-integration-tests \
+#      -DtrimStackTrace=false \
+#      -Dclirr.skip=true \
+#      -Denforcer.skip=true \
+#      -fae \
+#      verify
+#    RETURN_CODE=$?
+#    ;;
+# graalvm)
+#    # Run Unit and Integration Tests with Native Image
+#    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative -Penable-integration-tests test
+#    RETURN_CODE=$?
+#    ;;
+# graalvm17)
+#    # Run Unit and Integration Tests with Native Image
+#    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative -Penable-integration-tests test
+#    RETURN_CODE=$?
+#    ;;
+# samples)
+#    SAMPLES_DIR=samples
+#    # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ subdirectories otherwise.
+#    if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
+#    then
+#      SAMPLES_DIR=samples/snapshot
+#    fi
 
-if [[ "${SKIP_INTEGRATION_TESTS_IF_NO_CHANGES}" == "true" ]] &&
-   [[ "${JOB_TYPE}" == "integration" ]]; then
-  CLIENT=$(echo ${INTEGRATION_TEST_ARGS} | cut -d' ' -f1 | cut -d'/' -f2)
-  CLIENT_HAS_CHANGES=$(client_has_changes ${CLIENT})
-  if [[ "${CLIENT_HAS_CHANGES}" == "false" ]]; then
-    echo "No difference from master, skipping tests."
-    exit 0
-  fi
-fi
+#    if [[ -f ${SAMPLES_DIR}/pom.xml ]]
+#    then
+#        for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
+#          [[ -f "$FILE" ]] || continue
+#          source "$FILE"
+#        done
 
-mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V
+#        pushd ${SAMPLES_DIR}
+#        mvn -B \
+#          -ntp \
+#          -DtrimStackTrace=false \
+#          -Dclirr.skip=true \
+#          -Denforcer.skip=true \
+#          -fae \
+#          verify
+#        RETURN_CODE=$?
+#        popd
+#    else
+#        echo "no sample pom.xml found - skipping sample tests"
+#    fi
+#    ;;
+# clirr)
+#    mvn -B -ntp -Denforcer.skip=true clirr:check
+#    RETURN_CODE=$?
+#    ;;
+# *)
+#    ;;
+# esac
 
-# prepend Kokoro root directory onto GOOGLE_APPLICATION_CREDENTIALS path
-if [[ ! -z "$GOOGLE_APPLICATION_CREDENTIALS" ]]; then
-    export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_ROOT}/src/${GOOGLE_APPLICATION_CREDENTIALS})
-fi
+# if [ "${REPORT_COVERAGE}" == "true" ]
+# then
+#  bash ${KOKORO_GFILE_DIR}/codecov.sh
+# fi
 
-case $JOB_TYPE in
-test)
-    mvn test -B
-    bash $KOKORO_GFILE_DIR/codecov.sh
-    ;;
-lint)
-    mvn com.coveo:fmt-maven-plugin:check
-    ;;
-javadoc)
-    mvn javadoc:javadoc javadoc:test-javadoc
-    ;;
-integration)
-    mvn -B -pl ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -fae verify
-    ;;
-*)
-    ;;
-esac
+# # fix output location of logs
+# bash .kokoro/coerce_logs.sh
+
+# if [[ "${ENABLE_FLAKYBOT}" == "true" ]]
+# then
+#    chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/flakybot
+#    ${KOKORO_GFILE_DIR}/linux_amd64/flakybot -repo=googleapis/google-cloud-java
+# fi
+
+# echo "exiting with ${RETURN_CODE}"
+# exit ${RETURN_CODE}

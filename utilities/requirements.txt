@@ -1,5 +1,0 @@
-attr
-gcp-releasetool
-jinja2
-lxml~=4.2
-typing~=3.6

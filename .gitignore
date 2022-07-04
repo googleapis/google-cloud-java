@@ -17,6 +17,8 @@ nosetests.xml
 
 # Mr Developer
 .mr.developer.cfg
+
+.metadata
 .project
 .pydevproject
 *.iml

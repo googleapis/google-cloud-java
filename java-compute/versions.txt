@@ -1,0 +1,5 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-compute:1.10.0:1.10.1-SNAPSHOT
+proto-google-cloud-compute-v1:1.10.0:1.10.1-SNAPSHOT

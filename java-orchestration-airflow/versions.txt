@@ -1,0 +1,8 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-orchestration-airflow:1.2.0:1.2.0
+grpc-google-cloud-orchestration-airflow-v1:1.2.0:1.2.0
+grpc-google-cloud-orchestration-airflow-v1beta1:0.5.0:0.5.0
+proto-google-cloud-orchestration-airflow-v1:1.2.0:1.2.0
+proto-google-cloud-orchestration-airflow-v1beta1:0.5.0:0.5.0

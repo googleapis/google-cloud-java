@@ -1,0 +1,16 @@
+{
+  "release-type": "java-yoshi",
+  "separate-pull-requests": false,
+  "include-component-in-tag": true,
+  "packages": {
+    "java-accessapproval": {
+      "component": "google-cloud-accessapproval"
+    },
+    "java-accesscontextmanager": {
+      "component": "google-identity-accesscontextmanager"
+    }
+  },
+  "plugins": [
+    "maven-workspace"
+  ]
+}
