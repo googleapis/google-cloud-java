@@ -67,7 +67,7 @@ final class Endpoint {
 
   public synchronized void setChangeStateFuture(ScheduledFuture<?> future) {
     resetStateChangeFuture();
-    this.changeStateFuture = future;
+    changeStateFuture = future;
   }
 
   public synchronized void resetStateChangeFuture() {

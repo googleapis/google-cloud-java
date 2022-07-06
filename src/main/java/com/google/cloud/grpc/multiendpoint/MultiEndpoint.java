@@ -37,7 +37,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
  * priority). MultiEndpoint returns top priority endpoint that is available as current. If no
  * endpoint is available, MultiEndpoint returns the top priority endpoint.
  *
- * <p>Sometimes switching between endpoints can be costly, and it is worth to wait for some time
+ * <p>Sometimes switching between endpoints can be costly, and it is worth waiting for some time
  * after current endpoint becomes unavailable. For this case, use {@link
  * Builder#withRecoveryTimeout} to set the recovery timeout. MultiEndpoint will keep the current
  * endpoint for up to recovery timeout after it became unavailable to give it some time to recover.

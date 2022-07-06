@@ -68,6 +68,15 @@ import java.util.concurrent.TimeUnit;
  * GcpMultiEndpointOptions list defines the default MultiEndpoint that will be used when no
  * MultiEndpoint name is provided with an RPC call.
  *
+ * <p>Example:
+ *
+ * <p>Let's assume we have a service with read and write operations and the following backends:
+ * <ul>
+ *   <li>service.example.com -- the main set of backends supporting all operations</li>
+ *   <li>service-fallback.example.com -- read-write replica supporting all operations</li>
+ *   <li>ro-service.example.com -- read-only replica supporting only read operations</li>
+ * </ul>
+ *
  * <p>Example configuration:
  * <ul>
  *   <li>
@@ -85,13 +94,6 @@ import java.util.concurrent.TimeUnit;
  *       <li>service.example.com:443</li>
  *     </ol>
  *   </li>
- * </ul>
- *
- * <p>Let's assume we have a service with read and write operations and the following backends:
- * <ul>
- *   <li>service.example.com -- the main set of backends supporting all operations</li>
- *   <li>service-fallback.example.com -- read-write replica supporting all operations</li>
- *   <li>ro-service.example.com -- read-only replica supporting only read operations</li>
  * </ul>
  *
  * <p>With the configuration above GcpMultiEndpointChannel will use the "default" MultiEndpoint by
