@@ -57,14 +57,11 @@ public final class MultiEndpoint {
   private String currentId;
 
   private final Duration recoveryTimeout;
-  private final boolean recoveryEnabled;
 
   private final ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
 
   private MultiEndpoint(Builder builder) {
     this.recoveryTimeout = builder.recoveryTimeout;
-    this.recoveryEnabled =
-        !builder.recoveryTimeout.isNegative() && !builder.recoveryTimeout.isZero();
     this.setEndpoints(builder.endpoints);
   }
 
@@ -113,6 +110,10 @@ public final class MultiEndpoint {
     }
   }
 
+  private boolean isRecoveryEnabled() {
+    return !recoveryTimeout.isNegative() && !recoveryTimeout.isZero();
+  }
+
   /** Inform MultiEndpoint when an endpoint becomes available or unavailable. */
   public synchronized void setEndpointAvailable(String endpointId, boolean available) {
     setEndpointState(endpointId, available ? EndpointState.AVAILABLE : EndpointState.UNAVAILABLE);
@@ -125,7 +126,7 @@ public final class MultiEndpoint {
       return;
     }
     // If we allow some recovery time.
-    if (EndpointState.UNAVAILABLE.equals(state) && recoveryEnabled) {
+    if (EndpointState.UNAVAILABLE.equals(state) && isRecoveryEnabled()) {
       endpoint.setState(EndpointState.RECOVERING);
       ScheduledFuture<?> future =
           executor.schedule(
@@ -162,9 +163,9 @@ public final class MultiEndpoint {
         continue;
       }
       EndpointState newState =
-          recoveryEnabled ? EndpointState.RECOVERING : EndpointState.UNAVAILABLE;
+          isRecoveryEnabled() ? EndpointState.RECOVERING : EndpointState.UNAVAILABLE;
       Endpoint newEndpoint = new Endpoint(endpointId, newState, priority++);
-      if (recoveryEnabled) {
+      if (isRecoveryEnabled()) {
         ScheduledFuture<?> future =
             executor.schedule(
                 () -> setEndpointStateInternal(endpointId, EndpointState.UNAVAILABLE),
