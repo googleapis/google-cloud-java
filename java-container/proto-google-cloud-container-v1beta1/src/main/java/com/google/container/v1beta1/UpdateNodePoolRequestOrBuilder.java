@@ -28,7 +28,7 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -36,7 +36,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2202
+   *     google/container/v1beta1/cluster_service.proto;l=2399
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -46,7 +46,7 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -54,7 +54,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2202
+   *     google/container/v1beta1/cluster_service.proto;l=2399
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2211
+   *     google/container/v1beta1/cluster_service.proto;l=2408
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2211
+   *     google/container/v1beta1/cluster_service.proto;l=2408
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2218
+   *     google/container/v1beta1/cluster_service.proto;l=2415
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2218
+   *     google/container/v1beta1/cluster_service.proto;l=2415
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -144,7 +144,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2225
+   *     google/container/v1beta1/cluster_service.proto;l=2422
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -161,7 +161,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2225
+   *     google/container/v1beta1/cluster_service.proto;l=2422
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -596,6 +596,41 @@ public interface UpdateNodePoolRequestOrBuilder
    *
    *
    * <pre>
+   * Node network config.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeNetworkConfig node_network_config = 21;</code>
+   *
+   * @return Whether the nodeNetworkConfig field is set.
+   */
+  boolean hasNodeNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Node network config.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeNetworkConfig node_network_config = 21;</code>
+   *
+   * @return The nodeNetworkConfig.
+   */
+  com.google.container.v1beta1.NodeNetworkConfig getNodeNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Node network config.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodeNetworkConfig node_network_config = 21;</code>
+   */
+  com.google.container.v1beta1.NodeNetworkConfigOrBuilder getNodeNetworkConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * GCFS config.
    * </pre>
    *
@@ -626,6 +661,44 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1beta1.GcfsConfig gcfs_config = 22;</code>
    */
   com.google.container.v1beta1.GcfsConfigOrBuilder getGcfsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 23;</code>
+   *
+   * @return Whether the confidentialNodes field is set.
+   */
+  boolean hasConfidentialNodes();
+  /**
+   *
+   *
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 23;</code>
+   *
+   * @return The confidentialNodes.
+   */
+  com.google.container.v1beta1.ConfidentialNodes getConfidentialNodes();
+  /**
+   *
+   *
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 23;</code>
+   */
+  com.google.container.v1beta1.ConfidentialNodesOrBuilder getConfidentialNodesOrBuilder();
 
   /**
    *

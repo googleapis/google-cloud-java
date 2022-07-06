@@ -28,14 +28,14 @@ public interface ListClustersRequestOrBuilder
    *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ListClustersRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2334
+   *     google/container/v1/cluster_service.proto;l=2472
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -45,14 +45,14 @@ public interface ListClustersRequestOrBuilder
    *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ListClustersRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2334
+   *     google/container/v1/cluster_service.proto;l=2472
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -71,7 +71,7 @@ public interface ListClustersRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ListClustersRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2340
+   *     google/container/v1/cluster_service.proto;l=2478
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -89,7 +89,7 @@ public interface ListClustersRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ListClustersRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2340
+   *     google/container/v1/cluster_service.proto;l=2478
    * @return The bytes for zone.
    */
   @java.lang.Deprecated

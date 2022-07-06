@@ -169,6 +169,52 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
 
               break;
             }
+          case 130:
+            {
+              com.google.container.v1.NetworkTags.Builder subBuilder = null;
+              if (tags_ != null) {
+                subBuilder = tags_.toBuilder();
+              }
+              tags_ =
+                  input.readMessage(
+                      com.google.container.v1.NetworkTags.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(tags_);
+                tags_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 138:
+            {
+              com.google.container.v1.NodeTaints.Builder subBuilder = null;
+              if (taints_ != null) {
+                subBuilder = taints_.toBuilder();
+              }
+              taints_ =
+                  input.readMessage(com.google.container.v1.NodeTaints.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(taints_);
+                taints_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 146:
+            {
+              com.google.container.v1.NodeLabels.Builder subBuilder = null;
+              if (labels_ != null) {
+                subBuilder = labels_.toBuilder();
+              }
+              labels_ =
+                  input.readMessage(com.google.container.v1.NodeLabels.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(labels_);
+                labels_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 154:
             {
               com.google.container.v1.LinuxNodeConfig.Builder subBuilder = null;
@@ -201,6 +247,22 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
 
               break;
             }
+          case 170:
+            {
+              com.google.container.v1.NodeNetworkConfig.Builder subBuilder = null;
+              if (nodeNetworkConfig_ != null) {
+                subBuilder = nodeNetworkConfig_.toBuilder();
+              }
+              nodeNetworkConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.NodeNetworkConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(nodeNetworkConfig_);
+                nodeNetworkConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 178:
             {
               com.google.container.v1.GcfsConfig.Builder subBuilder = null;
@@ -212,6 +274,22 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
               if (subBuilder != null) {
                 subBuilder.mergeFrom(gcfsConfig_);
                 gcfsConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 186:
+            {
+              com.google.container.v1.ConfidentialNodes.Builder subBuilder = null;
+              if (confidentialNodes_ != null) {
+                subBuilder = confidentialNodes_.toBuilder();
+              }
+              confidentialNodes_ =
+                  input.readMessage(
+                      com.google.container.v1.ConfidentialNodes.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(confidentialNodes_);
+                confidentialNodes_ = subBuilder.buildPartial();
               }
 
               break;
@@ -277,14 +355,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2007
+   *     google/container/v1/cluster_service.proto;l=2123
    * @return The projectId.
    */
   @java.lang.Override
@@ -305,14 +383,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2007
+   *     google/container/v1/cluster_service.proto;l=2123
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -344,7 +422,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2013
+   *     google/container/v1/cluster_service.proto;l=2129
    * @return The zone.
    */
   @java.lang.Override
@@ -373,7 +451,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2013
+   *     google/container/v1/cluster_service.proto;l=2129
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -403,7 +481,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2017
+   *     google/container/v1/cluster_service.proto;l=2133
    * @return The clusterId.
    */
   @java.lang.Override
@@ -430,7 +508,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2017
+   *     google/container/v1/cluster_service.proto;l=2133
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -460,7 +538,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2021
+   *     google/container/v1/cluster_service.proto;l=2137
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -487,7 +565,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2021
+   *     google/container/v1/cluster_service.proto;l=2137
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -845,6 +923,162 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     return getUpgradeSettings();
   }
 
+  public static final int TAGS_FIELD_NUMBER = 16;
+  private com.google.container.v1.NetworkTags tags_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags to be applied to all nodes in the node pool.
+   * If this field is not present, the tags will not be changed. Otherwise,
+   * the existing network tags will be *replaced* with the provided tags.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTags tags = 16;</code>
+   *
+   * @return Whether the tags field is set.
+   */
+  @java.lang.Override
+  public boolean hasTags() {
+    return tags_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags to be applied to all nodes in the node pool.
+   * If this field is not present, the tags will not be changed. Otherwise,
+   * the existing network tags will be *replaced* with the provided tags.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTags tags = 16;</code>
+   *
+   * @return The tags.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NetworkTags getTags() {
+    return tags_ == null ? com.google.container.v1.NetworkTags.getDefaultInstance() : tags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags to be applied to all nodes in the node pool.
+   * If this field is not present, the tags will not be changed. Otherwise,
+   * the existing network tags will be *replaced* with the provided tags.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTags tags = 16;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NetworkTagsOrBuilder getTagsOrBuilder() {
+    return getTags();
+  }
+
+  public static final int TAINTS_FIELD_NUMBER = 17;
+  private com.google.container.v1.NodeTaints taints_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired node taints to be applied to all nodes in the node pool.
+   * If this field is not present, the taints will not be changed. Otherwise,
+   * the existing node taints will be *replaced* with the provided taints.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeTaints taints = 17;</code>
+   *
+   * @return Whether the taints field is set.
+   */
+  @java.lang.Override
+  public boolean hasTaints() {
+    return taints_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired node taints to be applied to all nodes in the node pool.
+   * If this field is not present, the taints will not be changed. Otherwise,
+   * the existing node taints will be *replaced* with the provided taints.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeTaints taints = 17;</code>
+   *
+   * @return The taints.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeTaints getTaints() {
+    return taints_ == null ? com.google.container.v1.NodeTaints.getDefaultInstance() : taints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired node taints to be applied to all nodes in the node pool.
+   * If this field is not present, the taints will not be changed. Otherwise,
+   * the existing node taints will be *replaced* with the provided taints.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeTaints taints = 17;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeTaintsOrBuilder getTaintsOrBuilder() {
+    return getTaints();
+  }
+
+  public static final int LABELS_FIELD_NUMBER = 18;
+  private com.google.container.v1.NodeLabels labels_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired node labels to be applied to all nodes in the node pool.
+   * If this field is not present, the labels will not be changed. Otherwise,
+   * the existing node labels will be *replaced* with the provided labels.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeLabels labels = 18;</code>
+   *
+   * @return Whether the labels field is set.
+   */
+  @java.lang.Override
+  public boolean hasLabels() {
+    return labels_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired node labels to be applied to all nodes in the node pool.
+   * If this field is not present, the labels will not be changed. Otherwise,
+   * the existing node labels will be *replaced* with the provided labels.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeLabels labels = 18;</code>
+   *
+   * @return The labels.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeLabels getLabels() {
+    return labels_ == null ? com.google.container.v1.NodeLabels.getDefaultInstance() : labels_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired node labels to be applied to all nodes in the node pool.
+   * If this field is not present, the labels will not be changed. Otherwise,
+   * the existing node labels will be *replaced* with the provided labels.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeLabels labels = 18;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeLabelsOrBuilder getLabelsOrBuilder() {
+    return getLabels();
+  }
+
   public static final int LINUX_NODE_CONFIG_FIELD_NUMBER = 19;
   private com.google.container.v1.LinuxNodeConfig linuxNodeConfig_;
   /**
@@ -941,6 +1175,54 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     return getKubeletConfig();
   }
 
+  public static final int NODE_NETWORK_CONFIG_FIELD_NUMBER = 21;
+  private com.google.container.v1.NodeNetworkConfig nodeNetworkConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Node network config.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+   *
+   * @return Whether the nodeNetworkConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodeNetworkConfig() {
+    return nodeNetworkConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Node network config.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+   *
+   * @return The nodeNetworkConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeNetworkConfig getNodeNetworkConfig() {
+    return nodeNetworkConfig_ == null
+        ? com.google.container.v1.NodeNetworkConfig.getDefaultInstance()
+        : nodeNetworkConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Node network config.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodeNetworkConfigOrBuilder getNodeNetworkConfigOrBuilder() {
+    return getNodeNetworkConfig();
+  }
+
   public static final int GCFS_CONFIG_FIELD_NUMBER = 22;
   private com.google.container.v1.GcfsConfig gcfsConfig_;
   /**
@@ -987,6 +1269,57 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.container.v1.GcfsConfigOrBuilder getGcfsConfigOrBuilder() {
     return getGcfsConfig();
+  }
+
+  public static final int CONFIDENTIAL_NODES_FIELD_NUMBER = 23;
+  private com.google.container.v1.ConfidentialNodes confidentialNodes_;
+  /**
+   *
+   *
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+   *
+   * @return Whether the confidentialNodes field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfidentialNodes() {
+    return confidentialNodes_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+   *
+   * @return The confidentialNodes.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ConfidentialNodes getConfidentialNodes() {
+    return confidentialNodes_ == null
+        ? com.google.container.v1.ConfidentialNodes.getDefaultInstance()
+        : confidentialNodes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ConfidentialNodesOrBuilder getConfidentialNodesOrBuilder() {
+    return getConfidentialNodes();
   }
 
   public static final int GVNIC_FIELD_NUMBER = 29;
@@ -1079,14 +1412,29 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (upgradeSettings_ != null) {
       output.writeMessage(15, getUpgradeSettings());
     }
+    if (tags_ != null) {
+      output.writeMessage(16, getTags());
+    }
+    if (taints_ != null) {
+      output.writeMessage(17, getTaints());
+    }
+    if (labels_ != null) {
+      output.writeMessage(18, getLabels());
+    }
     if (linuxNodeConfig_ != null) {
       output.writeMessage(19, getLinuxNodeConfig());
     }
     if (kubeletConfig_ != null) {
       output.writeMessage(20, getKubeletConfig());
     }
+    if (nodeNetworkConfig_ != null) {
+      output.writeMessage(21, getNodeNetworkConfig());
+    }
     if (gcfsConfig_ != null) {
       output.writeMessage(22, getGcfsConfig());
+    }
+    if (confidentialNodes_ != null) {
+      output.writeMessage(23, getConfidentialNodes());
     }
     if (gvnic_ != null) {
       output.writeMessage(29, getGvnic());
@@ -1136,14 +1484,29 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (upgradeSettings_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getUpgradeSettings());
     }
+    if (tags_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getTags());
+    }
+    if (taints_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getTaints());
+    }
+    if (labels_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getLabels());
+    }
     if (linuxNodeConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getLinuxNodeConfig());
     }
     if (kubeletConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getKubeletConfig());
     }
+    if (nodeNetworkConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getNodeNetworkConfig());
+    }
     if (gcfsConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getGcfsConfig());
+    }
+    if (confidentialNodes_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getConfidentialNodes());
     }
     if (gvnic_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getGvnic());
@@ -1180,6 +1543,18 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasUpgradeSettings()) {
       if (!getUpgradeSettings().equals(other.getUpgradeSettings())) return false;
     }
+    if (hasTags() != other.hasTags()) return false;
+    if (hasTags()) {
+      if (!getTags().equals(other.getTags())) return false;
+    }
+    if (hasTaints() != other.hasTaints()) return false;
+    if (hasTaints()) {
+      if (!getTaints().equals(other.getTaints())) return false;
+    }
+    if (hasLabels() != other.hasLabels()) return false;
+    if (hasLabels()) {
+      if (!getLabels().equals(other.getLabels())) return false;
+    }
     if (hasLinuxNodeConfig() != other.hasLinuxNodeConfig()) return false;
     if (hasLinuxNodeConfig()) {
       if (!getLinuxNodeConfig().equals(other.getLinuxNodeConfig())) return false;
@@ -1188,9 +1563,17 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasKubeletConfig()) {
       if (!getKubeletConfig().equals(other.getKubeletConfig())) return false;
     }
+    if (hasNodeNetworkConfig() != other.hasNodeNetworkConfig()) return false;
+    if (hasNodeNetworkConfig()) {
+      if (!getNodeNetworkConfig().equals(other.getNodeNetworkConfig())) return false;
+    }
     if (hasGcfsConfig() != other.hasGcfsConfig()) return false;
     if (hasGcfsConfig()) {
       if (!getGcfsConfig().equals(other.getGcfsConfig())) return false;
+    }
+    if (hasConfidentialNodes() != other.hasConfidentialNodes()) return false;
+    if (hasConfidentialNodes()) {
+      if (!getConfidentialNodes().equals(other.getConfidentialNodes())) return false;
     }
     if (hasGvnic() != other.hasGvnic()) return false;
     if (hasGvnic()) {
@@ -1233,6 +1616,18 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + UPGRADE_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getUpgradeSettings().hashCode();
     }
+    if (hasTags()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTags().hashCode();
+    }
+    if (hasTaints()) {
+      hash = (37 * hash) + TAINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getTaints().hashCode();
+    }
+    if (hasLabels()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + getLabels().hashCode();
+    }
     if (hasLinuxNodeConfig()) {
       hash = (37 * hash) + LINUX_NODE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getLinuxNodeConfig().hashCode();
@@ -1241,9 +1636,17 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + KUBELET_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getKubeletConfig().hashCode();
     }
+    if (hasNodeNetworkConfig()) {
+      hash = (37 * hash) + NODE_NETWORK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeNetworkConfig().hashCode();
+    }
     if (hasGcfsConfig()) {
       hash = (37 * hash) + GCFS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getGcfsConfig().hashCode();
+    }
+    if (hasConfidentialNodes()) {
+      hash = (37 * hash) + CONFIDENTIAL_NODES_FIELD_NUMBER;
+      hash = (53 * hash) + getConfidentialNodes().hashCode();
     }
     if (hasGvnic()) {
       hash = (37 * hash) + GVNIC_FIELD_NUMBER;
@@ -1422,6 +1825,24 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         upgradeSettings_ = null;
         upgradeSettingsBuilder_ = null;
       }
+      if (tagsBuilder_ == null) {
+        tags_ = null;
+      } else {
+        tags_ = null;
+        tagsBuilder_ = null;
+      }
+      if (taintsBuilder_ == null) {
+        taints_ = null;
+      } else {
+        taints_ = null;
+        taintsBuilder_ = null;
+      }
+      if (labelsBuilder_ == null) {
+        labels_ = null;
+      } else {
+        labels_ = null;
+        labelsBuilder_ = null;
+      }
       if (linuxNodeConfigBuilder_ == null) {
         linuxNodeConfig_ = null;
       } else {
@@ -1434,11 +1855,23 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         kubeletConfig_ = null;
         kubeletConfigBuilder_ = null;
       }
+      if (nodeNetworkConfigBuilder_ == null) {
+        nodeNetworkConfig_ = null;
+      } else {
+        nodeNetworkConfig_ = null;
+        nodeNetworkConfigBuilder_ = null;
+      }
       if (gcfsConfigBuilder_ == null) {
         gcfsConfig_ = null;
       } else {
         gcfsConfig_ = null;
         gcfsConfigBuilder_ = null;
+      }
+      if (confidentialNodesBuilder_ == null) {
+        confidentialNodes_ = null;
+      } else {
+        confidentialNodes_ = null;
+        confidentialNodesBuilder_ = null;
       }
       if (gvnicBuilder_ == null) {
         gvnic_ = null;
@@ -1496,6 +1929,21 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         result.upgradeSettings_ = upgradeSettingsBuilder_.build();
       }
+      if (tagsBuilder_ == null) {
+        result.tags_ = tags_;
+      } else {
+        result.tags_ = tagsBuilder_.build();
+      }
+      if (taintsBuilder_ == null) {
+        result.taints_ = taints_;
+      } else {
+        result.taints_ = taintsBuilder_.build();
+      }
+      if (labelsBuilder_ == null) {
+        result.labels_ = labels_;
+      } else {
+        result.labels_ = labelsBuilder_.build();
+      }
       if (linuxNodeConfigBuilder_ == null) {
         result.linuxNodeConfig_ = linuxNodeConfig_;
       } else {
@@ -1506,10 +1954,20 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       } else {
         result.kubeletConfig_ = kubeletConfigBuilder_.build();
       }
+      if (nodeNetworkConfigBuilder_ == null) {
+        result.nodeNetworkConfig_ = nodeNetworkConfig_;
+      } else {
+        result.nodeNetworkConfig_ = nodeNetworkConfigBuilder_.build();
+      }
       if (gcfsConfigBuilder_ == null) {
         result.gcfsConfig_ = gcfsConfig_;
       } else {
         result.gcfsConfig_ = gcfsConfigBuilder_.build();
+      }
+      if (confidentialNodesBuilder_ == null) {
+        result.confidentialNodes_ = confidentialNodes_;
+      } else {
+        result.confidentialNodes_ = confidentialNodesBuilder_.build();
       }
       if (gvnicBuilder_ == null) {
         result.gvnic_ = gvnic_;
@@ -1609,14 +2067,29 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (other.hasUpgradeSettings()) {
         mergeUpgradeSettings(other.getUpgradeSettings());
       }
+      if (other.hasTags()) {
+        mergeTags(other.getTags());
+      }
+      if (other.hasTaints()) {
+        mergeTaints(other.getTaints());
+      }
+      if (other.hasLabels()) {
+        mergeLabels(other.getLabels());
+      }
       if (other.hasLinuxNodeConfig()) {
         mergeLinuxNodeConfig(other.getLinuxNodeConfig());
       }
       if (other.hasKubeletConfig()) {
         mergeKubeletConfig(other.getKubeletConfig());
       }
+      if (other.hasNodeNetworkConfig()) {
+        mergeNodeNetworkConfig(other.getNodeNetworkConfig());
+      }
       if (other.hasGcfsConfig()) {
         mergeGcfsConfig(other.getGcfsConfig());
+      }
+      if (other.hasConfidentialNodes()) {
+        mergeConfidentialNodes(other.getConfidentialNodes());
       }
       if (other.hasGvnic()) {
         mergeGvnic(other.getGvnic());
@@ -1658,14 +2131,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2007
+     *     google/container/v1/cluster_service.proto;l=2123
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -1685,14 +2158,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2007
+     *     google/container/v1/cluster_service.proto;l=2123
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -1712,14 +2185,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2007
+     *     google/container/v1/cluster_service.proto;l=2123
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -1738,14 +2211,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2007
+     *     google/container/v1/cluster_service.proto;l=2123
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1760,14 +2233,14 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2007
+     *     google/container/v1/cluster_service.proto;l=2123
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -1797,7 +2270,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2013
+     *     google/container/v1/cluster_service.proto;l=2129
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -1825,7 +2298,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2013
+     *     google/container/v1/cluster_service.proto;l=2129
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1853,7 +2326,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2013
+     *     google/container/v1/cluster_service.proto;l=2129
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1880,7 +2353,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2013
+     *     google/container/v1/cluster_service.proto;l=2129
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1903,7 +2376,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2013
+     *     google/container/v1/cluster_service.proto;l=2129
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1931,7 +2404,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2017
+     *     google/container/v1/cluster_service.proto;l=2133
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1957,7 +2430,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2017
+     *     google/container/v1/cluster_service.proto;l=2133
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1983,7 +2456,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2017
+     *     google/container/v1/cluster_service.proto;l=2133
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -2008,7 +2481,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2017
+     *     google/container/v1/cluster_service.proto;l=2133
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2029,7 +2502,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2017
+     *     google/container/v1/cluster_service.proto;l=2133
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -2057,7 +2530,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2021
+     *     google/container/v1/cluster_service.proto;l=2137
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -2083,7 +2556,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2021
+     *     google/container/v1/cluster_service.proto;l=2137
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -2109,7 +2582,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2021
+     *     google/container/v1/cluster_service.proto;l=2137
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -2134,7 +2607,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2021
+     *     google/container/v1/cluster_service.proto;l=2137
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2155,7 +2628,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2021
+     *     google/container/v1/cluster_service.proto;l=2137
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -3118,6 +3591,601 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       return upgradeSettingsBuilder_;
     }
 
+    private com.google.container.v1.NetworkTags tags_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NetworkTags,
+            com.google.container.v1.NetworkTags.Builder,
+            com.google.container.v1.NetworkTagsOrBuilder>
+        tagsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags to be applied to all nodes in the node pool.
+     * If this field is not present, the tags will not be changed. Otherwise,
+     * the existing network tags will be *replaced* with the provided tags.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags tags = 16;</code>
+     *
+     * @return Whether the tags field is set.
+     */
+    public boolean hasTags() {
+      return tagsBuilder_ != null || tags_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags to be applied to all nodes in the node pool.
+     * If this field is not present, the tags will not be changed. Otherwise,
+     * the existing network tags will be *replaced* with the provided tags.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags tags = 16;</code>
+     *
+     * @return The tags.
+     */
+    public com.google.container.v1.NetworkTags getTags() {
+      if (tagsBuilder_ == null) {
+        return tags_ == null ? com.google.container.v1.NetworkTags.getDefaultInstance() : tags_;
+      } else {
+        return tagsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags to be applied to all nodes in the node pool.
+     * If this field is not present, the tags will not be changed. Otherwise,
+     * the existing network tags will be *replaced* with the provided tags.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags tags = 16;</code>
+     */
+    public Builder setTags(com.google.container.v1.NetworkTags value) {
+      if (tagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tags_ = value;
+        onChanged();
+      } else {
+        tagsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags to be applied to all nodes in the node pool.
+     * If this field is not present, the tags will not be changed. Otherwise,
+     * the existing network tags will be *replaced* with the provided tags.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags tags = 16;</code>
+     */
+    public Builder setTags(com.google.container.v1.NetworkTags.Builder builderForValue) {
+      if (tagsBuilder_ == null) {
+        tags_ = builderForValue.build();
+        onChanged();
+      } else {
+        tagsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags to be applied to all nodes in the node pool.
+     * If this field is not present, the tags will not be changed. Otherwise,
+     * the existing network tags will be *replaced* with the provided tags.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags tags = 16;</code>
+     */
+    public Builder mergeTags(com.google.container.v1.NetworkTags value) {
+      if (tagsBuilder_ == null) {
+        if (tags_ != null) {
+          tags_ =
+              com.google.container.v1.NetworkTags.newBuilder(tags_).mergeFrom(value).buildPartial();
+        } else {
+          tags_ = value;
+        }
+        onChanged();
+      } else {
+        tagsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags to be applied to all nodes in the node pool.
+     * If this field is not present, the tags will not be changed. Otherwise,
+     * the existing network tags will be *replaced* with the provided tags.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags tags = 16;</code>
+     */
+    public Builder clearTags() {
+      if (tagsBuilder_ == null) {
+        tags_ = null;
+        onChanged();
+      } else {
+        tags_ = null;
+        tagsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags to be applied to all nodes in the node pool.
+     * If this field is not present, the tags will not be changed. Otherwise,
+     * the existing network tags will be *replaced* with the provided tags.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags tags = 16;</code>
+     */
+    public com.google.container.v1.NetworkTags.Builder getTagsBuilder() {
+
+      onChanged();
+      return getTagsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags to be applied to all nodes in the node pool.
+     * If this field is not present, the tags will not be changed. Otherwise,
+     * the existing network tags will be *replaced* with the provided tags.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags tags = 16;</code>
+     */
+    public com.google.container.v1.NetworkTagsOrBuilder getTagsOrBuilder() {
+      if (tagsBuilder_ != null) {
+        return tagsBuilder_.getMessageOrBuilder();
+      } else {
+        return tags_ == null ? com.google.container.v1.NetworkTags.getDefaultInstance() : tags_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags to be applied to all nodes in the node pool.
+     * If this field is not present, the tags will not be changed. Otherwise,
+     * the existing network tags will be *replaced* with the provided tags.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags tags = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NetworkTags,
+            com.google.container.v1.NetworkTags.Builder,
+            com.google.container.v1.NetworkTagsOrBuilder>
+        getTagsFieldBuilder() {
+      if (tagsBuilder_ == null) {
+        tagsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NetworkTags,
+                com.google.container.v1.NetworkTags.Builder,
+                com.google.container.v1.NetworkTagsOrBuilder>(
+                getTags(), getParentForChildren(), isClean());
+        tags_ = null;
+      }
+      return tagsBuilder_;
+    }
+
+    private com.google.container.v1.NodeTaints taints_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeTaints,
+            com.google.container.v1.NodeTaints.Builder,
+            com.google.container.v1.NodeTaintsOrBuilder>
+        taintsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired node taints to be applied to all nodes in the node pool.
+     * If this field is not present, the taints will not be changed. Otherwise,
+     * the existing node taints will be *replaced* with the provided taints.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeTaints taints = 17;</code>
+     *
+     * @return Whether the taints field is set.
+     */
+    public boolean hasTaints() {
+      return taintsBuilder_ != null || taints_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node taints to be applied to all nodes in the node pool.
+     * If this field is not present, the taints will not be changed. Otherwise,
+     * the existing node taints will be *replaced* with the provided taints.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeTaints taints = 17;</code>
+     *
+     * @return The taints.
+     */
+    public com.google.container.v1.NodeTaints getTaints() {
+      if (taintsBuilder_ == null) {
+        return taints_ == null ? com.google.container.v1.NodeTaints.getDefaultInstance() : taints_;
+      } else {
+        return taintsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node taints to be applied to all nodes in the node pool.
+     * If this field is not present, the taints will not be changed. Otherwise,
+     * the existing node taints will be *replaced* with the provided taints.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeTaints taints = 17;</code>
+     */
+    public Builder setTaints(com.google.container.v1.NodeTaints value) {
+      if (taintsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        taints_ = value;
+        onChanged();
+      } else {
+        taintsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node taints to be applied to all nodes in the node pool.
+     * If this field is not present, the taints will not be changed. Otherwise,
+     * the existing node taints will be *replaced* with the provided taints.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeTaints taints = 17;</code>
+     */
+    public Builder setTaints(com.google.container.v1.NodeTaints.Builder builderForValue) {
+      if (taintsBuilder_ == null) {
+        taints_ = builderForValue.build();
+        onChanged();
+      } else {
+        taintsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node taints to be applied to all nodes in the node pool.
+     * If this field is not present, the taints will not be changed. Otherwise,
+     * the existing node taints will be *replaced* with the provided taints.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeTaints taints = 17;</code>
+     */
+    public Builder mergeTaints(com.google.container.v1.NodeTaints value) {
+      if (taintsBuilder_ == null) {
+        if (taints_ != null) {
+          taints_ =
+              com.google.container.v1.NodeTaints.newBuilder(taints_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          taints_ = value;
+        }
+        onChanged();
+      } else {
+        taintsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node taints to be applied to all nodes in the node pool.
+     * If this field is not present, the taints will not be changed. Otherwise,
+     * the existing node taints will be *replaced* with the provided taints.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeTaints taints = 17;</code>
+     */
+    public Builder clearTaints() {
+      if (taintsBuilder_ == null) {
+        taints_ = null;
+        onChanged();
+      } else {
+        taints_ = null;
+        taintsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node taints to be applied to all nodes in the node pool.
+     * If this field is not present, the taints will not be changed. Otherwise,
+     * the existing node taints will be *replaced* with the provided taints.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeTaints taints = 17;</code>
+     */
+    public com.google.container.v1.NodeTaints.Builder getTaintsBuilder() {
+
+      onChanged();
+      return getTaintsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node taints to be applied to all nodes in the node pool.
+     * If this field is not present, the taints will not be changed. Otherwise,
+     * the existing node taints will be *replaced* with the provided taints.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeTaints taints = 17;</code>
+     */
+    public com.google.container.v1.NodeTaintsOrBuilder getTaintsOrBuilder() {
+      if (taintsBuilder_ != null) {
+        return taintsBuilder_.getMessageOrBuilder();
+      } else {
+        return taints_ == null ? com.google.container.v1.NodeTaints.getDefaultInstance() : taints_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node taints to be applied to all nodes in the node pool.
+     * If this field is not present, the taints will not be changed. Otherwise,
+     * the existing node taints will be *replaced* with the provided taints.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeTaints taints = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeTaints,
+            com.google.container.v1.NodeTaints.Builder,
+            com.google.container.v1.NodeTaintsOrBuilder>
+        getTaintsFieldBuilder() {
+      if (taintsBuilder_ == null) {
+        taintsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodeTaints,
+                com.google.container.v1.NodeTaints.Builder,
+                com.google.container.v1.NodeTaintsOrBuilder>(
+                getTaints(), getParentForChildren(), isClean());
+        taints_ = null;
+      }
+      return taintsBuilder_;
+    }
+
+    private com.google.container.v1.NodeLabels labels_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeLabels,
+            com.google.container.v1.NodeLabels.Builder,
+            com.google.container.v1.NodeLabelsOrBuilder>
+        labelsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired node labels to be applied to all nodes in the node pool.
+     * If this field is not present, the labels will not be changed. Otherwise,
+     * the existing node labels will be *replaced* with the provided labels.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeLabels labels = 18;</code>
+     *
+     * @return Whether the labels field is set.
+     */
+    public boolean hasLabels() {
+      return labelsBuilder_ != null || labels_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node labels to be applied to all nodes in the node pool.
+     * If this field is not present, the labels will not be changed. Otherwise,
+     * the existing node labels will be *replaced* with the provided labels.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeLabels labels = 18;</code>
+     *
+     * @return The labels.
+     */
+    public com.google.container.v1.NodeLabels getLabels() {
+      if (labelsBuilder_ == null) {
+        return labels_ == null ? com.google.container.v1.NodeLabels.getDefaultInstance() : labels_;
+      } else {
+        return labelsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node labels to be applied to all nodes in the node pool.
+     * If this field is not present, the labels will not be changed. Otherwise,
+     * the existing node labels will be *replaced* with the provided labels.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeLabels labels = 18;</code>
+     */
+    public Builder setLabels(com.google.container.v1.NodeLabels value) {
+      if (labelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        labels_ = value;
+        onChanged();
+      } else {
+        labelsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node labels to be applied to all nodes in the node pool.
+     * If this field is not present, the labels will not be changed. Otherwise,
+     * the existing node labels will be *replaced* with the provided labels.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeLabels labels = 18;</code>
+     */
+    public Builder setLabels(com.google.container.v1.NodeLabels.Builder builderForValue) {
+      if (labelsBuilder_ == null) {
+        labels_ = builderForValue.build();
+        onChanged();
+      } else {
+        labelsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node labels to be applied to all nodes in the node pool.
+     * If this field is not present, the labels will not be changed. Otherwise,
+     * the existing node labels will be *replaced* with the provided labels.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeLabels labels = 18;</code>
+     */
+    public Builder mergeLabels(com.google.container.v1.NodeLabels value) {
+      if (labelsBuilder_ == null) {
+        if (labels_ != null) {
+          labels_ =
+              com.google.container.v1.NodeLabels.newBuilder(labels_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          labels_ = value;
+        }
+        onChanged();
+      } else {
+        labelsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node labels to be applied to all nodes in the node pool.
+     * If this field is not present, the labels will not be changed. Otherwise,
+     * the existing node labels will be *replaced* with the provided labels.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeLabels labels = 18;</code>
+     */
+    public Builder clearLabels() {
+      if (labelsBuilder_ == null) {
+        labels_ = null;
+        onChanged();
+      } else {
+        labels_ = null;
+        labelsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node labels to be applied to all nodes in the node pool.
+     * If this field is not present, the labels will not be changed. Otherwise,
+     * the existing node labels will be *replaced* with the provided labels.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeLabels labels = 18;</code>
+     */
+    public com.google.container.v1.NodeLabels.Builder getLabelsBuilder() {
+
+      onChanged();
+      return getLabelsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node labels to be applied to all nodes in the node pool.
+     * If this field is not present, the labels will not be changed. Otherwise,
+     * the existing node labels will be *replaced* with the provided labels.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeLabels labels = 18;</code>
+     */
+    public com.google.container.v1.NodeLabelsOrBuilder getLabelsOrBuilder() {
+      if (labelsBuilder_ != null) {
+        return labelsBuilder_.getMessageOrBuilder();
+      } else {
+        return labels_ == null ? com.google.container.v1.NodeLabels.getDefaultInstance() : labels_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired node labels to be applied to all nodes in the node pool.
+     * If this field is not present, the labels will not be changed. Otherwise,
+     * the existing node labels will be *replaced* with the provided labels.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeLabels labels = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeLabels,
+            com.google.container.v1.NodeLabels.Builder,
+            com.google.container.v1.NodeLabelsOrBuilder>
+        getLabelsFieldBuilder() {
+      if (labelsBuilder_ == null) {
+        labelsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodeLabels,
+                com.google.container.v1.NodeLabels.Builder,
+                com.google.container.v1.NodeLabelsOrBuilder>(
+                getLabels(), getParentForChildren(), isClean());
+        labels_ = null;
+      }
+      return labelsBuilder_;
+    }
+
     private com.google.container.v1.LinuxNodeConfig linuxNodeConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.LinuxNodeConfig,
@@ -3490,6 +4558,192 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       return kubeletConfigBuilder_;
     }
 
+    private com.google.container.v1.NodeNetworkConfig nodeNetworkConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeNetworkConfig,
+            com.google.container.v1.NodeNetworkConfig.Builder,
+            com.google.container.v1.NodeNetworkConfigOrBuilder>
+        nodeNetworkConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Node network config.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+     *
+     * @return Whether the nodeNetworkConfig field is set.
+     */
+    public boolean hasNodeNetworkConfig() {
+      return nodeNetworkConfigBuilder_ != null || nodeNetworkConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node network config.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+     *
+     * @return The nodeNetworkConfig.
+     */
+    public com.google.container.v1.NodeNetworkConfig getNodeNetworkConfig() {
+      if (nodeNetworkConfigBuilder_ == null) {
+        return nodeNetworkConfig_ == null
+            ? com.google.container.v1.NodeNetworkConfig.getDefaultInstance()
+            : nodeNetworkConfig_;
+      } else {
+        return nodeNetworkConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node network config.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+     */
+    public Builder setNodeNetworkConfig(com.google.container.v1.NodeNetworkConfig value) {
+      if (nodeNetworkConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodeNetworkConfig_ = value;
+        onChanged();
+      } else {
+        nodeNetworkConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node network config.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+     */
+    public Builder setNodeNetworkConfig(
+        com.google.container.v1.NodeNetworkConfig.Builder builderForValue) {
+      if (nodeNetworkConfigBuilder_ == null) {
+        nodeNetworkConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        nodeNetworkConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node network config.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+     */
+    public Builder mergeNodeNetworkConfig(com.google.container.v1.NodeNetworkConfig value) {
+      if (nodeNetworkConfigBuilder_ == null) {
+        if (nodeNetworkConfig_ != null) {
+          nodeNetworkConfig_ =
+              com.google.container.v1.NodeNetworkConfig.newBuilder(nodeNetworkConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          nodeNetworkConfig_ = value;
+        }
+        onChanged();
+      } else {
+        nodeNetworkConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node network config.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+     */
+    public Builder clearNodeNetworkConfig() {
+      if (nodeNetworkConfigBuilder_ == null) {
+        nodeNetworkConfig_ = null;
+        onChanged();
+      } else {
+        nodeNetworkConfig_ = null;
+        nodeNetworkConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node network config.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+     */
+    public com.google.container.v1.NodeNetworkConfig.Builder getNodeNetworkConfigBuilder() {
+
+      onChanged();
+      return getNodeNetworkConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node network config.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+     */
+    public com.google.container.v1.NodeNetworkConfigOrBuilder getNodeNetworkConfigOrBuilder() {
+      if (nodeNetworkConfigBuilder_ != null) {
+        return nodeNetworkConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return nodeNetworkConfig_ == null
+            ? com.google.container.v1.NodeNetworkConfig.getDefaultInstance()
+            : nodeNetworkConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Node network config.
+     * </pre>
+     *
+     * <code>.google.container.v1.NodeNetworkConfig node_network_config = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NodeNetworkConfig,
+            com.google.container.v1.NodeNetworkConfig.Builder,
+            com.google.container.v1.NodeNetworkConfigOrBuilder>
+        getNodeNetworkConfigFieldBuilder() {
+      if (nodeNetworkConfigBuilder_ == null) {
+        nodeNetworkConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodeNetworkConfig,
+                com.google.container.v1.NodeNetworkConfig.Builder,
+                com.google.container.v1.NodeNetworkConfigOrBuilder>(
+                getNodeNetworkConfig(), getParentForChildren(), isClean());
+        nodeNetworkConfig_ = null;
+      }
+      return nodeNetworkConfigBuilder_;
+    }
+
     private com.google.container.v1.GcfsConfig gcfsConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.GcfsConfig,
@@ -3673,6 +4927,201 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         gcfsConfig_ = null;
       }
       return gcfsConfigBuilder_;
+    }
+
+    private com.google.container.v1.ConfidentialNodes confidentialNodes_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ConfidentialNodes,
+            com.google.container.v1.ConfidentialNodes.Builder,
+            com.google.container.v1.ConfidentialNodesOrBuilder>
+        confidentialNodesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+     *
+     * @return Whether the confidentialNodes field is set.
+     */
+    public boolean hasConfidentialNodes() {
+      return confidentialNodesBuilder_ != null || confidentialNodes_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+     *
+     * @return The confidentialNodes.
+     */
+    public com.google.container.v1.ConfidentialNodes getConfidentialNodes() {
+      if (confidentialNodesBuilder_ == null) {
+        return confidentialNodes_ == null
+            ? com.google.container.v1.ConfidentialNodes.getDefaultInstance()
+            : confidentialNodes_;
+      } else {
+        return confidentialNodesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+     */
+    public Builder setConfidentialNodes(com.google.container.v1.ConfidentialNodes value) {
+      if (confidentialNodesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        confidentialNodes_ = value;
+        onChanged();
+      } else {
+        confidentialNodesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+     */
+    public Builder setConfidentialNodes(
+        com.google.container.v1.ConfidentialNodes.Builder builderForValue) {
+      if (confidentialNodesBuilder_ == null) {
+        confidentialNodes_ = builderForValue.build();
+        onChanged();
+      } else {
+        confidentialNodesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+     */
+    public Builder mergeConfidentialNodes(com.google.container.v1.ConfidentialNodes value) {
+      if (confidentialNodesBuilder_ == null) {
+        if (confidentialNodes_ != null) {
+          confidentialNodes_ =
+              com.google.container.v1.ConfidentialNodes.newBuilder(confidentialNodes_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          confidentialNodes_ = value;
+        }
+        onChanged();
+      } else {
+        confidentialNodesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+     */
+    public Builder clearConfidentialNodes() {
+      if (confidentialNodesBuilder_ == null) {
+        confidentialNodes_ = null;
+        onChanged();
+      } else {
+        confidentialNodes_ = null;
+        confidentialNodesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+     */
+    public com.google.container.v1.ConfidentialNodes.Builder getConfidentialNodesBuilder() {
+
+      onChanged();
+      return getConfidentialNodesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+     */
+    public com.google.container.v1.ConfidentialNodesOrBuilder getConfidentialNodesOrBuilder() {
+      if (confidentialNodesBuilder_ != null) {
+        return confidentialNodesBuilder_.getMessageOrBuilder();
+      } else {
+        return confidentialNodes_ == null
+            ? com.google.container.v1.ConfidentialNodes.getDefaultInstance()
+            : confidentialNodes_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1.ConfidentialNodes confidential_nodes = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ConfidentialNodes,
+            com.google.container.v1.ConfidentialNodes.Builder,
+            com.google.container.v1.ConfidentialNodesOrBuilder>
+        getConfidentialNodesFieldBuilder() {
+      if (confidentialNodesBuilder_ == null) {
+        confidentialNodesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ConfidentialNodes,
+                com.google.container.v1.ConfidentialNodes.Builder,
+                com.google.container.v1.ConfidentialNodesOrBuilder>(
+                getConfidentialNodes(), getParentForChildren(), isClean());
+        confidentialNodes_ = null;
+      }
+      return confidentialNodesBuilder_;
     }
 
     private com.google.container.v1.VirtualNIC gvnic_;

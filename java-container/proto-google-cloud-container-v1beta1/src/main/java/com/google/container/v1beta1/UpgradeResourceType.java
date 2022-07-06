@@ -154,7 +154,7 @@ public enum UpgradeResourceType implements com.google.protobuf.ProtocolMessageEn
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.container.v1beta1.ClusterServiceProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.container.v1beta1.ClusterServiceProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final UpgradeResourceType[] VALUES = values();

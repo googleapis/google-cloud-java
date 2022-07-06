@@ -27,8 +27,7 @@ public interface ConfidentialNodesOrBuilder
    *
    *
    * <pre>
-   * Whether Confidential Nodes feature is enabled for all nodes in this
-   * cluster.
+   * Whether Confidential Nodes feature is enabled.
    * </pre>
    *
    * <code>bool enabled = 1;</code>

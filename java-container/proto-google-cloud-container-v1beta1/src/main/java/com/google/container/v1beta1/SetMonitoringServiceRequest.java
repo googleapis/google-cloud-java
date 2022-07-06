@@ -152,7 +152,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -160,7 +160,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * </code>
    *
    * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2383
+   *     google/container/v1beta1/cluster_service.proto;l=2587
    * @return The projectId.
    */
   @java.lang.Override
@@ -181,7 +181,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -189,7 +189,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * </code>
    *
    * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2383
+   *     google/container/v1beta1/cluster_service.proto;l=2587
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -221,7 +221,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2392
+   *     google/container/v1beta1/cluster_service.proto;l=2596
    * @return The zone.
    */
   @java.lang.Override
@@ -250,7 +250,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2392
+   *     google/container/v1beta1/cluster_service.proto;l=2596
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -281,7 +281,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * </code>
    *
    * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2399
+   *     google/container/v1beta1/cluster_service.proto;l=2603
    * @return The clusterId.
    */
   @java.lang.Override
@@ -309,7 +309,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
    * </code>
    *
    * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2399
+   *     google/container/v1beta1/cluster_service.proto;l=2603
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -831,7 +831,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -839,7 +839,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2383
+     *     See google/container/v1beta1/cluster_service.proto;l=2587
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -859,7 +859,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -867,7 +867,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2383
+     *     See google/container/v1beta1/cluster_service.proto;l=2587
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -887,7 +887,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -895,7 +895,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2383
+     *     See google/container/v1beta1/cluster_service.proto;l=2587
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -914,7 +914,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -922,7 +922,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2383
+     *     See google/container/v1beta1/cluster_service.proto;l=2587
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -937,7 +937,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -945,7 +945,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.project_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2383
+     *     See google/container/v1beta1/cluster_service.proto;l=2587
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -975,7 +975,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2392
+     *     google/container/v1beta1/cluster_service.proto;l=2596
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -1003,7 +1003,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2392
+     *     google/container/v1beta1/cluster_service.proto;l=2596
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1031,7 +1031,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2392
+     *     google/container/v1beta1/cluster_service.proto;l=2596
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1058,7 +1058,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2392
+     *     google/container/v1beta1/cluster_service.proto;l=2596
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1081,7 +1081,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2392
+     *     google/container/v1beta1/cluster_service.proto;l=2596
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1110,7 +1110,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2399
+     *     See google/container/v1beta1/cluster_service.proto;l=2603
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1137,7 +1137,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2399
+     *     See google/container/v1beta1/cluster_service.proto;l=2603
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1164,7 +1164,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2399
+     *     See google/container/v1beta1/cluster_service.proto;l=2603
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1190,7 +1190,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2399
+     *     See google/container/v1beta1/cluster_service.proto;l=2603
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1212,7 +1212,7 @@ public final class SetMonitoringServiceRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.container.v1beta1.SetMonitoringServiceRequest.cluster_id is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2399
+     *     See google/container/v1beta1/cluster_service.proto;l=2603
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */

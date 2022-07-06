@@ -29,6 +29,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.container.v1beta1.CancelOperationRequest;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
+import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CreateClusterRequest;
 import com.google.container.v1beta1.CreateNodePoolRequest;
 import com.google.container.v1beta1.DeleteClusterRequest;
@@ -302,6 +303,16 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CompleteNodePoolUpgradeRequest, Empty>
+      completeNodePoolUpgradeMethodDescriptor =
+          MethodDescriptor.<CompleteNodePoolUpgradeRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.container.v1beta1.ClusterManager/CompleteNodePoolUpgrade")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CompleteNodePoolUpgradeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<RollbackNodePoolUpgradeRequest, Operation>
       rollbackNodePoolUpgradeMethodDescriptor =
           MethodDescriptor.<RollbackNodePoolUpgradeRequest, Operation>newBuilder()
@@ -435,6 +446,8 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   private final UnaryCallable<GetNodePoolRequest, NodePool> getNodePoolCallable;
   private final UnaryCallable<CreateNodePoolRequest, Operation> createNodePoolCallable;
   private final UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable;
+  private final UnaryCallable<CompleteNodePoolUpgradeRequest, Empty>
+      completeNodePoolUpgradeCallable;
   private final UnaryCallable<RollbackNodePoolUpgradeRequest, Operation>
       rollbackNodePoolUpgradeCallable;
   private final UnaryCallable<SetNodePoolManagementRequest, Operation>
@@ -782,6 +795,17 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<CompleteNodePoolUpgradeRequest, Empty>
+        completeNodePoolUpgradeTransportSettings =
+            GrpcCallSettings.<CompleteNodePoolUpgradeRequest, Empty>newBuilder()
+                .setMethodDescriptor(completeNodePoolUpgradeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<RollbackNodePoolUpgradeRequest, Operation>
         rollbackNodePoolUpgradeTransportSettings =
             GrpcCallSettings.<RollbackNodePoolUpgradeRequest, Operation>newBuilder()
@@ -999,6 +1023,11 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
     this.deleteNodePoolCallable =
         callableFactory.createUnaryCallable(
             deleteNodePoolTransportSettings, settings.deleteNodePoolSettings(), clientContext);
+    this.completeNodePoolUpgradeCallable =
+        callableFactory.createUnaryCallable(
+            completeNodePoolUpgradeTransportSettings,
+            settings.completeNodePoolUpgradeSettings(),
+            clientContext);
     this.rollbackNodePoolUpgradeCallable =
         callableFactory.createUnaryCallable(
             rollbackNodePoolUpgradeTransportSettings,
@@ -1164,6 +1193,11 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
   @Override
   public UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable() {
     return deleteNodePoolCallable;
+  }
+
+  @Override
+  public UnaryCallable<CompleteNodePoolUpgradeRequest, Empty> completeNodePoolUpgradeCallable() {
+    return completeNodePoolUpgradeCallable;
   }
 
   @Override

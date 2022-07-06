@@ -28,7 +28,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -36,7 +36,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNetworkPolicyRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3804
+   *     google/container/v1beta1/cluster_service.proto;l=4197
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -46,7 +46,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -54,7 +54,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNetworkPolicyRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3804
+   *     google/container/v1beta1/cluster_service.proto;l=4197
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetNetworkPolicyRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3813
+   *     google/container/v1beta1/cluster_service.proto;l=4206
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetNetworkPolicyRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3813
+   *     google/container/v1beta1/cluster_service.proto;l=4206
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNetworkPolicyRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3820
+   *     google/container/v1beta1/cluster_service.proto;l=4213
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNetworkPolicyRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3820
+   *     google/container/v1beta1/cluster_service.proto;l=4213
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -177,7 +177,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The name (project, location, cluster id) of the cluster to set networking
+   * The name (project, location, cluster name) of the cluster to set networking
    * policy. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -190,7 +190,7 @@ public interface SetNetworkPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The name (project, location, cluster id) of the cluster to set networking
+   * The name (project, location, cluster name) of the cluster to set networking
    * policy. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *

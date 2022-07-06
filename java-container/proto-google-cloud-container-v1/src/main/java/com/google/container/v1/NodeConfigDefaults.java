@@ -125,7 +125,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * GCFS (Google Container File System, a.k.a Riptide) options.
+   * GCFS (Google Container File System, a.k.a. Riptide) options.
    * </pre>
    *
    * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -140,7 +140,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * GCFS (Google Container File System, a.k.a Riptide) options.
+   * GCFS (Google Container File System, a.k.a. Riptide) options.
    * </pre>
    *
    * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -157,7 +157,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * GCFS (Google Container File System, a.k.a Riptide) options.
+   * GCFS (Google Container File System, a.k.a. Riptide) options.
    * </pre>
    *
    * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -505,7 +505,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -519,7 +519,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -539,7 +539,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -561,7 +561,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -580,7 +580,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -606,7 +606,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -626,7 +626,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -640,7 +640,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>
@@ -658,7 +658,7 @@ public final class NodeConfigDefaults extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * GCFS (Google Container File System, a.k.a Riptide) options.
+     * GCFS (Google Container File System, a.k.a. Riptide) options.
      * </pre>
      *
      * <code>.google.container.v1.GcfsConfig gcfs_config = 1;</code>

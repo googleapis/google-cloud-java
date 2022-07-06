@@ -28,14 +28,14 @@ public interface SetLegacyAbacRequestOrBuilder
    *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3138
+   *     google/container/v1/cluster_service.proto;l=3441
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -45,14 +45,14 @@ public interface SetLegacyAbacRequestOrBuilder
    *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3138
+   *     google/container/v1/cluster_service.proto;l=3441
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -71,7 +71,7 @@ public interface SetLegacyAbacRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3144
+   *     google/container/v1/cluster_service.proto;l=3447
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -89,7 +89,7 @@ public interface SetLegacyAbacRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3144
+   *     google/container/v1/cluster_service.proto;l=3447
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -106,7 +106,7 @@ public interface SetLegacyAbacRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3148
+   *     google/container/v1/cluster_service.proto;l=3451
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -122,7 +122,7 @@ public interface SetLegacyAbacRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetLegacyAbacRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3148
+   *     google/container/v1/cluster_service.proto;l=3451
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -145,8 +145,8 @@ public interface SetLegacyAbacRequestOrBuilder
    *
    *
    * <pre>
-   * The name (project, location, cluster id) of the cluster to set legacy abac.
-   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
+   * The name (project, location, cluster name) of the cluster to set legacy
+   * abac. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>
@@ -158,8 +158,8 @@ public interface SetLegacyAbacRequestOrBuilder
    *
    *
    * <pre>
-   * The name (project, location, cluster id) of the cluster to set legacy abac.
-   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
+   * The name (project, location, cluster name) of the cluster to set legacy
+   * abac. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
    * <code>string name = 6;</code>

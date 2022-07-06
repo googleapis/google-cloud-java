@@ -221,41 +221,51 @@ public interface AutoprovisioningNodePoolDefaultsOrBuilder
    *
    *
    * <pre>
-   * Minimum CPU platform to be used by this instance. The instance may be
-   * scheduled on the specified or newer CPU platform. Applicable values are the
-   * friendly names of CPU platforms, such as
-   * `minCpuPlatform: "Intel Haswell"` or
-   * `minCpuPlatform: "Intel Sandy Bridge"`. For more
+   * Deprecated. Minimum CPU platform to be used for NAP created node pools.
+   * The instance may be scheduled on the specified or newer CPU platform.
+   * Applicable values are the friendly names of CPU platforms, such as
+   * minCpuPlatform: Intel Haswell or
+   * minCpuPlatform: Intel Sandy Bridge. For more
    * information, read [how to specify min CPU
    * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * This field is deprecated, min_cpu_platform should be specified using
+   * cloud.google.com/requested-min-cpu-platform label selector on the pod.
    * To unset the min cpu platform field pass "automatic"
    * as field value.
    * </pre>
    *
-   * <code>string min_cpu_platform = 5;</code>
+   * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3854
    * @return The minCpuPlatform.
    */
+  @java.lang.Deprecated
   java.lang.String getMinCpuPlatform();
   /**
    *
    *
    * <pre>
-   * Minimum CPU platform to be used by this instance. The instance may be
-   * scheduled on the specified or newer CPU platform. Applicable values are the
-   * friendly names of CPU platforms, such as
-   * `minCpuPlatform: "Intel Haswell"` or
-   * `minCpuPlatform: "Intel Sandy Bridge"`. For more
+   * Deprecated. Minimum CPU platform to be used for NAP created node pools.
+   * The instance may be scheduled on the specified or newer CPU platform.
+   * Applicable values are the friendly names of CPU platforms, such as
+   * minCpuPlatform: Intel Haswell or
+   * minCpuPlatform: Intel Sandy Bridge. For more
    * information, read [how to specify min CPU
    * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * This field is deprecated, min_cpu_platform should be specified using
+   * cloud.google.com/requested-min-cpu-platform label selector on the pod.
    * To unset the min cpu platform field pass "automatic"
    * as field value.
    * </pre>
    *
-   * <code>string min_cpu_platform = 5;</code>
+   * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
+   * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3854
    * @return The bytes for minCpuPlatform.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getMinCpuPlatformBytes();
 
   /**

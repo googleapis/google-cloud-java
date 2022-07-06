@@ -33,6 +33,7 @@ import com.google.container.v1beta1.CancelOperationRequest;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.ClusterUpdate;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
+import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CreateClusterRequest;
 import com.google.container.v1beta1.CreateNodePoolRequest;
 import com.google.container.v1beta1.DeleteClusterRequest;
@@ -219,8 +220,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the parent field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the parent field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides,
    *     or "-" for all zones. This field has been deprecated and replaced by the parent field.
@@ -304,8 +305,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -407,8 +408,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the parent field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the parent field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the parent field.
@@ -523,8 +524,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -630,7 +631,9 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setLabels(NodeLabels.newBuilder().build())
    *           .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
    *           .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+   *           .setNodeNetworkConfig(NodeNetworkConfig.newBuilder().build())
    *           .setGcfsConfig(GcfsConfig.newBuilder().build())
+   *           .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
    *           .setGvnic(VirtualNIC.newBuilder().build())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
@@ -671,7 +674,9 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setLabels(NodeLabels.newBuilder().build())
    *           .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
    *           .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+   *           .setNodeNetworkConfig(NodeNetworkConfig.newBuilder().build())
    *           .setGcfsConfig(GcfsConfig.newBuilder().build())
+   *           .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
    *           .setGvnic(VirtualNIC.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
@@ -766,8 +771,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -876,8 +881,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -987,8 +992,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -1089,8 +1094,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -1204,8 +1209,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -1373,8 +1378,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -1477,8 +1482,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the parent field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the parent field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) to return operations for, or
    *     `-` for all zones. This field has been deprecated and replaced by the parent field.
@@ -1563,8 +1568,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -1655,8 +1660,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation
    *     resides. This field has been deprecated and replaced by the name field.
@@ -1746,8 +1751,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) to return operations for.
    *     This field has been deprecated and replaced by the name field.
@@ -1832,8 +1837,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
-   *     deprecated and replaced by the parent field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the parent field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the parent field.
@@ -1976,8 +1981,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
-   *     deprecated and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -2076,8 +2081,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
-   *     deprecated and replaced by the parent field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the parent field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the parent field.
@@ -2176,8 +2181,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
-   *     deprecated and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -2259,6 +2264,53 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * CompleteNodePoolUpgrade will signal an on-going node pool upgrade to complete.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CompleteNodePoolUpgradeRequest request =
+   *       CompleteNodePoolUpgradeRequest.newBuilder().setName("name3373707").build();
+   *   clusterManagerClient.completeNodePoolUpgrade(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void completeNodePoolUpgrade(CompleteNodePoolUpgradeRequest request) {
+    completeNodePoolUpgradeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * CompleteNodePoolUpgrade will signal an on-going node pool upgrade to complete.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CompleteNodePoolUpgradeRequest request =
+   *       CompleteNodePoolUpgradeRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Empty> future =
+   *       clusterManagerClient.completeNodePoolUpgradeCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CompleteNodePoolUpgradeRequest, Empty>
+      completeNodePoolUpgradeCallable() {
+    return stub.completeNodePoolUpgradeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Rolls back a previously Aborted or Failed NodePool upgrade. This makes no changes if the last
    * upgrade successfully completed.
    *
@@ -2278,8 +2330,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -2319,6 +2371,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setClusterId("clusterId561939637")
    *           .setNodePoolId("nodePoolId1121557241")
    *           .setName("name3373707")
+   *           .setRespectPdb(true)
    *           .build();
    *   Operation response = clusterManagerClient.rollbackNodePoolUpgrade(request);
    * }
@@ -2349,6 +2402,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setClusterId("clusterId561939637")
    *           .setNodePoolId("nodePoolId1121557241")
    *           .setName("name3373707")
+   *           .setRespectPdb(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterManagerClient.rollbackNodePoolUpgradeCallable().futureCall(request);
@@ -2384,8 +2438,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -2496,8 +2550,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
-   *     deprecated and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -2606,8 +2660,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
-   *     and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -2704,8 +2758,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
-   *     deprecated and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -2799,8 +2853,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
-   *     deprecated and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -2958,8 +3012,8 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. Deprecated. The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
-   *     deprecated and replaced by the name field.
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This
+   *     field has been deprecated and replaced by the name field.
    * @param zone Required. Deprecated. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    *     This field has been deprecated and replaced by the name field.
@@ -3058,7 +3112,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param projectId Required. The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
+   *     number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * @param zone Required. The name of the Google Compute Engine
    *     [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides.
    * @param clusterId Required. The name of the cluster to update.

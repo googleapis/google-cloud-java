@@ -91,4 +91,55 @@ public interface AcceleratorConfigOrBuilder
    * @return The bytes for gpuPartitionSize.
    */
   com.google.protobuf.ByteString getGpuPartitionSizeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of time-shared GPU resources to expose for each physical GPU.
+   * </pre>
+   *
+   * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
+   *
+   * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4104
+   * @return The maxTimeSharedClientsPerGpu.
+   */
+  @java.lang.Deprecated
+  long getMaxTimeSharedClientsPerGpu();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU sharing options.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+   *
+   * @return Whether the gpuSharingConfig field is set.
+   */
+  boolean hasGpuSharingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU sharing options.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+   *
+   * @return The gpuSharingConfig.
+   */
+  com.google.container.v1beta1.GPUSharingConfig getGpuSharingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU sharing options.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+   */
+  com.google.container.v1beta1.GPUSharingConfigOrBuilder getGpuSharingConfigOrBuilder();
 }

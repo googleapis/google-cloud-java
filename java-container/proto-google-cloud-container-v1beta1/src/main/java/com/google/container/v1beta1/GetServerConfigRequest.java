@@ -136,7 +136,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -144,7 +144,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.GetServerConfigRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2764
+   *     google/container/v1beta1/cluster_service.proto;l=2968
    * @return The projectId.
    */
   @java.lang.Override
@@ -165,7 +165,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -173,7 +173,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.GetServerConfigRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2764
+   *     google/container/v1beta1/cluster_service.proto;l=2968
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -205,7 +205,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.GetServerConfigRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2773
+   *     google/container/v1beta1/cluster_service.proto;l=2977
    * @return The zone.
    */
   @java.lang.Override
@@ -234,7 +234,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.GetServerConfigRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2773
+   *     google/container/v1beta1/cluster_service.proto;l=2977
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -658,7 +658,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -666,7 +666,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.GetServerConfigRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2764
+     *     google/container/v1beta1/cluster_service.proto;l=2968
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -686,7 +686,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -694,7 +694,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.GetServerConfigRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2764
+     *     google/container/v1beta1/cluster_service.proto;l=2968
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -714,7 +714,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -722,7 +722,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.GetServerConfigRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2764
+     *     google/container/v1beta1/cluster_service.proto;l=2968
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -741,7 +741,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -749,7 +749,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.GetServerConfigRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2764
+     *     google/container/v1beta1/cluster_service.proto;l=2968
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -764,7 +764,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -772,7 +772,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.GetServerConfigRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2764
+     *     google/container/v1beta1/cluster_service.proto;l=2968
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -802,7 +802,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.GetServerConfigRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2773
+     *     google/container/v1beta1/cluster_service.proto;l=2977
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -830,7 +830,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.GetServerConfigRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2773
+     *     google/container/v1beta1/cluster_service.proto;l=2977
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -858,7 +858,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.GetServerConfigRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2773
+     *     google/container/v1beta1/cluster_service.proto;l=2977
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -885,7 +885,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.GetServerConfigRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2773
+     *     google/container/v1beta1/cluster_service.proto;l=2977
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -908,7 +908,7 @@ public final class GetServerConfigRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.GetServerConfigRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2773
+     *     google/container/v1beta1/cluster_service.proto;l=2977
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */

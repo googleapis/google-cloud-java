@@ -28,7 +28,7 @@ public interface ListClustersRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
@@ -36,7 +36,7 @@ public interface ListClustersRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ListClustersRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2631
+   *     google/container/v1beta1/cluster_service.proto;l=2835
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -46,7 +46,7 @@ public interface ListClustersRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
@@ -54,7 +54,7 @@ public interface ListClustersRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ListClustersRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2631
+   *     google/container/v1beta1/cluster_service.proto;l=2835
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface ListClustersRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.ListClustersRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2640
+   *     google/container/v1beta1/cluster_service.proto;l=2844
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface ListClustersRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.ListClustersRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2640
+   *     google/container/v1beta1/cluster_service.proto;l=2844
    * @return The bytes for zone.
    */
   @java.lang.Deprecated

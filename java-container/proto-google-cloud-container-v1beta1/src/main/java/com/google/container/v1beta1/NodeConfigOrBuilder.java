@@ -1235,4 +1235,42 @@ public interface NodeConfigOrBuilder
    * @return The spot.
    */
   boolean getSpot();
+
+  /**
+   *
+   *
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+   *
+   * @return Whether the confidentialNodes field is set.
+   */
+  boolean hasConfidentialNodes();
+  /**
+   *
+   *
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+   *
+   * @return The confidentialNodes.
+   */
+  com.google.container.v1beta1.ConfidentialNodes getConfidentialNodes();
+  /**
+   *
+   *
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+   */
+  com.google.container.v1beta1.ConfidentialNodesOrBuilder getConfidentialNodesOrBuilder();
 }

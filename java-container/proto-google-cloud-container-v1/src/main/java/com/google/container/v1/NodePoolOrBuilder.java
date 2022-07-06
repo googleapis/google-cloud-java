@@ -273,6 +273,8 @@ public interface NodePoolOrBuilder
    * [Output only] The resource URLs of the [managed instance
    * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
+   * During the node pool blue-green upgrade operation, the URLs contain both
+   * blue and green resources.
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
@@ -287,6 +289,8 @@ public interface NodePoolOrBuilder
    * [Output only] The resource URLs of the [managed instance
    * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
+   * During the node pool blue-green upgrade operation, the URLs contain both
+   * blue and green resources.
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
@@ -301,6 +305,8 @@ public interface NodePoolOrBuilder
    * [Output only] The resource URLs of the [managed instance
    * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
+   * During the node pool blue-green upgrade operation, the URLs contain both
+   * blue and green resources.
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
@@ -316,6 +322,8 @@ public interface NodePoolOrBuilder
    * [Output only] The resource URLs of the [managed instance
    * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
+   * During the node pool blue-green upgrade operation, the URLs contain both
+   * blue and green resources.
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
@@ -362,7 +370,7 @@ public interface NodePoolOrBuilder
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2702
+   *     google/container/v1/cluster_service.proto;l=2957
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -379,7 +387,7 @@ public interface NodePoolOrBuilder
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2702
+   *     google/container/v1/cluster_service.proto;l=2957
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -595,4 +603,48 @@ public interface NodePoolOrBuilder
    * <code>.google.container.v1.NodePool.UpgradeSettings upgrade_settings = 107;</code>
    */
   com.google.container.v1.NodePool.UpgradeSettingsOrBuilder getUpgradeSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Update info contains relevant information during a node
+   * pool update.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateInfo field is set.
+   */
+  boolean hasUpdateInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Update info contains relevant information during a node
+   * pool update.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateInfo.
+   */
+  com.google.container.v1.NodePool.UpdateInfo getUpdateInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Update info contains relevant information during a node
+   * pool update.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1.NodePool.UpdateInfoOrBuilder getUpdateInfoOrBuilder();
 }

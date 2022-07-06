@@ -23,7 +23,7 @@ package com.google.container.v1beta1;
  *
  * <pre>
  * The datapath provider selects the implementation of the Kubernetes networking
- * // model for service resolution and network policy enforcement.
+ * model for service resolution and network policy enforcement.
  * </pre>
  *
  * Protobuf enum {@code google.container.v1beta1.DatapathProvider}
@@ -158,7 +158,7 @@ public enum DatapathProvider implements com.google.protobuf.ProtocolMessageEnum 
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.container.v1beta1.ClusterServiceProto.getDescriptor().getEnumTypes().get(1);
+    return com.google.container.v1beta1.ClusterServiceProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final DatapathProvider[] VALUES = values();

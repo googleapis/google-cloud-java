@@ -28,14 +28,14 @@ public interface CreateNodePoolRequestOrBuilder
    *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.CreateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2488
+   *     google/container/v1/cluster_service.proto;l=2626
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -45,14 +45,14 @@ public interface CreateNodePoolRequestOrBuilder
    *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.CreateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2488
+   *     google/container/v1/cluster_service.proto;l=2626
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -71,7 +71,7 @@ public interface CreateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.CreateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2494
+   *     google/container/v1/cluster_service.proto;l=2632
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -89,7 +89,7 @@ public interface CreateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.CreateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2494
+   *     google/container/v1/cluster_service.proto;l=2632
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -106,7 +106,7 @@ public interface CreateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.CreateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2498
+   *     google/container/v1/cluster_service.proto;l=2636
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -122,7 +122,7 @@ public interface CreateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.CreateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2498
+   *     google/container/v1/cluster_service.proto;l=2636
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -170,7 +170,7 @@ public interface CreateNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * The parent (project, location, cluster id) where the node pool will be
+   * The parent (project, location, cluster name) where the node pool will be
    * created. Specified in the format
    * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
@@ -184,7 +184,7 @@ public interface CreateNodePoolRequestOrBuilder
    *
    *
    * <pre>
-   * The parent (project, location, cluster id) where the node pool will be
+   * The parent (project, location, cluster name) where the node pool will be
    * created. Specified in the format
    * `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>

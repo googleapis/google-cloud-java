@@ -28,7 +28,7 @@ public interface DeleteClusterRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -36,7 +36,7 @@ public interface DeleteClusterRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.DeleteClusterRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2600
+   *     google/container/v1beta1/cluster_service.proto;l=2804
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -46,7 +46,7 @@ public interface DeleteClusterRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -54,7 +54,7 @@ public interface DeleteClusterRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.DeleteClusterRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2600
+   *     google/container/v1beta1/cluster_service.proto;l=2804
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface DeleteClusterRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.DeleteClusterRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2609
+   *     google/container/v1beta1/cluster_service.proto;l=2813
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface DeleteClusterRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.DeleteClusterRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2609
+   *     google/container/v1beta1/cluster_service.proto;l=2813
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface DeleteClusterRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.DeleteClusterRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2616
+   *     google/container/v1beta1/cluster_service.proto;l=2820
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface DeleteClusterRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.DeleteClusterRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2616
+   *     google/container/v1beta1/cluster_service.proto;l=2820
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

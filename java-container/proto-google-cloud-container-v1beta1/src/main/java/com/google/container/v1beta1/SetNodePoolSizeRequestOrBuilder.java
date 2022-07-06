@@ -28,7 +28,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -36,7 +36,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3354
+   *     google/container/v1beta1/cluster_service.proto;l=3678
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -46,7 +46,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -54,7 +54,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3354
+   *     google/container/v1beta1/cluster_service.proto;l=3678
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3363
+   *     google/container/v1beta1/cluster_service.proto;l=3687
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3363
+   *     google/container/v1beta1/cluster_service.proto;l=3687
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3370
+   *     google/container/v1beta1/cluster_service.proto;l=3694
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3370
+   *     google/container/v1beta1/cluster_service.proto;l=3694
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -144,7 +144,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3377
+   *     google/container/v1beta1/cluster_service.proto;l=3701
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -161,7 +161,7 @@ public interface SetNodePoolSizeRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.SetNodePoolSizeRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3377
+   *     google/container/v1beta1/cluster_service.proto;l=3701
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated

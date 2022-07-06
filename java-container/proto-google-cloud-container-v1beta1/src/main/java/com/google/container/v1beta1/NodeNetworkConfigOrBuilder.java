@@ -120,4 +120,47 @@ public interface NodeNetworkConfigOrBuilder
    * @return The bytes for podIpv4CidrBlock.
    */
   com.google.protobuf.ByteString getPodIpv4CidrBlockBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Network bandwidth tier configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.NodeNetworkConfig.NetworkPerformanceConfig network_performance_config = 11;
+   * </code>
+   *
+   * @return Whether the networkPerformanceConfig field is set.
+   */
+  boolean hasNetworkPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Network bandwidth tier configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.NodeNetworkConfig.NetworkPerformanceConfig network_performance_config = 11;
+   * </code>
+   *
+   * @return The networkPerformanceConfig.
+   */
+  com.google.container.v1beta1.NodeNetworkConfig.NetworkPerformanceConfig
+      getNetworkPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Network bandwidth tier configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.NodeNetworkConfig.NetworkPerformanceConfig network_performance_config = 11;
+   * </code>
+   */
+  com.google.container.v1beta1.NodeNetworkConfig.NetworkPerformanceConfigOrBuilder
+      getNetworkPerformanceConfigOrBuilder();
 }

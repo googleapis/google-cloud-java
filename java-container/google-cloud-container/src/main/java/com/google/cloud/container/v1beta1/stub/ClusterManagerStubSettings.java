@@ -47,6 +47,7 @@ import com.google.common.collect.Lists;
 import com.google.container.v1beta1.CancelOperationRequest;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
+import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CreateClusterRequest;
 import com.google.container.v1beta1.CreateNodePoolRequest;
 import com.google.container.v1beta1.DeleteClusterRequest;
@@ -162,6 +163,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
   private final UnaryCallSettings<GetNodePoolRequest, NodePool> getNodePoolSettings;
   private final UnaryCallSettings<CreateNodePoolRequest, Operation> createNodePoolSettings;
   private final UnaryCallSettings<DeleteNodePoolRequest, Operation> deleteNodePoolSettings;
+  private final UnaryCallSettings<CompleteNodePoolUpgradeRequest, Empty>
+      completeNodePoolUpgradeSettings;
   private final UnaryCallSettings<RollbackNodePoolUpgradeRequest, Operation>
       rollbackNodePoolUpgradeSettings;
   private final UnaryCallSettings<SetNodePoolManagementRequest, Operation>
@@ -363,6 +366,12 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     return deleteNodePoolSettings;
   }
 
+  /** Returns the object with the settings used for calls to completeNodePoolUpgrade. */
+  public UnaryCallSettings<CompleteNodePoolUpgradeRequest, Empty>
+      completeNodePoolUpgradeSettings() {
+    return completeNodePoolUpgradeSettings;
+  }
+
   /** Returns the object with the settings used for calls to rollbackNodePoolUpgrade. */
   public UnaryCallSettings<RollbackNodePoolUpgradeRequest, Operation>
       rollbackNodePoolUpgradeSettings() {
@@ -521,6 +530,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     getNodePoolSettings = settingsBuilder.getNodePoolSettings().build();
     createNodePoolSettings = settingsBuilder.createNodePoolSettings().build();
     deleteNodePoolSettings = settingsBuilder.deleteNodePoolSettings().build();
+    completeNodePoolUpgradeSettings = settingsBuilder.completeNodePoolUpgradeSettings().build();
     rollbackNodePoolUpgradeSettings = settingsBuilder.rollbackNodePoolUpgradeSettings().build();
     setNodePoolManagementSettings = settingsBuilder.setNodePoolManagementSettings().build();
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
@@ -571,6 +581,8 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
         createNodePoolSettings;
     private final UnaryCallSettings.Builder<DeleteNodePoolRequest, Operation>
         deleteNodePoolSettings;
+    private final UnaryCallSettings.Builder<CompleteNodePoolUpgradeRequest, Empty>
+        completeNodePoolUpgradeSettings;
     private final UnaryCallSettings.Builder<RollbackNodePoolUpgradeRequest, Operation>
         rollbackNodePoolUpgradeSettings;
     private final UnaryCallSettings.Builder<SetNodePoolManagementRequest, Operation>
@@ -669,6 +681,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       getNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      completeNodePoolUpgradeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       rollbackNodePoolUpgradeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setNodePoolManagementSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -706,6 +719,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               getNodePoolSettings,
               createNodePoolSettings,
               deleteNodePoolSettings,
+              completeNodePoolUpgradeSettings,
               rollbackNodePoolUpgradeSettings,
               setNodePoolManagementSettings,
               setLabelsSettings,
@@ -745,6 +759,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
       getNodePoolSettings = settings.getNodePoolSettings.toBuilder();
       createNodePoolSettings = settings.createNodePoolSettings.toBuilder();
       deleteNodePoolSettings = settings.deleteNodePoolSettings.toBuilder();
+      completeNodePoolUpgradeSettings = settings.completeNodePoolUpgradeSettings.toBuilder();
       rollbackNodePoolUpgradeSettings = settings.rollbackNodePoolUpgradeSettings.toBuilder();
       setNodePoolManagementSettings = settings.setNodePoolManagementSettings.toBuilder();
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
@@ -781,6 +796,7 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
               getNodePoolSettings,
               createNodePoolSettings,
               deleteNodePoolSettings,
+              completeNodePoolUpgradeSettings,
               rollbackNodePoolUpgradeSettings,
               setNodePoolManagementSettings,
               setLabelsSettings,
@@ -917,6 +933,11 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
           .deleteNodePoolSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .completeNodePoolUpgradeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .rollbackNodePoolUpgradeSettings()
@@ -1112,6 +1133,12 @@ public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubS
     /** Returns the builder for the settings used for calls to deleteNodePool. */
     public UnaryCallSettings.Builder<DeleteNodePoolRequest, Operation> deleteNodePoolSettings() {
       return deleteNodePoolSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to completeNodePoolUpgrade. */
+    public UnaryCallSettings.Builder<CompleteNodePoolUpgradeRequest, Empty>
+        completeNodePoolUpgradeSettings() {
+      return completeNodePoolUpgradeSettings;
     }
 
     /** Returns the builder for the settings used for calls to rollbackNodePoolUpgrade. */

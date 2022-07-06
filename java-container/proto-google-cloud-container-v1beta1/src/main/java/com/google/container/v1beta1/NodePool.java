@@ -292,6 +292,22 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 874:
+            {
+              com.google.container.v1beta1.NodePool.UpdateInfo.Builder subBuilder = null;
+              if (updateInfo_ != null) {
+                subBuilder = updateInfo_.toBuilder();
+              }
+              updateInfo_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.NodePool.UpdateInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateInfo_);
+                updateInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -629,8 +645,107 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return The maxUnavailable.
      */
     int getMaxUnavailable();
+
+    /**
+     *
+     *
+     * <pre>
+     * Update strategy of the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.NodePoolUpdateStrategy strategy = 3;</code>
+     *
+     * @return Whether the strategy field is set.
+     */
+    boolean hasStrategy();
+    /**
+     *
+     *
+     * <pre>
+     * Update strategy of the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.NodePoolUpdateStrategy strategy = 3;</code>
+     *
+     * @return The enum numeric value on the wire for strategy.
+     */
+    int getStrategyValue();
+    /**
+     *
+     *
+     * <pre>
+     * Update strategy of the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.NodePoolUpdateStrategy strategy = 3;</code>
+     *
+     * @return The strategy.
+     */
+    com.google.container.v1beta1.NodePoolUpdateStrategy getStrategy();
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for blue-green upgrade strategy.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+     *
+     * @return Whether the blueGreenSettings field is set.
+     */
+    boolean hasBlueGreenSettings();
+    /**
+     *
+     *
+     * <pre>
+     * Settings for blue-green upgrade strategy.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+     *
+     * @return The blueGreenSettings.
+     */
+    com.google.container.v1beta1.BlueGreenSettings getBlueGreenSettings();
+    /**
+     *
+     *
+     * <pre>
+     * Settings for blue-green upgrade strategy.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+     */
+    com.google.container.v1beta1.BlueGreenSettingsOrBuilder getBlueGreenSettingsOrBuilder();
   }
-  /** Protobuf type {@code google.container.v1beta1.NodePool.UpgradeSettings} */
+  /**
+   *
+   *
+   * <pre>
+   * These upgrade settings configure the upgrade strategy for the node pool.
+   * Use strategy to switch between the strategies applied to the node pool.
+   * If the strategy is SURGE, use max_surge and max_unavailable to control
+   * the level of parallelism and the level of disruption caused by upgrade.
+   * 1. maxSurge controls the number of additional nodes that can be added to
+   * the node pool temporarily for the time of the upgrade to increase the
+   * number of available nodes.
+   * 2. maxUnavailable controls the number of nodes that can be simultaneously
+   * unavailable.
+   * 3. (maxUnavailable + maxSurge) determines the level of parallelism (how
+   * many nodes are being upgraded at the same time).
+   * If the strategy is BLUE_GREEN, use blue_green_settings to configure the
+   * blue-green upgrade related settings.
+   * 1. standard_rollout_policy is the default policy. The policy is used to
+   * control the way blue pool gets drained. The draining is executed in the
+   * batch mode. The batch size could be specified as either percentage of the
+   * node pool size or the number of nodes. batch_soak_duration is the soak
+   * time after each batch gets drained.
+   * 2. node_pool_soak_duration is the soak time after all blue nodes are
+   * drained. After this period, the blue pool nodes will be deleted.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1beta1.NodePool.UpgradeSettings}
+   */
   public static final class UpgradeSettings extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.container.v1beta1.NodePool.UpgradeSettings)
@@ -641,7 +756,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private UpgradeSettings() {}
+    private UpgradeSettings() {
+      strategy_ = 0;
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -662,6 +779,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -680,6 +798,29 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 maxUnavailable_ = input.readInt32();
+                break;
+              }
+            case 24:
+              {
+                int rawValue = input.readEnum();
+                bitField0_ |= 0x00000001;
+                strategy_ = rawValue;
+                break;
+              }
+            case 34:
+              {
+                com.google.container.v1beta1.BlueGreenSettings.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000002) != 0)) {
+                  subBuilder = blueGreenSettings_.toBuilder();
+                }
+                blueGreenSettings_ =
+                    input.readMessage(
+                        com.google.container.v1beta1.BlueGreenSettings.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(blueGreenSettings_);
+                  blueGreenSettings_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00000002;
                 break;
               }
             default:
@@ -718,6 +859,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
               com.google.container.v1beta1.NodePool.UpgradeSettings.Builder.class);
     }
 
+    private int bitField0_;
     public static final int MAX_SURGE_FIELD_NUMBER = 1;
     private int maxSurge_;
     /**
@@ -757,6 +899,109 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       return maxUnavailable_;
     }
 
+    public static final int STRATEGY_FIELD_NUMBER = 3;
+    private int strategy_;
+    /**
+     *
+     *
+     * <pre>
+     * Update strategy of the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.NodePoolUpdateStrategy strategy = 3;</code>
+     *
+     * @return Whether the strategy field is set.
+     */
+    @java.lang.Override
+    public boolean hasStrategy() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update strategy of the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.NodePoolUpdateStrategy strategy = 3;</code>
+     *
+     * @return The enum numeric value on the wire for strategy.
+     */
+    @java.lang.Override
+    public int getStrategyValue() {
+      return strategy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Update strategy of the node pool.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.NodePoolUpdateStrategy strategy = 3;</code>
+     *
+     * @return The strategy.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.NodePoolUpdateStrategy getStrategy() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1beta1.NodePoolUpdateStrategy result =
+          com.google.container.v1beta1.NodePoolUpdateStrategy.valueOf(strategy_);
+      return result == null
+          ? com.google.container.v1beta1.NodePoolUpdateStrategy.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int BLUE_GREEN_SETTINGS_FIELD_NUMBER = 4;
+    private com.google.container.v1beta1.BlueGreenSettings blueGreenSettings_;
+    /**
+     *
+     *
+     * <pre>
+     * Settings for blue-green upgrade strategy.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+     *
+     * @return Whether the blueGreenSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasBlueGreenSettings() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for blue-green upgrade strategy.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+     *
+     * @return The blueGreenSettings.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.BlueGreenSettings getBlueGreenSettings() {
+      return blueGreenSettings_ == null
+          ? com.google.container.v1beta1.BlueGreenSettings.getDefaultInstance()
+          : blueGreenSettings_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for blue-green upgrade strategy.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.BlueGreenSettingsOrBuilder getBlueGreenSettingsOrBuilder() {
+      return blueGreenSettings_ == null
+          ? com.google.container.v1beta1.BlueGreenSettings.getDefaultInstance()
+          : blueGreenSettings_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -777,6 +1022,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (maxUnavailable_ != 0) {
         output.writeInt32(2, maxUnavailable_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeEnum(3, strategy_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(4, getBlueGreenSettings());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -791,6 +1042,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (maxUnavailable_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxUnavailable_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, strategy_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBlueGreenSettings());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -810,6 +1067,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
       if (getMaxSurge() != other.getMaxSurge()) return false;
       if (getMaxUnavailable() != other.getMaxUnavailable()) return false;
+      if (hasStrategy() != other.hasStrategy()) return false;
+      if (hasStrategy()) {
+        if (strategy_ != other.strategy_) return false;
+      }
+      if (hasBlueGreenSettings() != other.hasBlueGreenSettings()) return false;
+      if (hasBlueGreenSettings()) {
+        if (!getBlueGreenSettings().equals(other.getBlueGreenSettings())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -825,6 +1090,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getMaxSurge();
       hash = (37 * hash) + MAX_UNAVAILABLE_FIELD_NUMBER;
       hash = (53 * hash) + getMaxUnavailable();
+      if (hasStrategy()) {
+        hash = (37 * hash) + STRATEGY_FIELD_NUMBER;
+        hash = (53 * hash) + strategy_;
+      }
+      if (hasBlueGreenSettings()) {
+        hash = (37 * hash) + BLUE_GREEN_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getBlueGreenSettings().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -927,7 +1200,34 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-    /** Protobuf type {@code google.container.v1beta1.NodePool.UpgradeSettings} */
+    /**
+     *
+     *
+     * <pre>
+     * These upgrade settings configure the upgrade strategy for the node pool.
+     * Use strategy to switch between the strategies applied to the node pool.
+     * If the strategy is SURGE, use max_surge and max_unavailable to control
+     * the level of parallelism and the level of disruption caused by upgrade.
+     * 1. maxSurge controls the number of additional nodes that can be added to
+     * the node pool temporarily for the time of the upgrade to increase the
+     * number of available nodes.
+     * 2. maxUnavailable controls the number of nodes that can be simultaneously
+     * unavailable.
+     * 3. (maxUnavailable + maxSurge) determines the level of parallelism (how
+     * many nodes are being upgraded at the same time).
+     * If the strategy is BLUE_GREEN, use blue_green_settings to configure the
+     * blue-green upgrade related settings.
+     * 1. standard_rollout_policy is the default policy. The policy is used to
+     * control the way blue pool gets drained. The draining is executed in the
+     * batch mode. The batch size could be specified as either percentage of the
+     * node pool size or the number of nodes. batch_soak_duration is the soak
+     * time after each batch gets drained.
+     * 2. node_pool_soak_duration is the soak time after all blue nodes are
+     * drained. After this period, the blue pool nodes will be deleted.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1beta1.NodePool.UpgradeSettings}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -959,7 +1259,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
 
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getBlueGreenSettingsFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -969,6 +1271,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
         maxUnavailable_ = 0;
 
+        strategy_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (blueGreenSettingsBuilder_ == null) {
+          blueGreenSettings_ = null;
+        } else {
+          blueGreenSettingsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -996,8 +1306,23 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       public com.google.container.v1beta1.NodePool.UpgradeSettings buildPartial() {
         com.google.container.v1beta1.NodePool.UpgradeSettings result =
             new com.google.container.v1beta1.NodePool.UpgradeSettings(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.maxSurge_ = maxSurge_;
         result.maxUnavailable_ = maxUnavailable_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.strategy_ = strategy_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          if (blueGreenSettingsBuilder_ == null) {
+            result.blueGreenSettings_ = blueGreenSettings_;
+          } else {
+            result.blueGreenSettings_ = blueGreenSettingsBuilder_.build();
+          }
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1056,6 +1381,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         if (other.getMaxUnavailable() != 0) {
           setMaxUnavailable(other.getMaxUnavailable());
         }
+        if (other.hasStrategy()) {
+          setStrategy(other.getStrategy());
+        }
+        if (other.hasBlueGreenSettings()) {
+          mergeBlueGreenSettings(other.getBlueGreenSettings());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1085,6 +1416,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
+      private int bitField0_;
 
       private int maxSurge_;
       /**
@@ -1199,6 +1532,303 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int strategy_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Update strategy of the node pool.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.NodePoolUpdateStrategy strategy = 3;</code>
+       *
+       * @return Whether the strategy field is set.
+       */
+      @java.lang.Override
+      public boolean hasStrategy() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Update strategy of the node pool.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.NodePoolUpdateStrategy strategy = 3;</code>
+       *
+       * @return The enum numeric value on the wire for strategy.
+       */
+      @java.lang.Override
+      public int getStrategyValue() {
+        return strategy_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Update strategy of the node pool.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.NodePoolUpdateStrategy strategy = 3;</code>
+       *
+       * @param value The enum numeric value on the wire for strategy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStrategyValue(int value) {
+        bitField0_ |= 0x00000001;
+        strategy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Update strategy of the node pool.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.NodePoolUpdateStrategy strategy = 3;</code>
+       *
+       * @return The strategy.
+       */
+      @java.lang.Override
+      public com.google.container.v1beta1.NodePoolUpdateStrategy getStrategy() {
+        @SuppressWarnings("deprecation")
+        com.google.container.v1beta1.NodePoolUpdateStrategy result =
+            com.google.container.v1beta1.NodePoolUpdateStrategy.valueOf(strategy_);
+        return result == null
+            ? com.google.container.v1beta1.NodePoolUpdateStrategy.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Update strategy of the node pool.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.NodePoolUpdateStrategy strategy = 3;</code>
+       *
+       * @param value The strategy to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStrategy(com.google.container.v1beta1.NodePoolUpdateStrategy value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        strategy_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Update strategy of the node pool.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.NodePoolUpdateStrategy strategy = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStrategy() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        strategy_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.container.v1beta1.BlueGreenSettings blueGreenSettings_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.container.v1beta1.BlueGreenSettings,
+              com.google.container.v1beta1.BlueGreenSettings.Builder,
+              com.google.container.v1beta1.BlueGreenSettingsOrBuilder>
+          blueGreenSettingsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Settings for blue-green upgrade strategy.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+       *
+       * @return Whether the blueGreenSettings field is set.
+       */
+      public boolean hasBlueGreenSettings() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Settings for blue-green upgrade strategy.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+       *
+       * @return The blueGreenSettings.
+       */
+      public com.google.container.v1beta1.BlueGreenSettings getBlueGreenSettings() {
+        if (blueGreenSettingsBuilder_ == null) {
+          return blueGreenSettings_ == null
+              ? com.google.container.v1beta1.BlueGreenSettings.getDefaultInstance()
+              : blueGreenSettings_;
+        } else {
+          return blueGreenSettingsBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Settings for blue-green upgrade strategy.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+       */
+      public Builder setBlueGreenSettings(com.google.container.v1beta1.BlueGreenSettings value) {
+        if (blueGreenSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          blueGreenSettings_ = value;
+          onChanged();
+        } else {
+          blueGreenSettingsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Settings for blue-green upgrade strategy.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+       */
+      public Builder setBlueGreenSettings(
+          com.google.container.v1beta1.BlueGreenSettings.Builder builderForValue) {
+        if (blueGreenSettingsBuilder_ == null) {
+          blueGreenSettings_ = builderForValue.build();
+          onChanged();
+        } else {
+          blueGreenSettingsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Settings for blue-green upgrade strategy.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+       */
+      public Builder mergeBlueGreenSettings(com.google.container.v1beta1.BlueGreenSettings value) {
+        if (blueGreenSettingsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && blueGreenSettings_ != null
+              && blueGreenSettings_
+                  != com.google.container.v1beta1.BlueGreenSettings.getDefaultInstance()) {
+            blueGreenSettings_ =
+                com.google.container.v1beta1.BlueGreenSettings.newBuilder(blueGreenSettings_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            blueGreenSettings_ = value;
+          }
+          onChanged();
+        } else {
+          blueGreenSettingsBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Settings for blue-green upgrade strategy.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+       */
+      public Builder clearBlueGreenSettings() {
+        if (blueGreenSettingsBuilder_ == null) {
+          blueGreenSettings_ = null;
+          onChanged();
+        } else {
+          blueGreenSettingsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Settings for blue-green upgrade strategy.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+       */
+      public com.google.container.v1beta1.BlueGreenSettings.Builder getBlueGreenSettingsBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getBlueGreenSettingsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Settings for blue-green upgrade strategy.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+       */
+      public com.google.container.v1beta1.BlueGreenSettingsOrBuilder
+          getBlueGreenSettingsOrBuilder() {
+        if (blueGreenSettingsBuilder_ != null) {
+          return blueGreenSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          return blueGreenSettings_ == null
+              ? com.google.container.v1beta1.BlueGreenSettings.getDefaultInstance()
+              : blueGreenSettings_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Settings for blue-green upgrade strategy.
+       * </pre>
+       *
+       * <code>optional .google.container.v1beta1.BlueGreenSettings blue_green_settings = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.container.v1beta1.BlueGreenSettings,
+              com.google.container.v1beta1.BlueGreenSettings.Builder,
+              com.google.container.v1beta1.BlueGreenSettingsOrBuilder>
+          getBlueGreenSettingsFieldBuilder() {
+        if (blueGreenSettingsBuilder_ == null) {
+          blueGreenSettingsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.container.v1beta1.BlueGreenSettings,
+                  com.google.container.v1beta1.BlueGreenSettings.Builder,
+                  com.google.container.v1beta1.BlueGreenSettingsOrBuilder>(
+                  getBlueGreenSettings(), getParentForChildren(), isClean());
+          blueGreenSettings_ = null;
+        }
+        return blueGreenSettingsBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1247,6 +1877,2860 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.container.v1beta1.NodePool.UpgradeSettings getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface UpdateInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1beta1.NodePool.UpdateInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Information of a blue-green upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;</code>
+     *
+     * @return Whether the blueGreenInfo field is set.
+     */
+    boolean hasBlueGreenInfo();
+    /**
+     *
+     *
+     * <pre>
+     * Information of a blue-green upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;</code>
+     *
+     * @return The blueGreenInfo.
+     */
+    com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo getBlueGreenInfo();
+    /**
+     *
+     *
+     * <pre>
+     * Information of a blue-green upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;</code>
+     */
+    com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfoOrBuilder
+        getBlueGreenInfoOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * UpdateInfo contains resource (instance groups, etc), status and other
+   * intermediate information relevant to a node pool upgrade.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1beta1.NodePool.UpdateInfo}
+   */
+  public static final class UpdateInfo extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1beta1.NodePool.UpdateInfo)
+      UpdateInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use UpdateInfo.newBuilder() to construct.
+    private UpdateInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private UpdateInfo() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new UpdateInfo();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private UpdateInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Builder subBuilder =
+                    null;
+                if (blueGreenInfo_ != null) {
+                  subBuilder = blueGreenInfo_.toBuilder();
+                }
+                blueGreenInfo_ =
+                    input.readMessage(
+                        com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(blueGreenInfo_);
+                  blueGreenInfo_ = subBuilder.buildPartial();
+                }
+
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_NodePool_UpdateInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_NodePool_UpdateInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1beta1.NodePool.UpdateInfo.class,
+              com.google.container.v1beta1.NodePool.UpdateInfo.Builder.class);
+    }
+
+    public interface BlueGreenInfoOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Current blue-green upgrade phase.
+       * </pre>
+       *
+       * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase phase = 1;</code>
+       *
+       * @return The enum numeric value on the wire for phase.
+       */
+      int getPhaseValue();
+      /**
+       *
+       *
+       * <pre>
+       * Current blue-green upgrade phase.
+       * </pre>
+       *
+       * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase phase = 1;</code>
+       *
+       * @return The phase.
+       */
+      com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase getPhase();
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with blue pool.
+       * </pre>
+       *
+       * <code>repeated string blue_instance_group_urls = 2;</code>
+       *
+       * @return A list containing the blueInstanceGroupUrls.
+       */
+      java.util.List<java.lang.String> getBlueInstanceGroupUrlsList();
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with blue pool.
+       * </pre>
+       *
+       * <code>repeated string blue_instance_group_urls = 2;</code>
+       *
+       * @return The count of blueInstanceGroupUrls.
+       */
+      int getBlueInstanceGroupUrlsCount();
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with blue pool.
+       * </pre>
+       *
+       * <code>repeated string blue_instance_group_urls = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The blueInstanceGroupUrls at the given index.
+       */
+      java.lang.String getBlueInstanceGroupUrls(int index);
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with blue pool.
+       * </pre>
+       *
+       * <code>repeated string blue_instance_group_urls = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the blueInstanceGroupUrls at the given index.
+       */
+      com.google.protobuf.ByteString getBlueInstanceGroupUrlsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with green pool.
+       * </pre>
+       *
+       * <code>repeated string green_instance_group_urls = 3;</code>
+       *
+       * @return A list containing the greenInstanceGroupUrls.
+       */
+      java.util.List<java.lang.String> getGreenInstanceGroupUrlsList();
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with green pool.
+       * </pre>
+       *
+       * <code>repeated string green_instance_group_urls = 3;</code>
+       *
+       * @return The count of greenInstanceGroupUrls.
+       */
+      int getGreenInstanceGroupUrlsCount();
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with green pool.
+       * </pre>
+       *
+       * <code>repeated string green_instance_group_urls = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The greenInstanceGroupUrls at the given index.
+       */
+      java.lang.String getGreenInstanceGroupUrls(int index);
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with green pool.
+       * </pre>
+       *
+       * <code>repeated string green_instance_group_urls = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the greenInstanceGroupUrls at the given index.
+       */
+      com.google.protobuf.ByteString getGreenInstanceGroupUrlsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Time to start deleting blue pool to complete blue-green upgrade,
+       * in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+       * </pre>
+       *
+       * <code>string blue_pool_deletion_start_time = 4;</code>
+       *
+       * @return The bluePoolDeletionStartTime.
+       */
+      java.lang.String getBluePoolDeletionStartTime();
+      /**
+       *
+       *
+       * <pre>
+       * Time to start deleting blue pool to complete blue-green upgrade,
+       * in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+       * </pre>
+       *
+       * <code>string blue_pool_deletion_start_time = 4;</code>
+       *
+       * @return The bytes for bluePoolDeletionStartTime.
+       */
+      com.google.protobuf.ByteString getBluePoolDeletionStartTimeBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Version of green pool.
+       * </pre>
+       *
+       * <code>string green_pool_version = 5;</code>
+       *
+       * @return The greenPoolVersion.
+       */
+      java.lang.String getGreenPoolVersion();
+      /**
+       *
+       *
+       * <pre>
+       * Version of green pool.
+       * </pre>
+       *
+       * <code>string green_pool_version = 5;</code>
+       *
+       * @return The bytes for greenPoolVersion.
+       */
+      com.google.protobuf.ByteString getGreenPoolVersionBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information relevant to blue-green upgrade.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo}
+     */
+    public static final class BlueGreenInfo extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo)
+        BlueGreenInfoOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use BlueGreenInfo.newBuilder() to construct.
+      private BlueGreenInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private BlueGreenInfo() {
+        phase_ = 0;
+        blueInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        greenInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bluePoolDeletionStartTime_ = "";
+        greenPoolVersion_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new BlueGreenInfo();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+        return this.unknownFields;
+      }
+
+      private BlueGreenInfo(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  int rawValue = input.readEnum();
+
+                  phase_ = rawValue;
+                  break;
+                }
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                    blueInstanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList();
+                    mutable_bitField0_ |= 0x00000001;
+                  }
+                  blueInstanceGroupUrls_.add(s);
+                  break;
+                }
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                    greenInstanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList();
+                    mutable_bitField0_ |= 0x00000002;
+                  }
+                  greenInstanceGroupUrls_.add(s);
+                  break;
+                }
+              case 34:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  bluePoolDeletionStartTime_ = s;
+                  break;
+                }
+              case 42:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  greenPoolVersion_ = s;
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000001) != 0)) {
+            blueInstanceGroupUrls_ = blueInstanceGroupUrls_.getUnmodifiableView();
+          }
+          if (((mutable_bitField0_ & 0x00000002) != 0)) {
+            greenInstanceGroupUrls_ = greenInstanceGroupUrls_.getUnmodifiableView();
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NodePool_UpdateInfo_BlueGreenInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NodePool_UpdateInfo_BlueGreenInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.class,
+                com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Phase represents the different stages blue-green upgrade is running in.
+       * </pre>
+       *
+       * Protobuf enum {@code google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase}
+       */
+      public enum Phase implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified phase.
+         * </pre>
+         *
+         * <code>PHASE_UNSPECIFIED = 0;</code>
+         */
+        PHASE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * blue-green upgrade has been initiated.
+         * </pre>
+         *
+         * <code>UPDATE_STARTED = 1;</code>
+         */
+        UPDATE_STARTED(1),
+        /**
+         *
+         *
+         * <pre>
+         * Start creating green pool nodes.
+         * </pre>
+         *
+         * <code>CREATING_GREEN_POOL = 2;</code>
+         */
+        CREATING_GREEN_POOL(2),
+        /**
+         *
+         *
+         * <pre>
+         * Start cordoning blue pool nodes.
+         * </pre>
+         *
+         * <code>CORDONING_BLUE_POOL = 3;</code>
+         */
+        CORDONING_BLUE_POOL(3),
+        /**
+         *
+         *
+         * <pre>
+         * Start draining blue pool nodes.
+         * </pre>
+         *
+         * <code>DRAINING_BLUE_POOL = 4;</code>
+         */
+        DRAINING_BLUE_POOL(4),
+        /**
+         *
+         *
+         * <pre>
+         * Start soaking time after draining entire blue pool.
+         * </pre>
+         *
+         * <code>NODE_POOL_SOAKING = 5;</code>
+         */
+        NODE_POOL_SOAKING(5),
+        /**
+         *
+         *
+         * <pre>
+         * Start deleting blue nodes.
+         * </pre>
+         *
+         * <code>DELETING_BLUE_POOL = 6;</code>
+         */
+        DELETING_BLUE_POOL(6),
+        /**
+         *
+         *
+         * <pre>
+         * Rollback has been initiated.
+         * </pre>
+         *
+         * <code>ROLLBACK_STARTED = 7;</code>
+         */
+        ROLLBACK_STARTED(7),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified phase.
+         * </pre>
+         *
+         * <code>PHASE_UNSPECIFIED = 0;</code>
+         */
+        public static final int PHASE_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * blue-green upgrade has been initiated.
+         * </pre>
+         *
+         * <code>UPDATE_STARTED = 1;</code>
+         */
+        public static final int UPDATE_STARTED_VALUE = 1;
+        /**
+         *
+         *
+         * <pre>
+         * Start creating green pool nodes.
+         * </pre>
+         *
+         * <code>CREATING_GREEN_POOL = 2;</code>
+         */
+        public static final int CREATING_GREEN_POOL_VALUE = 2;
+        /**
+         *
+         *
+         * <pre>
+         * Start cordoning blue pool nodes.
+         * </pre>
+         *
+         * <code>CORDONING_BLUE_POOL = 3;</code>
+         */
+        public static final int CORDONING_BLUE_POOL_VALUE = 3;
+        /**
+         *
+         *
+         * <pre>
+         * Start draining blue pool nodes.
+         * </pre>
+         *
+         * <code>DRAINING_BLUE_POOL = 4;</code>
+         */
+        public static final int DRAINING_BLUE_POOL_VALUE = 4;
+        /**
+         *
+         *
+         * <pre>
+         * Start soaking time after draining entire blue pool.
+         * </pre>
+         *
+         * <code>NODE_POOL_SOAKING = 5;</code>
+         */
+        public static final int NODE_POOL_SOAKING_VALUE = 5;
+        /**
+         *
+         *
+         * <pre>
+         * Start deleting blue nodes.
+         * </pre>
+         *
+         * <code>DELETING_BLUE_POOL = 6;</code>
+         */
+        public static final int DELETING_BLUE_POOL_VALUE = 6;
+        /**
+         *
+         *
+         * <pre>
+         * Rollback has been initiated.
+         * </pre>
+         *
+         * <code>ROLLBACK_STARTED = 7;</code>
+         */
+        public static final int ROLLBACK_STARTED_VALUE = 7;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static Phase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static Phase forNumber(int value) {
+          switch (value) {
+            case 0:
+              return PHASE_UNSPECIFIED;
+            case 1:
+              return UPDATE_STARTED;
+            case 2:
+              return CREATING_GREEN_POOL;
+            case 3:
+              return CORDONING_BLUE_POOL;
+            case 4:
+              return DRAINING_BLUE_POOL;
+            case 5:
+              return NODE_POOL_SOAKING;
+            case 6:
+              return DELETING_BLUE_POOL;
+            case 7:
+              return ROLLBACK_STARTED;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<Phase> internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<Phase> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<Phase>() {
+              public Phase findValueByNumber(int number) {
+                return Phase.forNumber(number);
+              }
+            };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final Phase[] VALUES = values();
+
+        public static Phase valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private Phase(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase)
+      }
+
+      public static final int PHASE_FIELD_NUMBER = 1;
+      private int phase_;
+      /**
+       *
+       *
+       * <pre>
+       * Current blue-green upgrade phase.
+       * </pre>
+       *
+       * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase phase = 1;</code>
+       *
+       * @return The enum numeric value on the wire for phase.
+       */
+      @java.lang.Override
+      public int getPhaseValue() {
+        return phase_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Current blue-green upgrade phase.
+       * </pre>
+       *
+       * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase phase = 1;</code>
+       *
+       * @return The phase.
+       */
+      @java.lang.Override
+      public com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase getPhase() {
+        @SuppressWarnings("deprecation")
+        com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase result =
+            com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase.valueOf(phase_);
+        return result == null
+            ? com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase.UNRECOGNIZED
+            : result;
+      }
+
+      public static final int BLUE_INSTANCE_GROUP_URLS_FIELD_NUMBER = 2;
+      private com.google.protobuf.LazyStringList blueInstanceGroupUrls_;
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with blue pool.
+       * </pre>
+       *
+       * <code>repeated string blue_instance_group_urls = 2;</code>
+       *
+       * @return A list containing the blueInstanceGroupUrls.
+       */
+      public com.google.protobuf.ProtocolStringList getBlueInstanceGroupUrlsList() {
+        return blueInstanceGroupUrls_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with blue pool.
+       * </pre>
+       *
+       * <code>repeated string blue_instance_group_urls = 2;</code>
+       *
+       * @return The count of blueInstanceGroupUrls.
+       */
+      public int getBlueInstanceGroupUrlsCount() {
+        return blueInstanceGroupUrls_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with blue pool.
+       * </pre>
+       *
+       * <code>repeated string blue_instance_group_urls = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The blueInstanceGroupUrls at the given index.
+       */
+      public java.lang.String getBlueInstanceGroupUrls(int index) {
+        return blueInstanceGroupUrls_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with blue pool.
+       * </pre>
+       *
+       * <code>repeated string blue_instance_group_urls = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the blueInstanceGroupUrls at the given index.
+       */
+      public com.google.protobuf.ByteString getBlueInstanceGroupUrlsBytes(int index) {
+        return blueInstanceGroupUrls_.getByteString(index);
+      }
+
+      public static final int GREEN_INSTANCE_GROUP_URLS_FIELD_NUMBER = 3;
+      private com.google.protobuf.LazyStringList greenInstanceGroupUrls_;
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with green pool.
+       * </pre>
+       *
+       * <code>repeated string green_instance_group_urls = 3;</code>
+       *
+       * @return A list containing the greenInstanceGroupUrls.
+       */
+      public com.google.protobuf.ProtocolStringList getGreenInstanceGroupUrlsList() {
+        return greenInstanceGroupUrls_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with green pool.
+       * </pre>
+       *
+       * <code>repeated string green_instance_group_urls = 3;</code>
+       *
+       * @return The count of greenInstanceGroupUrls.
+       */
+      public int getGreenInstanceGroupUrlsCount() {
+        return greenInstanceGroupUrls_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with green pool.
+       * </pre>
+       *
+       * <code>repeated string green_instance_group_urls = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The greenInstanceGroupUrls at the given index.
+       */
+      public java.lang.String getGreenInstanceGroupUrls(int index) {
+        return greenInstanceGroupUrls_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The resource URLs of the [managed instance groups]
+       * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+       * associated with green pool.
+       * </pre>
+       *
+       * <code>repeated string green_instance_group_urls = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the greenInstanceGroupUrls at the given index.
+       */
+      public com.google.protobuf.ByteString getGreenInstanceGroupUrlsBytes(int index) {
+        return greenInstanceGroupUrls_.getByteString(index);
+      }
+
+      public static final int BLUE_POOL_DELETION_START_TIME_FIELD_NUMBER = 4;
+      private volatile java.lang.Object bluePoolDeletionStartTime_;
+      /**
+       *
+       *
+       * <pre>
+       * Time to start deleting blue pool to complete blue-green upgrade,
+       * in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+       * </pre>
+       *
+       * <code>string blue_pool_deletion_start_time = 4;</code>
+       *
+       * @return The bluePoolDeletionStartTime.
+       */
+      @java.lang.Override
+      public java.lang.String getBluePoolDeletionStartTime() {
+        java.lang.Object ref = bluePoolDeletionStartTime_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          bluePoolDeletionStartTime_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Time to start deleting blue pool to complete blue-green upgrade,
+       * in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+       * </pre>
+       *
+       * <code>string blue_pool_deletion_start_time = 4;</code>
+       *
+       * @return The bytes for bluePoolDeletionStartTime.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getBluePoolDeletionStartTimeBytes() {
+        java.lang.Object ref = bluePoolDeletionStartTime_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          bluePoolDeletionStartTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int GREEN_POOL_VERSION_FIELD_NUMBER = 5;
+      private volatile java.lang.Object greenPoolVersion_;
+      /**
+       *
+       *
+       * <pre>
+       * Version of green pool.
+       * </pre>
+       *
+       * <code>string green_pool_version = 5;</code>
+       *
+       * @return The greenPoolVersion.
+       */
+      @java.lang.Override
+      public java.lang.String getGreenPoolVersion() {
+        java.lang.Object ref = greenPoolVersion_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          greenPoolVersion_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Version of green pool.
+       * </pre>
+       *
+       * <code>string green_pool_version = 5;</code>
+       *
+       * @return The bytes for greenPoolVersion.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getGreenPoolVersionBytes() {
+        java.lang.Object ref = greenPoolVersion_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          greenPoolVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (phase_
+            != com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase
+                .PHASE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(1, phase_);
+        }
+        for (int i = 0; i < blueInstanceGroupUrls_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(
+              output, 2, blueInstanceGroupUrls_.getRaw(i));
+        }
+        for (int i = 0; i < greenInstanceGroupUrls_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(
+              output, 3, greenInstanceGroupUrls_.getRaw(i));
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bluePoolDeletionStartTime_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, bluePoolDeletionStartTime_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(greenPoolVersion_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, greenPoolVersion_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (phase_
+            != com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase
+                .PHASE_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, phase_);
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < blueInstanceGroupUrls_.size(); i++) {
+            dataSize += computeStringSizeNoTag(blueInstanceGroupUrls_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getBlueInstanceGroupUrlsList().size();
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < greenInstanceGroupUrls_.size(); i++) {
+            dataSize += computeStringSizeNoTag(greenInstanceGroupUrls_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getGreenInstanceGroupUrlsList().size();
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bluePoolDeletionStartTime_)) {
+          size +=
+              com.google.protobuf.GeneratedMessageV3.computeStringSize(
+                  4, bluePoolDeletionStartTime_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(greenPoolVersion_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, greenPoolVersion_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo)) {
+          return super.equals(obj);
+        }
+        com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo other =
+            (com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo) obj;
+
+        if (phase_ != other.phase_) return false;
+        if (!getBlueInstanceGroupUrlsList().equals(other.getBlueInstanceGroupUrlsList()))
+          return false;
+        if (!getGreenInstanceGroupUrlsList().equals(other.getGreenInstanceGroupUrlsList()))
+          return false;
+        if (!getBluePoolDeletionStartTime().equals(other.getBluePoolDeletionStartTime()))
+          return false;
+        if (!getGreenPoolVersion().equals(other.getGreenPoolVersion())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + PHASE_FIELD_NUMBER;
+        hash = (53 * hash) + phase_;
+        if (getBlueInstanceGroupUrlsCount() > 0) {
+          hash = (37 * hash) + BLUE_INSTANCE_GROUP_URLS_FIELD_NUMBER;
+          hash = (53 * hash) + getBlueInstanceGroupUrlsList().hashCode();
+        }
+        if (getGreenInstanceGroupUrlsCount() > 0) {
+          hash = (37 * hash) + GREEN_INSTANCE_GROUP_URLS_FIELD_NUMBER;
+          hash = (53 * hash) + getGreenInstanceGroupUrlsList().hashCode();
+        }
+        hash = (37 * hash) + BLUE_POOL_DELETION_START_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getBluePoolDeletionStartTime().hashCode();
+        hash = (37 * hash) + GREEN_POOL_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getGreenPoolVersion().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information relevant to blue-green upgrade.
+       * </pre>
+       *
+       * Protobuf type {@code google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo)
+          com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfoOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.container.v1beta1.ClusterServiceProto
+              .internal_static_google_container_v1beta1_NodePool_UpdateInfo_BlueGreenInfo_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.container.v1beta1.ClusterServiceProto
+              .internal_static_google_container_v1beta1_NodePool_UpdateInfo_BlueGreenInfo_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.class,
+                  com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Builder.class);
+        }
+
+        // Construct using
+        // com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          phase_ = 0;
+
+          blueInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          greenInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          bluePoolDeletionStartTime_ = "";
+
+          greenPoolVersion_ = "";
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.container.v1beta1.ClusterServiceProto
+              .internal_static_google_container_v1beta1_NodePool_UpdateInfo_BlueGreenInfo_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo
+            getDefaultInstanceForType() {
+          return com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo build() {
+          com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo buildPartial() {
+          com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo result =
+              new com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo(this);
+          int from_bitField0_ = bitField0_;
+          result.phase_ = phase_;
+          if (((bitField0_ & 0x00000001) != 0)) {
+            blueInstanceGroupUrls_ = blueInstanceGroupUrls_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.blueInstanceGroupUrls_ = blueInstanceGroupUrls_;
+          if (((bitField0_ & 0x00000002) != 0)) {
+            greenInstanceGroupUrls_ = greenInstanceGroupUrls_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.greenInstanceGroupUrls_ = greenInstanceGroupUrls_;
+          result.bluePoolDeletionStartTime_ = bluePoolDeletionStartTime_;
+          result.greenPoolVersion_ = greenPoolVersion_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo) {
+            return mergeFrom(
+                (com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo other) {
+          if (other
+              == com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo
+                  .getDefaultInstance()) return this;
+          if (other.phase_ != 0) {
+            setPhaseValue(other.getPhaseValue());
+          }
+          if (!other.blueInstanceGroupUrls_.isEmpty()) {
+            if (blueInstanceGroupUrls_.isEmpty()) {
+              blueInstanceGroupUrls_ = other.blueInstanceGroupUrls_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureBlueInstanceGroupUrlsIsMutable();
+              blueInstanceGroupUrls_.addAll(other.blueInstanceGroupUrls_);
+            }
+            onChanged();
+          }
+          if (!other.greenInstanceGroupUrls_.isEmpty()) {
+            if (greenInstanceGroupUrls_.isEmpty()) {
+              greenInstanceGroupUrls_ = other.greenInstanceGroupUrls_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureGreenInstanceGroupUrlsIsMutable();
+              greenInstanceGroupUrls_.addAll(other.greenInstanceGroupUrls_);
+            }
+            onChanged();
+          }
+          if (!other.getBluePoolDeletionStartTime().isEmpty()) {
+            bluePoolDeletionStartTime_ = other.bluePoolDeletionStartTime_;
+            onChanged();
+          }
+          if (!other.getGreenPoolVersion().isEmpty()) {
+            greenPoolVersion_ = other.greenPoolVersion_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage =
+                (com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo)
+                    e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int phase_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Current blue-green upgrade phase.
+         * </pre>
+         *
+         * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase phase = 1;</code>
+         *
+         * @return The enum numeric value on the wire for phase.
+         */
+        @java.lang.Override
+        public int getPhaseValue() {
+          return phase_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Current blue-green upgrade phase.
+         * </pre>
+         *
+         * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase phase = 1;</code>
+         *
+         * @param value The enum numeric value on the wire for phase to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPhaseValue(int value) {
+
+          phase_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Current blue-green upgrade phase.
+         * </pre>
+         *
+         * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase phase = 1;</code>
+         *
+         * @return The phase.
+         */
+        @java.lang.Override
+        public com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase getPhase() {
+          @SuppressWarnings("deprecation")
+          com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase result =
+              com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase.valueOf(phase_);
+          return result == null
+              ? com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Current blue-green upgrade phase.
+         * </pre>
+         *
+         * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase phase = 1;</code>
+         *
+         * @param value The phase to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPhase(
+            com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          phase_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Current blue-green upgrade phase.
+         * </pre>
+         *
+         * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Phase phase = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPhase() {
+
+          phase_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringList blueInstanceGroupUrls_ =
+            com.google.protobuf.LazyStringArrayList.EMPTY;
+
+        private void ensureBlueInstanceGroupUrlsIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            blueInstanceGroupUrls_ =
+                new com.google.protobuf.LazyStringArrayList(blueInstanceGroupUrls_);
+            bitField0_ |= 0x00000001;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with blue pool.
+         * </pre>
+         *
+         * <code>repeated string blue_instance_group_urls = 2;</code>
+         *
+         * @return A list containing the blueInstanceGroupUrls.
+         */
+        public com.google.protobuf.ProtocolStringList getBlueInstanceGroupUrlsList() {
+          return blueInstanceGroupUrls_.getUnmodifiableView();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with blue pool.
+         * </pre>
+         *
+         * <code>repeated string blue_instance_group_urls = 2;</code>
+         *
+         * @return The count of blueInstanceGroupUrls.
+         */
+        public int getBlueInstanceGroupUrlsCount() {
+          return blueInstanceGroupUrls_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with blue pool.
+         * </pre>
+         *
+         * <code>repeated string blue_instance_group_urls = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The blueInstanceGroupUrls at the given index.
+         */
+        public java.lang.String getBlueInstanceGroupUrls(int index) {
+          return blueInstanceGroupUrls_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with blue pool.
+         * </pre>
+         *
+         * <code>repeated string blue_instance_group_urls = 2;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the blueInstanceGroupUrls at the given index.
+         */
+        public com.google.protobuf.ByteString getBlueInstanceGroupUrlsBytes(int index) {
+          return blueInstanceGroupUrls_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with blue pool.
+         * </pre>
+         *
+         * <code>repeated string blue_instance_group_urls = 2;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The blueInstanceGroupUrls to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBlueInstanceGroupUrls(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBlueInstanceGroupUrlsIsMutable();
+          blueInstanceGroupUrls_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with blue pool.
+         * </pre>
+         *
+         * <code>repeated string blue_instance_group_urls = 2;</code>
+         *
+         * @param value The blueInstanceGroupUrls to add.
+         * @return This builder for chaining.
+         */
+        public Builder addBlueInstanceGroupUrls(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBlueInstanceGroupUrlsIsMutable();
+          blueInstanceGroupUrls_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with blue pool.
+         * </pre>
+         *
+         * <code>repeated string blue_instance_group_urls = 2;</code>
+         *
+         * @param values The blueInstanceGroupUrls to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllBlueInstanceGroupUrls(java.lang.Iterable<java.lang.String> values) {
+          ensureBlueInstanceGroupUrlsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blueInstanceGroupUrls_);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with blue pool.
+         * </pre>
+         *
+         * <code>repeated string blue_instance_group_urls = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBlueInstanceGroupUrls() {
+          blueInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with blue pool.
+         * </pre>
+         *
+         * <code>repeated string blue_instance_group_urls = 2;</code>
+         *
+         * @param value The bytes of the blueInstanceGroupUrls to add.
+         * @return This builder for chaining.
+         */
+        public Builder addBlueInstanceGroupUrlsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureBlueInstanceGroupUrlsIsMutable();
+          blueInstanceGroupUrls_.add(value);
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringList greenInstanceGroupUrls_ =
+            com.google.protobuf.LazyStringArrayList.EMPTY;
+
+        private void ensureGreenInstanceGroupUrlsIsMutable() {
+          if (!((bitField0_ & 0x00000002) != 0)) {
+            greenInstanceGroupUrls_ =
+                new com.google.protobuf.LazyStringArrayList(greenInstanceGroupUrls_);
+            bitField0_ |= 0x00000002;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with green pool.
+         * </pre>
+         *
+         * <code>repeated string green_instance_group_urls = 3;</code>
+         *
+         * @return A list containing the greenInstanceGroupUrls.
+         */
+        public com.google.protobuf.ProtocolStringList getGreenInstanceGroupUrlsList() {
+          return greenInstanceGroupUrls_.getUnmodifiableView();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with green pool.
+         * </pre>
+         *
+         * <code>repeated string green_instance_group_urls = 3;</code>
+         *
+         * @return The count of greenInstanceGroupUrls.
+         */
+        public int getGreenInstanceGroupUrlsCount() {
+          return greenInstanceGroupUrls_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with green pool.
+         * </pre>
+         *
+         * <code>repeated string green_instance_group_urls = 3;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The greenInstanceGroupUrls at the given index.
+         */
+        public java.lang.String getGreenInstanceGroupUrls(int index) {
+          return greenInstanceGroupUrls_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with green pool.
+         * </pre>
+         *
+         * <code>repeated string green_instance_group_urls = 3;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the greenInstanceGroupUrls at the given index.
+         */
+        public com.google.protobuf.ByteString getGreenInstanceGroupUrlsBytes(int index) {
+          return greenInstanceGroupUrls_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with green pool.
+         * </pre>
+         *
+         * <code>repeated string green_instance_group_urls = 3;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The greenInstanceGroupUrls to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGreenInstanceGroupUrls(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGreenInstanceGroupUrlsIsMutable();
+          greenInstanceGroupUrls_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with green pool.
+         * </pre>
+         *
+         * <code>repeated string green_instance_group_urls = 3;</code>
+         *
+         * @param value The greenInstanceGroupUrls to add.
+         * @return This builder for chaining.
+         */
+        public Builder addGreenInstanceGroupUrls(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGreenInstanceGroupUrlsIsMutable();
+          greenInstanceGroupUrls_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with green pool.
+         * </pre>
+         *
+         * <code>repeated string green_instance_group_urls = 3;</code>
+         *
+         * @param values The greenInstanceGroupUrls to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllGreenInstanceGroupUrls(java.lang.Iterable<java.lang.String> values) {
+          ensureGreenInstanceGroupUrlsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, greenInstanceGroupUrls_);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with green pool.
+         * </pre>
+         *
+         * <code>repeated string green_instance_group_urls = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearGreenInstanceGroupUrls() {
+          greenInstanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The resource URLs of the [managed instance groups]
+         * (/compute/docs/instance-groups/creating-groups-of-managed-instances)
+         * associated with green pool.
+         * </pre>
+         *
+         * <code>repeated string green_instance_group_urls = 3;</code>
+         *
+         * @param value The bytes of the greenInstanceGroupUrls to add.
+         * @return This builder for chaining.
+         */
+        public Builder addGreenInstanceGroupUrlsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureGreenInstanceGroupUrlsIsMutable();
+          greenInstanceGroupUrls_.add(value);
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object bluePoolDeletionStartTime_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Time to start deleting blue pool to complete blue-green upgrade,
+         * in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+         * </pre>
+         *
+         * <code>string blue_pool_deletion_start_time = 4;</code>
+         *
+         * @return The bluePoolDeletionStartTime.
+         */
+        public java.lang.String getBluePoolDeletionStartTime() {
+          java.lang.Object ref = bluePoolDeletionStartTime_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            bluePoolDeletionStartTime_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Time to start deleting blue pool to complete blue-green upgrade,
+         * in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+         * </pre>
+         *
+         * <code>string blue_pool_deletion_start_time = 4;</code>
+         *
+         * @return The bytes for bluePoolDeletionStartTime.
+         */
+        public com.google.protobuf.ByteString getBluePoolDeletionStartTimeBytes() {
+          java.lang.Object ref = bluePoolDeletionStartTime_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            bluePoolDeletionStartTime_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Time to start deleting blue pool to complete blue-green upgrade,
+         * in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+         * </pre>
+         *
+         * <code>string blue_pool_deletion_start_time = 4;</code>
+         *
+         * @param value The bluePoolDeletionStartTime to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBluePoolDeletionStartTime(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          bluePoolDeletionStartTime_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Time to start deleting blue pool to complete blue-green upgrade,
+         * in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+         * </pre>
+         *
+         * <code>string blue_pool_deletion_start_time = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBluePoolDeletionStartTime() {
+
+          bluePoolDeletionStartTime_ = getDefaultInstance().getBluePoolDeletionStartTime();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Time to start deleting blue pool to complete blue-green upgrade,
+         * in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+         * </pre>
+         *
+         * <code>string blue_pool_deletion_start_time = 4;</code>
+         *
+         * @param value The bytes for bluePoolDeletionStartTime to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBluePoolDeletionStartTimeBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          bluePoolDeletionStartTime_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object greenPoolVersion_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Version of green pool.
+         * </pre>
+         *
+         * <code>string green_pool_version = 5;</code>
+         *
+         * @return The greenPoolVersion.
+         */
+        public java.lang.String getGreenPoolVersion() {
+          java.lang.Object ref = greenPoolVersion_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            greenPoolVersion_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Version of green pool.
+         * </pre>
+         *
+         * <code>string green_pool_version = 5;</code>
+         *
+         * @return The bytes for greenPoolVersion.
+         */
+        public com.google.protobuf.ByteString getGreenPoolVersionBytes() {
+          java.lang.Object ref = greenPoolVersion_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            greenPoolVersion_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Version of green pool.
+         * </pre>
+         *
+         * <code>string green_pool_version = 5;</code>
+         *
+         * @param value The greenPoolVersion to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGreenPoolVersion(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          greenPoolVersion_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Version of green pool.
+         * </pre>
+         *
+         * <code>string green_pool_version = 5;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearGreenPoolVersion() {
+
+          greenPoolVersion_ = getDefaultInstance().getGreenPoolVersion();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Version of green pool.
+         * </pre>
+         *
+         * <code>string green_pool_version = 5;</code>
+         *
+         * @param value The bytes for greenPoolVersion to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGreenPoolVersionBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
+          greenPoolVersion_ = value;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo)
+      private static final com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo();
+      }
+
+      public static com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<BlueGreenInfo> PARSER =
+          new com.google.protobuf.AbstractParser<BlueGreenInfo>() {
+            @java.lang.Override
+            public BlueGreenInfo parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new BlueGreenInfo(input, extensionRegistry);
+            }
+          };
+
+      public static com.google.protobuf.Parser<BlueGreenInfo> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BlueGreenInfo> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int BLUE_GREEN_INFO_FIELD_NUMBER = 1;
+    private com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blueGreenInfo_;
+    /**
+     *
+     *
+     * <pre>
+     * Information of a blue-green upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;</code>
+     *
+     * @return Whether the blueGreenInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasBlueGreenInfo() {
+      return blueGreenInfo_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information of a blue-green upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;</code>
+     *
+     * @return The blueGreenInfo.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo getBlueGreenInfo() {
+      return blueGreenInfo_ == null
+          ? com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.getDefaultInstance()
+          : blueGreenInfo_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information of a blue-green upgrade.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfoOrBuilder
+        getBlueGreenInfoOrBuilder() {
+      return getBlueGreenInfo();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (blueGreenInfo_ != null) {
+        output.writeMessage(1, getBlueGreenInfo());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (blueGreenInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBlueGreenInfo());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1beta1.NodePool.UpdateInfo)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1beta1.NodePool.UpdateInfo other =
+          (com.google.container.v1beta1.NodePool.UpdateInfo) obj;
+
+      if (hasBlueGreenInfo() != other.hasBlueGreenInfo()) return false;
+      if (hasBlueGreenInfo()) {
+        if (!getBlueGreenInfo().equals(other.getBlueGreenInfo())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBlueGreenInfo()) {
+        hash = (37 * hash) + BLUE_GREEN_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getBlueGreenInfo().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1beta1.NodePool.UpdateInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.NodePool.UpdateInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodePool.UpdateInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.NodePool.UpdateInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodePool.UpdateInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.NodePool.UpdateInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodePool.UpdateInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.NodePool.UpdateInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodePool.UpdateInfo parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.NodePool.UpdateInfo parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.NodePool.UpdateInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.NodePool.UpdateInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.container.v1beta1.NodePool.UpdateInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * UpdateInfo contains resource (instance groups, etc), status and other
+     * intermediate information relevant to a node pool upgrade.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1beta1.NodePool.UpdateInfo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1beta1.NodePool.UpdateInfo)
+        com.google.container.v1beta1.NodePool.UpdateInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NodePool_UpdateInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NodePool_UpdateInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1beta1.NodePool.UpdateInfo.class,
+                com.google.container.v1beta1.NodePool.UpdateInfo.Builder.class);
+      }
+
+      // Construct using com.google.container.v1beta1.NodePool.UpdateInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (blueGreenInfoBuilder_ == null) {
+          blueGreenInfo_ = null;
+        } else {
+          blueGreenInfo_ = null;
+          blueGreenInfoBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_NodePool_UpdateInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.NodePool.UpdateInfo getDefaultInstanceForType() {
+        return com.google.container.v1beta1.NodePool.UpdateInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.NodePool.UpdateInfo build() {
+        com.google.container.v1beta1.NodePool.UpdateInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.NodePool.UpdateInfo buildPartial() {
+        com.google.container.v1beta1.NodePool.UpdateInfo result =
+            new com.google.container.v1beta1.NodePool.UpdateInfo(this);
+        if (blueGreenInfoBuilder_ == null) {
+          result.blueGreenInfo_ = blueGreenInfo_;
+        } else {
+          result.blueGreenInfo_ = blueGreenInfoBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1beta1.NodePool.UpdateInfo) {
+          return mergeFrom((com.google.container.v1beta1.NodePool.UpdateInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.container.v1beta1.NodePool.UpdateInfo other) {
+        if (other == com.google.container.v1beta1.NodePool.UpdateInfo.getDefaultInstance())
+          return this;
+        if (other.hasBlueGreenInfo()) {
+          mergeBlueGreenInfo(other.getBlueGreenInfo());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.container.v1beta1.NodePool.UpdateInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.container.v1beta1.NodePool.UpdateInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blueGreenInfo_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo,
+              com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Builder,
+              com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfoOrBuilder>
+          blueGreenInfoBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Information of a blue-green upgrade.
+       * </pre>
+       *
+       * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;
+       * </code>
+       *
+       * @return Whether the blueGreenInfo field is set.
+       */
+      public boolean hasBlueGreenInfo() {
+        return blueGreenInfoBuilder_ != null || blueGreenInfo_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information of a blue-green upgrade.
+       * </pre>
+       *
+       * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;
+       * </code>
+       *
+       * @return The blueGreenInfo.
+       */
+      public com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo getBlueGreenInfo() {
+        if (blueGreenInfoBuilder_ == null) {
+          return blueGreenInfo_ == null
+              ? com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.getDefaultInstance()
+              : blueGreenInfo_;
+        } else {
+          return blueGreenInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information of a blue-green upgrade.
+       * </pre>
+       *
+       * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;
+       * </code>
+       */
+      public Builder setBlueGreenInfo(
+          com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo value) {
+        if (blueGreenInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          blueGreenInfo_ = value;
+          onChanged();
+        } else {
+          blueGreenInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information of a blue-green upgrade.
+       * </pre>
+       *
+       * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;
+       * </code>
+       */
+      public Builder setBlueGreenInfo(
+          com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Builder builderForValue) {
+        if (blueGreenInfoBuilder_ == null) {
+          blueGreenInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          blueGreenInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information of a blue-green upgrade.
+       * </pre>
+       *
+       * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;
+       * </code>
+       */
+      public Builder mergeBlueGreenInfo(
+          com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo value) {
+        if (blueGreenInfoBuilder_ == null) {
+          if (blueGreenInfo_ != null) {
+            blueGreenInfo_ =
+                com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.newBuilder(
+                        blueGreenInfo_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            blueGreenInfo_ = value;
+          }
+          onChanged();
+        } else {
+          blueGreenInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information of a blue-green upgrade.
+       * </pre>
+       *
+       * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;
+       * </code>
+       */
+      public Builder clearBlueGreenInfo() {
+        if (blueGreenInfoBuilder_ == null) {
+          blueGreenInfo_ = null;
+          onChanged();
+        } else {
+          blueGreenInfo_ = null;
+          blueGreenInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information of a blue-green upgrade.
+       * </pre>
+       *
+       * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;
+       * </code>
+       */
+      public com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Builder
+          getBlueGreenInfoBuilder() {
+
+        onChanged();
+        return getBlueGreenInfoFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information of a blue-green upgrade.
+       * </pre>
+       *
+       * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;
+       * </code>
+       */
+      public com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfoOrBuilder
+          getBlueGreenInfoOrBuilder() {
+        if (blueGreenInfoBuilder_ != null) {
+          return blueGreenInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return blueGreenInfo_ == null
+              ? com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.getDefaultInstance()
+              : blueGreenInfo_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information of a blue-green upgrade.
+       * </pre>
+       *
+       * <code>.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo blue_green_info = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo,
+              com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Builder,
+              com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfoOrBuilder>
+          getBlueGreenInfoFieldBuilder() {
+        if (blueGreenInfoBuilder_ == null) {
+          blueGreenInfoBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo,
+                  com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfo.Builder,
+                  com.google.container.v1beta1.NodePool.UpdateInfo.BlueGreenInfoOrBuilder>(
+                  getBlueGreenInfo(), getParentForChildren(), isClean());
+          blueGreenInfo_ = null;
+        }
+        return blueGreenInfoBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1beta1.NodePool.UpdateInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1beta1.NodePool.UpdateInfo)
+    private static final com.google.container.v1beta1.NodePool.UpdateInfo DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1beta1.NodePool.UpdateInfo();
+    }
+
+    public static com.google.container.v1beta1.NodePool.UpdateInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateInfo> PARSER =
+        new com.google.protobuf.AbstractParser<UpdateInfo>() {
+          @java.lang.Override
+          public UpdateInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new UpdateInfo(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<UpdateInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1beta1.NodePool.UpdateInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -2389,6 +5873,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * [Output only] The resource URLs of the [managed instance
    * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
+   * During the node pool blue-green upgrade operation, the URLs contain both
+   * blue and green resources.
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
@@ -2405,6 +5891,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * [Output only] The resource URLs of the [managed instance
    * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
+   * During the node pool blue-green upgrade operation, the URLs contain both
+   * blue and green resources.
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
@@ -2421,6 +5909,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * [Output only] The resource URLs of the [managed instance
    * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
+   * During the node pool blue-green upgrade operation, the URLs contain both
+   * blue and green resources.
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
@@ -2438,6 +5928,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * [Output only] The resource URLs of the [managed instance
    * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
    * associated with this node pool.
+   * During the node pool blue-green upgrade operation, the URLs contain both
+   * blue and green resources.
    * </pre>
    *
    * <code>repeated string instance_group_urls = 102;</code>
@@ -2499,7 +5991,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3131
+   *     google/container/v1beta1/cluster_service.proto;l=3451
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -2527,7 +6019,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3131
+   *     google/container/v1beta1/cluster_service.proto;l=3451
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -2879,6 +6371,63 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     return getPlacementPolicy();
   }
 
+  public static final int UPDATE_INFO_FIELD_NUMBER = 109;
+  private com.google.container.v1beta1.NodePool.UpdateInfo updateInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Update info contains relevant information during a node
+   * pool update.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateInfo() {
+    return updateInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Update info contains relevant information during a node
+   * pool update.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateInfo.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodePool.UpdateInfo getUpdateInfo() {
+    return updateInfo_ == null
+        ? com.google.container.v1beta1.NodePool.UpdateInfo.getDefaultInstance()
+        : updateInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Update info contains relevant information during a node
+   * pool update.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodePool.UpdateInfoOrBuilder getUpdateInfoOrBuilder() {
+    return getUpdateInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2943,6 +6492,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (placementPolicy_ != null) {
       output.writeMessage(108, getPlacementPolicy());
+    }
+    if (updateInfo_ != null) {
+      output.writeMessage(109, getUpdateInfo());
     }
     unknownFields.writeTo(output);
   }
@@ -3014,6 +6566,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (placementPolicy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(108, getPlacementPolicy());
     }
+    if (updateInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(109, getUpdateInfo());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3066,6 +6621,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (hasPlacementPolicy() != other.hasPlacementPolicy()) return false;
     if (hasPlacementPolicy()) {
       if (!getPlacementPolicy().equals(other.getPlacementPolicy())) return false;
+    }
+    if (hasUpdateInfo() != other.hasUpdateInfo()) return false;
+    if (hasUpdateInfo()) {
+      if (!getUpdateInfo().equals(other.getUpdateInfo())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -3131,6 +6690,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (hasPlacementPolicy()) {
       hash = (37 * hash) + PLACEMENT_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getPlacementPolicy().hashCode();
+    }
+    if (hasUpdateInfo()) {
+      hash = (37 * hash) + UPDATE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateInfo().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -3367,6 +6930,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         placementPolicy_ = null;
         placementPolicyBuilder_ = null;
       }
+      if (updateInfoBuilder_ == null) {
+        updateInfo_ = null;
+      } else {
+        updateInfo_ = null;
+        updateInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -3455,6 +7024,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         result.placementPolicy_ = placementPolicy_;
       } else {
         result.placementPolicy_ = placementPolicyBuilder_.build();
+      }
+      if (updateInfoBuilder_ == null) {
+        result.updateInfo_ = updateInfo_;
+      } else {
+        result.updateInfo_ = updateInfoBuilder_.build();
       }
       onBuilt();
       return result;
@@ -3597,6 +7171,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPlacementPolicy()) {
         mergePlacementPolicy(other.getPlacementPolicy());
+      }
+      if (other.hasUpdateInfo()) {
+        mergeUpdateInfo(other.getUpdateInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4635,6 +8212,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
+     * During the node pool blue-green upgrade operation, the URLs contain both
+     * blue and green resources.
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
@@ -4651,6 +8230,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
+     * During the node pool blue-green upgrade operation, the URLs contain both
+     * blue and green resources.
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
@@ -4667,6 +8248,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
+     * During the node pool blue-green upgrade operation, the URLs contain both
+     * blue and green resources.
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
@@ -4684,6 +8267,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
+     * During the node pool blue-green upgrade operation, the URLs contain both
+     * blue and green resources.
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
@@ -4701,6 +8286,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
+     * During the node pool blue-green upgrade operation, the URLs contain both
+     * blue and green resources.
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
@@ -4725,6 +8312,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
+     * During the node pool blue-green upgrade operation, the URLs contain both
+     * blue and green resources.
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
@@ -4748,6 +8337,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
+     * During the node pool blue-green upgrade operation, the URLs contain both
+     * blue and green resources.
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
@@ -4768,6 +8359,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
+     * During the node pool blue-green upgrade operation, the URLs contain both
+     * blue and green resources.
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
@@ -4787,6 +8380,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * [Output only] The resource URLs of the [managed instance
      * groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
      * associated with this node pool.
+     * During the node pool blue-green upgrade operation, the URLs contain both
+     * blue and green resources.
      * </pre>
      *
      * <code>repeated string instance_group_urls = 102;</code>
@@ -4909,7 +8504,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3131
+     *     google/container/v1beta1/cluster_service.proto;l=3451
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -4936,7 +8531,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3131
+     *     google/container/v1beta1/cluster_service.proto;l=3451
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -4963,7 +8558,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3131
+     *     google/container/v1beta1/cluster_service.proto;l=3451
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -4989,7 +8584,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3131
+     *     google/container/v1beta1/cluster_service.proto;l=3451
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5011,7 +8606,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3131
+     *     google/container/v1beta1/cluster_service.proto;l=3451
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -6382,6 +9977,219 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         placementPolicy_ = null;
       }
       return placementPolicyBuilder_;
+    }
+
+    private com.google.container.v1beta1.NodePool.UpdateInfo updateInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodePool.UpdateInfo,
+            com.google.container.v1beta1.NodePool.UpdateInfo.Builder,
+            com.google.container.v1beta1.NodePool.UpdateInfoOrBuilder>
+        updateInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Update info contains relevant information during a node
+     * pool update.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateInfo field is set.
+     */
+    public boolean hasUpdateInfo() {
+      return updateInfoBuilder_ != null || updateInfo_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Update info contains relevant information during a node
+     * pool update.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateInfo.
+     */
+    public com.google.container.v1beta1.NodePool.UpdateInfo getUpdateInfo() {
+      if (updateInfoBuilder_ == null) {
+        return updateInfo_ == null
+            ? com.google.container.v1beta1.NodePool.UpdateInfo.getDefaultInstance()
+            : updateInfo_;
+      } else {
+        return updateInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Update info contains relevant information during a node
+     * pool update.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateInfo(com.google.container.v1beta1.NodePool.UpdateInfo value) {
+      if (updateInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateInfo_ = value;
+        onChanged();
+      } else {
+        updateInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Update info contains relevant information during a node
+     * pool update.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateInfo(
+        com.google.container.v1beta1.NodePool.UpdateInfo.Builder builderForValue) {
+      if (updateInfoBuilder_ == null) {
+        updateInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        updateInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Update info contains relevant information during a node
+     * pool update.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateInfo(com.google.container.v1beta1.NodePool.UpdateInfo value) {
+      if (updateInfoBuilder_ == null) {
+        if (updateInfo_ != null) {
+          updateInfo_ =
+              com.google.container.v1beta1.NodePool.UpdateInfo.newBuilder(updateInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          updateInfo_ = value;
+        }
+        onChanged();
+      } else {
+        updateInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Update info contains relevant information during a node
+     * pool update.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateInfo() {
+      if (updateInfoBuilder_ == null) {
+        updateInfo_ = null;
+        onChanged();
+      } else {
+        updateInfo_ = null;
+        updateInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Update info contains relevant information during a node
+     * pool update.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.NodePool.UpdateInfo.Builder getUpdateInfoBuilder() {
+
+      onChanged();
+      return getUpdateInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Update info contains relevant information during a node
+     * pool update.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.NodePool.UpdateInfoOrBuilder getUpdateInfoOrBuilder() {
+      if (updateInfoBuilder_ != null) {
+        return updateInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return updateInfo_ == null
+            ? com.google.container.v1beta1.NodePool.UpdateInfo.getDefaultInstance()
+            : updateInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] Update info contains relevant information during a node
+     * pool update.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.NodePool.UpdateInfo update_info = 109 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodePool.UpdateInfo,
+            com.google.container.v1beta1.NodePool.UpdateInfo.Builder,
+            com.google.container.v1beta1.NodePool.UpdateInfoOrBuilder>
+        getUpdateInfoFieldBuilder() {
+      if (updateInfoBuilder_ == null) {
+        updateInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.NodePool.UpdateInfo,
+                com.google.container.v1beta1.NodePool.UpdateInfo.Builder,
+                com.google.container.v1beta1.NodePool.UpdateInfoOrBuilder>(
+                getUpdateInfo(), getParentForChildren(), isClean());
+        updateInfo_ = null;
+      }
+      return updateInfoBuilder_;
     }
 
     @java.lang.Override

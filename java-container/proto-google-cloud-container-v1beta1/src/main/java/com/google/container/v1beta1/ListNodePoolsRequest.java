@@ -144,7 +144,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
@@ -152,7 +152,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2932
+   *     google/container/v1beta1/cluster_service.proto;l=3136
    * @return The projectId.
    */
   @java.lang.Override
@@ -173,7 +173,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
@@ -181,7 +181,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2932
+   *     google/container/v1beta1/cluster_service.proto;l=3136
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -213,7 +213,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2941
+   *     google/container/v1beta1/cluster_service.proto;l=3145
    * @return The zone.
    */
   @java.lang.Override
@@ -242,7 +242,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2941
+   *     google/container/v1beta1/cluster_service.proto;l=3145
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -273,7 +273,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2948
+   *     google/container/v1beta1/cluster_service.proto;l=3152
    * @return The clusterId.
    */
   @java.lang.Override
@@ -301,7 +301,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2948
+   *     google/container/v1beta1/cluster_service.proto;l=3152
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -324,7 +324,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The parent (project, location, cluster id) where the node pools will be
+   * The parent (project, location, cluster name) where the node pools will be
    * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -348,7 +348,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The parent (project, location, cluster id) where the node pools will be
+   * The parent (project, location, cluster name) where the node pools will be
    * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -741,7 +741,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
@@ -749,7 +749,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2932
+     *     google/container/v1beta1/cluster_service.proto;l=3136
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -769,7 +769,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
@@ -777,7 +777,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2932
+     *     google/container/v1beta1/cluster_service.proto;l=3136
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -797,7 +797,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
@@ -805,7 +805,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2932
+     *     google/container/v1beta1/cluster_service.proto;l=3136
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -824,7 +824,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
@@ -832,7 +832,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2932
+     *     google/container/v1beta1/cluster_service.proto;l=3136
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -847,7 +847,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
@@ -855,7 +855,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2932
+     *     google/container/v1beta1/cluster_service.proto;l=3136
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -885,7 +885,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2941
+     *     google/container/v1beta1/cluster_service.proto;l=3145
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -913,7 +913,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2941
+     *     google/container/v1beta1/cluster_service.proto;l=3145
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -941,7 +941,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2941
+     *     google/container/v1beta1/cluster_service.proto;l=3145
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -968,7 +968,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2941
+     *     google/container/v1beta1/cluster_service.proto;l=3145
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -991,7 +991,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2941
+     *     google/container/v1beta1/cluster_service.proto;l=3145
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1020,7 +1020,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2948
+     *     google/container/v1beta1/cluster_service.proto;l=3152
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1047,7 +1047,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2948
+     *     google/container/v1beta1/cluster_service.proto;l=3152
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1074,7 +1074,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2948
+     *     google/container/v1beta1/cluster_service.proto;l=3152
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1100,7 +1100,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2948
+     *     google/container/v1beta1/cluster_service.proto;l=3152
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1122,7 +1122,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2948
+     *     google/container/v1beta1/cluster_service.proto;l=3152
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1143,7 +1143,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The parent (project, location, cluster id) where the node pools will be
+     * The parent (project, location, cluster name) where the node pools will be
      * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -1166,7 +1166,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The parent (project, location, cluster id) where the node pools will be
+     * The parent (project, location, cluster name) where the node pools will be
      * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -1189,7 +1189,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The parent (project, location, cluster id) where the node pools will be
+     * The parent (project, location, cluster name) where the node pools will be
      * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -1211,7 +1211,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The parent (project, location, cluster id) where the node pools will be
+     * The parent (project, location, cluster name) where the node pools will be
      * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -1229,7 +1229,7 @@ public final class ListNodePoolsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The parent (project, location, cluster id) where the node pools will be
+     * The parent (project, location, cluster name) where the node pools will be
      * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *

@@ -23,6 +23,10 @@ package com.google.container.v1beta1;
  *
  * <pre>
  * Parameters that describe the nodes in a cluster.
+ * GKE Autopilot clusters do not
+ * recognize parameters in `NodeConfig`. Use
+ * [AutoprovisioningNodePoolDefaults][google.container.v1beta1.AutoprovisioningNodePoolDefaults]
+ * instead.
  * </pre>
  *
  * Protobuf type {@code google.container.v1beta1.NodeConfig}
@@ -383,6 +387,22 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
           case 256:
             {
               spot_ = input.readBool();
+              break;
+            }
+          case 282:
+            {
+              com.google.container.v1beta1.ConfidentialNodes.Builder subBuilder = null;
+              if (confidentialNodes_ != null) {
+                subBuilder = confidentialNodes_.toBuilder();
+              }
+              confidentialNodes_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.ConfidentialNodes.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(confidentialNodes_);
+                confidentialNodes_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -2079,6 +2099,57 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     return spot_;
   }
 
+  public static final int CONFIDENTIAL_NODES_FIELD_NUMBER = 35;
+  private com.google.container.v1beta1.ConfidentialNodes confidentialNodes_;
+  /**
+   *
+   *
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+   *
+   * @return Whether the confidentialNodes field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfidentialNodes() {
+    return confidentialNodes_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+   *
+   * @return The confidentialNodes.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ConfidentialNodes getConfidentialNodes() {
+    return confidentialNodes_ == null
+        ? com.google.container.v1beta1.ConfidentialNodes.getDefaultInstance()
+        : confidentialNodes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Confidential nodes config.
+   * All the nodes in the node pool will be Confidential VM once enabled.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ConfidentialNodesOrBuilder getConfidentialNodesOrBuilder() {
+    return getConfidentialNodes();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2171,6 +2242,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (spot_ != false) {
       output.writeBool(32, spot_);
+    }
+    if (confidentialNodes_ != null) {
+      output.writeMessage(35, getConfidentialNodes());
     }
     unknownFields.writeTo(output);
   }
@@ -2292,6 +2366,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (spot_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(32, spot_);
     }
+    if (confidentialNodes_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(35, getConfidentialNodes());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2364,6 +2441,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getGvnic().equals(other.getGvnic())) return false;
     }
     if (getSpot() != other.getSpot()) return false;
+    if (hasConfidentialNodes() != other.hasConfidentialNodes()) return false;
+    if (hasConfidentialNodes()) {
+      if (!getConfidentialNodes().equals(other.getConfidentialNodes())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2461,6 +2542,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SPOT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSpot());
+    if (hasConfidentialNodes()) {
+      hash = (37 * hash) + CONFIDENTIAL_NODES_FIELD_NUMBER;
+      hash = (53 * hash) + getConfidentialNodes().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2566,6 +2651,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Parameters that describe the nodes in a cluster.
+   * GKE Autopilot clusters do not
+   * recognize parameters in `NodeConfig`. Use
+   * [AutoprovisioningNodePoolDefaults][google.container.v1beta1.AutoprovisioningNodePoolDefaults]
+   * instead.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.NodeConfig}
@@ -2733,6 +2822,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       spot_ = false;
 
+      if (confidentialNodesBuilder_ == null) {
+        confidentialNodes_ = null;
+      } else {
+        confidentialNodes_ = null;
+        confidentialNodesBuilder_ = null;
+      }
       return this;
     }
 
@@ -2854,6 +2949,11 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         result.gvnic_ = gvnicBuilder_.build();
       }
       result.spot_ = spot_;
+      if (confidentialNodesBuilder_ == null) {
+        result.confidentialNodes_ = confidentialNodes_;
+      } else {
+        result.confidentialNodes_ = confidentialNodesBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -3048,6 +3148,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getSpot() != false) {
         setSpot(other.getSpot());
+      }
+      if (other.hasConfidentialNodes()) {
+        mergeConfidentialNodes(other.getConfidentialNodes());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7884,6 +7987,201 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       spot_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1beta1.ConfidentialNodes confidentialNodes_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ConfidentialNodes,
+            com.google.container.v1beta1.ConfidentialNodes.Builder,
+            com.google.container.v1beta1.ConfidentialNodesOrBuilder>
+        confidentialNodesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+     *
+     * @return Whether the confidentialNodes field is set.
+     */
+    public boolean hasConfidentialNodes() {
+      return confidentialNodesBuilder_ != null || confidentialNodes_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+     *
+     * @return The confidentialNodes.
+     */
+    public com.google.container.v1beta1.ConfidentialNodes getConfidentialNodes() {
+      if (confidentialNodesBuilder_ == null) {
+        return confidentialNodes_ == null
+            ? com.google.container.v1beta1.ConfidentialNodes.getDefaultInstance()
+            : confidentialNodes_;
+      } else {
+        return confidentialNodesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+     */
+    public Builder setConfidentialNodes(com.google.container.v1beta1.ConfidentialNodes value) {
+      if (confidentialNodesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        confidentialNodes_ = value;
+        onChanged();
+      } else {
+        confidentialNodesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+     */
+    public Builder setConfidentialNodes(
+        com.google.container.v1beta1.ConfidentialNodes.Builder builderForValue) {
+      if (confidentialNodesBuilder_ == null) {
+        confidentialNodes_ = builderForValue.build();
+        onChanged();
+      } else {
+        confidentialNodesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+     */
+    public Builder mergeConfidentialNodes(com.google.container.v1beta1.ConfidentialNodes value) {
+      if (confidentialNodesBuilder_ == null) {
+        if (confidentialNodes_ != null) {
+          confidentialNodes_ =
+              com.google.container.v1beta1.ConfidentialNodes.newBuilder(confidentialNodes_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          confidentialNodes_ = value;
+        }
+        onChanged();
+      } else {
+        confidentialNodesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+     */
+    public Builder clearConfidentialNodes() {
+      if (confidentialNodesBuilder_ == null) {
+        confidentialNodes_ = null;
+        onChanged();
+      } else {
+        confidentialNodes_ = null;
+        confidentialNodesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+     */
+    public com.google.container.v1beta1.ConfidentialNodes.Builder getConfidentialNodesBuilder() {
+
+      onChanged();
+      return getConfidentialNodesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+     */
+    public com.google.container.v1beta1.ConfidentialNodesOrBuilder getConfidentialNodesOrBuilder() {
+      if (confidentialNodesBuilder_ != null) {
+        return confidentialNodesBuilder_.getMessageOrBuilder();
+      } else {
+        return confidentialNodes_ == null
+            ? com.google.container.v1beta1.ConfidentialNodes.getDefaultInstance()
+            : confidentialNodes_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Confidential nodes config.
+     * All the nodes in the node pool will be Confidential VM once enabled.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ConfidentialNodes confidential_nodes = 35;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ConfidentialNodes,
+            com.google.container.v1beta1.ConfidentialNodes.Builder,
+            com.google.container.v1beta1.ConfidentialNodesOrBuilder>
+        getConfidentialNodesFieldBuilder() {
+      if (confidentialNodesBuilder_ == null) {
+        confidentialNodesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.ConfidentialNodes,
+                com.google.container.v1beta1.ConfidentialNodes.Builder,
+                com.google.container.v1beta1.ConfidentialNodesOrBuilder>(
+                getConfidentialNodes(), getParentForChildren(), isClean());
+        confidentialNodes_ = null;
+      }
+      return confidentialNodesBuilder_;
     }
 
     @java.lang.Override

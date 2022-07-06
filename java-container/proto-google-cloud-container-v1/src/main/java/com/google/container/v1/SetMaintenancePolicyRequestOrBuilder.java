@@ -28,7 +28,7 @@ public interface SetMaintenancePolicyRequestOrBuilder
    *
    * <pre>
    * Required. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +41,7 @@ public interface SetMaintenancePolicyRequestOrBuilder
    *
    * <pre>
    * Required. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -152,8 +152,8 @@ public interface SetMaintenancePolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The name (project, location, cluster id) of the cluster to set maintenance
-   * policy.
+   * The name (project, location, cluster name) of the cluster to set
+   * maintenance policy.
    * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -166,8 +166,8 @@ public interface SetMaintenancePolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The name (project, location, cluster id) of the cluster to set maintenance
-   * policy.
+   * The name (project, location, cluster name) of the cluster to set
+   * maintenance policy.
    * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *

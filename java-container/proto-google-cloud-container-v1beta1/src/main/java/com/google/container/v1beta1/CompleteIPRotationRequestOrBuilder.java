@@ -28,7 +28,7 @@ public interface CompleteIPRotationRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -36,7 +36,7 @@ public interface CompleteIPRotationRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.CompleteIPRotationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3695
+   *     google/container/v1beta1/cluster_service.proto;l=4063
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -46,7 +46,7 @@ public interface CompleteIPRotationRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -54,7 +54,7 @@ public interface CompleteIPRotationRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.CompleteIPRotationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3695
+   *     google/container/v1beta1/cluster_service.proto;l=4063
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface CompleteIPRotationRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.CompleteIPRotationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3704
+   *     google/container/v1beta1/cluster_service.proto;l=4072
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface CompleteIPRotationRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.CompleteIPRotationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3704
+   *     google/container/v1beta1/cluster_service.proto;l=4072
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface CompleteIPRotationRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.CompleteIPRotationRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3711
+   *     google/container/v1beta1/cluster_service.proto;l=4079
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface CompleteIPRotationRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.CompleteIPRotationRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3711
+   *     google/container/v1beta1/cluster_service.proto;l=4079
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -136,7 +136,7 @@ public interface CompleteIPRotationRequestOrBuilder
    *
    *
    * <pre>
-   * The name (project, location, cluster id) of the cluster to complete IP
+   * The name (project, location, cluster name) of the cluster to complete IP
    * rotation. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -149,7 +149,7 @@ public interface CompleteIPRotationRequestOrBuilder
    *
    *
    * <pre>
-   * The name (project, location, cluster id) of the cluster to complete IP
+   * The name (project, location, cluster name) of the cluster to complete IP
    * rotation. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *

@@ -116,8 +116,7 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Whether Confidential Nodes feature is enabled for all nodes in this
-   * cluster.
+   * Whether Confidential Nodes feature is enabled.
    * </pre>
    *
    * <code>bool enabled = 1;</code>
@@ -450,8 +449,7 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether Confidential Nodes feature is enabled for all nodes in this
-     * cluster.
+     * Whether Confidential Nodes feature is enabled.
      * </pre>
      *
      * <code>bool enabled = 1;</code>
@@ -466,8 +464,7 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether Confidential Nodes feature is enabled for all nodes in this
-     * cluster.
+     * Whether Confidential Nodes feature is enabled.
      * </pre>
      *
      * <code>bool enabled = 1;</code>
@@ -485,8 +482,7 @@ public final class ConfidentialNodes extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Whether Confidential Nodes feature is enabled for all nodes in this
-     * cluster.
+     * Whether Confidential Nodes feature is enabled.
      * </pre>
      *
      * <code>bool enabled = 1;</code>

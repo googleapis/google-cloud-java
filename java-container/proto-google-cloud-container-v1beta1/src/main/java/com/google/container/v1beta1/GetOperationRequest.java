@@ -144,7 +144,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -152,7 +152,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.container.v1beta1.GetOperationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2667
+   *     google/container/v1beta1/cluster_service.proto;l=2871
    * @return The projectId.
    */
   @java.lang.Override
@@ -173,7 +173,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -181,7 +181,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.container.v1beta1.GetOperationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2667
+   *     google/container/v1beta1/cluster_service.proto;l=2871
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -213,7 +213,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.GetOperationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2676
+   *     google/container/v1beta1/cluster_service.proto;l=2880
    * @return The zone.
    */
   @java.lang.Override
@@ -242,7 +242,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.GetOperationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2676
+   *     google/container/v1beta1/cluster_service.proto;l=2880
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -273,7 +273,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.container.v1beta1.GetOperationRequest.operation_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2683
+   *     google/container/v1beta1/cluster_service.proto;l=2887
    * @return The operationId.
    */
   @java.lang.Override
@@ -301,7 +301,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.container.v1beta1.GetOperationRequest.operation_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2683
+   *     google/container/v1beta1/cluster_service.proto;l=2887
    * @return The bytes for operationId.
    */
   @java.lang.Override
@@ -740,7 +740,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -748,7 +748,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2667
+     *     google/container/v1beta1/cluster_service.proto;l=2871
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -768,7 +768,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -776,7 +776,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2667
+     *     google/container/v1beta1/cluster_service.proto;l=2871
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -796,7 +796,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -804,7 +804,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2667
+     *     google/container/v1beta1/cluster_service.proto;l=2871
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -823,7 +823,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -831,7 +831,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2667
+     *     google/container/v1beta1/cluster_service.proto;l=2871
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -846,7 +846,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://support.google.com/cloud/answer/6158840).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -854,7 +854,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2667
+     *     google/container/v1beta1/cluster_service.proto;l=2871
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -884,7 +884,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2676
+     *     google/container/v1beta1/cluster_service.proto;l=2880
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -912,7 +912,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2676
+     *     google/container/v1beta1/cluster_service.proto;l=2880
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -940,7 +940,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2676
+     *     google/container/v1beta1/cluster_service.proto;l=2880
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -967,7 +967,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2676
+     *     google/container/v1beta1/cluster_service.proto;l=2880
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -990,7 +990,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2676
+     *     google/container/v1beta1/cluster_service.proto;l=2880
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1019,7 +1019,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.operation_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2683
+     *     google/container/v1beta1/cluster_service.proto;l=2887
      * @return The operationId.
      */
     @java.lang.Deprecated
@@ -1046,7 +1046,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.operation_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2683
+     *     google/container/v1beta1/cluster_service.proto;l=2887
      * @return The bytes for operationId.
      */
     @java.lang.Deprecated
@@ -1073,7 +1073,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.operation_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2683
+     *     google/container/v1beta1/cluster_service.proto;l=2887
      * @param value The operationId to set.
      * @return This builder for chaining.
      */
@@ -1099,7 +1099,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.operation_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2683
+     *     google/container/v1beta1/cluster_service.proto;l=2887
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1121,7 +1121,7 @@ public final class GetOperationRequest extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.container.v1beta1.GetOperationRequest.operation_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2683
+     *     google/container/v1beta1/cluster_service.proto;l=2887
      * @param value The bytes for operationId to set.
      * @return This builder for chaining.
      */

@@ -38,7 +38,9 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     super(builder);
   }
 
-  private NodePoolAutoscaling() {}
+  private NodePoolAutoscaling() {
+    locationPolicy_ = 0;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -89,6 +91,23 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
               autoprovisioned_ = input.readBool();
               break;
             }
+          case 40:
+            {
+              int rawValue = input.readEnum();
+
+              locationPolicy_ = rawValue;
+              break;
+            }
+          case 48:
+            {
+              totalMinNodeCount_ = input.readInt32();
+              break;
+            }
+          case 56:
+            {
+              totalMaxNodeCount_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -123,6 +142,166 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
         .ensureFieldAccessorsInitialized(
             com.google.container.v1beta1.NodePoolAutoscaling.class,
             com.google.container.v1beta1.NodePoolAutoscaling.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Location policy specifies how zones are picked when scaling up the
+   * nodepool.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1beta1.NodePoolAutoscaling.LocationPolicy}
+   */
+  public enum LocationPolicy implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>LOCATION_POLICY_UNSPECIFIED = 0;</code>
+     */
+    LOCATION_POLICY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * BALANCED is a best effort policy that aims to balance the sizes of
+     * different zones.
+     * </pre>
+     *
+     * <code>BALANCED = 1;</code>
+     */
+    BALANCED(1),
+    /**
+     *
+     *
+     * <pre>
+     * ANY policy picks zones that have the highest capacity available.
+     * </pre>
+     *
+     * <code>ANY = 2;</code>
+     */
+    ANY(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>LOCATION_POLICY_UNSPECIFIED = 0;</code>
+     */
+    public static final int LOCATION_POLICY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * BALANCED is a best effort policy that aims to balance the sizes of
+     * different zones.
+     * </pre>
+     *
+     * <code>BALANCED = 1;</code>
+     */
+    public static final int BALANCED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * ANY policy picks zones that have the highest capacity available.
+     * </pre>
+     *
+     * <code>ANY = 2;</code>
+     */
+    public static final int ANY_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static LocationPolicy valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static LocationPolicy forNumber(int value) {
+      switch (value) {
+        case 0:
+          return LOCATION_POLICY_UNSPECIFIED;
+        case 1:
+          return BALANCED;
+        case 2:
+          return ANY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<LocationPolicy> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<LocationPolicy> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<LocationPolicy>() {
+          public LocationPolicy findValueByNumber(int number) {
+            return LocationPolicy.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1beta1.NodePoolAutoscaling.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final LocationPolicy[] VALUES = values();
+
+    public static LocationPolicy valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private LocationPolicy(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.NodePoolAutoscaling.LocationPolicy)
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
@@ -199,6 +378,86 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     return autoprovisioned_;
   }
 
+  public static final int LOCATION_POLICY_FIELD_NUMBER = 5;
+  private int locationPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Location policy used when scaling up a nodepool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;</code>
+   *
+   * @return The enum numeric value on the wire for locationPolicy.
+   */
+  @java.lang.Override
+  public int getLocationPolicyValue() {
+    return locationPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Location policy used when scaling up a nodepool.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;</code>
+   *
+   * @return The locationPolicy.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy getLocationPolicy() {
+    @SuppressWarnings("deprecation")
+    com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy result =
+        com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy.valueOf(locationPolicy_);
+    return result == null
+        ? com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int TOTAL_MIN_NODE_COUNT_FIELD_NUMBER = 6;
+  private int totalMinNodeCount_;
+  /**
+   *
+   *
+   * <pre>
+   * Minimum number of nodes in the node pool. Must be greater than 1 less than
+   * total_max_node_count.
+   * The total_*_node_count fields are mutually exclusive with the *_node_count
+   * fields.
+   * </pre>
+   *
+   * <code>int32 total_min_node_count = 6;</code>
+   *
+   * @return The totalMinNodeCount.
+   */
+  @java.lang.Override
+  public int getTotalMinNodeCount() {
+    return totalMinNodeCount_;
+  }
+
+  public static final int TOTAL_MAX_NODE_COUNT_FIELD_NUMBER = 7;
+  private int totalMaxNodeCount_;
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of nodes in the node pool. Must be greater than
+   * total_min_node_count. There has to be enough quota to scale up the cluster.
+   * The total_*_node_count fields are mutually exclusive with the *_node_count
+   * fields.
+   * </pre>
+   *
+   * <code>int32 total_max_node_count = 7;</code>
+   *
+   * @return The totalMaxNodeCount.
+   */
+  @java.lang.Override
+  public int getTotalMaxNodeCount() {
+    return totalMaxNodeCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -225,6 +484,18 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     if (autoprovisioned_ != false) {
       output.writeBool(4, autoprovisioned_);
     }
+    if (locationPolicy_
+        != com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy
+            .LOCATION_POLICY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, locationPolicy_);
+    }
+    if (totalMinNodeCount_ != 0) {
+      output.writeInt32(6, totalMinNodeCount_);
+    }
+    if (totalMaxNodeCount_ != 0) {
+      output.writeInt32(7, totalMaxNodeCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -246,6 +517,18 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     if (autoprovisioned_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, autoprovisioned_);
     }
+    if (locationPolicy_
+        != com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy
+            .LOCATION_POLICY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, locationPolicy_);
+    }
+    if (totalMinNodeCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, totalMinNodeCount_);
+    }
+    if (totalMaxNodeCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, totalMaxNodeCount_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -266,6 +549,9 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     if (getMinNodeCount() != other.getMinNodeCount()) return false;
     if (getMaxNodeCount() != other.getMaxNodeCount()) return false;
     if (getAutoprovisioned() != other.getAutoprovisioned()) return false;
+    if (locationPolicy_ != other.locationPolicy_) return false;
+    if (getTotalMinNodeCount() != other.getTotalMinNodeCount()) return false;
+    if (getTotalMaxNodeCount() != other.getTotalMaxNodeCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -285,6 +571,12 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getMaxNodeCount();
     hash = (37 * hash) + AUTOPROVISIONED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoprovisioned());
+    hash = (37 * hash) + LOCATION_POLICY_FIELD_NUMBER;
+    hash = (53 * hash) + locationPolicy_;
+    hash = (37 * hash) + TOTAL_MIN_NODE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalMinNodeCount();
+    hash = (37 * hash) + TOTAL_MAX_NODE_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalMaxNodeCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -439,6 +731,12 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
 
       autoprovisioned_ = false;
 
+      locationPolicy_ = 0;
+
+      totalMinNodeCount_ = 0;
+
+      totalMaxNodeCount_ = 0;
+
       return this;
     }
 
@@ -470,6 +768,9 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
       result.minNodeCount_ = minNodeCount_;
       result.maxNodeCount_ = maxNodeCount_;
       result.autoprovisioned_ = autoprovisioned_;
+      result.locationPolicy_ = locationPolicy_;
+      result.totalMinNodeCount_ = totalMinNodeCount_;
+      result.totalMaxNodeCount_ = totalMaxNodeCount_;
       onBuilt();
       return result;
     }
@@ -531,6 +832,15 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
       }
       if (other.getAutoprovisioned() != false) {
         setAutoprovisioned(other.getAutoprovisioned());
+      }
+      if (other.locationPolicy_ != 0) {
+        setLocationPolicyValue(other.getLocationPolicyValue());
+      }
+      if (other.getTotalMinNodeCount() != 0) {
+        setTotalMinNodeCount(other.getTotalMinNodeCount());
+      }
+      if (other.getTotalMaxNodeCount() != 0) {
+        setTotalMaxNodeCount(other.getTotalMaxNodeCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -771,6 +1081,227 @@ public final class NodePoolAutoscaling extends com.google.protobuf.GeneratedMess
     public Builder clearAutoprovisioned() {
 
       autoprovisioned_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int locationPolicy_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Location policy used when scaling up a nodepool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for locationPolicy.
+     */
+    @java.lang.Override
+    public int getLocationPolicyValue() {
+      return locationPolicy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location policy used when scaling up a nodepool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for locationPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocationPolicyValue(int value) {
+
+      locationPolicy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location policy used when scaling up a nodepool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;
+     * </code>
+     *
+     * @return The locationPolicy.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy getLocationPolicy() {
+      @SuppressWarnings("deprecation")
+      com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy result =
+          com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy.valueOf(locationPolicy_);
+      return result == null
+          ? com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location policy used when scaling up a nodepool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;
+     * </code>
+     *
+     * @param value The locationPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocationPolicy(
+        com.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      locationPolicy_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Location policy used when scaling up a nodepool.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePoolAutoscaling.LocationPolicy location_policy = 5;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocationPolicy() {
+
+      locationPolicy_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int totalMinNodeCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Minimum number of nodes in the node pool. Must be greater than 1 less than
+     * total_max_node_count.
+     * The total_*_node_count fields are mutually exclusive with the *_node_count
+     * fields.
+     * </pre>
+     *
+     * <code>int32 total_min_node_count = 6;</code>
+     *
+     * @return The totalMinNodeCount.
+     */
+    @java.lang.Override
+    public int getTotalMinNodeCount() {
+      return totalMinNodeCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum number of nodes in the node pool. Must be greater than 1 less than
+     * total_max_node_count.
+     * The total_*_node_count fields are mutually exclusive with the *_node_count
+     * fields.
+     * </pre>
+     *
+     * <code>int32 total_min_node_count = 6;</code>
+     *
+     * @param value The totalMinNodeCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalMinNodeCount(int value) {
+
+      totalMinNodeCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Minimum number of nodes in the node pool. Must be greater than 1 less than
+     * total_max_node_count.
+     * The total_*_node_count fields are mutually exclusive with the *_node_count
+     * fields.
+     * </pre>
+     *
+     * <code>int32 total_min_node_count = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalMinNodeCount() {
+
+      totalMinNodeCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int totalMaxNodeCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of nodes in the node pool. Must be greater than
+     * total_min_node_count. There has to be enough quota to scale up the cluster.
+     * The total_*_node_count fields are mutually exclusive with the *_node_count
+     * fields.
+     * </pre>
+     *
+     * <code>int32 total_max_node_count = 7;</code>
+     *
+     * @return The totalMaxNodeCount.
+     */
+    @java.lang.Override
+    public int getTotalMaxNodeCount() {
+      return totalMaxNodeCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of nodes in the node pool. Must be greater than
+     * total_min_node_count. There has to be enough quota to scale up the cluster.
+     * The total_*_node_count fields are mutually exclusive with the *_node_count
+     * fields.
+     * </pre>
+     *
+     * <code>int32 total_max_node_count = 7;</code>
+     *
+     * @param value The totalMaxNodeCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalMaxNodeCount(int value) {
+
+      totalMaxNodeCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of nodes in the node pool. Must be greater than
+     * total_min_node_count. There has to be enough quota to scale up the cluster.
+     * The total_*_node_count fields are mutually exclusive with the *_node_count
+     * fields.
+     * </pre>
+     *
+     * <code>int32 total_max_node_count = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalMaxNodeCount() {
+
+      totalMaxNodeCount_ = 0;
       onChanged();
       return this;
     }

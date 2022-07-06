@@ -150,7 +150,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -158,7 +158,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3661
+   *     google/container/v1beta1/cluster_service.proto;l=4029
    * @return The projectId.
    */
   @java.lang.Override
@@ -179,7 +179,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the name field.
    * </pre>
    *
@@ -187,7 +187,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3661
+   *     google/container/v1beta1/cluster_service.proto;l=4029
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -219,7 +219,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3670
+   *     google/container/v1beta1/cluster_service.proto;l=4038
    * @return The zone.
    */
   @java.lang.Override
@@ -248,7 +248,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3670
+   *     google/container/v1beta1/cluster_service.proto;l=4038
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -279,7 +279,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3677
+   *     google/container/v1beta1/cluster_service.proto;l=4045
    * @return The clusterId.
    */
   @java.lang.Override
@@ -307,7 +307,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.StartIPRotationRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3677
+   *     google/container/v1beta1/cluster_service.proto;l=4045
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -330,7 +330,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The name (project, location, cluster id) of the cluster to start IP
+   * The name (project, location, cluster name) of the cluster to start IP
    * rotation. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -354,7 +354,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The name (project, location, cluster id) of the cluster to start IP
+   * The name (project, location, cluster name) of the cluster to start IP
    * rotation. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -781,7 +781,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -789,7 +789,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3661
+     *     google/container/v1beta1/cluster_service.proto;l=4029
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -809,7 +809,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -817,7 +817,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3661
+     *     google/container/v1beta1/cluster_service.proto;l=4029
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -837,7 +837,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -845,7 +845,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3661
+     *     google/container/v1beta1/cluster_service.proto;l=4029
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -864,7 +864,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -872,7 +872,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3661
+     *     google/container/v1beta1/cluster_service.proto;l=4029
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -887,7 +887,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Deprecated. The Google Developers Console [project ID or project
-     * number](https://developers.google.com/console/help/new/#projectnumber).
+     * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
      * This field has been deprecated and replaced by the name field.
      * </pre>
      *
@@ -895,7 +895,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3661
+     *     google/container/v1beta1/cluster_service.proto;l=4029
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -925,7 +925,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3670
+     *     google/container/v1beta1/cluster_service.proto;l=4038
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -953,7 +953,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3670
+     *     google/container/v1beta1/cluster_service.proto;l=4038
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -981,7 +981,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3670
+     *     google/container/v1beta1/cluster_service.proto;l=4038
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1008,7 +1008,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3670
+     *     google/container/v1beta1/cluster_service.proto;l=4038
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1031,7 +1031,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3670
+     *     google/container/v1beta1/cluster_service.proto;l=4038
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1060,7 +1060,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3677
+     *     google/container/v1beta1/cluster_service.proto;l=4045
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1087,7 +1087,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3677
+     *     google/container/v1beta1/cluster_service.proto;l=4045
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1114,7 +1114,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3677
+     *     google/container/v1beta1/cluster_service.proto;l=4045
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1140,7 +1140,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3677
+     *     google/container/v1beta1/cluster_service.proto;l=4045
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1162,7 +1162,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.StartIPRotationRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3677
+     *     google/container/v1beta1/cluster_service.proto;l=4045
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -1183,7 +1183,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name (project, location, cluster id) of the cluster to start IP
+     * The name (project, location, cluster name) of the cluster to start IP
      * rotation. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -1206,7 +1206,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name (project, location, cluster id) of the cluster to start IP
+     * The name (project, location, cluster name) of the cluster to start IP
      * rotation. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -1229,7 +1229,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name (project, location, cluster id) of the cluster to start IP
+     * The name (project, location, cluster name) of the cluster to start IP
      * rotation. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -1251,7 +1251,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name (project, location, cluster id) of the cluster to start IP
+     * The name (project, location, cluster name) of the cluster to start IP
      * rotation. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -1269,7 +1269,7 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The name (project, location, cluster id) of the cluster to start IP
+     * The name (project, location, cluster name) of the cluster to start IP
      * rotation. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *

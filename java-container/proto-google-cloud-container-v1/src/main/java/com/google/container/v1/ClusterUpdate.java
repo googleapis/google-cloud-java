@@ -479,6 +479,22 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 530:
+            {
+              com.google.container.v1.IdentityServiceConfig.Builder subBuilder = null;
+              if (desiredIdentityServiceConfig_ != null) {
+                subBuilder = desiredIdentityServiceConfig_.toBuilder();
+              }
+              desiredIdentityServiceConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.IdentityServiceConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredIdentityServiceConfig_);
+                desiredIdentityServiceConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 538:
             {
               com.google.container.v1.MeshCertificates.Builder subBuilder = null;
@@ -513,6 +529,22 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
               if (subBuilder != null) {
                 subBuilder.mergeFrom(desiredGcfsConfig_);
                 desiredGcfsConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 882:
+            {
+              com.google.container.v1.NetworkTags.Builder subBuilder = null;
+              if (desiredNodePoolAutoConfigNetworkTags_ != null) {
+                subBuilder = desiredNodePoolAutoConfigNetworkTags_.toBuilder();
+              }
+              desiredNodePoolAutoConfigNetworkTags_ =
+                  input.readMessage(
+                      com.google.container.v1.NetworkTags.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredNodePoolAutoConfigNetworkTags_);
+                desiredNodePoolAutoConfigNetworkTags_ = subBuilder.buildPartial();
               }
 
               break;
@@ -2062,6 +2094,55 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredMonitoringConfig();
   }
 
+  public static final int DESIRED_IDENTITY_SERVICE_CONFIG_FIELD_NUMBER = 66;
+  private com.google.container.v1.IdentityServiceConfig desiredIdentityServiceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired Identity Service component configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+   *
+   * @return Whether the desiredIdentityServiceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredIdentityServiceConfig() {
+    return desiredIdentityServiceConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired Identity Service component configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+   *
+   * @return The desiredIdentityServiceConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.IdentityServiceConfig getDesiredIdentityServiceConfig() {
+    return desiredIdentityServiceConfig_ == null
+        ? com.google.container.v1.IdentityServiceConfig.getDefaultInstance()
+        : desiredIdentityServiceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired Identity Service component configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.IdentityServiceConfigOrBuilder
+      getDesiredIdentityServiceConfigOrBuilder() {
+    return getDesiredIdentityServiceConfig();
+  }
+
   public static final int DESIRED_SERVICE_EXTERNAL_IPS_CONFIG_FIELD_NUMBER = 60;
   private com.google.container.v1.ServiceExternalIPsConfig desiredServiceExternalIpsConfig_;
   /**
@@ -2228,6 +2309,58 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredGcfsConfig();
   }
 
+  public static final int DESIRED_NODE_POOL_AUTO_CONFIG_NETWORK_TAGS_FIELD_NUMBER = 110;
+  private com.google.container.v1.NetworkTags desiredNodePoolAutoConfigNetworkTags_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags that apply to all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;</code>
+   *
+   * @return Whether the desiredNodePoolAutoConfigNetworkTags field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredNodePoolAutoConfigNetworkTags() {
+    return desiredNodePoolAutoConfigNetworkTags_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags that apply to all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;</code>
+   *
+   * @return The desiredNodePoolAutoConfigNetworkTags.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NetworkTags getDesiredNodePoolAutoConfigNetworkTags() {
+    return desiredNodePoolAutoConfigNetworkTags_ == null
+        ? com.google.container.v1.NetworkTags.getDefaultInstance()
+        : desiredNodePoolAutoConfigNetworkTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags that apply to all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NetworkTagsOrBuilder
+      getDesiredNodePoolAutoConfigNetworkTagsOrBuilder() {
+    return getDesiredNodePoolAutoConfigNetworkTags();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2332,6 +2465,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredMonitoringConfig_ != null) {
       output.writeMessage(65, getDesiredMonitoringConfig());
     }
+    if (desiredIdentityServiceConfig_ != null) {
+      output.writeMessage(66, getDesiredIdentityServiceConfig());
+    }
     if (desiredMeshCertificates_ != null) {
       output.writeMessage(67, getDesiredMeshCertificates());
     }
@@ -2340,6 +2476,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (desiredGcfsConfig_ != null) {
       output.writeMessage(109, getDesiredGcfsConfig());
+    }
+    if (desiredNodePoolAutoConfigNetworkTags_ != null) {
+      output.writeMessage(110, getDesiredNodePoolAutoConfigNetworkTags());
     }
     unknownFields.writeTo(output);
   }
@@ -2483,6 +2622,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               65, getDesiredMonitoringConfig());
     }
+    if (desiredIdentityServiceConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              66, getDesiredIdentityServiceConfig());
+    }
     if (desiredMeshCertificates_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2493,6 +2637,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (desiredGcfsConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(109, getDesiredGcfsConfig());
+    }
+    if (desiredNodePoolAutoConfigNetworkTags_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              110, getDesiredNodePoolAutoConfigNetworkTags());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2620,6 +2769,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredMonitoringConfig()) {
       if (!getDesiredMonitoringConfig().equals(other.getDesiredMonitoringConfig())) return false;
     }
+    if (hasDesiredIdentityServiceConfig() != other.hasDesiredIdentityServiceConfig()) return false;
+    if (hasDesiredIdentityServiceConfig()) {
+      if (!getDesiredIdentityServiceConfig().equals(other.getDesiredIdentityServiceConfig()))
+        return false;
+    }
     if (hasDesiredServiceExternalIpsConfig() != other.hasDesiredServiceExternalIpsConfig())
       return false;
     if (hasDesiredServiceExternalIpsConfig()) {
@@ -2630,6 +2784,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredGcfsConfig() != other.hasDesiredGcfsConfig()) return false;
     if (hasDesiredGcfsConfig()) {
       if (!getDesiredGcfsConfig().equals(other.getDesiredGcfsConfig())) return false;
+    }
+    if (hasDesiredNodePoolAutoConfigNetworkTags()
+        != other.hasDesiredNodePoolAutoConfigNetworkTags()) return false;
+    if (hasDesiredNodePoolAutoConfigNetworkTags()) {
+      if (!getDesiredNodePoolAutoConfigNetworkTags()
+          .equals(other.getDesiredNodePoolAutoConfigNetworkTags())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -2744,6 +2904,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_MONITORING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredMonitoringConfig().hashCode();
     }
+    if (hasDesiredIdentityServiceConfig()) {
+      hash = (37 * hash) + DESIRED_IDENTITY_SERVICE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredIdentityServiceConfig().hashCode();
+    }
     if (hasDesiredServiceExternalIpsConfig()) {
       hash = (37 * hash) + DESIRED_SERVICE_EXTERNAL_IPS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredServiceExternalIpsConfig().hashCode();
@@ -2753,6 +2917,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredGcfsConfig()) {
       hash = (37 * hash) + DESIRED_GCFS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredGcfsConfig().hashCode();
+    }
+    if (hasDesiredNodePoolAutoConfigNetworkTags()) {
+      hash = (37 * hash) + DESIRED_NODE_POOL_AUTO_CONFIG_NETWORK_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredNodePoolAutoConfigNetworkTags().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -3042,6 +3210,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredMonitoringConfig_ = null;
         desiredMonitoringConfigBuilder_ = null;
       }
+      if (desiredIdentityServiceConfigBuilder_ == null) {
+        desiredIdentityServiceConfig_ = null;
+      } else {
+        desiredIdentityServiceConfig_ = null;
+        desiredIdentityServiceConfigBuilder_ = null;
+      }
       if (desiredServiceExternalIpsConfigBuilder_ == null) {
         desiredServiceExternalIpsConfig_ = null;
       } else {
@@ -3055,6 +3229,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         desiredGcfsConfig_ = null;
         desiredGcfsConfigBuilder_ = null;
+      }
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        desiredNodePoolAutoConfigNetworkTags_ = null;
+      } else {
+        desiredNodePoolAutoConfigNetworkTags_ = null;
+        desiredNodePoolAutoConfigNetworkTagsBuilder_ = null;
       }
       return this;
     }
@@ -3202,6 +3382,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.desiredMonitoringConfig_ = desiredMonitoringConfigBuilder_.build();
       }
+      if (desiredIdentityServiceConfigBuilder_ == null) {
+        result.desiredIdentityServiceConfig_ = desiredIdentityServiceConfig_;
+      } else {
+        result.desiredIdentityServiceConfig_ = desiredIdentityServiceConfigBuilder_.build();
+      }
       if (desiredServiceExternalIpsConfigBuilder_ == null) {
         result.desiredServiceExternalIpsConfig_ = desiredServiceExternalIpsConfig_;
       } else {
@@ -3212,6 +3397,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         result.desiredGcfsConfig_ = desiredGcfsConfig_;
       } else {
         result.desiredGcfsConfig_ = desiredGcfsConfigBuilder_.build();
+      }
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        result.desiredNodePoolAutoConfigNetworkTags_ = desiredNodePoolAutoConfigNetworkTags_;
+      } else {
+        result.desiredNodePoolAutoConfigNetworkTags_ =
+            desiredNodePoolAutoConfigNetworkTagsBuilder_.build();
       }
       onBuilt();
       return result;
@@ -3362,6 +3553,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDesiredMonitoringConfig()) {
         mergeDesiredMonitoringConfig(other.getDesiredMonitoringConfig());
       }
+      if (other.hasDesiredIdentityServiceConfig()) {
+        mergeDesiredIdentityServiceConfig(other.getDesiredIdentityServiceConfig());
+      }
       if (other.hasDesiredServiceExternalIpsConfig()) {
         mergeDesiredServiceExternalIpsConfig(other.getDesiredServiceExternalIpsConfig());
       }
@@ -3371,6 +3565,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredGcfsConfig()) {
         mergeDesiredGcfsConfig(other.getDesiredGcfsConfig());
+      }
+      if (other.hasDesiredNodePoolAutoConfigNetworkTags()) {
+        mergeDesiredNodePoolAutoConfigNetworkTags(other.getDesiredNodePoolAutoConfigNetworkTags());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -8569,6 +8766,197 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return desiredMonitoringConfigBuilder_;
     }
 
+    private com.google.container.v1.IdentityServiceConfig desiredIdentityServiceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.IdentityServiceConfig,
+            com.google.container.v1.IdentityServiceConfig.Builder,
+            com.google.container.v1.IdentityServiceConfigOrBuilder>
+        desiredIdentityServiceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired Identity Service component configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+     *
+     * @return Whether the desiredIdentityServiceConfig field is set.
+     */
+    public boolean hasDesiredIdentityServiceConfig() {
+      return desiredIdentityServiceConfigBuilder_ != null || desiredIdentityServiceConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Identity Service component configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+     *
+     * @return The desiredIdentityServiceConfig.
+     */
+    public com.google.container.v1.IdentityServiceConfig getDesiredIdentityServiceConfig() {
+      if (desiredIdentityServiceConfigBuilder_ == null) {
+        return desiredIdentityServiceConfig_ == null
+            ? com.google.container.v1.IdentityServiceConfig.getDefaultInstance()
+            : desiredIdentityServiceConfig_;
+      } else {
+        return desiredIdentityServiceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Identity Service component configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+     */
+    public Builder setDesiredIdentityServiceConfig(
+        com.google.container.v1.IdentityServiceConfig value) {
+      if (desiredIdentityServiceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredIdentityServiceConfig_ = value;
+        onChanged();
+      } else {
+        desiredIdentityServiceConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Identity Service component configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+     */
+    public Builder setDesiredIdentityServiceConfig(
+        com.google.container.v1.IdentityServiceConfig.Builder builderForValue) {
+      if (desiredIdentityServiceConfigBuilder_ == null) {
+        desiredIdentityServiceConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredIdentityServiceConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Identity Service component configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+     */
+    public Builder mergeDesiredIdentityServiceConfig(
+        com.google.container.v1.IdentityServiceConfig value) {
+      if (desiredIdentityServiceConfigBuilder_ == null) {
+        if (desiredIdentityServiceConfig_ != null) {
+          desiredIdentityServiceConfig_ =
+              com.google.container.v1.IdentityServiceConfig.newBuilder(
+                      desiredIdentityServiceConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredIdentityServiceConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredIdentityServiceConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Identity Service component configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+     */
+    public Builder clearDesiredIdentityServiceConfig() {
+      if (desiredIdentityServiceConfigBuilder_ == null) {
+        desiredIdentityServiceConfig_ = null;
+        onChanged();
+      } else {
+        desiredIdentityServiceConfig_ = null;
+        desiredIdentityServiceConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Identity Service component configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+     */
+    public com.google.container.v1.IdentityServiceConfig.Builder
+        getDesiredIdentityServiceConfigBuilder() {
+
+      onChanged();
+      return getDesiredIdentityServiceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Identity Service component configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+     */
+    public com.google.container.v1.IdentityServiceConfigOrBuilder
+        getDesiredIdentityServiceConfigOrBuilder() {
+      if (desiredIdentityServiceConfigBuilder_ != null) {
+        return desiredIdentityServiceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredIdentityServiceConfig_ == null
+            ? com.google.container.v1.IdentityServiceConfig.getDefaultInstance()
+            : desiredIdentityServiceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired Identity Service component configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.IdentityServiceConfig,
+            com.google.container.v1.IdentityServiceConfig.Builder,
+            com.google.container.v1.IdentityServiceConfigOrBuilder>
+        getDesiredIdentityServiceConfigFieldBuilder() {
+      if (desiredIdentityServiceConfigBuilder_ == null) {
+        desiredIdentityServiceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.IdentityServiceConfig,
+                com.google.container.v1.IdentityServiceConfig.Builder,
+                com.google.container.v1.IdentityServiceConfigOrBuilder>(
+                getDesiredIdentityServiceConfig(), getParentForChildren(), isClean());
+        desiredIdentityServiceConfig_ = null;
+      }
+      return desiredIdentityServiceConfigBuilder_;
+    }
+
     private com.google.container.v1.ServiceExternalIPsConfig desiredServiceExternalIpsConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1.ServiceExternalIPsConfig,
@@ -9104,6 +9492,215 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredGcfsConfig_ = null;
       }
       return desiredGcfsConfigBuilder_;
+    }
+
+    private com.google.container.v1.NetworkTags desiredNodePoolAutoConfigNetworkTags_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NetworkTags,
+            com.google.container.v1.NetworkTags.Builder,
+            com.google.container.v1.NetworkTagsOrBuilder>
+        desiredNodePoolAutoConfigNetworkTagsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     *
+     * @return Whether the desiredNodePoolAutoConfigNetworkTags field is set.
+     */
+    public boolean hasDesiredNodePoolAutoConfigNetworkTags() {
+      return desiredNodePoolAutoConfigNetworkTagsBuilder_ != null
+          || desiredNodePoolAutoConfigNetworkTags_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     *
+     * @return The desiredNodePoolAutoConfigNetworkTags.
+     */
+    public com.google.container.v1.NetworkTags getDesiredNodePoolAutoConfigNetworkTags() {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        return desiredNodePoolAutoConfigNetworkTags_ == null
+            ? com.google.container.v1.NetworkTags.getDefaultInstance()
+            : desiredNodePoolAutoConfigNetworkTags_;
+      } else {
+        return desiredNodePoolAutoConfigNetworkTagsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    public Builder setDesiredNodePoolAutoConfigNetworkTags(
+        com.google.container.v1.NetworkTags value) {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredNodePoolAutoConfigNetworkTags_ = value;
+        onChanged();
+      } else {
+        desiredNodePoolAutoConfigNetworkTagsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    public Builder setDesiredNodePoolAutoConfigNetworkTags(
+        com.google.container.v1.NetworkTags.Builder builderForValue) {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        desiredNodePoolAutoConfigNetworkTags_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredNodePoolAutoConfigNetworkTagsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    public Builder mergeDesiredNodePoolAutoConfigNetworkTags(
+        com.google.container.v1.NetworkTags value) {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        if (desiredNodePoolAutoConfigNetworkTags_ != null) {
+          desiredNodePoolAutoConfigNetworkTags_ =
+              com.google.container.v1.NetworkTags.newBuilder(desiredNodePoolAutoConfigNetworkTags_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredNodePoolAutoConfigNetworkTags_ = value;
+        }
+        onChanged();
+      } else {
+        desiredNodePoolAutoConfigNetworkTagsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    public Builder clearDesiredNodePoolAutoConfigNetworkTags() {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        desiredNodePoolAutoConfigNetworkTags_ = null;
+        onChanged();
+      } else {
+        desiredNodePoolAutoConfigNetworkTags_ = null;
+        desiredNodePoolAutoConfigNetworkTagsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    public com.google.container.v1.NetworkTags.Builder
+        getDesiredNodePoolAutoConfigNetworkTagsBuilder() {
+
+      onChanged();
+      return getDesiredNodePoolAutoConfigNetworkTagsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    public com.google.container.v1.NetworkTagsOrBuilder
+        getDesiredNodePoolAutoConfigNetworkTagsOrBuilder() {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ != null) {
+        return desiredNodePoolAutoConfigNetworkTagsBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredNodePoolAutoConfigNetworkTags_ == null
+            ? com.google.container.v1.NetworkTags.getDefaultInstance()
+            : desiredNodePoolAutoConfigNetworkTags_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NetworkTags,
+            com.google.container.v1.NetworkTags.Builder,
+            com.google.container.v1.NetworkTagsOrBuilder>
+        getDesiredNodePoolAutoConfigNetworkTagsFieldBuilder() {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        desiredNodePoolAutoConfigNetworkTagsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NetworkTags,
+                com.google.container.v1.NetworkTags.Builder,
+                com.google.container.v1.NetworkTagsOrBuilder>(
+                getDesiredNodePoolAutoConfigNetworkTags(), getParentForChildren(), isClean());
+        desiredNodePoolAutoConfigNetworkTags_ = null;
+      }
+      return desiredNodePoolAutoConfigNetworkTagsBuilder_;
     }
 
     @java.lang.Override

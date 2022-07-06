@@ -21,6 +21,7 @@ import com.google.container.v1beta1.CancelOperationRequest;
 import com.google.container.v1beta1.Cluster;
 import com.google.container.v1beta1.ClusterManagerGrpc.ClusterManagerImplBase;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
+import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.CreateClusterRequest;
 import com.google.container.v1beta1.CreateNodePoolRequest;
 import com.google.container.v1beta1.DeleteClusterRequest;
@@ -558,6 +559,27 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
                   "Unrecognized response type %s for method DeleteNodePool, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void completeNodePoolUpgrade(
+      CompleteNodePoolUpgradeRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CompleteNodePoolUpgrade, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

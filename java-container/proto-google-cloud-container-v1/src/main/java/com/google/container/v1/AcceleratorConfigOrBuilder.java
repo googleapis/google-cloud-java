@@ -91,4 +91,39 @@ public interface AcceleratorConfigOrBuilder
    * @return The bytes for gpuPartitionSize.
    */
   com.google.protobuf.ByteString getGpuPartitionSizeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU sharing options.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+   *
+   * @return Whether the gpuSharingConfig field is set.
+   */
+  boolean hasGpuSharingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU sharing options.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+   *
+   * @return The gpuSharingConfig.
+   */
+  com.google.container.v1.GPUSharingConfig getGpuSharingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU sharing options.
+   * </pre>
+   *
+   * <code>optional .google.container.v1.GPUSharingConfig gpu_sharing_config = 5;</code>
+   */
+  com.google.container.v1.GPUSharingConfigOrBuilder getGpuSharingConfigOrBuilder();
 }

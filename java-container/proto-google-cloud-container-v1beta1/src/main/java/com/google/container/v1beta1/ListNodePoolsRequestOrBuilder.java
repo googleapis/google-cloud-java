@@ -28,7 +28,7 @@ public interface ListNodePoolsRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
@@ -36,7 +36,7 @@ public interface ListNodePoolsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2932
+   *     google/container/v1beta1/cluster_service.proto;l=3136
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -46,7 +46,7 @@ public interface ListNodePoolsRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://developers.google.com/console/help/new/#projectnumber).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
@@ -54,7 +54,7 @@ public interface ListNodePoolsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2932
+   *     google/container/v1beta1/cluster_service.proto;l=3136
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface ListNodePoolsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2941
+   *     google/container/v1beta1/cluster_service.proto;l=3145
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface ListNodePoolsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2941
+   *     google/container/v1beta1/cluster_service.proto;l=3145
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface ListNodePoolsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2948
+   *     google/container/v1beta1/cluster_service.proto;l=3152
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface ListNodePoolsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ListNodePoolsRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2948
+   *     google/container/v1beta1/cluster_service.proto;l=3152
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -136,7 +136,7 @@ public interface ListNodePoolsRequestOrBuilder
    *
    *
    * <pre>
-   * The parent (project, location, cluster id) where the node pools will be
+   * The parent (project, location, cluster name) where the node pools will be
    * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -149,7 +149,7 @@ public interface ListNodePoolsRequestOrBuilder
    *
    *
    * <pre>
-   * The parent (project, location, cluster id) where the node pools will be
+   * The parent (project, location, cluster name) where the node pools will be
    * listed. Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *

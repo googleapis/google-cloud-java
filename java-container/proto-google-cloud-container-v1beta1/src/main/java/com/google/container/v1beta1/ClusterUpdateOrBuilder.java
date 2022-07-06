@@ -1172,6 +1172,41 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Configuration for direct-path (via ALTS) with workload identity.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+   *
+   * @return Whether the desiredWorkloadAltsConfig field is set.
+   */
+  boolean hasDesiredWorkloadAltsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for direct-path (via ALTS) with workload identity.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+   *
+   * @return The desiredWorkloadAltsConfig.
+   */
+  com.google.container.v1beta1.WorkloadALTSConfig getDesiredWorkloadAltsConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for direct-path (via ALTS) with workload identity.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+   */
+  com.google.container.v1beta1.WorkloadALTSConfigOrBuilder getDesiredWorkloadAltsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Configuration for Shielded Nodes.
    * </pre>
    *
@@ -1202,6 +1237,45 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1beta1.ShieldedNodes desired_shielded_nodes = 48;</code>
    */
   com.google.container.v1beta1.ShieldedNodesOrBuilder getDesiredShieldedNodesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired configuration for the fine-grained cost management feature.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+   * </code>
+   *
+   * @return Whether the desiredCostManagementConfig field is set.
+   */
+  boolean hasDesiredCostManagementConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired configuration for the fine-grained cost management feature.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+   * </code>
+   *
+   * @return The desiredCostManagementConfig.
+   */
+  com.google.container.v1beta1.CostManagementConfig getDesiredCostManagementConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired configuration for the fine-grained cost management feature.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+   * </code>
+   */
+  com.google.container.v1beta1.CostManagementConfigOrBuilder
+      getDesiredCostManagementConfigOrBuilder();
 
   /**
    *
@@ -1471,4 +1545,81 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1beta1.IdentityServiceConfigOrBuilder
       getDesiredIdentityServiceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags that apply to all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolAutoConfigNetworkTags field is set.
+   */
+  boolean hasDesiredNodePoolAutoConfigNetworkTags();
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags that apply to all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+   * </code>
+   *
+   * @return The desiredNodePoolAutoConfigNetworkTags.
+   */
+  com.google.container.v1beta1.NetworkTags getDesiredNodePoolAutoConfigNetworkTags();
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags that apply to all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+   * </code>
+   */
+  com.google.container.v1beta1.NetworkTagsOrBuilder
+      getDesiredNodePoolAutoConfigNetworkTagsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Protect API features for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   *
+   * @return Whether the desiredProtectConfig field is set.
+   */
+  boolean hasDesiredProtectConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Protect API features for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   *
+   * @return The desiredProtectConfig.
+   */
+  com.google.container.v1beta1.ProtectConfig getDesiredProtectConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Protect API features for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   */
+  com.google.container.v1beta1.ProtectConfigOrBuilder getDesiredProtectConfigOrBuilder();
 }

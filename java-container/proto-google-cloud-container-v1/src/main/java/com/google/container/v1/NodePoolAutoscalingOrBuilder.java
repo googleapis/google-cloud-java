@@ -76,4 +76,61 @@ public interface NodePoolAutoscalingOrBuilder
    * @return The autoprovisioned.
    */
   boolean getAutoprovisioned();
+
+  /**
+   *
+   *
+   * <pre>
+   * Location policy used when scaling up a nodepool.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolAutoscaling.LocationPolicy location_policy = 5;</code>
+   *
+   * @return The enum numeric value on the wire for locationPolicy.
+   */
+  int getLocationPolicyValue();
+  /**
+   *
+   *
+   * <pre>
+   * Location policy used when scaling up a nodepool.
+   * </pre>
+   *
+   * <code>.google.container.v1.NodePoolAutoscaling.LocationPolicy location_policy = 5;</code>
+   *
+   * @return The locationPolicy.
+   */
+  com.google.container.v1.NodePoolAutoscaling.LocationPolicy getLocationPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Minimum number of nodes in the node pool. Must be greater than 1 less than
+   * total_max_node_count.
+   * The total_*_node_count fields are mutually exclusive with the *_node_count
+   * fields.
+   * </pre>
+   *
+   * <code>int32 total_min_node_count = 6;</code>
+   *
+   * @return The totalMinNodeCount.
+   */
+  int getTotalMinNodeCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of nodes in the node pool. Must be greater than
+   * total_min_node_count. There has to be enough quota to scale up the cluster.
+   * The total_*_node_count fields are mutually exclusive with the *_node_count
+   * fields.
+   * </pre>
+   *
+   * <code>int32 total_max_node_count = 7;</code>
+   *
+   * @return The totalMaxNodeCount.
+   */
+  int getTotalMaxNodeCount();
 }

@@ -421,6 +421,23 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 394:
+            {
+              com.google.container.v1beta1.CostManagementConfig.Builder subBuilder = null;
+              if (desiredCostManagementConfig_ != null) {
+                subBuilder = desiredCostManagementConfig_.toBuilder();
+              }
+              desiredCostManagementConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.CostManagementConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredCostManagementConfig_);
+                desiredCostManagementConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 400:
             {
               int rawValue = input.readEnum();
@@ -513,6 +530,22 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
               if (subBuilder != null) {
                 subBuilder.mergeFrom(desiredWorkloadCertificates_);
                 desiredWorkloadCertificates_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 498:
+            {
+              com.google.container.v1beta1.WorkloadALTSConfig.Builder subBuilder = null;
+              if (desiredWorkloadAltsConfig_ != null) {
+                subBuilder = desiredWorkloadAltsConfig_.toBuilder();
+              }
+              desiredWorkloadAltsConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.WorkloadALTSConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredWorkloadAltsConfig_);
+                desiredWorkloadAltsConfig_ = subBuilder.buildPartial();
               }
 
               break;
@@ -622,6 +655,38 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 882:
+            {
+              com.google.container.v1beta1.NetworkTags.Builder subBuilder = null;
+              if (desiredNodePoolAutoConfigNetworkTags_ != null) {
+                subBuilder = desiredNodePoolAutoConfigNetworkTags_.toBuilder();
+              }
+              desiredNodePoolAutoConfigNetworkTags_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.NetworkTags.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredNodePoolAutoConfigNetworkTags_);
+                desiredNodePoolAutoConfigNetworkTags_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 898:
+            {
+              com.google.container.v1beta1.ProtectConfig.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) != 0)) {
+                subBuilder = desiredProtectConfig_.toBuilder();
+              }
+              desiredProtectConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.ProtectConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(desiredProtectConfig_);
+                desiredProtectConfig_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -661,6 +726,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.ClusterUpdate.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DESIRED_NODE_VERSION_FIELD_NUMBER = 4;
   private volatile java.lang.Object desiredNodeVersion_;
   /**
@@ -2267,6 +2333,55 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredMeshCertificates();
   }
 
+  public static final int DESIRED_WORKLOAD_ALTS_CONFIG_FIELD_NUMBER = 62;
+  private com.google.container.v1beta1.WorkloadALTSConfig desiredWorkloadAltsConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for direct-path (via ALTS) with workload identity.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+   *
+   * @return Whether the desiredWorkloadAltsConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredWorkloadAltsConfig() {
+    return desiredWorkloadAltsConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for direct-path (via ALTS) with workload identity.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+   *
+   * @return The desiredWorkloadAltsConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.WorkloadALTSConfig getDesiredWorkloadAltsConfig() {
+    return desiredWorkloadAltsConfig_ == null
+        ? com.google.container.v1beta1.WorkloadALTSConfig.getDefaultInstance()
+        : desiredWorkloadAltsConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for direct-path (via ALTS) with workload identity.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.WorkloadALTSConfigOrBuilder
+      getDesiredWorkloadAltsConfigOrBuilder() {
+    return getDesiredWorkloadAltsConfig();
+  }
+
   public static final int DESIRED_SHIELDED_NODES_FIELD_NUMBER = 48;
   private com.google.container.v1beta1.ShieldedNodes desiredShieldedNodes_;
   /**
@@ -2313,6 +2428,58 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.container.v1beta1.ShieldedNodesOrBuilder getDesiredShieldedNodesOrBuilder() {
     return getDesiredShieldedNodes();
+  }
+
+  public static final int DESIRED_COST_MANAGEMENT_CONFIG_FIELD_NUMBER = 49;
+  private com.google.container.v1beta1.CostManagementConfig desiredCostManagementConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired configuration for the fine-grained cost management feature.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+   * </code>
+   *
+   * @return Whether the desiredCostManagementConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredCostManagementConfig() {
+    return desiredCostManagementConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired configuration for the fine-grained cost management feature.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+   * </code>
+   *
+   * @return The desiredCostManagementConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.CostManagementConfig getDesiredCostManagementConfig() {
+    return desiredCostManagementConfig_ == null
+        ? com.google.container.v1beta1.CostManagementConfig.getDefaultInstance()
+        : desiredCostManagementConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired configuration for the fine-grained cost management feature.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.CostManagementConfigOrBuilder
+      getDesiredCostManagementConfigOrBuilder() {
+    return getDesiredCostManagementConfig();
   }
 
   public static final int DESIRED_MASTER_FIELD_NUMBER = 52;
@@ -2678,6 +2845,111 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return getDesiredIdentityServiceConfig();
   }
 
+  public static final int DESIRED_NODE_POOL_AUTO_CONFIG_NETWORK_TAGS_FIELD_NUMBER = 110;
+  private com.google.container.v1beta1.NetworkTags desiredNodePoolAutoConfigNetworkTags_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags that apply to all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolAutoConfigNetworkTags field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredNodePoolAutoConfigNetworkTags() {
+    return desiredNodePoolAutoConfigNetworkTags_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags that apply to all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+   * </code>
+   *
+   * @return The desiredNodePoolAutoConfigNetworkTags.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NetworkTags getDesiredNodePoolAutoConfigNetworkTags() {
+    return desiredNodePoolAutoConfigNetworkTags_ == null
+        ? com.google.container.v1beta1.NetworkTags.getDefaultInstance()
+        : desiredNodePoolAutoConfigNetworkTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags that apply to all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NetworkTagsOrBuilder
+      getDesiredNodePoolAutoConfigNetworkTagsOrBuilder() {
+    return getDesiredNodePoolAutoConfigNetworkTags();
+  }
+
+  public static final int DESIRED_PROTECT_CONFIG_FIELD_NUMBER = 112;
+  private com.google.container.v1beta1.ProtectConfig desiredProtectConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Protect API features for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   *
+   * @return Whether the desiredProtectConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredProtectConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Protect API features for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   *
+   * @return The desiredProtectConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ProtectConfig getDesiredProtectConfig() {
+    return desiredProtectConfig_ == null
+        ? com.google.container.v1beta1.ProtectConfig.getDefaultInstance()
+        : desiredProtectConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Protect API features for the cluster.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ProtectConfigOrBuilder getDesiredProtectConfigOrBuilder() {
+    return desiredProtectConfig_ == null
+        ? com.google.container.v1beta1.ProtectConfig.getDefaultInstance()
+        : desiredProtectConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2764,6 +3036,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredShieldedNodes_ != null) {
       output.writeMessage(48, getDesiredShieldedNodes());
     }
+    if (desiredCostManagementConfig_ != null) {
+      output.writeMessage(49, getDesiredCostManagementConfig());
+    }
     if (desiredDatapathProvider_
         != com.google.container.v1beta1.DatapathProvider.DATAPATH_PROVIDER_UNSPECIFIED
             .getNumber()) {
@@ -2790,6 +3065,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredWorkloadCertificates_ != null) {
       output.writeMessage(61, getDesiredWorkloadCertificates());
     }
+    if (desiredWorkloadAltsConfig_ != null) {
+      output.writeMessage(62, getDesiredWorkloadAltsConfig());
+    }
     if (desiredAuthenticatorGroupsConfig_ != null) {
       output.writeMessage(63, getDesiredAuthenticatorGroupsConfig());
     }
@@ -2810,6 +3088,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (desiredGcfsConfig_ != null) {
       output.writeMessage(109, getDesiredGcfsConfig());
+    }
+    if (desiredNodePoolAutoConfigNetworkTags_ != null) {
+      output.writeMessage(110, getDesiredNodePoolAutoConfigNetworkTags());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(112, getDesiredProtectConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -2928,6 +3212,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(48, getDesiredShieldedNodes());
     }
+    if (desiredCostManagementConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              49, getDesiredCostManagementConfig());
+    }
     if (desiredDatapathProvider_
         != com.google.container.v1beta1.DatapathProvider.DATAPATH_PROVIDER_UNSPECIFIED
             .getNumber()) {
@@ -2962,6 +3251,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               61, getDesiredWorkloadCertificates());
     }
+    if (desiredWorkloadAltsConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              62, getDesiredWorkloadAltsConfig());
+    }
     if (desiredAuthenticatorGroupsConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2991,6 +3285,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (desiredGcfsConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(109, getDesiredGcfsConfig());
+    }
+    if (desiredNodePoolAutoConfigNetworkTags_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              110, getDesiredNodePoolAutoConfigNetworkTags());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(112, getDesiredProtectConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -3121,9 +3424,19 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredMeshCertificates()) {
       if (!getDesiredMeshCertificates().equals(other.getDesiredMeshCertificates())) return false;
     }
+    if (hasDesiredWorkloadAltsConfig() != other.hasDesiredWorkloadAltsConfig()) return false;
+    if (hasDesiredWorkloadAltsConfig()) {
+      if (!getDesiredWorkloadAltsConfig().equals(other.getDesiredWorkloadAltsConfig()))
+        return false;
+    }
     if (hasDesiredShieldedNodes() != other.hasDesiredShieldedNodes()) return false;
     if (hasDesiredShieldedNodes()) {
       if (!getDesiredShieldedNodes().equals(other.getDesiredShieldedNodes())) return false;
+    }
+    if (hasDesiredCostManagementConfig() != other.hasDesiredCostManagementConfig()) return false;
+    if (hasDesiredCostManagementConfig()) {
+      if (!getDesiredCostManagementConfig().equals(other.getDesiredCostManagementConfig()))
+        return false;
     }
     if (hasDesiredMaster() != other.hasDesiredMaster()) return false;
     if (hasDesiredMaster()) {
@@ -3157,6 +3470,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredIdentityServiceConfig()) {
       if (!getDesiredIdentityServiceConfig().equals(other.getDesiredIdentityServiceConfig()))
         return false;
+    }
+    if (hasDesiredNodePoolAutoConfigNetworkTags()
+        != other.hasDesiredNodePoolAutoConfigNetworkTags()) return false;
+    if (hasDesiredNodePoolAutoConfigNetworkTags()) {
+      if (!getDesiredNodePoolAutoConfigNetworkTags()
+          .equals(other.getDesiredNodePoolAutoConfigNetworkTags())) return false;
+    }
+    if (hasDesiredProtectConfig() != other.hasDesiredProtectConfig()) return false;
+    if (hasDesiredProtectConfig()) {
+      if (!getDesiredProtectConfig().equals(other.getDesiredProtectConfig())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -3273,9 +3596,17 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_MESH_CERTIFICATES_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredMeshCertificates().hashCode();
     }
+    if (hasDesiredWorkloadAltsConfig()) {
+      hash = (37 * hash) + DESIRED_WORKLOAD_ALTS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredWorkloadAltsConfig().hashCode();
+    }
     if (hasDesiredShieldedNodes()) {
       hash = (37 * hash) + DESIRED_SHIELDED_NODES_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredShieldedNodes().hashCode();
+    }
+    if (hasDesiredCostManagementConfig()) {
+      hash = (37 * hash) + DESIRED_COST_MANAGEMENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredCostManagementConfig().hashCode();
     }
     if (hasDesiredMaster()) {
       hash = (37 * hash) + DESIRED_MASTER_FIELD_NUMBER;
@@ -3304,6 +3635,14 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredIdentityServiceConfig()) {
       hash = (37 * hash) + DESIRED_IDENTITY_SERVICE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredIdentityServiceConfig().hashCode();
+    }
+    if (hasDesiredNodePoolAutoConfigNetworkTags()) {
+      hash = (37 * hash) + DESIRED_NODE_POOL_AUTO_CONFIG_NETWORK_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredNodePoolAutoConfigNetworkTags().hashCode();
+    }
+    if (hasDesiredProtectConfig()) {
+      hash = (37 * hash) + DESIRED_PROTECT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredProtectConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -3446,7 +3785,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDesiredProtectConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -3596,11 +3937,23 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredMeshCertificates_ = null;
         desiredMeshCertificatesBuilder_ = null;
       }
+      if (desiredWorkloadAltsConfigBuilder_ == null) {
+        desiredWorkloadAltsConfig_ = null;
+      } else {
+        desiredWorkloadAltsConfig_ = null;
+        desiredWorkloadAltsConfigBuilder_ = null;
+      }
       if (desiredShieldedNodesBuilder_ == null) {
         desiredShieldedNodes_ = null;
       } else {
         desiredShieldedNodes_ = null;
         desiredShieldedNodesBuilder_ = null;
+      }
+      if (desiredCostManagementConfigBuilder_ == null) {
+        desiredCostManagementConfig_ = null;
+      } else {
+        desiredCostManagementConfig_ = null;
+        desiredCostManagementConfigBuilder_ = null;
       }
       if (desiredMasterBuilder_ == null) {
         desiredMaster_ = null;
@@ -3644,6 +3997,18 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredIdentityServiceConfig_ = null;
         desiredIdentityServiceConfigBuilder_ = null;
       }
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        desiredNodePoolAutoConfigNetworkTags_ = null;
+      } else {
+        desiredNodePoolAutoConfigNetworkTags_ = null;
+        desiredNodePoolAutoConfigNetworkTagsBuilder_ = null;
+      }
+      if (desiredProtectConfigBuilder_ == null) {
+        desiredProtectConfig_ = null;
+      } else {
+        desiredProtectConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -3672,6 +4037,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       com.google.container.v1beta1.ClusterUpdate result =
           new com.google.container.v1beta1.ClusterUpdate(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.desiredNodeVersion_ = desiredNodeVersion_;
       result.desiredMonitoringService_ = desiredMonitoringService_;
       if (desiredAddonsConfigBuilder_ == null) {
@@ -3791,10 +4157,20 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.desiredMeshCertificates_ = desiredMeshCertificatesBuilder_.build();
       }
+      if (desiredWorkloadAltsConfigBuilder_ == null) {
+        result.desiredWorkloadAltsConfig_ = desiredWorkloadAltsConfig_;
+      } else {
+        result.desiredWorkloadAltsConfig_ = desiredWorkloadAltsConfigBuilder_.build();
+      }
       if (desiredShieldedNodesBuilder_ == null) {
         result.desiredShieldedNodes_ = desiredShieldedNodes_;
       } else {
         result.desiredShieldedNodes_ = desiredShieldedNodesBuilder_.build();
+      }
+      if (desiredCostManagementConfigBuilder_ == null) {
+        result.desiredCostManagementConfig_ = desiredCostManagementConfig_;
+      } else {
+        result.desiredCostManagementConfig_ = desiredCostManagementConfigBuilder_.build();
       }
       if (desiredMasterBuilder_ == null) {
         result.desiredMaster_ = desiredMaster_;
@@ -3831,6 +4207,21 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.desiredIdentityServiceConfig_ = desiredIdentityServiceConfigBuilder_.build();
       }
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        result.desiredNodePoolAutoConfigNetworkTags_ = desiredNodePoolAutoConfigNetworkTags_;
+      } else {
+        result.desiredNodePoolAutoConfigNetworkTags_ =
+            desiredNodePoolAutoConfigNetworkTagsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (desiredProtectConfigBuilder_ == null) {
+          result.desiredProtectConfig_ = desiredProtectConfig_;
+        } else {
+          result.desiredProtectConfig_ = desiredProtectConfigBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -3984,8 +4375,14 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasDesiredMeshCertificates()) {
         mergeDesiredMeshCertificates(other.getDesiredMeshCertificates());
       }
+      if (other.hasDesiredWorkloadAltsConfig()) {
+        mergeDesiredWorkloadAltsConfig(other.getDesiredWorkloadAltsConfig());
+      }
       if (other.hasDesiredShieldedNodes()) {
         mergeDesiredShieldedNodes(other.getDesiredShieldedNodes());
+      }
+      if (other.hasDesiredCostManagementConfig()) {
+        mergeDesiredCostManagementConfig(other.getDesiredCostManagementConfig());
       }
       if (other.hasDesiredMaster()) {
         mergeDesiredMaster(other.getDesiredMaster());
@@ -4007,6 +4404,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredIdentityServiceConfig()) {
         mergeDesiredIdentityServiceConfig(other.getDesiredIdentityServiceConfig());
+      }
+      if (other.hasDesiredNodePoolAutoConfigNetworkTags()) {
+        mergeDesiredNodePoolAutoConfigNetworkTags(other.getDesiredNodePoolAutoConfigNetworkTags());
+      }
+      if (other.hasDesiredProtectConfig()) {
+        mergeDesiredProtectConfig(other.getDesiredProtectConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -9424,6 +9827,196 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return desiredMeshCertificatesBuilder_;
     }
 
+    private com.google.container.v1beta1.WorkloadALTSConfig desiredWorkloadAltsConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.WorkloadALTSConfig,
+            com.google.container.v1beta1.WorkloadALTSConfig.Builder,
+            com.google.container.v1beta1.WorkloadALTSConfigOrBuilder>
+        desiredWorkloadAltsConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for direct-path (via ALTS) with workload identity.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+     *
+     * @return Whether the desiredWorkloadAltsConfig field is set.
+     */
+    public boolean hasDesiredWorkloadAltsConfig() {
+      return desiredWorkloadAltsConfigBuilder_ != null || desiredWorkloadAltsConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for direct-path (via ALTS) with workload identity.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+     *
+     * @return The desiredWorkloadAltsConfig.
+     */
+    public com.google.container.v1beta1.WorkloadALTSConfig getDesiredWorkloadAltsConfig() {
+      if (desiredWorkloadAltsConfigBuilder_ == null) {
+        return desiredWorkloadAltsConfig_ == null
+            ? com.google.container.v1beta1.WorkloadALTSConfig.getDefaultInstance()
+            : desiredWorkloadAltsConfig_;
+      } else {
+        return desiredWorkloadAltsConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for direct-path (via ALTS) with workload identity.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+     */
+    public Builder setDesiredWorkloadAltsConfig(
+        com.google.container.v1beta1.WorkloadALTSConfig value) {
+      if (desiredWorkloadAltsConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredWorkloadAltsConfig_ = value;
+        onChanged();
+      } else {
+        desiredWorkloadAltsConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for direct-path (via ALTS) with workload identity.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+     */
+    public Builder setDesiredWorkloadAltsConfig(
+        com.google.container.v1beta1.WorkloadALTSConfig.Builder builderForValue) {
+      if (desiredWorkloadAltsConfigBuilder_ == null) {
+        desiredWorkloadAltsConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredWorkloadAltsConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for direct-path (via ALTS) with workload identity.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+     */
+    public Builder mergeDesiredWorkloadAltsConfig(
+        com.google.container.v1beta1.WorkloadALTSConfig value) {
+      if (desiredWorkloadAltsConfigBuilder_ == null) {
+        if (desiredWorkloadAltsConfig_ != null) {
+          desiredWorkloadAltsConfig_ =
+              com.google.container.v1beta1.WorkloadALTSConfig.newBuilder(desiredWorkloadAltsConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredWorkloadAltsConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredWorkloadAltsConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for direct-path (via ALTS) with workload identity.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+     */
+    public Builder clearDesiredWorkloadAltsConfig() {
+      if (desiredWorkloadAltsConfigBuilder_ == null) {
+        desiredWorkloadAltsConfig_ = null;
+        onChanged();
+      } else {
+        desiredWorkloadAltsConfig_ = null;
+        desiredWorkloadAltsConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for direct-path (via ALTS) with workload identity.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+     */
+    public com.google.container.v1beta1.WorkloadALTSConfig.Builder
+        getDesiredWorkloadAltsConfigBuilder() {
+
+      onChanged();
+      return getDesiredWorkloadAltsConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for direct-path (via ALTS) with workload identity.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+     */
+    public com.google.container.v1beta1.WorkloadALTSConfigOrBuilder
+        getDesiredWorkloadAltsConfigOrBuilder() {
+      if (desiredWorkloadAltsConfigBuilder_ != null) {
+        return desiredWorkloadAltsConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredWorkloadAltsConfig_ == null
+            ? com.google.container.v1beta1.WorkloadALTSConfig.getDefaultInstance()
+            : desiredWorkloadAltsConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for direct-path (via ALTS) with workload identity.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.WorkloadALTSConfig desired_workload_alts_config = 62;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.WorkloadALTSConfig,
+            com.google.container.v1beta1.WorkloadALTSConfig.Builder,
+            com.google.container.v1beta1.WorkloadALTSConfigOrBuilder>
+        getDesiredWorkloadAltsConfigFieldBuilder() {
+      if (desiredWorkloadAltsConfigBuilder_ == null) {
+        desiredWorkloadAltsConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.WorkloadALTSConfig,
+                com.google.container.v1beta1.WorkloadALTSConfig.Builder,
+                com.google.container.v1beta1.WorkloadALTSConfigOrBuilder>(
+                getDesiredWorkloadAltsConfig(), getParentForChildren(), isClean());
+        desiredWorkloadAltsConfig_ = null;
+      }
+      return desiredWorkloadAltsConfigBuilder_;
+    }
+
     private com.google.container.v1beta1.ShieldedNodes desiredShieldedNodes_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1beta1.ShieldedNodes,
@@ -9608,6 +10201,206 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredShieldedNodes_ = null;
       }
       return desiredShieldedNodesBuilder_;
+    }
+
+    private com.google.container.v1beta1.CostManagementConfig desiredCostManagementConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.CostManagementConfig,
+            com.google.container.v1beta1.CostManagementConfig.Builder,
+            com.google.container.v1beta1.CostManagementConfigOrBuilder>
+        desiredCostManagementConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+     * </code>
+     *
+     * @return Whether the desiredCostManagementConfig field is set.
+     */
+    public boolean hasDesiredCostManagementConfig() {
+      return desiredCostManagementConfigBuilder_ != null || desiredCostManagementConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+     * </code>
+     *
+     * @return The desiredCostManagementConfig.
+     */
+    public com.google.container.v1beta1.CostManagementConfig getDesiredCostManagementConfig() {
+      if (desiredCostManagementConfigBuilder_ == null) {
+        return desiredCostManagementConfig_ == null
+            ? com.google.container.v1beta1.CostManagementConfig.getDefaultInstance()
+            : desiredCostManagementConfig_;
+      } else {
+        return desiredCostManagementConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+     * </code>
+     */
+    public Builder setDesiredCostManagementConfig(
+        com.google.container.v1beta1.CostManagementConfig value) {
+      if (desiredCostManagementConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredCostManagementConfig_ = value;
+        onChanged();
+      } else {
+        desiredCostManagementConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+     * </code>
+     */
+    public Builder setDesiredCostManagementConfig(
+        com.google.container.v1beta1.CostManagementConfig.Builder builderForValue) {
+      if (desiredCostManagementConfigBuilder_ == null) {
+        desiredCostManagementConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredCostManagementConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+     * </code>
+     */
+    public Builder mergeDesiredCostManagementConfig(
+        com.google.container.v1beta1.CostManagementConfig value) {
+      if (desiredCostManagementConfigBuilder_ == null) {
+        if (desiredCostManagementConfig_ != null) {
+          desiredCostManagementConfig_ =
+              com.google.container.v1beta1.CostManagementConfig.newBuilder(
+                      desiredCostManagementConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredCostManagementConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredCostManagementConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+     * </code>
+     */
+    public Builder clearDesiredCostManagementConfig() {
+      if (desiredCostManagementConfigBuilder_ == null) {
+        desiredCostManagementConfig_ = null;
+        onChanged();
+      } else {
+        desiredCostManagementConfig_ = null;
+        desiredCostManagementConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+     * </code>
+     */
+    public com.google.container.v1beta1.CostManagementConfig.Builder
+        getDesiredCostManagementConfigBuilder() {
+
+      onChanged();
+      return getDesiredCostManagementConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+     * </code>
+     */
+    public com.google.container.v1beta1.CostManagementConfigOrBuilder
+        getDesiredCostManagementConfigOrBuilder() {
+      if (desiredCostManagementConfigBuilder_ != null) {
+        return desiredCostManagementConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredCostManagementConfig_ == null
+            ? com.google.container.v1beta1.CostManagementConfig.getDefaultInstance()
+            : desiredCostManagementConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired configuration for the fine-grained cost management feature.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.CostManagementConfig desired_cost_management_config = 49;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.CostManagementConfig,
+            com.google.container.v1beta1.CostManagementConfig.Builder,
+            com.google.container.v1beta1.CostManagementConfigOrBuilder>
+        getDesiredCostManagementConfigFieldBuilder() {
+      if (desiredCostManagementConfigBuilder_ == null) {
+        desiredCostManagementConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.CostManagementConfig,
+                com.google.container.v1beta1.CostManagementConfig.Builder,
+                com.google.container.v1beta1.CostManagementConfigOrBuilder>(
+                getDesiredCostManagementConfig(), getParentForChildren(), isClean());
+        desiredCostManagementConfig_ = null;
+      }
+      return desiredCostManagementConfigBuilder_;
     }
 
     private com.google.container.v1beta1.Master desiredMaster_;
@@ -10995,6 +11788,404 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredIdentityServiceConfig_ = null;
       }
       return desiredIdentityServiceConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.NetworkTags desiredNodePoolAutoConfigNetworkTags_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NetworkTags,
+            com.google.container.v1beta1.NetworkTags.Builder,
+            com.google.container.v1beta1.NetworkTagsOrBuilder>
+        desiredNodePoolAutoConfigNetworkTagsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     *
+     * @return Whether the desiredNodePoolAutoConfigNetworkTags field is set.
+     */
+    public boolean hasDesiredNodePoolAutoConfigNetworkTags() {
+      return desiredNodePoolAutoConfigNetworkTagsBuilder_ != null
+          || desiredNodePoolAutoConfigNetworkTags_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     *
+     * @return The desiredNodePoolAutoConfigNetworkTags.
+     */
+    public com.google.container.v1beta1.NetworkTags getDesiredNodePoolAutoConfigNetworkTags() {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        return desiredNodePoolAutoConfigNetworkTags_ == null
+            ? com.google.container.v1beta1.NetworkTags.getDefaultInstance()
+            : desiredNodePoolAutoConfigNetworkTags_;
+      } else {
+        return desiredNodePoolAutoConfigNetworkTagsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    public Builder setDesiredNodePoolAutoConfigNetworkTags(
+        com.google.container.v1beta1.NetworkTags value) {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredNodePoolAutoConfigNetworkTags_ = value;
+        onChanged();
+      } else {
+        desiredNodePoolAutoConfigNetworkTagsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    public Builder setDesiredNodePoolAutoConfigNetworkTags(
+        com.google.container.v1beta1.NetworkTags.Builder builderForValue) {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        desiredNodePoolAutoConfigNetworkTags_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredNodePoolAutoConfigNetworkTagsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    public Builder mergeDesiredNodePoolAutoConfigNetworkTags(
+        com.google.container.v1beta1.NetworkTags value) {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        if (desiredNodePoolAutoConfigNetworkTags_ != null) {
+          desiredNodePoolAutoConfigNetworkTags_ =
+              com.google.container.v1beta1.NetworkTags.newBuilder(
+                      desiredNodePoolAutoConfigNetworkTags_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredNodePoolAutoConfigNetworkTags_ = value;
+        }
+        onChanged();
+      } else {
+        desiredNodePoolAutoConfigNetworkTagsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    public Builder clearDesiredNodePoolAutoConfigNetworkTags() {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        desiredNodePoolAutoConfigNetworkTags_ = null;
+        onChanged();
+      } else {
+        desiredNodePoolAutoConfigNetworkTags_ = null;
+        desiredNodePoolAutoConfigNetworkTagsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    public com.google.container.v1beta1.NetworkTags.Builder
+        getDesiredNodePoolAutoConfigNetworkTagsBuilder() {
+
+      onChanged();
+      return getDesiredNodePoolAutoConfigNetworkTagsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    public com.google.container.v1beta1.NetworkTagsOrBuilder
+        getDesiredNodePoolAutoConfigNetworkTagsOrBuilder() {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ != null) {
+        return desiredNodePoolAutoConfigNetworkTagsBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredNodePoolAutoConfigNetworkTags_ == null
+            ? com.google.container.v1beta1.NetworkTags.getDefaultInstance()
+            : desiredNodePoolAutoConfigNetworkTags_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired network tags that apply to all auto-provisioned node pools
+     * in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NetworkTags desired_node_pool_auto_config_network_tags = 110;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NetworkTags,
+            com.google.container.v1beta1.NetworkTags.Builder,
+            com.google.container.v1beta1.NetworkTagsOrBuilder>
+        getDesiredNodePoolAutoConfigNetworkTagsFieldBuilder() {
+      if (desiredNodePoolAutoConfigNetworkTagsBuilder_ == null) {
+        desiredNodePoolAutoConfigNetworkTagsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.NetworkTags,
+                com.google.container.v1beta1.NetworkTags.Builder,
+                com.google.container.v1beta1.NetworkTagsOrBuilder>(
+                getDesiredNodePoolAutoConfigNetworkTags(), getParentForChildren(), isClean());
+        desiredNodePoolAutoConfigNetworkTags_ = null;
+      }
+      return desiredNodePoolAutoConfigNetworkTagsBuilder_;
+    }
+
+    private com.google.container.v1beta1.ProtectConfig desiredProtectConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ProtectConfig,
+            com.google.container.v1beta1.ProtectConfig.Builder,
+            com.google.container.v1beta1.ProtectConfigOrBuilder>
+        desiredProtectConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Protect API features for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     *
+     * @return Whether the desiredProtectConfig field is set.
+     */
+    public boolean hasDesiredProtectConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Protect API features for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     *
+     * @return The desiredProtectConfig.
+     */
+    public com.google.container.v1beta1.ProtectConfig getDesiredProtectConfig() {
+      if (desiredProtectConfigBuilder_ == null) {
+        return desiredProtectConfig_ == null
+            ? com.google.container.v1beta1.ProtectConfig.getDefaultInstance()
+            : desiredProtectConfig_;
+      } else {
+        return desiredProtectConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Protect API features for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     */
+    public Builder setDesiredProtectConfig(com.google.container.v1beta1.ProtectConfig value) {
+      if (desiredProtectConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredProtectConfig_ = value;
+        onChanged();
+      } else {
+        desiredProtectConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Protect API features for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     */
+    public Builder setDesiredProtectConfig(
+        com.google.container.v1beta1.ProtectConfig.Builder builderForValue) {
+      if (desiredProtectConfigBuilder_ == null) {
+        desiredProtectConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        desiredProtectConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Protect API features for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     */
+    public Builder mergeDesiredProtectConfig(com.google.container.v1beta1.ProtectConfig value) {
+      if (desiredProtectConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && desiredProtectConfig_ != null
+            && desiredProtectConfig_
+                != com.google.container.v1beta1.ProtectConfig.getDefaultInstance()) {
+          desiredProtectConfig_ =
+              com.google.container.v1beta1.ProtectConfig.newBuilder(desiredProtectConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          desiredProtectConfig_ = value;
+        }
+        onChanged();
+      } else {
+        desiredProtectConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Protect API features for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     */
+    public Builder clearDesiredProtectConfig() {
+      if (desiredProtectConfigBuilder_ == null) {
+        desiredProtectConfig_ = null;
+        onChanged();
+      } else {
+        desiredProtectConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Protect API features for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     */
+    public com.google.container.v1beta1.ProtectConfig.Builder getDesiredProtectConfigBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getDesiredProtectConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Protect API features for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     */
+    public com.google.container.v1beta1.ProtectConfigOrBuilder getDesiredProtectConfigOrBuilder() {
+      if (desiredProtectConfigBuilder_ != null) {
+        return desiredProtectConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredProtectConfig_ == null
+            ? com.google.container.v1beta1.ProtectConfig.getDefaultInstance()
+            : desiredProtectConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Protect API features for the cluster.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ProtectConfig,
+            com.google.container.v1beta1.ProtectConfig.Builder,
+            com.google.container.v1beta1.ProtectConfigOrBuilder>
+        getDesiredProtectConfigFieldBuilder() {
+      if (desiredProtectConfigBuilder_ == null) {
+        desiredProtectConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.ProtectConfig,
+                com.google.container.v1beta1.ProtectConfig.Builder,
+                com.google.container.v1beta1.ProtectConfigOrBuilder>(
+                getDesiredProtectConfig(), getParentForChildren(), isClean());
+        desiredProtectConfig_ = null;
+      }
+      return desiredProtectConfigBuilder_;
     }
 
     @java.lang.Override

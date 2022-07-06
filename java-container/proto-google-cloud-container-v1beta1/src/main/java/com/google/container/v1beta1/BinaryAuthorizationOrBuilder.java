@@ -28,7 +28,7 @@ public interface BinaryAuthorizationOrBuilder
    *
    * <pre>
    * Enable Binary Authorization for this cluster. If enabled, all container
-   * images will be validated by Google Binauthz.
+   * images will be validated by Binary Authorization.
    * </pre>
    *
    * <code>bool enabled = 1;</code>
@@ -36,4 +36,33 @@ public interface BinaryAuthorizationOrBuilder
    * @return The enabled.
    */
   boolean getEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Mode of operation for binauthz policy evaluation. Currently the only
+   * options are equivalent to enable/disable. If unspecified, defaults to
+   * DISABLED.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.BinaryAuthorization.EvaluationMode evaluation_mode = 2;</code>
+   *
+   * @return The enum numeric value on the wire for evaluationMode.
+   */
+  int getEvaluationModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Mode of operation for binauthz policy evaluation. Currently the only
+   * options are equivalent to enable/disable. If unspecified, defaults to
+   * DISABLED.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.BinaryAuthorization.EvaluationMode evaluation_mode = 2;</code>
+   *
+   * @return The evaluationMode.
+   */
+  com.google.container.v1beta1.BinaryAuthorization.EvaluationMode getEvaluationMode();
 }

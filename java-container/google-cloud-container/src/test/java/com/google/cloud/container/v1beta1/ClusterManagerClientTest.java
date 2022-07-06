@@ -36,7 +36,9 @@ import com.google.container.v1beta1.ClusterAutoscaling;
 import com.google.container.v1beta1.ClusterTelemetry;
 import com.google.container.v1beta1.ClusterUpdate;
 import com.google.container.v1beta1.CompleteIPRotationRequest;
+import com.google.container.v1beta1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1beta1.ConfidentialNodes;
+import com.google.container.v1beta1.CostManagementConfig;
 import com.google.container.v1beta1.CreateClusterRequest;
 import com.google.container.v1beta1.CreateNodePoolRequest;
 import com.google.container.v1beta1.DatabaseEncryption;
@@ -82,6 +84,7 @@ import com.google.container.v1beta1.NodeLabels;
 import com.google.container.v1beta1.NodeManagement;
 import com.google.container.v1beta1.NodeNetworkConfig;
 import com.google.container.v1beta1.NodePool;
+import com.google.container.v1beta1.NodePoolAutoConfig;
 import com.google.container.v1beta1.NodePoolAutoscaling;
 import com.google.container.v1beta1.NodePoolDefaults;
 import com.google.container.v1beta1.NodeTaints;
@@ -90,6 +93,7 @@ import com.google.container.v1beta1.Operation;
 import com.google.container.v1beta1.OperationProgress;
 import com.google.container.v1beta1.PodSecurityPolicyConfig;
 import com.google.container.v1beta1.PrivateClusterConfig;
+import com.google.container.v1beta1.ProtectConfig;
 import com.google.container.v1beta1.ReleaseChannel;
 import com.google.container.v1beta1.ResourceUsageExportConfig;
 import com.google.container.v1beta1.RollbackNodePoolUpgradeRequest;
@@ -117,6 +121,7 @@ import com.google.container.v1beta1.UsableSubnetwork;
 import com.google.container.v1beta1.VerticalPodAutoscaling;
 import com.google.container.v1beta1.VirtualNIC;
 import com.google.container.v1beta1.WindowsVersions;
+import com.google.container.v1beta1.WorkloadALTSConfig;
 import com.google.container.v1beta1.WorkloadCertificates;
 import com.google.container.v1beta1.WorkloadIdentityConfig;
 import com.google.container.v1beta1.WorkloadMetadataConfig;
@@ -260,6 +265,8 @@ public class ClusterManagerClientTest {
             .setWorkloadIdentityConfig(WorkloadIdentityConfig.newBuilder().build())
             .setWorkloadCertificates(WorkloadCertificates.newBuilder().build())
             .setMeshCertificates(MeshCertificates.newBuilder().build())
+            .setWorkloadAltsConfig(WorkloadALTSConfig.newBuilder().build())
+            .setCostManagementConfig(CostManagementConfig.newBuilder().build())
             .setClusterTelemetry(ClusterTelemetry.newBuilder().build())
             .setTpuConfig(TpuConfig.newBuilder().build())
             .setNotificationConfig(NotificationConfig.newBuilder().build())
@@ -289,6 +296,8 @@ public class ClusterManagerClientTest {
             .setNodePoolDefaults(NodePoolDefaults.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
+            .setNodePoolAutoConfig(NodePoolAutoConfig.newBuilder().build())
+            .setProtectConfig(ProtectConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -480,7 +489,9 @@ public class ClusterManagerClientTest {
             .setLabels(NodeLabels.newBuilder().build())
             .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
             .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+            .setNodeNetworkConfig(NodeNetworkConfig.newBuilder().build())
             .setGcfsConfig(GcfsConfig.newBuilder().build())
+            .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
             .setGvnic(VirtualNIC.newBuilder().build())
             .build();
 
@@ -507,7 +518,9 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getLabels(), actualRequest.getLabels());
     Assert.assertEquals(request.getLinuxNodeConfig(), actualRequest.getLinuxNodeConfig());
     Assert.assertEquals(request.getKubeletConfig(), actualRequest.getKubeletConfig());
+    Assert.assertEquals(request.getNodeNetworkConfig(), actualRequest.getNodeNetworkConfig());
     Assert.assertEquals(request.getGcfsConfig(), actualRequest.getGcfsConfig());
+    Assert.assertEquals(request.getConfidentialNodes(), actualRequest.getConfidentialNodes());
     Assert.assertEquals(request.getGvnic(), actualRequest.getGvnic());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -538,7 +551,9 @@ public class ClusterManagerClientTest {
               .setLabels(NodeLabels.newBuilder().build())
               .setLinuxNodeConfig(LinuxNodeConfig.newBuilder().build())
               .setKubeletConfig(NodeKubeletConfig.newBuilder().build())
+              .setNodeNetworkConfig(NodeNetworkConfig.newBuilder().build())
               .setGcfsConfig(GcfsConfig.newBuilder().build())
+              .setConfidentialNodes(ConfidentialNodes.newBuilder().build())
               .setGvnic(VirtualNIC.newBuilder().build())
               .build();
       client.updateNodePool(request);
@@ -1327,6 +1342,7 @@ public class ClusterManagerClientTest {
             .setPodIpv4CidrSize(1098768716)
             .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
             .setPlacementPolicy(NodePool.PlacementPolicy.newBuilder().build())
+            .setUpdateInfo(NodePool.UpdateInfo.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -1481,6 +1497,43 @@ public class ClusterManagerClientTest {
       String clusterId = "clusterId561939637";
       String nodePoolId = "nodePoolId1121557241";
       client.deleteNodePool(projectId, zone, clusterId, nodePoolId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void completeNodePoolUpgradeTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockClusterManager.addResponse(expectedResponse);
+
+    CompleteNodePoolUpgradeRequest request =
+        CompleteNodePoolUpgradeRequest.newBuilder().setName("name3373707").build();
+
+    client.completeNodePoolUpgrade(request);
+
+    List<AbstractMessage> actualRequests = mockClusterManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CompleteNodePoolUpgradeRequest actualRequest =
+        ((CompleteNodePoolUpgradeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void completeNodePoolUpgradeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockClusterManager.addException(exception);
+
+    try {
+      CompleteNodePoolUpgradeRequest request =
+          CompleteNodePoolUpgradeRequest.newBuilder().setName("name3373707").build();
+      client.completeNodePoolUpgrade(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

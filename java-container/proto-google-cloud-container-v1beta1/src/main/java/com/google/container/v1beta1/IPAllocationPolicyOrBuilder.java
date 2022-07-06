@@ -92,7 +92,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1212
+   *     google/container/v1beta1/cluster_service.proto;l=1305
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -107,7 +107,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1212
+   *     google/container/v1beta1/cluster_service.proto;l=1305
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -123,7 +123,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1215
+   *     google/container/v1beta1/cluster_service.proto;l=1308
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -138,7 +138,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1215
+   *     google/container/v1beta1/cluster_service.proto;l=1308
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -154,7 +154,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1218
+   *     google/container/v1beta1/cluster_service.proto;l=1311
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -169,7 +169,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1218
+   *     google/container/v1beta1/cluster_service.proto;l=1311
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -463,4 +463,104 @@ public interface IPAllocationPolicyOrBuilder
    * @return The useRoutes.
    */
   boolean getUseRoutes();
+
+  /**
+   *
+   *
+   * <pre>
+   * IP stack type
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.IPAllocationPolicy.StackType stack_type = 16;</code>
+   *
+   * @return The enum numeric value on the wire for stackType.
+   */
+  int getStackTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * IP stack type
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.IPAllocationPolicy.StackType stack_type = 16;</code>
+   *
+   * @return The stackType.
+   */
+  com.google.container.v1beta1.IPAllocationPolicy.StackType getStackType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The ipv6 access type (internal or external) when create_subnetwork is true
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.IPAllocationPolicy.IPv6AccessType ipv6_access_type = 17;</code>
+   *
+   * @return The enum numeric value on the wire for ipv6AccessType.
+   */
+  int getIpv6AccessTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The ipv6 access type (internal or external) when create_subnetwork is true
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.IPAllocationPolicy.IPv6AccessType ipv6_access_type = 17;</code>
+   *
+   * @return The ipv6AccessType.
+   */
+  com.google.container.v1beta1.IPAllocationPolicy.IPv6AccessType getIpv6AccessType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and pods.
+   * </pre>
+   *
+   * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The subnetIpv6CidrBlock.
+   */
+  java.lang.String getSubnetIpv6CidrBlock();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and pods.
+   * </pre>
+   *
+   * <code>string subnet_ipv6_cidr_block = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for subnetIpv6CidrBlock.
+   */
+  com.google.protobuf.ByteString getSubnetIpv6CidrBlockBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The services IPv6 CIDR block for the cluster.
+   * </pre>
+   *
+   * <code>string services_ipv6_cidr_block = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The servicesIpv6CidrBlock.
+   */
+  java.lang.String getServicesIpv6CidrBlock();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The services IPv6 CIDR block for the cluster.
+   * </pre>
+   *
+   * <code>string services_ipv6_cidr_block = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for servicesIpv6CidrBlock.
+   */
+  com.google.protobuf.ByteString getServicesIpv6CidrBlockBytes();
 }

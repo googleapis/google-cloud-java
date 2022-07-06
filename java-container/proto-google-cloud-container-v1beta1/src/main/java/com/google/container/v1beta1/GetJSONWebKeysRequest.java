@@ -122,7 +122,7 @@ public final class GetJSONWebKeysRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The cluster (project, location, cluster id) to get keys for. Specified in
+   * The cluster (project, location, cluster name) to get keys for. Specified in
    * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -146,7 +146,7 @@ public final class GetJSONWebKeysRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The cluster (project, location, cluster id) to get keys for. Specified in
+   * The cluster (project, location, cluster name) to get keys for. Specified in
    * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
    * </pre>
    *
@@ -493,7 +493,7 @@ public final class GetJSONWebKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The cluster (project, location, cluster id) to get keys for. Specified in
+     * The cluster (project, location, cluster name) to get keys for. Specified in
      * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -516,7 +516,7 @@ public final class GetJSONWebKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The cluster (project, location, cluster id) to get keys for. Specified in
+     * The cluster (project, location, cluster name) to get keys for. Specified in
      * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -539,7 +539,7 @@ public final class GetJSONWebKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The cluster (project, location, cluster id) to get keys for. Specified in
+     * The cluster (project, location, cluster name) to get keys for. Specified in
      * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -561,7 +561,7 @@ public final class GetJSONWebKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The cluster (project, location, cluster id) to get keys for. Specified in
+     * The cluster (project, location, cluster name) to get keys for. Specified in
      * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *
@@ -579,7 +579,7 @@ public final class GetJSONWebKeysRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The cluster (project, location, cluster id) to get keys for. Specified in
+     * The cluster (project, location, cluster name) to get keys for. Specified in
      * the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;`.
      * </pre>
      *

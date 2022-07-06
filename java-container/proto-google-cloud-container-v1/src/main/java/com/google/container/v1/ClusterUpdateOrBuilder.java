@@ -1099,6 +1099,41 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired Identity Service component configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+   *
+   * @return Whether the desiredIdentityServiceConfig field is set.
+   */
+  boolean hasDesiredIdentityServiceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired Identity Service component configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+   *
+   * @return The desiredIdentityServiceConfig.
+   */
+  com.google.container.v1.IdentityServiceConfig getDesiredIdentityServiceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired Identity Service component configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.IdentityServiceConfig desired_identity_service_config = 66;</code>
+   */
+  com.google.container.v1.IdentityServiceConfigOrBuilder getDesiredIdentityServiceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * ServiceExternalIPsConfig specifies the config for the use of Services with
    * ExternalIPs field.
    * </pre>
@@ -1210,4 +1245,42 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1.GcfsConfig desired_gcfs_config = 109;</code>
    */
   com.google.container.v1.GcfsConfigOrBuilder getDesiredGcfsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags that apply to all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;</code>
+   *
+   * @return Whether the desiredNodePoolAutoConfigNetworkTags field is set.
+   */
+  boolean hasDesiredNodePoolAutoConfigNetworkTags();
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags that apply to all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;</code>
+   *
+   * @return The desiredNodePoolAutoConfigNetworkTags.
+   */
+  com.google.container.v1.NetworkTags getDesiredNodePoolAutoConfigNetworkTags();
+  /**
+   *
+   *
+   * <pre>
+   * The desired network tags that apply to all auto-provisioned node pools
+   * in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTags desired_node_pool_auto_config_network_tags = 110;</code>
+   */
+  com.google.container.v1.NetworkTagsOrBuilder getDesiredNodePoolAutoConfigNetworkTagsOrBuilder();
 }

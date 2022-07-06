@@ -57,4 +57,42 @@ public interface MonitoringConfigOrBuilder
    * <code>.google.container.v1.MonitoringComponentConfig component_config = 1;</code>
    */
   com.google.container.v1.MonitoringComponentConfigOrBuilder getComponentConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable Google Cloud Managed Service for Prometheus
+   * in the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+   *
+   * @return Whether the managedPrometheusConfig field is set.
+   */
+  boolean hasManagedPrometheusConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable Google Cloud Managed Service for Prometheus
+   * in the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+   *
+   * @return The managedPrometheusConfig.
+   */
+  com.google.container.v1.ManagedPrometheusConfig getManagedPrometheusConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable Google Cloud Managed Service for Prometheus
+   * in the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.ManagedPrometheusConfig managed_prometheus_config = 2;</code>
+   */
+  com.google.container.v1.ManagedPrometheusConfigOrBuilder getManagedPrometheusConfigOrBuilder();
 }

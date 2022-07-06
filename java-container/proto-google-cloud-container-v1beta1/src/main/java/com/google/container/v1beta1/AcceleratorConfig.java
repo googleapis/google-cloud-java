@@ -61,6 +61,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -88,6 +89,27 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
               java.lang.String s = input.readStringRequireUtf8();
 
               gpuPartitionSize_ = s;
+              break;
+            }
+          case 32:
+            {
+              maxTimeSharedClientsPerGpu_ = input.readInt64();
+              break;
+            }
+          case 42:
+            {
+              com.google.container.v1beta1.GPUSharingConfig.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) != 0)) {
+                subBuilder = gpuSharingConfig_.toBuilder();
+              }
+              gpuSharingConfig_ =
+                  input.readMessage(
+                      com.google.container.v1beta1.GPUSharingConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gpuSharingConfig_);
+                gpuSharingConfig_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
               break;
             }
           default:
@@ -126,6 +148,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
             com.google.container.v1beta1.AcceleratorConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ACCELERATOR_COUNT_FIELD_NUMBER = 1;
   private long acceleratorCount_;
   /**
@@ -248,6 +271,77 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int MAX_TIME_SHARED_CLIENTS_PER_GPU_FIELD_NUMBER = 4;
+  private long maxTimeSharedClientsPerGpu_;
+  /**
+   *
+   *
+   * <pre>
+   * The number of time-shared GPU resources to expose for each physical GPU.
+   * </pre>
+   *
+   * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
+   *
+   * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4104
+   * @return The maxTimeSharedClientsPerGpu.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public long getMaxTimeSharedClientsPerGpu() {
+    return maxTimeSharedClientsPerGpu_;
+  }
+
+  public static final int GPU_SHARING_CONFIG_FIELD_NUMBER = 5;
+  private com.google.container.v1beta1.GPUSharingConfig gpuSharingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU sharing options.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+   *
+   * @return Whether the gpuSharingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGpuSharingConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU sharing options.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+   *
+   * @return The gpuSharingConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GPUSharingConfig getGpuSharingConfig() {
+    return gpuSharingConfig_ == null
+        ? com.google.container.v1beta1.GPUSharingConfig.getDefaultInstance()
+        : gpuSharingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for GPU sharing options.
+   * </pre>
+   *
+   * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.GPUSharingConfigOrBuilder getGpuSharingConfigOrBuilder() {
+    return gpuSharingConfig_ == null
+        ? com.google.container.v1beta1.GPUSharingConfig.getDefaultInstance()
+        : gpuSharingConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -271,6 +365,12 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gpuPartitionSize_);
     }
+    if (maxTimeSharedClientsPerGpu_ != 0L) {
+      output.writeInt64(4, maxTimeSharedClientsPerGpu_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getGpuSharingConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -288,6 +388,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gpuPartitionSize_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gpuPartitionSize_);
+    }
+    if (maxTimeSharedClientsPerGpu_ != 0L) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(4, maxTimeSharedClientsPerGpu_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getGpuSharingConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -308,6 +415,11 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     if (getAcceleratorCount() != other.getAcceleratorCount()) return false;
     if (!getAcceleratorType().equals(other.getAcceleratorType())) return false;
     if (!getGpuPartitionSize().equals(other.getGpuPartitionSize())) return false;
+    if (getMaxTimeSharedClientsPerGpu() != other.getMaxTimeSharedClientsPerGpu()) return false;
+    if (hasGpuSharingConfig() != other.hasGpuSharingConfig()) return false;
+    if (hasGpuSharingConfig()) {
+      if (!getGpuSharingConfig().equals(other.getGpuSharingConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -325,6 +437,12 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getAcceleratorType().hashCode();
     hash = (37 * hash) + GPU_PARTITION_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getGpuPartitionSize().hashCode();
+    hash = (37 * hash) + MAX_TIME_SHARED_CLIENTS_PER_GPU_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxTimeSharedClientsPerGpu());
+    if (hasGpuSharingConfig()) {
+      hash = (37 * hash) + GPU_SHARING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGpuSharingConfig().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -464,7 +582,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getGpuSharingConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -476,6 +596,14 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
 
       gpuPartitionSize_ = "";
 
+      maxTimeSharedClientsPerGpu_ = 0L;
+
+      if (gpuSharingConfigBuilder_ == null) {
+        gpuSharingConfig_ = null;
+      } else {
+        gpuSharingConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -503,9 +631,21 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     public com.google.container.v1beta1.AcceleratorConfig buildPartial() {
       com.google.container.v1beta1.AcceleratorConfig result =
           new com.google.container.v1beta1.AcceleratorConfig(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.acceleratorCount_ = acceleratorCount_;
       result.acceleratorType_ = acceleratorType_;
       result.gpuPartitionSize_ = gpuPartitionSize_;
+      result.maxTimeSharedClientsPerGpu_ = maxTimeSharedClientsPerGpu_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        if (gpuSharingConfigBuilder_ == null) {
+          result.gpuSharingConfig_ = gpuSharingConfig_;
+        } else {
+          result.gpuSharingConfig_ = gpuSharingConfigBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -566,6 +706,12 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
         gpuPartitionSize_ = other.gpuPartitionSize_;
         onChanged();
       }
+      if (other.getMaxTimeSharedClientsPerGpu() != 0L) {
+        setMaxTimeSharedClientsPerGpu(other.getMaxTimeSharedClientsPerGpu());
+      }
+      if (other.hasGpuSharingConfig()) {
+        mergeGpuSharingConfig(other.getGpuSharingConfig());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -594,6 +740,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
+    private int bitField0_;
 
     private long acceleratorCount_;
     /**
@@ -872,6 +1020,255 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       gpuPartitionSize_ = value;
       onChanged();
       return this;
+    }
+
+    private long maxTimeSharedClientsPerGpu_;
+    /**
+     *
+     *
+     * <pre>
+     * The number of time-shared GPU resources to expose for each physical GPU.
+     * </pre>
+     *
+     * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
+     *
+     * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4104
+     * @return The maxTimeSharedClientsPerGpu.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public long getMaxTimeSharedClientsPerGpu() {
+      return maxTimeSharedClientsPerGpu_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of time-shared GPU resources to expose for each physical GPU.
+     * </pre>
+     *
+     * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
+     *
+     * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4104
+     * @param value The maxTimeSharedClientsPerGpu to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder setMaxTimeSharedClientsPerGpu(long value) {
+
+      maxTimeSharedClientsPerGpu_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The number of time-shared GPU resources to expose for each physical GPU.
+     * </pre>
+     *
+     * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
+     *
+     * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4104
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder clearMaxTimeSharedClientsPerGpu() {
+
+      maxTimeSharedClientsPerGpu_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1beta1.GPUSharingConfig gpuSharingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GPUSharingConfig,
+            com.google.container.v1beta1.GPUSharingConfig.Builder,
+            com.google.container.v1beta1.GPUSharingConfigOrBuilder>
+        gpuSharingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     *
+     * @return Whether the gpuSharingConfig field is set.
+     */
+    public boolean hasGpuSharingConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     *
+     * @return The gpuSharingConfig.
+     */
+    public com.google.container.v1beta1.GPUSharingConfig getGpuSharingConfig() {
+      if (gpuSharingConfigBuilder_ == null) {
+        return gpuSharingConfig_ == null
+            ? com.google.container.v1beta1.GPUSharingConfig.getDefaultInstance()
+            : gpuSharingConfig_;
+      } else {
+        return gpuSharingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    public Builder setGpuSharingConfig(com.google.container.v1beta1.GPUSharingConfig value) {
+      if (gpuSharingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gpuSharingConfig_ = value;
+        onChanged();
+      } else {
+        gpuSharingConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    public Builder setGpuSharingConfig(
+        com.google.container.v1beta1.GPUSharingConfig.Builder builderForValue) {
+      if (gpuSharingConfigBuilder_ == null) {
+        gpuSharingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gpuSharingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    public Builder mergeGpuSharingConfig(com.google.container.v1beta1.GPUSharingConfig value) {
+      if (gpuSharingConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && gpuSharingConfig_ != null
+            && gpuSharingConfig_
+                != com.google.container.v1beta1.GPUSharingConfig.getDefaultInstance()) {
+          gpuSharingConfig_ =
+              com.google.container.v1beta1.GPUSharingConfig.newBuilder(gpuSharingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gpuSharingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gpuSharingConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000001;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    public Builder clearGpuSharingConfig() {
+      if (gpuSharingConfigBuilder_ == null) {
+        gpuSharingConfig_ = null;
+        onChanged();
+      } else {
+        gpuSharingConfigBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    public com.google.container.v1beta1.GPUSharingConfig.Builder getGpuSharingConfigBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getGpuSharingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    public com.google.container.v1beta1.GPUSharingConfigOrBuilder getGpuSharingConfigOrBuilder() {
+      if (gpuSharingConfigBuilder_ != null) {
+        return gpuSharingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gpuSharingConfig_ == null
+            ? com.google.container.v1beta1.GPUSharingConfig.getDefaultInstance()
+            : gpuSharingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for GPU sharing options.
+     * </pre>
+     *
+     * <code>optional .google.container.v1beta1.GPUSharingConfig gpu_sharing_config = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.GPUSharingConfig,
+            com.google.container.v1beta1.GPUSharingConfig.Builder,
+            com.google.container.v1beta1.GPUSharingConfigOrBuilder>
+        getGpuSharingConfigFieldBuilder() {
+      if (gpuSharingConfigBuilder_ == null) {
+        gpuSharingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.GPUSharingConfig,
+                com.google.container.v1beta1.GPUSharingConfig.Builder,
+                com.google.container.v1beta1.GPUSharingConfigOrBuilder>(
+                getGpuSharingConfig(), getParentForChildren(), isClean());
+        gpuSharingConfig_ = null;
+      }
+      return gpuSharingConfigBuilder_;
     }
 
     @java.lang.Override

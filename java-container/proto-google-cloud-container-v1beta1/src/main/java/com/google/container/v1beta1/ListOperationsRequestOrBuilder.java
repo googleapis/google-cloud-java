@@ -28,7 +28,7 @@ public interface ListOperationsRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
@@ -36,7 +36,7 @@ public interface ListOperationsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ListOperationsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2698
+   *     google/container/v1beta1/cluster_service.proto;l=2902
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -46,7 +46,7 @@ public interface ListOperationsRequestOrBuilder
    *
    * <pre>
    * Required. Deprecated. The Google Developers Console [project ID or project
-   * number](https://support.google.com/cloud/answer/6158840).
+   * number](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
    * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
@@ -54,7 +54,7 @@ public interface ListOperationsRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ListOperationsRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2698
+   *     google/container/v1beta1/cluster_service.proto;l=2902
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface ListOperationsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.ListOperationsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2707
+   *     google/container/v1beta1/cluster_service.proto;l=2911
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface ListOperationsRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.ListOperationsRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2707
+   *     google/container/v1beta1/cluster_service.proto;l=2911
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
