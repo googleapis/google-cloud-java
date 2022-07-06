@@ -41,6 +41,8 @@ do
   text=$(echo "$text" | sed 's/\"//g; s/\,//g; s/^[[:space:]]*//' )
   text=${text/api_shortname/api-name}
   echo -e "\n"$text>> ${service}/.OwlBot.yaml
+  git add .
+  git commit -am "chore: setup owlbot configuration"
 
   cd ../google-cloud-java
   git remote add ${service} ../${service}
