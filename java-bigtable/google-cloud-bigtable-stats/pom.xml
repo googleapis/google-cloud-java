@@ -101,6 +101,15 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>3.3.0</version>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>clirr-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>com/google/bigtable/veneer/repackaged/**</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
