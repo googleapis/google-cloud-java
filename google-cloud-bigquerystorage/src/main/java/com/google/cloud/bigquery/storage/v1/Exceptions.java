@@ -22,6 +22,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.StatusProto;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.annotation.Nullable;
@@ -201,6 +202,30 @@ public final class Exceptions {
   public static StorageException toStorageException(Throwable exception) {
     com.google.rpc.Status rpcStatus = StatusProto.fromThrowable(exception);
     return toStorageException(rpcStatus, exception);
+  }
+
+  /**
+   * This exception is thrown from {@link JsonStreamWriter#append()} when the client side Json to
+   * Proto serializtion fails. The exception contains a Map of indexes of faulty lines and the
+   * corresponding error message.
+   */
+  public static class AppendSerializtionError extends RuntimeException {
+    private final Map<Integer, String> rowIndexToErrorMessage;
+    private final String streamName;
+
+    public AppendSerializtionError(String streamName, Map<Integer, String> rowIndexToErrorMessage) {
+      super(String.format("Append serializtion failed for writer: %s", streamName));
+      this.rowIndexToErrorMessage = rowIndexToErrorMessage;
+      this.streamName = streamName;
+    }
+
+    public Map<Integer, String> getRowIndexToErrorMessage() {
+      return rowIndexToErrorMessage;
+    }
+
+    public String getStreamName() {
+      return streamName;
+    }
   }
 
   private Exceptions() {}

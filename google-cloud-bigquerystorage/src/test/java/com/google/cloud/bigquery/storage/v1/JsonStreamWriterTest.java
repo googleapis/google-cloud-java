@@ -31,6 +31,7 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.cloud.bigquery.storage.test.JsonTest;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.test.Test.UpdatedFooType;
+import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Int64Value;
 import com.google.protobuf.Timestamp;
@@ -38,6 +39,7 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
@@ -518,9 +520,11 @@ public class JsonStreamWriterTest {
       try {
         ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
         Assert.fail("expected ExecutionException");
-      } catch (Exception ex) {
+      } catch (AppendSerializtionError ex) {
         assertEquals(
-            ex.getMessage(), "JSONObject has fields unknown to BigQuery: root.test_unknown.");
+            "JSONObject has fields unknown to BigQuery: root.test_unknown.",
+            ex.getRowIndexToErrorMessage().get(1));
+        assertEquals(TEST_STREAM, ex.getStreamName());
       }
     }
   }
@@ -601,6 +605,42 @@ public class JsonStreamWriterTest {
       jsonArr.put(foo);
       ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
       appendFuture.get();
+    }
+  }
+
+  @Test
+  public void testMultipleAppendSerializtionErrors()
+      throws DescriptorValidationException, IOException, InterruptedException {
+    FooType expectedProto = FooType.newBuilder().setFoo("allen").build();
+    JSONObject foo = new JSONObject();
+    // put a field which is not part of the expected schema
+    foo.put("not_foo", "allen");
+    JSONObject foo1 = new JSONObject();
+    // put a vaild value into the field
+    foo1.put("foo", "allen");
+    JSONObject foo2 = new JSONObject();
+    // put a number into a string field
+    foo2.put("foo", 666);
+    JSONArray jsonArr = new JSONArray();
+    jsonArr.put(foo);
+    jsonArr.put(foo1);
+    jsonArr.put(foo2);
+
+    try (JsonStreamWriter writer =
+        getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA).build()) {
+      try {
+        ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
+        Assert.fail("expected AppendSerializtionError");
+      } catch (AppendSerializtionError appendSerializtionError) {
+        Map<Integer, String> rowIndexToErrorMessage =
+            appendSerializtionError.getRowIndexToErrorMessage();
+        assertEquals(2, rowIndexToErrorMessage.size());
+        assertEquals(
+            "JSONObject has fields unknown to BigQuery: root.not_foo.",
+            rowIndexToErrorMessage.get(0));
+        assertEquals(
+            "JSONObject does not have a string field at root.foo.", rowIndexToErrorMessage.get(2));
+      }
     }
   }
 }

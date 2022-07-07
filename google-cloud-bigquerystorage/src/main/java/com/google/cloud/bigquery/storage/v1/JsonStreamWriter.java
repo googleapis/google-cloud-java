@@ -19,12 +19,15 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Message;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -137,17 +140,27 @@ public class JsonStreamWriter implements AutoCloseable {
 
       ProtoRows.Builder rowsBuilder = ProtoRows.newBuilder();
       // Any error in convertJsonToProtoMessage will throw an
-      // IllegalArgumentException/IllegalStateException/NullPointerException and will halt
-      // processing
-      // of JSON data.
+      // IllegalArgumentException/IllegalStateException/NullPointerException.
+      // IllegalArgumentException will be collected into a Map of row indexes to error messages.
+      // After the conversion is finished an AppendSerializtionError exception that contains all the
+      // conversion errors will be thrown.
       long currentRequestSize = 0;
+      Map<Integer, String> rowIndexToErrorMessage = new HashMap<>();
       for (int i = 0; i < jsonArr.length(); i++) {
         JSONObject json = jsonArr.getJSONObject(i);
-        Message protoMessage =
-            JsonToProtoMessage.convertJsonToProtoMessage(
-                this.descriptor, this.tableSchema, json, ignoreUnknownFields);
-        rowsBuilder.addSerializedRows(protoMessage.toByteString());
-        currentRequestSize += protoMessage.getSerializedSize();
+        try {
+          Message protoMessage =
+              JsonToProtoMessage.convertJsonToProtoMessage(
+                  this.descriptor, this.tableSchema, json, ignoreUnknownFields);
+          rowsBuilder.addSerializedRows(protoMessage.toByteString());
+          currentRequestSize += protoMessage.getSerializedSize();
+        } catch (IllegalArgumentException exception) {
+          rowIndexToErrorMessage.put(i, exception.getMessage());
+        }
+      }
+
+      if (!rowIndexToErrorMessage.isEmpty()) {
+        throw new AppendSerializtionError(streamName, rowIndexToErrorMessage);
       }
       final ApiFuture<AppendRowsResponse> appendResponseFuture =
           this.streamWriter.append(rowsBuilder.build(), offset);
