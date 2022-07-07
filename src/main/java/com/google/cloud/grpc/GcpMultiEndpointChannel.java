@@ -224,6 +224,9 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     Preconditions.checkArgument(!meOptions.isEmpty(), "MultiEndpoints list is empty");
     Set<String> currentMultiEndpoints = new HashSet<>();
     Set<String> currentEndpoints = new HashSet<>();
+
+    // Must have all multiendpoints before initializing the pools so that all multiendpoints
+    // can get status update of every pool.
     meOptions.forEach(options -> {
       currentMultiEndpoints.add(options.getName());
       // Create or update MultiEndpoint
@@ -236,8 +239,9 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
                 .build());
       }
     });
-    // Must have all multiendpoints before initializing the pools so that all multiendpoints
-    // can get status update of every pool.
+
+    // TODO: Add support for different credentials for the same endpoint.
+    // TODO: Add support for DirectPath.
     meOptions.forEach(options -> {
       // Create missing pools
       options.getEndpoints().forEach(endpoint -> {
