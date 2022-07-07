@@ -2,14 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>translation-snippets</artifactId>
+  <artifactId>translate-snippets</artifactId>
   <packaging>jar</packaging>
-  <name>Google Cloud Translation Snippets</name>
+  <name>Google Cloud Translate Snippets</name>
   <url>https://github.com/googleapis/java-translate</url>
 
   <!--
     The parent pom defines common style checks and testing strategies for our samples.
-    Removing or replacing it should not affect the execution of the samples in anyway.
+    Removing or replacing it should not affect the execution of the samples in any way.
   -->
   <parent>
     <groupId>com.google.cloud.samples</groupId>
@@ -24,7 +24,7 @@
   </properties>
 
 
-  <!-- [START translation_install_with_bom] -->
+  <!-- [START translate_install_with_bom] -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -68,5 +68,5 @@
     </dependency>
     <!-- [END_EXCLUDE] -->
   </dependencies>
-  <!-- [END translation_install_with_bom] -->
+  <!-- [END translate_install_with_bom] -->
 </project>

@@ -2,14 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>translation-install-without-bom</artifactId>
+  <artifactId>translate-install-without-bom</artifactId>
   <packaging>jar</packaging>
-  <name>Google Cloud Translation Install Without Bom</name>
+  <name>Google Cloud Translate Install Without Bom</name>
   <url>https://github.com/googleapis/java-translate</url>
 
   <!--
     The parent pom defines common style checks and testing strategies for our samples.
-    Removing or replacing it should not affect the execution of the samples in anyway.
+    Removing or replacing it should not affect the execution of the samples in any way.
   -->
   <parent>
     <groupId>com.google.cloud.samples</groupId>
@@ -25,13 +25,13 @@
 
 
   <dependencies>
-    <!-- [START translation_install_without_bom] -->
+    <!-- [START translate_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-translate</artifactId>
       <version>2.3.0</version>
     </dependency>
-    <!-- [END translation_install_without_bom] -->
+    <!-- [END translate_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>

@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-translation-samples</artifactId>
+  <artifactId>google-cloud-translate-samples</artifactId>
   <version>0.0.1-SNAPSHOT</version><!-- This artifact should not be released -->
   <packaging>pom</packaging>
-  <name>Google Cloud Translation Samples Parent</name>
+  <name>Google Cloud Translate Samples Parent</name>
   <url>https://github.com/googleapis/java-translate</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
@@ -13,7 +13,7 @@
 
   <!--
     The parent pom defines common style checks and testing strategies for our samples.
-    Removing or replacing it should not affect the execution of the samples in anyway.
+    Removing or replacing it should not affect the execution of the samples in any way.
   -->
   <parent>
     <groupId>com.google.cloud.samples</groupId>
