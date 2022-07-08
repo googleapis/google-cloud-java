@@ -11,7 +11,7 @@ Java idiomatic client for [Security Command Center][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 ```xml
 <dependencyManagement>
@@ -57,23 +57,23 @@ If you are using Maven without BOM, add this to your dependencies:
 
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies
+If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
 implementation platform('com.google.cloud:libraries-bom:25.4.0')
 
 implementation 'com.google.cloud:google-cloud-securitycenter'
 ```
-If you are using Gradle without BOM, add this to your dependencies
+If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-securitycenter:2.7.0'
+implementation 'com.google.cloud:google-cloud-securitycenter:2.7.1'
 ```
 
-If you are using SBT, add this to your dependencies
+If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter" % "2.7.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter" % "2.7.1"
 ```
 
 ## Authentication
