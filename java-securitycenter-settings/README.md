@@ -26,13 +26,13 @@ If you are using Maven, add this to your pom.xml file:
 </dependency>
 ```
 
-If you are using Gradle without BOM, add this to your dependencies
+If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
 implementation 'com.google.cloud:google-cloud-securitycenter-settings:0.6.1'
 ```
 
-If you are using SBT, add this to your dependencies
+If you are using SBT, add this to your dependencies:
 
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-securitycenter-settings" % "0.6.1"
