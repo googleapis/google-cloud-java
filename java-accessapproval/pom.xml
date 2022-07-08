@@ -117,7 +117,7 @@
   </modules>
 
   
-  <!-- Test new changes -->
+  <!-- Testing new changes -->
   <reporting>
     <plugins>
       <plugin>
