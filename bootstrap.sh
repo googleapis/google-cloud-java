@@ -42,6 +42,7 @@ do
   text=${text/api_shortname/api-name}
   echo -e "\n"$text>> ${service}/.OwlBot.yaml
   git add .
+  git config --add secrets.allowed "dest.*src"
   git commit -am "chore: setup owlbot configuration"
 
   cd ../google-cloud-java
@@ -62,28 +63,6 @@ cd google-cloud-java
 
 git add pom.xml
 git commit -am 'feat: create aggregator pom'
-
-cp -r --preserve=all ../../templates/. ./
-git add --all
-git commit -m 'chore: add template files'
-
-# generate coverage report
-mkdir CoverageAggregator
-cp ../../coverage.pom.xml CoverageAggregator/pom.xml
-
-# create aggregator project for jacoco
-mvn compile -Dexec.executable='echo' \
--Dexec.args='<dependency><groupId>${project.groupId}</groupId><artifactId>${project.artifactId}</artifactId><version>${project.version}</version></dependency>' \
-exec:exec -q -B | grep -v 'CoverageAggregator\|bom\|parent\|proto\-\|grpc-\|google\-cloud\-java' >> ../coverage-modules.txt
-
-# insert processed modules into coverage aggregator pom.xml
-awk -v MODULES="`awk -v ORS='\\\\n' '1' ../coverage-modules.txt`" '1;/<dependencies>/{print MODULES}' ../../coverage.pom.xml > CoverageAggregator/pom.xml
-
-# add CoverageAggregator to root pom
-awk -v MODULE='    <module>CoverageAggregator</module>' '/<\/modules>/{print MODULE};1' pom.xml > pom.xml.tmp && mv pom.xml.tmp pom.xml
-
-git add --all
-git commit -am 'feat: create CoverageAggregator module'
 
 # generate BOM of the artifacts in this repository
 bom_lines=""
@@ -124,3 +103,31 @@ awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyM
 
 git add google-cloud-gapic-bom/pom.xml
 git commit -am 'feat: create bom module'
+
+# Confirm everything is fine so far
+mvn -q -B -ntp validate
+
+
+# Template files
+cp -r --preserve=all ../../templates/. ./
+git add --all
+git commit -m 'chore: add template files'
+
+
+# generate coverage report
+mkdir CoverageAggregator
+cp ../../coverage.pom.xml CoverageAggregator/pom.xml
+
+# create aggregator project for jacoco
+mvn compile -Dexec.executable='echo' \
+-Dexec.args='<dependency><groupId>${project.groupId}</groupId><artifactId>${project.artifactId}</artifactId><version>${project.version}</version></dependency>' \
+exec:exec -q -B | grep -v 'CoverageAggregator\|bom\|parent\|proto\-\|grpc-\|google\-cloud\-java' >> ../coverage-modules.txt
+
+# insert processed modules into coverage aggregator pom.xml
+awk -v MODULES="`awk -v ORS='\\\\n' '1' ../coverage-modules.txt`" '1;/<dependencies>/{print MODULES}' ../../coverage.pom.xml > CoverageAggregator/pom.xml
+
+# add CoverageAggregator to root pom
+awk -v MODULE='    <module>CoverageAggregator</module>' '/<\/modules>/{print MODULE};1' pom.xml > pom.xml.tmp && mv pom.xml.tmp pom.xml
+
+git add --all
+git commit -am 'feat: create CoverageAggregator module'
