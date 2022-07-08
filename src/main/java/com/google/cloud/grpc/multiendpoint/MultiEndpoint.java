@@ -106,7 +106,7 @@ public final class MultiEndpoint {
     Endpoint endpoint = endpointsMap.get(endpointId);
     if (endpoint != null) {
       endpoint.setState(state);
-      maybeFallback();
+      maybeUpdateCurrentEndpoint();
     }
   }
 
@@ -138,7 +138,7 @@ public final class MultiEndpoint {
     }
     endpoint.resetStateChangeFuture();
     endpoint.setState(state);
-    maybeFallback();
+    maybeUpdateCurrentEndpoint();
   }
 
   /**
@@ -176,10 +176,12 @@ public final class MultiEndpoint {
       endpointsMap.put(endpointId, newEndpoint);
     }
 
-    maybeFallback();
+    maybeUpdateCurrentEndpoint();
   }
 
-  private synchronized void maybeFallback() {
+  // Updates currentId to the top-priority available endpoint unless the current endpoint is
+  // recovering.
+  private synchronized void maybeUpdateCurrentEndpoint() {
     Optional<Endpoint> topEndpoint =
         endpointsMap.values().stream()
             .filter((c) -> c.getState().equals(EndpointState.AVAILABLE))
