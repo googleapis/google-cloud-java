@@ -65,6 +65,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-analytics-admin-v1beta</artifactId>
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-admin-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-analytics-admin-v1beta</artifactId>
+        <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-analytics-admin-v1beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-analytics-admin-v1alpha</artifactId>
         <version>0.11.1-SNAPSHOT</version><!-- {x-version-update:proto-google-analytics-admin-v1alpha:current} -->
       </dependency>
@@ -111,7 +121,9 @@
   <modules>
     <module>google-analytics-admin</module>
     <module>grpc-google-analytics-admin-v1alpha</module>
+    <module>grpc-google-analytics-admin-v1beta</module>
     <module>proto-google-analytics-admin-v1alpha</module>
+    <module>proto-google-analytics-admin-v1beta</module>
     <module>google-analytics-admin-bom</module>
   </modules>
 
