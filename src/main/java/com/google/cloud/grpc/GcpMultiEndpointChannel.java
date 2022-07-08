@@ -394,8 +394,11 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
   }
 
   /**
-   * The authority of the destination this channel connects to. Typically this is in the format
-   * {@code host:port}.
+   * The authority of the current endpoint of the default MultiEndpoint. Typically, this is in the
+   * format {@code host:port}.
+   *
+   * To get the authority of the current endpoint of another MultiEndpoint use {@link
+   * #authorityFor(String)} method.
    *
    * This may return different values over time because MultiEndpoint may switch between endpoints.
    *
@@ -404,5 +407,19 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
   @Override
   public String authority() {
     return pools.get(defaultMultiEndpoint.getCurrentId()).authority();
+  }
+
+  /**
+   * The authority of the current endpoint of the specified MultiEndpoint. Typically, this is in the
+   * format {@code host:port}.
+   *
+   * This may return different values over time because MultiEndpoint may switch between endpoints.
+   */
+  public String authorityFor(String multiEndpointName) {
+    MultiEndpoint multiEndpoint = multiEndpoints.get(multiEndpointName);
+    if (multiEndpoint == null) {
+      return null;
+    }
+    return pools.get(multiEndpoint.getCurrentId()).authority();
   }
 }

@@ -566,6 +566,14 @@ public final class SpannerIntegrationTest {
     final String followerPoolIndex = String.format("pool-%d", currentIndex);
     final String leaderPoolIndex = String.format("pool-%d", currentIndex - 1);
 
+    // Make sure authorities are overridden by channel configurator.
+    assertThat(gcpMultiEndpointChannel.authority()).isEqualTo(SPANNER_TARGET);
+    assertThat(gcpMultiEndpointChannel.authorityFor("leader"))
+        .isEqualTo(SPANNER_TARGET);
+    assertThat(gcpMultiEndpointChannel.authorityFor("follower"))
+        .isEqualTo(SPANNER_TARGET);
+    assertThat(gcpMultiEndpointChannel.authorityFor("no-such-name")).isNull();
+
     TimeUnit.MILLISECONDS.sleep(200);
 
     List<String> logMessages = logRecords.stream()
