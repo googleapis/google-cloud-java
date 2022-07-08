@@ -240,8 +240,10 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
       }
     });
 
-    // TODO: Add support for different credentials for the same endpoint.
-    // TODO: Add support for DirectPath.
+    // TODO: Support the same endpoint in different MultiEndpoint to use different channel
+    //       credentials.
+    // TODO: Support different endpoints in the same MultiEndpoint to use different channel
+    //       credentials.
     meOptions.forEach(options -> {
       // Create missing pools
       options.getEndpoints().forEach(endpoint -> {
