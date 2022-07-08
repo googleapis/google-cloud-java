@@ -101,6 +101,7 @@
     <module>grpc-google-identity-accesscontextmanager-v1</module>
     <module>proto-google-identity-accesscontextmanager-v1</module>
     <module>proto-google-identity-accesscontextmanager-type</module>
+    <module>google-identity-accesscontextmanager-bom</module>
   </modules>
 
   <reporting>
