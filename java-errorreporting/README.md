@@ -14,7 +14,7 @@ Java idiomatic client for [Error Reporting][product-docs].
 
 ## Quickstart
 
-If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 ```xml
 <dependencyManagement>
@@ -68,23 +68,23 @@ If you are using Maven without BOM, add this to your dependencies:
 
 ```
 
-If you are using Gradle 5.x or later, add this to your dependencies
+If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
 implementation platform('com.google.cloud:libraries-bom:25.4.0')
 
 implementation 'com.google.cloud:google-cloud-errorreporting'
 ```
-If you are using Gradle without BOM, add this to your dependencies
+If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-errorreporting:0.123.3-beta'
+implementation 'com.google.cloud:google-cloud-errorreporting:0.123.4-beta'
 ```
 
-If you are using SBT, add this to your dependencies
+If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.123.3-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.123.4-beta"
 ```
 
 ## Authentication
