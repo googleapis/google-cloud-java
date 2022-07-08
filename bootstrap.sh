@@ -87,7 +87,7 @@ git commit -am 'feat: create CoverageAggregator module'
 
 # generate BOM of the artifacts in this repository
 bom_lines=""
-for bom_directory in $(find . -name 'google-*-bom'); do
+for bom_directory in $(find . -name 'google-*-bom' | sort); do
   pom_file="${bom_directory}/pom.xml"
   groupId_line=$(grep --max-count=1 'groupId' "${pom_file}")
   artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
