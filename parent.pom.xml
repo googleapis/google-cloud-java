@@ -13,6 +13,7 @@
   </properties>
 
   <modules>
+    <module>google-cloud-gapic-bom</module>
   </modules>
 
   <build>
