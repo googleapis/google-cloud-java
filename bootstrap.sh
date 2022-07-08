@@ -121,7 +121,5 @@ mkdir bom
 awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyManagements)}1' \
     ../../bom.pom.xml > bom/pom.xml
 
-git add --all
+git add bom/pom.xml
 git commit -am 'feat: create bom module'
-
-EOL
