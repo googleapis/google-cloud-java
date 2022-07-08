@@ -1,0 +1,8 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-binary-authorization:1.2.0:1.2.1-SNAPSHOT
+grpc-google-cloud-binary-authorization-v1beta1:0.7.0:0.7.1-SNAPSHOT
+grpc-google-cloud-binary-authorization-v1:1.2.0:1.2.1-SNAPSHOT
+proto-google-cloud-binary-authorization-v1beta1:0.7.0:0.7.1-SNAPSHOT
+proto-google-cloud-binary-authorization-v1:1.2.0:1.2.1-SNAPSHOT
