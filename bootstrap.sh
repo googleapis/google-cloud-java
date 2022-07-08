@@ -84,3 +84,44 @@ awk -v MODULE='    <module>CoverageAggregator</module>' '/<\/modules>/{print MOD
 
 git add --all
 git commit -am 'feat: create CoverageAggregator module'
+
+# generate BOM of the artifacts in this repository
+bom_lines=""
+for bom_directory in $(find . -name 'google-*-bom'); do
+  pom_file="${bom_directory}/pom.xml"
+  groupId_line=$(grep --max-count=1 'groupId' "${pom_file}")
+  artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
+  version_line=$(grep --max-count=1 'x-version-update' "${pom_file}")
+
+  if [[ $version_line == *"<version>0"* ]]; then
+    # Not including non-GA libraries, except those that happened to be included
+    # already in google-cloud-bom.
+    if [[ $artifactId_line != *"google-cloud-datalabeling"* ]] \
+        && [[ $artifactId_line != *"google-cloud-errorreporting"* ]] \
+        && [[ $artifactId_line != *"google-cloud-logging-logback"* ]] \
+        && [[ $artifactId_line != *"google-cloud-mediatranslation"* ]] \
+        && [[ $artifactId_line != *"google-cloud-nio"* ]] \
+        && [[ $artifactId_line != *"google-cloud-notification"* ]] \
+        && [[ $artifactId_line != *"google-cloud-phishingprotection"* ]]; then
+      continue
+    fi
+  fi
+
+  bom_lines+="    <dependency>
+    ${groupId_line}
+    ${artifactId_line}
+    ${version_line}
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+"
+done
+
+mkdir bom
+awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyManagements)}1' \
+    ../../bom.pom.xml > bom/pom.xml
+
+git add --all
+git commit -am 'feat: create bom module'
+
+EOL

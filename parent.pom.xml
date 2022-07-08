@@ -13,6 +13,7 @@
   </properties>
 
   <modules>
+    <module>bom</module>
   </modules>
 
   <build>
