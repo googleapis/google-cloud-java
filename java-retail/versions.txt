@@ -1,0 +1,10 @@
+# Format:
+# module:released-version:current-version
+
+google-cloud-retail:2.3.0:2.3.1-SNAPSHOT
+grpc-google-cloud-retail-v2:2.3.0:2.3.1-SNAPSHOT
+proto-google-cloud-retail-v2:2.3.0:2.3.1-SNAPSHOT
+proto-google-cloud-retail-v2alpha:2.3.0:2.3.1-SNAPSHOT
+proto-google-cloud-retail-v2beta:2.3.0:2.3.1-SNAPSHOT
+grpc-google-cloud-retail-v2alpha:2.3.0:2.3.1-SNAPSHOT
+grpc-google-cloud-retail-v2beta:2.3.0:2.3.1-SNAPSHOT
