@@ -13,7 +13,9 @@
     detail of the Libraries BOM.
   </description>
   <dependencyManagement>
+    <dependencies>
 BOM_ARTIFACT_LIST
+    </dependencies>
   </dependencyManagement>
 
   <build>
