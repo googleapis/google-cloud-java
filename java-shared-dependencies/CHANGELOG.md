@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.14.0](https://github.com/googleapis/java-shared-dependencies/compare/v2.13.0...v2.14.0) (2022-07-11)
+
+
+### Dependencies
+
+* update dependency com.google.api-client:google-api-client-bom to v1.35.2 ([#729](https://github.com/googleapis/java-shared-dependencies/issues/729)) ([1fa59af](https://github.com/googleapis/java-shared-dependencies/commit/1fa59af80abb9f278f57658c10158567e825fec6))
+* update dependency com.google.auth:google-auth-library-bom to v1.8.0 ([#726](https://github.com/googleapis/java-shared-dependencies/issues/726)) ([2c5d64c](https://github.com/googleapis/java-shared-dependencies/commit/2c5d64c127db8384e49113acfeac6928716a2d7f))
+* update dependency com.google.http-client:google-http-client-bom to v1.42.1 ([#730](https://github.com/googleapis/java-shared-dependencies/issues/730)) ([6b47126](https://github.com/googleapis/java-shared-dependencies/commit/6b47126686b603a5d112e097ce6aa3a1880daf6f))
+* update dependency com.google.protobuf:protobuf-bom to v3.21.2 ([#722](https://github.com/googleapis/java-shared-dependencies/issues/722)) ([7a96b12](https://github.com/googleapis/java-shared-dependencies/commit/7a96b1259a526b63e9376fd6cc18b27cddeb5f0f))
+* update gax.version to v2.18.3 ([#731](https://github.com/googleapis/java-shared-dependencies/issues/731)) ([e8ee554](https://github.com/googleapis/java-shared-dependencies/commit/e8ee554707acb2f71c739d08e2ff02fbe43ffa52))
+* update google.common-protos.version to v2.9.1 ([#724](https://github.com/googleapis/java-shared-dependencies/issues/724)) ([5213dbb](https://github.com/googleapis/java-shared-dependencies/commit/5213dbbfa9c9b73d2420ec2be7782f16c9c4955f))
+* update google.core.version to v2.8.1 ([#725](https://github.com/googleapis/java-shared-dependencies/issues/725)) ([575858a](https://github.com/googleapis/java-shared-dependencies/commit/575858a60f76e46bbc2a2435c2b6c01c8f4ab681))
+* update iam.version to v1.5.0 ([#732](https://github.com/googleapis/java-shared-dependencies/issues/732)) ([9dce0e5](https://github.com/googleapis/java-shared-dependencies/commit/9dce0e5199c1e425119adc804304958f58003a27))
+
 ## [2.13.0](https://github.com/googleapis/java-shared-dependencies/compare/v2.12.0...v2.13.0) (2022-06-22)
 
 
