@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/googleapis/google-cloud-java/compare/google-identity-accesscontextmanager-v1.3.0...google-identity-accesscontextmanager-v1.3.1) (2022-07-11)
+
+
+### Dependencies
+
+* testing release-please PR generation for this module. ([adf35c8](https://github.com/googleapis/google-cloud-java/commit/adf35c89d182d21f7ddf7049fc7aac7d06b76cb5))
+
 ## [1.3.0](https://github.com/googleapis/java-accesscontextmanager/compare/v1.2.10...v1.3.0) (2022-05-19)
 
 

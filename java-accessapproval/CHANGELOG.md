@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/google-cloud-java/compare/google-cloud-accessapproval-v2.3.0...google-cloud-accessapproval-v2.3.1) (2022-07-11)
+
+
+### Bug Fixes
+
+* testing release-pr generation ([9219b4d](https://github.com/googleapis/google-cloud-java/commit/9219b4dafc8b3d3de768a9b0dfea86c0718c0f06))
+
+
+### Dependencies
+
+* release-pr generation attempt ([8c67310](https://github.com/googleapis/google-cloud-java/commit/8c67310d58f97d97300431dd32ad49911df59856))
+* testing release-please ([e955640](https://github.com/googleapis/google-cloud-java/commit/e955640f75777c3c7bac9bab2c14b9e6806b32e0))
+* testing release-please ([e456eb3](https://github.com/googleapis/google-cloud-java/commit/e456eb305b40f9afd9deada6fb38f0c1a36af4b3))
+* testing release-please ([88182c0](https://github.com/googleapis/google-cloud-java/commit/88182c0406cfdd616e121fce2e12c0f5c96739b4))
+
 ## [2.3.0](https://github.com/googleapis/java-accessapproval/compare/v2.2.5...v2.3.0) (2022-05-19)
 
 
