@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.6](https://github.com/googleapis/java-contact-center-insights/compare/v2.3.5...v2.3.6) (2022-07-11)
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#306](https://github.com/googleapis/java-contact-center-insights/issues/306)) ([b9ad614](https://github.com/googleapis/java-contact-center-insights/commit/b9ad614aa5a4160be99b4f1ce174bd2ff1c583db))
+
 ## [2.3.5](https://github.com/googleapis/java-contact-center-insights/compare/v2.3.4...v2.3.5) (2022-07-01)
 
 
