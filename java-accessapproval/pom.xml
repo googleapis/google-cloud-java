@@ -117,7 +117,7 @@
   </modules>
 
   
-  <!-- Testing new changes -->
+  <!-- Testing new changes for rp pr generation -->
   <reporting>
     <plugins>
       <plugin>
