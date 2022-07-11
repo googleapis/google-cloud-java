@@ -17,7 +17,7 @@
 package search;
 
 import static com.google.common.truth.Truth.assertThat;
-import static search.SearchSimpleQuery.getSearchResponse;
+import static search.SearchSimpleQuery.searchResponse;
 
 import com.google.cloud.ServiceOptions;
 import java.io.ByteArrayOutputStream;
@@ -27,7 +27,10 @@ import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
+@RunWith(JUnit4.class)
 public class SearchSimpleQueryTest {
 
   private ByteArrayOutputStream bout;
@@ -44,7 +47,7 @@ public class SearchSimpleQueryTest {
     originalPrintStream = System.out;
     System.setOut(out);
 
-    getSearchResponse(defaultSearchPlacementName);
+    searchResponse(defaultSearchPlacementName);
   }
 
   @Test
