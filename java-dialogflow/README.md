@@ -41,7 +41,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow</artifactId>
-  <version>4.6.0</version>
+  <version>4.7.0</version>
 </dependency>
 
 ```
@@ -49,7 +49,7 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:25.4.0')
+implementation platform('com.google.cloud:libraries-bom:26.0.0')
 
 implementation 'com.google.cloud:google-cloud-dialogflow'
 ```
