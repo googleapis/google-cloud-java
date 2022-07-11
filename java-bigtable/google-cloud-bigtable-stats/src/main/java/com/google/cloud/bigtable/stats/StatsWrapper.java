@@ -20,7 +20,10 @@ import static com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.tracing.SpanName;
 import io.opencensus.stats.Stats;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Wrapper class for accessing opencensus. We use a shaded version of opencensus to avoid polluting
@@ -33,5 +36,17 @@ public class StatsWrapper {
       OperationType operationType, SpanName spanName, Map<String, String> statsAttributes) {
     return new StatsRecorderWrapper(
         operationType, spanName, statsAttributes, Stats.getStatsRecorder());
+  }
+
+  // This is used in integration tests to get the tag value strings from view manager because Stats
+  // is relocated to com.google.bigtable.veneer.repackaged.io.opencensus.
+  @InternalApi("Visible for testing")
+  public static List<String> getOperationLatencyViewTagValueStrings() {
+    return Stats.getViewManager().getView(BuiltinViewConstants.OPERATION_LATENCIES_VIEW.getName())
+        .getAggregationMap().entrySet().stream()
+        .map(Map.Entry::getKey)
+        .flatMap(x -> x.stream())
+        .map(x -> x.asString())
+        .collect(Collectors.toCollection(ArrayList::new));
   }
 }
