@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.12.0](https://github.com/googleapis/java-analytics-admin/compare/v0.11.0...v0.12.0) (2022-07-08)
+
+
+### Features
+
+* release the Google Analytics Admin API V1 Beta ([#424](https://github.com/googleapis/java-analytics-admin/issues/424)) ([ab9449f](https://github.com/googleapis/java-analytics-admin/commit/ab9449fe9620c7c3021dd278ae900dee1781192b))
+
 ## [0.11.0](https://github.com/googleapis/java-analytics-admin/compare/v0.10.2...v0.11.0) (2022-07-01)
 
 
