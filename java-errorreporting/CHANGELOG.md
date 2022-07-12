@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.124.0](https://github.com/googleapis/java-errorreporting/compare/v0.123.4...v0.124.0) (2022-07-11)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#883](https://github.com/googleapis/java-errorreporting/issues/883)) ([cbce9ac](https://github.com/googleapis/java-errorreporting/commit/cbce9acf30b23885624ae4fdd10efa05f817618b))
+
 ## [0.123.4](https://github.com/googleapis/java-errorreporting/compare/v0.123.3...v0.123.4) (2022-07-01)
 
 

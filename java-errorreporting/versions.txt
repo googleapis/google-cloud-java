@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-errorreporting:0.123.4-beta:0.123.5-beta-SNAPSHOT
-grpc-google-cloud-error-reporting-v1beta1:0.89.4:0.89.5-SNAPSHOT
-proto-google-cloud-error-reporting-v1beta1:0.89.4:0.89.5-SNAPSHOT
+google-cloud-errorreporting:0.124.0-beta:0.124.0-beta
+grpc-google-cloud-error-reporting-v1beta1:0.90.0:0.90.0
+proto-google-cloud-error-reporting-v1beta1:0.90.0:0.90.0
