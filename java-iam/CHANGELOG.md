@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.5.1](https://github.com/googleapis/java-iam/compare/v1.5.0...v1.5.1) (2022-07-12)
+
+
+### Documentation
+
+* **samples:** add iam deny samples and test ([#371](https://github.com/googleapis/java-iam/issues/371)) ([c503444](https://github.com/googleapis/java-iam/commit/c50344450dcaaeed31ea33c494edf507c9b6ff6b))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-cloudresourcemanager to v3-rev20220619-1.32.1 ([#375](https://github.com/googleapis/java-iam/issues/375)) ([9102337](https://github.com/googleapis/java-iam/commit/91023372c5ba198e428e0a5f87f657334f65d5da))
+* update dependency com.google.auth:google-auth-library-oauth2-http to v1.8.0 ([#377](https://github.com/googleapis/java-iam/issues/377)) ([2687617](https://github.com/googleapis/java-iam/commit/268761726c8b70010d243b7f0c58db45a6590ef4))
+* update dependency com.google.http-client:google-http-client-jackson2 to v1.42.1 ([#378](https://github.com/googleapis/java-iam/issues/378)) ([7ea1243](https://github.com/googleapis/java-iam/commit/7ea1243a734745d04edba01c75e996737f97eee5))
+
 ## [1.5.0](https://github.com/googleapis/java-iam/compare/v1.4.1...v1.5.0) (2022-06-30)
 
 
