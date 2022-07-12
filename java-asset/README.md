@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-asset</artifactId>
-  <version>3.3.1</version>
+  <version>3.4.1</version>
 </dependency>
 
 ```
@@ -57,13 +57,13 @@ implementation 'com.google.cloud:google-cloud-asset'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-asset:3.4.0'
+implementation 'com.google.cloud:google-cloud-asset:3.4.1'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-asset" % "3.4.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-asset" % "3.4.1"
 ```
 
 ## Authentication
