@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.14.1](https://github.com/googleapis/java-dialogflow-cx/compare/v0.14.0...v0.14.1) (2022-07-12)
+
+
+### Documentation
+
+* add DetectIntent samples  ([#500](https://github.com/googleapis/java-dialogflow-cx/issues/500)) ([2c5f9c2](https://github.com/googleapis/java-dialogflow-cx/commit/2c5f9c25a88ebb041b5ba11e2fab6b7b467afb19))
+
 ## [0.14.0](https://github.com/googleapis/java-dialogflow-cx/compare/v0.13.1...v0.14.0) (2022-07-01)
 
 
