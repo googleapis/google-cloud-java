@@ -42,7 +42,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataproc</artifactId>
-  <version>3.1.2</version>
+  <version>4.0.0</version>
 </dependency>
 
 ```
