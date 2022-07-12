@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.16.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.15.0...v2.16.0) (2022-07-11)
+
+
+### Features
+
+* expose row level serialization failures for JsonStreamWriter append ([#1686](https://github.com/googleapis/java-bigquerystorage/issues/1686)) ([bba0746](https://github.com/googleapis/java-bigquerystorage/commit/bba0746a13c785621c4e4cbd2239060d67ce155b))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.13.8 ([#1690](https://github.com/googleapis/java-bigquerystorage/issues/1690)) ([195670d](https://github.com/googleapis/java-bigquerystorage/commit/195670d677864ed310898fe9f4b00cc28d942237))
+
 ## [2.15.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.14.2...v2.15.0) (2022-07-01)
 
 
