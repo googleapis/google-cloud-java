@@ -30,9 +30,6 @@ pushd $(dirname "$0")/../../
 # install docuploader package
 python3 -m pip install gcp-docuploader
 
-# install jq package
-apt-get install -y jq
-
 # compile all packages
 #mvn clean install -B -q -DskipTests -T 1C
 
@@ -40,7 +37,7 @@ modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | 
 for module in $modules
 do
   cd $module
-  NAME=$(cat '.repo-metadata.json' | jq -r '.distribution_name' | cut -d ':' -f 2)
+  NAME=$(jq -r '.distribution_name' .repo-metadata.json | cut -d ':' -f 2)
   VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
   echo "${NAME}-${VERSION}"
 
