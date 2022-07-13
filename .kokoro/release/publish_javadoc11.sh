@@ -32,7 +32,7 @@ python3 -m pip install gcp-docuploader
 
 # compile all packages
 # Add -q back in
-mvn clean install -B -DskipTests -T 1C
+mvn clean install -B -DskipTests -Dcheckstyle.skip -T 1C
 
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
 for module in $modules
