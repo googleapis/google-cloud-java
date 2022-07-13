@@ -24,9 +24,6 @@ if [[ -z "${STAGING_BUCKET_V2}" ]]; then
   exit 1
 fi
 
-# Print the ubuntu version
-lsb_release -a
-
 # work from the git root directory
 pushd $(dirname "$0")/../../
 
@@ -35,8 +32,6 @@ python3 -m pip install gcp-docuploader
 
 apt-get update
 apt-get install -y jq
-
-which jq
 
 # compile all packages
 #mvn clean install -B -q -DskipTests -Dcheckstyle.skip -Denforcer.skip=true -T 1C
@@ -56,26 +51,24 @@ do
 
   cd target/docfx-yml
 
-  cd ../..
+  # create metadata
+  python3 -m docuploader create-metadata \
+   --name ${NAME} \
+   --version ${VERSION} \
+   --xrefs devsite://java/gax \
+   --xrefs devsite://java/google-cloud-core \
+   --xrefs devsite://java/api-common \
+   --xrefs devsite://java/proto-google-common-protos \
+   --xrefs devsite://java/google-api-client \
+   --xrefs devsite://java/google-http-client \
+   --xrefs devsite://java/protobuf \
+   --language java
 
-#  # create metadata
-#  python3 -m docuploader create-metadata \
-#   --name ${NAME} \
-#   --version ${VERSION} \
-#   --xrefs devsite://java/gax \
-#   --xrefs devsite://java/google-cloud-core \
-#   --xrefs devsite://java/api-common \
-#   --xrefs devsite://java/proto-google-common-protos \
-#   --xrefs devsite://java/google-api-client \
-#   --xrefs devsite://java/google-http-client \
-#   --xrefs devsite://java/protobuf \
-#   --language java
-#
-#  # upload yml to production bucket
-#  python3 -m docuploader upload . \
-#   --credentials ${CREDENTIALS} \
-#   --staging-bucket ${STAGING_BUCKET_V2} \
-#   --destination-prefix docfx
+  # upload yml to production bucket
+  python3 -m docuploader upload . \
+   --credentials ${CREDENTIALS} \
+   --staging-bucket ${STAGING_BUCKET_V2} \
+   --destination-prefix docfx
 
-  cd ..
+  cd ../../..
 done
