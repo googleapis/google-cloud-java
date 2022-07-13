@@ -12,6 +12,12 @@
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
 
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-shared-config</artifactId>
+    <version>1.5.1</version>
+  </parent>
+
   <modules>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
