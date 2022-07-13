@@ -31,7 +31,7 @@ pushd $(dirname "$0")/../../
 python3 -m pip install gcp-docuploader
 
 # install jq package
-python3 -m pip install jq
+apt-get install jq
 
 # compile all packages
 #mvn clean install -B -q -DskipTests -T 1C
