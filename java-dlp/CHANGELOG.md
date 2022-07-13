@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.6.0](https://github.com/googleapis/java-dlp/compare/v3.5.0...v3.6.0) (2022-07-13)
+
+
+### Features
+
+* InfoType categories were added to built-in infoTypes ([#922](https://github.com/googleapis/java-dlp/issues/922)) ([5a3af6c](https://github.com/googleapis/java-dlp/commit/5a3af6cba0b6749f50568f760d1feb870537a550))
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-dlp/issues/1485)) ([#924](https://github.com/googleapis/java-dlp/issues/924)) ([6a6a873](https://github.com/googleapis/java-dlp/commit/6a6a873d24020c10e27d8db7ed158ad93e7077e3))
+* suppress checkstyle for certain methods ([#921](https://github.com/googleapis/java-dlp/issues/921)) ([28ae04d](https://github.com/googleapis/java-dlp/commit/28ae04d11c3690c302129c59555b4e9210b5f0d8))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-pubsub to v1.120.1 ([#917](https://github.com/googleapis/java-dlp/issues/917)) ([98adc52](https://github.com/googleapis/java-dlp/commit/98adc52996c1fe40b1f2ef7245a2b54d8dec4157))
+
 ## [3.5.0](https://github.com/googleapis/java-dlp/compare/v3.4.0...v3.5.0) (2022-07-01)
 
 
