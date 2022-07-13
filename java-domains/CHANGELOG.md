@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/googleapis/java-domains/compare/v1.0.0...v1.0.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-domains/issues/1485)) ([#250](https://github.com/googleapis/java-domains/issues/250)) ([d4a4458](https://github.com/googleapis/java-domains/commit/d4a44585c28aee9a3dd9c5d6561c01cff4375ba7))
+
 ## [1.0.0](https://github.com/googleapis/java-domains/compare/v0.7.0...v1.0.0) (2022-07-11)
 
 
