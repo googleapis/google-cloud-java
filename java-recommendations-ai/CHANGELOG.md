@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.1](https://github.com/googleapis/java-recommendations-ai/compare/v0.10.0...v0.10.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-recommendations-ai/issues/1485)) ([#549](https://github.com/googleapis/java-recommendations-ai/issues/549)) ([db19052](https://github.com/googleapis/java-recommendations-ai/commit/db1905238c36199325d6b44c9daba3cf00391439))
+
 ## [0.10.0](https://github.com/googleapis/java-recommendations-ai/compare/v0.9.0...v0.10.0) (2022-07-01)
 
 
