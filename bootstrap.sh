@@ -35,8 +35,8 @@ do
   cp ${service}/.github/.OwlBot.yaml ${service}/.OwlBot.yaml
   rm ${service}/.github/.OwlBot.lock.yaml
   rm ${service}/.github/.OwlBot.yaml
-  sed -i '/docker/d' ${service}/.OwlBot.yaml
-  sed -i '/image/d' ${service}/.OwlBot.yaml
+  sed -i.bak '/docker/d' ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
+  sed -i.bak '/image/d' ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
   text=$(grep '^.*api_shortname.*' ${service}/.repo-metadata.json)
   text=$(echo "$text" | sed 's/\"//g; s/\,//g; s/^[[:space:]]*//' )
   text=${text/api_shortname/api-name}
