@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.10.1](https://github.com/googleapis/java-datastore/compare/v2.10.0...v2.10.1) (2022-07-13)
+
+
+### Dependencies
+
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.13 ([#793](https://github.com/googleapis/java-datastore/issues/793)) ([0bd0199](https://github.com/googleapis/java-datastore/commit/0bd0199f22a4bc5b0b93e3bbeca5d2e990dde83f))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.13 ([#794](https://github.com/googleapis/java-datastore/issues/794)) ([fa3979a](https://github.com/googleapis/java-datastore/commit/fa3979a32dfb3cb84a593948f38ed27549355a55))
+
 ## [2.10.0](https://github.com/googleapis/java-datastore/compare/v2.9.1...v2.10.0) (2022-06-30)
 
 
