@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/googleapis/java-orchestration-airflow/compare/v1.3.0...v1.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-orchestration-airflow/issues/1485)) ([#212](https://github.com/googleapis/java-orchestration-airflow/issues/212)) ([751461e](https://github.com/googleapis/java-orchestration-airflow/commit/751461e04d3254915194a8ac5f7916255a3abbe1))
+
 ## [1.3.0](https://github.com/googleapis/java-orchestration-airflow/compare/v1.2.0...v1.3.0) (2022-07-01)
 
 
