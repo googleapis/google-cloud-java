@@ -162,4 +162,56 @@ public interface InfoTypeDescriptionOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The category of the infoType.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.InfoTypeCategory> getCategoriesList();
+  /**
+   *
+   *
+   * <pre>
+   * The category of the infoType.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+   */
+  com.google.privacy.dlp.v2.InfoTypeCategory getCategories(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The category of the infoType.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+   */
+  int getCategoriesCount();
+  /**
+   *
+   *
+   * <pre>
+   * The category of the infoType.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeCategoryOrBuilder>
+      getCategoriesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The category of the infoType.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+   */
+  com.google.privacy.dlp.v2.InfoTypeCategoryOrBuilder getCategoriesOrBuilder(int index);
 }

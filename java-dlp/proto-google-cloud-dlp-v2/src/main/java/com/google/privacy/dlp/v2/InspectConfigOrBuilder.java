@@ -186,7 +186,7 @@ public interface InspectConfigOrBuilder
    *
    * <pre>
    * When true, a contextual quote from the data that triggered a finding is
-   * included in the response; see Finding.quote.
+   * included in the response; see [Finding.quote][google.privacy.dlp.v2.Finding.quote].
    * This is not used for data profiling.
    * </pre>
    *
