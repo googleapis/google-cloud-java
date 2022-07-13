@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.1.2](https://github.com/googleapis/java-dns/compare/v2.1.1...v2.1.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-dns/issues/1485)) ([#679](https://github.com/googleapis/java-dns/issues/679)) ([12a0ad0](https://github.com/googleapis/java-dns/commit/12a0ad08a99e380ab5b5a941c5c0086de852e3b4))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-dns to v1-rev20220622-1.32.1 ([#669](https://github.com/googleapis/java-dns/issues/669)) ([fe66dff](https://github.com/googleapis/java-dns/commit/fe66dffc2b52c3ecd259d6b80c6b753421299559))
+* update dependency com.google.apis:google-api-services-dns to v1-rev20220630-1.32.1 ([#677](https://github.com/googleapis/java-dns/issues/677)) ([83f881a](https://github.com/googleapis/java-dns/commit/83f881a55d1fdde8e1db3716a1109fac51d108b7))
+
 ## [2.1.1](https://github.com/googleapis/java-dns/compare/v2.1.0...v2.1.1) (2022-07-01)
 
 
