@@ -87,14 +87,14 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
     fi
   fi
 
-  bom_lines+="      <dependency>
-      ${groupId_line}
-      ${artifactId_line}
-      ${version_line}
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-"
+  bom_lines+="      <dependency>\n\
+      ${groupId_line}\n\
+      ${artifactId_line}\n\
+      ${version_line}\n\
+        <type>pom</type>\n\
+        <scope>import</scope>\n\
+      </dependency>\n"
+
 done
 
 mkdir google-cloud-gapic-bom
@@ -109,7 +109,7 @@ mvn -q -B -ntp validate
 
 
 # Template files
-cp -r --preserve=all ../../templates/. ./
+cp -rp ../../templates/. ./
 git add --all
 git commit -m 'chore: add template files'
 
