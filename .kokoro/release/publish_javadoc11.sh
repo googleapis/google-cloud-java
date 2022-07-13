@@ -34,7 +34,7 @@ python3 -m pip install gcp-docuploader
 python3 -m pip install jq
 
 # compile all packages
-mvn clean install -B -q -DskipTests
+#mvn clean install -B -q -DskipTests -T 1C
 
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
 for module in $modules
@@ -44,13 +44,15 @@ do
   VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
   echo "${NAME}-${VERSION}"
 
-#  # cloud RAD generation
-#  mvn clean javadoc:aggregate -B -q
-#  # include CHANGELOG
-#  cp CHANGELOG.md target/docfx-yml/history.md
-#
-#  pushd target/docfx-yml
-#
+  # cloud RAD generation
+  mvn clean javadoc:aggregate -B -q -P docFX-pipelineTest
+  # include CHANGELOG
+  cp CHANGELOG.md target/docfx-yml/history.md
+
+  cd target/docfx-yml
+
+  cd ../..
+
 #  # create metadata
 #  python3 -m docuploader create-metadata \
 #   --name ${NAME} \
