@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.8.0](https://github.com/googleapis/java-securitycenter/compare/v2.7.1...v2.8.0) (2022-07-13)
+
+
+### Features
+
+* Added contacts field to findings attributes, specifying Essential Contacts defined at org, folder or project level within a GCP org ([#865](https://github.com/googleapis/java-securitycenter/issues/865)) ([080c590](https://github.com/googleapis/java-securitycenter/commit/080c59004ce85a4813a2ade16e0972d4f7baee3f))
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-securitycenter/issues/1485)) ([#869](https://github.com/googleapis/java-securitycenter/issues/869)) ([1a3e969](https://github.com/googleapis/java-securitycenter/commit/1a3e969a9b3b8212bb97d0c0f4348fd37122b4b3))
+
 ## [2.7.1](https://github.com/googleapis/java-securitycenter/compare/v2.7.0...v2.7.1) (2022-07-01)
 
 
