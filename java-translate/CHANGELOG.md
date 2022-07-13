@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.2](https://github.com/googleapis/java-translate/compare/v2.3.1...v2.3.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-translate/issues/1485)) ([#1032](https://github.com/googleapis/java-translate/issues/1032)) ([a106a05](https://github.com/googleapis/java-translate/commit/a106a05fc6f32ac0c3bc8f780e4bf623505a025b))
+
 ## [2.3.1](https://github.com/googleapis/java-translate/compare/v2.3.0...v2.3.1) (2022-07-11)
 
 
