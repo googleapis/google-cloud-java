@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.7.2](https://github.com/googleapis/java-dialogflow/compare/v4.7.1...v4.7.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-dialogflow/issues/1485)) ([#957](https://github.com/googleapis/java-dialogflow/issues/957)) ([0266733](https://github.com/googleapis/java-dialogflow/commit/0266733e2cc760cd1bd1a72647c07db5c40fc929))
+
 ## [4.7.1](https://github.com/googleapis/java-dialogflow/compare/v4.7.0...v4.7.1) (2022-07-01)
 
 
