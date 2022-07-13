@@ -30,9 +30,11 @@ pushd $(dirname "$0")/../../
 # install docuploader package
 python3 -m pip install gcp-docuploader
 
+sudo apt-get update
+sudo apt-get install jq
+
 # compile all packages
-# Add -q back in
-mvn clean install -B -DskipTests -Dcheckstyle.skip -Denforcer.skip=true -T 1C
+#mvn clean install -B -q -DskipTests -Dcheckstyle.skip -Denforcer.skip=true -T 1C
 
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
 for module in $modules
