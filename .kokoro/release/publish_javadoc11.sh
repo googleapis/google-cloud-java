@@ -24,6 +24,9 @@ if [[ -z "${STAGING_BUCKET_V2}" ]]; then
   exit 1
 fi
 
+# Print the ubuntu version
+lsb_release -a
+
 # work from the git root directory
 pushd $(dirname "$0")/../../
 
@@ -31,7 +34,7 @@ pushd $(dirname "$0")/../../
 python3 -m pip install gcp-docuploader
 
 apt-get update
-apt-get install jq
+apt-get install -y jq
 
 which jq
 
