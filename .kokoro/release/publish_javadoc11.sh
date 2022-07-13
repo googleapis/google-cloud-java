@@ -31,7 +31,8 @@ pushd $(dirname "$0")/../../
 python3 -m pip install gcp-docuploader
 
 # compile all packages
-#mvn clean install -B -q -DskipTests -T 1C
+# Add -q back in
+mvn clean install -B -DskipTests -T 1C
 
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
 for module in $modules
