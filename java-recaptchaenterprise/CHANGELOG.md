@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.0...v3.0.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-recaptchaenterprise/issues/1485)) ([#838](https://github.com/googleapis/java-recaptchaenterprise/issues/838)) ([7f9bdfe](https://github.com/googleapis/java-recaptchaenterprise/commit/7f9bdfe22f3cc40056f263a158d7169d343b5eee))
+
 ## [3.0.0](https://github.com/googleapis/java-recaptchaenterprise/compare/v2.6.2...v3.0.0) (2022-07-01)
 
 
