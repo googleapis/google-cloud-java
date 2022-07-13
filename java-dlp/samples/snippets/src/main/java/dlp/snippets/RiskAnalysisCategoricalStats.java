@@ -15,6 +15,7 @@
  */
 
 package dlp.snippets;
+
 // [START dlp_categorical_stats]
 
 import com.google.api.core.SettableApiFuture;
