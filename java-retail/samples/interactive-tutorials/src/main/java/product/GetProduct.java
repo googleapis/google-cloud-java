@@ -49,8 +49,12 @@ public class GetProduct {
     GetProductRequest getProductRequest =
         GetProductRequest.newBuilder().setName(productName).build();
 
-    try {
-      product = ProductServiceClient.create().getProduct(getProductRequest);
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
+    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
+      product = serviceClient.getProduct(getProductRequest);
       System.out.println("Get product response: " + product);
       return product;
     } catch (NotFoundException e) {

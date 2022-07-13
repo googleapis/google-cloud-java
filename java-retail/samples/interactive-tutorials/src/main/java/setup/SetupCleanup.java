@@ -81,7 +81,6 @@ import java.util.concurrent.ExecutionException;
 
 public class SetupCleanup {
 
-  // TODO(developer): Replace these variables before running the sample.
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String DEFAULT_CATALOG =
       String.format("projects/%s/locations/global/catalogs/default_catalog", PROJECT_ID);
@@ -116,9 +115,10 @@ public class SetupCleanup {
   }
 
   public static UserEvent writeUserEvent(String visitorId) throws IOException {
-    // Initialize client that will be used to send requests. This client only needs to be created
-    // once, and can be reused for multiple requests. After completing all of your requests, call
-    // the "close" method on the client to safely clean up any remaining background resources.
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
     try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
       WriteUserEventRequest writeUserEventRequest =
           WriteUserEventRequest.newBuilder()
@@ -134,9 +134,10 @@ public class SetupCleanup {
 
   public static void purgeUserEvent(String visitorId)
       throws IOException, ExecutionException, InterruptedException {
-    // Initialize client that will be used to send requests. This client only needs to be created
-    // once, and can be reused for multiple requests. After completing all of your requests, call
-    // the "close" method on the client to safely clean up any remaining background resources.
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
     try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
       PurgeUserEventsRequest purgeUserEventsRequest =
           PurgeUserEventsRequest.newBuilder()
@@ -188,6 +189,10 @@ public class SetupCleanup {
             .build();
     System.out.printf("Create product request: %s%n", createProductRequest);
 
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
     try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
       Product createdProduct = serviceClient.createProduct(createProductRequest);
       System.out.printf("Created product: %s%n", createdProduct);
@@ -201,6 +206,10 @@ public class SetupCleanup {
     GetProductRequest getProductRequest =
         GetProductRequest.newBuilder().setName(productName).build();
 
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
     try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
       product = serviceClient.getProduct(getProductRequest);
       System.out.println("Get product response: " + product);
@@ -216,6 +225,10 @@ public class SetupCleanup {
         DeleteProductRequest.newBuilder().setName(productName).build();
     System.out.printf("Delete product request %s%n", deleteProductRequest);
 
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
     try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
       serviceClient.deleteProduct(deleteProductRequest);
       System.out.printf("Product %s was deleted.%n", productName);
@@ -356,7 +369,7 @@ public class SetupCleanup {
                 + job.getStatus().getError());
       }
     } catch (BigQueryException | InterruptedException e) {
-      System.out.println("Column not added during load append \n" + e);
+      System.out.printf("Column not added during load append: %s%n", e.getMessage());
     }
   }
 
