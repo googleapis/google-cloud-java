@@ -27,6 +27,33 @@ public interface ProcessOrBuilder
    *
    *
    * <pre>
+   * The process name visible in utilities like `top` and `ps`; it can
+   * be accessed via `/proc/[pid]/comm` and changed with `prctl(PR_SET_NAME)`.
+   * </pre>
+   *
+   * <code>string name = 12;</code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * The process name visible in utilities like `top` and `ps`; it can
+   * be accessed via `/proc/[pid]/comm` and changed with `prctl(PR_SET_NAME)`.
+   * </pre>
+   *
+   * <code>string name = 12;</code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * File information for the process executable.
    * </pre>
    *

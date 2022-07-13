@@ -354,12 +354,29 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.securitycenter.v1.Connection.parser(), extensionRegistry));
               break;
             }
-          case 274:
+          case 266:
             {
               if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                contacts_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ContactsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+                  contacts__ =
+                      input.readMessage(
+                          ContactsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              contacts_.getMutableMap().put(contacts__.getKey(), contacts__.getValue());
+              break;
+            }
+          case 274:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 compliances_ =
                     new java.util.ArrayList<com.google.cloud.securitycenter.v1.Compliance>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000020;
               }
               compliances_.add(
                   input.readMessage(
@@ -391,10 +408,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             }
           case 314:
             {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 iamBindings_ =
                     new java.util.ArrayList<com.google.cloud.securitycenter.v1.IamBinding>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000040;
               }
               iamBindings_.add(
                   input.readMessage(
@@ -430,10 +447,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         connections_ = java.util.Collections.unmodifiableList(connections_);
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
         compliances_ = java.util.Collections.unmodifiableList(compliances_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
         iamBindings_ = java.util.Collections.unmodifiableList(iamBindings_);
       }
       this.unknownFields = unknownFields.build();
@@ -454,6 +471,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         return internalGetSourceProperties();
       case 22:
         return internalGetExternalSystems();
+      case 33:
+        return internalGetContacts();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -2293,8 +2312,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2319,8 +2338,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2336,8 +2355,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2358,8 +2377,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2673,6 +2692,186 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.securitycenter.v1.ProcessOrBuilder getProcessesOrBuilder(int index) {
     return processes_.get(index);
+  }
+
+  public static final int CONTACTS_FIELD_NUMBER = 33;
+
+  private static final class ContactsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+                    newDefaultInstance(
+                        com.google.cloud.securitycenter.v1.FindingOuterClass
+                            .internal_static_google_cloud_securitycenter_v1_Finding_ContactsEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.securitycenter.v1.ContactDetails.getDefaultInstance());
+  }
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+      contacts_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+      internalGetContacts() {
+    if (contacts_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(ContactsDefaultEntryHolder.defaultEntry);
+    }
+    return contacts_;
+  }
+
+  public int getContactsCount() {
+    return internalGetContacts().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map containing the point of contacts for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
+   * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *     {
+   *       "security": {
+   *         "contacts": [
+   *           {
+   *             "email": "person1&#64;company.com"
+   *           },
+   *           {
+   *             "email": "person2&#64;company.com"
+   *           }
+   *         ]
+   *       }
+   *     }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsContacts(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetContacts().getMap().containsKey(key);
+  }
+  /** Use {@link #getContactsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+      getContacts() {
+    return getContactsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map containing the point of contacts for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
+   * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *     {
+   *       "security": {
+   *         "contacts": [
+   *           {
+   *             "email": "person1&#64;company.com"
+   *           },
+   *           {
+   *             "email": "person2&#64;company.com"
+   *           }
+   *         ]
+   *       }
+   *     }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+      getContactsMap() {
+    return internalGetContacts().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map containing the point of contacts for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
+   * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *     {
+   *       "security": {
+   *         "contacts": [
+   *           {
+   *             "email": "person1&#64;company.com"
+   *           },
+   *           {
+   *             "email": "person2&#64;company.com"
+   *           }
+   *         ]
+   *       }
+   *     }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ContactDetails getContactsOrDefault(
+      java.lang.String key, com.google.cloud.securitycenter.v1.ContactDetails defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails> map =
+        internalGetContacts().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map containing the point of contacts for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
+   * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *     {
+   *       "security": {
+   *         "contacts": [
+   *           {
+   *             "email": "person1&#64;company.com"
+   *           },
+   *           {
+   *             "email": "person2&#64;company.com"
+   *           }
+   *         ]
+   *       }
+   *     }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ContactDetails getContactsOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails> map =
+        internalGetContacts().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   public static final int COMPLIANCES_FIELD_NUMBER = 34;
@@ -3048,6 +3247,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < connections_.size(); i++) {
       output.writeMessage(31, connections_.get(i));
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetContacts(), ContactsDefaultEntryHolder.defaultEntry, 33);
     for (int i = 0; i < compliances_.size(); i++) {
       output.writeMessage(34, compliances_.get(i));
     }
@@ -3160,6 +3361,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < connections_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, connections_.get(i));
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+        entry : internalGetContacts().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+          contacts__ =
+              ContactsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(33, contacts__);
+    }
     for (int i = 0; i < compliances_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(34, compliances_.get(i));
     }
@@ -3238,6 +3451,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (!getConnectionsList().equals(other.getConnectionsList())) return false;
     if (!getMuteInitiator().equals(other.getMuteInitiator())) return false;
     if (!getProcessesList().equals(other.getProcessesList())) return false;
+    if (!internalGetContacts().equals(other.internalGetContacts())) return false;
     if (!getCompliancesList().equals(other.getCompliancesList())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (hasExfiltration() != other.hasExfiltration()) return false;
@@ -3326,6 +3540,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (getProcessesCount() > 0) {
       hash = (37 * hash) + PROCESSES_FIELD_NUMBER;
       hash = (53 * hash) + getProcessesList().hashCode();
+    }
+    if (!internalGetContacts().getMap().isEmpty()) {
+      hash = (37 * hash) + CONTACTS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetContacts().hashCode();
     }
     if (getCompliancesCount() > 0) {
       hash = (37 * hash) + COMPLIANCES_FIELD_NUMBER;
@@ -3473,6 +3691,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           return internalGetSourceProperties();
         case 22:
           return internalGetExternalSystems();
+        case 33:
+          return internalGetContacts();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -3485,6 +3705,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           return internalGetMutableSourceProperties();
         case 22:
           return internalGetMutableExternalSystems();
+        case 33:
+          return internalGetMutableContacts();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -3606,9 +3828,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         processesBuilder_.clear();
       }
+      internalGetMutableContacts().clear();
       if (compliancesBuilder_ == null) {
         compliances_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
       } else {
         compliancesBuilder_.clear();
       }
@@ -3622,7 +3845,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       if (iamBindingsBuilder_ == null) {
         iamBindings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
       } else {
         iamBindingsBuilder_.clear();
       }
@@ -3729,10 +3952,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.processes_ = processesBuilder_.build();
       }
+      result.contacts_ = internalGetContacts();
+      result.contacts_.makeImmutable();
       if (compliancesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           compliances_ = java.util.Collections.unmodifiableList(compliances_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.compliances_ = compliances_;
       } else {
@@ -3745,9 +3970,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.exfiltration_ = exfiltrationBuilder_.build();
       }
       if (iamBindingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           iamBindings_ = java.util.Collections.unmodifiableList(iamBindings_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.iamBindings_ = iamBindings_;
       } else {
@@ -3923,11 +4148,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      internalGetMutableContacts().mergeFrom(other.internalGetContacts());
       if (compliancesBuilder_ == null) {
         if (!other.compliances_.isEmpty()) {
           if (compliances_.isEmpty()) {
             compliances_ = other.compliances_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureCompliancesIsMutable();
             compliances_.addAll(other.compliances_);
@@ -3940,7 +4166,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             compliancesBuilder_.dispose();
             compliancesBuilder_ = null;
             compliances_ = other.compliances_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             compliancesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCompliancesFieldBuilder()
@@ -3961,7 +4187,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         if (!other.iamBindings_.isEmpty()) {
           if (iamBindings_.isEmpty()) {
             iamBindings_ = other.iamBindings_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureIamBindingsIsMutable();
             iamBindings_.addAll(other.iamBindings_);
@@ -3974,7 +4200,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             iamBindingsBuilder_.dispose();
             iamBindingsBuilder_ = null;
             iamBindings_ = other.iamBindings_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             iamBindingsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getIamBindingsFieldBuilder()
@@ -6636,8 +6862,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -6662,8 +6888,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -6679,8 +6905,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -6701,8 +6927,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -6731,8 +6957,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -6756,8 +6982,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -6780,8 +7006,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external
-     * system information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+     * information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -8007,14 +8233,305 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return processesBuilder_;
     }
 
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+        contacts_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+        internalGetContacts() {
+      if (contacts_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(ContactsDefaultEntryHolder.defaultEntry);
+      }
+      return contacts_;
+    }
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+        internalGetMutableContacts() {
+      onChanged();
+      ;
+      if (contacts_ == null) {
+        contacts_ =
+            com.google.protobuf.MapField.newMapField(ContactsDefaultEntryHolder.defaultEntry);
+      }
+      if (!contacts_.isMutable()) {
+        contacts_ = contacts_.copy();
+      }
+      return contacts_;
+    }
+
+    public int getContactsCount() {
+      return internalGetContacts().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Map containing the point of contacts for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
+     * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *     {
+     *       "security": {
+     *         "contacts": [
+     *           {
+     *             "email": "person1&#64;company.com"
+     *           },
+     *           {
+     *             "email": "person2&#64;company.com"
+     *           }
+     *         ]
+     *       }
+     *     }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsContacts(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetContacts().getMap().containsKey(key);
+    }
+    /** Use {@link #getContactsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+        getContacts() {
+      return getContactsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Map containing the point of contacts for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
+     * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *     {
+     *       "security": {
+     *         "contacts": [
+     *           {
+     *             "email": "person1&#64;company.com"
+     *           },
+     *           {
+     *             "email": "person2&#64;company.com"
+     *           }
+     *         ]
+     *       }
+     *     }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+        getContactsMap() {
+      return internalGetContacts().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Map containing the point of contacts for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
+     * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *     {
+     *       "security": {
+     *         "contacts": [
+     *           {
+     *             "email": "person1&#64;company.com"
+     *           },
+     *           {
+     *             "email": "person2&#64;company.com"
+     *           }
+     *         ]
+     *       }
+     *     }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.ContactDetails getContactsOrDefault(
+        java.lang.String key, com.google.cloud.securitycenter.v1.ContactDetails defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails> map =
+          internalGetContacts().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Map containing the point of contacts for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
+     * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *     {
+     *       "security": {
+     *         "contacts": [
+     *           {
+     *             "email": "person1&#64;company.com"
+     *           },
+     *           {
+     *             "email": "person2&#64;company.com"
+     *           }
+     *         ]
+     *       }
+     *     }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.ContactDetails getContactsOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails> map =
+          internalGetContacts().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearContacts() {
+      internalGetMutableContacts().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Map containing the point of contacts for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
+     * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *     {
+     *       "security": {
+     *         "contacts": [
+     *           {
+     *             "email": "person1&#64;company.com"
+     *           },
+     *           {
+     *             "email": "person2&#64;company.com"
+     *           }
+     *         ]
+     *       }
+     *     }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeContacts(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableContacts().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+        getMutableContacts() {
+      return internalGetMutableContacts().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Map containing the point of contacts for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
+     * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *     {
+     *       "security": {
+     *         "contacts": [
+     *           {
+     *             "email": "person1&#64;company.com"
+     *           },
+     *           {
+     *             "email": "person2&#64;company.com"
+     *           }
+     *         ]
+     *       }
+     *     }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putContacts(
+        java.lang.String key, com.google.cloud.securitycenter.v1.ContactDetails value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+
+      internalGetMutableContacts().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Map containing the point of contacts for the given finding. The key
+     * represents the type of contact, while the value contains a list of all the
+     * contacts that pertain. Please refer to:
+     * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+     *     {
+     *       "security": {
+     *         "contacts": [
+     *           {
+     *             "email": "person1&#64;company.com"
+     *           },
+     *           {
+     *             "email": "person2&#64;company.com"
+     *           }
+     *         ]
+     *       }
+     *     }
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllContacts(
+        java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails> values) {
+      internalGetMutableContacts().getMutableMap().putAll(values);
+      return this;
+    }
+
     private java.util.List<com.google.cloud.securitycenter.v1.Compliance> compliances_ =
         java.util.Collections.emptyList();
 
     private void ensureCompliancesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         compliances_ =
             new java.util.ArrayList<com.google.cloud.securitycenter.v1.Compliance>(compliances_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -8241,7 +8758,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCompliances() {
       if (compliancesBuilder_ == null) {
         compliances_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         compliancesBuilder_.clear();
@@ -8371,7 +8888,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.Compliance,
                 com.google.cloud.securitycenter.v1.Compliance.Builder,
                 com.google.cloud.securitycenter.v1.ComplianceOrBuilder>(
-                compliances_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                compliances_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         compliances_ = null;
       }
       return compliancesBuilder_;
@@ -8673,10 +9190,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureIamBindingsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         iamBindings_ =
             new java.util.ArrayList<com.google.cloud.securitycenter.v1.IamBinding>(iamBindings_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -8892,7 +9409,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder clearIamBindings() {
       if (iamBindingsBuilder_ == null) {
         iamBindings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         iamBindingsBuilder_.clear();
@@ -9015,7 +9532,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.IamBinding,
                 com.google.cloud.securitycenter.v1.IamBinding.Builder,
                 com.google.cloud.securitycenter.v1.IamBindingOrBuilder>(
-                iamBindings_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                iamBindings_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         iamBindings_ = null;
       }
       return iamBindingsBuilder_;

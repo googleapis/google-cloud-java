@@ -663,8 +663,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -676,8 +676,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -693,8 +693,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -707,8 +707,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -725,8 +725,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external
-   * system information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
+   * information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -945,6 +945,151 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Process processes = 30;</code>
    */
   com.google.cloud.securitycenter.v1.ProcessOrBuilder getProcessesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map containing the point of contacts for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
+   * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *     {
+   *       "security": {
+   *         "contacts": [
+   *           {
+   *             "email": "person1&#64;company.com"
+   *           },
+   *           {
+   *             "email": "person2&#64;company.com"
+   *           }
+   *         ]
+   *       }
+   *     }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getContactsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map containing the point of contacts for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
+   * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *     {
+   *       "security": {
+   *         "contacts": [
+   *           {
+   *             "email": "person1&#64;company.com"
+   *           },
+   *           {
+   *             "email": "person2&#64;company.com"
+   *           }
+   *         ]
+   *       }
+   *     }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean containsContacts(java.lang.String key);
+  /** Use {@link #getContactsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails> getContacts();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map containing the point of contacts for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
+   * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *     {
+   *       "security": {
+   *         "contacts": [
+   *           {
+   *             "email": "person1&#64;company.com"
+   *           },
+   *           {
+   *             "email": "person2&#64;company.com"
+   *           }
+   *         ]
+   *       }
+   *     }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.securitycenter.v1.ContactDetails>
+      getContactsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map containing the point of contacts for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
+   * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *     {
+   *       "security": {
+   *         "contacts": [
+   *           {
+   *             "email": "person1&#64;company.com"
+   *           },
+   *           {
+   *             "email": "person2&#64;company.com"
+   *           }
+   *         ]
+   *       }
+   *     }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+
+  /* nullable */
+  com.google.cloud.securitycenter.v1.ContactDetails getContactsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.securitycenter.v1.ContactDetails defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map containing the point of contacts for the given finding. The key
+   * represents the type of contact, while the value contains a list of all the
+   * contacts that pertain. Please refer to:
+   * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
+   *     {
+   *       "security": {
+   *         "contacts": [
+   *           {
+   *             "email": "person1&#64;company.com"
+   *           },
+   *           {
+   *             "email": "person2&#64;company.com"
+   *           }
+   *         ]
+   *       }
+   *     }
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.securitycenter.v1.ContactDetails&gt; contacts = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.securitycenter.v1.ContactDetails getContactsOrThrow(java.lang.String key);
 
   /**
    *

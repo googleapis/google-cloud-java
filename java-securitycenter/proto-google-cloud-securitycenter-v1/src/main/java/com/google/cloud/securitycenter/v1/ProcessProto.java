@@ -47,23 +47,23 @@ public final class ProcessProto {
       "\n,google/cloud/securitycenter/v1/process"
           + ".proto\022\036google.cloud.securitycenter.v1\032)"
           + "google/cloud/securitycenter/v1/file.prot"
-          + "o\"\347\002\n\007Process\0224\n\006binary\030\003 \001(\0132$.google.c"
-          + "loud.securitycenter.v1.File\0227\n\tlibraries"
-          + "\030\004 \003(\0132$.google.cloud.securitycenter.v1."
-          + "File\0224\n\006script\030\005 \001(\0132$.google.cloud.secu"
-          + "ritycenter.v1.File\022\014\n\004args\030\006 \003(\t\022\033\n\023argu"
-          + "ments_truncated\030\007 \001(\010\022J\n\renv_variables\030\010"
-          + " \003(\01323.google.cloud.securitycenter.v1.En"
-          + "vironmentVariable\022\037\n\027env_variables_trunc"
-          + "ated\030\t \001(\010\022\013\n\003pid\030\n \001(\003\022\022\n\nparent_pid\030\013 "
-          + "\001(\003\"0\n\023EnvironmentVariable\022\014\n\004name\030\001 \001(\t"
-          + "\022\013\n\003val\030\002 \001(\tB\350\001\n\"com.google.cloud.secur"
-          + "itycenter.v1B\014ProcessProtoP\001ZLgoogle.gol"
-          + "ang.org/genproto/googleapis/cloud/securi"
-          + "tycenter/v1;securitycenter\252\002\036Google.Clou"
-          + "d.SecurityCenter.V1\312\002\036Google\\Cloud\\Secur"
-          + "ityCenter\\V1\352\002!Google::Cloud::SecurityCe"
-          + "nter::V1b\006proto3"
+          + "o\"\365\002\n\007Process\022\014\n\004name\030\014 \001(\t\0224\n\006binary\030\003 "
+          + "\001(\0132$.google.cloud.securitycenter.v1.Fil"
+          + "e\0227\n\tlibraries\030\004 \003(\0132$.google.cloud.secu"
+          + "ritycenter.v1.File\0224\n\006script\030\005 \001(\0132$.goo"
+          + "gle.cloud.securitycenter.v1.File\022\014\n\004args"
+          + "\030\006 \003(\t\022\033\n\023arguments_truncated\030\007 \001(\010\022J\n\re"
+          + "nv_variables\030\010 \003(\01323.google.cloud.securi"
+          + "tycenter.v1.EnvironmentVariable\022\037\n\027env_v"
+          + "ariables_truncated\030\t \001(\010\022\013\n\003pid\030\n \001(\003\022\022\n"
+          + "\nparent_pid\030\013 \001(\003\"0\n\023EnvironmentVariable"
+          + "\022\014\n\004name\030\001 \001(\t\022\013\n\003val\030\002 \001(\tB\350\001\n\"com.goog"
+          + "le.cloud.securitycenter.v1B\014ProcessProto"
+          + "P\001ZLgoogle.golang.org/genproto/googleapi"
+          + "s/cloud/securitycenter/v1;securitycenter"
+          + "\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036Goog"
+          + "le\\Cloud\\SecurityCenter\\V1\352\002!Google::Clo"
+          + "ud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -77,6 +77,7 @@ public final class ProcessProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_Process_descriptor,
             new java.lang.String[] {
+              "Name",
               "Binary",
               "Libraries",
               "Script",

@@ -124,4 +124,67 @@ public interface IndicatorOrBuilder
    * @return The bytes of the domains at the given index.
    */
   com.google.protobuf.ByteString getDomainsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of matched signatures indicating that the given
+   * process is present in the environment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Indicator.ProcessSignature signatures = 3;
+   * </code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.Indicator.ProcessSignature> getSignaturesList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of matched signatures indicating that the given
+   * process is present in the environment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Indicator.ProcessSignature signatures = 3;
+   * </code>
+   */
+  com.google.cloud.securitycenter.v1.Indicator.ProcessSignature getSignatures(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The list of matched signatures indicating that the given
+   * process is present in the environment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Indicator.ProcessSignature signatures = 3;
+   * </code>
+   */
+  int getSignaturesCount();
+  /**
+   *
+   *
+   * <pre>
+   * The list of matched signatures indicating that the given
+   * process is present in the environment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Indicator.ProcessSignature signatures = 3;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.Indicator.ProcessSignatureOrBuilder>
+      getSignaturesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The list of matched signatures indicating that the given
+   * process is present in the environment.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Indicator.ProcessSignature signatures = 3;
+   * </code>
+   */
+  com.google.cloud.securitycenter.v1.Indicator.ProcessSignatureOrBuilder getSignaturesOrBuilder(
+      int index);
 }

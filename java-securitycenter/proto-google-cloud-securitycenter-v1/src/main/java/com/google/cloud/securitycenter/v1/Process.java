@@ -38,6 +38,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Process() {
+    name_ = "";
     libraries_ = java.util.Collections.emptyList();
     args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     envVariables_ = java.util.Collections.emptyList();
@@ -160,6 +161,13 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
               parentPid_ = input.readInt64();
               break;
             }
+          case 98:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -203,6 +211,57 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.securitycenter.v1.Process.class,
             com.google.cloud.securitycenter.v1.Process.Builder.class);
+  }
+
+  public static final int NAME_FIELD_NUMBER = 12;
+  private volatile java.lang.Object name_;
+  /**
+   *
+   *
+   * <pre>
+   * The process name visible in utilities like `top` and `ps`; it can
+   * be accessed via `/proc/[pid]/comm` and changed with `prctl(PR_SET_NAME)`.
+   * </pre>
+   *
+   * <code>string name = 12;</code>
+   *
+   * @return The name.
+   */
+  @java.lang.Override
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The process name visible in utilities like `top` and `ps`; it can
+   * be accessed via `/proc/[pid]/comm` and changed with `prctl(PR_SET_NAME)`.
+   * </pre>
+   *
+   * <code>string name = 12;</code>
+   *
+   * @return The bytes for name.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int BINARY_FIELD_NUMBER = 3;
@@ -620,6 +679,9 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     if (parentPid_ != 0L) {
       output.writeInt64(11, parentPid_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, name_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -661,6 +723,9 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     if (parentPid_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(11, parentPid_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, name_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -677,6 +742,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.securitycenter.v1.Process other =
         (com.google.cloud.securitycenter.v1.Process) obj;
 
+    if (!getName().equals(other.getName())) return false;
     if (hasBinary() != other.hasBinary()) return false;
     if (hasBinary()) {
       if (!getBinary().equals(other.getBinary())) return false;
@@ -703,6 +769,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     if (hasBinary()) {
       hash = (37 * hash) + BINARY_FIELD_NUMBER;
       hash = (53 * hash) + getBinary().hashCode();
@@ -879,6 +947,8 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       if (binaryBuilder_ == null) {
         binary_ = null;
       } else {
@@ -941,6 +1011,7 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.securitycenter.v1.Process result =
           new com.google.cloud.securitycenter.v1.Process(this);
       int from_bitField0_ = bitField0_;
+      result.name_ = name_;
       if (binaryBuilder_ == null) {
         result.binary_ = binary_;
       } else {
@@ -1027,6 +1098,10 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.securitycenter.v1.Process other) {
       if (other == com.google.cloud.securitycenter.v1.Process.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       if (other.hasBinary()) {
         mergeBinary(other.getBinary());
       }
@@ -1139,6 +1214,117 @@ public final class Process extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+
+    private java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The process name visible in utilities like `top` and `ps`; it can
+     * be accessed via `/proc/[pid]/comm` and changed with `prctl(PR_SET_NAME)`.
+     * </pre>
+     *
+     * <code>string name = 12;</code>
+     *
+     * @return The name.
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The process name visible in utilities like `top` and `ps`; it can
+     * be accessed via `/proc/[pid]/comm` and changed with `prctl(PR_SET_NAME)`.
+     * </pre>
+     *
+     * <code>string name = 12;</code>
+     *
+     * @return The bytes for name.
+     */
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The process name visible in utilities like `top` and `ps`; it can
+     * be accessed via `/proc/[pid]/comm` and changed with `prctl(PR_SET_NAME)`.
+     * </pre>
+     *
+     * <code>string name = 12;</code>
+     *
+     * @param value The name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The process name visible in utilities like `top` and `ps`; it can
+     * be accessed via `/proc/[pid]/comm` and changed with `prctl(PR_SET_NAME)`.
+     * </pre>
+     *
+     * <code>string name = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearName() {
+
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The process name visible in utilities like `top` and `ps`; it can
+     * be accessed via `/proc/[pid]/comm` and changed with `prctl(PR_SET_NAME)`.
+     * </pre>
+     *
+     * <code>string name = 12;</code>
+     *
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      name_ = value;
+      onChanged();
+      return this;
+    }
 
     private com.google.cloud.securitycenter.v1.File binary_;
     private com.google.protobuf.SingleFieldBuilderV3<
