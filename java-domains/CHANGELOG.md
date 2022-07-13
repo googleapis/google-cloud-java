@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://github.com/googleapis/java-domains/compare/v0.7.0...v1.0.0) (2022-07-11)
+
+
+### Features
+
+* promote to GA again ([#248](https://github.com/googleapis/java-domains/issues/248)) ([94afd87](https://github.com/googleapis/java-domains/commit/94afd87d5920b5112bece3ebc04bd7d128a176fc))
+
 ## [0.7.0](https://github.com/googleapis/java-domains/compare/v0.6.1...v0.7.0) (2022-06-30)
 
 
