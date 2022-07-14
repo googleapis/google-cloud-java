@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-gsuite-addons/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-gsuite-addons/issues/1485)) ([#247](https://github.com/googleapis/java-gsuite-addons/issues/247)) ([b359f14](https://github.com/googleapis/java-gsuite-addons/commit/b359f14cce32318f5d9cab1874891f910fc1eca6))
+
 ## [2.3.0](https://github.com/googleapis/java-gsuite-addons/compare/v2.2.1...v2.3.0) (2022-07-01)
 
 
