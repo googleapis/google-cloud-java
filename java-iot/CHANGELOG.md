@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-iot/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-iot/issues/1485)) ([#747](https://github.com/googleapis/java-iot/issues/747)) ([93a62e2](https://github.com/googleapis/java-iot/commit/93a62e289e62e9a94c018cf925b4884181380dab))
+
 ## [2.3.0](https://github.com/googleapis/java-iot/compare/v2.2.1...v2.3.0) (2022-07-01)
 
 
