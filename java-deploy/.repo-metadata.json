@@ -1,0 +1,17 @@
+{
+  "api_shortname": "clouddeploy",
+  "name_pretty": "Google Cloud Deploy",
+  "product_documentation": "https://cloud.google.com/deploy/docs",
+  "api_description": "is a service that automates delivery of your applications to a series of target environments in a defined sequence",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-deploy/latest/index.html",
+  "release_level": "stable",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-deploy",
+  "repo_short": "java-deploy",
+  "distribution_name": "com.google.cloud:google-cloud-deploy",
+  "api_id": "clouddeploy.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
+  "codeowner_team": "@googleapis/aap-dpes"
+}
