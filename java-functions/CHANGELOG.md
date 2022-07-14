@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.3](https://github.com/googleapis/java-functions/compare/v2.4.2...v2.4.3) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-functions/issues/1485)) ([#443](https://github.com/googleapis/java-functions/issues/443)) ([d466ebc](https://github.com/googleapis/java-functions/commit/d466ebcbef50f65391fb8e8ebed265a783a5acf9))
+
 ## [2.4.2](https://github.com/googleapis/java-functions/compare/v2.4.1...v2.4.2) (2022-07-01)
 
 

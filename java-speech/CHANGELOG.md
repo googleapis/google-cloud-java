@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.5.3](https://github.com/googleapis/java-speech/compare/v2.5.2...v2.5.3) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-speech/issues/1485)) ([#921](https://github.com/googleapis/java-speech/issues/921)) ([0348dcd](https://github.com/googleapis/java-speech/commit/0348dcdccf7a0c2e44358818797800d354553475))
+
+## [2.5.2](https://github.com/googleapis/java-speech/compare/v2.5.1...v2.5.2) (2022-07-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.9.2 ([#916](https://github.com/googleapis/java-speech/issues/916)) ([0dce341](https://github.com/googleapis/java-speech/commit/0dce341f639887be61a4a1de0c3c6885230486a9))
+
 ## [2.5.1](https://github.com/googleapis/java-speech/compare/v2.5.0...v2.5.1) (2022-07-01)
 
 

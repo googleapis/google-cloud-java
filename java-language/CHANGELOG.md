@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-language/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-language/issues/1485)) ([#868](https://github.com/googleapis/java-language/issues/868)) ([c168587](https://github.com/googleapis/java-language/commit/c1685872ad7c6b28b0055af67ea8b0a1aff6e852))
+
 ## [2.3.0](https://github.com/googleapis/java-language/compare/v2.2.0...v2.3.0) (2022-07-01)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/googleapis/java-resourcemanager/compare/v1.5.0...v1.5.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-resourcemanager/issues/1485)) ([#804](https://github.com/googleapis/java-resourcemanager/issues/804)) ([109cc0f](https://github.com/googleapis/java-resourcemanager/commit/109cc0f4e716a36583c6f22f169d53fc635fd6c7))
+
 ## [1.5.0](https://github.com/googleapis/java-resourcemanager/compare/v1.4.0...v1.5.0) (2022-07-01)
 
 

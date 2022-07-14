@@ -11,12 +11,13 @@ branchProtectionRules:
       - dependencies (8)
       - dependencies (11)
       - lint
-      - clirr
       - units (8)
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
       - OwlBot Post Processor
+      - 'Kokoro - Test: Java GraalVM Native Image'
+      - 'Kokoro - Test: Java 17 GraalVM Native Image'
   - pattern: java7
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -26,7 +27,6 @@ branchProtectionRules:
       - dependencies (8)
       - dependencies (11)
       - lint
-      - clirr
       - units (7)
       - units (8)
       - units (11)

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/googleapis/java-policy-troubleshooter/compare/v1.2.0...v1.2.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-policy-troubleshooter/issues/1485)) ([#242](https://github.com/googleapis/java-policy-troubleshooter/issues/242)) ([8e96695](https://github.com/googleapis/java-policy-troubleshooter/commit/8e96695e9cd93a7759e93908795d8786608fc046))
+
 ## [1.2.0](https://github.com/googleapis/java-policy-troubleshooter/compare/v1.1.1...v1.2.0) (2022-07-01)
 
 

@@ -12,12 +12,6 @@
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
 
-  <parent>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.5.1</version>
-  </parent>
-
   <modules>
     <module>java-accessapproval</module>
     <module>java-accesscontextmanager</module>
@@ -144,78 +138,27 @@
   </modules>
 
   <build>
-    <plugins>
-      <!-- jacoco code coverage -->
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.8.7</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>prepare-agent</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>report</id>
-            <phase>test</phase>
-            <goals>
-              <goal>report</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
+  <plugins>
+    <!-- jacoco code coverage -->
+    <plugin>
+      <groupId>org.jacoco</groupId>
+      <artifactId>jacoco-maven-plugin</artifactId>
+      <version>0.8.7</version>
+      <executions>
+        <execution>
+          <goals>
+            <goal>prepare-agent</goal>
+          </goals>
+        </execution>
+        <execution>
+          <id>report</id>
+          <phase>test</phase>
+          <goals>
+            <goal>report</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
   </build>
-
-  <profiles>
-    <profile>
-      <!-- cloud RAD generation -->
-      <id>docFX-pipelineTest</id>
-      <activation>
-        <property>
-          <!-- activate with -P docFX -->
-          <name>docFX</name>
-        </property>
-      </activation>
-      <properties>
-        <!-- default config values -->
-        <docletName>java-docfx-doclet-1.7.0</docletName>
-        <outputpath>${project.build.directory}/docfx-yml</outputpath>
-        <projectname>${project.artifactId}</projectname>
-        <excludeclasses></excludeclasses>
-        <excludePackages></excludePackages>
-        <source>11</source>
-        <sourceFileExclude></sourceFileExclude>
-      </properties>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.4.0</version>
-            <configuration>
-              <doclet>com.microsoft.doclet.DocFxDoclet</doclet>
-              <useStandardDocletOptions>false</useStandardDocletOptions>
-              <!-- custom config with -Dproperty=value -->
-              <docletPath>${env.KOKORO_GFILE_DIR}/${docletName}.jar</docletPath>
-              <additionalOptions>
-                -outputpath ${outputpath}
-                -projectname ${projectname}
-                -excludeclasses ${excludeclasses}:
-                -excludepackages ${excludePackages}:
-              </additionalOptions>
-              <doclint>none</doclint>
-              <show>protected</show>
-              <nohelp>true</nohelp>
-              <source>${source}</source>
-              <sourceFileExcludes>
-                <exclude>${sourceFileExclude}</exclude>
-              </sourceFileExcludes>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 </project>

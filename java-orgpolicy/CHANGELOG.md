@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-orgpolicy/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-orgpolicy/issues/1485)) ([#367](https://github.com/googleapis/java-orgpolicy/issues/367)) ([1edefa2](https://github.com/googleapis/java-orgpolicy/commit/1edefa24c92e5aa1f213b572fdcab8683f3bef0c))
+
 ## [2.3.0](https://github.com/googleapis/java-orgpolicy/compare/v2.2.1...v2.3.0) (2022-07-01)
 
 

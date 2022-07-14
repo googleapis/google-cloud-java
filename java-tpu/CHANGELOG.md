@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.2](https://github.com/googleapis/java-tpu/compare/v2.3.1...v2.3.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-tpu/issues/1485)) ([#216](https://github.com/googleapis/java-tpu/issues/216)) ([8ad7e53](https://github.com/googleapis/java-tpu/commit/8ad7e53e6a8f36a9ad4df166b57b59721d398e5b))
+
 ## [2.3.1](https://github.com/googleapis/java-tpu/compare/v2.3.0...v2.3.1) (2022-06-23)
 
 

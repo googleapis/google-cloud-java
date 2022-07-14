@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.1](https://github.com/googleapis/java-redis/compare/v2.6.0...v2.6.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-redis/issues/1485)) ([#668](https://github.com/googleapis/java-redis/issues/668)) ([df9b0dd](https://github.com/googleapis/java-redis/commit/df9b0ddd65ada40d29e52630d76ac61e9248679f))
+
 ## [2.6.0](https://github.com/googleapis/java-redis/compare/v2.5.0...v2.6.0) (2022-07-01)
 
 

@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bare-metal-solution</artifactId>
-  <version>0.2.1</version>
+  <version>0.3.0</version>
 </dependency>
 ```
 
-If you are using Gradle without BOM, add this to your dependencies
+If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bare-metal-solution:0.2.1'
+implementation 'com.google.cloud:google-cloud-bare-metal-solution:0.3.0'
 ```
 
-If you are using SBT, add this to your dependencies
+If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bare-metal-solution" % "0.2.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-bare-metal-solution" % "0.3.0"
 ```
 
 ## Authentication

@@ -38,11 +38,11 @@ import java.io.IOException;
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 public class SetInventory {
 
   public static void main(String[] args) throws IOException, InterruptedException {
-    // TODO(developer): Replace these variables before running the sample.
     String projectId = ServiceOptions.getDefaultProjectId();
     String generatedProductId = UUID.randomUUID().toString();
     String productName =
@@ -57,21 +57,10 @@ public class SetInventory {
   }
 
   public static void setInventory(String productName) throws IOException, InterruptedException {
-    SetInventoryRequest setInventoryRequest = getSetInventoryRequest(productName);
+    float price = 15.0f;
+    float originalPrice = 20.0f;
+    float cost = 8.0f;
 
-    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
-      serviceClient.setInventoryAsync(setInventoryRequest);
-    }
-
-    /*
-    This is a long-running operation and its result is not immediately
-    present with get operations,thus we simulate wait with sleep method.
-    */
-    System.out.println("Set inventory, wait 30 seconds.");
-    Thread.sleep(30_000);
-  }
-
-  public static SetInventoryRequest getSetInventoryRequest(String productName) {
     // The request timestamp
     Timestamp requestTime =
         Timestamp.newBuilder()
@@ -85,23 +74,6 @@ public class SetInventory {
                 Arrays.asList(
                     "price_info", "availability", "fulfillment_info", "available_quantity"))
             .build();
-
-    SetInventoryRequest setInventoryRequest =
-        SetInventoryRequest.newBuilder()
-            .setInventory(getProductWithInventoryInfo(productName))
-            .setSetTime(requestTime)
-            .setAllowMissing(true)
-            .setSetMask(setMask)
-            .build();
-    System.out.printf("Set inventory request: %s%n", setInventoryRequest);
-
-    return setInventoryRequest;
-  }
-
-  public static Product getProductWithInventoryInfo(String productName) {
-    float price = 15.0f;
-    float originalPrice = 20.0f;
-    float cost = 8.0f;
 
     PriceInfo priceInfo =
         PriceInfo.newBuilder()
@@ -117,13 +89,36 @@ public class SetInventory {
             .addAllPlaceIds(Arrays.asList("store1", "store2"))
             .build();
 
-    return Product.newBuilder()
-        .setName(productName)
-        .setPriceInfo(priceInfo)
-        .addFulfillmentInfo(fulfillmentInfo)
-        .setAvailability(Availability.IN_STOCK)
-        .setAvailableQuantity(Int32Value.newBuilder().setValue(5).build())
-        .build();
+    Product product =
+        Product.newBuilder()
+            .setName(productName)
+            .setPriceInfo(priceInfo)
+            .addFulfillmentInfo(fulfillmentInfo)
+            .setAvailability(Availability.IN_STOCK)
+            .setAvailableQuantity(Int32Value.newBuilder().setValue(5).build())
+            .build();
+
+    SetInventoryRequest setInventoryRequest =
+        SetInventoryRequest.newBuilder()
+            .setInventory(product)
+            .setSetTime(requestTime)
+            .setAllowMissing(true)
+            .setSetMask(setMask)
+            .build();
+    System.out.printf("Set inventory request: %s%n", setInventoryRequest);
+
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
+    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
+      serviceClient.setInventoryAsync(setInventoryRequest);
+    }
+
+    // This is a long-running operation and its result is not immediately
+    // present with get operations,thus we simulate wait with sleep method.
+    System.out.println("Set inventory, wait 30 seconds.");
+    TimeUnit.SECONDS.sleep(30);
   }
 }
 

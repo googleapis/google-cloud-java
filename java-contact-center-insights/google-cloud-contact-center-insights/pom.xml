@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-contact-center-insights</artifactId>
-  <version>2.3.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
+  <version>2.3.7</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
   <packaging>jar</packaging>
   <name>Google CCAI Insights</name>
   <url>https://github.com/googleapis/java-contact-center-insights</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-contact-center-insights-parent</artifactId>
-    <version>2.3.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
+    <version>2.3.7</version><!-- {x-version-update:google-cloud-contact-center-insights:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-contact-center-insights</site.installationModule>
@@ -59,6 +59,10 @@
       <artifactId>gax-grpc</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-httpjson</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.threeten</groupId>
       <artifactId>threetenbp</artifactId>
     </dependency>
@@ -77,9 +81,21 @@
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
+     <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    <groupId>com.google.api</groupId>
+      <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>

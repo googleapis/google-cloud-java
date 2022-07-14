@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-game-servers/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-game-servers/issues/1485)) ([#691](https://github.com/googleapis/java-game-servers/issues/691)) ([971dfa0](https://github.com/googleapis/java-game-servers/commit/971dfa0842cc05d2ed7a7c4e99a6b5bfc1f02f8f))
+
 ## [2.3.0](https://github.com/googleapis/java-game-servers/compare/v2.2.1...v2.3.0) (2022-07-01)
 
 

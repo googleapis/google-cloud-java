@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/googleapis/java-eventarc/compare/v1.3.2...v1.3.3) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-eventarc/issues/1485)) ([#207](https://github.com/googleapis/java-eventarc/issues/207)) ([cd237e9](https://github.com/googleapis/java-eventarc/commit/cd237e993b177d9e215ee5eff75ded7bb71f02b3))
+
 ## [1.3.2](https://github.com/googleapis/java-eventarc/compare/v1.3.1...v1.3.2) (2022-07-01)
 
 

@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.14.2](https://github.com/googleapis/java-dialogflow-cx/compare/v0.14.1...v0.14.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-dialogflow-cx/issues/1485)) ([#516](https://github.com/googleapis/java-dialogflow-cx/issues/516)) ([e057843](https://github.com/googleapis/java-dialogflow-cx/commit/e0578432487c01f3a866dda84b5bc4c9d5efa91b))
+
+## [0.14.1](https://github.com/googleapis/java-dialogflow-cx/compare/v0.14.0...v0.14.1) (2022-07-12)
+
+
+### Documentation
+
+* add DetectIntent samples  ([#500](https://github.com/googleapis/java-dialogflow-cx/issues/500)) ([2c5f9c2](https://github.com/googleapis/java-dialogflow-cx/commit/2c5f9c25a88ebb041b5ba11e2fab6b7b467afb19))
+
 ## [0.14.0](https://github.com/googleapis/java-dialogflow-cx/compare/v0.13.1...v0.14.0) (2022-07-01)
 
 

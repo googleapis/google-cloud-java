@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.1](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.5.0...v2.5.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-monitoring-dashboards/issues/1485)) ([#622](https://github.com/googleapis/java-monitoring-dashboards/issues/622)) ([21b6baa](https://github.com/googleapis/java-monitoring-dashboards/commit/21b6baad5d51da4ca41bdf4fcb10a6dbe14f95e0))
+
 ## [2.5.0](https://github.com/googleapis/java-monitoring-dashboards/compare/v2.4.0...v2.5.0) (2022-07-01)
 
 

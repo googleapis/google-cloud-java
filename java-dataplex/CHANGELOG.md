@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/googleapis/java-dataplex/compare/v1.0.1...v1.0.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-dataplex/issues/1485)) ([#79](https://github.com/googleapis/java-dataplex/issues/79)) ([c9a633d](https://github.com/googleapis/java-dataplex/commit/c9a633df5346e08edee985b827ea7c1e5dbc3631))
+
 ## [1.0.1](https://github.com/googleapis/java-dataplex/compare/v1.0.0...v1.0.1) (2022-07-01)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/googleapis/java-datacatalog/compare/v1.9.0...v1.9.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-datacatalog/issues/1485)) ([#833](https://github.com/googleapis/java-datacatalog/issues/833)) ([a9a8828](https://github.com/googleapis/java-datacatalog/commit/a9a88285ba7beac16a94de0c508bfe4bb9372ea0))
+
 ## [1.9.0](https://github.com/googleapis/java-datacatalog/compare/v1.8.4...v1.9.0) (2022-07-01)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.1](https://github.com/googleapis/java-dataflow/compare/v0.7.0...v0.7.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-dataflow/issues/1485)) ([#196](https://github.com/googleapis/java-dataflow/issues/196)) ([430974a](https://github.com/googleapis/java-dataflow/commit/430974ad0cdaeee1c0e7d7ffad8c6059f15fee03))
+
 ## [0.7.0](https://github.com/googleapis/java-dataflow/compare/v0.6.1...v0.7.0) (2022-07-01)
 
 

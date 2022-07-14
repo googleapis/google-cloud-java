@@ -33,17 +33,15 @@ import java.util.UUID;
 public class SearchWithFiltering {
 
   public static void main(String[] args) throws IOException {
-    // TODO(developer): Replace these variables before running the sample.
     String projectId = ServiceOptions.getDefaultProjectId();
     String defaultCatalogName =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
     String defaultSearchPlacementName = defaultCatalogName + "/placements/default_search";
 
-    getSearchResponse(defaultSearchPlacementName);
+    searchResponse(defaultSearchPlacementName);
   }
 
-  public static SearchResponse getSearchResponse(String defaultSearchPlacementName)
-      throws IOException {
+  public static void searchResponse(String defaultSearchPlacementName) throws IOException {
     // TRY DIFFERENT FILTER EXPRESSIONS HERE:
     String filter = "(colorFamilies: ANY(\"Black\"))";
     String queryPhrase = "Tee";
@@ -61,11 +59,13 @@ public class SearchWithFiltering {
 
     System.out.println("Search request: " + searchRequest);
 
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
     try (SearchServiceClient client = SearchServiceClient.create()) {
       SearchResponse searchResponse = client.search(searchRequest).getPage().getResponse();
       System.out.println("Search response: " + searchResponse);
-
-      return searchResponse;
     }
   }
 }

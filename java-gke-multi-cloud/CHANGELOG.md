@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/googleapis/java-gke-multi-cloud/compare/v0.2.0...v0.2.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-gke-multi-cloud/issues/1485)) ([#35](https://github.com/googleapis/java-gke-multi-cloud/issues/35)) ([9f63b39](https://github.com/googleapis/java-gke-multi-cloud/commit/9f63b393d12354bac21605b3825431e1ac64ff33))
+
 ## [0.2.0](https://github.com/googleapis/java-gke-multi-cloud/compare/v0.1.1...v0.2.0) (2022-07-01)
 
 

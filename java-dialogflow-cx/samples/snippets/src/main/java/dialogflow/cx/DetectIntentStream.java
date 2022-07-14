@@ -53,11 +53,10 @@ public class DetectIntentStream {
     }
     SessionsSettings sessionsSettings = sessionsSettingsBuilder.build();
 
-    // Instantiates a client
+    // Instantiates a client by setting the session name.
+    // Format: `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/sessions/<SessionID>`
+    // Using the same `sessionId` between requests allows continuation of the conversation.
     try (SessionsClient sessionsClient = SessionsClient.create(sessionsSettings)) {
-      // Set the session name using the projectID (my-project-id), locationID (global), agentID
-      // (UUID), and sessionId (UUID).
-      // Using the same `sessionId` between requests allows continuation of the conversation.
       SessionName session = SessionName.of(projectId, locationId, agentId, sessionId);
 
       // Instructs the speech recognizer how to process the audio content.

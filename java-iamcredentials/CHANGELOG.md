@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-iamcredentials/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-iamcredentials/issues/1485)) ([#703](https://github.com/googleapis/java-iamcredentials/issues/703)) ([4fbbc80](https://github.com/googleapis/java-iamcredentials/commit/4fbbc80f101f7b71864aa8ed2a1f9f4f6fb179a1))
+
 ## [2.3.0](https://github.com/googleapis/java-iamcredentials/compare/v2.2.0...v2.3.0) (2022-07-01)
 
 

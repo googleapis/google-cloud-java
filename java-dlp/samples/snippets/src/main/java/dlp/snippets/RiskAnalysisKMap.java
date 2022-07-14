@@ -15,6 +15,7 @@
  */
 
 package dlp.snippets;
+
 // [START dlp_k_map]
 
 import com.google.api.core.SettableApiFuture;
@@ -50,6 +51,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("checkstyle:AbbreviationAsWordInName")
 class RiskAnalysisKMap {
 
   public static void main(String[] args) throws Exception {

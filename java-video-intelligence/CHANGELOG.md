@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/googleapis/java-video-intelligence/compare/v2.2.1...v2.2.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-video-intelligence/issues/1485)) ([#936](https://github.com/googleapis/java-video-intelligence/issues/936)) ([f7d02cf](https://github.com/googleapis/java-video-intelligence/commit/f7d02cf9cefb928171eaf577de3abb53951956c7))
+
 ## [2.2.1](https://github.com/googleapis/java-video-intelligence/compare/v2.2.0...v2.2.1) (2022-07-01)
 
 

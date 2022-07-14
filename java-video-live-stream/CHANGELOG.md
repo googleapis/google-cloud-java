@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/googleapis/java-video-live-stream/compare/v0.5.0...v0.5.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-video-live-stream/issues/1485)) ([#70](https://github.com/googleapis/java-video-live-stream/issues/70)) ([91fcbb7](https://github.com/googleapis/java-video-live-stream/commit/91fcbb738c805e720a0060cc98a9188d899673b8))
+
 ## [0.5.0](https://github.com/googleapis/java-video-live-stream/compare/v0.4.0...v0.5.0) (2022-06-30)
 
 

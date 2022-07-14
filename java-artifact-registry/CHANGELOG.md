@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.3](https://github.com/googleapis/java-artifact-registry/compare/v1.2.2...v1.2.3) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-artifact-registry/issues/1485)) ([#282](https://github.com/googleapis/java-artifact-registry/issues/282)) ([3c9c33e](https://github.com/googleapis/java-artifact-registry/commit/3c9c33ef8064c9ea92d1c8d08d5b79cddbbb5975))
+
 ## [1.2.2](https://github.com/googleapis/java-artifact-registry/compare/v1.2.1...v1.2.2) (2022-07-01)
 
 

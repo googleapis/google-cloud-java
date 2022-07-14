@@ -34,17 +34,15 @@ import java.util.UUID;
 public class SearchWithPagination {
 
   public static void main(String[] args) throws IOException {
-    // TODO(developer): Replace these variables before running the sample.
     String projectId = ServiceOptions.getDefaultProjectId();
     String defaultCatalogName =
         String.format("projects/%s/locations/global/catalogs/default_catalog", projectId);
     String defaultSearchPlacementName = defaultCatalogName + "/placements/default_search";
 
-    getSearchResponse(defaultSearchPlacementName);
+    searchResponse(defaultSearchPlacementName);
   }
 
-  public static SearchResponse getSearchResponse(String defaultSearchPlacementName)
-      throws IOException {
+  public static void searchResponse(String defaultSearchPlacementName) throws IOException {
     // TRY DIFFERENT PAGINATION PARAMETERS HERE:
     int pageSize = 6;
     String queryPhrase = "Hoodie";
@@ -63,6 +61,10 @@ public class SearchWithPagination {
             .build();
     System.out.println("Search request: " + searchRequest);
 
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
     try (SearchServiceClient client = SearchServiceClient.create()) {
       SearchResponse searchResponseFirstPage = client.search(searchRequest).getPage().getResponse();
       System.out.println("Search response: " + searchResponseFirstPage);
@@ -70,8 +72,6 @@ public class SearchWithPagination {
       // PASTE CALL WITH NEXT PAGE TOKEN HERE:
 
       // PASTE CALL WITH OFFSET HERE:
-
-      return searchResponseFirstPage;
     }
   }
 }

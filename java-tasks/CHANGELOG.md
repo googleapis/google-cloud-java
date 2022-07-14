@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-tasks/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-tasks/issues/1485)) ([#713](https://github.com/googleapis/java-tasks/issues/713)) ([ac338a8](https://github.com/googleapis/java-tasks/commit/ac338a8125cb7c5eea5bffa88e52a7f46784f3c4))
+
 ## [2.3.0](https://github.com/googleapis/java-tasks/compare/v2.2.0...v2.3.0) (2022-07-01)
 
 

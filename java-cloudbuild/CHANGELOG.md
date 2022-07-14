@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.5.1](https://github.com/googleapis/java-cloudbuild/compare/v3.5.0...v3.5.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-cloudbuild/issues/1485)) ([#768](https://github.com/googleapis/java-cloudbuild/issues/768)) ([59f3a4f](https://github.com/googleapis/java-cloudbuild/commit/59f3a4fe1f14888a553ae51e8336ace169c59b47))
+
 ## [3.5.0](https://github.com/googleapis/java-cloudbuild/compare/v3.4.1...v3.5.0) (2022-07-01)
 
 

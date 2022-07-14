@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-vpcaccess/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-vpcaccess/issues/1485)) ([#218](https://github.com/googleapis/java-vpcaccess/issues/218)) ([4a3199c](https://github.com/googleapis/java-vpcaccess/commit/4a3199cd9fbe25f3aaefb331ea4317cbf506a81a))
+
 ## [2.3.0](https://github.com/googleapis/java-vpcaccess/compare/v2.2.1...v2.3.0) (2022-07-01)
 
 

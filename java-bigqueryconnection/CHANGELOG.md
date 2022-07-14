@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/googleapis/java-bigqueryconnection/compare/v2.4.0...v2.4.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-bigqueryconnection/issues/1485)) ([#716](https://github.com/googleapis/java-bigqueryconnection/issues/716)) ([d5ac7dd](https://github.com/googleapis/java-bigqueryconnection/commit/d5ac7dd875e2d2355ba45e177150abb5813f1744))
+
 ## [2.4.0](https://github.com/googleapis/java-bigqueryconnection/compare/v2.3.0...v2.4.0) (2022-07-01)
 
 

@@ -46,28 +46,27 @@ public final class TracingProto {
           + "lient.proto\032\037google/api/field_behavior.p"
           + "roto\032\031google/api/resource.proto\032)google/"
           + "devtools/cloudtrace/v2/trace.proto\032\033goog"
-          + "le/protobuf/empty.proto\032\037google/protobuf"
-          + "/timestamp.proto\"\224\001\n\026BatchWriteSpansRequ"
-          + "est\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+cloudresource"
-          + "manager.googleapis.com/Project\0227\n\005spans\030"
-          + "\002 \003(\0132#.google.devtools.cloudtrace.v2.Sp"
-          + "anB\003\340A\0022\272\003\n\014TraceService\022\241\001\n\017BatchWriteS"
-          + "pans\0225.google.devtools.cloudtrace.v2.Bat"
-          + "chWriteSpansRequest\032\026.google.protobuf.Em"
-          + "pty\"?\202\323\344\223\002,\"\'/v2/{name=projects/*}/trace"
-          + "s:batchWrite:\001*\332A\nname,spans\022\211\001\n\nCreateS"
-          + "pan\022#.google.devtools.cloudtrace.v2.Span"
-          + "\032#.google.devtools.cloudtrace.v2.Span\"1\202"
-          + "\323\344\223\002+\"&/v2/{name=projects/*/traces/*/spa"
-          + "ns/*}:\001*\032z\312A\031cloudtrace.googleapis.com\322A"
-          + "[https://www.googleapis.com/auth/cloud-p"
-          + "latform,https://www.googleapis.com/auth/"
-          + "trace.appendB\307\001\n!com.google.devtools.clo"
-          + "udtrace.v2B\014TracingProtoP\001ZGgoogle.golan"
-          + "g.org/genproto/googleapis/devtools/cloud"
-          + "trace/v2;cloudtrace\252\002\025Google.Cloud.Trace"
-          + ".V2\312\002\025Google\\Cloud\\Trace\\V2\352\002\030Google::Cl"
-          + "oud::Trace::V2b\006proto3"
+          + "le/protobuf/empty.proto\"\224\001\n\026BatchWriteSp"
+          + "ansRequest\022A\n\004name\030\001 \001(\tB3\340A\002\372A-\n+cloudr"
+          + "esourcemanager.googleapis.com/Project\0227\n"
+          + "\005spans\030\002 \003(\0132#.google.devtools.cloudtrac"
+          + "e.v2.SpanB\003\340A\0022\272\003\n\014TraceService\022\241\001\n\017Batc"
+          + "hWriteSpans\0225.google.devtools.cloudtrace"
+          + ".v2.BatchWriteSpansRequest\032\026.google.prot"
+          + "obuf.Empty\"?\202\323\344\223\002,\"\'/v2/{name=projects/*"
+          + "}/traces:batchWrite:\001*\332A\nname,spans\022\211\001\n\n"
+          + "CreateSpan\022#.google.devtools.cloudtrace."
+          + "v2.Span\032#.google.devtools.cloudtrace.v2."
+          + "Span\"1\202\323\344\223\002+\"&/v2/{name=projects/*/trace"
+          + "s/*/spans/*}:\001*\032z\312A\031cloudtrace.googleapi"
+          + "s.com\322A[https://www.googleapis.com/auth/"
+          + "cloud-platform,https://www.googleapis.co"
+          + "m/auth/trace.appendB\307\001\n!com.google.devto"
+          + "ols.cloudtrace.v2B\014TracingProtoP\001ZGgoogl"
+          + "e.golang.org/genproto/googleapis/devtool"
+          + "s/cloudtrace/v2;cloudtrace\252\002\025Google.Clou"
+          + "d.Trace.V2\312\002\025Google\\Cloud\\Trace\\V2\352\002\030Goo"
+          + "gle::Cloud::Trace::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -79,7 +78,6 @@ public final class TracingProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.devtools.cloudtrace.v2.TraceProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
-              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_devtools_cloudtrace_v2_BatchWriteSpansRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -105,7 +103,6 @@ public final class TracingProto {
     com.google.api.ResourceProto.getDescriptor();
     com.google.devtools.cloudtrace.v2.TraceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

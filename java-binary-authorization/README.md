@@ -19,20 +19,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-binary-authorization</artifactId>
-  <version>1.1.1</version>
+  <version>1.2.1</version>
 </dependency>
 ```
 
-If you are using Gradle without BOM, add this to your dependencies
+If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-binary-authorization:1.1.1'
+implementation 'com.google.cloud:google-cloud-binary-authorization:1.2.1'
 ```
 
-If you are using SBT, add this to your dependencies
+If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-binary-authorization" % "1.1.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-binary-authorization" % "1.2.1"
 ```
 
 ## Authentication

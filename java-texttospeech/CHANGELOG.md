@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/googleapis/java-texttospeech/compare/v2.4.0...v2.4.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-texttospeech/issues/1485)) ([#718](https://github.com/googleapis/java-texttospeech/issues/718)) ([69f7dd7](https://github.com/googleapis/java-texttospeech/commit/69f7dd777b42181e07bd7778f354108953601077))
+
 ## [2.4.0](https://github.com/googleapis/java-texttospeech/compare/v2.3.1...v2.4.0) (2022-07-01)
 
 

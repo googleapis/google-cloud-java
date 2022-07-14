@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/googleapis/java-network-management/compare/v1.3.0...v1.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-network-management/issues/1485)) ([#196](https://github.com/googleapis/java-network-management/issues/196)) ([3fc0e47](https://github.com/googleapis/java-network-management/commit/3fc0e47323600ca303821b02eb1f83d75afdf81b))
+
 ## [1.3.0](https://github.com/googleapis/java-network-management/compare/v1.2.1...v1.3.0) (2022-06-30)
 
 

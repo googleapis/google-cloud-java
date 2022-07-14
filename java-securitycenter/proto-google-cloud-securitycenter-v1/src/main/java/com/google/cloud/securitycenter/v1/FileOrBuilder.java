@@ -66,7 +66,7 @@ public interface FileOrBuilder
    *
    * <pre>
    * SHA256 hash of the first hashed_size bytes of the file encoded as a
-   * hex string.  If hashed_size == size, hash_sha256 represents the SHA256 hash
+   * hex string.  If hashed_size == size, sha256 represents the SHA256 hash
    * of the entire file.
    * </pre>
    *
@@ -80,7 +80,7 @@ public interface FileOrBuilder
    *
    * <pre>
    * SHA256 hash of the first hashed_size bytes of the file encoded as a
-   * hex string.  If hashed_size == size, hash_sha256 represents the SHA256 hash
+   * hex string.  If hashed_size == size, sha256 represents the SHA256 hash
    * of the entire file.
    * </pre>
    *

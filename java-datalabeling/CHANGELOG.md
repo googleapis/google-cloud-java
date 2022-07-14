@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.123.2](https://github.com/googleapis/java-datalabeling/compare/v0.123.1...v0.123.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-datalabeling/issues/1485)) ([#761](https://github.com/googleapis/java-datalabeling/issues/761)) ([3c54e39](https://github.com/googleapis/java-datalabeling/commit/3c54e39fea6b139c50fd64e19cf1292caa1c6366))
+
 ## [0.123.1](https://github.com/googleapis/java-datalabeling/compare/v0.123.0...v0.123.1) (2022-06-23)
 
 

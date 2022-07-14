@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.3](https://github.com/googleapis/java-appengine-admin/compare/v2.3.2...v2.3.3) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-appengine-admin/issues/1485)) ([#259](https://github.com/googleapis/java-appengine-admin/issues/259)) ([7f14f4a](https://github.com/googleapis/java-appengine-admin/commit/7f14f4a03907fa14ba741a768b9a8e0f1e78ba50))
+
 ## [2.3.2](https://github.com/googleapis/java-appengine-admin/compare/v2.3.1...v2.3.2) (2022-07-01)
 
 

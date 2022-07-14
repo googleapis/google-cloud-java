@@ -79,6 +79,10 @@ public class MuteFindingIT {
 
   @BeforeClass
   public static void setUp() throws IOException {
+    final PrintStream out = System.out;
+    stdOut = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(stdOut));
+
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("SCC_PROJECT_ID");
     requireEnvVar("SCC_PROJECT_ORG_ID");
@@ -93,6 +97,9 @@ public class MuteFindingIT {
     FINDING_1 = createFinding(SOURCE.getName(), "1testingscc" + uuid);
     FINDING_2 = createFinding(SOURCE.getName(), "2testingscc" + uuid);
     FINDING_3 = createFinding(SOURCE.getName(), "3testingscc" + uuid);
+
+    stdOut = null;
+    System.setOut(out);
   }
 
   @AfterClass

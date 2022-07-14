@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/googleapis/java-webrisk/compare/v2.2.0...v2.2.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-webrisk/issues/1485)) ([#682](https://github.com/googleapis/java-webrisk/issues/682)) ([32b5c7c](https://github.com/googleapis/java-webrisk/commit/32b5c7cbca19da0edda228a41d1215d3a5185389))
+
 ## [2.2.0](https://github.com/googleapis/java-webrisk/compare/v2.1.1...v2.2.0) (2022-07-01)
 
 

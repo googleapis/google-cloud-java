@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.4.2](https://github.com/googleapis/java-containeranalysis/compare/v2.4.1...v2.4.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-containeranalysis/issues/1485)) ([#907](https://github.com/googleapis/java-containeranalysis/issues/907)) ([47d3ac8](https://github.com/googleapis/java-containeranalysis/commit/47d3ac8cee424b7a272fb45272267f8fb42cf34a))
+
+## [2.4.1](https://github.com/googleapis/java-containeranalysis/compare/v2.4.0...v2.4.1) (2022-07-11)
+
+
+### Dependencies
+
+* update dependency io.grafeas:grafeas to v2.4.0 ([#902](https://github.com/googleapis/java-containeranalysis/issues/902)) ([9ca6fc2](https://github.com/googleapis/java-containeranalysis/commit/9ca6fc297c5662e770513a6da7c957ad162f6fc5))
+
 ## [2.4.0](https://github.com/googleapis/java-containeranalysis/compare/v2.3.1...v2.4.0) (2022-06-30)
 
 

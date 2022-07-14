@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/googleapis/java-iam-admin/compare/v1.2.1...v1.2.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-iam-admin/issues/1485)) ([#147](https://github.com/googleapis/java-iam-admin/issues/147)) ([0c852fd](https://github.com/googleapis/java-iam-admin/commit/0c852fd01a2375563dcbe25e483ed39f7bb1fd3a))
+
 ## [1.2.1](https://github.com/googleapis/java-iam-admin/compare/v1.2.0...v1.2.1) (2022-07-01)
 
 

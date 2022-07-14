@@ -42,6 +42,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     displayName_ = "";
     supportedBy_ = java.util.Collections.emptyList();
     description_ = "";
+    categories_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -120,6 +121,17 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
               description_ = s;
               break;
             }
+          case 82:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                categories_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeCategory>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              categories_.add(
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.InfoTypeCategory.parser(), extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -138,6 +150,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     } finally {
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         supportedBy_ = java.util.Collections.unmodifiableList(supportedBy_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        categories_ = java.util.Collections.unmodifiableList(categories_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -406,6 +421,75 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int CATEGORIES_FIELD_NUMBER = 10;
+  private java.util.List<com.google.privacy.dlp.v2.InfoTypeCategory> categories_;
+  /**
+   *
+   *
+   * <pre>
+   * The category of the infoType.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.privacy.dlp.v2.InfoTypeCategory> getCategoriesList() {
+    return categories_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The category of the infoType.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeCategoryOrBuilder>
+      getCategoriesOrBuilderList() {
+    return categories_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The category of the infoType.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+   */
+  @java.lang.Override
+  public int getCategoriesCount() {
+    return categories_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The category of the infoType.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.InfoTypeCategory getCategories(int index) {
+    return categories_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The category of the infoType.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.InfoTypeCategoryOrBuilder getCategoriesOrBuilder(int index) {
+    return categories_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -437,6 +521,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
+    for (int i = 0; i < categories_.size(); i++) {
+      output.writeMessage(10, categories_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -467,6 +554,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
+    for (int i = 0; i < categories_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, categories_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -487,6 +577,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!supportedBy_.equals(other.supportedBy_)) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (!getCategoriesList().equals(other.getCategoriesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -508,6 +599,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (getCategoriesCount() > 0) {
+      hash = (37 * hash) + CATEGORIES_FIELD_NUMBER;
+      hash = (53 * hash) + getCategoriesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -647,7 +742,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCategoriesFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -661,6 +758,12 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
 
+      if (categoriesBuilder_ == null) {
+        categories_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        categoriesBuilder_.clear();
+      }
       return this;
     }
 
@@ -697,6 +800,15 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       result.supportedBy_ = supportedBy_;
       result.description_ = description_;
+      if (categoriesBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          categories_ = java.util.Collections.unmodifiableList(categories_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.categories_ = categories_;
+      } else {
+        result.categories_ = categoriesBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -767,6 +879,33 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         onChanged();
+      }
+      if (categoriesBuilder_ == null) {
+        if (!other.categories_.isEmpty()) {
+          if (categories_.isEmpty()) {
+            categories_ = other.categories_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureCategoriesIsMutable();
+            categories_.addAll(other.categories_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.categories_.isEmpty()) {
+          if (categoriesBuilder_.isEmpty()) {
+            categoriesBuilder_.dispose();
+            categoriesBuilder_ = null;
+            categories_ = other.categories_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            categoriesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCategoriesFieldBuilder()
+                    : null;
+          } else {
+            categoriesBuilder_.addAllMessages(other.categories_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1341,6 +1480,357 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       description_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.privacy.dlp.v2.InfoTypeCategory> categories_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCategoriesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        categories_ =
+            new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeCategory>(categories_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.InfoTypeCategory,
+            com.google.privacy.dlp.v2.InfoTypeCategory.Builder,
+            com.google.privacy.dlp.v2.InfoTypeCategoryOrBuilder>
+        categoriesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.InfoTypeCategory> getCategoriesList() {
+      if (categoriesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(categories_);
+      } else {
+        return categoriesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public int getCategoriesCount() {
+      if (categoriesBuilder_ == null) {
+        return categories_.size();
+      } else {
+        return categoriesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public com.google.privacy.dlp.v2.InfoTypeCategory getCategories(int index) {
+      if (categoriesBuilder_ == null) {
+        return categories_.get(index);
+      } else {
+        return categoriesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public Builder setCategories(int index, com.google.privacy.dlp.v2.InfoTypeCategory value) {
+      if (categoriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCategoriesIsMutable();
+        categories_.set(index, value);
+        onChanged();
+      } else {
+        categoriesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public Builder setCategories(
+        int index, com.google.privacy.dlp.v2.InfoTypeCategory.Builder builderForValue) {
+      if (categoriesBuilder_ == null) {
+        ensureCategoriesIsMutable();
+        categories_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        categoriesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public Builder addCategories(com.google.privacy.dlp.v2.InfoTypeCategory value) {
+      if (categoriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCategoriesIsMutable();
+        categories_.add(value);
+        onChanged();
+      } else {
+        categoriesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public Builder addCategories(int index, com.google.privacy.dlp.v2.InfoTypeCategory value) {
+      if (categoriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCategoriesIsMutable();
+        categories_.add(index, value);
+        onChanged();
+      } else {
+        categoriesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public Builder addCategories(
+        com.google.privacy.dlp.v2.InfoTypeCategory.Builder builderForValue) {
+      if (categoriesBuilder_ == null) {
+        ensureCategoriesIsMutable();
+        categories_.add(builderForValue.build());
+        onChanged();
+      } else {
+        categoriesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public Builder addCategories(
+        int index, com.google.privacy.dlp.v2.InfoTypeCategory.Builder builderForValue) {
+      if (categoriesBuilder_ == null) {
+        ensureCategoriesIsMutable();
+        categories_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        categoriesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public Builder addAllCategories(
+        java.lang.Iterable<? extends com.google.privacy.dlp.v2.InfoTypeCategory> values) {
+      if (categoriesBuilder_ == null) {
+        ensureCategoriesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, categories_);
+        onChanged();
+      } else {
+        categoriesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public Builder clearCategories() {
+      if (categoriesBuilder_ == null) {
+        categories_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        categoriesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public Builder removeCategories(int index) {
+      if (categoriesBuilder_ == null) {
+        ensureCategoriesIsMutable();
+        categories_.remove(index);
+        onChanged();
+      } else {
+        categoriesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public com.google.privacy.dlp.v2.InfoTypeCategory.Builder getCategoriesBuilder(int index) {
+      return getCategoriesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public com.google.privacy.dlp.v2.InfoTypeCategoryOrBuilder getCategoriesOrBuilder(int index) {
+      if (categoriesBuilder_ == null) {
+        return categories_.get(index);
+      } else {
+        return categoriesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeCategoryOrBuilder>
+        getCategoriesOrBuilderList() {
+      if (categoriesBuilder_ != null) {
+        return categoriesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(categories_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public com.google.privacy.dlp.v2.InfoTypeCategory.Builder addCategoriesBuilder() {
+      return getCategoriesFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.InfoTypeCategory.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public com.google.privacy.dlp.v2.InfoTypeCategory.Builder addCategoriesBuilder(int index) {
+      return getCategoriesFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.InfoTypeCategory.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The category of the infoType.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.InfoTypeCategory categories = 10;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.InfoTypeCategory.Builder>
+        getCategoriesBuilderList() {
+      return getCategoriesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.InfoTypeCategory,
+            com.google.privacy.dlp.v2.InfoTypeCategory.Builder,
+            com.google.privacy.dlp.v2.InfoTypeCategoryOrBuilder>
+        getCategoriesFieldBuilder() {
+      if (categoriesBuilder_ == null) {
+        categoriesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.InfoTypeCategory,
+                com.google.privacy.dlp.v2.InfoTypeCategory.Builder,
+                com.google.privacy.dlp.v2.InfoTypeCategoryOrBuilder>(
+                categories_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        categories_ = null;
+      }
+      return categoriesBuilder_;
     }
 
     @java.lang.Override

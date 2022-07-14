@@ -52,6 +52,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
 import org.threeten.bp.Duration;
 
+@SuppressWarnings("checkstyle:AbbreviationAsWordInName")
 class RiskAnalysisLDiversity {
 
   public static void main(String[] args) throws Exception {

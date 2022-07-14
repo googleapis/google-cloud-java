@@ -37,7 +37,6 @@ import java.util.UUID;
 public class CreateProduct {
 
   public static void main(String[] args) throws IOException {
-    // TODO(developer): Replace these variables before running the sample.
     String projectId = ServiceOptions.getDefaultProjectId();
     String branchName =
         String.format(
@@ -50,23 +49,6 @@ public class CreateProduct {
 
   // call the Retail API to create product
   public static Product createProduct(String productId, String branchName) throws IOException {
-    CreateProductRequest createProductRequest =
-        CreateProductRequest.newBuilder()
-            .setProduct(generateProduct())
-            .setProductId(productId)
-            .setParent(branchName)
-            .build();
-    System.out.printf("Create product request: %s%n", createProductRequest);
-
-    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
-      Product createdProduct = serviceClient.createProduct(createProductRequest);
-      System.out.printf("Created product: %s%n", createdProduct);
-      return createdProduct;
-    }
-  }
-
-  // generate product for create
-  public static Product generateProduct() {
     float price = 30.0f;
     float originalPrice = 35.5f;
 
@@ -77,14 +59,33 @@ public class CreateProduct {
             .setCurrencyCode("USD")
             .build();
 
-    return Product.newBuilder()
-        .setTitle("Nest Mini")
-        .setType(Type.PRIMARY)
-        .addCategories("Speakers and displays")
-        .addBrands("Google")
-        .setPriceInfo(priceInfo)
-        .setAvailability(Availability.IN_STOCK)
-        .build();
+    Product generatedProduct =
+        Product.newBuilder()
+            .setTitle("Nest Mini")
+            .setType(Type.PRIMARY)
+            .addCategories("Speakers and displays")
+            .addBrands("Google")
+            .setPriceInfo(priceInfo)
+            .setAvailability(Availability.IN_STOCK)
+            .build();
+
+    CreateProductRequest createProductRequest =
+        CreateProductRequest.newBuilder()
+            .setProduct(generatedProduct)
+            .setProductId(productId)
+            .setParent(branchName)
+            .build();
+    System.out.printf("Create product request: %s%n", createProductRequest);
+
+    // Initialize client that will be used to send requests. This client only
+    // needs to be created once, and can be reused for multiple requests. After
+    // completing all of your requests, call the "close" method on the client to
+    // safely clean up any remaining background resources.
+    try (ProductServiceClient serviceClient = ProductServiceClient.create()) {
+      Product createdProduct = serviceClient.createProduct(createProductRequest);
+      System.out.printf("Created product: %s%n", createdProduct);
+      return createdProduct;
+    }
   }
 }
 

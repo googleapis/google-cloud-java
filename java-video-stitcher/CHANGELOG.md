@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/googleapis/java-video-stitcher/compare/v0.3.0...v0.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-video-stitcher/issues/1485)) ([#54](https://github.com/googleapis/java-video-stitcher/issues/54)) ([ff83d6e](https://github.com/googleapis/java-video-stitcher/commit/ff83d6eb04736279c7b15b3dcc4784a76f7cbeb3))
+
 ## [0.3.0](https://github.com/googleapis/java-video-stitcher/compare/v0.2.1...v0.3.0) (2022-06-30)
 
 

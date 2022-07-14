@@ -64,4 +64,7 @@ for library in s.get_staging_dirs():
     s.move(library)
 
 s.remove_staging_dirs()
-java.common_templates()
+
+java.common_templates(excludes=[
+    '.kokoro/presubmit/samples.cfg'
+])

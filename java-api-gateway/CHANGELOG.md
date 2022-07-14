@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-api-gateway/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-api-gateway/issues/1485)) ([#275](https://github.com/googleapis/java-api-gateway/issues/275)) ([215c9b7](https://github.com/googleapis/java-api-gateway/commit/215c9b799c1f168cd4ebe350200b789aa9f366a9))
+
 ## [2.3.0](https://github.com/googleapis/java-api-gateway/compare/v2.2.1...v2.3.0) (2022-07-01)
 
 

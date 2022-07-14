@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/googleapis/java-gke-backup/compare/v0.2.0...v0.2.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-gke-backup/issues/1485)) ([#31](https://github.com/googleapis/java-gke-backup/issues/31)) ([0e13684](https://github.com/googleapis/java-gke-backup/commit/0e13684e4676c264d1b0ca938bd4042383db7695))
+
 ## [0.2.0](https://github.com/googleapis/java-gke-backup/compare/v0.1.0...v0.2.0) (2022-07-01)
 
 

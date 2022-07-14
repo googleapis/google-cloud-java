@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-billingbudgets/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-billingbudgets/issues/1485)) ([#732](https://github.com/googleapis/java-billingbudgets/issues/732)) ([6d437df](https://github.com/googleapis/java-billingbudgets/commit/6d437df5360b53b263a5df5360c508a2552c0e65))
+
 ## [2.3.0](https://github.com/googleapis/java-billingbudgets/compare/v2.2.1...v2.3.0) (2022-07-01)
 
 

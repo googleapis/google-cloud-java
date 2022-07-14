@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/googleapis/java-vmmigration/compare/v1.2.0...v1.2.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-vmmigration/issues/1485)) ([#115](https://github.com/googleapis/java-vmmigration/issues/115)) ([9c315ab](https://github.com/googleapis/java-vmmigration/commit/9c315ab8d44551785d4af930967b92712cb5f571))
+
 ## [1.2.0](https://github.com/googleapis/java-vmmigration/compare/v1.1.1...v1.2.0) (2022-07-01)
 
 

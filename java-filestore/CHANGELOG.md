@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/googleapis/java-filestore/compare/v1.4.0...v1.4.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-filestore/issues/1485)) ([#205](https://github.com/googleapis/java-filestore/issues/205)) ([754499c](https://github.com/googleapis/java-filestore/commit/754499c2d394fd460e35d75747b8d647d5dcdf17))
+
 ## [1.4.0](https://github.com/googleapis/java-filestore/compare/v1.3.0...v1.4.0) (2022-07-01)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/googleapis/java-life-sciences/compare/v0.5.0...v0.5.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-life-sciences/issues/1485)) ([#210](https://github.com/googleapis/java-life-sciences/issues/210)) ([98381b7](https://github.com/googleapis/java-life-sciences/commit/98381b758ec384688052a3751daf2ee0d46c3d27))
+
 ## [0.5.0](https://github.com/googleapis/java-life-sciences/compare/v0.4.1...v0.5.0) (2022-07-01)
 
 

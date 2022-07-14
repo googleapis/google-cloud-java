@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/googleapis/java-talent/compare/v2.4.0...v2.4.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-talent/issues/1485)) ([#809](https://github.com/googleapis/java-talent/issues/809)) ([e10def1](https://github.com/googleapis/java-talent/commit/e10def1784434cae08d2c4cc7b3799bee2c08cd7))
+
 ## [2.4.0](https://github.com/googleapis/java-talent/compare/v2.3.0...v2.4.0) (2022-07-01)
 
 
