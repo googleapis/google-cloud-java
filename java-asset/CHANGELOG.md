@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.2](https://github.com/googleapis/java-asset/compare/v3.4.1...v3.4.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-asset/issues/1485)) ([#1265](https://github.com/googleapis/java-asset/issues/1265)) ([dcf4821](https://github.com/googleapis/java-asset/commit/dcf4821a2df0f5db02599feae62ebad7774cebd0))
+
 ## [3.4.1](https://github.com/googleapis/java-asset/compare/v3.4.0...v3.4.1) (2022-07-11)
 
 
