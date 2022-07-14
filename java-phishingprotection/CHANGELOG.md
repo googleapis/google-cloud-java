@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.34.1](https://github.com/googleapis/java-phishingprotection/compare/v0.34.0...v0.34.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-phishingprotection/issues/1485)) ([#698](https://github.com/googleapis/java-phishingprotection/issues/698)) ([6c4cebe](https://github.com/googleapis/java-phishingprotection/commit/6c4cebeba77dce300caa67f2897d8077bb693a65))
+
 ## [0.34.0](https://github.com/googleapis/java-phishingprotection/compare/v0.33.1...v0.34.0) (2022-07-01)
 
 
