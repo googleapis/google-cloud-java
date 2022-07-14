@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.1](https://github.com/googleapis/java-os-config/compare/v2.5.0...v2.5.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-os-config/issues/1485)) ([#499](https://github.com/googleapis/java-os-config/issues/499)) ([5e7f699](https://github.com/googleapis/java-os-config/commit/5e7f6990a791ca9e0238786d82bd4daf6b16cb69))
+
 ## [2.5.0](https://github.com/googleapis/java-os-config/compare/v2.4.3...v2.5.0) (2022-07-01)
 
 
