@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-apigee-connect/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-apigee-connect/issues/1485)) ([#193](https://github.com/googleapis/java-apigee-connect/issues/193)) ([aeb1daa](https://github.com/googleapis/java-apigee-connect/commit/aeb1daa4c1649a5e1e161c0ee3756e88ae12df5f))
+
 ## [2.3.0](https://github.com/googleapis/java-apigee-connect/compare/v2.2.1...v2.3.0) (2022-07-01)
 
 
