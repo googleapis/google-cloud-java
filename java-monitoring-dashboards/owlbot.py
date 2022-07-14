@@ -19,8 +19,8 @@ import os
 
 for library in s.get_staging_dirs():
     # put any special-case replacements here
-    os.remove("owl-bot-staging/v1/proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DrilldownsProto.java")
-    os.remove("owl-bot-staging/v1/proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ServiceMonitoringProto.java")
+    os.remove("owl-bot-staging/java-monitoring-dashboards/v1/proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DrilldownsProto.java")
+    os.remove("owl-bot-staging/java-monitoring-dashboards/v1/proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ServiceMonitoringProto.java")
     s.move(library)
 
 s.remove_staging_dirs()
