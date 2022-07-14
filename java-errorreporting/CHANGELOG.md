@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.124.1](https://github.com/googleapis/java-errorreporting/compare/v0.124.0...v0.124.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-errorreporting/issues/1485)) ([#897](https://github.com/googleapis/java-errorreporting/issues/897)) ([ff9f9b3](https://github.com/googleapis/java-errorreporting/commit/ff9f9b3c379ba4cea69fc5c5149f474392b6f7c3))
+
 ## [0.124.0](https://github.com/googleapis/java-errorreporting/compare/v0.123.4...v0.124.0) (2022-07-11)
 
 
