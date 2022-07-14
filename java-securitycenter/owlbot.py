@@ -21,43 +21,43 @@ for library in s.get_staging_dirs():
     # TODO: remove for next major release (2.0.0)
     version = library.parts[len(library.parts) - 1]
     s.replace(
-        [f"owl-bot-staging/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
+        [f"owl-bot-staging/java-securitycenter/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
         "formatOrganizationAssetName\(",
         "formatOrganizationAssetSecurityMarksName("
     )
     s.replace(
-        [f"owl-bot-staging/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
+        [f"owl-bot-staging/java-securitycenter/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
         "formatOrganizationSourceFindingName\(",
         "formatOrganizationSourceFindingSecurityMarksName("
     )
     s.replace(
-        [f"owl-bot-staging/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
+        [f"owl-bot-staging/java-securitycenter/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
         "newOrganizationAssetBuilder\(",
         "newOrganizationAssetSecurityMarksBuilder("
     )
     s.replace(
-        [f"owl-bot-staging/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
+        [f"owl-bot-staging/java-securitycenter/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
         "newOrganizationSourceFindingBuilder\(",
         "newOrganizationSourceFindingSecurityMarksBuilder("
     )
     s.replace(
-        [f"owl-bot-staging/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
+        [f"owl-bot-staging/java-securitycenter/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
         "ofOrganizationAssetName\(",
         "ofOrganizationAssetSecurityMarksName("
     )
     s.replace(
-        [f"owl-bot-staging/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
+        [f"owl-bot-staging/java-securitycenter/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
         "ofOrganizationSourceFindingName\(",
         "ofOrganizationSourceFindingSecurityMarksName("
         )
     s.replace(
-        [f"owl-bot-staging/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
+        [f"owl-bot-staging/java-securitycenter/{version}/proto-google-cloud-securitycenter-{version}/src/main/java/com/google/cloud/securitycenter/{version}/SecurityMarksName.java"],
         "OrganizationSourceFindingBuilder",
         "OrganizationSourceFindingSecurityMarksBuilder",
     )
     
     s.replace(
-        [f"owl-bot-staging/{version}/google-cloud-securitycenter/src/test/java/com/google/cloud/securitycenter/{version}/SecurityCenterClientTest.java"],
+        [f"owl-bot-staging/java-securitycenter/{version}/google-cloud-securitycenter/src/test/java/com/google/cloud/securitycenter/{version}/SecurityCenterClientTest.java"],
         "SecurityMarksName.ofOrganizationAssetName",
         "SecurityMarksName.ofOrganizationAssetSecurityMarksName"
         )
