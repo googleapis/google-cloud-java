@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.1](https://github.com/googleapis/java-mediatranslation/compare/v0.9.0...v0.9.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-mediatranslation/issues/1485)) ([#670](https://github.com/googleapis/java-mediatranslation/issues/670)) ([3e71f49](https://github.com/googleapis/java-mediatranslation/commit/3e71f49500f0033db07d3266874c70e5a0926a27))
+
 ## [0.9.0](https://github.com/googleapis/java-mediatranslation/compare/v0.8.1...v0.9.0) (2022-07-01)
 
 
