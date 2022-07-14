@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-memcache/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-memcache/issues/1485)) ([#654](https://github.com/googleapis/java-memcache/issues/654)) ([5386697](https://github.com/googleapis/java-memcache/commit/5386697feea34544a595393266c12676cc6dfdd6))
+
 ## [2.3.0](https://github.com/googleapis/java-memcache/compare/v2.2.1...v2.3.0) (2022-07-01)
 
 
