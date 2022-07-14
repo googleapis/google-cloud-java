@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.14.2](https://github.com/googleapis/java-analytics-data/compare/v0.14.1...v0.14.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-analytics-data/issues/1485)) ([#521](https://github.com/googleapis/java-analytics-data/issues/521)) ([8eb30ca](https://github.com/googleapis/java-analytics-data/commit/8eb30ca273b009e05e64b05f83a736a2113b8151))
+
 ## [0.14.1](https://github.com/googleapis/java-analytics-data/compare/v0.14.0...v0.14.1) (2022-07-01)
 
 
