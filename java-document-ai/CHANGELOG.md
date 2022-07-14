@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.1](https://github.com/googleapis/java-document-ai/compare/v2.6.0...v2.6.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-document-ai/issues/1485)) ([#853](https://github.com/googleapis/java-document-ai/issues/853)) ([e7d5234](https://github.com/googleapis/java-document-ai/commit/e7d523402aee6b997cee6786abedc529761b91fd))
+
 ## [2.6.0](https://github.com/googleapis/java-document-ai/compare/v2.5.2...v2.6.0) (2022-06-30)
 
 
