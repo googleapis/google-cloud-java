@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/googleapis/java-gke-connect-gateway/compare/v0.4.1...v0.4.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-gke-connect-gateway/issues/1485)) ([#193](https://github.com/googleapis/java-gke-connect-gateway/issues/193)) ([0bf8913](https://github.com/googleapis/java-gke-connect-gateway/commit/0bf891372216c565caacd61c1a0dba7f56bcb6b4))
+
 ## [0.4.1](https://github.com/googleapis/java-gke-connect-gateway/compare/v0.4.0...v0.4.1) (2022-07-01)
 
 
