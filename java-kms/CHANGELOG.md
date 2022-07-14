@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.1](https://github.com/googleapis/java-kms/compare/v2.6.0...v2.6.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-kms/issues/1485)) ([#818](https://github.com/googleapis/java-kms/issues/818)) ([5267579](https://github.com/googleapis/java-kms/commit/5267579b3306591feaa57b23baca02d30db81711))
+
 ## [2.6.0](https://github.com/googleapis/java-kms/compare/v2.5.3...v2.6.0) (2022-07-01)
 
 
