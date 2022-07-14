@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/googleapis/java-dataproc/compare/v4.0.0...v4.0.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-dataproc/issues/1485)) ([#884](https://github.com/googleapis/java-dataproc/issues/884)) ([79ea3aa](https://github.com/googleapis/java-dataproc/commit/79ea3aaea253356a95656e0acca50293eefd979a))
+
 ## [4.0.0](https://github.com/googleapis/java-dataproc/compare/v3.1.2...v4.0.0) (2022-07-01)
 
 
