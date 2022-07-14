@@ -43,17 +43,17 @@ for library in s.get_staging_dirs():
     version = library.parts[len(library.parts) - 1]
     service = 'tasks'
     s.replace(
-        f'owl-bot-staging/{version}/google-cloud-{service}/src/main/java/com/google/cloud/tasks/{version}/CloudTasksClient.java',
+        f'owl-bot-staging/java-tasks/{version}/google-cloud-{service}/src/main/java/com/google/cloud/tasks/{version}/CloudTasksClient.java',
         GET_IAM_POLICY_PREVIOUS,
         "\g<1>\n\n" + GET_IAM_POLICY
     )
     s.replace(
-        f'owl-bot-staging/{version}/google-cloud-{service}/src/main/java/com/google/cloud/tasks/{version}/CloudTasksClient.java',
+        f'owl-bot-staging/java-tasks/{version}/google-cloud-{service}/src/main/java/com/google/cloud/tasks/{version}/CloudTasksClient.java',
         SET_IAM_POLICY_PREVIOUS,
         "\g<1>\n\n" + SET_IAM_POLICY
     )
     s.replace(
-        f'owl-bot-staging/{version}/google-cloud-{service}/src/main/java/com/google/cloud/tasks/{version}/CloudTasksClient.java',
+        f'owl-bot-staging/java-tasks/{version}/google-cloud-{service}/src/main/java/com/google/cloud/tasks/{version}/CloudTasksClient.java',
         TEST_IAM_POLICY_PREVIOUS,
         "\g<1>\n\n" + TEST_IAM_POLICY
     )
