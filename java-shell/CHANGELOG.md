@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.3](https://github.com/googleapis/java-shell/compare/v2.2.2...v2.2.3) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-shell/issues/1485)) ([#227](https://github.com/googleapis/java-shell/issues/227)) ([840323b](https://github.com/googleapis/java-shell/commit/840323bc9230a5949072f914a3eebad2e9be7eb5))
+
 ## [2.2.2](https://github.com/googleapis/java-shell/compare/v2.2.1...v2.2.2) (2022-07-01)
 
 
