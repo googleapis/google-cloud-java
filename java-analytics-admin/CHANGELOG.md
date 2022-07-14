@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.12.1](https://github.com/googleapis/java-analytics-admin/compare/v0.12.0...v0.12.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-analytics-admin/issues/1485)) ([#429](https://github.com/googleapis/java-analytics-admin/issues/429)) ([7edcdee](https://github.com/googleapis/java-analytics-admin/commit/7edcdeebe4a5723cd69b1f3d97f32b61e27dacd4))
+
 ## [0.12.0](https://github.com/googleapis/java-analytics-admin/compare/v0.11.0...v0.12.0) (2022-07-08)
 
 
