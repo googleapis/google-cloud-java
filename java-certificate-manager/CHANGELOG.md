@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/googleapis/java-certificate-manager/compare/v0.4.0...v0.4.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-certificate-manager/issues/1485)) ([#60](https://github.com/googleapis/java-certificate-manager/issues/60)) ([44d24e1](https://github.com/googleapis/java-certificate-manager/commit/44d24e100b995f71903b25571cfa4a5564ad0bec))
+
 ## [0.4.0](https://github.com/googleapis/java-certificate-manager/compare/v0.3.1...v0.4.0) (2022-06-30)
 
 
