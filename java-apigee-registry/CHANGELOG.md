@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/googleapis/java-apigee-registry/compare/v0.2.0...v0.2.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-apigee-registry/issues/1485)) ([#20](https://github.com/googleapis/java-apigee-registry/issues/20)) ([3a18bee](https://github.com/googleapis/java-apigee-registry/commit/3a18bee5b0048c87592ae53f03bef28a28f01273))
+
 ## [0.2.0](https://github.com/googleapis/java-apigee-registry/compare/v0.1.1...v0.2.0) (2022-07-01)
 
 
