@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/googleapis/java-dms/compare/v2.2.1...v2.2.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-dms/issues/1485)) ([#242](https://github.com/googleapis/java-dms/issues/242)) ([c401b2d](https://github.com/googleapis/java-dms/commit/c401b2da4c5e27f33a294a646d9fd93218611b61))
+
 ## [2.2.1](https://github.com/googleapis/java-dms/compare/v2.2.0...v2.2.1) (2022-06-23)
 
 
