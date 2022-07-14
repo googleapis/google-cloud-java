@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/googleapis/java-os-login/compare/v2.2.0...v2.2.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-os-login/issues/1485)) ([#704](https://github.com/googleapis/java-os-login/issues/704)) ([8c5e4e7](https://github.com/googleapis/java-os-login/commit/8c5e4e7e9f596ac0405246d17377cbd0b0094074))
+
 ## [2.2.0](https://github.com/googleapis/java-os-login/compare/v2.1.0...v2.2.0) (2022-07-01)
 
 
