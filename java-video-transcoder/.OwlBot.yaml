@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -33,3 +31,5 @@ deep-copy-regex:
   dest: "/owl-bot-staging/$1/google-cloud-video-transcoder/src"
 - source: "/google/cloud/video/transcoder/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/$1/samples/snippets/generated"
+
+api-name: transcoder
