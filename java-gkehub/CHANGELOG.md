@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/googleapis/java-gkehub/compare/v1.3.0...v1.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-gkehub/issues/1485)) ([#256](https://github.com/googleapis/java-gkehub/issues/256)) ([12f8cae](https://github.com/googleapis/java-gkehub/commit/12f8cae5f960e7a0b397241f5bb3c67cda7ac0f9))
+
 ## [1.3.0](https://github.com/googleapis/java-gkehub/compare/v1.2.1...v1.3.0) (2022-07-01)
 
 
