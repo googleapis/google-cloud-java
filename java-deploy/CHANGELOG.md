@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/googleapis/java-deploy/compare/v1.1.2...v1.1.3) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-deploy/issues/1485)) ([#137](https://github.com/googleapis/java-deploy/issues/137)) ([efed1a6](https://github.com/googleapis/java-deploy/commit/efed1a67f8fa833c6321ba6629e8b52456027191))
+
 ## [1.1.2](https://github.com/googleapis/java-deploy/compare/v1.1.1...v1.1.2) (2022-07-01)
 
 
