@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/googleapis/java-bigqueryreservation/compare/v2.4.0...v2.4.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-bigqueryreservation/issues/1485)) ([#690](https://github.com/googleapis/java-bigqueryreservation/issues/690)) ([2bf8e91](https://github.com/googleapis/java-bigqueryreservation/commit/2bf8e9175f3858951878798b41c9a8c21a32e634))
+
 ## [2.4.0](https://github.com/googleapis/java-bigqueryreservation/compare/v2.3.1...v2.4.0) (2022-07-01)
 
 
