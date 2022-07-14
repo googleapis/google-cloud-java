@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/googleapis/java-assured-workloads/compare/v2.0.0...v2.0.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-assured-workloads/issues/1485)) ([#458](https://github.com/googleapis/java-assured-workloads/issues/458)) ([4bcf11d](https://github.com/googleapis/java-assured-workloads/commit/4bcf11d618503e4902283d0bac5bf2c50a0191d4))
+
 ## [2.0.0](https://github.com/googleapis/java-assured-workloads/compare/v1.1.0...v2.0.0) (2022-07-01)
 
 
