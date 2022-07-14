@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.1.0](https://github.com/googleapis/java-aiplatform/compare/v3.0.0...v3.1.0) (2022-07-13)
+
+
+### Features
+
+* **samples:** add remaining featurestore api samples ([#974](https://github.com/googleapis/java-aiplatform/issues/974)) ([872efb4](https://github.com/googleapis/java-aiplatform/commit/872efb44a685153f366533c48a79b112bfe6543e))
+* **samples:** added all entity type samples ([#976](https://github.com/googleapis/java-aiplatform/issues/976)) ([b75963f](https://github.com/googleapis/java-aiplatform/commit/b75963f7cf8435212c80b516601a0d433f3fc708))
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-aiplatform/issues/1485)) ([#991](https://github.com/googleapis/java-aiplatform/issues/991)) ([858e68b](https://github.com/googleapis/java-aiplatform/commit/858e68b96f0a4a391a44a69944186d2b06dc4ab3))
+
 ## [3.0.0](https://github.com/googleapis/java-aiplatform/compare/v2.9.8...v3.0.0) (2022-07-01)
 
 
