@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.7](https://github.com/googleapis/java-contact-center-insights/compare/v2.3.6...v2.3.7) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-contact-center-insights/issues/1485)) ([#322](https://github.com/googleapis/java-contact-center-insights/issues/322)) ([3366cb5](https://github.com/googleapis/java-contact-center-insights/commit/3366cb54aa4e9c147a390a3452b2a78d045ce6f6))
+
 ## [2.3.6](https://github.com/googleapis/java-contact-center-insights/compare/v2.3.5...v2.3.6) (2022-07-11)
 
 
