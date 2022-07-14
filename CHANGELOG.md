@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.10.1](https://github.com/googleapis/java-logging/compare/v3.10.0...v3.10.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-logging/issues/1485)) ([#995](https://github.com/googleapis/java-logging/issues/995)) ([b2f68cb](https://github.com/googleapis/java-logging/commit/b2f68cb46d56521eeddcd63a0daea1abd85b70ae))
+
+
+### Dependencies
+
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.12 ([#977](https://github.com/googleapis/java-logging/issues/977)) ([71dc1ee](https://github.com/googleapis/java-logging/commit/71dc1ee5ee98532958ea89f4ee7e3dd801d57501))
+
 ## [3.10.0](https://github.com/googleapis/java-logging/compare/v3.9.0...v3.10.0) (2022-06-25)
 
 
