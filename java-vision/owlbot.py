@@ -219,12 +219,12 @@ public static final String parseReferenceImageFromReferenceImageName(String refe
 for library in s.get_staging_dirs():
     # put any special-case replacements here
     s.replace(
-        "owl-bot-staging/v1/google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ProductSearchClient.java",
+        "owl-bot-staging/java-vision/v1/google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ProductSearchClient.java",
         "private final OperationsClient operationsClient;",
         f"private final OperationsClient operationsClient;\n{DEPRECATED_RESOURCE_NAME_HELPERS}"
     )
     s.replace(
-        "owl-bot-staging/v1/google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ProductSearchClient.java",
+        "owl-bot-staging/java-vision/v1/google-cloud-vision/src/main/java/com/google/cloud/vision/v1/ProductSearchClient.java",
         "import com.google.api.gax.rpc.UnaryCallable;",
         "import com.google.api.gax.rpc.UnaryCallable;\nimport com.google.api.pathtemplate.PathTemplate;"
     )
