@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/googleapis/java-bare-metal-solution/compare/v0.3.0...v0.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-bare-metal-solution/issues/1485)) ([#48](https://github.com/googleapis/java-bare-metal-solution/issues/48)) ([a2b9144](https://github.com/googleapis/java-bare-metal-solution/commit/a2b9144b59b2074ad79aa9fe7f776469311fb1f5))
+
 ## [0.3.0](https://github.com/googleapis/java-bare-metal-solution/compare/v0.2.1...v0.3.0) (2022-06-28)
 
 
