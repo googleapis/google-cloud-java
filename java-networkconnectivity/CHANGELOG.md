@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/googleapis/java-networkconnectivity/compare/v1.2.1...v1.2.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-networkconnectivity/issues/1485)) ([#269](https://github.com/googleapis/java-networkconnectivity/issues/269)) ([e839c3c](https://github.com/googleapis/java-networkconnectivity/commit/e839c3c71602af0bcb6827b9e40f564fa7c3e8fb))
+
 ## [1.2.1](https://github.com/googleapis/java-networkconnectivity/compare/v1.2.0...v1.2.1) (2022-06-23)
 
 
