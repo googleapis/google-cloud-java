@@ -41,7 +41,9 @@ for module in $modules
 do
   cd $module
   NAME=$(jq -r '.distribution_name' .repo-metadata.json | cut -d ':' -f 2)
-  VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
+  # Hard code version for now since SNAPSHOT versions won't be generated
+  VERSION="104.0.0"
+#  VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
   echo "${NAME}-${VERSION}"
 
   # cloud RAD generation
