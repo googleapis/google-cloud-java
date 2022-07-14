@@ -1,0 +1,16 @@
+{
+  "api_shortname": "dataplex",
+  "name_pretty": "Cloud Dataplex",
+  "product_documentation": "https://cloud.google.com/dataplex",
+  "api_description": "provides intelligent data fabric that enables organizations to centrally manage, monitor, and govern their data across data lakes, data warehouses, and data marts with consistent controls, providing access to trusted data and powering analytics at scale.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-dataplex/latest/index.html",
+  "release_level": "stable",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-dataplex",
+  "repo_short": "java-dataplex",
+  "distribution_name": "com.google.cloud:google-cloud-dataplex",
+  "api_id": "dataplex.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
