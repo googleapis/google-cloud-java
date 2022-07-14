@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.8.2](https://github.com/googleapis/java-core/compare/v2.8.1...v2.8.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-core/issues/1485)) ([#866](https://github.com/googleapis/java-core/issues/866)) ([3add981](https://github.com/googleapis/java-core/commit/3add98191ecfc00f324ef214b98d02cfb143d08e))
+
+
+### Dependencies
+
+* update dependency com.google.api-client:google-api-client-bom to v1.35.2 ([#859](https://github.com/googleapis/java-core/issues/859)) ([c26a33d](https://github.com/googleapis/java-core/commit/c26a33d44df2405653ee5161f5335b423d334c93))
+* update dependency com.google.api:gax-bom to v2.18.3 ([#860](https://github.com/googleapis/java-core/issues/860)) ([f16395e](https://github.com/googleapis/java-core/commit/f16395e005b253a1cccadcd77b6403617cf72467))
+* update dependency com.google.api.grpc:proto-google-common-protos to v2.9.1 ([#855](https://github.com/googleapis/java-core/issues/855)) ([f7fc1cc](https://github.com/googleapis/java-core/commit/f7fc1cca6e79a17313c1d9c522dc93ea6df44645))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.5.0 ([#862](https://github.com/googleapis/java-core/issues/862)) ([fc82590](https://github.com/googleapis/java-core/commit/fc82590ca3022449300f18bb6d0109521aa73cbc))
+* update dependency com.google.http-client:google-http-client-bom to v1.42.1 ([#861](https://github.com/googleapis/java-core/issues/861)) ([3849fdf](https://github.com/googleapis/java-core/commit/3849fdf14e863d23b097b0d625e3a11b47f5d99b))
+
 ## [2.8.1](https://github.com/googleapis/java-core/compare/v2.8.0...v2.8.1) (2022-06-27)
 
 
