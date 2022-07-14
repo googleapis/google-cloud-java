@@ -1,0 +1,15 @@
+name: Googleapis Sync (Hermetic Build)
+on:
+  workflow_dispatch:
+jobs:
+  create-pull-request:
+    name: Create pull request for recent googleapis changes
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        repository: 'googleapis/google-cloud-java'
+    - run: |
+        .kokoro/sync_with_googleapis.sh monorepo_script_output
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
