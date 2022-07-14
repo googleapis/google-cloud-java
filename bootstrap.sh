@@ -37,6 +37,11 @@ do
   rm ${service}/.github/.OwlBot.yaml
   sed -i '/docker/d' ${service}/.OwlBot.yaml
   sed -i '/image/d' ${service}/.OwlBot.yaml
+
+  # In monorepo, the staging directory structure tells the destination module to
+  # which the OwlBot Java postprocessor copies the files.
+  sed -i "s|owl-bot-staging|owl-bot-staging/${service}|" ${service}/.OwlBot.yaml
+  sed -i "s|owl-bot-staging|owl-bot-staging/${service}|" ${service}/owlbot.py
   text=$(grep '^.*api_shortname.*' ${service}/.repo-metadata.json)
   text=$(echo "$text" | sed 's/\"//g; s/\,//g; s/^[[:space:]]*//' )
   text=${text/api_shortname/api-name}
