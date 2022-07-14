@@ -1,0 +1,85 @@
+rebaseMergeAllowed: false
+squashMergeAllowed: true
+mergeCommitAllowed: false
+branchProtectionRules:
+  - pattern: main
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - OwlBot Post Processor
+      - 'Kokoro - Test: Java GraalVM Native Image'
+      - 'Kokoro - Test: Java 17 GraalVM Native Image'
+  - pattern: 1.3.0-sp
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - units (7)
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - OwlBot Post Processor
+  - pattern: java7
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - units (7)
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - OwlBot Post Processor
+  - pattern: 2.0.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - OwlBot Post Processor
+  - pattern: 2.1.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (8)
+      - dependencies (11)
+      - lint
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - OwlBot Post Processor
+permissionRules:
+  - team: yoshi-admins
+    permission: admin
+  - team: yoshi-java-admins
+    permission: admin
+  - team: yoshi-java
+    permission: push
