@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-essential-contacts/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-essential-contacts/issues/1485)) ([#243](https://github.com/googleapis/java-essential-contacts/issues/243)) ([adc67c4](https://github.com/googleapis/java-essential-contacts/commit/adc67c40a5941a84d1ac59bf18d43875578121fd))
+
 ## [2.3.0](https://github.com/googleapis/java-essential-contacts/compare/v2.2.1...v2.3.0) (2022-07-01)
 
 
