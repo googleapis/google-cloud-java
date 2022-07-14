@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/googleapis/java-bigquerymigration/compare/v0.4.0...v0.4.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-bigquerymigration/issues/1485)) ([#141](https://github.com/googleapis/java-bigquerymigration/issues/141)) ([f02b160](https://github.com/googleapis/java-bigquerymigration/commit/f02b16058c93f1f89668516c1ef1bfcfc6992bf9))
+
 ## [0.4.0](https://github.com/googleapis/java-bigquerymigration/compare/v0.3.0...v0.4.0) (2022-07-01)
 
 
