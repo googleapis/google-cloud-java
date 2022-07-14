@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminService*</className>
+    <method>* *FirebaseLink*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/stub/AnalyticsAdminService*</className>
+    <method>* *FirebaseLink*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/stub/GrpcAnalyticsAdminServiceStub*</className>
+    <method>* *FirebaseLink*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminService*</className>
+    <method>* *EnhancedMeasurementSettings*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/stub/*AnalyticsAdminServiceStub*</className>
+    <method>* *EnhancedMeasurementSettings*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient</className>
+    <method>* *DataStream*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient*DataStreams*</className>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceSettings*</className>
+    <method>* *DataStream*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/stub/*AnalyticsAdminServiceStub*</className>
+    <method>* *DataStream*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7005</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient*</className>
+    <method>* *MeasurementProtocolSecret*(*)</method>
+    <to>* *(*)</to>
+  </difference>
+</differences>
