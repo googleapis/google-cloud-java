@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.2](https://github.com/googleapis/java-monitoring/compare/v3.3.1...v3.3.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-monitoring/issues/1485)) ([#883](https://github.com/googleapis/java-monitoring/issues/883)) ([8a96502](https://github.com/googleapis/java-monitoring/commit/8a965025da7942c2d9bcb970782343a3c8538d36))
+
 ## [3.3.1](https://github.com/googleapis/java-monitoring/compare/v3.3.0...v3.3.1) (2022-07-01)
 
 
