@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.123.5](https://github.com/googleapis/java-notification/compare/v0.123.4...v0.123.5) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-notification/issues/1485)) ([#628](https://github.com/googleapis/java-notification/issues/628)) ([e7fef5b](https://github.com/googleapis/java-notification/commit/e7fef5beabfa2500254e3b41e36bc99924946875))
+
 ## [0.123.4](https://github.com/googleapis/java-notification/compare/v0.123.3...v0.123.4) (2022-07-12)
 
 
