@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/googleapis/java-bigquery-data-exchange/compare/v0.3.0...v0.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-bigquery-data-exchange/issues/1485)) ([#36](https://github.com/googleapis/java-bigquery-data-exchange/issues/36)) ([f6f08ad](https://github.com/googleapis/java-bigquery-data-exchange/commit/f6f08ad559a90634fa006984f0546fefdf0afde3))
+
 ## [0.3.0](https://github.com/googleapis/java-bigquery-data-exchange/compare/v0.2.1...v0.3.0) (2022-07-01)
 
 
