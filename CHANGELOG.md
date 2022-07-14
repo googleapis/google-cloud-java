@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [0.126.1](https://github.com/googleapis/java-logging-logback/compare/v0.126.0...v0.126.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-logging-logback/issues/1485)) ([#802](https://github.com/googleapis/java-logging-logback/issues/802)) ([1498ecb](https://github.com/googleapis/java-logging-logback/commit/1498ecb3b0db8f01c7e2ccc78303ff753ec99616))
+
 ## [0.126.0](https://github.com/googleapis/java-logging-logback/compare/v0.125.0...v0.126.0) (2022-06-30)
 
 
