@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.2](https://github.com/googleapis/java-automl/compare/v2.3.1...v2.3.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-automl/issues/1485)) ([#1183](https://github.com/googleapis/java-automl/issues/1183)) ([a82eb7c](https://github.com/googleapis/java-automl/commit/a82eb7c6a0c8ffc59a575d66477edcf628a753f7))
+
 ## [2.3.1](https://github.com/googleapis/java-automl/compare/v2.3.0...v2.3.1) (2022-07-01)
 
 
