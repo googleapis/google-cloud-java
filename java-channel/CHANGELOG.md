@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.7.1](https://github.com/googleapis/java-channel/compare/v3.7.0...v3.7.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-channel/issues/1485)) ([#324](https://github.com/googleapis/java-channel/issues/324)) ([9e1558f](https://github.com/googleapis/java-channel/commit/9e1558f787e5d2ffb22b9067af76bb59a9b10bdb))
+
 ## [3.7.0](https://github.com/googleapis/java-channel/compare/v3.6.1...v3.7.0) (2022-07-01)
 
 
