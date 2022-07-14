@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.2](https://github.com/googleapis/java-accessapproval/compare/v2.4.1...v2.4.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-accessapproval/issues/1485)) ([#773](https://github.com/googleapis/java-accessapproval/issues/773)) ([7d509f0](https://github.com/googleapis/java-accessapproval/commit/7d509f0298c89477e78611494ba065bd9ba61a8b))
+
 ## [2.4.1](https://github.com/googleapis/java-accessapproval/compare/v2.4.0...v2.4.1) (2022-07-01)
 
 
