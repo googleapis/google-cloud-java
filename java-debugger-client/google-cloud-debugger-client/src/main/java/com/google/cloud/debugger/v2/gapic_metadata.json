@@ -1,0 +1,51 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.devtools.clouddebugger.v2",
+  "libraryPackage": "com.google.cloud.debugger.v2",
+  "services": {
+    "Controller2": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "Controller2Client",
+          "rpcs": {
+            "ListActiveBreakpoints": {
+              "methods": ["listActiveBreakpoints", "listActiveBreakpoints", "listActiveBreakpointsCallable"]
+            },
+            "RegisterDebuggee": {
+              "methods": ["registerDebuggee", "registerDebuggee", "registerDebuggeeCallable"]
+            },
+            "UpdateActiveBreakpoint": {
+              "methods": ["updateActiveBreakpoint", "updateActiveBreakpoint", "updateActiveBreakpointCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Debugger2": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "Debugger2Client",
+          "rpcs": {
+            "DeleteBreakpoint": {
+              "methods": ["deleteBreakpoint", "deleteBreakpoint", "deleteBreakpointCallable"]
+            },
+            "GetBreakpoint": {
+              "methods": ["getBreakpoint", "getBreakpoint", "getBreakpointCallable"]
+            },
+            "ListBreakpoints": {
+              "methods": ["listBreakpoints", "listBreakpoints", "listBreakpointsCallable"]
+            },
+            "ListDebuggees": {
+              "methods": ["listDebuggees", "listDebuggees", "listDebuggeesCallable"]
+            },
+            "SetBreakpoint": {
+              "methods": ["setBreakpoint", "setBreakpoint", "setBreakpointCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
