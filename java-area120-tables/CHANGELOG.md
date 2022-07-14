@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.1](https://github.com/googleapis/java-area120-tables/compare/v0.7.0...v0.7.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-area120-tables/issues/1485)) ([#375](https://github.com/googleapis/java-area120-tables/issues/375)) ([9836728](https://github.com/googleapis/java-area120-tables/commit/9836728f0389bd22157138f6394c41bc0ef798c0))
+
 ## [0.7.0](https://github.com/googleapis/java-area120-tables/compare/v0.6.1...v0.7.0) (2022-07-01)
 
 
