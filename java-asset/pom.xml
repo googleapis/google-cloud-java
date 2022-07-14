@@ -161,13 +161,13 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-pubsub</artifactId>
-        <version>1.118.0</version>
+        <version>1.120.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-pubsub-v1</artifactId>
-        <version>1.102.0</version>
+        <version>1.102.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
