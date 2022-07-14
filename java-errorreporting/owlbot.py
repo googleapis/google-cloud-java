@@ -57,16 +57,16 @@ for library in s.get_staging_dirs():
     version = library.parts[len(library.parts) - 1]
     service = 'errorreporting'
 
-    #java.fix_proto_headers('owl-bot-staging/v2beta1/proto-google-cloud-error-reporting-v1beta1')
-    #java.fix_grpc_headers('owl-bot-staging/v2beta1/grpc-google-cloud-error-reporting-v1beta1', "")
+    #java.fix_proto_headers('owl-bot-staging/java-errorreporting/v2beta1/proto-google-cloud-error-reporting-v1beta1')
+    #java.fix_grpc_headers('owl-bot-staging/java-errorreporting/v2beta1/grpc-google-cloud-error-reporting-v1beta1', "")
 
     s.replace(
-        'owl-bot-staging/v1beta1/google-cloud-errorreporting/src/**/ErrorGroupServiceClient.java',
+        'owl-bot-staging/java-errorreporting/v1beta1/google-cloud-errorreporting/src/**/ErrorGroupServiceClient.java',
         ERROR_GROUP_OVERLOAD_PREVIOUS_METHOD,
         "\g<1>\n\n" + ERROR_GROUP_OVERLOAD
     )
     s.replace(
-        'owl-bot-staging/v1beta1/google-cloud-errorreporting/src/**/ErrorGroupServiceClient.java',
+        'owl-bot-staging/java-errorreporting/v1beta1/google-cloud-errorreporting/src/**/ErrorGroupServiceClient.java',
         "import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupName;",
         "import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupName;\nimport com.google.devtools.clouderrorreporting.v1beta1.GroupName;"
     )
