@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/googleapis/java-batch/compare/v0.2.0...v0.2.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-batch/issues/1485)) ([#18](https://github.com/googleapis/java-batch/issues/18)) ([9a8cd4b](https://github.com/googleapis/java-batch/commit/9a8cd4b17c67f8c93770399a822019f8a6a827ce))
+
 ## [0.2.0](https://github.com/googleapis/java-batch/compare/v0.1.1...v0.2.0) (2022-06-30)
 
 
