@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/googleapis/java-debugger-client/compare/v1.3.0...v1.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-debugger-client/issues/1485)) ([#207](https://github.com/googleapis/java-debugger-client/issues/207)) ([fba5b55](https://github.com/googleapis/java-debugger-client/commit/fba5b55360670bddc871060e9d3e79dd8552787d))
+
 ## [1.3.0](https://github.com/googleapis/java-debugger-client/compare/v1.2.1...v1.3.0) (2022-07-01)
 
 
