@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -23,10 +21,12 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/security/privateca/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-security-private-ca-$1/src"
+  dest: "/owl-bot-staging/java-security-private-ca/$1/proto-google-cloud-security-private-ca-$1/src"
 - source: "/google/cloud/security/privateca/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-security-private-ca-$1/src"
+  dest: "/owl-bot-staging/java-security-private-ca/$1/grpc-google-cloud-security-private-ca-$1/src"
 - source: "/google/cloud/security/privateca/v.*/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-security-private-ca/src"
+  dest: "/owl-bot-staging/java-security-private-ca/$1/google-cloud-security-private-ca/src"
 - source: "/google/cloud/security/privateca/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-security-private-ca/$1/samples/snippets/generated"
+
+api-name: privateca
