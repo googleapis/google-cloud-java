@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.2](https://github.com/googleapis/java-vision/compare/v3.0.1...v3.0.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-vision/issues/1485)) ([#946](https://github.com/googleapis/java-vision/issues/946)) ([d58bf8c](https://github.com/googleapis/java-vision/commit/d58bf8ceb62855e3bfc089f2c7c2332f1f5afa07))
+
 ## [3.0.1](https://github.com/googleapis/java-vision/compare/v3.0.0...v3.0.1) (2022-07-01)
 
 
