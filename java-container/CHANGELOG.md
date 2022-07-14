@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/googleapis/java-container/compare/v2.4.1...v2.5.0) (2022-07-12)
+
+
+### Features
+
+* add support to modify kubelet pod pid limit in node system configuration ([#752](https://github.com/googleapis/java-container/issues/752)) ([6681fbe](https://github.com/googleapis/java-container/commit/6681fbe0bf0ab806e9e237ab9929ab6ee6808fcf))
+
 ## [2.4.1](https://github.com/googleapis/java-container/compare/v2.4.0...v2.4.1) (2022-06-23)
 
 

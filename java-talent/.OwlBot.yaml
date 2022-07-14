@@ -24,12 +24,12 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/talent/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-talent-$1/src"
+  dest: "/owl-bot-staging/java-talent/$1/proto-google-cloud-talent-$1/src"
 - source: "/google/cloud/talent/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-talent-$1/src"
+  dest: "/owl-bot-staging/java-talent/$1/grpc-google-cloud-talent-$1/src"
 - source: "/google/cloud/talent/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-talent/src"
+  dest: "/owl-bot-staging/java-talent/$1/google-cloud-talent/src"
 - source: "/google/cloud/talent/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-talent/$1/samples/snippets/generated"
 
 api-name: jobs

@@ -17,13 +17,13 @@ from synthtool.languages import java
 
 def fix_resource(client, version, name):
     s.replace(
-        [f'owl-bot-staging/{version}/google-cloud-monitoring/**/{version}/{client}.java'],
+        [f'owl-bot-staging/java-monitoring/{version}/google-cloud-monitoring/**/{version}/{client}.java'],
         f'import com.google.monitoring.{version}.{name}',
         'import com.google.api.resourcenames.ResourceName',
     )
 
     s.replace(
-        [f'owl-bot-staging/{version}/google-cloud-monitoring/**/{version}/{client}.java'],
+        [f'owl-bot-staging/java-monitoring/{version}/google-cloud-monitoring/**/{version}/{client}.java'],
         name,
         'ResourceName',
     )

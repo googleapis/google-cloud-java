@@ -21,12 +21,12 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/workflows/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-workflows-$1/src"
+  dest: "/owl-bot-staging/java-workflows/$1/proto-google-cloud-workflows-$1/src"
 - source: "/google/cloud/workflows/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-workflows-$1/src"
+  dest: "/owl-bot-staging/java-workflows/$1/grpc-google-cloud-workflows-$1/src"
 - source: "/google/cloud/workflows/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-workflows/src"
+  dest: "/owl-bot-staging/java-workflows/$1/google-cloud-workflows/src"
 - source: "/google/cloud/workflows/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-workflows/$1/samples/snippets/generated"
 
 api-name: workflows

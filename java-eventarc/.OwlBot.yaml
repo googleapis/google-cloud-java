@@ -24,12 +24,12 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/eventarc/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-eventarc-$1/src"
+  dest: "/owl-bot-staging/java-eventarc/$1/proto-google-cloud-eventarc-$1/src"
 - source: "/google/cloud/eventarc/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-eventarc-$1/src"
+  dest: "/owl-bot-staging/java-eventarc/$1/grpc-google-cloud-eventarc-$1/src"
 - source: "/google/cloud/eventarc/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-eventarc/src"
+  dest: "/owl-bot-staging/java-eventarc/$1/google-cloud-eventarc/src"
 - source: "/google/cloud/eventarc/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-eventarc/$1/samples/snippets/generated"
 
 api-name: eventarc

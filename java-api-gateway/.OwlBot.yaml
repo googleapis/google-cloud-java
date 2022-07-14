@@ -24,12 +24,12 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/apigateway/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-api-gateway-$1/src"
+  dest: "/owl-bot-staging/java-api-gateway/$1/proto-google-cloud-api-gateway-$1/src"
 - source: "/google/cloud/apigateway/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-api-gateway-$1/src"
+  dest: "/owl-bot-staging/java-api-gateway/$1/grpc-google-cloud-api-gateway-$1/src"
 - source: "/google/cloud/apigateway/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-api-gateway/src"
+  dest: "/owl-bot-staging/java-api-gateway/$1/google-cloud-api-gateway/src"
 - source: "/google/cloud/apigateway/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-api-gateway/$1/samples/snippets/generated"
 
 api-name: apigateway

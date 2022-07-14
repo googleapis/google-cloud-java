@@ -27,9 +27,9 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/devtools/containeranalysis/v1/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/v1/proto-google-cloud-containeranalysis-v1/src"
+  dest: "/owl-bot-staging/java-containeranalysis/v1/proto-google-cloud-containeranalysis-v1/src"
 - source: "/google/devtools/containeranalysis/v1/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/v1/grpc-google-cloud-containeranalysis-v1/src"
+  dest: "/owl-bot-staging/java-containeranalysis/v1/grpc-google-cloud-containeranalysis-v1/src"
 - source: "/google/devtools/containeranalysis/v1/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/v1/google-cloud-containeranalysis/src"
+  dest: "/owl-bot-staging/java-containeranalysis/v1/google-cloud-containeranalysis/src"
 api-name: containeranalysis

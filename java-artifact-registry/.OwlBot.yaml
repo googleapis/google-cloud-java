@@ -20,10 +20,10 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/devtools/artifactregistry/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-artifact-registry-$1/src"
+  dest: "/owl-bot-staging/java-artifact-registry/$1/proto-google-cloud-artifact-registry-$1/src"
 - source: "/google/devtools/artifactregistry/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-artifact-registry-$1/src"
+  dest: "/owl-bot-staging/java-artifact-registry/$1/grpc-google-cloud-artifact-registry-$1/src"
 - source: "/google/devtools/artifactregistry/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-artifact-registry/src"
+  dest: "/owl-bot-staging/java-artifact-registry/$1/google-cloud-artifact-registry/src"
 
 api-name: artifactregistry

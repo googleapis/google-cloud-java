@@ -21,12 +21,12 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/binaryauthorization/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-binary-authorization-$1/src"
+  dest: "/owl-bot-staging/java-binary-authorization/$1/proto-google-cloud-binary-authorization-$1/src"
 - source: "/google/cloud/binaryauthorization/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-binary-authorization-$1/src"
+  dest: "/owl-bot-staging/java-binary-authorization/$1/grpc-google-cloud-binary-authorization-$1/src"
 - source: "/google/cloud/binaryauthorization/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-binary-authorization/src"
+  dest: "/owl-bot-staging/java-binary-authorization/$1/google-cloud-binary-authorization/src"
 - source: "/google/cloud/binaryauthorization/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-binary-authorization/$1/samples/snippets/generated"
 
 api-name: binaryauthorization

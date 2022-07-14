@@ -20,10 +20,10 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/area120/tables/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-area120-tables-$1/src"
+  dest: "/owl-bot-staging/java-area120-tables/$1/proto-google-area120-tables-$1/src"
 - source: "/google/area120/tables/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-area120-tables-$1/src"
+  dest: "/owl-bot-staging/java-area120-tables/$1/grpc-google-area120-tables-$1/src"
 - source: "/google/area120/tables/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-area120-tables/src"
+  dest: "/owl-bot-staging/java-area120-tables/$1/google-area120-tables/src"
 
 api-name: area120tables

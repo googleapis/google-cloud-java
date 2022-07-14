@@ -30,10 +30,10 @@ for library in s.get_staging_dirs():
     # Copy of Resource name helper classes from v1 and import replacements
     # Todo: remove before next major release(lines 36 - 60)
     shutil.copy(
-        'owl-bot-staging/v1/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/UserName.java',
-        'owl-bot-staging/v1/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/UserName.java')
+        'owl-bot-staging/java-os-login/v1/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/UserName.java',
+        'owl-bot-staging/java-os-login/v1/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/UserName.java')
     s.replace(
-        'owl-bot-staging/v1/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/UserName.java',
+        'owl-bot-staging/java-os-login/v1/proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/UserName.java',
         'package com.google.cloud.oslogin.common;',
         'package com.google.cloud.oslogin.v1;')
     s.replace('**/OsLoginServiceClient.java',

@@ -23,10 +23,10 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/gaming/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-game-servers-$1/src"
+  dest: "/owl-bot-staging/java-game-servers/$1/proto-google-cloud-game-servers-$1/src"
 - source: "/google/cloud/gaming/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-game-servers-$1/src"
+  dest: "/owl-bot-staging/java-game-servers/$1/grpc-google-cloud-game-servers-$1/src"
 - source: "/google/cloud/gaming/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-game-servers/src"
+  dest: "/owl-bot-staging/java-game-servers/$1/google-cloud-game-servers/src"
 
 api-name: gameservices

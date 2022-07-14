@@ -33,12 +33,12 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/vision/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-vision-$1/src"
+  dest: "/owl-bot-staging/java-vision/$1/proto-google-cloud-vision-$1/src"
 - source: "/google/cloud/vision/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-vision-$1/src"
+  dest: "/owl-bot-staging/java-vision/$1/grpc-google-cloud-vision-$1/src"
 - source: "/google/cloud/vision/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-vision/src"
+  dest: "/owl-bot-staging/java-vision/$1/google-cloud-vision/src"
 - source: "/google/cloud/vision/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-vision/$1/samples/snippets/generated"
 
 api-name: vision

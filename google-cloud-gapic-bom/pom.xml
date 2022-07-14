@@ -52,7 +52,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-appengine-admin-bom</artifactId>
-        <version>2.3.3</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
+        <version>2.3.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-appengine-admin:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -101,7 +101,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigqueryreservation-bom</artifactId>
-        <version>2.4.1</version><!-- {x-version-update:google-cloud-bigqueryreservation:current} -->
+        <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryreservation:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -157,7 +157,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-container-bom</artifactId>
-        <version>2.4.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
+        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -395,7 +395,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-monitoring-bom</artifactId>
-        <version>3.3.2</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+        <version>3.3.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -423,7 +423,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-optimization-bom</artifactId>
-        <version>1.1.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-optimization:current} -->
+        <version>1.1.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-optimization:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -444,7 +444,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-os-config-bom</artifactId>
-        <version>2.5.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
+        <version>2.5.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -577,7 +577,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shell-bom</artifactId>
-        <version>2.2.3</version><!-- {x-version-update:google-cloud-shell:current} -->
+        <version>2.2.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-shell:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -682,14 +682,14 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-workflow-executions-bom</artifactId>
-        <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-workflow-executions:current} -->
+        <version>2.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-workflow-executions:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-workflows-bom</artifactId>
-        <version>2.3.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-workflows:current} -->
+        <version>2.3.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-workflows:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>

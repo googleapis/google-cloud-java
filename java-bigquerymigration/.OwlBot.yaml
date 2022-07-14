@@ -23,10 +23,10 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/bigquery/migration/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-bigquerymigration-$1/src"
+  dest: "/owl-bot-staging/java-bigquerymigration/$1/proto-google-cloud-bigquerymigration-$1/src"
 - source: "/google/cloud/bigquery/migration/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-bigquerymigration-$1/src"
+  dest: "/owl-bot-staging/java-bigquerymigration/$1/grpc-google-cloud-bigquerymigration-$1/src"
 - source: "/google/cloud/bigquery/migration/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-bigquerymigration/src"
+  dest: "/owl-bot-staging/java-bigquerymigration/$1/google-cloud-bigquerymigration/src"
 
 api-name: bigquerymigration

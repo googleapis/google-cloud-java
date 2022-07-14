@@ -29,14 +29,14 @@ get_grafeas_code = """
 for library in s.get_staging_dirs():
     # put any special-case replacements here
     s.replace(
-        f'owl-bot-staging/v1/google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisClient.java',
+        f'owl-bot-staging/java-containeranalysis/v1/google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisClient.java',
         'import com.google.iam.v1.TestIamPermissionsResponse;',
         'import com.google.iam.v1.TestIamPermissionsResponse;\nimport io.grafeas.v1.GrafeasClient;'
     )
 
     # add getGrafeasClient()
     s.replace(
-        f'owl-bot-staging/v1/google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisClient.java',
+        f'owl-bot-staging/java-containeranalysis/v1/google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisClient.java',
         r'(\s+private final ContainerAnalysisStub stub;.*)',
         f'\g<1>{get_grafeas_code}'
     )

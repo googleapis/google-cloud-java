@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/googleapis/java-workflows/compare/v2.3.0...v2.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-workflows/issues/1485)) ([#473](https://github.com/googleapis/java-workflows/issues/473)) ([7081d23](https://github.com/googleapis/java-workflows/commit/7081d23b71fbeefc6a7146b32579078f4ab38796))
+
 ## [2.3.0](https://github.com/googleapis/java-workflows/compare/v2.2.1...v2.3.0) (2022-07-01)
 
 

@@ -25,10 +25,10 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/container/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-container-$1/src"
+  dest: "/owl-bot-staging/java-container/$1/proto-google-cloud-container-$1/src"
 - source: "/google/container/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-container-$1/src"
+  dest: "/owl-bot-staging/java-container/$1/grpc-google-cloud-container-$1/src"
 - source: "/google/container/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-container/src"
+  dest: "/owl-bot-staging/java-container/$1/google-cloud-container/src"
 
 api-name: container

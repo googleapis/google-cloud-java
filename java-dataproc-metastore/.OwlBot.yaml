@@ -23,10 +23,10 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/metastore/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-dataproc-metastore-$1/src"
+  dest: "/owl-bot-staging/java-dataproc-metastore/$1/proto-google-cloud-dataproc-metastore-$1/src"
 - source: "/google/cloud/metastore/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-dataproc-metastore-$1/src"
+  dest: "/owl-bot-staging/java-dataproc-metastore/$1/grpc-google-cloud-dataproc-metastore-$1/src"
 - source: "/google/cloud/metastore/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-dataproc-metastore/src"
+  dest: "/owl-bot-staging/java-dataproc-metastore/$1/google-cloud-dataproc-metastore/src"
 
 api-name: metastore

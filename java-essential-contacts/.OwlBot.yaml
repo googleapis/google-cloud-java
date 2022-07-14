@@ -21,12 +21,12 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/essentialcontacts/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-essential-contacts-$1/src"
+  dest: "/owl-bot-staging/java-essential-contacts/$1/proto-google-cloud-essential-contacts-$1/src"
 - source: "/google/cloud/essentialcontacts/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-essential-contacts-$1/src"
+  dest: "/owl-bot-staging/java-essential-contacts/$1/grpc-google-cloud-essential-contacts-$1/src"
 - source: "/google/cloud/essentialcontacts/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-essential-contacts/src"
+  dest: "/owl-bot-staging/java-essential-contacts/$1/google-cloud-essential-contacts/src"
 - source: "/google/cloud/essentialcontacts/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-essential-contacts/$1/samples/snippets/generated"
 
 api-name: essentialcontacts

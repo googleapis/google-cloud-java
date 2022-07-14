@@ -21,12 +21,12 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/mediatranslation/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-mediatranslation-$1/src"
+  dest: "/owl-bot-staging/java-mediatranslation/$1/proto-google-cloud-mediatranslation-$1/src"
 - source: "/google/cloud/mediatranslation/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-mediatranslation-$1/src"
+  dest: "/owl-bot-staging/java-mediatranslation/$1/grpc-google-cloud-mediatranslation-$1/src"
 - source: "/google/cloud/mediatranslation/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-mediatranslation/src"
+  dest: "/owl-bot-staging/java-mediatranslation/$1/google-cloud-mediatranslation/src"
 - source: "/google/cloud/mediatranslation/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-mediatranslation/$1/samples/snippets/generated"
 
 api-name: mediatranslation
