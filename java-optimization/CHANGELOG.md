@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/googleapis/java-optimization/compare/v1.1.0...v1.1.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-optimization/issues/1485)) ([#65](https://github.com/googleapis/java-optimization/issues/65)) ([ddc12cc](https://github.com/googleapis/java-optimization/commit/ddc12cc45b398828160528e1833201bb3af05649))
+
 ## [1.1.0](https://github.com/googleapis/java-optimization/compare/v1.0.0...v1.1.0) (2022-07-01)
 
 
