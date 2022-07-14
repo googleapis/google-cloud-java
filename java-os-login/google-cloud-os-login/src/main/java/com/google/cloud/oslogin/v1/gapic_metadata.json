@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.oslogin.v1",
+  "libraryPackage": "com.google.cloud.oslogin.v1",
+  "services": {
+    "OsLoginService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OsLoginServiceClient",
+          "rpcs": {
+            "DeletePosixAccount": {
+              "methods": ["deletePosixAccount", "deletePosixAccount", "deletePosixAccount", "deletePosixAccountCallable"]
+            },
+            "DeleteSshPublicKey": {
+              "methods": ["deleteSshPublicKey", "deleteSshPublicKey", "deleteSshPublicKey", "deleteSshPublicKeyCallable"]
+            },
+            "GetLoginProfile": {
+              "methods": ["getLoginProfile", "getLoginProfile", "getLoginProfile", "getLoginProfileCallable"]
+            },
+            "GetSshPublicKey": {
+              "methods": ["getSshPublicKey", "getSshPublicKey", "getSshPublicKey", "getSshPublicKeyCallable"]
+            },
+            "ImportSshPublicKey": {
+              "methods": ["importSshPublicKey", "importSshPublicKey", "importSshPublicKey", "importSshPublicKey", "importSshPublicKey", "importSshPublicKeyCallable"]
+            },
+            "UpdateSshPublicKey": {
+              "methods": ["updateSshPublicKey", "updateSshPublicKey", "updateSshPublicKey", "updateSshPublicKey", "updateSshPublicKey", "updateSshPublicKeyCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
