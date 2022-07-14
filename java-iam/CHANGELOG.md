@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/googleapis/java-iam/compare/v1.5.1...v1.5.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-iam/issues/1485)) ([#381](https://github.com/googleapis/java-iam/issues/381)) ([436496a](https://github.com/googleapis/java-iam/commit/436496a0c8d710bca7df3bf3d1dd96ce2d8099a8))
+
 ## [1.5.1](https://github.com/googleapis/java-iam/compare/v1.5.0...v1.5.1) (2022-07-12)
 
 
