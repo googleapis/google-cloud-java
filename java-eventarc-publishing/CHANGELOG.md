@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/googleapis/java-eventarc-publishing/compare/v0.3.0...v0.3.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-eventarc-publishing/issues/1485)) ([#97](https://github.com/googleapis/java-eventarc-publishing/issues/97)) ([2134846](https://github.com/googleapis/java-eventarc-publishing/commit/2134846f9d13484eb31a4d1647bdbc895458d8ea))
+
 ## [0.3.0](https://github.com/googleapis/java-eventarc-publishing/compare/v0.2.1...v0.3.0) (2022-06-30)
 
 
