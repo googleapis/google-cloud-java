@@ -1,0 +1,16 @@
+{
+  "api_shortname": "certificatemanager",
+  "name_pretty": "Certificate Manager",
+  "product_documentation": "https://cloud.google.com/certificate-manager/docs",
+  "api_description": "lets you acquire and manage TLS (SSL) certificates for use with Cloud Load Balancing.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-certificate-manager/latest/index.html",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-certificate-manager",
+  "repo_short": "java-certificate-manager",
+  "distribution_name": "com.google.cloud:google-cloud-certificate-manager",
+  "api_id": "certificate-manager.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
