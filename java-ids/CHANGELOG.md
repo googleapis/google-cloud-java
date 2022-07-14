@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/googleapis/java-ids/compare/v1.2.0...v1.2.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-ids/issues/1485)) ([#118](https://github.com/googleapis/java-ids/issues/118)) ([0ef6af7](https://github.com/googleapis/java-ids/commit/0ef6af79389382569fe1a26296e14c597c255fbe))
+
 ## [1.2.0](https://github.com/googleapis/java-ids/compare/v1.1.1...v1.2.0) (2022-07-01)
 
 
