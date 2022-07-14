@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.1](https://github.com/googleapis/java-recommender/compare/v2.5.0...v2.5.1) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-recommender/issues/1485)) ([#787](https://github.com/googleapis/java-recommender/issues/787)) ([5f5c482](https://github.com/googleapis/java-recommender/commit/5f5c482648c97bf70261db7e7c4af89058f55050))
+
 ## [2.5.0](https://github.com/googleapis/java-recommender/compare/v2.4.1...v2.5.0) (2022-07-01)
 
 
