@@ -31,46 +31,52 @@ pushd $(dirname "$0")/../../
 python3 -m pip install gcp-docuploader
 
 apt-get update
+# install jq to extract field from json file
 apt-get install -y jq
 
 # compile all packages
 #mvn clean install -B -q -DskipTests -Dcheckstyle.skip -Denforcer.skip=true -T 1C
 
+# Retrieve list of modules from aggregator pom
 modules=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
+excluded_modules=('CoverageAggregator' 'google-cloud-gapic-bom')
+
 for module in $modules
 do
-  cd $module
-  NAME=$(jq -r '.distribution_name' .repo-metadata.json | cut -d ':' -f 2)
-  # Hard code version for now since SNAPSHOT versions won't be generated
-  VERSION="104.0.0"
-#  VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3)
-  echo "${NAME}-${VERSION}"
+  # Proceed if module is not excluded
+  if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
+    cd $module
+    # Extract Cloud RAD module name
+    NAME=$(jq -r '.distribution_name' .repo-metadata.json | cut -d ':' -f 2)
+    # Extract (current) version from versions.txt and remove `-SNAPSHOT`
+    VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3 | sed -i 's/-SNAPSHOT//g')
 
-  # cloud RAD generation
-  mvn clean javadoc:aggregate -B -q -P docFX-pipelineTest
-  # include CHANGELOG
-  cp CHANGELOG.md target/docfx-yml/history.md
+    # cloud RAD generation
+    mvn clean javadoc:aggregate -B -q -P docFX-pipelineTest
+    # include CHANGELOG
+    cp CHANGELOG.md target/docfx-yml/history.md
 
-  cd target/docfx-yml
+    cd target/docfx-yml
 
-  # create metadata
-  python3 -m docuploader create-metadata \
-   --name ${NAME} \
-   --version ${VERSION} \
-   --xrefs devsite://java/gax \
-   --xrefs devsite://java/google-cloud-core \
-   --xrefs devsite://java/api-common \
-   --xrefs devsite://java/proto-google-common-protos \
-   --xrefs devsite://java/google-api-client \
-   --xrefs devsite://java/google-http-client \
-   --xrefs devsite://java/protobuf \
-   --language java
+    # create metadata
+    python3 -m docuploader create-metadata \
+     --name ${NAME} \
+     --version ${VERSION} \
+     --xrefs devsite://java/gax \
+     --xrefs devsite://java/google-cloud-core \
+     --xrefs devsite://java/api-common \
+     --xrefs devsite://java/proto-google-common-protos \
+     --xrefs devsite://java/google-api-client \
+     --xrefs devsite://java/google-http-client \
+     --xrefs devsite://java/protobuf \
+     --language java
 
-  # upload yml to production bucket
-  python3 -m docuploader upload . \
-   --credentials ${CREDENTIALS} \
-   --staging-bucket ${STAGING_BUCKET_V2} \
-   --destination-prefix docfx
+    # upload yml to production bucket
+    python3 -m docuploader upload . \
+     --credentials ${CREDENTIALS} \
+     --staging-bucket ${STAGING_BUCKET_V2} \
+     --destination-prefix docfx
 
-  cd ../../..
+    cd ../../..
+  fi
 done
