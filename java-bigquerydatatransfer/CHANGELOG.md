@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.2](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.3.1...v2.3.2) (2022-07-13)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-bigquerydatatransfer/issues/1485)) ([#1417](https://github.com/googleapis/java-bigquerydatatransfer/issues/1417)) ([a58f433](https://github.com/googleapis/java-bigquerydatatransfer/commit/a58f433f7d8a8107aad7b94d19580168baefa1c7))
+
 ## [2.3.1](https://github.com/googleapis/java-bigquerydatatransfer/compare/v2.3.0...v2.3.1) (2022-07-11)
 
 
