@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.assuredworkloads.v1beta1",
+  "libraryPackage": "com.google.cloud.assuredworkloads.v1beta1",
+  "services": {
+    "AssuredWorkloadsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AssuredWorkloadsServiceClient",
+          "rpcs": {
+            "CreateWorkload": {
+              "methods": ["createWorkloadAsync", "createWorkloadAsync", "createWorkloadAsync", "createWorkloadOperationCallable", "createWorkloadCallable"]
+            },
+            "DeleteWorkload": {
+              "methods": ["deleteWorkload", "deleteWorkload", "deleteWorkload", "deleteWorkloadCallable"]
+            },
+            "GetWorkload": {
+              "methods": ["getWorkload", "getWorkload", "getWorkload", "getWorkloadCallable"]
+            },
+            "ListWorkloads": {
+              "methods": ["listWorkloads", "listWorkloads", "listWorkloads", "listWorkloadsPagedCallable", "listWorkloadsCallable"]
+            },
+            "UpdateWorkload": {
+              "methods": ["updateWorkload", "updateWorkload", "updateWorkloadCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
