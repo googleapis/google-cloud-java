@@ -50,9 +50,10 @@ do
     NAME=$(jq -r '.distribution_name' .repo-metadata.json | cut -d ':' -f 2)
     # Extract (current) version from versions.txt and remove `-SNAPSHOT`
     VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3 | sed -e 's/-SNAPSHOT//g')
+    echo "Running for ${NAME}-${VERSION}"
 
     # cloud RAD generation
-    mvn clean javadoc:aggregate -B -q -P docFX-pipelineTest
+    mvn clean javadoc:aggregate -B -P docFX-pipelineTest
     # include CHANGELOG
     cp CHANGELOG.md target/docfx-yml/history.md
 
