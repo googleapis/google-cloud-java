@@ -261,10 +261,10 @@ public final class TraceProto {
       "ING_VPC\020\001\022\017\n\013VPN_GATEWAY\020\002\022\020\n\014INTERCONNE" +
       "CT\020\003\022\016\n\nGKE_MASTER\020\004\022\"\n\036IMPORTED_CUSTOM_" +
       "ROUTE_NEXT_HOP\020\005\022\026\n\022CLOUD_SQL_INSTANCE\020\006" +
-      "\"\214\004\n\tAbortInfo\022F\n\005cause\030\001 \001(\01627.google.c" +
+      "\"\235\004\n\tAbortInfo\022F\n\005cause\030\001 \001(\01627.google.c" +
       "loud.networkmanagement.v1beta1.AbortInfo" +
       ".Cause\022\024\n\014resource_uri\030\002 \001(\t\022#\n\033projects" +
-      "_missing_permission\030\003 \003(\t\"\373\002\n\005Cause\022\025\n\021C" +
+      "_missing_permission\030\003 \003(\t\"\214\003\n\005Cause\022\025\n\021C" +
       "AUSE_UNSPECIFIED\020\000\022\023\n\017UNKNOWN_NETWORK\020\001\022" +
       "\016\n\nUNKNOWN_IP\020\002\022\023\n\017UNKNOWN_PROJECT\020\003\022\025\n\021" +
       "PERMISSION_DENIED\020\004\022\026\n\022NO_SOURCE_LOCATIO" +
@@ -274,40 +274,40 @@ public final class TraceProto {
       "RCE_ENDPOINT_NOT_FOUND\020\013\022\035\n\031MISMATCHED_S" +
       "OURCE_NETWORK\020\014\022\"\n\036DESTINATION_ENDPOINT_" +
       "NOT_FOUND\020\r\022\"\n\036MISMATCHED_DESTINATION_NE" +
-      "TWORK\020\016\"\237\006\n\010DropInfo\022E\n\005cause\030\001 \001(\01626.go" +
-      "ogle.cloud.networkmanagement.v1beta1.Dro" +
-      "pInfo.Cause\022\024\n\014resource_uri\030\002 \001(\t\"\265\005\n\005Ca" +
-      "use\022\025\n\021CAUSE_UNSPECIFIED\020\000\022\034\n\030UNKNOWN_EX" +
-      "TERNAL_ADDRESS\020\001\022\031\n\025FOREIGN_IP_DISALLOWE" +
-      "D\020\002\022\021\n\rFIREWALL_RULE\020\003\022\014\n\010NO_ROUTE\020\004\022\023\n\017" +
-      "ROUTE_BLACKHOLE\020\005\022\027\n\023ROUTE_WRONG_NETWORK" +
-      "\020\006\022\037\n\033PRIVATE_TRAFFIC_TO_INTERNET\020\007\022$\n P" +
-      "RIVATE_GOOGLE_ACCESS_DISALLOWED\020\010\022\027\n\023NO_" +
-      "EXTERNAL_ADDRESS\020\t\022\034\n\030UNKNOWN_INTERNAL_A" +
-      "DDRESS\020\n\022\034\n\030FORWARDING_RULE_MISMATCH\020\013\022 " +
-      "\n\034FORWARDING_RULE_NO_INSTANCES\020\014\0228\n4FIRE" +
-      "WALL_BLOCKING_LOAD_BALANCER_BACKEND_HEAL" +
-      "TH_CHECK\020\r\022\030\n\024INSTANCE_NOT_RUNNING\020\016\022\030\n\024" +
-      "TRAFFIC_TYPE_BLOCKED\020\017\022\"\n\036GKE_MASTER_UNA" +
-      "UTHORIZED_ACCESS\020\020\022*\n&CLOUD_SQL_INSTANCE" +
-      "_UNAUTHORIZED_ACCESS\020\021\022\036\n\032DROPPED_INSIDE" +
-      "_GKE_SERVICE\020\022\022$\n DROPPED_INSIDE_CLOUD_S" +
-      "QL_SERVICE\020\023\022%\n!GOOGLE_MANAGED_SERVICE_N" +
-      "O_PEERING\020\024\022$\n CLOUD_SQL_INSTANCE_NO_IP_" +
-      "ADDRESS\020\025\"k\n\rGKEMasterInfo\022\023\n\013cluster_ur" +
-      "i\030\002 \001(\t\022\033\n\023cluster_network_uri\030\004 \001(\t\022\023\n\013" +
-      "internal_ip\030\005 \001(\t\022\023\n\013external_ip\030\006 \001(\t\"\210" +
-      "\001\n\024CloudSQLInstanceInfo\022\024\n\014display_name\030" +
-      "\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022\023\n\013network_uri\030\004 \001(\t\022" +
-      "\023\n\013internal_ip\030\005 \001(\t\022\023\n\013external_ip\030\006 \001(" +
-      "\t\022\016\n\006region\030\007 \001(\tB\221\002\n*com.google.cloud.n" +
-      "etworkmanagement.v1beta1B\nTraceProtoP\001ZW" +
-      "google.golang.org/genproto/googleapis/cl" +
-      "oud/networkmanagement/v1beta1;networkman" +
-      "agement\252\002&Google.Cloud.NetworkManagement" +
-      ".V1Beta1\312\002&Google\\Cloud\\NetworkManagemen" +
-      "t\\V1beta1\352\002)Google::Cloud::NetworkManage" +
-      "ment::V1beta1b\006proto3"
+      "TWORK\020\016\022\017\n\013UNSUPPORTED\020\017\"\237\006\n\010DropInfo\022E\n" +
+      "\005cause\030\001 \001(\01626.google.cloud.networkmanag" +
+      "ement.v1beta1.DropInfo.Cause\022\024\n\014resource" +
+      "_uri\030\002 \001(\t\"\265\005\n\005Cause\022\025\n\021CAUSE_UNSPECIFIE" +
+      "D\020\000\022\034\n\030UNKNOWN_EXTERNAL_ADDRESS\020\001\022\031\n\025FOR" +
+      "EIGN_IP_DISALLOWED\020\002\022\021\n\rFIREWALL_RULE\020\003\022" +
+      "\014\n\010NO_ROUTE\020\004\022\023\n\017ROUTE_BLACKHOLE\020\005\022\027\n\023RO" +
+      "UTE_WRONG_NETWORK\020\006\022\037\n\033PRIVATE_TRAFFIC_T" +
+      "O_INTERNET\020\007\022$\n PRIVATE_GOOGLE_ACCESS_DI" +
+      "SALLOWED\020\010\022\027\n\023NO_EXTERNAL_ADDRESS\020\t\022\034\n\030U" +
+      "NKNOWN_INTERNAL_ADDRESS\020\n\022\034\n\030FORWARDING_" +
+      "RULE_MISMATCH\020\013\022 \n\034FORWARDING_RULE_NO_IN" +
+      "STANCES\020\014\0228\n4FIREWALL_BLOCKING_LOAD_BALA" +
+      "NCER_BACKEND_HEALTH_CHECK\020\r\022\030\n\024INSTANCE_" +
+      "NOT_RUNNING\020\016\022\030\n\024TRAFFIC_TYPE_BLOCKED\020\017\022" +
+      "\"\n\036GKE_MASTER_UNAUTHORIZED_ACCESS\020\020\022*\n&C" +
+      "LOUD_SQL_INSTANCE_UNAUTHORIZED_ACCESS\020\021\022" +
+      "\036\n\032DROPPED_INSIDE_GKE_SERVICE\020\022\022$\n DROPP" +
+      "ED_INSIDE_CLOUD_SQL_SERVICE\020\023\022%\n!GOOGLE_" +
+      "MANAGED_SERVICE_NO_PEERING\020\024\022$\n CLOUD_SQ" +
+      "L_INSTANCE_NO_IP_ADDRESS\020\025\"k\n\rGKEMasterI" +
+      "nfo\022\023\n\013cluster_uri\030\002 \001(\t\022\033\n\023cluster_netw" +
+      "ork_uri\030\004 \001(\t\022\023\n\013internal_ip\030\005 \001(\t\022\023\n\013ex" +
+      "ternal_ip\030\006 \001(\t\"\210\001\n\024CloudSQLInstanceInfo" +
+      "\022\024\n\014display_name\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022\023\n\013n" +
+      "etwork_uri\030\004 \001(\t\022\023\n\013internal_ip\030\005 \001(\t\022\023\n" +
+      "\013external_ip\030\006 \001(\t\022\016\n\006region\030\007 \001(\tB\221\002\n*c" +
+      "om.google.cloud.networkmanagement.v1beta" +
+      "1B\nTraceProtoP\001ZWgoogle.golang.org/genpr" +
+      "oto/googleapis/cloud/networkmanagement/v" +
+      "1beta1;networkmanagement\252\002&Google.Cloud." +
+      "NetworkManagement.V1Beta1\312\002&Google\\Cloud" +
+      "\\NetworkManagement\\V1beta1\352\002)Google::Clo" +
+      "ud::NetworkManagement::V1beta1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

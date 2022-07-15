@@ -258,6 +258,14 @@ private static final long serialVersionUID = 0L;
      * <code>MISMATCHED_DESTINATION_NETWORK = 14;</code>
      */
     MISMATCHED_DESTINATION_NETWORK(14),
+    /**
+     * <pre>
+     * Aborted because the test scenario is not supported.
+     * </pre>
+     *
+     * <code>UNSUPPORTED = 15;</code>
+     */
+    UNSUPPORTED(15),
     UNRECOGNIZED(-1),
     ;
 
@@ -396,6 +404,14 @@ private static final long serialVersionUID = 0L;
      * <code>MISMATCHED_DESTINATION_NETWORK = 14;</code>
      */
     public static final int MISMATCHED_DESTINATION_NETWORK_VALUE = 14;
+    /**
+     * <pre>
+     * Aborted because the test scenario is not supported.
+     * </pre>
+     *
+     * <code>UNSUPPORTED = 15;</code>
+     */
+    public static final int UNSUPPORTED_VALUE = 15;
 
 
     public final int getNumber() {
@@ -437,6 +453,7 @@ private static final long serialVersionUID = 0L;
         case 12: return MISMATCHED_SOURCE_NETWORK;
         case 13: return DESTINATION_ENDPOINT_NOT_FOUND;
         case 14: return MISMATCHED_DESTINATION_NETWORK;
+        case 15: return UNSUPPORTED;
         default: return null;
       }
     }
