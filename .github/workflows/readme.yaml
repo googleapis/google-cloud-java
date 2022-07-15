@@ -30,7 +30,7 @@ jobs:
     - run: python3 -m pip install requests
     - run: python3 generate-readme.py
     - run: |
-        git config user.email "suztomo@users.noreply.github.com"
+        git config user.email "suztomo@google.com"
         git config user.name "Tomo Suzuki"        
         git checkout -b update-readme
         git add README.md
