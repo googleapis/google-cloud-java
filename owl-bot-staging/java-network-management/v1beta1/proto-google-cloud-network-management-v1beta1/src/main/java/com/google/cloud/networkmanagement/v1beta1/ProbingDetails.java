@@ -128,6 +128,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 74: {
+            com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.Builder subBuilder = null;
+            if (destinationEgressLocation_ != null) {
+              subBuilder = destinationEgressLocation_.toBuilder();
+            }
+            destinationEgressLocation_ = input.readMessage(com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(destinationEgressLocation_);
+              destinationEgressLocation_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -496,6 +509,622 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingAbortCause)
   }
 
+  public interface EdgeLocationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Name of the metropolitan area.
+     * </pre>
+     *
+     * <code>string metropolitan_area = 1;</code>
+     * @return The metropolitanArea.
+     */
+    java.lang.String getMetropolitanArea();
+    /**
+     * <pre>
+     * Name of the metropolitan area.
+     * </pre>
+     *
+     * <code>string metropolitan_area = 1;</code>
+     * @return The bytes for metropolitanArea.
+     */
+    com.google.protobuf.ByteString
+        getMetropolitanAreaBytes();
+  }
+  /**
+   * <pre>
+   * Representation of a network edge location as per
+   * https://cloud.google.com/vpc/docs/edge-locations.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation}
+   */
+  public static final class EdgeLocation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation)
+      EdgeLocationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use EdgeLocation.newBuilder() to construct.
+    private EdgeLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private EdgeLocation() {
+      metropolitanArea_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new EdgeLocation();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private EdgeLocation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              metropolitanArea_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.cloud.networkmanagement.v1beta1.TestOuterClass.internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_EdgeLocation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.networkmanagement.v1beta1.TestOuterClass.internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_EdgeLocation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.class, com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.Builder.class);
+    }
+
+    public static final int METROPOLITAN_AREA_FIELD_NUMBER = 1;
+    private volatile java.lang.Object metropolitanArea_;
+    /**
+     * <pre>
+     * Name of the metropolitan area.
+     * </pre>
+     *
+     * <code>string metropolitan_area = 1;</code>
+     * @return The metropolitanArea.
+     */
+    @java.lang.Override
+    public java.lang.String getMetropolitanArea() {
+      java.lang.Object ref = metropolitanArea_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metropolitanArea_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Name of the metropolitan area.
+     * </pre>
+     *
+     * <code>string metropolitan_area = 1;</code>
+     * @return The bytes for metropolitanArea.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMetropolitanAreaBytes() {
+      java.lang.Object ref = metropolitanArea_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        metropolitanArea_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metropolitanArea_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metropolitanArea_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metropolitanArea_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metropolitanArea_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation other = (com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation) obj;
+
+      if (!getMetropolitanArea()
+          .equals(other.getMetropolitanArea())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + METROPOLITAN_AREA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetropolitanArea().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Representation of a network edge location as per
+     * https://cloud.google.com/vpc/docs/edge-locations.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation)
+        com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.cloud.networkmanagement.v1beta1.TestOuterClass.internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_EdgeLocation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.networkmanagement.v1beta1.TestOuterClass.internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_EdgeLocation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.class, com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.Builder.class);
+      }
+
+      // Construct using com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        metropolitanArea_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.cloud.networkmanagement.v1beta1.TestOuterClass.internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_EdgeLocation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation getDefaultInstanceForType() {
+        return com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation build() {
+        com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation buildPartial() {
+        com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation result = new com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation(this);
+        result.metropolitanArea_ = metropolitanArea_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation) {
+          return mergeFrom((com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation other) {
+        if (other == com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.getDefaultInstance()) return this;
+        if (!other.getMetropolitanArea().isEmpty()) {
+          metropolitanArea_ = other.metropolitanArea_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object metropolitanArea_ = "";
+      /**
+       * <pre>
+       * Name of the metropolitan area.
+       * </pre>
+       *
+       * <code>string metropolitan_area = 1;</code>
+       * @return The metropolitanArea.
+       */
+      public java.lang.String getMetropolitanArea() {
+        java.lang.Object ref = metropolitanArea_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          metropolitanArea_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Name of the metropolitan area.
+       * </pre>
+       *
+       * <code>string metropolitan_area = 1;</code>
+       * @return The bytes for metropolitanArea.
+       */
+      public com.google.protobuf.ByteString
+          getMetropolitanAreaBytes() {
+        java.lang.Object ref = metropolitanArea_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          metropolitanArea_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Name of the metropolitan area.
+       * </pre>
+       *
+       * <code>string metropolitan_area = 1;</code>
+       * @param value The metropolitanArea to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetropolitanArea(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        metropolitanArea_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Name of the metropolitan area.
+       * </pre>
+       *
+       * <code>string metropolitan_area = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMetropolitanArea() {
+        
+        metropolitanArea_ = getDefaultInstance().getMetropolitanArea();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Name of the metropolitan area.
+       * </pre>
+       *
+       * <code>string metropolitan_area = 1;</code>
+       * @param value The bytes for metropolitanArea to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMetropolitanAreaBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        metropolitanArea_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation)
+    private static final com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation();
+    }
+
+    public static com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EdgeLocation>
+        PARSER = new com.google.protobuf.AbstractParser<EdgeLocation>() {
+      @java.lang.Override
+      public EdgeLocation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new EdgeLocation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<EdgeLocation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EdgeLocation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public static final int RESULT_FIELD_NUMBER = 1;
   private int result_;
   /**
@@ -738,6 +1367,59 @@ private static final long serialVersionUID = 0L;
     return getProbingLatency();
   }
 
+  public static final int DESTINATION_EGRESS_LOCATION_FIELD_NUMBER = 9;
+  private com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destinationEgressLocation_;
+  /**
+   * <pre>
+   * The EdgeLocation from which a packet destined for/originating from the
+   * internet will egress/ingress the Google network.
+   * This will only be populated for a connectivity test which has an internet
+   * destination/source address.
+   * The absence of this field *must not* be used as an indication that the
+   * destination/source is part of the Google network.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+   * @return Whether the destinationEgressLocation field is set.
+   */
+  @java.lang.Override
+  public boolean hasDestinationEgressLocation() {
+    return destinationEgressLocation_ != null;
+  }
+  /**
+   * <pre>
+   * The EdgeLocation from which a packet destined for/originating from the
+   * internet will egress/ingress the Google network.
+   * This will only be populated for a connectivity test which has an internet
+   * destination/source address.
+   * The absence of this field *must not* be used as an indication that the
+   * destination/source is part of the Google network.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+   * @return The destinationEgressLocation.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation getDestinationEgressLocation() {
+    return destinationEgressLocation_ == null ? com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.getDefaultInstance() : destinationEgressLocation_;
+  }
+  /**
+   * <pre>
+   * The EdgeLocation from which a packet destined for/originating from the
+   * internet will egress/ingress the Google network.
+   * This will only be populated for a connectivity test which has an internet
+   * destination/source address.
+   * The absence of this field *must not* be used as an indication that the
+   * destination/source is part of the Google network.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocationOrBuilder getDestinationEgressLocationOrBuilder() {
+    return getDestinationEgressLocation();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -775,6 +1457,9 @@ private static final long serialVersionUID = 0L;
     }
     if (probingLatency_ != null) {
       output.writeMessage(8, getProbingLatency());
+    }
+    if (destinationEgressLocation_ != null) {
+      output.writeMessage(9, getDestinationEgressLocation());
     }
     unknownFields.writeTo(output);
   }
@@ -817,6 +1502,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getProbingLatency());
     }
+    if (destinationEgressLocation_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, getDestinationEgressLocation());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -858,6 +1547,11 @@ private static final long serialVersionUID = 0L;
       if (!getProbingLatency()
           .equals(other.getProbingLatency())) return false;
     }
+    if (hasDestinationEgressLocation() != other.hasDestinationEgressLocation()) return false;
+    if (hasDestinationEgressLocation()) {
+      if (!getDestinationEgressLocation()
+          .equals(other.getDestinationEgressLocation())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -892,6 +1586,10 @@ private static final long serialVersionUID = 0L;
     if (hasProbingLatency()) {
       hash = (37 * hash) + PROBING_LATENCY_FIELD_NUMBER;
       hash = (53 * hash) + getProbingLatency().hashCode();
+    }
+    if (hasDestinationEgressLocation()) {
+      hash = (37 * hash) + DESTINATION_EGRESS_LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDestinationEgressLocation().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1062,6 +1760,12 @@ private static final long serialVersionUID = 0L;
         probingLatency_ = null;
         probingLatencyBuilder_ = null;
       }
+      if (destinationEgressLocationBuilder_ == null) {
+        destinationEgressLocation_ = null;
+      } else {
+        destinationEgressLocation_ = null;
+        destinationEgressLocationBuilder_ = null;
+      }
       return this;
     }
 
@@ -1111,6 +1815,11 @@ private static final long serialVersionUID = 0L;
         result.probingLatency_ = probingLatency_;
       } else {
         result.probingLatency_ = probingLatencyBuilder_.build();
+      }
+      if (destinationEgressLocationBuilder_ == null) {
+        result.destinationEgressLocation_ = destinationEgressLocation_;
+      } else {
+        result.destinationEgressLocation_ = destinationEgressLocationBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1183,6 +1892,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasProbingLatency()) {
         mergeProbingLatency(other.getProbingLatency());
+      }
+      if (other.hasDestinationEgressLocation()) {
+        mergeDestinationEgressLocation(other.getDestinationEgressLocation());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2083,6 +2795,206 @@ private static final long serialVersionUID = 0L;
         probingLatency_ = null;
       }
       return probingLatencyBuilder_;
+    }
+
+    private com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destinationEgressLocation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation, com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.Builder, com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocationOrBuilder> destinationEgressLocationBuilder_;
+    /**
+     * <pre>
+     * The EdgeLocation from which a packet destined for/originating from the
+     * internet will egress/ingress the Google network.
+     * This will only be populated for a connectivity test which has an internet
+     * destination/source address.
+     * The absence of this field *must not* be used as an indication that the
+     * destination/source is part of the Google network.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+     * @return Whether the destinationEgressLocation field is set.
+     */
+    public boolean hasDestinationEgressLocation() {
+      return destinationEgressLocationBuilder_ != null || destinationEgressLocation_ != null;
+    }
+    /**
+     * <pre>
+     * The EdgeLocation from which a packet destined for/originating from the
+     * internet will egress/ingress the Google network.
+     * This will only be populated for a connectivity test which has an internet
+     * destination/source address.
+     * The absence of this field *must not* be used as an indication that the
+     * destination/source is part of the Google network.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+     * @return The destinationEgressLocation.
+     */
+    public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation getDestinationEgressLocation() {
+      if (destinationEgressLocationBuilder_ == null) {
+        return destinationEgressLocation_ == null ? com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.getDefaultInstance() : destinationEgressLocation_;
+      } else {
+        return destinationEgressLocationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The EdgeLocation from which a packet destined for/originating from the
+     * internet will egress/ingress the Google network.
+     * This will only be populated for a connectivity test which has an internet
+     * destination/source address.
+     * The absence of this field *must not* be used as an indication that the
+     * destination/source is part of the Google network.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+     */
+    public Builder setDestinationEgressLocation(com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation value) {
+      if (destinationEgressLocationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        destinationEgressLocation_ = value;
+        onChanged();
+      } else {
+        destinationEgressLocationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The EdgeLocation from which a packet destined for/originating from the
+     * internet will egress/ingress the Google network.
+     * This will only be populated for a connectivity test which has an internet
+     * destination/source address.
+     * The absence of this field *must not* be used as an indication that the
+     * destination/source is part of the Google network.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+     */
+    public Builder setDestinationEgressLocation(
+        com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.Builder builderForValue) {
+      if (destinationEgressLocationBuilder_ == null) {
+        destinationEgressLocation_ = builderForValue.build();
+        onChanged();
+      } else {
+        destinationEgressLocationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The EdgeLocation from which a packet destined for/originating from the
+     * internet will egress/ingress the Google network.
+     * This will only be populated for a connectivity test which has an internet
+     * destination/source address.
+     * The absence of this field *must not* be used as an indication that the
+     * destination/source is part of the Google network.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+     */
+    public Builder mergeDestinationEgressLocation(com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation value) {
+      if (destinationEgressLocationBuilder_ == null) {
+        if (destinationEgressLocation_ != null) {
+          destinationEgressLocation_ =
+            com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.newBuilder(destinationEgressLocation_).mergeFrom(value).buildPartial();
+        } else {
+          destinationEgressLocation_ = value;
+        }
+        onChanged();
+      } else {
+        destinationEgressLocationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The EdgeLocation from which a packet destined for/originating from the
+     * internet will egress/ingress the Google network.
+     * This will only be populated for a connectivity test which has an internet
+     * destination/source address.
+     * The absence of this field *must not* be used as an indication that the
+     * destination/source is part of the Google network.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+     */
+    public Builder clearDestinationEgressLocation() {
+      if (destinationEgressLocationBuilder_ == null) {
+        destinationEgressLocation_ = null;
+        onChanged();
+      } else {
+        destinationEgressLocation_ = null;
+        destinationEgressLocationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The EdgeLocation from which a packet destined for/originating from the
+     * internet will egress/ingress the Google network.
+     * This will only be populated for a connectivity test which has an internet
+     * destination/source address.
+     * The absence of this field *must not* be used as an indication that the
+     * destination/source is part of the Google network.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.Builder getDestinationEgressLocationBuilder() {
+      
+      onChanged();
+      return getDestinationEgressLocationFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The EdgeLocation from which a packet destined for/originating from the
+     * internet will egress/ingress the Google network.
+     * This will only be populated for a connectivity test which has an internet
+     * destination/source address.
+     * The absence of this field *must not* be used as an indication that the
+     * destination/source is part of the Google network.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocationOrBuilder getDestinationEgressLocationOrBuilder() {
+      if (destinationEgressLocationBuilder_ != null) {
+        return destinationEgressLocationBuilder_.getMessageOrBuilder();
+      } else {
+        return destinationEgressLocation_ == null ?
+            com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.getDefaultInstance() : destinationEgressLocation_;
+      }
+    }
+    /**
+     * <pre>
+     * The EdgeLocation from which a packet destined for/originating from the
+     * internet will egress/ingress the Google network.
+     * This will only be populated for a connectivity test which has an internet
+     * destination/source address.
+     * The absence of this field *must not* be used as an indication that the
+     * destination/source is part of the Google network.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation, com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.Builder, com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocationOrBuilder> 
+        getDestinationEgressLocationFieldBuilder() {
+      if (destinationEgressLocationBuilder_ == null) {
+        destinationEgressLocationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation, com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.Builder, com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocationOrBuilder>(
+                getDestinationEgressLocation(),
+                getParentForChildren(),
+                isClean());
+        destinationEgressLocation_ = null;
+      }
+      return destinationEgressLocationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

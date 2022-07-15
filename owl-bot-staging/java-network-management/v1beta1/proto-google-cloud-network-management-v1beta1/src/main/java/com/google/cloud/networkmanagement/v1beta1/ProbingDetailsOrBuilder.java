@@ -178,4 +178,46 @@ public interface ProbingDetailsOrBuilder extends
    * <code>.google.cloud.networkmanagement.v1beta1.LatencyDistribution probing_latency = 8;</code>
    */
   com.google.cloud.networkmanagement.v1beta1.LatencyDistributionOrBuilder getProbingLatencyOrBuilder();
+
+  /**
+   * <pre>
+   * The EdgeLocation from which a packet destined for/originating from the
+   * internet will egress/ingress the Google network.
+   * This will only be populated for a connectivity test which has an internet
+   * destination/source address.
+   * The absence of this field *must not* be used as an indication that the
+   * destination/source is part of the Google network.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+   * @return Whether the destinationEgressLocation field is set.
+   */
+  boolean hasDestinationEgressLocation();
+  /**
+   * <pre>
+   * The EdgeLocation from which a packet destined for/originating from the
+   * internet will egress/ingress the Google network.
+   * This will only be populated for a connectivity test which has an internet
+   * destination/source address.
+   * The absence of this field *must not* be used as an indication that the
+   * destination/source is part of the Google network.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+   * @return The destinationEgressLocation.
+   */
+  com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation getDestinationEgressLocation();
+  /**
+   * <pre>
+   * The EdgeLocation from which a packet destined for/originating from the
+   * internet will egress/ingress the Google network.
+   * This will only be populated for a connectivity test which has an internet
+   * destination/source address.
+   * The absence of this field *must not* be used as an indication that the
+   * destination/source is part of the Google network.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation destination_egress_location = 9;</code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocationOrBuilder getDestinationEgressLocationOrBuilder();
 }

@@ -49,6 +49,11 @@ public final class TestOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_EdgeLocation_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_EdgeLocation_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -60,12 +65,12 @@ public final class TestOuterClass {
     java.lang.String[] descriptorData = {
       "\n>google/cloud/networkmanagement/v1beta1" +
       "/connectivity_test.proto\022&google.cloud.n" +
-      "etworkmanagement.v1beta1\032\037google/api/fie" +
-      "ld_behavior.proto\032\031google/api/resource.p" +
-      "roto\0322google/cloud/networkmanagement/v1b" +
-      "eta1/trace.proto\032\037google/protobuf/timest" +
-      "amp.proto\032\027google/rpc/status.proto\032\034goog" +
-      "le/api/annotations.proto\"\261\006\n\020Connectivit" +
+      "etworkmanagement.v1beta1\032\034google/api/ann" +
+      "otations.proto\032\037google/api/field_behavio" +
+      "r.proto\032\031google/api/resource.proto\0322goog" +
+      "le/cloud/networkmanagement/v1beta1/trace" +
+      ".proto\032\037google/protobuf/timestamp.proto\032" +
+      "\027google/rpc/status.proto\"\261\006\n\020Connectivit" +
       "yTest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\023\n\013description\030" +
       "\002 \001(\t\022E\n\006source\030\003 \001(\01320.google.cloud.net" +
       "workmanagement.v1beta1.EndpointB\003\340A\002\022J\n\013" +
@@ -107,7 +112,7 @@ public final class TestOuterClass {
       "\005\022\026\n\016latency_micros\030\002 \001(\003\"m\n\023LatencyDist" +
       "ribution\022V\n\023latency_percentiles\030\001 \003(\01329." +
       "google.cloud.networkmanagement.v1beta1.L" +
-      "atencyPercentile\"\342\005\n\016ProbingDetails\022T\n\006r" +
+      "atencyPercentile\"\367\006\n\016ProbingDetails\022T\n\006r" +
       "esult\030\001 \001(\0162D.google.cloud.networkmanage" +
       "ment.v1beta1.ProbingDetails.ProbingResul" +
       "t\022/\n\013verify_time\030\002 \001(\0132\032.google.protobuf" +
@@ -120,30 +125,33 @@ public final class TestOuterClass {
       "workmanagement.v1beta1.EndpointInfo\022T\n\017p" +
       "robing_latency\030\010 \001(\0132;.google.cloud.netw" +
       "orkmanagement.v1beta1.LatencyDistributio" +
-      "n\"\200\001\n\rProbingResult\022\036\n\032PROBING_RESULT_UN" +
-      "SPECIFIED\020\000\022\r\n\tREACHABLE\020\001\022\017\n\013UNREACHABL" +
-      "E\020\002\022\035\n\031REACHABILITY_INCONSISTENT\020\003\022\020\n\014UN" +
-      "DETERMINED\020\004\"g\n\021ProbingAbortCause\022#\n\037PRO" +
-      "BING_ABORT_CAUSE_UNSPECIFIED\020\000\022\025\n\021PERMIS" +
-      "SION_DENIED\020\001\022\026\n\022NO_SOURCE_LOCATION\020\002B\225\002" +
-      "\n*com.google.cloud.networkmanagement.v1b" +
-      "eta1B\016TestOuterClassP\001ZWgoogle.golang.or" +
-      "g/genproto/googleapis/cloud/networkmanag" +
-      "ement/v1beta1;networkmanagement\252\002&Google" +
-      ".Cloud.NetworkManagement.V1Beta1\312\002&Googl" +
-      "e\\Cloud\\NetworkManagement\\V1beta1\352\002)Goog" +
-      "le::Cloud::NetworkManagement::V1beta1b\006p" +
-      "roto3"
+      "n\022h\n\033destination_egress_location\030\t \001(\0132C" +
+      ".google.cloud.networkmanagement.v1beta1." +
+      "ProbingDetails.EdgeLocation\032)\n\014EdgeLocat" +
+      "ion\022\031\n\021metropolitan_area\030\001 \001(\t\"\200\001\n\rProbi" +
+      "ngResult\022\036\n\032PROBING_RESULT_UNSPECIFIED\020\000" +
+      "\022\r\n\tREACHABLE\020\001\022\017\n\013UNREACHABLE\020\002\022\035\n\031REAC" +
+      "HABILITY_INCONSISTENT\020\003\022\020\n\014UNDETERMINED\020" +
+      "\004\"g\n\021ProbingAbortCause\022#\n\037PROBING_ABORT_" +
+      "CAUSE_UNSPECIFIED\020\000\022\025\n\021PERMISSION_DENIED" +
+      "\020\001\022\026\n\022NO_SOURCE_LOCATION\020\002B\225\002\n*com.googl" +
+      "e.cloud.networkmanagement.v1beta1B\016TestO" +
+      "uterClassP\001ZWgoogle.golang.org/genproto/" +
+      "googleapis/cloud/networkmanagement/v1bet" +
+      "a1;networkmanagement\252\002&Google.Cloud.Netw" +
+      "orkManagement.V1Beta1\312\002&Google\\Cloud\\Net" +
+      "workManagement\\V1beta1\352\002)Google::Cloud::" +
+      "NetworkManagement::V1beta1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.networkmanagement.v1beta1.TraceProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.rpc.StatusProto.getDescriptor(),
-          com.google.api.AnnotationsProto.getDescriptor(),
         });
     internal_static_google_cloud_networkmanagement_v1beta1_ConnectivityTest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -186,19 +194,25 @@ public final class TestOuterClass {
     internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_descriptor,
-        new java.lang.String[] { "Result", "VerifyTime", "Error", "AbortCause", "SentProbeCount", "SuccessfulProbeCount", "EndpointInfo", "ProbingLatency", });
+        new java.lang.String[] { "Result", "VerifyTime", "Error", "AbortCause", "SentProbeCount", "SuccessfulProbeCount", "EndpointInfo", "ProbingLatency", "DestinationEgressLocation", });
+    internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_EdgeLocation_descriptor =
+      internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_EdgeLocation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_networkmanagement_v1beta1_ProbingDetails_EdgeLocation_descriptor,
+        new java.lang.String[] { "MetropolitanArea", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.networkmanagement.v1beta1.TraceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

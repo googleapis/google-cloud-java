@@ -422,10 +422,10 @@ java.lang.String defaultValue);
 
   /**
    * <pre>
-   * Output only. The probing details of this test from the latest run, present for
-   * applicable tests only. The details are updated when creating a new test,
-   * updating an existing test, or triggering a one-time rerun of an existing
-   * test.
+   * Output only. The probing details of this test from the latest run, present
+   * for applicable tests only. The details are updated when creating a new
+   * test, updating an existing test, or triggering a one-time rerun of an
+   * existing test.
    * </pre>
    *
    * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -434,10 +434,10 @@ java.lang.String defaultValue);
   boolean hasProbingDetails();
   /**
    * <pre>
-   * Output only. The probing details of this test from the latest run, present for
-   * applicable tests only. The details are updated when creating a new test,
-   * updating an existing test, or triggering a one-time rerun of an existing
-   * test.
+   * Output only. The probing details of this test from the latest run, present
+   * for applicable tests only. The details are updated when creating a new
+   * test, updating an existing test, or triggering a one-time rerun of an
+   * existing test.
    * </pre>
    *
    * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -446,10 +446,10 @@ java.lang.String defaultValue);
   com.google.cloud.networkmanagement.v1beta1.ProbingDetails getProbingDetails();
   /**
    * <pre>
-   * Output only. The probing details of this test from the latest run, present for
-   * applicable tests only. The details are updated when creating a new test,
-   * updating an existing test, or triggering a one-time rerun of an existing
-   * test.
+   * Output only. The probing details of this test from the latest run, present
+   * for applicable tests only. The details are updated when creating a new
+   * test, updating an existing test, or triggering a one-time rerun of an
+   * existing test.
    * </pre>
    *
    * <code>.google.cloud.networkmanagement.v1beta1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
