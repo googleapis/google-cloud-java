@@ -18,7 +18,9 @@ package com.google.cloud.dataplex.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -28,9 +30,12 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataplex.v1.stub.DataplexServiceStub;
 import com.google.cloud.dataplex.v1.stub.DataplexServiceStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -41,7 +46,7 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Dataplex service provides data lakes as a service. The primary resources
- * offered by this service are Lakes, Zones and Assets which collectively allow a data adminstrator
+ * offered by this service are Lakes, Zones and Assets which collectively allow a data administrator
  * to organize, manage, secure and catalog data across their organization located across cloud
  * projects in a variety of storage systems including Cloud Storage and BigQuery.
  *
@@ -65,13 +70,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -108,13 +113,29 @@ import javax.annotation.Generated;
  *     DataplexServiceClient.create(dataplexServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * DataplexServiceSettings dataplexServiceSettings =
+ *     DataplexServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             DataplexServiceSettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * DataplexServiceClient dataplexServiceClient =
+ *     DataplexServiceClient.create(dataplexServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @Generated("by gapic-generator-java")
 public class DataplexServiceClient implements BackgroundResource {
   private final DataplexServiceSettings settings;
   private final DataplexServiceStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of DataplexServiceClient with default settings. */
   public static final DataplexServiceClient create() throws IOException {
@@ -146,13 +167,17 @@ public class DataplexServiceClient implements BackgroundResource {
   protected DataplexServiceClient(DataplexServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((DataplexServiceStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected DataplexServiceClient(DataplexServiceStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final DataplexServiceSettings getSettings() {
@@ -167,8 +192,17 @@ public class DataplexServiceClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -195,11 +229,11 @@ public class DataplexServiceClient implements BackgroundResource {
    * @param lakeId Required. Lake identifier. This ID will be used to generate names such as
    *     database and dataset names when publishing metadata to Hive Metastore and BigQuery.
    *     <ul>
-   *       <li>Must contain only lowercase letters, numbers and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be between 1-63 characters.
-   *       <li>Must be unique within the customer project / location.
+   *       <li> Must contain only lowercase letters, numbers and hyphens.
+   *       <li> Must start with a letter.
+   *       <li> Must end with a number or a letter.
+   *       <li> Must be between 1-63 characters.
+   *       <li> Must be unique within the customer project / location.
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -239,11 +273,11 @@ public class DataplexServiceClient implements BackgroundResource {
    * @param lakeId Required. Lake identifier. This ID will be used to generate names such as
    *     database and dataset names when publishing metadata to Hive Metastore and BigQuery.
    *     <ul>
-   *       <li>Must contain only lowercase letters, numbers and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be between 1-63 characters.
-   *       <li>Must be unique within the customer project / location.
+   *       <li> Must contain only lowercase letters, numbers and hyphens.
+   *       <li> Must start with a letter.
+   *       <li> Must end with a number or a letter.
+   *       <li> Must be between 1-63 characters.
+   *       <li> Must be unique within the customer project / location.
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -464,7 +498,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the lake:
-   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteLakeAsync(LakeName name) {
@@ -490,7 +524,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the lake:
-   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteLakeAsync(String name) {
@@ -846,7 +880,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent lake:
-   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLakeActionsPagedResponse listLakeActions(LakeName parent) {
@@ -875,7 +909,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent lake:
-   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListLakeActionsPagedResponse listLakeActions(String parent) {
@@ -1002,12 +1036,12 @@ public class DataplexServiceClient implements BackgroundResource {
    * @param zoneId Required. Zone identifier. This ID will be used to generate names such as
    *     database and dataset names when publishing metadata to Hive Metastore and BigQuery.
    *     <ul>
-   *       <li>Must contain only lowercase letters, numbers and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be between 1-63 characters.
-   *       <li>Must be unique across all lakes from all locations in a project.
-   *       <li>Must not be one of the reserved IDs (i.e. "default", "global-temp")
+   *       <li> Must contain only lowercase letters, numbers and hyphens.
+   *       <li> Must start with a letter.
+   *       <li> Must end with a number or a letter.
+   *       <li> Must be between 1-63 characters.
+   *       <li> Must be unique across all lakes from all locations in a project.
+   *       <li> Must not be one of the reserved IDs (i.e. "default", "global-temp")
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1046,12 +1080,12 @@ public class DataplexServiceClient implements BackgroundResource {
    * @param zoneId Required. Zone identifier. This ID will be used to generate names such as
    *     database and dataset names when publishing metadata to Hive Metastore and BigQuery.
    *     <ul>
-   *       <li>Must contain only lowercase letters, numbers and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be between 1-63 characters.
-   *       <li>Must be unique across all lakes from all locations in a project.
-   *       <li>Must not be one of the reserved IDs (i.e. "default", "global-temp")
+   *       <li> Must contain only lowercase letters, numbers and hyphens.
+   *       <li> Must start with a letter.
+   *       <li> Must end with a number or a letter.
+   *       <li> Must be between 1-63 characters.
+   *       <li> Must be unique across all lakes from all locations in a project.
+   *       <li> Must not be one of the reserved IDs (i.e. "default", "global-temp")
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1803,16 +1837,16 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent zone:
-   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
    * @param asset Required. Asset resource.
    * @param assetId Required. Asset identifier. This ID will be used to generate names such as table
    *     names when publishing metadata to Hive Metastore and BigQuery.
    *     <ul>
-   *       <li>Must contain only lowercase letters, numbers and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be between 1-63 characters.
-   *       <li>Must be unique within the zone.
+   *       <li> Must contain only lowercase letters, numbers and hyphens.
+   *       <li> Must start with a letter.
+   *       <li> Must end with a number or a letter.
+   *       <li> Must be between 1-63 characters.
+   *       <li> Must be unique within the zone.
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1846,16 +1880,16 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent zone:
-   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
    * @param asset Required. Asset resource.
    * @param assetId Required. Asset identifier. This ID will be used to generate names such as table
    *     names when publishing metadata to Hive Metastore and BigQuery.
    *     <ul>
-   *       <li>Must contain only lowercase letters, numbers and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be between 1-63 characters.
-   *       <li>Must be unique within the zone.
+   *       <li> Must contain only lowercase letters, numbers and hyphens.
+   *       <li> Must start with a letter.
+   *       <li> Must end with a number or a letter.
+   *       <li> Must be between 1-63 characters.
+   *       <li> Must be unique within the zone.
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3155,7 +3189,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the task:
-   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Task getTask(TaskName name) {
@@ -3180,7 +3214,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the task:
-   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Task getTask(String name) {
@@ -3601,15 +3635,15 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent lake:
-   *     projects/{project_id}/locations/{location_id}/lakes/{lake_id}
+   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
    * @param environment Required. Environment resource.
    * @param environmentId Required. Environment identifier.
    *     <ul>
-   *       <li>Must contain only lowercase letters, numbers and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must be between 1-63 characters.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be unique within the lake.
+   *       <li> Must contain only lowercase letters, numbers and hyphens.
+   *       <li> Must start with a letter.
+   *       <li> Must be between 1-63 characters.
+   *       <li> Must end with a number or a letter.
+   *       <li> Must be unique within the lake.
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3644,15 +3678,15 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent lake:
-   *     projects/{project_id}/locations/{location_id}/lakes/{lake_id}
+   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
    * @param environment Required. Environment resource.
    * @param environmentId Required. Environment identifier.
    *     <ul>
-   *       <li>Must contain only lowercase letters, numbers and hyphens.
-   *       <li>Must start with a letter.
-   *       <li>Must be between 1-63 characters.
-   *       <li>Must end with a number or a letter.
-   *       <li>Must be unique within the lake.
+   *       <li> Must contain only lowercase letters, numbers and hyphens.
+   *       <li> Must start with a letter.
+   *       <li> Must be between 1-63 characters.
+   *       <li> Must end with a number or a letter.
+   *       <li> Must be unique within the lake.
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3887,7 +3921,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the environment:
-   *     projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`
+   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteEnvironmentAsync(
@@ -3917,7 +3951,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the environment:
-   *     projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`
+   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteEnvironmentAsync(String name) {
@@ -4029,7 +4063,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent lake:
-   *     projects/{project_id}/locations/{location_id}/lakes/{lake_id}
+   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEnvironmentsPagedResponse listEnvironments(LakeName parent) {
@@ -4058,7 +4092,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent lake:
-   *     projects/{project_id}/locations/{location_id}/lakes/{lake_id}
+   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEnvironmentsPagedResponse listEnvironments(String parent) {
@@ -4186,7 +4220,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the environment:
-   *     projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}
+   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Environment getEnvironment(EnvironmentName name) {
@@ -4212,7 +4246,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the environment:
-   *     projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}
+   *     `projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environments/{environment_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Environment getEnvironment(String name) {
@@ -4293,7 +4327,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent environment:
-   *     projects/{project_number}/locations/{location_id}/lakes/{lake_id}/environment/{environment_id}
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/environment/{environment_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSessionsPagedResponse listSessions(EnvironmentName parent) {
@@ -4323,7 +4357,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the parent environment:
-   *     projects/{project_number}/locations/{location_id}/lakes/{lake_id}/environment/{environment_id}
+   *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/environment/{environment_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSessionsPagedResponse listSessions(String parent) {
@@ -4348,6 +4382,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (Session element : dataplexServiceClient.listSessions(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -4379,6 +4414,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Session> future =
    *       dataplexServiceClient.listSessionsPagedCallable().futureCall(request);
@@ -4411,6 +4447,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListSessionsResponse response = dataplexServiceClient.listSessionsCallable().call(request);
@@ -4429,6 +4466,147 @@ public class DataplexServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable() {
     return stub.listSessionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : dataplexServiceClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       dataplexServiceClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response =
+   *         dataplexServiceClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = dataplexServiceClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future = dataplexServiceClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
   }
 
   @Override
@@ -4528,10 +4706,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
   public static class ListLakeActionsPagedResponse
       extends AbstractPagedListResponse<
-          ListLakeActionsRequest,
-          ListActionsResponse,
-          Action,
-          ListLakeActionsPage,
+          ListLakeActionsRequest, ListActionsResponse, Action, ListLakeActionsPage,
           ListLakeActionsFixedSizeCollection> {
 
     public static ApiFuture<ListLakeActionsPagedResponse> createAsync(
@@ -4581,10 +4756,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
   public static class ListLakeActionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListLakeActionsRequest,
-          ListActionsResponse,
-          Action,
-          ListLakeActionsPage,
+          ListLakeActionsRequest, ListActionsResponse, Action, ListLakeActionsPage,
           ListLakeActionsFixedSizeCollection> {
 
     private ListLakeActionsFixedSizeCollection(
@@ -4670,10 +4842,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
   public static class ListZoneActionsPagedResponse
       extends AbstractPagedListResponse<
-          ListZoneActionsRequest,
-          ListActionsResponse,
-          Action,
-          ListZoneActionsPage,
+          ListZoneActionsRequest, ListActionsResponse, Action, ListZoneActionsPage,
           ListZoneActionsFixedSizeCollection> {
 
     public static ApiFuture<ListZoneActionsPagedResponse> createAsync(
@@ -4723,10 +4892,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
   public static class ListZoneActionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListZoneActionsRequest,
-          ListActionsResponse,
-          Action,
-          ListZoneActionsPage,
+          ListZoneActionsRequest, ListActionsResponse, Action, ListZoneActionsPage,
           ListZoneActionsFixedSizeCollection> {
 
     private ListZoneActionsFixedSizeCollection(
@@ -4747,10 +4913,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
   public static class ListAssetsPagedResponse
       extends AbstractPagedListResponse<
-          ListAssetsRequest,
-          ListAssetsResponse,
-          Asset,
-          ListAssetsPage,
+          ListAssetsRequest, ListAssetsResponse, Asset, ListAssetsPage,
           ListAssetsFixedSizeCollection> {
 
     public static ApiFuture<ListAssetsPagedResponse> createAsync(
@@ -4797,10 +4960,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
   public static class ListAssetsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAssetsRequest,
-          ListAssetsResponse,
-          Asset,
-          ListAssetsPage,
+          ListAssetsRequest, ListAssetsResponse, Asset, ListAssetsPage,
           ListAssetsFixedSizeCollection> {
 
     private ListAssetsFixedSizeCollection(List<ListAssetsPage> pages, int collectionSize) {
@@ -4820,10 +4980,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
   public static class ListAssetActionsPagedResponse
       extends AbstractPagedListResponse<
-          ListAssetActionsRequest,
-          ListActionsResponse,
-          Action,
-          ListAssetActionsPage,
+          ListAssetActionsRequest, ListActionsResponse, Action, ListAssetActionsPage,
           ListAssetActionsFixedSizeCollection> {
 
     public static ApiFuture<ListAssetActionsPagedResponse> createAsync(
@@ -4873,10 +5030,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
   public static class ListAssetActionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListAssetActionsRequest,
-          ListActionsResponse,
-          Action,
-          ListAssetActionsPage,
+          ListAssetActionsRequest, ListActionsResponse, Action, ListAssetActionsPage,
           ListAssetActionsFixedSizeCollection> {
 
     private ListAssetActionsFixedSizeCollection(
@@ -5025,10 +5179,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
   public static class ListEnvironmentsPagedResponse
       extends AbstractPagedListResponse<
-          ListEnvironmentsRequest,
-          ListEnvironmentsResponse,
-          Environment,
-          ListEnvironmentsPage,
+          ListEnvironmentsRequest, ListEnvironmentsResponse, Environment, ListEnvironmentsPage,
           ListEnvironmentsFixedSizeCollection> {
 
     public static ApiFuture<ListEnvironmentsPagedResponse> createAsync(
@@ -5078,10 +5229,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
   public static class ListEnvironmentsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListEnvironmentsRequest,
-          ListEnvironmentsResponse,
-          Environment,
-          ListEnvironmentsPage,
+          ListEnvironmentsRequest, ListEnvironmentsResponse, Environment, ListEnvironmentsPage,
           ListEnvironmentsFixedSizeCollection> {
 
     private ListEnvironmentsFixedSizeCollection(
@@ -5102,10 +5250,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
   public static class ListSessionsPagedResponse
       extends AbstractPagedListResponse<
-          ListSessionsRequest,
-          ListSessionsResponse,
-          Session,
-          ListSessionsPage,
+          ListSessionsRequest, ListSessionsResponse, Session, ListSessionsPage,
           ListSessionsFixedSizeCollection> {
 
     public static ApiFuture<ListSessionsPagedResponse> createAsync(
@@ -5154,10 +5299,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
   public static class ListSessionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListSessionsRequest,
-          ListSessionsResponse,
-          Session,
-          ListSessionsPage,
+          ListSessionsRequest, ListSessionsResponse, Session, ListSessionsPage,
           ListSessionsFixedSizeCollection> {
 
     private ListSessionsFixedSizeCollection(List<ListSessionsPage> pages, int collectionSize) {
@@ -5172,6 +5314,76 @@ public class DataplexServiceClient implements BackgroundResource {
     protected ListSessionsFixedSizeCollection createCollection(
         List<ListSessionsPage> pages, int collectionSize) {
       return new ListSessionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

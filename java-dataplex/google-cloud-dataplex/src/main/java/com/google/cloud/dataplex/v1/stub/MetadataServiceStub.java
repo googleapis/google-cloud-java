@@ -17,6 +17,7 @@
 package com.google.cloud.dataplex.v1.stub;
 
 import static com.google.cloud.dataplex.v1.MetadataServiceClient.ListEntitiesPagedResponse;
+import static com.google.cloud.dataplex.v1.MetadataServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataplex.v1.MetadataServiceClient.ListPartitionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -34,6 +35,10 @@ import com.google.cloud.dataplex.v1.ListPartitionsRequest;
 import com.google.cloud.dataplex.v1.ListPartitionsResponse;
 import com.google.cloud.dataplex.v1.Partition;
 import com.google.cloud.dataplex.v1.UpdateEntityRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -89,6 +94,19 @@ public abstract class MetadataServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListPartitionsRequest, ListPartitionsResponse> listPartitionsCallable() {
     throw new UnsupportedOperationException("Not implemented: listPartitionsCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

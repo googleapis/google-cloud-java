@@ -15,10 +15,19 @@
 import synthtool as s
 from synthtool.languages import java
 
+print("copying from staging dirs")
 
 for library in s.get_staging_dirs():
     # put any special-case replacements here
-    s.move(library)
+    print("moving " + str(library))
+    s.move(library, destination='java-dataplex')
+    print("moved")
+print("moved from staging dirs")
 
 s.remove_staging_dirs()
+
+print("finished s.remove_staging_dirs")
+
 java.common_templates()
+
+print("finished java.common_templates")

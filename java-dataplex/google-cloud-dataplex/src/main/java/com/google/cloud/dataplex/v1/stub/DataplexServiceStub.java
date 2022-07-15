@@ -22,6 +22,7 @@ import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListEnvironment
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakeActionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLakesPagedResponse;
+import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListSessionsPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListTasksPagedResponse;
 import static com.google.cloud.dataplex.v1.DataplexServiceClient.ListZoneActionsPagedResponse;
@@ -77,6 +78,10 @@ import com.google.cloud.dataplex.v1.UpdateLakeRequest;
 import com.google.cloud.dataplex.v1.UpdateTaskRequest;
 import com.google.cloud.dataplex.v1.UpdateZoneRequest;
 import com.google.cloud.dataplex.v1.Zone;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -92,7 +97,11 @@ import javax.annotation.Generated;
 public abstract class DataplexServiceStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {
-    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
   }
 
   public OperationCallable<CreateLakeRequest, Lake, OperationMetadata>
@@ -344,6 +353,19 @@ public abstract class DataplexServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable() {
     throw new UnsupportedOperationException("Not implemented: listSessionsCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

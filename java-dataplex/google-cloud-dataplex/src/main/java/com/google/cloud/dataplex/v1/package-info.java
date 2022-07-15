@@ -55,7 +55,7 @@
  * <p>======================= DataplexServiceClient =======================
  *
  * <p>Service Description: Dataplex service provides data lakes as a service. The primary resources
- * offered by this service are Lakes, Zones and Assets which collectively allow a data adminstrator
+ * offered by this service are Lakes, Zones and Assets which collectively allow a data administrator
  * to organize, manage, secure and catalog data across their organization located across cloud
  * projects in a variety of storage systems including Cloud Storage and BigQuery.
  *
