@@ -485,7 +485,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string service_account = 8 [deprecated = true];</code>
    * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
-   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=232
+   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=245
    * @return The serviceAccount.
    */
   @java.lang.Override
@@ -508,7 +508,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string service_account = 8 [deprecated = true];</code>
    * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
-   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=232
+   *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=245
    * @return The bytes for serviceAccount.
    */
   @java.lang.Override
@@ -1700,7 +1700,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service_account = 8 [deprecated = true];</code>
      * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
-     *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=232
+     *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=245
      * @return The serviceAccount.
      */
     @java.lang.Deprecated public java.lang.String getServiceAccount() {
@@ -1722,7 +1722,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service_account = 8 [deprecated = true];</code>
      * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
-     *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=232
+     *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=245
      * @return The bytes for serviceAccount.
      */
     @java.lang.Deprecated public com.google.protobuf.ByteString
@@ -1745,7 +1745,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service_account = 8 [deprecated = true];</code>
      * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
-     *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=232
+     *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=245
      * @param value The serviceAccount to set.
      * @return This builder for chaining.
      */
@@ -1766,7 +1766,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service_account = 8 [deprecated = true];</code>
      * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
-     *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=232
+     *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=245
      * @return This builder for chaining.
      */
     @java.lang.Deprecated public Builder clearServiceAccount() {
@@ -1782,7 +1782,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service_account = 8 [deprecated = true];</code>
      * @deprecated google.cloud.networkmanagement.v1beta1.InstanceInfo.service_account is deprecated.
-     *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=232
+     *     See google/cloud/networkmanagement/v1beta1/trace.proto;l=245
      * @param value The bytes for serviceAccount to set.
      * @return This builder for chaining.
      */

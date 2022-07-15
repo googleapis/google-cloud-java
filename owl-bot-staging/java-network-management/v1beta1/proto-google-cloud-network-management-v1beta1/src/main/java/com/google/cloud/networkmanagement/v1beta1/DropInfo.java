@@ -312,6 +312,32 @@ private static final long serialVersionUID = 0L;
      * <code>CLOUD_SQL_INSTANCE_NO_IP_ADDRESS = 21;</code>
      */
     CLOUD_SQL_INSTANCE_NO_IP_ADDRESS(21),
+    /**
+     * <pre>
+     * Packet could be dropped because the Cloud function is not in an active
+     * status.
+     * </pre>
+     *
+     * <code>CLOUD_FUNCTION_NOT_ACTIVE = 22;</code>
+     */
+    CLOUD_FUNCTION_NOT_ACTIVE(22),
+    /**
+     * <pre>
+     * Packet could be dropped because no VPC connector is set.
+     * </pre>
+     *
+     * <code>VPC_CONNECTOR_NOT_SET = 23;</code>
+     */
+    VPC_CONNECTOR_NOT_SET(23),
+    /**
+     * <pre>
+     * Packet could be dropped because the VPC connector is not in a running
+     * state.
+     * </pre>
+     *
+     * <code>VPC_CONNECTOR_NOT_RUNNING = 24;</code>
+     */
+    VPC_CONNECTOR_NOT_RUNNING(24),
     UNRECOGNIZED(-1),
     ;
 
@@ -518,6 +544,32 @@ private static final long serialVersionUID = 0L;
      * <code>CLOUD_SQL_INSTANCE_NO_IP_ADDRESS = 21;</code>
      */
     public static final int CLOUD_SQL_INSTANCE_NO_IP_ADDRESS_VALUE = 21;
+    /**
+     * <pre>
+     * Packet could be dropped because the Cloud function is not in an active
+     * status.
+     * </pre>
+     *
+     * <code>CLOUD_FUNCTION_NOT_ACTIVE = 22;</code>
+     */
+    public static final int CLOUD_FUNCTION_NOT_ACTIVE_VALUE = 22;
+    /**
+     * <pre>
+     * Packet could be dropped because no VPC connector is set.
+     * </pre>
+     *
+     * <code>VPC_CONNECTOR_NOT_SET = 23;</code>
+     */
+    public static final int VPC_CONNECTOR_NOT_SET_VALUE = 23;
+    /**
+     * <pre>
+     * Packet could be dropped because the VPC connector is not in a running
+     * state.
+     * </pre>
+     *
+     * <code>VPC_CONNECTOR_NOT_RUNNING = 24;</code>
+     */
+    public static final int VPC_CONNECTOR_NOT_RUNNING_VALUE = 24;
 
 
     public final int getNumber() {
@@ -566,6 +618,9 @@ private static final long serialVersionUID = 0L;
         case 19: return DROPPED_INSIDE_CLOUD_SQL_SERVICE;
         case 20: return GOOGLE_MANAGED_SERVICE_NO_PEERING;
         case 21: return CLOUD_SQL_INSTANCE_NO_IP_ADDRESS;
+        case 22: return CLOUD_FUNCTION_NOT_ACTIVE;
+        case 23: return VPC_CONNECTOR_NOT_SET;
+        case 24: return VPC_CONNECTOR_NOT_RUNNING;
         default: return null;
       }
     }
