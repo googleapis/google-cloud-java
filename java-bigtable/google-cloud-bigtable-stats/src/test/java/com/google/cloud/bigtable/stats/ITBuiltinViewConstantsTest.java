@@ -17,23 +17,22 @@ package com.google.cloud.bigtable.stats;
 
 import static com.google.common.truth.Truth.assertWithMessage;
 
-import io.opencensus.stats.View;
+import java.util.List;
+import java.util.Map;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-public class BuiltinViewConstantsTest {
+@RunWith(JUnit4.class)
+public class ITBuiltinViewConstantsTest {
   @Test
   public void testBasicTagsExistForAllViews() {
-    for (View v : BuiltinViews.BIGTABLE_BUILTIN_VIEWS) {
-      assertWithMessage(v.getName() + " should have all basic tags")
-          .that(v.getColumns())
+    Map<String, List<String>> viewToTagMap = StatsWrapper.getViewToTagMap();
+    for (String view : viewToTagMap.keySet()) {
+      assertWithMessage(view + " should have all basic tags")
+          .that(viewToTagMap.get(view))
           .containsAtLeast(
-              BuiltinMeasureConstants.PROJECT_ID,
-              BuiltinMeasureConstants.INSTANCE_ID,
-              BuiltinMeasureConstants.APP_PROFILE,
-              BuiltinMeasureConstants.METHOD,
-              BuiltinMeasureConstants.ZONE,
-              BuiltinMeasureConstants.CLUSTER,
-              BuiltinMeasureConstants.TABLE);
+              "project_id", "instance_id", "app_profile", "method", "zone", "cluster", "table");
     }
   }
 }

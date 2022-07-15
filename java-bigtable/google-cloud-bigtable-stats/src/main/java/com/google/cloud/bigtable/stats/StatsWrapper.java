@@ -20,7 +20,10 @@ import static com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.tracing.SpanName;
 import io.opencensus.stats.Stats;
+import io.opencensus.stats.View;
+import io.opencensus.tags.TagKey;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -31,7 +34,6 @@ import java.util.stream.Collectors;
  */
 @InternalApi("For internal use only")
 public class StatsWrapper {
-
   public static StatsRecorderWrapper createRecorder(
       OperationType operationType, SpanName spanName, Map<String, String> statsAttributes) {
     return new StatsRecorderWrapper(
@@ -48,5 +50,20 @@ public class StatsWrapper {
         .flatMap(x -> x.stream())
         .map(x -> x.asString())
         .collect(Collectors.toCollection(ArrayList::new));
+  }
+
+  // A workaround to run ITBuiltinViewConstantsTest as integration test. Integration test runs after
+  // the packaging step. Opencensus classes will be relocated when they are packaged but the
+  // integration test files will not be. So the integration tests can't reference any transitive
+  // dependencies that have been relocated.
+  static Map<String, List<String>> getViewToTagMap() {
+    Map<String, List<String>> map = new HashMap<>();
+    for (View view : BuiltinViews.BIGTABLE_BUILTIN_VIEWS) {
+      List<TagKey> tagKeys = view.getColumns();
+      map.put(
+          view.getName().asString(),
+          tagKeys.stream().map(tagKey -> tagKey.getName()).collect(Collectors.toList()));
+    }
+    return map;
   }
 }
