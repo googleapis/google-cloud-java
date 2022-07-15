@@ -29,18 +29,9 @@ jobs:
         architecture: 'x64'
     - run: python3 -m pip install requests
     - run: python3 generate-readme.py
-    - uses: googleapis/code-suggester@v3
-      env:
-        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        command: pr
-        upstream_owner: googleapis
-        upstream_repo: google-cloud-java
-        description: 'ran python3 generate-readme.py'
-        title: 'chore: regenerate client table in README'
-        message: 'chore: regenerate client table in README'
-        branch: update-readme
-        primary: main
-        force: true
-        git_dir: '.'
-        fork: false
+    - run: |
+        git config user.email "suztomo@users.noreply.github.com"
+        git config user.name "Tomo Suzuki"
+        git commit -m 'docs: regenerate readme'
+        git push -f -u origin "update-readme"
+        gh pr create --title="regenerate readme"
