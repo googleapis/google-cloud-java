@@ -3656,6 +3656,28 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testGeographyParameter() throws Exception {
+    // Issues a simple ST_DISTANCE using two geopoints, one being a named geography parameter.
+    String query =
+        "SELECT ST_DISTANCE(ST_GEOGFROMTEXT(\"POINT(-122.335503 47.625536)\"), @geo) < 3000 as within3k";
+    QueryParameterValue geoParameterValue =
+        QueryParameterValue.geography("POINT(-122.3509153 47.6495389)");
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setUseLegacySql(false)
+            .addNamedParameter("geo", geoParameterValue)
+            .build();
+    TableResult result = bigquery.query(config);
+    int rowCount = 0;
+    for (FieldValueList row : result.getValues()) {
+      rowCount++;
+      assertEquals(true, row.get(0).getBooleanValue());
+    }
+    assertEquals(1, rowCount);
+  }
+
+  @Test
   public void testListJobs() {
     Page<Job> jobs = bigquery.listJobs();
     for (Job job : jobs.getValues()) {

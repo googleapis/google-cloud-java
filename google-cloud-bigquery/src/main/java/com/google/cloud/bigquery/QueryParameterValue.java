@@ -258,6 +258,11 @@ public abstract class QueryParameterValue implements Serializable {
     return of(value, StandardSQLTypeName.STRING);
   }
 
+  /** Creates a {@code QueryParameterValue} object with a type of GEOGRAPHY. */
+  public static QueryParameterValue geography(String value) {
+    return of(value, StandardSQLTypeName.GEOGRAPHY);
+  }
+
   /**
    * Creates a {@code QueryParameterValue} object with a type of JSON. Currently, this is only
    * supported in INSERT, not in query as a filter
@@ -369,6 +374,8 @@ public abstract class QueryParameterValue implements Serializable {
       return StandardSQLTypeName.BOOL;
     } else if (String.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.STRING;
+    } else if (String.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.GEOGRAPHY;
     } else if (Integer.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.INT64;
     } else if (Long.class.isAssignableFrom(type)) {
@@ -421,6 +428,8 @@ public abstract class QueryParameterValue implements Serializable {
         }
         break;
       case STRING:
+        return value.toString();
+      case GEOGRAPHY:
         return value.toString();
       case JSON:
         if (value instanceof String || value instanceof JsonObject) return value.toString();

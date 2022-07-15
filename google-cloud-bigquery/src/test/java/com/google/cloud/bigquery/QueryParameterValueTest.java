@@ -197,6 +197,15 @@ public class QueryParameterValueTest {
   }
 
   @Test
+  public void testGeography() {
+    QueryParameterValue value = QueryParameterValue.geography("POINT(-122.350220 47.649154)");
+    assertThat(value.getValue()).isEqualTo("POINT(-122.350220 47.649154)");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.GEOGRAPHY);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
+  }
+
+  @Test
   public void testJson() {
     QueryParameterValue value =
         QueryParameterValue.json("{\"class\" : {\"students\" : [{\"name\" : \"Jane\"}]}}");
