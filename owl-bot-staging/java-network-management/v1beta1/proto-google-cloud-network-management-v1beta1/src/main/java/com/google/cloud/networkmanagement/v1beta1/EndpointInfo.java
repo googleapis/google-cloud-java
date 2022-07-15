@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     protocol_ = "";
     sourceNetworkUri_ = "";
     destinationNetworkUri_ = "";
+    sourceAgentUri_ = "";
   }
 
   @java.lang.Override
@@ -97,6 +98,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             destinationNetworkUri_ = s;
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            sourceAgentUri_ = s;
             break;
           }
           default: {
@@ -393,6 +400,52 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SOURCE_AGENT_URI_FIELD_NUMBER = 8;
+  private volatile java.lang.Object sourceAgentUri_;
+  /**
+   * <pre>
+   * URI of the source telemetry agent this packet originates from.
+   * </pre>
+   *
+   * <code>string source_agent_uri = 8;</code>
+   * @return The sourceAgentUri.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceAgentUri() {
+    java.lang.Object ref = sourceAgentUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceAgentUri_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * URI of the source telemetry agent this packet originates from.
+   * </pre>
+   *
+   * <code>string source_agent_uri = 8;</code>
+   * @return The bytes for sourceAgentUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSourceAgentUriBytes() {
+    java.lang.Object ref = sourceAgentUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sourceAgentUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -428,6 +481,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationNetworkUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, destinationNetworkUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceAgentUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, sourceAgentUri_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -460,6 +516,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationNetworkUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, destinationNetworkUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceAgentUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, sourceAgentUri_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -489,6 +548,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSourceNetworkUri())) return false;
     if (!getDestinationNetworkUri()
         .equals(other.getDestinationNetworkUri())) return false;
+    if (!getSourceAgentUri()
+        .equals(other.getSourceAgentUri())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -514,6 +575,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getSourceNetworkUri().hashCode();
     hash = (37 * hash) + DESTINATION_NETWORK_URI_FIELD_NUMBER;
     hash = (53 * hash) + getDestinationNetworkUri().hashCode();
+    hash = (37 * hash) + SOURCE_AGENT_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceAgentUri().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -667,6 +730,8 @@ private static final long serialVersionUID = 0L;
 
       destinationNetworkUri_ = "";
 
+      sourceAgentUri_ = "";
+
       return this;
     }
 
@@ -700,6 +765,7 @@ private static final long serialVersionUID = 0L;
       result.destinationPort_ = destinationPort_;
       result.sourceNetworkUri_ = sourceNetworkUri_;
       result.destinationNetworkUri_ = destinationNetworkUri_;
+      result.sourceAgentUri_ = sourceAgentUri_;
       onBuilt();
       return result;
     }
@@ -772,6 +838,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDestinationNetworkUri().isEmpty()) {
         destinationNetworkUri_ = other.destinationNetworkUri_;
+        onChanged();
+      }
+      if (!other.getSourceAgentUri().isEmpty()) {
+        sourceAgentUri_ = other.sourceAgentUri_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1365,6 +1435,102 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       destinationNetworkUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceAgentUri_ = "";
+    /**
+     * <pre>
+     * URI of the source telemetry agent this packet originates from.
+     * </pre>
+     *
+     * <code>string source_agent_uri = 8;</code>
+     * @return The sourceAgentUri.
+     */
+    public java.lang.String getSourceAgentUri() {
+      java.lang.Object ref = sourceAgentUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceAgentUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * URI of the source telemetry agent this packet originates from.
+     * </pre>
+     *
+     * <code>string source_agent_uri = 8;</code>
+     * @return The bytes for sourceAgentUri.
+     */
+    public com.google.protobuf.ByteString
+        getSourceAgentUriBytes() {
+      java.lang.Object ref = sourceAgentUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sourceAgentUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * URI of the source telemetry agent this packet originates from.
+     * </pre>
+     *
+     * <code>string source_agent_uri = 8;</code>
+     * @param value The sourceAgentUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceAgentUri(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      sourceAgentUri_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * URI of the source telemetry agent this packet originates from.
+     * </pre>
+     *
+     * <code>string source_agent_uri = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceAgentUri() {
+      
+      sourceAgentUri_ = getDefaultInstance().getSourceAgentUri();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * URI of the source telemetry agent this packet originates from.
+     * </pre>
+     *
+     * <code>string source_agent_uri = 8;</code>
+     * @param value The bytes for sourceAgentUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceAgentUriBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      sourceAgentUri_ = value;
       onChanged();
       return this;
     }

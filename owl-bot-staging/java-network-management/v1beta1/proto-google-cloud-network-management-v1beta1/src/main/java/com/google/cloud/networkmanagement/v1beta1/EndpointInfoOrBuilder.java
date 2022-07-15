@@ -126,4 +126,24 @@ public interface EndpointInfoOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDestinationNetworkUriBytes();
+
+  /**
+   * <pre>
+   * URI of the source telemetry agent this packet originates from.
+   * </pre>
+   *
+   * <code>string source_agent_uri = 8;</code>
+   * @return The sourceAgentUri.
+   */
+  java.lang.String getSourceAgentUri();
+  /**
+   * <pre>
+   * URI of the source telemetry agent this packet originates from.
+   * </pre>
+   *
+   * <code>string source_agent_uri = 8;</code>
+   * @return The bytes for sourceAgentUri.
+   */
+  com.google.protobuf.ByteString
+      getSourceAgentUriBytes();
 }
