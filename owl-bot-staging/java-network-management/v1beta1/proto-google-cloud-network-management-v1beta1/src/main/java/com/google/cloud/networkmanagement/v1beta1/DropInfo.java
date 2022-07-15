@@ -338,6 +338,23 @@ private static final long serialVersionUID = 0L;
      * <code>VPC_CONNECTOR_NOT_RUNNING = 24;</code>
      */
     VPC_CONNECTOR_NOT_RUNNING(24),
+    /**
+     * <pre>
+     * Packet could be dropped because it was sent from a different region
+     * to a regional forwarding without global access.
+     * </pre>
+     *
+     * <code>FORWARDING_RULE_REGION_MISMATCH = 25;</code>
+     */
+    FORWARDING_RULE_REGION_MISMATCH(25),
+    /**
+     * <pre>
+     * Privte Service Connect (PSC) connection is not in accepted state.
+     * </pre>
+     *
+     * <code>PSC_CONNECTION_NOT_ACCEPTED = 26;</code>
+     */
+    PSC_CONNECTION_NOT_ACCEPTED(26),
     UNRECOGNIZED(-1),
     ;
 
@@ -570,6 +587,23 @@ private static final long serialVersionUID = 0L;
      * <code>VPC_CONNECTOR_NOT_RUNNING = 24;</code>
      */
     public static final int VPC_CONNECTOR_NOT_RUNNING_VALUE = 24;
+    /**
+     * <pre>
+     * Packet could be dropped because it was sent from a different region
+     * to a regional forwarding without global access.
+     * </pre>
+     *
+     * <code>FORWARDING_RULE_REGION_MISMATCH = 25;</code>
+     */
+    public static final int FORWARDING_RULE_REGION_MISMATCH_VALUE = 25;
+    /**
+     * <pre>
+     * Privte Service Connect (PSC) connection is not in accepted state.
+     * </pre>
+     *
+     * <code>PSC_CONNECTION_NOT_ACCEPTED = 26;</code>
+     */
+    public static final int PSC_CONNECTION_NOT_ACCEPTED_VALUE = 26;
 
 
     public final int getNumber() {
@@ -621,6 +655,8 @@ private static final long serialVersionUID = 0L;
         case 22: return CLOUD_FUNCTION_NOT_ACTIVE;
         case 23: return VPC_CONNECTOR_NOT_SET;
         case 24: return VPC_CONNECTOR_NOT_RUNNING;
+        case 25: return FORWARDING_RULE_REGION_MISMATCH;
+        case 26: return PSC_CONNECTION_NOT_ACCEPTED;
         default: return null;
       }
     }

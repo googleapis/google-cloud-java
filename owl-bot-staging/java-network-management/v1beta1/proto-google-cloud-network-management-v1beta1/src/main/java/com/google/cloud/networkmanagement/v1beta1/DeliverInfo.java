@@ -157,6 +157,33 @@ private static final long serialVersionUID = 0L;
      * <code>CLOUD_SQL_INSTANCE = 5;</code>
      */
     CLOUD_SQL_INSTANCE(5),
+    /**
+     * <pre>
+     * Target is a published service using [Private Service
+     * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
+     * </pre>
+     *
+     * <code>PSC_PUBLISHED_SERVICE = 6;</code>
+     */
+    PSC_PUBLISHED_SERVICE(6),
+    /**
+     * <pre>
+     * Target is all Google APIs using [Private Service
+     * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-apis).
+     * </pre>
+     *
+     * <code>PSC_GOOGLE_API = 7;</code>
+     */
+    PSC_GOOGLE_API(7),
+    /**
+     * <pre>
+     * Target is VPC-SC using [Private Service
+     * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-apis).
+     * </pre>
+     *
+     * <code>PSC_VPC_SC = 8;</code>
+     */
+    PSC_VPC_SC(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -208,6 +235,33 @@ private static final long serialVersionUID = 0L;
      * <code>CLOUD_SQL_INSTANCE = 5;</code>
      */
     public static final int CLOUD_SQL_INSTANCE_VALUE = 5;
+    /**
+     * <pre>
+     * Target is a published service using [Private Service
+     * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
+     * </pre>
+     *
+     * <code>PSC_PUBLISHED_SERVICE = 6;</code>
+     */
+    public static final int PSC_PUBLISHED_SERVICE_VALUE = 6;
+    /**
+     * <pre>
+     * Target is all Google APIs using [Private Service
+     * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-apis).
+     * </pre>
+     *
+     * <code>PSC_GOOGLE_API = 7;</code>
+     */
+    public static final int PSC_GOOGLE_API_VALUE = 7;
+    /**
+     * <pre>
+     * Target is VPC-SC using [Private Service
+     * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-apis).
+     * </pre>
+     *
+     * <code>PSC_VPC_SC = 8;</code>
+     */
+    public static final int PSC_VPC_SC_VALUE = 8;
 
 
     public final int getNumber() {
@@ -240,6 +294,9 @@ private static final long serialVersionUID = 0L;
         case 3: return GOOGLE_API;
         case 4: return GKE_MASTER;
         case 5: return CLOUD_SQL_INSTANCE;
+        case 6: return PSC_PUBLISHED_SERVICE;
+        case 7: return PSC_GOOGLE_API;
+        case 8: return PSC_VPC_SC;
         default: return null;
       }
     }
