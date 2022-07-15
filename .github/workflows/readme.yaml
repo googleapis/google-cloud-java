@@ -37,3 +37,5 @@ jobs:
         git commit -m 'docs: regenerate readme'
         git push -f -u origin "update-readme"
         gh pr create --title="regenerate readme"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
