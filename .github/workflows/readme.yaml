@@ -36,6 +36,7 @@ jobs:
         git add README.md
         git commit -m 'docs: regenerate readme'
         git push -f -u origin "update-readme"
-        gh pr create --title="regenerate readme"
+        gh pr create --title="regenerate readme" \
+            --body "Auto-generated pull request from readme.yaml"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
