@@ -40,7 +40,7 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-notification</artifactId>
       <!-- TODO: REMOVE VERSION SPECIFIED BELOW WHEN THE CLIENT GOES GA-->
-      <version>0.123.2-beta</version>
+      <version>0.123.4-beta</version>
     </dependency>
 
     <dependency>
