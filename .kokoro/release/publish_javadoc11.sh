@@ -49,7 +49,7 @@ do
     # Extract Cloud RAD module name
     NAME=$(jq -r '.distribution_name' .repo-metadata.json | cut -d ':' -f 2)
     # Extract (current) version from versions.txt and remove `-SNAPSHOT`
-    VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3 | sed -i 's/-SNAPSHOT//g')
+    VERSION=$(grep ${NAME}: versions.txt | cut -d: -f3 | sed -e 's/-SNAPSHOT//g')
 
     # cloud RAD generation
     mvn clean javadoc:aggregate -B -q -P docFX-pipelineTest
