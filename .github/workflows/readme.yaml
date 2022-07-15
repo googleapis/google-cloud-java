@@ -31,7 +31,8 @@ jobs:
     - run: python3 generate-readme.py
     - run: |
         git config user.email "suztomo@users.noreply.github.com"
-        git config user.name "Tomo Suzuki"
+        git config user.name "Tomo Suzuki"        
+        git checkout -b update-readme
         git add README.md
         git commit -m 'docs: regenerate readme'
         git push -f -u origin "update-readme"
