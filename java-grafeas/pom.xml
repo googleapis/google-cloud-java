@@ -14,9 +14,9 @@
     Java idiomatic client for Grafeas.
   </description>
   <parent>
-    <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.5.1</version>
+    <groupId>com.google.api</groupId>
+    <artifactId>google-cloud-java</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
   <developers>
     <developer>
