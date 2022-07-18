@@ -628,10 +628,10 @@
       </repositories>
     </profile>
     <profile>
-      <!-- Only run checkstyle plugin on Java 8+ (checkstyle artifact only supports Java 8+) -->
+      <!-- Only run checkstyle plugin on Java 11+ (checkstyle artifact only supports Java 11+) -->
       <id>checkstyle-tests</id>
       <activation>
-        <jdk>[1.8,)</jdk>
+        <jdk>[1.11,)</jdk>
       </activation>
       <build>
         <plugins>
@@ -643,7 +643,7 @@
               <dependency>
                 <groupId>com.puppycrawl.tools</groupId>
                 <artifactId>checkstyle</artifactId>
-                <version>9.3</version>
+                <version>10.3.1</version>
               </dependency>
             </dependencies>
             <executions>
