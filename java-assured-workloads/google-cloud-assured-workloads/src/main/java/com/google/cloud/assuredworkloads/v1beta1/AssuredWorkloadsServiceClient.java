@@ -368,7 +368,7 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param workload Required. The workload to update. The workload’s `name` field is used to
+   * @param workload Required. The workload to update. The workload's `name` field is used to
    *     identify the workload to be updated. Format:
    *     organizations/{org_id}/locations/{location_id}/workloads/{workload_id}
    * @param updateMask Required. The list of fields to be updated.
@@ -440,8 +440,124 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Restrict the list of services allowed in the Workload environment. The current list of allowed
+   * services can be found at https://cloud.google.com/assured-workloads/docs/supported-products In
+   * addition to assuredworkloads.workload.update permission, the user should also have
+   * orgpolicy.policy.set permission on the folder resource to use this functionality.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   RestrictAllowedServicesRequest request =
+   *       RestrictAllowedServicesRequest.newBuilder().setName("name3373707").build();
+   *   RestrictAllowedServicesResponse response =
+   *       assuredWorkloadsServiceClient.restrictAllowedServices(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestrictAllowedServicesResponse restrictAllowedServices(
+      RestrictAllowedServicesRequest request) {
+    return restrictAllowedServicesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restrict the list of services allowed in the Workload environment. The current list of allowed
+   * services can be found at https://cloud.google.com/assured-workloads/docs/supported-products In
+   * addition to assuredworkloads.workload.update permission, the user should also have
+   * orgpolicy.policy.set permission on the folder resource to use this functionality.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   RestrictAllowedServicesRequest request =
+   *       RestrictAllowedServicesRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<RestrictAllowedServicesResponse> future =
+   *       assuredWorkloadsServiceClient.restrictAllowedServicesCallable().futureCall(request);
+   *   // Do something.
+   *   RestrictAllowedServicesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
+      restrictAllowedServicesCallable() {
+    return stub.restrictAllowedServicesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restrict the list of resources allowed in the Workload environment. The current list of allowed
+   * products can be found at https://cloud.google.com/assured-workloads/docs/supported-products In
+   * addition to assuredworkloads.workload.update permission, the user should also have
+   * orgpolicy.policy.set permission on the folder resource to use this functionality.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   RestrictAllowedResourcesRequest request =
+   *       RestrictAllowedResourcesRequest.newBuilder().setName("name3373707").build();
+   *   RestrictAllowedResourcesResponse response =
+   *       assuredWorkloadsServiceClient.restrictAllowedResources(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RestrictAllowedResourcesResponse restrictAllowedResources(
+      RestrictAllowedResourcesRequest request) {
+    return restrictAllowedResourcesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restrict the list of resources allowed in the Workload environment. The current list of allowed
+   * products can be found at https://cloud.google.com/assured-workloads/docs/supported-products In
+   * addition to assuredworkloads.workload.update permission, the user should also have
+   * orgpolicy.policy.set permission on the folder resource to use this functionality.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   RestrictAllowedResourcesRequest request =
+   *       RestrictAllowedResourcesRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<RestrictAllowedResourcesResponse> future =
+   *       assuredWorkloadsServiceClient.restrictAllowedResourcesCallable().futureCall(request);
+   *   // Do something.
+   *   RestrictAllowedResourcesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesCallable() {
+    return stub.restrictAllowedResourcesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes the workload. Make sure that workload's direct children are already in a deleted state,
-   * otherwise the request will fail with a FAILED_PRECONDITION error.
+   * otherwise the request will fail with a FAILED_PRECONDITION error. In addition to
+   * assuredworkloads.workload.delete permission, the user should also have orgpolicy.policy.set
+   * permission on the deleted folder to remove Assured Workloads OrgPolicies.
    *
    * <p>Sample code:
    *
@@ -468,7 +584,9 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the workload. Make sure that workload's direct children are already in a deleted state,
-   * otherwise the request will fail with a FAILED_PRECONDITION error.
+   * otherwise the request will fail with a FAILED_PRECONDITION error. In addition to
+   * assuredworkloads.workload.delete permission, the user should also have orgpolicy.policy.set
+   * permission on the deleted folder to remove Assured Workloads OrgPolicies.
    *
    * <p>Sample code:
    *
@@ -494,7 +612,9 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the workload. Make sure that workload's direct children are already in a deleted state,
-   * otherwise the request will fail with a FAILED_PRECONDITION error.
+   * otherwise the request will fail with a FAILED_PRECONDITION error. In addition to
+   * assuredworkloads.workload.delete permission, the user should also have orgpolicy.policy.set
+   * permission on the deleted folder to remove Assured Workloads OrgPolicies.
    *
    * <p>Sample code:
    *
@@ -522,7 +642,9 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the workload. Make sure that workload's direct children are already in a deleted state,
-   * otherwise the request will fail with a FAILED_PRECONDITION error.
+   * otherwise the request will fail with a FAILED_PRECONDITION error. In addition to
+   * assuredworkloads.workload.delete permission, the user should also have orgpolicy.policy.set
+   * permission on the deleted folder to remove Assured Workloads OrgPolicies.
    *
    * <p>Sample code:
    *
@@ -652,6 +774,91 @@ public class AssuredWorkloadsServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable() {
     return stub.getWorkloadCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyze if the source Assured Workloads can be moved to the target Assured Workload
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   String project = "project-309310695";
+   *   String target = "target-880905839";
+   *   AnalyzeWorkloadMoveResponse response =
+   *       assuredWorkloadsServiceClient.analyzeWorkloadMove(project, target);
+   * }
+   * }</pre>
+   *
+   * @param project The Source is a project based to be moved. This is the project's relative path
+   *     in the API, formatted as "cloudresourcemanager.googleapis.com/projects/{project_number}"
+   *     "projects/{project_number}" "cloudresourcemanager.googleapis.com/projects/{project_id}"
+   *     "projects/{project_id}" For example,
+   *     "organizations/123/locations/us-east1/workloads/assured-workload-1".
+   * @param target Required. The resource name of the Workload to fetch. This is the workloads's
+   *     relative path in the API, formatted as
+   *     "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}". For
+   *     example, "organizations/123/locations/us-east1/workloads/assured-workload-2".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeWorkloadMoveResponse analyzeWorkloadMove(String project, String target) {
+    AnalyzeWorkloadMoveRequest request =
+        AnalyzeWorkloadMoveRequest.newBuilder().setProject(project).setTarget(target).build();
+    return analyzeWorkloadMove(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyze if the source Assured Workloads can be moved to the target Assured Workload
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   AnalyzeWorkloadMoveRequest request =
+   *       AnalyzeWorkloadMoveRequest.newBuilder().setTarget("target-880905839").build();
+   *   AnalyzeWorkloadMoveResponse response =
+   *       assuredWorkloadsServiceClient.analyzeWorkloadMove(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeWorkloadMoveResponse analyzeWorkloadMove(AnalyzeWorkloadMoveRequest request) {
+    return analyzeWorkloadMoveCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyze if the source Assured Workloads can be moved to the target Assured Workload
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+   *     AssuredWorkloadsServiceClient.create()) {
+   *   AnalyzeWorkloadMoveRequest request =
+   *       AnalyzeWorkloadMoveRequest.newBuilder().setTarget("target-880905839").build();
+   *   ApiFuture<AnalyzeWorkloadMoveResponse> future =
+   *       assuredWorkloadsServiceClient.analyzeWorkloadMoveCallable().futureCall(request);
+   *   // Do something.
+   *   AnalyzeWorkloadMoveResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AnalyzeWorkloadMoveRequest, AnalyzeWorkloadMoveResponse>
+      analyzeWorkloadMoveCallable() {
+    return stub.analyzeWorkloadMoveCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

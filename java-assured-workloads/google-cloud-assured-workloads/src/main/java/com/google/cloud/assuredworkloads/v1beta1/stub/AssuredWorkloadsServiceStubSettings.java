@@ -47,12 +47,18 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest;
+import com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse;
 import com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadOperationMetadata;
 import com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest;
 import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse;
+import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest;
+import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse;
+import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest;
+import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse;
 import com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.Workload;
 import com.google.common.collect.ImmutableList;
@@ -115,8 +121,14 @@ public class AssuredWorkloadsServiceStubSettings
           CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationSettings;
   private final UnaryCallSettings<UpdateWorkloadRequest, Workload> updateWorkloadSettings;
+  private final UnaryCallSettings<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
+      restrictAllowedServicesSettings;
+  private final UnaryCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesSettings;
   private final UnaryCallSettings<DeleteWorkloadRequest, Empty> deleteWorkloadSettings;
   private final UnaryCallSettings<GetWorkloadRequest, Workload> getWorkloadSettings;
+  private final UnaryCallSettings<AnalyzeWorkloadMoveRequest, AnalyzeWorkloadMoveResponse>
+      analyzeWorkloadMoveSettings;
   private final PagedCallSettings<
           ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
       listWorkloadsSettings;
@@ -190,6 +202,18 @@ public class AssuredWorkloadsServiceStubSettings
     return updateWorkloadSettings;
   }
 
+  /** Returns the object with the settings used for calls to restrictAllowedServices. */
+  public UnaryCallSettings<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
+      restrictAllowedServicesSettings() {
+    return restrictAllowedServicesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restrictAllowedResources. */
+  public UnaryCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesSettings() {
+    return restrictAllowedResourcesSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteWorkload. */
   public UnaryCallSettings<DeleteWorkloadRequest, Empty> deleteWorkloadSettings() {
     return deleteWorkloadSettings;
@@ -198,6 +222,12 @@ public class AssuredWorkloadsServiceStubSettings
   /** Returns the object with the settings used for calls to getWorkload. */
   public UnaryCallSettings<GetWorkloadRequest, Workload> getWorkloadSettings() {
     return getWorkloadSettings;
+  }
+
+  /** Returns the object with the settings used for calls to analyzeWorkloadMove. */
+  public UnaryCallSettings<AnalyzeWorkloadMoveRequest, AnalyzeWorkloadMoveResponse>
+      analyzeWorkloadMoveSettings() {
+    return analyzeWorkloadMoveSettings;
   }
 
   /** Returns the object with the settings used for calls to listWorkloads. */
@@ -315,8 +345,11 @@ public class AssuredWorkloadsServiceStubSettings
     createWorkloadSettings = settingsBuilder.createWorkloadSettings().build();
     createWorkloadOperationSettings = settingsBuilder.createWorkloadOperationSettings().build();
     updateWorkloadSettings = settingsBuilder.updateWorkloadSettings().build();
+    restrictAllowedServicesSettings = settingsBuilder.restrictAllowedServicesSettings().build();
+    restrictAllowedResourcesSettings = settingsBuilder.restrictAllowedResourcesSettings().build();
     deleteWorkloadSettings = settingsBuilder.deleteWorkloadSettings().build();
     getWorkloadSettings = settingsBuilder.getWorkloadSettings().build();
+    analyzeWorkloadMoveSettings = settingsBuilder.analyzeWorkloadMoveSettings().build();
     listWorkloadsSettings = settingsBuilder.listWorkloadsSettings().build();
   }
 
@@ -330,8 +363,16 @@ public class AssuredWorkloadsServiceStubSettings
             CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
         createWorkloadOperationSettings;
     private final UnaryCallSettings.Builder<UpdateWorkloadRequest, Workload> updateWorkloadSettings;
+    private final UnaryCallSettings.Builder<
+            RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
+        restrictAllowedServicesSettings;
+    private final UnaryCallSettings.Builder<
+            RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+        restrictAllowedResourcesSettings;
     private final UnaryCallSettings.Builder<DeleteWorkloadRequest, Empty> deleteWorkloadSettings;
     private final UnaryCallSettings.Builder<GetWorkloadRequest, Workload> getWorkloadSettings;
+    private final UnaryCallSettings.Builder<AnalyzeWorkloadMoveRequest, AnalyzeWorkloadMoveResponse>
+        analyzeWorkloadMoveSettings;
     private final PagedCallSettings.Builder<
             ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
         listWorkloadsSettings;
@@ -343,6 +384,7 @@ public class AssuredWorkloadsServiceStubSettings
           ImmutableMap.builder();
       definitions.put(
           "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_1_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
@@ -362,6 +404,8 @@ public class AssuredWorkloadsServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(200L))
@@ -386,16 +430,22 @@ public class AssuredWorkloadsServiceStubSettings
       createWorkloadSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createWorkloadOperationSettings = OperationCallSettings.newBuilder();
       updateWorkloadSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restrictAllowedServicesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restrictAllowedResourcesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteWorkloadSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getWorkloadSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      analyzeWorkloadMoveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listWorkloadsSettings = PagedCallSettings.newBuilder(LIST_WORKLOADS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createWorkloadSettings,
               updateWorkloadSettings,
+              restrictAllowedServicesSettings,
+              restrictAllowedResourcesSettings,
               deleteWorkloadSettings,
               getWorkloadSettings,
+              analyzeWorkloadMoveSettings,
               listWorkloadsSettings);
       initDefaults(this);
     }
@@ -406,16 +456,22 @@ public class AssuredWorkloadsServiceStubSettings
       createWorkloadSettings = settings.createWorkloadSettings.toBuilder();
       createWorkloadOperationSettings = settings.createWorkloadOperationSettings.toBuilder();
       updateWorkloadSettings = settings.updateWorkloadSettings.toBuilder();
+      restrictAllowedServicesSettings = settings.restrictAllowedServicesSettings.toBuilder();
+      restrictAllowedResourcesSettings = settings.restrictAllowedResourcesSettings.toBuilder();
       deleteWorkloadSettings = settings.deleteWorkloadSettings.toBuilder();
       getWorkloadSettings = settings.getWorkloadSettings.toBuilder();
+      analyzeWorkloadMoveSettings = settings.analyzeWorkloadMoveSettings.toBuilder();
       listWorkloadsSettings = settings.listWorkloadsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createWorkloadSettings,
               updateWorkloadSettings,
+              restrictAllowedServicesSettings,
+              restrictAllowedResourcesSettings,
               deleteWorkloadSettings,
               getWorkloadSettings,
+              analyzeWorkloadMoveSettings,
               listWorkloadsSettings);
     }
 
@@ -457,12 +513,27 @@ public class AssuredWorkloadsServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .restrictAllowedServicesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .restrictAllowedResourcesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .deleteWorkloadSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
           .getWorkloadSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .analyzeWorkloadMoveSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
@@ -533,6 +604,20 @@ public class AssuredWorkloadsServiceStubSettings
       return updateWorkloadSettings;
     }
 
+    /** Returns the builder for the settings used for calls to restrictAllowedServices. */
+    public UnaryCallSettings.Builder<
+            RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
+        restrictAllowedServicesSettings() {
+      return restrictAllowedServicesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restrictAllowedResources. */
+    public UnaryCallSettings.Builder<
+            RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+        restrictAllowedResourcesSettings() {
+      return restrictAllowedResourcesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteWorkload. */
     public UnaryCallSettings.Builder<DeleteWorkloadRequest, Empty> deleteWorkloadSettings() {
       return deleteWorkloadSettings;
@@ -541,6 +626,12 @@ public class AssuredWorkloadsServiceStubSettings
     /** Returns the builder for the settings used for calls to getWorkload. */
     public UnaryCallSettings.Builder<GetWorkloadRequest, Workload> getWorkloadSettings() {
       return getWorkloadSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeWorkloadMove. */
+    public UnaryCallSettings.Builder<AnalyzeWorkloadMoveRequest, AnalyzeWorkloadMoveResponse>
+        analyzeWorkloadMoveSettings() {
+      return analyzeWorkloadMoveSettings;
     }
 
     /** Returns the builder for the settings used for calls to listWorkloads. */

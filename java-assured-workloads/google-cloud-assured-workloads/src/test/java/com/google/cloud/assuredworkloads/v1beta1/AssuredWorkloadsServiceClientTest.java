@@ -261,6 +261,86 @@ public class AssuredWorkloadsServiceClientTest {
   }
 
   @Test
+  public void restrictAllowedServicesTest() throws Exception {
+    RestrictAllowedServicesResponse expectedResponse =
+        RestrictAllowedServicesResponse.newBuilder().build();
+    mockAssuredWorkloadsService.addResponse(expectedResponse);
+
+    RestrictAllowedServicesRequest request =
+        RestrictAllowedServicesRequest.newBuilder().setName("name3373707").build();
+
+    RestrictAllowedServicesResponse actualResponse = client.restrictAllowedServices(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestrictAllowedServicesRequest actualRequest =
+        ((RestrictAllowedServicesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getRestrictionType(), actualRequest.getRestrictionType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restrictAllowedServicesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssuredWorkloadsService.addException(exception);
+
+    try {
+      RestrictAllowedServicesRequest request =
+          RestrictAllowedServicesRequest.newBuilder().setName("name3373707").build();
+      client.restrictAllowedServices(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void restrictAllowedResourcesTest() throws Exception {
+    RestrictAllowedResourcesResponse expectedResponse =
+        RestrictAllowedResourcesResponse.newBuilder().build();
+    mockAssuredWorkloadsService.addResponse(expectedResponse);
+
+    RestrictAllowedResourcesRequest request =
+        RestrictAllowedResourcesRequest.newBuilder().setName("name3373707").build();
+
+    RestrictAllowedResourcesResponse actualResponse = client.restrictAllowedResources(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestrictAllowedResourcesRequest actualRequest =
+        ((RestrictAllowedResourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getRestrictionType(), actualRequest.getRestrictionType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restrictAllowedResourcesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssuredWorkloadsService.addException(exception);
+
+    try {
+      RestrictAllowedResourcesRequest request =
+          RestrictAllowedResourcesRequest.newBuilder().setName("name3373707").build();
+      client.restrictAllowedResources(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void deleteWorkloadTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockAssuredWorkloadsService.addResponse(expectedResponse);
@@ -420,6 +500,45 @@ public class AssuredWorkloadsServiceClientTest {
     try {
       String name = "name3373707";
       client.getWorkload(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void analyzeWorkloadMoveTest() throws Exception {
+    AnalyzeWorkloadMoveResponse expectedResponse =
+        AnalyzeWorkloadMoveResponse.newBuilder().addAllBlockers(new ArrayList<String>()).build();
+    mockAssuredWorkloadsService.addResponse(expectedResponse);
+
+    String project = "project-309310695";
+    String target = "target-880905839";
+
+    AnalyzeWorkloadMoveResponse actualResponse = client.analyzeWorkloadMove(project, target);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAssuredWorkloadsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeWorkloadMoveRequest actualRequest = ((AnalyzeWorkloadMoveRequest) actualRequests.get(0));
+
+    Assert.assertEquals(project, actualRequest.getProject());
+    Assert.assertEquals(target, actualRequest.getTarget());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void analyzeWorkloadMoveExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssuredWorkloadsService.addException(exception);
+
+    try {
+      String project = "project-309310695";
+      String target = "target-880905839";
+      client.analyzeWorkloadMove(project, target);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
