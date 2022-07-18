@@ -288,6 +288,46 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
               dialectValueCase_ = 11;
               break;
             }
+          case 98:
+            {
+              com.google.cloud.bigquery.migration.v2.PostgresqlDialect.Builder subBuilder = null;
+              if (dialectValueCase_ == 12) {
+                subBuilder =
+                    ((com.google.cloud.bigquery.migration.v2.PostgresqlDialect) dialectValue_)
+                        .toBuilder();
+              }
+              dialectValue_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.migration.v2.PostgresqlDialect.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.bigquery.migration.v2.PostgresqlDialect) dialectValue_);
+                dialectValue_ = subBuilder.buildPartial();
+              }
+              dialectValueCase_ = 12;
+              break;
+            }
+          case 106:
+            {
+              com.google.cloud.bigquery.migration.v2.PrestoDialect.Builder subBuilder = null;
+              if (dialectValueCase_ == 13) {
+                subBuilder =
+                    ((com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_)
+                        .toBuilder();
+              }
+              dialectValue_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.migration.v2.PrestoDialect.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_);
+                dialectValue_ = subBuilder.buildPartial();
+              }
+              dialectValueCase_ = 13;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -342,6 +382,8 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     AZURE_SYNAPSE_DIALECT(9),
     VERTICA_DIALECT(10),
     SQL_SERVER_DIALECT(11),
+    POSTGRESQL_DIALECT(12),
+    PRESTO_DIALECT(13),
     DIALECTVALUE_NOT_SET(0);
     private final int value;
 
@@ -382,6 +424,10 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
           return VERTICA_DIALECT;
         case 11:
           return SQL_SERVER_DIALECT;
+        case 12:
+          return POSTGRESQL_DIALECT;
+        case 13:
+          return PRESTO_DIALECT;
         case 0:
           return DIALECTVALUE_NOT_SET;
         default:
@@ -968,6 +1014,109 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.bigquery.migration.v2.SQLServerDialect.getDefaultInstance();
   }
 
+  public static final int POSTGRESQL_DIALECT_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * The Postgresql dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+   *
+   * @return Whether the postgresqlDialect field is set.
+   */
+  @java.lang.Override
+  public boolean hasPostgresqlDialect() {
+    return dialectValueCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Postgresql dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+   *
+   * @return The postgresqlDialect.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.PostgresqlDialect getPostgresqlDialect() {
+    if (dialectValueCase_ == 12) {
+      return (com.google.cloud.bigquery.migration.v2.PostgresqlDialect) dialectValue_;
+    }
+    return com.google.cloud.bigquery.migration.v2.PostgresqlDialect.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Postgresql dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.PostgresqlDialectOrBuilder
+      getPostgresqlDialectOrBuilder() {
+    if (dialectValueCase_ == 12) {
+      return (com.google.cloud.bigquery.migration.v2.PostgresqlDialect) dialectValue_;
+    }
+    return com.google.cloud.bigquery.migration.v2.PostgresqlDialect.getDefaultInstance();
+  }
+
+  public static final int PRESTO_DIALECT_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * The Presto dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+   *
+   * @return Whether the prestoDialect field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrestoDialect() {
+    return dialectValueCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Presto dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+   *
+   * @return The prestoDialect.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.PrestoDialect getPrestoDialect() {
+    if (dialectValueCase_ == 13) {
+      return (com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_;
+    }
+    return com.google.cloud.bigquery.migration.v2.PrestoDialect.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Presto dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.PrestoDialectOrBuilder getPrestoDialectOrBuilder() {
+    if (dialectValueCase_ == 13) {
+      return (com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_;
+    }
+    return com.google.cloud.bigquery.migration.v2.PrestoDialect.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1022,6 +1171,13 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
     if (dialectValueCase_ == 11) {
       output.writeMessage(
           11, (com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_);
+    }
+    if (dialectValueCase_ == 12) {
+      output.writeMessage(
+          12, (com.google.cloud.bigquery.migration.v2.PostgresqlDialect) dialectValue_);
+    }
+    if (dialectValueCase_ == 13) {
+      output.writeMessage(13, (com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_);
     }
     unknownFields.writeTo(output);
   }
@@ -1087,6 +1243,16 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, (com.google.cloud.bigquery.migration.v2.SQLServerDialect) dialectValue_);
     }
+    if (dialectValueCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.bigquery.migration.v2.PostgresqlDialect) dialectValue_);
+    }
+    if (dialectValueCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1137,6 +1303,12 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         break;
       case 11:
         if (!getSqlServerDialect().equals(other.getSqlServerDialect())) return false;
+        break;
+      case 12:
+        if (!getPostgresqlDialect().equals(other.getPostgresqlDialect())) return false;
+        break;
+      case 13:
+        if (!getPrestoDialect().equals(other.getPrestoDialect())) return false;
         break;
       case 0:
       default:
@@ -1196,6 +1368,14 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       case 11:
         hash = (37 * hash) + SQL_SERVER_DIALECT_FIELD_NUMBER;
         hash = (53 * hash) + getSqlServerDialect().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + POSTGRESQL_DIALECT_FIELD_NUMBER;
+        hash = (53 * hash) + getPostgresqlDialect().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + PRESTO_DIALECT_FIELD_NUMBER;
+        hash = (53 * hash) + getPrestoDialect().hashCode();
         break;
       case 0:
       default:
@@ -1451,6 +1631,20 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
           result.dialectValue_ = sqlServerDialectBuilder_.build();
         }
       }
+      if (dialectValueCase_ == 12) {
+        if (postgresqlDialectBuilder_ == null) {
+          result.dialectValue_ = dialectValue_;
+        } else {
+          result.dialectValue_ = postgresqlDialectBuilder_.build();
+        }
+      }
+      if (dialectValueCase_ == 13) {
+        if (prestoDialectBuilder_ == null) {
+          result.dialectValue_ = dialectValue_;
+        } else {
+          result.dialectValue_ = prestoDialectBuilder_.build();
+        }
+      }
       result.dialectValueCase_ = dialectValueCase_;
       onBuilt();
       return result;
@@ -1555,6 +1749,16 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
         case SQL_SERVER_DIALECT:
           {
             mergeSqlServerDialect(other.getSqlServerDialect());
+            break;
+          }
+        case POSTGRESQL_DIALECT:
+          {
+            mergePostgresqlDialect(other.getPostgresqlDialect());
+            break;
+          }
+        case PRESTO_DIALECT:
+          {
+            mergePrestoDialect(other.getPrestoDialect());
             break;
           }
         case DIALECTVALUE_NOT_SET:
@@ -3979,6 +4183,434 @@ public final class Dialect extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return sqlServerDialectBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2.PostgresqlDialect,
+            com.google.cloud.bigquery.migration.v2.PostgresqlDialect.Builder,
+            com.google.cloud.bigquery.migration.v2.PostgresqlDialectOrBuilder>
+        postgresqlDialectBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The Postgresql dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+     *
+     * @return Whether the postgresqlDialect field is set.
+     */
+    @java.lang.Override
+    public boolean hasPostgresqlDialect() {
+      return dialectValueCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Postgresql dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+     *
+     * @return The postgresqlDialect.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2.PostgresqlDialect getPostgresqlDialect() {
+      if (postgresqlDialectBuilder_ == null) {
+        if (dialectValueCase_ == 12) {
+          return (com.google.cloud.bigquery.migration.v2.PostgresqlDialect) dialectValue_;
+        }
+        return com.google.cloud.bigquery.migration.v2.PostgresqlDialect.getDefaultInstance();
+      } else {
+        if (dialectValueCase_ == 12) {
+          return postgresqlDialectBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.migration.v2.PostgresqlDialect.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Postgresql dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+     */
+    public Builder setPostgresqlDialect(
+        com.google.cloud.bigquery.migration.v2.PostgresqlDialect value) {
+      if (postgresqlDialectBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dialectValue_ = value;
+        onChanged();
+      } else {
+        postgresqlDialectBuilder_.setMessage(value);
+      }
+      dialectValueCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Postgresql dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+     */
+    public Builder setPostgresqlDialect(
+        com.google.cloud.bigquery.migration.v2.PostgresqlDialect.Builder builderForValue) {
+      if (postgresqlDialectBuilder_ == null) {
+        dialectValue_ = builderForValue.build();
+        onChanged();
+      } else {
+        postgresqlDialectBuilder_.setMessage(builderForValue.build());
+      }
+      dialectValueCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Postgresql dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+     */
+    public Builder mergePostgresqlDialect(
+        com.google.cloud.bigquery.migration.v2.PostgresqlDialect value) {
+      if (postgresqlDialectBuilder_ == null) {
+        if (dialectValueCase_ == 12
+            && dialectValue_
+                != com.google.cloud.bigquery.migration.v2.PostgresqlDialect.getDefaultInstance()) {
+          dialectValue_ =
+              com.google.cloud.bigquery.migration.v2.PostgresqlDialect.newBuilder(
+                      (com.google.cloud.bigquery.migration.v2.PostgresqlDialect) dialectValue_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dialectValue_ = value;
+        }
+        onChanged();
+      } else {
+        if (dialectValueCase_ == 12) {
+          postgresqlDialectBuilder_.mergeFrom(value);
+        } else {
+          postgresqlDialectBuilder_.setMessage(value);
+        }
+      }
+      dialectValueCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Postgresql dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+     */
+    public Builder clearPostgresqlDialect() {
+      if (postgresqlDialectBuilder_ == null) {
+        if (dialectValueCase_ == 12) {
+          dialectValueCase_ = 0;
+          dialectValue_ = null;
+          onChanged();
+        }
+      } else {
+        if (dialectValueCase_ == 12) {
+          dialectValueCase_ = 0;
+          dialectValue_ = null;
+        }
+        postgresqlDialectBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Postgresql dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+     */
+    public com.google.cloud.bigquery.migration.v2.PostgresqlDialect.Builder
+        getPostgresqlDialectBuilder() {
+      return getPostgresqlDialectFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Postgresql dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2.PostgresqlDialectOrBuilder
+        getPostgresqlDialectOrBuilder() {
+      if ((dialectValueCase_ == 12) && (postgresqlDialectBuilder_ != null)) {
+        return postgresqlDialectBuilder_.getMessageOrBuilder();
+      } else {
+        if (dialectValueCase_ == 12) {
+          return (com.google.cloud.bigquery.migration.v2.PostgresqlDialect) dialectValue_;
+        }
+        return com.google.cloud.bigquery.migration.v2.PostgresqlDialect.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Postgresql dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2.PostgresqlDialect,
+            com.google.cloud.bigquery.migration.v2.PostgresqlDialect.Builder,
+            com.google.cloud.bigquery.migration.v2.PostgresqlDialectOrBuilder>
+        getPostgresqlDialectFieldBuilder() {
+      if (postgresqlDialectBuilder_ == null) {
+        if (!(dialectValueCase_ == 12)) {
+          dialectValue_ =
+              com.google.cloud.bigquery.migration.v2.PostgresqlDialect.getDefaultInstance();
+        }
+        postgresqlDialectBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.migration.v2.PostgresqlDialect,
+                com.google.cloud.bigquery.migration.v2.PostgresqlDialect.Builder,
+                com.google.cloud.bigquery.migration.v2.PostgresqlDialectOrBuilder>(
+                (com.google.cloud.bigquery.migration.v2.PostgresqlDialect) dialectValue_,
+                getParentForChildren(),
+                isClean());
+        dialectValue_ = null;
+      }
+      dialectValueCase_ = 12;
+      onChanged();
+      ;
+      return postgresqlDialectBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2.PrestoDialect,
+            com.google.cloud.bigquery.migration.v2.PrestoDialect.Builder,
+            com.google.cloud.bigquery.migration.v2.PrestoDialectOrBuilder>
+        prestoDialectBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The Presto dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+     *
+     * @return Whether the prestoDialect field is set.
+     */
+    @java.lang.Override
+    public boolean hasPrestoDialect() {
+      return dialectValueCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Presto dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+     *
+     * @return The prestoDialect.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2.PrestoDialect getPrestoDialect() {
+      if (prestoDialectBuilder_ == null) {
+        if (dialectValueCase_ == 13) {
+          return (com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_;
+        }
+        return com.google.cloud.bigquery.migration.v2.PrestoDialect.getDefaultInstance();
+      } else {
+        if (dialectValueCase_ == 13) {
+          return prestoDialectBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.migration.v2.PrestoDialect.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Presto dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+     */
+    public Builder setPrestoDialect(com.google.cloud.bigquery.migration.v2.PrestoDialect value) {
+      if (prestoDialectBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dialectValue_ = value;
+        onChanged();
+      } else {
+        prestoDialectBuilder_.setMessage(value);
+      }
+      dialectValueCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Presto dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+     */
+    public Builder setPrestoDialect(
+        com.google.cloud.bigquery.migration.v2.PrestoDialect.Builder builderForValue) {
+      if (prestoDialectBuilder_ == null) {
+        dialectValue_ = builderForValue.build();
+        onChanged();
+      } else {
+        prestoDialectBuilder_.setMessage(builderForValue.build());
+      }
+      dialectValueCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Presto dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+     */
+    public Builder mergePrestoDialect(com.google.cloud.bigquery.migration.v2.PrestoDialect value) {
+      if (prestoDialectBuilder_ == null) {
+        if (dialectValueCase_ == 13
+            && dialectValue_
+                != com.google.cloud.bigquery.migration.v2.PrestoDialect.getDefaultInstance()) {
+          dialectValue_ =
+              com.google.cloud.bigquery.migration.v2.PrestoDialect.newBuilder(
+                      (com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dialectValue_ = value;
+        }
+        onChanged();
+      } else {
+        if (dialectValueCase_ == 13) {
+          prestoDialectBuilder_.mergeFrom(value);
+        } else {
+          prestoDialectBuilder_.setMessage(value);
+        }
+      }
+      dialectValueCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Presto dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+     */
+    public Builder clearPrestoDialect() {
+      if (prestoDialectBuilder_ == null) {
+        if (dialectValueCase_ == 13) {
+          dialectValueCase_ = 0;
+          dialectValue_ = null;
+          onChanged();
+        }
+      } else {
+        if (dialectValueCase_ == 13) {
+          dialectValueCase_ = 0;
+          dialectValue_ = null;
+        }
+        prestoDialectBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Presto dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+     */
+    public com.google.cloud.bigquery.migration.v2.PrestoDialect.Builder getPrestoDialectBuilder() {
+      return getPrestoDialectFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Presto dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2.PrestoDialectOrBuilder
+        getPrestoDialectOrBuilder() {
+      if ((dialectValueCase_ == 13) && (prestoDialectBuilder_ != null)) {
+        return prestoDialectBuilder_.getMessageOrBuilder();
+      } else {
+        if (dialectValueCase_ == 13) {
+          return (com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_;
+        }
+        return com.google.cloud.bigquery.migration.v2.PrestoDialect.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Presto dialect
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2.PrestoDialect,
+            com.google.cloud.bigquery.migration.v2.PrestoDialect.Builder,
+            com.google.cloud.bigquery.migration.v2.PrestoDialectOrBuilder>
+        getPrestoDialectFieldBuilder() {
+      if (prestoDialectBuilder_ == null) {
+        if (!(dialectValueCase_ == 13)) {
+          dialectValue_ = com.google.cloud.bigquery.migration.v2.PrestoDialect.getDefaultInstance();
+        }
+        prestoDialectBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.migration.v2.PrestoDialect,
+                com.google.cloud.bigquery.migration.v2.PrestoDialect.Builder,
+                com.google.cloud.bigquery.migration.v2.PrestoDialectOrBuilder>(
+                (com.google.cloud.bigquery.migration.v2.PrestoDialect) dialectValue_,
+                getParentForChildren(),
+                isClean());
+        dialectValue_ = null;
+      }
+      dialectValueCase_ = 13;
+      onChanged();
+      ;
+      return prestoDialectBuilder_;
     }
 
     @java.lang.Override

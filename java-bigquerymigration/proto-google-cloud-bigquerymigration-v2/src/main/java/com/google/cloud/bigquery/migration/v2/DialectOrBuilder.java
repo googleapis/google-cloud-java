@@ -409,5 +409,75 @@ public interface DialectOrBuilder
    */
   com.google.cloud.bigquery.migration.v2.SQLServerDialectOrBuilder getSqlServerDialectOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The Postgresql dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+   *
+   * @return Whether the postgresqlDialect field is set.
+   */
+  boolean hasPostgresqlDialect();
+  /**
+   *
+   *
+   * <pre>
+   * The Postgresql dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+   *
+   * @return The postgresqlDialect.
+   */
+  com.google.cloud.bigquery.migration.v2.PostgresqlDialect getPostgresqlDialect();
+  /**
+   *
+   *
+   * <pre>
+   * The Postgresql dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.PostgresqlDialect postgresql_dialect = 12;</code>
+   */
+  com.google.cloud.bigquery.migration.v2.PostgresqlDialectOrBuilder getPostgresqlDialectOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Presto dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+   *
+   * @return Whether the prestoDialect field is set.
+   */
+  boolean hasPrestoDialect();
+  /**
+   *
+   *
+   * <pre>
+   * The Presto dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+   *
+   * @return The prestoDialect.
+   */
+  com.google.cloud.bigquery.migration.v2.PrestoDialect getPrestoDialect();
+  /**
+   *
+   *
+   * <pre>
+   * The Presto dialect
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.PrestoDialect presto_dialect = 13;</code>
+   */
+  com.google.cloud.bigquery.migration.v2.PrestoDialectOrBuilder getPrestoDialectOrBuilder();
+
   public com.google.cloud.bigquery.migration.v2.Dialect.DialectValueCase getDialectValueCase();
 }
