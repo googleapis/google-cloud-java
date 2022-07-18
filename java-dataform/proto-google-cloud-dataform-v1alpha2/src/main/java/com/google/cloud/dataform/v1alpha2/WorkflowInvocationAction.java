@@ -39,6 +39,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
 
   private WorkflowInvocationAction() {
     state_ = 0;
+    failureReason_ = "";
   }
 
   @java.lang.Override
@@ -141,6 +142,13 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
                 bigqueryAction_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              failureReason_ = s;
               break;
             }
           default:
@@ -1262,6 +1270,55 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         : result;
   }
 
+  public static final int FAILURE_REASON_FIELD_NUMBER = 7;
+  private volatile java.lang.Object failureReason_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If and only if action's state is FAILED a failure reason is set.
+   * </pre>
+   *
+   * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The failureReason.
+   */
+  @java.lang.Override
+  public java.lang.String getFailureReason() {
+    java.lang.Object ref = failureReason_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      failureReason_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If and only if action's state is FAILED a failure reason is set.
+   * </pre>
+   *
+   * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for failureReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFailureReasonBytes() {
+    java.lang.Object ref = failureReason_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      failureReason_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int INVOCATION_TIMING_FIELD_NUMBER = 5;
   private com.google.type.Interval invocationTiming_;
   /**
@@ -1413,6 +1470,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     if (bigqueryAction_ != null) {
       output.writeMessage(6, getBigqueryAction());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureReason_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, failureReason_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1437,6 +1497,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     }
     if (bigqueryAction_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getBigqueryAction());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureReason_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, failureReason_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1463,6 +1526,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       if (!getCanonicalTarget().equals(other.getCanonicalTarget())) return false;
     }
     if (state_ != other.state_) return false;
+    if (!getFailureReason().equals(other.getFailureReason())) return false;
     if (hasInvocationTiming() != other.hasInvocationTiming()) return false;
     if (hasInvocationTiming()) {
       if (!getInvocationTiming().equals(other.getInvocationTiming())) return false;
@@ -1492,6 +1556,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + FAILURE_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getFailureReason().hashCode();
     if (hasInvocationTiming()) {
       hash = (37 * hash) + INVOCATION_TIMING_FIELD_NUMBER;
       hash = (53 * hash) + getInvocationTiming().hashCode();
@@ -1660,6 +1726,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       state_ = 0;
 
+      failureReason_ = "";
+
       if (invocationTimingBuilder_ == null) {
         invocationTiming_ = null;
       } else {
@@ -1710,6 +1778,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         result.canonicalTarget_ = canonicalTargetBuilder_.build();
       }
       result.state_ = state_;
+      result.failureReason_ = failureReason_;
       if (invocationTimingBuilder_ == null) {
         result.invocationTiming_ = invocationTiming_;
       } else {
@@ -1778,6 +1847,10 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (!other.getFailureReason().isEmpty()) {
+        failureReason_ = other.failureReason_;
+        onChanged();
       }
       if (other.hasInvocationTiming()) {
         mergeInvocationTiming(other.getInvocationTiming());
@@ -2331,6 +2404,112 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     public Builder clearState() {
 
       state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object failureReason_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If and only if action's state is FAILED a failure reason is set.
+     * </pre>
+     *
+     * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The failureReason.
+     */
+    public java.lang.String getFailureReason() {
+      java.lang.Object ref = failureReason_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        failureReason_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If and only if action's state is FAILED a failure reason is set.
+     * </pre>
+     *
+     * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for failureReason.
+     */
+    public com.google.protobuf.ByteString getFailureReasonBytes() {
+      java.lang.Object ref = failureReason_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        failureReason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If and only if action's state is FAILED a failure reason is set.
+     * </pre>
+     *
+     * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The failureReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailureReason(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      failureReason_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If and only if action's state is FAILED a failure reason is set.
+     * </pre>
+     *
+     * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFailureReason() {
+
+      failureReason_ = getDefaultInstance().getFailureReason();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If and only if action's state is FAILED a failure reason is set.
+     * </pre>
+     *
+     * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for failureReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailureReasonBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      failureReason_ = value;
       onChanged();
       return this;
     }

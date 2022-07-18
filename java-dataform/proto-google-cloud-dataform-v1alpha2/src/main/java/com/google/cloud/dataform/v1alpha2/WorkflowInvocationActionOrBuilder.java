@@ -141,6 +141,31 @@ public interface WorkflowInvocationActionOrBuilder
    *
    *
    * <pre>
+   * Output only. If and only if action's state is FAILED a failure reason is set.
+   * </pre>
+   *
+   * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The failureReason.
+   */
+  java.lang.String getFailureReason();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If and only if action's state is FAILED a failure reason is set.
+   * </pre>
+   *
+   * <code>string failure_reason = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for failureReason.
+   */
+  com.google.protobuf.ByteString getFailureReasonBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. This action's timing details.
    * `start_time` will be set if the action is in [RUNNING, SUCCEEDED,
    * CANCELLED, FAILED] state.

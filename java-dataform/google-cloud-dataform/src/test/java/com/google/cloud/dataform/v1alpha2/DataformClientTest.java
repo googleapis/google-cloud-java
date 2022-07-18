@@ -2433,7 +2433,6 @@ public class DataformClientTest {
                     .toString())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
-            .setFilter("filter-1274492040")
             .build();
 
     QueryWorkflowInvocationActionsPagedResponse pagedListResponse =
@@ -2453,7 +2452,6 @@ public class DataformClientTest {
     Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
-    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -2474,7 +2472,6 @@ public class DataformClientTest {
                       .toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
-              .setFilter("filter-1274492040")
               .build();
       client.queryWorkflowInvocationActions(request);
       Assert.fail("No exception raised");
@@ -2597,7 +2594,10 @@ public class DataformClientTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setResource(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -2626,7 +2626,10 @@ public class DataformClientTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(
+                  CompilationResultName.of(
+                          "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                      .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

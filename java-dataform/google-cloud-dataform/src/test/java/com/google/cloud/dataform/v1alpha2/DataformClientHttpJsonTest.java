@@ -2683,7 +2683,6 @@ public class DataformClientHttpJsonTest {
                     .toString())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
-            .setFilter("filter-1274492040")
             .build();
 
     QueryWorkflowInvocationActionsPagedResponse pagedListResponse =
@@ -2726,7 +2725,6 @@ public class DataformClientHttpJsonTest {
                       .toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
-              .setFilter("filter-1274492040")
               .build();
       client.queryWorkflowInvocationActions(request);
       Assert.fail("No exception raised");
@@ -2864,7 +2862,10 @@ public class DataformClientHttpJsonTest {
 
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
-            .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setResource(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .build();
@@ -2897,7 +2898,10 @@ public class DataformClientHttpJsonTest {
     try {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
-              .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setResource(
+                  CompilationResultName.of(
+                          "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                      .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .build();

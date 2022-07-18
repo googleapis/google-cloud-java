@@ -1397,7 +1397,6 @@ public class HttpJsonDataformStub extends DataformStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<QueryWorkflowInvocationActionsRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             return fields;
@@ -1496,7 +1495,8 @@ public class HttpJsonDataformStub extends DataformStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1alpha2/{resource=projects/*/locations/*/repositories/*/workspaces/*}:setIamPolicy")
+                          "/v1alpha2/{resource=projects/*/locations/*/repositories/*/workspaces/*}:setIamPolicy",
+                          "/v1alpha2/{resource=projects/*/locations/*/repositories/*/compilationResults/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

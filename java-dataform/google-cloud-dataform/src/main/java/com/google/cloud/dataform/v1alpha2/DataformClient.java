@@ -3282,7 +3282,6 @@ public class DataformClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (WorkflowInvocationAction element :
    *       dataformClient.queryWorkflowInvocationActions(request).iterateAll()) {
@@ -3317,7 +3316,6 @@ public class DataformClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<WorkflowInvocationAction> future =
    *       dataformClient.queryWorkflowInvocationActionsPagedCallable().futureCall(request);
@@ -3352,7 +3350,6 @@ public class DataformClient implements BackgroundResource {
    *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
-   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     QueryWorkflowInvocationActionsResponse response =
@@ -3529,7 +3526,10 @@ public class DataformClient implements BackgroundResource {
    * try (DataformClient dataformClient = DataformClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(
+   *               CompilationResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+   *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();
@@ -3558,7 +3558,10 @@ public class DataformClient implements BackgroundResource {
    * try (DataformClient dataformClient = DataformClient.create()) {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
-   *           .setResource(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setResource(
+   *               CompilationResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+   *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .build();

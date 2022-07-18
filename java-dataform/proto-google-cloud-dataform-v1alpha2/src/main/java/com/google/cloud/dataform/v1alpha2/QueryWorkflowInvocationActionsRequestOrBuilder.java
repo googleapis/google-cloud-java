@@ -99,31 +99,4 @@ public interface QueryWorkflowInvocationActionsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Optional filter for the returned list. Filtering is only currently
-   * supported on the `file_path` field.
-   * </pre>
-   *
-   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The filter.
-   */
-  java.lang.String getFilter();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Optional filter for the returned list. Filtering is only currently
-   * supported on the `file_path` field.
-   * </pre>
-   *
-   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for filter.
-   */
-  com.google.protobuf.ByteString getFilterBytes();
 }
