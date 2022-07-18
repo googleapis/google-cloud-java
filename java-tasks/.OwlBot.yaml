@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -30,10 +28,12 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/tasks/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-tasks-$1/src"
+  dest: "/owl-bot-staging/java-tasks/$1/proto-google-cloud-tasks-$1/src"
 - source: "/google/cloud/tasks/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-tasks-$1/src"
+  dest: "/owl-bot-staging/java-tasks/$1/grpc-google-cloud-tasks-$1/src"
 - source: "/google/cloud/tasks/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-tasks/src"
+  dest: "/owl-bot-staging/java-tasks/$1/google-cloud-tasks/src"
 - source: "/google/cloud/tasks/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-tasks/$1/samples/snippets/generated"
+
+api-name: cloudtasks
