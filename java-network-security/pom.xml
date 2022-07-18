@@ -73,6 +73,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-network-security-v1</artifactId>
+        <version>0.5.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-network-security-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-network-security-v1</artifactId>
+        <version>0.5.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-network-security-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-network-security-v1beta1</artifactId>
         <version>0.5.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-network-security-v1beta1:current} -->
       </dependency>
@@ -112,7 +122,9 @@
   <modules>
     <module>google-cloud-network-security</module>
     <module>grpc-google-cloud-network-security-v1beta1</module>
+    <module>grpc-google-cloud-network-security-v1</module>
     <module>proto-google-cloud-network-security-v1beta1</module>
+    <module>proto-google-cloud-network-security-v1</module>
     <module>google-cloud-network-security-bom</module>
   </modules>
 
