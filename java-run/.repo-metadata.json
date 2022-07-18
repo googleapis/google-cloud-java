@@ -1,0 +1,16 @@
+{
+  "api_shortname": "run",
+  "name_pretty": "Cloud Run",
+  "product_documentation": "https://cloud.google.com/run/docs",
+  "api_description": "is a managed compute platform that enables you to run containers that are invocable via requests or events.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-run/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-run",
+  "repo_short": "java-run",
+  "distribution_name": "com.google.cloud:google-cloud-run",
+  "api_id": "run.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
