@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.networkmanagement.v1beta1",
+  "libraryPackage": "com.google.cloud.networkmanagement.v1beta1",
+  "services": {
+    "ReachabilityService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReachabilityServiceClient",
+          "rpcs": {
+            "CreateConnectivityTest": {
+              "methods": ["createConnectivityTestAsync", "createConnectivityTestOperationCallable", "createConnectivityTestCallable"]
+            },
+            "DeleteConnectivityTest": {
+              "methods": ["deleteConnectivityTestAsync", "deleteConnectivityTestOperationCallable", "deleteConnectivityTestCallable"]
+            },
+            "GetConnectivityTest": {
+              "methods": ["getConnectivityTest", "getConnectivityTestCallable"]
+            },
+            "ListConnectivityTests": {
+              "methods": ["listConnectivityTests", "listConnectivityTestsPagedCallable", "listConnectivityTestsCallable"]
+            },
+            "RerunConnectivityTest": {
+              "methods": ["rerunConnectivityTestAsync", "rerunConnectivityTestOperationCallable", "rerunConnectivityTestCallable"]
+            },
+            "UpdateConnectivityTest": {
+              "methods": ["updateConnectivityTestAsync", "updateConnectivityTestOperationCallable", "updateConnectivityTestCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
