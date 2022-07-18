@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.2.0 (2021-07-18)
+
+### Features
+
+* multi-endpoint (#135).
+* round-robin for bind calls (#127).
+* minSize of the channel pool (#134).
+* detailed logs (#133).
+* log metrics (#131).
+* map a key to current channel when bound call arrives but no mapping for the
+key exists (#132).
+* consolidate channel pool config in the GcpChannelPoolOptions (#109).
+
 ## 1.1.0 (2021-07-20)
 
 ### Features
