@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/containeranalysis/v1beta1/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/containeranalysis/v1beta1/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/containeranalysis/v1beta1/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/attestation/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/attestation/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/attestation/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/build/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/build/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/build/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/common/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/common/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/common/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/deployment/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/deployment/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/deployment/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/discovery/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/discovery/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/discovery/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/image/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/image/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/image/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/pkg/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/pkg/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/pkg/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/provenance/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/provenance/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/provenance/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/source/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/source/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/source/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/vulnerability/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/vulnerability/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>io/grafeas/v1beta1/vulnerability/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>
+</differences>
