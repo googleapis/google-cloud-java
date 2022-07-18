@@ -1,0 +1,15 @@
+{
+    "api_shortname": "cloudtrace",
+    "name_pretty": "Stackdriver Trace",
+    "product_documentation": "https://cloud.google.com/trace/docs/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-trace/latest/history",
+    "api_description": "is a distributed tracing system that collects latency data from your applications and displays it in the Google Cloud Platform Console. You can track how requests propagate through your application and receive detailed near real-time performance insights.",
+    "release_level": "stable",
+    "language": "java",
+    "transport": "grpc",
+    "repo": "googleapis/java-trace",
+    "repo_short": "java-trace",
+    "distribution_name": "com.google.cloud:google-cloud-trace",
+    "api_id": "cloudtrace.googleapis.com",
+    "library_type": "GAPIC_AUTO"
+}
