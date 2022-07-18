@@ -17,6 +17,8 @@ branchProtectionRules:
       - 'Kokoro - Test: Integration'
       - cla/google
       - OwlBot Post Processor
+      - 'Kokoro - Test: Java GraalVM Native Image'
+      - 'Kokoro - Test: Java 17 GraalVM Native Image'
   - pattern: 1.22.0-sp
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
