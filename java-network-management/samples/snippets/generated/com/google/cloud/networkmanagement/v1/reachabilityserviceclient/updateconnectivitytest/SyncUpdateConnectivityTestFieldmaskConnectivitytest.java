@@ -16,8 +16,7 @@
 
 package com.google.cloud.networkmanagement.v1.samples;
 
-// [START
-// networkmanagement_v1_generated_reachabilityserviceclient_updateconnectivitytest_fieldmaskconnectivitytest_sync]
+// [START networkmanagement_v1_generated_reachabilityserviceclient_updateconnectivitytest_fieldmaskconnectivitytest_sync]
 import com.google.cloud.networkmanagement.v1.ConnectivityTest;
 import com.google.cloud.networkmanagement.v1.ReachabilityServiceClient;
 import com.google.protobuf.FieldMask;
@@ -39,5 +38,4 @@ public class SyncUpdateConnectivityTestFieldmaskConnectivitytest {
     }
   }
 }
-// [END
-// networkmanagement_v1_generated_reachabilityserviceclient_updateconnectivitytest_fieldmaskconnectivitytest_sync]
+// [END networkmanagement_v1_generated_reachabilityserviceclient_updateconnectivitytest_fieldmaskconnectivitytest_sync]

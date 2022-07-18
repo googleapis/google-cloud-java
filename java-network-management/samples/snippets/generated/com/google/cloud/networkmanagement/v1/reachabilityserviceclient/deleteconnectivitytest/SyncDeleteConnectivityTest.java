@@ -19,6 +19,7 @@ package com.google.cloud.networkmanagement.v1.samples;
 // [START networkmanagement_v1_generated_reachabilityserviceclient_deleteconnectivitytest_sync]
 import com.google.cloud.networkmanagement.v1.DeleteConnectivityTestRequest;
 import com.google.cloud.networkmanagement.v1.ReachabilityServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteConnectivityTest {
 

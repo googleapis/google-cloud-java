@@ -16,8 +16,7 @@
 
 package com.google.cloud.networkmanagement.v1.samples;
 
-// [START
-// networkmanagement_v1_generated_reachabilityserviceclient_createconnectivitytest_stringstringconnectivitytest_sync]
+// [START networkmanagement_v1_generated_reachabilityserviceclient_createconnectivitytest_stringstringconnectivitytest_sync]
 import com.google.cloud.networkmanagement.v1.ConnectivityTest;
 import com.google.cloud.networkmanagement.v1.ReachabilityServiceClient;
 
@@ -39,5 +38,4 @@ public class SyncCreateConnectivityTestStringStringConnectivitytest {
     }
   }
 }
-// [END
-// networkmanagement_v1_generated_reachabilityserviceclient_createconnectivitytest_stringstringconnectivitytest_sync]
+// [END networkmanagement_v1_generated_reachabilityserviceclient_createconnectivitytest_stringstringconnectivitytest_sync]

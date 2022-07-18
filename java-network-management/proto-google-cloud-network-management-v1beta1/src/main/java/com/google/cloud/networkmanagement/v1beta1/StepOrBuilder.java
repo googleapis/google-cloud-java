@@ -370,6 +370,41 @@ public interface StepOrBuilder
    *
    *
    * <pre>
+   * Display information of a VPC connector.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+   *
+   * @return Whether the vpcConnector field is set.
+   */
+  boolean hasVpcConnector();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a VPC connector.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+   *
+   * @return The vpcConnector.
+   */
+  com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo getVpcConnector();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a VPC connector.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfoOrBuilder getVpcConnectorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Display information of the final state "deliver" and reason.
    * </pre>
    *
@@ -649,6 +684,41 @@ public interface StepOrBuilder
    */
   com.google.cloud.networkmanagement.v1beta1.CloudSQLInstanceInfoOrBuilder
       getCloudSqlInstanceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud function.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+   *
+   * @return Whether the cloudFunction field is set.
+   */
+  boolean hasCloudFunction();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud function.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+   *
+   * @return The cloudFunction.
+   */
+  com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo getCloudFunction();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud function.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfoOrBuilder getCloudFunctionOrBuilder();
 
   public com.google.cloud.networkmanagement.v1beta1.Step.StepInfoCase getStepInfoCase();
 }

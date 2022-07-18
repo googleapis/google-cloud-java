@@ -398,6 +398,47 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
               stepInfoCase_ = 19;
               break;
             }
+          case 162:
+            {
+              com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.Builder subBuilder =
+                  null;
+              if (stepInfoCase_ == 20) {
+                subBuilder =
+                    ((com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo) stepInfo_)
+                        .toBuilder();
+              }
+              stepInfo_ =
+                  input.readMessage(
+                      com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo) stepInfo_);
+                stepInfo_ = subBuilder.buildPartial();
+              }
+              stepInfoCase_ = 20;
+              break;
+            }
+          case 170:
+            {
+              com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.Builder subBuilder = null;
+              if (stepInfoCase_ == 21) {
+                subBuilder =
+                    ((com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo) stepInfo_)
+                        .toBuilder();
+              }
+              stepInfo_ =
+                  input.readMessage(
+                      com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo) stepInfo_);
+                stepInfo_ = subBuilder.buildPartial();
+              }
+              stepInfoCase_ = 21;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -516,6 +557,17 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Initial state: packet originating from a Cloud function.
+     * A CloudFunctionInfo is populated with starting function information.
+     * </pre>
+     *
+     * <code>START_FROM_CLOUD_FUNCTION = 23;</code>
+     */
+    START_FROM_CLOUD_FUNCTION(23),
+    /**
+     *
+     *
+     * <pre>
      * Config checking state: verify ingress firewall rule.
      * </pre>
      *
@@ -613,6 +665,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>ARRIVE_AT_VPN_TUNNEL = 13;</code>
      */
     ARRIVE_AT_VPN_TUNNEL(13),
+    /**
+     *
+     *
+     * <pre>
+     * Forwarding state: arriving at a VPC connector.
+     * </pre>
+     *
+     * <code>ARRIVE_AT_VPC_CONNECTOR = 24;</code>
+     */
+    ARRIVE_AT_VPC_CONNECTOR(24),
     /**
      *
      *
@@ -760,6 +822,17 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Initial state: packet originating from a Cloud function.
+     * A CloudFunctionInfo is populated with starting function information.
+     * </pre>
+     *
+     * <code>START_FROM_CLOUD_FUNCTION = 23;</code>
+     */
+    public static final int START_FROM_CLOUD_FUNCTION_VALUE = 23;
+    /**
+     *
+     *
+     * <pre>
      * Config checking state: verify ingress firewall rule.
      * </pre>
      *
@@ -857,6 +930,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * <code>ARRIVE_AT_VPN_TUNNEL = 13;</code>
      */
     public static final int ARRIVE_AT_VPN_TUNNEL_VALUE = 13;
+    /**
+     *
+     *
+     * <pre>
+     * Forwarding state: arriving at a VPC connector.
+     * </pre>
+     *
+     * <code>ARRIVE_AT_VPC_CONNECTOR = 24;</code>
+     */
+    public static final int ARRIVE_AT_VPC_CONNECTOR_VALUE = 24;
     /**
      *
      *
@@ -967,6 +1050,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return START_FROM_GKE_MASTER;
         case 22:
           return START_FROM_CLOUD_SQL_INSTANCE;
+        case 23:
+          return START_FROM_CLOUD_FUNCTION;
         case 4:
           return APPLY_INGRESS_FIREWALL_RULE;
         case 5:
@@ -987,6 +1072,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return ARRIVE_AT_VPN_GATEWAY;
         case 13:
           return ARRIVE_AT_VPN_TUNNEL;
+        case 24:
+          return ARRIVE_AT_VPC_CONNECTOR;
         case 14:
           return NAT;
         case 15:
@@ -1068,6 +1155,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     FORWARDING_RULE(9),
     VPN_GATEWAY(10),
     VPN_TUNNEL(11),
+    VPC_CONNECTOR(21),
     DELIVER(12),
     FORWARD(13),
     ABORT(14),
@@ -1076,6 +1164,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     NETWORK(17),
     GKE_MASTER(18),
     CLOUD_SQL_INSTANCE(19),
+    CLOUD_FUNCTION(20),
     STEPINFO_NOT_SET(0);
     private final int value;
 
@@ -1108,6 +1197,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return VPN_GATEWAY;
         case 11:
           return VPN_TUNNEL;
+        case 21:
+          return VPC_CONNECTOR;
         case 12:
           return DELIVER;
         case 13:
@@ -1124,6 +1215,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return GKE_MASTER;
         case 19:
           return CLOUD_SQL_INSTANCE;
+        case 20:
+          return CLOUD_FUNCTION;
         case 0:
           return STEPINFO_NOT_SET;
         default:
@@ -1662,6 +1755,58 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.networkmanagement.v1beta1.VpnTunnelInfo.getDefaultInstance();
   }
 
+  public static final int VPC_CONNECTOR_FIELD_NUMBER = 21;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a VPC connector.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+   *
+   * @return Whether the vpcConnector field is set.
+   */
+  @java.lang.Override
+  public boolean hasVpcConnector() {
+    return stepInfoCase_ == 21;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a VPC connector.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+   *
+   * @return The vpcConnector.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo getVpcConnector() {
+    if (stepInfoCase_ == 21) {
+      return (com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a VPC connector.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfoOrBuilder
+      getVpcConnectorOrBuilder() {
+    if (stepInfoCase_ == 21) {
+      return (com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.getDefaultInstance();
+  }
+
   public static final int DELIVER_FIELD_NUMBER = 12;
   /**
    *
@@ -2075,6 +2220,58 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.networkmanagement.v1beta1.CloudSQLInstanceInfo.getDefaultInstance();
   }
 
+  public static final int CLOUD_FUNCTION_FIELD_NUMBER = 20;
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud function.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+   *
+   * @return Whether the cloudFunction field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudFunction() {
+    return stepInfoCase_ == 20;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud function.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+   *
+   * @return The cloudFunction.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo getCloudFunction() {
+    if (stepInfoCase_ == 20) {
+      return (com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud function.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfoOrBuilder
+      getCloudFunctionOrBuilder() {
+    if (stepInfoCase_ == 20) {
+      return (com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2150,6 +2347,14 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     if (stepInfoCase_ == 19) {
       output.writeMessage(
           19, (com.google.cloud.networkmanagement.v1beta1.CloudSQLInstanceInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 20) {
+      output.writeMessage(
+          20, (com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 21) {
+      output.writeMessage(
+          21, (com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo) stepInfo_);
     }
     unknownFields.writeTo(output);
   }
@@ -2248,6 +2453,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               19, (com.google.cloud.networkmanagement.v1beta1.CloudSQLInstanceInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 20) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20, (com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 21) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21, (com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo) stepInfo_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2291,6 +2506,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       case 11:
         if (!getVpnTunnel().equals(other.getVpnTunnel())) return false;
         break;
+      case 21:
+        if (!getVpcConnector().equals(other.getVpcConnector())) return false;
+        break;
       case 12:
         if (!getDeliver().equals(other.getDeliver())) return false;
         break;
@@ -2314,6 +2532,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         break;
       case 19:
         if (!getCloudSqlInstance().equals(other.getCloudSqlInstance())) return false;
+        break;
+      case 20:
+        if (!getCloudFunction().equals(other.getCloudFunction())) return false;
         break;
       case 0:
       default:
@@ -2366,6 +2587,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + VPN_TUNNEL_FIELD_NUMBER;
         hash = (53 * hash) + getVpnTunnel().hashCode();
         break;
+      case 21:
+        hash = (37 * hash) + VPC_CONNECTOR_FIELD_NUMBER;
+        hash = (53 * hash) + getVpcConnector().hashCode();
+        break;
       case 12:
         hash = (37 * hash) + DELIVER_FIELD_NUMBER;
         hash = (53 * hash) + getDeliver().hashCode();
@@ -2397,6 +2622,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       case 19:
         hash = (37 * hash) + CLOUD_SQL_INSTANCE_FIELD_NUMBER;
         hash = (53 * hash) + getCloudSqlInstance().hashCode();
+        break;
+      case 20:
+        hash = (37 * hash) + CLOUD_FUNCTION_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudFunction().hashCode();
         break;
       case 0:
       default:
@@ -2637,6 +2866,13 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           result.stepInfo_ = vpnTunnelBuilder_.build();
         }
       }
+      if (stepInfoCase_ == 21) {
+        if (vpcConnectorBuilder_ == null) {
+          result.stepInfo_ = stepInfo_;
+        } else {
+          result.stepInfo_ = vpcConnectorBuilder_.build();
+        }
+      }
       if (stepInfoCase_ == 12) {
         if (deliverBuilder_ == null) {
           result.stepInfo_ = stepInfo_;
@@ -2691,6 +2927,13 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           result.stepInfo_ = stepInfo_;
         } else {
           result.stepInfo_ = cloudSqlInstanceBuilder_.build();
+        }
+      }
+      if (stepInfoCase_ == 20) {
+        if (cloudFunctionBuilder_ == null) {
+          result.stepInfo_ = stepInfo_;
+        } else {
+          result.stepInfo_ = cloudFunctionBuilder_.build();
         }
       }
       result.stepInfoCase_ = stepInfoCase_;
@@ -2794,6 +3037,11 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             mergeVpnTunnel(other.getVpnTunnel());
             break;
           }
+        case VPC_CONNECTOR:
+          {
+            mergeVpcConnector(other.getVpcConnector());
+            break;
+          }
         case DELIVER:
           {
             mergeDeliver(other.getDeliver());
@@ -2832,6 +3080,11 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         case CLOUD_SQL_INSTANCE:
           {
             mergeCloudSqlInstance(other.getCloudSqlInstance());
+            break;
+          }
+        case CLOUD_FUNCTION:
+          {
+            mergeCloudFunction(other.getCloudFunction());
             break;
           }
         case STEPINFO_NOT_SET:
@@ -4755,6 +5008,223 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo,
+            com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfoOrBuilder>
+        vpcConnectorBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+     *
+     * @return Whether the vpcConnector field is set.
+     */
+    @java.lang.Override
+    public boolean hasVpcConnector() {
+      return stepInfoCase_ == 21;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+     *
+     * @return The vpcConnector.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo getVpcConnector() {
+      if (vpcConnectorBuilder_ == null) {
+        if (stepInfoCase_ == 21) {
+          return (com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 21) {
+          return vpcConnectorBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    public Builder setVpcConnector(
+        com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo value) {
+      if (vpcConnectorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        vpcConnectorBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    public Builder setVpcConnector(
+        com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.Builder builderForValue) {
+      if (vpcConnectorBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        vpcConnectorBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    public Builder mergeVpcConnector(
+        com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo value) {
+      if (vpcConnectorBuilder_ == null) {
+        if (stepInfoCase_ == 21
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 21) {
+          vpcConnectorBuilder_.mergeFrom(value);
+        } else {
+          vpcConnectorBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 21;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    public Builder clearVpcConnector() {
+      if (vpcConnectorBuilder_ == null) {
+        if (stepInfoCase_ == 21) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 21) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        vpcConnectorBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.Builder
+        getVpcConnectorBuilder() {
+      return getVpcConnectorFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfoOrBuilder
+        getVpcConnectorOrBuilder() {
+      if ((stepInfoCase_ == 21) && (vpcConnectorBuilder_ != null)) {
+        return vpcConnectorBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 21) {
+          return (com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a VPC connector.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo vpc_connector = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo,
+            com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfoOrBuilder>
+        getVpcConnectorFieldBuilder() {
+      if (vpcConnectorBuilder_ == null) {
+        if (!(stepInfoCase_ == 21)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.getDefaultInstance();
+        }
+        vpcConnectorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo,
+                com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.VpcConnectorInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 21;
+      onChanged();
+      ;
+      return vpcConnectorBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.networkmanagement.v1beta1.DeliverInfo,
             com.google.cloud.networkmanagement.v1beta1.DeliverInfo.Builder,
             com.google.cloud.networkmanagement.v1beta1.DeliverInfoOrBuilder>
@@ -6462,6 +6932,223 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return cloudSqlInstanceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo,
+            com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfoOrBuilder>
+        cloudFunctionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+     *
+     * @return Whether the cloudFunction field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudFunction() {
+      return stepInfoCase_ == 20;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+     *
+     * @return The cloudFunction.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo getCloudFunction() {
+      if (cloudFunctionBuilder_ == null) {
+        if (stepInfoCase_ == 20) {
+          return (com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 20) {
+          return cloudFunctionBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    public Builder setCloudFunction(
+        com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo value) {
+      if (cloudFunctionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        cloudFunctionBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    public Builder setCloudFunction(
+        com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.Builder builderForValue) {
+      if (cloudFunctionBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudFunctionBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    public Builder mergeCloudFunction(
+        com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo value) {
+      if (cloudFunctionBuilder_ == null) {
+        if (stepInfoCase_ == 20
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 20) {
+          cloudFunctionBuilder_.mergeFrom(value);
+        } else {
+          cloudFunctionBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    public Builder clearCloudFunction() {
+      if (cloudFunctionBuilder_ == null) {
+        if (stepInfoCase_ == 20) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 20) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        cloudFunctionBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.Builder
+        getCloudFunctionBuilder() {
+      return getCloudFunctionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfoOrBuilder
+        getCloudFunctionOrBuilder() {
+      if ((stepInfoCase_ == 20) && (cloudFunctionBuilder_ != null)) {
+        return cloudFunctionBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 20) {
+          return (com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Cloud function.
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo cloud_function = 20;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo,
+            com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.Builder,
+            com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfoOrBuilder>
+        getCloudFunctionFieldBuilder() {
+      if (cloudFunctionBuilder_ == null) {
+        if (!(stepInfoCase_ == 20)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.getDefaultInstance();
+        }
+        cloudFunctionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo,
+                com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo.Builder,
+                com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 20;
+      onChanged();
+      ;
+      return cloudFunctionBuilder_;
     }
 
     @java.lang.Override

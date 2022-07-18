@@ -16,8 +16,7 @@
 
 package com.google.cloud.networkmanagement.v1beta1.samples;
 
-// [START
-// networkmanagement_v1beta1_generated_reachabilityserviceclient_createconnectivitytest_lro_async]
+// [START networkmanagement_v1beta1_generated_reachabilityserviceclient_createconnectivitytest_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.networkmanagement.v1beta1.ConnectivityTest;
 import com.google.cloud.networkmanagement.v1beta1.CreateConnectivityTestRequest;
@@ -47,5 +46,4 @@ public class AsyncCreateConnectivityTestLRO {
     }
   }
 }
-// [END
-// networkmanagement_v1beta1_generated_reachabilityserviceclient_createconnectivitytest_lro_async]
+// [END networkmanagement_v1beta1_generated_reachabilityserviceclient_createconnectivitytest_lro_async]

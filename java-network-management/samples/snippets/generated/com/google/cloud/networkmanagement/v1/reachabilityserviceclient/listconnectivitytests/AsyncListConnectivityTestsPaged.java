@@ -16,8 +16,7 @@
 
 package com.google.cloud.networkmanagement.v1.samples;
 
-// [START
-// networkmanagement_v1_generated_reachabilityserviceclient_listconnectivitytests_paged_async]
+// [START networkmanagement_v1_generated_reachabilityserviceclient_listconnectivitytests_paged_async]
 import com.google.cloud.networkmanagement.v1.ConnectivityTest;
 import com.google.cloud.networkmanagement.v1.ListConnectivityTestsRequest;
 import com.google.cloud.networkmanagement.v1.ListConnectivityTestsResponse;

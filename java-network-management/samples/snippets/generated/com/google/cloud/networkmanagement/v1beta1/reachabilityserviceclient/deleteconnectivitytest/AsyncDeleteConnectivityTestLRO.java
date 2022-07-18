@@ -16,8 +16,7 @@
 
 package com.google.cloud.networkmanagement.v1beta1.samples;
 
-// [START
-// networkmanagement_v1beta1_generated_reachabilityserviceclient_deleteconnectivitytest_lro_async]
+// [START networkmanagement_v1beta1_generated_reachabilityserviceclient_deleteconnectivitytest_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.networkmanagement.v1beta1.DeleteConnectivityTestRequest;
 import com.google.cloud.networkmanagement.v1beta1.OperationMetadata;
@@ -43,5 +42,4 @@ public class AsyncDeleteConnectivityTestLRO {
     }
   }
 }
-// [END
-// networkmanagement_v1beta1_generated_reachabilityserviceclient_deleteconnectivitytest_lro_async]
+// [END networkmanagement_v1beta1_generated_reachabilityserviceclient_deleteconnectivitytest_lro_async]

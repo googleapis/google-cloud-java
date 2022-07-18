@@ -252,6 +252,19 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPLIED_VPC_FIREWALL_RULE = 3;</code>
      */
     IMPLIED_VPC_FIREWALL_RULE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Implicit firewall rules that are managed by serverless VPC access to
+     * allow ingress access. They are not visible in the Google Cloud console.
+     * For details, see [VPC connector's implicit
+     * rules](https://cloud.google.com/functions/docs/networking/connecting-vpc#restrict-access).
+     * </pre>
+     *
+     * <code>SERVERLESS_VPC_ACCESS_MANAGED_FIREWALL_RULE = 4;</code>
+     */
+    SERVERLESS_VPC_ACCESS_MANAGED_FIREWALL_RULE(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -301,6 +314,19 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPLIED_VPC_FIREWALL_RULE = 3;</code>
      */
     public static final int IMPLIED_VPC_FIREWALL_RULE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Implicit firewall rules that are managed by serverless VPC access to
+     * allow ingress access. They are not visible in the Google Cloud console.
+     * For details, see [VPC connector's implicit
+     * rules](https://cloud.google.com/functions/docs/networking/connecting-vpc#restrict-access).
+     * </pre>
+     *
+     * <code>SERVERLESS_VPC_ACCESS_MANAGED_FIREWALL_RULE = 4;</code>
+     */
+    public static final int SERVERLESS_VPC_ACCESS_MANAGED_FIREWALL_RULE_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -334,6 +360,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
           return VPC_FIREWALL_RULE;
         case 3:
           return IMPLIED_VPC_FIREWALL_RULE;
+        case 4:
+          return SERVERLESS_VPC_ACCESS_MANAGED_FIREWALL_RULE;
         default:
           return null;
       }

@@ -16,8 +16,7 @@
 
 package com.google.cloud.networkmanagement.v1.samples;
 
-// [START
-// networkmanagement_v1_generated_reachabilityserviceclient_create_setcredentialsprovider1_sync]
+// [START networkmanagement_v1_generated_reachabilityserviceclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.networkmanagement.v1.ReachabilityServiceClient;
 import com.google.cloud.networkmanagement.v1.ReachabilityServiceSettings;
 
@@ -39,5 +38,4 @@ public class SyncCreateSetCredentialsProvider1 {
         ReachabilityServiceClient.create(reachabilityServiceSettings);
   }
 }
-// [END
-// networkmanagement_v1_generated_reachabilityserviceclient_create_setcredentialsprovider1_sync]
+// [END networkmanagement_v1_generated_reachabilityserviceclient_create_setcredentialsprovider1_sync]

@@ -149,6 +149,48 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
+   * A [Cloud function](https://cloud.google.com/functions).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+   * </code>
+   *
+   * @return Whether the cloudFunction field is set.
+   */
+  boolean hasCloudFunction();
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud function](https://cloud.google.com/functions).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+   * </code>
+   *
+   * @return The cloudFunction.
+   */
+  com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint getCloudFunction();
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud function](https://cloud.google.com/functions).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpointOrBuilder
+      getCloudFunctionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A Compute Engine network URI.
    * </pre>
    *

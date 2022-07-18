@@ -16,8 +16,7 @@
 
 package com.google.cloud.networkmanagement.v1beta1.samples;
 
-// [START
-// networkmanagement_v1beta1_generated_reachabilityserviceclient_listconnectivitytests_paged_async]
+// [START networkmanagement_v1beta1_generated_reachabilityserviceclient_listconnectivitytests_paged_async]
 import com.google.cloud.networkmanagement.v1beta1.ConnectivityTest;
 import com.google.cloud.networkmanagement.v1beta1.ListConnectivityTestsRequest;
 import com.google.cloud.networkmanagement.v1beta1.ListConnectivityTestsResponse;
@@ -58,5 +57,4 @@ public class AsyncListConnectivityTestsPaged {
     }
   }
 }
-// [END
-// networkmanagement_v1beta1_generated_reachabilityserviceclient_listconnectivitytests_paged_async]
+// [END networkmanagement_v1beta1_generated_reachabilityserviceclient_listconnectivitytests_paged_async]

@@ -554,6 +554,18 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_ILB = 10;</code>
      */
     NEXT_HOP_ILB(10),
+    /**
+     *
+     *
+     * <pre>
+     * Next hop is a
+     * [router appliance
+     * instance](https://cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ra-overview).
+     * </pre>
+     *
+     * <code>NEXT_HOP_ROUTER_APPLIANCE = 11;</code>
+     */
+    NEXT_HOP_ROUTER_APPLIANCE(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -671,6 +683,18 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>NEXT_HOP_ILB = 10;</code>
      */
     public static final int NEXT_HOP_ILB_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Next hop is a
+     * [router appliance
+     * instance](https://cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ra-overview).
+     * </pre>
+     *
+     * <code>NEXT_HOP_ROUTER_APPLIANCE = 11;</code>
+     */
+    public static final int NEXT_HOP_ROUTER_APPLIANCE_VALUE = 11;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -718,6 +742,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
           return NEXT_HOP_BLACKHOLE;
         case 10:
           return NEXT_HOP_ILB;
+        case 11:
+          return NEXT_HOP_ROUTER_APPLIANCE;
         default:
           return null;
       }

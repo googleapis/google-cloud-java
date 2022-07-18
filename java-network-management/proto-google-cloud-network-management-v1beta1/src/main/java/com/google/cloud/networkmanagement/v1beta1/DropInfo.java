@@ -157,7 +157,7 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * a Compute Engine instance can only send or receive a packet with a
+     * A Compute Engine instance can only send or receive a packet with a
      * foreign IP address if ip_forward is enabled.
      * </pre>
      *
@@ -234,9 +234,7 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Instance with only an internal IP address tries to access external hosts,
      * but Cloud NAT is not enabled in the subnet, unless special configurations
-     * on a VM allow this connection. For more details, see [Special
-     * configurations for VM
-     * instances](https://cloud.google.com/vpc/docs/special-configurations).
+     * on a VM allow this connection.
      * </pre>
      *
      * <code>NO_EXTERNAL_ADDRESS = 9;</code>
@@ -380,6 +378,59 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_SQL_INSTANCE_NO_IP_ADDRESS = 21;</code>
      */
     CLOUD_SQL_INSTANCE_NO_IP_ADDRESS(21),
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because the Cloud function is not in an active
+     * status.
+     * </pre>
+     *
+     * <code>CLOUD_FUNCTION_NOT_ACTIVE = 22;</code>
+     */
+    CLOUD_FUNCTION_NOT_ACTIVE(22),
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because no VPC connector is set.
+     * </pre>
+     *
+     * <code>VPC_CONNECTOR_NOT_SET = 23;</code>
+     */
+    VPC_CONNECTOR_NOT_SET(23),
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because the VPC connector is not in a running
+     * state.
+     * </pre>
+     *
+     * <code>VPC_CONNECTOR_NOT_RUNNING = 24;</code>
+     */
+    VPC_CONNECTOR_NOT_RUNNING(24),
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because it was sent from a different region
+     * to a regional forwarding without global access.
+     * </pre>
+     *
+     * <code>FORWARDING_RULE_REGION_MISMATCH = 25;</code>
+     */
+    FORWARDING_RULE_REGION_MISMATCH(25),
+    /**
+     *
+     *
+     * <pre>
+     * Privte Service Connect (PSC) connection is not in accepted state.
+     * </pre>
+     *
+     * <code>PSC_CONNECTION_NOT_ACCEPTED = 26;</code>
+     */
+    PSC_CONNECTION_NOT_ACCEPTED(26),
     UNRECOGNIZED(-1),
     ;
 
@@ -409,7 +460,7 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * a Compute Engine instance can only send or receive a packet with a
+     * A Compute Engine instance can only send or receive a packet with a
      * foreign IP address if ip_forward is enabled.
      * </pre>
      *
@@ -486,9 +537,7 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Instance with only an internal IP address tries to access external hosts,
      * but Cloud NAT is not enabled in the subnet, unless special configurations
-     * on a VM allow this connection. For more details, see [Special
-     * configurations for VM
-     * instances](https://cloud.google.com/vpc/docs/special-configurations).
+     * on a VM allow this connection.
      * </pre>
      *
      * <code>NO_EXTERNAL_ADDRESS = 9;</code>
@@ -632,6 +681,59 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_SQL_INSTANCE_NO_IP_ADDRESS = 21;</code>
      */
     public static final int CLOUD_SQL_INSTANCE_NO_IP_ADDRESS_VALUE = 21;
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because the Cloud function is not in an active
+     * status.
+     * </pre>
+     *
+     * <code>CLOUD_FUNCTION_NOT_ACTIVE = 22;</code>
+     */
+    public static final int CLOUD_FUNCTION_NOT_ACTIVE_VALUE = 22;
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because no VPC connector is set.
+     * </pre>
+     *
+     * <code>VPC_CONNECTOR_NOT_SET = 23;</code>
+     */
+    public static final int VPC_CONNECTOR_NOT_SET_VALUE = 23;
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because the VPC connector is not in a running
+     * state.
+     * </pre>
+     *
+     * <code>VPC_CONNECTOR_NOT_RUNNING = 24;</code>
+     */
+    public static final int VPC_CONNECTOR_NOT_RUNNING_VALUE = 24;
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because it was sent from a different region
+     * to a regional forwarding without global access.
+     * </pre>
+     *
+     * <code>FORWARDING_RULE_REGION_MISMATCH = 25;</code>
+     */
+    public static final int FORWARDING_RULE_REGION_MISMATCH_VALUE = 25;
+    /**
+     *
+     *
+     * <pre>
+     * Privte Service Connect (PSC) connection is not in accepted state.
+     * </pre>
+     *
+     * <code>PSC_CONNECTION_NOT_ACCEPTED = 26;</code>
+     */
+    public static final int PSC_CONNECTION_NOT_ACCEPTED_VALUE = 26;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -701,6 +803,16 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return GOOGLE_MANAGED_SERVICE_NO_PEERING;
         case 21:
           return CLOUD_SQL_INSTANCE_NO_IP_ADDRESS;
+        case 22:
+          return CLOUD_FUNCTION_NOT_ACTIVE;
+        case 23:
+          return VPC_CONNECTOR_NOT_SET;
+        case 24:
+          return VPC_CONNECTOR_NOT_RUNNING;
+        case 25:
+          return FORWARDING_RULE_REGION_MISMATCH;
+        case 26:
+          return PSC_CONNECTION_NOT_ACCEPTED;
         default:
           return null;
       }

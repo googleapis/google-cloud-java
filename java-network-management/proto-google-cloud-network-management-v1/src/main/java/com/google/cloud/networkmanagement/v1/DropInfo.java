@@ -234,9 +234,7 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Instance with only an internal IP address tries to access external hosts,
      * but Cloud NAT is not enabled in the subnet, unless special configurations
-     * on a VM allow this connection. For more details, see [Special
-     * configurations for VM
-     * instances](https://cloud.google.com/vpc/docs/special-configurations).
+     * on a VM allow this connection.
      * </pre>
      *
      * <code>NO_EXTERNAL_ADDRESS = 9;</code>
@@ -486,9 +484,7 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Instance with only an internal IP address tries to access external hosts,
      * but Cloud NAT is not enabled in the subnet, unless special configurations
-     * on a VM allow this connection. For more details, see [Special
-     * configurations for VM
-     * instances](https://cloud.google.com/vpc/docs/special-configurations).
+     * on a VM allow this connection.
      * </pre>
      *
      * <code>NO_EXTERNAL_ADDRESS = 9;</code>

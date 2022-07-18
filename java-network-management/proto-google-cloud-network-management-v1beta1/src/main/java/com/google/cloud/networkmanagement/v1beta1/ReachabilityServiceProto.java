@@ -71,13 +71,13 @@ public final class ReachabilityServiceProto {
       "\n9google/cloud/networkmanagement/v1beta1"
           + "/reachability.proto\022&google.cloud.networ"
           + "kmanagement.v1beta1\032\034google/api/annotati"
-          + "ons.proto\032\037google/api/field_behavior.pro"
-          + "to\032\031google/api/resource.proto\032>google/cl"
-          + "oud/networkmanagement/v1beta1/connectivi"
-          + "ty_test.proto\032#google/longrunning/operat"
-          + "ions.proto\032 google/protobuf/field_mask.p"
-          + "roto\032\037google/protobuf/timestamp.proto\032\027g"
-          + "oogle/api/client.proto\"|\n\034ListConnectivi"
+          + "ons.proto\032\027google/api/client.proto\032\037goog"
+          + "le/api/field_behavior.proto\032\031google/api/"
+          + "resource.proto\032>google/cloud/networkmana"
+          + "gement/v1beta1/connectivity_test.proto\032#"
+          + "google/longrunning/operations.proto\032 goo"
+          + "gle/protobuf/field_mask.proto\032\037google/pr"
+          + "otobuf/timestamp.proto\"|\n\034ListConnectivi"
           + "tyTestsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\021\n\tp"
           + "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006fi"
           + "lter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\232\001\n\035ListCon"
@@ -159,13 +159,13 @@ public final class ReachabilityServiceProto {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.networkmanagement.v1beta1.TestOuterClass.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_networkmanagement_v1beta1_ListConnectivityTestsRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -247,13 +247,13 @@ public final class ReachabilityServiceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.networkmanagement.v1beta1.TestOuterClass.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
