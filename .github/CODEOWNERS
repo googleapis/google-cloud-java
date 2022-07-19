@@ -6,7 +6,10 @@
 
 # The @googleapis/cloud-native-db-dpes @googleapis/api-firestore is the default owner for changes in this repo
 *                       @googleapis/yoshi-java @googleapis/cloud-native-db-dpes @googleapis/api-firestore
+
+# for handwritten libraries, keep codeowner_team in .repo-metadata.json as owner
 **/*.java               @googleapis/cloud-native-db-dpes @googleapis/api-firestore
+
 
 # The java-samples-reviewers team is the default owner for samples changes
 samples/**/*.java       @googleapis/java-samples-reviewers
