@@ -38,6 +38,10 @@ public class ListTrainingPhrases {
   // DialogFlow API List Training Phrases sample.
   public static void listTrainingPhrases(
       String projectId, String location, String agentId, String intentId) throws IOException {
+
+    // Note: close() needs to be called on the IntentsClient object to clean up resources
+    // such as threads. In the example below, try-with-resources is used,
+    // which automatically calls close().
     try (IntentsClient client = IntentsClient.create()) {
       // Set the intent name
       IntentName name = IntentName.of(projectId, location, agentId, intentId);

@@ -59,6 +59,9 @@ public class CreateSimplePage {
         .setPage(pageBuilder);
 
     // Make API request to create page
+    // Note: close() needs to be called on the PagesClient object to clean up resources
+    // such as threads. In the example below, try-with-resources is used,
+    // which automatically calls close().
     try (PagesClient client = PagesClient.create()) {
       response = client.createPage(createRequestBuilder.build());
       System.out.println("Successfully created page!");

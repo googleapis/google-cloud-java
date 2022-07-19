@@ -47,6 +47,9 @@ public class ExportAgent {
     String apiEndpoint = String.format("%s-dialogflow.googleapis.com:443", location);
 
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
+    // Note: close() needs to be called on the AgentsClient object to clean up resources
+    // such as threads. In the example below, try-with-resources is used,
+    // which automatically calls close().
     try (AgentsClient agentsClient = AgentsClient.create(agentsSettings)) {
       ExportAgentRequest request =
           ExportAgentRequest.newBuilder()

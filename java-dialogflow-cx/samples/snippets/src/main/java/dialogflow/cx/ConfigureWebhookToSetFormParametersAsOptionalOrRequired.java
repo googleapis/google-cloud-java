@@ -57,9 +57,6 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequired implements 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     String jsonResponseObject = gson.toJson(webhookResponse);
 
-    System.out.println("Response Object: \n");
-    System.out.println(jsonResponseObject.toString());
-
     /* {
      *   "page_info": {
      *     "form_info": {

@@ -62,6 +62,10 @@ public class DetectIntentIntentInput {
 
     // Instantiates a client by setting the session name.
     // Format:`projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/sessions/<SessionID>`
+
+    // Note: close() needs to be called on the SessionsClient object to clean up resources
+    // such as threads. In the example below, try-with-resources is used,
+    // which automatically calls close().
     try (SessionsClient sessionsClient = SessionsClient.create(sessionsSettings)) {
       SessionName session =
           SessionName.ofProjectLocationAgentSessionName(projectId, locationId, agentId, sessionId);

@@ -52,6 +52,9 @@ public class CreatePage {
     PagesSettings pagesSettings = pagesSettingsBuilder.build();
 
     // Instantiates a client
+    // Note: close() needs to be called on the PagesClient object to clean up resources
+    // such as threads. In the example below, try-with-resources is used,
+    // which automatically calls close().
     try (PagesClient pagesClient = PagesClient.create(pagesSettings)) {
       // Set the flow name using the projectID (my-project-id), locationID (global), agentID (UUID)
       // and flowID (UUID).

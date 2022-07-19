@@ -48,6 +48,9 @@ public class CreateIntent {
     IntentsSettings intentsSettings = intentsSettingsBuilder.build();
 
     // Instantiates a client
+    // Note: close() needs to be called on the IntentsClient object to clean up resources
+    // such as threads. In the example below, try-with-resources is used,
+    // which automatically calls close().
     try (IntentsClient intentsClient = IntentsClient.create(intentsSettings)) {
       // Set the project agent name using the projectID (my-project-id), locationID (global), and
       // agentID (UUID).

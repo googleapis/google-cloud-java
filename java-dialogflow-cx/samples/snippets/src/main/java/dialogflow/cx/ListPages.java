@@ -39,23 +39,22 @@ public class ListPages {
   // Lists all pages from the provided parameters
   public static void listPages(String projectId, String agentId, String flowId, String location)
       throws IOException {
-    PagesClient client = PagesClient.create();
-    Builder listRequestBuilder = ListPagesRequest.newBuilder();
+    // Note: close() needs to be called on the PagesClient object to clean up resources
+    // such as threads. In the example below, try-with-resources is used,
+    // which automatically calls close().
+    try (PagesClient client = PagesClient.create()) {
+      Builder listRequestBuilder = ListPagesRequest.newBuilder();
 
-    listRequestBuilder.setParent(
-        "projects/"
-            + projectId
-            + "/locations/"
-            + location
-            + "/agents/"
-            + agentId
-            + "/flows/"
-            + flowId);
-    listRequestBuilder.setLanguageCode("en");
+      String parentPath =
+          String.format(
+              "projects/%s/locations/%s/agents/%s/flows/%s", projectId, location, agentId, flowId);
+      listRequestBuilder.setParent(parentPath);
+      listRequestBuilder.setLanguageCode("en");
 
-    // Make API request to list all pages in the project
-    for (Page element : client.listPages(listRequestBuilder.build()).iterateAll()) {
-      System.out.println(element);
+      // Make API request to list all pages in the project
+      for (Page element : client.listPages(listRequestBuilder.build()).iterateAll()) {
+        System.out.println(element);
+      }
     }
   }
   // [END dialogflow_cx_list_pages]

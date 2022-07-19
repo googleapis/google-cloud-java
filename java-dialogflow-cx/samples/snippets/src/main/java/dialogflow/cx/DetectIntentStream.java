@@ -56,6 +56,10 @@ public class DetectIntentStream {
     // Instantiates a client by setting the session name.
     // Format: `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/sessions/<SessionID>`
     // Using the same `sessionId` between requests allows continuation of the conversation.
+
+    // Note: close() needs to be called on the SessionsClient object to clean up resources
+    // such as threads. In the example below, try-with-resources is used,
+    // which automatically calls close().
     try (SessionsClient sessionsClient = SessionsClient.create(sessionsSettings)) {
       SessionName session = SessionName.of(projectId, locationId, agentId, sessionId);
 

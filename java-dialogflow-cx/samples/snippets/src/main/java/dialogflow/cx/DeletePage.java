@@ -40,6 +40,10 @@ public class DeletePage {
   public static void deletePage(
       String projectId, String agentId, String flowId, String pageId, String location)
       throws IOException {
+
+    // Note: close() needs to be called on the PagesClient object to clean up resources
+    // such as threads. In the example below, try-with-resources is used,
+    // which automatically calls close().
     try (PagesClient client = PagesClient.create()) {
       Builder deleteRequestBuilder = DeletePageRequest.newBuilder();
 

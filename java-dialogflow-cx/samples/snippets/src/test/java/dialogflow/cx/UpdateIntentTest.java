@@ -48,21 +48,24 @@ public class UpdateIntentTest {
     stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
 
-    Builder build = Agent.newBuilder();
-    build.setDefaultLanguageCode("en");
-    build.setDisplayName("temp_agent_" + UUID.randomUUID().toString());
-    build.setTimeZone("America/Los_Angeles");
-
-    Agent agent = build.build();
-
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
-    String parentPath = "projects/" + PROJECT_ID + "/locations/global";
 
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
-    AgentsClient client = AgentsClient.create(agentsSettings);
+    try (AgentsClient agentsClient = AgentsClient.create(agentsSettings)) {
 
-    parent = client.createAgent(parentPath, agent).getName();
-    UpdateIntentTest.agentID = parent.split("/")[5];
+      Builder build = Agent.newBuilder();
+
+      build.setDefaultLanguageCode("en");
+      build.setDisplayName("temp_agent_" + UUID.randomUUID().toString());
+      build.setTimeZone("America/Los_Angeles");
+
+      Agent agent = build.build();
+      String parentPath = String.format("projects/%s/locations/global", PROJECT_ID);
+
+      parent = agentsClient.createAgent(parentPath, agent).getName();
+
+      UpdateIntentTest.agentID = parent.split("/")[5];
+    }
 
     try (IntentsClient intentsClient = IntentsClient.create()) {
       com.google.cloud.dialogflow.cx.v3.Intent.Builder intent = Intent.newBuilder();
@@ -77,16 +80,17 @@ public class UpdateIntentTest {
   public void tearDown() throws IOException, InterruptedException {
     stdOut = null;
     System.setOut(null);
+
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
-    String parentPath = "projects/" + PROJECT_ID + "/locations/global";
 
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
-    AgentsClient client = AgentsClient.create(agentsSettings);
+    try (AgentsClient client = AgentsClient.create(agentsSettings)) {
+      String parentPath = "projects/" + PROJECT_ID + "/locations/global";
+      client.deleteAgent(parent);
 
-    client.deleteAgent(parent);
-
-    // Small delay to prevent reaching quota limit of requests per minute
-    Thread.sleep(250);
+      // Small delay to prevent reaching quota limit of requests per minute
+      Thread.sleep(250);
+    }
   }
 
   @Test

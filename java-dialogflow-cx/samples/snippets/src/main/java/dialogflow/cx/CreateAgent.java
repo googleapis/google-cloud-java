@@ -39,6 +39,9 @@ public class CreateAgent {
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
 
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
+    // Note: close() needs to be called on the AgentsClient object to clean up resources
+    // such as threads. In the example below, try-with-resources is used,
+    // which automatically calls close().
     try (AgentsClient client = AgentsClient.create(agentsSettings)) {
       // Set the details of the Agent to create
       Builder build = Agent.newBuilder();

@@ -65,7 +65,9 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredIT {
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
 
     FulfillmentInfo fulfillmentInfo =
-        FulfillmentInfo.newBuilder().setTag("configure-session-parameters").build();
+        FulfillmentInfo.newBuilder()
+            .setTag("configure-form-parameters-optional-or-parameter")
+            .build();
 
     WebhookRequest webhookRequest =
         WebhookRequest.newBuilder().setFulfillmentInfo(fulfillmentInfo).build();
@@ -94,5 +96,6 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredIT {
     String expectedResponse = gson.toJson(webhookResponse);
 
     assertThat(responseOut.toString()).isEqualTo(expectedResponse);
+    Thread.sleep(200);
   }
 }

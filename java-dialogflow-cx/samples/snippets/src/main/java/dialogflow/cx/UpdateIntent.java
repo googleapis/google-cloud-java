@@ -41,6 +41,10 @@ public class UpdateIntent {
   public static void updateIntent(
       String projectId, String agentId, String intentId, String location, String displayName)
       throws IOException {
+
+    // Note: close() needs to be called on the IntentsClient object to clean up resources
+    // such as threads. In the example below, try-with-resources is used,
+    // which automatically calls close().
     try (IntentsClient client = IntentsClient.create()) {
       String intentPath =
           "projects/"

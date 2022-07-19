@@ -48,12 +48,12 @@ public class CreateAgentIT {
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
 
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
-    AgentsClient client = AgentsClient.create(agentsSettings);
+    try (AgentsClient client = AgentsClient.create(agentsSettings)) {
+      client.deleteAgent(CreateAgentIT.agentPath);
 
-    client.deleteAgent(CreateAgentIT.agentPath);
-
-    // Small delay to prevent reaching quota limit of requests per minute
-    Thread.sleep(250);
+      // Small delay to prevent reaching quota limit of requests per minute
+      Thread.sleep(250);
+    }
   }
 
   @Test

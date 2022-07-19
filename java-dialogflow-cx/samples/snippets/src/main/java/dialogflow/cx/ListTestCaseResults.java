@@ -57,10 +57,14 @@ public class ListTestCaseResults {
         TestCasesSettings.newBuilder()
             .setEndpoint(location + "-dialogflow.googleapis.com:443")
             .build();
-    TestCasesClient client = TestCasesClient.create(testCasesSettings);
 
-    for (TestCaseResult element : client.listTestCaseResults(req.build()).iterateAll()) {
-      System.out.println(element);
+    // Note: close() needs to be called on the TestCasesClient object to clean up resources
+    // such as threads. In the example below, try-with-resources is used,
+    // which automatically calls close().
+    try (TestCasesClient client = TestCasesClient.create(testCasesSettings)) {
+      for (TestCaseResult element : client.listTestCaseResults(req.build()).iterateAll()) {
+        System.out.println(element);
+      }
     }
   }
 }
