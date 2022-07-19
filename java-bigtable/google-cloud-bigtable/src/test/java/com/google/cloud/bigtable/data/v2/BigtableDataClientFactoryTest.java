@@ -26,16 +26,16 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.WatchdogProvider;
 import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.InstanceName;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
+import com.google.bigtable.v2.PingAndWarmRequest;
+import com.google.bigtable.v2.PingAndWarmResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
-import com.google.bigtable.v2.RowFilter;
-import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.base.Preconditions;
-import com.google.protobuf.ByteString;
 import io.grpc.Attributes;
 import io.grpc.Server;
 import io.grpc.ServerTransportFilter;
@@ -224,14 +224,12 @@ public class BigtableDataClientFactoryTest {
 
   @Test
   public void testCreateWithRefreshingChannel() throws Exception {
-    String[] tableIds = {"fake-table1", "fake-table2"};
     int poolSize = 3;
     BigtableDataSettings.Builder builder =
         BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .setProjectId(DEFAULT_PROJECT_ID)
             .setInstanceId(DEFAULT_INSTANCE_ID)
             .setAppProfileId(DEFAULT_APP_PROFILE_ID)
-            .setPrimingTableIds(tableIds)
             .setRefreshingChannel(true);
     builder
         .stubSettings()
@@ -258,26 +256,17 @@ public class BigtableDataClientFactoryTest {
     assertThat(setUpAttributes).hasSize(poolSize);
 
     // Make sure that prime requests were sent only once per table per connection
-    assertThat(service.readRowsRequests).hasSize(poolSize * tableIds.length);
-    List<ReadRowsRequest> expectedRequests = new LinkedList<>();
-    for (String tableId : tableIds) {
-      for (int i = 0; i < poolSize; i++) {
-        expectedRequests.add(
-            ReadRowsRequest.newBuilder()
-                .setTableName(
-                    String.format(
-                        "projects/%s/instances/%s/tables/%s",
-                        DEFAULT_PROJECT_ID, DEFAULT_INSTANCE_ID, tableId))
-                .setAppProfileId(DEFAULT_APP_PROFILE_ID)
-                .setRows(
-                    RowSet.newBuilder()
-                        .addRowKeys(ByteString.copyFromUtf8("nonexistent-priming-row")))
-                .setFilter(RowFilter.newBuilder().setBlockAllFilter(true).build())
-                .setRowsLimit(1)
-                .build());
-      }
+    assertThat(service.pingAndWarmRequests).hasSize(poolSize);
+    List<PingAndWarmRequest> expectedRequests = new LinkedList<>();
+    for (int i = 0; i < poolSize; i++) {
+      expectedRequests.add(
+          PingAndWarmRequest.newBuilder()
+              .setName(InstanceName.format(DEFAULT_PROJECT_ID, DEFAULT_INSTANCE_ID))
+              .setAppProfileId(DEFAULT_APP_PROFILE_ID)
+              .build());
     }
-    assertThat(service.readRowsRequests).containsExactly(expectedRequests.toArray());
+
+    assertThat(service.pingAndWarmRequests).containsExactly(expectedRequests.toArray());
 
     // Wait for all the connections to close asynchronously
     factory.close();
@@ -316,11 +305,20 @@ public class BigtableDataClientFactoryTest {
 
     volatile MutateRowRequest lastRequest;
     BlockingQueue<ReadRowsRequest> readRowsRequests = new LinkedBlockingDeque<>();
+    BlockingQueue<PingAndWarmRequest> pingAndWarmRequests = new LinkedBlockingDeque<>();
     private ApiFunction<ReadRowsRequest, ReadRowsResponse> readRowsCallback =
         new ApiFunction<ReadRowsRequest, ReadRowsResponse>() {
           @Override
           public ReadRowsResponse apply(ReadRowsRequest readRowsRequest) {
             return ReadRowsResponse.getDefaultInstance();
+          }
+        };
+
+    private ApiFunction<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmCallback =
+        new ApiFunction<PingAndWarmRequest, PingAndWarmResponse>() {
+          @Override
+          public PingAndWarmResponse apply(PingAndWarmRequest pingAndWarmRequest) {
+            return PingAndWarmResponse.getDefaultInstance();
           }
         };
 
@@ -341,6 +339,14 @@ public class BigtableDataClientFactoryTest {
         MutateRowRequest request, StreamObserver<MutateRowResponse> responseObserver) {
       lastRequest = request;
       responseObserver.onNext(MutateRowResponse.getDefaultInstance());
+      responseObserver.onCompleted();
+    }
+
+    @Override
+    public void pingAndWarm(
+        PingAndWarmRequest request, StreamObserver<PingAndWarmResponse> responseObserver) {
+      pingAndWarmRequests.add(request);
+      responseObserver.onNext(pingAndWarmCallback.apply(request));
       responseObserver.onCompleted();
     }
   }

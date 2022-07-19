@@ -215,10 +215,10 @@ public final class BigtableDataSettings {
   }
 
   /**
-   * Gets the table ids that will be used to send warmup requests when {@link
-   * #isRefreshingChannel()} is enabled.
+   * @deprecated This field is ignored. If {@link #isRefreshingChannel()} is enabled, warm up
+   *     requests will be sent to all table ids of the instance.
    */
-  @BetaApi("Channel priming is not currently stable and may change in the future")
+  @Deprecated
   public List<String> getPrimingTableIds() {
     return stubSettings.getPrimedTableIds();
   }
@@ -377,23 +377,20 @@ public final class BigtableDataSettings {
     }
 
     /**
-     * Configure the tables that can be used to prime a channel during a refresh.
-     *
-     * <p>These tables work in conjunction with {@link #setRefreshingChannel(boolean)}. When a
-     * channel is refreshed, it will send a request to each table to warm up the serverside caches
-     * before admitting the new channel into the channel pool.
+     * @deprecated This field is ignored. If {@link #isRefreshingChannel()} is enabled, warm up
+     *     requests will be sent to all table ids of the instance.
      */
-    @BetaApi("Channel priming is not currently stable and may change in the future")
+    @Deprecated
     public Builder setPrimingTableIds(String... tableIds) {
       stubSettings.setPrimedTableIds(tableIds);
       return this;
     }
 
     /**
-     * Gets the table ids that will be used to send warmup requests when {@link
-     * #setRefreshingChannel(boolean)} is enabled.
+     * @deprecated This field is ignored. If {@link #isRefreshingChannel()} is enabled, warm up
+     *     requests will be sent to all table ids of the instance.
      */
-    @BetaApi("Channel priming is not currently stable and may change in the future")
+    @Deprecated
     public List<String> getPrimingTableIds() {
       return stubSettings.getPrimedTableIds();
     }

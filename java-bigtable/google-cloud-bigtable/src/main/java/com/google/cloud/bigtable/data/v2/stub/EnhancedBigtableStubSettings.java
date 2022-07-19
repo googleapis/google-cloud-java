@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.auth.Credentials;
+import com.google.bigtable.v2.PingAndWarmRequest;
 import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
@@ -113,6 +114,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private static final Set<Code> READ_ROWS_RETRY_CODES =
       ImmutableSet.<Code>builder().addAll(IDEMPOTENT_RETRY_CODES).add(Code.ABORTED).build();
 
+  // Priming request should have a shorter timeout
+  private static Duration PRIME_REQUEST_TIMEOUT = Duration.ofSeconds(30);
+
   private static final RetrySettings READ_ROWS_RETRY_SETTINGS =
       RetrySettings.newBuilder()
           .setInitialRetryDelay(Duration.ofMillis(10))
@@ -173,6 +177,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final BigtableBulkReadRowsCallSettings bulkReadRowsSettings;
   private final UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings;
   private final UnaryCallSettings<ReadModifyWriteRow, Row> readModifyWriteRowSettings;
+  private final UnaryCallSettings<PingAndWarmRequest, Void> pingAndWarmSettings;
 
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
@@ -208,6 +213,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     bulkReadRowsSettings = builder.bulkReadRowsSettings.build();
     checkAndMutateRowSettings = builder.checkAndMutateRowSettings.build();
     readModifyWriteRowSettings = builder.readModifyWriteRowSettings.build();
+    pingAndWarmSettings = builder.pingAndWarmSettings.build();
   }
 
   /** Create a new builder. */
@@ -236,8 +242,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return isRefreshingChannel;
   }
 
-  /** Gets the tables that will be primed during a channel refresh. */
-  @BetaApi("Channel priming is not currently stable and might change in the future")
+  /**
+   * @deprecated This field is ignored. If {@link #isRefreshingChannel()} is enabled, warm up
+   *     requests will be sent to all table ids of the instance.
+   */
+  @Deprecated
   public List<String> getPrimedTableIds() {
     return primedTableIds;
   }
@@ -491,6 +500,15 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return readModifyWriteRowSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to PingAndWarm.
+   *
+   * <p>By default the retries are disabled for PingAndWarm and deadline is set to 30 seconds.
+   */
+  UnaryCallSettings<PingAndWarmRequest, Void> pingAndWarmSettings() {
+    return pingAndWarmSettings;
+  }
+
   /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
@@ -515,6 +533,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private final UnaryCallSettings.Builder<ConditionalRowMutation, Boolean>
         checkAndMutateRowSettings;
     private final UnaryCallSettings.Builder<ReadModifyWriteRow, Row> readModifyWriteRowSettings;
+    private final UnaryCallSettings.Builder<PingAndWarmRequest, Void> pingAndWarmSettings;
 
     /**
      * Initializes a new Builder with sane defaults for all settings.
@@ -626,6 +645,15 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
       readModifyWriteRowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       copyRetrySettings(baseDefaults.readModifyWriteRowSettings(), readModifyWriteRowSettings);
+
+      pingAndWarmSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      pingAndWarmSettings.setRetrySettings(
+          RetrySettings.newBuilder()
+              .setMaxAttempts(1)
+              .setInitialRpcTimeout(PRIME_REQUEST_TIMEOUT)
+              .setMaxRpcTimeout(PRIME_REQUEST_TIMEOUT)
+              .setTotalTimeout(PRIME_REQUEST_TIMEOUT)
+              .build());
     }
 
     private Builder(EnhancedBigtableStubSettings settings) {
@@ -646,6 +674,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       bulkReadRowsSettings = settings.bulkReadRowsSettings.toBuilder();
       checkAndMutateRowSettings = settings.checkAndMutateRowSettings.toBuilder();
       readModifyWriteRowSettings = settings.readModifyWriteRowSettings.toBuilder();
+      pingAndWarmSettings = settings.pingAndWarmSettings.toBuilder();
     }
     // <editor-fold desc="Private Helpers">
 
@@ -727,9 +756,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     /**
      * Sets if channels will gracefully refresh connections to Cloud Bigtable service.
      *
-     * <p>When enabled, this will wait for the connection to complete the SSL handshake. The effect
-     * can be enhanced by configuring table ids that can be used warm serverside caches using {@link
-     * #setPrimedTableIds(String...)}.
+     * <p>When enabled, this will wait for the connection to complete the SSL handshake and warm up
+     * serverside caches for all the tables of the instance.
      *
      * @see com.google.cloud.bigtable.data.v2.BigtableDataSettings.Builder#setRefreshingChannel
      */
@@ -739,8 +767,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       return this;
     }
 
-    /** Configures which tables will be primed when a connection is created. */
-    @BetaApi("Channel priming is not currently stable and might change in the future")
+    /**
+     * @deprecated This field is ignored. If {@link #isRefreshingChannel()} is enabled, warm up
+     *     requests will be sent to all table ids of the instance.
+     */
+    @Deprecated
     public Builder setPrimedTableIds(String... tableIds) {
       this.primedTableIds = ImmutableList.copyOf(tableIds);
       return this;
@@ -752,8 +783,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       return isRefreshingChannel;
     }
 
-    /** Gets the tables that will be primed during a channel refresh. */
-    @BetaApi("Channel priming is not currently stable and might change in the future")
+    /**
+     * @deprecated This field is ignored. If {@link #isRefreshingChannel()} is enabled, warm up
+     *     requests will be sent to all table ids of the instance.
+     */
+    @Deprecated
     public List<String> getPrimedTableIds() {
       return primedTableIds;
     }
@@ -809,6 +843,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       return readModifyWriteRowSettings;
     }
 
+    /** Returns the builder with the settings used for calls to PingAndWarm. */
+    public UnaryCallSettings.Builder<PingAndWarmRequest, Void> pingAndWarmSettings() {
+      return pingAndWarmSettings;
+    }
+
     @SuppressWarnings("unchecked")
     public EnhancedBigtableStubSettings build() {
       Preconditions.checkState(projectId != null, "Project id must be set");
@@ -831,8 +870,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         // Use shared credentials
         this.setCredentialsProvider(FixedCredentialsProvider.create(credentials));
         channelProviderBuilder.setChannelPrimer(
-            BigtableChannelPrimer.create(
-                credentials, projectId, instanceId, appProfileId, primedTableIds));
+            BigtableChannelPrimer.create(credentials, projectId, instanceId, appProfileId));
         this.setTransportChannelProvider(channelProviderBuilder.build());
       }
       return new EnhancedBigtableStubSettings(this);
@@ -857,6 +895,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         .add("bulkReadRowsSettings", bulkReadRowsSettings)
         .add("checkAndMutateRowSettings", checkAndMutateRowSettings)
         .add("readModifyWriteRowSettings", readModifyWriteRowSettings)
+        .add("pingAndWarmSettings", pingAndWarmSettings)
         .add("parent", super.toString())
         .toString();
   }

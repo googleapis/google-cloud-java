@@ -51,6 +51,8 @@ import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
+import com.google.bigtable.v2.PingAndWarmRequest;
+import com.google.bigtable.v2.PingAndWarmResponse;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
@@ -104,6 +106,7 @@ import io.opencensus.tags.Tags;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -141,6 +144,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final UnaryCallable<BulkMutation, Void> bulkMutateRowsCallable;
   private final UnaryCallable<ConditionalRowMutation, Boolean> checkAndMutateRowCallable;
   private final UnaryCallable<ReadModifyWriteRow, Row> readModifyWriteRowCallable;
+  private final UnaryCallable<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmCallable;
 
   public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
       throws IOException {
@@ -181,8 +185,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
                       credentials,
                       settings.getProjectId(),
                       settings.getInstanceId(),
-                      settings.getAppProfileId(),
-                      settings.getPrimedTableIds()))
+                      settings.getAppProfileId()))
               .build());
     }
 
@@ -284,6 +287,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     bulkMutateRowsCallable = createBulkMutateRowsCallable();
     checkAndMutateRowCallable = createCheckAndMutateRowCallable();
     readModifyWriteRowCallable = createReadModifyWriteRowCallable();
+    pingAndWarmCallable = createPingAndWarmCallable();
   }
 
   // <editor-fold desc="Callable creators">
@@ -810,6 +814,25 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
+
+  private UnaryCallable<PingAndWarmRequest, PingAndWarmResponse> createPingAndWarmCallable() {
+    UnaryCallable<PingAndWarmRequest, PingAndWarmResponse> pingAndWarm =
+        GrpcRawCallableFactory.createUnaryCallable(
+            GrpcCallSettings.<PingAndWarmRequest, PingAndWarmResponse>newBuilder()
+                .setMethodDescriptor(BigtableGrpc.getPingAndWarmMethod())
+                .setParamsExtractor(
+                    new RequestParamsExtractor<PingAndWarmRequest>() {
+                      @Override
+                      public Map<String, String> extract(PingAndWarmRequest request) {
+                        return ImmutableMap.of(
+                            "name", request.getName(),
+                            "app_profile_id", request.getAppProfileId());
+                      }
+                    })
+                .build(),
+            Collections.emptySet());
+    return pingAndWarm.withDefaultCallContext(clientContext.getDefaultCallContext());
+  }
   // </editor-fold>
 
   // <editor-fold desc="Callable accessors">
@@ -853,6 +876,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
    */
   public UnaryCallable<ReadModifyWriteRow, Row> readModifyWriteRowCallable() {
     return readModifyWriteRowCallable;
+  }
+
+  UnaryCallable<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmCallable() {
+    return pingAndWarmCallable;
   }
   // </editor-fold>
 

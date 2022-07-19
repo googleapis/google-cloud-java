@@ -21,12 +21,9 @@ import com.google.api.core.ApiFunction;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.bigtable.v2.BigtableGrpc.BigtableImplBase;
-import com.google.bigtable.v2.ReadRowsRequest;
-import com.google.bigtable.v2.ReadRowsResponse;
-import com.google.bigtable.v2.RowFilter;
-import com.google.bigtable.v2.RowSet;
+import com.google.bigtable.v2.PingAndWarmRequest;
+import com.google.bigtable.v2.PingAndWarmResponse;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
-import com.google.common.collect.ImmutableList;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
@@ -75,8 +72,7 @@ public class BigtableChannelPrimerTest {
             OAuth2Credentials.create(new AccessToken(TOKEN_VALUE, null)),
             "fake-project",
             "fake-instance",
-            "fake-app-profile",
-            ImmutableList.of("table1", "table2"));
+            "fake-app-profile");
 
     channel =
         ManagedChannelBuilder.forAddress("localhost", server.getPort()).usePlaintext().build();
@@ -104,63 +100,45 @@ public class BigtableChannelPrimerTest {
 
   @Test
   public void testRequests() {
-    final Queue<ReadRowsRequest> requests = new ConcurrentLinkedQueue<>();
+    final Queue<PingAndWarmRequest> requests = new ConcurrentLinkedQueue<>();
 
-    fakeService.readRowsCallback =
-        new ApiFunction<ReadRowsRequest, ReadRowsResponse>() {
+    fakeService.pingAndWarmCallback =
+        new ApiFunction<PingAndWarmRequest, PingAndWarmResponse>() {
           @Override
-          public ReadRowsResponse apply(ReadRowsRequest req) {
+          public PingAndWarmResponse apply(PingAndWarmRequest req) {
             requests.add(req);
-            return ReadRowsResponse.getDefaultInstance();
+            return PingAndWarmResponse.getDefaultInstance();
           }
         };
     primer.primeChannel(channel);
 
     assertThat(requests)
         .containsExactly(
-            ReadRowsRequest.newBuilder()
-                .setTableName("projects/fake-project/instances/fake-instance/tables/table1")
+            PingAndWarmRequest.newBuilder()
+                .setName("projects/fake-project/instances/fake-instance")
                 .setAppProfileId("fake-app-profile")
-                .setRows(RowSet.newBuilder().addRowKeys(BigtableChannelPrimer.PRIMING_ROW_KEY))
-                .setFilter(RowFilter.newBuilder().setBlockAllFilter(true).build())
-                .setRowsLimit(1)
-                .build(),
-            ReadRowsRequest.newBuilder()
-                .setTableName("projects/fake-project/instances/fake-instance/tables/table2")
-                .setAppProfileId("fake-app-profile")
-                .setRows(RowSet.newBuilder().addRowKeys(BigtableChannelPrimer.PRIMING_ROW_KEY))
-                .setFilter(RowFilter.newBuilder().setBlockAllFilter(true).build())
-                .setRowsLimit(1)
                 .build());
   }
 
   @Test
   public void testErrorsAreLogged() {
-    fakeService.readRowsCallback =
-        new ApiFunction<ReadRowsRequest, ReadRowsResponse>() {
+    fakeService.pingAndWarmCallback =
+        new ApiFunction<PingAndWarmRequest, PingAndWarmResponse>() {
           @Override
-          public ReadRowsResponse apply(ReadRowsRequest req) {
+          public PingAndWarmResponse apply(PingAndWarmRequest pingAndWarmRequest) {
             throw new StatusRuntimeException(Status.FAILED_PRECONDITION);
           }
         };
     primer.primeChannel(channel);
 
-    assertThat(logHandler.logs).hasSize(2);
+    assertThat(logHandler.logs).hasSize(1);
     for (LogRecord log : logHandler.logs) {
       assertThat(log.getMessage()).contains("FAILED_PRECONDITION");
     }
   }
 
   @Test
-  public void testErrorsAreLoggedForBasic() {
-    BigtableChannelPrimer basicPrimer =
-        BigtableChannelPrimer.create(
-            OAuth2Credentials.create(new AccessToken(TOKEN_VALUE, null)),
-            "fake-project",
-            "fake-instance",
-            "fake-app-profile",
-            ImmutableList.<String>of());
-
+  public void testChannelErrorsAreLogged() {
     ManagedChannel channel =
         Mockito.mock(
             ManagedChannel.class, new ThrowsException(new UnsupportedOperationException()));
@@ -168,7 +146,7 @@ public class BigtableChannelPrimerTest {
 
     assertThat(logHandler.logs).hasSize(1);
     for (LogRecord log : logHandler.logs) {
-      assertThat(log.getMessage()).contains("Unexpected");
+      assertThat(log.getMessage()).contains("UnsupportedOperationException");
     }
   }
 
@@ -187,20 +165,19 @@ public class BigtableChannelPrimerTest {
   }
 
   static class FakeService extends BigtableImplBase {
-    private ApiFunction<ReadRowsRequest, ReadRowsResponse> readRowsCallback =
-        new ApiFunction<ReadRowsRequest, ReadRowsResponse>() {
+    private ApiFunction<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmCallback =
+        new ApiFunction<PingAndWarmRequest, PingAndWarmResponse>() {
           @Override
-          public ReadRowsResponse apply(ReadRowsRequest readRowsRequest) {
-            return ReadRowsResponse.getDefaultInstance();
+          public PingAndWarmResponse apply(PingAndWarmRequest pingAndWarmRequest) {
+            return PingAndWarmResponse.getDefaultInstance();
           }
         };
 
     @Override
-    public void readRows(
-        ReadRowsRequest request, StreamObserver<ReadRowsResponse> responseObserver) {
-
+    public void pingAndWarm(
+        PingAndWarmRequest request, StreamObserver<PingAndWarmResponse> responseObserver) {
       try {
-        responseObserver.onNext(readRowsCallback.apply(request));
+        responseObserver.onNext(pingAndWarmCallback.apply(request));
         responseObserver.onCompleted();
       } catch (RuntimeException e) {
         responseObserver.onError(e);

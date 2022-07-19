@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
-import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -23,25 +22,13 @@ import com.google.api.gax.grpc.ChannelPrimer;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.auth.Credentials;
-import com.google.bigtable.v2.ReadRowsRequest;
-import com.google.bigtable.v2.RowFilter;
-import com.google.bigtable.v2.RowSet;
-import com.google.bigtable.v2.TableName;
-import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
-import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.bigtable.v2.PingAndWarmRequest;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
-import com.google.protobuf.ByteString;
-import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
-import org.threeten.bp.Duration;
 
 /**
  * A channel warmer that ensures that a Bigtable channel is ready to be used before being added to
@@ -54,18 +41,10 @@ import org.threeten.bp.Duration;
 class BigtableChannelPrimer implements ChannelPrimer {
   private static Logger LOG = Logger.getLogger(BigtableChannelPrimer.class.toString());
 
-  static ByteString PRIMING_ROW_KEY = ByteString.copyFromUtf8("nonexistent-priming-row");
-  private static Duration PRIME_REQUEST_TIMEOUT = Duration.ofSeconds(30);
-
   private final EnhancedBigtableStubSettings settingsTemplate;
-  private final List<String> tableIds;
 
   static BigtableChannelPrimer create(
-      Credentials credentials,
-      String projectId,
-      String instanceId,
-      String appProfileId,
-      List<String> tableIds) {
+      Credentials credentials, String projectId, String instanceId, String appProfileId) {
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
             .setProjectId(projectId)
@@ -75,28 +54,12 @@ class BigtableChannelPrimer implements ChannelPrimer {
             .setExecutorProvider(
                 InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build());
 
-    // Disable retries for priming request
-    builder
-        .readRowSettings()
-        .setRetrySettings(
-            builder
-                .readRowSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setMaxAttempts(1)
-                .setJittered(false)
-                .setInitialRpcTimeout(PRIME_REQUEST_TIMEOUT)
-                .setMaxRpcTimeout(PRIME_REQUEST_TIMEOUT)
-                .setTotalTimeout(PRIME_REQUEST_TIMEOUT)
-                .build());
-    return new BigtableChannelPrimer(builder.build(), tableIds);
+    return new BigtableChannelPrimer(builder.build());
   }
 
-  private BigtableChannelPrimer(
-      EnhancedBigtableStubSettings settingsTemplate, List<String> tableIds) {
+  private BigtableChannelPrimer(EnhancedBigtableStubSettings settingsTemplate) {
     Preconditions.checkNotNull(settingsTemplate, "settingsTemplate can't be null");
     this.settingsTemplate = settingsTemplate;
-    this.tableIds = ImmutableList.copyOf(tableIds);
   }
 
   @Override
@@ -110,25 +73,7 @@ class BigtableChannelPrimer implements ChannelPrimer {
   }
 
   private void primeChannelUnsafe(ManagedChannel managedChannel) throws IOException {
-    if (tableIds.isEmpty()) {
-      waitForChannelReady(managedChannel);
-    } else {
-      sendPrimeRequests(managedChannel);
-    }
-  }
-
-  private void waitForChannelReady(ManagedChannel managedChannel) {
-    for (int i = 0; i < 30; i++) {
-      ConnectivityState connectivityState = managedChannel.getState(true);
-      if (connectivityState == ConnectivityState.READY) {
-        break;
-      }
-      try {
-        TimeUnit.SECONDS.sleep(1);
-      } catch (InterruptedException e) {
-        break;
-      }
-    }
+    sendPrimeRequests(managedChannel);
   }
 
   private void sendPrimeRequests(ManagedChannel managedChannel) throws IOException {
@@ -141,41 +86,24 @@ class BigtableChannelPrimer implements ChannelPrimer {
             .build();
 
     try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(primingSettings)) {
-      Map<String, ApiFuture<?>> primeFutures = new HashMap<>();
+      PingAndWarmRequest request =
+          PingAndWarmRequest.newBuilder()
+              .setName(
+                  NameUtil.formatInstanceName(
+                      primingSettings.getProjectId(), primingSettings.getInstanceId()))
+              .setAppProfileId(primingSettings.getAppProfileId())
+              .build();
 
-      // Prime all of the table ids in parallel
-      for (String tableId : tableIds) {
-        ApiFuture<Row> f =
-            stub.createReadRowsRawCallable(new DefaultRowAdapter())
-                .first()
-                .futureCall(
-                    ReadRowsRequest.newBuilder()
-                        .setTableName(
-                            TableName.format(
-                                primingSettings.getProjectId(),
-                                primingSettings.getInstanceId(),
-                                tableId))
-                        .setAppProfileId(primingSettings.getAppProfileId())
-                        .setRows(RowSet.newBuilder().addRowKeys(PRIMING_ROW_KEY).build())
-                        .setFilter(RowFilter.newBuilder().setBlockAllFilter(true).build())
-                        .setRowsLimit(1)
-                        .build());
-
-        primeFutures.put(tableId, f);
-      }
-
-      // Wait for all of the prime requests to complete.
-      for (Map.Entry<String, ApiFuture<?>> entry : primeFutures.entrySet()) {
-        try {
-          entry.getValue().get();
-        } catch (Throwable e) {
-          if (e instanceof ExecutionException) {
-            e = e.getCause();
-          }
-          LOG.warning(
-              String.format(
-                  "Failed to prime channel for table: %s: %s", entry.getKey(), e.getMessage()));
+      try {
+        stub.pingAndWarmCallable().call(request);
+      } catch (Throwable e) {
+        // TODO: Not sure if we should swallow the error here. We are pre-emptively swapping
+        // channels if the new
+        // channel is bad.
+        if (e instanceof ExecutionException) {
+          e = e.getCause();
         }
+        LOG.warning(String.format("Failed to prime channel: %s", e));
       }
     }
   }

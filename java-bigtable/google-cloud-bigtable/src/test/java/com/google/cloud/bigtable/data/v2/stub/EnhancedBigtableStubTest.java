@@ -35,6 +35,8 @@ import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
+import com.google.bigtable.v2.PingAndWarmRequest;
+import com.google.bigtable.v2.PingAndWarmResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowSet;
@@ -261,15 +263,10 @@ public class EnhancedBigtableStubTest {
   @Test
   public void testChannelPrimerConfigured() throws IOException {
     EnhancedBigtableStubSettings settings =
-        defaultSettings
-            .toBuilder()
-            .setRefreshingChannel(true)
-            .setPrimedTableIds("table1", "table2")
-            .build();
+        defaultSettings.toBuilder().setRefreshingChannel(true).build();
 
     try (EnhancedBigtableStub ignored = EnhancedBigtableStub.create(settings)) {
-      // priming will issue a request per table on startup
-      assertThat(fakeDataService.requests).hasSize(2);
+      assertThat(fakeDataService.pingRequests).hasSize(1);
     }
   }
 
@@ -515,6 +512,7 @@ public class EnhancedBigtableStubTest {
 
   private static class FakeDataService extends BigtableGrpc.BigtableImplBase {
     final BlockingQueue<ReadRowsRequest> requests = Queues.newLinkedBlockingDeque();
+    final BlockingQueue<PingAndWarmRequest> pingRequests = Queues.newLinkedBlockingDeque();
 
     @SuppressWarnings("unchecked")
     ReadRowsRequest popLastRequest() throws InterruptedException {
@@ -547,6 +545,14 @@ public class EnhancedBigtableStubTest {
                       .setQualifier(BytesValue.getDefaultInstance())
                       .setValueSize(0))
               .build());
+      responseObserver.onCompleted();
+    }
+
+    @Override
+    public void pingAndWarm(
+        PingAndWarmRequest request, StreamObserver<PingAndWarmResponse> responseObserver) {
+      pingRequests.add(request);
+      responseObserver.onNext(PingAndWarmResponse.getDefaultInstance());
       responseObserver.onCompleted();
     }
   }
