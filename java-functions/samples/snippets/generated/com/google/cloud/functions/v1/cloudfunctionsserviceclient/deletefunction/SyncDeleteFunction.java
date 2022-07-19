@@ -20,6 +20,7 @@ package com.google.cloud.functions.v1.samples;
 import com.google.cloud.functions.v1.CloudFunctionName;
 import com.google.cloud.functions.v1.CloudFunctionsServiceClient;
 import com.google.cloud.functions.v1.DeleteFunctionRequest;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteFunction {
 
