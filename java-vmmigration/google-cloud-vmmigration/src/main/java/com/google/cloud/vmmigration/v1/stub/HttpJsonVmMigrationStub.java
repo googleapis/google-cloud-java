@@ -108,6 +108,8 @@ import com.google.cloud.vmmigration.v1.UpdateGroupRequest;
 import com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.UpdateSourceRequest;
 import com.google.cloud.vmmigration.v1.UpdateTargetProjectRequest;
+import com.google.cloud.vmmigration.v1.UpgradeApplianceRequest;
+import com.google.cloud.vmmigration.v1.UpgradeApplianceResponse;
 import com.google.cloud.vmmigration.v1.UtilizationReport;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -148,6 +150,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
           .add(AddGroupMigrationResponse.getDescriptor())
           .add(Group.getDescriptor())
           .add(StartMigrationResponse.getDescriptor())
+          .add(UpgradeApplianceResponse.getDescriptor())
           .add(PauseMigrationResponse.getDescriptor())
           .build();
 
@@ -681,6 +684,47 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpgradeApplianceRequest, Operation>
+      upgradeApplianceMethodDescriptor =
+          ApiMethodDescriptor.<UpgradeApplianceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/UpgradeAppliance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpgradeApplianceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{datacenterConnector=projects/*/locations/*/sources/*/datacenterConnectors/*}:upgradeAppliance",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpgradeApplianceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "datacenterConnector", request.getDatacenterConnector());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpgradeApplianceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearDatacenterConnector().build()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpgradeApplianceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<CreateMigratingVmRequest, Operation>
       createMigratingVmMethodDescriptor =
           ApiMethodDescriptor.<CreateMigratingVmRequest, Operation>newBuilder()
@@ -749,6 +793,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "view", request.getView());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -782,6 +827,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetMigratingVmRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "view", request.getView());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1833,6 +1879,10 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
       deleteDatacenterConnectorCallable;
   private final OperationCallable<DeleteDatacenterConnectorRequest, Empty, OperationMetadata>
       deleteDatacenterConnectorOperationCallable;
+  private final UnaryCallable<UpgradeApplianceRequest, Operation> upgradeApplianceCallable;
+  private final OperationCallable<
+          UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
+      upgradeApplianceOperationCallable;
   private final UnaryCallable<CreateMigratingVmRequest, Operation> createMigratingVmCallable;
   private final OperationCallable<CreateMigratingVmRequest, MigratingVm, OperationMetadata>
       createMigratingVmOperationCallable;
@@ -2044,6 +2094,11 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
                 .setMethodDescriptor(deleteDatacenterConnectorMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<UpgradeApplianceRequest, Operation> upgradeApplianceTransportSettings =
+        HttpJsonCallSettings.<UpgradeApplianceRequest, Operation>newBuilder()
+            .setMethodDescriptor(upgradeApplianceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<CreateMigratingVmRequest, Operation> createMigratingVmTransportSettings =
         HttpJsonCallSettings.<CreateMigratingVmRequest, Operation>newBuilder()
             .setMethodDescriptor(createMigratingVmMethodDescriptor)
@@ -2311,6 +2366,15 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
             settings.deleteDatacenterConnectorOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.upgradeApplianceCallable =
+        callableFactory.createUnaryCallable(
+            upgradeApplianceTransportSettings, settings.upgradeApplianceSettings(), clientContext);
+    this.upgradeApplianceOperationCallable =
+        callableFactory.createOperationCallable(
+            upgradeApplianceTransportSettings,
+            settings.upgradeApplianceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.createMigratingVmCallable =
         callableFactory.createUnaryCallable(
             createMigratingVmTransportSettings,
@@ -2571,6 +2635,7 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
     methodDescriptors.add(getDatacenterConnectorMethodDescriptor);
     methodDescriptors.add(createDatacenterConnectorMethodDescriptor);
     methodDescriptors.add(deleteDatacenterConnectorMethodDescriptor);
+    methodDescriptors.add(upgradeApplianceMethodDescriptor);
     methodDescriptors.add(createMigratingVmMethodDescriptor);
     methodDescriptors.add(listMigratingVmsMethodDescriptor);
     methodDescriptors.add(getMigratingVmMethodDescriptor);
@@ -2742,6 +2807,17 @@ public class HttpJsonVmMigrationStub extends VmMigrationStub {
   public OperationCallable<DeleteDatacenterConnectorRequest, Empty, OperationMetadata>
       deleteDatacenterConnectorOperationCallable() {
     return deleteDatacenterConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpgradeApplianceRequest, Operation> upgradeApplianceCallable() {
+    return upgradeApplianceCallable;
+  }
+
+  @Override
+  public OperationCallable<UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
+      upgradeApplianceOperationCallable() {
+    return upgradeApplianceOperationCallable;
   }
 
   @Override

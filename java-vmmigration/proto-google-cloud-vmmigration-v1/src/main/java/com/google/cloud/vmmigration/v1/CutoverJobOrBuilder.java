@@ -69,8 +69,8 @@ public interface CutoverJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the cutover job was created (as an API call, not when it was
-   * actually created in the target).
+   * Output only. The time the cutover job was created (as an API call, not when
+   * it was actually created in the target).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -83,8 +83,8 @@ public interface CutoverJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the cutover job was created (as an API call, not when it was
-   * actually created in the target).
+   * Output only. The time the cutover job was created (as an API call, not when
+   * it was actually created in the target).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -97,14 +97,52 @@ public interface CutoverJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the cutover job was created (as an API call, not when it was
-   * actually created in the target).
+   * Output only. The time the cutover job was created (as an API call, not when
+   * it was actually created in the target).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the cutover job had finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the endTime field is set.
+   */
+  boolean hasEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the cutover job had finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The endTime.
+   */
+  com.google.protobuf.Timestamp getEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the cutover job had finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
   /**
    *
@@ -215,7 +253,8 @@ public interface CutoverJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details for the errors that led to the Cutover Job's state.
+   * Output only. Provides details for the errors that led to the Cutover Job's
+   * state.
    * </pre>
    *
    * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -227,7 +266,8 @@ public interface CutoverJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details for the errors that led to the Cutover Job's state.
+   * Output only. Provides details for the errors that led to the Cutover Job's
+   * state.
    * </pre>
    *
    * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -239,7 +279,8 @@ public interface CutoverJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details for the errors that led to the Cutover Job's state.
+   * Output only. Provides details for the errors that led to the Cutover Job's
+   * state.
    * </pre>
    *
    * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -250,7 +291,8 @@ public interface CutoverJobOrBuilder
    *
    *
    * <pre>
-   * Output only. A message providing possible extra details about the current state.
+   * Output only. A message providing possible extra details about the current
+   * state.
    * </pre>
    *
    * <code>string state_message = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -262,7 +304,8 @@ public interface CutoverJobOrBuilder
    *
    *
    * <pre>
-   * Output only. A message providing possible extra details about the current state.
+   * Output only. A message providing possible extra details about the current
+   * state.
    * </pre>
    *
    * <code>string state_message = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

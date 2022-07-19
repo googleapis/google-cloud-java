@@ -889,7 +889,7 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The VM's OS. See for example
-   * https://pubs.vmware.com/vi-sdk/visdk250/ReferenceGuide/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
+   * https://vdc-repo.vmware.com/vmwb-repository/dcr-public/da47f910-60ac-438b-8b9b-6122f4d14524/16b7274a-bf8b-4b4c-a05e-746f2aa93c8c/doc/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
    * for types of strings this might hold.
    * </pre>
    *
@@ -914,7 +914,7 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The VM's OS. See for example
-   * https://pubs.vmware.com/vi-sdk/visdk250/ReferenceGuide/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
+   * https://vdc-repo.vmware.com/vmwb-repository/dcr-public/da47f910-60ac-438b-8b9b-6122f4d14524/16b7274a-bf8b-4b4c-a05e-746f2aa93c8c/doc/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
    * for types of strings this might hold.
    * </pre>
    *
@@ -2314,7 +2314,7 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The VM's OS. See for example
-     * https://pubs.vmware.com/vi-sdk/visdk250/ReferenceGuide/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
+     * https://vdc-repo.vmware.com/vmwb-repository/dcr-public/da47f910-60ac-438b-8b9b-6122f4d14524/16b7274a-bf8b-4b4c-a05e-746f2aa93c8c/doc/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
      * for types of strings this might hold.
      * </pre>
      *
@@ -2338,7 +2338,7 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The VM's OS. See for example
-     * https://pubs.vmware.com/vi-sdk/visdk250/ReferenceGuide/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
+     * https://vdc-repo.vmware.com/vmwb-repository/dcr-public/da47f910-60ac-438b-8b9b-6122f4d14524/16b7274a-bf8b-4b4c-a05e-746f2aa93c8c/doc/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
      * for types of strings this might hold.
      * </pre>
      *
@@ -2362,7 +2362,7 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The VM's OS. See for example
-     * https://pubs.vmware.com/vi-sdk/visdk250/ReferenceGuide/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
+     * https://vdc-repo.vmware.com/vmwb-repository/dcr-public/da47f910-60ac-438b-8b9b-6122f4d14524/16b7274a-bf8b-4b4c-a05e-746f2aa93c8c/doc/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
      * for types of strings this might hold.
      * </pre>
      *
@@ -2385,7 +2385,7 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The VM's OS. See for example
-     * https://pubs.vmware.com/vi-sdk/visdk250/ReferenceGuide/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
+     * https://vdc-repo.vmware.com/vmwb-repository/dcr-public/da47f910-60ac-438b-8b9b-6122f4d14524/16b7274a-bf8b-4b4c-a05e-746f2aa93c8c/doc/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
      * for types of strings this might hold.
      * </pre>
      *
@@ -2404,7 +2404,7 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The VM's OS. See for example
-     * https://pubs.vmware.com/vi-sdk/visdk250/ReferenceGuide/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
+     * https://vdc-repo.vmware.com/vmwb-repository/dcr-public/da47f910-60ac-438b-8b9b-6122f4d14524/16b7274a-bf8b-4b4c-a05e-746f2aa93c8c/doc/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html
      * for types of strings this might hold.
      * </pre>
      *

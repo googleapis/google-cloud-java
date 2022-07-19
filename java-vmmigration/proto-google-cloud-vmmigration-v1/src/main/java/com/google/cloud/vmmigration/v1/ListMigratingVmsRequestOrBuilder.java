@@ -56,10 +56,10 @@ public interface ListMigratingVmsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of migrating VMs to return. The service may return
-   * fewer than this value. If unspecified, at most 500 migrating VMs will be
-   * returned. The maximum value is 1000; values above 1000 will be coerced to
-   * 1000.
+   * Optional. The maximum number of migrating VMs to return. The service may
+   * return fewer than this value. If unspecified, at most 500 migrating VMs
+   * will be returned. The maximum value is 1000; values above 1000 will be
+   * coerced to 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -148,4 +148,33 @@ public interface ListMigratingVmsRequestOrBuilder
    * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The level of details of each migrating VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVmView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  int getViewValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The level of details of each migrating VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVmView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  com.google.cloud.vmmigration.v1.MigratingVmView getView();
 }

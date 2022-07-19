@@ -69,8 +69,8 @@ public interface CloneJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the clone job was created (as an API call, not when it was
-   * actually created in the target).
+   * Output only. The time the clone job was created (as an API call, not when
+   * it was actually created in the target).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -83,8 +83,8 @@ public interface CloneJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the clone job was created (as an API call, not when it was
-   * actually created in the target).
+   * Output only. The time the clone job was created (as an API call, not when
+   * it was actually created in the target).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -97,8 +97,8 @@ public interface CloneJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the clone job was created (as an API call, not when it was
-   * actually created in the target).
+   * Output only. The time the clone job was created (as an API call, not when
+   * it was actually created in the target).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -110,10 +110,48 @@ public interface CloneJobOrBuilder
    *
    *
    * <pre>
-   * The name of the clone.
+   * Output only. The time the clone job was ended.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>.google.protobuf.Timestamp end_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the endTime field is set.
+   */
+  boolean hasEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the clone job was ended.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The endTime.
+   */
+  com.google.protobuf.Timestamp getEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the clone job was ended.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the clone.
+   * </pre>
+   *
+   * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -122,10 +160,10 @@ public interface CloneJobOrBuilder
    *
    *
    * <pre>
-   * The name of the clone.
+   * Output only. The name of the clone.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>string name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -202,7 +240,8 @@ public interface CloneJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details for the errors that led to the Clone Job's state.
+   * Output only. Provides details for the errors that led to the Clone Job's
+   * state.
    * </pre>
    *
    * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -214,7 +253,8 @@ public interface CloneJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details for the errors that led to the Clone Job's state.
+   * Output only. Provides details for the errors that led to the Clone Job's
+   * state.
    * </pre>
    *
    * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -226,7 +266,8 @@ public interface CloneJobOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details for the errors that led to the Clone Job's state.
+   * Output only. Provides details for the errors that led to the Clone Job's
+   * state.
    * </pre>
    *
    * <code>.google.rpc.Status error = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

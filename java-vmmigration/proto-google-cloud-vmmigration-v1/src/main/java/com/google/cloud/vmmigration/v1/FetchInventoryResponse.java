@@ -186,12 +186,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Output only. The description of the VMs in a Source of type Vmware.
+   * The description of the VMs in a Source of type Vmware.
    * </pre>
    *
-   * <code>
-   * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
    *
    * @return Whether the vmwareVms field is set.
    */
@@ -203,12 +201,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Output only. The description of the VMs in a Source of type Vmware.
+   * The description of the VMs in a Source of type Vmware.
    * </pre>
    *
-   * <code>
-   * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
    *
    * @return The vmwareVms.
    */
@@ -223,12 +219,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Output only. The description of the VMs in a Source of type Vmware.
+   * The description of the VMs in a Source of type Vmware.
    * </pre>
    *
-   * <code>
-   * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
    */
   @java.lang.Override
   public com.google.cloud.vmmigration.v1.VmwareVmsDetailsOrBuilder getVmwareVmsOrBuilder() {
@@ -244,8 +238,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Output only. The timestamp when the source was last queried (if the result is from the
-   * cache).
+   * Output only. The timestamp when the source was last queried (if the result
+   * is from the cache).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -261,8 +255,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Output only. The timestamp when the source was last queried (if the result is from the
-   * cache).
+   * Output only. The timestamp when the source was last queried (if the result
+   * is from the cache).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -278,8 +272,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Output only. The timestamp when the source was last queried (if the result is from the
-   * cache).
+   * Output only. The timestamp when the source was last queried (if the result
+   * is from the cache).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -690,12 +684,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The description of the VMs in a Source of type Vmware.
+     * The description of the VMs in a Source of type Vmware.
      * </pre>
      *
-     * <code>
-     * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
      *
      * @return Whether the vmwareVms field is set.
      */
@@ -707,12 +699,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The description of the VMs in a Source of type Vmware.
+     * The description of the VMs in a Source of type Vmware.
      * </pre>
      *
-     * <code>
-     * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
      *
      * @return The vmwareVms.
      */
@@ -734,12 +724,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The description of the VMs in a Source of type Vmware.
+     * The description of the VMs in a Source of type Vmware.
      * </pre>
      *
-     * <code>
-     * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
      */
     public Builder setVmwareVms(com.google.cloud.vmmigration.v1.VmwareVmsDetails value) {
       if (vmwareVmsBuilder_ == null) {
@@ -758,12 +746,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The description of the VMs in a Source of type Vmware.
+     * The description of the VMs in a Source of type Vmware.
      * </pre>
      *
-     * <code>
-     * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
      */
     public Builder setVmwareVms(
         com.google.cloud.vmmigration.v1.VmwareVmsDetails.Builder builderForValue) {
@@ -780,12 +766,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The description of the VMs in a Source of type Vmware.
+     * The description of the VMs in a Source of type Vmware.
      * </pre>
      *
-     * <code>
-     * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
      */
     public Builder mergeVmwareVms(com.google.cloud.vmmigration.v1.VmwareVmsDetails value) {
       if (vmwareVmsBuilder_ == null) {
@@ -815,12 +799,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The description of the VMs in a Source of type Vmware.
+     * The description of the VMs in a Source of type Vmware.
      * </pre>
      *
-     * <code>
-     * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
      */
     public Builder clearVmwareVms() {
       if (vmwareVmsBuilder_ == null) {
@@ -842,12 +824,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The description of the VMs in a Source of type Vmware.
+     * The description of the VMs in a Source of type Vmware.
      * </pre>
      *
-     * <code>
-     * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
      */
     public com.google.cloud.vmmigration.v1.VmwareVmsDetails.Builder getVmwareVmsBuilder() {
       return getVmwareVmsFieldBuilder().getBuilder();
@@ -856,12 +836,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The description of the VMs in a Source of type Vmware.
+     * The description of the VMs in a Source of type Vmware.
      * </pre>
      *
-     * <code>
-     * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
      */
     @java.lang.Override
     public com.google.cloud.vmmigration.v1.VmwareVmsDetailsOrBuilder getVmwareVmsOrBuilder() {
@@ -878,12 +856,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The description of the VMs in a Source of type Vmware.
+     * The description of the VMs in a Source of type Vmware.
      * </pre>
      *
-     * <code>
-     * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vmmigration.v1.VmwareVmsDetails,
@@ -920,8 +896,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The timestamp when the source was last queried (if the result is from the
-     * cache).
+     * Output only. The timestamp when the source was last queried (if the result
+     * is from the cache).
      * </pre>
      *
      * <code>
@@ -937,8 +913,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The timestamp when the source was last queried (if the result is from the
-     * cache).
+     * Output only. The timestamp when the source was last queried (if the result
+     * is from the cache).
      * </pre>
      *
      * <code>
@@ -960,8 +936,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The timestamp when the source was last queried (if the result is from the
-     * cache).
+     * Output only. The timestamp when the source was last queried (if the result
+     * is from the cache).
      * </pre>
      *
      * <code>
@@ -985,8 +961,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The timestamp when the source was last queried (if the result is from the
-     * cache).
+     * Output only. The timestamp when the source was last queried (if the result
+     * is from the cache).
      * </pre>
      *
      * <code>
@@ -1007,8 +983,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The timestamp when the source was last queried (if the result is from the
-     * cache).
+     * Output only. The timestamp when the source was last queried (if the result
+     * is from the cache).
      * </pre>
      *
      * <code>
@@ -1034,8 +1010,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The timestamp when the source was last queried (if the result is from the
-     * cache).
+     * Output only. The timestamp when the source was last queried (if the result
+     * is from the cache).
      * </pre>
      *
      * <code>
@@ -1057,8 +1033,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The timestamp when the source was last queried (if the result is from the
-     * cache).
+     * Output only. The timestamp when the source was last queried (if the result
+     * is from the cache).
      * </pre>
      *
      * <code>
@@ -1074,8 +1050,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The timestamp when the source was last queried (if the result is from the
-     * cache).
+     * Output only. The timestamp when the source was last queried (if the result
+     * is from the cache).
      * </pre>
      *
      * <code>
@@ -1095,8 +1071,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Output only. The timestamp when the source was last queried (if the result is from the
-     * cache).
+     * Output only. The timestamp when the source was last queried (if the result
+     * is from the cache).
      * </pre>
      *
      * <code>

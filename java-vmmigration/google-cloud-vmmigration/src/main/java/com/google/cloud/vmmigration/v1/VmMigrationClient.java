@@ -2119,6 +2119,96 @@ public class VmMigrationClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Upgrades the appliance relate to this DatacenterConnector to the in-place updateable version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   UpgradeApplianceRequest request =
+   *       UpgradeApplianceRequest.newBuilder()
+   *           .setDatacenterConnector(
+   *               DatacenterConnectorName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DATACENTER_CONNECTOR]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   UpgradeApplianceResponse response = vmMigrationClient.upgradeApplianceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UpgradeApplianceResponse, OperationMetadata> upgradeApplianceAsync(
+      UpgradeApplianceRequest request) {
+    return upgradeApplianceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades the appliance relate to this DatacenterConnector to the in-place updateable version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   UpgradeApplianceRequest request =
+   *       UpgradeApplianceRequest.newBuilder()
+   *           .setDatacenterConnector(
+   *               DatacenterConnectorName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DATACENTER_CONNECTOR]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<UpgradeApplianceResponse, OperationMetadata> future =
+   *       vmMigrationClient.upgradeApplianceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   UpgradeApplianceResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
+      upgradeApplianceOperationCallable() {
+    return stub.upgradeApplianceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades the appliance relate to this DatacenterConnector to the in-place updateable version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (VmMigrationClient vmMigrationClient = VmMigrationClient.create()) {
+   *   UpgradeApplianceRequest request =
+   *       UpgradeApplianceRequest.newBuilder()
+   *           .setDatacenterConnector(
+   *               DatacenterConnectorName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DATACENTER_CONNECTOR]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vmMigrationClient.upgradeApplianceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpgradeApplianceRequest, Operation> upgradeApplianceCallable() {
+    return stub.upgradeApplianceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a new MigratingVm in a given Source.
    *
    * <p>Sample code:
@@ -2342,6 +2432,7 @@ public class VmMigrationClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setView(MigratingVmView.forNumber(0))
    *           .build();
    *   for (MigratingVm element : vmMigrationClient.listMigratingVms(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -2373,6 +2464,7 @@ public class VmMigrationClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setView(MigratingVmView.forNumber(0))
    *           .build();
    *   ApiFuture<MigratingVm> future =
    *       vmMigrationClient.listMigratingVmsPagedCallable().futureCall(request);
@@ -2405,6 +2497,7 @@ public class VmMigrationClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setView(MigratingVmView.forNumber(0))
    *           .build();
    *   while (true) {
    *     ListMigratingVmsResponse response =
@@ -2491,6 +2584,7 @@ public class VmMigrationClient implements BackgroundResource {
    *           .setName(
    *               MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]")
    *                   .toString())
+   *           .setView(MigratingVmView.forNumber(0))
    *           .build();
    *   MigratingVm response = vmMigrationClient.getMigratingVm(request);
    * }
@@ -2518,6 +2612,7 @@ public class VmMigrationClient implements BackgroundResource {
    *           .setName(
    *               MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]")
    *                   .toString())
+   *           .setView(MigratingVmView.forNumber(0))
    *           .build();
    *   ApiFuture<MigratingVm> future =
    *       vmMigrationClient.getMigratingVmCallable().futureCall(request);

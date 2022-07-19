@@ -39,6 +39,7 @@ public final class GetMigratingVmRequest extends com.google.protobuf.GeneratedMe
 
   private GetMigratingVmRequest() {
     name_ = "";
+    view_ = 0;
   }
 
   @java.lang.Override
@@ -75,6 +76,13 @@ public final class GetMigratingVmRequest extends com.google.protobuf.GeneratedMe
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
+              break;
+            }
+          case 16:
+            {
+              int rawValue = input.readEnum();
+
+              view_ = rawValue;
               break;
             }
           default:
@@ -166,6 +174,46 @@ public final class GetMigratingVmRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int VIEW_FIELD_NUMBER = 2;
+  private int view_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The level of details of the migrating VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVmView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  @java.lang.Override
+  public int getViewValue() {
+    return view_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The level of details of the migrating VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVmView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.MigratingVmView getView() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.vmmigration.v1.MigratingVmView result =
+        com.google.cloud.vmmigration.v1.MigratingVmView.valueOf(view_);
+    return result == null ? com.google.cloud.vmmigration.v1.MigratingVmView.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -183,6 +231,11 @@ public final class GetMigratingVmRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (view_
+        != com.google.cloud.vmmigration.v1.MigratingVmView.MIGRATING_VM_VIEW_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(2, view_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -194,6 +247,11 @@ public final class GetMigratingVmRequest extends com.google.protobuf.GeneratedMe
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (view_
+        != com.google.cloud.vmmigration.v1.MigratingVmView.MIGRATING_VM_VIEW_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, view_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -212,6 +270,7 @@ public final class GetMigratingVmRequest extends com.google.protobuf.GeneratedMe
         (com.google.cloud.vmmigration.v1.GetMigratingVmRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (view_ != other.view_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -225,6 +284,8 @@ public final class GetMigratingVmRequest extends com.google.protobuf.GeneratedMe
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + VIEW_FIELD_NUMBER;
+    hash = (53 * hash) + view_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -373,6 +434,8 @@ public final class GetMigratingVmRequest extends com.google.protobuf.GeneratedMe
       super.clear();
       name_ = "";
 
+      view_ = 0;
+
       return this;
     }
 
@@ -401,6 +464,7 @@ public final class GetMigratingVmRequest extends com.google.protobuf.GeneratedMe
       com.google.cloud.vmmigration.v1.GetMigratingVmRequest result =
           new com.google.cloud.vmmigration.v1.GetMigratingVmRequest(this);
       result.name_ = name_;
+      result.view_ = view_;
       onBuilt();
       return result;
     }
@@ -454,6 +518,9 @@ public final class GetMigratingVmRequest extends com.google.protobuf.GeneratedMe
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.view_ != 0) {
+        setViewValue(other.getViewValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -597,6 +664,107 @@ public final class GetMigratingVmRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
 
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int view_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The level of details of the migrating VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVmView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for view.
+     */
+    @java.lang.Override
+    public int getViewValue() {
+      return view_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The level of details of the migrating VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVmView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewValue(int value) {
+
+      view_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The level of details of the migrating VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVmView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The view.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.MigratingVmView getView() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.vmmigration.v1.MigratingVmView result =
+          com.google.cloud.vmmigration.v1.MigratingVmView.valueOf(view_);
+      return result == null ? com.google.cloud.vmmigration.v1.MigratingVmView.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The level of details of the migrating VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVmView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setView(com.google.cloud.vmmigration.v1.MigratingVmView value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      view_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The level of details of the migrating VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVmView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearView() {
+
+      view_ = 0;
       onChanged();
       return this;
     }

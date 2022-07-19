@@ -100,6 +100,8 @@ import com.google.cloud.vmmigration.v1.UpdateGroupRequest;
 import com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.UpdateSourceRequest;
 import com.google.cloud.vmmigration.v1.UpdateTargetProjectRequest;
+import com.google.cloud.vmmigration.v1.UpgradeApplianceRequest;
+import com.google.cloud.vmmigration.v1.UpgradeApplianceResponse;
 import com.google.cloud.vmmigration.v1.UtilizationReport;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -261,6 +263,16 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   "google.cloud.vmmigration.v1.VmMigration/DeleteDatacenterConnector")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDatacenterConnectorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpgradeApplianceRequest, Operation>
+      upgradeApplianceMethodDescriptor =
+          MethodDescriptor.<UpgradeApplianceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/UpgradeAppliance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpgradeApplianceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -592,6 +604,10 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
       deleteDatacenterConnectorCallable;
   private final OperationCallable<DeleteDatacenterConnectorRequest, Empty, OperationMetadata>
       deleteDatacenterConnectorOperationCallable;
+  private final UnaryCallable<UpgradeApplianceRequest, Operation> upgradeApplianceCallable;
+  private final OperationCallable<
+          UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
+      upgradeApplianceOperationCallable;
   private final UnaryCallable<CreateMigratingVmRequest, Operation> createMigratingVmCallable;
   private final OperationCallable<CreateMigratingVmRequest, MigratingVm, OperationMetadata>
       createMigratingVmOperationCallable;
@@ -870,6 +886,17 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<UpgradeApplianceRequest, Operation> upgradeApplianceTransportSettings =
+        GrpcCallSettings.<UpgradeApplianceRequest, Operation>newBuilder()
+            .setMethodDescriptor(upgradeApplianceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "datacenter_connector", String.valueOf(request.getDatacenterConnector()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<CreateMigratingVmRequest, Operation> createMigratingVmTransportSettings =
         GrpcCallSettings.<CreateMigratingVmRequest, Operation>newBuilder()
             .setMethodDescriptor(createMigratingVmMethodDescriptor)
@@ -1279,6 +1306,15 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             settings.deleteDatacenterConnectorOperationSettings(),
             clientContext,
             operationsStub);
+    this.upgradeApplianceCallable =
+        callableFactory.createUnaryCallable(
+            upgradeApplianceTransportSettings, settings.upgradeApplianceSettings(), clientContext);
+    this.upgradeApplianceOperationCallable =
+        callableFactory.createOperationCallable(
+            upgradeApplianceTransportSettings,
+            settings.upgradeApplianceOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createMigratingVmCallable =
         callableFactory.createUnaryCallable(
             createMigratingVmTransportSettings,
@@ -1661,6 +1697,17 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
   public OperationCallable<DeleteDatacenterConnectorRequest, Empty, OperationMetadata>
       deleteDatacenterConnectorOperationCallable() {
     return deleteDatacenterConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpgradeApplianceRequest, Operation> upgradeApplianceCallable() {
+    return upgradeApplianceCallable;
+  }
+
+  @Override
+  public OperationCallable<UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
+      upgradeApplianceOperationCallable() {
+    return upgradeApplianceOperationCallable;
   }
 
   @Override

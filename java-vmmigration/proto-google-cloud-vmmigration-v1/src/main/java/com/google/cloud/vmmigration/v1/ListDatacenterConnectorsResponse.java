@@ -233,8 +233,8 @@ public final class ListDatacenterConnectorsResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * Output only. A token, which can be sent as `page_token` to retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * Output only. A token, which can be sent as `page_token` to retrieve the
+   * next page. If this field is omitted, there are no subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -257,8 +257,8 @@ public final class ListDatacenterConnectorsResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * Output only. A token, which can be sent as `page_token` to retrieve the next page.
-   * If this field is omitted, there are no subsequent pages.
+   * Output only. A token, which can be sent as `page_token` to retrieve the
+   * next page. If this field is omitted, there are no subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1159,8 +1159,8 @@ public final class ListDatacenterConnectorsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. A token, which can be sent as `page_token` to retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * Output only. A token, which can be sent as `page_token` to retrieve the
+     * next page. If this field is omitted, there are no subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1182,8 +1182,8 @@ public final class ListDatacenterConnectorsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. A token, which can be sent as `page_token` to retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * Output only. A token, which can be sent as `page_token` to retrieve the
+     * next page. If this field is omitted, there are no subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1205,8 +1205,8 @@ public final class ListDatacenterConnectorsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. A token, which can be sent as `page_token` to retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * Output only. A token, which can be sent as `page_token` to retrieve the
+     * next page. If this field is omitted, there are no subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1227,8 +1227,8 @@ public final class ListDatacenterConnectorsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. A token, which can be sent as `page_token` to retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * Output only. A token, which can be sent as `page_token` to retrieve the
+     * next page. If this field is omitted, there are no subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1245,8 +1245,8 @@ public final class ListDatacenterConnectorsResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. A token, which can be sent as `page_token` to retrieve the next page.
-     * If this field is omitted, there are no subsequent pages.
+     * Output only. A token, which can be sent as `page_token` to retrieve the
+     * next page. If this field is omitted, there are no subsequent pages.
      * </pre>
      *
      * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

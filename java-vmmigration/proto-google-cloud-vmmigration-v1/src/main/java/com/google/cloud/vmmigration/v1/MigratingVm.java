@@ -45,6 +45,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     state_ = 0;
     group_ = "";
+    recentCloneJobs_ = java.util.Collections.emptyList();
+    recentCutoverJobs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -196,6 +198,18 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
               labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
               break;
             }
+          case 138:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                recentCloneJobs_ =
+                    new java.util.ArrayList<com.google.cloud.vmmigration.v1.CloneJob>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              recentCloneJobs_.add(
+                  input.readMessage(
+                      com.google.cloud.vmmigration.v1.CloneJob.parser(), extensionRegistry));
+              break;
+            }
           case 146:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -215,6 +229,18 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
                 error_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 162:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                recentCutoverJobs_ =
+                    new java.util.ArrayList<com.google.cloud.vmmigration.v1.CutoverJob>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              recentCutoverJobs_.add(
+                  input.readMessage(
+                      com.google.cloud.vmmigration.v1.CutoverJob.parser(), extensionRegistry));
               break;
             }
           case 178:
@@ -277,6 +303,12 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        recentCloneJobs_ = java.util.Collections.unmodifiableList(recentCloneJobs_);
+      }
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        recentCutoverJobs_ = java.util.Collections.unmodifiableList(recentCutoverJobs_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -1032,8 +1064,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time the migrating VM was created (this refers to this resource and not
-   * to the time it was installed in the source).
+   * Output only. The time the migrating VM was created (this refers to this
+   * resource and not to the time it was installed in the source).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1049,8 +1081,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time the migrating VM was created (this refers to this resource and not
-   * to the time it was installed in the source).
+   * Output only. The time the migrating VM was created (this refers to this
+   * resource and not to the time it was installed in the source).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1066,8 +1098,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time the migrating VM was created (this refers to this resource and not
-   * to the time it was installed in the source).
+   * Output only. The time the migrating VM was created (this refers to this
+   * resource and not to the time it was installed in the source).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1133,8 +1165,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The most updated snapshot created time in the source that finished
-   * replication.
+   * Output only. The most updated snapshot created time in the source that
+   * finished replication.
    * </pre>
    *
    * <code>
@@ -1151,8 +1183,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The most updated snapshot created time in the source that finished
-   * replication.
+   * Output only. The most updated snapshot created time in the source that
+   * finished replication.
    * </pre>
    *
    * <code>
@@ -1171,8 +1203,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The most updated snapshot created time in the source that finished
-   * replication.
+   * Output only. The most updated snapshot created time in the source that
+   * finished replication.
    * </pre>
    *
    * <code>
@@ -1279,7 +1311,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The percentage progress of the current running replication cycle.
+   * Output only. The percentage progress of the current running replication
+   * cycle.
    * </pre>
    *
    * <code>
@@ -1296,7 +1329,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The percentage progress of the current running replication cycle.
+   * Output only. The percentage progress of the current running replication
+   * cycle.
    * </pre>
    *
    * <code>
@@ -1315,7 +1349,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The percentage progress of the current running replication cycle.
+   * Output only. The percentage progress of the current running replication
+   * cycle.
    * </pre>
    *
    * <code>
@@ -1333,8 +1368,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The group this migrating vm is included in, if any. The group is
-   * represented by the full path of the appropriate
+   * Output only. The group this migrating vm is included in, if any. The group
+   * is represented by the full path of the appropriate
    * [Group][google.cloud.vmmigration.v1.Group] resource.
    * </pre>
    *
@@ -1360,8 +1395,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The group this migrating vm is included in, if any. The group is
-   * represented by the full path of the appropriate
+   * Output only. The group this migrating vm is included in, if any. The group
+   * is represented by the full path of the appropriate
    * [Group][google.cloud.vmmigration.v1.Group] resource.
    * </pre>
    *
@@ -1482,14 +1517,113 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int RECENT_CLONE_JOBS_FIELD_NUMBER = 17;
+  private java.util.List<com.google.cloud.vmmigration.v1.CloneJob> recentCloneJobs_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+   * performed on the migrating VM. This field holds the vm's last completed
+   * clone job and the vm's running clone job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.vmmigration.v1.CloneJob> getRecentCloneJobsList() {
+    return recentCloneJobs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+   * performed on the migrating VM. This field holds the vm's last completed
+   * clone job and the vm's running clone job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.vmmigration.v1.CloneJobOrBuilder>
+      getRecentCloneJobsOrBuilderList() {
+    return recentCloneJobs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+   * performed on the migrating VM. This field holds the vm's last completed
+   * clone job and the vm's running clone job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getRecentCloneJobsCount() {
+    return recentCloneJobs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+   * performed on the migrating VM. This field holds the vm's last completed
+   * clone job and the vm's running clone job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.CloneJob getRecentCloneJobs(int index) {
+    return recentCloneJobs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+   * performed on the migrating VM. This field holds the vm's last completed
+   * clone job and the vm's running clone job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.CloneJobOrBuilder getRecentCloneJobsOrBuilder(int index) {
+    return recentCloneJobs_.get(index);
+  }
+
   public static final int ERROR_FIELD_NUMBER = 19;
   private com.google.rpc.Status error_;
   /**
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the Migrating VM in case of an
-   * error in replication.
+   * Output only. Provides details on the state of the Migrating VM in case of
+   * an error in replication.
    * </pre>
    *
    * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1504,8 +1638,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the Migrating VM in case of an
-   * error in replication.
+   * Output only. Provides details on the state of the Migrating VM in case of
+   * an error in replication.
    * </pre>
    *
    * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1520,8 +1654,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the Migrating VM in case of an
-   * error in replication.
+   * Output only. Provides details on the state of the Migrating VM in case of
+   * an error in replication.
    * </pre>
    *
    * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1529,6 +1663,106 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
     return getError();
+  }
+
+  public static final int RECENT_CUTOVER_JOBS_FIELD_NUMBER = 20;
+  private java.util.List<com.google.cloud.vmmigration.v1.CutoverJob> recentCutoverJobs_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent cutover jobs performed on the migrating VM.
+   * This field holds the vm's last completed cutover job and the vm's
+   * running cutover job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.vmmigration.v1.CutoverJob> getRecentCutoverJobsList() {
+    return recentCutoverJobs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent cutover jobs performed on the migrating VM.
+   * This field holds the vm's last completed cutover job and the vm's
+   * running cutover job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.vmmigration.v1.CutoverJobOrBuilder>
+      getRecentCutoverJobsOrBuilderList() {
+    return recentCutoverJobs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent cutover jobs performed on the migrating VM.
+   * This field holds the vm's last completed cutover job and the vm's
+   * running cutover job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getRecentCutoverJobsCount() {
+    return recentCutoverJobs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent cutover jobs performed on the migrating VM.
+   * This field holds the vm's last completed cutover job and the vm's
+   * running cutover job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.CutoverJob getRecentCutoverJobs(int index) {
+    return recentCutoverJobs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent cutover jobs performed on the migrating VM.
+   * This field holds the vm's last completed cutover job and the vm's
+   * running cutover job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.CutoverJobOrBuilder getRecentCutoverJobsOrBuilder(
+      int index) {
+    return recentCutoverJobs_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1574,11 +1808,17 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 16);
+    for (int i = 0; i < recentCloneJobs_.size(); i++) {
+      output.writeMessage(17, recentCloneJobs_.get(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, displayName_);
     }
     if (error_ != null) {
       output.writeMessage(19, getError());
+    }
+    for (int i = 0; i < recentCutoverJobs_.size(); i++) {
+      output.writeMessage(20, recentCutoverJobs_.get(i));
     }
     if (stateTime_ != null) {
       output.writeMessage(22, getStateTime());
@@ -1636,11 +1876,18 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, labels__);
     }
+    for (int i = 0; i < recentCloneJobs_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, recentCloneJobs_.get(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, displayName_);
     }
     if (error_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getError());
+    }
+    for (int i = 0; i < recentCutoverJobs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(20, recentCutoverJobs_.get(i));
     }
     if (stateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getStateTime());
@@ -1700,10 +1947,12 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getGroup().equals(other.getGroup())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getRecentCloneJobsList().equals(other.getRecentCloneJobsList())) return false;
     if (hasError() != other.hasError()) return false;
     if (hasError()) {
       if (!getError().equals(other.getError())) return false;
     }
+    if (!getRecentCutoverJobsList().equals(other.getRecentCutoverJobsList())) return false;
     if (!getTargetVmDefaultsCase().equals(other.getTargetVmDefaultsCase())) return false;
     switch (targetVmDefaultsCase_) {
       case 26:
@@ -1764,9 +2013,17 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    if (getRecentCloneJobsCount() > 0) {
+      hash = (37 * hash) + RECENT_CLONE_JOBS_FIELD_NUMBER;
+      hash = (53 * hash) + getRecentCloneJobsList().hashCode();
+    }
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
+    }
+    if (getRecentCutoverJobsCount() > 0) {
+      hash = (37 * hash) + RECENT_CUTOVER_JOBS_FIELD_NUMBER;
+      hash = (53 * hash) + getRecentCutoverJobsList().hashCode();
     }
     switch (targetVmDefaultsCase_) {
       case 26:
@@ -1936,7 +2193,10 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getRecentCloneJobsFieldBuilder();
+        getRecentCutoverJobsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1991,11 +2251,23 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       group_ = "";
 
       internalGetMutableLabels().clear();
+      if (recentCloneJobsBuilder_ == null) {
+        recentCloneJobs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        recentCloneJobsBuilder_.clear();
+      }
       if (errorBuilder_ == null) {
         error_ = null;
       } else {
         error_ = null;
         errorBuilder_ = null;
+      }
+      if (recentCutoverJobsBuilder_ == null) {
+        recentCutoverJobs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      } else {
+        recentCutoverJobsBuilder_.clear();
       }
       targetVmDefaultsCase_ = 0;
       targetVmDefaults_ = null;
@@ -2072,10 +2344,28 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       result.group_ = group_;
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (recentCloneJobsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          recentCloneJobs_ = java.util.Collections.unmodifiableList(recentCloneJobs_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.recentCloneJobs_ = recentCloneJobs_;
+      } else {
+        result.recentCloneJobs_ = recentCloneJobsBuilder_.build();
+      }
       if (errorBuilder_ == null) {
         result.error_ = error_;
       } else {
         result.error_ = errorBuilder_.build();
+      }
+      if (recentCutoverJobsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          recentCutoverJobs_ = java.util.Collections.unmodifiableList(recentCutoverJobs_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.recentCutoverJobs_ = recentCutoverJobs_;
+      } else {
+        result.recentCutoverJobs_ = recentCutoverJobsBuilder_.build();
       }
       result.targetVmDefaultsCase_ = targetVmDefaultsCase_;
       onBuilt();
@@ -2169,8 +2459,62 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (recentCloneJobsBuilder_ == null) {
+        if (!other.recentCloneJobs_.isEmpty()) {
+          if (recentCloneJobs_.isEmpty()) {
+            recentCloneJobs_ = other.recentCloneJobs_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureRecentCloneJobsIsMutable();
+            recentCloneJobs_.addAll(other.recentCloneJobs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.recentCloneJobs_.isEmpty()) {
+          if (recentCloneJobsBuilder_.isEmpty()) {
+            recentCloneJobsBuilder_.dispose();
+            recentCloneJobsBuilder_ = null;
+            recentCloneJobs_ = other.recentCloneJobs_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            recentCloneJobsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRecentCloneJobsFieldBuilder()
+                    : null;
+          } else {
+            recentCloneJobsBuilder_.addAllMessages(other.recentCloneJobs_);
+          }
+        }
+      }
       if (other.hasError()) {
         mergeError(other.getError());
+      }
+      if (recentCutoverJobsBuilder_ == null) {
+        if (!other.recentCutoverJobs_.isEmpty()) {
+          if (recentCutoverJobs_.isEmpty()) {
+            recentCutoverJobs_ = other.recentCutoverJobs_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureRecentCutoverJobsIsMutable();
+            recentCutoverJobs_.addAll(other.recentCutoverJobs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.recentCutoverJobs_.isEmpty()) {
+          if (recentCutoverJobsBuilder_.isEmpty()) {
+            recentCutoverJobsBuilder_.dispose();
+            recentCutoverJobsBuilder_ = null;
+            recentCutoverJobs_ = other.recentCutoverJobs_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            recentCutoverJobsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRecentCutoverJobsFieldBuilder()
+                    : null;
+          } else {
+            recentCutoverJobsBuilder_.addAllMessages(other.recentCutoverJobs_);
+          }
+        }
       }
       switch (other.getTargetVmDefaultsCase()) {
         case COMPUTE_ENGINE_TARGET_DEFAULTS:
@@ -3095,8 +3439,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the migrating VM was created (this refers to this resource and not
-     * to the time it was installed in the source).
+     * Output only. The time the migrating VM was created (this refers to this
+     * resource and not to the time it was installed in the source).
      * </pre>
      *
      * <code>
@@ -3112,8 +3456,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the migrating VM was created (this refers to this resource and not
-     * to the time it was installed in the source).
+     * Output only. The time the migrating VM was created (this refers to this
+     * resource and not to the time it was installed in the source).
      * </pre>
      *
      * <code>
@@ -3135,8 +3479,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the migrating VM was created (this refers to this resource and not
-     * to the time it was installed in the source).
+     * Output only. The time the migrating VM was created (this refers to this
+     * resource and not to the time it was installed in the source).
      * </pre>
      *
      * <code>
@@ -3160,8 +3504,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the migrating VM was created (this refers to this resource and not
-     * to the time it was installed in the source).
+     * Output only. The time the migrating VM was created (this refers to this
+     * resource and not to the time it was installed in the source).
      * </pre>
      *
      * <code>
@@ -3182,8 +3526,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the migrating VM was created (this refers to this resource and not
-     * to the time it was installed in the source).
+     * Output only. The time the migrating VM was created (this refers to this
+     * resource and not to the time it was installed in the source).
      * </pre>
      *
      * <code>
@@ -3209,8 +3553,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the migrating VM was created (this refers to this resource and not
-     * to the time it was installed in the source).
+     * Output only. The time the migrating VM was created (this refers to this
+     * resource and not to the time it was installed in the source).
      * </pre>
      *
      * <code>
@@ -3232,8 +3576,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the migrating VM was created (this refers to this resource and not
-     * to the time it was installed in the source).
+     * Output only. The time the migrating VM was created (this refers to this
+     * resource and not to the time it was installed in the source).
      * </pre>
      *
      * <code>
@@ -3249,8 +3593,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the migrating VM was created (this refers to this resource and not
-     * to the time it was installed in the source).
+     * Output only. The time the migrating VM was created (this refers to this
+     * resource and not to the time it was installed in the source).
      * </pre>
      *
      * <code>
@@ -3270,8 +3614,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the migrating VM was created (this refers to this resource and not
-     * to the time it was installed in the source).
+     * Output only. The time the migrating VM was created (this refers to this
+     * resource and not to the time it was installed in the source).
      * </pre>
      *
      * <code>
@@ -3506,8 +3850,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most updated snapshot created time in the source that finished
-     * replication.
+     * Output only. The most updated snapshot created time in the source that
+     * finished replication.
      * </pre>
      *
      * <code>
@@ -3523,8 +3867,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most updated snapshot created time in the source that finished
-     * replication.
+     * Output only. The most updated snapshot created time in the source that
+     * finished replication.
      * </pre>
      *
      * <code>
@@ -3546,8 +3890,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most updated snapshot created time in the source that finished
-     * replication.
+     * Output only. The most updated snapshot created time in the source that
+     * finished replication.
      * </pre>
      *
      * <code>
@@ -3571,8 +3915,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most updated snapshot created time in the source that finished
-     * replication.
+     * Output only. The most updated snapshot created time in the source that
+     * finished replication.
      * </pre>
      *
      * <code>
@@ -3594,8 +3938,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most updated snapshot created time in the source that finished
-     * replication.
+     * Output only. The most updated snapshot created time in the source that
+     * finished replication.
      * </pre>
      *
      * <code>
@@ -3623,8 +3967,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most updated snapshot created time in the source that finished
-     * replication.
+     * Output only. The most updated snapshot created time in the source that
+     * finished replication.
      * </pre>
      *
      * <code>
@@ -3646,8 +3990,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most updated snapshot created time in the source that finished
-     * replication.
+     * Output only. The most updated snapshot created time in the source that
+     * finished replication.
      * </pre>
      *
      * <code>
@@ -3663,8 +4007,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most updated snapshot created time in the source that finished
-     * replication.
+     * Output only. The most updated snapshot created time in the source that
+     * finished replication.
      * </pre>
      *
      * <code>
@@ -3684,8 +4028,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The most updated snapshot created time in the source that finished
-     * replication.
+     * Output only. The most updated snapshot created time in the source that
+     * finished replication.
      * </pre>
      *
      * <code>
@@ -4019,7 +4363,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication cycle.
+     * Output only. The percentage progress of the current running replication
+     * cycle.
      * </pre>
      *
      * <code>
@@ -4035,7 +4380,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication cycle.
+     * Output only. The percentage progress of the current running replication
+     * cycle.
      * </pre>
      *
      * <code>
@@ -4057,7 +4403,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication cycle.
+     * Output only. The percentage progress of the current running replication
+     * cycle.
      * </pre>
      *
      * <code>
@@ -4081,7 +4428,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication cycle.
+     * Output only. The percentage progress of the current running replication
+     * cycle.
      * </pre>
      *
      * <code>
@@ -4103,7 +4451,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication cycle.
+     * Output only. The percentage progress of the current running replication
+     * cycle.
      * </pre>
      *
      * <code>
@@ -4131,7 +4480,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication cycle.
+     * Output only. The percentage progress of the current running replication
+     * cycle.
      * </pre>
      *
      * <code>
@@ -4153,7 +4503,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication cycle.
+     * Output only. The percentage progress of the current running replication
+     * cycle.
      * </pre>
      *
      * <code>
@@ -4169,7 +4520,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication cycle.
+     * Output only. The percentage progress of the current running replication
+     * cycle.
      * </pre>
      *
      * <code>
@@ -4189,7 +4541,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication cycle.
+     * Output only. The percentage progress of the current running replication
+     * cycle.
      * </pre>
      *
      * <code>
@@ -4218,8 +4571,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The group this migrating vm is included in, if any. The group is
-     * represented by the full path of the appropriate
+     * Output only. The group this migrating vm is included in, if any. The group
+     * is represented by the full path of the appropriate
      * [Group][google.cloud.vmmigration.v1.Group] resource.
      * </pre>
      *
@@ -4244,8 +4597,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The group this migrating vm is included in, if any. The group is
-     * represented by the full path of the appropriate
+     * Output only. The group this migrating vm is included in, if any. The group
+     * is represented by the full path of the appropriate
      * [Group][google.cloud.vmmigration.v1.Group] resource.
      * </pre>
      *
@@ -4270,8 +4623,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The group this migrating vm is included in, if any. The group is
-     * represented by the full path of the appropriate
+     * Output only. The group this migrating vm is included in, if any. The group
+     * is represented by the full path of the appropriate
      * [Group][google.cloud.vmmigration.v1.Group] resource.
      * </pre>
      *
@@ -4295,8 +4648,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The group this migrating vm is included in, if any. The group is
-     * represented by the full path of the appropriate
+     * Output only. The group this migrating vm is included in, if any. The group
+     * is represented by the full path of the appropriate
      * [Group][google.cloud.vmmigration.v1.Group] resource.
      * </pre>
      *
@@ -4316,8 +4669,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The group this migrating vm is included in, if any. The group is
-     * represented by the full path of the appropriate
+     * Output only. The group this migrating vm is included in, if any. The group
+     * is represented by the full path of the appropriate
      * [Group][google.cloud.vmmigration.v1.Group] resource.
      * </pre>
      *
@@ -4497,6 +4850,469 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.util.List<com.google.cloud.vmmigration.v1.CloneJob> recentCloneJobs_ =
+        java.util.Collections.emptyList();
+
+    private void ensureRecentCloneJobsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        recentCloneJobs_ =
+            new java.util.ArrayList<com.google.cloud.vmmigration.v1.CloneJob>(recentCloneJobs_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.CloneJob,
+            com.google.cloud.vmmigration.v1.CloneJob.Builder,
+            com.google.cloud.vmmigration.v1.CloneJobOrBuilder>
+        recentCloneJobsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.CloneJob> getRecentCloneJobsList() {
+      if (recentCloneJobsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(recentCloneJobs_);
+      } else {
+        return recentCloneJobsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getRecentCloneJobsCount() {
+      if (recentCloneJobsBuilder_ == null) {
+        return recentCloneJobs_.size();
+      } else {
+        return recentCloneJobsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CloneJob getRecentCloneJobs(int index) {
+      if (recentCloneJobsBuilder_ == null) {
+        return recentCloneJobs_.get(index);
+      } else {
+        return recentCloneJobsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRecentCloneJobs(int index, com.google.cloud.vmmigration.v1.CloneJob value) {
+      if (recentCloneJobsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRecentCloneJobsIsMutable();
+        recentCloneJobs_.set(index, value);
+        onChanged();
+      } else {
+        recentCloneJobsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRecentCloneJobs(
+        int index, com.google.cloud.vmmigration.v1.CloneJob.Builder builderForValue) {
+      if (recentCloneJobsBuilder_ == null) {
+        ensureRecentCloneJobsIsMutable();
+        recentCloneJobs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        recentCloneJobsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRecentCloneJobs(com.google.cloud.vmmigration.v1.CloneJob value) {
+      if (recentCloneJobsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRecentCloneJobsIsMutable();
+        recentCloneJobs_.add(value);
+        onChanged();
+      } else {
+        recentCloneJobsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRecentCloneJobs(int index, com.google.cloud.vmmigration.v1.CloneJob value) {
+      if (recentCloneJobsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRecentCloneJobsIsMutable();
+        recentCloneJobs_.add(index, value);
+        onChanged();
+      } else {
+        recentCloneJobsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRecentCloneJobs(
+        com.google.cloud.vmmigration.v1.CloneJob.Builder builderForValue) {
+      if (recentCloneJobsBuilder_ == null) {
+        ensureRecentCloneJobsIsMutable();
+        recentCloneJobs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        recentCloneJobsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRecentCloneJobs(
+        int index, com.google.cloud.vmmigration.v1.CloneJob.Builder builderForValue) {
+      if (recentCloneJobsBuilder_ == null) {
+        ensureRecentCloneJobsIsMutable();
+        recentCloneJobs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        recentCloneJobsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllRecentCloneJobs(
+        java.lang.Iterable<? extends com.google.cloud.vmmigration.v1.CloneJob> values) {
+      if (recentCloneJobsBuilder_ == null) {
+        ensureRecentCloneJobsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, recentCloneJobs_);
+        onChanged();
+      } else {
+        recentCloneJobsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRecentCloneJobs() {
+      if (recentCloneJobsBuilder_ == null) {
+        recentCloneJobs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        recentCloneJobsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeRecentCloneJobs(int index) {
+      if (recentCloneJobsBuilder_ == null) {
+        ensureRecentCloneJobsIsMutable();
+        recentCloneJobs_.remove(index);
+        onChanged();
+      } else {
+        recentCloneJobsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CloneJob.Builder getRecentCloneJobsBuilder(int index) {
+      return getRecentCloneJobsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CloneJobOrBuilder getRecentCloneJobsOrBuilder(
+        int index) {
+      if (recentCloneJobsBuilder_ == null) {
+        return recentCloneJobs_.get(index);
+      } else {
+        return recentCloneJobsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.vmmigration.v1.CloneJobOrBuilder>
+        getRecentCloneJobsOrBuilderList() {
+      if (recentCloneJobsBuilder_ != null) {
+        return recentCloneJobsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(recentCloneJobs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CloneJob.Builder addRecentCloneJobsBuilder() {
+      return getRecentCloneJobsFieldBuilder()
+          .addBuilder(com.google.cloud.vmmigration.v1.CloneJob.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CloneJob.Builder addRecentCloneJobsBuilder(int index) {
+      return getRecentCloneJobsFieldBuilder()
+          .addBuilder(index, com.google.cloud.vmmigration.v1.CloneJob.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+     * performed on the migrating VM. This field holds the vm's last completed
+     * clone job and the vm's running clone job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.CloneJob.Builder>
+        getRecentCloneJobsBuilderList() {
+      return getRecentCloneJobsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.CloneJob,
+            com.google.cloud.vmmigration.v1.CloneJob.Builder,
+            com.google.cloud.vmmigration.v1.CloneJobOrBuilder>
+        getRecentCloneJobsFieldBuilder() {
+      if (recentCloneJobsBuilder_ == null) {
+        recentCloneJobsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.CloneJob,
+                com.google.cloud.vmmigration.v1.CloneJob.Builder,
+                com.google.cloud.vmmigration.v1.CloneJobOrBuilder>(
+                recentCloneJobs_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        recentCloneJobs_ = null;
+      }
+      return recentCloneJobsBuilder_;
+    }
+
     private com.google.rpc.Status error_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
@@ -4505,8 +5321,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Migrating VM in case of an
-     * error in replication.
+     * Output only. Provides details on the state of the Migrating VM in case of
+     * an error in replication.
      * </pre>
      *
      * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4520,8 +5336,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Migrating VM in case of an
-     * error in replication.
+     * Output only. Provides details on the state of the Migrating VM in case of
+     * an error in replication.
      * </pre>
      *
      * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4539,8 +5355,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Migrating VM in case of an
-     * error in replication.
+     * Output only. Provides details on the state of the Migrating VM in case of
+     * an error in replication.
      * </pre>
      *
      * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4562,8 +5378,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Migrating VM in case of an
-     * error in replication.
+     * Output only. Provides details on the state of the Migrating VM in case of
+     * an error in replication.
      * </pre>
      *
      * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4582,8 +5398,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Migrating VM in case of an
-     * error in replication.
+     * Output only. Provides details on the state of the Migrating VM in case of
+     * an error in replication.
      * </pre>
      *
      * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4606,8 +5422,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Migrating VM in case of an
-     * error in replication.
+     * Output only. Provides details on the state of the Migrating VM in case of
+     * an error in replication.
      * </pre>
      *
      * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4627,8 +5443,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Migrating VM in case of an
-     * error in replication.
+     * Output only. Provides details on the state of the Migrating VM in case of
+     * an error in replication.
      * </pre>
      *
      * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4642,8 +5458,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Migrating VM in case of an
-     * error in replication.
+     * Output only. Provides details on the state of the Migrating VM in case of
+     * an error in replication.
      * </pre>
      *
      * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4659,8 +5475,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Migrating VM in case of an
-     * error in replication.
+     * Output only. Provides details on the state of the Migrating VM in case of
+     * an error in replication.
      * </pre>
      *
      * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4677,6 +5493,473 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         error_ = null;
       }
       return errorBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.vmmigration.v1.CutoverJob> recentCutoverJobs_ =
+        java.util.Collections.emptyList();
+
+    private void ensureRecentCutoverJobsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        recentCutoverJobs_ =
+            new java.util.ArrayList<com.google.cloud.vmmigration.v1.CutoverJob>(recentCutoverJobs_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.CutoverJob,
+            com.google.cloud.vmmigration.v1.CutoverJob.Builder,
+            com.google.cloud.vmmigration.v1.CutoverJobOrBuilder>
+        recentCutoverJobsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.CutoverJob> getRecentCutoverJobsList() {
+      if (recentCutoverJobsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(recentCutoverJobs_);
+      } else {
+        return recentCutoverJobsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getRecentCutoverJobsCount() {
+      if (recentCutoverJobsBuilder_ == null) {
+        return recentCutoverJobs_.size();
+      } else {
+        return recentCutoverJobsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CutoverJob getRecentCutoverJobs(int index) {
+      if (recentCutoverJobsBuilder_ == null) {
+        return recentCutoverJobs_.get(index);
+      } else {
+        return recentCutoverJobsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRecentCutoverJobs(
+        int index, com.google.cloud.vmmigration.v1.CutoverJob value) {
+      if (recentCutoverJobsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRecentCutoverJobsIsMutable();
+        recentCutoverJobs_.set(index, value);
+        onChanged();
+      } else {
+        recentCutoverJobsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRecentCutoverJobs(
+        int index, com.google.cloud.vmmigration.v1.CutoverJob.Builder builderForValue) {
+      if (recentCutoverJobsBuilder_ == null) {
+        ensureRecentCutoverJobsIsMutable();
+        recentCutoverJobs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        recentCutoverJobsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRecentCutoverJobs(com.google.cloud.vmmigration.v1.CutoverJob value) {
+      if (recentCutoverJobsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRecentCutoverJobsIsMutable();
+        recentCutoverJobs_.add(value);
+        onChanged();
+      } else {
+        recentCutoverJobsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRecentCutoverJobs(
+        int index, com.google.cloud.vmmigration.v1.CutoverJob value) {
+      if (recentCutoverJobsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRecentCutoverJobsIsMutable();
+        recentCutoverJobs_.add(index, value);
+        onChanged();
+      } else {
+        recentCutoverJobsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRecentCutoverJobs(
+        com.google.cloud.vmmigration.v1.CutoverJob.Builder builderForValue) {
+      if (recentCutoverJobsBuilder_ == null) {
+        ensureRecentCutoverJobsIsMutable();
+        recentCutoverJobs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        recentCutoverJobsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRecentCutoverJobs(
+        int index, com.google.cloud.vmmigration.v1.CutoverJob.Builder builderForValue) {
+      if (recentCutoverJobsBuilder_ == null) {
+        ensureRecentCutoverJobsIsMutable();
+        recentCutoverJobs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        recentCutoverJobsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllRecentCutoverJobs(
+        java.lang.Iterable<? extends com.google.cloud.vmmigration.v1.CutoverJob> values) {
+      if (recentCutoverJobsBuilder_ == null) {
+        ensureRecentCutoverJobsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, recentCutoverJobs_);
+        onChanged();
+      } else {
+        recentCutoverJobsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRecentCutoverJobs() {
+      if (recentCutoverJobsBuilder_ == null) {
+        recentCutoverJobs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        recentCutoverJobsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeRecentCutoverJobs(int index) {
+      if (recentCutoverJobsBuilder_ == null) {
+        ensureRecentCutoverJobsIsMutable();
+        recentCutoverJobs_.remove(index);
+        onChanged();
+      } else {
+        recentCutoverJobsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CutoverJob.Builder getRecentCutoverJobsBuilder(
+        int index) {
+      return getRecentCutoverJobsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CutoverJobOrBuilder getRecentCutoverJobsOrBuilder(
+        int index) {
+      if (recentCutoverJobsBuilder_ == null) {
+        return recentCutoverJobs_.get(index);
+      } else {
+        return recentCutoverJobsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.vmmigration.v1.CutoverJobOrBuilder>
+        getRecentCutoverJobsOrBuilderList() {
+      if (recentCutoverJobsBuilder_ != null) {
+        return recentCutoverJobsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(recentCutoverJobs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CutoverJob.Builder addRecentCutoverJobsBuilder() {
+      return getRecentCutoverJobsFieldBuilder()
+          .addBuilder(com.google.cloud.vmmigration.v1.CutoverJob.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CutoverJob.Builder addRecentCutoverJobsBuilder(
+        int index) {
+      return getRecentCutoverJobsFieldBuilder()
+          .addBuilder(index, com.google.cloud.vmmigration.v1.CutoverJob.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The recent cutover jobs performed on the migrating VM.
+     * This field holds the vm's last completed cutover job and the vm's
+     * running cutover job, if one exists.
+     * Note: To have this field populated you need to explicitly request it via
+     * the "view" parameter of the Get/List request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.CutoverJob.Builder>
+        getRecentCutoverJobsBuilderList() {
+      return getRecentCutoverJobsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.CutoverJob,
+            com.google.cloud.vmmigration.v1.CutoverJob.Builder,
+            com.google.cloud.vmmigration.v1.CutoverJobOrBuilder>
+        getRecentCutoverJobsFieldBuilder() {
+      if (recentCutoverJobsBuilder_ == null) {
+        recentCutoverJobsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.CutoverJob,
+                com.google.cloud.vmmigration.v1.CutoverJob.Builder,
+                com.google.cloud.vmmigration.v1.CutoverJobOrBuilder>(
+                recentCutoverJobs_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        recentCutoverJobs_ = null;
+      }
+      return recentCutoverJobsBuilder_;
     }
 
     @java.lang.Override

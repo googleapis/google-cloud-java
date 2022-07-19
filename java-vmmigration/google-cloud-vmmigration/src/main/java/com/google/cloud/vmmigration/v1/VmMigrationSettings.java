@@ -211,6 +211,17 @@ public class VmMigrationSettings extends ClientSettings<VmMigrationSettings> {
         .deleteDatacenterConnectorOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to upgradeAppliance. */
+  public UnaryCallSettings<UpgradeApplianceRequest, Operation> upgradeApplianceSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).upgradeApplianceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to upgradeAppliance. */
+  public OperationCallSettings<UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
+      upgradeApplianceOperationSettings() {
+    return ((VmMigrationStubSettings) getStubSettings()).upgradeApplianceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createMigratingVm. */
   public UnaryCallSettings<CreateMigratingVmRequest, Operation> createMigratingVmSettings() {
     return ((VmMigrationStubSettings) getStubSettings()).createMigratingVmSettings();
@@ -724,6 +735,19 @@ public class VmMigrationSettings extends ClientSettings<VmMigrationSettings> {
     public OperationCallSettings.Builder<DeleteDatacenterConnectorRequest, Empty, OperationMetadata>
         deleteDatacenterConnectorOperationSettings() {
       return getStubSettingsBuilder().deleteDatacenterConnectorOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeAppliance. */
+    public UnaryCallSettings.Builder<UpgradeApplianceRequest, Operation>
+        upgradeApplianceSettings() {
+      return getStubSettingsBuilder().upgradeApplianceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeAppliance. */
+    public OperationCallSettings.Builder<
+            UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
+        upgradeApplianceOperationSettings() {
+      return getStubSettingsBuilder().upgradeApplianceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createMigratingVm. */

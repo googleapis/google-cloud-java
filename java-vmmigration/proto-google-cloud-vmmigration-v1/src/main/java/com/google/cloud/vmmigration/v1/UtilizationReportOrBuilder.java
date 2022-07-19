@@ -144,7 +144,8 @@ public interface UtilizationReportOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the report in case of an error.
+   * Output only. Provides details on the state of the report in case of an
+   * error.
    * </pre>
    *
    * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -156,7 +157,8 @@ public interface UtilizationReportOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the report in case of an error.
+   * Output only. Provides details on the state of the report in case of an
+   * error.
    * </pre>
    *
    * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -168,7 +170,8 @@ public interface UtilizationReportOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the report in case of an error.
+   * Output only. Provides details on the state of the report in case of an
+   * error.
    * </pre>
    *
    * <code>.google.rpc.Status error = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -179,8 +182,8 @@ public interface UtilizationReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the report was created (this refers to the time of the request,
-   * not the time the report creation completed).
+   * Output only. The time the report was created (this refers to the time of
+   * the request, not the time the report creation completed).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -193,8 +196,8 @@ public interface UtilizationReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the report was created (this refers to the time of the request,
-   * not the time the report creation completed).
+   * Output only. The time the report was created (this refers to the time of
+   * the request, not the time the report creation completed).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -207,8 +210,8 @@ public interface UtilizationReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the report was created (this refers to the time of the request,
-   * not the time the report creation completed).
+   * Output only. The time the report was created (this refers to the time of
+   * the request, not the time the report creation completed).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -245,9 +248,9 @@ public interface UtilizationReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The point in time when the time frame ends. Notice that the time
-   * frame is counted backwards. For instance if the "frame_end_time" value is
-   * 2021/01/20 and the time frame is WEEK then the report covers the week
+   * Output only. The point in time when the time frame ends. Notice that the
+   * time frame is counted backwards. For instance if the "frame_end_time" value
+   * is 2021/01/20 and the time frame is WEEK then the report covers the week
    * between 2021/01/20 and 2021/01/14.
    * </pre>
    *
@@ -262,9 +265,9 @@ public interface UtilizationReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The point in time when the time frame ends. Notice that the time
-   * frame is counted backwards. For instance if the "frame_end_time" value is
-   * 2021/01/20 and the time frame is WEEK then the report covers the week
+   * Output only. The point in time when the time frame ends. Notice that the
+   * time frame is counted backwards. For instance if the "frame_end_time" value
+   * is 2021/01/20 and the time frame is WEEK then the report covers the week
    * between 2021/01/20 and 2021/01/14.
    * </pre>
    *
@@ -279,9 +282,9 @@ public interface UtilizationReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The point in time when the time frame ends. Notice that the time
-   * frame is counted backwards. For instance if the "frame_end_time" value is
-   * 2021/01/20 and the time frame is WEEK then the report covers the week
+   * Output only. The point in time when the time frame ends. Notice that the
+   * time frame is counted backwards. For instance if the "frame_end_time" value
+   * is 2021/01/20 and the time frame is WEEK then the report covers the week
    * between 2021/01/20 and 2021/01/14.
    * </pre>
    *

@@ -96,6 +96,8 @@ import com.google.cloud.vmmigration.v1.UpdateGroupRequest;
 import com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.UpdateSourceRequest;
 import com.google.cloud.vmmigration.v1.UpdateTargetProjectRequest;
+import com.google.cloud.vmmigration.v1.UpgradeApplianceRequest;
+import com.google.cloud.vmmigration.v1.UpgradeApplianceResponse;
 import com.google.cloud.vmmigration.v1.UtilizationReport;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -236,6 +238,15 @@ public abstract class VmMigrationStub implements BackgroundResource {
   public UnaryCallable<DeleteDatacenterConnectorRequest, Operation>
       deleteDatacenterConnectorCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteDatacenterConnectorCallable()");
+  }
+
+  public OperationCallable<UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
+      upgradeApplianceOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: upgradeApplianceOperationCallable()");
+  }
+
+  public UnaryCallable<UpgradeApplianceRequest, Operation> upgradeApplianceCallable() {
+    throw new UnsupportedOperationException("Not implemented: upgradeApplianceCallable()");
   }
 
   public OperationCallable<CreateMigratingVmRequest, MigratingVm, OperationMetadata>

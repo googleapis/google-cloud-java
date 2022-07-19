@@ -122,6 +122,8 @@ import com.google.cloud.vmmigration.v1.UpdateGroupRequest;
 import com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.UpdateSourceRequest;
 import com.google.cloud.vmmigration.v1.UpdateTargetProjectRequest;
+import com.google.cloud.vmmigration.v1.UpgradeApplianceRequest;
+import com.google.cloud.vmmigration.v1.UpgradeApplianceResponse;
 import com.google.cloud.vmmigration.v1.UtilizationReport;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -220,6 +222,10 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       deleteDatacenterConnectorSettings;
   private final OperationCallSettings<DeleteDatacenterConnectorRequest, Empty, OperationMetadata>
       deleteDatacenterConnectorOperationSettings;
+  private final UnaryCallSettings<UpgradeApplianceRequest, Operation> upgradeApplianceSettings;
+  private final OperationCallSettings<
+          UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
+      upgradeApplianceOperationSettings;
   private final UnaryCallSettings<CreateMigratingVmRequest, Operation> createMigratingVmSettings;
   private final OperationCallSettings<CreateMigratingVmRequest, MigratingVm, OperationMetadata>
       createMigratingVmOperationSettings;
@@ -916,6 +922,17 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     return deleteDatacenterConnectorOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to upgradeAppliance. */
+  public UnaryCallSettings<UpgradeApplianceRequest, Operation> upgradeApplianceSettings() {
+    return upgradeApplianceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to upgradeAppliance. */
+  public OperationCallSettings<UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
+      upgradeApplianceOperationSettings() {
+    return upgradeApplianceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to createMigratingVm. */
   public UnaryCallSettings<CreateMigratingVmRequest, Operation> createMigratingVmSettings() {
     return createMigratingVmSettings;
@@ -1317,6 +1334,8 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     deleteDatacenterConnectorSettings = settingsBuilder.deleteDatacenterConnectorSettings().build();
     deleteDatacenterConnectorOperationSettings =
         settingsBuilder.deleteDatacenterConnectorOperationSettings().build();
+    upgradeApplianceSettings = settingsBuilder.upgradeApplianceSettings().build();
+    upgradeApplianceOperationSettings = settingsBuilder.upgradeApplianceOperationSettings().build();
     createMigratingVmSettings = settingsBuilder.createMigratingVmSettings().build();
     createMigratingVmOperationSettings =
         settingsBuilder.createMigratingVmOperationSettings().build();
@@ -1428,6 +1447,11 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     private final OperationCallSettings.Builder<
             DeleteDatacenterConnectorRequest, Empty, OperationMetadata>
         deleteDatacenterConnectorOperationSettings;
+    private final UnaryCallSettings.Builder<UpgradeApplianceRequest, Operation>
+        upgradeApplianceSettings;
+    private final OperationCallSettings.Builder<
+            UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
+        upgradeApplianceOperationSettings;
     private final UnaryCallSettings.Builder<CreateMigratingVmRequest, Operation>
         createMigratingVmSettings;
     private final OperationCallSettings.Builder<
@@ -1614,6 +1638,8 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       createDatacenterConnectorOperationSettings = OperationCallSettings.newBuilder();
       deleteDatacenterConnectorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDatacenterConnectorOperationSettings = OperationCallSettings.newBuilder();
+      upgradeApplianceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      upgradeApplianceOperationSettings = OperationCallSettings.newBuilder();
       createMigratingVmSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createMigratingVmOperationSettings = OperationCallSettings.newBuilder();
       listMigratingVmsSettings = PagedCallSettings.newBuilder(LIST_MIGRATING_VMS_PAGE_STR_FACT);
@@ -1679,6 +1705,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
               getDatacenterConnectorSettings,
               createDatacenterConnectorSettings,
               deleteDatacenterConnectorSettings,
+              upgradeApplianceSettings,
               createMigratingVmSettings,
               listMigratingVmsSettings,
               getMigratingVmSettings,
@@ -1739,6 +1766,8 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       deleteDatacenterConnectorSettings = settings.deleteDatacenterConnectorSettings.toBuilder();
       deleteDatacenterConnectorOperationSettings =
           settings.deleteDatacenterConnectorOperationSettings.toBuilder();
+      upgradeApplianceSettings = settings.upgradeApplianceSettings.toBuilder();
+      upgradeApplianceOperationSettings = settings.upgradeApplianceOperationSettings.toBuilder();
       createMigratingVmSettings = settings.createMigratingVmSettings.toBuilder();
       createMigratingVmOperationSettings = settings.createMigratingVmOperationSettings.toBuilder();
       listMigratingVmsSettings = settings.listMigratingVmsSettings.toBuilder();
@@ -1808,6 +1837,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
               getDatacenterConnectorSettings,
               createDatacenterConnectorSettings,
               deleteDatacenterConnectorSettings,
+              upgradeApplianceSettings,
               createMigratingVmSettings,
               listMigratingVmsSettings,
               getMigratingVmSettings,
@@ -1933,6 +1963,11 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
       builder
           .deleteDatacenterConnectorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .upgradeApplianceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -2237,6 +2272,30 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .upgradeApplianceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpgradeApplianceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(UpgradeApplianceResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -2868,6 +2927,21 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     public OperationCallSettings.Builder<DeleteDatacenterConnectorRequest, Empty, OperationMetadata>
         deleteDatacenterConnectorOperationSettings() {
       return deleteDatacenterConnectorOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeAppliance. */
+    public UnaryCallSettings.Builder<UpgradeApplianceRequest, Operation>
+        upgradeApplianceSettings() {
+      return upgradeApplianceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeAppliance. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
+        upgradeApplianceOperationSettings() {
+      return upgradeApplianceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createMigratingVm. */

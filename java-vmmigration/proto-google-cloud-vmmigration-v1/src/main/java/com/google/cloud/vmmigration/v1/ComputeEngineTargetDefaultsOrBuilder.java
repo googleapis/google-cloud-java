@@ -565,4 +565,80 @@ public interface ComputeEngineTargetDefaultsOrBuilder
    * <code>map&lt;string, string&gt; metadata = 16;</code>
    */
   java.lang.String getMetadataOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Additional licenses to assign to the VM.
+   * </pre>
+   *
+   * <code>repeated string additional_licenses = 17;</code>
+   *
+   * @return A list containing the additionalLicenses.
+   */
+  java.util.List<java.lang.String> getAdditionalLicensesList();
+  /**
+   *
+   *
+   * <pre>
+   * Additional licenses to assign to the VM.
+   * </pre>
+   *
+   * <code>repeated string additional_licenses = 17;</code>
+   *
+   * @return The count of additionalLicenses.
+   */
+  int getAdditionalLicensesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Additional licenses to assign to the VM.
+   * </pre>
+   *
+   * <code>repeated string additional_licenses = 17;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The additionalLicenses at the given index.
+   */
+  java.lang.String getAdditionalLicenses(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Additional licenses to assign to the VM.
+   * </pre>
+   *
+   * <code>repeated string additional_licenses = 17;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalLicenses at the given index.
+   */
+  com.google.protobuf.ByteString getAdditionalLicensesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The hostname to assign to the VM.
+   * </pre>
+   *
+   * <code>string hostname = 18;</code>
+   *
+   * @return The hostname.
+   */
+  java.lang.String getHostname();
+  /**
+   *
+   *
+   * <pre>
+   * The hostname to assign to the VM.
+   * </pre>
+   *
+   * <code>string hostname = 18;</code>
+   *
+   * @return The bytes for hostname.
+   */
+  com.google.protobuf.ByteString getHostnameBytes();
 }

@@ -42,6 +42,7 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
     pageToken_ = "";
     filter_ = "";
     orderBy_ = "";
+    view_ = 0;
   }
 
   @java.lang.Override
@@ -104,6 +105,13 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
               java.lang.String s = input.readStringRequireUtf8();
 
               orderBy_ = s;
+              break;
+            }
+          case 48:
+            {
+              int rawValue = input.readEnum();
+
+              view_ = rawValue;
               break;
             }
           default:
@@ -201,10 +209,10 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. The maximum number of migrating VMs to return. The service may return
-   * fewer than this value. If unspecified, at most 500 migrating VMs will be
-   * returned. The maximum value is 1000; values above 1000 will be coerced to
-   * 1000.
+   * Optional. The maximum number of migrating VMs to return. The service may
+   * return fewer than this value. If unspecified, at most 500 migrating VMs
+   * will be returned. The maximum value is 1000; values above 1000 will be
+   * coerced to 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -369,6 +377,46 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int VIEW_FIELD_NUMBER = 6;
+  private int view_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The level of details of each migrating VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVmView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  @java.lang.Override
+  public int getViewValue() {
+    return view_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The level of details of each migrating VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVmView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.MigratingVmView getView() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.vmmigration.v1.MigratingVmView result =
+        com.google.cloud.vmmigration.v1.MigratingVmView.valueOf(view_);
+    return result == null ? com.google.cloud.vmmigration.v1.MigratingVmView.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -398,6 +446,11 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, orderBy_);
     }
+    if (view_
+        != com.google.cloud.vmmigration.v1.MigratingVmView.MIGRATING_VM_VIEW_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, view_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -422,6 +475,11 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, orderBy_);
     }
+    if (view_
+        != com.google.cloud.vmmigration.v1.MigratingVmView.MIGRATING_VM_VIEW_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, view_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -443,6 +501,7 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (view_ != other.view_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -464,6 +523,8 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
     hash = (53 * hash) + getFilter().hashCode();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
+    hash = (37 * hash) + VIEW_FIELD_NUMBER;
+    hash = (53 * hash) + view_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -620,6 +681,8 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
 
       orderBy_ = "";
 
+      view_ = 0;
+
       return this;
     }
 
@@ -652,6 +715,7 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
       result.pageToken_ = pageToken_;
       result.filter_ = filter_;
       result.orderBy_ = orderBy_;
+      result.view_ = view_;
       onBuilt();
       return result;
     }
@@ -720,6 +784,9 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
         onChanged();
+      }
+      if (other.view_ != 0) {
+        setViewValue(other.getViewValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -872,10 +939,10 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. The maximum number of migrating VMs to return. The service may return
-     * fewer than this value. If unspecified, at most 500 migrating VMs will be
-     * returned. The maximum value is 1000; values above 1000 will be coerced to
-     * 1000.
+     * Optional. The maximum number of migrating VMs to return. The service may
+     * return fewer than this value. If unspecified, at most 500 migrating VMs
+     * will be returned. The maximum value is 1000; values above 1000 will be
+     * coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -890,10 +957,10 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. The maximum number of migrating VMs to return. The service may return
-     * fewer than this value. If unspecified, at most 500 migrating VMs will be
-     * returned. The maximum value is 1000; values above 1000 will be coerced to
-     * 1000.
+     * Optional. The maximum number of migrating VMs to return. The service may
+     * return fewer than this value. If unspecified, at most 500 migrating VMs
+     * will be returned. The maximum value is 1000; values above 1000 will be
+     * coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -911,10 +978,10 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. The maximum number of migrating VMs to return. The service may return
-     * fewer than this value. If unspecified, at most 500 migrating VMs will be
-     * returned. The maximum value is 1000; values above 1000 will be coerced to
-     * 1000.
+     * Optional. The maximum number of migrating VMs to return. The service may
+     * return fewer than this value. If unspecified, at most 500 migrating VMs
+     * will be returned. The maximum value is 1000; values above 1000 will be
+     * coerced to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1257,6 +1324,107 @@ public final class ListMigratingVmsRequest extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
 
       orderBy_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int view_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The level of details of each migrating VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVmView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for view.
+     */
+    @java.lang.Override
+    public int getViewValue() {
+      return view_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The level of details of each migrating VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVmView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewValue(int value) {
+
+      view_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The level of details of each migrating VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVmView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The view.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.MigratingVmView getView() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.vmmigration.v1.MigratingVmView result =
+          com.google.cloud.vmmigration.v1.MigratingVmView.valueOf(view_);
+      return result == null ? com.google.cloud.vmmigration.v1.MigratingVmView.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The level of details of each migrating VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVmView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setView(com.google.cloud.vmmigration.v1.MigratingVmView value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      view_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The level of details of each migrating VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVmView view = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearView() {
+
+      view_ = 0;
       onChanged();
       return this;
     }

@@ -103,8 +103,8 @@ public interface ListUtilizationReportsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A page token, received from a previous `ListUtilizationReports` call.
-   * Provide this to retrieve the subsequent page.
+   * Required. A page token, received from a previous `ListUtilizationReports`
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to `ListUtilizationReports`
    * must match the call that provided the page token.
    * </pre>
@@ -118,8 +118,8 @@ public interface ListUtilizationReportsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A page token, received from a previous `ListUtilizationReports` call.
-   * Provide this to retrieve the subsequent page.
+   * Required. A page token, received from a previous `ListUtilizationReports`
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to `ListUtilizationReports`
    * must match the call that provided the page token.
    * </pre>
