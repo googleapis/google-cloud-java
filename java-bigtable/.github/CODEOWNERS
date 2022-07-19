@@ -6,7 +6,10 @@
 
 # The @googleapis/api-bigtable is the default owner for changes in this repo
 *                       @googleapis/yoshi-java @googleapis/api-bigtable
+
+# for handwritten libraries, keep codeowner_team in .repo-metadata.json as owner
 **/*.java               @googleapis/api-bigtable
+
 
 # The java-samples-reviewers team is the default owner for samples changes
 samples/**/*.java       @googleapis/java-samples-reviewers
