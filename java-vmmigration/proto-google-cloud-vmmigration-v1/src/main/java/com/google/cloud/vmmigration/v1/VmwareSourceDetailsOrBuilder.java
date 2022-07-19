@@ -52,8 +52,8 @@ public interface VmwareSourceDetailsOrBuilder
    *
    *
    * <pre>
-   * Input only. The credentials password. This is write only and can not be read in a GET
-   * operation.
+   * Input only. The credentials password. This is write only and can not be
+   * read in a GET operation.
    * </pre>
    *
    * <code>string password = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -65,8 +65,8 @@ public interface VmwareSourceDetailsOrBuilder
    *
    *
    * <pre>
-   * Input only. The credentials password. This is write only and can not be read in a GET
-   * operation.
+   * Input only. The credentials password. This is write only and can not be
+   * read in a GET operation.
    * </pre>
    *
    * <code>string password = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>

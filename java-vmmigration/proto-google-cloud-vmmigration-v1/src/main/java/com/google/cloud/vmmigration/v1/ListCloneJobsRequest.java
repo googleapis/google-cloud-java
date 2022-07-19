@@ -201,10 +201,10 @@ public final class ListCloneJobsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The maximum number of clone jobs to return. The service may return
-   * fewer than this value. If unspecified, at most 500 clone jobs will be
-   * returned. The maximum value is 1000; values above 1000 will be coerced to
-   * 1000.
+   * Optional. The maximum number of clone jobs to return. The service may
+   * return fewer than this value. If unspecified, at most 500 clone jobs will
+   * be returned. The maximum value is 1000; values above 1000 will be coerced
+   * to 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -871,10 +871,10 @@ public final class ListCloneJobsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of clone jobs to return. The service may return
-     * fewer than this value. If unspecified, at most 500 clone jobs will be
-     * returned. The maximum value is 1000; values above 1000 will be coerced to
-     * 1000.
+     * Optional. The maximum number of clone jobs to return. The service may
+     * return fewer than this value. If unspecified, at most 500 clone jobs will
+     * be returned. The maximum value is 1000; values above 1000 will be coerced
+     * to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -889,10 +889,10 @@ public final class ListCloneJobsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of clone jobs to return. The service may return
-     * fewer than this value. If unspecified, at most 500 clone jobs will be
-     * returned. The maximum value is 1000; values above 1000 will be coerced to
-     * 1000.
+     * Optional. The maximum number of clone jobs to return. The service may
+     * return fewer than this value. If unspecified, at most 500 clone jobs will
+     * be returned. The maximum value is 1000; values above 1000 will be coerced
+     * to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -910,10 +910,10 @@ public final class ListCloneJobsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of clone jobs to return. The service may return
-     * fewer than this value. If unspecified, at most 500 clone jobs will be
-     * returned. The maximum value is 1000; values above 1000 will be coerced to
-     * 1000.
+     * Optional. The maximum number of clone jobs to return. The service may
+     * return fewer than this value. If unspecified, at most 500 clone jobs will
+     * be returned. The maximum value is 1000; values above 1000 will be coerced
+     * to 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

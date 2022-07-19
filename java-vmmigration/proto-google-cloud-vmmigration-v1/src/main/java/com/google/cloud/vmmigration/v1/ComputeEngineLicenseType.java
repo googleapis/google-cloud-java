@@ -153,7 +153,7 @@ public enum ComputeEngineLicenseType implements com.google.protobuf.ProtocolMess
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.vmmigration.v1.VmMigrationProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.cloud.vmmigration.v1.VmMigrationProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final ComputeEngineLicenseType[] VALUES = values();

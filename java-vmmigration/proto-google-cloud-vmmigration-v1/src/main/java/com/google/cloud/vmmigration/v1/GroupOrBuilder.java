@@ -27,10 +27,10 @@ public interface GroupOrBuilder
    *
    *
    * <pre>
-   * The Group name.
+   * Output only. The Group name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -39,10 +39,10 @@ public interface GroupOrBuilder
    *
    *
    * <pre>
-   * The Group name.
+   * Output only. The Group name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */

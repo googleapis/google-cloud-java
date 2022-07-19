@@ -138,7 +138,8 @@ public interface MigrationErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. URL(s) pointing to additional information on handling the current error.
+   * Output only. URL(s) pointing to additional information on handling the
+   * current error.
    * </pre>
    *
    * <code>
@@ -150,7 +151,8 @@ public interface MigrationErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. URL(s) pointing to additional information on handling the current error.
+   * Output only. URL(s) pointing to additional information on handling the
+   * current error.
    * </pre>
    *
    * <code>
@@ -162,7 +164,8 @@ public interface MigrationErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. URL(s) pointing to additional information on handling the current error.
+   * Output only. URL(s) pointing to additional information on handling the
+   * current error.
    * </pre>
    *
    * <code>
@@ -174,7 +177,8 @@ public interface MigrationErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. URL(s) pointing to additional information on handling the current error.
+   * Output only. URL(s) pointing to additional information on handling the
+   * current error.
    * </pre>
    *
    * <code>
@@ -186,7 +190,8 @@ public interface MigrationErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. URL(s) pointing to additional information on handling the current error.
+   * Output only. URL(s) pointing to additional information on handling the
+   * current error.
    * </pre>
    *
    * <code>

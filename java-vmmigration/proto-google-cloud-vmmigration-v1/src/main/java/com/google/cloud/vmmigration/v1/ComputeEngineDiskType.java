@@ -177,7 +177,7 @@ public enum ComputeEngineDiskType implements com.google.protobuf.ProtocolMessage
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.vmmigration.v1.VmMigrationProto.getDescriptor().getEnumTypes().get(1);
+    return com.google.cloud.vmmigration.v1.VmMigrationProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final ComputeEngineDiskType[] VALUES = values();

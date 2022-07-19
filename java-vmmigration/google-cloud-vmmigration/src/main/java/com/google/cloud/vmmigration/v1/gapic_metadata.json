@@ -138,6 +138,9 @@
             },
             "UpdateTargetProject": {
               "methods": ["updateTargetProjectAsync", "updateTargetProjectAsync", "updateTargetProjectOperationCallable", "updateTargetProjectCallable"]
+            },
+            "UpgradeAppliance": {
+              "methods": ["upgradeApplianceAsync", "upgradeApplianceOperationCallable", "upgradeApplianceCallable"]
             }
           }
         }

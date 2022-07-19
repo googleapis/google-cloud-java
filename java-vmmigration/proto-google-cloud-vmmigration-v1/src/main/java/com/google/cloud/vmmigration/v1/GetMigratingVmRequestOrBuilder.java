@@ -51,4 +51,33 @@ public interface GetMigratingVmRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The level of details of the migrating VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVmView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  int getViewValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The level of details of the migrating VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVmView view = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  com.google.cloud.vmmigration.v1.MigratingVmView getView();
 }

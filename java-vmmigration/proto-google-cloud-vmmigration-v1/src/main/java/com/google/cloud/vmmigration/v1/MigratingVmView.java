@@ -22,42 +22,44 @@ package com.google.cloud.vmmigration.v1;
  *
  *
  * <pre>
- * Possible values for vm boot option.
+ * Controls the level of details of a Migrating VM.
  * </pre>
  *
- * Protobuf enum {@code google.cloud.vmmigration.v1.ComputeEngineBootOption}
+ * Protobuf enum {@code google.cloud.vmmigration.v1.MigratingVmView}
  */
-public enum ComputeEngineBootOption implements com.google.protobuf.ProtocolMessageEnum {
+public enum MigratingVmView implements com.google.protobuf.ProtocolMessageEnum {
   /**
    *
    *
    * <pre>
-   * The boot option is unknown.
+   * View is unspecified. The API will fallback to the default value.
    * </pre>
    *
-   * <code>COMPUTE_ENGINE_BOOT_OPTION_UNSPECIFIED = 0;</code>
+   * <code>MIGRATING_VM_VIEW_UNSPECIFIED = 0;</code>
    */
-  COMPUTE_ENGINE_BOOT_OPTION_UNSPECIFIED(0),
+  MIGRATING_VM_VIEW_UNSPECIFIED(0),
   /**
    *
    *
    * <pre>
-   * The boot option is EFI.
+   * Get the migrating VM basic details.
+   * The basic details do not include the recent clone jobs and recent cutover
+   * jobs lists.
    * </pre>
    *
-   * <code>COMPUTE_ENGINE_BOOT_OPTION_EFI = 1;</code>
+   * <code>MIGRATING_VM_VIEW_BASIC = 1;</code>
    */
-  COMPUTE_ENGINE_BOOT_OPTION_EFI(1),
+  MIGRATING_VM_VIEW_BASIC(1),
   /**
    *
    *
    * <pre>
-   * The boot option is BIOS.
+   * Include everything.
    * </pre>
    *
-   * <code>COMPUTE_ENGINE_BOOT_OPTION_BIOS = 2;</code>
+   * <code>MIGRATING_VM_VIEW_FULL = 2;</code>
    */
-  COMPUTE_ENGINE_BOOT_OPTION_BIOS(2),
+  MIGRATING_VM_VIEW_FULL(2),
   UNRECOGNIZED(-1),
   ;
 
@@ -65,32 +67,34 @@ public enum ComputeEngineBootOption implements com.google.protobuf.ProtocolMessa
    *
    *
    * <pre>
-   * The boot option is unknown.
+   * View is unspecified. The API will fallback to the default value.
    * </pre>
    *
-   * <code>COMPUTE_ENGINE_BOOT_OPTION_UNSPECIFIED = 0;</code>
+   * <code>MIGRATING_VM_VIEW_UNSPECIFIED = 0;</code>
    */
-  public static final int COMPUTE_ENGINE_BOOT_OPTION_UNSPECIFIED_VALUE = 0;
+  public static final int MIGRATING_VM_VIEW_UNSPECIFIED_VALUE = 0;
   /**
    *
    *
    * <pre>
-   * The boot option is EFI.
+   * Get the migrating VM basic details.
+   * The basic details do not include the recent clone jobs and recent cutover
+   * jobs lists.
    * </pre>
    *
-   * <code>COMPUTE_ENGINE_BOOT_OPTION_EFI = 1;</code>
+   * <code>MIGRATING_VM_VIEW_BASIC = 1;</code>
    */
-  public static final int COMPUTE_ENGINE_BOOT_OPTION_EFI_VALUE = 1;
+  public static final int MIGRATING_VM_VIEW_BASIC_VALUE = 1;
   /**
    *
    *
    * <pre>
-   * The boot option is BIOS.
+   * Include everything.
    * </pre>
    *
-   * <code>COMPUTE_ENGINE_BOOT_OPTION_BIOS = 2;</code>
+   * <code>MIGRATING_VM_VIEW_FULL = 2;</code>
    */
-  public static final int COMPUTE_ENGINE_BOOT_OPTION_BIOS_VALUE = 2;
+  public static final int MIGRATING_VM_VIEW_FULL_VALUE = 2;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -106,7 +110,7 @@ public enum ComputeEngineBootOption implements com.google.protobuf.ProtocolMessa
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static ComputeEngineBootOption valueOf(int value) {
+  public static MigratingVmView valueOf(int value) {
     return forNumber(value);
   }
 
@@ -114,31 +118,29 @@ public enum ComputeEngineBootOption implements com.google.protobuf.ProtocolMessa
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static ComputeEngineBootOption forNumber(int value) {
+  public static MigratingVmView forNumber(int value) {
     switch (value) {
       case 0:
-        return COMPUTE_ENGINE_BOOT_OPTION_UNSPECIFIED;
+        return MIGRATING_VM_VIEW_UNSPECIFIED;
       case 1:
-        return COMPUTE_ENGINE_BOOT_OPTION_EFI;
+        return MIGRATING_VM_VIEW_BASIC;
       case 2:
-        return COMPUTE_ENGINE_BOOT_OPTION_BIOS;
+        return MIGRATING_VM_VIEW_FULL;
       default:
         return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<ComputeEngineBootOption>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<MigratingVmView> internalGetValueMap() {
     return internalValueMap;
   }
 
-  private static final com.google.protobuf.Internal.EnumLiteMap<ComputeEngineBootOption>
-      internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ComputeEngineBootOption>() {
-            public ComputeEngineBootOption findValueByNumber(int number) {
-              return ComputeEngineBootOption.forNumber(number);
-            }
-          };
+  private static final com.google.protobuf.Internal.EnumLiteMap<MigratingVmView> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<MigratingVmView>() {
+        public MigratingVmView findValueByNumber(int number) {
+          return MigratingVmView.forNumber(number);
+        }
+      };
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     if (this == UNRECOGNIZED) {
@@ -153,13 +155,12 @@ public enum ComputeEngineBootOption implements com.google.protobuf.ProtocolMessa
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.vmmigration.v1.VmMigrationProto.getDescriptor().getEnumTypes().get(4);
+    return com.google.cloud.vmmigration.v1.VmMigrationProto.getDescriptor().getEnumTypes().get(1);
   }
 
-  private static final ComputeEngineBootOption[] VALUES = values();
+  private static final MigratingVmView[] VALUES = values();
 
-  public static ComputeEngineBootOption valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static MigratingVmView valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
@@ -171,9 +172,9 @@ public enum ComputeEngineBootOption implements com.google.protobuf.ProtocolMessa
 
   private final int value;
 
-  private ComputeEngineBootOption(int value) {
+  private MigratingVmView(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:google.cloud.vmmigration.v1.ComputeEngineBootOption)
+  // @@protoc_insertion_point(enum_scope:google.cloud.vmmigration.v1.MigratingVmView)
 }

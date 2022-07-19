@@ -46,6 +46,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
     version_ = "";
     bucket_ = "";
     state_ = 0;
+    applianceInfrastructureVersion_ = "";
+    applianceSoftwareVersion_ = "";
   }
 
   @java.lang.Override
@@ -176,6 +178,52 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
               java.lang.String s = input.readStringRequireUtf8();
 
               registrationId_ = s;
+              break;
+            }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              applianceInfrastructureVersion_ = s;
+              break;
+            }
+          case 114:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              applianceSoftwareVersion_ = s;
+              break;
+            }
+          case 122:
+            {
+              com.google.cloud.vmmigration.v1.AvailableUpdates.Builder subBuilder = null;
+              if (availableVersions_ != null) {
+                subBuilder = availableVersions_.toBuilder();
+              }
+              availableVersions_ =
+                  input.readMessage(
+                      com.google.cloud.vmmigration.v1.AvailableUpdates.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(availableVersions_);
+                availableVersions_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 130:
+            {
+              com.google.cloud.vmmigration.v1.UpgradeStatus.Builder subBuilder = null;
+              if (upgradeStatus_ != null) {
+                subBuilder = upgradeStatus_.toBuilder();
+              }
+              upgradeStatus_ =
+                  input.readMessage(
+                      com.google.cloud.vmmigration.v1.UpgradeStatus.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(upgradeStatus_);
+                upgradeStatus_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           default:
@@ -429,8 +477,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The time the connector was created (as an API call, not when it was
-   * actually installed).
+   * Output only. The time the connector was created (as an API call, not when
+   * it was actually installed).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -446,8 +494,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The time the connector was created (as an API call, not when it was
-   * actually installed).
+   * Output only. The time the connector was created (as an API call, not when
+   * it was actually installed).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -463,8 +511,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The time the connector was created (as an API call, not when it was
-   * actually installed).
+   * Output only. The time the connector was created (as an API call, not when
+   * it was actually installed).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -579,9 +627,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Immutable. A unique key for this connector. This key is internal to the OVA connector
-   * and is supplied with its creation during the registration process and can
-   * not be modified.
+   * Immutable. A unique key for this connector. This key is internal to the OVA
+   * connector and is supplied with its creation during the registration process
+   * and can not be modified.
    * </pre>
    *
    * <code>string registration_id = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -604,9 +652,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Immutable. A unique key for this connector. This key is internal to the OVA connector
-   * and is supplied with its creation during the registration process and can
-   * not be modified.
+   * Immutable. A unique key for this connector. This key is internal to the OVA
+   * connector and is supplied with its creation during the registration process
+   * and can not be modified.
    * </pre>
    *
    * <code>string registration_id = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -734,7 +782,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The communication channel between the datacenter connector and GCP.
+   * Output only. The communication channel between the datacenter connector and
+   * GCP.
    * </pre>
    *
    * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -757,7 +806,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The communication channel between the datacenter connector and GCP.
+   * Output only. The communication channel between the datacenter connector and
+   * GCP.
    * </pre>
    *
    * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -783,7 +833,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. State of the DatacenterConnector, as determined by the health checks.
+   * Output only. State of the DatacenterConnector, as determined by the health
+   * checks.
    * </pre>
    *
    * <code>
@@ -800,7 +851,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. State of the DatacenterConnector, as determined by the health checks.
+   * Output only. State of the DatacenterConnector, as determined by the health
+   * checks.
    * </pre>
    *
    * <code>
@@ -874,8 +926,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the Datacenter Connector in case of an
-   * error.
+   * Output only. Provides details on the state of the Datacenter Connector in
+   * case of an error.
    * </pre>
    *
    * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -890,8 +942,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the Datacenter Connector in case of an
-   * error.
+   * Output only. Provides details on the state of the Datacenter Connector in
+   * case of an error.
    * </pre>
    *
    * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -906,8 +958,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the Datacenter Connector in case of an
-   * error.
+   * Output only. Provides details on the state of the Datacenter Connector in
+   * case of an error.
    * </pre>
    *
    * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -915,6 +967,226 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
     return getError();
+  }
+
+  public static final int APPLIANCE_INFRASTRUCTURE_VERSION_FIELD_NUMBER = 13;
+  private volatile java.lang.Object applianceInfrastructureVersion_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Appliance OVA version.
+   * This is the OVA which is manually installed by the user and contains the
+   * infrastructure for the automatically updatable components on the appliance.
+   * </pre>
+   *
+   * <code>
+   * string appliance_infrastructure_version = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The applianceInfrastructureVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getApplianceInfrastructureVersion() {
+    java.lang.Object ref = applianceInfrastructureVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      applianceInfrastructureVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Appliance OVA version.
+   * This is the OVA which is manually installed by the user and contains the
+   * infrastructure for the automatically updatable components on the appliance.
+   * </pre>
+   *
+   * <code>
+   * string appliance_infrastructure_version = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for applianceInfrastructureVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getApplianceInfrastructureVersionBytes() {
+    java.lang.Object ref = applianceInfrastructureVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      applianceInfrastructureVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int APPLIANCE_SOFTWARE_VERSION_FIELD_NUMBER = 14;
+  private volatile java.lang.Object applianceSoftwareVersion_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Appliance last installed update bundle version.
+   * This is the version of the automatically updatable components on the
+   * appliance.
+   * </pre>
+   *
+   * <code>string appliance_software_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The applianceSoftwareVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getApplianceSoftwareVersion() {
+    java.lang.Object ref = applianceSoftwareVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      applianceSoftwareVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Appliance last installed update bundle version.
+   * This is the version of the automatically updatable components on the
+   * appliance.
+   * </pre>
+   *
+   * <code>string appliance_software_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for applianceSoftwareVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getApplianceSoftwareVersionBytes() {
+    java.lang.Object ref = applianceSoftwareVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      applianceSoftwareVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AVAILABLE_VERSIONS_FIELD_NUMBER = 15;
+  private com.google.cloud.vmmigration.v1.AvailableUpdates availableVersions_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The available versions for updating this appliance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the availableVersions field is set.
+   */
+  @java.lang.Override
+  public boolean hasAvailableVersions() {
+    return availableVersions_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The available versions for updating this appliance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The availableVersions.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AvailableUpdates getAvailableVersions() {
+    return availableVersions_ == null
+        ? com.google.cloud.vmmigration.v1.AvailableUpdates.getDefaultInstance()
+        : availableVersions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The available versions for updating this appliance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AvailableUpdatesOrBuilder getAvailableVersionsOrBuilder() {
+    return getAvailableVersions();
+  }
+
+  public static final int UPGRADE_STATUS_FIELD_NUMBER = 16;
+  private com.google.cloud.vmmigration.v1.UpgradeStatus upgradeStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the current / last upgradeAppliance operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the upgradeStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpgradeStatus() {
+    return upgradeStatus_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the current / last upgradeAppliance operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The upgradeStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.UpgradeStatus getUpgradeStatus() {
+    return upgradeStatus_ == null
+        ? com.google.cloud.vmmigration.v1.UpgradeStatus.getDefaultInstance()
+        : upgradeStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the current / last upgradeAppliance operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.UpgradeStatusOrBuilder getUpgradeStatusOrBuilder() {
+    return getUpgradeStatus();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -963,6 +1235,19 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(registrationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, registrationId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applianceInfrastructureVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 13, applianceInfrastructureVersion_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applianceSoftwareVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, applianceSoftwareVersion_);
+    }
+    if (availableVersions_ != null) {
+      output.writeMessage(15, getAvailableVersions());
+    }
+    if (upgradeStatus_ != null) {
+      output.writeMessage(16, getUpgradeStatus());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1004,6 +1289,21 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(registrationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, registrationId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applianceInfrastructureVersion_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              13, applianceInfrastructureVersion_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(applianceSoftwareVersion_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(14, applianceSoftwareVersion_);
+    }
+    if (availableVersions_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getAvailableVersions());
+    }
+    if (upgradeStatus_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getUpgradeStatus());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1041,6 +1341,17 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
     if (hasError() != other.hasError()) return false;
     if (hasError()) {
       if (!getError().equals(other.getError())) return false;
+    }
+    if (!getApplianceInfrastructureVersion().equals(other.getApplianceInfrastructureVersion()))
+      return false;
+    if (!getApplianceSoftwareVersion().equals(other.getApplianceSoftwareVersion())) return false;
+    if (hasAvailableVersions() != other.hasAvailableVersions()) return false;
+    if (hasAvailableVersions()) {
+      if (!getAvailableVersions().equals(other.getAvailableVersions())) return false;
+    }
+    if (hasUpgradeStatus() != other.hasUpgradeStatus()) return false;
+    if (hasUpgradeStatus()) {
+      if (!getUpgradeStatus().equals(other.getUpgradeStatus())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1080,6 +1391,18 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
+    }
+    hash = (37 * hash) + APPLIANCE_INFRASTRUCTURE_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getApplianceInfrastructureVersion().hashCode();
+    hash = (37 * hash) + APPLIANCE_SOFTWARE_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getApplianceSoftwareVersion().hashCode();
+    if (hasAvailableVersions()) {
+      hash = (37 * hash) + AVAILABLE_VERSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAvailableVersions().hashCode();
+    }
+    if (hasUpgradeStatus()) {
+      hash = (37 * hash) + UPGRADE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getUpgradeStatus().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1264,6 +1587,22 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
         error_ = null;
         errorBuilder_ = null;
       }
+      applianceInfrastructureVersion_ = "";
+
+      applianceSoftwareVersion_ = "";
+
+      if (availableVersionsBuilder_ == null) {
+        availableVersions_ = null;
+      } else {
+        availableVersions_ = null;
+        availableVersionsBuilder_ = null;
+      }
+      if (upgradeStatusBuilder_ == null) {
+        upgradeStatus_ = null;
+      } else {
+        upgradeStatus_ = null;
+        upgradeStatusBuilder_ = null;
+      }
       return this;
     }
 
@@ -1316,6 +1655,18 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
         result.error_ = error_;
       } else {
         result.error_ = errorBuilder_.build();
+      }
+      result.applianceInfrastructureVersion_ = applianceInfrastructureVersion_;
+      result.applianceSoftwareVersion_ = applianceSoftwareVersion_;
+      if (availableVersionsBuilder_ == null) {
+        result.availableVersions_ = availableVersions_;
+      } else {
+        result.availableVersions_ = availableVersionsBuilder_.build();
+      }
+      if (upgradeStatusBuilder_ == null) {
+        result.upgradeStatus_ = upgradeStatus_;
+      } else {
+        result.upgradeStatus_ = upgradeStatusBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1402,6 +1753,20 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
       if (other.hasError()) {
         mergeError(other.getError());
       }
+      if (!other.getApplianceInfrastructureVersion().isEmpty()) {
+        applianceInfrastructureVersion_ = other.applianceInfrastructureVersion_;
+        onChanged();
+      }
+      if (!other.getApplianceSoftwareVersion().isEmpty()) {
+        applianceSoftwareVersion_ = other.applianceSoftwareVersion_;
+        onChanged();
+      }
+      if (other.hasAvailableVersions()) {
+        mergeAvailableVersions(other.getAvailableVersions());
+      }
+      if (other.hasUpgradeStatus()) {
+        mergeUpgradeStatus(other.getUpgradeStatus());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1442,8 +1807,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time the connector was created (as an API call, not when it was
-     * actually installed).
+     * Output only. The time the connector was created (as an API call, not when
+     * it was actually installed).
      * </pre>
      *
      * <code>
@@ -1459,8 +1824,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time the connector was created (as an API call, not when it was
-     * actually installed).
+     * Output only. The time the connector was created (as an API call, not when
+     * it was actually installed).
      * </pre>
      *
      * <code>
@@ -1482,8 +1847,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time the connector was created (as an API call, not when it was
-     * actually installed).
+     * Output only. The time the connector was created (as an API call, not when
+     * it was actually installed).
      * </pre>
      *
      * <code>
@@ -1507,8 +1872,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time the connector was created (as an API call, not when it was
-     * actually installed).
+     * Output only. The time the connector was created (as an API call, not when
+     * it was actually installed).
      * </pre>
      *
      * <code>
@@ -1529,8 +1894,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time the connector was created (as an API call, not when it was
-     * actually installed).
+     * Output only. The time the connector was created (as an API call, not when
+     * it was actually installed).
      * </pre>
      *
      * <code>
@@ -1556,8 +1921,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time the connector was created (as an API call, not when it was
-     * actually installed).
+     * Output only. The time the connector was created (as an API call, not when
+     * it was actually installed).
      * </pre>
      *
      * <code>
@@ -1579,8 +1944,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time the connector was created (as an API call, not when it was
-     * actually installed).
+     * Output only. The time the connector was created (as an API call, not when
+     * it was actually installed).
      * </pre>
      *
      * <code>
@@ -1596,8 +1961,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time the connector was created (as an API call, not when it was
-     * actually installed).
+     * Output only. The time the connector was created (as an API call, not when
+     * it was actually installed).
      * </pre>
      *
      * <code>
@@ -1617,8 +1982,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The time the connector was created (as an API call, not when it was
-     * actually installed).
+     * Output only. The time the connector was created (as an API call, not when
+     * it was actually installed).
      * </pre>
      *
      * <code>
@@ -1954,9 +2319,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. A unique key for this connector. This key is internal to the OVA connector
-     * and is supplied with its creation during the registration process and can
-     * not be modified.
+     * Immutable. A unique key for this connector. This key is internal to the OVA
+     * connector and is supplied with its creation during the registration process
+     * and can not be modified.
      * </pre>
      *
      * <code>string registration_id = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1978,9 +2343,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. A unique key for this connector. This key is internal to the OVA connector
-     * and is supplied with its creation during the registration process and can
-     * not be modified.
+     * Immutable. A unique key for this connector. This key is internal to the OVA
+     * connector and is supplied with its creation during the registration process
+     * and can not be modified.
      * </pre>
      *
      * <code>string registration_id = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2002,9 +2367,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. A unique key for this connector. This key is internal to the OVA connector
-     * and is supplied with its creation during the registration process and can
-     * not be modified.
+     * Immutable. A unique key for this connector. This key is internal to the OVA
+     * connector and is supplied with its creation during the registration process
+     * and can not be modified.
      * </pre>
      *
      * <code>string registration_id = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2025,9 +2390,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. A unique key for this connector. This key is internal to the OVA connector
-     * and is supplied with its creation during the registration process and can
-     * not be modified.
+     * Immutable. A unique key for this connector. This key is internal to the OVA
+     * connector and is supplied with its creation during the registration process
+     * and can not be modified.
      * </pre>
      *
      * <code>string registration_id = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2044,9 +2409,9 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. A unique key for this connector. This key is internal to the OVA connector
-     * and is supplied with its creation during the registration process and can
-     * not be modified.
+     * Immutable. A unique key for this connector. This key is internal to the OVA
+     * connector and is supplied with its creation during the registration process
+     * and can not be modified.
      * </pre>
      *
      * <code>string registration_id = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2292,7 +2657,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The communication channel between the datacenter connector and GCP.
+     * Output only. The communication channel between the datacenter connector and
+     * GCP.
      * </pre>
      *
      * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2314,7 +2680,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The communication channel between the datacenter connector and GCP.
+     * Output only. The communication channel between the datacenter connector and
+     * GCP.
      * </pre>
      *
      * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2336,7 +2703,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The communication channel between the datacenter connector and GCP.
+     * Output only. The communication channel between the datacenter connector and
+     * GCP.
      * </pre>
      *
      * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2357,7 +2725,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The communication channel between the datacenter connector and GCP.
+     * Output only. The communication channel between the datacenter connector and
+     * GCP.
      * </pre>
      *
      * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2374,7 +2743,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The communication channel between the datacenter connector and GCP.
+     * Output only. The communication channel between the datacenter connector and
+     * GCP.
      * </pre>
      *
      * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2398,7 +2768,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the DatacenterConnector, as determined by the health checks.
+     * Output only. State of the DatacenterConnector, as determined by the health
+     * checks.
      * </pre>
      *
      * <code>
@@ -2415,7 +2786,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the DatacenterConnector, as determined by the health checks.
+     * Output only. State of the DatacenterConnector, as determined by the health
+     * checks.
      * </pre>
      *
      * <code>
@@ -2435,7 +2807,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the DatacenterConnector, as determined by the health checks.
+     * Output only. State of the DatacenterConnector, as determined by the health
+     * checks.
      * </pre>
      *
      * <code>
@@ -2457,7 +2830,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the DatacenterConnector, as determined by the health checks.
+     * Output only. State of the DatacenterConnector, as determined by the health
+     * checks.
      * </pre>
      *
      * <code>
@@ -2480,7 +2854,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the DatacenterConnector, as determined by the health checks.
+     * Output only. State of the DatacenterConnector, as determined by the health
+     * checks.
      * </pre>
      *
      * <code>
@@ -2692,8 +3067,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Datacenter Connector in case of an
-     * error.
+     * Output only. Provides details on the state of the Datacenter Connector in
+     * case of an error.
      * </pre>
      *
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2707,8 +3082,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Datacenter Connector in case of an
-     * error.
+     * Output only. Provides details on the state of the Datacenter Connector in
+     * case of an error.
      * </pre>
      *
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2726,8 +3101,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Datacenter Connector in case of an
-     * error.
+     * Output only. Provides details on the state of the Datacenter Connector in
+     * case of an error.
      * </pre>
      *
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2749,8 +3124,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Datacenter Connector in case of an
-     * error.
+     * Output only. Provides details on the state of the Datacenter Connector in
+     * case of an error.
      * </pre>
      *
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2769,8 +3144,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Datacenter Connector in case of an
-     * error.
+     * Output only. Provides details on the state of the Datacenter Connector in
+     * case of an error.
      * </pre>
      *
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2793,8 +3168,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Datacenter Connector in case of an
-     * error.
+     * Output only. Provides details on the state of the Datacenter Connector in
+     * case of an error.
      * </pre>
      *
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2814,8 +3189,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Datacenter Connector in case of an
-     * error.
+     * Output only. Provides details on the state of the Datacenter Connector in
+     * case of an error.
      * </pre>
      *
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2829,8 +3204,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Datacenter Connector in case of an
-     * error.
+     * Output only. Provides details on the state of the Datacenter Connector in
+     * case of an error.
      * </pre>
      *
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2846,8 +3221,8 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. Provides details on the state of the Datacenter Connector in case of an
-     * error.
+     * Output only. Provides details on the state of the Datacenter Connector in
+     * case of an error.
      * </pre>
      *
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2864,6 +3239,662 @@ public final class DatacenterConnector extends com.google.protobuf.GeneratedMess
         error_ = null;
       }
       return errorBuilder_;
+    }
+
+    private java.lang.Object applianceInfrastructureVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Appliance OVA version.
+     * This is the OVA which is manually installed by the user and contains the
+     * infrastructure for the automatically updatable components on the appliance.
+     * </pre>
+     *
+     * <code>
+     * string appliance_infrastructure_version = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The applianceInfrastructureVersion.
+     */
+    public java.lang.String getApplianceInfrastructureVersion() {
+      java.lang.Object ref = applianceInfrastructureVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        applianceInfrastructureVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Appliance OVA version.
+     * This is the OVA which is manually installed by the user and contains the
+     * infrastructure for the automatically updatable components on the appliance.
+     * </pre>
+     *
+     * <code>
+     * string appliance_infrastructure_version = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for applianceInfrastructureVersion.
+     */
+    public com.google.protobuf.ByteString getApplianceInfrastructureVersionBytes() {
+      java.lang.Object ref = applianceInfrastructureVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        applianceInfrastructureVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Appliance OVA version.
+     * This is the OVA which is manually installed by the user and contains the
+     * infrastructure for the automatically updatable components on the appliance.
+     * </pre>
+     *
+     * <code>
+     * string appliance_infrastructure_version = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The applianceInfrastructureVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplianceInfrastructureVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      applianceInfrastructureVersion_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Appliance OVA version.
+     * This is the OVA which is manually installed by the user and contains the
+     * infrastructure for the automatically updatable components on the appliance.
+     * </pre>
+     *
+     * <code>
+     * string appliance_infrastructure_version = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearApplianceInfrastructureVersion() {
+
+      applianceInfrastructureVersion_ = getDefaultInstance().getApplianceInfrastructureVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Appliance OVA version.
+     * This is the OVA which is manually installed by the user and contains the
+     * infrastructure for the automatically updatable components on the appliance.
+     * </pre>
+     *
+     * <code>
+     * string appliance_infrastructure_version = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for applianceInfrastructureVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplianceInfrastructureVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      applianceInfrastructureVersion_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object applianceSoftwareVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Appliance last installed update bundle version.
+     * This is the version of the automatically updatable components on the
+     * appliance.
+     * </pre>
+     *
+     * <code>string appliance_software_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The applianceSoftwareVersion.
+     */
+    public java.lang.String getApplianceSoftwareVersion() {
+      java.lang.Object ref = applianceSoftwareVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        applianceSoftwareVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Appliance last installed update bundle version.
+     * This is the version of the automatically updatable components on the
+     * appliance.
+     * </pre>
+     *
+     * <code>string appliance_software_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for applianceSoftwareVersion.
+     */
+    public com.google.protobuf.ByteString getApplianceSoftwareVersionBytes() {
+      java.lang.Object ref = applianceSoftwareVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        applianceSoftwareVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Appliance last installed update bundle version.
+     * This is the version of the automatically updatable components on the
+     * appliance.
+     * </pre>
+     *
+     * <code>string appliance_software_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The applianceSoftwareVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplianceSoftwareVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      applianceSoftwareVersion_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Appliance last installed update bundle version.
+     * This is the version of the automatically updatable components on the
+     * appliance.
+     * </pre>
+     *
+     * <code>string appliance_software_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearApplianceSoftwareVersion() {
+
+      applianceSoftwareVersion_ = getDefaultInstance().getApplianceSoftwareVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Appliance last installed update bundle version.
+     * This is the version of the automatically updatable components on the
+     * appliance.
+     * </pre>
+     *
+     * <code>string appliance_software_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for applianceSoftwareVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplianceSoftwareVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      applianceSoftwareVersion_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.vmmigration.v1.AvailableUpdates availableVersions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AvailableUpdates,
+            com.google.cloud.vmmigration.v1.AvailableUpdates.Builder,
+            com.google.cloud.vmmigration.v1.AvailableUpdatesOrBuilder>
+        availableVersionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available versions for updating this appliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the availableVersions field is set.
+     */
+    public boolean hasAvailableVersions() {
+      return availableVersionsBuilder_ != null || availableVersions_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available versions for updating this appliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The availableVersions.
+     */
+    public com.google.cloud.vmmigration.v1.AvailableUpdates getAvailableVersions() {
+      if (availableVersionsBuilder_ == null) {
+        return availableVersions_ == null
+            ? com.google.cloud.vmmigration.v1.AvailableUpdates.getDefaultInstance()
+            : availableVersions_;
+      } else {
+        return availableVersionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available versions for updating this appliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAvailableVersions(com.google.cloud.vmmigration.v1.AvailableUpdates value) {
+      if (availableVersionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        availableVersions_ = value;
+        onChanged();
+      } else {
+        availableVersionsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available versions for updating this appliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAvailableVersions(
+        com.google.cloud.vmmigration.v1.AvailableUpdates.Builder builderForValue) {
+      if (availableVersionsBuilder_ == null) {
+        availableVersions_ = builderForValue.build();
+        onChanged();
+      } else {
+        availableVersionsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available versions for updating this appliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAvailableVersions(com.google.cloud.vmmigration.v1.AvailableUpdates value) {
+      if (availableVersionsBuilder_ == null) {
+        if (availableVersions_ != null) {
+          availableVersions_ =
+              com.google.cloud.vmmigration.v1.AvailableUpdates.newBuilder(availableVersions_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          availableVersions_ = value;
+        }
+        onChanged();
+      } else {
+        availableVersionsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available versions for updating this appliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAvailableVersions() {
+      if (availableVersionsBuilder_ == null) {
+        availableVersions_ = null;
+        onChanged();
+      } else {
+        availableVersions_ = null;
+        availableVersionsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available versions for updating this appliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AvailableUpdates.Builder getAvailableVersionsBuilder() {
+
+      onChanged();
+      return getAvailableVersionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available versions for updating this appliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AvailableUpdatesOrBuilder
+        getAvailableVersionsOrBuilder() {
+      if (availableVersionsBuilder_ != null) {
+        return availableVersionsBuilder_.getMessageOrBuilder();
+      } else {
+        return availableVersions_ == null
+            ? com.google.cloud.vmmigration.v1.AvailableUpdates.getDefaultInstance()
+            : availableVersions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available versions for updating this appliance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AvailableUpdates,
+            com.google.cloud.vmmigration.v1.AvailableUpdates.Builder,
+            com.google.cloud.vmmigration.v1.AvailableUpdatesOrBuilder>
+        getAvailableVersionsFieldBuilder() {
+      if (availableVersionsBuilder_ == null) {
+        availableVersionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.AvailableUpdates,
+                com.google.cloud.vmmigration.v1.AvailableUpdates.Builder,
+                com.google.cloud.vmmigration.v1.AvailableUpdatesOrBuilder>(
+                getAvailableVersions(), getParentForChildren(), isClean());
+        availableVersions_ = null;
+      }
+      return availableVersionsBuilder_;
+    }
+
+    private com.google.cloud.vmmigration.v1.UpgradeStatus upgradeStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.UpgradeStatus,
+            com.google.cloud.vmmigration.v1.UpgradeStatus.Builder,
+            com.google.cloud.vmmigration.v1.UpgradeStatusOrBuilder>
+        upgradeStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the current / last upgradeAppliance operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the upgradeStatus field is set.
+     */
+    public boolean hasUpgradeStatus() {
+      return upgradeStatusBuilder_ != null || upgradeStatus_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the current / last upgradeAppliance operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The upgradeStatus.
+     */
+    public com.google.cloud.vmmigration.v1.UpgradeStatus getUpgradeStatus() {
+      if (upgradeStatusBuilder_ == null) {
+        return upgradeStatus_ == null
+            ? com.google.cloud.vmmigration.v1.UpgradeStatus.getDefaultInstance()
+            : upgradeStatus_;
+      } else {
+        return upgradeStatusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the current / last upgradeAppliance operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpgradeStatus(com.google.cloud.vmmigration.v1.UpgradeStatus value) {
+      if (upgradeStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        upgradeStatus_ = value;
+        onChanged();
+      } else {
+        upgradeStatusBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the current / last upgradeAppliance operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpgradeStatus(
+        com.google.cloud.vmmigration.v1.UpgradeStatus.Builder builderForValue) {
+      if (upgradeStatusBuilder_ == null) {
+        upgradeStatus_ = builderForValue.build();
+        onChanged();
+      } else {
+        upgradeStatusBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the current / last upgradeAppliance operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpgradeStatus(com.google.cloud.vmmigration.v1.UpgradeStatus value) {
+      if (upgradeStatusBuilder_ == null) {
+        if (upgradeStatus_ != null) {
+          upgradeStatus_ =
+              com.google.cloud.vmmigration.v1.UpgradeStatus.newBuilder(upgradeStatus_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          upgradeStatus_ = value;
+        }
+        onChanged();
+      } else {
+        upgradeStatusBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the current / last upgradeAppliance operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpgradeStatus() {
+      if (upgradeStatusBuilder_ == null) {
+        upgradeStatus_ = null;
+        onChanged();
+      } else {
+        upgradeStatus_ = null;
+        upgradeStatusBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the current / last upgradeAppliance operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.UpgradeStatus.Builder getUpgradeStatusBuilder() {
+
+      onChanged();
+      return getUpgradeStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the current / last upgradeAppliance operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.UpgradeStatusOrBuilder getUpgradeStatusOrBuilder() {
+      if (upgradeStatusBuilder_ != null) {
+        return upgradeStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return upgradeStatus_ == null
+            ? com.google.cloud.vmmigration.v1.UpgradeStatus.getDefaultInstance()
+            : upgradeStatus_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the current / last upgradeAppliance operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.UpgradeStatus,
+            com.google.cloud.vmmigration.v1.UpgradeStatus.Builder,
+            com.google.cloud.vmmigration.v1.UpgradeStatusOrBuilder>
+        getUpgradeStatusFieldBuilder() {
+      if (upgradeStatusBuilder_ == null) {
+        upgradeStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.UpgradeStatus,
+                com.google.cloud.vmmigration.v1.UpgradeStatus.Builder,
+                com.google.cloud.vmmigration.v1.UpgradeStatusOrBuilder>(
+                getUpgradeStatus(), getParentForChildren(), isClean());
+        upgradeStatus_ = null;
+      }
+      return upgradeStatusBuilder_;
     }
 
     @java.lang.Override

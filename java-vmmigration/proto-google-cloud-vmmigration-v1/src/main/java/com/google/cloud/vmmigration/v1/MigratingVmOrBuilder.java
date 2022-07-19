@@ -208,8 +208,8 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the migrating VM was created (this refers to this resource and not
-   * to the time it was installed in the source).
+   * Output only. The time the migrating VM was created (this refers to this
+   * resource and not to the time it was installed in the source).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -222,8 +222,8 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the migrating VM was created (this refers to this resource and not
-   * to the time it was installed in the source).
+   * Output only. The time the migrating VM was created (this refers to this
+   * resource and not to the time it was installed in the source).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -236,8 +236,8 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the migrating VM was created (this refers to this resource and not
-   * to the time it was installed in the source).
+   * Output only. The time the migrating VM was created (this refers to this
+   * resource and not to the time it was installed in the source).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -287,8 +287,8 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The most updated snapshot created time in the source that finished
-   * replication.
+   * Output only. The most updated snapshot created time in the source that
+   * finished replication.
    * </pre>
    *
    * <code>
@@ -302,8 +302,8 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The most updated snapshot created time in the source that finished
-   * replication.
+   * Output only. The most updated snapshot created time in the source that
+   * finished replication.
    * </pre>
    *
    * <code>
@@ -317,8 +317,8 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The most updated snapshot created time in the source that finished
-   * replication.
+   * Output only. The most updated snapshot created time in the source that
+   * finished replication.
    * </pre>
    *
    * <code>
@@ -398,7 +398,8 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The percentage progress of the current running replication cycle.
+   * Output only. The percentage progress of the current running replication
+   * cycle.
    * </pre>
    *
    * <code>
@@ -412,7 +413,8 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The percentage progress of the current running replication cycle.
+   * Output only. The percentage progress of the current running replication
+   * cycle.
    * </pre>
    *
    * <code>
@@ -426,7 +428,8 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The percentage progress of the current running replication cycle.
+   * Output only. The percentage progress of the current running replication
+   * cycle.
    * </pre>
    *
    * <code>
@@ -439,8 +442,8 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The group this migrating vm is included in, if any. The group is
-   * represented by the full path of the appropriate
+   * Output only. The group this migrating vm is included in, if any. The group
+   * is represented by the full path of the appropriate
    * [Group][google.cloud.vmmigration.v1.Group] resource.
    * </pre>
    *
@@ -455,8 +458,8 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The group this migrating vm is included in, if any. The group is
-   * represented by the full path of the appropriate
+   * Output only. The group this migrating vm is included in, if any. The group
+   * is represented by the full path of the appropriate
    * [Group][google.cloud.vmmigration.v1.Group] resource.
    * </pre>
    *
@@ -531,8 +534,90 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the Migrating VM in case of an
-   * error in replication.
+   * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+   * performed on the migrating VM. This field holds the vm's last completed
+   * clone job and the vm's running clone job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.vmmigration.v1.CloneJob> getRecentCloneJobsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+   * performed on the migrating VM. This field holds the vm's last completed
+   * clone job and the vm's running clone job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.CloneJob getRecentCloneJobs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+   * performed on the migrating VM. This field holds the vm's last completed
+   * clone job and the vm's running clone job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getRecentCloneJobsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+   * performed on the migrating VM. This field holds the vm's last completed
+   * clone job and the vm's running clone job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.vmmigration.v1.CloneJobOrBuilder>
+      getRecentCloneJobsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent [clone jobs][google.cloud.vmmigration.v1.CloneJob]
+   * performed on the migrating VM. This field holds the vm's last completed
+   * clone job and the vm's running clone job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CloneJob recent_clone_jobs = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.CloneJobOrBuilder getRecentCloneJobsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details on the state of the Migrating VM in case of
+   * an error in replication.
    * </pre>
    *
    * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -544,8 +629,8 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the Migrating VM in case of an
-   * error in replication.
+   * Output only. Provides details on the state of the Migrating VM in case of
+   * an error in replication.
    * </pre>
    *
    * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -557,13 +642,95 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the Migrating VM in case of an
-   * error in replication.
+   * Output only. Provides details on the state of the Migrating VM in case of
+   * an error in replication.
    * </pre>
    *
    * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent cutover jobs performed on the migrating VM.
+   * This field holds the vm's last completed cutover job and the vm's
+   * running cutover job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.vmmigration.v1.CutoverJob> getRecentCutoverJobsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent cutover jobs performed on the migrating VM.
+   * This field holds the vm's last completed cutover job and the vm's
+   * running cutover job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.CutoverJob getRecentCutoverJobs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent cutover jobs performed on the migrating VM.
+   * This field holds the vm's last completed cutover job and the vm's
+   * running cutover job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getRecentCutoverJobsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent cutover jobs performed on the migrating VM.
+   * This field holds the vm's last completed cutover job and the vm's
+   * running cutover job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.vmmigration.v1.CutoverJobOrBuilder>
+      getRecentCutoverJobsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The recent cutover jobs performed on the migrating VM.
+   * This field holds the vm's last completed cutover job and the vm's
+   * running cutover job, if one exists.
+   * Note: To have this field populated you need to explicitly request it via
+   * the "view" parameter of the Get/List request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.CutoverJob recent_cutover_jobs = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.CutoverJobOrBuilder getRecentCutoverJobsOrBuilder(int index);
 
   public com.google.cloud.vmmigration.v1.MigratingVm.TargetVmDefaultsCase getTargetVmDefaultsCase();
 }

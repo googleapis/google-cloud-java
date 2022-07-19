@@ -695,6 +695,50 @@ public final class VmMigrationGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.UpgradeApplianceRequest, com.google.longrunning.Operation>
+      getUpgradeApplianceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpgradeAppliance",
+      requestType = com.google.cloud.vmmigration.v1.UpgradeApplianceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vmmigration.v1.UpgradeApplianceRequest, com.google.longrunning.Operation>
+      getUpgradeApplianceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vmmigration.v1.UpgradeApplianceRequest,
+            com.google.longrunning.Operation>
+        getUpgradeApplianceMethod;
+    if ((getUpgradeApplianceMethod = VmMigrationGrpc.getUpgradeApplianceMethod) == null) {
+      synchronized (VmMigrationGrpc.class) {
+        if ((getUpgradeApplianceMethod = VmMigrationGrpc.getUpgradeApplianceMethod) == null) {
+          VmMigrationGrpc.getUpgradeApplianceMethod =
+              getUpgradeApplianceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vmmigration.v1.UpgradeApplianceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpgradeAppliance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vmmigration.v1.UpgradeApplianceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VmMigrationMethodDescriptorSupplier("UpgradeAppliance"))
+                      .build();
+        }
+      }
+    }
+    return getUpgradeApplianceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vmmigration.v1.CreateMigratingVmRequest,
           com.google.longrunning.Operation>
       getCreateMigratingVmMethod;
@@ -2258,6 +2302,21 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
+     * Upgrades the appliance relate to this DatacenterConnector to the in-place
+     * updateable version.
+     * </pre>
+     */
+    public void upgradeAppliance(
+        com.google.cloud.vmmigration.v1.UpgradeApplianceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpgradeApplianceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new MigratingVm in a given Source.
      * </pre>
      */
@@ -2779,6 +2838,12 @@ public final class VmMigrationGrpc {
                       com.google.longrunning.Operation>(
                       this, METHODID_DELETE_DATACENTER_CONNECTOR)))
           .addMethod(
+              getUpgradeApplianceMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.vmmigration.v1.UpgradeApplianceRequest,
+                      com.google.longrunning.Operation>(this, METHODID_UPGRADE_APPLIANCE)))
+          .addMethod(
               getCreateMigratingVmMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -3210,6 +3275,23 @@ public final class VmMigrationGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteDatacenterConnectorMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrades the appliance relate to this DatacenterConnector to the in-place
+     * updateable version.
+     * </pre>
+     */
+    public void upgradeAppliance(
+        com.google.cloud.vmmigration.v1.UpgradeApplianceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpgradeApplianceMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3910,6 +3992,20 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
+     * Upgrades the appliance relate to this DatacenterConnector to the in-place
+     * updateable version.
+     * </pre>
+     */
+    public com.google.longrunning.Operation upgradeAppliance(
+        com.google.cloud.vmmigration.v1.UpgradeApplianceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpgradeApplianceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new MigratingVm in a given Source.
      * </pre>
      */
@@ -4526,6 +4622,20 @@ public final class VmMigrationGrpc {
      *
      *
      * <pre>
+     * Upgrades the appliance relate to this DatacenterConnector to the in-place
+     * updateable version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        upgradeAppliance(com.google.cloud.vmmigration.v1.UpgradeApplianceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpgradeApplianceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new MigratingVm in a given Source.
      * </pre>
      */
@@ -4942,35 +5052,36 @@ public final class VmMigrationGrpc {
   private static final int METHODID_GET_DATACENTER_CONNECTOR = 11;
   private static final int METHODID_CREATE_DATACENTER_CONNECTOR = 12;
   private static final int METHODID_DELETE_DATACENTER_CONNECTOR = 13;
-  private static final int METHODID_CREATE_MIGRATING_VM = 14;
-  private static final int METHODID_LIST_MIGRATING_VMS = 15;
-  private static final int METHODID_GET_MIGRATING_VM = 16;
-  private static final int METHODID_UPDATE_MIGRATING_VM = 17;
-  private static final int METHODID_DELETE_MIGRATING_VM = 18;
-  private static final int METHODID_START_MIGRATION = 19;
-  private static final int METHODID_RESUME_MIGRATION = 20;
-  private static final int METHODID_PAUSE_MIGRATION = 21;
-  private static final int METHODID_FINALIZE_MIGRATION = 22;
-  private static final int METHODID_CREATE_CLONE_JOB = 23;
-  private static final int METHODID_CANCEL_CLONE_JOB = 24;
-  private static final int METHODID_LIST_CLONE_JOBS = 25;
-  private static final int METHODID_GET_CLONE_JOB = 26;
-  private static final int METHODID_CREATE_CUTOVER_JOB = 27;
-  private static final int METHODID_CANCEL_CUTOVER_JOB = 28;
-  private static final int METHODID_LIST_CUTOVER_JOBS = 29;
-  private static final int METHODID_GET_CUTOVER_JOB = 30;
-  private static final int METHODID_LIST_GROUPS = 31;
-  private static final int METHODID_GET_GROUP = 32;
-  private static final int METHODID_CREATE_GROUP = 33;
-  private static final int METHODID_UPDATE_GROUP = 34;
-  private static final int METHODID_DELETE_GROUP = 35;
-  private static final int METHODID_ADD_GROUP_MIGRATION = 36;
-  private static final int METHODID_REMOVE_GROUP_MIGRATION = 37;
-  private static final int METHODID_LIST_TARGET_PROJECTS = 38;
-  private static final int METHODID_GET_TARGET_PROJECT = 39;
-  private static final int METHODID_CREATE_TARGET_PROJECT = 40;
-  private static final int METHODID_UPDATE_TARGET_PROJECT = 41;
-  private static final int METHODID_DELETE_TARGET_PROJECT = 42;
+  private static final int METHODID_UPGRADE_APPLIANCE = 14;
+  private static final int METHODID_CREATE_MIGRATING_VM = 15;
+  private static final int METHODID_LIST_MIGRATING_VMS = 16;
+  private static final int METHODID_GET_MIGRATING_VM = 17;
+  private static final int METHODID_UPDATE_MIGRATING_VM = 18;
+  private static final int METHODID_DELETE_MIGRATING_VM = 19;
+  private static final int METHODID_START_MIGRATION = 20;
+  private static final int METHODID_RESUME_MIGRATION = 21;
+  private static final int METHODID_PAUSE_MIGRATION = 22;
+  private static final int METHODID_FINALIZE_MIGRATION = 23;
+  private static final int METHODID_CREATE_CLONE_JOB = 24;
+  private static final int METHODID_CANCEL_CLONE_JOB = 25;
+  private static final int METHODID_LIST_CLONE_JOBS = 26;
+  private static final int METHODID_GET_CLONE_JOB = 27;
+  private static final int METHODID_CREATE_CUTOVER_JOB = 28;
+  private static final int METHODID_CANCEL_CUTOVER_JOB = 29;
+  private static final int METHODID_LIST_CUTOVER_JOBS = 30;
+  private static final int METHODID_GET_CUTOVER_JOB = 31;
+  private static final int METHODID_LIST_GROUPS = 32;
+  private static final int METHODID_GET_GROUP = 33;
+  private static final int METHODID_CREATE_GROUP = 34;
+  private static final int METHODID_UPDATE_GROUP = 35;
+  private static final int METHODID_DELETE_GROUP = 36;
+  private static final int METHODID_ADD_GROUP_MIGRATION = 37;
+  private static final int METHODID_REMOVE_GROUP_MIGRATION = 38;
+  private static final int METHODID_LIST_TARGET_PROJECTS = 39;
+  private static final int METHODID_GET_TARGET_PROJECT = 40;
+  private static final int METHODID_CREATE_TARGET_PROJECT = 41;
+  private static final int METHODID_UPDATE_TARGET_PROJECT = 42;
+  private static final int METHODID_DELETE_TARGET_PROJECT = 43;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5066,6 +5177,11 @@ public final class VmMigrationGrpc {
         case METHODID_DELETE_DATACENTER_CONNECTOR:
           serviceImpl.deleteDatacenterConnector(
               (com.google.cloud.vmmigration.v1.DeleteDatacenterConnectorRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPGRADE_APPLIANCE:
+          serviceImpl.upgradeAppliance(
+              (com.google.cloud.vmmigration.v1.UpgradeApplianceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_CREATE_MIGRATING_VM:
@@ -5303,6 +5419,7 @@ public final class VmMigrationGrpc {
                       .addMethod(getGetDatacenterConnectorMethod())
                       .addMethod(getCreateDatacenterConnectorMethod())
                       .addMethod(getDeleteDatacenterConnectorMethod())
+                      .addMethod(getUpgradeApplianceMethod())
                       .addMethod(getCreateMigratingVmMethod())
                       .addMethod(getListMigratingVmsMethod())
                       .addMethod(getGetMigratingVmMethod())

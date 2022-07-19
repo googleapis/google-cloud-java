@@ -22,33 +22,31 @@ package com.google.cloud.vmmigration.v1;
  *
  *
  * <pre>
- * VmwareSourceDetails message describes a specific source details for the
- * vmware source type.
+ * Describes an appliance version.
  * </pre>
  *
- * Protobuf type {@code google.cloud.vmmigration.v1.VmwareSourceDetails}
+ * Protobuf type {@code google.cloud.vmmigration.v1.ApplianceVersion}
  */
-public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMessageV3
+public final class ApplianceVersion extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.VmwareSourceDetails)
-    VmwareSourceDetailsOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.ApplianceVersion)
+    ApplianceVersionOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use VmwareSourceDetails.newBuilder() to construct.
-  private VmwareSourceDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ApplianceVersion.newBuilder() to construct.
+  private ApplianceVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private VmwareSourceDetails() {
-    username_ = "";
-    password_ = "";
-    vcenterIp_ = "";
-    thumbprint_ = "";
+  private ApplianceVersion() {
+    version_ = "";
+    uri_ = "";
+    releaseNotesUri_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new VmwareSourceDetails();
+    return new ApplianceVersion();
   }
 
   @java.lang.Override
@@ -56,7 +54,7 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private VmwareSourceDetails(
+  private ApplianceVersion(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -78,28 +76,26 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              username_ = s;
+              version_ = s;
               break;
             }
           case 18:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              password_ = s;
+              uri_ = s;
               break;
             }
-          case 26:
+          case 24:
             {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              vcenterIp_ = s;
+              critical_ = input.readBool();
               break;
             }
           case 34:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              thumbprint_ = s;
+              releaseNotesUri_ = s;
               break;
             }
           default:
@@ -125,41 +121,41 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.vmmigration.v1.VmMigrationProto
-        .internal_static_google_cloud_vmmigration_v1_VmwareSourceDetails_descriptor;
+        .internal_static_google_cloud_vmmigration_v1_ApplianceVersion_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.vmmigration.v1.VmMigrationProto
-        .internal_static_google_cloud_vmmigration_v1_VmwareSourceDetails_fieldAccessorTable
+        .internal_static_google_cloud_vmmigration_v1_ApplianceVersion_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vmmigration.v1.VmwareSourceDetails.class,
-            com.google.cloud.vmmigration.v1.VmwareSourceDetails.Builder.class);
+            com.google.cloud.vmmigration.v1.ApplianceVersion.class,
+            com.google.cloud.vmmigration.v1.ApplianceVersion.Builder.class);
   }
 
-  public static final int USERNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object username_;
+  public static final int VERSION_FIELD_NUMBER = 1;
+  private volatile java.lang.Object version_;
   /**
    *
    *
    * <pre>
-   * The credentials username.
+   * The appliance version.
    * </pre>
    *
-   * <code>string username = 1;</code>
+   * <code>string version = 1;</code>
    *
-   * @return The username.
+   * @return The version.
    */
   @java.lang.Override
-  public java.lang.String getUsername() {
-    java.lang.Object ref = username_;
+  public java.lang.String getVersion() {
+    java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      username_ = s;
+      version_ = s;
       return s;
     }
   }
@@ -167,49 +163,48 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The credentials username.
+   * The appliance version.
    * </pre>
    *
-   * <code>string username = 1;</code>
+   * <code>string version = 1;</code>
    *
-   * @return The bytes for username.
+   * @return The bytes for version.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getUsernameBytes() {
-    java.lang.Object ref = username_;
+  public com.google.protobuf.ByteString getVersionBytes() {
+    java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      username_ = b;
+      version_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int PASSWORD_FIELD_NUMBER = 2;
-  private volatile java.lang.Object password_;
+  public static final int URI_FIELD_NUMBER = 2;
+  private volatile java.lang.Object uri_;
   /**
    *
    *
    * <pre>
-   * Input only. The credentials password. This is write only and can not be
-   * read in a GET operation.
+   * A link for downloading the version.
    * </pre>
    *
-   * <code>string password = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>string uri = 2;</code>
    *
-   * @return The password.
+   * @return The uri.
    */
   @java.lang.Override
-  public java.lang.String getPassword() {
-    java.lang.Object ref = password_;
+  public java.lang.String getUri() {
+    java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      password_ = s;
+      uri_ = s;
       return s;
     }
   }
@@ -217,98 +212,66 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Input only. The credentials password. This is write only and can not be
-   * read in a GET operation.
+   * A link for downloading the version.
    * </pre>
    *
-   * <code>string password = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   * <code>string uri = 2;</code>
    *
-   * @return The bytes for password.
+   * @return The bytes for uri.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getPasswordBytes() {
-    java.lang.Object ref = password_;
+  public com.google.protobuf.ByteString getUriBytes() {
+    java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      password_ = b;
+      uri_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int VCENTER_IP_FIELD_NUMBER = 3;
-  private volatile java.lang.Object vcenterIp_;
+  public static final int CRITICAL_FIELD_NUMBER = 3;
+  private boolean critical_;
   /**
    *
    *
    * <pre>
-   * The ip address of the vcenter this Source represents.
+   * Determine whether it's critical to upgrade the appliance to this version.
    * </pre>
    *
-   * <code>string vcenter_ip = 3;</code>
+   * <code>bool critical = 3;</code>
    *
-   * @return The vcenterIp.
+   * @return The critical.
    */
   @java.lang.Override
-  public java.lang.String getVcenterIp() {
-    java.lang.Object ref = vcenterIp_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      vcenterIp_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The ip address of the vcenter this Source represents.
-   * </pre>
-   *
-   * <code>string vcenter_ip = 3;</code>
-   *
-   * @return The bytes for vcenterIp.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getVcenterIpBytes() {
-    java.lang.Object ref = vcenterIp_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      vcenterIp_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public boolean getCritical() {
+    return critical_;
   }
 
-  public static final int THUMBPRINT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object thumbprint_;
+  public static final int RELEASE_NOTES_URI_FIELD_NUMBER = 4;
+  private volatile java.lang.Object releaseNotesUri_;
   /**
    *
    *
    * <pre>
-   * The thumbprint representing the certificate for the vcenter.
+   * Link to a page that contains the version release notes.
    * </pre>
    *
-   * <code>string thumbprint = 4;</code>
+   * <code>string release_notes_uri = 4;</code>
    *
-   * @return The thumbprint.
+   * @return The releaseNotesUri.
    */
   @java.lang.Override
-  public java.lang.String getThumbprint() {
-    java.lang.Object ref = thumbprint_;
+  public java.lang.String getReleaseNotesUri() {
+    java.lang.Object ref = releaseNotesUri_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      thumbprint_ = s;
+      releaseNotesUri_ = s;
       return s;
     }
   }
@@ -316,20 +279,20 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The thumbprint representing the certificate for the vcenter.
+   * Link to a page that contains the version release notes.
    * </pre>
    *
-   * <code>string thumbprint = 4;</code>
+   * <code>string release_notes_uri = 4;</code>
    *
-   * @return The bytes for thumbprint.
+   * @return The bytes for releaseNotesUri.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getThumbprintBytes() {
-    java.lang.Object ref = thumbprint_;
+  public com.google.protobuf.ByteString getReleaseNotesUriBytes() {
+    java.lang.Object ref = releaseNotesUri_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      thumbprint_ = b;
+      releaseNotesUri_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -350,17 +313,17 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, version_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vcenterIp_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, vcenterIp_);
+    if (critical_ != false) {
+      output.writeBool(3, critical_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(thumbprint_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, thumbprint_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(releaseNotesUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, releaseNotesUri_);
     }
     unknownFields.writeTo(output);
   }
@@ -371,17 +334,17 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, version_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vcenterIp_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, vcenterIp_);
+    if (critical_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, critical_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(thumbprint_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, thumbprint_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(releaseNotesUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, releaseNotesUri_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -393,16 +356,16 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.vmmigration.v1.VmwareSourceDetails)) {
+    if (!(obj instanceof com.google.cloud.vmmigration.v1.ApplianceVersion)) {
       return super.equals(obj);
     }
-    com.google.cloud.vmmigration.v1.VmwareSourceDetails other =
-        (com.google.cloud.vmmigration.v1.VmwareSourceDetails) obj;
+    com.google.cloud.vmmigration.v1.ApplianceVersion other =
+        (com.google.cloud.vmmigration.v1.ApplianceVersion) obj;
 
-    if (!getUsername().equals(other.getUsername())) return false;
-    if (!getPassword().equals(other.getPassword())) return false;
-    if (!getVcenterIp().equals(other.getVcenterIp())) return false;
-    if (!getThumbprint().equals(other.getThumbprint())) return false;
+    if (!getVersion().equals(other.getVersion())) return false;
+    if (!getUri().equals(other.getUri())) return false;
+    if (getCritical() != other.getCritical()) return false;
+    if (!getReleaseNotesUri().equals(other.getReleaseNotesUri())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -414,84 +377,84 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getUsername().hashCode();
-    hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-    hash = (53 * hash) + getPassword().hashCode();
-    hash = (37 * hash) + VCENTER_IP_FIELD_NUMBER;
-    hash = (53 * hash) + getVcenterIp().hashCode();
-    hash = (37 * hash) + THUMBPRINT_FIELD_NUMBER;
-    hash = (53 * hash) + getThumbprint().hashCode();
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion().hashCode();
+    hash = (37 * hash) + URI_FIELD_NUMBER;
+    hash = (53 * hash) + getUri().hashCode();
+    hash = (37 * hash) + CRITICAL_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCritical());
+    hash = (37 * hash) + RELEASE_NOTES_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getReleaseNotesUri().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.vmmigration.v1.VmwareSourceDetails parseFrom(
-      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.vmmigration.v1.ApplianceVersion parseFrom(java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.vmmigration.v1.VmwareSourceDetails parseFrom(
+  public static com.google.cloud.vmmigration.v1.ApplianceVersion parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.vmmigration.v1.VmwareSourceDetails parseFrom(
+  public static com.google.cloud.vmmigration.v1.ApplianceVersion parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.vmmigration.v1.VmwareSourceDetails parseFrom(
+  public static com.google.cloud.vmmigration.v1.ApplianceVersion parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.vmmigration.v1.VmwareSourceDetails parseFrom(byte[] data)
+  public static com.google.cloud.vmmigration.v1.ApplianceVersion parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.vmmigration.v1.VmwareSourceDetails parseFrom(
+  public static com.google.cloud.vmmigration.v1.ApplianceVersion parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.vmmigration.v1.VmwareSourceDetails parseFrom(
+  public static com.google.cloud.vmmigration.v1.ApplianceVersion parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.vmmigration.v1.VmwareSourceDetails parseFrom(
+  public static com.google.cloud.vmmigration.v1.ApplianceVersion parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.vmmigration.v1.VmwareSourceDetails parseDelimitedFrom(
+  public static com.google.cloud.vmmigration.v1.ApplianceVersion parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.vmmigration.v1.VmwareSourceDetails parseDelimitedFrom(
+  public static com.google.cloud.vmmigration.v1.ApplianceVersion parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.vmmigration.v1.VmwareSourceDetails parseFrom(
+  public static com.google.cloud.vmmigration.v1.ApplianceVersion parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.vmmigration.v1.VmwareSourceDetails parseFrom(
+  public static com.google.cloud.vmmigration.v1.ApplianceVersion parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -508,7 +471,7 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.vmmigration.v1.VmwareSourceDetails prototype) {
+  public static Builder newBuilder(com.google.cloud.vmmigration.v1.ApplianceVersion prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -526,32 +489,31 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * VmwareSourceDetails message describes a specific source details for the
-   * vmware source type.
+   * Describes an appliance version.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.vmmigration.v1.VmwareSourceDetails}
+   * Protobuf type {@code google.cloud.vmmigration.v1.ApplianceVersion}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.vmmigration.v1.VmwareSourceDetails)
-      com.google.cloud.vmmigration.v1.VmwareSourceDetailsOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.vmmigration.v1.ApplianceVersion)
+      com.google.cloud.vmmigration.v1.ApplianceVersionOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.vmmigration.v1.VmMigrationProto
-          .internal_static_google_cloud_vmmigration_v1_VmwareSourceDetails_descriptor;
+          .internal_static_google_cloud_vmmigration_v1_ApplianceVersion_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vmmigration.v1.VmMigrationProto
-          .internal_static_google_cloud_vmmigration_v1_VmwareSourceDetails_fieldAccessorTable
+          .internal_static_google_cloud_vmmigration_v1_ApplianceVersion_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vmmigration.v1.VmwareSourceDetails.class,
-              com.google.cloud.vmmigration.v1.VmwareSourceDetails.Builder.class);
+              com.google.cloud.vmmigration.v1.ApplianceVersion.class,
+              com.google.cloud.vmmigration.v1.ApplianceVersion.Builder.class);
     }
 
-    // Construct using com.google.cloud.vmmigration.v1.VmwareSourceDetails.newBuilder()
+    // Construct using com.google.cloud.vmmigration.v1.ApplianceVersion.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -568,13 +530,13 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      username_ = "";
+      version_ = "";
 
-      password_ = "";
+      uri_ = "";
 
-      vcenterIp_ = "";
+      critical_ = false;
 
-      thumbprint_ = "";
+      releaseNotesUri_ = "";
 
       return this;
     }
@@ -582,17 +544,17 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.vmmigration.v1.VmMigrationProto
-          .internal_static_google_cloud_vmmigration_v1_VmwareSourceDetails_descriptor;
+          .internal_static_google_cloud_vmmigration_v1_ApplianceVersion_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.vmmigration.v1.VmwareSourceDetails getDefaultInstanceForType() {
-      return com.google.cloud.vmmigration.v1.VmwareSourceDetails.getDefaultInstance();
+    public com.google.cloud.vmmigration.v1.ApplianceVersion getDefaultInstanceForType() {
+      return com.google.cloud.vmmigration.v1.ApplianceVersion.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.vmmigration.v1.VmwareSourceDetails build() {
-      com.google.cloud.vmmigration.v1.VmwareSourceDetails result = buildPartial();
+    public com.google.cloud.vmmigration.v1.ApplianceVersion build() {
+      com.google.cloud.vmmigration.v1.ApplianceVersion result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -600,13 +562,13 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     }
 
     @java.lang.Override
-    public com.google.cloud.vmmigration.v1.VmwareSourceDetails buildPartial() {
-      com.google.cloud.vmmigration.v1.VmwareSourceDetails result =
-          new com.google.cloud.vmmigration.v1.VmwareSourceDetails(this);
-      result.username_ = username_;
-      result.password_ = password_;
-      result.vcenterIp_ = vcenterIp_;
-      result.thumbprint_ = thumbprint_;
+    public com.google.cloud.vmmigration.v1.ApplianceVersion buildPartial() {
+      com.google.cloud.vmmigration.v1.ApplianceVersion result =
+          new com.google.cloud.vmmigration.v1.ApplianceVersion(this);
+      result.version_ = version_;
+      result.uri_ = uri_;
+      result.critical_ = critical_;
+      result.releaseNotesUri_ = releaseNotesUri_;
       onBuilt();
       return result;
     }
@@ -646,31 +608,30 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.vmmigration.v1.VmwareSourceDetails) {
-        return mergeFrom((com.google.cloud.vmmigration.v1.VmwareSourceDetails) other);
+      if (other instanceof com.google.cloud.vmmigration.v1.ApplianceVersion) {
+        return mergeFrom((com.google.cloud.vmmigration.v1.ApplianceVersion) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.vmmigration.v1.VmwareSourceDetails other) {
-      if (other == com.google.cloud.vmmigration.v1.VmwareSourceDetails.getDefaultInstance())
+    public Builder mergeFrom(com.google.cloud.vmmigration.v1.ApplianceVersion other) {
+      if (other == com.google.cloud.vmmigration.v1.ApplianceVersion.getDefaultInstance())
         return this;
-      if (!other.getUsername().isEmpty()) {
-        username_ = other.username_;
+      if (!other.getVersion().isEmpty()) {
+        version_ = other.version_;
         onChanged();
       }
-      if (!other.getPassword().isEmpty()) {
-        password_ = other.password_;
+      if (!other.getUri().isEmpty()) {
+        uri_ = other.uri_;
         onChanged();
       }
-      if (!other.getVcenterIp().isEmpty()) {
-        vcenterIp_ = other.vcenterIp_;
-        onChanged();
+      if (other.getCritical() != false) {
+        setCritical(other.getCritical());
       }
-      if (!other.getThumbprint().isEmpty()) {
-        thumbprint_ = other.thumbprint_;
+      if (!other.getReleaseNotesUri().isEmpty()) {
+        releaseNotesUri_ = other.releaseNotesUri_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -688,12 +649,11 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.vmmigration.v1.VmwareSourceDetails parsedMessage = null;
+      com.google.cloud.vmmigration.v1.ApplianceVersion parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage =
-            (com.google.cloud.vmmigration.v1.VmwareSourceDetails) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.vmmigration.v1.ApplianceVersion) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -703,24 +663,24 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
       return this;
     }
 
-    private java.lang.Object username_ = "";
+    private java.lang.Object version_ = "";
     /**
      *
      *
      * <pre>
-     * The credentials username.
+     * The appliance version.
      * </pre>
      *
-     * <code>string username = 1;</code>
+     * <code>string version = 1;</code>
      *
-     * @return The username.
+     * @return The version.
      */
-    public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        username_ = s;
+        version_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -730,19 +690,19 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The credentials username.
+     * The appliance version.
      * </pre>
      *
-     * <code>string username = 1;</code>
+     * <code>string version = 1;</code>
      *
-     * @return The bytes for username.
+     * @return The bytes for version.
      */
-    public com.google.protobuf.ByteString getUsernameBytes() {
-      java.lang.Object ref = username_;
+    public com.google.protobuf.ByteString getVersionBytes() {
+      java.lang.Object ref = version_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        username_ = b;
+        version_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -752,20 +712,20 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The credentials username.
+     * The appliance version.
      * </pre>
      *
-     * <code>string username = 1;</code>
+     * <code>string version = 1;</code>
      *
-     * @param value The username to set.
+     * @param value The version to set.
      * @return This builder for chaining.
      */
-    public Builder setUsername(java.lang.String value) {
+    public Builder setVersion(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      username_ = value;
+      version_ = value;
       onChanged();
       return this;
     }
@@ -773,16 +733,16 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The credentials username.
+     * The appliance version.
      * </pre>
      *
-     * <code>string username = 1;</code>
+     * <code>string version = 1;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearUsername() {
+    public Builder clearVersion() {
 
-      username_ = getDefaultInstance().getUsername();
+      version_ = getDefaultInstance().getVersion();
       onChanged();
       return this;
     }
@@ -790,44 +750,43 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The credentials username.
+     * The appliance version.
      * </pre>
      *
-     * <code>string username = 1;</code>
+     * <code>string version = 1;</code>
      *
-     * @param value The bytes for username to set.
+     * @param value The bytes for version to set.
      * @return This builder for chaining.
      */
-    public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
+    public Builder setVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      username_ = value;
+      version_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object password_ = "";
+    private java.lang.Object uri_ = "";
     /**
      *
      *
      * <pre>
-     * Input only. The credentials password. This is write only and can not be
-     * read in a GET operation.
+     * A link for downloading the version.
      * </pre>
      *
-     * <code>string password = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>string uri = 2;</code>
      *
-     * @return The password.
+     * @return The uri.
      */
-    public java.lang.String getPassword() {
-      java.lang.Object ref = password_;
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        password_ = s;
+        uri_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -837,20 +796,19 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input only. The credentials password. This is write only and can not be
-     * read in a GET operation.
+     * A link for downloading the version.
      * </pre>
      *
-     * <code>string password = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>string uri = 2;</code>
      *
-     * @return The bytes for password.
+     * @return The bytes for uri.
      */
-    public com.google.protobuf.ByteString getPasswordBytes() {
-      java.lang.Object ref = password_;
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        password_ = b;
+        uri_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -860,21 +818,20 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input only. The credentials password. This is write only and can not be
-     * read in a GET operation.
+     * A link for downloading the version.
      * </pre>
      *
-     * <code>string password = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>string uri = 2;</code>
      *
-     * @param value The password to set.
+     * @param value The uri to set.
      * @return This builder for chaining.
      */
-    public Builder setPassword(java.lang.String value) {
+    public Builder setUri(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      password_ = value;
+      uri_ = value;
       onChanged();
       return this;
     }
@@ -882,17 +839,16 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input only. The credentials password. This is write only and can not be
-     * read in a GET operation.
+     * A link for downloading the version.
      * </pre>
      *
-     * <code>string password = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>string uri = 2;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearPassword() {
+    public Builder clearUri() {
 
-      password_ = getDefaultInstance().getPassword();
+      uri_ = getDefaultInstance().getUri();
       onChanged();
       return this;
     }
@@ -900,44 +856,95 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Input only. The credentials password. This is write only and can not be
-     * read in a GET operation.
+     * A link for downloading the version.
      * </pre>
      *
-     * <code>string password = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * <code>string uri = 2;</code>
      *
-     * @param value The bytes for password to set.
+     * @param value The bytes for uri to set.
      * @return This builder for chaining.
      */
-    public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
+    public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      password_ = value;
+      uri_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object vcenterIp_ = "";
+    private boolean critical_;
     /**
      *
      *
      * <pre>
-     * The ip address of the vcenter this Source represents.
+     * Determine whether it's critical to upgrade the appliance to this version.
      * </pre>
      *
-     * <code>string vcenter_ip = 3;</code>
+     * <code>bool critical = 3;</code>
      *
-     * @return The vcenterIp.
+     * @return The critical.
      */
-    public java.lang.String getVcenterIp() {
-      java.lang.Object ref = vcenterIp_;
+    @java.lang.Override
+    public boolean getCritical() {
+      return critical_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Determine whether it's critical to upgrade the appliance to this version.
+     * </pre>
+     *
+     * <code>bool critical = 3;</code>
+     *
+     * @param value The critical to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCritical(boolean value) {
+
+      critical_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Determine whether it's critical to upgrade the appliance to this version.
+     * </pre>
+     *
+     * <code>bool critical = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCritical() {
+
+      critical_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object releaseNotesUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Link to a page that contains the version release notes.
+     * </pre>
+     *
+     * <code>string release_notes_uri = 4;</code>
+     *
+     * @return The releaseNotesUri.
+     */
+    public java.lang.String getReleaseNotesUri() {
+      java.lang.Object ref = releaseNotesUri_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        vcenterIp_ = s;
+        releaseNotesUri_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -947,19 +954,19 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The ip address of the vcenter this Source represents.
+     * Link to a page that contains the version release notes.
      * </pre>
      *
-     * <code>string vcenter_ip = 3;</code>
+     * <code>string release_notes_uri = 4;</code>
      *
-     * @return The bytes for vcenterIp.
+     * @return The bytes for releaseNotesUri.
      */
-    public com.google.protobuf.ByteString getVcenterIpBytes() {
-      java.lang.Object ref = vcenterIp_;
+    public com.google.protobuf.ByteString getReleaseNotesUriBytes() {
+      java.lang.Object ref = releaseNotesUri_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        vcenterIp_ = b;
+        releaseNotesUri_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -969,20 +976,20 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The ip address of the vcenter this Source represents.
+     * Link to a page that contains the version release notes.
      * </pre>
      *
-     * <code>string vcenter_ip = 3;</code>
+     * <code>string release_notes_uri = 4;</code>
      *
-     * @param value The vcenterIp to set.
+     * @param value The releaseNotesUri to set.
      * @return This builder for chaining.
      */
-    public Builder setVcenterIp(java.lang.String value) {
+    public Builder setReleaseNotesUri(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      vcenterIp_ = value;
+      releaseNotesUri_ = value;
       onChanged();
       return this;
     }
@@ -990,16 +997,16 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The ip address of the vcenter this Source represents.
+     * Link to a page that contains the version release notes.
      * </pre>
      *
-     * <code>string vcenter_ip = 3;</code>
+     * <code>string release_notes_uri = 4;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearVcenterIp() {
+    public Builder clearReleaseNotesUri() {
 
-      vcenterIp_ = getDefaultInstance().getVcenterIp();
+      releaseNotesUri_ = getDefaultInstance().getReleaseNotesUri();
       onChanged();
       return this;
     }
@@ -1007,127 +1014,21 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The ip address of the vcenter this Source represents.
+     * Link to a page that contains the version release notes.
      * </pre>
      *
-     * <code>string vcenter_ip = 3;</code>
+     * <code>string release_notes_uri = 4;</code>
      *
-     * @param value The bytes for vcenterIp to set.
+     * @param value The bytes for releaseNotesUri to set.
      * @return This builder for chaining.
      */
-    public Builder setVcenterIpBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      vcenterIp_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object thumbprint_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * The thumbprint representing the certificate for the vcenter.
-     * </pre>
-     *
-     * <code>string thumbprint = 4;</code>
-     *
-     * @return The thumbprint.
-     */
-    public java.lang.String getThumbprint() {
-      java.lang.Object ref = thumbprint_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        thumbprint_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The thumbprint representing the certificate for the vcenter.
-     * </pre>
-     *
-     * <code>string thumbprint = 4;</code>
-     *
-     * @return The bytes for thumbprint.
-     */
-    public com.google.protobuf.ByteString getThumbprintBytes() {
-      java.lang.Object ref = thumbprint_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        thumbprint_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The thumbprint representing the certificate for the vcenter.
-     * </pre>
-     *
-     * <code>string thumbprint = 4;</code>
-     *
-     * @param value The thumbprint to set.
-     * @return This builder for chaining.
-     */
-    public Builder setThumbprint(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      thumbprint_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The thumbprint representing the certificate for the vcenter.
-     * </pre>
-     *
-     * <code>string thumbprint = 4;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearThumbprint() {
-
-      thumbprint_ = getDefaultInstance().getThumbprint();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The thumbprint representing the certificate for the vcenter.
-     * </pre>
-     *
-     * <code>string thumbprint = 4;</code>
-     *
-     * @param value The bytes for thumbprint to set.
-     * @return This builder for chaining.
-     */
-    public Builder setThumbprintBytes(com.google.protobuf.ByteString value) {
+    public Builder setReleaseNotesUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      thumbprint_ = value;
+      releaseNotesUri_ = value;
       onChanged();
       return this;
     }
@@ -1143,42 +1044,42 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.vmmigration.v1.VmwareSourceDetails)
+    // @@protoc_insertion_point(builder_scope:google.cloud.vmmigration.v1.ApplianceVersion)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.vmmigration.v1.VmwareSourceDetails)
-  private static final com.google.cloud.vmmigration.v1.VmwareSourceDetails DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.vmmigration.v1.ApplianceVersion)
+  private static final com.google.cloud.vmmigration.v1.ApplianceVersion DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.vmmigration.v1.VmwareSourceDetails();
+    DEFAULT_INSTANCE = new com.google.cloud.vmmigration.v1.ApplianceVersion();
   }
 
-  public static com.google.cloud.vmmigration.v1.VmwareSourceDetails getDefaultInstance() {
+  public static com.google.cloud.vmmigration.v1.ApplianceVersion getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<VmwareSourceDetails> PARSER =
-      new com.google.protobuf.AbstractParser<VmwareSourceDetails>() {
+  private static final com.google.protobuf.Parser<ApplianceVersion> PARSER =
+      new com.google.protobuf.AbstractParser<ApplianceVersion>() {
         @java.lang.Override
-        public VmwareSourceDetails parsePartialFrom(
+        public ApplianceVersion parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new VmwareSourceDetails(input, extensionRegistry);
+          return new ApplianceVersion(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<VmwareSourceDetails> parser() {
+  public static com.google.protobuf.Parser<ApplianceVersion> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<VmwareSourceDetails> getParserForType() {
+  public com.google.protobuf.Parser<ApplianceVersion> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.vmmigration.v1.VmwareSourceDetails getDefaultInstanceForType() {
+  public com.google.cloud.vmmigration.v1.ApplianceVersion getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }
