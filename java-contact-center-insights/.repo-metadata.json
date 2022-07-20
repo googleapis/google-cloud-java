@@ -1,0 +1,17 @@
+{
+  "api_shortname": "contactcenterinsights",
+  "name_pretty": "CCAI Insights",
+  "product_documentation": "https://cloud.google.com/dialogflow/priv/docs/insights/",
+  "api_description": " helps users detect and visualize patterns in their contact center data.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-contact-center-insights/latest/index.html",
+  "release_level": "stable",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-contact-center-insights",
+  "repo_short": "java-contact-center-insights",
+  "distribution_name": "com.google.cloud:google-cloud-contact-center-insights",
+  "api_id": "contactcenterinsights.googleapis.com",
+  "requires_billing": true,
+  "library_type": "GAPIC_AUTO",
+  "codeowner_team": "@googleapis/api-contact-center-insights"
+}
