@@ -45,7 +45,7 @@ for module in $modules
 do
   # Proceed if module is not excluded
   if [[ ! "${excluded_modules[*]}" =~ $module ]]; then
-    cd $module
+    pushd $module
     # Extract Cloud RAD module name
     NAME=$(jq -r '.distribution_name' .repo-metadata.json | cut -d ':' -f 2)
     # Extract (current) version from versions.txt and remove `-SNAPSHOT`
@@ -53,11 +53,11 @@ do
     echo "Running for ${NAME}-${VERSION}"
 
     # cloud RAD generation
-    mvn clean javadoc:aggregate -B -P docFX-pipelineTest
+    mvn clean javadoc:aggregate -B -P docFX
     # include CHANGELOG
     cp CHANGELOG.md target/docfx-yml/history.md
 
-    cd target/docfx-yml
+    pushd target/docfx-yml
 
     # create metadata
     python3 -m docuploader create-metadata \
@@ -78,6 +78,7 @@ do
      --staging-bucket ${STAGING_BUCKET_V2} \
      --destination-prefix docfx
 
-    cd ../../..
+    popd # out of target/docfx-yml
+    popd # out of $module
   fi
 done
