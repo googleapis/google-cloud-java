@@ -1,0 +1,16 @@
+{
+  "api_shortname": "servicecontrol",
+  "name_pretty": "Service Control API",
+  "product_documentation": "https://cloud.google.com/service-infrastructure/docs/overview/",
+  "api_description": " is a foundational platform for creating, managing, securing, and consuming APIs and services across organizations. It is used by Google APIs, Cloud APIs, Cloud Endpoints, and API Gateway.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-service-control/latest/history",
+  "release_level": "stable",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-service-control",
+  "repo_short": "java-service-control",
+  "distribution_name": "com.google.cloud:google-cloud-service-control",
+  "api_id": "servicecontrol.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
