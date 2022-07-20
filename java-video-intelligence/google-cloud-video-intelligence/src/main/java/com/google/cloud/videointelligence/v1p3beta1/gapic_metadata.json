@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.videointelligence.v1p3beta1",
+  "libraryPackage": "com.google.cloud.videointelligence.v1p3beta1",
+  "services": {
+    "VideoIntelligenceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VideoIntelligenceServiceClient",
+          "rpcs": {
+            "AnnotateVideo": {
+              "methods": ["annotateVideoAsync", "annotateVideoAsync", "annotateVideoOperationCallable", "annotateVideoCallable"]
+            }
+          }
+        }
+      }
+    },
+    "StreamingVideoIntelligenceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "StreamingVideoIntelligenceServiceClient",
+          "rpcs": {
+            "StreamingAnnotateVideo": {
+              "methods": ["streamingAnnotateVideoCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
