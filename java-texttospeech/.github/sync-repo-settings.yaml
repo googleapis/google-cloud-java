@@ -1,0 +1,55 @@
+
+# Whether or not rebase-merging is enabled on this repository.
+# Defaults to `true`
+rebaseMergeAllowed: false
+
+# Whether or not squash-merging is enabled on this repository.
+# Defaults to `true`
+squashMergeAllowed: true
+
+# Whether or not PRs are merged with a merge commit on this repository.
+# Defaults to `false`
+mergeCommitAllowed: false
+
+# Rules for main branch protection
+branchProtectionRules:
+# Identifies the protection rule pattern. Name of the branch to be protected.
+# Defaults to `main`
+- pattern: main
+  isAdminEnforced: true
+  requiredApprovingReviewCount: 1
+  requiresCodeOwnerReviews: true
+  requiresStrictStatusChecks: false
+  requiredStatusCheckContexts:
+    - "dependencies (8)"
+    - "dependencies (11)"
+    - "lint"
+    - "units (8)"
+    - "units (11)"
+    - "Kokoro - Test: Integration"
+    - "cla/google"
+    - OwlBot Post Processor
+    - "Kokoro - Test: Java GraalVM Native Image"
+    - "Kokoro - Test: Java 17 GraalVM Native Image"
+- pattern: java7
+  isAdminEnforced: true
+  requiredApprovingReviewCount: 1
+  requiresCodeOwnerReviews: true
+  requiresStrictStatusChecks: false
+  requiredStatusCheckContexts:
+    - "dependencies (8)"
+    - "dependencies (11)"
+    - "lint"
+    - "units (7)"
+    - "units (8)"
+    - "units (11)"
+    - "Kokoro - Test: Integration"
+    - "cla/google"
+    - OwlBot Post Processor
+permissionRules:
+- team: yoshi-admins
+  permission: admin
+- team: yoshi-java-admins
+  permission: admin
+- team: yoshi-java
+  permission: push
