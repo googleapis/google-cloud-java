@@ -2,7 +2,7 @@
 
 # https://stackoverflow.com/questions/1425892/how-do-you-merge-two-git-repositories
 
-#set -xe
+set -xe
 
 [ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
 [ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
@@ -76,11 +76,8 @@ echo "{" >> .release-please-manifest.json
 
 # generate BOM of the artifacts in this repository
 bom_lines=""
-
 for bom_directory in $(find . -name 'google-*-bom' | sort); do
-
   repo_metadata="${bom_directory}/../.repo-metadata.json"
-
   pom_file="${bom_directory}/pom.xml"
   groupId_line=$(grep --max-count=1 'groupId' "${pom_file}")
   artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
@@ -146,7 +143,6 @@ done
 
 echo "}" >> .release-please-manifest.json
 
-#
 mkdir google-cloud-gapic-bom
 awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyManagements)}1' \
     ../../bom.pom.xml > google-cloud-gapic-bom/pom.xml
