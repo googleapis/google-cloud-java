@@ -192,7 +192,7 @@ class ConnectionImpl implements Connection {
       if (isFastQuerySupported()) {
         String projectId = bigQueryOptions.getProjectId();
         QueryRequest queryRequest = createQueryRequest(connectionSettings, sql, null, null);
-        return queryRpc(projectId, queryRequest, false);
+        return queryRpc(projectId, queryRequest, sql, false);
       }
       // use jobs.insert otherwise
       com.google.api.services.bigquery.model.Job queryJob =
@@ -236,7 +236,7 @@ class ConnectionImpl implements Connection {
         final String projectId = bigQueryOptions.getProjectId();
         final QueryRequest queryRequest =
             createQueryRequest(connectionSettings, sql, parameters, labelMap);
-        return queryRpc(projectId, queryRequest, parameters != null);
+        return queryRpc(projectId, queryRequest, sql, parameters != null);
       }
       // use jobs.insert otherwise
       com.google.api.services.bigquery.model.Job queryJob =
@@ -289,7 +289,10 @@ class ConnectionImpl implements Connection {
   }
 
   private BigQueryResult queryRpc(
-      final String projectId, final QueryRequest queryRequest, Boolean hasQueryParameters) {
+      final String projectId,
+      final QueryRequest queryRequest,
+      String sql,
+      Boolean hasQueryParameters) {
     com.google.api.services.bigquery.model.QueryResponse results;
     try {
       results =
@@ -322,8 +325,29 @@ class ConnectionImpl implements Connection {
       // and can be optimized here, but this is left as future work.
       Long totalRows = results.getTotalRows() == null ? null : results.getTotalRows().longValue();
       Long pageRows = results.getRows() == null ? null : (long) (results.getRows().size());
+      logger.log(
+          Level.WARNING,
+          "\n"
+              + String.format(
+                  "results.getJobComplete(): %s, isSchemaNull: %s , totalRows: %s, pageRows: %s",
+                  results.getJobComplete(), results.getSchema() == null, totalRows, pageRows));
       JobId jobId = JobId.fromPb(results.getJobReference());
       GetQueryResultsResponse firstPage = getQueryResultsFirstPage(jobId);
+      // We might get null schema from the backend occasionally. Ref:
+      // https://github.com/googleapis/java-bigquery/issues/2103/. Using queryDryRun in such cases
+      // to get the schema
+      if (firstPage.getSchema() == null) { // get schema using dry run
+        // Log the status if the job was complete complete
+        logger.log(
+            Level.WARNING,
+            "\n"
+                + "Received null schema, Using dryRun the get the Schema. jobComplete:"
+                + firstPage.getJobComplete());
+        com.google.api.services.bigquery.model.Job dryRunJob = createDryRunJob(sql);
+        Schema schema = Schema.fromPb(dryRunJob.getStatistics().getQuery().getSchema());
+        return getSubsequentQueryResultsWithJob(
+            totalRows, pageRows, jobId, firstPage, schema, hasQueryParameters);
+      }
       return getSubsequentQueryResultsWithJob(
           totalRows, pageRows, jobId, firstPage, hasQueryParameters);
     }
@@ -1243,7 +1267,8 @@ class ConnectionImpl implements Connection {
   }
 
   // Used by dryRun
-  private com.google.api.services.bigquery.model.Job createDryRunJob(String sql) {
+  @VisibleForTesting
+  com.google.api.services.bigquery.model.Job createDryRunJob(String sql) {
     com.google.api.services.bigquery.model.JobConfiguration configurationPb =
         new com.google.api.services.bigquery.model.JobConfiguration();
     configurationPb.setDryRun(true);
