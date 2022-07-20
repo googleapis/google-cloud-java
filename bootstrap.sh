@@ -2,7 +2,7 @@
 
 # https://stackoverflow.com/questions/1425892/how-do-you-merge-two-git-repositories
 
-set -xe
+#set -xe
 
 [ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
 [ -z "`git config user.name`" ] && git config --global user.name "${USERNAME:-script}"
@@ -69,14 +69,56 @@ cd google-cloud-java
 git add pom.xml
 git commit -am 'feat: create aggregator pom'
 
+num_modules="$(wc -l < ../../repos.txt)"
+#echo "${num_modules}"
+touch .release-please-manifest.json
+echo "{" >> .release-please-manifest.json
+
 # generate BOM of the artifacts in this repository
 bom_lines=""
+
 for bom_directory in $(find . -name 'google-*-bom' | sort); do
+
   repo_metadata="${bom_directory}/../.repo-metadata.json"
+
   pom_file="${bom_directory}/pom.xml"
   groupId_line=$(grep --max-count=1 'groupId' "${pom_file}")
   artifactId_line=$(grep --max-count=1 'artifactId' "${pom_file}")
+
+  # extracting module name
+  prefix="  <artifactId>"
+  suffix="-bom</artifactId>"
+  artifactName=${artifactId_line#"$prefix"}
+  artifactName=${artifactName%"$suffix"}
+  prefix="./"
+  suffix="/${artifactName}-bom"
+  module=${bom_directory#"$prefix"}
+  module=${module%"$suffix"}
+#  echo "the module name is ${module}"
+
   version_line=$(grep --max-count=1 'x-version-update' "${pom_file}")
+
+  #extracting module version
+  prefix="  <version>"
+  suffix="</version><!-- {x-version-update:${artifactName}:current} -->"
+  module_version=${version_line#"$prefix"}
+  module_version=${module_version%"$suffix"}
+#  echo "the module version is ${module_version}"
+
+  #concatenating module name and module version
+  rp_config_line=""\""${module}"\"": "\""${module_version}"\"""
+
+  #adding " , " where it's necessary
+  if [ $num_modules -gt 1 ]
+    then
+    	rp_config_line+=","
+    	num_modules=$((num_modules-1))
+  fi
+
+  #adding the line to manifest config file
+  echo "${rp_config_line}" >> .release-please-manifest.json
+
+
   if ! grep --quiet '"release_level": "stable"' "${repo_metadata}"; then
     # Not including non-GA libraries, except those that happened to be included
     # already in google-cloud-bom.
@@ -102,6 +144,9 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
 
 done
 
+echo "}" >> .release-please-manifest.json
+
+#
 mkdir google-cloud-gapic-bom
 awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyManagements)}1' \
     ../../bom.pom.xml > google-cloud-gapic-bom/pom.xml
