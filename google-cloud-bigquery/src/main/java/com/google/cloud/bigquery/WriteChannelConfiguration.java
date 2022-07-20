@@ -55,6 +55,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   private final Clustering clustering;
   private final Boolean useAvroLogicalTypes;
   private final Map<String, String> labels;
+  private List<String> decimalTargetTypes;
 
   public static final class Builder implements LoadConfiguration.Builder {
 
@@ -73,6 +74,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     private Clustering clustering;
     private Boolean useAvroLogicalTypes;
     private Map<String, String> labels;
+    private List<String> decimalTargetTypes;
 
     private Builder() {}
 
@@ -93,6 +95,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       this.clustering = writeChannelConfiguration.clustering;
       this.useAvroLogicalTypes = writeChannelConfiguration.useAvroLogicalTypes;
       this.labels = writeChannelConfiguration.labels;
+      this.decimalTargetTypes = writeChannelConfiguration.decimalTargetTypes;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -168,6 +171,9 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       this.useAvroLogicalTypes = loadConfigurationPb.getUseAvroLogicalTypes();
       if (configurationPb.getLabels() != null) {
         this.labels = configurationPb.getLabels();
+      }
+      if (loadConfigurationPb.getDecimalTargetTypes() != null) {
+        this.decimalTargetTypes = loadConfigurationPb.getDecimalTargetTypes();
       }
     }
 
@@ -263,6 +269,12 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     }
 
     @Override
+    public Builder setDecimalTargetTypes(List<String> decimalTargetTypes) {
+      this.decimalTargetTypes = decimalTargetTypes;
+      return this;
+    }
+
+    @Override
     public WriteChannelConfiguration build() {
       return new WriteChannelConfiguration(this);
     }
@@ -284,6 +296,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     this.clustering = builder.clustering;
     this.useAvroLogicalTypes = builder.useAvroLogicalTypes;
     this.labels = builder.labels;
+    this.decimalTargetTypes = builder.decimalTargetTypes;
   }
 
   @Override
@@ -373,6 +386,11 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   }
 
   @Override
+  public List<String> getDecimalTargetTypes() {
+    return decimalTargetTypes;
+  }
+
+  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -393,7 +411,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         .add("timePartitioning", timePartitioning)
         .add("clustering", clustering)
         .add("useAvroLogicalTypes", useAvroLogicalTypes)
-        .add("labels", labels);
+        .add("labels", labels)
+        .add("decimalTargetTypes", decimalTargetTypes);
   }
 
   @Override
@@ -424,7 +443,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         timePartitioning,
         clustering,
         useAvroLogicalTypes,
-        labels);
+        labels,
+        decimalTargetTypes);
   }
 
   WriteChannelConfiguration setProjectId(String projectId) {
@@ -494,6 +514,9 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     loadConfigurationPb.setUseAvroLogicalTypes(useAvroLogicalTypes);
     if (labels != null) {
       jobConfiguration.setLabels(labels);
+    }
+    if (decimalTargetTypes != null) {
+      loadConfigurationPb.setDecimalTargetTypes(decimalTargetTypes);
     }
     jobConfiguration.setLoad(loadConfigurationPb);
     return jobConfiguration;

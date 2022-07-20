@@ -4375,6 +4375,32 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testInsertWithDecimalTargetTypes()
+      throws InterruptedException, IOException, TimeoutException {
+    String destinationTableName = "test_insert_from_file_table_with_decimal_target_type";
+    TableId tableId = TableId.of(DATASET, destinationTableName);
+    WriteChannelConfiguration configuration =
+        WriteChannelConfiguration.newBuilder(tableId)
+            .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+            .setAutodetect(true)
+            .setDecimalTargetTypes(ImmutableList.of("STRING", "NUMERIC", "BIGNUMERIC"))
+            .build();
+    TableDataWriteChannel channel = bigquery.writer(configuration);
+    try {
+      channel.write(ByteBuffer.wrap("foo".getBytes(StandardCharsets.UTF_8)));
+    } finally {
+      channel.close();
+    }
+    Job job = channel.getJob().waitFor();
+    LoadJobConfiguration jobConfiguration = job.getConfiguration();
+    assertNull(job.getStatus().getError());
+    assertEquals(
+        ImmutableList.of("STRING", "NUMERIC", "BIGNUMERIC"),
+        jobConfiguration.getDecimalTargetTypes());
+    assertTrue(bigquery.delete(tableId));
+  }
+
+  @Test
   public void testLocation() throws Exception {
     String location = "EU";
     String wrongLocation = "US";

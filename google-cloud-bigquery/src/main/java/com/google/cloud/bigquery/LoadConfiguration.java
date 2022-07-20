@@ -125,6 +125,17 @@ public interface LoadConfiguration {
      */
     Builder setUseAvroLogicalTypes(Boolean useAvroLogicalTypes);
 
+    /**
+     * Defines the list of possible SQL data types to which the source decimal values are converted.
+     * This list and the precision and the scale parameters of the decimal field determine the
+     * target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in
+     * the specified list and if it supports the precision and the scale. STRING supports all
+     * precision and scale values.
+     *
+     * @param decimalTargetTypes decimalTargetType or {@code null} for none
+     */
+    Builder setDecimalTargetTypes(List<String> decimalTargetTypes);
+
     LoadConfiguration build();
   }
 
@@ -213,6 +224,15 @@ public interface LoadConfiguration {
 
   /** Returns True/False. Indicates whether the logical type is interpreted. */
   Boolean getUseAvroLogicalTypes();
+
+  /**
+   * Returns the list of possible SQL data types to which the source decimal values are converted.
+   * This list and the precision and the scale parameters of the decimal field determine the target
+   * type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the
+   * specified list and if it supports the precision and the scale. STRING supports all precision
+   * and scale values.
+   */
+  List<String> getDecimalTargetTypes();
 
   /** Returns a builder for the load configuration object. */
   Builder toBuilder();
