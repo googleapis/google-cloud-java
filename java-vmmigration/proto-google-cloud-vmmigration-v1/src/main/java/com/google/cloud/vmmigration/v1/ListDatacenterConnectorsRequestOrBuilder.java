@@ -56,8 +56,8 @@ public interface ListDatacenterConnectorsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of connectors to return. The service may return
-   * fewer than this value. If unspecified, at most 500 sources will be
+   * Optional. The maximum number of connectors to return. The service may
+   * return fewer than this value. If unspecified, at most 500 sources will be
    * returned. The maximum value is 1000; values above 1000 will be coerced to
    * 1000.
    * </pre>
@@ -72,8 +72,8 @@ public interface ListDatacenterConnectorsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A page token, received from a previous `ListDatacenterConnectors` call.
-   * Provide this to retrieve the subsequent page.
+   * Required. A page token, received from a previous `ListDatacenterConnectors`
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
    * `ListDatacenterConnectors` must match the call that provided the page
    * token.
@@ -88,8 +88,8 @@ public interface ListDatacenterConnectorsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A page token, received from a previous `ListDatacenterConnectors` call.
-   * Provide this to retrieve the subsequent page.
+   * Required. A page token, received from a previous `ListDatacenterConnectors`
+   * call. Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to
    * `ListDatacenterConnectors` must match the call that provided the page
    * token.

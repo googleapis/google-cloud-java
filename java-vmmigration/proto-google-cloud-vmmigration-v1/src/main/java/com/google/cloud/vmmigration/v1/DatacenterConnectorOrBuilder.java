@@ -27,8 +27,8 @@ public interface DatacenterConnectorOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the connector was created (as an API call, not when it was
-   * actually installed).
+   * Output only. The time the connector was created (as an API call, not when
+   * it was actually installed).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -41,8 +41,8 @@ public interface DatacenterConnectorOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the connector was created (as an API call, not when it was
-   * actually installed).
+   * Output only. The time the connector was created (as an API call, not when
+   * it was actually installed).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -55,8 +55,8 @@ public interface DatacenterConnectorOrBuilder
    *
    *
    * <pre>
-   * Output only. The time the connector was created (as an API call, not when it was
-   * actually installed).
+   * Output only. The time the connector was created (as an API call, not when
+   * it was actually installed).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -131,9 +131,9 @@ public interface DatacenterConnectorOrBuilder
    *
    *
    * <pre>
-   * Immutable. A unique key for this connector. This key is internal to the OVA connector
-   * and is supplied with its creation during the registration process and can
-   * not be modified.
+   * Immutable. A unique key for this connector. This key is internal to the OVA
+   * connector and is supplied with its creation during the registration process
+   * and can not be modified.
    * </pre>
    *
    * <code>string registration_id = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -145,9 +145,9 @@ public interface DatacenterConnectorOrBuilder
    *
    *
    * <pre>
-   * Immutable. A unique key for this connector. This key is internal to the OVA connector
-   * and is supplied with its creation during the registration process and can
-   * not be modified.
+   * Immutable. A unique key for this connector. This key is internal to the OVA
+   * connector and is supplied with its creation during the registration process
+   * and can not be modified.
    * </pre>
    *
    * <code>string registration_id = 12 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -214,7 +214,8 @@ public interface DatacenterConnectorOrBuilder
    *
    *
    * <pre>
-   * Output only. The communication channel between the datacenter connector and GCP.
+   * Output only. The communication channel between the datacenter connector and
+   * GCP.
    * </pre>
    *
    * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -226,7 +227,8 @@ public interface DatacenterConnectorOrBuilder
    *
    *
    * <pre>
-   * Output only. The communication channel between the datacenter connector and GCP.
+   * Output only. The communication channel between the datacenter connector and
+   * GCP.
    * </pre>
    *
    * <code>string bucket = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -239,7 +241,8 @@ public interface DatacenterConnectorOrBuilder
    *
    *
    * <pre>
-   * Output only. State of the DatacenterConnector, as determined by the health checks.
+   * Output only. State of the DatacenterConnector, as determined by the health
+   * checks.
    * </pre>
    *
    * <code>
@@ -253,7 +256,8 @@ public interface DatacenterConnectorOrBuilder
    *
    *
    * <pre>
-   * Output only. State of the DatacenterConnector, as determined by the health checks.
+   * Output only. State of the DatacenterConnector, as determined by the health
+   * checks.
    * </pre>
    *
    * <code>
@@ -306,8 +310,8 @@ public interface DatacenterConnectorOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the Datacenter Connector in case of an
-   * error.
+   * Output only. Provides details on the state of the Datacenter Connector in
+   * case of an error.
    * </pre>
    *
    * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -319,8 +323,8 @@ public interface DatacenterConnectorOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the Datacenter Connector in case of an
-   * error.
+   * Output only. Provides details on the state of the Datacenter Connector in
+   * case of an error.
    * </pre>
    *
    * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -332,11 +336,157 @@ public interface DatacenterConnectorOrBuilder
    *
    *
    * <pre>
-   * Output only. Provides details on the state of the Datacenter Connector in case of an
-   * error.
+   * Output only. Provides details on the state of the Datacenter Connector in
+   * case of an error.
    * </pre>
    *
    * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Appliance OVA version.
+   * This is the OVA which is manually installed by the user and contains the
+   * infrastructure for the automatically updatable components on the appliance.
+   * </pre>
+   *
+   * <code>
+   * string appliance_infrastructure_version = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The applianceInfrastructureVersion.
+   */
+  java.lang.String getApplianceInfrastructureVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Appliance OVA version.
+   * This is the OVA which is manually installed by the user and contains the
+   * infrastructure for the automatically updatable components on the appliance.
+   * </pre>
+   *
+   * <code>
+   * string appliance_infrastructure_version = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for applianceInfrastructureVersion.
+   */
+  com.google.protobuf.ByteString getApplianceInfrastructureVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Appliance last installed update bundle version.
+   * This is the version of the automatically updatable components on the
+   * appliance.
+   * </pre>
+   *
+   * <code>string appliance_software_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The applianceSoftwareVersion.
+   */
+  java.lang.String getApplianceSoftwareVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Appliance last installed update bundle version.
+   * This is the version of the automatically updatable components on the
+   * appliance.
+   * </pre>
+   *
+   * <code>string appliance_software_version = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for applianceSoftwareVersion.
+   */
+  com.google.protobuf.ByteString getApplianceSoftwareVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The available versions for updating this appliance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the availableVersions field is set.
+   */
+  boolean hasAvailableVersions();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The available versions for updating this appliance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The availableVersions.
+   */
+  com.google.cloud.vmmigration.v1.AvailableUpdates getAvailableVersions();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The available versions for updating this appliance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AvailableUpdates available_versions = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.AvailableUpdatesOrBuilder getAvailableVersionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the current / last upgradeAppliance operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the upgradeStatus field is set.
+   */
+  boolean hasUpgradeStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the current / last upgradeAppliance operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The upgradeStatus.
+   */
+  com.google.cloud.vmmigration.v1.UpgradeStatus getUpgradeStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the current / last upgradeAppliance operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.UpgradeStatus upgrade_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.UpgradeStatusOrBuilder getUpgradeStatusOrBuilder();
 }

@@ -277,6 +277,16 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      * <code>UTILIZATION_REPORT_ERROR = 8;</code>
      */
     UTILIZATION_REPORT_ERROR(8),
+    /**
+     *
+     *
+     * <pre>
+     * Migrate for Compute encountered an error during appliance upgrade.
+     * </pre>
+     *
+     * <code>APPLIANCE_UPGRADE_ERROR = 9;</code>
+     */
+    APPLIANCE_UPGRADE_ERROR(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -372,6 +382,16 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      * <code>UTILIZATION_REPORT_ERROR = 8;</code>
      */
     public static final int UTILIZATION_REPORT_ERROR_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Migrate for Compute encountered an error during appliance upgrade.
+     * </pre>
+     *
+     * <code>APPLIANCE_UPGRADE_ERROR = 9;</code>
+     */
+    public static final int APPLIANCE_UPGRADE_ERROR_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -415,6 +435,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
           return CUTOVER_ERROR;
         case 8:
           return UTILIZATION_REPORT_ERROR;
+        case 9:
+          return APPLIANCE_UPGRADE_ERROR;
         default:
           return null;
       }
@@ -622,7 +644,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. URL(s) pointing to additional information on handling the current error.
+   * Output only. URL(s) pointing to additional information on handling the
+   * current error.
    * </pre>
    *
    * <code>
@@ -637,7 +660,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. URL(s) pointing to additional information on handling the current error.
+   * Output only. URL(s) pointing to additional information on handling the
+   * current error.
    * </pre>
    *
    * <code>
@@ -652,7 +676,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. URL(s) pointing to additional information on handling the current error.
+   * Output only. URL(s) pointing to additional information on handling the
+   * current error.
    * </pre>
    *
    * <code>
@@ -667,7 +692,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. URL(s) pointing to additional information on handling the current error.
+   * Output only. URL(s) pointing to additional information on handling the
+   * current error.
    * </pre>
    *
    * <code>
@@ -682,7 +708,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. URL(s) pointing to additional information on handling the current error.
+   * Output only. URL(s) pointing to additional information on handling the
+   * current error.
    * </pre>
    *
    * <code>
@@ -1734,7 +1761,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -1752,7 +1780,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -1770,7 +1799,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -1788,7 +1818,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -1812,7 +1843,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -1833,7 +1865,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -1857,7 +1890,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -1881,7 +1915,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -1902,7 +1937,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -1923,7 +1959,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -1944,7 +1981,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -1965,7 +2003,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -1986,7 +2025,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -2000,7 +2040,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -2018,7 +2059,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -2036,7 +2078,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -2050,7 +2093,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>
@@ -2065,7 +2109,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URL(s) pointing to additional information on handling the current error.
+     * Output only. URL(s) pointing to additional information on handling the
+     * current error.
      * </pre>
      *
      * <code>

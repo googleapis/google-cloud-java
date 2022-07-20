@@ -27,10 +27,10 @@ public interface TargetProjectOrBuilder
    *
    *
    * <pre>
-   * The name of the target project.
+   * Output only. The name of the target project.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -39,10 +39,10 @@ public interface TargetProjectOrBuilder
    *
    *
    * <pre>
-   * The name of the target project.
+   * Output only. The name of the target project.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -102,8 +102,8 @@ public interface TargetProjectOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this target project resource was created (not related to when the
-   * Compute Engine project it points to was created).
+   * Output only. The time this target project resource was created (not related
+   * to when the Compute Engine project it points to was created).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -116,8 +116,8 @@ public interface TargetProjectOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this target project resource was created (not related to when the
-   * Compute Engine project it points to was created).
+   * Output only. The time this target project resource was created (not related
+   * to when the Compute Engine project it points to was created).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -130,8 +130,8 @@ public interface TargetProjectOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this target project resource was created (not related to when the
-   * Compute Engine project it points to was created).
+   * Output only. The time this target project resource was created (not related
+   * to when the Compute Engine project it points to was created).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];

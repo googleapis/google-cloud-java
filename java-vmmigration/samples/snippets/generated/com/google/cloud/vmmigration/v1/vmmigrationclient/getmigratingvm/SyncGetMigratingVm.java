@@ -20,6 +20,7 @@ package com.google.cloud.vmmigration.v1.samples;
 import com.google.cloud.vmmigration.v1.GetMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.MigratingVm;
 import com.google.cloud.vmmigration.v1.MigratingVmName;
+import com.google.cloud.vmmigration.v1.MigratingVmView;
 import com.google.cloud.vmmigration.v1.VmMigrationClient;
 
 public class SyncGetMigratingVm {
@@ -37,6 +38,7 @@ public class SyncGetMigratingVm {
               .setName(
                   MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]")
                       .toString())
+              .setView(MigratingVmView.forNumber(0))
               .build();
       MigratingVm response = vmMigrationClient.getMigratingVm(request);
     }

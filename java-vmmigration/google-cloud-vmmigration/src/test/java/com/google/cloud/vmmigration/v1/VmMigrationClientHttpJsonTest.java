@@ -1196,6 +1196,10 @@ public class VmMigrationClientHttpJsonTest {
             .setBucket("bucket-1378203158")
             .setStateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
+            .setApplianceInfrastructureVersion("applianceInfrastructureVersion560843272")
+            .setApplianceSoftwareVersion("applianceSoftwareVersion-1982719036")
+            .setAvailableVersions(AvailableUpdates.newBuilder().build())
+            .setUpgradeStatus(UpgradeStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1254,6 +1258,10 @@ public class VmMigrationClientHttpJsonTest {
             .setBucket("bucket-1378203158")
             .setStateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
+            .setApplianceInfrastructureVersion("applianceInfrastructureVersion560843272")
+            .setApplianceSoftwareVersion("applianceSoftwareVersion-1982719036")
+            .setAvailableVersions(AvailableUpdates.newBuilder().build())
+            .setUpgradeStatus(UpgradeStatus.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1311,6 +1319,10 @@ public class VmMigrationClientHttpJsonTest {
             .setBucket("bucket-1378203158")
             .setStateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
+            .setApplianceInfrastructureVersion("applianceInfrastructureVersion560843272")
+            .setApplianceSoftwareVersion("applianceSoftwareVersion-1982719036")
+            .setAvailableVersions(AvailableUpdates.newBuilder().build())
+            .setUpgradeStatus(UpgradeStatus.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1380,6 +1392,10 @@ public class VmMigrationClientHttpJsonTest {
             .setBucket("bucket-1378203158")
             .setStateTime(Timestamp.newBuilder().build())
             .setError(Status.newBuilder().build())
+            .setApplianceInfrastructureVersion("applianceInfrastructureVersion560843272")
+            .setApplianceSoftwareVersion("applianceSoftwareVersion-1982719036")
+            .setAvailableVersions(AvailableUpdates.newBuilder().build())
+            .setUpgradeStatus(UpgradeStatus.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1529,6 +1545,66 @@ public class VmMigrationClientHttpJsonTest {
   }
 
   @Test
+  public void upgradeApplianceTest() throws Exception {
+    UpgradeApplianceResponse expectedResponse = UpgradeApplianceResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("upgradeApplianceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    UpgradeApplianceRequest request =
+        UpgradeApplianceRequest.newBuilder()
+            .setDatacenterConnector(
+                DatacenterConnectorName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DATACENTER_CONNECTOR]")
+                    .toString())
+            .setRequestId("requestId693933066")
+            .build();
+
+    UpgradeApplianceResponse actualResponse = client.upgradeApplianceAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void upgradeApplianceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UpgradeApplianceRequest request =
+          UpgradeApplianceRequest.newBuilder()
+              .setDatacenterConnector(
+                  DatacenterConnectorName.of(
+                          "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DATACENTER_CONNECTOR]")
+                      .toString())
+              .setRequestId("requestId693933066")
+              .build();
+      client.upgradeApplianceAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void createMigratingVmTest() throws Exception {
     MigratingVm expectedResponse =
         MigratingVm.newBuilder()
@@ -1546,7 +1622,9 @@ public class VmMigrationClientHttpJsonTest {
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
+            .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
+            .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1614,7 +1692,9 @@ public class VmMigrationClientHttpJsonTest {
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
+            .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
+            .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1782,7 +1862,9 @@ public class VmMigrationClientHttpJsonTest {
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
+            .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
+            .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1842,7 +1924,9 @@ public class VmMigrationClientHttpJsonTest {
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
+            .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
+            .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1902,7 +1986,9 @@ public class VmMigrationClientHttpJsonTest {
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
+            .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
+            .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1928,7 +2014,9 @@ public class VmMigrationClientHttpJsonTest {
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
+            .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
+            .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1974,7 +2062,9 @@ public class VmMigrationClientHttpJsonTest {
               .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
               .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .putAllLabels(new HashMap<String, String>())
+              .addAllRecentCloneJobs(new ArrayList<CloneJob>())
               .setError(Status.newBuilder().build())
+              .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateMigratingVmAsync(migratingVm, updateMask).get();
@@ -2386,6 +2476,7 @@ public class VmMigrationClientHttpJsonTest {
     CloneJob expectedResponse =
         CloneJob.newBuilder()
             .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .setName(
                 CloneJobName.of(
                         "[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]", "[CLONE_JOB]")
@@ -2447,6 +2538,7 @@ public class VmMigrationClientHttpJsonTest {
     CloneJob expectedResponse =
         CloneJob.newBuilder()
             .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .setName(
                 CloneJobName.of(
                         "[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]", "[CLONE_JOB]")
@@ -2708,6 +2800,7 @@ public class VmMigrationClientHttpJsonTest {
     CloneJob expectedResponse =
         CloneJob.newBuilder()
             .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .setName(
                 CloneJobName.of(
                         "[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]", "[CLONE_JOB]")
@@ -2760,6 +2853,7 @@ public class VmMigrationClientHttpJsonTest {
     CloneJob expectedResponse =
         CloneJob.newBuilder()
             .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .setName(
                 CloneJobName.of(
                         "[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]", "[CLONE_JOB]")
@@ -2812,6 +2906,7 @@ public class VmMigrationClientHttpJsonTest {
     CutoverJob expectedResponse =
         CutoverJob.newBuilder()
             .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .setName(
                 CutoverJobName.of(
                         "[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]", "[CUTOVER_JOB]")
@@ -2876,6 +2971,7 @@ public class VmMigrationClientHttpJsonTest {
     CutoverJob expectedResponse =
         CutoverJob.newBuilder()
             .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .setName(
                 CutoverJobName.of(
                         "[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]", "[CUTOVER_JOB]")
@@ -3141,6 +3237,7 @@ public class VmMigrationClientHttpJsonTest {
     CutoverJob expectedResponse =
         CutoverJob.newBuilder()
             .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .setName(
                 CutoverJobName.of(
                         "[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]", "[CUTOVER_JOB]")
@@ -3196,6 +3293,7 @@ public class VmMigrationClientHttpJsonTest {
     CutoverJob expectedResponse =
         CutoverJob.newBuilder()
             .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
             .setName(
                 CutoverJobName.of(
                         "[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]", "[CUTOVER_JOB]")

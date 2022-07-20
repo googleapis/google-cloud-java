@@ -164,6 +164,21 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
               targetVmDetailsCase_ = 14;
               break;
             }
+          case 130:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (endTime_ != null) {
+                subBuilder = endTime_.toBuilder();
+              }
+              endTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(endTime_);
+                endTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -578,8 +593,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time the cutover job was created (as an API call, not when it was
-   * actually created in the target).
+   * Output only. The time the cutover job was created (as an API call, not when
+   * it was actually created in the target).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -595,8 +610,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time the cutover job was created (as an API call, not when it was
-   * actually created in the target).
+   * Output only. The time the cutover job was created (as an API call, not when
+   * it was actually created in the target).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -612,8 +627,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time the cutover job was created (as an API call, not when it was
-   * actually created in the target).
+   * Output only. The time the cutover job was created (as an API call, not when
+   * it was actually created in the target).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -622,6 +637,55 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
     return getCreateTime();
+  }
+
+  public static final int END_TIME_FIELD_NUMBER = 16;
+  private com.google.protobuf.Timestamp endTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the cutover job had finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the endTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndTime() {
+    return endTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the cutover job had finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The endTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getEndTime() {
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the cutover job had finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+    return getEndTime();
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
@@ -786,7 +850,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Provides details for the errors that led to the Cutover Job's state.
+   * Output only. Provides details for the errors that led to the Cutover Job's
+   * state.
    * </pre>
    *
    * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -801,7 +866,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Provides details for the errors that led to the Cutover Job's state.
+   * Output only. Provides details for the errors that led to the Cutover Job's
+   * state.
    * </pre>
    *
    * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -816,7 +882,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Provides details for the errors that led to the Cutover Job's state.
+   * Output only. Provides details for the errors that led to the Cutover Job's
+   * state.
    * </pre>
    *
    * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -832,7 +899,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A message providing possible extra details about the current state.
+   * Output only. A message providing possible extra details about the current
+   * state.
    * </pre>
    *
    * <code>string state_message = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -855,7 +923,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A message providing possible extra details about the current state.
+   * Output only. A message providing possible extra details about the current
+   * state.
    * </pre>
    *
    * <code>string state_message = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -914,6 +983,9 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           14, (com.google.cloud.vmmigration.v1.ComputeEngineTargetDetails) targetVmDetails_);
     }
+    if (endTime_ != null) {
+      output.writeMessage(16, getEndTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -949,6 +1021,9 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, (com.google.cloud.vmmigration.v1.ComputeEngineTargetDetails) targetVmDetails_);
     }
+    if (endTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getEndTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -968,6 +1043,10 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasEndTime() != other.hasEndTime()) return false;
+    if (hasEndTime()) {
+      if (!getEndTime().equals(other.getEndTime())) return false;
     }
     if (!getName().equals(other.getName())) return false;
     if (state_ != other.state_) return false;
@@ -1004,6 +1083,10 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasEndTime()) {
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndTime().hashCode();
     }
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
@@ -1182,6 +1265,12 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
         createTimeBuilder_ = null;
       }
+      if (endTimeBuilder_ == null) {
+        endTime_ = null;
+      } else {
+        endTime_ = null;
+        endTimeBuilder_ = null;
+      }
       name_ = "";
 
       state_ = 0;
@@ -1242,6 +1331,11 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
         result.createTime_ = createTime_;
       } else {
         result.createTime_ = createTimeBuilder_.build();
+      }
+      if (endTimeBuilder_ == null) {
+        result.endTime_ = endTime_;
+      } else {
+        result.endTime_ = endTimeBuilder_.build();
       }
       result.name_ = name_;
       result.state_ = state_;
@@ -1309,6 +1403,9 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vmmigration.v1.CutoverJob.getDefaultInstance()) return this;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasEndTime()) {
+        mergeEndTime(other.getEndTime());
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
@@ -1630,8 +1727,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the cutover job was created (as an API call, not when it was
-     * actually created in the target).
+     * Output only. The time the cutover job was created (as an API call, not when
+     * it was actually created in the target).
      * </pre>
      *
      * <code>
@@ -1647,8 +1744,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the cutover job was created (as an API call, not when it was
-     * actually created in the target).
+     * Output only. The time the cutover job was created (as an API call, not when
+     * it was actually created in the target).
      * </pre>
      *
      * <code>
@@ -1670,8 +1767,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the cutover job was created (as an API call, not when it was
-     * actually created in the target).
+     * Output only. The time the cutover job was created (as an API call, not when
+     * it was actually created in the target).
      * </pre>
      *
      * <code>
@@ -1695,8 +1792,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the cutover job was created (as an API call, not when it was
-     * actually created in the target).
+     * Output only. The time the cutover job was created (as an API call, not when
+     * it was actually created in the target).
      * </pre>
      *
      * <code>
@@ -1717,8 +1814,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the cutover job was created (as an API call, not when it was
-     * actually created in the target).
+     * Output only. The time the cutover job was created (as an API call, not when
+     * it was actually created in the target).
      * </pre>
      *
      * <code>
@@ -1744,8 +1841,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the cutover job was created (as an API call, not when it was
-     * actually created in the target).
+     * Output only. The time the cutover job was created (as an API call, not when
+     * it was actually created in the target).
      * </pre>
      *
      * <code>
@@ -1767,8 +1864,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the cutover job was created (as an API call, not when it was
-     * actually created in the target).
+     * Output only. The time the cutover job was created (as an API call, not when
+     * it was actually created in the target).
      * </pre>
      *
      * <code>
@@ -1784,8 +1881,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the cutover job was created (as an API call, not when it was
-     * actually created in the target).
+     * Output only. The time the cutover job was created (as an API call, not when
+     * it was actually created in the target).
      * </pre>
      *
      * <code>
@@ -1805,8 +1902,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time the cutover job was created (as an API call, not when it was
-     * actually created in the target).
+     * Output only. The time the cutover job was created (as an API call, not when
+     * it was actually created in the target).
      * </pre>
      *
      * <code>
@@ -1828,6 +1925,194 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
       }
       return createTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp endTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        endTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the cutover job had finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the endTime field is set.
+     */
+    public boolean hasEndTime() {
+      return endTimeBuilder_ != null || endTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the cutover job had finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The endTime.
+     */
+    public com.google.protobuf.Timestamp getEndTime() {
+      if (endTimeBuilder_ == null) {
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      } else {
+        return endTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the cutover job had finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEndTime(com.google.protobuf.Timestamp value) {
+      if (endTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endTime_ = value;
+        onChanged();
+      } else {
+        endTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the cutover job had finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (endTimeBuilder_ == null) {
+        endTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        endTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the cutover job had finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
+      if (endTimeBuilder_ == null) {
+        if (endTime_ != null) {
+          endTime_ =
+              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        } else {
+          endTime_ = value;
+        }
+        onChanged();
+      } else {
+        endTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the cutover job had finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEndTime() {
+      if (endTimeBuilder_ == null) {
+        endTime_ = null;
+        onChanged();
+      } else {
+        endTime_ = null;
+        endTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the cutover job had finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
+
+      onChanged();
+      return getEndTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the cutover job had finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+      if (endTimeBuilder_ != null) {
+        return endTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the cutover job had finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getEndTimeFieldBuilder() {
+      if (endTimeBuilder_ == null) {
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
+        endTime_ = null;
+      }
+      return endTimeBuilder_;
     }
 
     private java.lang.Object name_ = "";
@@ -2287,7 +2572,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details for the errors that led to the Cutover Job's state.
+     * Output only. Provides details for the errors that led to the Cutover Job's
+     * state.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2301,7 +2587,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details for the errors that led to the Cutover Job's state.
+     * Output only. Provides details for the errors that led to the Cutover Job's
+     * state.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2319,7 +2606,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details for the errors that led to the Cutover Job's state.
+     * Output only. Provides details for the errors that led to the Cutover Job's
+     * state.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2341,7 +2629,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details for the errors that led to the Cutover Job's state.
+     * Output only. Provides details for the errors that led to the Cutover Job's
+     * state.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2360,7 +2649,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details for the errors that led to the Cutover Job's state.
+     * Output only. Provides details for the errors that led to the Cutover Job's
+     * state.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2383,7 +2673,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details for the errors that led to the Cutover Job's state.
+     * Output only. Provides details for the errors that led to the Cutover Job's
+     * state.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2403,7 +2694,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details for the errors that led to the Cutover Job's state.
+     * Output only. Provides details for the errors that led to the Cutover Job's
+     * state.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2417,7 +2709,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details for the errors that led to the Cutover Job's state.
+     * Output only. Provides details for the errors that led to the Cutover Job's
+     * state.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2433,7 +2726,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Provides details for the errors that led to the Cutover Job's state.
+     * Output only. Provides details for the errors that led to the Cutover Job's
+     * state.
      * </pre>
      *
      * <code>.google.rpc.Status error = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2457,7 +2751,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A message providing possible extra details about the current state.
+     * Output only. A message providing possible extra details about the current
+     * state.
      * </pre>
      *
      * <code>string state_message = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2479,7 +2774,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A message providing possible extra details about the current state.
+     * Output only. A message providing possible extra details about the current
+     * state.
      * </pre>
      *
      * <code>string state_message = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2501,7 +2797,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A message providing possible extra details about the current state.
+     * Output only. A message providing possible extra details about the current
+     * state.
      * </pre>
      *
      * <code>string state_message = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2522,7 +2819,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A message providing possible extra details about the current state.
+     * Output only. A message providing possible extra details about the current
+     * state.
      * </pre>
      *
      * <code>string state_message = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2539,7 +2837,8 @@ public final class CutoverJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A message providing possible extra details about the current state.
+     * Output only. A message providing possible extra details about the current
+     * state.
      * </pre>
      *
      * <code>string state_message = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

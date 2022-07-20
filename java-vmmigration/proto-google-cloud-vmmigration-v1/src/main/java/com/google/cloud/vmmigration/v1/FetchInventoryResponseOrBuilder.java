@@ -27,12 +27,10 @@ public interface FetchInventoryResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The description of the VMs in a Source of type Vmware.
+   * The description of the VMs in a Source of type Vmware.
    * </pre>
    *
-   * <code>
-   * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
    *
    * @return Whether the vmwareVms field is set.
    */
@@ -41,12 +39,10 @@ public interface FetchInventoryResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The description of the VMs in a Source of type Vmware.
+   * The description of the VMs in a Source of type Vmware.
    * </pre>
    *
-   * <code>
-   * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
    *
    * @return The vmwareVms.
    */
@@ -55,12 +51,10 @@ public interface FetchInventoryResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The description of the VMs in a Source of type Vmware.
+   * The description of the VMs in a Source of type Vmware.
    * </pre>
    *
-   * <code>
-   * .google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.cloud.vmmigration.v1.VmwareVmsDetails vmware_vms = 1;</code>
    */
   com.google.cloud.vmmigration.v1.VmwareVmsDetailsOrBuilder getVmwareVmsOrBuilder();
 
@@ -68,8 +62,8 @@ public interface FetchInventoryResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the source was last queried (if the result is from the
-   * cache).
+   * Output only. The timestamp when the source was last queried (if the result
+   * is from the cache).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -82,8 +76,8 @@ public interface FetchInventoryResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the source was last queried (if the result is from the
-   * cache).
+   * Output only. The timestamp when the source was last queried (if the result
+   * is from the cache).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -96,8 +90,8 @@ public interface FetchInventoryResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the source was last queried (if the result is from the
-   * cache).
+   * Output only. The timestamp when the source was last queried (if the result
+   * is from the cache).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];

@@ -20,6 +20,7 @@ package com.google.cloud.vmmigration.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsRequest;
 import com.google.cloud.vmmigration.v1.MigratingVm;
+import com.google.cloud.vmmigration.v1.MigratingVmView;
 import com.google.cloud.vmmigration.v1.SourceName;
 import com.google.cloud.vmmigration.v1.VmMigrationClient;
 
@@ -40,6 +41,7 @@ public class AsyncListMigratingVms {
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
               .setOrderBy("orderBy-1207110587")
+              .setView(MigratingVmView.forNumber(0))
               .build();
       ApiFuture<MigratingVm> future =
           vmMigrationClient.listMigratingVmsPagedCallable().futureCall(request);

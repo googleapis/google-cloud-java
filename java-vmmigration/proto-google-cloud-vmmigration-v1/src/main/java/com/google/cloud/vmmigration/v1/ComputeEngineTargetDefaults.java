@@ -50,6 +50,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     diskType_ = 0;
     licenseType_ = 0;
     bootOption_ = 0;
+    additionalLicenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    hostname_ = "";
   }
 
   @java.lang.Override
@@ -234,6 +236,23 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
               metadata_.getMutableMap().put(metadata__.getKey(), metadata__.getValue());
               break;
             }
+          case 138:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                additionalLicenses_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              additionalLicenses_.add(s);
+              break;
+            }
+          case 146:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              hostname_ = s;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -255,6 +274,9 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         networkInterfaces_ = java.util.Collections.unmodifiableList(networkInterfaces_);
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        additionalLicenses_ = additionalLicenses_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -1154,6 +1176,116 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     return map.get(key);
   }
 
+  public static final int ADDITIONAL_LICENSES_FIELD_NUMBER = 17;
+  private com.google.protobuf.LazyStringList additionalLicenses_;
+  /**
+   *
+   *
+   * <pre>
+   * Additional licenses to assign to the VM.
+   * </pre>
+   *
+   * <code>repeated string additional_licenses = 17;</code>
+   *
+   * @return A list containing the additionalLicenses.
+   */
+  public com.google.protobuf.ProtocolStringList getAdditionalLicensesList() {
+    return additionalLicenses_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional licenses to assign to the VM.
+   * </pre>
+   *
+   * <code>repeated string additional_licenses = 17;</code>
+   *
+   * @return The count of additionalLicenses.
+   */
+  public int getAdditionalLicensesCount() {
+    return additionalLicenses_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional licenses to assign to the VM.
+   * </pre>
+   *
+   * <code>repeated string additional_licenses = 17;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The additionalLicenses at the given index.
+   */
+  public java.lang.String getAdditionalLicenses(int index) {
+    return additionalLicenses_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Additional licenses to assign to the VM.
+   * </pre>
+   *
+   * <code>repeated string additional_licenses = 17;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalLicenses at the given index.
+   */
+  public com.google.protobuf.ByteString getAdditionalLicensesBytes(int index) {
+    return additionalLicenses_.getByteString(index);
+  }
+
+  public static final int HOSTNAME_FIELD_NUMBER = 18;
+  private volatile java.lang.Object hostname_;
+  /**
+   *
+   *
+   * <pre>
+   * The hostname to assign to the VM.
+   * </pre>
+   *
+   * <code>string hostname = 18;</code>
+   *
+   * @return The hostname.
+   */
+  @java.lang.Override
+  public java.lang.String getHostname() {
+    java.lang.Object ref = hostname_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      hostname_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The hostname to assign to the VM.
+   * </pre>
+   *
+   * <code>string hostname = 18;</code>
+   *
+   * @return The bytes for hostname.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getHostnameBytes() {
+    java.lang.Object ref = hostname_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      hostname_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1223,6 +1355,12 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 16);
+    for (int i = 0; i < additionalLicenses_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, additionalLicenses_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostname_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, hostname_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1309,6 +1447,17 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, metadata__);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < additionalLicenses_.size(); i++) {
+        dataSize += computeStringSizeNoTag(additionalLicenses_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getAdditionalLicensesList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostname_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, hostname_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1347,6 +1496,8 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
     if (getSecureBoot() != other.getSecureBoot()) return false;
     if (bootOption_ != other.bootOption_) return false;
     if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
+    if (!getAdditionalLicensesList().equals(other.getAdditionalLicensesList())) return false;
+    if (!getHostname().equals(other.getHostname())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1402,6 +1553,12 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetadata().hashCode();
     }
+    if (getAdditionalLicensesCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_LICENSES_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalLicensesList().hashCode();
+    }
+    hash = (37 * hash) + HOSTNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getHostname().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1617,6 +1774,10 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       bootOption_ = 0;
 
       internalGetMutableMetadata().clear();
+      additionalLicenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      hostname_ = "";
+
       return this;
     }
 
@@ -1683,6 +1844,12 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
       result.bootOption_ = bootOption_;
       result.metadata_ = internalGetMetadata();
       result.metadata_.makeImmutable();
+      if (((bitField0_ & 0x00000010) != 0)) {
+        additionalLicenses_ = additionalLicenses_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.additionalLicenses_ = additionalLicenses_;
+      result.hostname_ = hostname_;
       onBuilt();
       return result;
     }
@@ -1814,6 +1981,20 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
         setBootOptionValue(other.getBootOptionValue());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      if (!other.additionalLicenses_.isEmpty()) {
+        if (additionalLicenses_.isEmpty()) {
+          additionalLicenses_ = other.additionalLicenses_;
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          ensureAdditionalLicensesIsMutable();
+          additionalLicenses_.addAll(other.additionalLicenses_);
+        }
+        onChanged();
+      }
+      if (!other.getHostname().isEmpty()) {
+        hostname_ = other.hostname_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -4065,6 +4246,280 @@ public final class ComputeEngineTargetDefaults extends com.google.protobuf.Gener
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList additionalLicenses_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureAdditionalLicensesIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        additionalLicenses_ = new com.google.protobuf.LazyStringArrayList(additionalLicenses_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional licenses to assign to the VM.
+     * </pre>
+     *
+     * <code>repeated string additional_licenses = 17;</code>
+     *
+     * @return A list containing the additionalLicenses.
+     */
+    public com.google.protobuf.ProtocolStringList getAdditionalLicensesList() {
+      return additionalLicenses_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional licenses to assign to the VM.
+     * </pre>
+     *
+     * <code>repeated string additional_licenses = 17;</code>
+     *
+     * @return The count of additionalLicenses.
+     */
+    public int getAdditionalLicensesCount() {
+      return additionalLicenses_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional licenses to assign to the VM.
+     * </pre>
+     *
+     * <code>repeated string additional_licenses = 17;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The additionalLicenses at the given index.
+     */
+    public java.lang.String getAdditionalLicenses(int index) {
+      return additionalLicenses_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional licenses to assign to the VM.
+     * </pre>
+     *
+     * <code>repeated string additional_licenses = 17;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the additionalLicenses at the given index.
+     */
+    public com.google.protobuf.ByteString getAdditionalLicensesBytes(int index) {
+      return additionalLicenses_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional licenses to assign to the VM.
+     * </pre>
+     *
+     * <code>repeated string additional_licenses = 17;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The additionalLicenses to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalLicenses(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdditionalLicensesIsMutable();
+      additionalLicenses_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional licenses to assign to the VM.
+     * </pre>
+     *
+     * <code>repeated string additional_licenses = 17;</code>
+     *
+     * @param value The additionalLicenses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalLicenses(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdditionalLicensesIsMutable();
+      additionalLicenses_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional licenses to assign to the VM.
+     * </pre>
+     *
+     * <code>repeated string additional_licenses = 17;</code>
+     *
+     * @param values The additionalLicenses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdditionalLicenses(java.lang.Iterable<java.lang.String> values) {
+      ensureAdditionalLicensesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalLicenses_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional licenses to assign to the VM.
+     * </pre>
+     *
+     * <code>repeated string additional_licenses = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditionalLicenses() {
+      additionalLicenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional licenses to assign to the VM.
+     * </pre>
+     *
+     * <code>repeated string additional_licenses = 17;</code>
+     *
+     * @param value The bytes of the additionalLicenses to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalLicensesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAdditionalLicensesIsMutable();
+      additionalLicenses_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object hostname_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The hostname to assign to the VM.
+     * </pre>
+     *
+     * <code>string hostname = 18;</code>
+     *
+     * @return The hostname.
+     */
+    public java.lang.String getHostname() {
+      java.lang.Object ref = hostname_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hostname_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The hostname to assign to the VM.
+     * </pre>
+     *
+     * <code>string hostname = 18;</code>
+     *
+     * @return The bytes for hostname.
+     */
+    public com.google.protobuf.ByteString getHostnameBytes() {
+      java.lang.Object ref = hostname_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        hostname_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The hostname to assign to the VM.
+     * </pre>
+     *
+     * <code>string hostname = 18;</code>
+     *
+     * @param value The hostname to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHostname(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      hostname_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The hostname to assign to the VM.
+     * </pre>
+     *
+     * <code>string hostname = 18;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHostname() {
+
+      hostname_ = getDefaultInstance().getHostname();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The hostname to assign to the VM.
+     * </pre>
+     *
+     * <code>string hostname = 18;</code>
+     *
+     * @param value The bytes for hostname to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHostnameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      hostname_ = value;
+      onChanged();
       return this;
     }
 

@@ -19,6 +19,7 @@ package com.google.cloud.vmmigration.v1.samples;
 // [START vmmigration_v1_generated_vmmigrationclient_listmigratingvms_sync]
 import com.google.cloud.vmmigration.v1.ListMigratingVmsRequest;
 import com.google.cloud.vmmigration.v1.MigratingVm;
+import com.google.cloud.vmmigration.v1.MigratingVmView;
 import com.google.cloud.vmmigration.v1.SourceName;
 import com.google.cloud.vmmigration.v1.VmMigrationClient;
 
@@ -39,6 +40,7 @@ public class SyncListMigratingVms {
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
               .setOrderBy("orderBy-1207110587")
+              .setView(MigratingVmView.forNumber(0))
               .build();
       for (MigratingVm element : vmMigrationClient.listMigratingVms(request).iterateAll()) {
         // doThingsWith(element);
