@@ -103,6 +103,50 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
   }
 
   @Override
+  public void restrictAllowedServices(
+      RestrictAllowedServicesRequest request,
+      StreamObserver<RestrictAllowedServicesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RestrictAllowedServicesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RestrictAllowedServicesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RestrictAllowedServices, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RestrictAllowedServicesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void restrictAllowedResources(
+      RestrictAllowedResourcesRequest request,
+      StreamObserver<RestrictAllowedResourcesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RestrictAllowedResourcesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RestrictAllowedResourcesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RestrictAllowedResources, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RestrictAllowedResourcesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteWorkload(
       DeleteWorkloadRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();
@@ -139,6 +183,28 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
                   "Unrecognized response type %s for method GetWorkload, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Workload.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void analyzeWorkloadMove(
+      AnalyzeWorkloadMoveRequest request,
+      StreamObserver<AnalyzeWorkloadMoveResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AnalyzeWorkloadMoveResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AnalyzeWorkloadMoveResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AnalyzeWorkloadMove, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AnalyzeWorkloadMoveResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

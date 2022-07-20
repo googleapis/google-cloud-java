@@ -279,16 +279,15 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for IL4.
+   * Input only. Immutable. Settings specific to resources needed for IL4.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=458
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=498
    * @return Whether the il4Settings field is set.
    */
   @java.lang.Deprecated
@@ -297,16 +296,15 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for IL4.
+   * Input only. Immutable. Settings specific to resources needed for IL4.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=458
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=498
    * @return The il4Settings.
    */
   @java.lang.Deprecated
@@ -315,12 +313,11 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for IL4.
+   * Input only. Immutable. Settings specific to resources needed for IL4.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Deprecated
@@ -330,16 +327,15 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for CJIS.
+   * Input only. Immutable. Settings specific to resources needed for CJIS.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=467
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=505
    * @return Whether the cjisSettings field is set.
    */
   @java.lang.Deprecated
@@ -348,16 +344,15 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for CJIS.
+   * Input only. Immutable. Settings specific to resources needed for CJIS.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=467
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=505
    * @return The cjisSettings.
    */
   @java.lang.Deprecated
@@ -366,12 +361,11 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for CJIS.
+   * Input only. Immutable. Settings specific to resources needed for CJIS.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Deprecated
@@ -382,16 +376,15 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for FedRAMP High.
+   * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
-   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=476
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=512
    * @return Whether the fedrampHighSettings field is set.
    */
   @java.lang.Deprecated
@@ -400,16 +393,15 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for FedRAMP High.
+   * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
-   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=476
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=512
    * @return The fedrampHighSettings.
    */
   @java.lang.Deprecated
@@ -418,12 +410,11 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for FedRAMP High.
+   * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Deprecated
@@ -434,16 +425,15 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for FedRAMP Moderate.
+   * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=485
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=519
    * @return Whether the fedrampModerateSettings field is set.
    */
   @java.lang.Deprecated
@@ -452,16 +442,15 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for FedRAMP Moderate.
+   * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=485
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=519
    * @return The fedrampModerateSettings.
    */
   @java.lang.Deprecated
@@ -471,12 +460,11 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for FedRAMP Moderate.
+   * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Deprecated
@@ -573,8 +561,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. The parent resource for the resources managed by this Assured
-   * Workload. May be either empty or a folder resource which is a child of the
+   * Input only. The parent resource for the resources managed by this Assured Workload. May
+   * be either empty or a folder resource which is a child of the
    * Workload parent. If not specified all resources are created under the
    * parent organization.
    * Format:
@@ -591,8 +579,8 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. The parent resource for the resources managed by this Assured
-   * Workload. May be either empty or a folder resource which is a child of the
+   * Input only. The parent resource for the resources managed by this Assured Workload. May
+   * be either empty or a folder resource which is a child of the
    * Workload parent. If not specified all resources are created under the
    * parent organization.
    * Format:
@@ -610,56 +598,69 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project
-   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-   * Compliance Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+   * CMEK key is provisioned.
+   * This field is deprecated as of Feb 28, 2022.
+   * In order to create a Keyring, callers should specify,
+   * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.kms_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=546
    * @return Whether the kmsSettings field is set.
    */
+  @java.lang.Deprecated
   boolean hasKmsSettings();
   /**
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project
-   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-   * Compliance Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+   * CMEK key is provisioned.
+   * This field is deprecated as of Feb 28, 2022.
+   * In order to create a Keyring, callers should specify,
+   * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.kms_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=546
    * @return The kmsSettings.
    */
+  @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings getKmsSettings();
   /**
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project
-   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-   * Compliance Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+   * CMEK key is provisioned.
+   * This field is deprecated as of Feb 28, 2022.
+   * In order to create a Keyring, callers should specify,
+   * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder getKmsSettingsOrBuilder();
 
   /**
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -672,9 +673,9 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -687,9 +688,9 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -701,9 +702,9 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -717,9 +718,9 @@ public interface WorkloadOrBuilder
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>

@@ -96,6 +96,20 @@ public class AssuredWorkloadsServiceSettings
     return ((AssuredWorkloadsServiceStubSettings) getStubSettings()).updateWorkloadSettings();
   }
 
+  /** Returns the object with the settings used for calls to restrictAllowedServices. */
+  public UnaryCallSettings<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
+      restrictAllowedServicesSettings() {
+    return ((AssuredWorkloadsServiceStubSettings) getStubSettings())
+        .restrictAllowedServicesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restrictAllowedResources. */
+  public UnaryCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesSettings() {
+    return ((AssuredWorkloadsServiceStubSettings) getStubSettings())
+        .restrictAllowedResourcesSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteWorkload. */
   public UnaryCallSettings<DeleteWorkloadRequest, Empty> deleteWorkloadSettings() {
     return ((AssuredWorkloadsServiceStubSettings) getStubSettings()).deleteWorkloadSettings();
@@ -104,6 +118,12 @@ public class AssuredWorkloadsServiceSettings
   /** Returns the object with the settings used for calls to getWorkload. */
   public UnaryCallSettings<GetWorkloadRequest, Workload> getWorkloadSettings() {
     return ((AssuredWorkloadsServiceStubSettings) getStubSettings()).getWorkloadSettings();
+  }
+
+  /** Returns the object with the settings used for calls to analyzeWorkloadMove. */
+  public UnaryCallSettings<AnalyzeWorkloadMoveRequest, AnalyzeWorkloadMoveResponse>
+      analyzeWorkloadMoveSettings() {
+    return ((AssuredWorkloadsServiceStubSettings) getStubSettings()).analyzeWorkloadMoveSettings();
   }
 
   /** Returns the object with the settings used for calls to listWorkloads. */
@@ -245,6 +265,20 @@ public class AssuredWorkloadsServiceSettings
       return getStubSettingsBuilder().updateWorkloadSettings();
     }
 
+    /** Returns the builder for the settings used for calls to restrictAllowedServices. */
+    public UnaryCallSettings.Builder<
+            RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
+        restrictAllowedServicesSettings() {
+      return getStubSettingsBuilder().restrictAllowedServicesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restrictAllowedResources. */
+    public UnaryCallSettings.Builder<
+            RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+        restrictAllowedResourcesSettings() {
+      return getStubSettingsBuilder().restrictAllowedResourcesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteWorkload. */
     public UnaryCallSettings.Builder<DeleteWorkloadRequest, Empty> deleteWorkloadSettings() {
       return getStubSettingsBuilder().deleteWorkloadSettings();
@@ -253,6 +287,12 @@ public class AssuredWorkloadsServiceSettings
     /** Returns the builder for the settings used for calls to getWorkload. */
     public UnaryCallSettings.Builder<GetWorkloadRequest, Workload> getWorkloadSettings() {
       return getStubSettingsBuilder().getWorkloadSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeWorkloadMove. */
+    public UnaryCallSettings.Builder<AnalyzeWorkloadMoveRequest, AnalyzeWorkloadMoveResponse>
+        analyzeWorkloadMoveSettings() {
+      return getStubSettingsBuilder().analyzeWorkloadMoveSettings();
     }
 
     /** Returns the builder for the settings used for calls to listWorkloads. */

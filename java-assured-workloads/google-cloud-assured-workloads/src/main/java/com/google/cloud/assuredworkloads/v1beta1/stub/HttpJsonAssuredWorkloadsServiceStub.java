@@ -16,8 +16,6 @@
 
 package com.google.cloud.assuredworkloads.v1beta1.stub;
 
-import static com.google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsServiceClient.ListWorkloadsPagedResponse;
-
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -36,9 +34,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadOperationMetadata;
 import com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest;
-import com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest;
-import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest;
-import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse;
+import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest;
+import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse;
 import com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.Workload;
 import com.google.longrunning.Operation;
@@ -147,6 +144,45 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesMethodDescriptor =
+          ApiMethodDescriptor
+              .<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsService/RestrictAllowedResources")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RestrictAllowedResourcesRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=organizations/*/locations/*/workloads/*}:restrictAllowedResources",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RestrictAllowedResourcesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RestrictAllowedResourcesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RestrictAllowedResourcesResponse>newBuilder()
+                      .setDefaultInstance(RestrictAllowedResourcesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<DeleteWorkloadRequest, Empty>
       deleteWorkloadMethodDescriptor =
           ApiMethodDescriptor.<DeleteWorkloadRequest, Empty>newBuilder()
@@ -182,86 +218,13 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<GetWorkloadRequest, Workload>
-      getWorkloadMethodDescriptor =
-          ApiMethodDescriptor.<GetWorkloadRequest, Workload>newBuilder()
-              .setFullMethodName(
-                  "google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsService/GetWorkload")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<GetWorkloadRequest>newBuilder()
-                      .setPath(
-                          "/v1beta1/{name=organizations/*/locations/*/workloads/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<GetWorkloadRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<GetWorkloadRequest> serializer =
-                                ProtoRestSerializer.create();
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Workload>newBuilder()
-                      .setDefaultInstance(Workload.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<ListWorkloadsRequest, ListWorkloadsResponse>
-      listWorkloadsMethodDescriptor =
-          ApiMethodDescriptor.<ListWorkloadsRequest, ListWorkloadsResponse>newBuilder()
-              .setFullMethodName(
-                  "google.cloud.assuredworkloads.v1beta1.AssuredWorkloadsService/ListWorkloads")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<ListWorkloadsRequest>newBuilder()
-                      .setPath(
-                          "/v1beta1/{parent=organizations/*/locations/*}/workloads",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<ListWorkloadsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "parent", request.getParent());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<ListWorkloadsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<ListWorkloadsResponse>newBuilder()
-                      .setDefaultInstance(ListWorkloadsResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
   private final UnaryCallable<CreateWorkloadRequest, Operation> createWorkloadCallable;
   private final OperationCallable<CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationCallable;
   private final UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable;
+  private final UnaryCallable<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesCallable;
   private final UnaryCallable<DeleteWorkloadRequest, Empty> deleteWorkloadCallable;
-  private final UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable;
-  private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable;
-  private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
-      listWorkloadsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -321,22 +284,18 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
             .setMethodDescriptor(updateWorkloadMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+        restrictAllowedResourcesTransportSettings =
+            HttpJsonCallSettings
+                .<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>newBuilder()
+                .setMethodDescriptor(restrictAllowedResourcesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<DeleteWorkloadRequest, Empty> deleteWorkloadTransportSettings =
         HttpJsonCallSettings.<DeleteWorkloadRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteWorkloadMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
-    HttpJsonCallSettings<GetWorkloadRequest, Workload> getWorkloadTransportSettings =
-        HttpJsonCallSettings.<GetWorkloadRequest, Workload>newBuilder()
-            .setMethodDescriptor(getWorkloadMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .build();
-    HttpJsonCallSettings<ListWorkloadsRequest, ListWorkloadsResponse>
-        listWorkloadsTransportSettings =
-            HttpJsonCallSettings.<ListWorkloadsRequest, ListWorkloadsResponse>newBuilder()
-                .setMethodDescriptor(listWorkloadsMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .build();
 
     this.createWorkloadCallable =
         callableFactory.createUnaryCallable(
@@ -350,18 +309,14 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
     this.updateWorkloadCallable =
         callableFactory.createUnaryCallable(
             updateWorkloadTransportSettings, settings.updateWorkloadSettings(), clientContext);
+    this.restrictAllowedResourcesCallable =
+        callableFactory.createUnaryCallable(
+            restrictAllowedResourcesTransportSettings,
+            settings.restrictAllowedResourcesSettings(),
+            clientContext);
     this.deleteWorkloadCallable =
         callableFactory.createUnaryCallable(
             deleteWorkloadTransportSettings, settings.deleteWorkloadSettings(), clientContext);
-    this.getWorkloadCallable =
-        callableFactory.createUnaryCallable(
-            getWorkloadTransportSettings, settings.getWorkloadSettings(), clientContext);
-    this.listWorkloadsCallable =
-        callableFactory.createUnaryCallable(
-            listWorkloadsTransportSettings, settings.listWorkloadsSettings(), clientContext);
-    this.listWorkloadsPagedCallable =
-        callableFactory.createPagedCallable(
-            listWorkloadsTransportSettings, settings.listWorkloadsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -372,9 +327,8 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(createWorkloadMethodDescriptor);
     methodDescriptors.add(updateWorkloadMethodDescriptor);
+    methodDescriptors.add(restrictAllowedResourcesMethodDescriptor);
     methodDescriptors.add(deleteWorkloadMethodDescriptor);
-    methodDescriptors.add(getWorkloadMethodDescriptor);
-    methodDescriptors.add(listWorkloadsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -399,24 +353,14 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
   }
 
   @Override
+  public UnaryCallable<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesCallable() {
+    return restrictAllowedResourcesCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteWorkloadRequest, Empty> deleteWorkloadCallable() {
     return deleteWorkloadCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable() {
-    return getWorkloadCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable() {
-    return listWorkloadsCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
-      listWorkloadsPagedCallable() {
-    return listWorkloadsPagedCallable;
   }
 
   @Override
