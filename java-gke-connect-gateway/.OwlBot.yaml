@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/samples/snippets/generated"
@@ -23,10 +21,12 @@ deep-remove-regex:
 
 deep-copy-regex:
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-gke-connect-gateway-$1/src"
+  dest: "/owl-bot-staging/java-gke-connect-gateway/$1/proto-google-cloud-gke-connect-gateway-$1/src"
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-gke-connect-gateway-$1/src"
+  dest: "/owl-bot-staging/java-gke-connect-gateway/$1/grpc-google-cloud-gke-connect-gateway-$1/src"
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-gke-connect-gateway/src"
+  dest: "/owl-bot-staging/java-gke-connect-gateway/$1/google-cloud-gke-connect-gateway/src"
 - source: "/google/cloud/gkeconnect/gateway/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-gke-connect-gateway/$1/samples/snippets/generated"
+
+api-name: connectgateway
