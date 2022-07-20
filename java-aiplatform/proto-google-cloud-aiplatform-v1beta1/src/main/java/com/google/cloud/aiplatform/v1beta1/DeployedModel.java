@@ -201,6 +201,13 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 138:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              predictionResourcesCase_ = 17;
+              predictionResources_ = s;
+              break;
+            }
           case 146:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -253,6 +260,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DEDICATED_RESOURCES(7),
     AUTOMATIC_RESOURCES(8),
+    SHARED_RESOURCES(17),
     PREDICTIONRESOURCES_NOT_SET(0);
     private final int value;
 
@@ -275,6 +283,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
           return DEDICATED_RESOURCES;
         case 8:
           return AUTOMATIC_RESOURCES;
+        case 17:
+          return SHARED_RESOURCES;
         case 0:
           return PREDICTIONRESOURCES_NOT_SET;
         default:
@@ -399,6 +409,82 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.aiplatform.v1beta1.AutomaticResources) predictionResources_;
     }
     return com.google.cloud.aiplatform.v1beta1.AutomaticResources.getDefaultInstance();
+  }
+
+  public static final int SHARED_RESOURCES_FIELD_NUMBER = 17;
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the shared DeploymentResourcePool to deploy on.
+   * Format:
+   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * </pre>
+   *
+   * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the sharedResources field is set.
+   */
+  public boolean hasSharedResources() {
+    return predictionResourcesCase_ == 17;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the shared DeploymentResourcePool to deploy on.
+   * Format:
+   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * </pre>
+   *
+   * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The sharedResources.
+   */
+  public java.lang.String getSharedResources() {
+    java.lang.Object ref = "";
+    if (predictionResourcesCase_ == 17) {
+      ref = predictionResources_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (predictionResourcesCase_ == 17) {
+        predictionResources_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of the shared DeploymentResourcePool to deploy on.
+   * Format:
+   * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+   * </pre>
+   *
+   * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for sharedResources.
+   */
+  public com.google.protobuf.ByteString getSharedResourcesBytes() {
+    java.lang.Object ref = "";
+    if (predictionResourcesCase_ == 17) {
+      ref = predictionResources_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (predictionResourcesCase_ == 17) {
+        predictionResources_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ID_FIELD_NUMBER = 1;
@@ -943,6 +1029,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (privateEndpoints_ != null) {
       output.writeMessage(14, getPrivateEndpoints());
     }
+    if (predictionResourcesCase_ == 17) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, predictionResources_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, modelVersionId_);
     }
@@ -992,6 +1081,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     if (privateEndpoints_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getPrivateEndpoints());
     }
+    if (predictionResourcesCase_ == 17) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, predictionResources_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelVersionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, modelVersionId_);
     }
@@ -1037,6 +1129,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         break;
       case 8:
         if (!getAutomaticResources().equals(other.getAutomaticResources())) return false;
+        break;
+      case 17:
+        if (!getSharedResources().equals(other.getSharedResources())) return false;
         break;
       case 0:
       default:
@@ -1086,6 +1181,10 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       case 8:
         hash = (37 * hash) + AUTOMATIC_RESOURCES_FIELD_NUMBER;
         hash = (53 * hash) + getAutomaticResources().hashCode();
+        break;
+      case 17:
+        hash = (37 * hash) + SHARED_RESOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getSharedResources().hashCode();
         break;
       case 0:
       default:
@@ -1310,6 +1409,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
           result.predictionResources_ = automaticResourcesBuilder_.build();
         }
       }
+      if (predictionResourcesCase_ == 17) {
+        result.predictionResources_ = predictionResources_;
+      }
       result.id_ = id_;
       result.model_ = model_;
       result.modelVersionId_ = modelVersionId_;
@@ -1427,6 +1529,13 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         case AUTOMATIC_RESOURCES:
           {
             mergeAutomaticResources(other.getAutomaticResources());
+            break;
+          }
+        case SHARED_RESOURCES:
+          {
+            predictionResourcesCase_ = 17;
+            predictionResources_ = other.predictionResources_;
+            onChanged();
             break;
           }
         case PREDICTIONRESOURCES_NOT_SET:
@@ -1926,6 +2035,152 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return automaticResourcesBuilder_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the shared DeploymentResourcePool to deploy on.
+     * Format:
+     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * </pre>
+     *
+     * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the sharedResources field is set.
+     */
+    @java.lang.Override
+    public boolean hasSharedResources() {
+      return predictionResourcesCase_ == 17;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the shared DeploymentResourcePool to deploy on.
+     * Format:
+     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * </pre>
+     *
+     * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The sharedResources.
+     */
+    @java.lang.Override
+    public java.lang.String getSharedResources() {
+      java.lang.Object ref = "";
+      if (predictionResourcesCase_ == 17) {
+        ref = predictionResources_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (predictionResourcesCase_ == 17) {
+          predictionResources_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the shared DeploymentResourcePool to deploy on.
+     * Format:
+     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * </pre>
+     *
+     * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for sharedResources.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSharedResourcesBytes() {
+      java.lang.Object ref = "";
+      if (predictionResourcesCase_ == 17) {
+        ref = predictionResources_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (predictionResourcesCase_ == 17) {
+          predictionResources_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the shared DeploymentResourcePool to deploy on.
+     * Format:
+     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * </pre>
+     *
+     * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The sharedResources to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSharedResources(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      predictionResourcesCase_ = 17;
+      predictionResources_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the shared DeploymentResourcePool to deploy on.
+     * Format:
+     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * </pre>
+     *
+     * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSharedResources() {
+      if (predictionResourcesCase_ == 17) {
+        predictionResourcesCase_ = 0;
+        predictionResources_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of the shared DeploymentResourcePool to deploy on.
+     * Format:
+     * projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}
+     * </pre>
+     *
+     * <code>string shared_resources = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for sharedResources to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSharedResourcesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      predictionResourcesCase_ = 17;
+      predictionResources_ = value;
+      onChanged();
+      return this;
     }
 
     private java.lang.Object id_ = "";

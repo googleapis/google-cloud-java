@@ -1048,7 +1048,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=116
+   *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=120
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Override
@@ -3864,7 +3864,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=116
+     *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=120
      * @return The enablePrivateServiceConnect.
      */
     @java.lang.Override
@@ -3885,7 +3885,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=116
+     *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=120
      * @param value The enablePrivateServiceConnect to set.
      * @return This builder for chaining.
      */
@@ -3909,7 +3909,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=116
+     *     deprecated. See google/cloud/aiplatform/v1beta1/endpoint.proto;l=120
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

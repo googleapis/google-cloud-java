@@ -95,37 +95,42 @@ public final class EndpointProto {
           + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:e\352Ab\n\"aip"
           + "latform.googleapis.com/Endpoint\022<project"
           + "s/{project}/locations/{location}/endpoin"
-          + "ts/{endpoint}\"\374\004\n\rDeployedModel\022R\n\023dedic"
+          + "ts/{endpoint}\"\317\005\n\rDeployedModel\022R\n\023dedic"
           + "ated_resources\030\007 \001(\01323.google.cloud.aipl"
           + "atform.v1beta1.DedicatedResourcesH\000\022R\n\023a"
           + "utomatic_resources\030\010 \001(\01323.google.cloud."
           + "aiplatform.v1beta1.AutomaticResourcesH\000\022"
-          + "\017\n\002id\030\001 \001(\tB\003\340A\005\0226\n\005model\030\002 \001(\tB\'\340A\002\372A!\n"
-          + "\037aiplatform.googleapis.com/Model\022\035\n\020mode"
-          + "l_version_id\030\022 \001(\tB\003\340A\003\022\024\n\014display_name\030"
-          + "\003 \001(\t\0224\n\013create_time\030\006 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\022J\n\020explanation_spec\030"
-          + "\t \001(\01320.google.cloud.aiplatform.v1beta1."
-          + "ExplanationSpec\022\027\n\017service_account\030\013 \001(\t"
-          + "\022 \n\030enable_container_logging\030\014 \001(\010\022\035\n\025en"
-          + "able_access_logging\030\r \001(\010\022Q\n\021private_end"
-          + "points\030\016 \001(\01321.google.cloud.aiplatform.v"
-          + "1beta1.PrivateEndpointsB\003\340A\003B\026\n\024predicti"
-          + "on_resources\"\217\001\n\020PrivateEndpoints\022\035\n\020pre"
-          + "dict_http_uri\030\001 \001(\tB\003\340A\003\022\035\n\020explain_http"
-          + "_uri\030\002 \001(\tB\003\340A\003\022\034\n\017health_http_uri\030\003 \001(\t"
-          + "B\003\340A\003\022\037\n\022service_attachment\030\004 \001(\tB\003\340A\003\"\241"
-          + "\001\n#PredictRequestResponseLoggingConfig\022\017"
-          + "\n\007enabled\030\001 \001(\010\022\025\n\rsampling_rate\030\002 \001(\001\022R"
-          + "\n\024bigquery_destination\030\003 \001(\01324.google.cl"
-          + "oud.aiplatform.v1beta1.BigQueryDestinati"
-          + "onB\352\001\n#com.google.cloud.aiplatform.v1bet"
-          + "a1B\rEndpointProtoP\001ZIgoogle.golang.org/g"
-          + "enproto/googleapis/cloud/aiplatform/v1be"
-          + "ta1;aiplatform\252\002\037Google.Cloud.AIPlatform"
-          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
-          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
-          + "\006proto3"
+          + "Q\n\020shared_resources\030\021 \001(\tB5\372A2\n0aiplatfo"
+          + "rm.googleapis.com/DeploymentResourcePool"
+          + "H\000\022\017\n\002id\030\001 \001(\tB\003\340A\005\0226\n\005model\030\002 \001(\tB\'\340A\002\372"
+          + "A!\n\037aiplatform.googleapis.com/Model\022\035\n\020m"
+          + "odel_version_id\030\022 \001(\tB\003\340A\003\022\024\n\014display_na"
+          + "me\030\003 \001(\t\0224\n\013create_time\030\006 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\003\340A\003\022J\n\020explanation_sp"
+          + "ec\030\t \001(\01320.google.cloud.aiplatform.v1bet"
+          + "a1.ExplanationSpec\022\027\n\017service_account\030\013 "
+          + "\001(\t\022 \n\030enable_container_logging\030\014 \001(\010\022\035\n"
+          + "\025enable_access_logging\030\r \001(\010\022Q\n\021private_"
+          + "endpoints\030\016 \001(\01321.google.cloud.aiplatfor"
+          + "m.v1beta1.PrivateEndpointsB\003\340A\003B\026\n\024predi"
+          + "ction_resources\"\217\001\n\020PrivateEndpoints\022\035\n\020"
+          + "predict_http_uri\030\001 \001(\tB\003\340A\003\022\035\n\020explain_h"
+          + "ttp_uri\030\002 \001(\tB\003\340A\003\022\034\n\017health_http_uri\030\003 "
+          + "\001(\tB\003\340A\003\022\037\n\022service_attachment\030\004 \001(\tB\003\340A"
+          + "\003\"\241\001\n#PredictRequestResponseLoggingConfi"
+          + "g\022\017\n\007enabled\030\001 \001(\010\022\025\n\rsampling_rate\030\002 \001("
+          + "\001\022R\n\024bigquery_destination\030\003 \001(\01324.google"
+          + ".cloud.aiplatform.v1beta1.BigQueryDestin"
+          + "ationB\374\002\n#com.google.cloud.aiplatform.v1"
+          + "beta1B\rEndpointProtoP\001ZIgoogle.golang.or"
+          + "g/genproto/googleapis/cloud/aiplatform/v"
+          + "1beta1;aiplatform\252\002\037Google.Cloud.AIPlatf"
+          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
+          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
+          + "a1\352A\216\001\n0aiplatform.googleapis.com/Deploy"
+          + "mentResourcePool\022Zprojects/{project}/loc"
+          + "ations/{location}/deploymentResourcePool"
+          + "s/{deployment_resource_pool}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -184,6 +189,7 @@ public final class EndpointProto {
             new java.lang.String[] {
               "DedicatedResources",
               "AutomaticResources",
+              "SharedResources",
               "Id",
               "Model",
               "ModelVersionId",
@@ -216,6 +222,7 @@ public final class EndpointProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
