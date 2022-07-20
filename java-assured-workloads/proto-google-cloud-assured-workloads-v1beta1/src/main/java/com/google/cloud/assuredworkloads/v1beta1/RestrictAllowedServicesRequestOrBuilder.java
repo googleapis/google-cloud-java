@@ -18,25 +18,23 @@
 
 package com.google.cloud.assuredworkloads.v1beta1;
 
-public interface GetWorkloadRequestOrBuilder
+public interface RestrictAllowedServicesRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the Workload to fetch. This is the workloads's
+   * Required. The resource name of the Workload. This is the workloads's
    * relative path in the API, formatted as
    * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
    * For example,
    * "organizations/123/locations/us-east1/workloads/assured-workload-1".
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The name.
    */
@@ -45,18 +43,46 @@ public interface GetWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Workload to fetch. This is the workloads's
+   * Required. The resource name of the Workload. This is the workloads's
    * relative path in the API, formatted as
    * "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
    * For example,
    * "organizations/123/locations/us-east1/workloads/assured-workload-1".
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The type of restriction for using gcp services in the Workload environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest.RestrictionType restriction_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for restrictionType.
+   */
+  int getRestrictionTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Required. The type of restriction for using gcp services in the Workload environment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest.RestrictionType restriction_type = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The restrictionType.
+   */
+  com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest.RestrictionType
+      getRestrictionType();
 }

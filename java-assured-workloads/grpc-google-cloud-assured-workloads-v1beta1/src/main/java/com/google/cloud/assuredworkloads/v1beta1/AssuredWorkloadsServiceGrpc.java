@@ -26,7 +26,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto")
+    comments = "Source: google/cloud/assuredworkloads/v1beta1/assuredworkloads_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AssuredWorkloadsServiceGrpc {
 
@@ -132,6 +132,115 @@ public final class AssuredWorkloadsServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest,
+          com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse>
+      getRestrictAllowedServicesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestrictAllowedServices",
+      requestType = com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest.class,
+      responseType =
+          com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest,
+          com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse>
+      getRestrictAllowedServicesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest,
+            com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse>
+        getRestrictAllowedServicesMethod;
+    if ((getRestrictAllowedServicesMethod =
+            AssuredWorkloadsServiceGrpc.getRestrictAllowedServicesMethod)
+        == null) {
+      synchronized (AssuredWorkloadsServiceGrpc.class) {
+        if ((getRestrictAllowedServicesMethod =
+                AssuredWorkloadsServiceGrpc.getRestrictAllowedServicesMethod)
+            == null) {
+          AssuredWorkloadsServiceGrpc.getRestrictAllowedServicesMethod =
+              getRestrictAllowedServicesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest,
+                          com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RestrictAllowedServices"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1beta1
+                                  .RestrictAllowedServicesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1beta1
+                                  .RestrictAllowedServicesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssuredWorkloadsServiceMethodDescriptorSupplier(
+                              "RestrictAllowedServices"))
+                      .build();
+        }
+      }
+    }
+    return getRestrictAllowedServicesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest,
+          com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse>
+      getRestrictAllowedResourcesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestrictAllowedResources",
+      requestType = com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest.class,
+      responseType =
+          com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest,
+          com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse>
+      getRestrictAllowedResourcesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest,
+            com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse>
+        getRestrictAllowedResourcesMethod;
+    if ((getRestrictAllowedResourcesMethod =
+            AssuredWorkloadsServiceGrpc.getRestrictAllowedResourcesMethod)
+        == null) {
+      synchronized (AssuredWorkloadsServiceGrpc.class) {
+        if ((getRestrictAllowedResourcesMethod =
+                AssuredWorkloadsServiceGrpc.getRestrictAllowedResourcesMethod)
+            == null) {
+          AssuredWorkloadsServiceGrpc.getRestrictAllowedResourcesMethod =
+              getRestrictAllowedResourcesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest,
+                          com.google.cloud.assuredworkloads.v1beta1
+                              .RestrictAllowedResourcesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RestrictAllowedResources"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1beta1
+                                  .RestrictAllowedResourcesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1beta1
+                                  .RestrictAllowedResourcesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssuredWorkloadsServiceMethodDescriptorSupplier(
+                              "RestrictAllowedResources"))
+                      .build();
+        }
+      }
+    }
+    return getRestrictAllowedResourcesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest,
           com.google.protobuf.Empty>
       getDeleteWorkloadMethod;
@@ -223,6 +332,58 @@ public final class AssuredWorkloadsServiceGrpc {
       }
     }
     return getGetWorkloadMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest,
+          com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse>
+      getAnalyzeWorkloadMoveMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnalyzeWorkloadMove",
+      requestType = com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest.class,
+      responseType = com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest,
+          com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse>
+      getAnalyzeWorkloadMoveMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest,
+            com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse>
+        getAnalyzeWorkloadMoveMethod;
+    if ((getAnalyzeWorkloadMoveMethod = AssuredWorkloadsServiceGrpc.getAnalyzeWorkloadMoveMethod)
+        == null) {
+      synchronized (AssuredWorkloadsServiceGrpc.class) {
+        if ((getAnalyzeWorkloadMoveMethod =
+                AssuredWorkloadsServiceGrpc.getAnalyzeWorkloadMoveMethod)
+            == null) {
+          AssuredWorkloadsServiceGrpc.getAnalyzeWorkloadMoveMethod =
+              getAnalyzeWorkloadMoveMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest,
+                          com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "AnalyzeWorkloadMove"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssuredWorkloadsServiceMethodDescriptorSupplier(
+                              "AnalyzeWorkloadMove"))
+                      .build();
+        }
+      }
+    }
+    return getAnalyzeWorkloadMoveMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -358,9 +519,54 @@ public final class AssuredWorkloadsServiceGrpc {
      *
      *
      * <pre>
+     * Restrict the list of services allowed in the Workload environment.
+     * The current list of allowed services can be found at
+     * https://cloud.google.com/assured-workloads/docs/supported-products
+     * In addition to assuredworkloads.workload.update permission, the user should
+     * also have orgpolicy.policy.set permission on the folder resource
+     * to use this functionality.
+     * </pre>
+     */
+    public void restrictAllowedServices(
+        com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRestrictAllowedServicesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restrict the list of resources allowed in the Workload environment.
+     * The current list of allowed products can be found at
+     * https://cloud.google.com/assured-workloads/docs/supported-products
+     * In addition to assuredworkloads.workload.update permission, the user should
+     * also have orgpolicy.policy.set permission on the folder resource
+     * to use this functionality.
+     * </pre>
+     */
+    public void restrictAllowedResources(
+        com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRestrictAllowedResourcesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the workload. Make sure that workload's direct children are already
      * in a deleted state, otherwise the request will fail with a
      * FAILED_PRECONDITION error.
+     * In addition to assuredworkloads.workload.delete permission, the user should
+     * also have orgpolicy.policy.set permission on the deleted folder to remove
+     * Assured Workloads OrgPolicies.
      * </pre>
      */
     public void deleteWorkload(
@@ -383,6 +589,23 @@ public final class AssuredWorkloadsServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetWorkloadMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyze if the source Assured Workloads can be moved to the target Assured
+     * Workload
+     * </pre>
+     */
+    public void analyzeWorkloadMove(
+        com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnalyzeWorkloadMoveMethod(), responseObserver);
     }
 
     /**
@@ -417,6 +640,20 @@ public final class AssuredWorkloadsServiceGrpc {
                       com.google.cloud.assuredworkloads.v1beta1.Workload>(
                       this, METHODID_UPDATE_WORKLOAD)))
           .addMethod(
+              getRestrictAllowedServicesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest,
+                      com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse>(
+                      this, METHODID_RESTRICT_ALLOWED_SERVICES)))
+          .addMethod(
+              getRestrictAllowedResourcesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest,
+                      com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse>(
+                      this, METHODID_RESTRICT_ALLOWED_RESOURCES)))
+          .addMethod(
               getDeleteWorkloadMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
                   new MethodHandlers<
@@ -429,6 +666,13 @@ public final class AssuredWorkloadsServiceGrpc {
                       com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest,
                       com.google.cloud.assuredworkloads.v1beta1.Workload>(
                       this, METHODID_GET_WORKLOAD)))
+          .addMethod(
+              getAnalyzeWorkloadMoveMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest,
+                      com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse>(
+                      this, METHODID_ANALYZE_WORKLOAD_MOVE)))
           .addMethod(
               getListWorkloadsMethod(),
               io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -499,9 +743,58 @@ public final class AssuredWorkloadsServiceGrpc {
      *
      *
      * <pre>
+     * Restrict the list of services allowed in the Workload environment.
+     * The current list of allowed services can be found at
+     * https://cloud.google.com/assured-workloads/docs/supported-products
+     * In addition to assuredworkloads.workload.update permission, the user should
+     * also have orgpolicy.policy.set permission on the folder resource
+     * to use this functionality.
+     * </pre>
+     */
+    public void restrictAllowedServices(
+        com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRestrictAllowedServicesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restrict the list of resources allowed in the Workload environment.
+     * The current list of allowed products can be found at
+     * https://cloud.google.com/assured-workloads/docs/supported-products
+     * In addition to assuredworkloads.workload.update permission, the user should
+     * also have orgpolicy.policy.set permission on the folder resource
+     * to use this functionality.
+     * </pre>
+     */
+    public void restrictAllowedResources(
+        com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRestrictAllowedResourcesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the workload. Make sure that workload's direct children are already
      * in a deleted state, otherwise the request will fail with a
      * FAILED_PRECONDITION error.
+     * In addition to assuredworkloads.workload.delete permission, the user should
+     * also have orgpolicy.policy.set permission on the deleted folder to remove
+     * Assured Workloads OrgPolicies.
      * </pre>
      */
     public void deleteWorkload(
@@ -526,6 +819,25 @@ public final class AssuredWorkloadsServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetWorkloadMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyze if the source Assured Workloads can be moved to the target Assured
+     * Workload
+     * </pre>
+     */
+    public void analyzeWorkloadMove(
+        com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAnalyzeWorkloadMoveMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -601,9 +913,50 @@ public final class AssuredWorkloadsServiceGrpc {
      *
      *
      * <pre>
+     * Restrict the list of services allowed in the Workload environment.
+     * The current list of allowed services can be found at
+     * https://cloud.google.com/assured-workloads/docs/supported-products
+     * In addition to assuredworkloads.workload.update permission, the user should
+     * also have orgpolicy.policy.set permission on the folder resource
+     * to use this functionality.
+     * </pre>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse
+        restrictAllowedServices(
+            com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestrictAllowedServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restrict the list of resources allowed in the Workload environment.
+     * The current list of allowed products can be found at
+     * https://cloud.google.com/assured-workloads/docs/supported-products
+     * In addition to assuredworkloads.workload.update permission, the user should
+     * also have orgpolicy.policy.set permission on the folder resource
+     * to use this functionality.
+     * </pre>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse
+        restrictAllowedResources(
+            com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestrictAllowedResourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the workload. Make sure that workload's direct children are already
      * in a deleted state, otherwise the request will fail with a
      * FAILED_PRECONDITION error.
+     * In addition to assuredworkloads.workload.delete permission, the user should
+     * also have orgpolicy.policy.set permission on the deleted folder to remove
+     * Assured Workloads OrgPolicies.
      * </pre>
      */
     public com.google.protobuf.Empty deleteWorkload(
@@ -623,6 +976,21 @@ public final class AssuredWorkloadsServiceGrpc {
         com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetWorkloadMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyze if the source Assured Workloads can be moved to the target Assured
+     * Workload
+     * </pre>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse
+        analyzeWorkloadMove(
+            com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeWorkloadMoveMethod(), getCallOptions(), request);
     }
 
     /**
@@ -693,9 +1061,52 @@ public final class AssuredWorkloadsServiceGrpc {
      *
      *
      * <pre>
+     * Restrict the list of services allowed in the Workload environment.
+     * The current list of allowed services can be found at
+     * https://cloud.google.com/assured-workloads/docs/supported-products
+     * In addition to assuredworkloads.workload.update permission, the user should
+     * also have orgpolicy.policy.set permission on the folder resource
+     * to use this functionality.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse>
+        restrictAllowedServices(
+            com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRestrictAllowedServicesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restrict the list of resources allowed in the Workload environment.
+     * The current list of allowed products can be found at
+     * https://cloud.google.com/assured-workloads/docs/supported-products
+     * In addition to assuredworkloads.workload.update permission, the user should
+     * also have orgpolicy.policy.set permission on the folder resource
+     * to use this functionality.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse>
+        restrictAllowedResources(
+            com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRestrictAllowedResourcesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the workload. Make sure that workload's direct children are already
      * in a deleted state, otherwise the request will fail with a
      * FAILED_PRECONDITION error.
+     * In addition to assuredworkloads.workload.delete permission, the user should
+     * also have orgpolicy.policy.set permission on the deleted folder to remove
+     * Assured Workloads OrgPolicies.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -722,6 +1133,22 @@ public final class AssuredWorkloadsServiceGrpc {
      *
      *
      * <pre>
+     * Analyze if the source Assured Workloads can be moved to the target Assured
+     * Workload
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse>
+        analyzeWorkloadMove(
+            com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAnalyzeWorkloadMoveMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Assured Workloads under a CRM Node.
      * </pre>
      */
@@ -735,9 +1162,12 @@ public final class AssuredWorkloadsServiceGrpc {
 
   private static final int METHODID_CREATE_WORKLOAD = 0;
   private static final int METHODID_UPDATE_WORKLOAD = 1;
-  private static final int METHODID_DELETE_WORKLOAD = 2;
-  private static final int METHODID_GET_WORKLOAD = 3;
-  private static final int METHODID_LIST_WORKLOADS = 4;
+  private static final int METHODID_RESTRICT_ALLOWED_SERVICES = 2;
+  private static final int METHODID_RESTRICT_ALLOWED_RESOURCES = 3;
+  private static final int METHODID_DELETE_WORKLOAD = 4;
+  private static final int METHODID_GET_WORKLOAD = 5;
+  private static final int METHODID_ANALYZE_WORKLOAD_MOVE = 6;
+  private static final int METHODID_LIST_WORKLOADS = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -767,6 +1197,20 @@ public final class AssuredWorkloadsServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1beta1.Workload>)
                   responseObserver);
           break;
+        case METHODID_RESTRICT_ALLOWED_SERVICES:
+          serviceImpl.restrictAllowedServices(
+              (com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_RESTRICT_ALLOWED_RESOURCES:
+          serviceImpl.restrictAllowedResources(
+              (com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse>)
+                  responseObserver);
+          break;
         case METHODID_DELETE_WORKLOAD:
           serviceImpl.deleteWorkload(
               (com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest) request,
@@ -776,6 +1220,13 @@ public final class AssuredWorkloadsServiceGrpc {
           serviceImpl.getWorkload(
               (com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1beta1.Workload>)
+                  responseObserver);
+          break;
+        case METHODID_ANALYZE_WORKLOAD_MOVE:
+          serviceImpl.analyzeWorkloadMove(
+              (com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_WORKLOADS:
@@ -808,7 +1259,7 @@ public final class AssuredWorkloadsServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsProto.getDescriptor();
+      return com.google.cloud.assuredworkloads.v1beta1.AssuredworkloadsServiceProto.getDescriptor();
     }
 
     @java.lang.Override
@@ -851,8 +1302,11 @@ public final class AssuredWorkloadsServiceGrpc {
                       .setSchemaDescriptor(new AssuredWorkloadsServiceFileDescriptorSupplier())
                       .addMethod(getCreateWorkloadMethod())
                       .addMethod(getUpdateWorkloadMethod())
+                      .addMethod(getRestrictAllowedServicesMethod())
+                      .addMethod(getRestrictAllowedResourcesMethod())
                       .addMethod(getDeleteWorkloadMethod())
                       .addMethod(getGetWorkloadMethod())
+                      .addMethod(getAnalyzeWorkloadMoveMethod())
                       .addMethod(getListWorkloadsMethod())
                       .build();
         }

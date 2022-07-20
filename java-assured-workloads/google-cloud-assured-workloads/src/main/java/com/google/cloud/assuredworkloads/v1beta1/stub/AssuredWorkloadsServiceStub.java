@@ -22,12 +22,18 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest;
+import com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse;
 import com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadOperationMetadata;
 import com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest;
 import com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse;
+import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest;
+import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse;
+import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesRequest;
+import com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedServicesResponse;
 import com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest;
 import com.google.cloud.assuredworkloads.v1beta1.Workload;
 import com.google.longrunning.Operation;
@@ -66,12 +72,27 @@ public abstract class AssuredWorkloadsServiceStub implements BackgroundResource 
     throw new UnsupportedOperationException("Not implemented: updateWorkloadCallable()");
   }
 
+  public UnaryCallable<RestrictAllowedServicesRequest, RestrictAllowedServicesResponse>
+      restrictAllowedServicesCallable() {
+    throw new UnsupportedOperationException("Not implemented: restrictAllowedServicesCallable()");
+  }
+
+  public UnaryCallable<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
+      restrictAllowedResourcesCallable() {
+    throw new UnsupportedOperationException("Not implemented: restrictAllowedResourcesCallable()");
+  }
+
   public UnaryCallable<DeleteWorkloadRequest, Empty> deleteWorkloadCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteWorkloadCallable()");
   }
 
   public UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable() {
     throw new UnsupportedOperationException("Not implemented: getWorkloadCallable()");
+  }
+
+  public UnaryCallable<AnalyzeWorkloadMoveRequest, AnalyzeWorkloadMoveResponse>
+      analyzeWorkloadMoveCallable() {
+    throw new UnsupportedOperationException("Not implemented: analyzeWorkloadMoveCallable()");
   }
 
   public UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>

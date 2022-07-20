@@ -1858,6 +1858,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  @java.lang.Deprecated
   public interface KMSSettingsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings)
@@ -1867,9 +1868,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management
-     * Service will automatically create a new version of the crypto key and
-     * mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+     * new version of the crypto key and mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1883,9 +1883,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management
-     * Service will automatically create a new version of the crypto key and
-     * mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+     * new version of the crypto key and mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1899,9 +1898,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management
-     * Service will automatically create a new version of the crypto key and
-     * mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+     * new version of the crypto key and mark it as the primary.
      * </pre>
      *
      * <code>
@@ -1914,9 +1912,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-     * this period when the Key Management Service automatically rotates a key.
-     * Must be at least 24 hours and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+     * Management Service automatically rotates a key. Must be at least 24 hours
+     * and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -1930,9 +1928,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-     * this period when the Key Management Service automatically rotates a key.
-     * Must be at least 24 hours and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+     * Management Service automatically rotates a key. Must be at least 24 hours
+     * and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -1946,9 +1944,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-     * this period when the Key Management Service automatically rotates a key.
-     * Must be at least 24 hours and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+     * Management Service automatically rotates a key. Must be at least 24 hours
+     * and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -1966,6 +1964,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    * Protobuf type {@code google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings}
    */
+  @java.lang.Deprecated
   public static final class KMSSettings extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings)
@@ -2079,9 +2078,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management
-     * Service will automatically create a new version of the crypto key and
-     * mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+     * new version of the crypto key and mark it as the primary.
      * </pre>
      *
      * <code>
@@ -2098,9 +2096,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management
-     * Service will automatically create a new version of the crypto key and
-     * mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+     * new version of the crypto key and mark it as the primary.
      * </pre>
      *
      * <code>
@@ -2119,9 +2116,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. The time at which the Key Management
-     * Service will automatically create a new version of the crypto key and
-     * mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+     * new version of the crypto key and mark it as the primary.
      * </pre>
      *
      * <code>
@@ -2139,9 +2135,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-     * this period when the Key Management Service automatically rotates a key.
-     * Must be at least 24 hours and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+     * Management Service automatically rotates a key. Must be at least 24 hours
+     * and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -2158,9 +2154,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-     * this period when the Key Management Service automatically rotates a key.
-     * Must be at least 24 hours and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+     * Management Service automatically rotates a key. Must be at least 24 hours
+     * and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -2179,9 +2175,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-     * this period when the Key Management Service automatically rotates a key.
-     * Must be at least 24 hours and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+     * Management Service automatically rotates a key. Must be at least 24 hours
+     * and at most 876,000 hours.
      * </pre>
      *
      * <code>
@@ -2570,9 +2566,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2588,9 +2583,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2612,9 +2606,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2638,9 +2631,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2661,9 +2653,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2691,9 +2682,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2715,9 +2705,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2733,9 +2722,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2755,9 +2743,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. The time at which the Key Management
-       * Service will automatically create a new version of the crypto key and
-       * mark it as the primary.
+       * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
+       * new version of the crypto key and mark it as the primary.
        * </pre>
        *
        * <code>
@@ -2791,9 +2778,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2809,9 +2796,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2833,9 +2820,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2859,9 +2846,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2882,9 +2869,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2912,9 +2899,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2936,9 +2923,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2954,9 +2941,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -2976,9 +2963,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. [next_rotation_time] will be advanced by
-       * this period when the Key Management Service automatically rotates a key.
-       * Must be at least 24 hours and at most 876,000 hours.
+       * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
+       * Management Service automatically rotates a key. Must be at least 24 hours
+       * and at most 876,000 hours.
        * </pre>
        *
        * <code>
@@ -3067,12 +3054,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the kmsSettings field is set.
@@ -3082,12 +3068,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The kmsSettings.
@@ -3097,12 +3082,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
@@ -3219,12 +3203,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the kmsSettings field is set.
@@ -3237,12 +3220,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The kmsSettings.
@@ -3257,12 +3239,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Override
@@ -3620,12 +3601,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return Whether the kmsSettings field is set.
@@ -3637,12 +3617,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return The kmsSettings.
@@ -3660,12 +3639,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder setKmsSettings(
@@ -3686,12 +3664,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder setKmsSettings(
@@ -3709,12 +3686,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder mergeKmsSettings(
@@ -3740,12 +3716,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder clearKmsSettings() {
@@ -3763,12 +3738,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder
@@ -3781,12 +3755,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
@@ -3803,12 +3776,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -3893,12 +3865,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the kmsSettings field is set.
@@ -3908,12 +3879,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The kmsSettings.
@@ -3923,12 +3893,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
@@ -4045,12 +4014,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the kmsSettings field is set.
@@ -4063,12 +4031,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The kmsSettings.
@@ -4083,12 +4050,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Override
@@ -4448,12 +4414,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return Whether the kmsSettings field is set.
@@ -4465,12 +4430,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return The kmsSettings.
@@ -4488,12 +4452,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder setKmsSettings(
@@ -4514,12 +4477,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder setKmsSettings(
@@ -4537,12 +4499,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder mergeKmsSettings(
@@ -4568,12 +4529,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder clearKmsSettings() {
@@ -4591,12 +4551,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder
@@ -4609,12 +4568,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
@@ -4631,12 +4589,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4721,12 +4678,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the kmsSettings field is set.
@@ -4736,12 +4692,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The kmsSettings.
@@ -4751,12 +4706,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
@@ -4873,12 +4827,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the kmsSettings field is set.
@@ -4891,12 +4844,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The kmsSettings.
@@ -4911,12 +4863,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Override
@@ -5282,12 +5233,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return Whether the kmsSettings field is set.
@@ -5299,12 +5249,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return The kmsSettings.
@@ -5322,12 +5271,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder setKmsSettings(
@@ -5348,12 +5296,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder setKmsSettings(
@@ -5371,12 +5318,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder mergeKmsSettings(
@@ -5402,12 +5348,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder clearKmsSettings() {
@@ -5425,12 +5370,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder
@@ -5443,12 +5387,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
@@ -5465,12 +5408,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5556,12 +5498,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the kmsSettings field is set.
@@ -5571,12 +5512,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The kmsSettings.
@@ -5586,12 +5526,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
@@ -5709,12 +5648,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the kmsSettings field is set.
@@ -5727,12 +5665,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The kmsSettings.
@@ -5747,12 +5684,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings used to create a CMEK crypto
-     * key.
+     * Input only. Immutable. Settings used to create a CMEK crypto key.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Override
@@ -6125,12 +6061,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return Whether the kmsSettings field is set.
@@ -6142,12 +6077,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return The kmsSettings.
@@ -6165,12 +6099,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder setKmsSettings(
@@ -6191,12 +6124,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder setKmsSettings(
@@ -6214,12 +6146,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder mergeKmsSettings(
@@ -6245,12 +6176,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public Builder clearKmsSettings() {
@@ -6268,12 +6198,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder
@@ -6286,12 +6215,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
@@ -6308,12 +6236,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Input only. Immutable. Settings used to create a CMEK crypto
-       * key.
+       * Input only. Immutable. Settings used to create a CMEK crypto key.
        * </pre>
        *
        * <code>
-       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+       * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 1 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -6401,6 +6328,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Resource identifier.
      * For a project this represents project_id. If the project is already
      * taken, the workload creation will fail.
+     * For KeyRing, this represents the keyring_id.
+     * For a folder, don't set this value as folder_id is assigned by Google.
      * </pre>
      *
      * <code>string resource_id = 1;</code>
@@ -6415,6 +6344,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Resource identifier.
      * For a project this represents project_id. If the project is already
      * taken, the workload creation will fail.
+     * For KeyRing, this represents the keyring_id.
+     * For a folder, don't set this value as folder_id is assigned by Google.
      * </pre>
      *
      * <code>string resource_id = 1;</code>
@@ -6605,6 +6536,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Resource identifier.
      * For a project this represents project_id. If the project is already
      * taken, the workload creation will fail.
+     * For KeyRing, this represents the keyring_id.
+     * For a folder, don't set this value as folder_id is assigned by Google.
      * </pre>
      *
      * <code>string resource_id = 1;</code>
@@ -6630,6 +6563,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * Resource identifier.
      * For a project this represents project_id. If the project is already
      * taken, the workload creation will fail.
+     * For KeyRing, this represents the keyring_id.
+     * For a folder, don't set this value as folder_id is assigned by Google.
      * </pre>
      *
      * <code>string resource_id = 1;</code>
@@ -7127,6 +7062,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * Resource identifier.
        * For a project this represents project_id. If the project is already
        * taken, the workload creation will fail.
+       * For KeyRing, this represents the keyring_id.
+       * For a folder, don't set this value as folder_id is assigned by Google.
        * </pre>
        *
        * <code>string resource_id = 1;</code>
@@ -7151,6 +7088,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * Resource identifier.
        * For a project this represents project_id. If the project is already
        * taken, the workload creation will fail.
+       * For KeyRing, this represents the keyring_id.
+       * For a folder, don't set this value as folder_id is assigned by Google.
        * </pre>
        *
        * <code>string resource_id = 1;</code>
@@ -7175,6 +7114,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * Resource identifier.
        * For a project this represents project_id. If the project is already
        * taken, the workload creation will fail.
+       * For KeyRing, this represents the keyring_id.
+       * For a folder, don't set this value as folder_id is assigned by Google.
        * </pre>
        *
        * <code>string resource_id = 1;</code>
@@ -7198,6 +7139,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * Resource identifier.
        * For a project this represents project_id. If the project is already
        * taken, the workload creation will fail.
+       * For KeyRing, this represents the keyring_id.
+       * For a folder, don't set this value as folder_id is assigned by Google.
        * </pre>
        *
        * <code>string resource_id = 1;</code>
@@ -7217,6 +7160,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * Resource identifier.
        * For a project this represents project_id. If the project is already
        * taken, the workload creation will fail.
+       * For KeyRing, this represents the keyring_id.
+       * For a folder, don't set this value as folder_id is assigned by Google.
        * </pre>
        *
        * <code>string resource_id = 1;</code>
@@ -9596,16 +9541,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for IL4.
+   * Input only. Immutable. Settings specific to resources needed for IL4.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=458
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=498
    * @return Whether the il4Settings field is set.
    */
   @java.lang.Override
@@ -9617,16 +9561,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for IL4.
+   * Input only. Immutable. Settings specific to resources needed for IL4.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=458
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=498
    * @return The il4Settings.
    */
   @java.lang.Override
@@ -9642,12 +9585,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for IL4.
+   * Input only. Immutable. Settings specific to resources needed for IL4.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -9666,16 +9608,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for CJIS.
+   * Input only. Immutable. Settings specific to resources needed for CJIS.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=467
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=505
    * @return Whether the cjisSettings field is set.
    */
   @java.lang.Override
@@ -9687,16 +9628,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for CJIS.
+   * Input only. Immutable. Settings specific to resources needed for CJIS.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=467
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=505
    * @return The cjisSettings.
    */
   @java.lang.Override
@@ -9712,12 +9652,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for CJIS.
+   * Input only. Immutable. Settings specific to resources needed for CJIS.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -9736,16 +9675,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for FedRAMP High.
+   * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
-   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=476
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=512
    * @return Whether the fedrampHighSettings field is set.
    */
   @java.lang.Override
@@ -9757,16 +9695,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for FedRAMP High.
+   * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is deprecated.
-   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=476
+   *     See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=512
    * @return The fedrampHighSettings.
    */
   @java.lang.Override
@@ -9784,12 +9721,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for FedRAMP High.
+   * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -9809,16 +9745,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for FedRAMP Moderate.
+   * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=485
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=519
    * @return Whether the fedrampModerateSettings field is set.
    */
   @java.lang.Override
@@ -9830,16 +9765,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for FedRAMP Moderate.
+   * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=485
+   *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=519
    * @return The fedrampModerateSettings.
    */
   @java.lang.Override
@@ -9857,12 +9791,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Input only. Immutable. Settings specific to resources needed
-   * for FedRAMP Moderate.
+   * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -10032,8 +9965,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The parent resource for the resources managed by this Assured
-   * Workload. May be either empty or a folder resource which is a child of the
+   * Input only. The parent resource for the resources managed by this Assured Workload. May
+   * be either empty or a folder resource which is a child of the
    * Workload parent. If not specified all resources are created under the
    * parent organization.
    * Format:
@@ -10061,8 +9994,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. The parent resource for the resources managed by this Assured
-   * Workload. May be either empty or a folder resource which is a child of the
+   * Input only. The parent resource for the resources managed by this Assured Workload. May
+   * be either empty or a folder resource which is a child of the
    * Workload parent. If not specified all resources are created under the
    * parent organization.
    * Format:
@@ -10093,18 +10026,23 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project
-   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-   * Compliance Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+   * CMEK key is provisioned.
+   * This field is deprecated as of Feb 28, 2022.
+   * In order to create a Keyring, callers should specify,
+   * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.kms_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=546
    * @return Whether the kmsSettings field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasKmsSettings() {
     return kmsSettings_ != null;
   }
@@ -10112,18 +10050,23 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project
-   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-   * Compliance Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+   * CMEK key is provisioned.
+   * This field is deprecated as of Feb 28, 2022.
+   * In order to create a Keyring, callers should specify,
+   * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.kms_settings is deprecated. See
+   *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=546
    * @return The kmsSettings.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings getKmsSettings() {
     return kmsSettings_ == null
         ? com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.getDefaultInstance()
@@ -10133,16 +10076,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Settings used to create a CMEK crypto key. When set a project
-   * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-   * Compliance Regimes.
+   * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+   * CMEK key is provisioned.
+   * This field is deprecated as of Feb 28, 2022.
+   * In order to create a Keyring, callers should specify,
+   * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
    * </pre>
    *
    * <code>
-   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+   * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
       getKmsSettingsOrBuilder() {
     return getKmsSettings();
@@ -10155,9 +10101,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -10173,9 +10119,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -10192,9 +10138,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -10209,9 +10155,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -10227,9 +10173,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. Resource properties that are used to customize workload
-   * resources. These properties (such as custom project id) will be used to
-   * create workload resources if possible. This field is optional.
+   * Input only. Resource properties that are used to customize workload resources.
+   * These properties (such as custom project id) will be used to create
+   * workload resources if possible. This field is optional.
    * </pre>
    *
    * <code>
@@ -12373,16 +12319,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for IL4.
+     * Input only. Immutable. Settings specific to resources needed for IL4.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=458
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=498
      * @return Whether the il4Settings field is set.
      */
     @java.lang.Override
@@ -12394,16 +12339,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for IL4.
+     * Input only. Immutable. Settings specific to resources needed for IL4.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.il4_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=458
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=498
      * @return The il4Settings.
      */
     @java.lang.Override
@@ -12426,12 +12370,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for IL4.
+     * Input only. Immutable. Settings specific to resources needed for IL4.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -12453,12 +12396,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for IL4.
+     * Input only. Immutable. Settings specific to resources needed for IL4.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -12477,12 +12419,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for IL4.
+     * Input only. Immutable. Settings specific to resources needed for IL4.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -12517,12 +12458,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for IL4.
+     * Input only. Immutable. Settings specific to resources needed for IL4.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -12546,12 +12486,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for IL4.
+     * Input only. Immutable. Settings specific to resources needed for IL4.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -12563,12 +12502,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for IL4.
+     * Input only. Immutable. Settings specific to resources needed for IL4.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Override
@@ -12589,12 +12527,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for IL4.
+     * Input only. Immutable. Settings specific to resources needed for IL4.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings il4_settings = 7 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -12633,16 +12570,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for CJIS.
+     * Input only. Immutable. Settings specific to resources needed for CJIS.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=467
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=505
      * @return Whether the cjisSettings field is set.
      */
     @java.lang.Override
@@ -12654,16 +12590,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for CJIS.
+     * Input only. Immutable. Settings specific to resources needed for CJIS.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.cjis_settings is deprecated. See
-     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=467
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=505
      * @return The cjisSettings.
      */
     @java.lang.Override
@@ -12686,12 +12621,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for CJIS.
+     * Input only. Immutable. Settings specific to resources needed for CJIS.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -12713,12 +12647,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for CJIS.
+     * Input only. Immutable. Settings specific to resources needed for CJIS.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -12737,12 +12670,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for CJIS.
+     * Input only. Immutable. Settings specific to resources needed for CJIS.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -12777,12 +12709,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for CJIS.
+     * Input only. Immutable. Settings specific to resources needed for CJIS.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -12806,12 +12737,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for CJIS.
+     * Input only. Immutable. Settings specific to resources needed for CJIS.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -12823,12 +12753,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for CJIS.
+     * Input only. Immutable. Settings specific to resources needed for CJIS.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Override
@@ -12849,12 +12778,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for CJIS.
+     * Input only. Immutable. Settings specific to resources needed for CJIS.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings cjis_settings = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -12893,16 +12821,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP High.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is
-     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=476
+     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=512
      * @return Whether the fedrampHighSettings field is set.
      */
     @java.lang.Override
@@ -12914,16 +12841,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP High.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_high_settings is
-     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=476
+     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=512
      * @return The fedrampHighSettings.
      */
     @java.lang.Override
@@ -12949,12 +12875,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP High.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -12976,12 +12901,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP High.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -13001,12 +12925,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP High.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -13041,12 +12964,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP High.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -13070,12 +12992,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP High.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -13087,12 +13008,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP High.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Override
@@ -13114,12 +13034,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP High.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP High.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings fedramp_high_settings = 11 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -13159,16 +13078,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP Moderate.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=485
+     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=519
      * @return Whether the fedrampModerateSettings field is set.
      */
     @java.lang.Override
@@ -13180,16 +13098,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP Moderate.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.fedramp_moderate_settings is
-     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=485
+     *     deprecated. See google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=519
      * @return The fedrampModerateSettings.
      */
     @java.lang.Override
@@ -13215,12 +13132,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP Moderate.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -13242,12 +13158,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP Moderate.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -13267,12 +13182,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP Moderate.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -13307,12 +13221,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP Moderate.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -13336,12 +13249,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP Moderate.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Deprecated
@@ -13353,12 +13265,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP Moderate.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     @java.lang.Override
@@ -13380,12 +13291,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Input only. Immutable. Settings specific to resources needed
-     * for FedRAMP Moderate.
+     * Input only. Immutable. Settings specific to resources needed for FedRAMP Moderate.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings fedramp_moderate_settings = 12 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -13691,8 +13601,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured
-     * Workload. May be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -13719,8 +13629,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured
-     * Workload. May be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -13747,8 +13657,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured
-     * Workload. May be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -13774,8 +13684,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured
-     * Workload. May be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -13797,8 +13707,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. The parent resource for the resources managed by this Assured
-     * Workload. May be either empty or a folder resource which is a child of the
+     * Input only. The parent resource for the resources managed by this Assured Workload. May
+     * be either empty or a folder resource which is a child of the
      * Workload parent. If not specified all resources are created under the
      * parent organization.
      * Format:
@@ -13832,17 +13742,22 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.kms_settings is deprecated. See
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=546
      * @return Whether the kmsSettings field is set.
      */
+    @java.lang.Deprecated
     public boolean hasKmsSettings() {
       return kmsSettingsBuilder_ != null || kmsSettings_ != null;
     }
@@ -13850,17 +13765,22 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      *
+     * @deprecated google.cloud.assuredworkloads.v1beta1.Workload.kms_settings is deprecated. See
+     *     google/cloud/assuredworkloads/v1beta1/assuredworkloads.proto;l=546
      * @return The kmsSettings.
      */
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings getKmsSettings() {
       if (kmsSettingsBuilder_ == null) {
         return kmsSettings_ == null
@@ -13874,15 +13794,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setKmsSettings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings value) {
       if (kmsSettingsBuilder_ == null) {
@@ -13901,15 +13824,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setKmsSettings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder builderForValue) {
       if (kmsSettingsBuilder_ == null) {
@@ -13925,15 +13851,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeKmsSettings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings value) {
       if (kmsSettingsBuilder_ == null) {
@@ -13957,15 +13886,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearKmsSettings() {
       if (kmsSettingsBuilder_ == null) {
         kmsSettings_ = null;
@@ -13981,15 +13913,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder
         getKmsSettingsBuilder() {
 
@@ -14000,15 +13935,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
         getKmsSettingsOrBuilder() {
       if (kmsSettingsBuilder_ != null) {
@@ -14023,13 +13961,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Settings used to create a CMEK crypto key. When set a project
-     * with a KMS CMEK key is provisioned. This field is mandatory for a subset of
-     * Compliance Regimes.
+     * Input only. Settings used to create a CMEK crypto key. When set, a project with a KMS
+     * CMEK key is provisioned.
+     * This field is deprecated as of Feb 28, 2022.
+     * In order to create a Keyring, callers should specify,
+     * ENCRYPTION_KEYS_PROJECT or KEYRING in ResourceSettings.resource_type field.
      * </pre>
      *
      * <code>
-     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [(.google.api.field_behavior) = INPUT_ONLY];
+     * .google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kms_settings = 14 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -14072,9 +14012,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14093,9 +14033,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14113,9 +14053,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14134,9 +14074,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14161,9 +14101,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14187,9 +14127,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14214,9 +14154,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14241,9 +14181,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14266,9 +14206,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14292,9 +14232,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14318,9 +14258,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14341,9 +14281,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14364,9 +14304,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14381,9 +14321,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14402,9 +14342,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14424,9 +14364,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14444,9 +14384,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>
@@ -14465,9 +14405,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. Resource properties that are used to customize workload
-     * resources. These properties (such as custom project id) will be used to
-     * create workload resources if possible. This field is optional.
+     * Input only. Resource properties that are used to customize workload resources.
+     * These properties (such as custom project id) will be used to create
+     * workload resources if possible. This field is optional.
      * </pre>
      *
      * <code>

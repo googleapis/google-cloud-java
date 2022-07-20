@@ -318,8 +318,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources
-   * managed by the workload.
+   * Optional. Compliance controls that should be applied to the resources managed by
+   * the workload.
    * </pre>
    *
    * <code>
@@ -336,8 +336,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources
-   * managed by the workload.
+   * Optional. Compliance controls that should be applied to the resources managed by
+   * the workload.
    * </pre>
    *
    * <code>
@@ -364,8 +364,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. Resource properties in the input that are used for
-   * creating/customizing workload resources.
+   * Optional. Resource properties in the input that are used for creating/customizing
+   * workload resources.
    * </pre>
    *
    * <code>
@@ -381,8 +381,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. Resource properties in the input that are used for
-   * creating/customizing workload resources.
+   * Optional. Resource properties in the input that are used for creating/customizing
+   * workload resources.
    * </pre>
    *
    * <code>
@@ -399,8 +399,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. Resource properties in the input that are used for
-   * creating/customizing workload resources.
+   * Optional. Resource properties in the input that are used for creating/customizing
+   * workload resources.
    * </pre>
    *
    * <code>
@@ -415,8 +415,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. Resource properties in the input that are used for
-   * creating/customizing workload resources.
+   * Optional. Resource properties in the input that are used for creating/customizing
+   * workload resources.
    * </pre>
    *
    * <code>
@@ -432,8 +432,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. Resource properties in the input that are used for
-   * creating/customizing workload resources.
+   * Optional. Resource properties in the input that are used for creating/customizing
+   * workload resources.
    * </pre>
    *
    * <code>
@@ -1311,8 +1311,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources
-     * managed by the workload.
+     * Optional. Compliance controls that should be applied to the resources managed by
+     * the workload.
      * </pre>
      *
      * <code>
@@ -1329,8 +1329,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources
-     * managed by the workload.
+     * Optional. Compliance controls that should be applied to the resources managed by
+     * the workload.
      * </pre>
      *
      * <code>
@@ -1350,8 +1350,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources
-     * managed by the workload.
+     * Optional. Compliance controls that should be applied to the resources managed by
+     * the workload.
      * </pre>
      *
      * <code>
@@ -1375,8 +1375,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources
-     * managed by the workload.
+     * Optional. Compliance controls that should be applied to the resources managed by
+     * the workload.
      * </pre>
      *
      * <code>
@@ -1400,8 +1400,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources
-     * managed by the workload.
+     * Optional. Compliance controls that should be applied to the resources managed by
+     * the workload.
      * </pre>
      *
      * <code>
@@ -1440,8 +1440,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1460,8 +1460,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1479,8 +1479,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1499,8 +1499,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1525,8 +1525,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1550,8 +1550,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1576,8 +1576,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1602,8 +1602,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1626,8 +1626,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1651,8 +1651,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1676,8 +1676,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1698,8 +1698,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1720,8 +1720,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1736,8 +1736,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1756,8 +1756,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1777,8 +1777,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1796,8 +1796,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
@@ -1816,8 +1816,8 @@ public final class CreateWorkloadOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. Resource properties in the input that are used for
-     * creating/customizing workload resources.
+     * Optional. Resource properties in the input that are used for creating/customizing
+     * workload resources.
      * </pre>
      *
      * <code>
