@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.16.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.16.0...v2.16.1) (2022-07-19)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-bigquerystorage/issues/1485)) ([#1699](https://github.com/googleapis/java-bigquerystorage/issues/1699)) ([0cb05fd](https://github.com/googleapis/java-bigquerystorage/commit/0cb05fd3f9a732a0e7fc0cc494e1a305ce44805f))
+
 ## [2.16.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.15.0...v2.16.0) (2022-07-11)
 
 
