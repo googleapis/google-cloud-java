@@ -320,6 +320,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -395,6 +397,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2783,6 +2787,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2860,6 +2866,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2935,6 +2943,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3010,6 +3020,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3335,6 +3347,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3368,6 +3382,8 @@ public class SecurityCenterClientHttpJsonTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
 
     Finding actualResponse = client.updateFinding(finding);
@@ -3426,6 +3442,8 @@ public class SecurityCenterClientHttpJsonTest {
               .setExfiltration(Exfiltration.newBuilder().build())
               .addAllIamBindings(new ArrayList<IamBinding>())
               .setNextSteps("nextSteps1206138868")
+              .addAllContainers(new ArrayList<Container>())
+              .setKubernetes(Kubernetes.newBuilder().build())
               .build();
       client.updateFinding(finding);
       Assert.fail("No exception raised");

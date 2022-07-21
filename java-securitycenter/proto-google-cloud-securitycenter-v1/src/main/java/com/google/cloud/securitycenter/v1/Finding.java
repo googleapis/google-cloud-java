@@ -60,6 +60,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     iamBindings_ = java.util.Collections.emptyList();
     nextSteps_ = "";
+    containers_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -425,6 +426,34 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
               nextSteps_ = s;
               break;
             }
+          case 338:
+            {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                containers_ =
+                    new java.util.ArrayList<com.google.cloud.securitycenter.v1.Container>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              containers_.add(
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1.Container.parser(), extensionRegistry));
+              break;
+            }
+          case 346:
+            {
+              com.google.cloud.securitycenter.v1.Kubernetes.Builder subBuilder = null;
+              if (kubernetes_ != null) {
+                subBuilder = kubernetes_.toBuilder();
+              }
+              kubernetes_ =
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1.Kubernetes.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(kubernetes_);
+                kubernetes_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -452,6 +481,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       if (((mutable_bitField0_ & 0x00000040) != 0)) {
         iamBindings_ = java.util.Collections.unmodifiableList(iamBindings_);
+      }
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+        containers_ = java.util.Collections.unmodifiableList(containers_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -3163,6 +3195,128 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CONTAINERS_FIELD_NUMBER = 42;
+  private java.util.List<com.google.cloud.securitycenter.v1.Container> containers_;
+  /**
+   *
+   *
+   * <pre>
+   * Containers associated with the finding. containers provides information
+   * for both Kubernetes and non-Kubernetes containers.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v1.Container> getContainersList() {
+    return containers_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Containers associated with the finding. containers provides information
+   * for both Kubernetes and non-Kubernetes containers.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.securitycenter.v1.ContainerOrBuilder>
+      getContainersOrBuilderList() {
+    return containers_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Containers associated with the finding. containers provides information
+   * for both Kubernetes and non-Kubernetes containers.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+   */
+  @java.lang.Override
+  public int getContainersCount() {
+    return containers_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Containers associated with the finding. containers provides information
+   * for both Kubernetes and non-Kubernetes containers.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Container getContainers(int index) {
+    return containers_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Containers associated with the finding. containers provides information
+   * for both Kubernetes and non-Kubernetes containers.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.ContainerOrBuilder getContainersOrBuilder(int index) {
+    return containers_.get(index);
+  }
+
+  public static final int KUBERNETES_FIELD_NUMBER = 43;
+  private com.google.cloud.securitycenter.v1.Kubernetes kubernetes_;
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes resources associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+   *
+   * @return Whether the kubernetes field is set.
+   */
+  @java.lang.Override
+  public boolean hasKubernetes() {
+    return kubernetes_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes resources associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+   *
+   * @return The kubernetes.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Kubernetes getKubernetes() {
+    return kubernetes_ == null
+        ? com.google.cloud.securitycenter.v1.Kubernetes.getDefaultInstance()
+        : kubernetes_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes resources associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.KubernetesOrBuilder getKubernetesOrBuilder() {
+    return getKubernetes();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3263,6 +3417,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextSteps_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 40, nextSteps_);
+    }
+    for (int i = 0; i < containers_.size(); i++) {
+      output.writeMessage(42, containers_.get(i));
+    }
+    if (kubernetes_ != null) {
+      output.writeMessage(43, getKubernetes());
     }
     unknownFields.writeTo(output);
   }
@@ -3388,6 +3548,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextSteps_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40, nextSteps_);
     }
+    for (int i = 0; i < containers_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, containers_.get(i));
+    }
+    if (kubernetes_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(43, getKubernetes());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3460,6 +3626,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getIamBindingsList().equals(other.getIamBindingsList())) return false;
     if (!getNextSteps().equals(other.getNextSteps())) return false;
+    if (!getContainersList().equals(other.getContainersList())) return false;
+    if (hasKubernetes() != other.hasKubernetes()) return false;
+    if (hasKubernetes()) {
+      if (!getKubernetes().equals(other.getKubernetes())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -3561,6 +3732,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + NEXT_STEPS_FIELD_NUMBER;
     hash = (53 * hash) + getNextSteps().hashCode();
+    if (getContainersCount() > 0) {
+      hash = (37 * hash) + CONTAINERS_FIELD_NUMBER;
+      hash = (53 * hash) + getContainersList().hashCode();
+    }
+    if (hasKubernetes()) {
+      hash = (37 * hash) + KUBERNETES_FIELD_NUMBER;
+      hash = (53 * hash) + getKubernetes().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3738,6 +3917,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         getProcessesFieldBuilder();
         getCompliancesFieldBuilder();
         getIamBindingsFieldBuilder();
+        getContainersFieldBuilder();
       }
     }
 
@@ -3851,6 +4031,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       nextSteps_ = "";
 
+      if (containersBuilder_ == null) {
+        containers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      } else {
+        containersBuilder_.clear();
+      }
+      if (kubernetesBuilder_ == null) {
+        kubernetes_ = null;
+      } else {
+        kubernetes_ = null;
+        kubernetesBuilder_ = null;
+      }
       return this;
     }
 
@@ -3979,6 +4171,20 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.iamBindings_ = iamBindingsBuilder_.build();
       }
       result.nextSteps_ = nextSteps_;
+      if (containersBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          containers_ = java.util.Collections.unmodifiableList(containers_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.containers_ = containers_;
+      } else {
+        result.containers_ = containersBuilder_.build();
+      }
+      if (kubernetesBuilder_ == null) {
+        result.kubernetes_ = kubernetes_;
+      } else {
+        result.kubernetes_ = kubernetesBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -4213,6 +4419,36 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (!other.getNextSteps().isEmpty()) {
         nextSteps_ = other.nextSteps_;
         onChanged();
+      }
+      if (containersBuilder_ == null) {
+        if (!other.containers_.isEmpty()) {
+          if (containers_.isEmpty()) {
+            containers_ = other.containers_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureContainersIsMutable();
+            containers_.addAll(other.containers_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.containers_.isEmpty()) {
+          if (containersBuilder_.isEmpty()) {
+            containersBuilder_.dispose();
+            containersBuilder_ = null;
+            containers_ = other.containers_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            containersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getContainersFieldBuilder()
+                    : null;
+          } else {
+            containersBuilder_.addAllMessages(other.containers_);
+          }
+        }
+      }
+      if (other.hasKubernetes()) {
+        mergeKubernetes(other.getKubernetes());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -9642,6 +9878,561 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       nextSteps_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.securitycenter.v1.Container> containers_ =
+        java.util.Collections.emptyList();
+
+    private void ensureContainersIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        containers_ =
+            new java.util.ArrayList<com.google.cloud.securitycenter.v1.Container>(containers_);
+        bitField0_ |= 0x00000080;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Container,
+            com.google.cloud.securitycenter.v1.Container.Builder,
+            com.google.cloud.securitycenter.v1.ContainerOrBuilder>
+        containersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.Container> getContainersList() {
+      if (containersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(containers_);
+      } else {
+        return containersBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public int getContainersCount() {
+      if (containersBuilder_ == null) {
+        return containers_.size();
+      } else {
+        return containersBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Container getContainers(int index) {
+      if (containersBuilder_ == null) {
+        return containers_.get(index);
+      } else {
+        return containersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public Builder setContainers(int index, com.google.cloud.securitycenter.v1.Container value) {
+      if (containersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContainersIsMutable();
+        containers_.set(index, value);
+        onChanged();
+      } else {
+        containersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public Builder setContainers(
+        int index, com.google.cloud.securitycenter.v1.Container.Builder builderForValue) {
+      if (containersBuilder_ == null) {
+        ensureContainersIsMutable();
+        containers_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        containersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public Builder addContainers(com.google.cloud.securitycenter.v1.Container value) {
+      if (containersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContainersIsMutable();
+        containers_.add(value);
+        onChanged();
+      } else {
+        containersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public Builder addContainers(int index, com.google.cloud.securitycenter.v1.Container value) {
+      if (containersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureContainersIsMutable();
+        containers_.add(index, value);
+        onChanged();
+      } else {
+        containersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public Builder addContainers(
+        com.google.cloud.securitycenter.v1.Container.Builder builderForValue) {
+      if (containersBuilder_ == null) {
+        ensureContainersIsMutable();
+        containers_.add(builderForValue.build());
+        onChanged();
+      } else {
+        containersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public Builder addContainers(
+        int index, com.google.cloud.securitycenter.v1.Container.Builder builderForValue) {
+      if (containersBuilder_ == null) {
+        ensureContainersIsMutable();
+        containers_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        containersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public Builder addAllContainers(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v1.Container> values) {
+      if (containersBuilder_ == null) {
+        ensureContainersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, containers_);
+        onChanged();
+      } else {
+        containersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public Builder clearContainers() {
+      if (containersBuilder_ == null) {
+        containers_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        containersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public Builder removeContainers(int index) {
+      if (containersBuilder_ == null) {
+        ensureContainersIsMutable();
+        containers_.remove(index);
+        onChanged();
+      } else {
+        containersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Container.Builder getContainersBuilder(int index) {
+      return getContainersFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public com.google.cloud.securitycenter.v1.ContainerOrBuilder getContainersOrBuilder(int index) {
+      if (containersBuilder_ == null) {
+        return containers_.get(index);
+      } else {
+        return containersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public java.util.List<? extends com.google.cloud.securitycenter.v1.ContainerOrBuilder>
+        getContainersOrBuilderList() {
+      if (containersBuilder_ != null) {
+        return containersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(containers_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Container.Builder addContainersBuilder() {
+      return getContainersFieldBuilder()
+          .addBuilder(com.google.cloud.securitycenter.v1.Container.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Container.Builder addContainersBuilder(int index) {
+      return getContainersFieldBuilder()
+          .addBuilder(index, com.google.cloud.securitycenter.v1.Container.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Containers associated with the finding. containers provides information
+     * for both Kubernetes and non-Kubernetes containers.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.Container.Builder>
+        getContainersBuilderList() {
+      return getContainersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Container,
+            com.google.cloud.securitycenter.v1.Container.Builder,
+            com.google.cloud.securitycenter.v1.ContainerOrBuilder>
+        getContainersFieldBuilder() {
+      if (containersBuilder_ == null) {
+        containersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.Container,
+                com.google.cloud.securitycenter.v1.Container.Builder,
+                com.google.cloud.securitycenter.v1.ContainerOrBuilder>(
+                containers_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+        containers_ = null;
+      }
+      return containersBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1.Kubernetes kubernetes_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Kubernetes,
+            com.google.cloud.securitycenter.v1.Kubernetes.Builder,
+            com.google.cloud.securitycenter.v1.KubernetesOrBuilder>
+        kubernetesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes resources associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+     *
+     * @return Whether the kubernetes field is set.
+     */
+    public boolean hasKubernetes() {
+      return kubernetesBuilder_ != null || kubernetes_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes resources associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+     *
+     * @return The kubernetes.
+     */
+    public com.google.cloud.securitycenter.v1.Kubernetes getKubernetes() {
+      if (kubernetesBuilder_ == null) {
+        return kubernetes_ == null
+            ? com.google.cloud.securitycenter.v1.Kubernetes.getDefaultInstance()
+            : kubernetes_;
+      } else {
+        return kubernetesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes resources associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+     */
+    public Builder setKubernetes(com.google.cloud.securitycenter.v1.Kubernetes value) {
+      if (kubernetesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kubernetes_ = value;
+        onChanged();
+      } else {
+        kubernetesBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes resources associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+     */
+    public Builder setKubernetes(
+        com.google.cloud.securitycenter.v1.Kubernetes.Builder builderForValue) {
+      if (kubernetesBuilder_ == null) {
+        kubernetes_ = builderForValue.build();
+        onChanged();
+      } else {
+        kubernetesBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes resources associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+     */
+    public Builder mergeKubernetes(com.google.cloud.securitycenter.v1.Kubernetes value) {
+      if (kubernetesBuilder_ == null) {
+        if (kubernetes_ != null) {
+          kubernetes_ =
+              com.google.cloud.securitycenter.v1.Kubernetes.newBuilder(kubernetes_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          kubernetes_ = value;
+        }
+        onChanged();
+      } else {
+        kubernetesBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes resources associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+     */
+    public Builder clearKubernetes() {
+      if (kubernetesBuilder_ == null) {
+        kubernetes_ = null;
+        onChanged();
+      } else {
+        kubernetes_ = null;
+        kubernetesBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes resources associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Kubernetes.Builder getKubernetesBuilder() {
+
+      onChanged();
+      return getKubernetesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes resources associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+     */
+    public com.google.cloud.securitycenter.v1.KubernetesOrBuilder getKubernetesOrBuilder() {
+      if (kubernetesBuilder_ != null) {
+        return kubernetesBuilder_.getMessageOrBuilder();
+      } else {
+        return kubernetes_ == null
+            ? com.google.cloud.securitycenter.v1.Kubernetes.getDefaultInstance()
+            : kubernetes_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes resources associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Kubernetes,
+            com.google.cloud.securitycenter.v1.Kubernetes.Builder,
+            com.google.cloud.securitycenter.v1.KubernetesOrBuilder>
+        getKubernetesFieldBuilder() {
+      if (kubernetesBuilder_ == null) {
+        kubernetesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.Kubernetes,
+                com.google.cloud.securitycenter.v1.Kubernetes.Builder,
+                com.google.cloud.securitycenter.v1.KubernetesOrBuilder>(
+                getKubernetes(), getParentForChildren(), isClean());
+        kubernetes_ = null;
+      }
+      return kubernetesBuilder_;
     }
 
     @java.lang.Override

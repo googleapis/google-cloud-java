@@ -1284,4 +1284,96 @@ public interface FindingOrBuilder
    * @return The bytes for nextSteps.
    */
   com.google.protobuf.ByteString getNextStepsBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Containers associated with the finding. containers provides information
+   * for both Kubernetes and non-Kubernetes containers.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.Container> getContainersList();
+  /**
+   *
+   *
+   * <pre>
+   * Containers associated with the finding. containers provides information
+   * for both Kubernetes and non-Kubernetes containers.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+   */
+  com.google.cloud.securitycenter.v1.Container getContainers(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Containers associated with the finding. containers provides information
+   * for both Kubernetes and non-Kubernetes containers.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+   */
+  int getContainersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Containers associated with the finding. containers provides information
+   * for both Kubernetes and non-Kubernetes containers.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.ContainerOrBuilder>
+      getContainersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Containers associated with the finding. containers provides information
+   * for both Kubernetes and non-Kubernetes containers.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
+   */
+  com.google.cloud.securitycenter.v1.ContainerOrBuilder getContainersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes resources associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+   *
+   * @return Whether the kubernetes field is set.
+   */
+  boolean hasKubernetes();
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes resources associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+   *
+   * @return The kubernetes.
+   */
+  com.google.cloud.securitycenter.v1.Kubernetes getKubernetes();
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes resources associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
+   */
+  com.google.cloud.securitycenter.v1.KubernetesOrBuilder getKubernetesOrBuilder();
 }

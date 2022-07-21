@@ -311,6 +311,8 @@ public class SecurityCenterClientTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -382,6 +384,8 @@ public class SecurityCenterClientTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2554,6 +2558,8 @@ public class SecurityCenterClientTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2627,6 +2633,8 @@ public class SecurityCenterClientTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2698,6 +2706,8 @@ public class SecurityCenterClientTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2768,6 +2778,8 @@ public class SecurityCenterClientTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3048,6 +3060,8 @@ public class SecurityCenterClientTest {
             .setExfiltration(Exfiltration.newBuilder().build())
             .addAllIamBindings(new ArrayList<IamBinding>())
             .setNextSteps("nextSteps1206138868")
+            .addAllContainers(new ArrayList<Container>())
+            .setKubernetes(Kubernetes.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

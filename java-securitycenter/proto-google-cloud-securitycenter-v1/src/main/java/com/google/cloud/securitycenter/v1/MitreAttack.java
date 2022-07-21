@@ -963,6 +963,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPAIR_DEFENSES = 31;</code>
      */
     IMPAIR_DEFENSES(31),
+    /**
+     *
+     *
+     * <pre>
+     * T1046
+     * </pre>
+     *
+     * <code>NETWORK_SERVICE_DISCOVERY = 32;</code>
+     */
+    NETWORK_SERVICE_DISCOVERY(32),
     UNRECOGNIZED(-1),
     ;
 
@@ -1286,6 +1296,16 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPAIR_DEFENSES = 31;</code>
      */
     public static final int IMPAIR_DEFENSES_VALUE = 31;
+    /**
+     *
+     *
+     * <pre>
+     * T1046
+     * </pre>
+     *
+     * <code>NETWORK_SERVICE_DISCOVERY = 32;</code>
+     */
+    public static final int NETWORK_SERVICE_DISCOVERY_VALUE = 32;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1375,6 +1395,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           return DOMAIN_POLICY_MODIFICATION;
         case 31:
           return IMPAIR_DEFENSES;
+        case 32:
+          return NETWORK_SERVICE_DISCOVERY;
         default:
           return null;
       }
