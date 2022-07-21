@@ -169,7 +169,7 @@
       <activation>
         <property>
           <!-- activate with -P docFX -->
-          <name>docFX</name>
+          <name>docFX-pipelineTest</name>
         </property>
       </activation>
       <properties>
