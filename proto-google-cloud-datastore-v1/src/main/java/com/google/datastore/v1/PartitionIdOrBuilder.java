@@ -52,6 +52,33 @@ public interface PartitionIdOrBuilder
    *
    *
    * <pre>
+   * If not empty, the ID of the database to which the entities
+   * belong.
+   * </pre>
+   *
+   * <code>string database_id = 3;</code>
+   *
+   * @return The databaseId.
+   */
+  java.lang.String getDatabaseId();
+  /**
+   *
+   *
+   * <pre>
+   * If not empty, the ID of the database to which the entities
+   * belong.
+   * </pre>
+   *
+   * <code>string database_id = 3;</code>
+   *
+   * @return The bytes for databaseId.
+   */
+  com.google.protobuf.ByteString getDatabaseIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * If not empty, the ID of the namespace to which the entities belong.
    * </pre>
    *

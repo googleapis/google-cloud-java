@@ -52,6 +52,35 @@ public interface AllocateIdsRequestOrBuilder
    *
    *
    * <pre>
+   * The ID of the database against which to make the request.
+   * '(default)' is not allowed; please use empty string '' to refer the default
+   * database.
+   * </pre>
+   *
+   * <code>string database_id = 9;</code>
+   *
+   * @return The databaseId.
+   */
+  java.lang.String getDatabaseId();
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the database against which to make the request.
+   * '(default)' is not allowed; please use empty string '' to refer the default
+   * database.
+   * </pre>
+   *
+   * <code>string database_id = 9;</code>
+   *
+   * @return The bytes for databaseId.
+   */
+  com.google.protobuf.ByteString getDatabaseIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. A list of keys with incomplete key paths for which to allocate IDs.
    * No key may be reserved/read-only.
    * </pre>

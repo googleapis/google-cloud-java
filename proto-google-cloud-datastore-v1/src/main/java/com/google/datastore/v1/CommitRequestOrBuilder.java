@@ -52,6 +52,35 @@ public interface CommitRequestOrBuilder
    *
    *
    * <pre>
+   * The ID of the database against which to make the request.
+   * '(default)' is not allowed; please use empty string '' to refer the default
+   * database.
+   * </pre>
+   *
+   * <code>string database_id = 9;</code>
+   *
+   * @return The databaseId.
+   */
+  java.lang.String getDatabaseId();
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the database against which to make the request.
+   * '(default)' is not allowed; please use empty string '' to refer the default
+   * database.
+   * </pre>
+   *
+   * <code>string database_id = 9;</code>
+   *
+   * @return The bytes for databaseId.
+   */
+  com.google.protobuf.ByteString getDatabaseIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The type of commit to perform. Defaults to `TRANSACTIONAL`.
    * </pre>
    *

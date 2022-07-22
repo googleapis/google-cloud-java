@@ -306,7 +306,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The list of filters to combine.
-   * Must contain at least one filter.
+   * Requires:
+   * * At least one filter is present.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -320,7 +321,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The list of filters to combine.
-   * Must contain at least one filter.
+   * Requires:
+   * * At least one filter is present.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -335,7 +337,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The list of filters to combine.
-   * Must contain at least one filter.
+   * Requires:
+   * * At least one filter is present.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -349,7 +352,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The list of filters to combine.
-   * Must contain at least one filter.
+   * Requires:
+   * * At least one filter is present.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -363,7 +367,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The list of filters to combine.
-   * Must contain at least one filter.
+   * Requires:
+   * * At least one filter is present.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -859,7 +864,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -876,7 +882,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -893,7 +900,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -910,7 +918,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -933,7 +942,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -953,7 +963,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -976,7 +987,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -999,7 +1011,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -1019,7 +1032,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -1039,7 +1053,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -1060,7 +1075,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -1080,7 +1096,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -1100,7 +1117,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -1113,7 +1131,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -1130,7 +1149,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -1148,7 +1168,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -1162,7 +1183,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
@@ -1176,7 +1198,8 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The list of filters to combine.
-     * Must contain at least one filter.
+     * Requires:
+     * * At least one filter is present.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Filter filters = 2;</code>

@@ -52,7 +52,9 @@ public interface ReserveIdsRequestOrBuilder
    *
    *
    * <pre>
-   * If not empty, the ID of the database against which to make the request.
+   * The ID of the database against which to make the request.
+   * '(default)' is not allowed; please use empty string '' to refer the default
+   * database.
    * </pre>
    *
    * <code>string database_id = 9;</code>
@@ -64,7 +66,9 @@ public interface ReserveIdsRequestOrBuilder
    *
    *
    * <pre>
-   * If not empty, the ID of the database against which to make the request.
+   * The ID of the database against which to make the request.
+   * '(default)' is not allowed; please use empty string '' to refer the default
+   * database.
    * </pre>
    *
    * <code>string database_id = 9;</code>

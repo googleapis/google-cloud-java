@@ -53,6 +53,7 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
 
   private PartitionId() {
     projectId_ = "";
+    databaseId_ = "";
     namespaceId_ = "";
   }
 
@@ -90,6 +91,13 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               projectId_ = s;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              databaseId_ = s;
               break;
             }
           case 34:
@@ -184,6 +192,57 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DATABASE_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object databaseId_;
+  /**
+   *
+   *
+   * <pre>
+   * If not empty, the ID of the database to which the entities
+   * belong.
+   * </pre>
+   *
+   * <code>string database_id = 3;</code>
+   *
+   * @return The databaseId.
+   */
+  @java.lang.Override
+  public java.lang.String getDatabaseId() {
+    java.lang.Object ref = databaseId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      databaseId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If not empty, the ID of the database to which the entities
+   * belong.
+   * </pre>
+   *
+   * <code>string database_id = 3;</code>
+   *
+   * @return The bytes for databaseId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDatabaseIdBytes() {
+    java.lang.Object ref = databaseId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      databaseId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int NAMESPACE_ID_FIELD_NUMBER = 4;
   private volatile java.lang.Object namespaceId_;
   /**
@@ -250,6 +309,9 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, projectId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, databaseId_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespaceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, namespaceId_);
     }
@@ -264,6 +326,9 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, projectId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, databaseId_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(namespaceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, namespaceId_);
@@ -284,6 +349,7 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
     com.google.datastore.v1.PartitionId other = (com.google.datastore.v1.PartitionId) obj;
 
     if (!getProjectId().equals(other.getProjectId())) return false;
+    if (!getDatabaseId().equals(other.getDatabaseId())) return false;
     if (!getNamespaceId().equals(other.getNamespaceId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -298,6 +364,8 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
+    hash = (37 * hash) + DATABASE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getDatabaseId().hashCode();
     hash = (37 * hash) + NAMESPACE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getNamespaceId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -460,6 +528,8 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       projectId_ = "";
 
+      databaseId_ = "";
+
       namespaceId_ = "";
 
       return this;
@@ -489,6 +559,7 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.PartitionId buildPartial() {
       com.google.datastore.v1.PartitionId result = new com.google.datastore.v1.PartitionId(this);
       result.projectId_ = projectId_;
+      result.databaseId_ = databaseId_;
       result.namespaceId_ = namespaceId_;
       onBuilt();
       return result;
@@ -541,6 +612,10 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.datastore.v1.PartitionId.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        onChanged();
+      }
+      if (!other.getDatabaseId().isEmpty()) {
+        databaseId_ = other.databaseId_;
         onChanged();
       }
       if (!other.getNamespaceId().isEmpty()) {
@@ -678,6 +753,117 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       projectId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object databaseId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * If not empty, the ID of the database to which the entities
+     * belong.
+     * </pre>
+     *
+     * <code>string database_id = 3;</code>
+     *
+     * @return The databaseId.
+     */
+    public java.lang.String getDatabaseId() {
+      java.lang.Object ref = databaseId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        databaseId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If not empty, the ID of the database to which the entities
+     * belong.
+     * </pre>
+     *
+     * <code>string database_id = 3;</code>
+     *
+     * @return The bytes for databaseId.
+     */
+    public com.google.protobuf.ByteString getDatabaseIdBytes() {
+      java.lang.Object ref = databaseId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        databaseId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If not empty, the ID of the database to which the entities
+     * belong.
+     * </pre>
+     *
+     * <code>string database_id = 3;</code>
+     *
+     * @param value The databaseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      databaseId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If not empty, the ID of the database to which the entities
+     * belong.
+     * </pre>
+     *
+     * <code>string database_id = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDatabaseId() {
+
+      databaseId_ = getDefaultInstance().getDatabaseId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If not empty, the ID of the database to which the entities
+     * belong.
+     * </pre>
+     *
+     * <code>string database_id = 3;</code>
+     *
+     * @param value The bytes for databaseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      databaseId_ = value;
       onChanged();
       return this;
     }

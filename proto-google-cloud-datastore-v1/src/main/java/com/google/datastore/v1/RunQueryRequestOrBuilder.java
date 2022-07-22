@@ -52,6 +52,35 @@ public interface RunQueryRequestOrBuilder
    *
    *
    * <pre>
+   * The ID of the database against which to make the request.
+   * '(default)' is not allowed; please use empty string '' to refer the default
+   * database.
+   * </pre>
+   *
+   * <code>string database_id = 9;</code>
+   *
+   * @return The databaseId.
+   */
+  java.lang.String getDatabaseId();
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the database against which to make the request.
+   * '(default)' is not allowed; please use empty string '' to refer the default
+   * database.
+   * </pre>
+   *
+   * <code>string database_id = 9;</code>
+   *
+   * @return The bytes for databaseId.
+   */
+  com.google.protobuf.ByteString getDatabaseIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Entities are partitioned into subsets, identified by a partition ID.
    * Queries are scoped to a single partition.
    * This partition ID is normalized with the standard default context
@@ -166,7 +195,7 @@ public interface RunQueryRequestOrBuilder
    *
    *
    * <pre>
-   * The GQL query to run.
+   * The GQL query to run. This query must be a non-aggregation query.
    * </pre>
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -178,7 +207,7 @@ public interface RunQueryRequestOrBuilder
    *
    *
    * <pre>
-   * The GQL query to run.
+   * The GQL query to run. This query must be a non-aggregation query.
    * </pre>
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>
@@ -190,7 +219,7 @@ public interface RunQueryRequestOrBuilder
    *
    *
    * <pre>
-   * The GQL query to run.
+   * The GQL query to run. This query must be a non-aggregation query.
    * </pre>
    *
    * <code>.google.datastore.v1.GqlQuery gql_query = 7;</code>

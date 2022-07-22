@@ -39,6 +39,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
 
   private AllocateIdsRequest() {
     projectId_ = "";
+    databaseId_ = "";
     keys_ = java.util.Collections.emptyList();
   }
 
@@ -86,6 +87,13 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
               java.lang.String s = input.readStringRequireUtf8();
 
               projectId_ = s;
+              break;
+            }
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              databaseId_ = s;
               break;
             }
           default:
@@ -170,6 +178,59 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DATABASE_ID_FIELD_NUMBER = 9;
+  private volatile java.lang.Object databaseId_;
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the database against which to make the request.
+   * '(default)' is not allowed; please use empty string '' to refer the default
+   * database.
+   * </pre>
+   *
+   * <code>string database_id = 9;</code>
+   *
+   * @return The databaseId.
+   */
+  @java.lang.Override
+  public java.lang.String getDatabaseId() {
+    java.lang.Object ref = databaseId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      databaseId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The ID of the database against which to make the request.
+   * '(default)' is not allowed; please use empty string '' to refer the default
+   * database.
+   * </pre>
+   *
+   * <code>string database_id = 9;</code>
+   *
+   * @return The bytes for databaseId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDatabaseIdBytes() {
+    java.lang.Object ref = databaseId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      databaseId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -274,6 +335,9 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, projectId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, databaseId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -288,6 +352,9 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(projectId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, projectId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, databaseId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -306,6 +373,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
         (com.google.datastore.v1.AllocateIdsRequest) obj;
 
     if (!getProjectId().equals(other.getProjectId())) return false;
+    if (!getDatabaseId().equals(other.getDatabaseId())) return false;
     if (!getKeysList().equals(other.getKeysList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -320,6 +388,8 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getProjectId().hashCode();
+    hash = (37 * hash) + DATABASE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getDatabaseId().hashCode();
     if (getKeysCount() > 0) {
       hash = (37 * hash) + KEYS_FIELD_NUMBER;
       hash = (53 * hash) + getKeysList().hashCode();
@@ -473,6 +543,8 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
       super.clear();
       projectId_ = "";
 
+      databaseId_ = "";
+
       if (keysBuilder_ == null) {
         keys_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -508,6 +580,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
           new com.google.datastore.v1.AllocateIdsRequest(this);
       int from_bitField0_ = bitField0_;
       result.projectId_ = projectId_;
+      result.databaseId_ = databaseId_;
       if (keysBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           keys_ = java.util.Collections.unmodifiableList(keys_);
@@ -568,6 +641,10 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
       if (other == com.google.datastore.v1.AllocateIdsRequest.getDefaultInstance()) return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        onChanged();
+      }
+      if (!other.getDatabaseId().isEmpty()) {
+        databaseId_ = other.databaseId_;
         onChanged();
       }
       if (keysBuilder_ == null) {
@@ -730,6 +807,122 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
 
       projectId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object databaseId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the database against which to make the request.
+     * '(default)' is not allowed; please use empty string '' to refer the default
+     * database.
+     * </pre>
+     *
+     * <code>string database_id = 9;</code>
+     *
+     * @return The databaseId.
+     */
+    public java.lang.String getDatabaseId() {
+      java.lang.Object ref = databaseId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        databaseId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the database against which to make the request.
+     * '(default)' is not allowed; please use empty string '' to refer the default
+     * database.
+     * </pre>
+     *
+     * <code>string database_id = 9;</code>
+     *
+     * @return The bytes for databaseId.
+     */
+    public com.google.protobuf.ByteString getDatabaseIdBytes() {
+      java.lang.Object ref = databaseId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        databaseId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the database against which to make the request.
+     * '(default)' is not allowed; please use empty string '' to refer the default
+     * database.
+     * </pre>
+     *
+     * <code>string database_id = 9;</code>
+     *
+     * @param value The databaseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      databaseId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the database against which to make the request.
+     * '(default)' is not allowed; please use empty string '' to refer the default
+     * database.
+     * </pre>
+     *
+     * <code>string database_id = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDatabaseId() {
+
+      databaseId_ = getDefaultInstance().getDatabaseId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the database against which to make the request.
+     * '(default)' is not allowed; please use empty string '' to refer the default
+     * database.
+     * </pre>
+     *
+     * <code>string database_id = 9;</code>
+     *
+     * @param value The bytes for databaseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      databaseId_ = value;
       onChanged();
       return this;
     }
