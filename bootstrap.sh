@@ -70,8 +70,6 @@ git add pom.xml
 git commit -am 'feat: create aggregator pom'
 
 num_modules="$(wc -l < ../../repos.txt)"
-#echo "${num_modules}"
-touch .release-please-manifest.json
 echo "{" >> .release-please-manifest.json
 
 # generate BOM of the artifacts in this repository
@@ -91,7 +89,6 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
   suffix="/${artifactName}-bom"
   module=${bom_directory#"$prefix"}
   module=${module%"$suffix"}
-#  echo "the module name is ${module}"
 
   version_line=$(grep --max-count=1 'x-version-update' "${pom_file}")
 
@@ -100,16 +97,14 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
   suffix="</version><!-- {x-version-update:${artifactName}:current} -->"
   module_version=${version_line#"$prefix"}
   module_version=${module_version%"$suffix"}
-#  echo "the module version is ${module_version}"
 
   #concatenating module name and module version
   rp_config_line=""\""${module}"\"": "\""${module_version}"\"""
 
   #adding " , " where it's necessary
-  if [ $num_modules -gt 1 ]
-    then
-    	rp_config_line+=","
-    	num_modules=$((num_modules-1))
+  if [[ $num_modules -gt 1 ]]; then
+    rp_config_line+=","
+    num_modules=$((num_modules-1))
   fi
 
   #adding the line to manifest config file
