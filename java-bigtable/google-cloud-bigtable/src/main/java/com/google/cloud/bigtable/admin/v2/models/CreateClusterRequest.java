@@ -110,12 +110,13 @@ public final class CreateClusterRequest {
 
   /**
    * Sets the scaling mode to autoscaling by accepting an AutoscalingConfig where min nodes, max
-   * nodes, and CPU utlization percent target are set.
+   * nodes, CPU utilization percent target, and storage utilization gib per node are set.
    */
   public CreateClusterRequest setScalingMode(@Nonnull ClusterAutoscalingConfig autoscalingConfig) {
     int minNodes = autoscalingConfig.getMinNodes();
     int maxNodes = autoscalingConfig.getMaxNodes();
     int cpuTargetPercent = autoscalingConfig.getCpuUtilizationTargetPercent();
+    int storageUtilizationGibPerNode = autoscalingConfig.getStorageUtilizationGibPerNode();
 
     proto
         .getClusterBuilder()
@@ -135,6 +136,12 @@ public final class CreateClusterRequest {
         .getClusterAutoscalingConfigBuilder()
         .getAutoscalingTargetsBuilder()
         .setCpuUtilizationPercent(cpuTargetPercent);
+    proto
+        .getClusterBuilder()
+        .getClusterConfigBuilder()
+        .getClusterAutoscalingConfigBuilder()
+        .getAutoscalingTargetsBuilder()
+        .setStorageUtilizationGibPerNode(storageUtilizationGibPerNode);
     return this;
   }
 

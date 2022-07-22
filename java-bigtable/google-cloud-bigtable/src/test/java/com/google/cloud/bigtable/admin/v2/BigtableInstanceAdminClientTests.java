@@ -113,7 +113,10 @@ public class BigtableInstanceAdminClientTests {
                           .setMinServeNodes(2)
                           .build())
                   .setAutoscalingTargets(
-                      AutoscalingTargets.newBuilder().setCpuUtilizationPercent(22).build()))
+                      AutoscalingTargets.newBuilder()
+                          .setCpuUtilizationPercent(22)
+                          .setStorageUtilizationGibPerNode(3000)
+                          .build()))
           .build();
 
   @Mock private BigtableInstanceAdminStub mockStub;
@@ -575,7 +578,8 @@ public class BigtableInstanceAdminClientTests {
                     ClusterAutoscalingConfig.of(INSTANCE_ID, CLUSTER_ID)
                         .setMinNodes(2)
                         .setMaxNodes(10)
-                        .setCpuUtilizationTargetPercent(22))
+                        .setCpuUtilizationTargetPercent(22)
+                        .setStorageUtilizationGibPerNode(3000))
                 .setStorageType(StorageType.SSD));
     // Verify
     assertThat(actualResult).isEqualTo(Cluster.fromProto(expectedResponse));
@@ -759,6 +763,8 @@ public class BigtableInstanceAdminClientTests {
                         "cluster_config.cluster_autoscaling_config.autoscaling_limits.min_serve_nodes")
                     .addPaths(
                         "cluster_config.cluster_autoscaling_config.autoscaling_targets.cpu_utilization_percent")
+                    .addPaths(
+                        "cluster_config.cluster_autoscaling_config.autoscaling_targets.storage_utilization_gib_per_node")
                     .build())
             .build();
 
@@ -776,6 +782,7 @@ public class BigtableInstanceAdminClientTests {
             ClusterAutoscalingConfig.of(INSTANCE_ID, CLUSTER_ID)
                 .setMaxNodes(10)
                 .setMinNodes(2)
+                .setStorageUtilizationGibPerNode(3000)
                 .setCpuUtilizationTargetPercent(22));
 
     // Verify

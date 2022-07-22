@@ -104,6 +104,21 @@ public class ClusterAutoscalingConfig {
     return this;
   }
 
+  public ClusterAutoscalingConfig setStorageUtilizationGibPerNode(
+      int storageUtilizationGibPerNode) {
+    builder.setUpdateMask(
+        FieldMaskUtil.union(
+            builder.getUpdateMask(),
+            FieldMaskUtil.fromString(
+                Cluster.class,
+                "cluster_config.cluster_autoscaling_config.autoscaling_targets.storage_utilization_gib_per_node")));
+    clusterConfigBuilder
+        .getClusterAutoscalingConfigBuilder()
+        .getAutoscalingTargetsBuilder()
+        .setStorageUtilizationGibPerNode(storageUtilizationGibPerNode);
+    return this;
+  }
+
   /** Get the minimum number of nodes to scale down to. */
   public int getMinNodes() {
     return clusterConfigBuilder
@@ -129,6 +144,20 @@ public class ClusterAutoscalingConfig {
         .getClusterAutoscalingConfig()
         .getAutoscalingTargets()
         .getCpuUtilizationPercent();
+  }
+
+  /**
+   * Get the storage utilization that the Autoscaler should be trying to achieve. This number is
+   * limited between 2560 (2.5TiB) and 5120 (5TiB) for a SSD cluster and between 8192 (8TiB) and
+   * 16384 (16TiB) for an HDD cluster; otherwise it will return INVALID_ARGUMENT error. If this
+   * value is set to 0, it will be treated as if it were set to the default value: 2560 for SSD,
+   * 8192 for HDD.
+   */
+  public int getStorageUtilizationGibPerNode() {
+    return clusterConfigBuilder
+        .getClusterAutoscalingConfig()
+        .getAutoscalingTargets()
+        .getStorageUtilizationGibPerNode();
   }
 
   /**
@@ -184,6 +213,15 @@ public class ClusterAutoscalingConfig {
                 .getClusterAutoscalingConfig()
                 .getAutoscalingTargets()
                 .getCpuUtilizationPercent())
+        && Objects.equal(
+            clusterConfigBuilder
+                .getClusterAutoscalingConfig()
+                .getAutoscalingTargets()
+                .getStorageUtilizationGibPerNode(),
+            that.clusterConfigBuilder
+                .getClusterAutoscalingConfig()
+                .getAutoscalingTargets()
+                .getStorageUtilizationGibPerNode())
         && Objects.equal(clusterId, that.clusterId)
         && Objects.equal(instanceId, that.instanceId);
   }
@@ -203,6 +241,10 @@ public class ClusterAutoscalingConfig {
             .getClusterAutoscalingConfig()
             .getAutoscalingTargets()
             .getCpuUtilizationPercent(),
+        clusterConfigBuilder
+            .getClusterAutoscalingConfig()
+            .getAutoscalingTargets()
+            .getStorageUtilizationGibPerNode(),
         clusterId,
         instanceId);
   }

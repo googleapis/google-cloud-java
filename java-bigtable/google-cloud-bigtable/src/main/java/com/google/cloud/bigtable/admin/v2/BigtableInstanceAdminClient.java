@@ -523,12 +523,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   public ApiFuture<Cluster> createClusterAsync(CreateClusterRequest request) {
     return ApiFutures.transform(
         stub.createClusterOperationCallable().futureCall(request.toProto(projectId)),
-        new ApiFunction<com.google.bigtable.admin.v2.Cluster, Cluster>() {
-          @Override
-          public Cluster apply(com.google.bigtable.admin.v2.Cluster proto) {
-            return Cluster.fromProto(proto);
-          }
-        },
+        Cluster::fromProto,
         MoreExecutors.directExecutor());
   }
 
