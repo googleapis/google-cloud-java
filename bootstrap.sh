@@ -116,6 +116,7 @@ mvn -q -B -ntp validate
 # Template files
 cp -rp ../../templates/. ./
 git add --all
+git add -f .gitignore
 git commit -m 'chore: add template files'
 
 
