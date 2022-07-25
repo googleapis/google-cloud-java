@@ -35,7 +35,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.Executor;
-import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -434,33 +433,11 @@ class MessageDispatcher {
                 SettableApiFuture<AckResponse> messageFuture =
                     ackHandler.getMessageFutureIfExists();
                 final AckReplyConsumerWithResponse ackReplyConsumerWithResponse =
-                    new AckReplyConsumerWithResponse() {
-                      @Override
-                      public Future<AckResponse> ack() {
-                        ackReplySettableApiFuture.set(AckReply.ACK);
-                        return messageFuture;
-                      }
-
-                      @Override
-                      public Future<AckResponse> nack() {
-                        ackReplySettableApiFuture.set(AckReply.NACK);
-                        return messageFuture;
-                      }
-                    };
+                    new AckReplyConsumerWithResponseImpl(ackReplySettableApiFuture, messageFuture);
                 receiverWithAckResponse.receiveMessage(message, ackReplyConsumerWithResponse);
               } else {
                 final AckReplyConsumer ackReplyConsumer =
-                    new AckReplyConsumer() {
-                      @Override
-                      public void ack() {
-                        ackReplySettableApiFuture.set(AckReply.ACK);
-                      }
-
-                      @Override
-                      public void nack() {
-                        ackReplySettableApiFuture.set(AckReply.NACK);
-                      }
-                    };
+                    new AckReplyConsumerImpl(ackReplySettableApiFuture);
                 receiver.receiveMessage(message, ackReplyConsumer);
               }
             } catch (Exception e) {
