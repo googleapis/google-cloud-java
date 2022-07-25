@@ -1,0 +1,183 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.appengine.v1",
+  "libraryPackage": "com.google.appengine.v1",
+  "services": {
+    "Applications": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApplicationsClient",
+          "rpcs": {
+            "CreateApplication": {
+              "methods": ["createApplicationAsync", "createApplicationOperationCallable", "createApplicationCallable"]
+            },
+            "GetApplication": {
+              "methods": ["getApplication", "getApplication", "getApplicationCallable"]
+            },
+            "RepairApplication": {
+              "methods": ["repairApplicationAsync", "repairApplicationOperationCallable", "repairApplicationCallable"]
+            },
+            "UpdateApplication": {
+              "methods": ["updateApplicationAsync", "updateApplicationOperationCallable", "updateApplicationCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Services": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServicesClient",
+          "rpcs": {
+            "DeleteService": {
+              "methods": ["deleteServiceAsync", "deleteServiceOperationCallable", "deleteServiceCallable"]
+            },
+            "GetService": {
+              "methods": ["getService", "getServiceCallable"]
+            },
+            "ListServices": {
+              "methods": ["listServices", "listServicesPagedCallable", "listServicesCallable"]
+            },
+            "UpdateService": {
+              "methods": ["updateServiceAsync", "updateServiceOperationCallable", "updateServiceCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Versions": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VersionsClient",
+          "rpcs": {
+            "CreateVersion": {
+              "methods": ["createVersionAsync", "createVersionOperationCallable", "createVersionCallable"]
+            },
+            "DeleteVersion": {
+              "methods": ["deleteVersionAsync", "deleteVersionOperationCallable", "deleteVersionCallable"]
+            },
+            "GetVersion": {
+              "methods": ["getVersion", "getVersionCallable"]
+            },
+            "ListVersions": {
+              "methods": ["listVersions", "listVersionsPagedCallable", "listVersionsCallable"]
+            },
+            "UpdateVersion": {
+              "methods": ["updateVersionAsync", "updateVersionOperationCallable", "updateVersionCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Instances": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InstancesClient",
+          "rpcs": {
+            "DebugInstance": {
+              "methods": ["debugInstanceAsync", "debugInstanceOperationCallable", "debugInstanceCallable"]
+            },
+            "DeleteInstance": {
+              "methods": ["deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
+            },
+            "GetInstance": {
+              "methods": ["getInstance", "getInstanceCallable"]
+            },
+            "ListInstances": {
+              "methods": ["listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Firewall": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FirewallClient",
+          "rpcs": {
+            "BatchUpdateIngressRules": {
+              "methods": ["batchUpdateIngressRules", "batchUpdateIngressRulesCallable"]
+            },
+            "CreateIngressRule": {
+              "methods": ["createIngressRule", "createIngressRuleCallable"]
+            },
+            "DeleteIngressRule": {
+              "methods": ["deleteIngressRule", "deleteIngressRuleCallable"]
+            },
+            "GetIngressRule": {
+              "methods": ["getIngressRule", "getIngressRuleCallable"]
+            },
+            "ListIngressRules": {
+              "methods": ["listIngressRules", "listIngressRulesPagedCallable", "listIngressRulesCallable"]
+            },
+            "UpdateIngressRule": {
+              "methods": ["updateIngressRule", "updateIngressRuleCallable"]
+            }
+          }
+        }
+      }
+    },
+    "AuthorizedDomains": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AuthorizedDomainsClient",
+          "rpcs": {
+            "ListAuthorizedDomains": {
+              "methods": ["listAuthorizedDomains", "listAuthorizedDomainsPagedCallable", "listAuthorizedDomainsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "AuthorizedCertificates": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AuthorizedCertificatesClient",
+          "rpcs": {
+            "CreateAuthorizedCertificate": {
+              "methods": ["createAuthorizedCertificate", "createAuthorizedCertificateCallable"]
+            },
+            "DeleteAuthorizedCertificate": {
+              "methods": ["deleteAuthorizedCertificate", "deleteAuthorizedCertificateCallable"]
+            },
+            "GetAuthorizedCertificate": {
+              "methods": ["getAuthorizedCertificate", "getAuthorizedCertificateCallable"]
+            },
+            "ListAuthorizedCertificates": {
+              "methods": ["listAuthorizedCertificates", "listAuthorizedCertificatesPagedCallable", "listAuthorizedCertificatesCallable"]
+            },
+            "UpdateAuthorizedCertificate": {
+              "methods": ["updateAuthorizedCertificate", "updateAuthorizedCertificateCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DomainMappings": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DomainMappingsClient",
+          "rpcs": {
+            "CreateDomainMapping": {
+              "methods": ["createDomainMappingAsync", "createDomainMappingOperationCallable", "createDomainMappingCallable"]
+            },
+            "DeleteDomainMapping": {
+              "methods": ["deleteDomainMappingAsync", "deleteDomainMappingOperationCallable", "deleteDomainMappingCallable"]
+            },
+            "GetDomainMapping": {
+              "methods": ["getDomainMapping", "getDomainMappingCallable"]
+            },
+            "ListDomainMappings": {
+              "methods": ["listDomainMappings", "listDomainMappingsPagedCallable", "listDomainMappingsCallable"]
+            },
+            "UpdateDomainMapping": {
+              "methods": ["updateDomainMappingAsync", "updateDomainMappingOperationCallable", "updateDomainMappingCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
