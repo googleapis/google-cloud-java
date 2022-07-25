@@ -1,0 +1,32 @@
+# Packages
+dist
+bin
+var
+sdist
+target
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+.metadata
+.project
+.pydevproject
+*.iml
+.idea
+.settings
+.DS_Store
+.classpath
+
+# Built documentation
+docs/
+
+# API key file containing value of GOOGLE_API_KEY for integration tests
+api_key
+
+# Python utilities
+*.pyc
