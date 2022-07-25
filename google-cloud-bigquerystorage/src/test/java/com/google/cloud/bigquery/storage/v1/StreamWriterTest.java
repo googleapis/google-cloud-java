@@ -653,4 +653,16 @@ public class StreamWriterTest {
       TimeUnit.SECONDS.sleep(1);
     }
   }
+
+  @Test
+  public void testWriterException() throws Exception {
+    StreamWriter writer = getTestStreamWriter();
+    writer.close();
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"}, 0);
+    Exceptions.StreamWriterClosedException actualError =
+        assertFutureException(Exceptions.StreamWriterClosedException.class, appendFuture1);
+    // The basic StatusRuntimeException API is not changed.
+    assertEquals(Status.Code.FAILED_PRECONDITION, actualError.getStatus().getCode());
+    assertTrue(actualError.getStatus().getDescription().contains("Connection is already closed"));
+  }
 }

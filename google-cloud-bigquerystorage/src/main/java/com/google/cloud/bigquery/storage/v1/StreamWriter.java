@@ -309,9 +309,10 @@ public class StreamWriter implements AutoCloseable {
     try {
       if (userClosed) {
         requestWrapper.appendResult.setException(
-            new StatusRuntimeException(
+            new Exceptions.StreamWriterClosedException(
                 Status.fromCode(Status.Code.FAILED_PRECONDITION)
-                    .withDescription("Connection is already closed")));
+                    .withDescription("Connection is already closed"),
+                streamName));
         return requestWrapper.appendResult;
       }
       // Check if queue is going to be full before adding the request.

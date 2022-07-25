@@ -83,6 +83,12 @@ public final class Exceptions {
     }
   }
 
+  public static final class StreamWriterClosedException extends StorageException {
+    protected StreamWriterClosedException(Status grpcStatus, String name) {
+      super(grpcStatus, name, null, null, ImmutableMap.of());
+    }
+  }
+
   /**
    * There was a schema mismatch due to bigquery table with fewer fields than the input message.
    * This can be resolved by updating the table's schema with the message schema.
