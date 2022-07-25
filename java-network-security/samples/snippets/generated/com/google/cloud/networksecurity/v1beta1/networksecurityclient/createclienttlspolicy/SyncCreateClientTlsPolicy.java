@@ -18,8 +18,8 @@ package com.google.cloud.networksecurity.v1beta1.samples;
 
 // [START networksecurity_v1beta1_generated_networksecurityclient_createclienttlspolicy_sync]
 import com.google.cloud.networksecurity.v1beta1.ClientTlsPolicy;
-import com.google.cloud.networksecurity.v1beta1.ClientTlsPolicyName;
 import com.google.cloud.networksecurity.v1beta1.CreateClientTlsPolicyRequest;
+import com.google.cloud.networksecurity.v1beta1.LocationName;
 import com.google.cloud.networksecurity.v1beta1.NetworkSecurityClient;
 
 public class SyncCreateClientTlsPolicy {
@@ -34,9 +34,7 @@ public class SyncCreateClientTlsPolicy {
     try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
       CreateClientTlsPolicyRequest request =
           CreateClientTlsPolicyRequest.newBuilder()
-              .setParent(
-                  ClientTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[CLIENT_TLS_POLICY]")
-                      .toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setClientTlsPolicyId("clientTlsPolicyId-188933315")
               .setClientTlsPolicy(ClientTlsPolicy.newBuilder().build())
               .build();

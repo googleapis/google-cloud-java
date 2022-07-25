@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
@@ -27,11 +28,19 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.networksecurity.v1beta1.stub.NetworkSecurityStub;
 import com.google.cloud.networksecurity.v1beta1.stub.NetworkSecurityStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
-import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -108,6 +117,21 @@ import javax.annotation.Generated;
  *     NetworkSecurityClient.create(networkSecuritySettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * NetworkSecuritySettings networkSecuritySettings =
+ *     NetworkSecuritySettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             NetworkSecuritySettings.defaultHttpJsonTransportProviderBuilder().build())
+ *         .build();
+ * NetworkSecurityClient networkSecurityClient =
+ *     NetworkSecurityClient.create(networkSecuritySettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
@@ -115,7 +139,8 @@ import javax.annotation.Generated;
 public class NetworkSecurityClient implements BackgroundResource {
   private final NetworkSecuritySettings settings;
   private final NetworkSecurityStub stub;
-  private final OperationsClient operationsClient;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of NetworkSecurityClient with default settings. */
   public static final NetworkSecurityClient create() throws IOException {
@@ -147,13 +172,17 @@ public class NetworkSecurityClient implements BackgroundResource {
   protected NetworkSecurityClient(NetworkSecuritySettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((NetworkSecurityStubSettings) settings.getStubSettings()).createStub();
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected NetworkSecurityClient(NetworkSecurityStub stub) {
     this.settings = null;
     this.stub = stub;
-    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final NetworkSecuritySettings getSettings() {
@@ -168,8 +197,17 @@ public class NetworkSecurityClient implements BackgroundResource {
    * Returns the OperationsClient that can be used to query the status of a long-running operation
    * returned by another API method call.
    */
-  public final OperationsClient getOperationsClient() {
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
     return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -450,8 +488,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
-   *   AuthorizationPolicyName parent =
-   *       AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   AuthorizationPolicy authorizationPolicy = AuthorizationPolicy.newBuilder().build();
    *   String authorizationPolicyId = "authorizationPolicyId1314252166";
    *   AuthorizationPolicy response =
@@ -471,7 +508,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    */
   public final OperationFuture<AuthorizationPolicy, OperationMetadata>
       createAuthorizationPolicyAsync(
-          AuthorizationPolicyName parent,
+          LocationName parent,
           AuthorizationPolicy authorizationPolicy,
           String authorizationPolicyId) {
     CreateAuthorizationPolicyRequest request =
@@ -493,9 +530,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
-   *   String parent =
-   *       AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-   *           .toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   AuthorizationPolicy authorizationPolicy = AuthorizationPolicy.newBuilder().build();
    *   String authorizationPolicyId = "authorizationPolicyId1314252166";
    *   AuthorizationPolicy response =
@@ -537,9 +572,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   CreateAuthorizationPolicyRequest request =
    *       CreateAuthorizationPolicyRequest.newBuilder()
-   *           .setParent(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setAuthorizationPolicyId("authorizationPolicyId1314252166")
    *           .setAuthorizationPolicy(AuthorizationPolicy.newBuilder().build())
    *           .build();
@@ -568,9 +601,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   CreateAuthorizationPolicyRequest request =
    *       CreateAuthorizationPolicyRequest.newBuilder()
-   *           .setParent(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setAuthorizationPolicyId("authorizationPolicyId1314252166")
    *           .setAuthorizationPolicy(AuthorizationPolicy.newBuilder().build())
    *           .build();
@@ -599,9 +630,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   CreateAuthorizationPolicyRequest request =
    *       CreateAuthorizationPolicyRequest.newBuilder()
-   *           .setParent(
-   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setAuthorizationPolicyId("authorizationPolicyId1314252166")
    *           .setAuthorizationPolicy(AuthorizationPolicy.newBuilder().build())
    *           .build();
@@ -1153,8 +1182,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
-   *   ServerTlsPolicyName parent =
-   *       ServerTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVER_TLS_POLICY]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ServerTlsPolicy serverTlsPolicy = ServerTlsPolicy.newBuilder().build();
    *   String serverTlsPolicyId = "serverTlsPolicyId-1966046011";
    *   ServerTlsPolicy response =
@@ -1173,7 +1201,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ServerTlsPolicy, OperationMetadata> createServerTlsPolicyAsync(
-      ServerTlsPolicyName parent, ServerTlsPolicy serverTlsPolicy, String serverTlsPolicyId) {
+      LocationName parent, ServerTlsPolicy serverTlsPolicy, String serverTlsPolicyId) {
     CreateServerTlsPolicyRequest request =
         CreateServerTlsPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1193,8 +1221,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
-   *   String parent =
-   *       ServerTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVER_TLS_POLICY]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   ServerTlsPolicy serverTlsPolicy = ServerTlsPolicy.newBuilder().build();
    *   String serverTlsPolicyId = "serverTlsPolicyId-1966046011";
    *   ServerTlsPolicy response =
@@ -1235,9 +1262,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   CreateServerTlsPolicyRequest request =
    *       CreateServerTlsPolicyRequest.newBuilder()
-   *           .setParent(
-   *               ServerTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVER_TLS_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setServerTlsPolicyId("serverTlsPolicyId-1966046011")
    *           .setServerTlsPolicy(ServerTlsPolicy.newBuilder().build())
    *           .build();
@@ -1265,9 +1290,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   CreateServerTlsPolicyRequest request =
    *       CreateServerTlsPolicyRequest.newBuilder()
-   *           .setParent(
-   *               ServerTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVER_TLS_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setServerTlsPolicyId("serverTlsPolicyId-1966046011")
    *           .setServerTlsPolicy(ServerTlsPolicy.newBuilder().build())
    *           .build();
@@ -1295,9 +1318,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   CreateServerTlsPolicyRequest request =
    *       CreateServerTlsPolicyRequest.newBuilder()
-   *           .setParent(
-   *               ServerTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVER_TLS_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setServerTlsPolicyId("serverTlsPolicyId-1966046011")
    *           .setServerTlsPolicy(ServerTlsPolicy.newBuilder().build())
    *           .build();
@@ -1842,8 +1863,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
-   *   ClientTlsPolicyName parent =
-   *       ClientTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[CLIENT_TLS_POLICY]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ClientTlsPolicy clientTlsPolicy = ClientTlsPolicy.newBuilder().build();
    *   String clientTlsPolicyId = "clientTlsPolicyId-188933315";
    *   ClientTlsPolicy response =
@@ -1862,7 +1882,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ClientTlsPolicy, OperationMetadata> createClientTlsPolicyAsync(
-      ClientTlsPolicyName parent, ClientTlsPolicy clientTlsPolicy, String clientTlsPolicyId) {
+      LocationName parent, ClientTlsPolicy clientTlsPolicy, String clientTlsPolicyId) {
     CreateClientTlsPolicyRequest request =
         CreateClientTlsPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1882,8 +1902,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * // This snippet has been automatically generated for illustrative purposes only.
    * // It may require modifications to work in your environment.
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
-   *   String parent =
-   *       ClientTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[CLIENT_TLS_POLICY]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   ClientTlsPolicy clientTlsPolicy = ClientTlsPolicy.newBuilder().build();
    *   String clientTlsPolicyId = "clientTlsPolicyId-188933315";
    *   ClientTlsPolicy response =
@@ -1924,9 +1943,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   CreateClientTlsPolicyRequest request =
    *       CreateClientTlsPolicyRequest.newBuilder()
-   *           .setParent(
-   *               ClientTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[CLIENT_TLS_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setClientTlsPolicyId("clientTlsPolicyId-188933315")
    *           .setClientTlsPolicy(ClientTlsPolicy.newBuilder().build())
    *           .build();
@@ -1954,9 +1971,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   CreateClientTlsPolicyRequest request =
    *       CreateClientTlsPolicyRequest.newBuilder()
-   *           .setParent(
-   *               ClientTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[CLIENT_TLS_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setClientTlsPolicyId("clientTlsPolicyId-188933315")
    *           .setClientTlsPolicy(ClientTlsPolicy.newBuilder().build())
    *           .build();
@@ -1984,9 +1999,7 @@ public class NetworkSecurityClient implements BackgroundResource {
    * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
    *   CreateClientTlsPolicyRequest request =
    *       CreateClientTlsPolicyRequest.newBuilder()
-   *           .setParent(
-   *               ClientTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[CLIENT_TLS_POLICY]")
-   *                   .toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setClientTlsPolicyId("clientTlsPolicyId-188933315")
    *           .setClientTlsPolicy(ClientTlsPolicy.newBuilder().build())
    *           .build();
@@ -2254,6 +2267,332 @@ public class NetworkSecurityClient implements BackgroundResource {
   public final UnaryCallable<DeleteClientTlsPolicyRequest, Operation>
       deleteClientTlsPolicyCallable() {
     return stub.deleteClientTlsPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : networkSecurityClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       networkSecurityClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response =
+   *         networkSecurityClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = networkSecurityClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future = networkSecurityClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+   *                   .toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = networkSecurityClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+   *                   .toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = networkSecurityClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+   *                   .toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = networkSecurityClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+   *                   .toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = networkSecurityClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(
+   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+   *                   .toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = networkSecurityClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated for illustrative purposes only.
+   * // It may require modifications to work in your environment.
+   * try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(
+   *               AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+   *                   .toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       networkSecurityClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override
@@ -2547,6 +2886,82 @@ public class NetworkSecurityClient implements BackgroundResource {
     protected ListClientTlsPoliciesFixedSizeCollection createCollection(
         List<ListClientTlsPoliciesPage> pages, int collectionSize) {
       return new ListClientTlsPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

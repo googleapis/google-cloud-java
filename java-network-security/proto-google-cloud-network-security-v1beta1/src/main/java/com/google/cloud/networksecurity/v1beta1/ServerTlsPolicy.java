@@ -1618,6 +1618,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
    * and `mtls_policy` are set, server allows both plain text and mTLS
    * connections. See documentation of other encryption modes to confirm
    * compatibility.
+   * Consider using it if you wish to upgrade in place your deployment to TLS
+   * while having mixed TLS and non-TLS traffic reaching port :80.
    * </pre>
    *
    * <code>bool allow_open = 6;</code>
@@ -3041,6 +3043,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * and `mtls_policy` are set, server allows both plain text and mTLS
      * connections. See documentation of other encryption modes to confirm
      * compatibility.
+     * Consider using it if you wish to upgrade in place your deployment to TLS
+     * while having mixed TLS and non-TLS traffic reaching port :80.
      * </pre>
      *
      * <code>bool allow_open = 6;</code>
@@ -3061,6 +3065,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * and `mtls_policy` are set, server allows both plain text and mTLS
      * connections. See documentation of other encryption modes to confirm
      * compatibility.
+     * Consider using it if you wish to upgrade in place your deployment to TLS
+     * while having mixed TLS and non-TLS traffic reaching port :80.
      * </pre>
      *
      * <code>bool allow_open = 6;</code>
@@ -3084,6 +3090,8 @@ public final class ServerTlsPolicy extends com.google.protobuf.GeneratedMessageV
      * and `mtls_policy` are set, server allows both plain text and mTLS
      * connections. See documentation of other encryption modes to confirm
      * compatibility.
+     * Consider using it if you wish to upgrade in place your deployment to TLS
+     * while having mixed TLS and non-TLS traffic reaching port :80.
      * </pre>
      *
      * <code>bool allow_open = 6;</code>

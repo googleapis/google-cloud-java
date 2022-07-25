@@ -34,6 +34,12 @@
             "GetClientTlsPolicy": {
               "methods": ["getClientTlsPolicy", "getClientTlsPolicy", "getClientTlsPolicy", "getClientTlsPolicyCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetServerTlsPolicy": {
               "methods": ["getServerTlsPolicy", "getServerTlsPolicy", "getServerTlsPolicy", "getServerTlsPolicyCallable"]
             },
@@ -43,8 +49,17 @@
             "ListClientTlsPolicies": {
               "methods": ["listClientTlsPolicies", "listClientTlsPolicies", "listClientTlsPolicies", "listClientTlsPoliciesPagedCallable", "listClientTlsPoliciesCallable"]
             },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
             "ListServerTlsPolicies": {
               "methods": ["listServerTlsPolicies", "listServerTlsPolicies", "listServerTlsPolicies", "listServerTlsPoliciesPagedCallable", "listServerTlsPoliciesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateAuthorizationPolicy": {
               "methods": ["updateAuthorizationPolicyAsync", "updateAuthorizationPolicyAsync", "updateAuthorizationPolicyOperationCallable", "updateAuthorizationPolicyCallable"]

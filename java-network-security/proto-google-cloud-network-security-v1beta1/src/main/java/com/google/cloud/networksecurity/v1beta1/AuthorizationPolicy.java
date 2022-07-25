@@ -377,10 +377,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic source. All of the sources must match.
-     * A source is a match if both principals and ip_blocks match. If not set,
-     * the action specified in the 'action' field will be applied without any
-     * rule checks for the source.
+     * Optional. List of attributes for the traffic source. All of the sources
+     * must match. A source is a match if both principals and ip_blocks match.
+     * If not set, the action specified in the 'action' field will be applied
+     * without any rule checks for the source.
      * </pre>
      *
      * <code>
@@ -393,10 +393,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic source. All of the sources must match.
-     * A source is a match if both principals and ip_blocks match. If not set,
-     * the action specified in the 'action' field will be applied without any
-     * rule checks for the source.
+     * Optional. List of attributes for the traffic source. All of the sources
+     * must match. A source is a match if both principals and ip_blocks match.
+     * If not set, the action specified in the 'action' field will be applied
+     * without any rule checks for the source.
      * </pre>
      *
      * <code>
@@ -408,10 +408,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic source. All of the sources must match.
-     * A source is a match if both principals and ip_blocks match. If not set,
-     * the action specified in the 'action' field will be applied without any
-     * rule checks for the source.
+     * Optional. List of attributes for the traffic source. All of the sources
+     * must match. A source is a match if both principals and ip_blocks match.
+     * If not set, the action specified in the 'action' field will be applied
+     * without any rule checks for the source.
      * </pre>
      *
      * <code>
@@ -423,10 +423,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic source. All of the sources must match.
-     * A source is a match if both principals and ip_blocks match. If not set,
-     * the action specified in the 'action' field will be applied without any
-     * rule checks for the source.
+     * Optional. List of attributes for the traffic source. All of the sources
+     * must match. A source is a match if both principals and ip_blocks match.
+     * If not set, the action specified in the 'action' field will be applied
+     * without any rule checks for the source.
      * </pre>
      *
      * <code>
@@ -441,10 +441,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic source. All of the sources must match.
-     * A source is a match if both principals and ip_blocks match. If not set,
-     * the action specified in the 'action' field will be applied without any
-     * rule checks for the source.
+     * Optional. List of attributes for the traffic source. All of the sources
+     * must match. A source is a match if both principals and ip_blocks match.
+     * If not set, the action specified in the 'action' field will be applied
+     * without any rule checks for the source.
      * </pre>
      *
      * <code>
@@ -458,9 +458,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic destination. All of the destinations
-     * must match. A destination is a match if a request matches all the
-     * specified hosts, ports, methods and headers. If not set, the
+     * Optional. List of attributes for the traffic destination. All of the
+     * destinations must match. A destination is a match if a request matches
+     * all the specified hosts, ports, methods and headers. If not set, the
      * action specified in the 'action' field will be applied without any rule
      * checks for the destination.
      * </pre>
@@ -475,9 +475,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic destination. All of the destinations
-     * must match. A destination is a match if a request matches all the
-     * specified hosts, ports, methods and headers. If not set, the
+     * Optional. List of attributes for the traffic destination. All of the
+     * destinations must match. A destination is a match if a request matches
+     * all the specified hosts, ports, methods and headers. If not set, the
      * action specified in the 'action' field will be applied without any rule
      * checks for the destination.
      * </pre>
@@ -492,9 +492,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic destination. All of the destinations
-     * must match. A destination is a match if a request matches all the
-     * specified hosts, ports, methods and headers. If not set, the
+     * Optional. List of attributes for the traffic destination. All of the
+     * destinations must match. A destination is a match if a request matches
+     * all the specified hosts, ports, methods and headers. If not set, the
      * action specified in the 'action' field will be applied without any rule
      * checks for the destination.
      * </pre>
@@ -508,9 +508,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic destination. All of the destinations
-     * must match. A destination is a match if a request matches all the
-     * specified hosts, ports, methods and headers. If not set, the
+     * Optional. List of attributes for the traffic destination. All of the
+     * destinations must match. A destination is a match if a request matches
+     * all the specified hosts, ports, methods and headers. If not set, the
      * action specified in the 'action' field will be applied without any rule
      * checks for the destination.
      * </pre>
@@ -528,9 +528,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic destination. All of the destinations
-     * must match. A destination is a match if a request matches all the
-     * specified hosts, ports, methods and headers. If not set, the
+     * Optional. List of attributes for the traffic destination. All of the
+     * destinations must match. A destination is a match if a request matches
+     * all the specified hosts, ports, methods and headers. If not set, the
      * action specified in the 'action' field will be applied without any rule
      * checks for the destination.
      * </pre>
@@ -679,11 +679,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of peer identities to match for authorization. At least one
-       * principal should match. Each peer can be an exact match, or a prefix
-       * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*". Authorization based on the
-       * principal name without certificate validation (configured by
+       * Optional. List of peer identities to match for authorization. At least
+       * one principal should match. Each peer can be an exact match, or a
+       * prefix match (example, "namespace/&#42;") or a suffix match (example,
+       * "*&#47;service-account") or a presence match "*". Authorization based on
+       * the principal name without certificate validation (configured by
        * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
@@ -696,11 +696,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of peer identities to match for authorization. At least one
-       * principal should match. Each peer can be an exact match, or a prefix
-       * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*". Authorization based on the
-       * principal name without certificate validation (configured by
+       * Optional. List of peer identities to match for authorization. At least
+       * one principal should match. Each peer can be an exact match, or a
+       * prefix match (example, "namespace/&#42;") or a suffix match (example,
+       * "*&#47;service-account") or a presence match "*". Authorization based on
+       * the principal name without certificate validation (configured by
        * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
@@ -713,11 +713,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of peer identities to match for authorization. At least one
-       * principal should match. Each peer can be an exact match, or a prefix
-       * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*". Authorization based on the
-       * principal name without certificate validation (configured by
+       * Optional. List of peer identities to match for authorization. At least
+       * one principal should match. Each peer can be an exact match, or a
+       * prefix match (example, "namespace/&#42;") or a suffix match (example,
+       * "*&#47;service-account") or a presence match "*". Authorization based on
+       * the principal name without certificate validation (configured by
        * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
@@ -731,11 +731,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of peer identities to match for authorization. At least one
-       * principal should match. Each peer can be an exact match, or a prefix
-       * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*". Authorization based on the
-       * principal name without certificate validation (configured by
+       * Optional. List of peer identities to match for authorization. At least
+       * one principal should match. Each peer can be an exact match, or a
+       * prefix match (example, "namespace/&#42;") or a suffix match (example,
+       * "*&#47;service-account") or a presence match "*". Authorization based on
+       * the principal name without certificate validation (configured by
        * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
@@ -750,11 +750,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of CIDR ranges to match based on source IP address. At least one
-       * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported. Authorization based on source IP alone
-       * should be avoided. The IP addresses of any load balancers or proxies
-       * should be considered untrusted.
+       * Optional. List of CIDR ranges to match based on source IP address. At
+       * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+       * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+       * alone should be avoided. The IP addresses of any load balancers or
+       * proxies should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -766,11 +766,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of CIDR ranges to match based on source IP address. At least one
-       * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported. Authorization based on source IP alone
-       * should be avoided. The IP addresses of any load balancers or proxies
-       * should be considered untrusted.
+       * Optional. List of CIDR ranges to match based on source IP address. At
+       * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+       * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+       * alone should be avoided. The IP addresses of any load balancers or
+       * proxies should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -782,11 +782,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of CIDR ranges to match based on source IP address. At least one
-       * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported. Authorization based on source IP alone
-       * should be avoided. The IP addresses of any load balancers or proxies
-       * should be considered untrusted.
+       * Optional. List of CIDR ranges to match based on source IP address. At
+       * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+       * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+       * alone should be avoided. The IP addresses of any load balancers or
+       * proxies should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -799,11 +799,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of CIDR ranges to match based on source IP address. At least one
-       * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported. Authorization based on source IP alone
-       * should be avoided. The IP addresses of any load balancers or proxies
-       * should be considered untrusted.
+       * Optional. List of CIDR ranges to match based on source IP address. At
+       * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+       * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+       * alone should be avoided. The IP addresses of any load balancers or
+       * proxies should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -937,11 +937,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of peer identities to match for authorization. At least one
-       * principal should match. Each peer can be an exact match, or a prefix
-       * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*". Authorization based on the
-       * principal name without certificate validation (configured by
+       * Optional. List of peer identities to match for authorization. At least
+       * one principal should match. Each peer can be an exact match, or a
+       * prefix match (example, "namespace/&#42;") or a suffix match (example,
+       * "*&#47;service-account") or a presence match "*". Authorization based on
+       * the principal name without certificate validation (configured by
        * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
@@ -956,11 +956,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of peer identities to match for authorization. At least one
-       * principal should match. Each peer can be an exact match, or a prefix
-       * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*". Authorization based on the
-       * principal name without certificate validation (configured by
+       * Optional. List of peer identities to match for authorization. At least
+       * one principal should match. Each peer can be an exact match, or a
+       * prefix match (example, "namespace/&#42;") or a suffix match (example,
+       * "*&#47;service-account") or a presence match "*". Authorization based on
+       * the principal name without certificate validation (configured by
        * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
@@ -975,11 +975,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of peer identities to match for authorization. At least one
-       * principal should match. Each peer can be an exact match, or a prefix
-       * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*". Authorization based on the
-       * principal name without certificate validation (configured by
+       * Optional. List of peer identities to match for authorization. At least
+       * one principal should match. Each peer can be an exact match, or a
+       * prefix match (example, "namespace/&#42;") or a suffix match (example,
+       * "*&#47;service-account") or a presence match "*". Authorization based on
+       * the principal name without certificate validation (configured by
        * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
@@ -995,11 +995,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of peer identities to match for authorization. At least one
-       * principal should match. Each peer can be an exact match, or a prefix
-       * match (example, "namespace/&#42;") or a suffix match (example, //
-       * *&#47;service-account") or a presence match "*". Authorization based on the
-       * principal name without certificate validation (configured by
+       * Optional. List of peer identities to match for authorization. At least
+       * one principal should match. Each peer can be an exact match, or a
+       * prefix match (example, "namespace/&#42;") or a suffix match (example,
+       * "*&#47;service-account") or a presence match "*". Authorization based on
+       * the principal name without certificate validation (configured by
        * ServerTlsPolicy resource) is considered insecure.
        * </pre>
        *
@@ -1018,11 +1018,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of CIDR ranges to match based on source IP address. At least one
-       * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported. Authorization based on source IP alone
-       * should be avoided. The IP addresses of any load balancers or proxies
-       * should be considered untrusted.
+       * Optional. List of CIDR ranges to match based on source IP address. At
+       * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+       * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+       * alone should be avoided. The IP addresses of any load balancers or
+       * proxies should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1036,11 +1036,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of CIDR ranges to match based on source IP address. At least one
-       * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported. Authorization based on source IP alone
-       * should be avoided. The IP addresses of any load balancers or proxies
-       * should be considered untrusted.
+       * Optional. List of CIDR ranges to match based on source IP address. At
+       * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+       * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+       * alone should be avoided. The IP addresses of any load balancers or
+       * proxies should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1054,11 +1054,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of CIDR ranges to match based on source IP address. At least one
-       * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported. Authorization based on source IP alone
-       * should be avoided. The IP addresses of any load balancers or proxies
-       * should be considered untrusted.
+       * Optional. List of CIDR ranges to match based on source IP address. At
+       * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+       * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+       * alone should be avoided. The IP addresses of any load balancers or
+       * proxies should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1073,11 +1073,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of CIDR ranges to match based on source IP address. At least one
-       * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-       * "1.2.3.0/24") are supported. Authorization based on source IP alone
-       * should be avoided. The IP addresses of any load balancers or proxies
-       * should be considered untrusted.
+       * Optional. List of CIDR ranges to match based on source IP address. At
+       * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+       * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+       * alone should be avoided. The IP addresses of any load balancers or
+       * proxies should be considered untrusted.
        * </pre>
        *
        * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1499,11 +1499,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of peer identities to match for authorization. At least one
-         * principal should match. Each peer can be an exact match, or a prefix
-         * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*". Authorization based on the
-         * principal name without certificate validation (configured by
+         * Optional. List of peer identities to match for authorization. At least
+         * one principal should match. Each peer can be an exact match, or a
+         * prefix match (example, "namespace/&#42;") or a suffix match (example,
+         * "*&#47;service-account") or a presence match "*". Authorization based on
+         * the principal name without certificate validation (configured by
          * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
@@ -1518,11 +1518,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of peer identities to match for authorization. At least one
-         * principal should match. Each peer can be an exact match, or a prefix
-         * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*". Authorization based on the
-         * principal name without certificate validation (configured by
+         * Optional. List of peer identities to match for authorization. At least
+         * one principal should match. Each peer can be an exact match, or a
+         * prefix match (example, "namespace/&#42;") or a suffix match (example,
+         * "*&#47;service-account") or a presence match "*". Authorization based on
+         * the principal name without certificate validation (configured by
          * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
@@ -1537,11 +1537,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of peer identities to match for authorization. At least one
-         * principal should match. Each peer can be an exact match, or a prefix
-         * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*". Authorization based on the
-         * principal name without certificate validation (configured by
+         * Optional. List of peer identities to match for authorization. At least
+         * one principal should match. Each peer can be an exact match, or a
+         * prefix match (example, "namespace/&#42;") or a suffix match (example,
+         * "*&#47;service-account") or a presence match "*". Authorization based on
+         * the principal name without certificate validation (configured by
          * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
@@ -1557,11 +1557,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of peer identities to match for authorization. At least one
-         * principal should match. Each peer can be an exact match, or a prefix
-         * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*". Authorization based on the
-         * principal name without certificate validation (configured by
+         * Optional. List of peer identities to match for authorization. At least
+         * one principal should match. Each peer can be an exact match, or a
+         * prefix match (example, "namespace/&#42;") or a suffix match (example,
+         * "*&#47;service-account") or a presence match "*". Authorization based on
+         * the principal name without certificate validation (configured by
          * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
@@ -1577,11 +1577,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of peer identities to match for authorization. At least one
-         * principal should match. Each peer can be an exact match, or a prefix
-         * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*". Authorization based on the
-         * principal name without certificate validation (configured by
+         * Optional. List of peer identities to match for authorization. At least
+         * one principal should match. Each peer can be an exact match, or a
+         * prefix match (example, "namespace/&#42;") or a suffix match (example,
+         * "*&#47;service-account") or a presence match "*". Authorization based on
+         * the principal name without certificate validation (configured by
          * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
@@ -1604,11 +1604,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of peer identities to match for authorization. At least one
-         * principal should match. Each peer can be an exact match, or a prefix
-         * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*". Authorization based on the
-         * principal name without certificate validation (configured by
+         * Optional. List of peer identities to match for authorization. At least
+         * one principal should match. Each peer can be an exact match, or a
+         * prefix match (example, "namespace/&#42;") or a suffix match (example,
+         * "*&#47;service-account") or a presence match "*". Authorization based on
+         * the principal name without certificate validation (configured by
          * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
@@ -1630,11 +1630,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of peer identities to match for authorization. At least one
-         * principal should match. Each peer can be an exact match, or a prefix
-         * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*". Authorization based on the
-         * principal name without certificate validation (configured by
+         * Optional. List of peer identities to match for authorization. At least
+         * one principal should match. Each peer can be an exact match, or a
+         * prefix match (example, "namespace/&#42;") or a suffix match (example,
+         * "*&#47;service-account") or a presence match "*". Authorization based on
+         * the principal name without certificate validation (configured by
          * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
@@ -1653,11 +1653,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of peer identities to match for authorization. At least one
-         * principal should match. Each peer can be an exact match, or a prefix
-         * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*". Authorization based on the
-         * principal name without certificate validation (configured by
+         * Optional. List of peer identities to match for authorization. At least
+         * one principal should match. Each peer can be an exact match, or a
+         * prefix match (example, "namespace/&#42;") or a suffix match (example,
+         * "*&#47;service-account") or a presence match "*". Authorization based on
+         * the principal name without certificate validation (configured by
          * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
@@ -1675,11 +1675,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of peer identities to match for authorization. At least one
-         * principal should match. Each peer can be an exact match, or a prefix
-         * match (example, "namespace/&#42;") or a suffix match (example, //
-         * *&#47;service-account") or a presence match "*". Authorization based on the
-         * principal name without certificate validation (configured by
+         * Optional. List of peer identities to match for authorization. At least
+         * one principal should match. Each peer can be an exact match, or a
+         * prefix match (example, "namespace/&#42;") or a suffix match (example,
+         * "*&#47;service-account") or a presence match "*". Authorization based on
+         * the principal name without certificate validation (configured by
          * ServerTlsPolicy resource) is considered insecure.
          * </pre>
          *
@@ -1712,11 +1712,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of CIDR ranges to match based on source IP address. At least one
-         * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported. Authorization based on source IP alone
-         * should be avoided. The IP addresses of any load balancers or proxies
-         * should be considered untrusted.
+         * Optional. List of CIDR ranges to match based on source IP address. At
+         * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+         * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+         * alone should be avoided. The IP addresses of any load balancers or
+         * proxies should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1730,11 +1730,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of CIDR ranges to match based on source IP address. At least one
-         * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported. Authorization based on source IP alone
-         * should be avoided. The IP addresses of any load balancers or proxies
-         * should be considered untrusted.
+         * Optional. List of CIDR ranges to match based on source IP address. At
+         * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+         * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+         * alone should be avoided. The IP addresses of any load balancers or
+         * proxies should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1748,11 +1748,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of CIDR ranges to match based on source IP address. At least one
-         * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported. Authorization based on source IP alone
-         * should be avoided. The IP addresses of any load balancers or proxies
-         * should be considered untrusted.
+         * Optional. List of CIDR ranges to match based on source IP address. At
+         * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+         * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+         * alone should be avoided. The IP addresses of any load balancers or
+         * proxies should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1767,11 +1767,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of CIDR ranges to match based on source IP address. At least one
-         * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported. Authorization based on source IP alone
-         * should be avoided. The IP addresses of any load balancers or proxies
-         * should be considered untrusted.
+         * Optional. List of CIDR ranges to match based on source IP address. At
+         * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+         * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+         * alone should be avoided. The IP addresses of any load balancers or
+         * proxies should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1786,11 +1786,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of CIDR ranges to match based on source IP address. At least one
-         * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported. Authorization based on source IP alone
-         * should be avoided. The IP addresses of any load balancers or proxies
-         * should be considered untrusted.
+         * Optional. List of CIDR ranges to match based on source IP address. At
+         * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+         * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+         * alone should be avoided. The IP addresses of any load balancers or
+         * proxies should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1812,11 +1812,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of CIDR ranges to match based on source IP address. At least one
-         * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported. Authorization based on source IP alone
-         * should be avoided. The IP addresses of any load balancers or proxies
-         * should be considered untrusted.
+         * Optional. List of CIDR ranges to match based on source IP address. At
+         * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+         * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+         * alone should be avoided. The IP addresses of any load balancers or
+         * proxies should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1837,11 +1837,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of CIDR ranges to match based on source IP address. At least one
-         * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported. Authorization based on source IP alone
-         * should be avoided. The IP addresses of any load balancers or proxies
-         * should be considered untrusted.
+         * Optional. List of CIDR ranges to match based on source IP address. At
+         * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+         * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+         * alone should be avoided. The IP addresses of any load balancers or
+         * proxies should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1859,11 +1859,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of CIDR ranges to match based on source IP address. At least one
-         * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported. Authorization based on source IP alone
-         * should be avoided. The IP addresses of any load balancers or proxies
-         * should be considered untrusted.
+         * Optional. List of CIDR ranges to match based on source IP address. At
+         * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+         * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+         * alone should be avoided. The IP addresses of any load balancers or
+         * proxies should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1880,11 +1880,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. List of CIDR ranges to match based on source IP address. At least one
-         * IP block should match. Single IP (e.g., "1.2.3.4") and CIDR (e.g.,
-         * "1.2.3.0/24") are supported. Authorization based on source IP alone
-         * should be avoided. The IP addresses of any load balancers or proxies
-         * should be considered untrusted.
+         * Optional. List of CIDR ranges to match based on source IP address. At
+         * least one IP block should match. Single IP (e.g., "1.2.3.4") and CIDR
+         * (e.g., "1.2.3.0/24") are supported. Authorization based on source IP
+         * alone should be avoided. The IP addresses of any load balancers or
+         * proxies should be considered untrusted.
          * </pre>
          *
          * <code>repeated string ip_blocks = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1968,10 +1968,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against the ":authority" header in
-       * http requests. At least one host should match. Each host can be an
-       * exact match, or a prefix match (example "mydomain.*") or a suffix
-       * match (example // *.myorg.com") or a presence(any) match "*".
+       * Required. List of host names to match. Matched against the ":authority"
+       * header in http requests. At least one host should match. Each host can
+       * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+       * match (example "*.myorg.com") or a presence (any) match "*".
        * </pre>
        *
        * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1983,10 +1983,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against the ":authority" header in
-       * http requests. At least one host should match. Each host can be an
-       * exact match, or a prefix match (example "mydomain.*") or a suffix
-       * match (example // *.myorg.com") or a presence(any) match "*".
+       * Required. List of host names to match. Matched against the ":authority"
+       * header in http requests. At least one host should match. Each host can
+       * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+       * match (example "*.myorg.com") or a presence (any) match "*".
        * </pre>
        *
        * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1998,10 +1998,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against the ":authority" header in
-       * http requests. At least one host should match. Each host can be an
-       * exact match, or a prefix match (example "mydomain.*") or a suffix
-       * match (example // *.myorg.com") or a presence(any) match "*".
+       * Required. List of host names to match. Matched against the ":authority"
+       * header in http requests. At least one host should match. Each host can
+       * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+       * match (example "*.myorg.com") or a presence (any) match "*".
        * </pre>
        *
        * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2014,10 +2014,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against the ":authority" header in
-       * http requests. At least one host should match. Each host can be an
-       * exact match, or a prefix match (example "mydomain.*") or a suffix
-       * match (example // *.myorg.com") or a presence(any) match "*".
+       * Required. List of host names to match. Matched against the ":authority"
+       * header in http requests. At least one host should match. Each host can
+       * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+       * match (example "*.myorg.com") or a presence (any) match "*".
        * </pre>
        *
        * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2031,7 +2031,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of destination ports to match. At least one port should match.
+       * Required. List of destination ports to match. At least one port should
+       * match.
        * </pre>
        *
        * <code>repeated uint32 ports = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2043,7 +2044,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of destination ports to match. At least one port should match.
+       * Required. List of destination ports to match. At least one port should
+       * match.
        * </pre>
        *
        * <code>repeated uint32 ports = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2055,7 +2057,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of destination ports to match. At least one port should match.
+       * Required. List of destination ports to match. At least one port should
+       * match.
        * </pre>
        *
        * <code>repeated uint32 ports = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2124,11 +2127,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Match against key:value pair in http header. Provides a flexible match
-       * based on HTTP headers, for potentially advanced use cases. At least one
-       * header should match. Avoid using header matches to make authorization
-       * decisions unless there is a strong guarantee that requests arrive
-       * through a trusted client or proxy.
+       * Optional. Match against key:value pair in http header. Provides a
+       * flexible match based on HTTP headers, for potentially advanced use
+       * cases. At least one header should match. Avoid using header matches to
+       * make authorization decisions unless there is a strong guarantee that
+       * requests arrive through a trusted client or proxy.
        * </pre>
        *
        * <code>
@@ -2142,11 +2145,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Match against key:value pair in http header. Provides a flexible match
-       * based on HTTP headers, for potentially advanced use cases. At least one
-       * header should match. Avoid using header matches to make authorization
-       * decisions unless there is a strong guarantee that requests arrive
-       * through a trusted client or proxy.
+       * Optional. Match against key:value pair in http header. Provides a
+       * flexible match based on HTTP headers, for potentially advanced use
+       * cases. At least one header should match. Avoid using header matches to
+       * make authorization decisions unless there is a strong guarantee that
+       * requests arrive through a trusted client or proxy.
        * </pre>
        *
        * <code>
@@ -2161,11 +2164,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Match against key:value pair in http header. Provides a flexible match
-       * based on HTTP headers, for potentially advanced use cases. At least one
-       * header should match. Avoid using header matches to make authorization
-       * decisions unless there is a strong guarantee that requests arrive
-       * through a trusted client or proxy.
+       * Optional. Match against key:value pair in http header. Provides a
+       * flexible match based on HTTP headers, for potentially advanced use
+       * cases. At least one header should match. Avoid using header matches to
+       * make authorization decisions unless there is a strong guarantee that
+       * requests arrive through a trusted client or proxy.
        * </pre>
        *
        * <code>
@@ -2441,7 +2444,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Specification of HTTP header match atrributes.
+       * Specification of HTTP header match attributes.
        * </pre>
        *
        * Protobuf type {@code
@@ -2949,7 +2952,7 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Specification of HTTP header match atrributes.
+         * Specification of HTTP header match attributes.
          * </pre>
          *
          * Protobuf type {@code
@@ -3528,10 +3531,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against the ":authority" header in
-       * http requests. At least one host should match. Each host can be an
-       * exact match, or a prefix match (example "mydomain.*") or a suffix
-       * match (example // *.myorg.com") or a presence(any) match "*".
+       * Required. List of host names to match. Matched against the ":authority"
+       * header in http requests. At least one host should match. Each host can
+       * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+       * match (example "*.myorg.com") or a presence (any) match "*".
        * </pre>
        *
        * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3545,10 +3548,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against the ":authority" header in
-       * http requests. At least one host should match. Each host can be an
-       * exact match, or a prefix match (example "mydomain.*") or a suffix
-       * match (example // *.myorg.com") or a presence(any) match "*".
+       * Required. List of host names to match. Matched against the ":authority"
+       * header in http requests. At least one host should match. Each host can
+       * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+       * match (example "*.myorg.com") or a presence (any) match "*".
        * </pre>
        *
        * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3562,10 +3565,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against the ":authority" header in
-       * http requests. At least one host should match. Each host can be an
-       * exact match, or a prefix match (example "mydomain.*") or a suffix
-       * match (example // *.myorg.com") or a presence(any) match "*".
+       * Required. List of host names to match. Matched against the ":authority"
+       * header in http requests. At least one host should match. Each host can
+       * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+       * match (example "*.myorg.com") or a presence (any) match "*".
        * </pre>
        *
        * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3580,10 +3583,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of host names to match. Matched against the ":authority" header in
-       * http requests. At least one host should match. Each host can be an
-       * exact match, or a prefix match (example "mydomain.*") or a suffix
-       * match (example // *.myorg.com") or a presence(any) match "*".
+       * Required. List of host names to match. Matched against the ":authority"
+       * header in http requests. At least one host should match. Each host can
+       * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+       * match (example "*.myorg.com") or a presence (any) match "*".
        * </pre>
        *
        * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3601,7 +3604,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of destination ports to match. At least one port should match.
+       * Required. List of destination ports to match. At least one port should
+       * match.
        * </pre>
        *
        * <code>repeated uint32 ports = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3616,7 +3620,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of destination ports to match. At least one port should match.
+       * Required. List of destination ports to match. At least one port should
+       * match.
        * </pre>
        *
        * <code>repeated uint32 ports = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3630,7 +3635,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Required. List of destination ports to match. At least one port should match.
+       * Required. List of destination ports to match. At least one port should
+       * match.
        * </pre>
        *
        * <code>repeated uint32 ports = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3717,11 +3723,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Match against key:value pair in http header. Provides a flexible match
-       * based on HTTP headers, for potentially advanced use cases. At least one
-       * header should match. Avoid using header matches to make authorization
-       * decisions unless there is a strong guarantee that requests arrive
-       * through a trusted client or proxy.
+       * Optional. Match against key:value pair in http header. Provides a
+       * flexible match based on HTTP headers, for potentially advanced use
+       * cases. At least one header should match. Avoid using header matches to
+       * make authorization decisions unless there is a strong guarantee that
+       * requests arrive through a trusted client or proxy.
        * </pre>
        *
        * <code>
@@ -3738,11 +3744,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Match against key:value pair in http header. Provides a flexible match
-       * based on HTTP headers, for potentially advanced use cases. At least one
-       * header should match. Avoid using header matches to make authorization
-       * decisions unless there is a strong guarantee that requests arrive
-       * through a trusted client or proxy.
+       * Optional. Match against key:value pair in http header. Provides a
+       * flexible match based on HTTP headers, for potentially advanced use
+       * cases. At least one header should match. Avoid using header matches to
+       * make authorization decisions unless there is a strong guarantee that
+       * requests arrive through a trusted client or proxy.
        * </pre>
        *
        * <code>
@@ -3764,11 +3770,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Match against key:value pair in http header. Provides a flexible match
-       * based on HTTP headers, for potentially advanced use cases. At least one
-       * header should match. Avoid using header matches to make authorization
-       * decisions unless there is a strong guarantee that requests arrive
-       * through a trusted client or proxy.
+       * Optional. Match against key:value pair in http header. Provides a
+       * flexible match based on HTTP headers, for potentially advanced use
+       * cases. At least one header should match. Avoid using header matches to
+       * make authorization decisions unless there is a strong guarantee that
+       * requests arrive through a trusted client or proxy.
        * </pre>
        *
        * <code>
@@ -4270,10 +4276,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against the ":authority" header in
-         * http requests. At least one host should match. Each host can be an
-         * exact match, or a prefix match (example "mydomain.*") or a suffix
-         * match (example // *.myorg.com") or a presence(any) match "*".
+         * Required. List of host names to match. Matched against the ":authority"
+         * header in http requests. At least one host should match. Each host can
+         * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+         * match (example "*.myorg.com") or a presence (any) match "*".
          * </pre>
          *
          * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4287,10 +4293,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against the ":authority" header in
-         * http requests. At least one host should match. Each host can be an
-         * exact match, or a prefix match (example "mydomain.*") or a suffix
-         * match (example // *.myorg.com") or a presence(any) match "*".
+         * Required. List of host names to match. Matched against the ":authority"
+         * header in http requests. At least one host should match. Each host can
+         * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+         * match (example "*.myorg.com") or a presence (any) match "*".
          * </pre>
          *
          * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4304,10 +4310,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against the ":authority" header in
-         * http requests. At least one host should match. Each host can be an
-         * exact match, or a prefix match (example "mydomain.*") or a suffix
-         * match (example // *.myorg.com") or a presence(any) match "*".
+         * Required. List of host names to match. Matched against the ":authority"
+         * header in http requests. At least one host should match. Each host can
+         * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+         * match (example "*.myorg.com") or a presence (any) match "*".
          * </pre>
          *
          * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4322,10 +4328,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against the ":authority" header in
-         * http requests. At least one host should match. Each host can be an
-         * exact match, or a prefix match (example "mydomain.*") or a suffix
-         * match (example // *.myorg.com") or a presence(any) match "*".
+         * Required. List of host names to match. Matched against the ":authority"
+         * header in http requests. At least one host should match. Each host can
+         * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+         * match (example "*.myorg.com") or a presence (any) match "*".
          * </pre>
          *
          * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4340,10 +4346,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against the ":authority" header in
-         * http requests. At least one host should match. Each host can be an
-         * exact match, or a prefix match (example "mydomain.*") or a suffix
-         * match (example // *.myorg.com") or a presence(any) match "*".
+         * Required. List of host names to match. Matched against the ":authority"
+         * header in http requests. At least one host should match. Each host can
+         * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+         * match (example "*.myorg.com") or a presence (any) match "*".
          * </pre>
          *
          * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4365,10 +4371,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against the ":authority" header in
-         * http requests. At least one host should match. Each host can be an
-         * exact match, or a prefix match (example "mydomain.*") or a suffix
-         * match (example // *.myorg.com") or a presence(any) match "*".
+         * Required. List of host names to match. Matched against the ":authority"
+         * header in http requests. At least one host should match. Each host can
+         * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+         * match (example "*.myorg.com") or a presence (any) match "*".
          * </pre>
          *
          * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4389,10 +4395,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against the ":authority" header in
-         * http requests. At least one host should match. Each host can be an
-         * exact match, or a prefix match (example "mydomain.*") or a suffix
-         * match (example // *.myorg.com") or a presence(any) match "*".
+         * Required. List of host names to match. Matched against the ":authority"
+         * header in http requests. At least one host should match. Each host can
+         * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+         * match (example "*.myorg.com") or a presence (any) match "*".
          * </pre>
          *
          * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4410,10 +4416,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against the ":authority" header in
-         * http requests. At least one host should match. Each host can be an
-         * exact match, or a prefix match (example "mydomain.*") or a suffix
-         * match (example // *.myorg.com") or a presence(any) match "*".
+         * Required. List of host names to match. Matched against the ":authority"
+         * header in http requests. At least one host should match. Each host can
+         * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+         * match (example "*.myorg.com") or a presence (any) match "*".
          * </pre>
          *
          * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4430,10 +4436,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of host names to match. Matched against the ":authority" header in
-         * http requests. At least one host should match. Each host can be an
-         * exact match, or a prefix match (example "mydomain.*") or a suffix
-         * match (example // *.myorg.com") or a presence(any) match "*".
+         * Required. List of host names to match. Matched against the ":authority"
+         * header in http requests. At least one host should match. Each host can
+         * be an exact match, or a prefix match (example "mydomain.*") or a suffix
+         * match (example "*.myorg.com") or a presence (any) match "*".
          * </pre>
          *
          * <code>repeated string hosts = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4464,7 +4470,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of destination ports to match. At least one port should match.
+         * Required. List of destination ports to match. At least one port should
+         * match.
          * </pre>
          *
          * <code>repeated uint32 ports = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4480,7 +4487,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of destination ports to match. At least one port should match.
+         * Required. List of destination ports to match. At least one port should
+         * match.
          * </pre>
          *
          * <code>repeated uint32 ports = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4494,7 +4502,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of destination ports to match. At least one port should match.
+         * Required. List of destination ports to match. At least one port should
+         * match.
          * </pre>
          *
          * <code>repeated uint32 ports = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4509,7 +4518,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of destination ports to match. At least one port should match.
+         * Required. List of destination ports to match. At least one port should
+         * match.
          * </pre>
          *
          * <code>repeated uint32 ports = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4528,7 +4538,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of destination ports to match. At least one port should match.
+         * Required. List of destination ports to match. At least one port should
+         * match.
          * </pre>
          *
          * <code>repeated uint32 ports = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4546,7 +4557,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of destination ports to match. At least one port should match.
+         * Required. List of destination ports to match. At least one port should
+         * match.
          * </pre>
          *
          * <code>repeated uint32 ports = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4564,7 +4576,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Required. List of destination ports to match. At least one port should match.
+         * Required. List of destination ports to match. At least one port should
+         * match.
          * </pre>
          *
          * <code>repeated uint32 ports = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4770,11 +4783,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a flexible match
-         * based on HTTP headers, for potentially advanced use cases. At least one
-         * header should match. Avoid using header matches to make authorization
-         * decisions unless there is a strong guarantee that requests arrive
-         * through a trusted client or proxy.
+         * Optional. Match against key:value pair in http header. Provides a
+         * flexible match based on HTTP headers, for potentially advanced use
+         * cases. At least one header should match. Avoid using header matches to
+         * make authorization decisions unless there is a strong guarantee that
+         * requests arrive through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4790,11 +4803,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a flexible match
-         * based on HTTP headers, for potentially advanced use cases. At least one
-         * header should match. Avoid using header matches to make authorization
-         * decisions unless there is a strong guarantee that requests arrive
-         * through a trusted client or proxy.
+         * Optional. Match against key:value pair in http header. Provides a
+         * flexible match based on HTTP headers, for potentially advanced use
+         * cases. At least one header should match. Avoid using header matches to
+         * make authorization decisions unless there is a strong guarantee that
+         * requests arrive through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4819,11 +4832,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a flexible match
-         * based on HTTP headers, for potentially advanced use cases. At least one
-         * header should match. Avoid using header matches to make authorization
-         * decisions unless there is a strong guarantee that requests arrive
-         * through a trusted client or proxy.
+         * Optional. Match against key:value pair in http header. Provides a
+         * flexible match based on HTTP headers, for potentially advanced use
+         * cases. At least one header should match. Avoid using header matches to
+         * make authorization decisions unless there is a strong guarantee that
+         * requests arrive through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4850,11 +4863,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a flexible match
-         * based on HTTP headers, for potentially advanced use cases. At least one
-         * header should match. Avoid using header matches to make authorization
-         * decisions unless there is a strong guarantee that requests arrive
-         * through a trusted client or proxy.
+         * Optional. Match against key:value pair in http header. Provides a
+         * flexible match based on HTTP headers, for potentially advanced use
+         * cases. At least one header should match. Avoid using header matches to
+         * make authorization decisions unless there is a strong guarantee that
+         * requests arrive through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4878,11 +4891,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a flexible match
-         * based on HTTP headers, for potentially advanced use cases. At least one
-         * header should match. Avoid using header matches to make authorization
-         * decisions unless there is a strong guarantee that requests arrive
-         * through a trusted client or proxy.
+         * Optional. Match against key:value pair in http header. Provides a
+         * flexible match based on HTTP headers, for potentially advanced use
+         * cases. At least one header should match. Avoid using header matches to
+         * make authorization decisions unless there is a strong guarantee that
+         * requests arrive through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4914,11 +4927,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a flexible match
-         * based on HTTP headers, for potentially advanced use cases. At least one
-         * header should match. Avoid using header matches to make authorization
-         * decisions unless there is a strong guarantee that requests arrive
-         * through a trusted client or proxy.
+         * Optional. Match against key:value pair in http header. Provides a
+         * flexible match based on HTTP headers, for potentially advanced use
+         * cases. At least one header should match. Avoid using header matches to
+         * make authorization decisions unless there is a strong guarantee that
+         * requests arrive through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4940,11 +4953,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a flexible match
-         * based on HTTP headers, for potentially advanced use cases. At least one
-         * header should match. Avoid using header matches to make authorization
-         * decisions unless there is a strong guarantee that requests arrive
-         * through a trusted client or proxy.
+         * Optional. Match against key:value pair in http header. Provides a
+         * flexible match based on HTTP headers, for potentially advanced use
+         * cases. At least one header should match. Avoid using header matches to
+         * make authorization decisions unless there is a strong guarantee that
+         * requests arrive through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4962,11 +4975,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a flexible match
-         * based on HTTP headers, for potentially advanced use cases. At least one
-         * header should match. Avoid using header matches to make authorization
-         * decisions unless there is a strong guarantee that requests arrive
-         * through a trusted client or proxy.
+         * Optional. Match against key:value pair in http header. Provides a
+         * flexible match based on HTTP headers, for potentially advanced use
+         * cases. At least one header should match. Avoid using header matches to
+         * make authorization decisions unless there is a strong guarantee that
+         * requests arrive through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -4989,11 +5002,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          *
          *
          * <pre>
-         * Optional. Match against key:value pair in http header. Provides a flexible match
-         * based on HTTP headers, for potentially advanced use cases. At least one
-         * header should match. Avoid using header matches to make authorization
-         * decisions unless there is a strong guarantee that requests arrive
-         * through a trusted client or proxy.
+         * Optional. Match against key:value pair in http header. Provides a
+         * flexible match based on HTTP headers, for potentially advanced use
+         * cases. At least one header should match. Avoid using header matches to
+         * make authorization decisions unless there is a strong guarantee that
+         * requests arrive through a trusted client or proxy.
          * </pre>
          *
          * <code>
@@ -5087,10 +5100,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic source. All of the sources must match.
-     * A source is a match if both principals and ip_blocks match. If not set,
-     * the action specified in the 'action' field will be applied without any
-     * rule checks for the source.
+     * Optional. List of attributes for the traffic source. All of the sources
+     * must match. A source is a match if both principals and ip_blocks match.
+     * If not set, the action specified in the 'action' field will be applied
+     * without any rule checks for the source.
      * </pre>
      *
      * <code>
@@ -5106,10 +5119,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic source. All of the sources must match.
-     * A source is a match if both principals and ip_blocks match. If not set,
-     * the action specified in the 'action' field will be applied without any
-     * rule checks for the source.
+     * Optional. List of attributes for the traffic source. All of the sources
+     * must match. A source is a match if both principals and ip_blocks match.
+     * If not set, the action specified in the 'action' field will be applied
+     * without any rule checks for the source.
      * </pre>
      *
      * <code>
@@ -5127,10 +5140,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic source. All of the sources must match.
-     * A source is a match if both principals and ip_blocks match. If not set,
-     * the action specified in the 'action' field will be applied without any
-     * rule checks for the source.
+     * Optional. List of attributes for the traffic source. All of the sources
+     * must match. A source is a match if both principals and ip_blocks match.
+     * If not set, the action specified in the 'action' field will be applied
+     * without any rule checks for the source.
      * </pre>
      *
      * <code>
@@ -5145,10 +5158,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic source. All of the sources must match.
-     * A source is a match if both principals and ip_blocks match. If not set,
-     * the action specified in the 'action' field will be applied without any
-     * rule checks for the source.
+     * Optional. List of attributes for the traffic source. All of the sources
+     * must match. A source is a match if both principals and ip_blocks match.
+     * If not set, the action specified in the 'action' field will be applied
+     * without any rule checks for the source.
      * </pre>
      *
      * <code>
@@ -5164,10 +5177,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic source. All of the sources must match.
-     * A source is a match if both principals and ip_blocks match. If not set,
-     * the action specified in the 'action' field will be applied without any
-     * rule checks for the source.
+     * Optional. List of attributes for the traffic source. All of the sources
+     * must match. A source is a match if both principals and ip_blocks match.
+     * If not set, the action specified in the 'action' field will be applied
+     * without any rule checks for the source.
      * </pre>
      *
      * <code>
@@ -5188,9 +5201,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic destination. All of the destinations
-     * must match. A destination is a match if a request matches all the
-     * specified hosts, ports, methods and headers. If not set, the
+     * Optional. List of attributes for the traffic destination. All of the
+     * destinations must match. A destination is a match if a request matches
+     * all the specified hosts, ports, methods and headers. If not set, the
      * action specified in the 'action' field will be applied without any rule
      * checks for the destination.
      * </pre>
@@ -5209,9 +5222,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic destination. All of the destinations
-     * must match. A destination is a match if a request matches all the
-     * specified hosts, ports, methods and headers. If not set, the
+     * Optional. List of attributes for the traffic destination. All of the
+     * destinations must match. A destination is a match if a request matches
+     * all the specified hosts, ports, methods and headers. If not set, the
      * action specified in the 'action' field will be applied without any rule
      * checks for the destination.
      * </pre>
@@ -5232,9 +5245,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic destination. All of the destinations
-     * must match. A destination is a match if a request matches all the
-     * specified hosts, ports, methods and headers. If not set, the
+     * Optional. List of attributes for the traffic destination. All of the
+     * destinations must match. A destination is a match if a request matches
+     * all the specified hosts, ports, methods and headers. If not set, the
      * action specified in the 'action' field will be applied without any rule
      * checks for the destination.
      * </pre>
@@ -5251,9 +5264,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic destination. All of the destinations
-     * must match. A destination is a match if a request matches all the
-     * specified hosts, ports, methods and headers. If not set, the
+     * Optional. List of attributes for the traffic destination. All of the
+     * destinations must match. A destination is a match if a request matches
+     * all the specified hosts, ports, methods and headers. If not set, the
      * action specified in the 'action' field will be applied without any rule
      * checks for the destination.
      * </pre>
@@ -5271,9 +5284,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of attributes for the traffic destination. All of the destinations
-     * must match. A destination is a match if a request matches all the
-     * specified hosts, ports, methods and headers. If not set, the
+     * Optional. List of attributes for the traffic destination. All of the
+     * destinations must match. A destination is a match if a request matches
+     * all the specified hosts, ports, methods and headers. If not set, the
      * action specified in the 'action' field will be applied without any rule
      * checks for the destination.
      * </pre>
@@ -5739,10 +5752,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -5762,10 +5775,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -5783,10 +5796,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -5805,10 +5818,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -5834,10 +5847,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -5861,10 +5874,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -5889,10 +5902,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -5918,10 +5931,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -5944,10 +5957,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -5971,10 +5984,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -5999,10 +6012,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -6023,10 +6036,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -6047,10 +6060,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -6065,10 +6078,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -6087,10 +6100,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -6111,10 +6124,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -6132,10 +6145,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -6154,10 +6167,10 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic source. All of the sources must match.
-       * A source is a match if both principals and ip_blocks match. If not set,
-       * the action specified in the 'action' field will be applied without any
-       * rule checks for the source.
+       * Optional. List of attributes for the traffic source. All of the sources
+       * must match. A source is a match if both principals and ip_blocks match.
+       * If not set, the action specified in the 'action' field will be applied
+       * without any rule checks for the source.
        * </pre>
        *
        * <code>
@@ -6213,9 +6226,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6237,9 +6250,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6259,9 +6272,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6282,9 +6295,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6312,9 +6325,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6340,9 +6353,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6369,9 +6382,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6399,9 +6412,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6426,9 +6439,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6454,9 +6467,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6483,9 +6496,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6508,9 +6521,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6533,9 +6546,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6552,9 +6565,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6575,9 +6588,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6601,9 +6614,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6623,9 +6636,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6646,9 +6659,9 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. List of attributes for the traffic destination. All of the destinations
-       * must match. A destination is a match if a request matches all the
-       * specified hosts, ports, methods and headers. If not set, the
+       * Optional. List of attributes for the traffic destination. All of the
+       * destinations must match. A destination is a match if a request matches
+       * all the specified hosts, ports, methods and headers. If not set, the
        * action specified in the 'action' field will be applied without any rule
        * checks for the destination.
        * </pre>
@@ -6968,7 +6981,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+   * Optional. Set of label tags associated with the AuthorizationPolicy
+   * resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6990,7 +7004,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+   * Optional. Set of label tags associated with the AuthorizationPolicy
+   * resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7003,7 +7018,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+   * Optional. Set of label tags associated with the AuthorizationPolicy
+   * resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7020,7 +7036,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+   * Optional. Set of label tags associated with the AuthorizationPolicy
+   * resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7087,10 +7104,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. List of rules to match. Note that at least one of the rules must match in
-   * order for the action specified in the 'action' field to be taken. A rule is
-   * a match if there is a matching source and destination. If left blank, the
-   * action specified in the `action` field will be applied on every request.
+   * Optional. List of rules to match. Note that at least one of the rules must
+   * match in order for the action specified in the 'action' field to be taken.
+   * A rule is a match if there is a matching source and destination. If left
+   * blank, the action specified in the `action` field will be applied on every
+   * request.
    * </pre>
    *
    * <code>
@@ -7106,10 +7124,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. List of rules to match. Note that at least one of the rules must match in
-   * order for the action specified in the 'action' field to be taken. A rule is
-   * a match if there is a matching source and destination. If left blank, the
-   * action specified in the `action` field will be applied on every request.
+   * Optional. List of rules to match. Note that at least one of the rules must
+   * match in order for the action specified in the 'action' field to be taken.
+   * A rule is a match if there is a matching source and destination. If left
+   * blank, the action specified in the `action` field will be applied on every
+   * request.
    * </pre>
    *
    * <code>
@@ -7126,10 +7145,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. List of rules to match. Note that at least one of the rules must match in
-   * order for the action specified in the 'action' field to be taken. A rule is
-   * a match if there is a matching source and destination. If left blank, the
-   * action specified in the `action` field will be applied on every request.
+   * Optional. List of rules to match. Note that at least one of the rules must
+   * match in order for the action specified in the 'action' field to be taken.
+   * A rule is a match if there is a matching source and destination. If left
+   * blank, the action specified in the `action` field will be applied on every
+   * request.
    * </pre>
    *
    * <code>
@@ -7144,10 +7164,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. List of rules to match. Note that at least one of the rules must match in
-   * order for the action specified in the 'action' field to be taken. A rule is
-   * a match if there is a matching source and destination. If left blank, the
-   * action specified in the `action` field will be applied on every request.
+   * Optional. List of rules to match. Note that at least one of the rules must
+   * match in order for the action specified in the 'action' field to be taken.
+   * A rule is a match if there is a matching source and destination. If left
+   * blank, the action specified in the `action` field will be applied on every
+   * request.
    * </pre>
    *
    * <code>
@@ -7162,10 +7183,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. List of rules to match. Note that at least one of the rules must match in
-   * order for the action specified in the 'action' field to be taken. A rule is
-   * a match if there is a matching source and destination. If left blank, the
-   * action specified in the `action` field will be applied on every request.
+   * Optional. List of rules to match. Note that at least one of the rules must
+   * match in order for the action specified in the 'action' field to be taken.
+   * A rule is a match if there is a matching source and destination. If left
+   * blank, the action specified in the `action` field will be applied on every
+   * request.
    * </pre>
    *
    * <code>
@@ -8340,7 +8362,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+     * Optional. Set of label tags associated with the AuthorizationPolicy
+     * resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8362,7 +8385,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+     * Optional. Set of label tags associated with the AuthorizationPolicy
+     * resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8375,7 +8399,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+     * Optional. Set of label tags associated with the AuthorizationPolicy
+     * resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8393,7 +8418,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+     * Optional. Set of label tags associated with the AuthorizationPolicy
+     * resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8418,7 +8444,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+     * Optional. Set of label tags associated with the AuthorizationPolicy
+     * resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8439,7 +8466,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+     * Optional. Set of label tags associated with the AuthorizationPolicy
+     * resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8459,7 +8487,8 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Set of label tags associated with the AuthorizationPolicy resource.
+     * Optional. Set of label tags associated with the AuthorizationPolicy
+     * resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -8600,10 +8629,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8622,10 +8652,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8643,10 +8674,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8664,10 +8696,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8692,10 +8725,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8718,10 +8752,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8746,10 +8781,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8774,10 +8810,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8799,10 +8836,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8825,10 +8863,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8852,10 +8891,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8876,10 +8916,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8900,10 +8941,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8918,10 +8960,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8940,10 +8983,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8963,10 +9007,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -8984,10 +9029,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>
@@ -9006,10 +9052,11 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. List of rules to match. Note that at least one of the rules must match in
-     * order for the action specified in the 'action' field to be taken. A rule is
-     * a match if there is a matching source and destination. If left blank, the
-     * action specified in the `action` field will be applied on every request.
+     * Optional. List of rules to match. Note that at least one of the rules must
+     * match in order for the action specified in the 'action' field to be taken.
+     * A rule is a match if there is a matching source and destination. If left
+     * blank, the action specified in the `action` field will be applied on every
+     * request.
      * </pre>
      *
      * <code>

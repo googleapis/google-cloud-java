@@ -54,35 +54,33 @@ public final class TlsProto {
     java.lang.String[] descriptorData = {
       "\n.google/cloud/networksecurity/v1beta1/t"
           + "ls.proto\022$google.cloud.networksecurity.v"
-          + "1beta1\032\037google/api/field_behavior.proto\032"
-          + "\034google/api/annotations.proto\"\'\n\014GrpcEnd"
-          + "point\022\027\n\ntarget_uri\030\001 \001(\tB\003\340A\002\"\317\001\n\014Valid"
-          + "ationCA\022K\n\rgrpc_endpoint\030\002 \001(\01322.google."
-          + "cloud.networksecurity.v1beta1.GrpcEndpoi"
-          + "ntH\000\022j\n\035certificate_provider_instance\030\003 "
-          + "\001(\0132A.google.cloud.networksecurity.v1bet"
-          + "a1.CertificateProviderInstanceH\000B\006\n\004type"
-          + "\";\n\033CertificateProviderInstance\022\034\n\017plugi"
-          + "n_instance\030\001 \001(\tB\003\340A\002\"\326\001\n\023CertificatePro"
-          + "vider\022K\n\rgrpc_endpoint\030\002 \001(\01322.google.cl"
-          + "oud.networksecurity.v1beta1.GrpcEndpoint"
-          + "H\000\022j\n\035certificate_provider_instance\030\003 \001("
-          + "\0132A.google.cloud.networksecurity.v1beta1"
-          + ".CertificateProviderInstanceH\000B\006\n\004typeB\203"
-          + "\002\n(com.google.cloud.networksecurity.v1be"
-          + "ta1B\010TlsProtoP\001ZSgoogle.golang.org/genpr"
-          + "oto/googleapis/cloud/networksecurity/v1b"
-          + "eta1;networksecurity\252\002$Google.Cloud.Netw"
-          + "orkSecurity.V1Beta1\312\002$Google\\Cloud\\Netwo"
-          + "rkSecurity\\V1beta1\352\002\'Google::Cloud::Netw"
-          + "orkSecurity::V1beta1b\006proto3"
+          + "1beta1\032\037google/api/field_behavior.proto\""
+          + "\'\n\014GrpcEndpoint\022\027\n\ntarget_uri\030\001 \001(\tB\003\340A\002"
+          + "\"\317\001\n\014ValidationCA\022K\n\rgrpc_endpoint\030\002 \001(\013"
+          + "22.google.cloud.networksecurity.v1beta1."
+          + "GrpcEndpointH\000\022j\n\035certificate_provider_i"
+          + "nstance\030\003 \001(\0132A.google.cloud.networksecu"
+          + "rity.v1beta1.CertificateProviderInstance"
+          + "H\000B\006\n\004type\";\n\033CertificateProviderInstanc"
+          + "e\022\034\n\017plugin_instance\030\001 \001(\tB\003\340A\002\"\326\001\n\023Cert"
+          + "ificateProvider\022K\n\rgrpc_endpoint\030\002 \001(\01322"
+          + ".google.cloud.networksecurity.v1beta1.Gr"
+          + "pcEndpointH\000\022j\n\035certificate_provider_ins"
+          + "tance\030\003 \001(\0132A.google.cloud.networksecuri"
+          + "ty.v1beta1.CertificateProviderInstanceH\000"
+          + "B\006\n\004typeB\203\002\n(com.google.cloud.networksec"
+          + "urity.v1beta1B\010TlsProtoP\001ZSgoogle.golang"
+          + ".org/genproto/googleapis/cloud/networkse"
+          + "curity/v1beta1;networksecurity\252\002$Google."
+          + "Cloud.NetworkSecurity.V1Beta1\312\002$Google\\C"
+          + "loud\\NetworkSecurity\\V1beta1\352\002\'Google::C"
+          + "loud::NetworkSecurity::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
-              com.google.api.AnnotationsProto.getDescriptor(),
             });
     internal_static_google_cloud_networksecurity_v1beta1_GrpcEndpoint_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -122,7 +120,6 @@ public final class TlsProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

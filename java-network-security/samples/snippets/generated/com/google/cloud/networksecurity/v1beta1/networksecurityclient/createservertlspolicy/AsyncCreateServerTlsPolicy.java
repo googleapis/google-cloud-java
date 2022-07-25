@@ -19,9 +19,9 @@ package com.google.cloud.networksecurity.v1beta1.samples;
 // [START networksecurity_v1beta1_generated_networksecurityclient_createservertlspolicy_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.networksecurity.v1beta1.CreateServerTlsPolicyRequest;
+import com.google.cloud.networksecurity.v1beta1.LocationName;
 import com.google.cloud.networksecurity.v1beta1.NetworkSecurityClient;
 import com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy;
-import com.google.cloud.networksecurity.v1beta1.ServerTlsPolicyName;
 import com.google.longrunning.Operation;
 
 public class AsyncCreateServerTlsPolicy {
@@ -36,9 +36,7 @@ public class AsyncCreateServerTlsPolicy {
     try (NetworkSecurityClient networkSecurityClient = NetworkSecurityClient.create()) {
       CreateServerTlsPolicyRequest request =
           CreateServerTlsPolicyRequest.newBuilder()
-              .setParent(
-                  ServerTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVER_TLS_POLICY]")
-                      .toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setServerTlsPolicyId("serverTlsPolicyId-1966046011")
               .setServerTlsPolicy(ServerTlsPolicy.newBuilder().build())
               .build();
