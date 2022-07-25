@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.120.2](https://github.com/googleapis/java-pubsub/compare/v1.120.1...v1.120.2) (2022-07-25)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-pubsub/issues/1485)) ([#1191](https://github.com/googleapis/java-pubsub/issues/1191)) ([c4b8d90](https://github.com/googleapis/java-pubsub/commit/c4b8d90a158a3360d626df8ca6378212e09f5a47))
+* PubSubMessage leak on MessageDispatcher ([#1197](https://github.com/googleapis/java-pubsub/issues/1197)) ([1b8c440](https://github.com/googleapis/java-pubsub/commit/1b8c440fccc51dc2291c43b2972b1f5c08dfd65a))
+
+
+### Dependencies
+
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.13 ([#1189](https://github.com/googleapis/java-pubsub/issues/1189)) ([0d96f8e](https://github.com/googleapis/java-pubsub/commit/0d96f8e2006c145de039d2f00c5eb1d8830eae3d))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.13 ([#1190](https://github.com/googleapis/java-pubsub/issues/1190)) ([c604080](https://github.com/googleapis/java-pubsub/commit/c6040802bcf97d063e2b91cdb5fa7fe3c3e3b807))
+
 ## [1.120.1](https://github.com/googleapis/java-pubsub/compare/v1.120.0...v1.120.1) (2022-07-11)
 
 
