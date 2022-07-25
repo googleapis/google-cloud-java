@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.14.0](https://github.com/googleapis/java-bigquery/compare/v2.13.8...v2.14.0) (2022-07-22)
+
+
+### Features
+
+* Add decimal target type ([#2166](https://github.com/googleapis/java-bigquery/issues/2166)) ([ebbd8f5](https://github.com/googleapis/java-bigquery/commit/ebbd8f52853d3c0ca918a47d826474cc5825a58a))
+* **bigquery:** enable use of GEOGRAPHY query params ([#2158](https://github.com/googleapis/java-bigquery/issues/2158)) ([b19ad76](https://github.com/googleapis/java-bigquery/commit/b19ad767a53a9bd5d14b4cb36716cbb1c7b44ed6))
+
+
+### Bug Fixes
+
+* Add query dryRun logic to get the schema when null schema is returned from the backend ([#2106](https://github.com/googleapis/java-bigquery/issues/2106)) ([c98d22b](https://github.com/googleapis/java-bigquery/commit/c98d22b2b4f45e20d7d0666c5342cdbfadd30bde))
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-bigquery/issues/1485)) ([#2164](https://github.com/googleapis/java-bigquery/issues/2164)) ([e18b9f8](https://github.com/googleapis/java-bigquery/commit/e18b9f8b4d2f194577b1710ad64710fe0f3d88d9))
+* **java:** make field accessible to address Java 17 issue with arrow ([#2165](https://github.com/googleapis/java-bigquery/issues/2165)) ([d605b81](https://github.com/googleapis/java-bigquery/commit/d605b8149954e79c05461630915b674e11793889))
+
+
+### Dependencies
+
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.13 ([#2160](https://github.com/googleapis/java-bigquery/issues/2160)) ([970135b](https://github.com/googleapis/java-bigquery/commit/970135bec33b831925476855da9a84c34311068d))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.13 ([#2161](https://github.com/googleapis/java-bigquery/issues/2161)) ([3507bf7](https://github.com/googleapis/java-bigquery/commit/3507bf7c9fc2aef299d06d9771cfcc06e3080b87))
+
 ## [2.13.8](https://github.com/googleapis/java-bigquery/compare/v2.13.7...v2.13.8) (2022-07-01)
 
 
