@@ -74,6 +74,7 @@ echo "{" >> .release-please-manifest.json
 
 # generate BOM of the artifacts in this repository
 bom_lines=""
+rp_config_line=""
 for bom_directory in $(find . -name 'google-*-bom' | sort); do
   repo_metadata="${bom_directory}/../.repo-metadata.json"
   pom_file="${bom_directory}/pom.xml"
@@ -85,6 +86,7 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
   suffix="-bom</artifactId>"
   artifactName=${artifactId_line#"$prefix"}
   artifactName=${artifactName%"$suffix"}
+  artifactName_config=${artifactName};
   prefix="./"
   suffix="/${artifactName}-bom"
   module=${bom_directory#"$prefix"}
@@ -99,16 +101,21 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
   module_version=${module_version%"$suffix"}
 
   #concatenating module name and module version
-  rp_config_line=""\""${module}"\"": "\""${module_version}"\"""
+  rp_manifest_line=""\""${module}"\"": "\""${module_version}"\"""
+
+  rp_config_line+=""\""${module}"\"": {\n\
+        "\""component"\"": "\""${artifactName_config}"\""\n\
+       }"
 
   #adding " , " where it's necessary
   if [[ $num_modules -gt 1 ]]; then
-    rp_config_line+=","
+    rp_manifest_line+=","
+    rp_config_line+=",\n    "
     num_modules=$((num_modules-1))
   fi
 
   #adding the line to manifest config file
-  echo "${rp_config_line}" >> .release-please-manifest.json
+  echo "${rp_manifest_line}" >> .release-please-manifest.json
 
 
   if ! grep --quiet '"release_level": "stable"' "${repo_metadata}"; then
@@ -134,9 +141,13 @@ for bom_directory in $(find . -name 'google-*-bom' | sort); do
         <scope>import</scope>\n\
       </dependency>\n"
 
+
 done
 
 echo "}" >> .release-please-manifest.json
+
+awk -v "packagesList=$rp_config_line" '{gsub(/ALL_PACKAGES/,packagesList)}1' \
+    ../../release_please_config_raw.json > release-please-config.json
 
 mkdir google-cloud-gapic-bom
 awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyManagements)}1' \
