@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.5.2](https://github.com/googleapis/java-shared-config/compare/v1.5.1...v1.5.2) (2022-07-25)
+
+
+### Dependencies
+
+* update dependency com.puppycrawl.tools:checkstyle to v10 ([#435](https://github.com/googleapis/java-shared-config/issues/435)) ([bfc8ce1](https://github.com/googleapis/java-shared-config/commit/bfc8ce1deca6292147d002d3afe22a09840aa5d6))
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.13 ([#488](https://github.com/googleapis/java-shared-config/issues/488)) ([39b91ee](https://github.com/googleapis/java-shared-config/commit/39b91ee1283f0a5fbbe63e8bfd1ec97ab4ab377e))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.13 ([#489](https://github.com/googleapis/java-shared-config/issues/489)) ([cc3bcfa](https://github.com/googleapis/java-shared-config/commit/cc3bcfa2d6717441a8d5b5048fa78c2cf7aabf2b))
+
 ## [1.5.1](https://github.com/googleapis/java-shared-config/compare/v1.5.0...v1.5.1) (2022-06-30)
 
 
