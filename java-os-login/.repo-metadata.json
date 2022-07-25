@@ -1,0 +1,17 @@
+{
+    "api_shortname": "oslogin",
+    "name_pretty": "Cloud OS Login",
+    "product_documentation": "https://cloud.google.com/compute/docs/oslogin/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-os-login/latest/history",
+    "api_description": "manages OS login configuration for Directory API users.",
+    "issue_tracker": "https://issuetracker.google.com/savedsearches/559755",
+    "release_level": "stable",
+    "language": "java",
+    "transport": "grpc",
+    "repo": "googleapis/java-os-login",
+    "repo_short": "java-os-login",
+    "distribution_name": "com.google.cloud:google-cloud-os-login",
+    "api_id": "oslogin.googleapis.com",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
+}
