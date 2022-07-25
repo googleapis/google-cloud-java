@@ -1,0 +1,16 @@
+{
+  "api_shortname": "datamigration",
+  "name_pretty": "Database Migration Service",
+  "product_documentation": "https://cloud.google.com/database-migration/docs",
+  "api_description": "makes it easier for you to migrate your data to Google Cloud. This service helps you lift and shift your MySQL and PostgreSQL workloads into Cloud SQL.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-dms/latest/history",
+  "release_level": "stable",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-dms",
+  "repo_short": "java-dms",
+  "distribution_name": "com.google.cloud:google-cloud-dms",
+  "api_id": "dms.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
