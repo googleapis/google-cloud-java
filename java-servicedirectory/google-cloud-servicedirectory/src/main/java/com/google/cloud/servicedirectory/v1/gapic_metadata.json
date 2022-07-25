@@ -1,0 +1,84 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.servicedirectory.v1",
+  "libraryPackage": "com.google.cloud.servicedirectory.v1",
+  "services": {
+    "LookupService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LookupServiceClient",
+          "rpcs": {
+            "ResolveService": {
+              "methods": ["resolveService", "resolveServiceCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegistrationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegistrationServiceClient",
+          "rpcs": {
+            "CreateEndpoint": {
+              "methods": ["createEndpoint", "createEndpoint", "createEndpoint", "createEndpointCallable"]
+            },
+            "CreateNamespace": {
+              "methods": ["createNamespace", "createNamespace", "createNamespace", "createNamespaceCallable"]
+            },
+            "CreateService": {
+              "methods": ["createService", "createService", "createService", "createServiceCallable"]
+            },
+            "DeleteEndpoint": {
+              "methods": ["deleteEndpoint", "deleteEndpoint", "deleteEndpoint", "deleteEndpointCallable"]
+            },
+            "DeleteNamespace": {
+              "methods": ["deleteNamespace", "deleteNamespace", "deleteNamespace", "deleteNamespaceCallable"]
+            },
+            "DeleteService": {
+              "methods": ["deleteService", "deleteService", "deleteService", "deleteServiceCallable"]
+            },
+            "GetEndpoint": {
+              "methods": ["getEndpoint", "getEndpoint", "getEndpoint", "getEndpointCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetNamespace": {
+              "methods": ["getNamespace", "getNamespace", "getNamespace", "getNamespaceCallable"]
+            },
+            "GetService": {
+              "methods": ["getService", "getService", "getService", "getServiceCallable"]
+            },
+            "ListEndpoints": {
+              "methods": ["listEndpoints", "listEndpoints", "listEndpoints", "listEndpointsPagedCallable", "listEndpointsCallable"]
+            },
+            "ListNamespaces": {
+              "methods": ["listNamespaces", "listNamespaces", "listNamespaces", "listNamespacesPagedCallable", "listNamespacesCallable"]
+            },
+            "ListServices": {
+              "methods": ["listServices", "listServices", "listServices", "listServicesPagedCallable", "listServicesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateEndpoint": {
+              "methods": ["updateEndpoint", "updateEndpoint", "updateEndpointCallable"]
+            },
+            "UpdateNamespace": {
+              "methods": ["updateNamespace", "updateNamespace", "updateNamespaceCallable"]
+            },
+            "UpdateService": {
+              "methods": ["updateService", "updateService", "updateServiceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
