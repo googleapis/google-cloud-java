@@ -20,6 +20,7 @@ package com.google.cloud.deploy.v1.samples;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.DeliveryPipelineName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteDeliveryPipeline {
 

@@ -1473,8 +1473,8 @@ public final class ExecutionConfig extends com.google.protobuf.GeneratedMessageV
      * repeated .google.cloud.deploy.v1.ExecutionConfig.ExecutionEnvironmentUsage usages = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of usages at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for usages to set.
      * @return This builder for chaining.
      */
     public Builder setUsagesValue(int index, int value) {
