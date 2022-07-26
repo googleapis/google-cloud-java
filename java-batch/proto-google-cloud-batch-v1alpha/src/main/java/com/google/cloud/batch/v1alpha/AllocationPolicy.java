@@ -13610,8 +13610,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
      *     See google/cloud/batch/v1alpha/job.proto;l=430
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of provisioningModels at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for provisioningModels to set.
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
