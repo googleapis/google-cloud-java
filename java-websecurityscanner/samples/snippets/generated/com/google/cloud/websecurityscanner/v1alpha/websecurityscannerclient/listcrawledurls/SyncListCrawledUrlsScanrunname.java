@@ -16,8 +16,7 @@
 
 package com.google.cloud.websecurityscanner.v1alpha.samples;
 
-// [START
-// websecurityscanner_v1alpha_generated_websecurityscannerclient_listcrawledurls_scanrunname_sync]
+// [START websecurityscanner_v1alpha_generated_websecurityscannerclient_listcrawledurls_scanrunname_sync]
 import com.google.cloud.websecurityscanner.v1alpha.CrawledUrl;
 import com.google.cloud.websecurityscanner.v1alpha.ScanRunName;
 import com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerClient;
@@ -39,5 +38,4 @@ public class SyncListCrawledUrlsScanrunname {
     }
   }
 }
-// [END
-// websecurityscanner_v1alpha_generated_websecurityscannerclient_listcrawledurls_scanrunname_sync]
+// [END websecurityscanner_v1alpha_generated_websecurityscannerclient_listcrawledurls_scanrunname_sync]

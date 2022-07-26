@@ -16,8 +16,7 @@
 
 package com.google.cloud.websecurityscanner.v1beta.samples;
 
-// [START
-// websecurityscanner_v1beta_generated_websecurityscannerclient_listscanconfigs_projectname_sync]
+// [START websecurityscanner_v1beta_generated_websecurityscannerclient_listscanconfigs_projectname_sync]
 import com.google.cloud.websecurityscanner.v1beta.ProjectName;
 import com.google.cloud.websecurityscanner.v1beta.ScanConfig;
 import com.google.cloud.websecurityscanner.v1beta.WebSecurityScannerClient;
@@ -39,5 +38,4 @@ public class SyncListScanConfigsProjectname {
     }
   }
 }
-// [END
-// websecurityscanner_v1beta_generated_websecurityscannerclient_listscanconfigs_projectname_sync]
+// [END websecurityscanner_v1beta_generated_websecurityscannerclient_listscanconfigs_projectname_sync]

@@ -20,6 +20,7 @@ package com.google.cloud.websecurityscanner.v1alpha.samples;
 import com.google.cloud.websecurityscanner.v1alpha.DeleteScanConfigRequest;
 import com.google.cloud.websecurityscanner.v1alpha.ScanConfigName;
 import com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteScanConfig {
 
