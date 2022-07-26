@@ -35,6 +35,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= DeploymentResourcePoolServiceClient =======================
+ *
+ * <p>Service Description: A service that manages the DeploymentResourcePool resource.
+ *
+ * <p>Sample for DeploymentResourcePoolServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
+ *     DeploymentResourcePoolServiceClient.create()) {
+ *   DeploymentResourcePoolName name =
+ *       DeploymentResourcePoolName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_RESOURCE_POOL]");
+ *   DeploymentResourcePool response =
+ *       deploymentResourcePoolServiceClient.getDeploymentResourcePool(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= EndpointServiceClient =======================
  *
  * <p>Service Description: A service for managing Vertex AI's Endpoints.
