@@ -25,42 +25,42 @@ git init -b main
 
 cat ../../repos.txt | while read service
 do
-#  cd ..
+  cd ..
   echo "    <module>${service}</module>" >> repo-modules.txt
-#  git clone https://github.com/googleapis/${service}.git
-#  cd  ${service}
-#  git filter-repo --to-subdirectory-filter ${service}
-#
-#  # Search for <parent> tag and replace the next three lines -- groupId, artifcatId, and version
-#  # Doesn't modify the pom.xml for each module's bom package (that still points to shared-config ... for now)
-#  sed -i -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/<version>.*<\/version>/<version>0.0.1-SNAPSHOT<\/version>/}' ${service}/pom.xml
-#
-#  # setup owlbot files correctly to match monorepo configuration
-#  cp ${service}/.github/.OwlBot.yaml ${service}/.OwlBot.yaml
-#  rm ${service}/.github/.OwlBot.lock.yaml
-#  rm ${service}/.github/.OwlBot.yaml
-#  sed -i.bak '/docker/d' ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
-#  sed -i.bak '/image/d' ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
-#
-#  # In monorepo, the staging directory structure tells the destination module to
-#  # which the OwlBot Java postprocessor copies the files.
-#  sed -i.bak "s|owl-bot-staging|owl-bot-staging/${service}|" ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
-#
-#  text=$(grep '^.*api_shortname.*' ${service}/.repo-metadata.json)
-#  text=$(echo "$text" | sed 's/\"//g; s/\,//g; s/^[[:space:]]*//' )
-#  text=${text/api_shortname/api-name}
-#  echo -e "\n"$text>> ${service}/.OwlBot.yaml
-#  git add .
-#  git config --add secrets.allowed "dest.*src"
-#  git commit -am "chore: setup owlbot configuration"
-#
-#  cd ../google-cloud-java
-#  git remote add ${service} ../${service}
-#  git config --add secrets.allowed "dest.*src"
-#  git fetch ${service} #--tags
-#  EDITOR=true git merge --allow-unrelated-histories ${service}/main
-#  git remote remove ${service}
-#  rm -rf ../${service}
+  git clone https://github.com/googleapis/${service}.git
+  cd  ${service}
+  git filter-repo --to-subdirectory-filter ${service}
+
+  # Search for <parent> tag and replace the next three lines -- groupId, artifcatId, and version
+  # Doesn't modify the pom.xml for each module's bom package (that still points to shared-config ... for now)
+  sed -i -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/<version>.*<\/version>/<version>0.0.1-SNAPSHOT<\/version>/}' ${service}/pom.xml
+
+  # setup owlbot files correctly to match monorepo configuration
+  cp ${service}/.github/.OwlBot.yaml ${service}/.OwlBot.yaml
+  rm ${service}/.github/.OwlBot.lock.yaml
+  rm ${service}/.github/.OwlBot.yaml
+  sed -i.bak '/docker/d' ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
+  sed -i.bak '/image/d' ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
+
+  # In monorepo, the staging directory structure tells the destination module to
+  # which the OwlBot Java postprocessor copies the files.
+  sed -i.bak "s|owl-bot-staging|owl-bot-staging/${service}|" ${service}/.OwlBot.yaml && rm ${service}/.OwlBot.yaml.bak
+
+  text=$(grep '^.*api_shortname.*' ${service}/.repo-metadata.json)
+  text=$(echo "$text" | sed 's/\"//g; s/\,//g; s/^[[:space:]]*//' )
+  text=${text/api_shortname/api-name}
+  echo -e "\n"$text>> ${service}/.OwlBot.yaml
+  git add .
+  git config --add secrets.allowed "dest.*src"
+  git commit -am "chore: setup owlbot configuration"
+
+  cd ../google-cloud-java
+  git remote add ${service} ../${service}
+  git config --add secrets.allowed "dest.*src"
+  git fetch ${service} #--tags
+  EDITOR=true git merge --allow-unrelated-histories ${service}/main
+  git remote remove ${service}
+  rm -rf ../${service}
 done
 
 cd ..
