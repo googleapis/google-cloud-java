@@ -3816,8 +3816,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.bigquery.dataexchange.common.Category categories = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of categories at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for categories to set.
      * @return This builder for chaining.
      */
     public Builder setCategoriesValue(int index, int value) {
