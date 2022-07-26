@@ -19,6 +19,7 @@ package com.google.cloud.gsuiteaddons.v1.samples;
 // [START gsuiteaddons_v1_generated_gsuiteaddonsclient_deletedeployment_deploymentname_sync]
 import com.google.cloud.gsuiteaddons.v1.DeploymentName;
 import com.google.cloud.gsuiteaddons.v1.GSuiteAddOnsClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteDeploymentDeploymentname {
 
