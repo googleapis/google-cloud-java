@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.v2beta1.stub;
 
+import static com.google.cloud.dialogflow.v2beta1.AgentsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.v2beta1.AgentsClient.SearchAgentsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -60,6 +61,10 @@ import com.google.cloud.dialogflow.v2beta1.SearchAgentsResponse;
 import com.google.cloud.dialogflow.v2beta1.SetAgentRequest;
 import com.google.cloud.dialogflow.v2beta1.TrainAgentRequest;
 import com.google.cloud.dialogflow.v2beta1.ValidationResult;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -134,6 +139,10 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
       restoreAgentOperationSettings;
   private final UnaryCallSettings<GetValidationResultRequest, ValidationResult>
       getValidationResultSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<SearchAgentsRequest, SearchAgentsResponse, Agent>
       SEARCH_AGENTS_PAGE_STR_DESC =
@@ -171,6 +180,42 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           SearchAgentsRequest, SearchAgentsResponse, SearchAgentsPagedResponse>
       SEARCH_AGENTS_PAGE_STR_FACT =
@@ -185,6 +230,23 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
               PageContext<SearchAgentsRequest, SearchAgentsResponse, Agent> pageContext =
                   PageContext.create(callable, SEARCH_AGENTS_PAGE_STR_DESC, request, context);
               return SearchAgentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -254,6 +316,17 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   public UnaryCallSettings<GetValidationResultRequest, ValidationResult>
       getValidationResultSettings() {
     return getValidationResultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public AgentsStub createStub() throws IOException {
@@ -373,6 +446,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     restoreAgentSettings = settingsBuilder.restoreAgentSettings().build();
     restoreAgentOperationSettings = settingsBuilder.restoreAgentOperationSettings().build();
     getValidationResultSettings = settingsBuilder.getValidationResultSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for AgentsStubSettings. */
@@ -398,6 +473,10 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
         restoreAgentOperationSettings;
     private final UnaryCallSettings.Builder<GetValidationResultRequest, ValidationResult>
         getValidationResultSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -449,6 +528,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
       restoreAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restoreAgentOperationSettings = OperationCallSettings.newBuilder();
       getValidationResultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -460,7 +541,9 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
               exportAgentSettings,
               importAgentSettings,
               restoreAgentSettings,
-              getValidationResultSettings);
+              getValidationResultSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -480,6 +563,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
       restoreAgentSettings = settings.restoreAgentSettings.toBuilder();
       restoreAgentOperationSettings = settings.restoreAgentOperationSettings.toBuilder();
       getValidationResultSettings = settings.getValidationResultSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -491,7 +576,9 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
               exportAgentSettings,
               importAgentSettings,
               restoreAgentSettings,
-              getValidationResultSettings);
+              getValidationResultSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -563,6 +650,16 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
 
       builder
           .getValidationResultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -755,6 +852,18 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     public UnaryCallSettings.Builder<GetValidationResultRequest, ValidationResult>
         getValidationResultSettings() {
       return getValidationResultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

@@ -16,8 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1beta1.samples;
 
-// [START
-// recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1client_create_setendpoint_sync]
+// [START recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1client_create_setendpoint_sync]
 import com.google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client;
 import com.google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1Settings;
 import com.google.cloud.recaptchaenterprise.v1beta1.myEndpoint;
@@ -37,5 +36,4 @@ public class SyncCreateSetEndpoint {
         RecaptchaEnterpriseServiceV1Beta1Client.create(recaptchaEnterpriseServiceV1Beta1Settings);
   }
 }
-// [END
-// recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1client_create_setendpoint_sync]
+// [END recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1client_create_setendpoint_sync]

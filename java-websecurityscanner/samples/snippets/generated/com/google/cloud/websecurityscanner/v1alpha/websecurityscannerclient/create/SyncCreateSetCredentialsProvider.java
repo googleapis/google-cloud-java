@@ -16,8 +16,7 @@
 
 package com.google.cloud.websecurityscanner.v1alpha.samples;
 
-// [START
-// websecurityscanner_v1alpha_generated_websecurityscannerclient_create_setcredentialsprovider_sync]
+// [START websecurityscanner_v1alpha_generated_websecurityscannerclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerClient;
 import com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerSettings;
@@ -40,5 +39,4 @@ public class SyncCreateSetCredentialsProvider {
         WebSecurityScannerClient.create(webSecurityScannerSettings);
   }
 }
-// [END
-// websecurityscanner_v1alpha_generated_websecurityscannerclient_create_setcredentialsprovider_sync]
+// [END websecurityscanner_v1alpha_generated_websecurityscannerclient_create_setcredentialsprovider_sync]

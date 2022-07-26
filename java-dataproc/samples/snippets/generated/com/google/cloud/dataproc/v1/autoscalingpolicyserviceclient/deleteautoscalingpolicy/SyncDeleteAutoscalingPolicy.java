@@ -20,6 +20,7 @@ package com.google.cloud.dataproc.v1.samples;
 import com.google.cloud.dataproc.v1.AutoscalingPolicyName;
 import com.google.cloud.dataproc.v1.AutoscalingPolicyServiceClient;
 import com.google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteAutoscalingPolicy {
 

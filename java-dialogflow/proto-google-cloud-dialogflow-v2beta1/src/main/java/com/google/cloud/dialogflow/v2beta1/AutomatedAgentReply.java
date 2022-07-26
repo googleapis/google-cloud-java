@@ -821,7 +821,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=474
+   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=486
    * @return Whether the cxSessionParameters field is set.
    */
   @java.lang.Override
@@ -841,7 +841,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
    * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=474
+   *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=486
    * @return The cxSessionParameters.
    */
   @java.lang.Override
@@ -2682,7 +2682,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=474
+     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=486
      * @return Whether the cxSessionParameters field is set.
      */
     @java.lang.Deprecated
@@ -2701,7 +2701,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Struct cx_session_parameters = 6 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.AutomatedAgentReply.cx_session_parameters is
-     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=474
+     *     deprecated. See google/cloud/dialogflow/v2beta1/participant.proto;l=486
      * @return The cxSessionParameters.
      */
     @java.lang.Deprecated

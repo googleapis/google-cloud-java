@@ -20,6 +20,7 @@ package com.google.cloud.dataproc.v1.samples;
 import com.google.cloud.dataproc.v1.BatchControllerClient;
 import com.google.cloud.dataproc.v1.BatchName;
 import com.google.cloud.dataproc.v1.DeleteBatchRequest;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteBatch {
 

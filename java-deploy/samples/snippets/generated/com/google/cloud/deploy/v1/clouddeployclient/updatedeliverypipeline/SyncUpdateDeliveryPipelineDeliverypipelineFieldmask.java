@@ -16,8 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START
-// deploy_v1_generated_clouddeployclient_updatedeliverypipeline_deliverypipelinefieldmask_sync]
+// [START deploy_v1_generated_clouddeployclient_updatedeliverypipeline_deliverypipelinefieldmask_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
 import com.google.protobuf.FieldMask;

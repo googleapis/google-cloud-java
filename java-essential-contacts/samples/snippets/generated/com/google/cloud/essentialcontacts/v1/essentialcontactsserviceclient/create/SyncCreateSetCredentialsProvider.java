@@ -16,8 +16,7 @@
 
 package com.google.cloud.essentialcontacts.v1.samples;
 
-// [START
-// essentialcontacts_v1_generated_essentialcontactsserviceclient_create_setcredentialsprovider_sync]
+// [START essentialcontacts_v1_generated_essentialcontactsserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.essentialcontacts.v1.EssentialContactsServiceClient;
 import com.google.cloud.essentialcontacts.v1.EssentialContactsServiceSettings;
@@ -40,5 +39,4 @@ public class SyncCreateSetCredentialsProvider {
         EssentialContactsServiceClient.create(essentialContactsServiceSettings);
   }
 }
-// [END
-// essentialcontacts_v1_generated_essentialcontactsserviceclient_create_setcredentialsprovider_sync]
+// [END essentialcontacts_v1_generated_essentialcontactsserviceclient_create_setcredentialsprovider_sync]

@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2.stub;
 
 import static com.google.cloud.dialogflow.v2.ConversationModelsClient.ListConversationModelEvaluationsPagedResponse;
 import static com.google.cloud.dialogflow.v2.ConversationModelsClient.ListConversationModelsPagedResponse;
+import static com.google.cloud.dialogflow.v2.ConversationModelsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -66,6 +67,10 @@ import com.google.cloud.dialogflow.v2.ListConversationModelsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationModelsResponse;
 import com.google.cloud.dialogflow.v2.UndeployConversationModelOperationMetadata;
 import com.google.cloud.dialogflow.v2.UndeployConversationModelRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -165,6 +170,10 @@ public class ConversationModelsStubSettings extends StubSettings<ConversationMod
           ConversationModelEvaluation,
           CreateConversationModelEvaluationOperationMetadata>
       createConversationModelEvaluationOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<
           ListConversationModelsRequest, ListConversationModelsResponse, ConversationModel>
@@ -258,6 +267,42 @@ public class ConversationModelsStubSettings extends StubSettings<ConversationMod
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListConversationModelsRequest,
           ListConversationModelsResponse,
@@ -315,6 +360,23 @@ public class ConversationModelsStubSettings extends StubSettings<ConversationMod
                           context);
               return ListConversationModelEvaluationsPagedResponse.createAsync(
                   pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -415,6 +477,17 @@ public class ConversationModelsStubSettings extends StubSettings<ConversationMod
           CreateConversationModelEvaluationOperationMetadata>
       createConversationModelEvaluationOperationSettings() {
     return createConversationModelEvaluationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public ConversationModelsStub createStub() throws IOException {
@@ -545,6 +618,8 @@ public class ConversationModelsStubSettings extends StubSettings<ConversationMod
         settingsBuilder.createConversationModelEvaluationSettings().build();
     createConversationModelEvaluationOperationSettings =
         settingsBuilder.createConversationModelEvaluationOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for ConversationModelsStubSettings. */
@@ -595,6 +670,10 @@ public class ConversationModelsStubSettings extends StubSettings<ConversationMod
             ConversationModelEvaluation,
             CreateConversationModelEvaluationOperationMetadata>
         createConversationModelEvaluationOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -649,6 +728,8 @@ public class ConversationModelsStubSettings extends StubSettings<ConversationMod
           PagedCallSettings.newBuilder(LIST_CONVERSATION_MODEL_EVALUATIONS_PAGE_STR_FACT);
       createConversationModelEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createConversationModelEvaluationOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -660,7 +741,9 @@ public class ConversationModelsStubSettings extends StubSettings<ConversationMod
               undeployConversationModelSettings,
               getConversationModelEvaluationSettings,
               listConversationModelEvaluationsSettings,
-              createConversationModelEvaluationSettings);
+              createConversationModelEvaluationSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -689,6 +772,8 @@ public class ConversationModelsStubSettings extends StubSettings<ConversationMod
           settings.createConversationModelEvaluationSettings.toBuilder();
       createConversationModelEvaluationOperationSettings =
           settings.createConversationModelEvaluationOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -700,7 +785,9 @@ public class ConversationModelsStubSettings extends StubSettings<ConversationMod
               undeployConversationModelSettings,
               getConversationModelEvaluationSettings,
               listConversationModelEvaluationsSettings,
-              createConversationModelEvaluationSettings);
+              createConversationModelEvaluationSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -772,6 +859,16 @@ public class ConversationModelsStubSettings extends StubSettings<ConversationMod
 
       builder
           .createConversationModelEvaluationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1029,6 +1126,18 @@ public class ConversationModelsStubSettings extends StubSettings<ConversationMod
             CreateConversationModelEvaluationOperationMetadata>
         createConversationModelEvaluationOperationSettings() {
       return createConversationModelEvaluationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

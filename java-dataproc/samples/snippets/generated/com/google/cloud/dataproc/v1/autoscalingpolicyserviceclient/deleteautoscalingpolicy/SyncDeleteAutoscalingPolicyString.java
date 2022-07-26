@@ -19,6 +19,7 @@ package com.google.cloud.dataproc.v1.samples;
 // [START dataproc_v1_generated_autoscalingpolicyserviceclient_deleteautoscalingpolicy_string_sync]
 import com.google.cloud.dataproc.v1.AutoscalingPolicyName;
 import com.google.cloud.dataproc.v1.AutoscalingPolicyServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteAutoscalingPolicyString {
 

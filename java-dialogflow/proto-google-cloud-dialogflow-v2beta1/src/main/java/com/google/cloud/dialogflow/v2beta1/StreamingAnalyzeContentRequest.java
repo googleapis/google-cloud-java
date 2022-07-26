@@ -67,6 +67,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
 
   private StreamingAnalyzeContentRequest() {
     participant_ = "";
+    cxCurrentPage_ = "";
   }
 
   @java.lang.Override
@@ -243,6 +244,13 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
                 cxParameters_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cxCurrentPage_ = s;
               break;
             }
           default:
@@ -925,6 +933,77 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     return getCxParameters();
   }
 
+  public static final int CX_CURRENT_PAGE_FIELD_NUMBER = 15;
+  private volatile java.lang.Object cxCurrentPage_;
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the CX page to override the `current_page` in the
+   * session.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * If `cx_current_page` is specified, the previous state of the session will
+   * be ignored by Dialogflow CX, including the [previous
+   * page][QueryResult.current_page] and the [previous session
+   * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+   * `cx_parameters` should be configured together to direct a session to a
+   * specific state.
+   * Note: this field should only be used if you are connecting to a Dialogflow
+   * CX agent.
+   * </pre>
+   *
+   * <code>string cx_current_page = 15;</code>
+   *
+   * @return The cxCurrentPage.
+   */
+  @java.lang.Override
+  public java.lang.String getCxCurrentPage() {
+    java.lang.Object ref = cxCurrentPage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cxCurrentPage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The unique identifier of the CX page to override the `current_page` in the
+   * session.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+   * If `cx_current_page` is specified, the previous state of the session will
+   * be ignored by Dialogflow CX, including the [previous
+   * page][QueryResult.current_page] and the [previous session
+   * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+   * `cx_parameters` should be configured together to direct a session to a
+   * specific state.
+   * Note: this field should only be used if you are connecting to a Dialogflow
+   * CX agent.
+   * </pre>
+   *
+   * <code>string cx_current_page = 15;</code>
+   *
+   * @return The bytes for cxCurrentPage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCxCurrentPageBytes() {
+    java.lang.Object ref = cxCurrentPage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      cxCurrentPage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ENABLE_PARTIAL_AUTOMATED_AGENT_REPLY_FIELD_NUMBER = 12;
   private boolean enablePartialAutomatedAgentReply_;
   /**
@@ -993,6 +1072,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (cxParameters_ != null) {
       output.writeMessage(13, getCxParameters());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cxCurrentPage_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, cxCurrentPage_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1045,6 +1127,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (cxParameters_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getCxParameters());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cxCurrentPage_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, cxCurrentPage_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1078,6 +1163,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (hasCxParameters()) {
       if (!getCxParameters().equals(other.getCxParameters())) return false;
     }
+    if (!getCxCurrentPage().equals(other.getCxCurrentPage())) return false;
     if (getEnablePartialAutomatedAgentReply() != other.getEnablePartialAutomatedAgentReply())
       return false;
     if (!getConfigCase().equals(other.getConfigCase())) return false;
@@ -1134,6 +1220,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       hash = (37 * hash) + CX_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getCxParameters().hashCode();
     }
+    hash = (37 * hash) + CX_CURRENT_PAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getCxCurrentPage().hashCode();
     hash = (37 * hash) + ENABLE_PARTIAL_AUTOMATED_AGENT_REPLY_FIELD_NUMBER;
     hash =
         (53 * hash)
@@ -1367,6 +1455,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         cxParameters_ = null;
         cxParametersBuilder_ = null;
       }
+      cxCurrentPage_ = "";
+
       enablePartialAutomatedAgentReply_ = false;
 
       configCase_ = 0;
@@ -1450,6 +1540,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       } else {
         result.cxParameters_ = cxParametersBuilder_.build();
       }
+      result.cxCurrentPage_ = cxCurrentPage_;
       result.enablePartialAutomatedAgentReply_ = enablePartialAutomatedAgentReply_;
       result.configCase_ = configCase_;
       result.inputCase_ = inputCase_;
@@ -1521,6 +1612,10 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       if (other.hasCxParameters()) {
         mergeCxParameters(other.getCxParameters());
+      }
+      if (!other.getCxCurrentPage().isEmpty()) {
+        cxCurrentPage_ = other.cxCurrentPage_;
+        onChanged();
       }
       if (other.getEnablePartialAutomatedAgentReply() != false) {
         setEnablePartialAutomatedAgentReply(other.getEnablePartialAutomatedAgentReply());
@@ -3447,6 +3542,167 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         cxParameters_ = null;
       }
       return cxParametersBuilder_;
+    }
+
+    private java.lang.Object cxCurrentPage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the CX page to override the `current_page` in the
+     * session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * If `cx_current_page` is specified, the previous state of the session will
+     * be ignored by Dialogflow CX, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+     * `cx_parameters` should be configured together to direct a session to a
+     * specific state.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>string cx_current_page = 15;</code>
+     *
+     * @return The cxCurrentPage.
+     */
+    public java.lang.String getCxCurrentPage() {
+      java.lang.Object ref = cxCurrentPage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cxCurrentPage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the CX page to override the `current_page` in the
+     * session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * If `cx_current_page` is specified, the previous state of the session will
+     * be ignored by Dialogflow CX, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+     * `cx_parameters` should be configured together to direct a session to a
+     * specific state.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>string cx_current_page = 15;</code>
+     *
+     * @return The bytes for cxCurrentPage.
+     */
+    public com.google.protobuf.ByteString getCxCurrentPageBytes() {
+      java.lang.Object ref = cxCurrentPage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        cxCurrentPage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the CX page to override the `current_page` in the
+     * session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * If `cx_current_page` is specified, the previous state of the session will
+     * be ignored by Dialogflow CX, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+     * `cx_parameters` should be configured together to direct a session to a
+     * specific state.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>string cx_current_page = 15;</code>
+     *
+     * @param value The cxCurrentPage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCxCurrentPage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      cxCurrentPage_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the CX page to override the `current_page` in the
+     * session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * If `cx_current_page` is specified, the previous state of the session will
+     * be ignored by Dialogflow CX, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+     * `cx_parameters` should be configured together to direct a session to a
+     * specific state.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>string cx_current_page = 15;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCxCurrentPage() {
+
+      cxCurrentPage_ = getDefaultInstance().getCxCurrentPage();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unique identifier of the CX page to override the `current_page` in the
+     * session.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/pages/&lt;Page ID&gt;`.
+     * If `cx_current_page` is specified, the previous state of the session will
+     * be ignored by Dialogflow CX, including the [previous
+     * page][QueryResult.current_page] and the [previous session
+     * parameters][QueryResult.parameters]. In most cases, `cx_current_page` and
+     * `cx_parameters` should be configured together to direct a session to a
+     * specific state.
+     * Note: this field should only be used if you are connecting to a Dialogflow
+     * CX agent.
+     * </pre>
+     *
+     * <code>string cx_current_page = 15;</code>
+     *
+     * @param value The bytes for cxCurrentPage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCxCurrentPageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      cxCurrentPage_ = value;
+      onChanged();
+      return this;
     }
 
     private boolean enablePartialAutomatedAgentReply_;

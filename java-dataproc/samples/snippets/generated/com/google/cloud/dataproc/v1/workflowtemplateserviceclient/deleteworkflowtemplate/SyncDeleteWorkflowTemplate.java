@@ -20,6 +20,7 @@ package com.google.cloud.dataproc.v1.samples;
 import com.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1.WorkflowTemplateName;
 import com.google.cloud.dataproc.v1.WorkflowTemplateServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteWorkflowTemplate {
 

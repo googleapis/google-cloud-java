@@ -2611,8 +2611,8 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of fileTypes at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for fileTypes to set.
      * @return This builder for chaining.
      */
     public Builder setFileTypesValue(int index, int value) {

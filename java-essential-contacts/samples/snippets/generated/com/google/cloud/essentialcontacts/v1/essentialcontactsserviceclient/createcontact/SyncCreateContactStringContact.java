@@ -16,8 +16,7 @@
 
 package com.google.cloud.essentialcontacts.v1.samples;
 
-// [START
-// essentialcontacts_v1_generated_essentialcontactsserviceclient_createcontact_stringcontact_sync]
+// [START essentialcontacts_v1_generated_essentialcontactsserviceclient_createcontact_stringcontact_sync]
 import com.google.cloud.essentialcontacts.v1.Contact;
 import com.google.cloud.essentialcontacts.v1.EssentialContactsServiceClient;
 import com.google.cloud.essentialcontacts.v1.ProjectName;
@@ -39,5 +38,4 @@ public class SyncCreateContactStringContact {
     }
   }
 }
-// [END
-// essentialcontacts_v1_generated_essentialcontactsserviceclient_createcontact_stringcontact_sync]
+// [END essentialcontacts_v1_generated_essentialcontactsserviceclient_createcontact_stringcontact_sync]

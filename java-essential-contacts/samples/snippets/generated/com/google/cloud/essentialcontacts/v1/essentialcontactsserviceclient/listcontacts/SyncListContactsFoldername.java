@@ -16,8 +16,7 @@
 
 package com.google.cloud.essentialcontacts.v1.samples;
 
-// [START
-// essentialcontacts_v1_generated_essentialcontactsserviceclient_listcontacts_foldername_sync]
+// [START essentialcontacts_v1_generated_essentialcontactsserviceclient_listcontacts_foldername_sync]
 import com.google.cloud.essentialcontacts.v1.Contact;
 import com.google.cloud.essentialcontacts.v1.EssentialContactsServiceClient;
 import com.google.cloud.essentialcontacts.v1.FolderName;

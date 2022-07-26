@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.v2.stub;
 
+import static com.google.cloud.dialogflow.v2.ParticipantsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.v2.ParticipantsClient.ListParticipantsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -34,6 +35,10 @@ import com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse;
 import com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest;
 import com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2.UpdateParticipantRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -83,6 +88,19 @@ public abstract class ParticipantsStub implements BackgroundResource {
   public UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesCallable() {
     throw new UnsupportedOperationException("Not implemented: suggestSmartRepliesCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

@@ -16,8 +16,7 @@
 
 package com.google.cloud.dataproc.v1.samples;
 
-// [START
-// dataproc_v1_generated_workflowtemplateserviceclient_instantiateinlineworkflowtemplate_lro_async]
+// [START dataproc_v1_generated_workflowtemplateserviceclient_instantiateinlineworkflowtemplate_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1.RegionName;
@@ -52,5 +51,4 @@ public class AsyncInstantiateInlineWorkflowTemplateLRO {
     }
   }
 }
-// [END
-// dataproc_v1_generated_workflowtemplateserviceclient_instantiateinlineworkflowtemplate_lro_async]
+// [END dataproc_v1_generated_workflowtemplateserviceclient_instantiateinlineworkflowtemplate_lro_async]

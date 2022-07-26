@@ -16,10 +16,10 @@
 
 package com.google.cloud.websecurityscanner.v1alpha.samples;
 
-// [START
-// websecurityscanner_v1alpha_generated_websecurityscannerclient_deletescanconfig_scanconfigname_sync]
+// [START websecurityscanner_v1alpha_generated_websecurityscannerclient_deletescanconfig_scanconfigname_sync]
 import com.google.cloud.websecurityscanner.v1alpha.ScanConfigName;
 import com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteScanConfigScanconfigname {
 
@@ -36,5 +36,4 @@ public class SyncDeleteScanConfigScanconfigname {
     }
   }
 }
-// [END
-// websecurityscanner_v1alpha_generated_websecurityscannerclient_deletescanconfig_scanconfigname_sync]
+// [END websecurityscanner_v1alpha_generated_websecurityscannerclient_deletescanconfig_scanconfigname_sync]

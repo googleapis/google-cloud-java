@@ -2603,8 +2603,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.analytics.admin.v1beta.CustomMetric.RestrictedMetricType restricted_metric_type = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of restrictedMetricType at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for restrictedMetricType to set.
      * @return This builder for chaining.
      */
     public Builder setRestrictedMetricTypeValue(int index, int value) {

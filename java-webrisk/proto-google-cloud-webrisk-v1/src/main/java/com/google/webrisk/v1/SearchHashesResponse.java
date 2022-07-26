@@ -1141,8 +1141,8 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
        *
        * <code>repeated .google.cloud.webrisk.v1.ThreatType threat_types = 1;</code>
        *
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of threatTypes at the given index.
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for threatTypes to set.
        * @return This builder for chaining.
        */
       public Builder setThreatTypesValue(int index, int value) {

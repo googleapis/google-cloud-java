@@ -755,8 +755,8 @@ public final class TelephonyDtmfEvents extends com.google.protobuf.GeneratedMess
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.TelephonyDtmf dtmf_events = 1;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of dtmfEvents at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for dtmfEvents to set.
      * @return This builder for chaining.
      */
     public Builder setDtmfEventsValue(int index, int value) {

@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.ContextsClient.ListContextsPagedResponse;
+import static com.google.cloud.dialogflow.v2beta1.ContextsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -51,6 +52,10 @@ import com.google.cloud.dialogflow.v2beta1.GetContextRequest;
 import com.google.cloud.dialogflow.v2beta1.ListContextsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListContextsResponse;
 import com.google.cloud.dialogflow.v2beta1.UpdateContextRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -112,6 +117,10 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
   private final UnaryCallSettings<UpdateContextRequest, Context> updateContextSettings;
   private final UnaryCallSettings<DeleteContextRequest, Empty> deleteContextSettings;
   private final UnaryCallSettings<DeleteAllContextsRequest, Empty> deleteAllContextsSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListContextsRequest, ListContextsResponse, Context>
       LIST_CONTEXTS_PAGE_STR_DESC =
@@ -149,6 +158,42 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListContextsRequest, ListContextsResponse, ListContextsPagedResponse>
       LIST_CONTEXTS_PAGE_STR_FACT =
@@ -163,6 +208,23 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
               PageContext<ListContextsRequest, ListContextsResponse, Context> pageContext =
                   PageContext.create(callable, LIST_CONTEXTS_PAGE_STR_DESC, request, context);
               return ListContextsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -195,6 +257,17 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
   /** Returns the object with the settings used for calls to deleteAllContexts. */
   public UnaryCallSettings<DeleteAllContextsRequest, Empty> deleteAllContextsSettings() {
     return deleteAllContextsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public ContextsStub createStub() throws IOException {
@@ -307,6 +380,8 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
     updateContextSettings = settingsBuilder.updateContextSettings().build();
     deleteContextSettings = settingsBuilder.deleteContextSettings().build();
     deleteAllContextsSettings = settingsBuilder.deleteAllContextsSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for ContextsStubSettings. */
@@ -321,6 +396,10 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
     private final UnaryCallSettings.Builder<DeleteContextRequest, Empty> deleteContextSettings;
     private final UnaryCallSettings.Builder<DeleteAllContextsRequest, Empty>
         deleteAllContextsSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -365,6 +444,8 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
       updateContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAllContextsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -373,7 +454,9 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
               createContextSettings,
               updateContextSettings,
               deleteContextSettings,
-              deleteAllContextsSettings);
+              deleteAllContextsSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -386,6 +469,8 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
       updateContextSettings = settings.updateContextSettings.toBuilder();
       deleteContextSettings = settings.deleteContextSettings.toBuilder();
       deleteAllContextsSettings = settings.deleteAllContextsSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -394,7 +479,9 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
               createContextSettings,
               updateContextSettings,
               deleteContextSettings,
-              deleteAllContextsSettings);
+              deleteAllContextsSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -454,6 +541,16 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       return builder;
     }
 
@@ -502,6 +599,18 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
     /** Returns the builder for the settings used for calls to deleteAllContexts. */
     public UnaryCallSettings.Builder<DeleteAllContextsRequest, Empty> deleteAllContextsSettings() {
       return deleteAllContextsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

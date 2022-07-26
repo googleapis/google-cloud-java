@@ -16,8 +16,7 @@
 
 package com.google.cloud.websecurityscanner.v1alpha.samples;
 
-// [START
-// websecurityscanner_v1alpha_generated_websecurityscannerclient_updatescanconfig_scanconfigfieldmask_sync]
+// [START websecurityscanner_v1alpha_generated_websecurityscannerclient_updatescanconfig_scanconfigfieldmask_sync]
 import com.google.cloud.websecurityscanner.v1alpha.ScanConfig;
 import com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerClient;
 import com.google.protobuf.FieldMask;
@@ -38,5 +37,4 @@ public class SyncUpdateScanConfigScanconfigFieldmask {
     }
   }
 }
-// [END
-// websecurityscanner_v1alpha_generated_websecurityscannerclient_updatescanconfig_scanconfigfieldmask_sync]
+// [END websecurityscanner_v1alpha_generated_websecurityscannerclient_updatescanconfig_scanconfigfieldmask_sync]

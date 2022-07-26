@@ -16,8 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1beta1.samples;
 
-// [START
-// recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1client_annotateassessment_async]
+// [START recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1client_annotateassessment_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client;
 import com.google.protobuf.ByteString;
@@ -50,5 +49,4 @@ public class AsyncAnnotateAssessment {
     }
   }
 }
-// [END
-// recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1client_annotateassessment_async]
+// [END recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1client_annotateassessment_async]

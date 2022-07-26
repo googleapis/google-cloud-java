@@ -16,8 +16,7 @@
 
 package com.google.cloud.websecurityscanner.v1alpha.samples;
 
-// [START
-// websecurityscanner_v1alpha_generated_websecurityscannerclient_listfindingtypestats_scanrunname_sync]
+// [START websecurityscanner_v1alpha_generated_websecurityscannerclient_listfindingtypestats_scanrunname_sync]
 import com.google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsResponse;
 import com.google.cloud.websecurityscanner.v1alpha.ScanRunName;
 import com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerClient;
@@ -37,5 +36,4 @@ public class SyncListFindingTypeStatsScanrunname {
     }
   }
 }
-// [END
-// websecurityscanner_v1alpha_generated_websecurityscannerclient_listfindingtypestats_scanrunname_sync]
+// [END websecurityscanner_v1alpha_generated_websecurityscannerclient_listfindingtypestats_scanrunname_sync]

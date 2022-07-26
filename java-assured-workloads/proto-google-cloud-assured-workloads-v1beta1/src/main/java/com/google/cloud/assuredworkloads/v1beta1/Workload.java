@@ -9002,8 +9002,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * repeated .google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError setup_errors = 2;
        * </code>
        *
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of setupErrors at the given index.
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for setupErrors to set.
        * @return This builder for chaining.
        */
       public Builder setSetupErrorsValue(int index, int value) {

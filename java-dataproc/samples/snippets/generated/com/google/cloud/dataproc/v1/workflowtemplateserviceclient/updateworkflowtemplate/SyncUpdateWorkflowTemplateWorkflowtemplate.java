@@ -16,8 +16,7 @@
 
 package com.google.cloud.dataproc.v1.samples;
 
-// [START
-// dataproc_v1_generated_workflowtemplateserviceclient_updateworkflowtemplate_workflowtemplate_sync]
+// [START dataproc_v1_generated_workflowtemplateserviceclient_updateworkflowtemplate_workflowtemplate_sync]
 import com.google.cloud.dataproc.v1.WorkflowTemplate;
 import com.google.cloud.dataproc.v1.WorkflowTemplateServiceClient;
 
@@ -37,5 +36,4 @@ public class SyncUpdateWorkflowTemplateWorkflowtemplate {
     }
   }
 }
-// [END
-// dataproc_v1_generated_workflowtemplateserviceclient_updateworkflowtemplate_workflowtemplate_sync]
+// [END dataproc_v1_generated_workflowtemplateserviceclient_updateworkflowtemplate_workflowtemplate_sync]

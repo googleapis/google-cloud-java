@@ -27825,8 +27825,8 @@ public final class PatchJobs {
        * repeated .google.cloud.osconfig.v1beta.WindowsUpdateSettings.Classification classifications = 1;
        * </code>
        *
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of classifications at the given index.
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for classifications to set.
        * @return This builder for chaining.
        */
       public Builder setClassificationsValue(int index, int value) {

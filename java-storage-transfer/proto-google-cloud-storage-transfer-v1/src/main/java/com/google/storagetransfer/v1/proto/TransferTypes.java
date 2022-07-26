@@ -38324,8 +38324,8 @@ public final class TransferTypes {
        * <code>repeated .google.storagetransfer.v1.NotificationConfig.EventType event_types = 2;
        * </code>
        *
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of eventTypes at the given index.
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for eventTypes to set.
        * @return This builder for chaining.
        */
       public Builder setEventTypesValue(int index, int value) {
@@ -40147,8 +40147,8 @@ public final class TransferTypes {
        * <code>repeated .google.storagetransfer.v1.LoggingConfig.LoggableAction log_actions = 1;
        * </code>
        *
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of logActions at the given index.
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for logActions to set.
        * @return This builder for chaining.
        */
       public Builder setLogActionsValue(int index, int value) {
@@ -40429,8 +40429,8 @@ public final class TransferTypes {
        * repeated .google.storagetransfer.v1.LoggingConfig.LoggableActionState log_action_states = 2;
        * </code>
        *
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of logActionStates at the given index.
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for logActionStates to set.
        * @return This builder for chaining.
        */
       public Builder setLogActionStatesValue(int index, int value) {

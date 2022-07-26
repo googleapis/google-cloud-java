@@ -1097,8 +1097,8 @@ public final class DeleteConsumerOverrideRequest extends com.google.protobuf.Gen
      *
      * <code>repeated .google.api.serviceusage.v1beta1.QuotaSafetyCheck force_only = 3;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of forceOnly at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for forceOnly to set.
      * @return This builder for chaining.
      */
     public Builder setForceOnlyValue(int index, int value) {

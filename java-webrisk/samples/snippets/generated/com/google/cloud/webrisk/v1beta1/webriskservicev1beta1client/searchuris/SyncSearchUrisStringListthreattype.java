@@ -16,8 +16,7 @@
 
 package com.google.cloud.webrisk.v1beta1.samples;
 
-// [START
-// webrisk_v1beta1_generated_webriskservicev1beta1client_searchuris_stringlistthreattype_sync]
+// [START webrisk_v1beta1_generated_webriskservicev1beta1client_searchuris_stringlistthreattype_sync]
 import com.google.cloud.webrisk.v1beta1.WebRiskServiceV1Beta1Client;
 import com.google.webrisk.v1beta1.SearchUrisResponse;
 import com.google.webrisk.v1beta1.ThreatType;

@@ -1585,8 +1585,8 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .google.cloud.domains.v1beta1.DomainNotice domain_notices = 3;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of domainNotices at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for domainNotices to set.
      * @return This builder for chaining.
      */
     public Builder setDomainNoticesValue(int index, int value) {
@@ -1829,8 +1829,8 @@ public final class RegisterDomainRequest extends com.google.protobuf.GeneratedMe
      *
      * <code>repeated .google.cloud.domains.v1beta1.ContactNotice contact_notices = 4;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of contactNotices at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for contactNotices to set.
      * @return This builder for chaining.
      */
     public Builder setContactNoticesValue(int index, int value) {

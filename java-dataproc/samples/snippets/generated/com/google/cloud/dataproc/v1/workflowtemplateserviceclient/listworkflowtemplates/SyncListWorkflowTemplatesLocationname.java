@@ -16,8 +16,7 @@
 
 package com.google.cloud.dataproc.v1.samples;
 
-// [START
-// dataproc_v1_generated_workflowtemplateserviceclient_listworkflowtemplates_locationname_sync]
+// [START dataproc_v1_generated_workflowtemplateserviceclient_listworkflowtemplates_locationname_sync]
 import com.google.cloud.dataproc.v1.LocationName;
 import com.google.cloud.dataproc.v1.WorkflowTemplate;
 import com.google.cloud.dataproc.v1.WorkflowTemplateServiceClient;

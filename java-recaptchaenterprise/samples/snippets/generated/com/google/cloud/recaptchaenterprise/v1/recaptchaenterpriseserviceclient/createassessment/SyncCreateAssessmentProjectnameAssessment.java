@@ -16,8 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1.samples;
 
-// [START
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_createassessment_projectnameassessment_sync]
+// [START recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_createassessment_projectnameassessment_sync]
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
 import com.google.recaptchaenterprise.v1.Assessment;
 import com.google.recaptchaenterprise.v1.ProjectName;
@@ -39,5 +38,4 @@ public class SyncCreateAssessmentProjectnameAssessment {
     }
   }
 }
-// [END
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_createassessment_projectnameassessment_sync]
+// [END recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_createassessment_projectnameassessment_sync]

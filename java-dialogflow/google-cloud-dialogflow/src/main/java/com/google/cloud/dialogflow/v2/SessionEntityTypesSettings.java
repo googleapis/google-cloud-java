@@ -16,6 +16,7 @@
 
 package com.google.cloud.dialogflow.v2;
 
+import static com.google.cloud.dialogflow.v2.SessionEntityTypesClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.v2.SessionEntityTypesClient.ListSessionEntityTypesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -31,6 +32,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2.stub.SessionEntityTypesStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -105,6 +110,17 @@ public class SessionEntityTypesSettings extends ClientSettings<SessionEntityType
   public UnaryCallSettings<DeleteSessionEntityTypeRequest, Empty>
       deleteSessionEntityTypeSettings() {
     return ((SessionEntityTypesStubSettings) getStubSettings()).deleteSessionEntityTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((SessionEntityTypesStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((SessionEntityTypesStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final SessionEntityTypesSettings create(SessionEntityTypesStubSettings stub)
@@ -253,6 +269,18 @@ public class SessionEntityTypesSettings extends ClientSettings<SessionEntityType
     public UnaryCallSettings.Builder<DeleteSessionEntityTypeRequest, Empty>
         deleteSessionEntityTypeSettings() {
       return getStubSettingsBuilder().deleteSessionEntityTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

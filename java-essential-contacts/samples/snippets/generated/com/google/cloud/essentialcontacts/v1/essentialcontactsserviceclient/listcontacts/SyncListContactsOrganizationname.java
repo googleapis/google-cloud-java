@@ -16,8 +16,7 @@
 
 package com.google.cloud.essentialcontacts.v1.samples;
 
-// [START
-// essentialcontacts_v1_generated_essentialcontactsserviceclient_listcontacts_organizationname_sync]
+// [START essentialcontacts_v1_generated_essentialcontactsserviceclient_listcontacts_organizationname_sync]
 import com.google.cloud.essentialcontacts.v1.Contact;
 import com.google.cloud.essentialcontacts.v1.EssentialContactsServiceClient;
 import com.google.cloud.essentialcontacts.v1.OrganizationName;
@@ -40,5 +39,4 @@ public class SyncListContactsOrganizationname {
     }
   }
 }
-// [END
-// essentialcontacts_v1_generated_essentialcontactsserviceclient_listcontacts_organizationname_sync]
+// [END essentialcontacts_v1_generated_essentialcontactsserviceclient_listcontacts_organizationname_sync]

@@ -1788,8 +1788,8 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      * repeated .google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest.Reason reasons = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of reasons at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for reasons to set.
      * @return This builder for chaining.
      */
     public Builder setReasonsValue(int index, int value) {

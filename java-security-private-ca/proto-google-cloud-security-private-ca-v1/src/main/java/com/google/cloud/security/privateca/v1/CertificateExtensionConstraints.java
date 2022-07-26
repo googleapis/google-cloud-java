@@ -1269,8 +1269,8 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * repeated .google.cloud.security.privateca.v1.CertificateExtensionConstraints.KnownCertificateExtension known_extensions = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of knownExtensions at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for knownExtensions to set.
      * @return This builder for chaining.
      */
     public Builder setKnownExtensionsValue(int index, int value) {

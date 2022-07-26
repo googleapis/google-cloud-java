@@ -20,6 +20,7 @@ package com.google.cloud.essentialcontacts.v1.samples;
 import com.google.cloud.essentialcontacts.v1.ContactName;
 import com.google.cloud.essentialcontacts.v1.DeleteContactRequest;
 import com.google.cloud.essentialcontacts.v1.EssentialContactsServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteContact {
 

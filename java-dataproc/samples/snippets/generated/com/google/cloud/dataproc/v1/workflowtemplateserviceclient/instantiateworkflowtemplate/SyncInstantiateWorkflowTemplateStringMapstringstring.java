@@ -16,10 +16,10 @@
 
 package com.google.cloud.dataproc.v1.samples;
 
-// [START
-// dataproc_v1_generated_workflowtemplateserviceclient_instantiateworkflowtemplate_stringmapstringstring_sync]
+// [START dataproc_v1_generated_workflowtemplateserviceclient_instantiateworkflowtemplate_stringmapstringstring_sync]
 import com.google.cloud.dataproc.v1.WorkflowTemplateName;
 import com.google.cloud.dataproc.v1.WorkflowTemplateServiceClient;
+import com.google.protobuf.Empty;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,5 +43,4 @@ public class SyncInstantiateWorkflowTemplateStringMapstringstring {
     }
   }
 }
-// [END
-// dataproc_v1_generated_workflowtemplateserviceclient_instantiateworkflowtemplate_stringmapstringstring_sync]
+// [END dataproc_v1_generated_workflowtemplateserviceclient_instantiateworkflowtemplate_stringmapstringstring_sync]

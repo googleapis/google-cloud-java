@@ -1326,8 +1326,8 @@ public final class ListTransferLogsRequest extends com.google.protobuf.Generated
      * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of messageTypes at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for messageTypes to set.
      * @return This builder for chaining.
      */
     public Builder setMessageTypesValue(int index, int value) {

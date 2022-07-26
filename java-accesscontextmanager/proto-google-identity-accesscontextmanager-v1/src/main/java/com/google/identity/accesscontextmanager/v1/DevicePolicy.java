@@ -1324,8 +1324,8 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.identity.accesscontextmanager.type.DeviceEncryptionStatus allowed_encryption_statuses = 2;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of allowedEncryptionStatuses at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for allowedEncryptionStatuses to set.
      * @return This builder for chaining.
      */
     public Builder setAllowedEncryptionStatusesValue(int index, int value) {
@@ -1978,9 +1978,8 @@ public final class DevicePolicy extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.identity.accesscontextmanager.type.DeviceManagementLevel allowed_device_management_levels = 6;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of allowedDeviceManagementLevels at the given
-     *     index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for allowedDeviceManagementLevels to set.
      * @return This builder for chaining.
      */
     public Builder setAllowedDeviceManagementLevelsValue(int index, int value) {

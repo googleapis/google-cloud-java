@@ -1301,8 +1301,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.filestore.v1.NetworkConfig.AddressMode modes = 3;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of modes at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for modes to set.
      * @return This builder for chaining.
      */
     public Builder setModesValue(int index, int value) {

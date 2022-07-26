@@ -16,8 +16,7 @@
 
 package com.google.cloud.websecurityscanner.v1beta.samples;
 
-// [START
-// websecurityscanner_v1beta_generated_websecurityscannerclient_create_setcredentialsprovider1_sync]
+// [START websecurityscanner_v1beta_generated_websecurityscannerclient_create_setcredentialsprovider1_sync]
 import com.google.cloud.websecurityscanner.v1beta.WebSecurityScannerClient;
 import com.google.cloud.websecurityscanner.v1beta.WebSecurityScannerSettings;
 
@@ -39,5 +38,4 @@ public class SyncCreateSetCredentialsProvider1 {
         WebSecurityScannerClient.create(webSecurityScannerSettings);
   }
 }
-// [END
-// websecurityscanner_v1beta_generated_websecurityscannerclient_create_setcredentialsprovider1_sync]
+// [END websecurityscanner_v1beta_generated_websecurityscannerclient_create_setcredentialsprovider1_sync]

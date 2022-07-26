@@ -775,8 +775,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * <code>repeated .google.cloud.networkconnectivity.v1.LocationFeature location_features = 1;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of locationFeatures at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for locationFeatures to set.
      * @return This builder for chaining.
      */
     public Builder setLocationFeaturesValue(int index, int value) {

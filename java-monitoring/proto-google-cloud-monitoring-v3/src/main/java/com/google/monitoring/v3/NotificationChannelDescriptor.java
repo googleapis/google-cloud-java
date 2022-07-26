@@ -2197,8 +2197,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      *
      * @deprecated google.monitoring.v3.NotificationChannelDescriptor.supported_tiers is deprecated.
      *     See google/monitoring/v3/notification.proto;l=75
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of supportedTiers at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for supportedTiers to set.
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -117,13 +117,16 @@ public final class AudioConfigProto {
           + "OUTPUT_AUDIO_ENCODING_MP3\020\002\022%\n!OUTPUT_AU"
           + "DIO_ENCODING_MP3_64_KBPS\020\004\022\"\n\036OUTPUT_AUD"
           + "IO_ENCODING_OGG_OPUS\020\003\022\037\n\033OUTPUT_AUDIO_E"
-          + "NCODING_MULAW\020\005B\367\001\n\036com.google.cloud.dia"
+          + "NCODING_MULAW\020\005B\334\002\n\036com.google.cloud.dia"
           + "logflow.v2B\020AudioConfigProtoP\001ZDgoogle.g"
           + "olang.org/genproto/googleapis/cloud/dial"
           + "ogflow/v2;dialogflow\370\001\001\242\002\002DF\252\002\032Google.Cl"
           + "oud.Dialogflow.V2\352AU\n\033automl.googleapis."
           + "com/Model\0226projects/{project}/locations/"
-          + "{location}/models/{model}b\006proto3"
+          + "{location}/models/{model}\352Ab\n\037speech.goo"
+          + "gleapis.com/PhraseSet\022?projects/{project"
+          + "}/locations/{location}/phraseSets/{phras"
+          + "e_set}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

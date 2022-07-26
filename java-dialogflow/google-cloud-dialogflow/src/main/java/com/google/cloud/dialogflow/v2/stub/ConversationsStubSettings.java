@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2.stub;
 
 import static com.google.cloud.dialogflow.v2.ConversationsClient.ListConversationsPagedResponse;
+import static com.google.cloud.dialogflow.v2.ConversationsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.v2.ConversationsClient.ListMessagesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -53,6 +54,10 @@ import com.google.cloud.dialogflow.v2.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2.ListMessagesRequest;
 import com.google.cloud.dialogflow.v2.ListMessagesResponse;
 import com.google.cloud.dialogflow.v2.Message;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -116,6 +121,10 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
   private final PagedCallSettings<
           ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
       listMessagesSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<
           ListConversationsRequest, ListConversationsResponse, Conversation>
@@ -193,6 +202,42 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListConversationsRequest, ListConversationsResponse, ListConversationsPagedResponse>
       LIST_CONVERSATIONS_PAGE_STR_FACT =
@@ -231,6 +276,23 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to createConversation. */
   public UnaryCallSettings<CreateConversationRequest, Conversation> createConversationSettings() {
     return createConversationSettings;
@@ -258,6 +320,17 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
   public PagedCallSettings<ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
       listMessagesSettings() {
     return listMessagesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public ConversationsStub createStub() throws IOException {
@@ -371,6 +444,8 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     getConversationSettings = settingsBuilder.getConversationSettings().build();
     completeConversationSettings = settingsBuilder.completeConversationSettings().build();
     listMessagesSettings = settingsBuilder.listMessagesSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for ConversationsStubSettings. */
@@ -388,6 +463,10 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     private final PagedCallSettings.Builder<
             ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
         listMessagesSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -431,6 +510,8 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       getConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       completeConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listMessagesSettings = PagedCallSettings.newBuilder(LIST_MESSAGES_PAGE_STR_FACT);
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -438,7 +519,9 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               listConversationsSettings,
               getConversationSettings,
               completeConversationSettings,
-              listMessagesSettings);
+              listMessagesSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -450,6 +533,8 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       getConversationSettings = settings.getConversationSettings.toBuilder();
       completeConversationSettings = settings.completeConversationSettings.toBuilder();
       listMessagesSettings = settings.listMessagesSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -457,7 +542,9 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               listConversationsSettings,
               getConversationSettings,
               completeConversationSettings,
-              listMessagesSettings);
+              listMessagesSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -512,6 +599,16 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       return builder;
     }
 
@@ -560,6 +657,18 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
             ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
         listMessagesSettings() {
       return listMessagesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2.stub;
 
 import static com.google.cloud.dialogflow.v2.DocumentsClient.ListDocumentsPagedResponse;
+import static com.google.cloud.dialogflow.v2.DocumentsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -59,6 +60,10 @@ import com.google.cloud.dialogflow.v2.ListDocumentsRequest;
 import com.google.cloud.dialogflow.v2.ListDocumentsResponse;
 import com.google.cloud.dialogflow.v2.ReloadDocumentRequest;
 import com.google.cloud.dialogflow.v2.UpdateDocumentRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -135,6 +140,10 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
   private final UnaryCallSettings<ExportDocumentRequest, Operation> exportDocumentSettings;
   private final OperationCallSettings<ExportDocumentRequest, Document, KnowledgeOperationMetadata>
       exportDocumentOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListDocumentsRequest, ListDocumentsResponse, Document>
       LIST_DOCUMENTS_PAGE_STR_DESC =
@@ -172,6 +181,42 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>
       LIST_DOCUMENTS_PAGE_STR_FACT =
@@ -186,6 +231,23 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
               PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> pageContext =
                   PageContext.create(callable, LIST_DOCUMENTS_PAGE_STR_DESC, request, context);
               return ListDocumentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -265,6 +327,17 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
   public OperationCallSettings<ExportDocumentRequest, Document, KnowledgeOperationMetadata>
       exportDocumentOperationSettings() {
     return exportDocumentOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
   }
 
   public DocumentsStub createStub() throws IOException {
@@ -385,6 +458,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     reloadDocumentOperationSettings = settingsBuilder.reloadDocumentOperationSettings().build();
     exportDocumentSettings = settingsBuilder.exportDocumentSettings().build();
     exportDocumentOperationSettings = settingsBuilder.exportDocumentOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for DocumentsStubSettings. */
@@ -424,6 +499,10 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     private final OperationCallSettings.Builder<
             ExportDocumentRequest, Document, KnowledgeOperationMetadata>
         exportDocumentOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -476,6 +555,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
       reloadDocumentOperationSettings = OperationCallSettings.newBuilder();
       exportDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       exportDocumentOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -486,7 +567,9 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
               deleteDocumentSettings,
               updateDocumentSettings,
               reloadDocumentSettings,
-              exportDocumentSettings);
+              exportDocumentSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -507,6 +590,8 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
       reloadDocumentOperationSettings = settings.reloadDocumentOperationSettings.toBuilder();
       exportDocumentSettings = settings.exportDocumentSettings.toBuilder();
       exportDocumentOperationSettings = settings.exportDocumentOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -517,7 +602,9 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
               deleteDocumentSettings,
               updateDocumentSettings,
               reloadDocumentSettings,
-              exportDocumentSettings);
+              exportDocumentSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -584,6 +671,16 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
 
       builder
           .exportDocumentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -848,6 +945,18 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
             ExportDocumentRequest, Document, KnowledgeOperationMetadata>
         exportDocumentOperationSettings() {
       return exportDocumentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

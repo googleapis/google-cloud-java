@@ -39,6 +39,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
 
   private ListAnswerRecordsRequest() {
     parent_ = "";
+    filter_ = "";
     pageToken_ = "";
   }
 
@@ -76,6 +77,13 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
               java.lang.String s = input.readStringRequireUtf8();
 
               parent_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filter_ = s;
               break;
             }
           case 24:
@@ -179,6 +187,67 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 2;
+  private volatile java.lang.Object filter_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filters to restrict results to specific answer records.
+   * Marked deprecated as it hasn't been, and isn't currently, supported.
+   * For more information about filtering, see
+   * [API Filtering](https://aip.dev/160).
+   * </pre>
+   *
+   * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated. See
+   *     google/cloud/dialogflow/v2beta1/answer_record.proto;l=288
+   * @return The filter.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filters to restrict results to specific answer records.
+   * Marked deprecated as it hasn't been, and isn't currently, supported.
+   * For more information about filtering, see
+   * [API Filtering](https://aip.dev/160).
+   * </pre>
+   *
+   * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated. See
+   *     google/cloud/dialogflow/v2beta1/answer_record.proto;l=288
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_;
   /**
@@ -271,6 +340,9 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
+    }
     if (pageSize_ != 0) {
       output.writeInt32(3, pageSize_);
     }
@@ -288,6 +360,9 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
     }
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
@@ -312,6 +387,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
         (com.google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -327,6 +403,8 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
@@ -479,6 +557,8 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
       super.clear();
       parent_ = "";
 
+      filter_ = "";
+
       pageSize_ = 0;
 
       pageToken_ = "";
@@ -512,6 +592,7 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
       com.google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest result =
           new com.google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest(this);
       result.parent_ = parent_;
+      result.filter_ = filter_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
       onBuilt();
@@ -567,6 +648,10 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        onChanged();
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -718,6 +803,142 @@ public final class ListAnswerRecordsRequest extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
 
       parent_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters to restrict results to specific answer records.
+     * Marked deprecated as it hasn't been, and isn't currently, supported.
+     * For more information about filtering, see
+     * [API Filtering](https://aip.dev/160).
+     * </pre>
+     *
+     * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated.
+     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=288
+     * @return The filter.
+     */
+    @java.lang.Deprecated
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters to restrict results to specific answer records.
+     * Marked deprecated as it hasn't been, and isn't currently, supported.
+     * For more information about filtering, see
+     * [API Filtering](https://aip.dev/160).
+     * </pre>
+     *
+     * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated.
+     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=288
+     * @return The bytes for filter.
+     */
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters to restrict results to specific answer records.
+     * Marked deprecated as it hasn't been, and isn't currently, supported.
+     * For more information about filtering, see
+     * [API Filtering](https://aip.dev/160).
+     * </pre>
+     *
+     * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated.
+     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=288
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters to restrict results to specific answer records.
+     * Marked deprecated as it hasn't been, and isn't currently, supported.
+     * For more information about filtering, see
+     * [API Filtering](https://aip.dev/160).
+     * </pre>
+     *
+     * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated.
+     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=288
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder clearFilter() {
+
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filters to restrict results to specific answer records.
+     * Marked deprecated as it hasn't been, and isn't currently, supported.
+     * For more information about filtering, see
+     * [API Filtering](https://aip.dev/160).
+     * </pre>
+     *
+     * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @deprecated google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest.filter is deprecated.
+     *     See google/cloud/dialogflow/v2beta1/answer_record.proto;l=288
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      filter_ = value;
       onChanged();
       return this;
     }

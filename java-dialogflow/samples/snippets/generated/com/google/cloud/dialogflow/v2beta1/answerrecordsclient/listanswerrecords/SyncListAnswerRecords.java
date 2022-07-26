@@ -35,6 +35,7 @@ public class SyncListAnswerRecords {
       ListAnswerRecordsRequest request =
           ListAnswerRecordsRequest.newBuilder()
               .setParent(ProjectName.of("[PROJECT]").toString())
+              .setFilter("filter-1274492040")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();
