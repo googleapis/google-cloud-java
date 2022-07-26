@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.17.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.16.1...v2.17.0) (2022-07-25)
+
+
+### Features
+
+* Return explicit StreamWriterClosedException ([#1709](https://github.com/googleapis/java-bigquerystorage/issues/1709)) ([57eb6d0](https://github.com/googleapis/java-bigquerystorage/commit/57eb6d0078a498e2f792d76b685c113a6a52ea8e))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.0 ([#1706](https://github.com/googleapis/java-bigquerystorage/issues/1706)) ([e92a8c0](https://github.com/googleapis/java-bigquerystorage/commit/e92a8c066130a6f28500fa887aef96da8a7af6df))
+
 ## [2.16.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.16.0...v2.16.1) (2022-07-19)
 
 
