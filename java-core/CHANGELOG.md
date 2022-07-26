@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.8.3](https://github.com/googleapis/java-core/compare/v2.8.2...v2.8.3) (2022-07-26)
+
+
+### Dependencies
+
+* update dependency com.google.api-client:google-api-client-bom to v2 ([#868](https://github.com/googleapis/java-core/issues/868)) ([e117c40](https://github.com/googleapis/java-core/commit/e117c40f31acf16a45bdbeeb727ba26d80eb6a51))
+* update dependency com.google.api:gax-bom to v2.18.4 ([#864](https://github.com/googleapis/java-core/issues/864)) ([bd40b1d](https://github.com/googleapis/java-core/commit/bd40b1d1b36cdcfa833047609e2488594b112be1))
+* update dependency com.google.api:gax-bom to v2.18.5 ([#876](https://github.com/googleapis/java-core/issues/876)) ([d8dc7fb](https://github.com/googleapis/java-core/commit/d8dc7fbdb0d65e493ca4154658c63e80d89ab600))
+* update dependency com.google.api.grpc:proto-google-common-protos to v2.9.2 ([#870](https://github.com/googleapis/java-core/issues/870)) ([7e961e9](https://github.com/googleapis/java-core/commit/7e961e945d5e049a1a1bb2592e9c155b5937e33b))
+* update dependency com.google.api.grpc:proto-google-iam-v1 to v1.5.2 ([#865](https://github.com/googleapis/java-core/issues/865)) ([fe7b974](https://github.com/googleapis/java-core/commit/fe7b974a0eae82711ca96edf412944309d5d6202))
+* update dependency com.google.auth:google-auth-library-bom to v1.8.1 ([#856](https://github.com/googleapis/java-core/issues/856)) ([92df5d3](https://github.com/googleapis/java-core/commit/92df5d3c248214970d38432e8c264d151298d1e6))
+* update dependency com.google.http-client:google-http-client-bom to v1.42.2 ([#871](https://github.com/googleapis/java-core/issues/871)) ([1972e8e](https://github.com/googleapis/java-core/commit/1972e8e45e11597e56609aa5fcd44e61958d5857))
+* update dependency com.google.protobuf:protobuf-bom to v3.21.3 ([#874](https://github.com/googleapis/java-core/issues/874)) ([1e18977](https://github.com/googleapis/java-core/commit/1e18977820ac766157156fb6246bd318d207971c))
+* update dependency com.google.protobuf:protobuf-bom to v3.21.4 ([#877](https://github.com/googleapis/java-core/issues/877)) ([d12fb5e](https://github.com/googleapis/java-core/commit/d12fb5e4eb8aa42015df84abf31f56408c8b64d8))
+* update dependency io.grpc:grpc-bom to v1.48.0 ([#873](https://github.com/googleapis/java-core/issues/873)) ([a45b075](https://github.com/googleapis/java-core/commit/a45b075e414049550c51ff0097337e45128fc499))
+
 ## [2.8.2](https://github.com/googleapis/java-core/compare/v2.8.1...v2.8.2) (2022-07-13)
 
 
