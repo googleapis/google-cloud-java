@@ -113,12 +113,14 @@ awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyM
 git add google-cloud-gapic-bom/pom.xml
 git commit -am 'feat: create bom module'
 
-# Confirm everything is fine so far
-mvn -q -B -ntp validate
-
-
 # Template files
 cp -rp ../../templates/. ./
+
+# Confirm everything is fine so far
+# Need license-checks.xml to validate
+mvn -q -B -ntp validate
+
+# Add all template files
 git add --all
 git add -f .gitignore
 git commit -m 'chore: add template files'
