@@ -21,6 +21,7 @@ import com.google.cloud.essentialcontacts.v1.EssentialContactsServiceClient;
 import com.google.cloud.essentialcontacts.v1.NotificationCategory;
 import com.google.cloud.essentialcontacts.v1.ProjectName;
 import com.google.cloud.essentialcontacts.v1.SendTestMessageRequest;
+import com.google.protobuf.Empty;
 import java.util.ArrayList;
 
 public class SyncSendTestMessage {

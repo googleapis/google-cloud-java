@@ -1431,9 +1431,8 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.essentialcontacts.v1.NotificationCategory notification_category_subscriptions = 3;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of notificationCategorySubscriptions at the given
-     *     index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for notificationCategorySubscriptions to set.
      * @return This builder for chaining.
      */
     public Builder setNotificationCategorySubscriptionsValue(int index, int value) {
