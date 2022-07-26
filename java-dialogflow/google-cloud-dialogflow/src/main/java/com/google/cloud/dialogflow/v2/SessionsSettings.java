@@ -16,6 +16,8 @@
 
 package com.google.cloud.dialogflow.v2;
 
+import static com.google.cloud.dialogflow.v2.SessionsClient.ListLocationsPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,10 +27,15 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2.stub.SessionsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -78,6 +85,17 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
   public StreamingCallSettings<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentSettings() {
     return ((SessionsStubSettings) getStubSettings()).streamingDetectIntentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((SessionsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((SessionsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final SessionsSettings create(SessionsStubSettings stub) throws IOException {
@@ -205,6 +223,18 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
             StreamingDetectIntentRequest, StreamingDetectIntentResponse>
         streamingDetectIntentSettings() {
       return getStubSettingsBuilder().streamingDetectIntentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

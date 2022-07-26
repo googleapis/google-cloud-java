@@ -60,33 +60,37 @@ public interface ListAnswerRecordsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Filters to restrict results to specific answer records.
-   * Filter on answer record type. Currently predicates on `type` is supported,
-   * valid values are `ARTICLE_ANSWER`, `FAQ_ANSWER`.
+   * Optional. Filters to restrict results to specific answer records.
+   * Marked deprecated as it hasn't been, and isn't currently, supported.
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
    *
-   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2.ListAnswerRecordsRequest.filter is deprecated. See
+   *     google/cloud/dialogflow/v2/answer_record.proto;l=135
    * @return The filter.
    */
+  @java.lang.Deprecated
   java.lang.String getFilter();
   /**
    *
    *
    * <pre>
-   * Required. Filters to restrict results to specific answer records.
-   * Filter on answer record type. Currently predicates on `type` is supported,
-   * valid values are `ARTICLE_ANSWER`, `FAQ_ANSWER`.
+   * Optional. Filters to restrict results to specific answer records.
+   * Marked deprecated as it hasn't been, and isn't currently, supported.
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
    * </pre>
    *
-   * <code>string filter = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string filter = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
+   * @deprecated google.cloud.dialogflow.v2.ListAnswerRecordsRequest.filter is deprecated. See
+   *     google/cloud/dialogflow/v2/answer_record.proto;l=135
    * @return The bytes for filter.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getFilterBytes();
 
   /**

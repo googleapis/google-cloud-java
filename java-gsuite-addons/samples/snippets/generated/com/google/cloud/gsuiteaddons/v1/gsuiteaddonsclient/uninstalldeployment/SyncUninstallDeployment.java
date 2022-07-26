@@ -20,6 +20,7 @@ package com.google.cloud.gsuiteaddons.v1.samples;
 import com.google.cloud.gsuiteaddons.v1.DeploymentName;
 import com.google.cloud.gsuiteaddons.v1.GSuiteAddOnsClient;
 import com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest;
+import com.google.protobuf.Empty;
 
 public class SyncUninstallDeployment {
 

@@ -16,8 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1.samples;
 
-// [START
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_searchrelatedaccountgroupmemberships_sync]
+// [START recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_searchrelatedaccountgroupmemberships_sync]
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
 import com.google.protobuf.ByteString;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
@@ -52,5 +51,4 @@ public class SyncSearchRelatedAccountGroupMemberships {
     }
   }
 }
-// [END
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_searchrelatedaccountgroupmemberships_sync]
+// [END recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_searchrelatedaccountgroupmemberships_sync]

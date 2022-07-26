@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2;
 
 import static com.google.cloud.dialogflow.v2.ConversationModelsClient.ListConversationModelEvaluationsPagedResponse;
 import static com.google.cloud.dialogflow.v2.ConversationModelsClient.ListConversationModelsPagedResponse;
+import static com.google.cloud.dialogflow.v2.ConversationModelsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -33,6 +34,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2.stub.ConversationModelsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -182,6 +187,17 @@ public class ConversationModelsSettings extends ClientSettings<ConversationModel
       createConversationModelEvaluationOperationSettings() {
     return ((ConversationModelsStubSettings) getStubSettings())
         .createConversationModelEvaluationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((ConversationModelsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((ConversationModelsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final ConversationModelsSettings create(ConversationModelsStubSettings stub)
@@ -397,6 +413,18 @@ public class ConversationModelsSettings extends ClientSettings<ConversationModel
             CreateConversationModelEvaluationOperationMetadata>
         createConversationModelEvaluationOperationSettings() {
       return getStubSettingsBuilder().createConversationModelEvaluationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

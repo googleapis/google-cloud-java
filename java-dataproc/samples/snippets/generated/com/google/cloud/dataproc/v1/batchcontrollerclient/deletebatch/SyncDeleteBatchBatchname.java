@@ -19,6 +19,7 @@ package com.google.cloud.dataproc.v1.samples;
 // [START dataproc_v1_generated_batchcontrollerclient_deletebatch_batchname_sync]
 import com.google.cloud.dataproc.v1.BatchControllerClient;
 import com.google.cloud.dataproc.v1.BatchName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteBatchBatchname {
 

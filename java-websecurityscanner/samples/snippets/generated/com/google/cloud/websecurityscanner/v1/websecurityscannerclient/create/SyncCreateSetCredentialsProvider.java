@@ -16,8 +16,7 @@
 
 package com.google.cloud.websecurityscanner.v1.samples;
 
-// [START
-// websecurityscanner_v1_generated_websecurityscannerclient_create_setcredentialsprovider_sync]
+// [START websecurityscanner_v1_generated_websecurityscannerclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.websecurityscanner.v1.WebSecurityScannerClient;
 import com.google.cloud.websecurityscanner.v1.WebSecurityScannerSettings;

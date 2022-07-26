@@ -18,6 +18,7 @@ package com.google.cloud.dataproc.v1.samples;
 
 // [START dataproc_v1_generated_jobcontrollerclient_deletejob_stringstringstring_sync]
 import com.google.cloud.dataproc.v1.JobControllerClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteJobStringStringString {
 

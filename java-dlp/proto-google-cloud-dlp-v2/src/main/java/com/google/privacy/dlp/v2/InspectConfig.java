@@ -4996,8 +4996,8 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.privacy.dlp.v2.ContentOption content_options = 8;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of contentOptions at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for contentOptions to set.
      * @return This builder for chaining.
      */
     public Builder setContentOptionsValue(int index, int value) {

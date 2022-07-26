@@ -1177,8 +1177,8 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
        *
        * <code>repeated .google.cloud.webrisk.v1.CompressionType supported_compressions = 3;</code>
        *
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of supportedCompressions at the given index.
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for supportedCompressions to set.
        * @return This builder for chaining.
        */
       public Builder setSupportedCompressionsValue(int index, int value) {

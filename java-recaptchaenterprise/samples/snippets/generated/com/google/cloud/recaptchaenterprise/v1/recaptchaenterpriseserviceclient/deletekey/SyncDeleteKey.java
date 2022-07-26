@@ -18,6 +18,7 @@ package com.google.cloud.recaptchaenterprise.v1.samples;
 
 // [START recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_deletekey_sync]
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
+import com.google.protobuf.Empty;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
 import com.google.recaptchaenterprise.v1.KeyName;
 

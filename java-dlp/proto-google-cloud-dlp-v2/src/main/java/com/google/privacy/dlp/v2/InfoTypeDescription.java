@@ -1322,8 +1322,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of supportedBy at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for supportedBy to set.
      * @return This builder for chaining.
      */
     public Builder setSupportedByValue(int index, int value) {

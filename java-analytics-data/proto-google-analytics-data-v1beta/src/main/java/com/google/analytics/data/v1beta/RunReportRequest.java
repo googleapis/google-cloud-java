@@ -3795,8 +3795,8 @@ public final class RunReportRequest extends com.google.protobuf.GeneratedMessage
      * <code>repeated .google.analytics.data.v1beta.MetricAggregation metric_aggregations = 9;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of metricAggregations at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for metricAggregations to set.
      * @return This builder for chaining.
      */
     public Builder setMetricAggregationsValue(int index, int value) {

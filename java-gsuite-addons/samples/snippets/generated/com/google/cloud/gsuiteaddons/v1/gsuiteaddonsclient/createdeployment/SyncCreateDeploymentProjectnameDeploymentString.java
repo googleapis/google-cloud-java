@@ -16,8 +16,7 @@
 
 package com.google.cloud.gsuiteaddons.v1.samples;
 
-// [START
-// gsuiteaddons_v1_generated_gsuiteaddonsclient_createdeployment_projectnamedeploymentstring_sync]
+// [START gsuiteaddons_v1_generated_gsuiteaddonsclient_createdeployment_projectnamedeploymentstring_sync]
 import com.google.cloud.gsuiteaddons.v1.Deployment;
 import com.google.cloud.gsuiteaddons.v1.GSuiteAddOnsClient;
 import com.google.cloud.gsuiteaddons.v1.ProjectName;
@@ -39,5 +38,4 @@ public class SyncCreateDeploymentProjectnameDeploymentString {
     }
   }
 }
-// [END
-// gsuiteaddons_v1_generated_gsuiteaddonsclient_createdeployment_projectnamedeploymentstring_sync]
+// [END gsuiteaddons_v1_generated_gsuiteaddonsclient_createdeployment_projectnamedeploymentstring_sync]

@@ -5002,8 +5002,8 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      * repeated .google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType purge_data_types = 8;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of purgeDataTypes at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for purgeDataTypes to set.
      * @return This builder for chaining.
      */
     public Builder setPurgeDataTypesValue(int index, int value) {

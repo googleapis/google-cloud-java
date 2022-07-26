@@ -16,8 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1.samples;
 
-// [START
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_listrelatedaccountgroups_async]
+// [START recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_listrelatedaccountgroups_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
@@ -52,5 +51,4 @@ public class AsyncListRelatedAccountGroups {
     }
   }
 }
-// [END
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_listrelatedaccountgroups_async]
+// [END recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_listrelatedaccountgroups_async]

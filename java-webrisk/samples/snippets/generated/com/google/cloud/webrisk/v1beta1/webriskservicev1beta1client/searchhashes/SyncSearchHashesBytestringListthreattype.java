@@ -16,8 +16,7 @@
 
 package com.google.cloud.webrisk.v1beta1.samples;
 
-// [START
-// webrisk_v1beta1_generated_webriskservicev1beta1client_searchhashes_bytestringlistthreattype_sync]
+// [START webrisk_v1beta1_generated_webriskservicev1beta1client_searchhashes_bytestringlistthreattype_sync]
 import com.google.cloud.webrisk.v1beta1.WebRiskServiceV1Beta1Client;
 import com.google.protobuf.ByteString;
 import com.google.webrisk.v1beta1.SearchHashesResponse;
@@ -43,5 +42,4 @@ public class SyncSearchHashesBytestringListthreattype {
     }
   }
 }
-// [END
-// webrisk_v1beta1_generated_webriskservicev1beta1client_searchhashes_bytestringlistthreattype_sync]
+// [END webrisk_v1beta1_generated_webriskservicev1beta1client_searchhashes_bytestringlistthreattype_sync]

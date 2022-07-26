@@ -3324,8 +3324,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        * <code>repeated .google.cloud.talent.v4.JobCategory job_categories = 3;</code>
        *
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of jobCategories at the given index.
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for jobCategories to set.
        * @return This builder for chaining.
        */
       public Builder setJobCategoriesValue(int index, int value) {
@@ -8605,8 +8605,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.talent.v4.JobBenefit job_benefits = 8;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of jobBenefits at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for jobBenefits to set.
      * @return This builder for chaining.
      */
     public Builder setJobBenefitsValue(int index, int value) {
@@ -9265,8 +9265,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.talent.v4.DegreeType degree_types = 11;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of degreeTypes at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for degreeTypes to set.
      * @return This builder for chaining.
      */
     public Builder setDegreeTypesValue(int index, int value) {
@@ -9622,8 +9622,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.talent.v4.EmploymentType employment_types = 13;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of employmentTypes at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for employmentTypes to set.
      * @return This builder for chaining.
      */
     public Builder setEmploymentTypesValue(int index, int value) {

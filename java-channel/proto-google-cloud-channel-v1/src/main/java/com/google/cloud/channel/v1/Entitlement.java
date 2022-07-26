@@ -3354,8 +3354,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.channel.v1.Entitlement.SuspensionReason suspension_reasons = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of suspensionReasons at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for suspensionReasons to set.
      * @return This builder for chaining.
      */
     public Builder setSuspensionReasonsValue(int index, int value) {

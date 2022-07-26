@@ -2240,8 +2240,8 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
        * <code>repeated .google.container.v1beta1.NotificationConfig.EventType event_type = 1;
        * </code>
        *
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of eventType at the given index.
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for eventType to set.
        * @return This builder for chaining.
        */
       public Builder setEventTypeValue(int index, int value) {

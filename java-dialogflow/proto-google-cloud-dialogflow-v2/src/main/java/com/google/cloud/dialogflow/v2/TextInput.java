@@ -22,6 +22,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
+ * ============================================================================
+ * Auxiliary proto messages.
  * Represents the natural language text to be processed.
  * </pre>
  *
@@ -398,6 +400,8 @@ public final class TextInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * ============================================================================
+   * Auxiliary proto messages.
    * Represents the natural language text to be processed.
    * </pre>
    *

@@ -185,7 +185,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * <code>bool single_utterance = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.StreamingDetectIntentRequest.single_utterance is
-   *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=455
+   *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=456
    * @return The singleUtterance.
    */
   @java.lang.Deprecated

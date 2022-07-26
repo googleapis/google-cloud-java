@@ -16,8 +16,7 @@
 
 package com.google.cloud.essentialcontacts.v1.samples;
 
-// [START
-// essentialcontacts_v1_generated_essentialcontactsserviceclient_updatecontact_contactfieldmask_sync]
+// [START essentialcontacts_v1_generated_essentialcontactsserviceclient_updatecontact_contactfieldmask_sync]
 import com.google.cloud.essentialcontacts.v1.Contact;
 import com.google.cloud.essentialcontacts.v1.EssentialContactsServiceClient;
 import com.google.protobuf.FieldMask;
@@ -39,5 +38,4 @@ public class SyncUpdateContactContactFieldmask {
     }
   }
 }
-// [END
-// essentialcontacts_v1_generated_essentialcontactsserviceclient_updatecontact_contactfieldmask_sync]
+// [END essentialcontacts_v1_generated_essentialcontactsserviceclient_updatecontact_contactfieldmask_sync]

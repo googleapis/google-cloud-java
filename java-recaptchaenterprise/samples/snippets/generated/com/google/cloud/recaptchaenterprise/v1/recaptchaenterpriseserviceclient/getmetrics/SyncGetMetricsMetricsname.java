@@ -16,8 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1.samples;
 
-// [START
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_getmetrics_metricsname_sync]
+// [START recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_getmetrics_metricsname_sync]
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MetricsName;
@@ -38,5 +37,4 @@ public class SyncGetMetricsMetricsname {
     }
   }
 }
-// [END
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_getmetrics_metricsname_sync]
+// [END recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_getmetrics_metricsname_sync]

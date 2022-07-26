@@ -16,8 +16,7 @@
 
 package com.google.cloud.dataproc.v1.samples;
 
-// [START
-// dataproc_v1_generated_autoscalingpolicyserviceclient_getautoscalingpolicy_autoscalingpolicyname_sync]
+// [START dataproc_v1_generated_autoscalingpolicyserviceclient_getautoscalingpolicy_autoscalingpolicyname_sync]
 import com.google.cloud.dataproc.v1.AutoscalingPolicy;
 import com.google.cloud.dataproc.v1.AutoscalingPolicyName;
 import com.google.cloud.dataproc.v1.AutoscalingPolicyServiceClient;
@@ -40,5 +39,4 @@ public class SyncGetAutoscalingPolicyAutoscalingpolicyname {
     }
   }
 }
-// [END
-// dataproc_v1_generated_autoscalingpolicyserviceclient_getautoscalingpolicy_autoscalingpolicyname_sync]
+// [END dataproc_v1_generated_autoscalingpolicyserviceclient_getautoscalingpolicy_autoscalingpolicyname_sync]

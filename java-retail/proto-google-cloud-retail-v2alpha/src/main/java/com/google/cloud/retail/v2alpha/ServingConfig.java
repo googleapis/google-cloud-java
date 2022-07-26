@@ -6036,8 +6036,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.retail.v2alpha.SolutionType solution_types = 19 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of solutionTypes at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for solutionTypes to set.
      * @return This builder for chaining.
      */
     public Builder setSolutionTypesValue(int index, int value) {

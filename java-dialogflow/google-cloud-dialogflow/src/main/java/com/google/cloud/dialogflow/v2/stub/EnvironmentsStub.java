@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2.stub;
 
 import static com.google.cloud.dialogflow.v2.EnvironmentsClient.GetEnvironmentHistoryPagedResponse;
 import static com.google.cloud.dialogflow.v2.EnvironmentsClient.ListEnvironmentsPagedResponse;
+import static com.google.cloud.dialogflow.v2.EnvironmentsClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -30,6 +31,10 @@ import com.google.cloud.dialogflow.v2.GetEnvironmentRequest;
 import com.google.cloud.dialogflow.v2.ListEnvironmentsRequest;
 import com.google.cloud.dialogflow.v2.ListEnvironmentsResponse;
 import com.google.cloud.dialogflow.v2.UpdateEnvironmentRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -77,6 +82,19 @@ public abstract class EnvironmentsStub implements BackgroundResource {
   public UnaryCallable<GetEnvironmentHistoryRequest, EnvironmentHistory>
       getEnvironmentHistoryCallable() {
     throw new UnsupportedOperationException("Not implemented: getEnvironmentHistoryCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

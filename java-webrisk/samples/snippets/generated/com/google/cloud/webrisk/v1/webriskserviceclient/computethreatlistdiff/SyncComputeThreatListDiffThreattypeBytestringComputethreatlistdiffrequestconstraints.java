@@ -16,8 +16,7 @@
 
 package com.google.cloud.webrisk.v1.samples;
 
-// [START
-// webrisk_v1_generated_webriskserviceclient_computethreatlistdiff_threattypebytestringcomputethreatlistdiffrequestconstraints_sync]
+// [START webrisk_v1_generated_webriskserviceclient_computethreatlistdiff_threattypebytestringcomputethreatlistdiffrequestconstraints_sync]
 import com.google.cloud.webrisk.v1.WebRiskServiceClient;
 import com.google.protobuf.ByteString;
 import com.google.webrisk.v1.ComputeThreatListDiffRequest;
@@ -45,5 +44,4 @@ public class SyncComputeThreatListDiffThreattypeBytestringComputethreatlistdiffr
     }
   }
 }
-// [END
-// webrisk_v1_generated_webriskserviceclient_computethreatlistdiff_threattypebytestringcomputethreatlistdiffrequestconstraints_sync]
+// [END webrisk_v1_generated_webriskserviceclient_computethreatlistdiff_threattypebytestringcomputethreatlistdiffrequestconstraints_sync]

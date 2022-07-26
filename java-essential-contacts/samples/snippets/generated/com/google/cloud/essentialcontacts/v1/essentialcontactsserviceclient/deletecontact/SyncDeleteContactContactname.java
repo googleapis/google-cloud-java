@@ -16,10 +16,10 @@
 
 package com.google.cloud.essentialcontacts.v1.samples;
 
-// [START
-// essentialcontacts_v1_generated_essentialcontactsserviceclient_deletecontact_contactname_sync]
+// [START essentialcontacts_v1_generated_essentialcontactsserviceclient_deletecontact_contactname_sync]
 import com.google.cloud.essentialcontacts.v1.ContactName;
 import com.google.cloud.essentialcontacts.v1.EssentialContactsServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteContactContactname {
 
@@ -37,5 +37,4 @@ public class SyncDeleteContactContactname {
     }
   }
 }
-// [END
-// essentialcontacts_v1_generated_essentialcontactsserviceclient_deletecontact_contactname_sync]
+// [END essentialcontacts_v1_generated_essentialcontactsserviceclient_deletecontact_contactname_sync]

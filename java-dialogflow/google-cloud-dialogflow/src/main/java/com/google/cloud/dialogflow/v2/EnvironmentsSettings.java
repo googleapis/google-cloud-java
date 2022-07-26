@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.v2;
 
 import static com.google.cloud.dialogflow.v2.EnvironmentsClient.GetEnvironmentHistoryPagedResponse;
 import static com.google.cloud.dialogflow.v2.EnvironmentsClient.ListEnvironmentsPagedResponse;
+import static com.google.cloud.dialogflow.v2.EnvironmentsClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -32,6 +33,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2.stub.EnvironmentsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -105,6 +110,17 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
           GetEnvironmentHistoryRequest, EnvironmentHistory, GetEnvironmentHistoryPagedResponse>
       getEnvironmentHistorySettings() {
     return ((EnvironmentsStubSettings) getStubSettings()).getEnvironmentHistorySettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final EnvironmentsSettings create(EnvironmentsStubSettings stub)
@@ -256,6 +272,18 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
             GetEnvironmentHistoryRequest, EnvironmentHistory, GetEnvironmentHistoryPagedResponse>
         getEnvironmentHistorySettings() {
       return getStubSettingsBuilder().getEnvironmentHistorySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

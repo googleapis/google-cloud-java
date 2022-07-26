@@ -16,8 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1.samples;
 
-// [START
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_create_setcredentialsprovider_sync]
+// [START recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_create_setcredentialsprovider_sync]
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceSettings;
@@ -40,5 +39,4 @@ public class SyncCreateSetCredentialsProvider {
         RecaptchaEnterpriseServiceClient.create(recaptchaEnterpriseServiceSettings);
   }
 }
-// [END
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_create_setcredentialsprovider_sync]
+// [END recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_create_setcredentialsprovider_sync]

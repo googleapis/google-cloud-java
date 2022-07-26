@@ -1182,8 +1182,8 @@ public final class ListServiceAccountKeysRequest extends com.google.protobuf.Gen
      * <code>repeated .google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType key_types = 2;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of keyTypes at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for keyTypes to set.
      * @return This builder for chaining.
      */
     public Builder setKeyTypesValue(int index, int value) {

@@ -17,6 +17,7 @@
 package com.google.cloud.dialogflow.v2;
 
 import static com.google.cloud.dialogflow.v2.ConversationProfilesClient.ListConversationProfilesPagedResponse;
+import static com.google.cloud.dialogflow.v2.ConversationProfilesClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -32,6 +33,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2.stub.ConversationProfilesStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -145,6 +150,17 @@ public class ConversationProfilesSettings extends ClientSettings<ConversationPro
       clearSuggestionFeatureConfigOperationSettings() {
     return ((ConversationProfilesStubSettings) getStubSettings())
         .clearSuggestionFeatureConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((ConversationProfilesStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((ConversationProfilesStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final ConversationProfilesSettings create(ConversationProfilesStubSettings stub)
@@ -324,6 +340,18 @@ public class ConversationProfilesSettings extends ClientSettings<ConversationPro
             ClearSuggestionFeatureConfigOperationMetadata>
         clearSuggestionFeatureConfigOperationSettings() {
       return getStubSettingsBuilder().clearSuggestionFeatureConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

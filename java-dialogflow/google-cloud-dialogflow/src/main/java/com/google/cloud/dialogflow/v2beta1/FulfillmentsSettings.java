@@ -16,6 +16,8 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
+import static com.google.cloud.dialogflow.v2beta1.FulfillmentsClient.ListLocationsPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,9 +27,14 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dialogflow.v2beta1.stub.FulfillmentsStubSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -77,6 +84,17 @@ public class FulfillmentsSettings extends ClientSettings<FulfillmentsSettings> {
   /** Returns the object with the settings used for calls to updateFulfillment. */
   public UnaryCallSettings<UpdateFulfillmentRequest, Fulfillment> updateFulfillmentSettings() {
     return ((FulfillmentsStubSettings) getStubSettings()).updateFulfillmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((FulfillmentsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((FulfillmentsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final FulfillmentsSettings create(FulfillmentsStubSettings stub)
@@ -203,6 +221,18 @@ public class FulfillmentsSettings extends ClientSettings<FulfillmentsSettings> {
     public UnaryCallSettings.Builder<UpdateFulfillmentRequest, Fulfillment>
         updateFulfillmentSettings() {
       return getStubSettingsBuilder().updateFulfillmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

@@ -16,11 +16,11 @@
 
 package com.google.cloud.dataproc.v1.samples;
 
-// [START
-// dataproc_v1_generated_workflowtemplateserviceclient_instantiateinlineworkflowtemplate_stringworkflowtemplate_sync]
+// [START dataproc_v1_generated_workflowtemplateserviceclient_instantiateinlineworkflowtemplate_stringworkflowtemplate_sync]
 import com.google.cloud.dataproc.v1.RegionName;
 import com.google.cloud.dataproc.v1.WorkflowTemplate;
 import com.google.cloud.dataproc.v1.WorkflowTemplateServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncInstantiateInlineWorkflowTemplateStringWorkflowtemplate {
 
@@ -40,5 +40,4 @@ public class SyncInstantiateInlineWorkflowTemplateStringWorkflowtemplate {
     }
   }
 }
-// [END
-// dataproc_v1_generated_workflowtemplateserviceclient_instantiateinlineworkflowtemplate_stringworkflowtemplate_sync]
+// [END dataproc_v1_generated_workflowtemplateserviceclient_instantiateinlineworkflowtemplate_stringworkflowtemplate_sync]

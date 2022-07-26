@@ -5381,8 +5381,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.appengine.v1.InboundServiceType inbound_services = 6;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of inboundServices at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for inboundServices to set.
      * @return This builder for chaining.
      */
     public Builder setInboundServicesValue(int index, int value) {

@@ -3350,8 +3350,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.talent.v4.JobCategory job_categories = 4;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of jobCategories at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for jobCategories to set.
      * @return This builder for chaining.
      */
     public Builder setJobCategoriesValue(int index, int value) {
@@ -4650,8 +4650,8 @@ public final class JobQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated .google.cloud.talent.v4.EmploymentType employment_types = 10;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of employmentTypes at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for employmentTypes to set.
      * @return This builder for chaining.
      */
     public Builder setEmploymentTypesValue(int index, int value) {

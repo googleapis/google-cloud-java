@@ -16,12 +16,12 @@
 
 package com.google.cloud.dataproc.v1.samples;
 
-// [START
-// dataproc_v1_generated_workflowtemplateserviceclient_instantiateinlineworkflowtemplate_sync]
+// [START dataproc_v1_generated_workflowtemplateserviceclient_instantiateinlineworkflowtemplate_sync]
 import com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1.RegionName;
 import com.google.cloud.dataproc.v1.WorkflowTemplate;
 import com.google.cloud.dataproc.v1.WorkflowTemplateServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncInstantiateInlineWorkflowTemplate {
 

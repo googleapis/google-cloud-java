@@ -18,6 +18,7 @@ package com.google.cloud.dataproc.v1.samples;
 
 // [START dataproc_v1_generated_clustercontrollerclient_deletecluster_stringstringstring_sync]
 import com.google.cloud.dataproc.v1.ClusterControllerClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteClusterStringStringString {
 

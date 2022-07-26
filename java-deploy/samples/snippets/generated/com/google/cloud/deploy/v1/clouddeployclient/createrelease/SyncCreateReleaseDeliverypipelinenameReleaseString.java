@@ -16,8 +16,7 @@
 
 package com.google.cloud.deploy.v1.samples;
 
-// [START
-// deploy_v1_generated_clouddeployclient_createrelease_deliverypipelinenamereleasestring_sync]
+// [START deploy_v1_generated_clouddeployclient_createrelease_deliverypipelinenamereleasestring_sync]
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.DeliveryPipelineName;
 import com.google.cloud.deploy.v1.Release;

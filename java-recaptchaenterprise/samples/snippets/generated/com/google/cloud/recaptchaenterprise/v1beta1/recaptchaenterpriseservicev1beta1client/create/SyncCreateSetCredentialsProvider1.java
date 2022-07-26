@@ -16,8 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1beta1.samples;
 
-// [START
-// recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1client_create_setcredentialsprovider1_sync]
+// [START recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1client_create_setcredentialsprovider1_sync]
 import com.google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client;
 import com.google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1Settings;
 
@@ -40,5 +39,4 @@ public class SyncCreateSetCredentialsProvider1 {
         RecaptchaEnterpriseServiceV1Beta1Client.create(recaptchaEnterpriseServiceV1Beta1Settings);
   }
 }
-// [END
-// recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1client_create_setcredentialsprovider1_sync]
+// [END recaptchaenterprise_v1beta1_generated_recaptchaenterpriseservicev1beta1client_create_setcredentialsprovider1_sync]

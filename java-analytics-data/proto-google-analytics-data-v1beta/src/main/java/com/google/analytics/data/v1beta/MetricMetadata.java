@@ -2410,8 +2410,8 @@ public final class MetricMetadata extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.analytics.data.v1beta.MetricMetadata.BlockedReason blocked_reasons = 8;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of blockedReasons at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for blockedReasons to set.
      * @return This builder for chaining.
      */
     public Builder setBlockedReasonsValue(int index, int value) {
