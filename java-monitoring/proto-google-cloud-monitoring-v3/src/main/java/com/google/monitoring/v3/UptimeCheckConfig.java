@@ -10500,8 +10500,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of selectedRegions at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for selectedRegions to set.
      * @return This builder for chaining.
      */
     public Builder setSelectedRegionsValue(int index, int value) {
