@@ -32,8 +32,8 @@ do
   git filter-repo --to-subdirectory-filter ${service}
 
   # Search for <parent> tag and replace the next three lines -- groupId, artifcatId, and version
-  # Doesn't modify the module's bom.xml (that still points to shared-config ... for now)
-  sed -i -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/1.5.1/0.0.1-SNAPSHOT/}' ${service}/pom.xml
+  # Doesn't modify the pom.xml for each module's bom package (that still points to shared-config ... for now)
+  sed -i -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/.*/<version>0.0.1-SNAPSHOT<\/version>/}' ${service}/pom.xml
 
   # setup owlbot files correctly to match monorepo configuration
   cp ${service}/.github/.OwlBot.yaml ${service}/.OwlBot.yaml
