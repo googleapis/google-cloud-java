@@ -2679,8 +2679,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v1.MitreAttack.Technique primary_techniques = 2;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of primaryTechniques at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for primaryTechniques to set.
      * @return This builder for chaining.
      */
     public Builder setPrimaryTechniquesValue(int index, int value) {
@@ -2927,8 +2927,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.cloud.securitycenter.v1.MitreAttack.Tactic additional_tactics = 3;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of additionalTactics at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for additionalTactics to set.
      * @return This builder for chaining.
      */
     public Builder setAdditionalTacticsValue(int index, int value) {
@@ -3186,8 +3186,8 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.securitycenter.v1.MitreAttack.Technique additional_techniques = 4;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of additionalTechniques at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for additionalTechniques to set.
      * @return This builder for chaining.
      */
     public Builder setAdditionalTechniquesValue(int index, int value) {
