@@ -16,8 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1.samples;
 
-// [START
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_searchrelatedaccountgroupmemberships_paged_async]
+// [START recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_searchrelatedaccountgroupmemberships_paged_async]
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
 import com.google.common.base.Strings;
 import com.google.protobuf.ByteString;
@@ -64,5 +63,4 @@ public class AsyncSearchRelatedAccountGroupMembershipsPaged {
     }
   }
 }
-// [END
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_searchrelatedaccountgroupmemberships_paged_async]
+// [END recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_searchrelatedaccountgroupmemberships_paged_async]

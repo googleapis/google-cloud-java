@@ -16,8 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1.samples;
 
-// [START
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_annotateassessment_stringannotateassessmentrequestannotation_sync]
+// [START recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_annotateassessment_stringannotateassessmentrequestannotation_sync]
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
@@ -43,5 +42,4 @@ public class SyncAnnotateAssessmentStringAnnotateassessmentrequestannotation {
     }
   }
 }
-// [END
-// recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_annotateassessment_stringannotateassessmentrequestannotation_sync]
+// [END recaptchaenterprise_v1_generated_recaptchaenterpriseserviceclient_annotateassessment_stringannotateassessmentrequestannotation_sync]
