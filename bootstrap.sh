@@ -66,10 +66,16 @@ done
 cd ..
 
 # insert processed modules into aggregator pom.xml
-awk -v MODULES="`awk -v ORS='\\\\n' '1' repo-modules.txt`" '1;/<modules>/{print MODULES}' ../parent.pom.xml > google-cloud-java/temp-pom.xml
+awk -v MODULES="`awk -v ORS='\\\\n' '1' repo-modules.txt`" '1;/<modules>/{print MODULES}' ../parent.pom.xml > google-cloud-java/temp-modules-pom.xml
 
 # insert parent pom details into aggregator pom after <packaging> tag
-awk -v PARENT_MODULE="  <parent>\n    <groupId>com.google.cloud</groupId>\n    <artifactId>google-cloud-shared-config</artifactId>\n    <version>1.5.1</version>\n  </parent>" '1;/<\/packaging>/{print PARENT_MODULE}' google-cloud-java/temp-pom.xml > google-cloud-java/pom.xml
+awk -v PARENT_MODULE="  <parent>\n    <groupId>com.google.cloud</groupId>\n    <artifactId>google-cloud-shared-config</artifactId>\n    <version>1.5.1</version>\n  </parent>" '1;/<\/packaging>/{print PARENT_MODULE}' google-cloud-java/temp-modules-pom.xml > google-cloud-java/temp-profile-pom.xml
+
+# add the profile to override the current docFx profile in shared-config
+awk -v PROFILE="`cat ../profile.txt`" '1;/<\/build>/{print PROFILE}' google-cloud-java/temp-profile-pom.xml > google-cloud-java/pom.xml
+
+rm google-cloud-java/temp-modules-pom.xml
+rm google-cloud-java/temp-profile-pom.xml
 
 cd google-cloud-java
 
