@@ -1299,8 +1299,8 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      * repeated .google.cloud.dataproc.v1.GkeNodePoolTarget.Role roles = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of roles at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for roles to set.
      * @return This builder for chaining.
      */
     public Builder setRolesValue(int index, int value) {

@@ -19,6 +19,7 @@ package com.google.cloud.dataproc.v1.samples;
 // [START dataproc_v1_generated_workflowtemplateserviceclient_deleteworkflowtemplate_string_sync]
 import com.google.cloud.dataproc.v1.WorkflowTemplateName;
 import com.google.cloud.dataproc.v1.WorkflowTemplateServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteWorkflowTemplateString {
 

@@ -16,10 +16,10 @@
 
 package com.google.cloud.dataproc.v1.samples;
 
-// [START
-// dataproc_v1_generated_autoscalingpolicyserviceclient_deleteautoscalingpolicy_autoscalingpolicyname_sync]
+// [START dataproc_v1_generated_autoscalingpolicyserviceclient_deleteautoscalingpolicy_autoscalingpolicyname_sync]
 import com.google.cloud.dataproc.v1.AutoscalingPolicyName;
 import com.google.cloud.dataproc.v1.AutoscalingPolicyServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteAutoscalingPolicyAutoscalingpolicyname {
 
@@ -39,5 +39,4 @@ public class SyncDeleteAutoscalingPolicyAutoscalingpolicyname {
     }
   }
 }
-// [END
-// dataproc_v1_generated_autoscalingpolicyserviceclient_deleteautoscalingpolicy_autoscalingpolicyname_sync]
+// [END dataproc_v1_generated_autoscalingpolicyserviceclient_deleteautoscalingpolicy_autoscalingpolicyname_sync]

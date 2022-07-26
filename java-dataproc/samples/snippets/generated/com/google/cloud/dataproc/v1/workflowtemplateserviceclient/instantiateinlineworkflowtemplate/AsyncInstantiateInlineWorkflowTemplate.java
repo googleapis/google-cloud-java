@@ -16,8 +16,7 @@
 
 package com.google.cloud.dataproc.v1.samples;
 
-// [START
-// dataproc_v1_generated_workflowtemplateserviceclient_instantiateinlineworkflowtemplate_async]
+// [START dataproc_v1_generated_workflowtemplateserviceclient_instantiateinlineworkflowtemplate_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1.RegionName;

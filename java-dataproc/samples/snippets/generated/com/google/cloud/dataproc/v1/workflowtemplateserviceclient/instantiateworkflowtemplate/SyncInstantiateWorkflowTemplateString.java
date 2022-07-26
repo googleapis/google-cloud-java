@@ -16,10 +16,10 @@
 
 package com.google.cloud.dataproc.v1.samples;
 
-// [START
-// dataproc_v1_generated_workflowtemplateserviceclient_instantiateworkflowtemplate_string_sync]
+// [START dataproc_v1_generated_workflowtemplateserviceclient_instantiateworkflowtemplate_string_sync]
 import com.google.cloud.dataproc.v1.WorkflowTemplateName;
 import com.google.cloud.dataproc.v1.WorkflowTemplateServiceClient;
+import com.google.protobuf.Empty;
 
 public class SyncInstantiateWorkflowTemplateString {
 

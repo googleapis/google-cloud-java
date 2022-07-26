@@ -16,8 +16,7 @@
 
 package com.google.cloud.dataproc.v1.samples;
 
-// [START
-// dataproc_v1_generated_clustercontrollerclient_updatecluster_stringstringstringclusterfieldmask_sync]
+// [START dataproc_v1_generated_clustercontrollerclient_updatecluster_stringstringstringclusterfieldmask_sync]
 import com.google.cloud.dataproc.v1.Cluster;
 import com.google.cloud.dataproc.v1.ClusterControllerClient;
 import com.google.protobuf.FieldMask;
@@ -44,5 +43,4 @@ public class SyncUpdateClusterStringStringStringClusterFieldmask {
     }
   }
 }
-// [END
-// dataproc_v1_generated_clustercontrollerclient_updatecluster_stringstringstringclusterfieldmask_sync]
+// [END dataproc_v1_generated_clustercontrollerclient_updatecluster_stringstringstringclusterfieldmask_sync]
