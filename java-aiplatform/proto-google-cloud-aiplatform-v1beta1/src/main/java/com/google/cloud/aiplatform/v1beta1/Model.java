@@ -493,6 +493,17 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTOMATIC_RESOURCES = 2;</code>
      */
     AUTOMATIC_RESOURCES(2),
+    /**
+     *
+     *
+     * <pre>
+     * Resources that can be shared by multiple [DeployedModels][google.cloud.aiplatform.v1beta1.DeployedModel].
+     * A pre-configured [DeploymentResourcePool][google.cloud.aiplatform.v1beta1.DeploymentResourcePool] is required.
+     * </pre>
+     *
+     * <code>SHARED_RESOURCES = 3;</code>
+     */
+    SHARED_RESOURCES(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -528,6 +539,17 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTOMATIC_RESOURCES = 2;</code>
      */
     public static final int AUTOMATIC_RESOURCES_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Resources that can be shared by multiple [DeployedModels][google.cloud.aiplatform.v1beta1.DeployedModel].
+     * A pre-configured [DeploymentResourcePool][google.cloud.aiplatform.v1beta1.DeploymentResourcePool] is required.
+     * </pre>
+     *
+     * <code>SHARED_RESOURCES = 3;</code>
+     */
+    public static final int SHARED_RESOURCES_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -559,6 +581,8 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
           return DEDICATED_RESOURCES;
         case 2:
           return AUTOMATIC_RESOURCES;
+        case 3:
+          return SHARED_RESOURCES;
         default:
           return null;
       }
