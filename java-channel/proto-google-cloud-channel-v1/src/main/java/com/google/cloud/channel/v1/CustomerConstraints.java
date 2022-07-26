@@ -1245,8 +1245,8 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
      * repeated .google.cloud.channel.v1.CloudIdentityInfo.CustomerType allowed_customer_types = 2;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of allowedCustomerTypes at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for allowedCustomerTypes to set.
      * @return This builder for chaining.
      */
     public Builder setAllowedCustomerTypesValue(int index, int value) {
@@ -1484,8 +1484,8 @@ public final class CustomerConstraints extends com.google.protobuf.GeneratedMess
      * <code>repeated .google.cloud.channel.v1.PromotionalOrderType promotional_order_types = 3;
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of promotionalOrderTypes at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for promotionalOrderTypes to set.
      * @return This builder for chaining.
      */
     public Builder setPromotionalOrderTypesValue(int index, int value) {
