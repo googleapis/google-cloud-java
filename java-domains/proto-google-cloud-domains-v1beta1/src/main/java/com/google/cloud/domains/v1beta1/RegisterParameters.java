@@ -1573,8 +1573,8 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      *
      * <code>repeated .google.cloud.domains.v1beta1.ContactPrivacy supported_privacy = 3;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of supportedPrivacy at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for supportedPrivacy to set.
      * @return This builder for chaining.
      */
     public Builder setSupportedPrivacyValue(int index, int value) {
@@ -1795,8 +1795,8 @@ public final class RegisterParameters extends com.google.protobuf.GeneratedMessa
      *
      * <code>repeated .google.cloud.domains.v1beta1.DomainNotice domain_notices = 4;</code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of domainNotices at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for domainNotices to set.
      * @return This builder for chaining.
      */
     public Builder setDomainNoticesValue(int index, int value) {

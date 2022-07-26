@@ -3171,8 +3171,8 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.domains.v1alpha2.Registration.Issue issues = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of issues at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for issues to set.
      * @return This builder for chaining.
      */
     public Builder setIssuesValue(int index, int value) {
@@ -4492,8 +4492,8 @@ public final class Registration extends com.google.protobuf.GeneratedMessageV3
      * repeated .google.cloud.domains.v1alpha2.ContactPrivacy supported_privacy = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of supportedPrivacy at the given index.
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for supportedPrivacy to set.
      * @return This builder for chaining.
      */
     public Builder setSupportedPrivacyValue(int index, int value) {
