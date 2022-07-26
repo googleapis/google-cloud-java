@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.10.0](https://github.com/googleapis/java-bigtable/compare/v2.9.0...v2.10.0) (2022-07-26)
+
+
+### Features
+
+* add response protos ([#1246](https://github.com/googleapis/java-bigtable/issues/1246)) ([52d59ce](https://github.com/googleapis/java-bigtable/commit/52d59ce18fb5536a17a5cb59da39e563e4afede4))
+* add response_params proto to clients ([#1303](https://github.com/googleapis/java-bigtable/issues/1303)) ([93edfe1](https://github.com/googleapis/java-bigtable/commit/93edfe1e43dcfefda6bba3e9ee53ed80eaf2e5c2))
+* add storage utilization gib per node for autoscaling ([#1317](https://github.com/googleapis/java-bigtable/issues/1317)) ([5282589](https://github.com/googleapis/java-bigtable/commit/52825891af0e4ec2dd76c0c6fa1379a98a77a08f))
+* use PingAndWarm request for channel priming ([#1179](https://github.com/googleapis/java-bigtable/issues/1179)) ([6629821](https://github.com/googleapis/java-bigtable/commit/6629821ea3200d3a5b93c9d45aab6d57485fcebf))
+
+
+### Bug Fixes
+
+* enable integration test for google-cloud-bigtable-stats ([#1311](https://github.com/googleapis/java-bigtable/issues/1311)) ([7c77879](https://github.com/googleapis/java-bigtable/commit/7c7787998b164ceb55472c0d06c083a835e5d000))
+* fix race condition in BuiltinMetricsTracer ([#1320](https://github.com/googleapis/java-bigtable/issues/1320)) ([644454a](https://github.com/googleapis/java-bigtable/commit/644454a9723da359677052b7a4b9201e91e9a78a))
+* ignore repackaged files to fix clirr ([#1300](https://github.com/googleapis/java-bigtable/issues/1300)) ([99b67ba](https://github.com/googleapis/java-bigtable/commit/99b67ba5b1625686ac7802a6e40dafc2edceade0))
+
+
+### Dependencies
+
+* update dependency org.graalvm.buildtools:junit-platform-native to v0.9.13 ([#1306](https://github.com/googleapis/java-bigtable/issues/1306)) ([ddae354](https://github.com/googleapis/java-bigtable/commit/ddae3540fd68e8f79d94d49c96c5685e1bad2f66))
+* update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.13 ([#1307](https://github.com/googleapis/java-bigtable/issues/1307)) ([c0740fe](https://github.com/googleapis/java-bigtable/commit/c0740fe30c5cd2bdf6dedf901e2fdb9a84ce64a1))
+
 ## [2.9.0](https://github.com/googleapis/java-bigtable/compare/v2.8.0...v2.9.0) (2022-06-30)
 
 
