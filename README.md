@@ -59,13 +59,13 @@ implementation 'com.google.cloud:google-cloud-bigquery'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigquery:2.13.8'
+implementation 'com.google.cloud:google-cloud-bigquery:2.14.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "2.13.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "2.14.0"
 ```
 
 ## Authentication
