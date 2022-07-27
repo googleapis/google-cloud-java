@@ -34,6 +34,8 @@ apt-get update
 # install jq to extract field from json file
 apt-get install -y jq
 
+doclet_name="java-docfx-doclet-1.7.0.jar"
+
 # compile all packages
 #mvn clean install -B -q -DskipTests -Dcheckstyle.skip -Denforcer.skip=true -T 1C
 
@@ -53,7 +55,7 @@ do
     echo "Running for ${NAME}-${VERSION}"
 
     # cloud RAD generation
-    mvn clean javadoc:aggregate -B -P docFX
+    mvn clean javadoc:aggregate -B -P docFX -DdocletPath=${KOKORO_GFILE_DIR}/${doclet_name}
     # include CHANGELOG
     cp CHANGELOG.md target/docfx-yml/history.md
 
