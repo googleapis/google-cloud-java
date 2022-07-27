@@ -138,6 +138,7 @@
     <module>java-workflows</module>
 
     <module>google-cloud-gapic-bom</module>
+    <module>CoverageAggregator</module>
   </modules>
 
   <build>
