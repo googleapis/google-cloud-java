@@ -64,7 +64,8 @@ public interface AudioInputOrBuilder
    * <pre>
    * Required. The natural language speech audio to be processed.
    * A single request can contain up to 1 minute of speech audio data.
-   * The transcribed text cannot contain more than 256 bytes.
+   * The transcribed text cannot contain more than 256 bytes for virtual agent
+   * interactions.
    * </pre>
    *
    * <code>bytes audio = 2;</code>

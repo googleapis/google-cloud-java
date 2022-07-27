@@ -28,7 +28,7 @@ public interface TextInputOrBuilder
    *
    * <pre>
    * Required. The UTF-8 encoded natural language text to be processed.
-   * Text length must not exceed 256 characters.
+   * Text length must not exceed 256 characters for virtual agent interactions.
    * </pre>
    *
    * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +41,7 @@ public interface TextInputOrBuilder
    *
    * <pre>
    * Required. The UTF-8 encoded natural language text to be processed.
-   * Text length must not exceed 256 characters.
+   * Text length must not exceed 256 characters for virtual agent interactions.
    * </pre>
    *
    * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>

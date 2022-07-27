@@ -652,7 +652,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * <pre>
    * The UTF-8 encoded natural language text to be processed. Must be sent if
    * `text_config` is set in the first message. Text length must not exceed
-   * 256 bytes. The `input_text` field can be only sent once.
+   * 256 bytes for virtual agent interactions. The `input_text` field can be
+   * only sent once.
    * </pre>
    *
    * <code>string input_text = 6;</code>
@@ -668,7 +669,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * <pre>
    * The UTF-8 encoded natural language text to be processed. Must be sent if
    * `text_config` is set in the first message. Text length must not exceed
-   * 256 bytes. The `input_text` field can be only sent once.
+   * 256 bytes for virtual agent interactions. The `input_text` field can be
+   * only sent once.
    * </pre>
    *
    * <code>string input_text = 6;</code>
@@ -697,7 +699,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * <pre>
    * The UTF-8 encoded natural language text to be processed. Must be sent if
    * `text_config` is set in the first message. Text length must not exceed
-   * 256 bytes. The `input_text` field can be only sent once.
+   * 256 bytes for virtual agent interactions. The `input_text` field can be
+   * only sent once.
    * </pre>
    *
    * <code>string input_text = 6;</code>
@@ -2578,7 +2581,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The UTF-8 encoded natural language text to be processed. Must be sent if
      * `text_config` is set in the first message. Text length must not exceed
-     * 256 bytes. The `input_text` field can be only sent once.
+     * 256 bytes for virtual agent interactions. The `input_text` field can be
+     * only sent once.
      * </pre>
      *
      * <code>string input_text = 6;</code>
@@ -2595,7 +2599,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The UTF-8 encoded natural language text to be processed. Must be sent if
      * `text_config` is set in the first message. Text length must not exceed
-     * 256 bytes. The `input_text` field can be only sent once.
+     * 256 bytes for virtual agent interactions. The `input_text` field can be
+     * only sent once.
      * </pre>
      *
      * <code>string input_text = 6;</code>
@@ -2625,7 +2630,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The UTF-8 encoded natural language text to be processed. Must be sent if
      * `text_config` is set in the first message. Text length must not exceed
-     * 256 bytes. The `input_text` field can be only sent once.
+     * 256 bytes for virtual agent interactions. The `input_text` field can be
+     * only sent once.
      * </pre>
      *
      * <code>string input_text = 6;</code>
@@ -2655,7 +2661,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The UTF-8 encoded natural language text to be processed. Must be sent if
      * `text_config` is set in the first message. Text length must not exceed
-     * 256 bytes. The `input_text` field can be only sent once.
+     * 256 bytes for virtual agent interactions. The `input_text` field can be
+     * only sent once.
      * </pre>
      *
      * <code>string input_text = 6;</code>
@@ -2678,7 +2685,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The UTF-8 encoded natural language text to be processed. Must be sent if
      * `text_config` is set in the first message. Text length must not exceed
-     * 256 bytes. The `input_text` field can be only sent once.
+     * 256 bytes for virtual agent interactions. The `input_text` field can be
+     * only sent once.
      * </pre>
      *
      * <code>string input_text = 6;</code>
@@ -2699,7 +2707,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The UTF-8 encoded natural language text to be processed. Must be sent if
      * `text_config` is set in the first message. Text length must not exceed
-     * 256 bytes. The `input_text` field can be only sent once.
+     * 256 bytes for virtual agent interactions. The `input_text` field can be
+     * only sent once.
      * </pre>
      *
      * <code>string input_text = 6;</code>
