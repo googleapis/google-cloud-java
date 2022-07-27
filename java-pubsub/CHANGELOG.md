@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.120.3](https://github.com/googleapis/java-pubsub/compare/v1.120.2...v1.120.3) (2022-07-27)
+
+
+### Dependencies
+
+* update dependency org.junit.vintage:junit-vintage-engine to v5.9.0 ([#1201](https://github.com/googleapis/java-pubsub/issues/1201)) ([f18e562](https://github.com/googleapis/java-pubsub/commit/f18e5628f54b0ae6858cd046a11824a1698c50c6))
+
 ## [1.120.2](https://github.com/googleapis/java-pubsub/compare/v1.120.1...v1.120.2) (2022-07-25)
 
 
