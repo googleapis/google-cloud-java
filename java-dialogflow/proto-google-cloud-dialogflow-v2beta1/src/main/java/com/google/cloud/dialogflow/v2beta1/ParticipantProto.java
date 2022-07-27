@@ -546,7 +546,7 @@ public final class ParticipantProto {
           + "participant=projects/*/locations/*/conve"
           + "rsations/*/participants/*}:analyzeConten"
           + "t:\001*\332A\026participant,text_input\332A\027particip"
-          + "ant,event_input\332A\027participant,audio_inpu"
+          + "ant,audio_input\332A\027participant,event_inpu"
           + "t\022\242\001\n\027StreamingAnalyzeContent\022?.google.c"
           + "loud.dialogflow.v2beta1.StreamingAnalyze"
           + "ContentRequest\032@.google.cloud.dialogflow"
