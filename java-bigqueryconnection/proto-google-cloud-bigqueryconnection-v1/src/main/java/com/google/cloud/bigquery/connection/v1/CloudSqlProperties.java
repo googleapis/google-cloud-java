@@ -41,6 +41,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     instanceId_ = "";
     database_ = "";
     type_ = 0;
+    serviceAccountId_ = "";
   }
 
   @java.lang.Override
@@ -108,6 +109,13 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
                 credential_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceAccountId_ = s;
               break;
             }
           default:
@@ -496,6 +504,61 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     return getCredential();
   }
 
+  public static final int SERVICE_ACCOUNT_ID_FIELD_NUMBER = 5;
+  private volatile java.lang.Object serviceAccountId_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The account ID of the service used for the purpose of this connection.
+   * When the connection is used in the context of an operation in
+   * BigQuery, this service account will serve as identity being used for
+   * connecting to the CloudSQL instance specified in this connection.
+   * </pre>
+   *
+   * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The serviceAccountId.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccountId() {
+    java.lang.Object ref = serviceAccountId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccountId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The account ID of the service used for the purpose of this connection.
+   * When the connection is used in the context of an operation in
+   * BigQuery, this service account will serve as identity being used for
+   * connecting to the CloudSQL instance specified in this connection.
+   * </pre>
+   *
+   * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for serviceAccountId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountIdBytes() {
+    java.lang.Object ref = serviceAccountId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccountId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -525,6 +588,9 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     if (credential_ != null) {
       output.writeMessage(4, getCredential());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, serviceAccountId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -549,6 +615,9 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     if (credential_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCredential());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, serviceAccountId_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -572,6 +641,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
     if (hasCredential()) {
       if (!getCredential().equals(other.getCredential())) return false;
     }
+    if (!getServiceAccountId().equals(other.getServiceAccountId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -593,6 +663,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + CREDENTIAL_FIELD_NUMBER;
       hash = (53 * hash) + getCredential().hashCode();
     }
+    hash = (37 * hash) + SERVICE_ACCOUNT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccountId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -751,6 +823,8 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         credential_ = null;
         credentialBuilder_ = null;
       }
+      serviceAccountId_ = "";
+
       return this;
     }
 
@@ -786,6 +860,7 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       } else {
         result.credential_ = credentialBuilder_.build();
       }
+      result.serviceAccountId_ = serviceAccountId_;
       onBuilt();
       return result;
     }
@@ -849,6 +924,10 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasCredential()) {
         mergeCredential(other.getCredential());
+      }
+      if (!other.getServiceAccountId().isEmpty()) {
+        serviceAccountId_ = other.serviceAccountId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1391,6 +1470,127 @@ public final class CloudSqlProperties extends com.google.protobuf.GeneratedMessa
         credential_ = null;
       }
       return credentialBuilder_;
+    }
+
+    private java.lang.Object serviceAccountId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The account ID of the service used for the purpose of this connection.
+     * When the connection is used in the context of an operation in
+     * BigQuery, this service account will serve as identity being used for
+     * connecting to the CloudSQL instance specified in this connection.
+     * </pre>
+     *
+     * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceAccountId.
+     */
+    public java.lang.String getServiceAccountId() {
+      java.lang.Object ref = serviceAccountId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccountId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The account ID of the service used for the purpose of this connection.
+     * When the connection is used in the context of an operation in
+     * BigQuery, this service account will serve as identity being used for
+     * connecting to the CloudSQL instance specified in this connection.
+     * </pre>
+     *
+     * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceAccountId.
+     */
+    public com.google.protobuf.ByteString getServiceAccountIdBytes() {
+      java.lang.Object ref = serviceAccountId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccountId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The account ID of the service used for the purpose of this connection.
+     * When the connection is used in the context of an operation in
+     * BigQuery, this service account will serve as identity being used for
+     * connecting to the CloudSQL instance specified in this connection.
+     * </pre>
+     *
+     * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The serviceAccountId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      serviceAccountId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The account ID of the service used for the purpose of this connection.
+     * When the connection is used in the context of an operation in
+     * BigQuery, this service account will serve as identity being used for
+     * connecting to the CloudSQL instance specified in this connection.
+     * </pre>
+     *
+     * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccountId() {
+
+      serviceAccountId_ = getDefaultInstance().getServiceAccountId();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The account ID of the service used for the purpose of this connection.
+     * When the connection is used in the context of an operation in
+     * BigQuery, this service account will serve as identity being used for
+     * connecting to the CloudSQL instance specified in this connection.
+     * </pre>
+     *
+     * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for serviceAccountId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      serviceAccountId_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
