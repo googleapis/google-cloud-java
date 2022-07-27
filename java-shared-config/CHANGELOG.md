@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.3](https://github.com/googleapis/java-shared-config/compare/v1.5.2...v1.5.3) (2022-07-27)
+
+
+### Dependencies
+
+* update dependency org.junit.vintage:junit-vintage-engine to v5.9.0 ([#497](https://github.com/googleapis/java-shared-config/issues/497)) ([1fc6ab4](https://github.com/googleapis/java-shared-config/commit/1fc6ab445624cd4f9c8b161d109f346a9e5ed09a))
+* Update doclet to latest version 1.6.0 ([38fb7c3](https://github.com/googleapis/java-shared-config/commit/38fb7c3957fb6c9b2da10f9e463cc93a8b80a3a4))
+
 ## [1.5.2](https://github.com/googleapis/java-shared-config/compare/v1.5.1...v1.5.2) (2022-07-25)
 
 
