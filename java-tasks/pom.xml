@@ -71,7 +71,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-tasks-v2</artifactId>
-        <version>2.3.1</version><!-- {x-version-update:proto-google-cloud-tasks-v2:current} -->
+        <version>2.3.2</version><!-- {x-version-update:proto-google-cloud-tasks-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
