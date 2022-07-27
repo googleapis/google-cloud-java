@@ -961,7 +961,7 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
    *
    * <p>Sample code:
    *
@@ -995,7 +995,7 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
    *
    * <p>Sample code:
    *
@@ -1026,7 +1026,7 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
    *
    * <p>Sample code:
    *
@@ -1055,7 +1055,7 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
-   * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
    *
    * <p>Sample code:
    *
@@ -1082,7 +1082,7 @@ public class ConnectionServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   * exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
    *
    * <p>Note: This operation is designed to be used for building permission-aware UIs and
    * command-line tools, not for authorization checking. This operation may "fail open" without
@@ -1121,7 +1121,7 @@ public class ConnectionServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   * exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
    *
    * <p>Note: This operation is designed to be used for building permission-aware UIs and
    * command-line tools, not for authorization checking. This operation may "fail open" without
@@ -1160,7 +1160,7 @@ public class ConnectionServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   * exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
    *
    * <p>Note: This operation is designed to be used for building permission-aware UIs and
    * command-line tools, not for authorization checking. This operation may "fail open" without
@@ -1191,7 +1191,7 @@ public class ConnectionServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource. If the resource does not
-   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   * exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
    *
    * <p>Note: This operation is designed to be used for building permission-aware UIs and
    * command-line tools, not for authorization checking. This operation may "fail open" without

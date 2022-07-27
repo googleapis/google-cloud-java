@@ -10804,6 +10804,37 @@ public final class ConnectionProto {
      */
     com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CloudSqlCredentialOrBuilder
         getCredentialOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The account ID of the service used for the purpose of this connection.
+     * When the connection is used in the context of an operation in
+     * BigQuery, this service account will serve as identity being used for
+     * connecting to the CloudSQL instance specified in this connection.
+     * </pre>
+     *
+     * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceAccountId.
+     */
+    java.lang.String getServiceAccountId();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The account ID of the service used for the purpose of this connection.
+     * When the connection is used in the context of an operation in
+     * BigQuery, this service account will serve as identity being used for
+     * connecting to the CloudSQL instance specified in this connection.
+     * </pre>
+     *
+     * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceAccountId.
+     */
+    com.google.protobuf.ByteString getServiceAccountIdBytes();
   }
   /**
    *
@@ -10828,6 +10859,7 @@ public final class ConnectionProto {
       instanceId_ = "";
       database_ = "";
       type_ = 0;
+      serviceAccountId_ = "";
     }
 
     @java.lang.Override
@@ -10898,6 +10930,13 @@ public final class ConnectionProto {
                   credential_ = subBuilder.buildPartial();
                 }
 
+                break;
+              }
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                serviceAccountId_ = s;
                 break;
               }
             default:
@@ -11299,6 +11338,61 @@ public final class ConnectionProto {
       return getCredential();
     }
 
+    public static final int SERVICE_ACCOUNT_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object serviceAccountId_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The account ID of the service used for the purpose of this connection.
+     * When the connection is used in the context of an operation in
+     * BigQuery, this service account will serve as identity being used for
+     * connecting to the CloudSQL instance specified in this connection.
+     * </pre>
+     *
+     * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceAccountId.
+     */
+    @java.lang.Override
+    public java.lang.String getServiceAccountId() {
+      java.lang.Object ref = serviceAccountId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccountId_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The account ID of the service used for the purpose of this connection.
+     * When the connection is used in the context of an operation in
+     * BigQuery, this service account will serve as identity being used for
+     * connecting to the CloudSQL instance specified in this connection.
+     * </pre>
+     *
+     * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceAccountId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceAccountIdBytes() {
+      java.lang.Object ref = serviceAccountId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccountId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -11328,6 +11422,9 @@ public final class ConnectionProto {
       if (credential_ != null) {
         output.writeMessage(4, getCredential());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, serviceAccountId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -11351,6 +11448,9 @@ public final class ConnectionProto {
       }
       if (credential_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCredential());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, serviceAccountId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11377,6 +11477,7 @@ public final class ConnectionProto {
       if (hasCredential()) {
         if (!getCredential().equals(other.getCredential())) return false;
       }
+      if (!getServiceAccountId().equals(other.getServiceAccountId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11398,6 +11499,8 @@ public final class ConnectionProto {
         hash = (37 * hash) + CREDENTIAL_FIELD_NUMBER;
         hash = (53 * hash) + getCredential().hashCode();
       }
+      hash = (37 * hash) + SERVICE_ACCOUNT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAccountId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11567,6 +11670,8 @@ public final class ConnectionProto {
           credential_ = null;
           credentialBuilder_ = null;
         }
+        serviceAccountId_ = "";
+
         return this;
       }
 
@@ -11608,6 +11713,7 @@ public final class ConnectionProto {
         } else {
           result.credential_ = credentialBuilder_.build();
         }
+        result.serviceAccountId_ = serviceAccountId_;
         onBuilt();
         return result;
       }
@@ -11679,6 +11785,10 @@ public final class ConnectionProto {
         }
         if (other.hasCredential()) {
           mergeCredential(other.getCredential());
+        }
+        if (!other.getServiceAccountId().isEmpty()) {
+          serviceAccountId_ = other.serviceAccountId_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -12249,6 +12359,127 @@ public final class ConnectionProto {
           credential_ = null;
         }
         return credentialBuilder_;
+      }
+
+      private java.lang.Object serviceAccountId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The account ID of the service used for the purpose of this connection.
+       * When the connection is used in the context of an operation in
+       * BigQuery, this service account will serve as identity being used for
+       * connecting to the CloudSQL instance specified in this connection.
+       * </pre>
+       *
+       * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The serviceAccountId.
+       */
+      public java.lang.String getServiceAccountId() {
+        java.lang.Object ref = serviceAccountId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceAccountId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The account ID of the service used for the purpose of this connection.
+       * When the connection is used in the context of an operation in
+       * BigQuery, this service account will serve as identity being used for
+       * connecting to the CloudSQL instance specified in this connection.
+       * </pre>
+       *
+       * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for serviceAccountId.
+       */
+      public com.google.protobuf.ByteString getServiceAccountIdBytes() {
+        java.lang.Object ref = serviceAccountId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceAccountId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The account ID of the service used for the purpose of this connection.
+       * When the connection is used in the context of an operation in
+       * BigQuery, this service account will serve as identity being used for
+       * connecting to the CloudSQL instance specified in this connection.
+       * </pre>
+       *
+       * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The serviceAccountId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceAccountId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        serviceAccountId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The account ID of the service used for the purpose of this connection.
+       * When the connection is used in the context of an operation in
+       * BigQuery, this service account will serve as identity being used for
+       * connecting to the CloudSQL instance specified in this connection.
+       * </pre>
+       *
+       * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceAccountId() {
+
+        serviceAccountId_ = getDefaultInstance().getServiceAccountId();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The account ID of the service used for the purpose of this connection.
+       * When the connection is used in the context of an operation in
+       * BigQuery, this service account will serve as identity being used for
+       * connecting to the CloudSQL instance specified in this connection.
+       * </pre>
+       *
+       * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for serviceAccountId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceAccountIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        serviceAccountId_ = value;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -13298,75 +13529,75 @@ public final class ConnectionProto {
           + "ctions/{connection}B\014\n\nproperties\"w\n\024Con"
           + "nectionCredential\022Q\n\tcloud_sql\030\001 \001(\0132<.g"
           + "oogle.cloud.bigquery.connection.v1beta1."
-          + "CloudSqlCredentialH\000B\014\n\ncredential\"\263\002\n\022C"
+          + "CloudSqlCredentialH\000B\014\n\ncredential\"\324\002\n\022C"
           + "loudSqlProperties\022\023\n\013instance_id\030\001 \001(\t\022\020"
           + "\n\010database\030\002 \001(\t\022W\n\004type\030\003 \001(\0162I.google."
           + "cloud.bigquery.connection.v1beta1.CloudS"
           + "qlProperties.DatabaseType\022U\n\ncredential\030"
           + "\004 \001(\0132<.google.cloud.bigquery.connection"
-          + ".v1beta1.CloudSqlCredentialB\003\340A\004\"F\n\014Data"
-          + "baseType\022\035\n\031DATABASE_TYPE_UNSPECIFIED\020\000\022"
-          + "\014\n\010POSTGRES\020\001\022\t\n\005MYSQL\020\002\"8\n\022CloudSqlCred"
-          + "ential\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001"
-          + "(\t2\230\020\n\021ConnectionService\022\367\001\n\020CreateConne"
-          + "ction\022A.google.cloud.bigquery.connection"
-          + ".v1beta1.CreateConnectionRequest\0324.googl"
-          + "e.cloud.bigquery.connection.v1beta1.Conn"
-          + "ection\"j\202\323\344\223\002B\"4/v1beta1/{parent=project"
-          + "s/*/locations/*}/connections:\nconnection"
-          + "\332A\037parent,connection,connection_id\022\312\001\n\rG"
-          + "etConnection\022>.google.cloud.bigquery.con"
-          + "nection.v1beta1.GetConnectionRequest\0324.g"
+          + ".v1beta1.CloudSqlCredentialB\003\340A\004\022\037\n\022serv"
+          + "ice_account_id\030\005 \001(\tB\003\340A\003\"F\n\014DatabaseTyp"
+          + "e\022\035\n\031DATABASE_TYPE_UNSPECIFIED\020\000\022\014\n\010POST"
+          + "GRES\020\001\022\t\n\005MYSQL\020\002\"8\n\022CloudSqlCredential\022"
+          + "\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t2\230\020\n\021"
+          + "ConnectionService\022\367\001\n\020CreateConnection\022A"
+          + ".google.cloud.bigquery.connection.v1beta"
+          + "1.CreateConnectionRequest\0324.google.cloud"
+          + ".bigquery.connection.v1beta1.Connection\""
+          + "j\202\323\344\223\002B\"4/v1beta1/{parent=projects/*/loc"
+          + "ations/*}/connections:\nconnection\332A\037pare"
+          + "nt,connection,connection_id\022\312\001\n\rGetConne"
+          + "ction\022>.google.cloud.bigquery.connection"
+          + ".v1beta1.GetConnectionRequest\0324.google.c"
+          + "loud.bigquery.connection.v1beta1.Connect"
+          + "ion\"C\202\323\344\223\0026\0224/v1beta1/{name=projects/*/l"
+          + "ocations/*/connections/*}\332A\004name\022\351\001\n\017Lis"
+          + "tConnections\022@.google.cloud.bigquery.con"
+          + "nection.v1beta1.ListConnectionsRequest\032A"
+          + ".google.cloud.bigquery.connection.v1beta"
+          + "1.ListConnectionsResponse\"Q\202\323\344\223\0026\0224/v1be"
+          + "ta1/{parent=projects/*/locations/*}/conn"
+          + "ections\332A\022parent,max_results\022\363\001\n\020UpdateC"
+          + "onnection\022A.google.cloud.bigquery.connec"
+          + "tion.v1beta1.UpdateConnectionRequest\0324.g"
           + "oogle.cloud.bigquery.connection.v1beta1."
-          + "Connection\"C\202\323\344\223\0026\0224/v1beta1/{name=proje"
-          + "cts/*/locations/*/connections/*}\332A\004name\022"
-          + "\351\001\n\017ListConnections\022@.google.cloud.bigqu"
-          + "ery.connection.v1beta1.ListConnectionsRe"
-          + "quest\032A.google.cloud.bigquery.connection"
-          + ".v1beta1.ListConnectionsResponse\"Q\202\323\344\223\0026"
-          + "\0224/v1beta1/{parent=projects/*/locations/"
-          + "*}/connections\332A\022parent,max_results\022\363\001\n\020"
-          + "UpdateConnection\022A.google.cloud.bigquery"
-          + ".connection.v1beta1.UpdateConnectionRequ"
-          + "est\0324.google.cloud.bigquery.connection.v"
-          + "1beta1.Connection\"f\202\323\344\223\002B24/v1beta1/{nam"
-          + "e=projects/*/locations/*/connections/*}:"
-          + "\nconnection\332A\033name,connection,update_mas"
-          + "k\022\350\001\n\032UpdateConnectionCredential\022K.googl"
-          + "e.cloud.bigquery.connection.v1beta1.Upda"
-          + "teConnectionCredentialRequest\032\026.google.p"
-          + "rotobuf.Empty\"e\202\323\344\223\002M2?/v1beta1/{name=pr"
-          + "ojects/*/locations/*/connections/*/crede"
-          + "ntial}:\ncredential\332A\017name,credential\022\262\001\n"
-          + "\020DeleteConnection\022A.google.cloud.bigquer"
-          + "y.connection.v1beta1.DeleteConnectionReq"
-          + "uest\032\026.google.protobuf.Empty\"C\202\323\344\223\0026*4/v"
-          + "1beta1/{name=projects/*/locations/*/conn"
-          + "ections/*}\332A\004name\022\256\001\n\014GetIamPolicy\022\".goo"
-          + "gle.iam.v1.GetIamPolicyRequest\032\025.google."
-          + "iam.v1.Policy\"c\202\323\344\223\002J\"E/v1beta1/{resourc"
-          + "e=projects/*/locations/*/connections/*}:"
-          + "getIamPolicy:\001*\332A\020resource,options\022\255\001\n\014S"
-          + "etIamPolicy\022\".google.iam.v1.SetIamPolicy"
-          + "Request\032\025.google.iam.v1.Policy\"b\202\323\344\223\002J\"E"
-          + "/v1beta1/{resource=projects/*/locations/"
-          + "*/connections/*}:setIamPolicy:\001*\332A\017resou"
-          + "rce,policy\022\330\001\n\022TestIamPermissions\022(.goog"
-          + "le.iam.v1.TestIamPermissionsRequest\032).go"
-          + "ogle.iam.v1.TestIamPermissionsResponse\"m"
-          + "\202\323\344\223\002P\"K/v1beta1/{resource=projects/*/lo"
-          + "cations/*/connections/*}:testIamPermissi"
-          + "ons:\001*\332A\024resource,permissions\032~\312A!bigque"
-          + "ryconnection.googleapis.com\322AWhttps://ww"
-          + "w.googleapis.com/auth/bigquery,https://w"
-          + "ww.googleapis.com/auth/cloud-platformB\351\001"
-          + "\n,com.google.cloud.bigquery.connection.v"
-          + "1beta1B\017ConnectionProtoZRgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/bigquery/co"
-          + "nnection/v1beta1;connection\252\002(Google.Clo"
-          + "ud.BigQuery.Connection.V1Beta1\312\002(Google\\"
-          + "Cloud\\BigQuery\\Connection\\V1beta1b\006proto"
-          + "3"
+          + "Connection\"f\202\323\344\223\002B24/v1beta1/{name=proje"
+          + "cts/*/locations/*/connections/*}:\nconnec"
+          + "tion\332A\033name,connection,update_mask\022\350\001\n\032U"
+          + "pdateConnectionCredential\022K.google.cloud"
+          + ".bigquery.connection.v1beta1.UpdateConne"
+          + "ctionCredentialRequest\032\026.google.protobuf"
+          + ".Empty\"e\202\323\344\223\002M2?/v1beta1/{name=projects/"
+          + "*/locations/*/connections/*/credential}:"
+          + "\ncredential\332A\017name,credential\022\262\001\n\020Delete"
+          + "Connection\022A.google.cloud.bigquery.conne"
+          + "ction.v1beta1.DeleteConnectionRequest\032\026."
+          + "google.protobuf.Empty\"C\202\323\344\223\0026*4/v1beta1/"
+          + "{name=projects/*/locations/*/connections"
+          + "/*}\332A\004name\022\256\001\n\014GetIamPolicy\022\".google.iam"
+          + ".v1.GetIamPolicyRequest\032\025.google.iam.v1."
+          + "Policy\"c\202\323\344\223\002J\"E/v1beta1/{resource=proje"
+          + "cts/*/locations/*/connections/*}:getIamP"
+          + "olicy:\001*\332A\020resource,options\022\255\001\n\014SetIamPo"
+          + "licy\022\".google.iam.v1.SetIamPolicyRequest"
+          + "\032\025.google.iam.v1.Policy\"b\202\323\344\223\002J\"E/v1beta"
+          + "1/{resource=projects/*/locations/*/conne"
+          + "ctions/*}:setIamPolicy:\001*\332A\017resource,pol"
+          + "icy\022\330\001\n\022TestIamPermissions\022(.google.iam."
+          + "v1.TestIamPermissionsRequest\032).google.ia"
+          + "m.v1.TestIamPermissionsResponse\"m\202\323\344\223\002P\""
+          + "K/v1beta1/{resource=projects/*/locations"
+          + "/*/connections/*}:testIamPermissions:\001*\332"
+          + "A\024resource,permissions\032~\312A!bigqueryconne"
+          + "ction.googleapis.com\322AWhttps://www.googl"
+          + "eapis.com/auth/bigquery,https://www.goog"
+          + "leapis.com/auth/cloud-platformB\351\001\n,com.g"
+          + "oogle.cloud.bigquery.connection.v1beta1B"
+          + "\017ConnectionProtoZRgoogle.golang.org/genp"
+          + "roto/googleapis/cloud/bigquery/connectio"
+          + "n/v1beta1;connection\252\002(Google.Cloud.BigQ"
+          + "uery.Connection.V1Beta1\312\002(Google\\Cloud\\B"
+          + "igQuery\\Connection\\V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -13467,7 +13698,7 @@ public final class ConnectionProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_connection_v1beta1_CloudSqlProperties_descriptor,
             new java.lang.String[] {
-              "InstanceId", "Database", "Type", "Credential",
+              "InstanceId", "Database", "Type", "Credential", "ServiceAccountId",
             });
     internal_static_google_cloud_bigquery_connection_v1beta1_CloudSqlCredential_descriptor =
         getDescriptor().getMessageTypes().get(10);

@@ -138,4 +138,35 @@ public interface CloudSqlPropertiesOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.connection.v1.CloudSqlCredentialOrBuilder getCredentialOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The account ID of the service used for the purpose of this connection.
+   * When the connection is used in the context of an operation in
+   * BigQuery, this service account will serve as identity being used for
+   * connecting to the CloudSQL instance specified in this connection.
+   * </pre>
+   *
+   * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The serviceAccountId.
+   */
+  java.lang.String getServiceAccountId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The account ID of the service used for the purpose of this connection.
+   * When the connection is used in the context of an operation in
+   * BigQuery, this service account will serve as identity being used for
+   * connecting to the CloudSQL instance specified in this connection.
+   * </pre>
+   *
+   * <code>string service_account_id = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for serviceAccountId.
+   */
+  com.google.protobuf.ByteString getServiceAccountIdBytes();
 }
