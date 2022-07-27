@@ -1,0 +1,45 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.bigquery.connection.v1beta1",
+  "libraryPackage": "com.google.cloud.bigquery.connection.v1beta1",
+  "services": {
+    "ConnectionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConnectionServiceClient",
+          "rpcs": {
+            "CreateConnection": {
+              "methods": ["createConnection", "createConnection", "createConnection", "createConnectionCallable"]
+            },
+            "DeleteConnection": {
+              "methods": ["deleteConnection", "deleteConnection", "deleteConnection", "deleteConnectionCallable"]
+            },
+            "GetConnection": {
+              "methods": ["getConnection", "getConnection", "getConnection", "getConnectionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "ListConnections": {
+              "methods": ["listConnections", "listConnections", "listConnections", "listConnectionsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateConnection": {
+              "methods": ["updateConnection", "updateConnection", "updateConnection", "updateConnectionCallable"]
+            },
+            "UpdateConnectionCredential": {
+              "methods": ["updateConnectionCredential", "updateConnectionCredential", "updateConnectionCredentialCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
