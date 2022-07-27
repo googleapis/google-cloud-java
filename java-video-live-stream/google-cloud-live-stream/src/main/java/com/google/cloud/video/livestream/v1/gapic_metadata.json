@@ -1,0 +1,66 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.video.livestream.v1",
+  "libraryPackage": "com.google.cloud.video.livestream.v1",
+  "services": {
+    "LivestreamService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LivestreamServiceClient",
+          "rpcs": {
+            "CreateChannel": {
+              "methods": ["createChannelAsync", "createChannelAsync", "createChannelAsync", "createChannelOperationCallable", "createChannelCallable"]
+            },
+            "CreateEvent": {
+              "methods": ["createEvent", "createEvent", "createEvent", "createEventCallable"]
+            },
+            "CreateInput": {
+              "methods": ["createInputAsync", "createInputAsync", "createInputAsync", "createInputOperationCallable", "createInputCallable"]
+            },
+            "DeleteChannel": {
+              "methods": ["deleteChannelAsync", "deleteChannelAsync", "deleteChannelAsync", "deleteChannelOperationCallable", "deleteChannelCallable"]
+            },
+            "DeleteEvent": {
+              "methods": ["deleteEvent", "deleteEvent", "deleteEvent", "deleteEventCallable"]
+            },
+            "DeleteInput": {
+              "methods": ["deleteInputAsync", "deleteInputAsync", "deleteInputAsync", "deleteInputOperationCallable", "deleteInputCallable"]
+            },
+            "GetChannel": {
+              "methods": ["getChannel", "getChannel", "getChannel", "getChannelCallable"]
+            },
+            "GetEvent": {
+              "methods": ["getEvent", "getEvent", "getEvent", "getEventCallable"]
+            },
+            "GetInput": {
+              "methods": ["getInput", "getInput", "getInput", "getInputCallable"]
+            },
+            "ListChannels": {
+              "methods": ["listChannels", "listChannels", "listChannels", "listChannelsPagedCallable", "listChannelsCallable"]
+            },
+            "ListEvents": {
+              "methods": ["listEvents", "listEvents", "listEvents", "listEventsPagedCallable", "listEventsCallable"]
+            },
+            "ListInputs": {
+              "methods": ["listInputs", "listInputs", "listInputs", "listInputsPagedCallable", "listInputsCallable"]
+            },
+            "StartChannel": {
+              "methods": ["startChannelAsync", "startChannelAsync", "startChannelAsync", "startChannelOperationCallable", "startChannelCallable"]
+            },
+            "StopChannel": {
+              "methods": ["stopChannelAsync", "stopChannelAsync", "stopChannelAsync", "stopChannelOperationCallable", "stopChannelCallable"]
+            },
+            "UpdateChannel": {
+              "methods": ["updateChannelAsync", "updateChannelAsync", "updateChannelOperationCallable", "updateChannelCallable"]
+            },
+            "UpdateInput": {
+              "methods": ["updateInputAsync", "updateInputAsync", "updateInputOperationCallable", "updateInputCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
