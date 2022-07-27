@@ -90,6 +90,14 @@ graalvm17)
     mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Dtest=ITBigQueryTest -Pnative -Penable-integration-tests test
     RETURN_CODE=$?
     ;;
+nightly-graalvm)
+    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Dtest=ITNightlyBigQueryTest -Pnative -Penable-integration-tests test
+    RETURN_CODE=$?
+    ;;
+nightly-graalvm17)
+    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Dtest=ITNightlyBigQueryTest -Pnative -Penable-integration-tests test
+    RETURN_CODE=$?
+    ;;
 samples)
     SAMPLES_DIR=samples
     # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ subdirectories otherwise.
