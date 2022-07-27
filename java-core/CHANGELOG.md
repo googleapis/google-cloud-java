@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.8.4](https://github.com/googleapis/java-core/compare/v2.8.3...v2.8.4) (2022-07-27)
+
+
+### Documentation
+
+* update javadocs for ReadChannel#limit to be more clear ([#880](https://github.com/googleapis/java-core/issues/880)) ([c7de4e2](https://github.com/googleapis/java-core/commit/c7de4e2871d6a32cacc7aab69d826f3afd6301ef))
+
+
+### Dependencies
+
+* Update google-cloud-shared-config to v1.5.3 ([#882](https://github.com/googleapis/java-core/issues/882)) ([aabb0b4](https://github.com/googleapis/java-core/commit/aabb0b42076f8a02e7b31d604add567fa909df6c))
+
 ## [2.8.3](https://github.com/googleapis/java-core/compare/v2.8.2...v2.8.3) (2022-07-26)
 
 
