@@ -119,11 +119,6 @@ public class StreamWriter implements AutoCloseable {
   private boolean inflightCleanuped = false;
 
   /*
-   * Retry threshold, limits how often the connection is retried before processing halts.
-   */
-  private static final long RETRY_THRESHOLD = 3;
-
-  /*
    * Indicates whether user has called Close() or not.
    */
   @GuardedBy("lock")
@@ -327,10 +322,11 @@ public class StreamWriter implements AutoCloseable {
 
       if (connectionFinalStatus != null) {
         requestWrapper.appendResult.setException(
-            new StatusRuntimeException(
+            new Exceptions.StreamWriterClosedException(
                 Status.fromCode(Status.Code.FAILED_PRECONDITION)
                     .withDescription(
-                        "Connection is closed due to " + connectionFinalStatus.toString())));
+                        "Connection is closed due to " + connectionFinalStatus.toString()),
+                streamName));
         return requestWrapper.appendResult;
       }
 
@@ -653,9 +649,7 @@ public class StreamWriter implements AutoCloseable {
       this.streamConnectionIsConnected = false;
       if (connectionFinalStatus == null) {
         // If the error can be retried, don't set it here, let it try to retry later on.
-        if (isRetriableError(finalStatus)
-            && conectionRetryCountWithoutCallback < RETRY_THRESHOLD
-            && !userClosed) {
+        if (isRetriableError(finalStatus) && !userClosed) {
           this.conectionRetryCountWithoutCallback++;
           log.fine(
               "Retriable error "
