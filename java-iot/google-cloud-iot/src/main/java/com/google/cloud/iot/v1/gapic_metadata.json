@@ -1,0 +1,75 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.iot.v1",
+  "libraryPackage": "com.google.cloud.iot.v1",
+  "services": {
+    "DeviceManager": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DeviceManagerClient",
+          "rpcs": {
+            "BindDeviceToGateway": {
+              "methods": ["bindDeviceToGateway", "bindDeviceToGateway", "bindDeviceToGateway", "bindDeviceToGatewayCallable"]
+            },
+            "CreateDevice": {
+              "methods": ["createDevice", "createDevice", "createDevice", "createDeviceCallable"]
+            },
+            "CreateDeviceRegistry": {
+              "methods": ["createDeviceRegistry", "createDeviceRegistry", "createDeviceRegistry", "createDeviceRegistryCallable"]
+            },
+            "DeleteDevice": {
+              "methods": ["deleteDevice", "deleteDevice", "deleteDevice", "deleteDeviceCallable"]
+            },
+            "DeleteDeviceRegistry": {
+              "methods": ["deleteDeviceRegistry", "deleteDeviceRegistry", "deleteDeviceRegistry", "deleteDeviceRegistryCallable"]
+            },
+            "GetDevice": {
+              "methods": ["getDevice", "getDevice", "getDevice", "getDeviceCallable"]
+            },
+            "GetDeviceRegistry": {
+              "methods": ["getDeviceRegistry", "getDeviceRegistry", "getDeviceRegistry", "getDeviceRegistryCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "ListDeviceConfigVersions": {
+              "methods": ["listDeviceConfigVersions", "listDeviceConfigVersions", "listDeviceConfigVersions", "listDeviceConfigVersionsCallable"]
+            },
+            "ListDeviceRegistries": {
+              "methods": ["listDeviceRegistries", "listDeviceRegistries", "listDeviceRegistries", "listDeviceRegistriesPagedCallable", "listDeviceRegistriesCallable"]
+            },
+            "ListDeviceStates": {
+              "methods": ["listDeviceStates", "listDeviceStates", "listDeviceStates", "listDeviceStatesCallable"]
+            },
+            "ListDevices": {
+              "methods": ["listDevices", "listDevices", "listDevices", "listDevicesPagedCallable", "listDevicesCallable"]
+            },
+            "ModifyCloudToDeviceConfig": {
+              "methods": ["modifyCloudToDeviceConfig", "modifyCloudToDeviceConfig", "modifyCloudToDeviceConfig", "modifyCloudToDeviceConfigCallable"]
+            },
+            "SendCommandToDevice": {
+              "methods": ["sendCommandToDevice", "sendCommandToDevice", "sendCommandToDevice", "sendCommandToDevice", "sendCommandToDevice", "sendCommandToDeviceCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UnbindDeviceFromGateway": {
+              "methods": ["unbindDeviceFromGateway", "unbindDeviceFromGateway", "unbindDeviceFromGateway", "unbindDeviceFromGatewayCallable"]
+            },
+            "UpdateDevice": {
+              "methods": ["updateDevice", "updateDevice", "updateDeviceCallable"]
+            },
+            "UpdateDeviceRegistry": {
+              "methods": ["updateDeviceRegistry", "updateDeviceRegistry", "updateDeviceRegistryCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
