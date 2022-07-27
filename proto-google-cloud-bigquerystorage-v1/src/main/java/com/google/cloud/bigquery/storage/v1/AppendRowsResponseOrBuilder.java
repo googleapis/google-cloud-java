@@ -239,5 +239,32 @@ public interface AppendRowsResponseOrBuilder
    */
   com.google.cloud.bigquery.storage.v1.RowErrorOrBuilder getRowErrorsOrBuilder(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * The target of the append operation. Matches the write_stream in the
+   * corresponding request.
+   * </pre>
+   *
+   * <code>string write_stream = 5;</code>
+   *
+   * @return The writeStream.
+   */
+  java.lang.String getWriteStream();
+  /**
+   *
+   *
+   * <pre>
+   * The target of the append operation. Matches the write_stream in the
+   * corresponding request.
+   * </pre>
+   *
+   * <code>string write_stream = 5;</code>
+   *
+   * @return The bytes for writeStream.
+   */
+  com.google.protobuf.ByteString getWriteStreamBytes();
+
   public com.google.cloud.bigquery.storage.v1.AppendRowsResponse.ResponseCase getResponseCase();
 }

@@ -291,6 +291,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setReadSession(ReadSession.newBuilder().build())
    *           .setMaxStreamCount(940837515)
+   *           .setPreferredMinStreamCount(-1905507237)
    *           .build();
    *   ReadSession response = baseBigQueryReadClient.createReadSession(request);
    * }
@@ -333,6 +334,7 @@ public class BaseBigQueryReadClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setReadSession(ReadSession.newBuilder().build())
    *           .setMaxStreamCount(940837515)
+   *           .setPreferredMinStreamCount(-1905507237)
    *           .build();
    *   ApiFuture<ReadSession> future =
    *       baseBigQueryReadClient.createReadSessionCallable().futureCall(request);

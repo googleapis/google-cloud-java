@@ -39,6 +39,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
 
   private AppendRowsResponse() {
     rowErrors_ = java.util.Collections.emptyList();
+    writeStream_ = "";
   }
 
   @java.lang.Override
@@ -134,6 +135,13 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
               rowErrors_.add(
                   input.readMessage(
                       com.google.cloud.bigquery.storage.v1.RowError.parser(), extensionRegistry));
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              writeStream_ = s;
               break;
             }
           default:
@@ -1282,6 +1290,57 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     return rowErrors_.get(index);
   }
 
+  public static final int WRITE_STREAM_FIELD_NUMBER = 5;
+  private volatile java.lang.Object writeStream_;
+  /**
+   *
+   *
+   * <pre>
+   * The target of the append operation. Matches the write_stream in the
+   * corresponding request.
+   * </pre>
+   *
+   * <code>string write_stream = 5;</code>
+   *
+   * @return The writeStream.
+   */
+  @java.lang.Override
+  public java.lang.String getWriteStream() {
+    java.lang.Object ref = writeStream_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      writeStream_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The target of the append operation. Matches the write_stream in the
+   * corresponding request.
+   * </pre>
+   *
+   * <code>string write_stream = 5;</code>
+   *
+   * @return The bytes for writeStream.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getWriteStreamBytes() {
+    java.lang.Object ref = writeStream_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      writeStream_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1309,6 +1368,9 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < rowErrors_.size(); i++) {
       output.writeMessage(4, rowErrors_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeStream_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, writeStream_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1334,6 +1396,9 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < rowErrors_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, rowErrors_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(writeStream_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, writeStream_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1355,6 +1420,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       if (!getUpdatedSchema().equals(other.getUpdatedSchema())) return false;
     }
     if (!getRowErrorsList().equals(other.getRowErrorsList())) return false;
+    if (!getWriteStream().equals(other.getWriteStream())) return false;
     if (!getResponseCase().equals(other.getResponseCase())) return false;
     switch (responseCase_) {
       case 1:
@@ -1385,6 +1451,8 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + ROW_ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getRowErrorsList().hashCode();
     }
+    hash = (37 * hash) + WRITE_STREAM_FIELD_NUMBER;
+    hash = (53 * hash) + getWriteStream().hashCode();
     switch (responseCase_) {
       case 1:
         hash = (37 * hash) + APPEND_RESULT_FIELD_NUMBER;
@@ -1557,6 +1625,8 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       } else {
         rowErrorsBuilder_.clear();
       }
+      writeStream_ = "";
+
       responseCase_ = 0;
       response_ = null;
       return this;
@@ -1615,6 +1685,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       } else {
         result.rowErrors_ = rowErrorsBuilder_.build();
       }
+      result.writeStream_ = writeStream_;
       result.responseCase_ = responseCase_;
       onBuilt();
       return result;
@@ -1695,6 +1766,10 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
             rowErrorsBuilder_.addAllMessages(other.rowErrors_);
           }
         }
+      }
+      if (!other.getWriteStream().isEmpty()) {
+        writeStream_ = other.writeStream_;
+        onChanged();
       }
       switch (other.getResponseCase()) {
         case APPEND_RESULT:
@@ -2897,6 +2972,117 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         rowErrors_ = null;
       }
       return rowErrorsBuilder_;
+    }
+
+    private java.lang.Object writeStream_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The target of the append operation. Matches the write_stream in the
+     * corresponding request.
+     * </pre>
+     *
+     * <code>string write_stream = 5;</code>
+     *
+     * @return The writeStream.
+     */
+    public java.lang.String getWriteStream() {
+      java.lang.Object ref = writeStream_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        writeStream_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target of the append operation. Matches the write_stream in the
+     * corresponding request.
+     * </pre>
+     *
+     * <code>string write_stream = 5;</code>
+     *
+     * @return The bytes for writeStream.
+     */
+    public com.google.protobuf.ByteString getWriteStreamBytes() {
+      java.lang.Object ref = writeStream_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        writeStream_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target of the append operation. Matches the write_stream in the
+     * corresponding request.
+     * </pre>
+     *
+     * <code>string write_stream = 5;</code>
+     *
+     * @param value The writeStream to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWriteStream(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      writeStream_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target of the append operation. Matches the write_stream in the
+     * corresponding request.
+     * </pre>
+     *
+     * <code>string write_stream = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWriteStream() {
+
+      writeStream_ = getDefaultInstance().getWriteStream();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target of the append operation. Matches the write_stream in the
+     * corresponding request.
+     * </pre>
+     *
+     * <code>string write_stream = 5;</code>
+     *
+     * @param value The bytes for writeStream to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWriteStreamBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      writeStream_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

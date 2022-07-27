@@ -115,4 +115,23 @@ public interface CreateReadSessionRequestOrBuilder
    * @return The maxStreamCount.
    */
   int getMaxStreamCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The minimum preferred stream count. This parameter can be used to inform
+   * the service that there is a desired lower bound on the number of streams.
+   * This is typically a target parallelism of the client (e.g. a Spark
+   * cluster with N-workers would set this to a low multiple of N to ensure
+   * good cluster utilization).
+   * The system will make a best effort to provide at least this number of
+   * streams, but in some cases might provide less.
+   * </pre>
+   *
+   * <code>int32 preferred_min_stream_count = 4;</code>
+   *
+   * @return The preferredMinStreamCount.
+   */
+  int getPreferredMinStreamCount();
 }

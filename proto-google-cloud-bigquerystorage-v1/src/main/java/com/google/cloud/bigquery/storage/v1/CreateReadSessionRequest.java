@@ -98,6 +98,11 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
               maxStreamCount_ = input.readInt32();
               break;
             }
+          case 32:
+            {
+              preferredMinStreamCount_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -269,6 +274,30 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
     return maxStreamCount_;
   }
 
+  public static final int PREFERRED_MIN_STREAM_COUNT_FIELD_NUMBER = 4;
+  private int preferredMinStreamCount_;
+  /**
+   *
+   *
+   * <pre>
+   * The minimum preferred stream count. This parameter can be used to inform
+   * the service that there is a desired lower bound on the number of streams.
+   * This is typically a target parallelism of the client (e.g. a Spark
+   * cluster with N-workers would set this to a low multiple of N to ensure
+   * good cluster utilization).
+   * The system will make a best effort to provide at least this number of
+   * streams, but in some cases might provide less.
+   * </pre>
+   *
+   * <code>int32 preferred_min_stream_count = 4;</code>
+   *
+   * @return The preferredMinStreamCount.
+   */
+  @java.lang.Override
+  public int getPreferredMinStreamCount() {
+    return preferredMinStreamCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -292,6 +321,9 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
     if (maxStreamCount_ != 0) {
       output.writeInt32(3, maxStreamCount_);
     }
+    if (preferredMinStreamCount_ != 0) {
+      output.writeInt32(4, preferredMinStreamCount_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -309,6 +341,9 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
     }
     if (maxStreamCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, maxStreamCount_);
+    }
+    if (preferredMinStreamCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, preferredMinStreamCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -332,6 +367,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
       if (!getReadSession().equals(other.getReadSession())) return false;
     }
     if (getMaxStreamCount() != other.getMaxStreamCount()) return false;
+    if (getPreferredMinStreamCount() != other.getPreferredMinStreamCount()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -351,6 +387,8 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
     }
     hash = (37 * hash) + MAX_STREAM_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getMaxStreamCount();
+    hash = (37 * hash) + PREFERRED_MIN_STREAM_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getPreferredMinStreamCount();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -507,6 +545,8 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
       }
       maxStreamCount_ = 0;
 
+      preferredMinStreamCount_ = 0;
+
       return this;
     }
 
@@ -542,6 +582,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
         result.readSession_ = readSessionBuilder_.build();
       }
       result.maxStreamCount_ = maxStreamCount_;
+      result.preferredMinStreamCount_ = preferredMinStreamCount_;
       onBuilt();
       return result;
     }
@@ -602,6 +643,9 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
       }
       if (other.getMaxStreamCount() != 0) {
         setMaxStreamCount(other.getMaxStreamCount());
+      }
+      if (other.getPreferredMinStreamCount() != 0) {
+        setPreferredMinStreamCount(other.getPreferredMinStreamCount());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1031,6 +1075,76 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
     public Builder clearMaxStreamCount() {
 
       maxStreamCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int preferredMinStreamCount_;
+    /**
+     *
+     *
+     * <pre>
+     * The minimum preferred stream count. This parameter can be used to inform
+     * the service that there is a desired lower bound on the number of streams.
+     * This is typically a target parallelism of the client (e.g. a Spark
+     * cluster with N-workers would set this to a low multiple of N to ensure
+     * good cluster utilization).
+     * The system will make a best effort to provide at least this number of
+     * streams, but in some cases might provide less.
+     * </pre>
+     *
+     * <code>int32 preferred_min_stream_count = 4;</code>
+     *
+     * @return The preferredMinStreamCount.
+     */
+    @java.lang.Override
+    public int getPreferredMinStreamCount() {
+      return preferredMinStreamCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The minimum preferred stream count. This parameter can be used to inform
+     * the service that there is a desired lower bound on the number of streams.
+     * This is typically a target parallelism of the client (e.g. a Spark
+     * cluster with N-workers would set this to a low multiple of N to ensure
+     * good cluster utilization).
+     * The system will make a best effort to provide at least this number of
+     * streams, but in some cases might provide less.
+     * </pre>
+     *
+     * <code>int32 preferred_min_stream_count = 4;</code>
+     *
+     * @param value The preferredMinStreamCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreferredMinStreamCount(int value) {
+
+      preferredMinStreamCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The minimum preferred stream count. This parameter can be used to inform
+     * the service that there is a desired lower bound on the number of streams.
+     * This is typically a target parallelism of the client (e.g. a Spark
+     * cluster with N-workers would set this to a low multiple of N to ensure
+     * good cluster utilization).
+     * The system will make a best effort to provide at least this number of
+     * streams, but in some cases might provide less.
+     * </pre>
+     *
+     * <code>int32 preferred_min_stream_count = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPreferredMinStreamCount() {
+
+      preferredMinStreamCount_ = 0;
       onChanged();
       return this;
     }

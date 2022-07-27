@@ -177,6 +177,7 @@ public class BigQueryWriteClientTest {
         AppendRowsResponse.newBuilder()
             .setUpdatedSchema(TableSchema.newBuilder().build())
             .addAllRowErrors(new ArrayList<RowError>())
+            .setWriteStream("writeStream1412231231")
             .build();
     mockBigQueryWrite.addResponse(expectedResponse);
     AppendRowsRequest request =
