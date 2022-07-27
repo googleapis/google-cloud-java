@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.14.1](https://github.com/googleapis/java-bigquery/compare/v2.14.0...v2.14.1) (2022-07-27)
+
+
+### Dependencies
+
+* update dependency org.junit.vintage:junit-vintage-engine to v5.9.0 ([#2183](https://github.com/googleapis/java-bigquery/issues/2183)) ([f8325cf](https://github.com/googleapis/java-bigquery/commit/f8325cff22af3f087b23d6376ab96e78648efd00))
+
 ## [2.14.0](https://github.com/googleapis/java-bigquery/compare/v2.13.8...v2.14.0) (2022-07-22)
 
 
