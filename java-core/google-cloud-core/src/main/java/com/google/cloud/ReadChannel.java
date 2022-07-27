@@ -55,8 +55,12 @@ public interface ReadChannel extends ReadableByteChannel, Closeable, Restorable<
   RestorableState<ReadChannel> capture();
 
   /**
-   * Limit the maximum number of bytes available to be read from this channel. If the limit is
+   * Limit the maximum number of bytes to be read from the objects content, counting from the
+   * beginning of the object, which will be available to read from this channel. If the limit is
    * larger than the actual size of the content this will have no material impact.
+   *
+   * <p>If used in conjunction with {@link #seek(long)} the total number of returned bytes from this
+   * channel will be reduced by the number of bytes specified to seek.
    *
    * <p><i>NOTE:</i>Implementers are not required to return a new instance from this method, however
    * they are allowed to. Users of this method should always use the instance returned from this
