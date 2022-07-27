@@ -31,6 +31,10 @@ do
   cd  ${service}
   git filter-repo --to-subdirectory-filter ${service}
 
+  # Search for <parent> tag and replace the next three lines -- groupId, artifcatId, and version
+  # Doesn't modify the pom.xml for each module's bom package (that still points to shared-config ... for now)
+  sed -i -e '/<parent>/{N;s/com.google.cloud/com.google.api/;N;s/google-cloud-shared-config/google-cloud-java/;N;s/<version>.*<\/version>/<version>0.0.1-SNAPSHOT<\/version>/}' ${service}/pom.xml
+
   # setup owlbot files correctly to match monorepo configuration
   cp ${service}/.github/.OwlBot.yaml ${service}/.OwlBot.yaml
   rm ${service}/.github/.OwlBot.lock.yaml
@@ -109,12 +113,14 @@ awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyM
 git add google-cloud-gapic-bom/pom.xml
 git commit -am 'feat: create bom module'
 
-# Confirm everything is fine so far
-mvn -q -B -ntp validate
-
-
 # Template files
 cp -rp ../../templates/. ./
+
+# Confirm everything is fine so far
+# Need license-checks.xml to validate
+mvn -q -B -ntp validate
+
+# Add all template files
 git add --all
 git add -f .gitignore
 git commit -m 'chore: add template files'
