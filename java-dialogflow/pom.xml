@@ -61,7 +61,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-v2</artifactId>
-        <version>4.7.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2:current} -->
+        <version>4.7.3</version><!-- {x-version-update:proto-google-cloud-dialogflow-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
