@@ -1,0 +1,57 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.securitycenter.settings.v1beta1",
+  "libraryPackage": "com.google.cloud.securitycenter.settings.v1beta1",
+  "services": {
+    "SecurityCenterSettingsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SecurityCenterSettingsServiceClient",
+          "rpcs": {
+            "BatchCalculateEffectiveSettings": {
+              "methods": ["batchCalculateEffectiveSettings", "batchCalculateEffectiveSettingsCallable"]
+            },
+            "BatchGetSettings": {
+              "methods": ["batchGetSettings", "batchGetSettingsCallable"]
+            },
+            "CalculateEffectiveComponentSettings": {
+              "methods": ["calculateEffectiveComponentSettings", "calculateEffectiveComponentSettings", "calculateEffectiveComponentSettings", "calculateEffectiveComponentSettingsCallable"]
+            },
+            "CalculateEffectiveSettings": {
+              "methods": ["calculateEffectiveSettings", "calculateEffectiveSettings", "calculateEffectiveSettings", "calculateEffectiveSettingsCallable"]
+            },
+            "GetComponentSettings": {
+              "methods": ["getComponentSettings", "getComponentSettings", "getComponentSettings", "getComponentSettingsCallable"]
+            },
+            "GetServiceAccount": {
+              "methods": ["getServiceAccount", "getServiceAccount", "getServiceAccount", "getServiceAccountCallable"]
+            },
+            "GetSettings": {
+              "methods": ["getSettings", "getSettings", "getSettings", "getSettingsCallable"]
+            },
+            "ListComponents": {
+              "methods": ["listComponents", "listComponents", "listComponents", "listComponentsPagedCallable", "listComponentsCallable"]
+            },
+            "ListDetectors": {
+              "methods": ["listDetectors", "listDetectors", "listDetectors", "listDetectorsPagedCallable", "listDetectorsCallable"]
+            },
+            "ResetComponentSettings": {
+              "methods": ["resetComponentSettings", "resetComponentSettingsCallable"]
+            },
+            "ResetSettings": {
+              "methods": ["resetSettings", "resetSettingsCallable"]
+            },
+            "UpdateComponentSettings": {
+              "methods": ["updateComponentSettings", "updateComponentSettings", "updateComponentSettingsCallable"]
+            },
+            "UpdateSettings": {
+              "methods": ["updateSettings", "updateSettings", "updateSettingsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
