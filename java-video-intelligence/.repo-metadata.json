@@ -1,0 +1,17 @@
+{
+    "api_shortname": "videointelligence",
+    "name_pretty": "Cloud Video Intelligence",
+    "product_documentation": "https://cloud.google.com/video-intelligence/docs/",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-video-intelligence/latest/history",
+    "api_description": "allows developers to use Google video analysis technology as part of their applications.",
+    "issue_tracker": "https://issuetracker.google.com/savedsearches/5084810",
+    "release_level": "stable",
+    "language": "java",
+    "repo": "googleapis/java-video-intelligence",
+    "repo_short": "java-video-intelligence",
+    "distribution_name": "com.google.cloud:google-cloud-video-intelligence",
+    "api_id": "videointelligence.googleapis.com",
+    "transport": "grpc",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
+}
