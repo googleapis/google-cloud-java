@@ -1,0 +1,16 @@
+{
+    "api_shortname": "dialogflow-cx",
+    "name_pretty": "Dialogflow CX",
+    "product_documentation": "https://cloud.google.com/dialogflow/cx/docs",
+    "api_description": "provides a new way of designing agents, taking a state machine approach to agent design. This gives you clear and explicit control over a conversation, a better end-user experience, and a better development workflow.",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-dialogflow-cx/latest/history",
+    "release_level": "preview",
+    "transport": "grpc",
+    "language": "java",
+    "repo": "googleapis/java-dialogflow-cx",
+    "repo_short": "java-dialogflow-cx",
+    "distribution_name": "com.google.cloud:google-cloud-dialogflow-cx",
+    "api_id": "dialogflow-cx.googleapis.com",
+    "requires_billing": true,
+    "library_type": "GAPIC_AUTO"
+}
