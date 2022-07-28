@@ -208,8 +208,8 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
    * * `pipeline_name`: Supports `=` and `!=` comparisons.
    * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
    * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
-   *  for example, can check if pipeline's display_name contains *step* by doing
-   *   display_name:&#92;"*step*&#92;"
+   *   for example, can check if pipeline's display_name contains *step* by
+   *   doing display_name:&#92;"*step*&#92;"
    * * `state`: Supports `=` and `!=` comparisons.
    * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
    *   Values must be in RFC 3339 format.
@@ -220,7 +220,7 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
    * * `labels`: Supports key-value equality and key presence.
    * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
    * * `template_metadata.version`: Supports `=`, `!=` comparisons, and `:`
-   * wildcard.
+   *   wildcard.
    * Filter expressions can be combined together using logical operators
    * (`AND` &amp; `OR`).
    * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
@@ -259,8 +259,8 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
    * * `pipeline_name`: Supports `=` and `!=` comparisons.
    * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
    * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
-   *  for example, can check if pipeline's display_name contains *step* by doing
-   *   display_name:&#92;"*step*&#92;"
+   *   for example, can check if pipeline's display_name contains *step* by
+   *   doing display_name:&#92;"*step*&#92;"
    * * `state`: Supports `=` and `!=` comparisons.
    * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
    *   Values must be in RFC 3339 format.
@@ -271,7 +271,7 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
    * * `labels`: Supports key-value equality and key presence.
    * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
    * * `template_metadata.version`: Supports `=`, `!=` comparisons, and `:`
-   * wildcard.
+   *   wildcard.
    * Filter expressions can be combined together using logical operators
    * (`AND` &amp; `OR`).
    * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
@@ -959,8 +959,8 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `pipeline_name`: Supports `=` and `!=` comparisons.
      * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
      * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
-     *  for example, can check if pipeline's display_name contains *step* by doing
-     *   display_name:&#92;"*step*&#92;"
+     *   for example, can check if pipeline's display_name contains *step* by
+     *   doing display_name:&#92;"*step*&#92;"
      * * `state`: Supports `=` and `!=` comparisons.
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
@@ -971,7 +971,7 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `labels`: Supports key-value equality and key presence.
      * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
      * * `template_metadata.version`: Supports `=`, `!=` comparisons, and `:`
-     * wildcard.
+     *   wildcard.
      * Filter expressions can be combined together using logical operators
      * (`AND` &amp; `OR`).
      * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
@@ -1009,8 +1009,8 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `pipeline_name`: Supports `=` and `!=` comparisons.
      * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
      * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
-     *  for example, can check if pipeline's display_name contains *step* by doing
-     *   display_name:&#92;"*step*&#92;"
+     *   for example, can check if pipeline's display_name contains *step* by
+     *   doing display_name:&#92;"*step*&#92;"
      * * `state`: Supports `=` and `!=` comparisons.
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
@@ -1021,7 +1021,7 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `labels`: Supports key-value equality and key presence.
      * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
      * * `template_metadata.version`: Supports `=`, `!=` comparisons, and `:`
-     * wildcard.
+     *   wildcard.
      * Filter expressions can be combined together using logical operators
      * (`AND` &amp; `OR`).
      * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
@@ -1059,8 +1059,8 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `pipeline_name`: Supports `=` and `!=` comparisons.
      * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
      * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
-     *  for example, can check if pipeline's display_name contains *step* by doing
-     *   display_name:&#92;"*step*&#92;"
+     *   for example, can check if pipeline's display_name contains *step* by
+     *   doing display_name:&#92;"*step*&#92;"
      * * `state`: Supports `=` and `!=` comparisons.
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
@@ -1071,7 +1071,7 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `labels`: Supports key-value equality and key presence.
      * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
      * * `template_metadata.version`: Supports `=`, `!=` comparisons, and `:`
-     * wildcard.
+     *   wildcard.
      * Filter expressions can be combined together using logical operators
      * (`AND` &amp; `OR`).
      * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
@@ -1108,8 +1108,8 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `pipeline_name`: Supports `=` and `!=` comparisons.
      * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
      * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
-     *  for example, can check if pipeline's display_name contains *step* by doing
-     *   display_name:&#92;"*step*&#92;"
+     *   for example, can check if pipeline's display_name contains *step* by
+     *   doing display_name:&#92;"*step*&#92;"
      * * `state`: Supports `=` and `!=` comparisons.
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
@@ -1120,7 +1120,7 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `labels`: Supports key-value equality and key presence.
      * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
      * * `template_metadata.version`: Supports `=`, `!=` comparisons, and `:`
-     * wildcard.
+     *   wildcard.
      * Filter expressions can be combined together using logical operators
      * (`AND` &amp; `OR`).
      * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
@@ -1153,8 +1153,8 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `pipeline_name`: Supports `=` and `!=` comparisons.
      * * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard.
      * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
-     *  for example, can check if pipeline's display_name contains *step* by doing
-     *   display_name:&#92;"*step*&#92;"
+     *   for example, can check if pipeline's display_name contains *step* by
+     *   doing display_name:&#92;"*step*&#92;"
      * * `state`: Supports `=` and `!=` comparisons.
      * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
      *   Values must be in RFC 3339 format.
@@ -1165,7 +1165,7 @@ public final class ListPipelineJobsRequest extends com.google.protobuf.Generated
      * * `labels`: Supports key-value equality and key presence.
      * * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard.
      * * `template_metadata.version`: Supports `=`, `!=` comparisons, and `:`
-     * wildcard.
+     *   wildcard.
      * Filter expressions can be combined together using logical operators
      * (`AND` &amp; `OR`).
      * For example: `pipeline_name="test" AND create_time&gt;"2020-05-18T13:30:00Z"`.
