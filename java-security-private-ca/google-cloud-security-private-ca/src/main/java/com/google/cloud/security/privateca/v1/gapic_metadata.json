@@ -1,0 +1,120 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.security.privateca.v1",
+  "libraryPackage": "com.google.cloud.security.privateca.v1",
+  "services": {
+    "CertificateAuthorityService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CertificateAuthorityServiceClient",
+          "rpcs": {
+            "ActivateCertificateAuthority": {
+              "methods": ["activateCertificateAuthorityAsync", "activateCertificateAuthorityAsync", "activateCertificateAuthorityAsync", "activateCertificateAuthorityOperationCallable", "activateCertificateAuthorityCallable"]
+            },
+            "CreateCaPool": {
+              "methods": ["createCaPoolAsync", "createCaPoolAsync", "createCaPoolAsync", "createCaPoolOperationCallable", "createCaPoolCallable"]
+            },
+            "CreateCertificate": {
+              "methods": ["createCertificate", "createCertificate", "createCertificate", "createCertificateCallable"]
+            },
+            "CreateCertificateAuthority": {
+              "methods": ["createCertificateAuthorityAsync", "createCertificateAuthorityAsync", "createCertificateAuthorityAsync", "createCertificateAuthorityOperationCallable", "createCertificateAuthorityCallable"]
+            },
+            "CreateCertificateTemplate": {
+              "methods": ["createCertificateTemplateAsync", "createCertificateTemplateAsync", "createCertificateTemplateAsync", "createCertificateTemplateOperationCallable", "createCertificateTemplateCallable"]
+            },
+            "DeleteCaPool": {
+              "methods": ["deleteCaPoolAsync", "deleteCaPoolAsync", "deleteCaPoolAsync", "deleteCaPoolOperationCallable", "deleteCaPoolCallable"]
+            },
+            "DeleteCertificateAuthority": {
+              "methods": ["deleteCertificateAuthorityAsync", "deleteCertificateAuthorityAsync", "deleteCertificateAuthorityAsync", "deleteCertificateAuthorityOperationCallable", "deleteCertificateAuthorityCallable"]
+            },
+            "DeleteCertificateTemplate": {
+              "methods": ["deleteCertificateTemplateAsync", "deleteCertificateTemplateAsync", "deleteCertificateTemplateAsync", "deleteCertificateTemplateOperationCallable", "deleteCertificateTemplateCallable"]
+            },
+            "DisableCertificateAuthority": {
+              "methods": ["disableCertificateAuthorityAsync", "disableCertificateAuthorityAsync", "disableCertificateAuthorityAsync", "disableCertificateAuthorityOperationCallable", "disableCertificateAuthorityCallable"]
+            },
+            "EnableCertificateAuthority": {
+              "methods": ["enableCertificateAuthorityAsync", "enableCertificateAuthorityAsync", "enableCertificateAuthorityAsync", "enableCertificateAuthorityOperationCallable", "enableCertificateAuthorityCallable"]
+            },
+            "FetchCaCerts": {
+              "methods": ["fetchCaCerts", "fetchCaCerts", "fetchCaCerts", "fetchCaCertsCallable"]
+            },
+            "FetchCertificateAuthorityCsr": {
+              "methods": ["fetchCertificateAuthorityCsr", "fetchCertificateAuthorityCsr", "fetchCertificateAuthorityCsr", "fetchCertificateAuthorityCsrCallable"]
+            },
+            "GetCaPool": {
+              "methods": ["getCaPool", "getCaPool", "getCaPool", "getCaPoolCallable"]
+            },
+            "GetCertificate": {
+              "methods": ["getCertificate", "getCertificate", "getCertificate", "getCertificateCallable"]
+            },
+            "GetCertificateAuthority": {
+              "methods": ["getCertificateAuthority", "getCertificateAuthority", "getCertificateAuthority", "getCertificateAuthorityCallable"]
+            },
+            "GetCertificateRevocationList": {
+              "methods": ["getCertificateRevocationList", "getCertificateRevocationList", "getCertificateRevocationList", "getCertificateRevocationListCallable"]
+            },
+            "GetCertificateTemplate": {
+              "methods": ["getCertificateTemplate", "getCertificateTemplate", "getCertificateTemplate", "getCertificateTemplateCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListCaPools": {
+              "methods": ["listCaPools", "listCaPools", "listCaPools", "listCaPoolsPagedCallable", "listCaPoolsCallable"]
+            },
+            "ListCertificateAuthorities": {
+              "methods": ["listCertificateAuthorities", "listCertificateAuthorities", "listCertificateAuthorities", "listCertificateAuthoritiesPagedCallable", "listCertificateAuthoritiesCallable"]
+            },
+            "ListCertificateRevocationLists": {
+              "methods": ["listCertificateRevocationLists", "listCertificateRevocationLists", "listCertificateRevocationLists", "listCertificateRevocationListsPagedCallable", "listCertificateRevocationListsCallable"]
+            },
+            "ListCertificateTemplates": {
+              "methods": ["listCertificateTemplates", "listCertificateTemplates", "listCertificateTemplates", "listCertificateTemplatesPagedCallable", "listCertificateTemplatesCallable"]
+            },
+            "ListCertificates": {
+              "methods": ["listCertificates", "listCertificates", "listCertificates", "listCertificatesPagedCallable", "listCertificatesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RevokeCertificate": {
+              "methods": ["revokeCertificate", "revokeCertificate", "revokeCertificate", "revokeCertificateCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UndeleteCertificateAuthority": {
+              "methods": ["undeleteCertificateAuthorityAsync", "undeleteCertificateAuthorityAsync", "undeleteCertificateAuthorityAsync", "undeleteCertificateAuthorityOperationCallable", "undeleteCertificateAuthorityCallable"]
+            },
+            "UpdateCaPool": {
+              "methods": ["updateCaPoolAsync", "updateCaPoolAsync", "updateCaPoolOperationCallable", "updateCaPoolCallable"]
+            },
+            "UpdateCertificate": {
+              "methods": ["updateCertificate", "updateCertificate", "updateCertificateCallable"]
+            },
+            "UpdateCertificateAuthority": {
+              "methods": ["updateCertificateAuthorityAsync", "updateCertificateAuthorityAsync", "updateCertificateAuthorityOperationCallable", "updateCertificateAuthorityCallable"]
+            },
+            "UpdateCertificateRevocationList": {
+              "methods": ["updateCertificateRevocationListAsync", "updateCertificateRevocationListAsync", "updateCertificateRevocationListOperationCallable", "updateCertificateRevocationListCallable"]
+            },
+            "UpdateCertificateTemplate": {
+              "methods": ["updateCertificateTemplateAsync", "updateCertificateTemplateAsync", "updateCertificateTemplateOperationCallable", "updateCertificateTemplateCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
