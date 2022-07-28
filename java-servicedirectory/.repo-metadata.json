@@ -1,0 +1,15 @@
+{
+    "api_shortname": "servicedirectory",
+    "name_pretty": "Service Directory",
+    "product_documentation": "https://cloud.google.com/service-directory/",
+    "api_description": "allows the registration and lookup of service endpoints.",
+    "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-servicedirectory/latest/history",
+    "release_level": "stable",
+    "transport": "grpc",
+    "language": "java",
+    "repo": "googleapis/java-servicedirectory",
+    "repo_short": "java-servicedirectory",
+    "distribution_name": "com.google.cloud:google-cloud-servicedirectory",
+    "api_id": "servicedirectory.googleapis.com",
+    "library_type": "GAPIC_AUTO"
+}
