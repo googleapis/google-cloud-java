@@ -1,0 +1,48 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.networkconnectivity.v1",
+  "libraryPackage": "com.google.cloud.networkconnectivity.v1",
+  "services": {
+    "HubService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HubServiceClient",
+          "rpcs": {
+            "CreateHub": {
+              "methods": ["createHubAsync", "createHubAsync", "createHubAsync", "createHubOperationCallable", "createHubCallable"]
+            },
+            "CreateSpoke": {
+              "methods": ["createSpokeAsync", "createSpokeAsync", "createSpokeAsync", "createSpokeOperationCallable", "createSpokeCallable"]
+            },
+            "DeleteHub": {
+              "methods": ["deleteHubAsync", "deleteHubAsync", "deleteHubAsync", "deleteHubOperationCallable", "deleteHubCallable"]
+            },
+            "DeleteSpoke": {
+              "methods": ["deleteSpokeAsync", "deleteSpokeAsync", "deleteSpokeAsync", "deleteSpokeOperationCallable", "deleteSpokeCallable"]
+            },
+            "GetHub": {
+              "methods": ["getHub", "getHub", "getHub", "getHubCallable"]
+            },
+            "GetSpoke": {
+              "methods": ["getSpoke", "getSpoke", "getSpoke", "getSpokeCallable"]
+            },
+            "ListHubs": {
+              "methods": ["listHubs", "listHubs", "listHubs", "listHubsPagedCallable", "listHubsCallable"]
+            },
+            "ListSpokes": {
+              "methods": ["listSpokes", "listSpokes", "listSpokes", "listSpokesPagedCallable", "listSpokesCallable"]
+            },
+            "UpdateHub": {
+              "methods": ["updateHubAsync", "updateHubAsync", "updateHubOperationCallable", "updateHubCallable"]
+            },
+            "UpdateSpoke": {
+              "methods": ["updateSpokeAsync", "updateSpokeAsync", "updateSpokeOperationCallable", "updateSpokeCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
