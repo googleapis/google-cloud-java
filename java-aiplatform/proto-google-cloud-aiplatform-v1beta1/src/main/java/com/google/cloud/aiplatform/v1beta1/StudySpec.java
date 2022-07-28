@@ -2564,7 +2564,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
        * Currently only supported by the Vertex AI Vizier service. Not supported
-       * by HyperparamterTuningJob or TrainingPipeline.
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional double default_value = 4;</code>
@@ -2580,7 +2580,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
        * Currently only supported by the Vertex AI Vizier service. Not supported
-       * by HyperparamterTuningJob or TrainingPipeline.
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional double default_value = 4;</code>
@@ -2741,7 +2741,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
        * Currently only supported by the Vertex AI Vizier service. Not supported
-       * by HyperparamterTuningJob or TrainingPipeline.
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional double default_value = 4;</code>
@@ -2760,7 +2760,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
        * Currently only supported by the Vertex AI Vizier service. Not supported
-       * by HyperparamterTuningJob or TrainingPipeline.
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional double default_value = 4;</code>
@@ -3287,7 +3287,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
          * Currently only supported by the Vertex AI Vizier service. Not supported
-         * by HyperparamterTuningJob or TrainingPipeline.
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional double default_value = 4;</code>
@@ -3306,7 +3306,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
          * Currently only supported by the Vertex AI Vizier service. Not supported
-         * by HyperparamterTuningJob or TrainingPipeline.
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional double default_value = 4;</code>
@@ -3325,7 +3325,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
          * Currently only supported by the Vertex AI Vizier service. Not supported
-         * by HyperparamterTuningJob or TrainingPipeline.
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional double default_value = 4;</code>
@@ -3347,7 +3347,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
          * Currently only supported by the Vertex AI Vizier service. Not supported
-         * by HyperparamterTuningJob or TrainingPipeline.
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional double default_value = 4;</code>
@@ -3457,7 +3457,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
        * Currently only supported by the Vertex AI Vizier service. Not supported
-       * by HyperparamterTuningJob or TrainingPipeline.
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional int64 default_value = 4;</code>
@@ -3473,7 +3473,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
        * Currently only supported by the Vertex AI Vizier service. Not supported
-       * by HyperparamterTuningJob or TrainingPipeline.
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional int64 default_value = 4;</code>
@@ -3635,7 +3635,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
        * Currently only supported by the Vertex AI Vizier service. Not supported
-       * by HyperparamterTuningJob or TrainingPipeline.
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional int64 default_value = 4;</code>
@@ -3654,7 +3654,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
        * Currently only supported by the Vertex AI Vizier service. Not supported
-       * by HyperparamterTuningJob or TrainingPipeline.
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional int64 default_value = 4;</code>
@@ -4172,7 +4172,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
          * Currently only supported by the Vertex AI Vizier service. Not supported
-         * by HyperparamterTuningJob or TrainingPipeline.
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional int64 default_value = 4;</code>
@@ -4191,7 +4191,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
          * Currently only supported by the Vertex AI Vizier service. Not supported
-         * by HyperparamterTuningJob or TrainingPipeline.
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional int64 default_value = 4;</code>
@@ -4210,7 +4210,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
          * Currently only supported by the Vertex AI Vizier service. Not supported
-         * by HyperparamterTuningJob or TrainingPipeline.
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional int64 default_value = 4;</code>
@@ -4232,7 +4232,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
          * Currently only supported by the Vertex AI Vizier service. Not supported
-         * by HyperparamterTuningJob or TrainingPipeline.
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional int64 default_value = 4;</code>
@@ -4366,8 +4366,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `CATEGORICAL` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional string default_value = 3;</code>
@@ -4382,8 +4382,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `CATEGORICAL` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional string default_value = 3;</code>
@@ -4398,8 +4398,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `CATEGORICAL` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional string default_value = 3;</code>
@@ -4593,8 +4593,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `CATEGORICAL` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional string default_value = 3;</code>
@@ -4612,8 +4612,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `CATEGORICAL` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional string default_value = 3;</code>
@@ -4639,8 +4639,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * A default value for a `CATEGORICAL` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional string default_value = 3;</code>
@@ -5237,8 +5237,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `CATEGORICAL` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional string default_value = 3;</code>
@@ -5255,8 +5255,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `CATEGORICAL` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional string default_value = 3;</code>
@@ -5281,8 +5281,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `CATEGORICAL` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional string default_value = 3;</code>
@@ -5307,8 +5307,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `CATEGORICAL` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional string default_value = 3;</code>
@@ -5332,8 +5332,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `CATEGORICAL` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional string default_value = 3;</code>
@@ -5353,8 +5353,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * A default value for a `CATEGORICAL` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional string default_value = 3;</code>
@@ -5490,8 +5490,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.  It automatically rounds to the
        * nearest feasible discrete point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional double default_value = 3;</code>
@@ -5507,8 +5507,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.  It automatically rounds to the
        * nearest feasible discrete point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional double default_value = 3;</code>
@@ -5710,8 +5710,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.  It automatically rounds to the
        * nearest feasible discrete point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional double default_value = 3;</code>
@@ -5730,8 +5730,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.  It automatically rounds to the
        * nearest feasible discrete point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparameterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional double default_value = 3;</code>
@@ -6306,8 +6306,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.  It automatically rounds to the
          * nearest feasible discrete point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional double default_value = 3;</code>
@@ -6326,8 +6326,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.  It automatically rounds to the
          * nearest feasible discrete point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional double default_value = 3;</code>
@@ -6346,8 +6346,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.  It automatically rounds to the
          * nearest feasible discrete point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional double default_value = 3;</code>
@@ -6369,8 +6369,8 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.  It automatically rounds to the
          * nearest feasible discrete point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparameterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional double default_value = 3;</code>
@@ -18296,7 +18296,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The observation noise level of the study.
    * Currently only supported by the Vertex AI Vizier service. Not supported by
-   * HyperparamterTuningJob or TrainingPipeline.
+   * HyperparameterTuningJob or TrainingPipeline.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;</code>
@@ -18313,7 +18313,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The observation noise level of the study.
    * Currently only supported by the Vertex AI Vizier service. Not supported by
-   * HyperparamterTuningJob or TrainingPipeline.
+   * HyperparameterTuningJob or TrainingPipeline.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;</code>
@@ -20910,7 +20910,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The observation noise level of the study.
      * Currently only supported by the Vertex AI Vizier service. Not supported by
-     * HyperparamterTuningJob or TrainingPipeline.
+     * HyperparameterTuningJob or TrainingPipeline.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;
@@ -20928,7 +20928,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The observation noise level of the study.
      * Currently only supported by the Vertex AI Vizier service. Not supported by
-     * HyperparamterTuningJob or TrainingPipeline.
+     * HyperparameterTuningJob or TrainingPipeline.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;
@@ -20949,7 +20949,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The observation noise level of the study.
      * Currently only supported by the Vertex AI Vizier service. Not supported by
-     * HyperparamterTuningJob or TrainingPipeline.
+     * HyperparameterTuningJob or TrainingPipeline.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;
@@ -20972,7 +20972,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The observation noise level of the study.
      * Currently only supported by the Vertex AI Vizier service. Not supported by
-     * HyperparamterTuningJob or TrainingPipeline.
+     * HyperparameterTuningJob or TrainingPipeline.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;
@@ -20997,7 +20997,7 @@ public final class StudySpec extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The observation noise level of the study.
      * Currently only supported by the Vertex AI Vizier service. Not supported by
-     * HyperparamterTuningJob or TrainingPipeline.
+     * HyperparameterTuningJob or TrainingPipeline.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.StudySpec.ObservationNoise observation_noise = 6;

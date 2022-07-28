@@ -139,7 +139,7 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of bool values.
+   * A list of double values.
    * </pre>
    *
    * <code>repeated double values = 1;</code>
@@ -154,7 +154,7 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of bool values.
+   * A list of double values.
    * </pre>
    *
    * <code>repeated double values = 1;</code>
@@ -168,7 +168,7 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of bool values.
+   * A list of double values.
    * </pre>
    *
    * <code>repeated double values = 1;</code>
@@ -538,7 +538,7 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of bool values.
+     * A list of double values.
      * </pre>
      *
      * <code>repeated double values = 1;</code>
@@ -554,7 +554,7 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of bool values.
+     * A list of double values.
      * </pre>
      *
      * <code>repeated double values = 1;</code>
@@ -568,7 +568,7 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of bool values.
+     * A list of double values.
      * </pre>
      *
      * <code>repeated double values = 1;</code>
@@ -583,7 +583,7 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of bool values.
+     * A list of double values.
      * </pre>
      *
      * <code>repeated double values = 1;</code>
@@ -602,7 +602,7 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of bool values.
+     * A list of double values.
      * </pre>
      *
      * <code>repeated double values = 1;</code>
@@ -620,7 +620,7 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of bool values.
+     * A list of double values.
      * </pre>
      *
      * <code>repeated double values = 1;</code>
@@ -638,7 +638,7 @@ public final class DoubleArray extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of bool values.
+     * A list of double values.
      * </pre>
      *
      * <code>repeated double values = 1;</code>
