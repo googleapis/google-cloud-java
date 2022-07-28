@@ -396,9 +396,9 @@ public final class FaqAnswerData extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the answer record.
+   * Name of the query record.
    * Format:
-   * projects/{project}/locations/{location}/answerRecords/{answer_record}
+   * projects/{project}/locations/{location}/queryRecords/{query_record}.
    * </pre>
    *
    * <code>string query_record = 5;</code>
@@ -421,9 +421,9 @@ public final class FaqAnswerData extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the answer record.
+   * Name of the query record.
    * Format:
-   * projects/{project}/locations/{location}/answerRecords/{answer_record}
+   * projects/{project}/locations/{location}/queryRecords/{query_record}.
    * </pre>
    *
    * <code>string query_record = 5;</code>
@@ -1364,9 +1364,9 @@ public final class FaqAnswerData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the answer record.
+     * Name of the query record.
      * Format:
-     * projects/{project}/locations/{location}/answerRecords/{answer_record}
+     * projects/{project}/locations/{location}/queryRecords/{query_record}.
      * </pre>
      *
      * <code>string query_record = 5;</code>
@@ -1388,9 +1388,9 @@ public final class FaqAnswerData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the answer record.
+     * Name of the query record.
      * Format:
-     * projects/{project}/locations/{location}/answerRecords/{answer_record}
+     * projects/{project}/locations/{location}/queryRecords/{query_record}.
      * </pre>
      *
      * <code>string query_record = 5;</code>
@@ -1412,9 +1412,9 @@ public final class FaqAnswerData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the answer record.
+     * Name of the query record.
      * Format:
-     * projects/{project}/locations/{location}/answerRecords/{answer_record}
+     * projects/{project}/locations/{location}/queryRecords/{query_record}.
      * </pre>
      *
      * <code>string query_record = 5;</code>
@@ -1435,9 +1435,9 @@ public final class FaqAnswerData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the answer record.
+     * Name of the query record.
      * Format:
-     * projects/{project}/locations/{location}/answerRecords/{answer_record}
+     * projects/{project}/locations/{location}/queryRecords/{query_record}.
      * </pre>
      *
      * <code>string query_record = 5;</code>
@@ -1454,9 +1454,9 @@ public final class FaqAnswerData extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the answer record.
+     * Name of the query record.
      * Format:
-     * projects/{project}/locations/{location}/answerRecords/{answer_record}
+     * projects/{project}/locations/{location}/queryRecords/{query_record}.
      * </pre>
      *
      * <code>string query_record = 5;</code>
