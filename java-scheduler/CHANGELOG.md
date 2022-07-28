@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.2](https://github.com/googleapis/java-scheduler/compare/v2.3.1...v2.3.2) (2022-07-19)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-scheduler/issues/1485)) ([#787](https://github.com/googleapis/java-scheduler/issues/787)) ([b562a9a](https://github.com/googleapis/java-scheduler/commit/b562a9a96f798208322e68e09086354dab93f972))
+
 ## [2.3.1](https://github.com/googleapis/java-scheduler/compare/v2.3.0...v2.3.1) (2022-07-11)
 
 
