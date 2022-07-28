@@ -55,7 +55,7 @@ public class ITSystemTest {
           + "/zones/us-central1-a/clusters/"
           + CLUSTER_NAME;
   private static final String NODE_POOL_SEL_LINK = SELF_LINK + "/nodePools/" + NODE_POOL_NAME;
-  private static final String NETWORK = "default";
+  private static final String NETWORK = "java-container-network";
   private static final int INITIAL_NODE_COUNT = 1;
 
   @BeforeClass
