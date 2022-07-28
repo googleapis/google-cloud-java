@@ -10,7 +10,7 @@
   "repo": "googleapis/java-beyondcorp-appgateways",
   "repo_short": "java-beyondcorp-appgateways",
   "distribution_name": "com.google.cloud:google-cloud-beyondcorp-appgateways",
-  "api_id": "beyondcorp-appgateways.googleapis.com",
+  "api_id": "beyondcorp.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }

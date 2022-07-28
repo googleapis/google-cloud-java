@@ -51,18 +51,6 @@
       <artifactId>guava</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax-grpc</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax-httpjson</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
     </dependency>
@@ -86,29 +74,14 @@
       <scope>test</scope>
       <version>4.13.2</version>
     </dependency>
-
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-beyondcorp-appgateways-v1</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
-      <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax-grpc</artifactId>
-      <classifier>testlib</classifier>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax-httpjson</artifactId>
-      <classifier>testlib</classifier>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-beyondcorp-appgateways-v1</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
