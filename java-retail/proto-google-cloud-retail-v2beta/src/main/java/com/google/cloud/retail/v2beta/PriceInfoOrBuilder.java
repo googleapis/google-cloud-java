@@ -87,7 +87,11 @@ public interface PriceInfoOrBuilder
    *
    * <pre>
    * Price of the product without any discount. If zero, by default set to be
-   * the [price][google.cloud.retail.v2beta.PriceInfo.price].
+   * the [price][google.cloud.retail.v2beta.PriceInfo.price]. If set,
+   * [original_price][google.cloud.retail.v2beta.PriceInfo.original_price]
+   * should be greater than or equal to
+   * [price][google.cloud.retail.v2beta.PriceInfo.price], otherwise an
+   * INVALID_ARGUMENT error is thrown.
    * </pre>
    *
    * <code>float original_price = 3;</code>

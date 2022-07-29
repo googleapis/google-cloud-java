@@ -31,6 +31,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -109,6 +110,8 @@ public class SearchServiceClientTest {
             .addAllVariantRollupKeys(new ArrayList<String>())
             .addAllPageCategories(new ArrayList<String>())
             .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -143,6 +146,8 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getPageCategoriesList(), actualRequest.getPageCategoriesList());
     Assert.assertEquals(request.getSearchMode(), actualRequest.getSearchMode());
     Assert.assertEquals(request.getPersonalizationSpec(), actualRequest.getPersonalizationSpec());
+    Assert.assertEquals(request.getLabelsMap(), actualRequest.getLabelsMap());
+    Assert.assertEquals(request.getSpellCorrectionSpec(), actualRequest.getSpellCorrectionSpec());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -176,6 +181,8 @@ public class SearchServiceClientTest {
               .addAllVariantRollupKeys(new ArrayList<String>())
               .addAllPageCategories(new ArrayList<String>())
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

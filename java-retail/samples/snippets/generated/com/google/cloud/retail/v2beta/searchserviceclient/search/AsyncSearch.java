@@ -24,6 +24,7 @@ import com.google.cloud.retail.v2beta.SearchResponse;
 import com.google.cloud.retail.v2beta.SearchServiceClient;
 import com.google.cloud.retail.v2beta.UserInfo;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncSearch {
 
@@ -56,6 +57,8 @@ public class AsyncSearch {
               .addAllVariantRollupKeys(new ArrayList<String>())
               .addAllPageCategories(new ArrayList<String>())
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .build();
       ApiFuture<SearchResponse.SearchResult> future =
           searchServiceClient.searchPagedCallable().futureCall(request);

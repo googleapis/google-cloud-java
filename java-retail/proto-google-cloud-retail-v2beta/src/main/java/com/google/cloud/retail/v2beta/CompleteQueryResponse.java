@@ -190,7 +190,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. It requires
+     * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+     * is imported properly.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -204,7 +206,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. It requires
+     * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+     * is imported properly.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -221,7 +225,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. It requires
+     * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+     * is imported properly.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -236,7 +242,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. It requires
+     * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+     * is imported properly.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -255,7 +263,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. It requires
+     * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+     * is imported properly.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -477,7 +487,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. It requires
+     * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+     * is imported properly.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -504,7 +516,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. It requires
+     * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+     * is imported properly.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -522,7 +536,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. It requires
+     * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+     * is imported properly.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -545,7 +561,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * * For "user-data", the attributes are additional custom attributes
      * ingested through BigQuery.
      * * For "cloud-retail", the attributes are product attributes generated
-     * by Cloud Retail.
+     * by Cloud Retail. It requires
+     * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+     * is imported properly.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -1090,7 +1108,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. It requires
+       * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+       * is imported properly.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -1117,7 +1137,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. It requires
+       * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+       * is imported properly.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -1135,7 +1157,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. It requires
+       * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+       * is imported properly.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -1158,7 +1182,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. It requires
+       * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+       * is imported properly.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -1189,7 +1215,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. It requires
+       * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+       * is imported properly.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -1215,7 +1243,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. It requires
+       * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+       * is imported properly.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -1240,7 +1270,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * * For "user-data", the attributes are additional custom attributes
        * ingested through BigQuery.
        * * For "cloud-retail", the attributes are product attributes generated
-       * by Cloud Retail.
+       * by Cloud Retail. It requires
+       * [UserEvent.product_details][google.cloud.retail.v2beta.UserEvent.product_details]
+       * is imported properly.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.retail.v2beta.CustomAttribute&gt; attributes = 2;</code>
@@ -2143,7 +2175,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
    *  case insensitively.
-   *  * They are transformed to lower cases.
+   *  * They are transformed to lower case.
    *  * They are UTF-8 safe.
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
@@ -2173,7 +2205,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
    *  case insensitively.
-   *  * They are transformed to lower cases.
+   *  * They are transformed to lower case.
    *  * They are UTF-8 safe.
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
@@ -2205,7 +2237,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
    *  case insensitively.
-   *  * They are transformed to lower cases.
+   *  * They are transformed to lower case.
    *  * They are UTF-8 safe.
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
@@ -2234,7 +2266,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
    *  case insensitively.
-   *  * They are transformed to lower cases.
+   *  * They are transformed to lower case.
    *  * They are UTF-8 safe.
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
@@ -2264,7 +2296,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
    *  case insensitively.
-   *  * They are transformed to lower cases.
+   *  * They are transformed to lower case.
    *  * They are UTF-8 safe.
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
@@ -3301,7 +3333,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3334,7 +3366,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3366,7 +3398,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3399,7 +3431,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3438,7 +3470,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3476,7 +3508,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3515,7 +3547,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3554,7 +3586,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3591,7 +3623,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3629,7 +3661,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3667,7 +3699,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3702,7 +3734,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3737,7 +3769,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3766,7 +3798,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3799,7 +3831,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3834,7 +3866,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3866,7 +3898,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.
@@ -3899,7 +3931,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *  * They are matched with
      *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
      *  case insensitively.
-     *  * They are transformed to lower cases.
+     *  * They are transformed to lower case.
      *  * They are UTF-8 safe.
      * Recent searches are deduplicated. More recent searches will be reserved
      * when duplication happens.

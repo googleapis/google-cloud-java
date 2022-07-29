@@ -22,7 +22,9 @@ package com.google.cloud.retail.v2beta;
  *
  *
  * <pre>
- * Request message for [RemoveFulfillmentPlaces][] method.
+ * Request message for
+ * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest}
@@ -240,7 +242,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    * * "custom-type-5"
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
-   * This field directly corresponds to [Product.fulfillment_info.type][].
+   * This field directly corresponds to
+   * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
    * </pre>
    *
    * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -277,7 +280,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    * * "custom-type-5"
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
-   * This field directly corresponds to [Product.fulfillment_info.type][].
+   * This field directly corresponds to
+   * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
    * </pre>
    *
    * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -677,7 +681,9 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request message for [RemoveFulfillmentPlaces][] method.
+   * Request message for
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest}
@@ -1042,7 +1048,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * * "custom-type-5"
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
-     * This field directly corresponds to [Product.fulfillment_info.type][].
+     * This field directly corresponds to
+     * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1078,7 +1085,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * * "custom-type-5"
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
-     * This field directly corresponds to [Product.fulfillment_info.type][].
+     * This field directly corresponds to
+     * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1114,7 +1122,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * * "custom-type-5"
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
-     * This field directly corresponds to [Product.fulfillment_info.type][].
+     * This field directly corresponds to
+     * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1149,7 +1158,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * * "custom-type-5"
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
-     * This field directly corresponds to [Product.fulfillment_info.type][].
+     * This field directly corresponds to
+     * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1180,7 +1190,8 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
      * * "custom-type-5"
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
-     * This field directly corresponds to [Product.fulfillment_info.type][].
+     * This field directly corresponds to
+     * [Product.fulfillment_info.type][google.cloud.retail.v2beta.FulfillmentInfo.type].
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>

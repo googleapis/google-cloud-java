@@ -51,16 +51,17 @@ public final class PurgeConfigProto {
       "\n-google/cloud/retail/v2beta/purge_confi"
           + "g.proto\022\032google.cloud.retail.v2beta\032\037goo"
           + "gle/api/field_behavior.proto\032\031google/api"
-          + "/resource.proto\"\017\n\rPurgeMetadata\"Q\n\026Purg"
-          + "eUserEventsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022"
-          + "\023\n\006filter\030\002 \001(\tB\003\340A\002\022\r\n\005force\030\003 \001(\010\"6\n\027P"
-          + "urgeUserEventsResponse\022\033\n\023purged_events_"
-          + "count\030\001 \001(\003B\331\001\n\036com.google.cloud.retail."
-          + "v2betaB\020PurgeConfigProtoP\001Z@google.golan"
-          + "g.org/genproto/googleapis/cloud/retail/v"
-          + "2beta;retail\242\002\006RETAIL\252\002\032Google.Cloud.Ret"
-          + "ail.V2Beta\312\002\032Google\\Cloud\\Retail\\V2beta\352"
-          + "\002\035Google::Cloud::Retail::V2betab\006proto3"
+          + "/resource.proto\"\017\n\rPurgeMetadata\"s\n\026Purg"
+          + "eUserEventsRequest\0225\n\006parent\030\001 \001(\tB%\340A\002\372"
+          + "A\037\n\035retail.googleapis.com/Catalog\022\023\n\006fil"
+          + "ter\030\002 \001(\tB\003\340A\002\022\r\n\005force\030\003 \001(\010\"6\n\027PurgeUs"
+          + "erEventsResponse\022\033\n\023purged_events_count\030"
+          + "\001 \001(\003B\331\001\n\036com.google.cloud.retail.v2beta"
+          + "B\020PurgeConfigProtoP\001Z@google.golang.org/"
+          + "genproto/googleapis/cloud/retail/v2beta;"
+          + "retail\242\002\006RETAIL\252\002\032Google.Cloud.Retail.V2"
+          + "Beta\312\002\032Google\\Cloud\\Retail\\V2beta\352\002\035Goog"
+          + "le::Cloud::Retail::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -94,6 +95,7 @@ public final class PurgeConfigProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();

@@ -334,9 +334,10 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The maximum number of autocomplete suggestions returned per term. The
-   * maximum allowed max suggestions is 20. Default value is 20. If left unset
-   * or set to 0, then will fallback to default value.
+   * The maximum number of autocomplete suggestions returned per term. Default
+   * value is 20. If left unset or set to 0, then will fallback to default
+   * value.
+   * Value range is 1 to 20.
    * </pre>
    *
    * <code>int32 max_suggestions = 3;</code>
@@ -357,6 +358,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    * The minimum number of characters needed to be typed in order to get
    * suggestions. Default value is 2. If left unset or set to 0, then will
    * fallback to default value.
+   * Value range is 1 to 20.
    * </pre>
    *
    * <code>int32 min_prefix_length = 4;</code>
@@ -396,8 +398,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The input config for the import of the source data that
-   * contains the autocomplete phrases uploaded by the customer.
+   * Output only. The source data for the latest import of the autocomplete
+   * suggestion phrases.
    * </pre>
    *
    * <code>
@@ -414,8 +416,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The input config for the import of the source data that
-   * contains the autocomplete phrases uploaded by the customer.
+   * Output only. The source data for the latest import of the autocomplete
+   * suggestion phrases.
    * </pre>
    *
    * <code>
@@ -434,8 +436,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The input config for the import of the source data that
-   * contains the autocomplete phrases uploaded by the customer.
+   * Output only. The source data for the latest import of the autocomplete
+   * suggestion phrases.
    * </pre>
    *
    * <code>
@@ -513,8 +515,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The input config for the import of the source data that
-   * contains the / autocomplete denylist phrases uploaded by the customer.
+   * Output only. The source data for the latest import of the autocomplete
+   * denylist phrases.
    * </pre>
    *
    * <code>
@@ -531,8 +533,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The input config for the import of the source data that
-   * contains the / autocomplete denylist phrases uploaded by the customer.
+   * Output only. The source data for the latest import of the autocomplete
+   * denylist phrases.
    * </pre>
    *
    * <code>
@@ -551,8 +553,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The input config for the import of the source data that
-   * contains the / autocomplete denylist phrases uploaded by the customer.
+   * Output only. The source data for the latest import of the autocomplete
+   * denylist phrases.
    * </pre>
    *
    * <code>
@@ -571,7 +573,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. LRO corresponding to the latest denylist import.
+   * Output only. Name of the LRO corresponding to the latest denylist import.
    * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
    * retrieve the latest state of the Long Running Operation.
    * </pre>
@@ -597,7 +599,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. LRO corresponding to the latest denylist import.
+   * Output only. Name of the LRO corresponding to the latest denylist import.
    * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
    * retrieve the latest state of the Long Running Operation.
    * </pre>
@@ -626,8 +628,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The input config for the import of the source data that
-   * contains the autocomplete allowlist phrases uploaded by the customer.
+   * Output only. The source data for the latest import of the autocomplete
+   * allowlist phrases.
    * </pre>
    *
    * <code>
@@ -644,8 +646,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The input config for the import of the source data that
-   * contains the autocomplete allowlist phrases uploaded by the customer.
+   * Output only. The source data for the latest import of the autocomplete
+   * allowlist phrases.
    * </pre>
    *
    * <code>
@@ -664,8 +666,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The input config for the import of the source data that
-   * contains the autocomplete allowlist phrases uploaded by the customer.
+   * Output only. The source data for the latest import of the autocomplete
+   * allowlist phrases.
    * </pre>
    *
    * <code>
@@ -684,7 +686,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. LRO corresponding to the latest allowlist import.
+   * Output only. Name of the LRO corresponding to the latest allowlist import.
    * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
    * retrieve the latest state of the Long Running Operation.
    * </pre>
@@ -710,7 +712,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. LRO corresponding to the latest allowlist import.
+   * Output only. Name of the LRO corresponding to the latest allowlist import.
    * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
    * retrieve the latest state of the Long Running Operation.
    * </pre>
@@ -1517,9 +1519,10 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The maximum number of autocomplete suggestions returned per term. The
-     * maximum allowed max suggestions is 20. Default value is 20. If left unset
-     * or set to 0, then will fallback to default value.
+     * The maximum number of autocomplete suggestions returned per term. Default
+     * value is 20. If left unset or set to 0, then will fallback to default
+     * value.
+     * Value range is 1 to 20.
      * </pre>
      *
      * <code>int32 max_suggestions = 3;</code>
@@ -1534,9 +1537,10 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The maximum number of autocomplete suggestions returned per term. The
-     * maximum allowed max suggestions is 20. Default value is 20. If left unset
-     * or set to 0, then will fallback to default value.
+     * The maximum number of autocomplete suggestions returned per term. Default
+     * value is 20. If left unset or set to 0, then will fallback to default
+     * value.
+     * Value range is 1 to 20.
      * </pre>
      *
      * <code>int32 max_suggestions = 3;</code>
@@ -1554,9 +1558,10 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The maximum number of autocomplete suggestions returned per term. The
-     * maximum allowed max suggestions is 20. Default value is 20. If left unset
-     * or set to 0, then will fallback to default value.
+     * The maximum number of autocomplete suggestions returned per term. Default
+     * value is 20. If left unset or set to 0, then will fallback to default
+     * value.
+     * Value range is 1 to 20.
      * </pre>
      *
      * <code>int32 max_suggestions = 3;</code>
@@ -1578,6 +1583,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * The minimum number of characters needed to be typed in order to get
      * suggestions. Default value is 2. If left unset or set to 0, then will
      * fallback to default value.
+     * Value range is 1 to 20.
      * </pre>
      *
      * <code>int32 min_prefix_length = 4;</code>
@@ -1595,6 +1601,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * The minimum number of characters needed to be typed in order to get
      * suggestions. Default value is 2. If left unset or set to 0, then will
      * fallback to default value.
+     * Value range is 1 to 20.
      * </pre>
      *
      * <code>int32 min_prefix_length = 4;</code>
@@ -1615,6 +1622,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      * The minimum number of characters needed to be typed in order to get
      * suggestions. Default value is 2. If left unset or set to 0, then will
      * fallback to default value.
+     * Value range is 1 to 20.
      * </pre>
      *
      * <code>int32 min_prefix_length = 4;</code>
@@ -1702,8 +1710,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * suggestion phrases.
      * </pre>
      *
      * <code>
@@ -1719,8 +1727,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * suggestion phrases.
      * </pre>
      *
      * <code>
@@ -1742,8 +1750,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * suggestion phrases.
      * </pre>
      *
      * <code>
@@ -1768,8 +1776,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * suggestion phrases.
      * </pre>
      *
      * <code>
@@ -1791,8 +1799,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * suggestion phrases.
      * </pre>
      *
      * <code>
@@ -1822,8 +1830,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * suggestion phrases.
      * </pre>
      *
      * <code>
@@ -1845,8 +1853,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * suggestion phrases.
      * </pre>
      *
      * <code>
@@ -1863,8 +1871,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * suggestion phrases.
      * </pre>
      *
      * <code>
@@ -1885,8 +1893,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * suggestion phrases.
      * </pre>
      *
      * <code>
@@ -2051,8 +2059,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the / autocomplete denylist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * denylist phrases.
      * </pre>
      *
      * <code>
@@ -2068,8 +2076,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the / autocomplete denylist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * denylist phrases.
      * </pre>
      *
      * <code>
@@ -2091,8 +2099,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the / autocomplete denylist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * denylist phrases.
      * </pre>
      *
      * <code>
@@ -2117,8 +2125,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the / autocomplete denylist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * denylist phrases.
      * </pre>
      *
      * <code>
@@ -2140,8 +2148,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the / autocomplete denylist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * denylist phrases.
      * </pre>
      *
      * <code>
@@ -2171,8 +2179,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the / autocomplete denylist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * denylist phrases.
      * </pre>
      *
      * <code>
@@ -2194,8 +2202,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the / autocomplete denylist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * denylist phrases.
      * </pre>
      *
      * <code>
@@ -2212,8 +2220,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the / autocomplete denylist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * denylist phrases.
      * </pre>
      *
      * <code>
@@ -2234,8 +2242,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the / autocomplete denylist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * denylist phrases.
      * </pre>
      *
      * <code>
@@ -2264,7 +2272,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. LRO corresponding to the latest denylist import.
+     * Output only. Name of the LRO corresponding to the latest denylist import.
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2289,7 +2297,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. LRO corresponding to the latest denylist import.
+     * Output only. Name of the LRO corresponding to the latest denylist import.
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2314,7 +2322,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. LRO corresponding to the latest denylist import.
+     * Output only. Name of the LRO corresponding to the latest denylist import.
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2338,7 +2346,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. LRO corresponding to the latest denylist import.
+     * Output only. Name of the LRO corresponding to the latest denylist import.
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2358,7 +2366,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. LRO corresponding to the latest denylist import.
+     * Output only. Name of the LRO corresponding to the latest denylist import.
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2390,8 +2398,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete allowlist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * allowlist phrases.
      * </pre>
      *
      * <code>
@@ -2407,8 +2415,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete allowlist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * allowlist phrases.
      * </pre>
      *
      * <code>
@@ -2430,8 +2438,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete allowlist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * allowlist phrases.
      * </pre>
      *
      * <code>
@@ -2456,8 +2464,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete allowlist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * allowlist phrases.
      * </pre>
      *
      * <code>
@@ -2479,8 +2487,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete allowlist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * allowlist phrases.
      * </pre>
      *
      * <code>
@@ -2510,8 +2518,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete allowlist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * allowlist phrases.
      * </pre>
      *
      * <code>
@@ -2533,8 +2541,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete allowlist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * allowlist phrases.
      * </pre>
      *
      * <code>
@@ -2551,8 +2559,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete allowlist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * allowlist phrases.
      * </pre>
      *
      * <code>
@@ -2573,8 +2581,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The input config for the import of the source data that
-     * contains the autocomplete allowlist phrases uploaded by the customer.
+     * Output only. The source data for the latest import of the autocomplete
+     * allowlist phrases.
      * </pre>
      *
      * <code>
@@ -2603,7 +2611,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. LRO corresponding to the latest allowlist import.
+     * Output only. Name of the LRO corresponding to the latest allowlist import.
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2629,7 +2637,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. LRO corresponding to the latest allowlist import.
+     * Output only. Name of the LRO corresponding to the latest allowlist import.
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2655,7 +2663,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. LRO corresponding to the latest allowlist import.
+     * Output only. Name of the LRO corresponding to the latest allowlist import.
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2680,7 +2688,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. LRO corresponding to the latest allowlist import.
+     * Output only. Name of the LRO corresponding to the latest allowlist import.
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>
@@ -2701,7 +2709,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. LRO corresponding to the latest allowlist import.
+     * Output only. Name of the LRO corresponding to the latest allowlist import.
      * Can use [GetOperation][google.longrunning.Operations.GetOperation] API to
      * retrieve the latest state of the Long Running Operation.
      * </pre>

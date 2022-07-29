@@ -22,7 +22,9 @@ package com.google.cloud.retail.v2beta;
  *
  *
  * <pre>
- * Request message for [UpdateProduct][] method.
+ * Request message for
+ * [ProductService.UpdateProduct][google.cloud.retail.v2beta.ProductService.UpdateProduct]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2beta.UpdateProductRequest}
@@ -227,6 +229,10 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
    * fields that are neither immutable nor output only) are updated.
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
+   * The attribute key can be updated by setting the mask path as
+   * "attributes.${key_name}". If a key name is present in the mask but not in
+   * the patching product from the request, this key will be deleted after the
+   * update.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -247,6 +253,10 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
    * fields that are neither immutable nor output only) are updated.
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
+   * The attribute key can be updated by setting the mask path as
+   * "attributes.${key_name}". If a key name is present in the mask but not in
+   * the patching product from the request, this key will be deleted after the
+   * update.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -267,6 +277,10 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
    * fields that are neither immutable nor output only) are updated.
    * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
    * is returned.
+   * The attribute key can be updated by setting the mask path as
+   * "attributes.${key_name}". If a key name is present in the mask but not in
+   * the patching product from the request, this key will be deleted after the
+   * update.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -487,7 +501,9 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [UpdateProduct][] method.
+   * Request message for
+   * [ProductService.UpdateProduct][google.cloud.retail.v2beta.ProductService.UpdateProduct]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2beta.UpdateProductRequest}
@@ -951,6 +967,10 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      * fields that are neither immutable nor output only) are updated.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
+     * The attribute key can be updated by setting the mask path as
+     * "attributes.${key_name}". If a key name is present in the mask but not in
+     * the patching product from the request, this key will be deleted after the
+     * update.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -970,6 +990,10 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      * fields that are neither immutable nor output only) are updated.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
+     * The attribute key can be updated by setting the mask path as
+     * "attributes.${key_name}". If a key name is present in the mask but not in
+     * the patching product from the request, this key will be deleted after the
+     * update.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -995,6 +1019,10 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      * fields that are neither immutable nor output only) are updated.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
+     * The attribute key can be updated by setting the mask path as
+     * "attributes.${key_name}". If a key name is present in the mask but not in
+     * the patching product from the request, this key will be deleted after the
+     * update.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1022,6 +1050,10 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      * fields that are neither immutable nor output only) are updated.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
+     * The attribute key can be updated by setting the mask path as
+     * "attributes.${key_name}". If a key name is present in the mask but not in
+     * the patching product from the request, this key will be deleted after the
+     * update.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1046,6 +1078,10 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      * fields that are neither immutable nor output only) are updated.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
+     * The attribute key can be updated by setting the mask path as
+     * "attributes.${key_name}". If a key name is present in the mask but not in
+     * the patching product from the request, this key will be deleted after the
+     * update.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1075,6 +1111,10 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      * fields that are neither immutable nor output only) are updated.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
+     * The attribute key can be updated by setting the mask path as
+     * "attributes.${key_name}". If a key name is present in the mask but not in
+     * the patching product from the request, this key will be deleted after the
+     * update.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1100,6 +1140,10 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      * fields that are neither immutable nor output only) are updated.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
+     * The attribute key can be updated by setting the mask path as
+     * "attributes.${key_name}". If a key name is present in the mask but not in
+     * the patching product from the request, this key will be deleted after the
+     * update.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1119,6 +1163,10 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      * fields that are neither immutable nor output only) are updated.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
+     * The attribute key can be updated by setting the mask path as
+     * "attributes.${key_name}". If a key name is present in the mask but not in
+     * the patching product from the request, this key will be deleted after the
+     * update.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1142,6 +1190,10 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
      * fields that are neither immutable nor output only) are updated.
      * If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
      * is returned.
+     * The attribute key can be updated by setting the mask path as
+     * "attributes.${key_name}". If a key name is present in the mask but not in
+     * the patching product from the request, this key will be deleted after the
+     * update.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

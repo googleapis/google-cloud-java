@@ -324,7 +324,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   PurgeUserEventsRequest request =
    *       PurgeUserEventsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
    *           .setFilter("filter-1274492040")
    *           .setForce(true)
    *           .build();
@@ -354,7 +354,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   PurgeUserEventsRequest request =
    *       PurgeUserEventsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
    *           .setFilter("filter-1274492040")
    *           .setForce(true)
    *           .build();
@@ -384,7 +384,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   PurgeUserEventsRequest request =
    *       PurgeUserEventsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
    *           .setFilter("filter-1274492040")
    *           .setForce(true)
    *           .build();

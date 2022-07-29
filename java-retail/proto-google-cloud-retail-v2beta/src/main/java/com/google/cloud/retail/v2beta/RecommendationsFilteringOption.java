@@ -22,45 +22,44 @@ package com.google.cloud.retail.v2beta;
  *
  *
  * <pre>
- * At which level we offer configuration for attributes.
+ * If filtering for recommendations is enabled.
  * </pre>
  *
- * Protobuf enum {@code google.cloud.retail.v2beta.AttributeConfigLevel}
+ * Protobuf enum {@code google.cloud.retail.v2beta.RecommendationsFilteringOption}
  */
-public enum AttributeConfigLevel implements com.google.protobuf.ProtocolMessageEnum {
+public enum RecommendationsFilteringOption implements com.google.protobuf.ProtocolMessageEnum {
   /**
    *
    *
    * <pre>
-   * Value used when unset. In this case, server behavior defaults to
-   * [CATALOG_LEVEL_ATTRIBUTE_CONFIG][google.cloud.retail.v2beta.AttributeConfigLevel.CATALOG_LEVEL_ATTRIBUTE_CONFIG].
+   * Value used when unset.
+   * In this case, server behavior defaults to
+   * [RECOMMENDATIONS_FILTERING_DISABLED][google.cloud.retail.v2beta.RecommendationsFilteringOption.RECOMMENDATIONS_FILTERING_DISABLED].
    * </pre>
    *
-   * <code>ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED = 0;</code>
+   * <code>RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED = 0;</code>
    */
-  ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED(0),
+  RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED(0),
   /**
    *
    *
    * <pre>
-   * At this level, we honor the attribute configurations set in
-   * [Product.attributes][google.cloud.retail.v2beta.Product.attributes].
+   * Recommendation filtering is disabled.
    * </pre>
    *
-   * <code>PRODUCT_LEVEL_ATTRIBUTE_CONFIG = 1;</code>
+   * <code>RECOMMENDATIONS_FILTERING_DISABLED = 1;</code>
    */
-  PRODUCT_LEVEL_ATTRIBUTE_CONFIG(1),
+  RECOMMENDATIONS_FILTERING_DISABLED(1),
   /**
    *
    *
    * <pre>
-   * At this level, we honor the attribute configurations set in
-   * [CatalogConfig.attribute_configs][].
+   * Recommendation filtering is enabled.
    * </pre>
    *
-   * <code>CATALOG_LEVEL_ATTRIBUTE_CONFIG = 2;</code>
+   * <code>RECOMMENDATIONS_FILTERING_ENABLED = 3;</code>
    */
-  CATALOG_LEVEL_ATTRIBUTE_CONFIG(2),
+  RECOMMENDATIONS_FILTERING_ENABLED(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -68,35 +67,34 @@ public enum AttributeConfigLevel implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Value used when unset. In this case, server behavior defaults to
-   * [CATALOG_LEVEL_ATTRIBUTE_CONFIG][google.cloud.retail.v2beta.AttributeConfigLevel.CATALOG_LEVEL_ATTRIBUTE_CONFIG].
+   * Value used when unset.
+   * In this case, server behavior defaults to
+   * [RECOMMENDATIONS_FILTERING_DISABLED][google.cloud.retail.v2beta.RecommendationsFilteringOption.RECOMMENDATIONS_FILTERING_DISABLED].
    * </pre>
    *
-   * <code>ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED = 0;</code>
+   * <code>RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED = 0;</code>
    */
-  public static final int ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED_VALUE = 0;
+  public static final int RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED_VALUE = 0;
   /**
    *
    *
    * <pre>
-   * At this level, we honor the attribute configurations set in
-   * [Product.attributes][google.cloud.retail.v2beta.Product.attributes].
+   * Recommendation filtering is disabled.
    * </pre>
    *
-   * <code>PRODUCT_LEVEL_ATTRIBUTE_CONFIG = 1;</code>
+   * <code>RECOMMENDATIONS_FILTERING_DISABLED = 1;</code>
    */
-  public static final int PRODUCT_LEVEL_ATTRIBUTE_CONFIG_VALUE = 1;
+  public static final int RECOMMENDATIONS_FILTERING_DISABLED_VALUE = 1;
   /**
    *
    *
    * <pre>
-   * At this level, we honor the attribute configurations set in
-   * [CatalogConfig.attribute_configs][].
+   * Recommendation filtering is enabled.
    * </pre>
    *
-   * <code>CATALOG_LEVEL_ATTRIBUTE_CONFIG = 2;</code>
+   * <code>RECOMMENDATIONS_FILTERING_ENABLED = 3;</code>
    */
-  public static final int CATALOG_LEVEL_ATTRIBUTE_CONFIG_VALUE = 2;
+  public static final int RECOMMENDATIONS_FILTERING_ENABLED_VALUE = 3;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -112,7 +110,7 @@ public enum AttributeConfigLevel implements com.google.protobuf.ProtocolMessageE
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static AttributeConfigLevel valueOf(int value) {
+  public static RecommendationsFilteringOption valueOf(int value) {
     return forNumber(value);
   }
 
@@ -120,29 +118,29 @@ public enum AttributeConfigLevel implements com.google.protobuf.ProtocolMessageE
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static AttributeConfigLevel forNumber(int value) {
+  public static RecommendationsFilteringOption forNumber(int value) {
     switch (value) {
       case 0:
-        return ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED;
+        return RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED;
       case 1:
-        return PRODUCT_LEVEL_ATTRIBUTE_CONFIG;
-      case 2:
-        return CATALOG_LEVEL_ATTRIBUTE_CONFIG;
+        return RECOMMENDATIONS_FILTERING_DISABLED;
+      case 3:
+        return RECOMMENDATIONS_FILTERING_ENABLED;
       default:
         return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<AttributeConfigLevel>
+  public static com.google.protobuf.Internal.EnumLiteMap<RecommendationsFilteringOption>
       internalGetValueMap() {
     return internalValueMap;
   }
 
-  private static final com.google.protobuf.Internal.EnumLiteMap<AttributeConfigLevel>
+  private static final com.google.protobuf.Internal.EnumLiteMap<RecommendationsFilteringOption>
       internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<AttributeConfigLevel>() {
-            public AttributeConfigLevel findValueByNumber(int number) {
-              return AttributeConfigLevel.forNumber(number);
+          new com.google.protobuf.Internal.EnumLiteMap<RecommendationsFilteringOption>() {
+            public RecommendationsFilteringOption findValueByNumber(int number) {
+              return RecommendationsFilteringOption.forNumber(number);
             }
           };
 
@@ -159,12 +157,12 @@ public enum AttributeConfigLevel implements com.google.protobuf.ProtocolMessageE
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.retail.v2beta.CommonProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.cloud.retail.v2beta.CommonProto.getDescriptor().getEnumTypes().get(2);
   }
 
-  private static final AttributeConfigLevel[] VALUES = values();
+  private static final RecommendationsFilteringOption[] VALUES = values();
 
-  public static AttributeConfigLevel valueOf(
+  public static RecommendationsFilteringOption valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
@@ -177,9 +175,9 @@ public enum AttributeConfigLevel implements com.google.protobuf.ProtocolMessageE
 
   private final int value;
 
-  private AttributeConfigLevel(int value) {
+  private RecommendationsFilteringOption(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2beta.AttributeConfigLevel)
+  // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2beta.RecommendationsFilteringOption)
 }

@@ -28,7 +28,7 @@ public interface ServingConfigOrBuilder
    *
    * <pre>
    * Immutable. Fully qualified name
-   * projects/&#42;&#47;locations/global/catalogs/&#42;&#47;servingConfig/&#42;
+   * `projects/&#42;&#47;locations/global/catalogs/&#42;&#47;servingConfig/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -41,7 +41,7 @@ public interface ServingConfigOrBuilder
    *
    * <pre>
    * Immutable. Fully qualified name
-   * projects/&#42;&#47;locations/global/catalogs/&#42;&#47;servingConfig/&#42;
+   * `projects/&#42;&#47;locations/global/catalogs/&#42;&#47;servingConfig/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -329,10 +329,11 @@ public interface ServingConfigOrBuilder
    * specifications is 100.
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
-   * and [SearchRequest.boost_spec] are set, the boost conditions from both
-   * places are evaluated. If a search request matches multiple boost
-   * conditions, the final boost score is equal to the sum of the boost scores
-   * from all matched boost conditions.
+   * and
+   * [SearchRequest.boost_spec][google.cloud.retail.v2beta.SearchRequest.boost_spec]
+   * are set, the boost conditions from both places are evaluated. If a search
+   * request matches multiple boost conditions, the final boost score is equal
+   * to the sum of the boost scores from all matched boost conditions.
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -354,10 +355,11 @@ public interface ServingConfigOrBuilder
    * specifications is 100.
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
-   * and [SearchRequest.boost_spec] are set, the boost conditions from both
-   * places are evaluated. If a search request matches multiple boost
-   * conditions, the final boost score is equal to the sum of the boost scores
-   * from all matched boost conditions.
+   * and
+   * [SearchRequest.boost_spec][google.cloud.retail.v2beta.SearchRequest.boost_spec]
+   * are set, the boost conditions from both places are evaluated. If a search
+   * request matches multiple boost conditions, the final boost score is equal
+   * to the sum of the boost scores from all matched boost conditions.
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -379,10 +381,11 @@ public interface ServingConfigOrBuilder
    * specifications is 100.
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
-   * and [SearchRequest.boost_spec] are set, the boost conditions from both
-   * places are evaluated. If a search request matches multiple boost
-   * conditions, the final boost score is equal to the sum of the boost scores
-   * from all matched boost conditions.
+   * and
+   * [SearchRequest.boost_spec][google.cloud.retail.v2beta.SearchRequest.boost_spec]
+   * are set, the boost conditions from both places are evaluated. If a search
+   * request matches multiple boost conditions, the final boost score is equal
+   * to the sum of the boost scores from all matched boost conditions.
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is
@@ -405,10 +408,11 @@ public interface ServingConfigOrBuilder
    * specifications is 100.
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2beta.ServingConfig.boost_control_ids]
-   * and [SearchRequest.boost_spec] are set, the boost conditions from both
-   * places are evaluated. If a search request matches multiple boost
-   * conditions, the final boost score is equal to the sum of the boost scores
-   * from all matched boost conditions.
+   * and
+   * [SearchRequest.boost_spec][google.cloud.retail.v2beta.SearchRequest.boost_spec]
+   * are set, the boost conditions from both places are evaluated. If a search
+   * request matches multiple boost conditions, the final boost score is equal
+   * to the sum of the boost scores from all matched boost conditions.
    * Can only be set if
    * [solution_types][google.cloud.retail.v2beta.ServingConfig.solution_types]
    * is

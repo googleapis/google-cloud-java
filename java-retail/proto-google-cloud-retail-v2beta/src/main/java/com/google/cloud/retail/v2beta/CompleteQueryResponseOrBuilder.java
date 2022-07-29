@@ -140,7 +140,7 @@ public interface CompleteQueryResponseOrBuilder
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
    *  case insensitively.
-   *  * They are transformed to lower cases.
+   *  * They are transformed to lower case.
    *  * They are UTF-8 safe.
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
@@ -167,7 +167,7 @@ public interface CompleteQueryResponseOrBuilder
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
    *  case insensitively.
-   *  * They are transformed to lower cases.
+   *  * They are transformed to lower case.
    *  * They are UTF-8 safe.
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
@@ -194,7 +194,7 @@ public interface CompleteQueryResponseOrBuilder
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
    *  case insensitively.
-   *  * They are transformed to lower cases.
+   *  * They are transformed to lower case.
    *  * They are UTF-8 safe.
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
@@ -220,7 +220,7 @@ public interface CompleteQueryResponseOrBuilder
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
    *  case insensitively.
-   *  * They are transformed to lower cases.
+   *  * They are transformed to lower case.
    *  * They are UTF-8 safe.
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.
@@ -249,7 +249,7 @@ public interface CompleteQueryResponseOrBuilder
    *  * They are matched with
    *  [CompleteQueryRequest.query][google.cloud.retail.v2beta.CompleteQueryRequest.query]
    *  case insensitively.
-   *  * They are transformed to lower cases.
+   *  * They are transformed to lower case.
    *  * They are UTF-8 safe.
    * Recent searches are deduplicated. More recent searches will be reserved
    * when duplication happens.

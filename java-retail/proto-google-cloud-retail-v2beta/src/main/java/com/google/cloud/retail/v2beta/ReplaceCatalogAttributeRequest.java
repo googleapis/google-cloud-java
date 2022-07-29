@@ -154,7 +154,7 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. Full AttributesConfig resource name. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
    * </pre>
    *
    * <code>
@@ -180,7 +180,7 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. Full AttributesConfig resource name. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
    * </pre>
    *
    * <code>
@@ -703,7 +703,7 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. Full AttributesConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
      * </pre>
      *
      * <code>
@@ -728,7 +728,7 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. Full AttributesConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
      * </pre>
      *
      * <code>
@@ -753,7 +753,7 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. Full AttributesConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
      * </pre>
      *
      * <code>
@@ -777,7 +777,7 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. Full AttributesConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
      * </pre>
      *
      * <code>
@@ -797,7 +797,7 @@ public final class ReplaceCatalogAttributeRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. Full AttributesConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
      * </pre>
      *
      * <code>

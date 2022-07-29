@@ -202,13 +202,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Full resource name of the format:
-   * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-   * The ID of the Recommendations AI placement. Before you can request
-   * predictions from your model, you must create at least one placement for it.
-   * For more information, see [Managing
-   * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-   * The full list of available placements can be seen at
-   * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+   * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+   * or
+   * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+   * We recommend using the `servingConfigs` resource. `placements` is a legacy
+   * resource.
+   * The ID of the Recommendations AI serving config or placement.
+   * Before you can request predictions from your model, you must create at
+   * least one serving config or placement for it. For more information, see
+   * [Managing serving configurations]
+   * (https://cloud.google.com/retail/docs/manage-configs).
+   * The full list of available serving configs can be seen at
+   * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
    * </pre>
    *
    * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -232,13 +237,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Full resource name of the format:
-   * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-   * The ID of the Recommendations AI placement. Before you can request
-   * predictions from your model, you must create at least one placement for it.
-   * For more information, see [Managing
-   * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-   * The full list of available placements can be seen at
-   * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+   * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+   * or
+   * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+   * We recommend using the `servingConfigs` resource. `placements` is a legacy
+   * resource.
+   * The ID of the Recommendations AI serving config or placement.
+   * Before you can request predictions from your model, you must create at
+   * least one serving config or placement for it. For more information, see
+   * [Managing serving configurations]
+   * (https://cloud.google.com/retail/docs/manage-configs).
+   * The full list of available serving configs can be seen at
+   * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
    * </pre>
    *
    * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -268,6 +278,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * they took to trigger the predict request. Note that this user event detail
    * won't be ingested to userEvent logs. Thus, a separate userEvent write
    * request is required for event logging.
+   * Don't set
+   * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] or
+   * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] to the same
+   * fixed ID for different users. If you are trying to receive non-personalized
+   * recommendations (not recommended; this can negatively impact model
+   * performance), instead set
+   * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] to
+   * a random unique ID and leave
+   * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] unset.
    * </pre>
    *
    * <code>
@@ -288,6 +307,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * they took to trigger the predict request. Note that this user event detail
    * won't be ingested to userEvent logs. Thus, a separate userEvent write
    * request is required for event logging.
+   * Don't set
+   * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] or
+   * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] to the same
+   * fixed ID for different users. If you are trying to receive non-personalized
+   * recommendations (not recommended; this can negatively impact model
+   * performance), instead set
+   * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] to
+   * a random unique ID and leave
+   * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] unset.
    * </pre>
    *
    * <code>
@@ -310,6 +338,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * they took to trigger the predict request. Note that this user event detail
    * won't be ingested to userEvent logs. Thus, a separate userEvent write
    * request is required for event logging.
+   * Don't set
+   * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] or
+   * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] to the same
+   * fixed ID for different users. If you are trying to receive non-personalized
+   * recommendations (not recommended; this can negatively impact model
+   * performance), instead set
+   * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] to
+   * a random unique ID and leave
+   * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] unset.
    * </pre>
    *
    * <code>
@@ -348,7 +385,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The previous PredictResponse.next_page_token.
+   * This field is not used for now; leave it unset.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -371,7 +408,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The previous PredictResponse.next_page_token.
+   * This field is not used for now; leave it unset.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -420,6 +457,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * receive empty results instead.
    * Note that the API will never return items with storageStatus of "EXPIRED"
    * or "DELETED" regardless of filter choices.
+   * If `filterSyntaxV2` is set to true under the `params` field, then
+   * attribute-based expressions are expected instead of the above described
+   * tag-based syntax. Examples:
+   *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+   *  * (availability: ANY("IN_STOCK")) AND
+   *    (colors: ANY("Red") OR categories: ANY("Phones"))
    * </pre>
    *
    * <code>string filter = 5;</code>
@@ -465,6 +508,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * receive empty results instead.
    * Note that the API will never return items with storageStatus of "EXPIRED"
    * or "DELETED" regardless of filter choices.
+   * If `filterSyntaxV2` is set to true under the `params` field, then
+   * attribute-based expressions are expected instead of the above described
+   * tag-based syntax. Examples:
+   *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+   *  * (availability: ANY("IN_STOCK")) AND
+   *    (colors: ANY("Red") OR categories: ANY("Phones"))
    * </pre>
    *
    * <code>string filter = 5;</code>
@@ -560,6 +609,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
    *    request-level control and adjusts prediction results based on product
    *    category.
+   * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+   *   field is interpreteted according to the new, attribute-based syntax.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -604,6 +655,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
    *    request-level control and adjusts prediction results based on product
    *    category.
+   * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+   *   field is interpreteted according to the new, attribute-based syntax.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -639,6 +692,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
    *    request-level control and adjusts prediction results based on product
    *    category.
+   * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+   *   field is interpreteted according to the new, attribute-based syntax.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -679,6 +734,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
    *    request-level control and adjusts prediction results based on product
    *    category.
+   * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+   *   field is interpreteted according to the new, attribute-based syntax.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -728,7 +785,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
-   *   characters, and cannot be empty. Values can be empty, and have a maximum
+   *   characters and cannot be empty. Values can be empty and have a maximum
    *   length of 63 characters.
    * * Keys and values can contain only lowercase letters, numeric characters,
    *   underscores, and dashes. All characters must use UTF-8 encoding, and
@@ -764,7 +821,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
-   *   characters, and cannot be empty. Values can be empty, and have a maximum
+   *   characters and cannot be empty. Values can be empty and have a maximum
    *   length of 63 characters.
    * * Keys and values can contain only lowercase letters, numeric characters,
    *   underscores, and dashes. All characters must use UTF-8 encoding, and
@@ -791,7 +848,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
-   *   characters, and cannot be empty. Values can be empty, and have a maximum
+   *   characters and cannot be empty. Values can be empty and have a maximum
    *   length of 63 characters.
    * * Keys and values can contain only lowercase letters, numeric characters,
    *   underscores, and dashes. All characters must use UTF-8 encoding, and
@@ -822,7 +879,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * * Each resource can have multiple labels, up to a maximum of 64.
    * * Each label must be a key-value pair.
    * * Keys have a minimum length of 1 character and a maximum length of 63
-   *   characters, and cannot be empty. Values can be empty, and have a maximum
+   *   characters and cannot be empty. Values can be empty and have a maximum
    *   length of 63 characters.
    * * Keys and values can contain only lowercase letters, numeric characters,
    *   underscores, and dashes. All characters must use UTF-8 encoding, and
@@ -1330,13 +1387,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Full resource name of the format:
-     * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-     * The ID of the Recommendations AI placement. Before you can request
-     * predictions from your model, you must create at least one placement for it.
-     * For more information, see [Managing
-     * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-     * The full list of available placements can be seen at
-     * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+     * or
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+     * We recommend using the `servingConfigs` resource. `placements` is a legacy
+     * resource.
+     * The ID of the Recommendations AI serving config or placement.
+     * Before you can request predictions from your model, you must create at
+     * least one serving config or placement for it. For more information, see
+     * [Managing serving configurations]
+     * (https://cloud.google.com/retail/docs/manage-configs).
+     * The full list of available serving configs can be seen at
+     * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1359,13 +1421,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Full resource name of the format:
-     * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-     * The ID of the Recommendations AI placement. Before you can request
-     * predictions from your model, you must create at least one placement for it.
-     * For more information, see [Managing
-     * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-     * The full list of available placements can be seen at
-     * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+     * or
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+     * We recommend using the `servingConfigs` resource. `placements` is a legacy
+     * resource.
+     * The ID of the Recommendations AI serving config or placement.
+     * Before you can request predictions from your model, you must create at
+     * least one serving config or placement for it. For more information, see
+     * [Managing serving configurations]
+     * (https://cloud.google.com/retail/docs/manage-configs).
+     * The full list of available serving configs can be seen at
+     * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1388,13 +1455,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Full resource name of the format:
-     * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-     * The ID of the Recommendations AI placement. Before you can request
-     * predictions from your model, you must create at least one placement for it.
-     * For more information, see [Managing
-     * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-     * The full list of available placements can be seen at
-     * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+     * or
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+     * We recommend using the `servingConfigs` resource. `placements` is a legacy
+     * resource.
+     * The ID of the Recommendations AI serving config or placement.
+     * Before you can request predictions from your model, you must create at
+     * least one serving config or placement for it. For more information, see
+     * [Managing serving configurations]
+     * (https://cloud.google.com/retail/docs/manage-configs).
+     * The full list of available serving configs can be seen at
+     * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1416,13 +1488,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Full resource name of the format:
-     * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-     * The ID of the Recommendations AI placement. Before you can request
-     * predictions from your model, you must create at least one placement for it.
-     * For more information, see [Managing
-     * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-     * The full list of available placements can be seen at
-     * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+     * or
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+     * We recommend using the `servingConfigs` resource. `placements` is a legacy
+     * resource.
+     * The ID of the Recommendations AI serving config or placement.
+     * Before you can request predictions from your model, you must create at
+     * least one serving config or placement for it. For more information, see
+     * [Managing serving configurations]
+     * (https://cloud.google.com/retail/docs/manage-configs).
+     * The full list of available serving configs can be seen at
+     * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1440,13 +1517,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Full resource name of the format:
-     * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-     * The ID of the Recommendations AI placement. Before you can request
-     * predictions from your model, you must create at least one placement for it.
-     * For more information, see [Managing
-     * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-     * The full list of available placements can be seen at
-     * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+     * or
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+     * We recommend using the `servingConfigs` resource. `placements` is a legacy
+     * resource.
+     * The ID of the Recommendations AI serving config or placement.
+     * Before you can request predictions from your model, you must create at
+     * least one serving config or placement for it. For more information, see
+     * [Managing serving configurations]
+     * (https://cloud.google.com/retail/docs/manage-configs).
+     * The full list of available serving configs can be seen at
+     * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1479,6 +1561,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * they took to trigger the predict request. Note that this user event detail
      * won't be ingested to userEvent logs. Thus, a separate userEvent write
      * request is required for event logging.
+     * Don't set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] or
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] to the same
+     * fixed ID for different users. If you are trying to receive non-personalized
+     * recommendations (not recommended; this can negatively impact model
+     * performance), instead set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] to
+     * a random unique ID and leave
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] unset.
      * </pre>
      *
      * <code>
@@ -1498,6 +1589,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * they took to trigger the predict request. Note that this user event detail
      * won't be ingested to userEvent logs. Thus, a separate userEvent write
      * request is required for event logging.
+     * Don't set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] or
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] to the same
+     * fixed ID for different users. If you are trying to receive non-personalized
+     * recommendations (not recommended; this can negatively impact model
+     * performance), instead set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] to
+     * a random unique ID and leave
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] unset.
      * </pre>
      *
      * <code>
@@ -1523,6 +1623,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * they took to trigger the predict request. Note that this user event detail
      * won't be ingested to userEvent logs. Thus, a separate userEvent write
      * request is required for event logging.
+     * Don't set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] or
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] to the same
+     * fixed ID for different users. If you are trying to receive non-personalized
+     * recommendations (not recommended; this can negatively impact model
+     * performance), instead set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] to
+     * a random unique ID and leave
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] unset.
      * </pre>
      *
      * <code>
@@ -1550,6 +1659,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * they took to trigger the predict request. Note that this user event detail
      * won't be ingested to userEvent logs. Thus, a separate userEvent write
      * request is required for event logging.
+     * Don't set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] or
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] to the same
+     * fixed ID for different users. If you are trying to receive non-personalized
+     * recommendations (not recommended; this can negatively impact model
+     * performance), instead set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] to
+     * a random unique ID and leave
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] unset.
      * </pre>
      *
      * <code>
@@ -1574,6 +1692,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * they took to trigger the predict request. Note that this user event detail
      * won't be ingested to userEvent logs. Thus, a separate userEvent write
      * request is required for event logging.
+     * Don't set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] or
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] to the same
+     * fixed ID for different users. If you are trying to receive non-personalized
+     * recommendations (not recommended; this can negatively impact model
+     * performance), instead set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] to
+     * a random unique ID and leave
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] unset.
      * </pre>
      *
      * <code>
@@ -1605,6 +1732,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * they took to trigger the predict request. Note that this user event detail
      * won't be ingested to userEvent logs. Thus, a separate userEvent write
      * request is required for event logging.
+     * Don't set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] or
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] to the same
+     * fixed ID for different users. If you are trying to receive non-personalized
+     * recommendations (not recommended; this can negatively impact model
+     * performance), instead set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] to
+     * a random unique ID and leave
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] unset.
      * </pre>
      *
      * <code>
@@ -1630,6 +1766,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * they took to trigger the predict request. Note that this user event detail
      * won't be ingested to userEvent logs. Thus, a separate userEvent write
      * request is required for event logging.
+     * Don't set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] or
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] to the same
+     * fixed ID for different users. If you are trying to receive non-personalized
+     * recommendations (not recommended; this can negatively impact model
+     * performance), instead set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] to
+     * a random unique ID and leave
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] unset.
      * </pre>
      *
      * <code>
@@ -1649,6 +1794,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * they took to trigger the predict request. Note that this user event detail
      * won't be ingested to userEvent logs. Thus, a separate userEvent write
      * request is required for event logging.
+     * Don't set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] or
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] to the same
+     * fixed ID for different users. If you are trying to receive non-personalized
+     * recommendations (not recommended; this can negatively impact model
+     * performance), instead set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] to
+     * a random unique ID and leave
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] unset.
      * </pre>
      *
      * <code>
@@ -1672,6 +1826,15 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * they took to trigger the predict request. Note that this user event detail
      * won't be ingested to userEvent logs. Thus, a separate userEvent write
      * request is required for event logging.
+     * Don't set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] or
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] to the same
+     * fixed ID for different users. If you are trying to receive non-personalized
+     * recommendations (not recommended; this can negatively impact model
+     * performance), instead set
+     * [UserEvent.visitor_id][google.cloud.retail.v2beta.UserEvent.visitor_id] to
+     * a random unique ID and leave
+     * [UserInfo.user_id][google.cloud.retail.v2beta.UserInfo.user_id] unset.
      * </pre>
      *
      * <code>
@@ -1761,7 +1924,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The previous PredictResponse.next_page_token.
+     * This field is not used for now; leave it unset.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1783,7 +1946,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The previous PredictResponse.next_page_token.
+     * This field is not used for now; leave it unset.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1805,7 +1968,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The previous PredictResponse.next_page_token.
+     * This field is not used for now; leave it unset.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1826,7 +1989,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The previous PredictResponse.next_page_token.
+     * This field is not used for now; leave it unset.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1843,7 +2006,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The previous PredictResponse.next_page_token.
+     * This field is not used for now; leave it unset.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1890,6 +2053,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * receive empty results instead.
      * Note that the API will never return items with storageStatus of "EXPIRED"
      * or "DELETED" regardless of filter choices.
+     * If `filterSyntaxV2` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+     *  * (availability: ANY("IN_STOCK")) AND
+     *    (colors: ANY("Red") OR categories: ANY("Phones"))
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -1934,6 +2103,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * receive empty results instead.
      * Note that the API will never return items with storageStatus of "EXPIRED"
      * or "DELETED" regardless of filter choices.
+     * If `filterSyntaxV2` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+     *  * (availability: ANY("IN_STOCK")) AND
+     *    (colors: ANY("Red") OR categories: ANY("Phones"))
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -1978,6 +2153,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * receive empty results instead.
      * Note that the API will never return items with storageStatus of "EXPIRED"
      * or "DELETED" regardless of filter choices.
+     * If `filterSyntaxV2` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+     *  * (availability: ANY("IN_STOCK")) AND
+     *    (colors: ANY("Red") OR categories: ANY("Phones"))
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -2021,6 +2202,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * receive empty results instead.
      * Note that the API will never return items with storageStatus of "EXPIRED"
      * or "DELETED" regardless of filter choices.
+     * If `filterSyntaxV2` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+     *  * (availability: ANY("IN_STOCK")) AND
+     *    (colors: ANY("Red") OR categories: ANY("Phones"))
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -2060,6 +2247,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * receive empty results instead.
      * Note that the API will never return items with storageStatus of "EXPIRED"
      * or "DELETED" regardless of filter choices.
+     * If `filterSyntaxV2` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+     *  * (availability: ANY("IN_STOCK")) AND
+     *    (colors: ANY("Red") OR categories: ANY("Phones"))
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -2192,6 +2385,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -2236,6 +2431,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -2271,6 +2468,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -2311,6 +2510,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -2358,6 +2559,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -2401,6 +2604,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -2443,6 +2648,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -2485,7 +2692,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
-     *   characters, and cannot be empty. Values can be empty, and have a maximum
+     *   characters and cannot be empty. Values can be empty and have a maximum
      *   length of 63 characters.
      * * Keys and values can contain only lowercase letters, numeric characters,
      *   underscores, and dashes. All characters must use UTF-8 encoding, and
@@ -2521,7 +2728,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
-     *   characters, and cannot be empty. Values can be empty, and have a maximum
+     *   characters and cannot be empty. Values can be empty and have a maximum
      *   length of 63 characters.
      * * Keys and values can contain only lowercase letters, numeric characters,
      *   underscores, and dashes. All characters must use UTF-8 encoding, and
@@ -2548,7 +2755,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
-     *   characters, and cannot be empty. Values can be empty, and have a maximum
+     *   characters and cannot be empty. Values can be empty and have a maximum
      *   length of 63 characters.
      * * Keys and values can contain only lowercase letters, numeric characters,
      *   underscores, and dashes. All characters must use UTF-8 encoding, and
@@ -2580,7 +2787,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
-     *   characters, and cannot be empty. Values can be empty, and have a maximum
+     *   characters and cannot be empty. Values can be empty and have a maximum
      *   length of 63 characters.
      * * Keys and values can contain only lowercase letters, numeric characters,
      *   underscores, and dashes. All characters must use UTF-8 encoding, and
@@ -2619,7 +2826,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
-     *   characters, and cannot be empty. Values can be empty, and have a maximum
+     *   characters and cannot be empty. Values can be empty and have a maximum
      *   length of 63 characters.
      * * Keys and values can contain only lowercase letters, numeric characters,
      *   underscores, and dashes. All characters must use UTF-8 encoding, and
@@ -2654,7 +2861,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
-     *   characters, and cannot be empty. Values can be empty, and have a maximum
+     *   characters and cannot be empty. Values can be empty and have a maximum
      *   length of 63 characters.
      * * Keys and values can contain only lowercase letters, numeric characters,
      *   underscores, and dashes. All characters must use UTF-8 encoding, and
@@ -2688,7 +2895,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * * Each resource can have multiple labels, up to a maximum of 64.
      * * Each label must be a key-value pair.
      * * Keys have a minimum length of 1 character and a maximum length of 63
-     *   characters, and cannot be empty. Values can be empty, and have a maximum
+     *   characters and cannot be empty. Values can be empty and have a maximum
      *   length of 63 characters.
      * * Keys and values can contain only lowercase letters, numeric characters,
      *   underscores, and dashes. All characters must use UTF-8 encoding, and
