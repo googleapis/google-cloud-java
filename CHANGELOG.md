@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.18.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.17.0...v2.18.0) (2022-07-27)
+
+
+### Features
+
+* Add another StreamWriterClosedException and remove RETRY_THRESHOLD ([#1713](https://github.com/googleapis/java-bigquerystorage/issues/1713)) ([f8d1bd9](https://github.com/googleapis/java-bigquerystorage/commit/f8d1bd901232a61ca87c2671e478136dfd4f2432))
+* increase timeout waiting for done callback from 2 minutes to 5 … ([#1682](https://github.com/googleapis/java-bigquerystorage/issues/1682)) ([5171898](https://github.com/googleapis/java-bigquerystorage/commit/517189858263107ffc00cee5328ac958cb45a3f9))
+
+
+### Documentation
+
+* clarify size limitations for AppendRowsRequest ([#1714](https://github.com/googleapis/java-bigquerystorage/issues/1714)) ([ed3fe1f](https://github.com/googleapis/java-bigquerystorage/commit/ed3fe1fb20fc2e07c26da42b7564599642540317))
+
 ## [2.17.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.16.1...v2.17.0) (2022-07-25)
 
 
