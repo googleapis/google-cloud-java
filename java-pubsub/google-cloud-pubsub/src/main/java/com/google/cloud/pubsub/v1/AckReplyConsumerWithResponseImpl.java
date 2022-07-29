@@ -15,8 +15,8 @@
  */
 package com.google.cloud.pubsub.v1;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
-import java.util.concurrent.Future;
 
 public class AckReplyConsumerWithResponseImpl implements AckReplyConsumerWithResponse {
   final SettableApiFuture<MessageDispatcher.AckReply> ackReplySettableApiFuture;
@@ -30,13 +30,13 @@ public class AckReplyConsumerWithResponseImpl implements AckReplyConsumerWithRes
   }
 
   @Override
-  public Future<AckResponse> ack() {
+  public ApiFuture<AckResponse> ack() {
     ackReplySettableApiFuture.set(MessageDispatcher.AckReply.ACK);
     return messageFuture;
   }
 
   @Override
-  public Future<AckResponse> nack() {
+  public ApiFuture<AckResponse> nack() {
     ackReplySettableApiFuture.set(MessageDispatcher.AckReply.NACK);
     return messageFuture;
   }

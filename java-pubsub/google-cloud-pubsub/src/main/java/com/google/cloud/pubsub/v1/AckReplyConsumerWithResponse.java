@@ -16,8 +16,8 @@
 
 package com.google.cloud.pubsub.v1;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import java.util.concurrent.Future;
 
 /**
  * Acknowledging a message in Pub/Sub means that you are done with it, and it will not be delivered
@@ -42,7 +42,7 @@ public interface AckReplyConsumerWithResponse {
    *
    * <p>A future representing the server response is returned
    */
-  Future<AckResponse> ack();
+  ApiFuture<AckResponse> ack();
 
   /**
    * Signals that the message has not been successfully processed. The service should resend the
@@ -50,5 +50,5 @@ public interface AckReplyConsumerWithResponse {
    *
    * <p>A future representing the server response is returned
    */
-  Future<AckResponse> nack();
+  ApiFuture<AckResponse> nack();
 }

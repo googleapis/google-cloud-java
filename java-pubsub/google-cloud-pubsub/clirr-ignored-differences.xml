@@ -17,4 +17,21 @@
     <className>com/google/cloud/pubsub/v1/MessageDispatcher$Builder</className>
     <method>com.google.cloud.pubsub.v1.MessageDispatcher$Builder setEnableExactlyOnceDelivery(boolean)</method>
   </difference>
+
+  <difference>
+    <!-- This should be removed after the next release 1.121.x -->
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/pubsub/v1/AckReplyConsumerWithResponse</className>
+    <method>*ack()</method>
+    <to>com.google.api.core.ApiFuture</to>
+    <justification>Updating return types to be consistent with Publish</justification>
+  </difference>
+  <difference>
+    <!-- This should be removed after the next release 1.121.x -->
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/pubsub/v1/AckReplyConsumerWithResponseImpl</className>
+    <method>*ack()</method>
+    <to>com.google.api.core.ApiFuture</to>
+    <justification>Updating return types to be consistent with Publish</justification>
+  </difference>
 </differences>
