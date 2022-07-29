@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.120.4](https://github.com/googleapis/java-pubsub/compare/v1.120.3...v1.120.4) (2022-07-29)
+
+
+### Bug Fixes
+
+* updating return types of ack/nack futures to be consistent with publish ([#1204](https://github.com/googleapis/java-pubsub/issues/1204)) ([6e73ab9](https://github.com/googleapis/java-pubsub/commit/6e73ab9618f61ee1915e52abe3b80e356bc3c13f))
+
 ## [1.120.3](https://github.com/googleapis/java-pubsub/compare/v1.120.2...v1.120.3) (2022-07-27)
 
 
