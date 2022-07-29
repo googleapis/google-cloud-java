@@ -23,7 +23,7 @@ package com.google.cloud.aiplatform.v1;
  *
  * <pre>
  * Represents the spec of a CustomJob.
- * Next Id: 14
+ * Next Id: 15
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1.CustomJobSpec}
@@ -399,7 +399,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full name of the Compute Engine
+   * Optional. The full name of the Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
    * should be peered. For example, `projects/12345/global/networks/myVPC`.
    * [Format](/compute/docs/reference/rest/v1/networks/insert)
@@ -412,7 +412,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * If this field is left unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The network.
    */
@@ -432,7 +434,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full name of the Compute Engine
+   * Optional. The full name of the Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
    * should be peered. For example, `projects/12345/global/networks/myVPC`.
    * [Format](/compute/docs/reference/rest/v1/networks/insert)
@@ -445,7 +447,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    * If this field is left unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for network.
    */
@@ -964,7 +968,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents the spec of a CustomJob.
-   * Next Id: 14
+   * Next Id: 15
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1.CustomJobSpec}
@@ -1978,7 +1982,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the Compute Engine
+     * Optional. The full name of the Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
      * should be peered. For example, `projects/12345/global/networks/myVPC`.
      * [Format](/compute/docs/reference/rest/v1/networks/insert)
@@ -1991,7 +1995,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The network.
      */
@@ -2010,7 +2016,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the Compute Engine
+     * Optional. The full name of the Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
      * should be peered. For example, `projects/12345/global/networks/myVPC`.
      * [Format](/compute/docs/reference/rest/v1/networks/insert)
@@ -2023,7 +2029,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for network.
      */
@@ -2042,7 +2050,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the Compute Engine
+     * Optional. The full name of the Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
      * should be peered. For example, `projects/12345/global/networks/myVPC`.
      * [Format](/compute/docs/reference/rest/v1/networks/insert)
@@ -2055,7 +2063,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The network to set.
      * @return This builder for chaining.
@@ -2073,7 +2083,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the Compute Engine
+     * Optional. The full name of the Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
      * should be peered. For example, `projects/12345/global/networks/myVPC`.
      * [Format](/compute/docs/reference/rest/v1/networks/insert)
@@ -2086,7 +2096,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2100,7 +2112,7 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the Compute Engine
+     * Optional. The full name of the Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
      * should be peered. For example, `projects/12345/global/networks/myVPC`.
      * [Format](/compute/docs/reference/rest/v1/networks/insert)
@@ -2113,7 +2125,9 @@ public final class CustomJobSpec extends com.google.protobuf.GeneratedMessageV3
      * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
-     * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for network to set.
      * @return This builder for chaining.

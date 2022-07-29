@@ -213,14 +213,16 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
    * <pre>
    * The standard list filter.
    * Supported fields:
-   *   * `display_name` supports = and !=.
-   *   * `state` supports = and !=.
-   *   * `model_display_name` supports = and !=
+   *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
+   *   * `model_display_name` supports `=`, `!=` comparisons.
+   *   * `state` supports `=`, `!=` comparisons.
+   *   * `create_time` supports `=`, `!=`,`&lt;`, `&lt;=`,`&gt;`, `&gt;=` comparisons.
+   *     `create_time` must be in RFC 3339 format.
    * Some examples of using the filter are:
-   *  * `state="JOB_STATE_SUCCEEDED" AND display_name="my_job"`
-   *  * `state="JOB_STATE_RUNNING" OR display_name="my_job"`
-   *  * `NOT display_name="my_job"`
-   *  * `state="JOB_STATE_FAILED"`
+   *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
+   *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
+   *   * `NOT display_name="my_job"`
+   *   * `create_time&gt;"2021-05-18T00:00:00Z"`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -245,14 +247,16 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
    * <pre>
    * The standard list filter.
    * Supported fields:
-   *   * `display_name` supports = and !=.
-   *   * `state` supports = and !=.
-   *   * `model_display_name` supports = and !=
+   *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
+   *   * `model_display_name` supports `=`, `!=` comparisons.
+   *   * `state` supports `=`, `!=` comparisons.
+   *   * `create_time` supports `=`, `!=`,`&lt;`, `&lt;=`,`&gt;`, `&gt;=` comparisons.
+   *     `create_time` must be in RFC 3339 format.
    * Some examples of using the filter are:
-   *  * `state="JOB_STATE_SUCCEEDED" AND display_name="my_job"`
-   *  * `state="JOB_STATE_RUNNING" OR display_name="my_job"`
-   *  * `NOT display_name="my_job"`
-   *  * `state="JOB_STATE_FAILED"`
+   *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
+   *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
+   *   * `NOT display_name="my_job"`
+   *   * `create_time&gt;"2021-05-18T00:00:00Z"`
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -921,14 +925,16 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      * <pre>
      * The standard list filter.
      * Supported fields:
-     *   * `display_name` supports = and !=.
-     *   * `state` supports = and !=.
-     *   * `model_display_name` supports = and !=
+     *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
+     *   * `model_display_name` supports `=`, `!=` comparisons.
+     *   * `state` supports `=`, `!=` comparisons.
+     *   * `create_time` supports `=`, `!=`,`&lt;`, `&lt;=`,`&gt;`, `&gt;=` comparisons.
+     *     `create_time` must be in RFC 3339 format.
      * Some examples of using the filter are:
-     *  * `state="JOB_STATE_SUCCEEDED" AND display_name="my_job"`
-     *  * `state="JOB_STATE_RUNNING" OR display_name="my_job"`
-     *  * `NOT display_name="my_job"`
-     *  * `state="JOB_STATE_FAILED"`
+     *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
+     *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
+     *   * `NOT display_name="my_job"`
+     *   * `create_time&gt;"2021-05-18T00:00:00Z"`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -952,14 +958,16 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      * <pre>
      * The standard list filter.
      * Supported fields:
-     *   * `display_name` supports = and !=.
-     *   * `state` supports = and !=.
-     *   * `model_display_name` supports = and !=
+     *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
+     *   * `model_display_name` supports `=`, `!=` comparisons.
+     *   * `state` supports `=`, `!=` comparisons.
+     *   * `create_time` supports `=`, `!=`,`&lt;`, `&lt;=`,`&gt;`, `&gt;=` comparisons.
+     *     `create_time` must be in RFC 3339 format.
      * Some examples of using the filter are:
-     *  * `state="JOB_STATE_SUCCEEDED" AND display_name="my_job"`
-     *  * `state="JOB_STATE_RUNNING" OR display_name="my_job"`
-     *  * `NOT display_name="my_job"`
-     *  * `state="JOB_STATE_FAILED"`
+     *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
+     *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
+     *   * `NOT display_name="my_job"`
+     *   * `create_time&gt;"2021-05-18T00:00:00Z"`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -983,14 +991,16 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      * <pre>
      * The standard list filter.
      * Supported fields:
-     *   * `display_name` supports = and !=.
-     *   * `state` supports = and !=.
-     *   * `model_display_name` supports = and !=
+     *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
+     *   * `model_display_name` supports `=`, `!=` comparisons.
+     *   * `state` supports `=`, `!=` comparisons.
+     *   * `create_time` supports `=`, `!=`,`&lt;`, `&lt;=`,`&gt;`, `&gt;=` comparisons.
+     *     `create_time` must be in RFC 3339 format.
      * Some examples of using the filter are:
-     *  * `state="JOB_STATE_SUCCEEDED" AND display_name="my_job"`
-     *  * `state="JOB_STATE_RUNNING" OR display_name="my_job"`
-     *  * `NOT display_name="my_job"`
-     *  * `state="JOB_STATE_FAILED"`
+     *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
+     *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
+     *   * `NOT display_name="my_job"`
+     *   * `create_time&gt;"2021-05-18T00:00:00Z"`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1013,14 +1023,16 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      * <pre>
      * The standard list filter.
      * Supported fields:
-     *   * `display_name` supports = and !=.
-     *   * `state` supports = and !=.
-     *   * `model_display_name` supports = and !=
+     *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
+     *   * `model_display_name` supports `=`, `!=` comparisons.
+     *   * `state` supports `=`, `!=` comparisons.
+     *   * `create_time` supports `=`, `!=`,`&lt;`, `&lt;=`,`&gt;`, `&gt;=` comparisons.
+     *     `create_time` must be in RFC 3339 format.
      * Some examples of using the filter are:
-     *  * `state="JOB_STATE_SUCCEEDED" AND display_name="my_job"`
-     *  * `state="JOB_STATE_RUNNING" OR display_name="my_job"`
-     *  * `NOT display_name="my_job"`
-     *  * `state="JOB_STATE_FAILED"`
+     *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
+     *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
+     *   * `NOT display_name="my_job"`
+     *   * `create_time&gt;"2021-05-18T00:00:00Z"`
      * </pre>
      *
      * <code>string filter = 2;</code>
@@ -1039,14 +1051,16 @@ public final class ListBatchPredictionJobsRequest extends com.google.protobuf.Ge
      * <pre>
      * The standard list filter.
      * Supported fields:
-     *   * `display_name` supports = and !=.
-     *   * `state` supports = and !=.
-     *   * `model_display_name` supports = and !=
+     *   * `display_name` supports `=`, `!=` comparisons, and `:` wildcard.
+     *   * `model_display_name` supports `=`, `!=` comparisons.
+     *   * `state` supports `=`, `!=` comparisons.
+     *   * `create_time` supports `=`, `!=`,`&lt;`, `&lt;=`,`&gt;`, `&gt;=` comparisons.
+     *     `create_time` must be in RFC 3339 format.
      * Some examples of using the filter are:
-     *  * `state="JOB_STATE_SUCCEEDED" AND display_name="my_job"`
-     *  * `state="JOB_STATE_RUNNING" OR display_name="my_job"`
-     *  * `NOT display_name="my_job"`
-     *  * `state="JOB_STATE_FAILED"`
+     *   * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"`
+     *   * `state!="JOB_STATE_FAILED" OR display_name="my_job"`
+     *   * `NOT display_name="my_job"`
+     *   * `create_time&gt;"2021-05-18T00:00:00Z"`
      * </pre>
      *
      * <code>string filter = 2;</code>

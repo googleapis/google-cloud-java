@@ -277,7 +277,7 @@ public interface SavedQueryOrBuilder
    *
    *
    * <pre>
-   * Used to perform a consistent read-modify-write update. If not set, a blind
+   * Used to perform consistent read-modify-write updates. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *
@@ -290,7 +290,7 @@ public interface SavedQueryOrBuilder
    *
    *
    * <pre>
-   * Used to perform a consistent read-modify-write update. If not set, a blind
+   * Used to perform consistent read-modify-write updates. If not set, a blind
    * "overwrite" update happens.
    * </pre>
    *
