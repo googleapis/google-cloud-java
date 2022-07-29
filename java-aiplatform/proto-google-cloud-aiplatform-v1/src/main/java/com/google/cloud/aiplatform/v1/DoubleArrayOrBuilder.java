@@ -27,7 +27,7 @@ public interface DoubleArrayOrBuilder
    *
    *
    * <pre>
-   * A list of bool values.
+   * A list of double values.
    * </pre>
    *
    * <code>repeated double values = 1;</code>
@@ -39,7 +39,7 @@ public interface DoubleArrayOrBuilder
    *
    *
    * <pre>
-   * A list of bool values.
+   * A list of double values.
    * </pre>
    *
    * <code>repeated double values = 1;</code>
@@ -51,7 +51,7 @@ public interface DoubleArrayOrBuilder
    *
    *
    * <pre>
-   * A list of bool values.
+   * A list of double values.
    * </pre>
    *
    * <code>repeated double values = 1;</code>
