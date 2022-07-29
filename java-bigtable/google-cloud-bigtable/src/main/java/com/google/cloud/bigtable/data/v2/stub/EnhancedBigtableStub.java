@@ -86,7 +86,6 @@ import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescr
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryingCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptor;
-import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsConvertExceptionCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryCompletedCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallable;
@@ -414,7 +413,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     // should be treated similar to UNAVAILABLE. However, this exception has an INTERNAL error code
     // which by default is not retryable. Convert the exception so it can be retried in the client.
     ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> convertException =
-        new ReadRowsConvertExceptionCallable<>(withStatsHeaders);
+        new ConvertExceptionCallable<>(withStatsHeaders);
 
     ServerStreamingCallable<ReadRowsRequest, RowT> merging =
         new RowMergingCallable<>(convertException, rowAdapter);
@@ -704,6 +703,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> withStatsHeaders =
         new StatsHeadersServerStreamingCallable<>(base);
 
+    // Sometimes MutateRows connections are disconnected via an RST frame. This error is transient
+    // and
+    // should be treated similar to UNAVAILABLE. However, this exception has an INTERNAL error code
+    // which by default is not retryable. Convert the exception so it can be retried in the client.
+    ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> convertException =
+        new ConvertExceptionCallable<>(withStatsHeaders);
+
     RetryAlgorithm<Void> retryAlgorithm =
         new RetryAlgorithm<>(
             new ApiResultRetryAlgorithm<Void>(),
@@ -714,7 +720,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     return new MutateRowsRetryingCallable(
         clientContext.getDefaultCallContext(),
-        withStatsHeaders,
+        convertException,
         retryingExecutor,
         settings.bulkMutateRowsSettings().getRetryableCodes());
   }

@@ -13,9 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.bigtable.data.v2.stub.readrows;
+package com.google.cloud.bigtable.data.v2.stub;
 
-import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.InternalException;
@@ -26,14 +25,12 @@ import com.google.api.gax.rpc.StreamController;
 /**
  * This callable converts the "Received rst stream" exception into a retryable {@link ApiException}.
  */
-@InternalApi
-public final class ReadRowsConvertExceptionCallable<ReadRowsRequest, RowT>
+final class ConvertExceptionCallable<ReadRowsRequest, RowT>
     extends ServerStreamingCallable<ReadRowsRequest, RowT> {
 
   private final ServerStreamingCallable<ReadRowsRequest, RowT> innerCallable;
 
-  public ReadRowsConvertExceptionCallable(
-      ServerStreamingCallable<ReadRowsRequest, RowT> innerCallable) {
+  public ConvertExceptionCallable(ServerStreamingCallable<ReadRowsRequest, RowT> innerCallable) {
     this.innerCallable = innerCallable;
   }
 
