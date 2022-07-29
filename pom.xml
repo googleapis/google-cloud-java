@@ -19,126 +19,6 @@
 
   <modules>
     <module>java-accessapproval</module>
-    <module>java-accesscontextmanager</module>
-    <module>java-aiplatform</module>
-    <module>java-analytics-admin</module>
-    <module>java-analytics-data</module>
-    <module>java-api-gateway</module>
-    <module>java-apigee-connect</module>
-    <module>java-appengine-admin</module>
-    <module>java-area120-tables</module>
-    <module>java-artifact-registry</module>
-    <module>java-asset</module>
-    <module>java-assured-workloads</module>
-    <module>java-automl</module>
-    <module>java-bare-metal-solution</module>
-    <module>java-bigquery-data-exchange</module>
-    <module>java-bigqueryconnection</module>
-    <module>java-bigquerydatatransfer</module>
-    <module>java-bigquerymigration</module>
-    <module>java-bigqueryreservation</module>
-    <module>java-billing</module>
-    <module>java-billingbudgets</module>
-    <module>java-binary-authorization</module>
-    <module>java-certificate-manager</module>
-    <module>java-channel</module>
-    <module>java-cloudbuild</module>
-    <module>java-compute</module>
-    <module>java-contact-center-insights</module>
-    <module>java-container</module>
-    <module>java-containeranalysis</module>
-    <module>java-data-fusion</module>
-    <module>java-datacatalog</module>
-    <module>java-dataflow</module>
-    <module>java-datalabeling</module>
-    <module>java-dataplex</module>
-    <module>java-dataproc</module>
-    <module>java-dataproc-metastore</module>
-    <module>java-datastream</module>
-    <module>java-debugger-client</module>
-    <module>java-deploy</module>
-    <module>java-dialogflow</module>
-    <module>java-dialogflow-cx</module>
-    <module>java-dlp</module>
-    <module>java-dms</module>
-    <module>java-document-ai</module>
-    <module>java-domains</module>
-    <module>java-errorreporting</module>
-    <module>java-essential-contacts</module>
-    <module>java-eventarc</module>
-    <module>java-eventarc-publishing</module>
-    <module>java-filestore</module>
-    <module>java-functions</module>
-    <module>java-game-servers</module>
-    <module>java-gke-backup</module>
-    <module>java-gke-connect-gateway</module>
-    <module>java-gke-multi-cloud</module>
-    <module>java-gkehub</module>
-    <module>java-gsuite-addons</module>
-    <module>java-iam-admin</module>
-    <module>java-iamcredentials</module>
-    <module>java-ids</module>
-    <module>java-iot</module>
-    <module>java-kms</module>
-    <module>java-language</module>
-    <module>java-life-sciences</module>
-    <module>java-managed-identities</module>
-    <module>java-mediatranslation</module>
-    <module>java-memcache</module>
-    <module>java-monitoring</module>
-    <module>java-monitoring-dashboards</module>
-    <module>java-network-management</module>
-    <module>java-network-security</module>
-    <module>java-networkconnectivity</module>
-    <module>java-notebooks</module>
-    <module>java-optimization</module>
-    <module>java-orchestration-airflow</module>
-    <module>java-orgpolicy</module>
-    <module>java-os-config</module>
-    <module>java-os-login</module>
-    <module>java-phishingprotection</module>
-    <module>java-policy-troubleshooter</module>
-    <module>java-private-catalog</module>
-    <module>java-profiler</module>
-    <module>java-recaptchaenterprise</module>
-    <module>java-recommendations-ai</module>
-    <module>java-recommender</module>
-    <module>java-redis</module>
-    <module>java-resource-settings</module>
-    <module>java-resourcemanager</module>
-    <module>java-retail</module>
-    <module>java-run</module>
-    <module>java-scheduler</module>
-    <module>java-secretmanager</module>
-    <module>java-security-private-ca</module>
-    <module>java-securitycenter</module>
-    <module>java-securitycenter-settings</module>
-    <module>java-service-control</module>
-    <module>java-service-management</module>
-    <module>java-service-usage</module>
-    <module>java-servicedirectory</module>
-    <module>java-shell</module>
-    <module>java-speech</module>
-    <module>java-storage-transfer</module>
-    <module>java-talent</module>
-    <module>java-tasks</module>
-    <module>java-texttospeech</module>
-    <module>java-tpu</module>
-    <module>java-trace</module>
-    <module>java-video-intelligence</module>
-    <module>java-video-live-stream</module>
-    <module>java-video-stitcher</module>
-    <module>java-video-transcoder</module>
-    <module>java-vision</module>
-    <module>java-vmmigration</module>
-    <module>java-vpcaccess</module>
-    <module>java-webrisk</module>
-    <module>java-websecurityscanner</module>
-    <module>java-workflow-executions</module>
-    <module>java-workflows</module>
-
-    <module>google-cloud-gapic-bom</module>
-    <module>CoverageAggregator</module>
   </modules>
 
   <build>
@@ -164,5 +44,33 @@
       </executions>
     </plugin>
   </plugins>
+    <extensions>
+      <extension>
+        <groupId>com.google.cloud.artifactregistry</groupId>
+        <artifactId>artifactregistry-maven-wagon</artifactId>
+        <version>2.1.0</version>
+      </extension>
+    </extensions>
   </build>
+
+  <distributionManagement>
+    <repository>
+      <id>artifact-registry</id>
+      <url>artifactregistry://us-central1-maven.pkg.dev/spanner-demo-326919/mono-repo</url>
+    </repository>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>artifact-registry</id>
+      <url>artifactregistry://us-central1-maven.pkg.dev/spanner-demo-326919/mono-repo</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
 </project>
