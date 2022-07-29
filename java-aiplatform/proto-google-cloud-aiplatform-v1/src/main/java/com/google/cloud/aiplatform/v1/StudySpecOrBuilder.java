@@ -307,7 +307,7 @@ public interface StudySpecOrBuilder
    * <pre>
    * The observation noise level of the study.
    * Currently only supported by the Vertex AI Vizier service. Not supported by
-   * HyperparamterTuningJob or TrainingPipeline.
+   * HyperparameterTuningJob or TrainingPipeline.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.StudySpec.ObservationNoise observation_noise = 6;</code>
@@ -321,7 +321,7 @@ public interface StudySpecOrBuilder
    * <pre>
    * The observation noise level of the study.
    * Currently only supported by the Vertex AI Vizier service. Not supported by
-   * HyperparamterTuningJob or TrainingPipeline.
+   * HyperparameterTuningJob or TrainingPipeline.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.StudySpec.ObservationNoise observation_noise = 6;</code>

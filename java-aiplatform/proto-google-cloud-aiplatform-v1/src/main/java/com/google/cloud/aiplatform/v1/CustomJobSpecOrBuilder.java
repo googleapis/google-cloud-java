@@ -167,7 +167,7 @@ public interface CustomJobSpecOrBuilder
    *
    *
    * <pre>
-   * The full name of the Compute Engine
+   * Optional. The full name of the Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
    * should be peered. For example, `projects/12345/global/networks/myVPC`.
    * [Format](/compute/docs/reference/rest/v1/networks/insert)
@@ -180,7 +180,9 @@ public interface CustomJobSpecOrBuilder
    * If this field is left unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The network.
    */
@@ -189,7 +191,7 @@ public interface CustomJobSpecOrBuilder
    *
    *
    * <pre>
-   * The full name of the Compute Engine
+   * Optional. The full name of the Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
    * should be peered. For example, `projects/12345/global/networks/myVPC`.
    * [Format](/compute/docs/reference/rest/v1/networks/insert)
@@ -202,7 +204,9 @@ public interface CustomJobSpecOrBuilder
    * If this field is left unspecified, the job is not peered with any network.
    * </pre>
    *
-   * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string network = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for network.
    */
