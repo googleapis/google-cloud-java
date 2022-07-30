@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.3](https://github.com/googleapis/java-dlp/compare/v3.6.2...v3.6.3) (2022-07-30)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#940](https://github.com/googleapis/java-dlp/issues/940)) ([1afea23](https://github.com/googleapis/java-dlp/commit/1afea2346990c2c2a72ff051822ba725f464d8a0))
+
 ## [3.6.2](https://github.com/googleapis/java-dlp/compare/v3.6.1...v3.6.2) (2022-07-29)
 
 
