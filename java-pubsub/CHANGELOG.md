@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.120.7](https://github.com/googleapis/java-pubsub/compare/v1.120.6...v1.120.7) (2022-08-01)
+
+
+### Bug Fixes
+
+* Updated log level from WARNING -> INFO for EOD failures ([#1218](https://github.com/googleapis/java-pubsub/issues/1218)) ([8782533](https://github.com/googleapis/java-pubsub/commit/8782533204fcc312c1063763f5073db83c72382f))
+
 ## [1.120.6](https://github.com/googleapis/java-pubsub/compare/v1.120.5...v1.120.6) (2022-08-01)
 
 
