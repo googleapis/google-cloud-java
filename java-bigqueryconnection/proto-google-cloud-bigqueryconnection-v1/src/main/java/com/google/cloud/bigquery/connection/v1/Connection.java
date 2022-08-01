@@ -149,6 +149,26 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
               propertiesCase_ = 8;
               break;
             }
+          case 90:
+            {
+              com.google.cloud.bigquery.connection.v1.AzureProperties.Builder subBuilder = null;
+              if (propertiesCase_ == 11) {
+                subBuilder =
+                    ((com.google.cloud.bigquery.connection.v1.AzureProperties) properties_)
+                        .toBuilder();
+              }
+              properties_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.connection.v1.AzureProperties.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.bigquery.connection.v1.AzureProperties) properties_);
+                properties_ = subBuilder.buildPartial();
+              }
+              propertiesCase_ = 11;
+              break;
+            }
           case 170:
             {
               com.google.cloud.bigquery.connection.v1.CloudSpannerProperties.Builder subBuilder =
@@ -236,6 +256,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CLOUD_SQL(4),
     AWS(8),
+    AZURE(11),
     CLOUD_SPANNER(21),
     CLOUD_RESOURCE(22),
     PROPERTIES_NOT_SET(0);
@@ -260,6 +281,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           return CLOUD_SQL;
         case 8:
           return AWS;
+        case 11:
+          return AZURE;
         case 21:
           return CLOUD_SPANNER;
         case 22:
@@ -532,6 +555,57 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.bigquery.connection.v1.AwsProperties.getDefaultInstance();
   }
 
+  public static final int AZURE_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * Azure properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+   *
+   * @return Whether the azure field is set.
+   */
+  @java.lang.Override
+  public boolean hasAzure() {
+    return propertiesCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Azure properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+   *
+   * @return The azure.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.connection.v1.AzureProperties getAzure() {
+    if (propertiesCase_ == 11) {
+      return (com.google.cloud.bigquery.connection.v1.AzureProperties) properties_;
+    }
+    return com.google.cloud.bigquery.connection.v1.AzureProperties.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Azure properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.connection.v1.AzurePropertiesOrBuilder getAzureOrBuilder() {
+    if (propertiesCase_ == 11) {
+      return (com.google.cloud.bigquery.connection.v1.AzureProperties) properties_;
+    }
+    return com.google.cloud.bigquery.connection.v1.AzureProperties.getDefaultInstance();
+  }
+
   public static final int CLOUD_SPANNER_FIELD_NUMBER = 21;
   /**
    *
@@ -729,6 +803,10 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     if (propertiesCase_ == 8) {
       output.writeMessage(8, (com.google.cloud.bigquery.connection.v1.AwsProperties) properties_);
     }
+    if (propertiesCase_ == 11) {
+      output.writeMessage(
+          11, (com.google.cloud.bigquery.connection.v1.AzureProperties) properties_);
+    }
     if (propertiesCase_ == 21) {
       output.writeMessage(
           21, (com.google.cloud.bigquery.connection.v1.CloudSpannerProperties) properties_);
@@ -774,6 +852,11 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.cloud.bigquery.connection.v1.AwsProperties) properties_);
     }
+    if (propertiesCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.cloud.bigquery.connection.v1.AzureProperties) properties_);
+    }
     if (propertiesCase_ == 21) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -813,6 +896,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         break;
       case 8:
         if (!getAws().equals(other.getAws())) return false;
+        break;
+      case 11:
+        if (!getAzure().equals(other.getAzure())) return false;
         break;
       case 21:
         if (!getCloudSpanner().equals(other.getCloudSpanner())) return false;
@@ -854,6 +940,10 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       case 8:
         hash = (37 * hash) + AWS_FIELD_NUMBER;
         hash = (53 * hash) + getAws().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + AZURE_FIELD_NUMBER;
+        hash = (53 * hash) + getAzure().hashCode();
         break;
       case 21:
         hash = (37 * hash) + CLOUD_SPANNER_FIELD_NUMBER;
@@ -1070,6 +1160,13 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           result.properties_ = awsBuilder_.build();
         }
       }
+      if (propertiesCase_ == 11) {
+        if (azureBuilder_ == null) {
+          result.properties_ = properties_;
+        } else {
+          result.properties_ = azureBuilder_.build();
+        }
+      }
       if (propertiesCase_ == 21) {
         if (cloudSpannerBuilder_ == null) {
           result.properties_ = properties_;
@@ -1168,6 +1265,11 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         case AWS:
           {
             mergeAws(other.getAws());
+            break;
+          }
+        case AZURE:
+          {
+            mergeAzure(other.getAzure());
             break;
           }
         case CLOUD_SPANNER:
@@ -1975,6 +2077,218 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return awsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.connection.v1.AzureProperties,
+            com.google.cloud.bigquery.connection.v1.AzureProperties.Builder,
+            com.google.cloud.bigquery.connection.v1.AzurePropertiesOrBuilder>
+        azureBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Azure properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+     *
+     * @return Whether the azure field is set.
+     */
+    @java.lang.Override
+    public boolean hasAzure() {
+      return propertiesCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Azure properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+     *
+     * @return The azure.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.connection.v1.AzureProperties getAzure() {
+      if (azureBuilder_ == null) {
+        if (propertiesCase_ == 11) {
+          return (com.google.cloud.bigquery.connection.v1.AzureProperties) properties_;
+        }
+        return com.google.cloud.bigquery.connection.v1.AzureProperties.getDefaultInstance();
+      } else {
+        if (propertiesCase_ == 11) {
+          return azureBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.connection.v1.AzureProperties.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Azure properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+     */
+    public Builder setAzure(com.google.cloud.bigquery.connection.v1.AzureProperties value) {
+      if (azureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        properties_ = value;
+        onChanged();
+      } else {
+        azureBuilder_.setMessage(value);
+      }
+      propertiesCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Azure properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+     */
+    public Builder setAzure(
+        com.google.cloud.bigquery.connection.v1.AzureProperties.Builder builderForValue) {
+      if (azureBuilder_ == null) {
+        properties_ = builderForValue.build();
+        onChanged();
+      } else {
+        azureBuilder_.setMessage(builderForValue.build());
+      }
+      propertiesCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Azure properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+     */
+    public Builder mergeAzure(com.google.cloud.bigquery.connection.v1.AzureProperties value) {
+      if (azureBuilder_ == null) {
+        if (propertiesCase_ == 11
+            && properties_
+                != com.google.cloud.bigquery.connection.v1.AzureProperties.getDefaultInstance()) {
+          properties_ =
+              com.google.cloud.bigquery.connection.v1.AzureProperties.newBuilder(
+                      (com.google.cloud.bigquery.connection.v1.AzureProperties) properties_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          properties_ = value;
+        }
+        onChanged();
+      } else {
+        if (propertiesCase_ == 11) {
+          azureBuilder_.mergeFrom(value);
+        } else {
+          azureBuilder_.setMessage(value);
+        }
+      }
+      propertiesCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Azure properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+     */
+    public Builder clearAzure() {
+      if (azureBuilder_ == null) {
+        if (propertiesCase_ == 11) {
+          propertiesCase_ = 0;
+          properties_ = null;
+          onChanged();
+        }
+      } else {
+        if (propertiesCase_ == 11) {
+          propertiesCase_ = 0;
+          properties_ = null;
+        }
+        azureBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Azure properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+     */
+    public com.google.cloud.bigquery.connection.v1.AzureProperties.Builder getAzureBuilder() {
+      return getAzureFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Azure properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.connection.v1.AzurePropertiesOrBuilder getAzureOrBuilder() {
+      if ((propertiesCase_ == 11) && (azureBuilder_ != null)) {
+        return azureBuilder_.getMessageOrBuilder();
+      } else {
+        if (propertiesCase_ == 11) {
+          return (com.google.cloud.bigquery.connection.v1.AzureProperties) properties_;
+        }
+        return com.google.cloud.bigquery.connection.v1.AzureProperties.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Azure properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.connection.v1.AzureProperties,
+            com.google.cloud.bigquery.connection.v1.AzureProperties.Builder,
+            com.google.cloud.bigquery.connection.v1.AzurePropertiesOrBuilder>
+        getAzureFieldBuilder() {
+      if (azureBuilder_ == null) {
+        if (!(propertiesCase_ == 11)) {
+          properties_ =
+              com.google.cloud.bigquery.connection.v1.AzureProperties.getDefaultInstance();
+        }
+        azureBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.connection.v1.AzureProperties,
+                com.google.cloud.bigquery.connection.v1.AzureProperties.Builder,
+                com.google.cloud.bigquery.connection.v1.AzurePropertiesOrBuilder>(
+                (com.google.cloud.bigquery.connection.v1.AzureProperties) properties_,
+                getParentForChildren(),
+                isClean());
+        properties_ = null;
+      }
+      propertiesCase_ = 11;
+      onChanged();
+      ;
+      return azureBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

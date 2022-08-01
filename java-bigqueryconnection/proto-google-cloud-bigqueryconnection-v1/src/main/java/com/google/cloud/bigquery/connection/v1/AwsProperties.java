@@ -153,6 +153,7 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    @java.lang.Deprecated
     CROSS_ACCOUNT_ROLE(2),
     ACCESS_ROLE(3),
     AUTHENTICATIONMETHOD_NOT_SET(0);
@@ -200,13 +201,19 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Authentication using Google owned AWS IAM user's access key to assume
    * into customer's AWS IAM Role.
+   * Deprecated, do not use.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+   * <code>
+   * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is deprecated.
+   *     See google/cloud/bigquery/connection/v1/connection.proto;l=314
    * @return Whether the crossAccountRole field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasCrossAccountRole() {
     return authenticationMethodCase_ == 2;
   }
@@ -216,13 +223,19 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Authentication using Google owned AWS IAM user's access key to assume
    * into customer's AWS IAM Role.
+   * Deprecated, do not use.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+   * <code>
+   * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is deprecated.
+   *     See google/cloud/bigquery/connection/v1/connection.proto;l=314
    * @return The crossAccountRole.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole getCrossAccountRole() {
     if (authenticationMethodCase_ == 2) {
       return (com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole) authenticationMethod_;
@@ -235,11 +248,15 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Authentication using Google owned AWS IAM user's access key to assume
    * into customer's AWS IAM Role.
+   * Deprecated, do not use.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+   * <code>
+   * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.bigquery.connection.v1.AwsCrossAccountRoleOrBuilder
       getCrossAccountRoleOrBuilder() {
     if (authenticationMethodCase_ == 2) {
@@ -705,13 +722,19 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Authentication using Google owned AWS IAM user's access key to assume
      * into customer's AWS IAM Role.
+     * Deprecated, do not use.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is
+     *     deprecated. See google/cloud/bigquery/connection/v1/connection.proto;l=314
      * @return Whether the crossAccountRole field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasCrossAccountRole() {
       return authenticationMethodCase_ == 2;
     }
@@ -721,13 +744,19 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Authentication using Google owned AWS IAM user's access key to assume
      * into customer's AWS IAM Role.
+     * Deprecated, do not use.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is
+     *     deprecated. See google/cloud/bigquery/connection/v1/connection.proto;l=314
      * @return The crossAccountRole.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole getCrossAccountRole() {
       if (crossAccountRoleBuilder_ == null) {
         if (authenticationMethodCase_ == 2) {
@@ -748,10 +777,14 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Authentication using Google owned AWS IAM user's access key to assume
      * into customer's AWS IAM Role.
+     * Deprecated, do not use.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setCrossAccountRole(
         com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole value) {
       if (crossAccountRoleBuilder_ == null) {
@@ -772,10 +805,14 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Authentication using Google owned AWS IAM user's access key to assume
      * into customer's AWS IAM Role.
+     * Deprecated, do not use.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setCrossAccountRole(
         com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole.Builder builderForValue) {
       if (crossAccountRoleBuilder_ == null) {
@@ -793,10 +830,14 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Authentication using Google owned AWS IAM user's access key to assume
      * into customer's AWS IAM Role.
+     * Deprecated, do not use.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeCrossAccountRole(
         com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole value) {
       if (crossAccountRoleBuilder_ == null) {
@@ -830,10 +871,14 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Authentication using Google owned AWS IAM user's access key to assume
      * into customer's AWS IAM Role.
+     * Deprecated, do not use.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearCrossAccountRole() {
       if (crossAccountRoleBuilder_ == null) {
         if (authenticationMethodCase_ == 2) {
@@ -856,10 +901,14 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Authentication using Google owned AWS IAM user's access key to assume
      * into customer's AWS IAM Role.
+     * Deprecated, do not use.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole.Builder
         getCrossAccountRoleBuilder() {
       return getCrossAccountRoleFieldBuilder().getBuilder();
@@ -870,11 +919,15 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Authentication using Google owned AWS IAM user's access key to assume
      * into customer's AWS IAM Role.
+     * Deprecated, do not use.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.bigquery.connection.v1.AwsCrossAccountRoleOrBuilder
         getCrossAccountRoleOrBuilder() {
       if ((authenticationMethodCase_ == 2) && (crossAccountRoleBuilder_ != null)) {
@@ -893,9 +946,12 @@ public final class AwsProperties extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Authentication using Google owned AWS IAM user's access key to assume
      * into customer's AWS IAM Role.
+     * Deprecated, do not use.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+     * <code>
+     * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole,

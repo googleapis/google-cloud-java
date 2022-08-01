@@ -29,12 +29,18 @@ public interface AwsPropertiesOrBuilder
    * <pre>
    * Authentication using Google owned AWS IAM user's access key to assume
    * into customer's AWS IAM Role.
+   * Deprecated, do not use.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+   * <code>
+   * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is deprecated.
+   *     See google/cloud/bigquery/connection/v1/connection.proto;l=314
    * @return Whether the crossAccountRole field is set.
    */
+  @java.lang.Deprecated
   boolean hasCrossAccountRole();
   /**
    *
@@ -42,12 +48,18 @@ public interface AwsPropertiesOrBuilder
    * <pre>
    * Authentication using Google owned AWS IAM user's access key to assume
    * into customer's AWS IAM Role.
+   * Deprecated, do not use.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+   * <code>
+   * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.bigquery.connection.v1.AwsProperties.cross_account_role is deprecated.
+   *     See google/cloud/bigquery/connection/v1/connection.proto;l=314
    * @return The crossAccountRole.
    */
+  @java.lang.Deprecated
   com.google.cloud.bigquery.connection.v1.AwsCrossAccountRole getCrossAccountRole();
   /**
    *
@@ -55,10 +67,14 @@ public interface AwsPropertiesOrBuilder
    * <pre>
    * Authentication using Google owned AWS IAM user's access key to assume
    * into customer's AWS IAM Role.
+   * Deprecated, do not use.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2;</code>
+   * <code>
+   * .google.cloud.bigquery.connection.v1.AwsCrossAccountRole cross_account_role = 2 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.bigquery.connection.v1.AwsCrossAccountRoleOrBuilder
       getCrossAccountRoleOrBuilder();
 

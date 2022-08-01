@@ -174,6 +174,41 @@ public interface ConnectionOrBuilder
    *
    *
    * <pre>
+   * Azure properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+   *
+   * @return Whether the azure field is set.
+   */
+  boolean hasAzure();
+  /**
+   *
+   *
+   * <pre>
+   * Azure properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+   *
+   * @return The azure.
+   */
+  com.google.cloud.bigquery.connection.v1.AzureProperties getAzure();
+  /**
+   *
+   *
+   * <pre>
+   * Azure properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.AzureProperties azure = 11;</code>
+   */
+  com.google.cloud.bigquery.connection.v1.AzurePropertiesOrBuilder getAzureOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Cloud Spanner properties.
    * </pre>
    *
