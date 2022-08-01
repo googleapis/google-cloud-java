@@ -1,0 +1,45 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.orchestration.airflow.service.v1",
+  "libraryPackage": "com.google.cloud.orchestration.airflow.service.v1",
+  "services": {
+    "Environments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EnvironmentsClient",
+          "rpcs": {
+            "CreateEnvironment": {
+              "methods": ["createEnvironmentAsync", "createEnvironmentAsync", "createEnvironmentOperationCallable", "createEnvironmentCallable"]
+            },
+            "DeleteEnvironment": {
+              "methods": ["deleteEnvironmentAsync", "deleteEnvironmentAsync", "deleteEnvironmentOperationCallable", "deleteEnvironmentCallable"]
+            },
+            "GetEnvironment": {
+              "methods": ["getEnvironment", "getEnvironment", "getEnvironmentCallable"]
+            },
+            "ListEnvironments": {
+              "methods": ["listEnvironments", "listEnvironments", "listEnvironmentsPagedCallable", "listEnvironmentsCallable"]
+            },
+            "UpdateEnvironment": {
+              "methods": ["updateEnvironmentAsync", "updateEnvironmentAsync", "updateEnvironmentOperationCallable", "updateEnvironmentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ImageVersions": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ImageVersionsClient",
+          "rpcs": {
+            "ListImageVersions": {
+              "methods": ["listImageVersions", "listImageVersions", "listImageVersionsPagedCallable", "listImageVersionsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
