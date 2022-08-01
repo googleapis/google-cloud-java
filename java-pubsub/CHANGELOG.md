@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.120.6](https://github.com/googleapis/java-pubsub/compare/v1.120.5...v1.120.6) (2022-08-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v2.14.1 ([#1215](https://github.com/googleapis/java-pubsub/issues/1215)) ([5667492](https://github.com/googleapis/java-pubsub/commit/56674928f2e671487c8d4c0dad4e45368da47e0e))
+* update dependency com.google.cloud:google-cloud-core to v2.8.5 ([#1213](https://github.com/googleapis/java-pubsub/issues/1213)) ([5db0c2c](https://github.com/googleapis/java-pubsub/commit/5db0c2cafcf27a80ac4e18c623fc22c2af252774))
+* update dependency com.google.protobuf:protobuf-java-util to v3.21.4 ([#1214](https://github.com/googleapis/java-pubsub/issues/1214)) ([bfc53d9](https://github.com/googleapis/java-pubsub/commit/bfc53d9fb616b4ee22e2c39dbaf1eed7354142a7))
+* update dependency org.apache.avro:avro to v1.11.1 ([#1210](https://github.com/googleapis/java-pubsub/issues/1210)) ([fafcded](https://github.com/googleapis/java-pubsub/commit/fafcdede6b4e5ef5098b8b04a53d9e42b59cda3d))
+
 ## [1.120.5](https://github.com/googleapis/java-pubsub/compare/v1.120.4...v1.120.5) (2022-07-30)
 
 
