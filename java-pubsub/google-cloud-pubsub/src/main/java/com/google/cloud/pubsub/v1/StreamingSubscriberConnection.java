@@ -547,18 +547,17 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                   String errorMessage = metadataMap.get(ackId);
                   if (errorMessage.startsWith(TRANSIENT_FAILURE_METADATA_PREFIX)) {
                     // Retry all "TRANSIENT_*" error messages - do not set message future
-                    logger.log(Level.WARNING, "Transient error message, will resend", errorMessage);
+                    logger.log(Level.INFO, "Transient error message, will resend", errorMessage);
                     ackRequestDataArrayRetryList.add(ackRequestData);
                   } else if (errorMessage.equals(PERMANENT_FAILURE_INVALID_ACK_ID_METADATA)) {
                     // Permanent failure, send
                     logger.log(
-                        Level.WARNING,
+                        Level.INFO,
                         "Permanent error invalid ack id message, will not resend",
                         errorMessage);
                     ackRequestData.setResponse(AckResponse.INVALID, setResponseOnSuccess);
                   } else {
-                    logger.log(
-                        Level.WARNING, "Unknown error message, will not resend", errorMessage);
+                    logger.log(Level.INFO, "Unknown error message, will not resend", errorMessage);
                     ackRequestData.setResponse(AckResponse.OTHER, setResponseOnSuccess);
                   }
                 } else {
