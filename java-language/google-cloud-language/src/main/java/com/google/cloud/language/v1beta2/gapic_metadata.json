@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.language.v1beta2",
+  "libraryPackage": "com.google.cloud.language.v1beta2",
+  "services": {
+    "LanguageService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LanguageServiceClient",
+          "rpcs": {
+            "AnalyzeEntities": {
+              "methods": ["analyzeEntities", "analyzeEntities", "analyzeEntities", "analyzeEntitiesCallable"]
+            },
+            "AnalyzeEntitySentiment": {
+              "methods": ["analyzeEntitySentiment", "analyzeEntitySentiment", "analyzeEntitySentiment", "analyzeEntitySentimentCallable"]
+            },
+            "AnalyzeSentiment": {
+              "methods": ["analyzeSentiment", "analyzeSentiment", "analyzeSentiment", "analyzeSentimentCallable"]
+            },
+            "AnalyzeSyntax": {
+              "methods": ["analyzeSyntax", "analyzeSyntax", "analyzeSyntax", "analyzeSyntaxCallable"]
+            },
+            "AnnotateText": {
+              "methods": ["annotateText", "annotateText", "annotateText", "annotateTextCallable"]
+            },
+            "ClassifyText": {
+              "methods": ["classifyText", "classifyText", "classifyTextCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
