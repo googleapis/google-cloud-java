@@ -1,0 +1,275 @@
+/*
+ * Copyright 2022 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.dialogflow.v2.stub;
+
+import static com.google.cloud.dialogflow.v2.AnswerRecordsClient.ListAnswerRecordsPagedResponse;
+
+import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.httpjson.ApiMethodDescriptor;
+import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
+import com.google.api.gax.httpjson.ProtoMessageResponseParser;
+import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.v2.AnswerRecord;
+import com.google.cloud.dialogflow.v2.ListAnswerRecordsRequest;
+import com.google.cloud.dialogflow.v2.ListAnswerRecordsResponse;
+import com.google.cloud.dialogflow.v2.UpdateAnswerRecordRequest;
+import com.google.protobuf.TypeRegistry;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * REST stub implementation for the AnswerRecords service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@Generated("by gapic-generator-java")
+@BetaApi
+public class HttpJsonAnswerRecordsStub extends AnswerRecordsStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
+  private static final ApiMethodDescriptor<ListAnswerRecordsRequest, ListAnswerRecordsResponse>
+      listAnswerRecordsMethodDescriptor =
+          ApiMethodDescriptor.<ListAnswerRecordsRequest, ListAnswerRecordsResponse>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.v2.AnswerRecords/ListAnswerRecords")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAnswerRecordsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*}/answerRecords",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAnswerRecordsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v2/{parent=projects/*/locations/*}/answerRecords")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAnswerRecordsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAnswerRecordsResponse>newBuilder()
+                      .setDefaultInstance(ListAnswerRecordsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAnswerRecordRequest, AnswerRecord>
+      updateAnswerRecordMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAnswerRecordRequest, AnswerRecord>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.v2.AnswerRecords/UpdateAnswerRecord")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAnswerRecordRequest>newBuilder()
+                      .setPath(
+                          "/v2/{answerRecord.name=projects/*/answerRecords/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAnswerRecordRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "answerRecord.name", request.getAnswerRecord().getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{answerRecord.name=projects/*/locations/*/answerRecords/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAnswerRecordRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("answerRecord", request.getAnswerRecord()))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AnswerRecord>newBuilder()
+                      .setDefaultInstance(AnswerRecord.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private final UnaryCallable<ListAnswerRecordsRequest, ListAnswerRecordsResponse>
+      listAnswerRecordsCallable;
+  private final UnaryCallable<ListAnswerRecordsRequest, ListAnswerRecordsPagedResponse>
+      listAnswerRecordsPagedCallable;
+  private final UnaryCallable<UpdateAnswerRecordRequest, AnswerRecord> updateAnswerRecordCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final HttpJsonStubCallableFactory callableFactory;
+
+  public static final HttpJsonAnswerRecordsStub create(AnswerRecordsStubSettings settings)
+      throws IOException {
+    return new HttpJsonAnswerRecordsStub(settings, ClientContext.create(settings));
+  }
+
+  public static final HttpJsonAnswerRecordsStub create(ClientContext clientContext)
+      throws IOException {
+    return new HttpJsonAnswerRecordsStub(
+        AnswerRecordsStubSettings.newHttpJsonBuilder().build(), clientContext);
+  }
+
+  public static final HttpJsonAnswerRecordsStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonAnswerRecordsStub(
+        AnswerRecordsStubSettings.newHttpJsonBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of HttpJsonAnswerRecordsStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected HttpJsonAnswerRecordsStub(
+      AnswerRecordsStubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new HttpJsonAnswerRecordsCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of HttpJsonAnswerRecordsStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected HttpJsonAnswerRecordsStub(
+      AnswerRecordsStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+
+    HttpJsonCallSettings<ListAnswerRecordsRequest, ListAnswerRecordsResponse>
+        listAnswerRecordsTransportSettings =
+            HttpJsonCallSettings.<ListAnswerRecordsRequest, ListAnswerRecordsResponse>newBuilder()
+                .setMethodDescriptor(listAnswerRecordsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<UpdateAnswerRecordRequest, AnswerRecord>
+        updateAnswerRecordTransportSettings =
+            HttpJsonCallSettings.<UpdateAnswerRecordRequest, AnswerRecord>newBuilder()
+                .setMethodDescriptor(updateAnswerRecordMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+
+    this.listAnswerRecordsCallable =
+        callableFactory.createUnaryCallable(
+            listAnswerRecordsTransportSettings,
+            settings.listAnswerRecordsSettings(),
+            clientContext);
+    this.listAnswerRecordsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAnswerRecordsTransportSettings,
+            settings.listAnswerRecordsSettings(),
+            clientContext);
+    this.updateAnswerRecordCallable =
+        callableFactory.createUnaryCallable(
+            updateAnswerRecordTransportSettings,
+            settings.updateAnswerRecordSettings(),
+            clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(listAnswerRecordsMethodDescriptor);
+    methodDescriptors.add(updateAnswerRecordMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<ListAnswerRecordsRequest, ListAnswerRecordsResponse>
+      listAnswerRecordsCallable() {
+    return listAnswerRecordsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAnswerRecordsRequest, ListAnswerRecordsPagedResponse>
+      listAnswerRecordsPagedCallable() {
+    return listAnswerRecordsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAnswerRecordRequest, AnswerRecord> updateAnswerRecordCallable() {
+    return updateAnswerRecordCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}
