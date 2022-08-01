@@ -12,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker:
-  image: "gcr.io/cloud-devrel-public-resources/owlbot-java:latest"
 
 deep-remove-regex:
 - "/grpc-google-.*/src"
@@ -30,8 +28,10 @@ deep-preserve-regex:
 
 deep-copy-regex:
 - source: "/google/monitoring/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/$1/proto-google-cloud-monitoring-$1/src"
+  dest: "/owl-bot-staging/java-monitoring/$1/proto-google-cloud-monitoring-$1/src"
 - source: "/google/monitoring/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/$1/grpc-google-cloud-monitoring-$1/src"
+  dest: "/owl-bot-staging/java-monitoring/$1/grpc-google-cloud-monitoring-$1/src"
 - source: "/google/monitoring/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/$1/google-cloud-monitoring/src"
+  dest: "/owl-bot-staging/java-monitoring/$1/google-cloud-monitoring/src"
+
+api-name: monitoring
