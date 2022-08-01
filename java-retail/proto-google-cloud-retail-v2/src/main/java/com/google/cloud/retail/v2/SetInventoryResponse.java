@@ -23,7 +23,8 @@ package com.google.cloud.retail.v2;
  *
  * <pre>
  * Response of the SetInventoryRequest.  Currently empty because
- * there is no meaningful response populated from the [SetInventory][]
+ * there is no meaningful response populated from the
+ * [ProductService.SetInventory][google.cloud.retail.v2.ProductService.SetInventory]
  * method.
  * </pre>
  *
@@ -261,7 +262,8 @@ public final class SetInventoryResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Response of the SetInventoryRequest.  Currently empty because
-   * there is no meaningful response populated from the [SetInventory][]
+   * there is no meaningful response populated from the
+   * [ProductService.SetInventory][google.cloud.retail.v2.ProductService.SetInventory]
    * method.
    * </pre>
    *

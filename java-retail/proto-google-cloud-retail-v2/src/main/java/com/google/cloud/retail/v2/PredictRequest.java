@@ -202,13 +202,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Full resource name of the format:
-   * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-   * The ID of the Recommendations AI placement. Before you can request
-   * predictions from your model, you must create at least one placement for it.
-   * For more information, see [Managing
-   * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-   * The full list of available placements can be seen at
-   * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+   * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+   * or
+   * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+   * We recommend using the `servingConfigs` resource. `placements` is a legacy
+   * resource.
+   * The ID of the Recommendations AI serving config or placement.
+   * Before you can request predictions from your model, you must create at
+   * least one serving config or placement for it. For more information, see
+   * [Managing serving configurations]
+   * (https://cloud.google.com/retail/docs/manage-configs).
+   * The full list of available serving configs can be seen at
+   * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
    * </pre>
    *
    * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -232,13 +237,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Full resource name of the format:
-   * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-   * The ID of the Recommendations AI placement. Before you can request
-   * predictions from your model, you must create at least one placement for it.
-   * For more information, see [Managing
-   * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-   * The full list of available placements can be seen at
-   * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+   * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+   * or
+   * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+   * We recommend using the `servingConfigs` resource. `placements` is a legacy
+   * resource.
+   * The ID of the Recommendations AI serving config or placement.
+   * Before you can request predictions from your model, you must create at
+   * least one serving config or placement for it. For more information, see
+   * [Managing serving configurations]
+   * (https://cloud.google.com/retail/docs/manage-configs).
+   * The full list of available serving configs can be seen at
+   * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
    * </pre>
    *
    * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -354,10 +364,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Maximum number of results to return per page. Set this property
-   * to the number of prediction results needed. If zero, the service will
-   * choose a reasonable default. The maximum allowed value is 100. Values
-   * above 100 will be coerced to 100.
+   * Maximum number of results to return. Set this property to the number of
+   * prediction results needed. If zero, the service will choose a reasonable
+   * default. The maximum allowed value is 100. Values above 100 will be coerced
+   * to 100.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
@@ -375,14 +385,17 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The previous PredictResponse.next_page_token.
+   * This field is not used; leave it unset.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2.PredictRequest.page_token is deprecated. See
+   *     google/cloud/retail/v2/prediction_service.proto;l=94
    * @return The pageToken.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getPageToken() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -398,14 +411,17 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The previous PredictResponse.next_page_token.
+   * This field is not used; leave it unset.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2.PredictRequest.page_token is deprecated. See
+   *     google/cloud/retail/v2/prediction_service.proto;l=94
    * @return The bytes for pageToken.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
@@ -447,6 +463,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * receive empty results instead.
    * Note that the API will never return items with storageStatus of "EXPIRED"
    * or "DELETED" regardless of filter choices.
+   * If `filterSyntaxV2` is set to true under the `params` field, then
+   * attribute-based expressions are expected instead of the above described
+   * tag-based syntax. Examples:
+   *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+   *  * (availability: ANY("IN_STOCK")) AND
+   *    (colors: ANY("Red") OR categories: ANY("Phones"))
    * </pre>
    *
    * <code>string filter = 5;</code>
@@ -492,6 +514,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * receive empty results instead.
    * Note that the API will never return items with storageStatus of "EXPIRED"
    * or "DELETED" regardless of filter choices.
+   * If `filterSyntaxV2` is set to true under the `params` field, then
+   * attribute-based expressions are expected instead of the above described
+   * tag-based syntax. Examples:
+   *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+   *  * (availability: ANY("IN_STOCK")) AND
+   *    (colors: ANY("Red") OR categories: ANY("Phones"))
    * </pre>
    *
    * <code>string filter = 5;</code>
@@ -587,6 +615,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
    *    request-level control and adjusts prediction results based on product
    *    category.
+   * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+   *   field is interpreteted according to the new, attribute-based syntax.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -631,6 +661,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
    *    request-level control and adjusts prediction results based on product
    *    category.
+   * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+   *   field is interpreteted according to the new, attribute-based syntax.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -666,6 +698,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
    *    request-level control and adjusts prediction results based on product
    *    category.
+   * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+   *   field is interpreteted according to the new, attribute-based syntax.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -706,6 +740,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
    *    request-level control and adjusts prediction results based on product
    *    category.
+   * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+   *   field is interpreteted according to the new, attribute-based syntax.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -1357,13 +1393,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Full resource name of the format:
-     * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-     * The ID of the Recommendations AI placement. Before you can request
-     * predictions from your model, you must create at least one placement for it.
-     * For more information, see [Managing
-     * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-     * The full list of available placements can be seen at
-     * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+     * or
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+     * We recommend using the `servingConfigs` resource. `placements` is a legacy
+     * resource.
+     * The ID of the Recommendations AI serving config or placement.
+     * Before you can request predictions from your model, you must create at
+     * least one serving config or placement for it. For more information, see
+     * [Managing serving configurations]
+     * (https://cloud.google.com/retail/docs/manage-configs).
+     * The full list of available serving configs can be seen at
+     * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1386,13 +1427,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Full resource name of the format:
-     * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-     * The ID of the Recommendations AI placement. Before you can request
-     * predictions from your model, you must create at least one placement for it.
-     * For more information, see [Managing
-     * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-     * The full list of available placements can be seen at
-     * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+     * or
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+     * We recommend using the `servingConfigs` resource. `placements` is a legacy
+     * resource.
+     * The ID of the Recommendations AI serving config or placement.
+     * Before you can request predictions from your model, you must create at
+     * least one serving config or placement for it. For more information, see
+     * [Managing serving configurations]
+     * (https://cloud.google.com/retail/docs/manage-configs).
+     * The full list of available serving configs can be seen at
+     * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1415,13 +1461,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Full resource name of the format:
-     * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-     * The ID of the Recommendations AI placement. Before you can request
-     * predictions from your model, you must create at least one placement for it.
-     * For more information, see [Managing
-     * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-     * The full list of available placements can be seen at
-     * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+     * or
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+     * We recommend using the `servingConfigs` resource. `placements` is a legacy
+     * resource.
+     * The ID of the Recommendations AI serving config or placement.
+     * Before you can request predictions from your model, you must create at
+     * least one serving config or placement for it. For more information, see
+     * [Managing serving configurations]
+     * (https://cloud.google.com/retail/docs/manage-configs).
+     * The full list of available serving configs can be seen at
+     * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1443,13 +1494,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Full resource name of the format:
-     * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-     * The ID of the Recommendations AI placement. Before you can request
-     * predictions from your model, you must create at least one placement for it.
-     * For more information, see [Managing
-     * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-     * The full list of available placements can be seen at
-     * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+     * or
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+     * We recommend using the `servingConfigs` resource. `placements` is a legacy
+     * resource.
+     * The ID of the Recommendations AI serving config or placement.
+     * Before you can request predictions from your model, you must create at
+     * least one serving config or placement for it. For more information, see
+     * [Managing serving configurations]
+     * (https://cloud.google.com/retail/docs/manage-configs).
+     * The full list of available serving configs can be seen at
+     * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1467,13 +1523,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Full resource name of the format:
-     * {name=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}
-     * The ID of the Recommendations AI placement. Before you can request
-     * predictions from your model, you must create at least one placement for it.
-     * For more information, see [Managing
-     * placements](https://cloud.google.com/retail/recommendations-ai/docs/manage-placements).
-     * The full list of available placements can be seen at
-     * https://console.cloud.google.com/recommendation/catalogs/default_catalog/placements
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/&#42;}`
+     * or
+     * `{placement=projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/&#42;}`.
+     * We recommend using the `servingConfigs` resource. `placements` is a legacy
+     * resource.
+     * The ID of the Recommendations AI serving config or placement.
+     * Before you can request predictions from your model, you must create at
+     * least one serving config or placement for it. For more information, see
+     * [Managing serving configurations]
+     * (https://cloud.google.com/retail/docs/manage-configs).
+     * The full list of available serving configs can be seen at
+     * https://console.cloud.google.com/ai/retail/catalogs/default_catalog/configs
      * </pre>
      *
      * <code>string placement = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1808,10 +1869,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of results to return per page. Set this property
-     * to the number of prediction results needed. If zero, the service will
-     * choose a reasonable default. The maximum allowed value is 100. Values
-     * above 100 will be coerced to 100.
+     * Maximum number of results to return. Set this property to the number of
+     * prediction results needed. If zero, the service will choose a reasonable
+     * default. The maximum allowed value is 100. Values above 100 will be coerced
+     * to 100.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1826,10 +1887,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of results to return per page. Set this property
-     * to the number of prediction results needed. If zero, the service will
-     * choose a reasonable default. The maximum allowed value is 100. Values
-     * above 100 will be coerced to 100.
+     * Maximum number of results to return. Set this property to the number of
+     * prediction results needed. If zero, the service will choose a reasonable
+     * default. The maximum allowed value is 100. Values above 100 will be coerced
+     * to 100.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1847,10 +1908,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of results to return per page. Set this property
-     * to the number of prediction results needed. If zero, the service will
-     * choose a reasonable default. The maximum allowed value is 100. Values
-     * above 100 will be coerced to 100.
+     * Maximum number of results to return. Set this property to the number of
+     * prediction results needed. If zero, the service will choose a reasonable
+     * default. The maximum allowed value is 100. Values above 100 will be coerced
+     * to 100.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1869,13 +1930,16 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The previous PredictResponse.next_page_token.
+     * This field is not used; leave it unset.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2.PredictRequest.page_token is deprecated. See
+     *     google/cloud/retail/v2/prediction_service.proto;l=94
      * @return The pageToken.
      */
+    @java.lang.Deprecated
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
       if (!(ref instanceof java.lang.String)) {
@@ -1891,13 +1955,16 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The previous PredictResponse.next_page_token.
+     * This field is not used; leave it unset.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2.PredictRequest.page_token is deprecated. See
+     *     google/cloud/retail/v2/prediction_service.proto;l=94
      * @return The bytes for pageToken.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof String) {
@@ -1913,14 +1980,17 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The previous PredictResponse.next_page_token.
+     * This field is not used; leave it unset.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2.PredictRequest.page_token is deprecated. See
+     *     google/cloud/retail/v2/prediction_service.proto;l=94
      * @param value The pageToken to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPageToken(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1934,13 +2004,16 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The previous PredictResponse.next_page_token.
+     * This field is not used; leave it unset.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2.PredictRequest.page_token is deprecated. See
+     *     google/cloud/retail/v2/prediction_service.proto;l=94
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearPageToken() {
 
       pageToken_ = getDefaultInstance().getPageToken();
@@ -1951,14 +2024,17 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The previous PredictResponse.next_page_token.
+     * This field is not used; leave it unset.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.retail.v2.PredictRequest.page_token is deprecated. See
+     *     google/cloud/retail/v2/prediction_service.proto;l=94
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1998,6 +2074,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * receive empty results instead.
      * Note that the API will never return items with storageStatus of "EXPIRED"
      * or "DELETED" regardless of filter choices.
+     * If `filterSyntaxV2` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+     *  * (availability: ANY("IN_STOCK")) AND
+     *    (colors: ANY("Red") OR categories: ANY("Phones"))
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -2042,6 +2124,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * receive empty results instead.
      * Note that the API will never return items with storageStatus of "EXPIRED"
      * or "DELETED" regardless of filter choices.
+     * If `filterSyntaxV2` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+     *  * (availability: ANY("IN_STOCK")) AND
+     *    (colors: ANY("Red") OR categories: ANY("Phones"))
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -2086,6 +2174,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * receive empty results instead.
      * Note that the API will never return items with storageStatus of "EXPIRED"
      * or "DELETED" regardless of filter choices.
+     * If `filterSyntaxV2` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+     *  * (availability: ANY("IN_STOCK")) AND
+     *    (colors: ANY("Red") OR categories: ANY("Phones"))
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -2129,6 +2223,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * receive empty results instead.
      * Note that the API will never return items with storageStatus of "EXPIRED"
      * or "DELETED" regardless of filter choices.
+     * If `filterSyntaxV2` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+     *  * (availability: ANY("IN_STOCK")) AND
+     *    (colors: ANY("Red") OR categories: ANY("Phones"))
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -2168,6 +2268,12 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * receive empty results instead.
      * Note that the API will never return items with storageStatus of "EXPIRED"
      * or "DELETED" regardless of filter choices.
+     * If `filterSyntaxV2` is set to true under the `params` field, then
+     * attribute-based expressions are expected instead of the above described
+     * tag-based syntax. Examples:
+     *  * (colors: ANY("Red", "Blue")) AND NOT (categories: ANY("Phones"))
+     *  * (availability: ANY("IN_STOCK")) AND
+     *    (colors: ANY("Red") OR categories: ANY("Phones"))
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -2300,6 +2406,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -2344,6 +2452,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -2379,6 +2489,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -2419,6 +2531,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -2466,6 +2580,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -2509,6 +2625,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>
@@ -2551,6 +2669,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      *    'medium-diversity', 'high-diversity', 'auto-diversity'}. This gives
      *    request-level control and adjusts prediction results based on product
      *    category.
+     * * `filterSyntaxV2`: Boolean. False by default. If set to true, the `filter`
+     *   field is interpreteted according to the new, attribute-based syntax.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; params = 7;</code>

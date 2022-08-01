@@ -27,7 +27,9 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the search engine placement, such as
+   * Required. The resource name of the Retail Search serving config, such as
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+   * or the name of the legacy placement resource, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
    * This field is used to identify the serving configuration name and the set
    * of models that will be used to make the search.
@@ -42,7 +44,9 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the search engine placement, such as
+   * Required. The resource name of the Retail Search serving config, such as
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+   * or the name of the legacy placement resource, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
    * This field is used to identify the serving configuration name and the set
    * of models that will be used to make the search.
@@ -455,7 +459,7 @@ public interface SearchRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=553
+   *     google/cloud/retail/v2/search_service.proto;l=575
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Deprecated
@@ -475,7 +479,7 @@ public interface SearchRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=553
+   *     google/cloud/retail/v2/search_service.proto;l=575
    * @return The dynamicFacetSpec.
    */
   @java.lang.Deprecated

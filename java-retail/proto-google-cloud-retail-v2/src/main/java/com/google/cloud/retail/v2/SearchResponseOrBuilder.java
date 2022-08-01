@@ -150,7 +150,7 @@ public interface SearchResponseOrBuilder
    * <pre>
    * Contains the spell corrected query, if found. If the spell correction type
    * is AUTOMATIC, then the search results are based on corrected_query.
-   * Otherwise the original query will be used for search.
+   * Otherwise the original query is used for search.
    * </pre>
    *
    * <code>string corrected_query = 4;</code>
@@ -164,7 +164,7 @@ public interface SearchResponseOrBuilder
    * <pre>
    * Contains the spell corrected query, if found. If the spell correction type
    * is AUTOMATIC, then the search results are based on corrected_query.
-   * Otherwise the original query will be used for search.
+   * Otherwise the original query is used for search.
    * </pre>
    *
    * <code>string corrected_query = 4;</code>

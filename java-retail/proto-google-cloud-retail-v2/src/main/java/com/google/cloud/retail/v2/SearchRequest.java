@@ -1324,11 +1324,29 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The order in which [Facet.values][] are returned.
+       * True to make facet keys case insensitive when getting faceting
+       * values with prefixes or contains; false otherwise.
+       * </pre>
+       *
+       * <code>bool case_insensitive = 10;</code>
+       *
+       * @return The caseInsensitive.
+       */
+      boolean getCaseInsensitive();
+
+      /**
+       *
+       *
+       * <pre>
+       * The order in which
+       * [SearchResponse.Facet.values][google.cloud.retail.v2.SearchResponse.Facet.values]
+       * are returned.
        * Allowed values are:
-       * * "count desc", which means order by [Facet.FacetValue.count][]
+       * * "count desc", which means order by
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
        * descending.
-       * * "value desc", which means order by [Facet.FacetValue.value][]
+       * * "value desc", which means order by
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
        * descending.
        *   Only applies to textual facets.
        * If not set, textual values are sorted in [natural
@@ -1349,11 +1367,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The order in which [Facet.values][] are returned.
+       * The order in which
+       * [SearchResponse.Facet.values][google.cloud.retail.v2.SearchResponse.Facet.values]
+       * are returned.
        * Allowed values are:
-       * * "count desc", which means order by [Facet.FacetValue.count][]
+       * * "count desc", which means order by
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
        * descending.
-       * * "value desc", which means order by [Facet.FacetValue.value][]
+       * * "value desc", which means order by
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
        * descending.
        *   Only applies to textual facets.
        * If not set, textual values are sorted in [natural
@@ -1382,9 +1404,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * detail syntax and limitations. Notice that there is no limitation on
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
        * when query is specified.
-       * In the response, [FacetValue.value][] will be always "1" and
-       * [FacetValue.count][] will be the number of results that matches the
-       * query.
+       * In the response,
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
+       * will be always "1" and
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
+       * will be the number of results that match the query.
        * For example, you can set a customized facet for "shipToStore",
        * where
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -1411,9 +1435,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * detail syntax and limitations. Notice that there is no limitation on
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
        * when query is specified.
-       * In the response, [FacetValue.value][] will be always "1" and
-       * [FacetValue.count][] will be the number of results that matches the
-       * query.
+       * In the response,
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
+       * will be always "1" and
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
+       * will be the number of results that match the query.
        * For example, you can set a customized facet for "shipToStore",
        * where
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -1429,6 +1455,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The bytes for query.
        */
       com.google.protobuf.ByteString getQueryBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Returns the min and max value for each numerical facet intervals.
+       * Ignored for textual facets.
+       * </pre>
+       *
+       * <code>bool return_min_max = 11;</code>
+       *
+       * @return The returnMinMax.
+       */
+      boolean getReturnMinMax();
     }
     /**
      *
@@ -1549,6 +1589,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                     mutable_bitField0_ |= 0x00000008;
                   }
                   contains_.add(s);
+                  break;
+                }
+              case 80:
+                {
+                  caseInsensitive_ = input.readBool();
+                  break;
+                }
+              case 88:
+                {
+                  returnMinMax_ = input.readBool();
                   break;
                 }
               default:
@@ -2073,17 +2123,40 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return contains_.getByteString(index);
       }
 
+      public static final int CASE_INSENSITIVE_FIELD_NUMBER = 10;
+      private boolean caseInsensitive_;
+      /**
+       *
+       *
+       * <pre>
+       * True to make facet keys case insensitive when getting faceting
+       * values with prefixes or contains; false otherwise.
+       * </pre>
+       *
+       * <code>bool case_insensitive = 10;</code>
+       *
+       * @return The caseInsensitive.
+       */
+      @java.lang.Override
+      public boolean getCaseInsensitive() {
+        return caseInsensitive_;
+      }
+
       public static final int ORDER_BY_FIELD_NUMBER = 4;
       private volatile java.lang.Object orderBy_;
       /**
        *
        *
        * <pre>
-       * The order in which [Facet.values][] are returned.
+       * The order in which
+       * [SearchResponse.Facet.values][google.cloud.retail.v2.SearchResponse.Facet.values]
+       * are returned.
        * Allowed values are:
-       * * "count desc", which means order by [Facet.FacetValue.count][]
+       * * "count desc", which means order by
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
        * descending.
-       * * "value desc", which means order by [Facet.FacetValue.value][]
+       * * "value desc", which means order by
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
        * descending.
        *   Only applies to textual facets.
        * If not set, textual values are sorted in [natural
@@ -2115,11 +2188,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The order in which [Facet.values][] are returned.
+       * The order in which
+       * [SearchResponse.Facet.values][google.cloud.retail.v2.SearchResponse.Facet.values]
+       * are returned.
        * Allowed values are:
-       * * "count desc", which means order by [Facet.FacetValue.count][]
+       * * "count desc", which means order by
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
        * descending.
-       * * "value desc", which means order by [Facet.FacetValue.value][]
+       * * "value desc", which means order by
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
        * descending.
        *   Only applies to textual facets.
        * If not set, textual values are sorted in [natural
@@ -2161,9 +2238,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * detail syntax and limitations. Notice that there is no limitation on
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
        * when query is specified.
-       * In the response, [FacetValue.value][] will be always "1" and
-       * [FacetValue.count][] will be the number of results that matches the
-       * query.
+       * In the response,
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
+       * will be always "1" and
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
+       * will be the number of results that match the query.
        * For example, you can set a customized facet for "shipToStore",
        * where
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -2201,9 +2280,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * detail syntax and limitations. Notice that there is no limitation on
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
        * when query is specified.
-       * In the response, [FacetValue.value][] will be always "1" and
-       * [FacetValue.count][] will be the number of results that matches the
-       * query.
+       * In the response,
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
+       * will be always "1" and
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
+       * will be the number of results that match the query.
        * For example, you can set a customized facet for "shipToStore",
        * where
        * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -2229,6 +2310,25 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
+      }
+
+      public static final int RETURN_MIN_MAX_FIELD_NUMBER = 11;
+      private boolean returnMinMax_;
+      /**
+       *
+       *
+       * <pre>
+       * Returns the min and max value for each numerical facet intervals.
+       * Ignored for textual facets.
+       * </pre>
+       *
+       * <code>bool return_min_max = 11;</code>
+       *
+       * @return The returnMinMax.
+       */
+      @java.lang.Override
+      public boolean getReturnMinMax() {
+        return returnMinMax_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -2266,6 +2366,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         for (int i = 0; i < contains_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 9, contains_.getRaw(i));
+        }
+        if (caseInsensitive_ != false) {
+          output.writeBool(10, caseInsensitive_);
+        }
+        if (returnMinMax_ != false) {
+          output.writeBool(11, returnMinMax_);
         }
         unknownFields.writeTo(output);
       }
@@ -2312,6 +2418,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           size += dataSize;
           size += 1 * getContainsList().size();
         }
+        if (caseInsensitive_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, caseInsensitive_);
+        }
+        if (returnMinMax_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, returnMinMax_);
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -2333,8 +2445,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (!getRestrictedValuesList().equals(other.getRestrictedValuesList())) return false;
         if (!getPrefixesList().equals(other.getPrefixesList())) return false;
         if (!getContainsList().equals(other.getContainsList())) return false;
+        if (getCaseInsensitive() != other.getCaseInsensitive()) return false;
         if (!getOrderBy().equals(other.getOrderBy())) return false;
         if (!getQuery().equals(other.getQuery())) return false;
+        if (getReturnMinMax() != other.getReturnMinMax()) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -2364,10 +2478,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + CONTAINS_FIELD_NUMBER;
           hash = (53 * hash) + getContainsList().hashCode();
         }
+        hash = (37 * hash) + CASE_INSENSITIVE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCaseInsensitive());
         hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
         hash = (53 * hash) + getOrderBy().hashCode();
         hash = (37 * hash) + QUERY_FIELD_NUMBER;
         hash = (53 * hash) + getQuery().hashCode();
+        hash = (37 * hash) + RETURN_MIN_MAX_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnMinMax());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -2532,9 +2650,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = (bitField0_ & ~0x00000004);
           contains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000008);
+          caseInsensitive_ = false;
+
           orderBy_ = "";
 
           query_ = "";
+
+          returnMinMax_ = false;
 
           return this;
         }
@@ -2590,8 +2712,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.contains_ = contains_;
+          result.caseInsensitive_ = caseInsensitive_;
           result.orderBy_ = orderBy_;
           result.query_ = query_;
+          result.returnMinMax_ = returnMinMax_;
           onBuilt();
           return result;
         }
@@ -2707,6 +2831,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             }
             onChanged();
           }
+          if (other.getCaseInsensitive() != false) {
+            setCaseInsensitive(other.getCaseInsensitive());
+          }
           if (!other.getOrderBy().isEmpty()) {
             orderBy_ = other.orderBy_;
             onChanged();
@@ -2714,6 +2841,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (!other.getQuery().isEmpty()) {
             query_ = other.query_;
             onChanged();
+          }
+          if (other.getReturnMinMax() != false) {
+            setReturnMinMax(other.getReturnMinMax());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -4129,16 +4259,75 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private boolean caseInsensitive_;
+        /**
+         *
+         *
+         * <pre>
+         * True to make facet keys case insensitive when getting faceting
+         * values with prefixes or contains; false otherwise.
+         * </pre>
+         *
+         * <code>bool case_insensitive = 10;</code>
+         *
+         * @return The caseInsensitive.
+         */
+        @java.lang.Override
+        public boolean getCaseInsensitive() {
+          return caseInsensitive_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * True to make facet keys case insensitive when getting faceting
+         * values with prefixes or contains; false otherwise.
+         * </pre>
+         *
+         * <code>bool case_insensitive = 10;</code>
+         *
+         * @param value The caseInsensitive to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCaseInsensitive(boolean value) {
+
+          caseInsensitive_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * True to make facet keys case insensitive when getting faceting
+         * values with prefixes or contains; false otherwise.
+         * </pre>
+         *
+         * <code>bool case_insensitive = 10;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCaseInsensitive() {
+
+          caseInsensitive_ = false;
+          onChanged();
+          return this;
+        }
+
         private java.lang.Object orderBy_ = "";
         /**
          *
          *
          * <pre>
-         * The order in which [Facet.values][] are returned.
+         * The order in which
+         * [SearchResponse.Facet.values][google.cloud.retail.v2.SearchResponse.Facet.values]
+         * are returned.
          * Allowed values are:
-         * * "count desc", which means order by [Facet.FacetValue.count][]
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
          * descending.
-         * * "value desc", which means order by [Facet.FacetValue.value][]
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
          * If not set, textual values are sorted in [natural
@@ -4169,11 +4358,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The order in which [Facet.values][] are returned.
+         * The order in which
+         * [SearchResponse.Facet.values][google.cloud.retail.v2.SearchResponse.Facet.values]
+         * are returned.
          * Allowed values are:
-         * * "count desc", which means order by [Facet.FacetValue.count][]
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
          * descending.
-         * * "value desc", which means order by [Facet.FacetValue.value][]
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
          * If not set, textual values are sorted in [natural
@@ -4204,11 +4397,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The order in which [Facet.values][] are returned.
+         * The order in which
+         * [SearchResponse.Facet.values][google.cloud.retail.v2.SearchResponse.Facet.values]
+         * are returned.
          * Allowed values are:
-         * * "count desc", which means order by [Facet.FacetValue.count][]
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
          * descending.
-         * * "value desc", which means order by [Facet.FacetValue.value][]
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
          * If not set, textual values are sorted in [natural
@@ -4238,11 +4435,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The order in which [Facet.values][] are returned.
+         * The order in which
+         * [SearchResponse.Facet.values][google.cloud.retail.v2.SearchResponse.Facet.values]
+         * are returned.
          * Allowed values are:
-         * * "count desc", which means order by [Facet.FacetValue.count][]
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
          * descending.
-         * * "value desc", which means order by [Facet.FacetValue.value][]
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
          * If not set, textual values are sorted in [natural
@@ -4268,11 +4469,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The order in which [Facet.values][] are returned.
+         * The order in which
+         * [SearchResponse.Facet.values][google.cloud.retail.v2.SearchResponse.Facet.values]
+         * are returned.
          * Allowed values are:
-         * * "count desc", which means order by [Facet.FacetValue.count][]
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
          * descending.
-         * * "value desc", which means order by [Facet.FacetValue.value][]
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
          * If not set, textual values are sorted in [natural
@@ -4312,9 +4517,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * detail syntax and limitations. Notice that there is no limitation on
          * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
          * when query is specified.
-         * In the response, [FacetValue.value][] will be always "1" and
-         * [FacetValue.count][] will be the number of results that matches the
-         * query.
+         * In the response,
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
+         * will be always "1" and
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
+         * will be the number of results that match the query.
          * For example, you can set a customized facet for "shipToStore",
          * where
          * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -4351,9 +4558,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * detail syntax and limitations. Notice that there is no limitation on
          * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
          * when query is specified.
-         * In the response, [FacetValue.value][] will be always "1" and
-         * [FacetValue.count][] will be the number of results that matches the
-         * query.
+         * In the response,
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
+         * will be always "1" and
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
+         * will be the number of results that match the query.
          * For example, you can set a customized facet for "shipToStore",
          * where
          * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -4390,9 +4599,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * detail syntax and limitations. Notice that there is no limitation on
          * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
          * when query is specified.
-         * In the response, [FacetValue.value][] will be always "1" and
-         * [FacetValue.count][] will be the number of results that matches the
-         * query.
+         * In the response,
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
+         * will be always "1" and
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
+         * will be the number of results that match the query.
          * For example, you can set a customized facet for "shipToStore",
          * where
          * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -4428,9 +4639,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * detail syntax and limitations. Notice that there is no limitation on
          * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
          * when query is specified.
-         * In the response, [FacetValue.value][] will be always "1" and
-         * [FacetValue.count][] will be the number of results that matches the
-         * query.
+         * In the response,
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
+         * will be always "1" and
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
+         * will be the number of results that match the query.
          * For example, you can set a customized facet for "shipToStore",
          * where
          * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -4462,9 +4675,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * detail syntax and limitations. Notice that there is no limitation on
          * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
          * when query is specified.
-         * In the response, [FacetValue.value][] will be always "1" and
-         * [FacetValue.count][] will be the number of results that matches the
-         * query.
+         * In the response,
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.value]
+         * will be always "1" and
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2.SearchResponse.Facet.FacetValue.count]
+         * will be the number of results that match the query.
          * For example, you can set a customized facet for "shipToStore",
          * where
          * [FacetKey.key][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.key]
@@ -4487,6 +4702,61 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
 
           query_ = value;
+          onChanged();
+          return this;
+        }
+
+        private boolean returnMinMax_;
+        /**
+         *
+         *
+         * <pre>
+         * Returns the min and max value for each numerical facet intervals.
+         * Ignored for textual facets.
+         * </pre>
+         *
+         * <code>bool return_min_max = 11;</code>
+         *
+         * @return The returnMinMax.
+         */
+        @java.lang.Override
+        public boolean getReturnMinMax() {
+          return returnMinMax_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Returns the min and max value for each numerical facet intervals.
+         * Ignored for textual facets.
+         * </pre>
+         *
+         * <code>bool return_min_max = 11;</code>
+         *
+         * @param value The returnMinMax to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReturnMinMax(boolean value) {
+
+          returnMinMax_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Returns the min and max value for each numerical facet intervals.
+         * Ignored for textual facets.
+         * </pre>
+         *
+         * <code>bool return_min_max = 11;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearReturnMinMax() {
+
+          returnMinMax_ = false;
           onChanged();
           return this;
         }
@@ -9289,7 +9559,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Unspecified query expansion condition. This defaults to
+       * Unspecified query expansion condition. In this case, server behavior
+       * defaults to
        * [Condition.DISABLED][google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.Condition.DISABLED].
        * </pre>
        *
@@ -9325,7 +9596,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Unspecified query expansion condition. This defaults to
+       * Unspecified query expansion condition. In this case, server behavior
+       * defaults to
        * [Condition.DISABLED][google.cloud.retail.v2.SearchRequest.QueryExpansionSpec.Condition.DISABLED].
        * </pre>
        *
@@ -10206,7 +10478,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Default value. Defaults to
+       * Default value. In this case, server behavior defaults to
        * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.AUTO].
        * </pre>
        *
@@ -10240,7 +10512,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Default value. Defaults to
+       * Default value. In this case, server behavior defaults to
        * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.PersonalizationSpec.Mode.AUTO].
        * </pre>
        *
@@ -11019,7 +11291,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Unspecified spell correction mode. This defaults to
+       * Unspecified spell correction mode. In this case, server behavior
+       * defaults to
        * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
        * </pre>
        *
@@ -11057,7 +11330,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Unspecified spell correction mode. This defaults to
+       * Unspecified spell correction mode. In this case, server behavior
+       * defaults to
        * [Mode.AUTO][google.cloud.retail.v2.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
        * </pre>
        *
@@ -11711,7 +11985,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the search engine placement, such as
+   * Required. The resource name of the Retail Search serving config, such as
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+   * or the name of the legacy placement resource, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
    * This field is used to identify the serving configuration name and the set
    * of models that will be used to make the search.
@@ -11737,7 +12013,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the search engine placement, such as
+   * Required. The resource name of the Retail Search serving config, such as
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+   * or the name of the legacy placement resource, such as
    * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
    * This field is used to identify the serving configuration name and the set
    * of models that will be used to make the search.
@@ -12370,7 +12648,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=553
+   *     google/cloud/retail/v2/search_service.proto;l=575
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Override
@@ -12393,7 +12671,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2/search_service.proto;l=553
+   *     google/cloud/retail/v2/search_service.proto;l=575
    * @return The dynamicFacetSpec.
    */
   @java.lang.Override
@@ -14095,7 +14373,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the search engine placement, such as
+     * Required. The resource name of the Retail Search serving config, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+     * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
@@ -14120,7 +14400,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the search engine placement, such as
+     * Required. The resource name of the Retail Search serving config, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+     * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
@@ -14145,7 +14427,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the search engine placement, such as
+     * Required. The resource name of the Retail Search serving config, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+     * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
@@ -14169,7 +14453,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the search engine placement, such as
+     * Required. The resource name of the Retail Search serving config, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+     * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
@@ -14189,7 +14475,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the search engine placement, such as
+     * Required. The resource name of the Retail Search serving config, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+     * or the name of the legacy placement resource, such as
      * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
@@ -15881,7 +16169,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2/search_service.proto;l=553
+     *     google/cloud/retail/v2/search_service.proto;l=575
      * @return Whether the dynamicFacetSpec field is set.
      */
     @java.lang.Deprecated
@@ -15903,7 +16191,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2/search_service.proto;l=553
+     *     google/cloud/retail/v2/search_service.proto;l=575
      * @return The dynamicFacetSpec.
      */
     @java.lang.Deprecated
