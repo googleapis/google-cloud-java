@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.10.1](https://github.com/googleapis/java-bigtable/compare/v2.10.0...v2.10.1) (2022-08-01)
+
+
+### Bug Fixes
+
+* retry rst stream in mutations ([#1327](https://github.com/googleapis/java-bigtable/issues/1327)) ([1a5b3a2](https://github.com/googleapis/java-bigtable/commit/1a5b3a215b5388678241cadec26a962a512157ac))
+
+
+### Dependencies
+
+* update dependency org.junit.vintage:junit-vintage-engine to v5.9.0 ([#1323](https://github.com/googleapis/java-bigtable/issues/1323)) ([7655747](https://github.com/googleapis/java-bigtable/commit/76557476744a6404b9df30c97c59f0a7e38a1ed8))
+
 ## [2.10.0](https://github.com/googleapis/java-bigtable/compare/v2.9.0...v2.10.0) (2022-07-26)
 
 
