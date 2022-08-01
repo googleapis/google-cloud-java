@@ -1,0 +1,87 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.vision.v1p3beta1",
+  "libraryPackage": "com.google.cloud.vision.v1p3beta1",
+  "services": {
+    "ImageAnnotator": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ImageAnnotatorClient",
+          "rpcs": {
+            "AsyncBatchAnnotateFiles": {
+              "methods": ["asyncBatchAnnotateFilesAsync", "asyncBatchAnnotateFilesAsync", "asyncBatchAnnotateFilesOperationCallable", "asyncBatchAnnotateFilesCallable"]
+            },
+            "BatchAnnotateImages": {
+              "methods": ["batchAnnotateImages", "batchAnnotateImages", "batchAnnotateImagesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ProductSearch": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProductSearchClient",
+          "rpcs": {
+            "AddProductToProductSet": {
+              "methods": ["addProductToProductSet", "addProductToProductSet", "addProductToProductSet", "addProductToProductSet", "addProductToProductSet", "addProductToProductSetCallable"]
+            },
+            "CreateProduct": {
+              "methods": ["createProduct", "createProduct", "createProduct", "createProductCallable"]
+            },
+            "CreateProductSet": {
+              "methods": ["createProductSet", "createProductSet", "createProductSet", "createProductSetCallable"]
+            },
+            "CreateReferenceImage": {
+              "methods": ["createReferenceImage", "createReferenceImage", "createReferenceImage", "createReferenceImageCallable"]
+            },
+            "DeleteProduct": {
+              "methods": ["deleteProduct", "deleteProduct", "deleteProduct", "deleteProductCallable"]
+            },
+            "DeleteProductSet": {
+              "methods": ["deleteProductSet", "deleteProductSet", "deleteProductSet", "deleteProductSetCallable"]
+            },
+            "DeleteReferenceImage": {
+              "methods": ["deleteReferenceImage", "deleteReferenceImage", "deleteReferenceImage", "deleteReferenceImageCallable"]
+            },
+            "GetProduct": {
+              "methods": ["getProduct", "getProduct", "getProduct", "getProductCallable"]
+            },
+            "GetProductSet": {
+              "methods": ["getProductSet", "getProductSet", "getProductSet", "getProductSetCallable"]
+            },
+            "GetReferenceImage": {
+              "methods": ["getReferenceImage", "getReferenceImage", "getReferenceImage", "getReferenceImageCallable"]
+            },
+            "ImportProductSets": {
+              "methods": ["importProductSetsAsync", "importProductSetsAsync", "importProductSetsAsync", "importProductSetsOperationCallable", "importProductSetsCallable"]
+            },
+            "ListProductSets": {
+              "methods": ["listProductSets", "listProductSets", "listProductSets", "listProductSetsPagedCallable", "listProductSetsCallable"]
+            },
+            "ListProducts": {
+              "methods": ["listProducts", "listProducts", "listProducts", "listProductsPagedCallable", "listProductsCallable"]
+            },
+            "ListProductsInProductSet": {
+              "methods": ["listProductsInProductSet", "listProductsInProductSet", "listProductsInProductSet", "listProductsInProductSetPagedCallable", "listProductsInProductSetCallable"]
+            },
+            "ListReferenceImages": {
+              "methods": ["listReferenceImages", "listReferenceImages", "listReferenceImages", "listReferenceImagesPagedCallable", "listReferenceImagesCallable"]
+            },
+            "RemoveProductFromProductSet": {
+              "methods": ["removeProductFromProductSet", "removeProductFromProductSet", "removeProductFromProductSet", "removeProductFromProductSet", "removeProductFromProductSet", "removeProductFromProductSetCallable"]
+            },
+            "UpdateProduct": {
+              "methods": ["updateProduct", "updateProduct", "updateProductCallable"]
+            },
+            "UpdateProductSet": {
+              "methods": ["updateProductSet", "updateProductSet", "updateProductSetCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
