@@ -89,8 +89,8 @@
     <dependency>
       <groupId>com.google.auth</groupId>
       <artifactId>google-auth-library-oauth2-http</artifactId>
+      <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-websecurityscanner-v1alpha</artifactId>
