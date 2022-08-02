@@ -8,9 +8,6 @@
        },
     "java-accesscontextmanager": {
         "component": "google-identity-accesscontextmanager"
-       },
-    "java-aiplatform": {
-        "component": "google-cloud-aiplatform"
        }
   },
   "plugins": [
