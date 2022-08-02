@@ -60,7 +60,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-aiplatform-v1beta1</artifactId>
-      <version>0.15.7</version>
+      <version>0.17.0</version>
     </dependency>
 
   </dependencies>
