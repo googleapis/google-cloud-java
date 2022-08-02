@@ -81,7 +81,7 @@ public interface LocationOrBuilder
    *
    *
    * <pre>
-   * Whether the location is recomended for GKE cluster scheduling.
+   * Whether the location is recommended for GKE cluster scheduling.
    * </pre>
    *
    * <code>bool recommended = 3;</code>

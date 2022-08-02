@@ -29,7 +29,7 @@ public interface CompleteNodePoolUpgradeRequestOrBuilder
    * <pre>
    * The name (project, location, cluster, node pool id) of the node pool to
    * complete upgrade.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -43,7 +43,7 @@ public interface CompleteNodePoolUpgradeRequestOrBuilder
    * <pre>
    * The name (project, location, cluster, node pool id) of the node pool to
    * complete upgrade.
-   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;'.
+   * Specified in the format `projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;&#47;nodePools/&#42;`.
    * </pre>
    *
    * <code>string name = 1;</code>

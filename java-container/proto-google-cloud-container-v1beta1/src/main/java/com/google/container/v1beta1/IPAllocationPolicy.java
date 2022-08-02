@@ -241,7 +241,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * IP stack type
+   * Possible values for IP stack type
    * </pre>
    *
    * Protobuf enum {@code google.container.v1beta1.IPAllocationPolicy.StackType}
