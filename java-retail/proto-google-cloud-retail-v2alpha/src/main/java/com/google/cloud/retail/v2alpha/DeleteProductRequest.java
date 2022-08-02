@@ -22,7 +22,9 @@ package com.google.cloud.retail.v2alpha;
  *
  *
  * <pre>
- * Request message for [DeleteProduct][] method.
+ * Request message for
+ * [ProductService.DeleteProduct][google.cloud.retail.v2alpha.ProductService.DeleteProduct]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.DeleteProductRequest}
@@ -363,7 +365,9 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [DeleteProduct][] method.
+   * Request message for
+   * [ProductService.DeleteProduct][google.cloud.retail.v2alpha.ProductService.DeleteProduct]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.DeleteProductRequest}

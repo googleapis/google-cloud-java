@@ -22,7 +22,9 @@ package com.google.cloud.retail.v2alpha;
  *
  *
  * <pre>
- * Request message for [AddLocalInventories][] method.
+ * Request message for
+ * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.AddLocalInventoriesRequest}
@@ -681,7 +683,9 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [AddLocalInventories][] method.
+   * Request message for
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.AddLocalInventoriesRequest}

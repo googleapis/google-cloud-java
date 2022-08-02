@@ -120,7 +120,7 @@ public final class ImportConfigProto {
           + "\025UserEventInlineSource\022@\n\013user_events\030\001 "
           + "\003(\0132&.google.cloud.retail.v2alpha.UserEv"
           + "entB\003\340A\002\"9\n\022ImportErrorsConfig\022\024\n\ngcs_pr"
-          + "efix\030\001 \001(\tH\000B\r\n\013destination\"\207\004\n\025ImportPr"
+          + "efix\030\001 \001(\tH\000B\r\n\013destination\"\257\004\n\025ImportPr"
           + "oductsRequest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034r"
           + "etail.googleapis.com/Branch\022\026\n\nrequest_i"
           + "d\030\006 \001(\tB\002\030\001\022J\n\014input_config\030\002 \001(\0132/.goog"
@@ -131,7 +131,8 @@ public final class ImportConfigProto {
           + "ieldMask\022b\n\023reconciliation_mode\030\005 \001(\0162E."
           + "google.cloud.retail.v2alpha.ImportProduc"
           + "tsRequest.ReconciliationMode\022!\n\031notifica"
-          + "tion_pubsub_topic\030\007 \001(\t\"T\n\022Reconciliatio"
+          + "tion_pubsub_topic\030\007 \001(\t\022&\n\036skip_default_"
+          + "branch_protection\030\010 \001(\010\"T\n\022Reconciliatio"
           + "nMode\022#\n\037RECONCILIATION_MODE_UNSPECIFIED"
           + "\020\000\022\017\n\013INCREMENTAL\020\001\022\010\n\004FULL\020\002\"\346\001\n\027Import"
           + "UserEventsRequest\0225\n\006parent\030\001 \001(\tB%\340A\002\372A"
@@ -259,6 +260,7 @@ public final class ImportConfigProto {
               "UpdateMask",
               "ReconciliationMode",
               "NotificationPubsubTopic",
+              "SkipDefaultBranchProtection",
             });
     internal_static_google_cloud_retail_v2alpha_ImportUserEventsRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);

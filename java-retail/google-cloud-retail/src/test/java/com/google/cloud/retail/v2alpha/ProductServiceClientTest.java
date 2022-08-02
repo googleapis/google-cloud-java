@@ -687,6 +687,7 @@ public class ProductServiceClientTest {
             .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
+            .setSkipDefaultBranchProtection(true)
             .build();
 
     ImportProductsResponse actualResponse = client.importProductsAsync(request).get();
@@ -704,6 +705,8 @@ public class ProductServiceClientTest {
     Assert.assertEquals(request.getReconciliationMode(), actualRequest.getReconciliationMode());
     Assert.assertEquals(
         request.getNotificationPubsubTopic(), actualRequest.getNotificationPubsubTopic());
+    Assert.assertEquals(
+        request.getSkipDefaultBranchProtection(), actualRequest.getSkipDefaultBranchProtection());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -725,6 +728,7 @@ public class ProductServiceClientTest {
               .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
+              .setSkipDefaultBranchProtection(true)
               .build();
       client.importProductsAsync(request).get();
       Assert.fail("No exception raised");

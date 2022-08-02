@@ -24,6 +24,7 @@ import com.google.cloud.retail.v2alpha.SearchServiceClient;
 import com.google.cloud.retail.v2alpha.UserInfo;
 import com.google.common.base.Strings;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncSearchPaged {
 
@@ -56,6 +57,8 @@ public class AsyncSearchPaged {
               .addAllVariantRollupKeys(new ArrayList<String>())
               .addAllPageCategories(new ArrayList<String>())
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .build();
       while (true) {
         SearchResponse response = searchServiceClient.searchCallable().call(request);

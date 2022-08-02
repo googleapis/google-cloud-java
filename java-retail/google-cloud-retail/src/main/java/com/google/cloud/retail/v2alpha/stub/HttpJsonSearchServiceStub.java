@@ -68,6 +68,8 @@ public class HttpJsonSearchServiceStub extends SearchServiceStub {
                         serializer.putPathParam(fields, "placement", request.getPlacement());
                         return fields;
                       })
+                  .setAdditionalPaths(
+                      "/v2alpha/{placement=projects/*/locations/*/catalogs/*/servingConfigs/*}:search")
                   .setQueryParamsExtractor(
                       request -> {
                         Map<String, List<String>> fields = new HashMap<>();

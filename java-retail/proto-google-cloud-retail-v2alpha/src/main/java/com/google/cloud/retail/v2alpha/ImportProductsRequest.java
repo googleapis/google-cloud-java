@@ -150,6 +150,11 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
               notificationPubsubTopic_ = s;
               break;
             }
+          case 64:
+            {
+              skipDefaultBranchProtection_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -686,11 +691,17 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Pub/Sub topic for receiving notification. If this field is set,
+   * Full Pub/Sub topic name for receiving notification. If this field is set,
    * when the import is finished, a notification will be sent to
    * specified Pub/Sub topic. The message data will be JSON string of a
    * [Operation][google.longrunning.Operation].
-   * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+   * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
+   * to be within the same project as
+   * [ImportProductsRequest.parent][google.cloud.retail.v2alpha.ImportProductsRequest.parent].
+   * Make sure that both
+   * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+   * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+   * have the `pubsub.topics.publish` IAM permission on the topic.
    * Only supported when
    * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
    * is set to `FULL`.
@@ -716,11 +727,17 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Pub/Sub topic for receiving notification. If this field is set,
+   * Full Pub/Sub topic name for receiving notification. If this field is set,
    * when the import is finished, a notification will be sent to
    * specified Pub/Sub topic. The message data will be JSON string of a
    * [Operation][google.longrunning.Operation].
-   * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+   * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
+   * to be within the same project as
+   * [ImportProductsRequest.parent][google.cloud.retail.v2alpha.ImportProductsRequest.parent].
+   * Make sure that both
+   * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+   * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+   * have the `pubsub.topics.publish` IAM permission on the topic.
    * Only supported when
    * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
    * is set to `FULL`.
@@ -741,6 +758,29 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int SKIP_DEFAULT_BRANCH_PROTECTION_FIELD_NUMBER = 8;
+  private boolean skipDefaultBranchProtection_;
+  /**
+   *
+   *
+   * <pre>
+   * If true, will perform the FULL import even if it would delete a large
+   * proportion of the products in the default branch, which could potentially
+   * cause outages if you have live predict/search traffic.
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>bool skip_default_branch_protection = 8;</code>
+   *
+   * @return The skipDefaultBranchProtection.
+   */
+  @java.lang.Override
+  public boolean getSkipDefaultBranchProtection() {
+    return skipDefaultBranchProtection_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -781,6 +821,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPubsubTopic_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, notificationPubsubTopic_);
     }
+    if (skipDefaultBranchProtection_ != false) {
+      output.writeBool(8, skipDefaultBranchProtection_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -814,6 +857,10 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notificationPubsubTopic_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, notificationPubsubTopic_);
     }
+    if (skipDefaultBranchProtection_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(8, skipDefaultBranchProtection_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -846,6 +893,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     }
     if (reconciliationMode_ != other.reconciliationMode_) return false;
     if (!getNotificationPubsubTopic().equals(other.getNotificationPubsubTopic())) return false;
+    if (getSkipDefaultBranchProtection() != other.getSkipDefaultBranchProtection()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -877,6 +925,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + reconciliationMode_;
     hash = (37 * hash) + NOTIFICATION_PUBSUB_TOPIC_FIELD_NUMBER;
     hash = (53 * hash) + getNotificationPubsubTopic().hashCode();
+    hash = (37 * hash) + SKIP_DEFAULT_BRANCH_PROTECTION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipDefaultBranchProtection());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1049,6 +1099,8 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
 
       notificationPubsubTopic_ = "";
 
+      skipDefaultBranchProtection_ = false;
+
       return this;
     }
 
@@ -1095,6 +1147,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       }
       result.reconciliationMode_ = reconciliationMode_;
       result.notificationPubsubTopic_ = notificationPubsubTopic_;
+      result.skipDefaultBranchProtection_ = skipDefaultBranchProtection_;
       onBuilt();
       return result;
     }
@@ -1168,6 +1221,9 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       if (!other.getNotificationPubsubTopic().isEmpty()) {
         notificationPubsubTopic_ = other.notificationPubsubTopic_;
         onChanged();
+      }
+      if (other.getSkipDefaultBranchProtection() != false) {
+        setSkipDefaultBranchProtection(other.getSkipDefaultBranchProtection());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2154,11 +2210,17 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Pub/Sub topic for receiving notification. If this field is set,
+     * Full Pub/Sub topic name for receiving notification. If this field is set,
      * when the import is finished, a notification will be sent to
      * specified Pub/Sub topic. The message data will be JSON string of a
      * [Operation][google.longrunning.Operation].
-     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
+     * to be within the same project as
+     * [ImportProductsRequest.parent][google.cloud.retail.v2alpha.ImportProductsRequest.parent].
+     * Make sure that both
+     * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+     * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+     * have the `pubsub.topics.publish` IAM permission on the topic.
      * Only supported when
      * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
      * is set to `FULL`.
@@ -2183,11 +2245,17 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Pub/Sub topic for receiving notification. If this field is set,
+     * Full Pub/Sub topic name for receiving notification. If this field is set,
      * when the import is finished, a notification will be sent to
      * specified Pub/Sub topic. The message data will be JSON string of a
      * [Operation][google.longrunning.Operation].
-     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
+     * to be within the same project as
+     * [ImportProductsRequest.parent][google.cloud.retail.v2alpha.ImportProductsRequest.parent].
+     * Make sure that both
+     * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+     * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+     * have the `pubsub.topics.publish` IAM permission on the topic.
      * Only supported when
      * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
      * is set to `FULL`.
@@ -2212,11 +2280,17 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Pub/Sub topic for receiving notification. If this field is set,
+     * Full Pub/Sub topic name for receiving notification. If this field is set,
      * when the import is finished, a notification will be sent to
      * specified Pub/Sub topic. The message data will be JSON string of a
      * [Operation][google.longrunning.Operation].
-     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
+     * to be within the same project as
+     * [ImportProductsRequest.parent][google.cloud.retail.v2alpha.ImportProductsRequest.parent].
+     * Make sure that both
+     * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+     * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+     * have the `pubsub.topics.publish` IAM permission on the topic.
      * Only supported when
      * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
      * is set to `FULL`.
@@ -2240,11 +2314,17 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Pub/Sub topic for receiving notification. If this field is set,
+     * Full Pub/Sub topic name for receiving notification. If this field is set,
      * when the import is finished, a notification will be sent to
      * specified Pub/Sub topic. The message data will be JSON string of a
      * [Operation][google.longrunning.Operation].
-     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
+     * to be within the same project as
+     * [ImportProductsRequest.parent][google.cloud.retail.v2alpha.ImportProductsRequest.parent].
+     * Make sure that both
+     * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+     * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+     * have the `pubsub.topics.publish` IAM permission on the topic.
      * Only supported when
      * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
      * is set to `FULL`.
@@ -2264,11 +2344,17 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Pub/Sub topic for receiving notification. If this field is set,
+     * Full Pub/Sub topic name for receiving notification. If this field is set,
      * when the import is finished, a notification will be sent to
      * specified Pub/Sub topic. The message data will be JSON string of a
      * [Operation][google.longrunning.Operation].
-     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`. It has
+     * to be within the same project as
+     * [ImportProductsRequest.parent][google.cloud.retail.v2alpha.ImportProductsRequest.parent].
+     * Make sure that both
+     * `cloud-retail-customer-data-access&#64;system.gserviceaccount.com` and
+     * `service-&lt;project number&gt;&#64;gcp-sa-retail.iam.gserviceaccount.com`
+     * have the `pubsub.topics.publish` IAM permission on the topic.
      * Only supported when
      * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
      * is set to `FULL`.
@@ -2286,6 +2372,73 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
 
       notificationPubsubTopic_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean skipDefaultBranchProtection_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, will perform the FULL import even if it would delete a large
+     * proportion of the products in the default branch, which could potentially
+     * cause outages if you have live predict/search traffic.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>bool skip_default_branch_protection = 8;</code>
+     *
+     * @return The skipDefaultBranchProtection.
+     */
+    @java.lang.Override
+    public boolean getSkipDefaultBranchProtection() {
+      return skipDefaultBranchProtection_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, will perform the FULL import even if it would delete a large
+     * proportion of the products in the default branch, which could potentially
+     * cause outages if you have live predict/search traffic.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>bool skip_default_branch_protection = 8;</code>
+     *
+     * @param value The skipDefaultBranchProtection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipDefaultBranchProtection(boolean value) {
+
+      skipDefaultBranchProtection_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, will perform the FULL import even if it would delete a large
+     * proportion of the products in the default branch, which could potentially
+     * cause outages if you have live predict/search traffic.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>bool skip_default_branch_protection = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipDefaultBranchProtection() {
+
+      skipDefaultBranchProtection_ = false;
       onChanged();
       return this;
     }

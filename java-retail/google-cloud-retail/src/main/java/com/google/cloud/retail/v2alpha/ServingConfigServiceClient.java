@@ -198,7 +198,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Full resource name of parent. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
    * @param servingConfig Required. The ServingConfig to create.
    * @param servingConfigId Required. The ID to use for the ServingConfig, which will become the
    *     final component of the ServingConfig's resource name.
@@ -240,7 +240,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Full resource name of parent. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
    * @param servingConfig Required. The ServingConfig to create.
    * @param servingConfigId Required. The ID to use for the ServingConfig, which will become the
    *     final component of the ServingConfig's resource name.

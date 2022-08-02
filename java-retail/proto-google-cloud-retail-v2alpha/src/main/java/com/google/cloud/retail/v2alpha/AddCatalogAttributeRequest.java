@@ -138,7 +138,7 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. Full AttributesConfig resource name. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
    * </pre>
    *
    * <code>
@@ -164,7 +164,7 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. Full AttributesConfig resource name. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
    * </pre>
    *
    * <code>
@@ -598,7 +598,7 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Full AttributesConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
      * </pre>
      *
      * <code>
@@ -623,7 +623,7 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Full AttributesConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
      * </pre>
      *
      * <code>
@@ -648,7 +648,7 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Full AttributesConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
      * </pre>
      *
      * <code>
@@ -672,7 +672,7 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Full AttributesConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
      * </pre>
      *
      * <code>
@@ -692,7 +692,7 @@ public final class AddCatalogAttributeRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Full AttributesConfig resource name. Format:
-     * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+     * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
      * </pre>
      *
      * <code>

@@ -43,6 +43,14 @@ public final class ExportConfigProto {
       internal_static_google_cloud_retail_v2alpha_ExportUserEventsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_ExportUserEventsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_OutputResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_OutputResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_BigQueryOutputResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_BigQueryOutputResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -61,20 +69,27 @@ public final class ExportConfigProto {
           + "B\r\n\013destination\"r\n\016ExportMetadata\022/\n\013cre"
           + "ate_time\030\001 \001(\0132\032.google.protobuf.Timesta"
           + "mp\022/\n\013update_time\030\002 \001(\0132\032.google.protobu"
-          + "f.Timestamp\"\213\001\n\026ExportProductsResponse\022)"
+          + "f.Timestamp\"\315\001\n\026ExportProductsResponse\022)"
           + "\n\rerror_samples\030\001 \003(\0132\022.google.rpc.Statu"
           + "s\022F\n\rerrors_config\030\002 \001(\0132/.google.cloud."
-          + "retail.v2alpha.ExportErrorsConfig\"\215\001\n\030Ex"
-          + "portUserEventsResponse\022)\n\rerror_samples\030"
-          + "\001 \003(\0132\022.google.rpc.Status\022F\n\rerrors_conf"
-          + "ig\030\002 \001(\0132/.google.cloud.retail.v2alpha.E"
-          + "xportErrorsConfigB\337\001\n\037com.google.cloud.r"
-          + "etail.v2alphaB\021ExportConfigProtoP\001ZAgoog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "retail/v2alpha;retail\242\002\006RETAIL\252\002\033Google."
-          + "Cloud.Retail.V2Alpha\312\002\033Google\\Cloud\\Reta"
-          + "il\\V2alpha\352\002\036Google::Cloud::Retail::V2al"
-          + "phab\006proto3"
+          + "retail.v2alpha.ExportErrorsConfig\022@\n\rout"
+          + "put_result\030\003 \001(\0132).google.cloud.retail.v"
+          + "2alpha.OutputResult\"\317\001\n\030ExportUserEvents"
+          + "Response\022)\n\rerror_samples\030\001 \003(\0132\022.google"
+          + ".rpc.Status\022F\n\rerrors_config\030\002 \001(\0132/.goo"
+          + "gle.cloud.retail.v2alpha.ExportErrorsCon"
+          + "fig\022@\n\routput_result\030\003 \001(\0132).google.clou"
+          + "d.retail.v2alpha.OutputResult\"Z\n\014OutputR"
+          + "esult\022J\n\017bigquery_result\030\001 \003(\01321.google."
+          + "cloud.retail.v2alpha.BigQueryOutputResul"
+          + "t\"<\n\024BigQueryOutputResult\022\022\n\ndataset_id\030"
+          + "\001 \001(\t\022\020\n\010table_id\030\002 \001(\tB\337\001\n\037com.google.c"
+          + "loud.retail.v2alphaB\021ExportConfigProtoP\001"
+          + "ZAgoogle.golang.org/genproto/googleapis/"
+          + "cloud/retail/v2alpha;retail\242\002\006RETAIL\252\002\033G"
+          + "oogle.Cloud.Retail.V2Alpha\312\002\033Google\\Clou"
+          + "d\\Retail\\V2alpha\352\002\036Google::Cloud::Retail"
+          + "::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -107,7 +122,7 @@ public final class ExportConfigProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2alpha_ExportProductsResponse_descriptor,
             new java.lang.String[] {
-              "ErrorSamples", "ErrorsConfig",
+              "ErrorSamples", "ErrorsConfig", "OutputResult",
             });
     internal_static_google_cloud_retail_v2alpha_ExportUserEventsResponse_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -115,7 +130,23 @@ public final class ExportConfigProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2alpha_ExportUserEventsResponse_descriptor,
             new java.lang.String[] {
-              "ErrorSamples", "ErrorsConfig",
+              "ErrorSamples", "ErrorsConfig", "OutputResult",
+            });
+    internal_static_google_cloud_retail_v2alpha_OutputResult_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_retail_v2alpha_OutputResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_OutputResult_descriptor,
+            new java.lang.String[] {
+              "BigqueryResult",
+            });
+    internal_static_google_cloud_retail_v2alpha_BigQueryOutputResult_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_retail_v2alpha_BigQueryOutputResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_BigQueryOutputResult_descriptor,
+            new java.lang.String[] {
+              "DatasetId", "TableId",
             });
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();

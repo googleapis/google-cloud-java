@@ -46,6 +46,7 @@ public class AsyncImportProductsLRO {
               .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
+              .setSkipDefaultBranchProtection(true)
               .build();
       OperationFuture<ImportProductsResponse, ImportMetadata> future =
           productServiceClient.importProductsOperationCallable().futureCall(request);

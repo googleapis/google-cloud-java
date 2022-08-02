@@ -22,7 +22,9 @@ package com.google.cloud.retail.v2alpha;
  *
  *
  * <pre>
- * Request message for [GetProduct][] method.
+ * Request message for
+ * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.GetProductRequest}
@@ -343,7 +345,9 @@ public final class GetProductRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [GetProduct][] method.
+   * Request message for
+   * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.GetProductRequest}

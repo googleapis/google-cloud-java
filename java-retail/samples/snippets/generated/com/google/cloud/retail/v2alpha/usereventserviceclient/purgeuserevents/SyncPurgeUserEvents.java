@@ -17,6 +17,7 @@
 package com.google.cloud.retail.v2alpha.samples;
 
 // [START retail_v2alpha_generated_usereventserviceclient_purgeuserevents_sync]
+import com.google.cloud.retail.v2alpha.CatalogName;
 import com.google.cloud.retail.v2alpha.PurgeUserEventsRequest;
 import com.google.cloud.retail.v2alpha.PurgeUserEventsResponse;
 import com.google.cloud.retail.v2alpha.UserEventServiceClient;
@@ -33,7 +34,7 @@ public class SyncPurgeUserEvents {
     try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
       PurgeUserEventsRequest request =
           PurgeUserEventsRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
               .setFilter("filter-1274492040")
               .setForce(true)
               .build();

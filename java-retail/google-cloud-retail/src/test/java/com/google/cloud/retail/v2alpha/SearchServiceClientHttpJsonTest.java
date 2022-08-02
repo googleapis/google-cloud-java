@@ -32,6 +32,7 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -107,6 +108,8 @@ public class SearchServiceClientHttpJsonTest {
             .addAllVariantRollupKeys(new ArrayList<String>())
             .addAllPageCategories(new ArrayList<String>())
             .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -162,6 +165,8 @@ public class SearchServiceClientHttpJsonTest {
               .addAllVariantRollupKeys(new ArrayList<String>())
               .addAllPageCategories(new ArrayList<String>())
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

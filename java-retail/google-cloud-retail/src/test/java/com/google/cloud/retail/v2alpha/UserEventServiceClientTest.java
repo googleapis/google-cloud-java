@@ -220,7 +220,7 @@ public class UserEventServiceClientTest {
 
     PurgeUserEventsRequest request =
         PurgeUserEventsRequest.newBuilder()
-            .setParent("parent-995424086")
+            .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
             .setFilter("filter-1274492040")
             .setForce(true)
             .build();
@@ -249,7 +249,7 @@ public class UserEventServiceClientTest {
     try {
       PurgeUserEventsRequest request =
           PurgeUserEventsRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
               .setFilter("filter-1274492040")
               .setForce(true)
               .build();

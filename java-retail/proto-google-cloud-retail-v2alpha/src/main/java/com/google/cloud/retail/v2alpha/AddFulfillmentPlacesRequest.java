@@ -22,7 +22,9 @@ package com.google.cloud.retail.v2alpha;
  *
  *
  * <pre>
- * Request message for [AddFulfillmentPlaces][] method.
+ * Request message for
+ * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest}
@@ -239,7 +241,8 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    * * "custom-type-5"
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
-   * This field directly corresponds to [Product.fulfillment_info.type][].
+   * This field directly corresponds to
+   * [Product.fulfillment_info.type][google.cloud.retail.v2alpha.FulfillmentInfo.type].
    * </pre>
    *
    * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -276,7 +279,8 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    * * "custom-type-5"
    * If this field is set to an invalid value other than these, an
    * INVALID_ARGUMENT error is returned.
-   * This field directly corresponds to [Product.fulfillment_info.type][].
+   * This field directly corresponds to
+   * [Product.fulfillment_info.type][google.cloud.retail.v2alpha.FulfillmentInfo.type].
    * </pre>
    *
    * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -692,7 +696,9 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request message for [AddFulfillmentPlaces][] method.
+   * Request message for
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest}
@@ -1054,7 +1060,8 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * * "custom-type-5"
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
-     * This field directly corresponds to [Product.fulfillment_info.type][].
+     * This field directly corresponds to
+     * [Product.fulfillment_info.type][google.cloud.retail.v2alpha.FulfillmentInfo.type].
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1090,7 +1097,8 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * * "custom-type-5"
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
-     * This field directly corresponds to [Product.fulfillment_info.type][].
+     * This field directly corresponds to
+     * [Product.fulfillment_info.type][google.cloud.retail.v2alpha.FulfillmentInfo.type].
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1126,7 +1134,8 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * * "custom-type-5"
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
-     * This field directly corresponds to [Product.fulfillment_info.type][].
+     * This field directly corresponds to
+     * [Product.fulfillment_info.type][google.cloud.retail.v2alpha.FulfillmentInfo.type].
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1161,7 +1170,8 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * * "custom-type-5"
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
-     * This field directly corresponds to [Product.fulfillment_info.type][].
+     * This field directly corresponds to
+     * [Product.fulfillment_info.type][google.cloud.retail.v2alpha.FulfillmentInfo.type].
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1192,7 +1202,8 @@ public final class AddFulfillmentPlacesRequest extends com.google.protobuf.Gener
      * * "custom-type-5"
      * If this field is set to an invalid value other than these, an
      * INVALID_ARGUMENT error is returned.
-     * This field directly corresponds to [Product.fulfillment_info.type][].
+     * This field directly corresponds to
+     * [Product.fulfillment_info.type][google.cloud.retail.v2alpha.FulfillmentInfo.type].
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
