@@ -15,6 +15,7 @@
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
+    <skipUnitTests>false</skipUnitTests>
   </properties>
 
   <modules>
@@ -162,6 +163,14 @@
           </goals>
         </execution>
       </executions>
+    </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>${surefire.version}</version>
+      <configuration>
+        <skip>${skipUnitTests}</skip>
+      </configuration>
     </plugin>
   </plugins>
   </build>

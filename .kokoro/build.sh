@@ -23,93 +23,107 @@ cd ${scriptDir}/..
 # include common functions
 source ${scriptDir}/common.sh
 
-# Print out Maven & Java version
-mvn -version
-echo ${JOB_TYPE}
+mvn clean install -T 2C -DskipTests=true -Dclirr.skip=true -Denforcer.skip=true
 
-mvn -pl -java-container clean install
 # if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
- if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
-    export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS})
- fi
+if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
+  export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_GFILE_DIR}/${GOOGLE_APPLICATION_CREDENTIALS})
+fi
 
- RETURN_CODE=0
- set +e
+RETURN_CODE=0
+set +e
 
- case ${JOB_TYPE} in
- test)
-    mvn test -B -ntp -Dclirr.skip=true -Denforcer.skip=true
-    RETURN_CODE=$?
-    ;;
- lint)
-    mvn com.coveo:fmt-maven-plugin:check -B -ntp
-    RETURN_CODE=$?
-    ;;
- javadoc)
-    mvn javadoc:javadoc javadoc:test-javadoc -B -ntp
-    RETURN_CODE=$?
-    ;;
- integration)
-    if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets" ]
-           then
-               source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
-    fi
-    mvn -B -pl -java-container\
-      -ntp \
-      -Penable-integration-tests \
-      -DtrimStackTrace=false \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -fae \
-      verify
-    RETURN_CODE=$?
-    ;;
- graalvm)
-    # Run Unit and Integration Tests with Native Image
-    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative -Penable-integration-tests test
-    RETURN_CODE=$?
-    ;;
- graalvm17)
-    # Run Unit and Integration Tests with Native Image
-    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative -Penable-integration-tests test
-    RETURN_CODE=$?
-    ;;
- samples)
-    SAMPLES_DIR=samples
-    # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ subdirectories otherwise.
-    if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
-    then
-      SAMPLES_DIR=samples/snapshot
-    fi
+case ${JOB_TYPE} in
+test)
+  mvn test -B -ntp -Dclirr.skip=true -Denforcer.skip=true
+  RETURN_CODE=$?
+  ;;
+lint)
+  mvn com.coveo:fmt-maven-plugin:check -B -ntp
+  RETURN_CODE=$?
+  ;;
+javadoc)
+  mvn javadoc:javadoc javadoc:test-javadoc -B -ntp
+  RETURN_CODE=$?
+  ;;
+integration)
+  if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets" ]
+         then
+             source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
+  fi
 
-    if [[ -f ${SAMPLES_DIR}/pom.xml ]]
-    then
-        for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
-          [[ -f "$FILE" ]] || continue
-          source "$FILE"
-        done
+  mvn -B -pl '!google-cloud-gapic-bom,!CoverageAggregator' \
+    -ntp \
+    -Penable-integration-tests \
+    -DtrimStackTrace=false \
+    -Dclirr.skip=true \
+    -Denforcer.skip=true \
+    -DskipUnitTests=true \
+    -fae \
+    -T 1.5C \
+    verify
+  RETURN_CODE=$?
+  ;;
+graalvm)
+  # Run Unit and Integration Tests with Native Image
+  mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative -Penable-integration-tests test
+  RETURN_CODE=$?
+  ;;
+graalvm17)
+  # Run Unit and Integration Tests with Native Image
+  mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative -Penable-integration-tests test
+  RETURN_CODE=$?
+  ;;
+samples)
+  SAMPLES_DIR=samples
+  # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ subdirectories otherwise.
+  if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
+  then
+    SAMPLES_DIR=samples/snapshot
+  fi
 
-        pushd ${SAMPLES_DIR}
-        mvn -B \
-          -ntp \
-          -DtrimStackTrace=false \
-          -Dclirr.skip=true \
-          -Denforcer.skip=true \
-          -fae \
-          verify
-        RETURN_CODE=$?
-        popd
-    else
-        echo "no sample pom.xml found - skipping sample tests"
-    fi
-    ;;
- clirr)
-    mvn -B -ntp -Denforcer.skip=true clirr:check
-    RETURN_CODE=$?
-    ;;
- *)
-    ;;
- esac
+  if [[ -f ${SAMPLES_DIR}/pom.xml ]]
+  then
+      for FILE in ${KOKORO_GFILE_DIR}/secret_manager/*-samples-secrets; do
+        [[ -f "$FILE" ]] || continue
+        source "$FILE"
+      done
 
- echo "exiting with ${RETURN_CODE}"
- exit ${RETURN_CODE}
+      pushd ${SAMPLES_DIR}
+      mvn -B \
+        -ntp \
+        -DtrimStackTrace=false \
+        -Dclirr.skip=true \
+        -Denforcer.skip=true \
+        -fae \
+        verify
+      RETURN_CODE=$?
+      popd
+  else
+      echo "no sample pom.xml found - skipping sample tests"
+  fi
+  ;;
+clirr)
+  mvn -B -ntp -Denforcer.skip=true clirr:check
+  RETURN_CODE=$?
+  ;;
+*)
+  ;;
+esac
+
+if [ "${REPORT_COVERAGE}" == "true" ]
+then
+bash ${KOKORO_GFILE_DIR}/codecov.sh
+fi
+
+# fix output location of logs
+bash .kokoro/coerce_logs.sh
+
+if [[ "${ENABLE_FLAKYBOT}" == "true" ]]
+then
+  chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/flakybot
+  ${KOKORO_GFILE_DIR}/linux_amd64/flakybot -repo=googleapis/google-cloud-java
+fi
+
+echo "exiting with ${RETURN_CODE}"
+exit ${RETURN_CODE}
