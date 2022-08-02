@@ -15,8 +15,13 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.readrows;
 
-import com.google.api.core.SettableApiFuture;
-import com.google.api.gax.rpc.UnaryCallable;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
+
+import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ResponseObserver;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -38,26 +43,23 @@ public class ReadRowsFirstCallableTest {
 
   private static final RequestContext REQUEST_CONTEXT =
       RequestContext.create("fake-project", "fake-instance", "fake-profile");
-  private UnaryCallable<Query, Row> innerCallable;
+
+  private ServerStreamingCallable<Query, Row> innerCallable;
   private ArgumentCaptor<Query> innerQuery;
-  private SettableApiFuture<Row> innerResult;
 
   @SuppressWarnings("unchecked")
   @Before
   public void setUp() {
-    innerCallable = Mockito.mock(UnaryCallable.class);
+    innerCallable = Mockito.mock(ServerStreamingCallable.class);
     innerQuery = ArgumentCaptor.forClass(Query.class);
-    innerResult = SettableApiFuture.create();
-    Mockito.when(innerCallable.futureCall(innerQuery.capture(), Mockito.any()))
-        .thenReturn(innerResult);
   }
 
   @Test
   public void testLimitAdded() {
     ReadRowsFirstCallable<Row> callable = new ReadRowsFirstCallable<>(innerCallable);
-    innerResult.set(null);
-    callable.call(Query.create("fake-table"));
-
+    callable.futureCall(Query.create("fake-table"), GrpcCallContext.createDefault());
+    verify(innerCallable)
+        .call(innerQuery.capture(), any(ResponseObserver.class), any(ApiCallContext.class));
     Truth.assertThat(innerQuery.getValue().toProto(REQUEST_CONTEXT))
         .isEqualTo(Query.create("fake-table").limit(1).toProto(REQUEST_CONTEXT));
   }
@@ -65,9 +67,9 @@ public class ReadRowsFirstCallableTest {
   @Test
   public void testLimitChanged() {
     ReadRowsFirstCallable<Row> callable = new ReadRowsFirstCallable<>(innerCallable);
-    innerResult.set(null);
-    callable.call(Query.create("fake-table").limit(1_000));
-
+    callable.futureCall(Query.create("fake-table").limit(10), GrpcCallContext.createDefault());
+    verify(innerCallable)
+        .call(innerQuery.capture(), any(ResponseObserver.class), any(ApiCallContext.class));
     Truth.assertThat(innerQuery.getValue().toProto(REQUEST_CONTEXT))
         .isEqualTo(Query.create("fake-table").limit(1).toProto(REQUEST_CONTEXT));
   }

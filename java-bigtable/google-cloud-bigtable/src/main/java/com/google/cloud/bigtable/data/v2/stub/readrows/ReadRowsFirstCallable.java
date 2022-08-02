@@ -16,7 +16,12 @@
 package com.google.cloud.bigtable.data.v2.stub.readrows;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.InternalApi;
+import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.StateCheckingResponseObserver;
+import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.Query;
 
@@ -24,15 +29,51 @@ import com.google.cloud.bigtable.data.v2.models.Query;
  * Enhancement for `readRowsCallable().first()` to gracefully limit the row count instead of
  * cancelling the RPC
  */
-class ReadRowsFirstCallable<RowT> extends UnaryCallable<Query, RowT> {
-  private final UnaryCallable<Query, RowT> inner;
+@InternalApi
+public class ReadRowsFirstCallable<RowT> extends UnaryCallable<Query, RowT> {
 
-  ReadRowsFirstCallable(UnaryCallable<Query, RowT> inner) {
+  private final ServerStreamingCallable<Query, RowT> inner;
+
+  public ReadRowsFirstCallable(ServerStreamingCallable<Query, RowT> inner) {
     this.inner = inner;
   }
 
   @Override
   public ApiFuture<RowT> futureCall(Query query, ApiCallContext context) {
-    return inner.futureCall(query.limit(1), context);
+    ReadRowsFirstResponseObserver<RowT> observer = new ReadRowsFirstResponseObserver<>();
+    this.inner.call(query.limit(1), observer, context);
+    return observer.getFuture();
+  }
+
+  private class ReadRowsFirstResponseObserver<RowT> extends StateCheckingResponseObserver<RowT> {
+    private StreamController innerController;
+    private RowT firstRow;
+    private SettableApiFuture<RowT> settableFuture = SettableApiFuture.create();
+
+    @Override
+    protected void onStartImpl(StreamController streamController) {
+      this.innerController = streamController;
+    }
+
+    @Override
+    protected void onResponseImpl(RowT response) {
+      if (firstRow == null) {
+        this.firstRow = response;
+      }
+    }
+
+    @Override
+    protected void onErrorImpl(Throwable throwable) {
+      settableFuture.setException(throwable);
+    }
+
+    @Override
+    protected void onCompleteImpl() {
+      settableFuture.set(firstRow);
+    }
+
+    protected ApiFuture<RowT> getFuture() {
+      return settableFuture;
+    }
   }
 }

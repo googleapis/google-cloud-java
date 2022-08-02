@@ -19,7 +19,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -34,27 +33,16 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 public class ReadRowsUserCallable<RowT> extends ServerStreamingCallable<Query, RowT> {
   private final ServerStreamingCallable<ReadRowsRequest, RowT> inner;
   private final RequestContext requestContext;
-  private final ReadRowsFirstCallable<RowT> firstCallable;
 
   public ReadRowsUserCallable(
       ServerStreamingCallable<ReadRowsRequest, RowT> inner, RequestContext requestContext) {
     this.inner = inner;
     this.requestContext = requestContext;
-
-    this.firstCallable = new ReadRowsFirstCallable<>(super.first());
   }
 
   @Override
   public void call(Query request, ResponseObserver<RowT> responseObserver, ApiCallContext context) {
     ReadRowsRequest innerRequest = request.toProto(requestContext);
     inner.call(innerRequest, responseObserver, context);
-  }
-
-  // Optimization: since the server supports row limits, override the first callable.
-  // This way unnecessary data doesn't need to be buffered and the number of CANCELLED request
-  // statuses is minimized
-  @Override
-  public UnaryCallable<Query, RowT> first() {
-    return firstCallable;
   }
 }

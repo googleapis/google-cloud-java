@@ -41,17 +41,4 @@ public class ReadRowsUserCallableTest {
 
     Truth.assertThat(innerCallable.getActualRequest()).isEqualTo(query.toProto(REQUEST_CONTEXT));
   }
-
-  @Test
-  public void testFirstIsLimited() {
-    ServerStreamingStashCallable<ReadRowsRequest, Row> innerCallable =
-        new ServerStreamingStashCallable<>();
-    ReadRowsUserCallable<Row> callable = new ReadRowsUserCallable<>(innerCallable, REQUEST_CONTEXT);
-    Query query = Query.create("fake-table");
-
-    callable.first().call(query);
-
-    Truth.assertThat(innerCallable.getActualRequest())
-        .isEqualTo(query.limit(1).toProto(REQUEST_CONTEXT));
-  }
 }
