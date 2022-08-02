@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.8.6](https://github.com/googleapis/java-core/compare/v2.8.5...v2.8.6) (2022-08-02)
+
+
+### Dependencies
+
+* update dependency com.google.api:gax-bom to v2.18.7 ([#890](https://github.com/googleapis/java-core/issues/890)) ([c67bed5](https://github.com/googleapis/java-core/commit/c67bed5281b458e78780cdd918235b5d073917c7))
+* update dependency com.google.code.gson:gson to v2.9.1 ([#888](https://github.com/googleapis/java-core/issues/888)) ([7b799c6](https://github.com/googleapis/java-core/commit/7b799c66f4aaf057242e9a231b920e49a7c964e9))
+
 ## [2.8.5](https://github.com/googleapis/java-core/compare/v2.8.4...v2.8.5) (2022-07-29)
 
 
