@@ -1,6 +1,15 @@
 # Changelog
 
 
+## [3.0.1](https://github.com/googleapis/java-shared-dependencies/compare/v3.0.0...v3.0.1) (2022-08-02)
+
+
+### Dependencies
+
+* update dependency com.google.code.gson:gson to v2.9.1 ([#766](https://github.com/googleapis/java-shared-dependencies/issues/766)) ([f7b2b06](https://github.com/googleapis/java-shared-dependencies/commit/f7b2b06b80e3e95ff8ab9b1d6a2638ef3069298a))
+* update gax.version to v2.18.7 ([#767](https://github.com/googleapis/java-shared-dependencies/issues/767)) ([9650368](https://github.com/googleapis/java-shared-dependencies/commit/96503682e98cdf348ea2c1365a03a60f4322c712))
+* update google.core.version to v2.8.6 ([#770](https://github.com/googleapis/java-shared-dependencies/issues/770)) ([cfd4377](https://github.com/googleapis/java-shared-dependencies/commit/cfd4377dc178cebb4724065d55d185ce03988d55))
+
 ## [3.0.0](https://github.com/googleapis/java-shared-dependencies/compare/v2.13.0...v3.0.0) (2022-07-29)
 
 
