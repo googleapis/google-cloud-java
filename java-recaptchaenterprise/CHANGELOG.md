@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.4](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.3...v3.0.4) (2022-08-03)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#856](https://github.com/googleapis/java-recaptchaenterprise/issues/856)) ([6854e73](https://github.com/googleapis/java-recaptchaenterprise/commit/6854e73db22b3c1ef7f01d5ac05455149511e508))
+* update dependency io.github.bonigarcia:webdrivermanager to v5.2.3 ([#860](https://github.com/googleapis/java-recaptchaenterprise/issues/860)) ([e20dd48](https://github.com/googleapis/java-recaptchaenterprise/commit/e20dd4837254735d2aae1a7380c5b3122bc8c4c3))
+
 ## [3.0.3](https://github.com/googleapis/java-recaptchaenterprise/compare/v3.0.2...v3.0.3) (2022-07-29)
 
 
