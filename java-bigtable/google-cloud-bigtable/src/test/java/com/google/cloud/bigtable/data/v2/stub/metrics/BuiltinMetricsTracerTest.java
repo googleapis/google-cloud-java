@@ -127,9 +127,7 @@ public class BuiltinMetricsTracerTest {
                     ResponseParams params =
                         ResponseParams.newBuilder().setZoneId(ZONE).setClusterId(CLUSTER).build();
                     byte[] byteArray = params.toByteArray();
-                    headers.put(
-                        Metadata.Key.of(Util.RESPONSE_PRAMS_KEY, Metadata.BINARY_BYTE_MARSHALLER),
-                        byteArray);
+                    headers.put(Util.METADATA_KEY, byteArray);
 
                     super.sendHeaders(headers);
                   }
