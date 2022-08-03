@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.8.7](https://github.com/googleapis/java-core/compare/v2.8.6...v2.8.7) (2022-08-03)
+
+
+### Dependencies
+
+* update dependency com.google.auth:google-auth-library-bom to v1.9.0 ([#894](https://github.com/googleapis/java-core/issues/894)) ([82aaa16](https://github.com/googleapis/java-core/commit/82aaa16cd9813984a0c92d944eb1ad956759a8e5))
+* update dependency io.grpc:grpc-bom to v1.48.1 ([#891](https://github.com/googleapis/java-core/issues/891)) ([0b0f9b8](https://github.com/googleapis/java-core/commit/0b0f9b89757b801e8334c764644d7b66032d36d1))
+
 ## [2.8.6](https://github.com/googleapis/java-core/compare/v2.8.5...v2.8.6) (2022-08-02)
 
 
