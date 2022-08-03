@@ -23,7 +23,11 @@ cd ${scriptDir}/..
 # include common functions
 source ${scriptDir}/common.sh
 
-mvn clean install -T 2C -DskipTests=true -Dclirr.skip=true -Denforcer.skip=true
+# Use GCP Maven Mirror
+mkdir -p ${HOME}/.m2
+cp settings.xml ${HOME}/.m2
+
+mvn clean install -T 1C -DskipTests=true -Dclirr.skip=true -Denforcer.skip=true
 
 # if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
 if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
