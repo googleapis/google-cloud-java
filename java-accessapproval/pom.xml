@@ -16,7 +16,7 @@
     <artifactId>google-cloud-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <!--my comment new comment-->
+  <!--my comment now 2nd comment-->
   <developers>
     <developer>
       <id>chingor</id>
