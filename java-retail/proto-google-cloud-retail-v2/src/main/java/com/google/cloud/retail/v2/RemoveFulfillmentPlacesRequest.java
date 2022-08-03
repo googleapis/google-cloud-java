@@ -22,7 +22,9 @@ package com.google.cloud.retail.v2;
  *
  *
  * <pre>
- * Request message for [RemoveFulfillmentPlaces][] method.
+ * Request message for
+ * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2.RemoveFulfillmentPlacesRequest}
@@ -679,7 +681,9 @@ public final class RemoveFulfillmentPlacesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request message for [RemoveFulfillmentPlaces][] method.
+   * Request message for
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2.RemoveFulfillmentPlacesRequest}

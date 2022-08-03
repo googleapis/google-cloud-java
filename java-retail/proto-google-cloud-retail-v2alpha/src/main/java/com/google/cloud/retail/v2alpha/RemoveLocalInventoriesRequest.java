@@ -22,7 +22,9 @@ package com.google.cloud.retail.v2alpha;
  *
  *
  * <pre>
- * Request message for [RemoveLocalInventories][] method.
+ * Request message for
+ * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.RemoveLocalInventoriesRequest}
@@ -554,7 +556,9 @@ public final class RemoveLocalInventoriesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request message for [RemoveLocalInventories][] method.
+   * Request message for
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.RemoveLocalInventoriesRequest}

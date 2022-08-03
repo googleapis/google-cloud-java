@@ -3191,6 +3191,40 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        */
       long getCount();
 
+      /**
+       *
+       *
+       * <pre>
+       * The minimum value in the
+       * [FacetValue.interval][google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue.interval].
+       * Only supported on numerical facets and returned if
+       * [SearchRequest.FacetSpec.FacetKey.return_min_max][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.return_min_max]
+       * is true.
+       * </pre>
+       *
+       * <code>double min_value = 5;</code>
+       *
+       * @return The minValue.
+       */
+      double getMinValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * The maximum value in the
+       * [FacetValue.interval][google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue.interval].
+       * Only supported on numerical facets and returned if
+       * [SearchRequest.FacetSpec.FacetKey.return_min_max][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.return_min_max]
+       * is true.
+       * </pre>
+       *
+       * <code>double max_value = 6;</code>
+       *
+       * @return The maxValue.
+       */
+      double getMaxValue();
+
       public com.google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue.FacetValueCase
           getFacetValueCase();
     }
@@ -3271,6 +3305,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               case 24:
                 {
                   count_ = input.readInt64();
+                  break;
+                }
+              case 41:
+                {
+                  minValue_ = input.readDouble();
+                  break;
+                }
+              case 49:
+                {
+                  maxValue_ = input.readDouble();
                   break;
                 }
               default:
@@ -3496,6 +3540,50 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return count_;
       }
 
+      public static final int MIN_VALUE_FIELD_NUMBER = 5;
+      private double minValue_;
+      /**
+       *
+       *
+       * <pre>
+       * The minimum value in the
+       * [FacetValue.interval][google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue.interval].
+       * Only supported on numerical facets and returned if
+       * [SearchRequest.FacetSpec.FacetKey.return_min_max][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.return_min_max]
+       * is true.
+       * </pre>
+       *
+       * <code>double min_value = 5;</code>
+       *
+       * @return The minValue.
+       */
+      @java.lang.Override
+      public double getMinValue() {
+        return minValue_;
+      }
+
+      public static final int MAX_VALUE_FIELD_NUMBER = 6;
+      private double maxValue_;
+      /**
+       *
+       *
+       * <pre>
+       * The maximum value in the
+       * [FacetValue.interval][google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue.interval].
+       * Only supported on numerical facets and returned if
+       * [SearchRequest.FacetSpec.FacetKey.return_min_max][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.return_min_max]
+       * is true.
+       * </pre>
+       *
+       * <code>double max_value = 6;</code>
+       *
+       * @return The maxValue.
+       */
+      @java.lang.Override
+      public double getMaxValue() {
+        return maxValue_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -3519,6 +3607,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (count_ != 0L) {
           output.writeInt64(3, count_);
         }
+        if (java.lang.Double.doubleToRawLongBits(minValue_) != 0) {
+          output.writeDouble(5, minValue_);
+        }
+        if (java.lang.Double.doubleToRawLongBits(maxValue_) != 0) {
+          output.writeDouble(6, maxValue_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -3539,6 +3633,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (count_ != 0L) {
           size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, count_);
         }
+        if (java.lang.Double.doubleToRawLongBits(minValue_) != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeDoubleSize(5, minValue_);
+        }
+        if (java.lang.Double.doubleToRawLongBits(maxValue_) != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeDoubleSize(6, maxValue_);
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -3556,6 +3656,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             (com.google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue) obj;
 
         if (getCount() != other.getCount()) return false;
+        if (java.lang.Double.doubleToLongBits(getMinValue())
+            != java.lang.Double.doubleToLongBits(other.getMinValue())) return false;
+        if (java.lang.Double.doubleToLongBits(getMaxValue())
+            != java.lang.Double.doubleToLongBits(other.getMaxValue())) return false;
         if (!getFacetValueCase().equals(other.getFacetValueCase())) return false;
         switch (facetValueCase_) {
           case 1:
@@ -3580,6 +3684,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + COUNT_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCount());
+        hash = (37 * hash) + MIN_VALUE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getMinValue()));
+        hash = (37 * hash) + MAX_VALUE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getMaxValue()));
         switch (facetValueCase_) {
           case 1:
             hash = (37 * hash) + VALUE_FIELD_NUMBER;
@@ -3745,6 +3859,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           super.clear();
           count_ = 0L;
 
+          minValue_ = 0D;
+
+          maxValue_ = 0D;
+
           facetValueCase_ = 0;
           facetValue_ = null;
           return this;
@@ -3787,6 +3905,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             }
           }
           result.count_ = count_;
+          result.minValue_ = minValue_;
+          result.maxValue_ = maxValue_;
           result.facetValueCase_ = facetValueCase_;
           onBuilt();
           return result;
@@ -3845,6 +3965,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (other.getCount() != 0L) {
             setCount(other.getCount());
+          }
+          if (other.getMinValue() != 0D) {
+            setMinValue(other.getMinValue());
+          }
+          if (other.getMaxValue() != 0D) {
+            setMaxValue(other.getMaxValue());
           }
           switch (other.getFacetValueCase()) {
             case VALUE:
@@ -4301,6 +4427,134 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         public Builder clearCount() {
 
           count_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private double minValue_;
+        /**
+         *
+         *
+         * <pre>
+         * The minimum value in the
+         * [FacetValue.interval][google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue.interval].
+         * Only supported on numerical facets and returned if
+         * [SearchRequest.FacetSpec.FacetKey.return_min_max][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.return_min_max]
+         * is true.
+         * </pre>
+         *
+         * <code>double min_value = 5;</code>
+         *
+         * @return The minValue.
+         */
+        @java.lang.Override
+        public double getMinValue() {
+          return minValue_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The minimum value in the
+         * [FacetValue.interval][google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue.interval].
+         * Only supported on numerical facets and returned if
+         * [SearchRequest.FacetSpec.FacetKey.return_min_max][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.return_min_max]
+         * is true.
+         * </pre>
+         *
+         * <code>double min_value = 5;</code>
+         *
+         * @param value The minValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMinValue(double value) {
+
+          minValue_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The minimum value in the
+         * [FacetValue.interval][google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue.interval].
+         * Only supported on numerical facets and returned if
+         * [SearchRequest.FacetSpec.FacetKey.return_min_max][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.return_min_max]
+         * is true.
+         * </pre>
+         *
+         * <code>double min_value = 5;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMinValue() {
+
+          minValue_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double maxValue_;
+        /**
+         *
+         *
+         * <pre>
+         * The maximum value in the
+         * [FacetValue.interval][google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue.interval].
+         * Only supported on numerical facets and returned if
+         * [SearchRequest.FacetSpec.FacetKey.return_min_max][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.return_min_max]
+         * is true.
+         * </pre>
+         *
+         * <code>double max_value = 6;</code>
+         *
+         * @return The maxValue.
+         */
+        @java.lang.Override
+        public double getMaxValue() {
+          return maxValue_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The maximum value in the
+         * [FacetValue.interval][google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue.interval].
+         * Only supported on numerical facets and returned if
+         * [SearchRequest.FacetSpec.FacetKey.return_min_max][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.return_min_max]
+         * is true.
+         * </pre>
+         *
+         * <code>double max_value = 6;</code>
+         *
+         * @param value The maxValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMaxValue(double value) {
+
+          maxValue_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The maximum value in the
+         * [FacetValue.interval][google.cloud.retail.v2beta.SearchResponse.Facet.FacetValue.interval].
+         * Only supported on numerical facets and returned if
+         * [SearchRequest.FacetSpec.FacetKey.return_min_max][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.return_min_max]
+         * is true.
+         * </pre>
+         *
+         * <code>double max_value = 6;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMaxValue() {
+
+          maxValue_ = 0D;
           onChanged();
           return this;
         }
@@ -6354,7 +6608,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If spell correction applies, the corrected query. Otherwise, empty.
+   * Contains the spell corrected query, if found. If the spell correction type
+   * is AUTOMATIC, then the search results are based on corrected_query.
+   * Otherwise the original query is used for search.
    * </pre>
    *
    * <code>string corrected_query = 4;</code>
@@ -6377,7 +6633,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If spell correction applies, the corrected query. Otherwise, empty.
+   * Contains the spell corrected query, if found. If the spell correction type
+   * is AUTOMATIC, then the search results are based on corrected_query.
+   * Otherwise the original query is used for search.
    * </pre>
    *
    * <code>string corrected_query = 4;</code>
@@ -6564,10 +6822,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The URI of a customer-defined redirect page. If redirect action is
-   * triggered, no search will be performed, and only
+   * triggered, no search is performed, and only
    * [redirect_uri][google.cloud.retail.v2beta.SearchResponse.redirect_uri] and
    * [attribution_token][google.cloud.retail.v2beta.SearchResponse.attribution_token]
-   * will be set in the response.
+   * are set in the response.
    * </pre>
    *
    * <code>string redirect_uri = 10;</code>
@@ -6591,10 +6849,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The URI of a customer-defined redirect page. If redirect action is
-   * triggered, no search will be performed, and only
+   * triggered, no search is performed, and only
    * [redirect_uri][google.cloud.retail.v2beta.SearchResponse.redirect_uri] and
    * [attribution_token][google.cloud.retail.v2beta.SearchResponse.attribution_token]
-   * will be set in the response.
+   * are set in the response.
    * </pre>
    *
    * <code>string redirect_uri = 10;</code>
@@ -8173,7 +8431,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If spell correction applies, the corrected query. Otherwise, empty.
+     * Contains the spell corrected query, if found. If the spell correction type
+     * is AUTOMATIC, then the search results are based on corrected_query.
+     * Otherwise the original query is used for search.
      * </pre>
      *
      * <code>string corrected_query = 4;</code>
@@ -8195,7 +8455,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If spell correction applies, the corrected query. Otherwise, empty.
+     * Contains the spell corrected query, if found. If the spell correction type
+     * is AUTOMATIC, then the search results are based on corrected_query.
+     * Otherwise the original query is used for search.
      * </pre>
      *
      * <code>string corrected_query = 4;</code>
@@ -8217,7 +8479,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If spell correction applies, the corrected query. Otherwise, empty.
+     * Contains the spell corrected query, if found. If the spell correction type
+     * is AUTOMATIC, then the search results are based on corrected_query.
+     * Otherwise the original query is used for search.
      * </pre>
      *
      * <code>string corrected_query = 4;</code>
@@ -8238,7 +8502,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If spell correction applies, the corrected query. Otherwise, empty.
+     * Contains the spell corrected query, if found. If the spell correction type
+     * is AUTOMATIC, then the search results are based on corrected_query.
+     * Otherwise the original query is used for search.
      * </pre>
      *
      * <code>string corrected_query = 4;</code>
@@ -8255,7 +8521,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If spell correction applies, the corrected query. Otherwise, empty.
+     * Contains the spell corrected query, if found. If the spell correction type
+     * is AUTOMATIC, then the search results are based on corrected_query.
+     * Otherwise the original query is used for search.
      * </pre>
      *
      * <code>string corrected_query = 4;</code>
@@ -8718,10 +8986,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URI of a customer-defined redirect page. If redirect action is
-     * triggered, no search will be performed, and only
+     * triggered, no search is performed, and only
      * [redirect_uri][google.cloud.retail.v2beta.SearchResponse.redirect_uri] and
      * [attribution_token][google.cloud.retail.v2beta.SearchResponse.attribution_token]
-     * will be set in the response.
+     * are set in the response.
      * </pre>
      *
      * <code>string redirect_uri = 10;</code>
@@ -8744,10 +9012,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URI of a customer-defined redirect page. If redirect action is
-     * triggered, no search will be performed, and only
+     * triggered, no search is performed, and only
      * [redirect_uri][google.cloud.retail.v2beta.SearchResponse.redirect_uri] and
      * [attribution_token][google.cloud.retail.v2beta.SearchResponse.attribution_token]
-     * will be set in the response.
+     * are set in the response.
      * </pre>
      *
      * <code>string redirect_uri = 10;</code>
@@ -8770,10 +9038,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URI of a customer-defined redirect page. If redirect action is
-     * triggered, no search will be performed, and only
+     * triggered, no search is performed, and only
      * [redirect_uri][google.cloud.retail.v2beta.SearchResponse.redirect_uri] and
      * [attribution_token][google.cloud.retail.v2beta.SearchResponse.attribution_token]
-     * will be set in the response.
+     * are set in the response.
      * </pre>
      *
      * <code>string redirect_uri = 10;</code>
@@ -8795,10 +9063,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URI of a customer-defined redirect page. If redirect action is
-     * triggered, no search will be performed, and only
+     * triggered, no search is performed, and only
      * [redirect_uri][google.cloud.retail.v2beta.SearchResponse.redirect_uri] and
      * [attribution_token][google.cloud.retail.v2beta.SearchResponse.attribution_token]
-     * will be set in the response.
+     * are set in the response.
      * </pre>
      *
      * <code>string redirect_uri = 10;</code>
@@ -8816,10 +9084,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URI of a customer-defined redirect page. If redirect action is
-     * triggered, no search will be performed, and only
+     * triggered, no search is performed, and only
      * [redirect_uri][google.cloud.retail.v2beta.SearchResponse.redirect_uri] and
      * [attribution_token][google.cloud.retail.v2beta.SearchResponse.attribution_token]
-     * will be set in the response.
+     * are set in the response.
      * </pre>
      *
      * <code>string redirect_uri = 10;</code>

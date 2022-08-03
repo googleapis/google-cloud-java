@@ -24,7 +24,8 @@ package com.google.cloud.retail.v2beta;
  * <pre>
  * Metadata related to the progress of the RemoveFulfillmentPlaces operation.
  * Currently empty because there is no meaningful metadata populated from the
- * [RemoveFulfillmentPlaces][] method.
+ * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2beta.RemoveFulfillmentPlacesMetadata}
@@ -264,7 +265,8 @@ public final class RemoveFulfillmentPlacesMetadata extends com.google.protobuf.G
    * <pre>
    * Metadata related to the progress of the RemoveFulfillmentPlaces operation.
    * Currently empty because there is no meaningful metadata populated from the
-   * [RemoveFulfillmentPlaces][] method.
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2beta.RemoveFulfillmentPlacesMetadata}

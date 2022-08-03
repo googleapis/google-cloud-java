@@ -149,7 +149,9 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
-   * If spell correction applies, the corrected query. Otherwise, empty.
+   * Contains the spell corrected query, if found. If the spell correction type
+   * is AUTOMATIC, then the search results are based on corrected_query.
+   * Otherwise the original query is used for search.
    * </pre>
    *
    * <code>string corrected_query = 4;</code>
@@ -161,7 +163,9 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
-   * If spell correction applies, the corrected query. Otherwise, empty.
+   * Contains the spell corrected query, if found. If the spell correction type
+   * is AUTOMATIC, then the search results are based on corrected_query.
+   * Otherwise the original query is used for search.
    * </pre>
    *
    * <code>string corrected_query = 4;</code>
@@ -274,10 +278,10 @@ public interface SearchResponseOrBuilder
    *
    * <pre>
    * The URI of a customer-defined redirect page. If redirect action is
-   * triggered, no search will be performed, and only
+   * triggered, no search is performed, and only
    * [redirect_uri][google.cloud.retail.v2beta.SearchResponse.redirect_uri] and
    * [attribution_token][google.cloud.retail.v2beta.SearchResponse.attribution_token]
-   * will be set in the response.
+   * are set in the response.
    * </pre>
    *
    * <code>string redirect_uri = 10;</code>
@@ -290,10 +294,10 @@ public interface SearchResponseOrBuilder
    *
    * <pre>
    * The URI of a customer-defined redirect page. If redirect action is
-   * triggered, no search will be performed, and only
+   * triggered, no search is performed, and only
    * [redirect_uri][google.cloud.retail.v2beta.SearchResponse.redirect_uri] and
    * [attribution_token][google.cloud.retail.v2beta.SearchResponse.attribution_token]
-   * will be set in the response.
+   * are set in the response.
    * </pre>
    *
    * <code>string redirect_uri = 10;</code>

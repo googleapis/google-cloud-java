@@ -28,7 +28,7 @@ public interface GetAttributesConfigRequestOrBuilder
    *
    * <pre>
    * Required. Full AttributesConfig resource name. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetAttributesConfigRequestOrBuilder
    *
    * <pre>
    * Required. Full AttributesConfig resource name. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
    * </pre>
    *
    * <code>

@@ -64,42 +64,45 @@ public final class PredictionServiceProto {
           + "service.proto\022\032google.cloud.retail.v2bet"
           + "a\032\034google/api/annotations.proto\032\027google/"
           + "api/client.proto\032\037google/api/field_behav"
-          + "ior.proto\032+google/cloud/retail/v2beta/us"
-          + "er_event.proto\032\034google/protobuf/struct.p"
-          + "roto\"\274\003\n\016PredictRequest\022\026\n\tplacement\030\001 \001"
-          + "(\tB\003\340A\002\022>\n\nuser_event\030\002 \001(\0132%.google.clo"
-          + "ud.retail.v2beta.UserEventB\003\340A\002\022\021\n\tpage_"
-          + "size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\022\016\n\006filter"
-          + "\030\005 \001(\t\022\025\n\rvalidate_only\030\006 \001(\010\022F\n\006params\030"
-          + "\007 \003(\01326.google.cloud.retail.v2beta.Predi"
-          + "ctRequest.ParamsEntry\022F\n\006labels\030\010 \003(\01326."
-          + "google.cloud.retail.v2beta.PredictReques"
-          + "t.LabelsEntry\032E\n\013ParamsEntry\022\013\n\003key\030\001 \001("
-          + "\t\022%\n\005value\030\002 \001(\0132\026.google.protobuf.Value"
-          + ":\0028\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
-          + "e\030\002 \001(\t:\0028\001\"\357\002\n\017PredictResponse\022M\n\007resul"
-          + "ts\030\001 \003(\0132<.google.cloud.retail.v2beta.Pr"
-          + "edictResponse.PredictionResult\022\031\n\021attrib"
-          + "ution_token\030\002 \001(\t\022\023\n\013missing_ids\030\003 \003(\t\022\025"
-          + "\n\rvalidate_only\030\004 \001(\010\032\305\001\n\020PredictionResu"
-          + "lt\022\n\n\002id\030\001 \001(\t\022\\\n\010metadata\030\002 \003(\0132J.googl"
-          + "e.cloud.retail.v2beta.PredictResponse.Pr"
-          + "edictionResult.MetadataEntry\032G\n\rMetadata"
-          + "Entry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.goog"
-          + "le.protobuf.Value:\0028\0012\232\002\n\021PredictionServ"
-          + "ice\022\271\001\n\007Predict\022*.google.cloud.retail.v2"
-          + "beta.PredictRequest\032+.google.cloud.retai"
-          + "l.v2beta.PredictResponse\"U\202\323\344\223\002O\"J/v2bet"
-          + "a/{placement=projects/*/locations/*/cata"
-          + "logs/*/placements/*}:predict:\001*\032I\312A\025reta"
-          + "il.googleapis.com\322A.https://www.googleap"
-          + "is.com/auth/cloud-platformB\337\001\n\036com.googl"
-          + "e.cloud.retail.v2betaB\026PredictionService"
-          + "ProtoP\001Z@google.golang.org/genproto/goog"
-          + "leapis/cloud/retail/v2beta;retail\242\002\006RETA"
-          + "IL\252\002\032Google.Cloud.Retail.V2Beta\312\002\032Google"
-          + "\\Cloud\\Retail\\V2beta\352\002\035Google::Cloud::Re"
-          + "tail::V2betab\006proto3"
+          + "ior.proto\032\031google/api/resource.proto\032+go"
+          + "ogle/cloud/retail/v2beta/user_event.prot"
+          + "o\032\034google/protobuf/struct.proto\"\274\003\n\016Pred"
+          + "ictRequest\022\026\n\tplacement\030\001 \001(\tB\003\340A\002\022>\n\nus"
+          + "er_event\030\002 \001(\0132%.google.cloud.retail.v2b"
+          + "eta.UserEventB\003\340A\002\022\021\n\tpage_size\030\003 \001(\005\022\022\n"
+          + "\npage_token\030\004 \001(\t\022\016\n\006filter\030\005 \001(\t\022\025\n\rval"
+          + "idate_only\030\006 \001(\010\022F\n\006params\030\007 \003(\01326.googl"
+          + "e.cloud.retail.v2beta.PredictRequest.Par"
+          + "amsEntry\022F\n\006labels\030\010 \003(\01326.google.cloud."
+          + "retail.v2beta.PredictRequest.LabelsEntry"
+          + "\032E\n\013ParamsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 "
+          + "\001(\0132\026.google.protobuf.Value:\0028\001\032-\n\013Label"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\357"
+          + "\002\n\017PredictResponse\022M\n\007results\030\001 \003(\0132<.go"
+          + "ogle.cloud.retail.v2beta.PredictResponse"
+          + ".PredictionResult\022\031\n\021attribution_token\030\002"
+          + " \001(\t\022\023\n\013missing_ids\030\003 \003(\t\022\025\n\rvalidate_on"
+          + "ly\030\004 \001(\010\032\305\001\n\020PredictionResult\022\n\n\002id\030\001 \001("
+          + "\t\022\\\n\010metadata\030\002 \003(\0132J.google.cloud.retai"
+          + "l.v2beta.PredictResponse.PredictionResul"
+          + "t.MetadataEntry\032G\n\rMetadataEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.protobuf.V"
+          + "alue:\0028\0012\361\002\n\021PredictionService\022\220\002\n\007Predi"
+          + "ct\022*.google.cloud.retail.v2beta.PredictR"
+          + "equest\032+.google.cloud.retail.v2beta.Pred"
+          + "ictResponse\"\253\001\202\323\344\223\002\244\001\"J/v2beta/{placemen"
+          + "t=projects/*/locations/*/catalogs/*/plac"
+          + "ements/*}:predict:\001*ZS\"N/v2beta/{placeme"
+          + "nt=projects/*/locations/*/catalogs/*/ser"
+          + "vingConfigs/*}:predict:\001*\032I\312A\025retail.goo"
+          + "gleapis.com\322A.https://www.googleapis.com"
+          + "/auth/cloud-platformB\337\001\n\036com.google.clou"
+          + "d.retail.v2betaB\026PredictionServiceProtoP"
+          + "\001Z@google.golang.org/genproto/googleapis"
+          + "/cloud/retail/v2beta;retail\242\002\006RETAIL\252\002\032G"
+          + "oogle.Cloud.Retail.V2Beta\312\002\032Google\\Cloud"
+          + "\\Retail\\V2beta\352\002\035Google::Cloud::Retail::"
+          + "V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -108,6 +111,7 @@ public final class PredictionServiceProto {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.retail.v2beta.UserEventProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
             });
@@ -185,6 +189,7 @@ public final class PredictionServiceProto {
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.retail.v2beta.UserEventProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }

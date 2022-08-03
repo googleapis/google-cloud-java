@@ -78,8 +78,7 @@ public interface ExportUserEventsResponseOrBuilder
    *
    *
    * <pre>
-   * Echoes the destination for the complete errors if this field was set in
-   * the request.
+   * This field is never set.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -91,8 +90,7 @@ public interface ExportUserEventsResponseOrBuilder
    *
    *
    * <pre>
-   * Echoes the destination for the complete errors if this field was set in
-   * the request.
+   * This field is never set.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -104,11 +102,45 @@ public interface ExportUserEventsResponseOrBuilder
    *
    *
    * <pre>
-   * Echoes the destination for the complete errors if this field was set in
-   * the request.
+   * This field is never set.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
    */
   com.google.cloud.retail.v2alpha.ExportErrorsConfigOrBuilder getErrorsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output result indicating where the data were exported to.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+   *
+   * @return Whether the outputResult field is set.
+   */
+  boolean hasOutputResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output result indicating where the data were exported to.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+   *
+   * @return The outputResult.
+   */
+  com.google.cloud.retail.v2alpha.OutputResult getOutputResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output result indicating where the data were exported to.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+   */
+  com.google.cloud.retail.v2alpha.OutputResultOrBuilder getOutputResultOrBuilder();
 }

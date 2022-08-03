@@ -964,17 +964,17 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, updates are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>When inventory is updated with
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the specified inventory
-   * field value(s) will overwrite any existing value(s) while ignoring the last update time for
-   * this field. Furthermore, the last update time for the specified inventory fields will be
-   * overwritten to the time of the
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the
+   * specified inventory field value(s) will overwrite any existing value(s) while ignoring the last
+   * update time for this field. Furthermore, the last update time for the specified inventory
+   * fields will be overwritten to the time of the
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
    *
    * <p>If no inventory fields are set in
    * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any
@@ -985,9 +985,10 @@ public class ProductServiceClient implements BackgroundResource {
    * existing inventory information will be preserved.
    *
    * <p>Pre-existing inventory information can only be updated with
-   * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
+   * [ProductService.SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
    * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
-   * and [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * and
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1015,8 +1016,8 @@ public class ProductServiceClient implements BackgroundResource {
    *           updated inventory fields must be specified in
    *           [SetInventoryRequest.set_mask][google.cloud.retail.v2.SetInventoryRequest.set_mask].
    *     </ul>
-   *     <p>If [SetInventoryRequest.inventory.name][] is empty or invalid, an INVALID_ARGUMENT error
-   *     is returned.
+   *     <p>If [SetInventoryRequest.inventory.name][google.cloud.retail.v2.Product.name] is empty or
+   *     invalid, an INVALID_ARGUMENT error is returned.
    *     <p>If the caller does not have permission to update the
    *     [Product][google.cloud.retail.v2.Product] named in
    *     [Product.name][google.cloud.retail.v2.Product.name], regardless of whether or not it
@@ -1033,7 +1034,7 @@ public class ProductServiceClient implements BackgroundResource {
    *       <li>Adds "fulfillment_info" in
    *           [SetInventoryRequest.set_mask][google.cloud.retail.v2.SetInventoryRequest.set_mask]
    *       <li>Specifies only the desired fulfillment types and corresponding place IDs to update in
-   *           [SetInventoryRequest.inventory.fulfillment_info][]
+   *           [SetInventoryRequest.inventory.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info]
    *     </ul>
    *     <p>The caller can clear all place IDs from a subset of fulfillment types in the following
    *     ways:
@@ -1041,9 +1042,9 @@ public class ProductServiceClient implements BackgroundResource {
    *       <li>Adds "fulfillment_info" in
    *           [SetInventoryRequest.set_mask][google.cloud.retail.v2.SetInventoryRequest.set_mask]
    *       <li>Specifies only the desired fulfillment types to clear in
-   *           [SetInventoryRequest.inventory.fulfillment_info][]
+   *           [SetInventoryRequest.inventory.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info]
    *       <li>Checks that only the desired fulfillment info types have empty
-   *           [SetInventoryRequest.inventory.fulfillment_info.place_ids][]
+   *           [SetInventoryRequest.inventory.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
    *     </ul>
    *     <p>The last update time is recorded for the following inventory fields:
    *     <ul>
@@ -1053,7 +1054,8 @@ public class ProductServiceClient implements BackgroundResource {
    *       <li>[Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info]
    *     </ul>
    *     <p>If a full overwrite of inventory information while ignoring timestamps is needed,
-   *     [UpdateProduct][] should be invoked instead.
+   *     [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] should
+   *     be invoked instead.
    * @param setMask Indicates which inventory fields in the provided
    *     [Product][google.cloud.retail.v2.Product] to update.
    *     <p>At least one field must be provided.
@@ -1078,17 +1080,17 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, updates are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>When inventory is updated with
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the specified inventory
-   * field value(s) will overwrite any existing value(s) while ignoring the last update time for
-   * this field. Furthermore, the last update time for the specified inventory fields will be
-   * overwritten to the time of the
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the
+   * specified inventory field value(s) will overwrite any existing value(s) while ignoring the last
+   * update time for this field. Furthermore, the last update time for the specified inventory
+   * fields will be overwritten to the time of the
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
    *
    * <p>If no inventory fields are set in
    * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any
@@ -1099,9 +1101,10 @@ public class ProductServiceClient implements BackgroundResource {
    * existing inventory information will be preserved.
    *
    * <p>Pre-existing inventory information can only be updated with
-   * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
+   * [ProductService.SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
    * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
-   * and [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * and
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1141,17 +1144,17 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, updates are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>When inventory is updated with
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the specified inventory
-   * field value(s) will overwrite any existing value(s) while ignoring the last update time for
-   * this field. Furthermore, the last update time for the specified inventory fields will be
-   * overwritten to the time of the
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the
+   * specified inventory field value(s) will overwrite any existing value(s) while ignoring the last
+   * update time for this field. Furthermore, the last update time for the specified inventory
+   * fields will be overwritten to the time of the
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
    *
    * <p>If no inventory fields are set in
    * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any
@@ -1162,9 +1165,10 @@ public class ProductServiceClient implements BackgroundResource {
    * existing inventory information will be preserved.
    *
    * <p>Pre-existing inventory information can only be updated with
-   * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
+   * [ProductService.SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
    * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
-   * and [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * and
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1204,17 +1208,17 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, updates are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>When inventory is updated with
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the specified inventory
-   * field value(s) will overwrite any existing value(s) while ignoring the last update time for
-   * this field. Furthermore, the last update time for the specified inventory fields will be
-   * overwritten to the time of the
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the
+   * specified inventory field value(s) will overwrite any existing value(s) while ignoring the last
+   * update time for this field. Furthermore, the last update time for the specified inventory
+   * fields will be overwritten to the time of the
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
    *
    * <p>If no inventory fields are set in
    * [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any
@@ -1225,9 +1229,10 @@ public class ProductServiceClient implements BackgroundResource {
    * existing inventory information will be preserved.
    *
    * <p>Pre-existing inventory information can only be updated with
-   * [SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
+   * [ProductService.SetInventory][google.cloud.retail.v2.ProductService.SetInventory],
    * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces],
-   * and [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * and
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1265,8 +1270,8 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, the added place IDs are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1311,8 +1316,8 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, the added place IDs are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1356,8 +1361,8 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, the added place IDs are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1401,8 +1406,8 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, the added place IDs are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1446,8 +1451,8 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, the added place IDs are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1490,8 +1495,8 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, the removed place IDs are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1536,8 +1541,8 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, the removed place IDs are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1581,8 +1586,8 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, the removed place IDs are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1626,8 +1631,8 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, the removed place IDs are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1673,8 +1678,8 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, the removed place IDs are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1717,13 +1722,13 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, updates are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>Local inventory information can only be modified using this method.
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
-   * inventories.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
+   * effect on local inventories.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1768,13 +1773,13 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, updates are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>Local inventory information can only be modified using this method.
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
-   * inventories.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
+   * effect on local inventories.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1818,13 +1823,13 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, updates are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>Local inventory information can only be modified using this method.
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
-   * inventories.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
+   * effect on local inventories.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1868,13 +1873,13 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, updates are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>Local inventory information can only be modified using this method.
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
-   * inventories.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
+   * effect on local inventories.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1918,13 +1923,13 @@ public class ProductServiceClient implements BackgroundResource {
    * the request is valid, the update will be enqueued and processed downstream. As a consequence,
    * when a response is returned, updates are not immediately manifested in the
    * [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>Local inventory information can only be modified using this method.
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
-   * inventories.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
+   * effect on local inventories.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -1964,13 +1969,13 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
    * processed downstream. As a consequence, when a response is returned, removals are not
    * immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>Local inventory information can only be removed using this method.
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
-   * inventories.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
+   * effect on local inventories.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -2013,13 +2018,13 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
    * processed downstream. As a consequence, when a response is returned, removals are not
    * immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>Local inventory information can only be removed using this method.
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
-   * inventories.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
+   * effect on local inventories.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -2061,13 +2066,13 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
    * processed downstream. As a consequence, when a response is returned, removals are not
    * immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>Local inventory information can only be removed using this method.
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
-   * inventories.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
+   * effect on local inventories.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -2108,13 +2113,13 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
    * processed downstream. As a consequence, when a response is returned, removals are not
    * immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>Local inventory information can only be removed using this method.
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
-   * inventories.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
+   * effect on local inventories.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.
@@ -2157,13 +2162,13 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
    * processed downstream. As a consequence, when a response is returned, removals are not
    * immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by
-   * [GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
-   * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
    *
    * <p>Local inventory information can only be removed using this method.
-   * [CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
-   * [UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local
-   * inventories.
+   * [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no
+   * effect on local inventories.
    *
    * <p>This feature is only available for users who have Retail Search enabled. Please enable
    * Retail Search on Cloud Console before using this feature.

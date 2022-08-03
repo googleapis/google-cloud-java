@@ -18,6 +18,7 @@ package com.google.cloud.retail.v2alpha.samples;
 
 // [START retail_v2alpha_generated_usereventserviceclient_purgeuserevents_lro_async]
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.retail.v2alpha.CatalogName;
 import com.google.cloud.retail.v2alpha.PurgeMetadata;
 import com.google.cloud.retail.v2alpha.PurgeUserEventsRequest;
 import com.google.cloud.retail.v2alpha.PurgeUserEventsResponse;
@@ -35,7 +36,7 @@ public class AsyncPurgeUserEventsLRO {
     try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
       PurgeUserEventsRequest request =
           PurgeUserEventsRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
               .setFilter("filter-1274492040")
               .setForce(true)
               .build();

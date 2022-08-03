@@ -223,7 +223,7 @@ public class UserEventServiceClientHttpJsonTest {
 
     PurgeUserEventsRequest request =
         PurgeUserEventsRequest.newBuilder()
-            .setParent("projects/project-6267/locations/location-6267/catalogs/catalog-6267")
+            .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
             .setFilter("filter-1274492040")
             .setForce(true)
             .build();
@@ -256,7 +256,7 @@ public class UserEventServiceClientHttpJsonTest {
     try {
       PurgeUserEventsRequest request =
           PurgeUserEventsRequest.newBuilder()
-              .setParent("projects/project-6267/locations/location-6267/catalogs/catalog-6267")
+              .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
               .setFilter("filter-1274492040")
               .setForce(true)
               .build();

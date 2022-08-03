@@ -24,7 +24,8 @@ package com.google.cloud.retail.v2alpha;
  * <pre>
  * Metadata related to the progress of the RemoveLocalInventories operation.
  * Currently empty because there is no meaningful metadata populated from the
- * [RemoveLocalInventories][] method.
+ * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.RemoveLocalInventoriesMetadata}
@@ -264,7 +265,8 @@ public final class RemoveLocalInventoriesMetadata extends com.google.protobuf.Ge
    * <pre>
    * Metadata related to the progress of the RemoveLocalInventories operation.
    * Currently empty because there is no meaningful metadata populated from the
-   * [RemoveLocalInventories][] method.
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.RemoveLocalInventoriesMetadata}

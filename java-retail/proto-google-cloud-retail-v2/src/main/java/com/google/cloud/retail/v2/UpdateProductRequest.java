@@ -22,7 +22,9 @@ package com.google.cloud.retail.v2;
  *
  *
  * <pre>
- * Request message for [UpdateProduct][] method.
+ * Request message for
+ * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2.UpdateProductRequest}
@@ -493,7 +495,9 @@ public final class UpdateProductRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [UpdateProduct][] method.
+   * Request message for
+   * [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2.UpdateProductRequest}

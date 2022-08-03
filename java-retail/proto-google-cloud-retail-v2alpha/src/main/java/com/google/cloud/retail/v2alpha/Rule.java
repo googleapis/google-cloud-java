@@ -1257,10 +1257,13 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * * Rule Condition:
-   *   - No [Condition][query_terms] provided is a global match.
-   *   - 1 or more [Condition][query_terms] provided is combined with OR
-   *   operator.
-   * * Action Input: The request query and filter that will be applied to the
+   *   - No
+   *   [Condition.query_terms][google.cloud.retail.v2alpha.Condition.query_terms]
+   *   provided is a global match.
+   *   - 1 or more
+   *   [Condition.query_terms][google.cloud.retail.v2alpha.Condition.query_terms]
+   *   provided are combined with OR operator.
+   * * Action Input: The request query and filter that are applied to the
    * retrieved products, in addition to any filters already provided with the
    * SearchRequest. The AND operator is used to combine the query's existing
    * filters with the filter rule(s). NOTE: May result in 0 results when
@@ -1597,10 +1600,13 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * * Rule Condition:
-     *   - No [Condition][query_terms] provided is a global match.
-     *   - 1 or more [Condition][query_terms] provided is combined with OR
-     *   operator.
-     * * Action Input: The request query and filter that will be applied to the
+     *   - No
+     *   [Condition.query_terms][google.cloud.retail.v2alpha.Condition.query_terms]
+     *   provided is a global match.
+     *   - 1 or more
+     *   [Condition.query_terms][google.cloud.retail.v2alpha.Condition.query_terms]
+     *   provided are combined with OR operator.
+     * * Action Input: The request query and filter that are applied to the
      * retrieved products, in addition to any filters already provided with the
      * SearchRequest. The AND operator is used to combine the query's existing
      * filters with the filter rule(s). NOTE: May result in 0 results when
@@ -2023,7 +2029,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Redirects a shopper to a specific page.
    * * Rule Condition:
-   *   - Must specify [Condition][query_terms].
+   *   - Must specify
+   *   [Condition.query_terms][google.cloud.retail.v2alpha.Condition.query_terms].
    * * Action Input: Request Query
    * * Action Result: Redirects shopper to provided uri.
    * </pre>
@@ -2332,7 +2339,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Redirects a shopper to a specific page.
      * * Rule Condition:
-     *   - Must specify [Condition][query_terms].
+     *   - Must specify
+     *   [Condition.query_terms][google.cloud.retail.v2alpha.Condition.query_terms].
      * * Action Input: Request Query
      * * Action Result: Redirects shopper to provided uri.
      * </pre>

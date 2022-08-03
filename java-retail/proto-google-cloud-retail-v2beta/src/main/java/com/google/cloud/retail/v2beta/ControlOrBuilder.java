@@ -104,7 +104,7 @@ public interface ControlOrBuilder
    *
    * <pre>
    * Immutable. Fully qualified name
-   * projects/&#42;&#47;locations/global/catalogs/&#42;&#47;controls/&#42;
+   * `projects/&#42;&#47;locations/global/catalogs/&#42;&#47;controls/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -117,7 +117,7 @@ public interface ControlOrBuilder
    *
    * <pre>
    * Immutable. Fully qualified name
-   * projects/&#42;&#47;locations/global/catalogs/&#42;&#47;controls/&#42;
+   * `projects/&#42;&#47;locations/global/catalogs/&#42;&#47;controls/&#42;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>

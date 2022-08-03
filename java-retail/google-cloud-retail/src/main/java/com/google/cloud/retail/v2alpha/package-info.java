@@ -79,6 +79,33 @@
  * }
  * }</pre>
  *
+ * <p>======================= ModelServiceClient =======================
+ *
+ * <p>Service Description: Service for performing CRUD operations on models. Recommendation models
+ * contain all the metadata necessary to generate a set of models for the Predict() api. A model is
+ * queried indirectly via a ServingConfig, which associates a model with a given Placement (e.g.
+ * Frequently Bought Together on Home Page).
+ *
+ * <p>This service allows customers to e.g.:
+ *
+ * <ul>
+ *   <li>Initiate training of a model.
+ *   <li>Pause training of an existing model.
+ *   <li>List all the available models along with their metadata.
+ *   <li>Control their tuning schedule.
+ * </ul>
+ *
+ * <p>Sample for ModelServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+ *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]");
+ *   Model response = modelServiceClient.pauseModel(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= PredictionServiceClient =======================
  *
  * <p>Service Description: Service for making recommendation prediction.
@@ -156,6 +183,8 @@
  *           .addAllVariantRollupKeys(new ArrayList<String>())
  *           .addAllPageCategories(new ArrayList<String>())
  *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+ *           .putAllLabels(new HashMap<String, String>())
+ *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);

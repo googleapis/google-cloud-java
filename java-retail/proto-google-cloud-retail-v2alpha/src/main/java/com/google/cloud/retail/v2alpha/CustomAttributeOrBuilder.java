@@ -152,11 +152,13 @@ public interface CustomAttributeOrBuilder
    *
    *
    * <pre>
-   * This field will only be used when
+   * This field is normally ignored unless
    * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
-   * of the [Catalog][google.cloud.retail.v2alpha.Catalog] is
-   * 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG', if true, custom attribute values are
-   * searchable by text queries in
+   * of the [Catalog][google.cloud.retail.v2alpha.Catalog] is set to the
+   * deprecated 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG' mode. For information about
+   * product-level attribute configuration, see [Configuration
+   * modes](https://cloud.google.com/retail/docs/attribute-config#config-modes).
+   * If true, custom attribute values are searchable by text queries in
    * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
    * This field is ignored in a
    * [UserEvent][google.cloud.retail.v2alpha.UserEvent].
@@ -164,20 +166,25 @@ public interface CustomAttributeOrBuilder
    * is set. Otherwise, a INVALID_ARGUMENT error is returned.
    * </pre>
    *
-   * <code>optional bool searchable = 3;</code>
+   * <code>optional bool searchable = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2alpha.CustomAttribute.searchable is deprecated. See
+   *     google/cloud/retail/v2alpha/common.proto;l=423
    * @return Whether the searchable field is set.
    */
+  @java.lang.Deprecated
   boolean hasSearchable();
   /**
    *
    *
    * <pre>
-   * This field will only be used when
+   * This field is normally ignored unless
    * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
-   * of the [Catalog][google.cloud.retail.v2alpha.Catalog] is
-   * 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG', if true, custom attribute values are
-   * searchable by text queries in
+   * of the [Catalog][google.cloud.retail.v2alpha.Catalog] is set to the
+   * deprecated 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG' mode. For information about
+   * product-level attribute configuration, see [Configuration
+   * modes](https://cloud.google.com/retail/docs/attribute-config#config-modes).
+   * If true, custom attribute values are searchable by text queries in
    * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
    * This field is ignored in a
    * [UserEvent][google.cloud.retail.v2alpha.UserEvent].
@@ -185,21 +192,27 @@ public interface CustomAttributeOrBuilder
    * is set. Otherwise, a INVALID_ARGUMENT error is returned.
    * </pre>
    *
-   * <code>optional bool searchable = 3;</code>
+   * <code>optional bool searchable = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2alpha.CustomAttribute.searchable is deprecated. See
+   *     google/cloud/retail/v2alpha/common.proto;l=423
    * @return The searchable.
    */
+  @java.lang.Deprecated
   boolean getSearchable();
 
   /**
    *
    *
    * <pre>
-   * This field will only be used when
+   * This field is normally ignored unless
    * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
-   * of the [Catalog][google.cloud.retail.v2alpha.Catalog] is
-   * 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG', if true, custom attribute values are
-   * indexed, so that it can be filtered, faceted or boosted in
+   * of the [Catalog][google.cloud.retail.v2alpha.Catalog] is set to the
+   * deprecated 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG' mode. For information about
+   * product-level attribute configuration, see [Configuration
+   * modes](https://cloud.google.com/retail/docs/attribute-config#config-modes).
+   * If true, custom attribute values are indexed, so that they can be filtered,
+   * faceted or boosted in
    * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
    * This field is ignored in a
    * [UserEvent][google.cloud.retail.v2alpha.UserEvent].
@@ -211,20 +224,26 @@ public interface CustomAttributeOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>optional bool indexable = 4;</code>
+   * <code>optional bool indexable = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2alpha.CustomAttribute.indexable is deprecated. See
+   *     google/cloud/retail/v2alpha/common.proto;l=444
    * @return Whether the indexable field is set.
    */
+  @java.lang.Deprecated
   boolean hasIndexable();
   /**
    *
    *
    * <pre>
-   * This field will only be used when
+   * This field is normally ignored unless
    * [AttributesConfig.attribute_config_level][google.cloud.retail.v2alpha.AttributesConfig.attribute_config_level]
-   * of the [Catalog][google.cloud.retail.v2alpha.Catalog] is
-   * 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG', if true, custom attribute values are
-   * indexed, so that it can be filtered, faceted or boosted in
+   * of the [Catalog][google.cloud.retail.v2alpha.Catalog] is set to the
+   * deprecated 'PRODUCT_LEVEL_ATTRIBUTE_CONFIG' mode. For information about
+   * product-level attribute configuration, see [Configuration
+   * modes](https://cloud.google.com/retail/docs/attribute-config#config-modes).
+   * If true, custom attribute values are indexed, so that they can be filtered,
+   * faceted or boosted in
    * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
    * This field is ignored in a
    * [UserEvent][google.cloud.retail.v2alpha.UserEvent].
@@ -236,9 +255,12 @@ public interface CustomAttributeOrBuilder
    * for more details.
    * </pre>
    *
-   * <code>optional bool indexable = 4;</code>
+   * <code>optional bool indexable = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.retail.v2alpha.CustomAttribute.indexable is deprecated. See
+   *     google/cloud/retail/v2alpha/common.proto;l=444
    * @return The indexable.
    */
+  @java.lang.Deprecated
   boolean getIndexable();
 }

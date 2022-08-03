@@ -30,6 +30,10 @@ public interface CatalogAttributeOrBuilder
    * Required. Attribute name.
    * For example: `color`, `brands`, `attributes.custom_attribute`, such as
    * `attributes.xyz`.
+   * To be indexable, the attribute name can contain only alpha-numeric
+   * characters and underscores. For example, an attribute named
+   * `attributes.abc_xyz` can be indexed, but an attribute named
+   * `attributes.abc-xyz` cannot be indexed.
    * </pre>
    *
    * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -44,6 +48,10 @@ public interface CatalogAttributeOrBuilder
    * Required. Attribute name.
    * For example: `color`, `brands`, `attributes.custom_attribute`, such as
    * `attributes.xyz`.
+   * To be indexable, the attribute name can contain only alpha-numeric
+   * characters and underscores. For example, an attribute named
+   * `attributes.abc_xyz` can be indexed, but an attribute named
+   * `attributes.abc-xyz` cannot be indexed.
    * </pre>
    *
    * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -62,14 +70,19 @@ public interface CatalogAttributeOrBuilder
    * [Product.attributes][google.cloud.retail.v2beta.Product.attributes].
    * Otherwise, this field is `False`.
    * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] can be
-   * pre-loaded by using [AddCatalogAttribute][], [ImportCatalogAttributes][],
-   * or [UpdateAttributesConfig][] APIs. This field is `False` for pre-loaded
+   * pre-loaded by using
+   * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2beta.CatalogService.AddCatalogAttribute],
+   * [CatalogService.ImportCatalogAttributes][], or
+   * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2beta.CatalogService.UpdateAttributesConfig]
+   * APIs. This field is `False` for pre-loaded
    * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s.
-   * Only [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that
-   * are not in use by products can be deleted.
+   * Only pre-loaded
    * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that are
-   * in use by products cannot be deleted; however, their configuration
-   * properties will reset to default values upon removal request.
+   * neither in use by products nor predefined can be deleted.
+   * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that are
+   * either in use by products or are predefined cannot be deleted; however,
+   * their configuration properties will reset to default values upon removal
+   * request.
    * After catalog changes, it takes about 10 minutes for this field to update.
    * </pre>
    *
@@ -221,4 +234,43 @@ public interface CatalogAttributeOrBuilder
    * @return The searchableOption.
    */
   com.google.cloud.retail.v2beta.CatalogAttribute.SearchableOption getSearchableOption();
+
+  /**
+   *
+   *
+   * <pre>
+   * When
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2beta.AttributesConfig.attribute_config_level]
+   * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if RECOMMENDATIONS_FILTERING_ENABLED,
+   * attribute values are filterable for recommendations.
+   * This option works for categorical features only,
+   * does not work for numerical features, inventory filtering.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2beta.RecommendationsFilteringOption recommendations_filtering_option = 8;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for recommendationsFilteringOption.
+   */
+  int getRecommendationsFilteringOptionValue();
+  /**
+   *
+   *
+   * <pre>
+   * When
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2beta.AttributesConfig.attribute_config_level]
+   * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if RECOMMENDATIONS_FILTERING_ENABLED,
+   * attribute values are filterable for recommendations.
+   * This option works for categorical features only,
+   * does not work for numerical features, inventory filtering.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2beta.RecommendationsFilteringOption recommendations_filtering_option = 8;
+   * </code>
+   *
+   * @return The recommendationsFilteringOption.
+   */
+  com.google.cloud.retail.v2beta.RecommendationsFilteringOption getRecommendationsFilteringOption();
 }

@@ -187,9 +187,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Additional product metadata / annotations.
      * Possible values:
-     * * `product`: JSON representation of the product. Will be set if
+     * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
-     * * `score`: Prediction score in double value. Will be set if
+     * * `score`: Prediction score in double value. Is set if
      *   `returnScore` is set to true in `PredictRequest.params`.
      * </pre>
      *
@@ -202,9 +202,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Additional product metadata / annotations.
      * Possible values:
-     * * `product`: JSON representation of the product. Will be set if
+     * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
-     * * `score`: Prediction score in double value. Will be set if
+     * * `score`: Prediction score in double value. Is set if
      *   `returnScore` is set to true in `PredictRequest.params`.
      * </pre>
      *
@@ -220,9 +220,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Additional product metadata / annotations.
      * Possible values:
-     * * `product`: JSON representation of the product. Will be set if
+     * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
-     * * `score`: Prediction score in double value. Will be set if
+     * * `score`: Prediction score in double value. Is set if
      *   `returnScore` is set to true in `PredictRequest.params`.
      * </pre>
      *
@@ -235,9 +235,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Additional product metadata / annotations.
      * Possible values:
-     * * `product`: JSON representation of the product. Will be set if
+     * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
-     * * `score`: Prediction score in double value. Will be set if
+     * * `score`: Prediction score in double value. Is set if
      *   `returnScore` is set to true in `PredictRequest.params`.
      * </pre>
      *
@@ -255,9 +255,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Additional product metadata / annotations.
      * Possible values:
-     * * `product`: JSON representation of the product. Will be set if
+     * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
-     * * `score`: Prediction score in double value. Will be set if
+     * * `score`: Prediction score in double value. Is set if
      *   `returnScore` is set to true in `PredictRequest.params`.
      * </pre>
      *
@@ -471,9 +471,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Additional product metadata / annotations.
      * Possible values:
-     * * `product`: JSON representation of the product. Will be set if
+     * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
-     * * `score`: Prediction score in double value. Will be set if
+     * * `score`: Prediction score in double value. Is set if
      *   `returnScore` is set to true in `PredictRequest.params`.
      * </pre>
      *
@@ -498,9 +498,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Additional product metadata / annotations.
      * Possible values:
-     * * `product`: JSON representation of the product. Will be set if
+     * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
-     * * `score`: Prediction score in double value. Will be set if
+     * * `score`: Prediction score in double value. Is set if
      *   `returnScore` is set to true in `PredictRequest.params`.
      * </pre>
      *
@@ -516,9 +516,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Additional product metadata / annotations.
      * Possible values:
-     * * `product`: JSON representation of the product. Will be set if
+     * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
-     * * `score`: Prediction score in double value. Will be set if
+     * * `score`: Prediction score in double value. Is set if
      *   `returnScore` is set to true in `PredictRequest.params`.
      * </pre>
      *
@@ -540,9 +540,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * Additional product metadata / annotations.
      * Possible values:
-     * * `product`: JSON representation of the product. Will be set if
+     * * `product`: JSON representation of the product. Is set if
      *   `returnProduct` is set to true in `PredictRequest.params`.
-     * * `score`: Prediction score in double value. Will be set if
+     * * `score`: Prediction score in double value. Is set if
      *   `returnScore` is set to true in `PredictRequest.params`.
      * </pre>
      *
@@ -1074,9 +1074,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Additional product metadata / annotations.
        * Possible values:
-       * * `product`: JSON representation of the product. Will be set if
+       * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
-       * * `score`: Prediction score in double value. Will be set if
+       * * `score`: Prediction score in double value. Is set if
        *   `returnScore` is set to true in `PredictRequest.params`.
        * </pre>
        *
@@ -1101,9 +1101,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Additional product metadata / annotations.
        * Possible values:
-       * * `product`: JSON representation of the product. Will be set if
+       * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
-       * * `score`: Prediction score in double value. Will be set if
+       * * `score`: Prediction score in double value. Is set if
        *   `returnScore` is set to true in `PredictRequest.params`.
        * </pre>
        *
@@ -1119,9 +1119,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Additional product metadata / annotations.
        * Possible values:
-       * * `product`: JSON representation of the product. Will be set if
+       * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
-       * * `score`: Prediction score in double value. Will be set if
+       * * `score`: Prediction score in double value. Is set if
        *   `returnScore` is set to true in `PredictRequest.params`.
        * </pre>
        *
@@ -1143,9 +1143,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Additional product metadata / annotations.
        * Possible values:
-       * * `product`: JSON representation of the product. Will be set if
+       * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
-       * * `score`: Prediction score in double value. Will be set if
+       * * `score`: Prediction score in double value. Is set if
        *   `returnScore` is set to true in `PredictRequest.params`.
        * </pre>
        *
@@ -1174,9 +1174,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Additional product metadata / annotations.
        * Possible values:
-       * * `product`: JSON representation of the product. Will be set if
+       * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
-       * * `score`: Prediction score in double value. Will be set if
+       * * `score`: Prediction score in double value. Is set if
        *   `returnScore` is set to true in `PredictRequest.params`.
        * </pre>
        *
@@ -1200,9 +1200,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Additional product metadata / annotations.
        * Possible values:
-       * * `product`: JSON representation of the product. Will be set if
+       * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
-       * * `score`: Prediction score in double value. Will be set if
+       * * `score`: Prediction score in double value. Is set if
        *   `returnScore` is set to true in `PredictRequest.params`.
        * </pre>
        *
@@ -1225,9 +1225,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
        * <pre>
        * Additional product metadata / annotations.
        * Possible values:
-       * * `product`: JSON representation of the product. Will be set if
+       * * `product`: JSON representation of the product. Is set if
        *   `returnProduct` is set to true in `PredictRequest.params`.
-       * * `score`: Prediction score in double value. Will be set if
+       * * `score`: Prediction score in double value. Is set if
        *   `returnScore` is set to true in `PredictRequest.params`.
        * </pre>
        *

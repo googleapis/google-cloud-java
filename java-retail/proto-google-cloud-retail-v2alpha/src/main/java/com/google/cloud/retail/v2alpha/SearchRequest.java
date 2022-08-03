@@ -286,6 +286,37 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 274:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
+          case 282:
+            {
+              com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Builder subBuilder =
+                  null;
+              if (((bitField0_ & 0x00000001) != 0)) {
+                subBuilder = spellCorrectionSpec_.toBuilder();
+              }
+              spellCorrectionSpec_ =
+                  input.readMessage(
+                      com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(spellCorrectionSpec_);
+                spellCorrectionSpec_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -321,6 +352,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_retail_v2alpha_SearchRequest_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 34:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -347,7 +389,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value. Defaults to
+     * Default value. In this case, server behavior defaults to
      * [RelevanceThreshold.HIGH][google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold.HIGH].
      * </pre>
      *
@@ -401,7 +443,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Default value. Defaults to
+     * Default value. In this case, server behavior defaults to
      * [RelevanceThreshold.HIGH][google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold.HIGH].
      * </pre>
      *
@@ -584,7 +626,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Only faceted search will be performed. The product search will be
      * disabled.
-     * When in this mode, one or both of [SearchRequest.facet_spec][] and
+     * When in this mode, one or both of
+     * [SearchRequest.facet_specs][google.cloud.retail.v2alpha.SearchRequest.facet_specs]
+     * and
      * [SearchRequest.dynamic_facet_spec][google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec]
      * should be set. Otherwise, an INVALID_ARGUMENT error is returned. Only
      * [SearchResponse.Facet] will be returned. [SearchResponse.SearchResult]
@@ -632,7 +676,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Only faceted search will be performed. The product search will be
      * disabled.
-     * When in this mode, one or both of [SearchRequest.facet_spec][] and
+     * When in this mode, one or both of
+     * [SearchRequest.facet_specs][google.cloud.retail.v2alpha.SearchRequest.facet_specs]
+     * and
      * [SearchRequest.dynamic_facet_spec][google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec]
      * should be set. Otherwise, an INVALID_ARGUMENT error is returned. Only
      * [SearchResponse.Facet] will be returned. [SearchResponse.SearchResult]
@@ -797,14 +843,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * By default,
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
-     * For example, suppose there are 100 products with color facet "Red" and
-     * 200 products with color facet "Blue". A query containing the filter
-     * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     * For example, suppose there are 100 products with the color facet "Red"
+     * and 200 products with the color facet "Blue". A query containing the
+     * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-     * will by default return the "Red" with count 100.
-     * If this field contains "colorFamilies", then the query returns both the
-     * "Red" with count 100 and "Blue" with count 200, because the
-     * "colorFamilies" key is now excluded from the filter.
+     * would by default return only "Red" products in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue products available, "Blue" would not be shown as an
+     * available facet value.
+     * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+     * returns the facet values "Red" with count 100 and "Blue" with count
+     * 200, because the "colorFamilies" key is now excluded from the filter.
+     * Because this field doesn't affect search results, the search results
+     * are still correctly filtered to return only "Red" products.
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -822,14 +876,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * By default,
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
-     * For example, suppose there are 100 products with color facet "Red" and
-     * 200 products with color facet "Blue". A query containing the filter
-     * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     * For example, suppose there are 100 products with the color facet "Red"
+     * and 200 products with the color facet "Blue". A query containing the
+     * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-     * will by default return the "Red" with count 100.
-     * If this field contains "colorFamilies", then the query returns both the
-     * "Red" with count 100 and "Blue" with count 200, because the
-     * "colorFamilies" key is now excluded from the filter.
+     * would by default return only "Red" products in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue products available, "Blue" would not be shown as an
+     * available facet value.
+     * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+     * returns the facet values "Red" with count 100 and "Blue" with count
+     * 200, because the "colorFamilies" key is now excluded from the filter.
+     * Because this field doesn't affect search results, the search results
+     * are still correctly filtered to return only "Red" products.
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -847,14 +909,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * By default,
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
-     * For example, suppose there are 100 products with color facet "Red" and
-     * 200 products with color facet "Blue". A query containing the filter
-     * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     * For example, suppose there are 100 products with the color facet "Red"
+     * and 200 products with the color facet "Blue". A query containing the
+     * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-     * will by default return the "Red" with count 100.
-     * If this field contains "colorFamilies", then the query returns both the
-     * "Red" with count 100 and "Blue" with count 200, because the
-     * "colorFamilies" key is now excluded from the filter.
+     * would by default return only "Red" products in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue products available, "Blue" would not be shown as an
+     * available facet value.
+     * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+     * returns the facet values "Red" with count 100 and "Blue" with count
+     * 200, because the "colorFamilies" key is now excluded from the filter.
+     * Because this field doesn't affect search results, the search results
+     * are still correctly filtered to return only "Red" products.
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -873,14 +943,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * By default,
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
-     * For example, suppose there are 100 products with color facet "Red" and
-     * 200 products with color facet "Blue". A query containing the filter
-     * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     * For example, suppose there are 100 products with the color facet "Red"
+     * and 200 products with the color facet "Blue". A query containing the
+     * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-     * will by default return the "Red" with count 100.
-     * If this field contains "colorFamilies", then the query returns both the
-     * "Red" with count 100 and "Blue" with count 200, because the
-     * "colorFamilies" key is now excluded from the filter.
+     * would by default return only "Red" products in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue products available, "Blue" would not be shown as an
+     * available facet value.
+     * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+     * returns the facet values "Red" with count 100 and "Blue" with count
+     * 200, because the "colorFamilies" key is now excluded from the filter.
+     * Because this field doesn't affect search results, the search results
+     * are still correctly filtered to return only "Red" products.
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -1229,8 +1307,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. For example, when using
        * "pickupInStore" as key and set restricted values to
        * ["store123", "store456"], only facets for "store123" and "store456" are
-       * returned. Only supported on textual fields and fulfillments.
-       * Maximum is 20.
+       * returned. Only supported on predefined textual fields, custom textual
+       * attributes and fulfillments. Maximum is 20.
        * Must be set for the fulfillment facet keys:
        * * pickupInStore
        * * shipToStore
@@ -1255,8 +1333,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. For example, when using
        * "pickupInStore" as key and set restricted values to
        * ["store123", "store456"], only facets for "store123" and "store456" are
-       * returned. Only supported on textual fields and fulfillments.
-       * Maximum is 20.
+       * returned. Only supported on predefined textual fields, custom textual
+       * attributes and fulfillments. Maximum is 20.
        * Must be set for the fulfillment facet keys:
        * * pickupInStore
        * * shipToStore
@@ -1281,8 +1359,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. For example, when using
        * "pickupInStore" as key and set restricted values to
        * ["store123", "store456"], only facets for "store123" and "store456" are
-       * returned. Only supported on textual fields and fulfillments.
-       * Maximum is 20.
+       * returned. Only supported on predefined textual fields, custom textual
+       * attributes and fulfillments. Maximum is 20.
        * Must be set for the fulfillment facet keys:
        * * pickupInStore
        * * shipToStore
@@ -1308,8 +1386,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. For example, when using
        * "pickupInStore" as key and set restricted values to
        * ["store123", "store456"], only facets for "store123" and "store456" are
-       * returned. Only supported on textual fields and fulfillments.
-       * Maximum is 20.
+       * returned. Only supported on predefined textual fields, custom textual
+       * attributes and fulfillments. Maximum is 20.
        * Must be set for the fulfillment facet keys:
        * * pickupInStore
        * * shipToStore
@@ -1467,11 +1545,29 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The order in which [Facet.values][] are returned.
+       * True to make facet keys case insensitive when getting faceting
+       * values with prefixes or contains; false otherwise.
+       * </pre>
+       *
+       * <code>bool case_insensitive = 10;</code>
+       *
+       * @return The caseInsensitive.
+       */
+      boolean getCaseInsensitive();
+
+      /**
+       *
+       *
+       * <pre>
+       * The order in which
+       * [SearchResponse.Facet.values][google.cloud.retail.v2alpha.SearchResponse.Facet.values]
+       * are returned.
        * Allowed values are:
-       * * "count desc", which means order by [Facet.FacetValue.count][]
+       * * "count desc", which means order by
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
        * descending.
-       * * "value desc", which means order by [Facet.FacetValue.value][]
+       * * "value desc", which means order by
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
        * descending.
        *   Only applies to textual facets.
        * If not set, textual values are sorted in [natural
@@ -1492,11 +1588,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The order in which [Facet.values][] are returned.
+       * The order in which
+       * [SearchResponse.Facet.values][google.cloud.retail.v2alpha.SearchResponse.Facet.values]
+       * are returned.
        * Allowed values are:
-       * * "count desc", which means order by [Facet.FacetValue.count][]
+       * * "count desc", which means order by
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
        * descending.
-       * * "value desc", which means order by [Facet.FacetValue.value][]
+       * * "value desc", which means order by
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
        * descending.
        *   Only applies to textual facets.
        * If not set, textual values are sorted in [natural
@@ -1526,9 +1626,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * on
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
        * when query is specified.
-       * In the response, [FacetValue.value][] will be always "1" and
-       * [FacetValue.count][] will be the number of results that matches the
-       * query.
+       * In the response,
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
+       * will be always "1" and
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
+       * will be the number of results that match the query.
        * For example, you can set a customized facet for "shipToStore",
        * where
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
@@ -1556,9 +1658,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * on
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
        * when query is specified.
-       * In the response, [FacetValue.value][] will be always "1" and
-       * [FacetValue.count][] will be the number of results that matches the
-       * query.
+       * In the response,
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
+       * will be always "1" and
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
+       * will be the number of results that match the query.
        * For example, you can set a customized facet for "shipToStore",
        * where
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
@@ -1574,6 +1678,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The bytes for query.
        */
       com.google.protobuf.ByteString getQueryBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Returns the min and max value for each numerical facet intervals.
+       * Ignored for textual facets.
+       * </pre>
+       *
+       * <code>bool return_min_max = 11;</code>
+       *
+       * @return The returnMinMax.
+       */
+      boolean getReturnMinMax();
     }
     /**
      *
@@ -1695,6 +1813,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                     mutable_bitField0_ |= 0x00000008;
                   }
                   contains_.add(s);
+                  break;
+                }
+              case 80:
+                {
+                  caseInsensitive_ = input.readBool();
+                  break;
+                }
+              case 88:
+                {
+                  returnMinMax_ = input.readBool();
                   break;
                 }
               default:
@@ -1957,8 +2085,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. For example, when using
        * "pickupInStore" as key and set restricted values to
        * ["store123", "store456"], only facets for "store123" and "store456" are
-       * returned. Only supported on textual fields and fulfillments.
-       * Maximum is 20.
+       * returned. Only supported on predefined textual fields, custom textual
+       * attributes and fulfillments. Maximum is 20.
        * Must be set for the fulfillment facet keys:
        * * pickupInStore
        * * shipToStore
@@ -1985,8 +2113,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. For example, when using
        * "pickupInStore" as key and set restricted values to
        * ["store123", "store456"], only facets for "store123" and "store456" are
-       * returned. Only supported on textual fields and fulfillments.
-       * Maximum is 20.
+       * returned. Only supported on predefined textual fields, custom textual
+       * attributes and fulfillments. Maximum is 20.
        * Must be set for the fulfillment facet keys:
        * * pickupInStore
        * * shipToStore
@@ -2013,8 +2141,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. For example, when using
        * "pickupInStore" as key and set restricted values to
        * ["store123", "store456"], only facets for "store123" and "store456" are
-       * returned. Only supported on textual fields and fulfillments.
-       * Maximum is 20.
+       * returned. Only supported on predefined textual fields, custom textual
+       * attributes and fulfillments. Maximum is 20.
        * Must be set for the fulfillment facet keys:
        * * pickupInStore
        * * shipToStore
@@ -2042,8 +2170,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Only get facet for the given restricted values. For example, when using
        * "pickupInStore" as key and set restricted values to
        * ["store123", "store456"], only facets for "store123" and "store456" are
-       * returned. Only supported on textual fields and fulfillments.
-       * Maximum is 20.
+       * returned. Only supported on predefined textual fields, custom textual
+       * attributes and fulfillments. Maximum is 20.
        * Must be set for the fulfillment facet keys:
        * * pickupInStore
        * * shipToStore
@@ -2219,17 +2347,40 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return contains_.getByteString(index);
       }
 
+      public static final int CASE_INSENSITIVE_FIELD_NUMBER = 10;
+      private boolean caseInsensitive_;
+      /**
+       *
+       *
+       * <pre>
+       * True to make facet keys case insensitive when getting faceting
+       * values with prefixes or contains; false otherwise.
+       * </pre>
+       *
+       * <code>bool case_insensitive = 10;</code>
+       *
+       * @return The caseInsensitive.
+       */
+      @java.lang.Override
+      public boolean getCaseInsensitive() {
+        return caseInsensitive_;
+      }
+
       public static final int ORDER_BY_FIELD_NUMBER = 4;
       private volatile java.lang.Object orderBy_;
       /**
        *
        *
        * <pre>
-       * The order in which [Facet.values][] are returned.
+       * The order in which
+       * [SearchResponse.Facet.values][google.cloud.retail.v2alpha.SearchResponse.Facet.values]
+       * are returned.
        * Allowed values are:
-       * * "count desc", which means order by [Facet.FacetValue.count][]
+       * * "count desc", which means order by
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
        * descending.
-       * * "value desc", which means order by [Facet.FacetValue.value][]
+       * * "value desc", which means order by
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
        * descending.
        *   Only applies to textual facets.
        * If not set, textual values are sorted in [natural
@@ -2261,11 +2412,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The order in which [Facet.values][] are returned.
+       * The order in which
+       * [SearchResponse.Facet.values][google.cloud.retail.v2alpha.SearchResponse.Facet.values]
+       * are returned.
        * Allowed values are:
-       * * "count desc", which means order by [Facet.FacetValue.count][]
+       * * "count desc", which means order by
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
        * descending.
-       * * "value desc", which means order by [Facet.FacetValue.value][]
+       * * "value desc", which means order by
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
        * descending.
        *   Only applies to textual facets.
        * If not set, textual values are sorted in [natural
@@ -2308,9 +2463,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * on
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
        * when query is specified.
-       * In the response, [FacetValue.value][] will be always "1" and
-       * [FacetValue.count][] will be the number of results that matches the
-       * query.
+       * In the response,
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
+       * will be always "1" and
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
+       * will be the number of results that match the query.
        * For example, you can set a customized facet for "shipToStore",
        * where
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
@@ -2349,9 +2506,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * on
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
        * when query is specified.
-       * In the response, [FacetValue.value][] will be always "1" and
-       * [FacetValue.count][] will be the number of results that matches the
-       * query.
+       * In the response,
+       * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
+       * will be always "1" and
+       * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
+       * will be the number of results that match the query.
        * For example, you can set a customized facet for "shipToStore",
        * where
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
@@ -2377,6 +2536,25 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
+      }
+
+      public static final int RETURN_MIN_MAX_FIELD_NUMBER = 11;
+      private boolean returnMinMax_;
+      /**
+       *
+       *
+       * <pre>
+       * Returns the min and max value for each numerical facet intervals.
+       * Ignored for textual facets.
+       * </pre>
+       *
+       * <code>bool return_min_max = 11;</code>
+       *
+       * @return The returnMinMax.
+       */
+      @java.lang.Override
+      public boolean getReturnMinMax() {
+        return returnMinMax_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -2414,6 +2592,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         }
         for (int i = 0; i < contains_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 9, contains_.getRaw(i));
+        }
+        if (caseInsensitive_ != false) {
+          output.writeBool(10, caseInsensitive_);
+        }
+        if (returnMinMax_ != false) {
+          output.writeBool(11, returnMinMax_);
         }
         unknownFields.writeTo(output);
       }
@@ -2460,6 +2644,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           size += dataSize;
           size += 1 * getContainsList().size();
         }
+        if (caseInsensitive_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, caseInsensitive_);
+        }
+        if (returnMinMax_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, returnMinMax_);
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -2481,8 +2671,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (!getRestrictedValuesList().equals(other.getRestrictedValuesList())) return false;
         if (!getPrefixesList().equals(other.getPrefixesList())) return false;
         if (!getContainsList().equals(other.getContainsList())) return false;
+        if (getCaseInsensitive() != other.getCaseInsensitive()) return false;
         if (!getOrderBy().equals(other.getOrderBy())) return false;
         if (!getQuery().equals(other.getQuery())) return false;
+        if (getReturnMinMax() != other.getReturnMinMax()) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -2512,10 +2704,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           hash = (37 * hash) + CONTAINS_FIELD_NUMBER;
           hash = (53 * hash) + getContainsList().hashCode();
         }
+        hash = (37 * hash) + CASE_INSENSITIVE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCaseInsensitive());
         hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
         hash = (53 * hash) + getOrderBy().hashCode();
         hash = (37 * hash) + QUERY_FIELD_NUMBER;
         hash = (53 * hash) + getQuery().hashCode();
+        hash = (37 * hash) + RETURN_MIN_MAX_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnMinMax());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -2683,9 +2879,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = (bitField0_ & ~0x00000004);
           contains_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000008);
+          caseInsensitive_ = false;
+
           orderBy_ = "";
 
           query_ = "";
+
+          returnMinMax_ = false;
 
           return this;
         }
@@ -2742,8 +2942,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.contains_ = contains_;
+          result.caseInsensitive_ = caseInsensitive_;
           result.orderBy_ = orderBy_;
           result.query_ = query_;
+          result.returnMinMax_ = returnMinMax_;
           onBuilt();
           return result;
         }
@@ -2860,6 +3062,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             }
             onChanged();
           }
+          if (other.getCaseInsensitive() != false) {
+            setCaseInsensitive(other.getCaseInsensitive());
+          }
           if (!other.getOrderBy().isEmpty()) {
             orderBy_ = other.orderBy_;
             onChanged();
@@ -2867,6 +3072,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (!other.getQuery().isEmpty()) {
             query_ = other.query_;
             onChanged();
+          }
+          if (other.getReturnMinMax() != false) {
+            setReturnMinMax(other.getReturnMinMax());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -3598,8 +3806,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. For example, when using
          * "pickupInStore" as key and set restricted values to
          * ["store123", "store456"], only facets for "store123" and "store456" are
-         * returned. Only supported on textual fields and fulfillments.
-         * Maximum is 20.
+         * returned. Only supported on predefined textual fields, custom textual
+         * attributes and fulfillments. Maximum is 20.
          * Must be set for the fulfillment facet keys:
          * * pickupInStore
          * * shipToStore
@@ -3626,8 +3834,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. For example, when using
          * "pickupInStore" as key and set restricted values to
          * ["store123", "store456"], only facets for "store123" and "store456" are
-         * returned. Only supported on textual fields and fulfillments.
-         * Maximum is 20.
+         * returned. Only supported on predefined textual fields, custom textual
+         * attributes and fulfillments. Maximum is 20.
          * Must be set for the fulfillment facet keys:
          * * pickupInStore
          * * shipToStore
@@ -3654,8 +3862,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. For example, when using
          * "pickupInStore" as key and set restricted values to
          * ["store123", "store456"], only facets for "store123" and "store456" are
-         * returned. Only supported on textual fields and fulfillments.
-         * Maximum is 20.
+         * returned. Only supported on predefined textual fields, custom textual
+         * attributes and fulfillments. Maximum is 20.
          * Must be set for the fulfillment facet keys:
          * * pickupInStore
          * * shipToStore
@@ -3683,8 +3891,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. For example, when using
          * "pickupInStore" as key and set restricted values to
          * ["store123", "store456"], only facets for "store123" and "store456" are
-         * returned. Only supported on textual fields and fulfillments.
-         * Maximum is 20.
+         * returned. Only supported on predefined textual fields, custom textual
+         * attributes and fulfillments. Maximum is 20.
          * Must be set for the fulfillment facet keys:
          * * pickupInStore
          * * shipToStore
@@ -3712,8 +3920,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. For example, when using
          * "pickupInStore" as key and set restricted values to
          * ["store123", "store456"], only facets for "store123" and "store456" are
-         * returned. Only supported on textual fields and fulfillments.
-         * Maximum is 20.
+         * returned. Only supported on predefined textual fields, custom textual
+         * attributes and fulfillments. Maximum is 20.
          * Must be set for the fulfillment facet keys:
          * * pickupInStore
          * * shipToStore
@@ -3748,8 +3956,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. For example, when using
          * "pickupInStore" as key and set restricted values to
          * ["store123", "store456"], only facets for "store123" and "store456" are
-         * returned. Only supported on textual fields and fulfillments.
-         * Maximum is 20.
+         * returned. Only supported on predefined textual fields, custom textual
+         * attributes and fulfillments. Maximum is 20.
          * Must be set for the fulfillment facet keys:
          * * pickupInStore
          * * shipToStore
@@ -3783,8 +3991,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. For example, when using
          * "pickupInStore" as key and set restricted values to
          * ["store123", "store456"], only facets for "store123" and "store456" are
-         * returned. Only supported on textual fields and fulfillments.
-         * Maximum is 20.
+         * returned. Only supported on predefined textual fields, custom textual
+         * attributes and fulfillments. Maximum is 20.
          * Must be set for the fulfillment facet keys:
          * * pickupInStore
          * * shipToStore
@@ -3815,8 +4023,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. For example, when using
          * "pickupInStore" as key and set restricted values to
          * ["store123", "store456"], only facets for "store123" and "store456" are
-         * returned. Only supported on textual fields and fulfillments.
-         * Maximum is 20.
+         * returned. Only supported on predefined textual fields, custom textual
+         * attributes and fulfillments. Maximum is 20.
          * Must be set for the fulfillment facet keys:
          * * pickupInStore
          * * shipToStore
@@ -3846,8 +4054,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * Only get facet for the given restricted values. For example, when using
          * "pickupInStore" as key and set restricted values to
          * ["store123", "store456"], only facets for "store123" and "store456" are
-         * returned. Only supported on textual fields and fulfillments.
-         * Maximum is 20.
+         * returned. Only supported on predefined textual fields, custom textual
+         * attributes and fulfillments. Maximum is 20.
          * Must be set for the fulfillment facet keys:
          * * pickupInStore
          * * shipToStore
@@ -4284,16 +4492,75 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private boolean caseInsensitive_;
+        /**
+         *
+         *
+         * <pre>
+         * True to make facet keys case insensitive when getting faceting
+         * values with prefixes or contains; false otherwise.
+         * </pre>
+         *
+         * <code>bool case_insensitive = 10;</code>
+         *
+         * @return The caseInsensitive.
+         */
+        @java.lang.Override
+        public boolean getCaseInsensitive() {
+          return caseInsensitive_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * True to make facet keys case insensitive when getting faceting
+         * values with prefixes or contains; false otherwise.
+         * </pre>
+         *
+         * <code>bool case_insensitive = 10;</code>
+         *
+         * @param value The caseInsensitive to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCaseInsensitive(boolean value) {
+
+          caseInsensitive_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * True to make facet keys case insensitive when getting faceting
+         * values with prefixes or contains; false otherwise.
+         * </pre>
+         *
+         * <code>bool case_insensitive = 10;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCaseInsensitive() {
+
+          caseInsensitive_ = false;
+          onChanged();
+          return this;
+        }
+
         private java.lang.Object orderBy_ = "";
         /**
          *
          *
          * <pre>
-         * The order in which [Facet.values][] are returned.
+         * The order in which
+         * [SearchResponse.Facet.values][google.cloud.retail.v2alpha.SearchResponse.Facet.values]
+         * are returned.
          * Allowed values are:
-         * * "count desc", which means order by [Facet.FacetValue.count][]
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
          * descending.
-         * * "value desc", which means order by [Facet.FacetValue.value][]
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
          * If not set, textual values are sorted in [natural
@@ -4324,11 +4591,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The order in which [Facet.values][] are returned.
+         * The order in which
+         * [SearchResponse.Facet.values][google.cloud.retail.v2alpha.SearchResponse.Facet.values]
+         * are returned.
          * Allowed values are:
-         * * "count desc", which means order by [Facet.FacetValue.count][]
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
          * descending.
-         * * "value desc", which means order by [Facet.FacetValue.value][]
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
          * If not set, textual values are sorted in [natural
@@ -4359,11 +4630,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The order in which [Facet.values][] are returned.
+         * The order in which
+         * [SearchResponse.Facet.values][google.cloud.retail.v2alpha.SearchResponse.Facet.values]
+         * are returned.
          * Allowed values are:
-         * * "count desc", which means order by [Facet.FacetValue.count][]
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
          * descending.
-         * * "value desc", which means order by [Facet.FacetValue.value][]
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
          * If not set, textual values are sorted in [natural
@@ -4393,11 +4668,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The order in which [Facet.values][] are returned.
+         * The order in which
+         * [SearchResponse.Facet.values][google.cloud.retail.v2alpha.SearchResponse.Facet.values]
+         * are returned.
          * Allowed values are:
-         * * "count desc", which means order by [Facet.FacetValue.count][]
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
          * descending.
-         * * "value desc", which means order by [Facet.FacetValue.value][]
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
          * If not set, textual values are sorted in [natural
@@ -4423,11 +4702,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The order in which [Facet.values][] are returned.
+         * The order in which
+         * [SearchResponse.Facet.values][google.cloud.retail.v2alpha.SearchResponse.Facet.values]
+         * are returned.
          * Allowed values are:
-         * * "count desc", which means order by [Facet.FacetValue.count][]
+         * * "count desc", which means order by
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
          * descending.
-         * * "value desc", which means order by [Facet.FacetValue.value][]
+         * * "value desc", which means order by
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
          * descending.
          *   Only applies to textual facets.
          * If not set, textual values are sorted in [natural
@@ -4468,9 +4751,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * on
          * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
          * when query is specified.
-         * In the response, [FacetValue.value][] will be always "1" and
-         * [FacetValue.count][] will be the number of results that matches the
-         * query.
+         * In the response,
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
+         * will be always "1" and
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
+         * will be the number of results that match the query.
          * For example, you can set a customized facet for "shipToStore",
          * where
          * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
@@ -4508,9 +4793,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * on
          * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
          * when query is specified.
-         * In the response, [FacetValue.value][] will be always "1" and
-         * [FacetValue.count][] will be the number of results that matches the
-         * query.
+         * In the response,
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
+         * will be always "1" and
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
+         * will be the number of results that match the query.
          * For example, you can set a customized facet for "shipToStore",
          * where
          * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
@@ -4548,9 +4835,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * on
          * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
          * when query is specified.
-         * In the response, [FacetValue.value][] will be always "1" and
-         * [FacetValue.count][] will be the number of results that matches the
-         * query.
+         * In the response,
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
+         * will be always "1" and
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
+         * will be the number of results that match the query.
          * For example, you can set a customized facet for "shipToStore",
          * where
          * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
@@ -4587,9 +4876,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * on
          * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
          * when query is specified.
-         * In the response, [FacetValue.value][] will be always "1" and
-         * [FacetValue.count][] will be the number of results that matches the
-         * query.
+         * In the response,
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
+         * will be always "1" and
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
+         * will be the number of results that match the query.
          * For example, you can set a customized facet for "shipToStore",
          * where
          * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
@@ -4622,9 +4913,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * on
          * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
          * when query is specified.
-         * In the response, [FacetValue.value][] will be always "1" and
-         * [FacetValue.count][] will be the number of results that matches the
-         * query.
+         * In the response,
+         * [SearchResponse.Facet.values.value][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.value]
+         * will be always "1" and
+         * [SearchResponse.Facet.values.count][google.cloud.retail.v2alpha.SearchResponse.Facet.FacetValue.count]
+         * will be the number of results that match the query.
          * For example, you can set a customized facet for "shipToStore",
          * where
          * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
@@ -4647,6 +4940,61 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
 
           query_ = value;
+          onChanged();
+          return this;
+        }
+
+        private boolean returnMinMax_;
+        /**
+         *
+         *
+         * <pre>
+         * Returns the min and max value for each numerical facet intervals.
+         * Ignored for textual facets.
+         * </pre>
+         *
+         * <code>bool return_min_max = 11;</code>
+         *
+         * @return The returnMinMax.
+         */
+        @java.lang.Override
+        public boolean getReturnMinMax() {
+          return returnMinMax_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Returns the min and max value for each numerical facet intervals.
+         * Ignored for textual facets.
+         * </pre>
+         *
+         * <code>bool return_min_max = 11;</code>
+         *
+         * @param value The returnMinMax to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReturnMinMax(boolean value) {
+
+          returnMinMax_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Returns the min and max value for each numerical facet intervals.
+         * Ignored for textual facets.
+         * </pre>
+         *
+         * <code>bool return_min_max = 11;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearReturnMinMax() {
+
+          returnMinMax_ = false;
           onChanged();
           return this;
         }
@@ -4792,14 +5140,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * By default,
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
-     * For example, suppose there are 100 products with color facet "Red" and
-     * 200 products with color facet "Blue". A query containing the filter
-     * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     * For example, suppose there are 100 products with the color facet "Red"
+     * and 200 products with the color facet "Blue". A query containing the
+     * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-     * will by default return the "Red" with count 100.
-     * If this field contains "colorFamilies", then the query returns both the
-     * "Red" with count 100 and "Blue" with count 200, because the
-     * "colorFamilies" key is now excluded from the filter.
+     * would by default return only "Red" products in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue products available, "Blue" would not be shown as an
+     * available facet value.
+     * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+     * returns the facet values "Red" with count 100 and "Blue" with count
+     * 200, because the "colorFamilies" key is now excluded from the filter.
+     * Because this field doesn't affect search results, the search results
+     * are still correctly filtered to return only "Red" products.
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -4819,14 +5175,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * By default,
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
-     * For example, suppose there are 100 products with color facet "Red" and
-     * 200 products with color facet "Blue". A query containing the filter
-     * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     * For example, suppose there are 100 products with the color facet "Red"
+     * and 200 products with the color facet "Blue". A query containing the
+     * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-     * will by default return the "Red" with count 100.
-     * If this field contains "colorFamilies", then the query returns both the
-     * "Red" with count 100 and "Blue" with count 200, because the
-     * "colorFamilies" key is now excluded from the filter.
+     * would by default return only "Red" products in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue products available, "Blue" would not be shown as an
+     * available facet value.
+     * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+     * returns the facet values "Red" with count 100 and "Blue" with count
+     * 200, because the "colorFamilies" key is now excluded from the filter.
+     * Because this field doesn't affect search results, the search results
+     * are still correctly filtered to return only "Red" products.
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -4846,14 +5210,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * By default,
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
-     * For example, suppose there are 100 products with color facet "Red" and
-     * 200 products with color facet "Blue". A query containing the filter
-     * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     * For example, suppose there are 100 products with the color facet "Red"
+     * and 200 products with the color facet "Blue". A query containing the
+     * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-     * will by default return the "Red" with count 100.
-     * If this field contains "colorFamilies", then the query returns both the
-     * "Red" with count 100 and "Blue" with count 200, because the
-     * "colorFamilies" key is now excluded from the filter.
+     * would by default return only "Red" products in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue products available, "Blue" would not be shown as an
+     * available facet value.
+     * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+     * returns the facet values "Red" with count 100 and "Blue" with count
+     * 200, because the "colorFamilies" key is now excluded from the filter.
+     * Because this field doesn't affect search results, the search results
+     * are still correctly filtered to return only "Red" products.
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -4874,14 +5246,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * By default,
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
      * is not excluded from the filter unless it is listed in this field.
-     * For example, suppose there are 100 products with color facet "Red" and
-     * 200 products with color facet "Blue". A query containing the filter
-     * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+     * Listing a facet key in this field allows its values to appear as facet
+     * results, even when they are filtered out of search results. Using this
+     * field does not affect what search results are returned.
+     * For example, suppose there are 100 products with the color facet "Red"
+     * and 200 products with the color facet "Blue". A query containing the
+     * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
      * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-     * will by default return the "Red" with count 100.
-     * If this field contains "colorFamilies", then the query returns both the
-     * "Red" with count 100 and "Blue" with count 200, because the
-     * "colorFamilies" key is now excluded from the filter.
+     * would by default return only "Red" products in the search results, and
+     * also return "Red" with count 100 as the only color facet. Although there
+     * are also blue products available, "Blue" would not be shown as an
+     * available facet value.
+     * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+     * returns the facet values "Red" with count 100 and "Blue" with count
+     * 200, because the "colorFamilies" key is now excluded from the filter.
+     * Because this field doesn't affect search results, the search results
+     * are still correctly filtered to return only "Red" products.
      * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
@@ -5626,14 +6006,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * By default,
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
-       * For example, suppose there are 100 products with color facet "Red" and
-       * 200 products with color facet "Blue". A query containing the filter
-       * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       * For example, suppose there are 100 products with the color facet "Red"
+       * and 200 products with the color facet "Blue". A query containing the
+       * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-       * will by default return the "Red" with count 100.
-       * If this field contains "colorFamilies", then the query returns both the
-       * "Red" with count 100 and "Blue" with count 200, because the
-       * "colorFamilies" key is now excluded from the filter.
+       * would by default return only "Red" products in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue products available, "Blue" would not be shown as an
+       * available facet value.
+       * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+       * returns the facet values "Red" with count 100 and "Blue" with count
+       * 200, because the "colorFamilies" key is now excluded from the filter.
+       * Because this field doesn't affect search results, the search results
+       * are still correctly filtered to return only "Red" products.
        * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
        * is returned.
        * </pre>
@@ -5653,14 +6041,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * By default,
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
-       * For example, suppose there are 100 products with color facet "Red" and
-       * 200 products with color facet "Blue". A query containing the filter
-       * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       * For example, suppose there are 100 products with the color facet "Red"
+       * and 200 products with the color facet "Blue". A query containing the
+       * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-       * will by default return the "Red" with count 100.
-       * If this field contains "colorFamilies", then the query returns both the
-       * "Red" with count 100 and "Blue" with count 200, because the
-       * "colorFamilies" key is now excluded from the filter.
+       * would by default return only "Red" products in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue products available, "Blue" would not be shown as an
+       * available facet value.
+       * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+       * returns the facet values "Red" with count 100 and "Blue" with count
+       * 200, because the "colorFamilies" key is now excluded from the filter.
+       * Because this field doesn't affect search results, the search results
+       * are still correctly filtered to return only "Red" products.
        * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
        * is returned.
        * </pre>
@@ -5680,14 +6076,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * By default,
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
-       * For example, suppose there are 100 products with color facet "Red" and
-       * 200 products with color facet "Blue". A query containing the filter
-       * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       * For example, suppose there are 100 products with the color facet "Red"
+       * and 200 products with the color facet "Blue". A query containing the
+       * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-       * will by default return the "Red" with count 100.
-       * If this field contains "colorFamilies", then the query returns both the
-       * "Red" with count 100 and "Blue" with count 200, because the
-       * "colorFamilies" key is now excluded from the filter.
+       * would by default return only "Red" products in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue products available, "Blue" would not be shown as an
+       * available facet value.
+       * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+       * returns the facet values "Red" with count 100 and "Blue" with count
+       * 200, because the "colorFamilies" key is now excluded from the filter.
+       * Because this field doesn't affect search results, the search results
+       * are still correctly filtered to return only "Red" products.
        * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
        * is returned.
        * </pre>
@@ -5708,14 +6112,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * By default,
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
-       * For example, suppose there are 100 products with color facet "Red" and
-       * 200 products with color facet "Blue". A query containing the filter
-       * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       * For example, suppose there are 100 products with the color facet "Red"
+       * and 200 products with the color facet "Blue". A query containing the
+       * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-       * will by default return the "Red" with count 100.
-       * If this field contains "colorFamilies", then the query returns both the
-       * "Red" with count 100 and "Blue" with count 200, because the
-       * "colorFamilies" key is now excluded from the filter.
+       * would by default return only "Red" products in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue products available, "Blue" would not be shown as an
+       * available facet value.
+       * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+       * returns the facet values "Red" with count 100 and "Blue" with count
+       * 200, because the "colorFamilies" key is now excluded from the filter.
+       * Because this field doesn't affect search results, the search results
+       * are still correctly filtered to return only "Red" products.
        * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
        * is returned.
        * </pre>
@@ -5736,14 +6148,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * By default,
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
-       * For example, suppose there are 100 products with color facet "Red" and
-       * 200 products with color facet "Blue". A query containing the filter
-       * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       * For example, suppose there are 100 products with the color facet "Red"
+       * and 200 products with the color facet "Blue". A query containing the
+       * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-       * will by default return the "Red" with count 100.
-       * If this field contains "colorFamilies", then the query returns both the
-       * "Red" with count 100 and "Blue" with count 200, because the
-       * "colorFamilies" key is now excluded from the filter.
+       * would by default return only "Red" products in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue products available, "Blue" would not be shown as an
+       * available facet value.
+       * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+       * returns the facet values "Red" with count 100 and "Blue" with count
+       * 200, because the "colorFamilies" key is now excluded from the filter.
+       * Because this field doesn't affect search results, the search results
+       * are still correctly filtered to return only "Red" products.
        * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
        * is returned.
        * </pre>
@@ -5771,14 +6191,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * By default,
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
-       * For example, suppose there are 100 products with color facet "Red" and
-       * 200 products with color facet "Blue". A query containing the filter
-       * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       * For example, suppose there are 100 products with the color facet "Red"
+       * and 200 products with the color facet "Blue". A query containing the
+       * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-       * will by default return the "Red" with count 100.
-       * If this field contains "colorFamilies", then the query returns both the
-       * "Red" with count 100 and "Blue" with count 200, because the
-       * "colorFamilies" key is now excluded from the filter.
+       * would by default return only "Red" products in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue products available, "Blue" would not be shown as an
+       * available facet value.
+       * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+       * returns the facet values "Red" with count 100 and "Blue" with count
+       * 200, because the "colorFamilies" key is now excluded from the filter.
+       * Because this field doesn't affect search results, the search results
+       * are still correctly filtered to return only "Red" products.
        * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
        * is returned.
        * </pre>
@@ -5805,14 +6233,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * By default,
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
-       * For example, suppose there are 100 products with color facet "Red" and
-       * 200 products with color facet "Blue". A query containing the filter
-       * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       * For example, suppose there are 100 products with the color facet "Red"
+       * and 200 products with the color facet "Blue". A query containing the
+       * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-       * will by default return the "Red" with count 100.
-       * If this field contains "colorFamilies", then the query returns both the
-       * "Red" with count 100 and "Blue" with count 200, because the
-       * "colorFamilies" key is now excluded from the filter.
+       * would by default return only "Red" products in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue products available, "Blue" would not be shown as an
+       * available facet value.
+       * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+       * returns the facet values "Red" with count 100 and "Blue" with count
+       * 200, because the "colorFamilies" key is now excluded from the filter.
+       * Because this field doesn't affect search results, the search results
+       * are still correctly filtered to return only "Red" products.
        * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
        * is returned.
        * </pre>
@@ -5836,14 +6272,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * By default,
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
-       * For example, suppose there are 100 products with color facet "Red" and
-       * 200 products with color facet "Blue". A query containing the filter
-       * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       * For example, suppose there are 100 products with the color facet "Red"
+       * and 200 products with the color facet "Blue". A query containing the
+       * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-       * will by default return the "Red" with count 100.
-       * If this field contains "colorFamilies", then the query returns both the
-       * "Red" with count 100 and "Blue" with count 200, because the
-       * "colorFamilies" key is now excluded from the filter.
+       * would by default return only "Red" products in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue products available, "Blue" would not be shown as an
+       * available facet value.
+       * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+       * returns the facet values "Red" with count 100 and "Blue" with count
+       * 200, because the "colorFamilies" key is now excluded from the filter.
+       * Because this field doesn't affect search results, the search results
+       * are still correctly filtered to return only "Red" products.
        * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
        * is returned.
        * </pre>
@@ -5866,14 +6310,22 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * By default,
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
        * is not excluded from the filter unless it is listed in this field.
-       * For example, suppose there are 100 products with color facet "Red" and
-       * 200 products with color facet "Blue". A query containing the filter
-       * "colorFamilies:ANY("Red")" and have "colorFamilies" as
+       * Listing a facet key in this field allows its values to appear as facet
+       * results, even when they are filtered out of search results. Using this
+       * field does not affect what search results are returned.
+       * For example, suppose there are 100 products with the color facet "Red"
+       * and 200 products with the color facet "Blue". A query containing the
+       * filter "colorFamilies:ANY("Red")" and having "colorFamilies" as
        * [FacetKey.key][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.key]
-       * will by default return the "Red" with count 100.
-       * If this field contains "colorFamilies", then the query returns both the
-       * "Red" with count 100 and "Blue" with count 200, because the
-       * "colorFamilies" key is now excluded from the filter.
+       * would by default return only "Red" products in the search results, and
+       * also return "Red" with count 100 as the only color facet. Although there
+       * are also blue products available, "Blue" would not be shown as an
+       * available facet value.
+       * If "colorFamilies" is listed in "excludedFilterKeys", then the query
+       * returns the facet values "Red" with count 100 and "Blue" with count
+       * 200, because the "colorFamilies" key is now excluded from the filter.
+       * Because this field doesn't affect search results, the search results
+       * are still correctly filtered to return only "Red" products.
        * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
        * is returned.
        * </pre>
@@ -6901,7 +7353,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Condition boost specifications. If a product matches multiple conditions
      * in the specifictions, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
-     * specifications is 10.
+     * specifications is 20.
      * </pre>
      *
      * <code>
@@ -6917,7 +7369,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Condition boost specifications. If a product matches multiple conditions
      * in the specifictions, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
-     * specifications is 10.
+     * specifications is 20.
      * </pre>
      *
      * <code>
@@ -6933,7 +7385,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Condition boost specifications. If a product matches multiple conditions
      * in the specifictions, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
-     * specifications is 10.
+     * specifications is 20.
      * </pre>
      *
      * <code>
@@ -6948,7 +7400,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Condition boost specifications. If a product matches multiple conditions
      * in the specifictions, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
-     * specifications is 10.
+     * specifications is 20.
      * </pre>
      *
      * <code>
@@ -6966,7 +7418,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Condition boost specifications. If a product matches multiple conditions
      * in the specifictions, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
-     * specifications is 10.
+     * specifications is 20.
      * </pre>
      *
      * <code>
@@ -8073,7 +8525,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Condition boost specifications. If a product matches multiple conditions
      * in the specifictions, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
-     * specifications is 10.
+     * specifications is 20.
      * </pre>
      *
      * <code>
@@ -8093,7 +8545,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Condition boost specifications. If a product matches multiple conditions
      * in the specifictions, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
-     * specifications is 10.
+     * specifications is 20.
      * </pre>
      *
      * <code>
@@ -8114,7 +8566,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Condition boost specifications. If a product matches multiple conditions
      * in the specifictions, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
-     * specifications is 10.
+     * specifications is 20.
      * </pre>
      *
      * <code>
@@ -8132,7 +8584,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Condition boost specifications. If a product matches multiple conditions
      * in the specifictions, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
-     * specifications is 10.
+     * specifications is 20.
      * </pre>
      *
      * <code>
@@ -8151,7 +8603,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * Condition boost specifications. If a product matches multiple conditions
      * in the specifictions, boost scores from these specifications are all
      * applied and combined in a non-linear way. Maximum number of
-     * specifications is 10.
+     * specifications is 20.
      * </pre>
      *
      * <code>
@@ -8626,7 +9078,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8649,7 +9101,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8670,7 +9122,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8692,7 +9144,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8721,7 +9173,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8748,7 +9200,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8776,7 +9228,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8805,7 +9257,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8831,7 +9283,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8858,7 +9310,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8886,7 +9338,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8910,7 +9362,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8934,7 +9386,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8952,7 +9404,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8974,7 +9426,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -8999,7 +9451,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -9020,7 +9472,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -9042,7 +9494,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * Condition boost specifications. If a product matches multiple conditions
        * in the specifictions, boost scores from these specifications are all
        * applied and combined in a non-linear way. Maximum number of
-       * specifications is 10.
+       * specifications is 20.
        * </pre>
        *
        * <code>
@@ -9380,7 +9832,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Unspecified query expansion condition. This defaults to
+       * Unspecified query expansion condition. In this case, server behavior
+       * defaults to
        * [Condition.DISABLED][google.cloud.retail.v2alpha.SearchRequest.QueryExpansionSpec.Condition.DISABLED].
        * </pre>
        *
@@ -9416,7 +9869,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Unspecified query expansion condition. This defaults to
+       * Unspecified query expansion condition. In this case, server behavior
+       * defaults to
        * [Condition.DISABLED][google.cloud.retail.v2alpha.SearchRequest.QueryExpansionSpec.Condition.DISABLED].
        * </pre>
        *
@@ -10313,7 +10767,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Default value. Defaults to
+       * Default value. In this case, server behavior defaults to
        * [Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
        * </pre>
        *
@@ -10347,7 +10801,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Default value. Defaults to
+       * Default value. In this case, server behavior defaults to
        * [Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.PersonalizationSpec.Mode.AUTO].
        * </pre>
        *
@@ -10988,14 +11442,852 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface SpellCorrectionSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The mode under which spell correction should take effect to
+     * replace the original search query. Default to
+     * [Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode mode = 1;</code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    int getModeValue();
+    /**
+     *
+     *
+     * <pre>
+     * The mode under which spell correction should take effect to
+     * replace the original search query. Default to
+     * [Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode mode = 1;</code>
+     *
+     * @return The mode.
+     */
+    com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode getMode();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The specification for query spell correction.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec}
+   */
+  public static final class SpellCorrectionSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec)
+      SpellCorrectionSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SpellCorrectionSpec.newBuilder() to construct.
+    private SpellCorrectionSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SpellCorrectionSpec() {
+      mode_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SpellCorrectionSpec();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private SpellCorrectionSpec(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8:
+              {
+                int rawValue = input.readEnum();
+
+                mode_ = rawValue;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.retail.v2alpha.SearchServiceProto
+          .internal_static_google_cloud_retail_v2alpha_SearchRequest_SpellCorrectionSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.retail.v2alpha.SearchServiceProto
+          .internal_static_google_cloud_retail_v2alpha_SearchRequest_SpellCorrectionSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.class,
+              com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enum describing under which mode spell correction should occur.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode}
+     */
+    public enum Mode implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified spell correction mode. In this case, server behavior
+       * defaults to
+       * [Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>MODE_UNSPECIFIED = 0;</code>
+       */
+      MODE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Google Retail Search will try to find a spell suggestion if there
+       * is any and put in the
+       * [SearchResponse.corrected_query][google.cloud.retail.v2alpha.SearchResponse.corrected_query].
+       * The spell suggestion will not be used as the search query.
+       * </pre>
+       *
+       * <code>SUGGESTION_ONLY = 1;</code>
+       */
+      SUGGESTION_ONLY(1),
+      /**
+       *
+       *
+       * <pre>
+       * Automatic spell correction built by Google Retail Search. Search will
+       * be based on the corrected query if found.
+       * </pre>
+       *
+       * <code>AUTO = 2;</code>
+       */
+      AUTO(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified spell correction mode. In this case, server behavior
+       * defaults to
+       * [Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>MODE_UNSPECIFIED = 0;</code>
+       */
+      public static final int MODE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Google Retail Search will try to find a spell suggestion if there
+       * is any and put in the
+       * [SearchResponse.corrected_query][google.cloud.retail.v2alpha.SearchResponse.corrected_query].
+       * The spell suggestion will not be used as the search query.
+       * </pre>
+       *
+       * <code>SUGGESTION_ONLY = 1;</code>
+       */
+      public static final int SUGGESTION_ONLY_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Automatic spell correction built by Google Retail Search. Search will
+       * be based on the corrected query if found.
+       * </pre>
+       *
+       * <code>AUTO = 2;</code>
+       */
+      public static final int AUTO_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Mode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Mode forNumber(int value) {
+        switch (value) {
+          case 0:
+            return MODE_UNSPECIFIED;
+          case 1:
+            return SUGGESTION_ONLY;
+          case 2:
+            return AUTO;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Mode> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Mode> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Mode>() {
+            public Mode findValueByNumber(int number) {
+              return Mode.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Mode[] VALUES = values();
+
+      public static Mode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Mode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode)
+    }
+
+    public static final int MODE_FIELD_NUMBER = 1;
+    private int mode_;
+    /**
+     *
+     *
+     * <pre>
+     * The mode under which spell correction should take effect to
+     * replace the original search query. Default to
+     * [Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode mode = 1;</code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    @java.lang.Override
+    public int getModeValue() {
+      return mode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mode under which spell correction should take effect to
+     * replace the original search query. Default to
+     * [Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode mode = 1;</code>
+     *
+     * @return The mode.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode getMode() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode result =
+          com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.valueOf(mode_);
+      return result == null
+          ? com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (mode_
+          != com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, mode_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (mode_
+          != com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, mode_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec other =
+          (com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec) obj;
+
+      if (mode_ != other.mode_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MODE_FIELD_NUMBER;
+      hash = (53 * hash) + mode_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification for query spell correction.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec)
+        com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2alpha.SearchServiceProto
+            .internal_static_google_cloud_retail_v2alpha_SearchRequest_SpellCorrectionSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2alpha.SearchServiceProto
+            .internal_static_google_cloud_retail_v2alpha_SearchRequest_SpellCorrectionSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.class,
+                com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        mode_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.retail.v2alpha.SearchServiceProto
+            .internal_static_google_cloud_retail_v2alpha_SearchRequest_SpellCorrectionSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec build() {
+        com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec buildPartial() {
+        com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec result =
+            new com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec(this);
+        result.mode_ = mode_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec) {
+          return mergeFrom(
+              (com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec other) {
+        if (other
+            == com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec
+                .getDefaultInstance()) return this;
+        if (other.mode_ != 0) {
+          setModeValue(other.getModeValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int mode_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The mode under which spell correction should take effect to
+       * replace the original search query. Default to
+       * [Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode mode = 1;</code>
+       *
+       * @return The enum numeric value on the wire for mode.
+       */
+      @java.lang.Override
+      public int getModeValue() {
+        return mode_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The mode under which spell correction should take effect to
+       * replace the original search query. Default to
+       * [Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode mode = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModeValue(int value) {
+
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The mode under which spell correction should take effect to
+       * replace the original search query. Default to
+       * [Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode mode = 1;</code>
+       *
+       * @return The mode.
+       */
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode getMode() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode result =
+            com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.valueOf(mode_);
+        return result == null
+            ? com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The mode under which spell correction should take effect to
+       * replace the original search query. Default to
+       * [Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode mode = 1;</code>
+       *
+       * @param value The mode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMode(
+          com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        mode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The mode under which spell correction should take effect to
+       * replace the original search query. Default to
+       * [Mode.AUTO][google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode.AUTO].
+       * </pre>
+       *
+       * <code>.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Mode mode = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMode() {
+
+        mode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec)
+    private static final com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec();
+    }
+
+    public static com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SpellCorrectionSpec> PARSER =
+        new com.google.protobuf.AbstractParser<SpellCorrectionSpec>() {
+          @java.lang.Override
+          public SpellCorrectionSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new SpellCorrectionSpec(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<SpellCorrectionSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SpellCorrectionSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int PLACEMENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object placement_;
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the search engine placement, such as
-   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
+   * Required. The resource name of the Retail Search serving config, such as
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+   * or the name of the legacy placement resource, such as
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
    * This field is used to identify the serving configuration name and the set
    * of models that will be used to make the search.
    * </pre>
@@ -11020,8 +12312,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The resource name of the search engine placement, such as
-   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
+   * Required. The resource name of the Retail Search serving config, such as
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+   * or the name of the legacy placement resource, such as
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
    * This field is used to identify the serving configuration name and the set
    * of models that will be used to make the search.
    * </pre>
@@ -11105,6 +12399,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Raw search query.
+   * If this field is empty, the request is considered a category browsing
+   * request and returned results are based on
+   * [filter][google.cloud.retail.v2alpha.SearchRequest.filter] and
+   * [page_categories][google.cloud.retail.v2alpha.SearchRequest.page_categories].
    * </pre>
    *
    * <code>string query = 3;</code>
@@ -11128,6 +12426,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Raw search query.
+   * If this field is empty, the request is considered a category browsing
+   * request and returned results are based on
+   * [filter][google.cloud.retail.v2alpha.SearchRequest.filter] and
+   * [page_categories][google.cloud.retail.v2alpha.SearchRequest.page_categories].
    * </pre>
    *
    * <code>string query = 3;</code>
@@ -11651,7 +12953,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2alpha/search_service.proto;l=536
+   *     google/cloud/retail/v2alpha/search_service.proto;l=600
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Override
@@ -11674,7 +12976,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2alpha/search_service.proto;l=536
+   *     google/cloud/retail/v2alpha/search_service.proto;l=600
    * @return The dynamicFacetSpec.
    */
   @java.lang.Override
@@ -11715,10 +13017,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * [user guide](https://cloud.google.com/retail/docs/boosting).
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
-   * and [SearchRequest.boost_spec] are set, the boost conditions from both
-   * places are evaluated. If a search request matches multiple boost
-   * conditions, the final boost score is equal to the sum of the boost scores
-   * from all matched boost conditions.
+   * and
+   * [SearchRequest.boost_spec][google.cloud.retail.v2alpha.SearchRequest.boost_spec]
+   * are set, the boost conditions from both places are evaluated. If a search
+   * request matches multiple boost conditions, the final boost score is equal
+   * to the sum of the boost scores from all matched boost conditions.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -11737,10 +13040,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * [user guide](https://cloud.google.com/retail/docs/boosting).
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
-   * and [SearchRequest.boost_spec] are set, the boost conditions from both
-   * places are evaluated. If a search request matches multiple boost
-   * conditions, the final boost score is equal to the sum of the boost scores
-   * from all matched boost conditions.
+   * and
+   * [SearchRequest.boost_spec][google.cloud.retail.v2alpha.SearchRequest.boost_spec]
+   * are set, the boost conditions from both places are evaluated. If a search
+   * request matches multiple boost conditions, the final boost score is equal
+   * to the sum of the boost scores from all matched boost conditions.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -11761,10 +13065,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * [user guide](https://cloud.google.com/retail/docs/boosting).
    * Notice that if both
    * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
-   * and [SearchRequest.boost_spec] are set, the boost conditions from both
-   * places are evaluated. If a search request matches multiple boost
-   * conditions, the final boost score is equal to the sum of the boost scores
-   * from all matched boost conditions.
+   * and
+   * [SearchRequest.boost_spec][google.cloud.retail.v2alpha.SearchRequest.boost_spec]
+   * are set, the boost conditions from both places are evaluated. If a search
+   * request matches multiple boost conditions, the final boost score is equal
+   * to the sum of the boost scores from all matched boost conditions.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -11913,7 +13218,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * inventory(place_id,price)
    * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
-   *   [Product.inventories.attributes][] map.
+   *   [Product.local_inventories.attributes][google.cloud.retail.v2alpha.LocalInventory.attributes]
+   *   map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -12000,7 +13306,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * inventory(place_id,price)
    * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
-   *   [Product.inventories.attributes][] map.
+   *   [Product.local_inventories.attributes][google.cloud.retail.v2alpha.LocalInventory.attributes]
+   *   map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -12087,7 +13394,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * inventory(place_id,price)
    * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
-   *   [Product.inventories.attributes][] map.
+   *   [Product.local_inventories.attributes][google.cloud.retail.v2alpha.LocalInventory.attributes]
+   *   map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -12175,7 +13483,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * * inventory(place_id,price)
    * * inventory(place_id,original_price)
    * * inventory(place_id,attributes.key), where key is any key in the
-   *   [Product.inventories.attributes][] map.
+   *   [Product.local_inventories.attributes][google.cloud.retail.v2alpha.LocalInventory.attributes]
+   *   map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -12426,6 +13735,221 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     return getPersonalizationSpec();
   }
 
+  public static final int LABELS_FIELD_NUMBER = 34;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.retail.v2alpha.SearchServiceProto
+                .internal_static_google_cloud_retail_v2alpha_SearchRequest_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 34;</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 34;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 34;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The labels applied to a resource must meet the following requirements:
+   * * Each resource can have multiple labels, up to a maximum of 64.
+   * * Each label must be a key-value pair.
+   * * Keys have a minimum length of 1 character and a maximum length of 63
+   *   characters and cannot be empty. Values can be empty and have a maximum
+   *   length of 63 characters.
+   * * Keys and values can contain only lowercase letters, numeric characters,
+   *   underscores, and dashes. All characters must use UTF-8 encoding, and
+   *   international characters are allowed.
+   * * The key portion of a label must be unique. However, you can use the same
+   *   key with multiple resources.
+   * * Keys must start with a lowercase letter or international character.
+   * See [Google Cloud
+   * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+   * for more details.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 34;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int SPELL_CORRECTION_SPEC_FIELD_NUMBER = 35;
+  private com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spellCorrectionSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * The spell correction specification that specifies the mode under
+   * which spell correction will take effect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+   * </code>
+   *
+   * @return Whether the spellCorrectionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpellCorrectionSpec() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The spell correction specification that specifies the mode under
+   * which spell correction will take effect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+   * </code>
+   *
+   * @return The spellCorrectionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec
+      getSpellCorrectionSpec() {
+    return spellCorrectionSpec_ == null
+        ? com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.getDefaultInstance()
+        : spellCorrectionSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The spell correction specification that specifies the mode under
+   * which spell correction will take effect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpecOrBuilder
+      getSpellCorrectionSpecOrBuilder() {
+    return spellCorrectionSpec_ == null
+        ? com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.getDefaultInstance()
+        : spellCorrectionSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -12504,6 +14028,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (personalizationSpec_ != null) {
       output.writeMessage(32, getPersonalizationSpec());
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 34);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(35, getSpellCorrectionSpec());
     }
     unknownFields.writeTo(output);
   }
@@ -12590,6 +14119,20 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(32, getPersonalizationSpec());
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(34, labels__);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(35, getSpellCorrectionSpec());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -12640,6 +14183,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasPersonalizationSpec() != other.hasPersonalizationSpec()) return false;
     if (hasPersonalizationSpec()) {
       if (!getPersonalizationSpec().equals(other.getPersonalizationSpec())) return false;
+    }
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasSpellCorrectionSpec() != other.hasSpellCorrectionSpec()) return false;
+    if (hasSpellCorrectionSpec()) {
+      if (!getSpellCorrectionSpec().equals(other.getSpellCorrectionSpec())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -12707,6 +14255,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasPersonalizationSpec()) {
       hash = (37 * hash) + PERSONALIZATION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getPersonalizationSpec().hashCode();
+    }
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasSpellCorrectionSpec()) {
+      hash = (37 * hash) + SPELL_CORRECTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getSpellCorrectionSpec().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -12828,6 +14384,26 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_retail_v2alpha_SearchRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 34:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 34:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -12851,6 +14427,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFacetSpecsFieldBuilder();
+        getSpellCorrectionSpecFieldBuilder();
       }
     }
 
@@ -12921,6 +14498,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         personalizationSpec_ = null;
         personalizationSpecBuilder_ = null;
       }
+      internalGetMutableLabels().clear();
+      if (spellCorrectionSpecBuilder_ == null) {
+        spellCorrectionSpec_ = null;
+      } else {
+        spellCorrectionSpecBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -12949,6 +14533,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.retail.v2alpha.SearchRequest result =
           new com.google.cloud.retail.v2alpha.SearchRequest(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.placement_ = placement_;
       result.branch_ = branch_;
       result.query_ = query_;
@@ -13005,6 +14590,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.personalizationSpec_ = personalizationSpecBuilder_.build();
       }
+      result.labels_ = internalGetLabels();
+      result.labels_.makeImmutable();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (spellCorrectionSpecBuilder_ == null) {
+          result.spellCorrectionSpec_ = spellCorrectionSpec_;
+        } else {
+          result.spellCorrectionSpec_ = spellCorrectionSpecBuilder_.build();
+        }
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -13160,6 +14756,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (other.hasPersonalizationSpec()) {
         mergePersonalizationSpec(other.getPersonalizationSpec());
       }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (other.hasSpellCorrectionSpec()) {
+        mergeSpellCorrectionSpec(other.getSpellCorrectionSpec());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -13196,8 +14796,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the search engine placement, such as
-     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
+     * Required. The resource name of the Retail Search serving config, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+     * or the name of the legacy placement resource, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
      * </pre>
@@ -13221,8 +14823,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the search engine placement, such as
-     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
+     * Required. The resource name of the Retail Search serving config, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+     * or the name of the legacy placement resource, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
      * </pre>
@@ -13246,8 +14850,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the search engine placement, such as
-     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
+     * Required. The resource name of the Retail Search serving config, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+     * or the name of the legacy placement resource, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
      * </pre>
@@ -13270,8 +14876,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the search engine placement, such as
-     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
+     * Required. The resource name of the Retail Search serving config, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+     * or the name of the legacy placement resource, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
      * </pre>
@@ -13290,8 +14898,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource name of the search engine placement, such as
-     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`
+     * Required. The resource name of the Retail Search serving config, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/servingConfigs/default_serving_config`
+     * or the name of the legacy placement resource, such as
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/placements/default_search`.
      * This field is used to identify the serving configuration name and the set
      * of models that will be used to make the search.
      * </pre>
@@ -13439,6 +15049,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Raw search query.
+     * If this field is empty, the request is considered a category browsing
+     * request and returned results are based on
+     * [filter][google.cloud.retail.v2alpha.SearchRequest.filter] and
+     * [page_categories][google.cloud.retail.v2alpha.SearchRequest.page_categories].
      * </pre>
      *
      * <code>string query = 3;</code>
@@ -13461,6 +15075,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Raw search query.
+     * If this field is empty, the request is considered a category browsing
+     * request and returned results are based on
+     * [filter][google.cloud.retail.v2alpha.SearchRequest.filter] and
+     * [page_categories][google.cloud.retail.v2alpha.SearchRequest.page_categories].
      * </pre>
      *
      * <code>string query = 3;</code>
@@ -13483,6 +15101,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Raw search query.
+     * If this field is empty, the request is considered a category browsing
+     * request and returned results are based on
+     * [filter][google.cloud.retail.v2alpha.SearchRequest.filter] and
+     * [page_categories][google.cloud.retail.v2alpha.SearchRequest.page_categories].
      * </pre>
      *
      * <code>string query = 3;</code>
@@ -13504,6 +15126,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Raw search query.
+     * If this field is empty, the request is considered a category browsing
+     * request and returned results are based on
+     * [filter][google.cloud.retail.v2alpha.SearchRequest.filter] and
+     * [page_categories][google.cloud.retail.v2alpha.SearchRequest.page_categories].
      * </pre>
      *
      * <code>string query = 3;</code>
@@ -13521,6 +15147,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Raw search query.
+     * If this field is empty, the request is considered a category browsing
+     * request and returned results are based on
+     * [filter][google.cloud.retail.v2alpha.SearchRequest.filter] and
+     * [page_categories][google.cloud.retail.v2alpha.SearchRequest.page_categories].
      * </pre>
      *
      * <code>string query = 3;</code>
@@ -14975,7 +16605,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2alpha/search_service.proto;l=536
+     *     google/cloud/retail/v2alpha/search_service.proto;l=600
      * @return Whether the dynamicFacetSpec field is set.
      */
     @java.lang.Deprecated
@@ -14997,7 +16627,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2alpha/search_service.proto;l=536
+     *     google/cloud/retail/v2alpha/search_service.proto;l=600
      * @return The dynamicFacetSpec.
      */
     @java.lang.Deprecated
@@ -15216,10 +16846,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * [user guide](https://cloud.google.com/retail/docs/boosting).
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
-     * and [SearchRequest.boost_spec] are set, the boost conditions from both
-     * places are evaluated. If a search request matches multiple boost
-     * conditions, the final boost score is equal to the sum of the boost scores
-     * from all matched boost conditions.
+     * and
+     * [SearchRequest.boost_spec][google.cloud.retail.v2alpha.SearchRequest.boost_spec]
+     * are set, the boost conditions from both places are evaluated. If a search
+     * request matches multiple boost conditions, the final boost score is equal
+     * to the sum of the boost scores from all matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -15237,10 +16868,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * [user guide](https://cloud.google.com/retail/docs/boosting).
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
-     * and [SearchRequest.boost_spec] are set, the boost conditions from both
-     * places are evaluated. If a search request matches multiple boost
-     * conditions, the final boost score is equal to the sum of the boost scores
-     * from all matched boost conditions.
+     * and
+     * [SearchRequest.boost_spec][google.cloud.retail.v2alpha.SearchRequest.boost_spec]
+     * are set, the boost conditions from both places are evaluated. If a search
+     * request matches multiple boost conditions, the final boost score is equal
+     * to the sum of the boost scores from all matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -15264,10 +16896,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * [user guide](https://cloud.google.com/retail/docs/boosting).
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
-     * and [SearchRequest.boost_spec] are set, the boost conditions from both
-     * places are evaluated. If a search request matches multiple boost
-     * conditions, the final boost score is equal to the sum of the boost scores
-     * from all matched boost conditions.
+     * and
+     * [SearchRequest.boost_spec][google.cloud.retail.v2alpha.SearchRequest.boost_spec]
+     * are set, the boost conditions from both places are evaluated. If a search
+     * request matches multiple boost conditions, the final boost score is equal
+     * to the sum of the boost scores from all matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -15293,10 +16926,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * [user guide](https://cloud.google.com/retail/docs/boosting).
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
-     * and [SearchRequest.boost_spec] are set, the boost conditions from both
-     * places are evaluated. If a search request matches multiple boost
-     * conditions, the final boost score is equal to the sum of the boost scores
-     * from all matched boost conditions.
+     * and
+     * [SearchRequest.boost_spec][google.cloud.retail.v2alpha.SearchRequest.boost_spec]
+     * are set, the boost conditions from both places are evaluated. If a search
+     * request matches multiple boost conditions, the final boost score is equal
+     * to the sum of the boost scores from all matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -15320,10 +16954,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * [user guide](https://cloud.google.com/retail/docs/boosting).
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
-     * and [SearchRequest.boost_spec] are set, the boost conditions from both
-     * places are evaluated. If a search request matches multiple boost
-     * conditions, the final boost score is equal to the sum of the boost scores
-     * from all matched boost conditions.
+     * and
+     * [SearchRequest.boost_spec][google.cloud.retail.v2alpha.SearchRequest.boost_spec]
+     * are set, the boost conditions from both places are evaluated. If a search
+     * request matches multiple boost conditions, the final boost score is equal
+     * to the sum of the boost scores from all matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -15353,10 +16988,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * [user guide](https://cloud.google.com/retail/docs/boosting).
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
-     * and [SearchRequest.boost_spec] are set, the boost conditions from both
-     * places are evaluated. If a search request matches multiple boost
-     * conditions, the final boost score is equal to the sum of the boost scores
-     * from all matched boost conditions.
+     * and
+     * [SearchRequest.boost_spec][google.cloud.retail.v2alpha.SearchRequest.boost_spec]
+     * are set, the boost conditions from both places are evaluated. If a search
+     * request matches multiple boost conditions, the final boost score is equal
+     * to the sum of the boost scores from all matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -15380,10 +17016,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * [user guide](https://cloud.google.com/retail/docs/boosting).
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
-     * and [SearchRequest.boost_spec] are set, the boost conditions from both
-     * places are evaluated. If a search request matches multiple boost
-     * conditions, the final boost score is equal to the sum of the boost scores
-     * from all matched boost conditions.
+     * and
+     * [SearchRequest.boost_spec][google.cloud.retail.v2alpha.SearchRequest.boost_spec]
+     * are set, the boost conditions from both places are evaluated. If a search
+     * request matches multiple boost conditions, the final boost score is equal
+     * to the sum of the boost scores from all matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -15401,10 +17038,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * [user guide](https://cloud.google.com/retail/docs/boosting).
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
-     * and [SearchRequest.boost_spec] are set, the boost conditions from both
-     * places are evaluated. If a search request matches multiple boost
-     * conditions, the final boost score is equal to the sum of the boost scores
-     * from all matched boost conditions.
+     * and
+     * [SearchRequest.boost_spec][google.cloud.retail.v2alpha.SearchRequest.boost_spec]
+     * are set, the boost conditions from both places are evaluated. If a search
+     * request matches multiple boost conditions, the final boost score is equal
+     * to the sum of the boost scores from all matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -15427,10 +17065,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * [user guide](https://cloud.google.com/retail/docs/boosting).
      * Notice that if both
      * [ServingConfig.boost_control_ids][google.cloud.retail.v2alpha.ServingConfig.boost_control_ids]
-     * and [SearchRequest.boost_spec] are set, the boost conditions from both
-     * places are evaluated. If a search request matches multiple boost
-     * conditions, the final boost score is equal to the sum of the boost scores
-     * from all matched boost conditions.
+     * and
+     * [SearchRequest.boost_spec][google.cloud.retail.v2alpha.SearchRequest.boost_spec]
+     * are set, the boost conditions from both places are evaluated. If a search
+     * request matches multiple boost conditions, the final boost score is equal
+     * to the sum of the boost scores from all matched boost conditions.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.SearchRequest.BoostSpec boost_spec = 13;</code>
@@ -15843,7 +17482,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * inventory(place_id,price)
      * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
-     *   [Product.inventories.attributes][] map.
+     *   [Product.local_inventories.attributes][google.cloud.retail.v2alpha.LocalInventory.attributes]
+     *   map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -15930,7 +17570,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * inventory(place_id,price)
      * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
-     *   [Product.inventories.attributes][] map.
+     *   [Product.local_inventories.attributes][google.cloud.retail.v2alpha.LocalInventory.attributes]
+     *   map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -16017,7 +17658,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * inventory(place_id,price)
      * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
-     *   [Product.inventories.attributes][] map.
+     *   [Product.local_inventories.attributes][google.cloud.retail.v2alpha.LocalInventory.attributes]
+     *   map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -16105,7 +17747,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * inventory(place_id,price)
      * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
-     *   [Product.inventories.attributes][] map.
+     *   [Product.local_inventories.attributes][google.cloud.retail.v2alpha.LocalInventory.attributes]
+     *   map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -16193,7 +17836,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * inventory(place_id,price)
      * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
-     *   [Product.inventories.attributes][] map.
+     *   [Product.local_inventories.attributes][google.cloud.retail.v2alpha.LocalInventory.attributes]
+     *   map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -16288,7 +17932,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * inventory(place_id,price)
      * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
-     *   [Product.inventories.attributes][] map.
+     *   [Product.local_inventories.attributes][google.cloud.retail.v2alpha.LocalInventory.attributes]
+     *   map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -16382,7 +18027,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * inventory(place_id,price)
      * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
-     *   [Product.inventories.attributes][] map.
+     *   [Product.local_inventories.attributes][google.cloud.retail.v2alpha.LocalInventory.attributes]
+     *   map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -16473,7 +18119,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * inventory(place_id,price)
      * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
-     *   [Product.inventories.attributes][] map.
+     *   [Product.local_inventories.attributes][google.cloud.retail.v2alpha.LocalInventory.attributes]
+     *   map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -16563,7 +18210,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * * inventory(place_id,price)
      * * inventory(place_id,original_price)
      * * inventory(place_id,attributes.key), where key is any key in the
-     *   [Product.inventories.attributes][] map.
+     *   [Product.local_inventories.attributes][google.cloud.retail.v2alpha.LocalInventory.attributes]
+     *   map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -17186,6 +18834,484 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         personalizationSpec_ = null;
       }
       return personalizationSpecBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      onChanged();
+      ;
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 34;</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 34;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 34;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 34;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 34;</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 34;</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The labels applied to a resource must meet the following requirements:
+     * * Each resource can have multiple labels, up to a maximum of 64.
+     * * Each label must be a key-value pair.
+     * * Keys have a minimum length of 1 character and a maximum length of 63
+     *   characters and cannot be empty. Values can be empty and have a maximum
+     *   length of 63 characters.
+     * * Keys and values can contain only lowercase letters, numeric characters,
+     *   underscores, and dashes. All characters must use UTF-8 encoding, and
+     *   international characters are allowed.
+     * * The key portion of a label must be unique. However, you can use the same
+     *   key with multiple resources.
+     * * Keys must start with a lowercase letter or international character.
+     * See [Google Cloud
+     * Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements)
+     * for more details.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 34;</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spellCorrectionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec,
+            com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Builder,
+            com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpecOrBuilder>
+        spellCorrectionSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The spell correction specification that specifies the mode under
+     * which spell correction will take effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+     * </code>
+     *
+     * @return Whether the spellCorrectionSpec field is set.
+     */
+    public boolean hasSpellCorrectionSpec() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spell correction specification that specifies the mode under
+     * which spell correction will take effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+     * </code>
+     *
+     * @return The spellCorrectionSpec.
+     */
+    public com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec
+        getSpellCorrectionSpec() {
+      if (spellCorrectionSpecBuilder_ == null) {
+        return spellCorrectionSpec_ == null
+            ? com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.getDefaultInstance()
+            : spellCorrectionSpec_;
+      } else {
+        return spellCorrectionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spell correction specification that specifies the mode under
+     * which spell correction will take effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+     * </code>
+     */
+    public Builder setSpellCorrectionSpec(
+        com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec value) {
+      if (spellCorrectionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spellCorrectionSpec_ = value;
+        onChanged();
+      } else {
+        spellCorrectionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spell correction specification that specifies the mode under
+     * which spell correction will take effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+     * </code>
+     */
+    public Builder setSpellCorrectionSpec(
+        com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Builder builderForValue) {
+      if (spellCorrectionSpecBuilder_ == null) {
+        spellCorrectionSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        spellCorrectionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spell correction specification that specifies the mode under
+     * which spell correction will take effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+     * </code>
+     */
+    public Builder mergeSpellCorrectionSpec(
+        com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec value) {
+      if (spellCorrectionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && spellCorrectionSpec_ != null
+            && spellCorrectionSpec_
+                != com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec
+                    .getDefaultInstance()) {
+          spellCorrectionSpec_ =
+              com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.newBuilder(
+                      spellCorrectionSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          spellCorrectionSpec_ = value;
+        }
+        onChanged();
+      } else {
+        spellCorrectionSpecBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spell correction specification that specifies the mode under
+     * which spell correction will take effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+     * </code>
+     */
+    public Builder clearSpellCorrectionSpec() {
+      if (spellCorrectionSpecBuilder_ == null) {
+        spellCorrectionSpec_ = null;
+        onChanged();
+      } else {
+        spellCorrectionSpecBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spell correction specification that specifies the mode under
+     * which spell correction will take effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Builder
+        getSpellCorrectionSpecBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getSpellCorrectionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spell correction specification that specifies the mode under
+     * which spell correction will take effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpecOrBuilder
+        getSpellCorrectionSpecOrBuilder() {
+      if (spellCorrectionSpecBuilder_ != null) {
+        return spellCorrectionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return spellCorrectionSpec_ == null
+            ? com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.getDefaultInstance()
+            : spellCorrectionSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The spell correction specification that specifies the mode under
+     * which spell correction will take effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec spell_correction_spec = 35;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec,
+            com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Builder,
+            com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpecOrBuilder>
+        getSpellCorrectionSpecFieldBuilder() {
+      if (spellCorrectionSpecBuilder_ == null) {
+        spellCorrectionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec,
+                com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpec.Builder,
+                com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpecOrBuilder>(
+                getSpellCorrectionSpec(), getParentForChildren(), isClean());
+        spellCorrectionSpec_ = null;
+      }
+      return spellCorrectionSpecBuilder_;
     }
 
     @java.lang.Override

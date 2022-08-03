@@ -22,7 +22,9 @@ package com.google.cloud.retail.v2beta;
  *
  *
  * <pre>
- * Request message for [CreateProduct][] method.
+ * Request message for
+ * [ProductService.CreateProduct][google.cloud.retail.v2beta.ProductService.CreateProduct]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2beta.CreateProductRequest}
@@ -503,7 +505,9 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [CreateProduct][] method.
+   * Request message for
+   * [ProductService.CreateProduct][google.cloud.retail.v2beta.ProductService.CreateProduct]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2beta.CreateProductRequest}

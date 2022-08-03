@@ -44,6 +44,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     indexableOption_ = 0;
     dynamicFacetableOption_ = 0;
     searchableOption_ = 0;
+    recommendationsFilteringOption_ = 0;
   }
 
   @java.lang.Override
@@ -101,6 +102,13 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
               int rawValue = input.readEnum();
 
               searchableOption_ = rawValue;
+              break;
+            }
+          case 64:
+            {
+              int rawValue = input.readEnum();
+
+              recommendationsFilteringOption_ = rawValue;
               break;
             }
           case 72:
@@ -805,6 +813,10 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * Required. Attribute name.
    * For example: `color`, `brands`, `attributes.custom_attribute`, such as
    * `attributes.xyz`.
+   * To be indexable, the attribute name can contain only alpha-numeric
+   * characters and underscores. For example, an attribute named
+   * `attributes.abc_xyz` can be indexed, but an attribute named
+   * `attributes.abc-xyz` cannot be indexed.
    * </pre>
    *
    * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -830,6 +842,10 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * Required. Attribute name.
    * For example: `color`, `brands`, `attributes.custom_attribute`, such as
    * `attributes.xyz`.
+   * To be indexable, the attribute name can contain only alpha-numeric
+   * characters and underscores. For example, an attribute named
+   * `attributes.abc_xyz` can be indexed, but an attribute named
+   * `attributes.abc-xyz` cannot be indexed.
    * </pre>
    *
    * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -861,14 +877,19 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * [Product.attributes][google.cloud.retail.v2beta.Product.attributes].
    * Otherwise, this field is `False`.
    * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] can be
-   * pre-loaded by using [AddCatalogAttribute][], [ImportCatalogAttributes][],
-   * or [UpdateAttributesConfig][] APIs. This field is `False` for pre-loaded
+   * pre-loaded by using
+   * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2beta.CatalogService.AddCatalogAttribute],
+   * [CatalogService.ImportCatalogAttributes][], or
+   * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2beta.CatalogService.UpdateAttributesConfig]
+   * APIs. This field is `False` for pre-loaded
    * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s.
-   * Only [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that
-   * are not in use by products can be deleted.
+   * Only pre-loaded
    * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that are
-   * in use by products cannot be deleted; however, their configuration
-   * properties will reset to default values upon removal request.
+   * neither in use by products nor predefined can be deleted.
+   * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that are
+   * either in use by products or are predefined cannot be deleted; however,
+   * their configuration properties will reset to default values upon removal
+   * request.
    * After catalog changes, it takes about 10 minutes for this field to update.
    * </pre>
    *
@@ -1077,6 +1098,60 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int RECOMMENDATIONS_FILTERING_OPTION_FIELD_NUMBER = 8;
+  private int recommendationsFilteringOption_;
+  /**
+   *
+   *
+   * <pre>
+   * When
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2beta.AttributesConfig.attribute_config_level]
+   * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if RECOMMENDATIONS_FILTERING_ENABLED,
+   * attribute values are filterable for recommendations.
+   * This option works for categorical features only,
+   * does not work for numerical features, inventory filtering.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2beta.RecommendationsFilteringOption recommendations_filtering_option = 8;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for recommendationsFilteringOption.
+   */
+  @java.lang.Override
+  public int getRecommendationsFilteringOptionValue() {
+    return recommendationsFilteringOption_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When
+   * [AttributesConfig.attribute_config_level][google.cloud.retail.v2beta.AttributesConfig.attribute_config_level]
+   * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if RECOMMENDATIONS_FILTERING_ENABLED,
+   * attribute values are filterable for recommendations.
+   * This option works for categorical features only,
+   * does not work for numerical features, inventory filtering.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.retail.v2beta.RecommendationsFilteringOption recommendations_filtering_option = 8;
+   * </code>
+   *
+   * @return The recommendationsFilteringOption.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2beta.RecommendationsFilteringOption
+      getRecommendationsFilteringOption() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.retail.v2beta.RecommendationsFilteringOption result =
+        com.google.cloud.retail.v2beta.RecommendationsFilteringOption.valueOf(
+            recommendationsFilteringOption_);
+    return result == null
+        ? com.google.cloud.retail.v2beta.RecommendationsFilteringOption.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1111,6 +1186,12 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             .SEARCHABLE_OPTION_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(7, searchableOption_);
+    }
+    if (recommendationsFilteringOption_
+        != com.google.cloud.retail.v2beta.RecommendationsFilteringOption
+            .RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(8, recommendationsFilteringOption_);
     }
     if (inUse_ != false) {
       output.writeBool(9, inUse_);
@@ -1149,6 +1230,13 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, searchableOption_);
     }
+    if (recommendationsFilteringOption_
+        != com.google.cloud.retail.v2beta.RecommendationsFilteringOption
+            .RECOMMENDATIONS_FILTERING_OPTION_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(8, recommendationsFilteringOption_);
+    }
     if (inUse_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, inUse_);
     }
@@ -1178,6 +1266,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     if (indexableOption_ != other.indexableOption_) return false;
     if (dynamicFacetableOption_ != other.dynamicFacetableOption_) return false;
     if (searchableOption_ != other.searchableOption_) return false;
+    if (recommendationsFilteringOption_ != other.recommendationsFilteringOption_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1201,6 +1290,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + dynamicFacetableOption_;
     hash = (37 * hash) + SEARCHABLE_OPTION_FIELD_NUMBER;
     hash = (53 * hash) + searchableOption_;
+    hash = (37 * hash) + RECOMMENDATIONS_FILTERING_OPTION_FIELD_NUMBER;
+    hash = (53 * hash) + recommendationsFilteringOption_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1359,6 +1450,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
       searchableOption_ = 0;
 
+      recommendationsFilteringOption_ = 0;
+
       return this;
     }
 
@@ -1392,6 +1485,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       result.indexableOption_ = indexableOption_;
       result.dynamicFacetableOption_ = dynamicFacetableOption_;
       result.searchableOption_ = searchableOption_;
+      result.recommendationsFilteringOption_ = recommendationsFilteringOption_;
       onBuilt();
       return result;
     }
@@ -1461,6 +1555,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       if (other.searchableOption_ != 0) {
         setSearchableOptionValue(other.getSearchableOptionValue());
       }
+      if (other.recommendationsFilteringOption_ != 0) {
+        setRecommendationsFilteringOptionValue(other.getRecommendationsFilteringOptionValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1498,6 +1595,10 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * Required. Attribute name.
      * For example: `color`, `brands`, `attributes.custom_attribute`, such as
      * `attributes.xyz`.
+     * To be indexable, the attribute name can contain only alpha-numeric
+     * characters and underscores. For example, an attribute named
+     * `attributes.abc_xyz` can be indexed, but an attribute named
+     * `attributes.abc-xyz` cannot be indexed.
      * </pre>
      *
      * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1522,6 +1623,10 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * Required. Attribute name.
      * For example: `color`, `brands`, `attributes.custom_attribute`, such as
      * `attributes.xyz`.
+     * To be indexable, the attribute name can contain only alpha-numeric
+     * characters and underscores. For example, an attribute named
+     * `attributes.abc_xyz` can be indexed, but an attribute named
+     * `attributes.abc-xyz` cannot be indexed.
      * </pre>
      *
      * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1546,6 +1651,10 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * Required. Attribute name.
      * For example: `color`, `brands`, `attributes.custom_attribute`, such as
      * `attributes.xyz`.
+     * To be indexable, the attribute name can contain only alpha-numeric
+     * characters and underscores. For example, an attribute named
+     * `attributes.abc_xyz` can be indexed, but an attribute named
+     * `attributes.abc-xyz` cannot be indexed.
      * </pre>
      *
      * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1569,6 +1678,10 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * Required. Attribute name.
      * For example: `color`, `brands`, `attributes.custom_attribute`, such as
      * `attributes.xyz`.
+     * To be indexable, the attribute name can contain only alpha-numeric
+     * characters and underscores. For example, an attribute named
+     * `attributes.abc_xyz` can be indexed, but an attribute named
+     * `attributes.abc-xyz` cannot be indexed.
      * </pre>
      *
      * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1588,6 +1701,10 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * Required. Attribute name.
      * For example: `color`, `brands`, `attributes.custom_attribute`, such as
      * `attributes.xyz`.
+     * To be indexable, the attribute name can contain only alpha-numeric
+     * characters and underscores. For example, an attribute named
+     * `attributes.abc_xyz` can be indexed, but an attribute named
+     * `attributes.abc-xyz` cannot be indexed.
      * </pre>
      *
      * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1617,14 +1734,19 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [Product.attributes][google.cloud.retail.v2beta.Product.attributes].
      * Otherwise, this field is `False`.
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] can be
-     * pre-loaded by using [AddCatalogAttribute][], [ImportCatalogAttributes][],
-     * or [UpdateAttributesConfig][] APIs. This field is `False` for pre-loaded
+     * pre-loaded by using
+     * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2beta.CatalogService.AddCatalogAttribute],
+     * [CatalogService.ImportCatalogAttributes][], or
+     * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2beta.CatalogService.UpdateAttributesConfig]
+     * APIs. This field is `False` for pre-loaded
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s.
-     * Only [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that
-     * are not in use by products can be deleted.
+     * Only pre-loaded
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that are
-     * in use by products cannot be deleted; however, their configuration
-     * properties will reset to default values upon removal request.
+     * neither in use by products nor predefined can be deleted.
+     * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that are
+     * either in use by products or are predefined cannot be deleted; however,
+     * their configuration properties will reset to default values upon removal
+     * request.
      * After catalog changes, it takes about 10 minutes for this field to update.
      * </pre>
      *
@@ -1646,14 +1768,19 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [Product.attributes][google.cloud.retail.v2beta.Product.attributes].
      * Otherwise, this field is `False`.
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] can be
-     * pre-loaded by using [AddCatalogAttribute][], [ImportCatalogAttributes][],
-     * or [UpdateAttributesConfig][] APIs. This field is `False` for pre-loaded
+     * pre-loaded by using
+     * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2beta.CatalogService.AddCatalogAttribute],
+     * [CatalogService.ImportCatalogAttributes][], or
+     * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2beta.CatalogService.UpdateAttributesConfig]
+     * APIs. This field is `False` for pre-loaded
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s.
-     * Only [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that
-     * are not in use by products can be deleted.
+     * Only pre-loaded
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that are
-     * in use by products cannot be deleted; however, their configuration
-     * properties will reset to default values upon removal request.
+     * neither in use by products nor predefined can be deleted.
+     * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that are
+     * either in use by products or are predefined cannot be deleted; however,
+     * their configuration properties will reset to default values upon removal
+     * request.
      * After catalog changes, it takes about 10 minutes for this field to update.
      * </pre>
      *
@@ -1678,14 +1805,19 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * [Product.attributes][google.cloud.retail.v2beta.Product.attributes].
      * Otherwise, this field is `False`.
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] can be
-     * pre-loaded by using [AddCatalogAttribute][], [ImportCatalogAttributes][],
-     * or [UpdateAttributesConfig][] APIs. This field is `False` for pre-loaded
+     * pre-loaded by using
+     * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2beta.CatalogService.AddCatalogAttribute],
+     * [CatalogService.ImportCatalogAttributes][], or
+     * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2beta.CatalogService.UpdateAttributesConfig]
+     * APIs. This field is `False` for pre-loaded
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s.
-     * Only [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that
-     * are not in use by products can be deleted.
+     * Only pre-loaded
      * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that are
-     * in use by products cannot be deleted; however, their configuration
-     * properties will reset to default values upon removal request.
+     * neither in use by products nor predefined can be deleted.
+     * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s that are
+     * either in use by products or are predefined cannot be deleted; however,
+     * their configuration properties will reset to default values upon removal
+     * request.
      * After catalog changes, it takes about 10 minutes for this field to update.
      * </pre>
      *
@@ -2184,6 +2316,137 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public Builder clearSearchableOption() {
 
       searchableOption_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int recommendationsFilteringOption_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * When
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2beta.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if RECOMMENDATIONS_FILTERING_ENABLED,
+     * attribute values are filterable for recommendations.
+     * This option works for categorical features only,
+     * does not work for numerical features, inventory filtering.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.RecommendationsFilteringOption recommendations_filtering_option = 8;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for recommendationsFilteringOption.
+     */
+    @java.lang.Override
+    public int getRecommendationsFilteringOptionValue() {
+      return recommendationsFilteringOption_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2beta.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if RECOMMENDATIONS_FILTERING_ENABLED,
+     * attribute values are filterable for recommendations.
+     * This option works for categorical features only,
+     * does not work for numerical features, inventory filtering.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.RecommendationsFilteringOption recommendations_filtering_option = 8;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for recommendationsFilteringOption to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRecommendationsFilteringOptionValue(int value) {
+
+      recommendationsFilteringOption_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2beta.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if RECOMMENDATIONS_FILTERING_ENABLED,
+     * attribute values are filterable for recommendations.
+     * This option works for categorical features only,
+     * does not work for numerical features, inventory filtering.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.RecommendationsFilteringOption recommendations_filtering_option = 8;
+     * </code>
+     *
+     * @return The recommendationsFilteringOption.
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2beta.RecommendationsFilteringOption
+        getRecommendationsFilteringOption() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.retail.v2beta.RecommendationsFilteringOption result =
+          com.google.cloud.retail.v2beta.RecommendationsFilteringOption.valueOf(
+              recommendationsFilteringOption_);
+      return result == null
+          ? com.google.cloud.retail.v2beta.RecommendationsFilteringOption.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2beta.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if RECOMMENDATIONS_FILTERING_ENABLED,
+     * attribute values are filterable for recommendations.
+     * This option works for categorical features only,
+     * does not work for numerical features, inventory filtering.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.RecommendationsFilteringOption recommendations_filtering_option = 8;
+     * </code>
+     *
+     * @param value The recommendationsFilteringOption to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRecommendationsFilteringOption(
+        com.google.cloud.retail.v2beta.RecommendationsFilteringOption value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      recommendationsFilteringOption_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When
+     * [AttributesConfig.attribute_config_level][google.cloud.retail.v2beta.AttributesConfig.attribute_config_level]
+     * is CATALOG_LEVEL_ATTRIBUTE_CONFIG, if RECOMMENDATIONS_FILTERING_ENABLED,
+     * attribute values are filterable for recommendations.
+     * This option works for categorical features only,
+     * does not work for numerical features, inventory filtering.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.retail.v2beta.RecommendationsFilteringOption recommendations_filtering_option = 8;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRecommendationsFilteringOption() {
+
+      recommendationsFilteringOption_ = 0;
       onChanged();
       return this;
     }

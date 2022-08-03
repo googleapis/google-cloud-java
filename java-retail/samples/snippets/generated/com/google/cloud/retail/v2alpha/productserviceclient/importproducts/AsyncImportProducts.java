@@ -45,6 +45,7 @@ public class AsyncImportProducts {
               .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
+              .setSkipDefaultBranchProtection(true)
               .build();
       ApiFuture<Operation> future =
           productServiceClient.importProductsCallable().futureCall(request);

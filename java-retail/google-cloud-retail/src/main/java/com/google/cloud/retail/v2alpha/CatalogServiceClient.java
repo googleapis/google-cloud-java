@@ -958,7 +958,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full AttributesConfig resource name. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AttributesConfig getAttributesConfig(AttributesConfigName name) {
@@ -985,7 +985,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Full AttributesConfig resource name. Format:
-   *     projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/attributesConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AttributesConfig getAttributesConfig(String name) {

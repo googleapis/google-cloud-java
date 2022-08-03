@@ -28,7 +28,7 @@ public interface DeleteControlRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Control to delete. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/controls/{control_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/controls/{control_id}`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface DeleteControlRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the Control to delete. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/controls/{control_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/controls/{control_id}`
    * </pre>
    *
    * <code>

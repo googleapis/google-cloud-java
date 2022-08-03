@@ -24,7 +24,8 @@ package com.google.cloud.retail.v2beta;
  * <pre>
  * Metadata related to the progress of the SetInventory operation.
  * Currently empty because there is no meaningful metadata populated from the
- * [SetInventory][] method.
+ * [ProductService.SetInventory][google.cloud.retail.v2beta.ProductService.SetInventory]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2beta.SetInventoryMetadata}
@@ -262,7 +263,8 @@ public final class SetInventoryMetadata extends com.google.protobuf.GeneratedMes
    * <pre>
    * Metadata related to the progress of the SetInventory operation.
    * Currently empty because there is no meaningful metadata populated from the
-   * [SetInventory][] method.
+   * [ProductService.SetInventory][google.cloud.retail.v2beta.ProductService.SetInventory]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2beta.SetInventoryMetadata}

@@ -32,7 +32,7 @@ public enum AttributeConfigLevel implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Value used when unset. Defaults to
+   * Value used when unset. In this case, server behavior defaults to
    * [CATALOG_LEVEL_ATTRIBUTE_CONFIG][google.cloud.retail.v2alpha.AttributeConfigLevel.CATALOG_LEVEL_ATTRIBUTE_CONFIG].
    * </pre>
    *
@@ -68,7 +68,7 @@ public enum AttributeConfigLevel implements com.google.protobuf.ProtocolMessageE
    *
    *
    * <pre>
-   * Value used when unset. Defaults to
+   * Value used when unset. In this case, server behavior defaults to
    * [CATALOG_LEVEL_ATTRIBUTE_CONFIG][google.cloud.retail.v2alpha.AttributeConfigLevel.CATALOG_LEVEL_ATTRIBUTE_CONFIG].
    * </pre>
    *

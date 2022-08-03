@@ -100,6 +100,22 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
 
               break;
             }
+          case 26:
+            {
+              com.google.cloud.retail.v2alpha.OutputResult.Builder subBuilder = null;
+              if (outputResult_ != null) {
+                subBuilder = outputResult_.toBuilder();
+              }
+              outputResult_ =
+                  input.readMessage(
+                      com.google.cloud.retail.v2alpha.OutputResult.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(outputResult_);
+                outputResult_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -213,7 +229,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Echoes the destination for the complete errors in the request if set.
+   * This field is never set.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -228,7 +244,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Echoes the destination for the complete errors in the request if set.
+   * This field is never set.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -245,7 +261,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Echoes the destination for the complete errors in the request if set.
+   * This field is never set.
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -253,6 +269,54 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.retail.v2alpha.ExportErrorsConfigOrBuilder getErrorsConfigOrBuilder() {
     return getErrorsConfig();
+  }
+
+  public static final int OUTPUT_RESULT_FIELD_NUMBER = 3;
+  private com.google.cloud.retail.v2alpha.OutputResult outputResult_;
+  /**
+   *
+   *
+   * <pre>
+   * Output result indicating where the data were exported to.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+   *
+   * @return Whether the outputResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasOutputResult() {
+    return outputResult_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output result indicating where the data were exported to.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+   *
+   * @return The outputResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.OutputResult getOutputResult() {
+    return outputResult_ == null
+        ? com.google.cloud.retail.v2alpha.OutputResult.getDefaultInstance()
+        : outputResult_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output result indicating where the data were exported to.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.OutputResultOrBuilder getOutputResultOrBuilder() {
+    return getOutputResult();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -275,6 +339,9 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
     if (errorsConfig_ != null) {
       output.writeMessage(2, getErrorsConfig());
     }
+    if (outputResult_ != null) {
+      output.writeMessage(3, getOutputResult());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -289,6 +356,9 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
     }
     if (errorsConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getErrorsConfig());
+    }
+    if (outputResult_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getOutputResult());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -311,6 +381,10 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
     if (hasErrorsConfig()) {
       if (!getErrorsConfig().equals(other.getErrorsConfig())) return false;
     }
+    if (hasOutputResult() != other.hasOutputResult()) return false;
+    if (hasOutputResult()) {
+      if (!getOutputResult().equals(other.getOutputResult())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -329,6 +403,10 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
     if (hasErrorsConfig()) {
       hash = (37 * hash) + ERRORS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getErrorsConfig().hashCode();
+    }
+    if (hasOutputResult()) {
+      hash = (37 * hash) + OUTPUT_RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getOutputResult().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -492,6 +570,12 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
         errorsConfig_ = null;
         errorsConfigBuilder_ = null;
       }
+      if (outputResultBuilder_ == null) {
+        outputResult_ = null;
+      } else {
+        outputResult_ = null;
+        outputResultBuilder_ = null;
+      }
       return this;
     }
 
@@ -533,6 +617,11 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
         result.errorsConfig_ = errorsConfig_;
       } else {
         result.errorsConfig_ = errorsConfigBuilder_.build();
+      }
+      if (outputResultBuilder_ == null) {
+        result.outputResult_ = outputResult_;
+      } else {
+        result.outputResult_ = outputResultBuilder_.build();
       }
       onBuilt();
       return result;
@@ -613,6 +702,9 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
       }
       if (other.hasErrorsConfig()) {
         mergeErrorsConfig(other.getErrorsConfig());
+      }
+      if (other.hasOutputResult()) {
+        mergeOutputResult(other.getOutputResult());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -994,7 +1086,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Echoes the destination for the complete errors in the request if set.
+     * This field is never set.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -1008,7 +1100,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Echoes the destination for the complete errors in the request if set.
+     * This field is never set.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -1028,7 +1120,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Echoes the destination for the complete errors in the request if set.
+     * This field is never set.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -1050,7 +1142,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Echoes the destination for the complete errors in the request if set.
+     * This field is never set.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -1070,7 +1162,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Echoes the destination for the complete errors in the request if set.
+     * This field is never set.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -1096,7 +1188,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Echoes the destination for the complete errors in the request if set.
+     * This field is never set.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -1116,7 +1208,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Echoes the destination for the complete errors in the request if set.
+     * This field is never set.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -1130,7 +1222,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Echoes the destination for the complete errors in the request if set.
+     * This field is never set.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -1148,7 +1240,7 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Echoes the destination for the complete errors in the request if set.
+     * This field is never set.
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ExportErrorsConfig errors_config = 2;</code>
@@ -1168,6 +1260,192 @@ public final class ExportProductsResponse extends com.google.protobuf.GeneratedM
         errorsConfig_ = null;
       }
       return errorsConfigBuilder_;
+    }
+
+    private com.google.cloud.retail.v2alpha.OutputResult outputResult_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.OutputResult,
+            com.google.cloud.retail.v2alpha.OutputResult.Builder,
+            com.google.cloud.retail.v2alpha.OutputResultOrBuilder>
+        outputResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the data were exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+     *
+     * @return Whether the outputResult field is set.
+     */
+    public boolean hasOutputResult() {
+      return outputResultBuilder_ != null || outputResult_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the data were exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+     *
+     * @return The outputResult.
+     */
+    public com.google.cloud.retail.v2alpha.OutputResult getOutputResult() {
+      if (outputResultBuilder_ == null) {
+        return outputResult_ == null
+            ? com.google.cloud.retail.v2alpha.OutputResult.getDefaultInstance()
+            : outputResult_;
+      } else {
+        return outputResultBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the data were exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+     */
+    public Builder setOutputResult(com.google.cloud.retail.v2alpha.OutputResult value) {
+      if (outputResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputResult_ = value;
+        onChanged();
+      } else {
+        outputResultBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the data were exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+     */
+    public Builder setOutputResult(
+        com.google.cloud.retail.v2alpha.OutputResult.Builder builderForValue) {
+      if (outputResultBuilder_ == null) {
+        outputResult_ = builderForValue.build();
+        onChanged();
+      } else {
+        outputResultBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the data were exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+     */
+    public Builder mergeOutputResult(com.google.cloud.retail.v2alpha.OutputResult value) {
+      if (outputResultBuilder_ == null) {
+        if (outputResult_ != null) {
+          outputResult_ =
+              com.google.cloud.retail.v2alpha.OutputResult.newBuilder(outputResult_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          outputResult_ = value;
+        }
+        onChanged();
+      } else {
+        outputResultBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the data were exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+     */
+    public Builder clearOutputResult() {
+      if (outputResultBuilder_ == null) {
+        outputResult_ = null;
+        onChanged();
+      } else {
+        outputResult_ = null;
+        outputResultBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the data were exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+     */
+    public com.google.cloud.retail.v2alpha.OutputResult.Builder getOutputResultBuilder() {
+
+      onChanged();
+      return getOutputResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the data were exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+     */
+    public com.google.cloud.retail.v2alpha.OutputResultOrBuilder getOutputResultOrBuilder() {
+      if (outputResultBuilder_ != null) {
+        return outputResultBuilder_.getMessageOrBuilder();
+      } else {
+        return outputResult_ == null
+            ? com.google.cloud.retail.v2alpha.OutputResult.getDefaultInstance()
+            : outputResult_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output result indicating where the data were exported to.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.OutputResult output_result = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.OutputResult,
+            com.google.cloud.retail.v2alpha.OutputResult.Builder,
+            com.google.cloud.retail.v2alpha.OutputResultOrBuilder>
+        getOutputResultFieldBuilder() {
+      if (outputResultBuilder_ == null) {
+        outputResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2alpha.OutputResult,
+                com.google.cloud.retail.v2alpha.OutputResult.Builder,
+                com.google.cloud.retail.v2alpha.OutputResultOrBuilder>(
+                getOutputResult(), getParentForChildren(), isClean());
+        outputResult_ = null;
+      }
+      return outputResultBuilder_;
     }
 
     @java.lang.Override

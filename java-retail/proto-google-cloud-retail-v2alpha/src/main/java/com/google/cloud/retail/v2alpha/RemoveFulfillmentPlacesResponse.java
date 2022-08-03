@@ -23,7 +23,8 @@ package com.google.cloud.retail.v2alpha;
  *
  * <pre>
  * Response of the RemoveFulfillmentPlacesRequest. Currently empty because there
- * is no meaningful response populated from the [RemoveFulfillmentPlaces][]
+ * is no meaningful response populated from the
+ * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces]
  * method.
  * </pre>
  *
@@ -263,7 +264,8 @@ public final class RemoveFulfillmentPlacesResponse extends com.google.protobuf.G
    *
    * <pre>
    * Response of the RemoveFulfillmentPlacesRequest. Currently empty because there
-   * is no meaningful response populated from the [RemoveFulfillmentPlaces][]
+   * is no meaningful response populated from the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces]
    * method.
    * </pre>
    *

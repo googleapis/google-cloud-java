@@ -24,7 +24,8 @@ package com.google.cloud.retail.v2beta;
  * <pre>
  * Metadata related to the progress of the AddFulfillmentPlaces operation.
  * Currently empty because there is no meaningful metadata populated from the
- * [AddFulfillmentPlaces][] method.
+ * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2beta.AddFulfillmentPlacesMetadata}
@@ -263,7 +264,8 @@ public final class AddFulfillmentPlacesMetadata extends com.google.protobuf.Gene
    * <pre>
    * Metadata related to the progress of the AddFulfillmentPlaces operation.
    * Currently empty because there is no meaningful metadata populated from the
-   * [AddFulfillmentPlaces][] method.
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2beta.AddFulfillmentPlacesMetadata}

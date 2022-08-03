@@ -44,6 +44,7 @@ public class SyncImportProducts {
               .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
               .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
+              .setSkipDefaultBranchProtection(true)
               .build();
       ImportProductsResponse response = productServiceClient.importProductsAsync(request).get();
     }

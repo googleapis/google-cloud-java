@@ -22,8 +22,11 @@ package com.google.cloud.retail.v2beta;
  *
  *
  * <pre>
- * Response of the [RemoveLocalInventories][] API.  Currently empty because
- * there is no meaningful response populated from the [RemoveLocalInventories][]
+ * Response of the
+ * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
+ * API.  Currently empty because there is no meaningful response populated from
+ * the
+ * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
  * method.
  * </pre>
  *
@@ -262,8 +265,11 @@ public final class RemoveLocalInventoriesResponse extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Response of the [RemoveLocalInventories][] API.  Currently empty because
-   * there is no meaningful response populated from the [RemoveLocalInventories][]
+   * Response of the
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
+   * API.  Currently empty because there is no meaningful response populated from
+   * the
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
    * method.
    * </pre>
    *

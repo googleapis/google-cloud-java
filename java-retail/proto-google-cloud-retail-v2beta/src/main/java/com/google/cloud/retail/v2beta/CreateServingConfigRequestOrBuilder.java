@@ -28,7 +28,7 @@ public interface CreateServingConfigRequestOrBuilder
    *
    * <pre>
    * Required. Full resource name of parent. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateServingConfigRequestOrBuilder
    *
    * <pre>
    * Required. Full resource name of parent. Format:
-   * projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}
+   * `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
    * </pre>
    *
    * <code>
