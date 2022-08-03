@@ -56,16 +56,16 @@ integration)
              source "${KOKORO_GFILE_DIR}/secret_manager/java-bigqueryconnection-samples-secrets"
   fi
 
-  mvn -B -pl '!google-cloud-gapic-bom,!CoverageAggregator' \
-    -ntp \
-    -Penable-integration-tests \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -DskipUnitTests=true \
-    -fae \
-    -T 1.5C \
-    verify
+#  mvn -B -pl '!google-cloud-gapic-bom,!CoverageAggregator' \
+#    -ntp \
+#    -Penable-integration-tests \
+#    -DtrimStackTrace=false \
+#    -Dclirr.skip=true \
+#    -Denforcer.skip=true \
+#    -DskipUnitTests=true \
+#    -fae \
+#    -T 1.5C \
+#    verify
   RETURN_CODE=$?
   ;;
 graalvm)
