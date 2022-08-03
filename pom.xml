@@ -173,5 +173,41 @@
       </configuration>
     </plugin>
   </plugins>
+  <extensions>
+    <extension>
+      <groupId>com.google.cloud.artifactregistry</groupId>
+      <artifactId>artifactregistry-maven-wagon</artifactId>
+      <version>2.1.0</version>
+    </extension>
+  </extensions>
   </build>
+
+  <profiles>
+    <profile>
+      <id>enable-integration-tests</id>
+      <distributionManagement>
+        <snapshotRepository>
+          <id>artifact-registry</id>
+          <url>artifactregistry://us-east4-maven.pkg.dev/steady-library-358314/lawrence-maven-artifact-registry</url>
+        </snapshotRepository>
+        <repository>
+          <id>artifact-registry</id>
+          <url>artifactregistry://us-east4-maven.pkg.dev/steady-library-358314/lawrence-maven-artifact-registry</url>
+        </repository>
+      </distributionManagement>
+
+      <repositories>
+        <repository>
+          <id>artifact-registry</id>
+          <url>artifactregistry://us-east4-maven.pkg.dev/steady-library-358314/lawrence-maven-artifact-registry</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
 </project>

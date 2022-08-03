@@ -29,4 +29,23 @@
       <mirrorOf>central</mirrorOf>
     </mirror>
   </mirrors>
+  <profiles>
+    <profile>
+      <id>enable-integration-tests</id>
+      <repositories>
+        <repository>
+          <id>artifact-registry</id>
+          <url>artifactregistry://us-east4-maven.pkg.dev/steady-library-358314/lawrence-maven-artifact-registry</url>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
 </settings>
