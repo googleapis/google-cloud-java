@@ -483,6 +483,16 @@ public final class DatastoreHelper {
     return Value.newBuilder().setTimestampValue(toTimestamp(date.getTime() * 1000L));
   }
 
+  /** Makes a GeoPoint value. */
+  public static Value.Builder makeValue(LatLng value) {
+    return Value.newBuilder().setGeoPointValue(value);
+  }
+
+  /** Makes a GeoPoint value. */
+  public static Value.Builder makeValue(LatLng.Builder value) {
+    return makeValue(value.build());
+  }
+
   private static Timestamp.Builder toTimestamp(long microseconds) {
     long seconds = microseconds / MICROSECONDS_PER_SECOND;
     long microsecondsRemainder = microseconds % MICROSECONDS_PER_SECOND;
@@ -495,16 +505,6 @@ public final class DatastoreHelper {
     return Timestamp.newBuilder()
         .setSeconds(seconds)
         .setNanos((int) microsecondsRemainder * NANOSECONDS_PER_MICROSECOND);
-  }
-
-  /** Makes a GeoPoint value. */
-  public static Value.Builder makeValue(LatLng value) {
-    return Value.newBuilder().setGeoPointValue(value);
-  }
-
-  /** Makes a GeoPoint value. */
-  public static Value.Builder makeValue(LatLng.Builder value) {
-    return makeValue(value.build());
   }
 
   /**
@@ -545,7 +545,8 @@ public final class DatastoreHelper {
         try {
           kind = (String) element;
         } catch (ClassCastException e) {
-          throw new IllegalArgumentException("Expected string or Key, got: " + element.getClass());
+          throw new IllegalArgumentException(
+              "Expected string or Key, got: " + element.getClass(), e);
         }
         pathElement.setKind(kind);
         if (pathIndex + 1 < elements.length) {
