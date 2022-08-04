@@ -18,29 +18,29 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                           https://maven.apache.org/xsd/settings-1.0.0.xsd">
-<!--  <mirrors>-->
-<!--    <mirror>-->
-<!--      <id>google-maven-central</id>-->
-<!--      <name>GCS Maven Central mirror</name>-->
-<!--      <url>https://maven-central.storage-download.googleapis.com/repos/central/data/</url>-->
-<!--      <mirrorOf>central</mirrorOf>-->
-<!--    </mirror>-->
-<!--  </mirrors>-->
-  <profiles>
-    <profile>
-      <id>enable-integration-tests</id>
-      <repositories>
-        <repository>
-          <id>artifact-registry</id>
-          <url>artifactregistry://us-east4-maven.pkg.dev/steady-library-358314/lawrence-maven-artifact-registry</url>
-          <releases>
-            <enabled>true</enabled>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-          </snapshots>
-        </repository>
-      </repositories>
-    </profile>
-  </profiles>
+  <mirrors>
+    <mirror>
+      <id>google-maven-central</id>
+      <name>GCS Maven Central mirror</name>
+      <url>https://maven-central.storage-download.googleapis.com/repos/central/data/</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+  </mirrors>
+<!--  <profiles>-->
+<!--    <profile>-->
+<!--      <id>enable-integration-tests</id>-->
+<!--      <repositories>-->
+<!--        <repository>-->
+<!--          <id>artifact-registry</id>-->
+<!--          <url>artifactregistry://us-east4-maven.pkg.dev/steady-library-358314/lawrence-maven-artifact-registry</url>-->
+<!--          <releases>-->
+<!--            <enabled>true</enabled>-->
+<!--          </releases>-->
+<!--          <snapshots>-->
+<!--            <enabled>true</enabled>-->
+<!--          </snapshots>-->
+<!--        </repository>-->
+<!--      </repositories>-->
+<!--    </profile>-->
+<!--  </profiles>-->
 </settings>
