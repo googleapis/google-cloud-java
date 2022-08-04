@@ -64,7 +64,7 @@ to add `google-cloud-beyondcorp-appconnections` as a dependency in your code.
 ## About BeyondCorp AppConnections
 
 
-[BeyondCorp AppConnections][product-docs] is Google's implementation of the zero trust model. It builds upon a decade of experience at Google, combined with ideas and best practices from the community. By shifting access controls from the network perimeter to individual users, BeyondCorp enables secure work from virtually any location without the need for a traditional VPN.
+[BeyondCorp AppConnections][product-docs] A zero trust solution that enables secure access to applications and resources, and offers integrated threat and data protection.
 
 See the [BeyondCorp AppConnections client library docs][javadocs] to learn how to
 use this BeyondCorp AppConnections Client Library.
