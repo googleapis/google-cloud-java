@@ -27,8 +27,7 @@ source ${scriptDir}/common.sh
 mkdir -p ${HOME}/.m2
 cp settings.xml ${HOME}/.m2
 
-mvn help:effective-settings
-#mvn clean install -pl '!google-cloud-gapic-bom,!CoverageAggregator' -T 1C -DskipTests=true -Dclirr.skip=true -Denforcer.skip=true -Penable-integration-tests
+mvn clean install -pl '!google-cloud-gapic-bom,!CoverageAggregator' -T 1C -DskipTests=true -Dclirr.skip=true -Denforcer.skip=true -Penable-integration-tests
 
 # if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
 if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
