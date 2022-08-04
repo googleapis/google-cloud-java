@@ -27,6 +27,46 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
+   * The architecture of the image. Valid values are ARM64 or X86_64.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return Whether the architecture field is set.
+   */
+  boolean hasArchitecture();
+  /**
+   *
+   *
+   * <pre>
+   * The architecture of the image. Valid values are ARM64 or X86_64.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return The architecture.
+   */
+  java.lang.String getArchitecture();
+  /**
+   *
+   *
+   * <pre>
+   * The architecture of the image. Valid values are ARM64 or X86_64.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return The bytes for architecture.
+   */
+  com.google.protobuf.ByteString getArchitectureBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
    * </pre>
    *

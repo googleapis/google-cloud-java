@@ -38,6 +38,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
   }
 
   private SavedDisk() {
+    architecture_ = "";
     kind_ = "";
     sourceDisk_ = "";
     storageBytesStatus_ = "";
@@ -76,27 +77,34 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
               kind_ = s;
+              break;
+            }
+          case -1872541030:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              architecture_ = s;
               break;
             }
           case -897913544:
             {
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               storageBytes_ = input.readInt64();
               break;
             }
           case -680936950:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               sourceDisk_ = s;
               break;
             }
           case -369054638:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               storageBytesStatus_ = s;
               break;
             }
@@ -134,6 +142,185 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.SavedDisk.class,
             com.google.cloud.compute.v1.SavedDisk.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The architecture of the attached disk.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.SavedDisk.Architecture}
+   */
+  public enum Architecture implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ARCHITECTURE = 0;</code>
+     */
+    UNDEFINED_ARCHITECTURE(0),
+    /**
+     *
+     *
+     * <pre>
+     * Default value indicating Architecture is not set.
+     * </pre>
+     *
+     * <code>ARCHITECTURE_UNSPECIFIED = 394750507;</code>
+     */
+    ARCHITECTURE_UNSPECIFIED(394750507),
+    /**
+     *
+     *
+     * <pre>
+     * Machines with architecture ARM64
+     * </pre>
+     *
+     * <code>ARM64 = 62547450;</code>
+     */
+    ARM64(62547450),
+    /**
+     *
+     *
+     * <pre>
+     * Machines with architecture X86_64
+     * </pre>
+     *
+     * <code>X86_64 = 425300551;</code>
+     */
+    X86_64(425300551),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_ARCHITECTURE = 0;</code>
+     */
+    public static final int UNDEFINED_ARCHITECTURE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Default value indicating Architecture is not set.
+     * </pre>
+     *
+     * <code>ARCHITECTURE_UNSPECIFIED = 394750507;</code>
+     */
+    public static final int ARCHITECTURE_UNSPECIFIED_VALUE = 394750507;
+    /**
+     *
+     *
+     * <pre>
+     * Machines with architecture ARM64
+     * </pre>
+     *
+     * <code>ARM64 = 62547450;</code>
+     */
+    public static final int ARM64_VALUE = 62547450;
+    /**
+     *
+     *
+     * <pre>
+     * Machines with architecture X86_64
+     * </pre>
+     *
+     * <code>X86_64 = 425300551;</code>
+     */
+    public static final int X86_64_VALUE = 425300551;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Architecture valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Architecture forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_ARCHITECTURE;
+        case 394750507:
+          return ARCHITECTURE_UNSPECIFIED;
+        case 62547450:
+          return ARM64;
+        case 425300551:
+          return X86_64;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Architecture> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Architecture> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Architecture>() {
+          public Architecture findValueByNumber(int number) {
+            return Architecture.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.SavedDisk.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Architecture[] VALUES = values();
+
+    public static Architecture valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Architecture(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.SavedDisk.Architecture)
   }
 
   /**
@@ -239,7 +426,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.SavedDisk.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.SavedDisk.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final StorageBytesStatus[] VALUES = values();
@@ -265,6 +452,73 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  public static final int ARCHITECTURE_FIELD_NUMBER = 302803283;
+  private volatile java.lang.Object architecture_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The architecture of the attached disk.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return Whether the architecture field is set.
+   */
+  @java.lang.Override
+  public boolean hasArchitecture() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The architecture of the attached disk.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return The architecture.
+   */
+  @java.lang.Override
+  public java.lang.String getArchitecture() {
+    java.lang.Object ref = architecture_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      architecture_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The architecture of the attached disk.
+   * Check the Architecture enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string architecture = 302803283;</code>
+   *
+   * @return The bytes for architecture.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getArchitectureBytes() {
+    java.lang.Object ref = architecture_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      architecture_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int KIND_FIELD_NUMBER = 3292052;
   private volatile java.lang.Object kind_;
   /**
@@ -280,7 +534,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -344,7 +598,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceDisk() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -408,7 +662,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStorageBytes() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -442,7 +696,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStorageBytesStatus() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -507,16 +761,19 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeInt64(424631719, storageBytes_);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 451753793, sourceDisk_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 302803283, architecture_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeInt64(424631719, storageBytes_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 451753793, sourceDisk_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 490739082, storageBytesStatus_);
     }
     unknownFields.writeTo(output);
@@ -528,16 +785,19 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeInt64Size(424631719, storageBytes_);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(451753793, sourceDisk_);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(302803283, architecture_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(424631719, storageBytes_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(451753793, sourceDisk_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(490739082, storageBytesStatus_);
     }
@@ -556,6 +816,10 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.SavedDisk other = (com.google.cloud.compute.v1.SavedDisk) obj;
 
+    if (hasArchitecture() != other.hasArchitecture()) return false;
+    if (hasArchitecture()) {
+      if (!getArchitecture().equals(other.getArchitecture())) return false;
+    }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
       if (!getKind().equals(other.getKind())) return false;
@@ -583,6 +847,10 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasArchitecture()) {
+      hash = (37 * hash) + ARCHITECTURE_FIELD_NUMBER;
+      hash = (53 * hash) + getArchitecture().hashCode();
+    }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
       hash = (53 * hash) + getKind().hashCode();
@@ -743,14 +1011,16 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      kind_ = "";
+      architecture_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      sourceDisk_ = "";
+      kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
-      storageBytes_ = 0L;
+      sourceDisk_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      storageBytesStatus_ = "";
+      storageBytes_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000008);
+      storageBytesStatus_ = "";
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -783,17 +1053,21 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         to_bitField0_ |= 0x00000001;
       }
-      result.kind_ = kind_;
+      result.architecture_ = architecture_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         to_bitField0_ |= 0x00000002;
       }
-      result.sourceDisk_ = sourceDisk_;
+      result.kind_ = kind_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.storageBytes_ = storageBytes_;
         to_bitField0_ |= 0x00000004;
       }
+      result.sourceDisk_ = sourceDisk_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.storageBytes_ = storageBytes_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        to_bitField0_ |= 0x00000010;
       }
       result.storageBytesStatus_ = storageBytesStatus_;
       result.bitField0_ = to_bitField0_;
@@ -846,13 +1120,18 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.SavedDisk other) {
       if (other == com.google.cloud.compute.v1.SavedDisk.getDefaultInstance()) return this;
-      if (other.hasKind()) {
+      if (other.hasArchitecture()) {
         bitField0_ |= 0x00000001;
+        architecture_ = other.architecture_;
+        onChanged();
+      }
+      if (other.hasKind()) {
+        bitField0_ |= 0x00000002;
         kind_ = other.kind_;
         onChanged();
       }
       if (other.hasSourceDisk()) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         sourceDisk_ = other.sourceDisk_;
         onChanged();
       }
@@ -860,7 +1139,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
         setStorageBytes(other.getStorageBytes());
       }
       if (other.hasStorageBytesStatus()) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         storageBytesStatus_ = other.storageBytesStatus_;
         onChanged();
       }
@@ -895,6 +1174,132 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
+    private java.lang.Object architecture_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The architecture of the attached disk.
+     * Check the Architecture enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string architecture = 302803283;</code>
+     *
+     * @return Whether the architecture field is set.
+     */
+    public boolean hasArchitecture() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The architecture of the attached disk.
+     * Check the Architecture enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string architecture = 302803283;</code>
+     *
+     * @return The architecture.
+     */
+    public java.lang.String getArchitecture() {
+      java.lang.Object ref = architecture_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        architecture_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The architecture of the attached disk.
+     * Check the Architecture enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string architecture = 302803283;</code>
+     *
+     * @return The bytes for architecture.
+     */
+    public com.google.protobuf.ByteString getArchitectureBytes() {
+      java.lang.Object ref = architecture_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        architecture_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The architecture of the attached disk.
+     * Check the Architecture enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string architecture = 302803283;</code>
+     *
+     * @param value The architecture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArchitecture(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000001;
+      architecture_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The architecture of the attached disk.
+     * Check the Architecture enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string architecture = 302803283;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearArchitecture() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      architecture_ = getDefaultInstance().getArchitecture();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The architecture of the attached disk.
+     * Check the Architecture enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string architecture = 302803283;</code>
+     *
+     * @param value The bytes for architecture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArchitectureBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      architecture_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object kind_ = "";
     /**
      *
@@ -908,7 +1313,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -970,7 +1375,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       kind_ = value;
       onChanged();
       return this;
@@ -987,7 +1392,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -1009,7 +1414,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       kind_ = value;
       onChanged();
       return this;
@@ -1028,7 +1433,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceDisk field is set.
      */
     public boolean hasSourceDisk() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1090,7 +1495,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       sourceDisk_ = value;
       onChanged();
       return this;
@@ -1107,7 +1512,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceDisk() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       sourceDisk_ = getDefaultInstance().getSourceDisk();
       onChanged();
       return this;
@@ -1129,7 +1534,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       sourceDisk_ = value;
       onChanged();
       return this;
@@ -1149,7 +1554,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasStorageBytes() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1179,7 +1584,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStorageBytes(long value) {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       storageBytes_ = value;
       onChanged();
       return this;
@@ -1196,7 +1601,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStorageBytes() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       storageBytes_ = 0L;
       onChanged();
       return this;
@@ -1216,7 +1621,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the storageBytesStatus field is set.
      */
     public boolean hasStorageBytesStatus() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1281,7 +1686,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       storageBytesStatus_ = value;
       onChanged();
       return this;
@@ -1299,7 +1704,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStorageBytesStatus() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       storageBytesStatus_ = getDefaultInstance().getStorageBytesStatus();
       onChanged();
       return this;
@@ -1322,7 +1727,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       storageBytesStatus_ = value;
       onChanged();
       return this;

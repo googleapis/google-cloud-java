@@ -22,29 +22,30 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A policy that specifies how requests intended for the route's backends are shadowed to a separate mirrored backend service. The load balancer doesn't wait for responses from the shadow service. Before sending traffic to the shadow service, the host or authority header is suffixed with -shadow.
+ * Describes a URL link.
  * </pre>
  *
- * Protobuf type {@code google.cloud.compute.v1.RequestMirrorPolicy}
+ * Protobuf type {@code google.cloud.compute.v1.HelpLink}
  */
-public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMessageV3
+public final class HelpLink extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RequestMirrorPolicy)
-    RequestMirrorPolicyOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HelpLink)
+    HelpLinkOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use RequestMirrorPolicy.newBuilder() to construct.
-  private RequestMirrorPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use HelpLink.newBuilder() to construct.
+  private HelpLink(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private RequestMirrorPolicy() {
-    backendService_ = "";
+  private HelpLink() {
+    description_ = "";
+    url_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new RequestMirrorPolicy();
+    return new HelpLink();
   }
 
   @java.lang.Override
@@ -52,7 +53,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     return this.unknownFields;
   }
 
-  private RequestMirrorPolicy(
+  private HelpLink(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -71,11 +72,18 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
           case 0:
             done = true;
             break;
-          case -1839398830:
+          case 928634:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              url_ = s;
+              break;
+            }
+          case -911466526:
             {
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000001;
-              backendService_ = s;
+              description_ = s;
               break;
             }
           default:
@@ -101,57 +109,57 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
-        .internal_static_google_cloud_compute_v1_RequestMirrorPolicy_descriptor;
+        .internal_static_google_cloud_compute_v1_HelpLink_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.compute.v1.Compute
-        .internal_static_google_cloud_compute_v1_RequestMirrorPolicy_fieldAccessorTable
+        .internal_static_google_cloud_compute_v1_HelpLink_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.compute.v1.RequestMirrorPolicy.class,
-            com.google.cloud.compute.v1.RequestMirrorPolicy.Builder.class);
+            com.google.cloud.compute.v1.HelpLink.class,
+            com.google.cloud.compute.v1.HelpLink.Builder.class);
   }
 
   private int bitField0_;
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
-  private volatile java.lang.Object backendService_;
+  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  private volatile java.lang.Object description_;
   /**
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+   * Describes what the link offers.
    * </pre>
    *
-   * <code>optional string backend_service = 306946058;</code>
+   * <code>optional string description = 422937596;</code>
    *
-   * @return Whether the backendService field is set.
+   * @return Whether the description field is set.
    */
   @java.lang.Override
-  public boolean hasBackendService() {
+  public boolean hasDescription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+   * Describes what the link offers.
    * </pre>
    *
-   * <code>optional string backend_service = 306946058;</code>
+   * <code>optional string description = 422937596;</code>
    *
-   * @return The backendService.
+   * @return The description.
    */
   @java.lang.Override
-  public java.lang.String getBackendService() {
-    java.lang.Object ref = backendService_;
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      backendService_ = s;
+      description_ = s;
       return s;
     }
   }
@@ -159,20 +167,84 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+   * Describes what the link offers.
    * </pre>
    *
-   * <code>optional string backend_service = 306946058;</code>
+   * <code>optional string description = 422937596;</code>
    *
-   * @return The bytes for backendService.
+   * @return The bytes for description.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getBackendServiceBytes() {
-    java.lang.Object ref = backendService_;
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      backendService_ = b;
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int URL_FIELD_NUMBER = 116079;
+  private volatile java.lang.Object url_;
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the link.
+   * </pre>
+   *
+   * <code>optional string url = 116079;</code>
+   *
+   * @return Whether the url field is set.
+   */
+  @java.lang.Override
+  public boolean hasUrl() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the link.
+   * </pre>
+   *
+   * <code>optional string url = 116079;</code>
+   *
+   * @return The url.
+   */
+  @java.lang.Override
+  public java.lang.String getUrl() {
+    java.lang.Object ref = url_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      url_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the link.
+   * </pre>
+   *
+   * <code>optional string url = 116079;</code>
+   *
+   * @return The bytes for url.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUrlBytes() {
+    java.lang.Object ref = url_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      url_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -193,8 +265,11 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 116079, url_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     unknownFields.writeTo(output);
   }
@@ -205,8 +280,11 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(116079, url_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -218,15 +296,18 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.compute.v1.RequestMirrorPolicy)) {
+    if (!(obj instanceof com.google.cloud.compute.v1.HelpLink)) {
       return super.equals(obj);
     }
-    com.google.cloud.compute.v1.RequestMirrorPolicy other =
-        (com.google.cloud.compute.v1.RequestMirrorPolicy) obj;
+    com.google.cloud.compute.v1.HelpLink other = (com.google.cloud.compute.v1.HelpLink) obj;
 
-    if (hasBackendService() != other.hasBackendService()) return false;
-    if (hasBackendService()) {
-      if (!getBackendService().equals(other.getBackendService())) return false;
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasUrl() != other.hasUrl()) return false;
+    if (hasUrl()) {
+      if (!getUrl().equals(other.getUrl())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -239,80 +320,83 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasBackendService()) {
-      hash = (37 * hash) + BACKEND_SERVICE_FIELD_NUMBER;
-      hash = (53 * hash) + getBackendService().hashCode();
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasUrl()) {
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.compute.v1.RequestMirrorPolicy parseFrom(java.nio.ByteBuffer data)
+  public static com.google.cloud.compute.v1.HelpLink parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.compute.v1.RequestMirrorPolicy parseFrom(
+  public static com.google.cloud.compute.v1.HelpLink parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.RequestMirrorPolicy parseFrom(
-      com.google.protobuf.ByteString data)
+  public static com.google.cloud.compute.v1.HelpLink parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.compute.v1.RequestMirrorPolicy parseFrom(
+  public static com.google.cloud.compute.v1.HelpLink parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.RequestMirrorPolicy parseFrom(byte[] data)
+  public static com.google.cloud.compute.v1.HelpLink parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.compute.v1.RequestMirrorPolicy parseFrom(
+  public static com.google.cloud.compute.v1.HelpLink parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.RequestMirrorPolicy parseFrom(java.io.InputStream input)
+  public static com.google.cloud.compute.v1.HelpLink parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.compute.v1.RequestMirrorPolicy parseFrom(
+  public static com.google.cloud.compute.v1.HelpLink parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.RequestMirrorPolicy parseDelimitedFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.compute.v1.HelpLink parseDelimitedFrom(java.io.InputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.compute.v1.RequestMirrorPolicy parseDelimitedFrom(
+  public static com.google.cloud.compute.v1.HelpLink parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.compute.v1.RequestMirrorPolicy parseFrom(
+  public static com.google.cloud.compute.v1.HelpLink parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.compute.v1.RequestMirrorPolicy parseFrom(
+  public static com.google.cloud.compute.v1.HelpLink parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -329,7 +413,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.compute.v1.RequestMirrorPolicy prototype) {
+  public static Builder newBuilder(com.google.cloud.compute.v1.HelpLink prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -347,31 +431,31 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A policy that specifies how requests intended for the route's backends are shadowed to a separate mirrored backend service. The load balancer doesn't wait for responses from the shadow service. Before sending traffic to the shadow service, the host or authority header is suffixed with -shadow.
+   * Describes a URL link.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.compute.v1.RequestMirrorPolicy}
+   * Protobuf type {@code google.cloud.compute.v1.HelpLink}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.compute.v1.RequestMirrorPolicy)
-      com.google.cloud.compute.v1.RequestMirrorPolicyOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.compute.v1.HelpLink)
+      com.google.cloud.compute.v1.HelpLinkOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.compute.v1.Compute
-          .internal_static_google_cloud_compute_v1_RequestMirrorPolicy_descriptor;
+          .internal_static_google_cloud_compute_v1_HelpLink_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.compute.v1.Compute
-          .internal_static_google_cloud_compute_v1_RequestMirrorPolicy_fieldAccessorTable
+          .internal_static_google_cloud_compute_v1_HelpLink_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.compute.v1.RequestMirrorPolicy.class,
-              com.google.cloud.compute.v1.RequestMirrorPolicy.Builder.class);
+              com.google.cloud.compute.v1.HelpLink.class,
+              com.google.cloud.compute.v1.HelpLink.Builder.class);
     }
 
-    // Construct using com.google.cloud.compute.v1.RequestMirrorPolicy.newBuilder()
+    // Construct using com.google.cloud.compute.v1.HelpLink.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -388,25 +472,27 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      backendService_ = "";
+      description_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
+      url_ = "";
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.compute.v1.Compute
-          .internal_static_google_cloud_compute_v1_RequestMirrorPolicy_descriptor;
+          .internal_static_google_cloud_compute_v1_HelpLink_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.compute.v1.RequestMirrorPolicy getDefaultInstanceForType() {
-      return com.google.cloud.compute.v1.RequestMirrorPolicy.getDefaultInstance();
+    public com.google.cloud.compute.v1.HelpLink getDefaultInstanceForType() {
+      return com.google.cloud.compute.v1.HelpLink.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.compute.v1.RequestMirrorPolicy build() {
-      com.google.cloud.compute.v1.RequestMirrorPolicy result = buildPartial();
+    public com.google.cloud.compute.v1.HelpLink build() {
+      com.google.cloud.compute.v1.HelpLink result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -414,15 +500,18 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     }
 
     @java.lang.Override
-    public com.google.cloud.compute.v1.RequestMirrorPolicy buildPartial() {
-      com.google.cloud.compute.v1.RequestMirrorPolicy result =
-          new com.google.cloud.compute.v1.RequestMirrorPolicy(this);
+    public com.google.cloud.compute.v1.HelpLink buildPartial() {
+      com.google.cloud.compute.v1.HelpLink result = new com.google.cloud.compute.v1.HelpLink(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         to_bitField0_ |= 0x00000001;
       }
-      result.backendService_ = backendService_;
+      result.description_ = description_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        to_bitField0_ |= 0x00000002;
+      }
+      result.url_ = url_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -463,20 +552,24 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.compute.v1.RequestMirrorPolicy) {
-        return mergeFrom((com.google.cloud.compute.v1.RequestMirrorPolicy) other);
+      if (other instanceof com.google.cloud.compute.v1.HelpLink) {
+        return mergeFrom((com.google.cloud.compute.v1.HelpLink) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.compute.v1.RequestMirrorPolicy other) {
-      if (other == com.google.cloud.compute.v1.RequestMirrorPolicy.getDefaultInstance())
-        return this;
-      if (other.hasBackendService()) {
+    public Builder mergeFrom(com.google.cloud.compute.v1.HelpLink other) {
+      if (other == com.google.cloud.compute.v1.HelpLink.getDefaultInstance()) return this;
+      if (other.hasDescription()) {
         bitField0_ |= 0x00000001;
-        backendService_ = other.backendService_;
+        description_ = other.description_;
+        onChanged();
+      }
+      if (other.hasUrl()) {
+        bitField0_ |= 0x00000002;
+        url_ = other.url_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -494,11 +587,11 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.compute.v1.RequestMirrorPolicy parsedMessage = null;
+      com.google.cloud.compute.v1.HelpLink parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.compute.v1.RequestMirrorPolicy) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.compute.v1.HelpLink) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -510,38 +603,38 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
 
     private int bitField0_;
 
-    private java.lang.Object backendService_ = "";
+    private java.lang.Object description_ = "";
     /**
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * Describes what the link offers.
      * </pre>
      *
-     * <code>optional string backend_service = 306946058;</code>
+     * <code>optional string description = 422937596;</code>
      *
-     * @return Whether the backendService field is set.
+     * @return Whether the description field is set.
      */
-    public boolean hasBackendService() {
+    public boolean hasDescription() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * Describes what the link offers.
      * </pre>
      *
-     * <code>optional string backend_service = 306946058;</code>
+     * <code>optional string description = 422937596;</code>
      *
-     * @return The backendService.
+     * @return The description.
      */
-    public java.lang.String getBackendService() {
-      java.lang.Object ref = backendService_;
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        backendService_ = s;
+        description_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -551,19 +644,19 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * Describes what the link offers.
      * </pre>
      *
-     * <code>optional string backend_service = 306946058;</code>
+     * <code>optional string description = 422937596;</code>
      *
-     * @return The bytes for backendService.
+     * @return The bytes for description.
      */
-    public com.google.protobuf.ByteString getBackendServiceBytes() {
-      java.lang.Object ref = backendService_;
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        backendService_ = b;
+        description_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -573,20 +666,20 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * Describes what the link offers.
      * </pre>
      *
-     * <code>optional string backend_service = 306946058;</code>
+     * <code>optional string description = 422937596;</code>
      *
-     * @param value The backendService to set.
+     * @param value The description to set.
      * @return This builder for chaining.
      */
-    public Builder setBackendService(java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
       bitField0_ |= 0x00000001;
-      backendService_ = value;
+      description_ = value;
       onChanged();
       return this;
     }
@@ -594,16 +687,16 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * Describes what the link offers.
      * </pre>
      *
-     * <code>optional string backend_service = 306946058;</code>
+     * <code>optional string description = 422937596;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearBackendService() {
+    public Builder clearDescription() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      backendService_ = getDefaultInstance().getBackendService();
+      description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
@@ -611,21 +704,141 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * Describes what the link offers.
      * </pre>
      *
-     * <code>optional string backend_service = 306946058;</code>
+     * <code>optional string description = 422937596;</code>
      *
-     * @param value The bytes for backendService to set.
+     * @param value The bytes for description to set.
      * @return This builder for chaining.
      */
-    public Builder setBackendServiceBytes(com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
       bitField0_ |= 0x00000001;
-      backendService_ = value;
+      description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object url_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the link.
+     * </pre>
+     *
+     * <code>optional string url = 116079;</code>
+     *
+     * @return Whether the url field is set.
+     */
+    public boolean hasUrl() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the link.
+     * </pre>
+     *
+     * <code>optional string url = 116079;</code>
+     *
+     * @return The url.
+     */
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the link.
+     * </pre>
+     *
+     * <code>optional string url = 116079;</code>
+     *
+     * @return The bytes for url.
+     */
+    public com.google.protobuf.ByteString getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the link.
+     * </pre>
+     *
+     * <code>optional string url = 116079;</code>
+     *
+     * @param value The url to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUrl(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      url_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the link.
+     * </pre>
+     *
+     * <code>optional string url = 116079;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUrl() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      url_ = getDefaultInstance().getUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URL of the link.
+     * </pre>
+     *
+     * <code>optional string url = 116079;</code>
+     *
+     * @param value The bytes for url to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUrlBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      url_ = value;
       onChanged();
       return this;
     }
@@ -641,42 +854,42 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.RequestMirrorPolicy)
+    // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.HelpLink)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.compute.v1.RequestMirrorPolicy)
-  private static final com.google.cloud.compute.v1.RequestMirrorPolicy DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.compute.v1.HelpLink)
+  private static final com.google.cloud.compute.v1.HelpLink DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.compute.v1.RequestMirrorPolicy();
+    DEFAULT_INSTANCE = new com.google.cloud.compute.v1.HelpLink();
   }
 
-  public static com.google.cloud.compute.v1.RequestMirrorPolicy getDefaultInstance() {
+  public static com.google.cloud.compute.v1.HelpLink getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RequestMirrorPolicy> PARSER =
-      new com.google.protobuf.AbstractParser<RequestMirrorPolicy>() {
+  private static final com.google.protobuf.Parser<HelpLink> PARSER =
+      new com.google.protobuf.AbstractParser<HelpLink>() {
         @java.lang.Override
-        public RequestMirrorPolicy parsePartialFrom(
+        public HelpLink parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RequestMirrorPolicy(input, extensionRegistry);
+          return new HelpLink(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<RequestMirrorPolicy> parser() {
+  public static com.google.protobuf.Parser<HelpLink> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<RequestMirrorPolicy> getParserForType() {
+  public com.google.protobuf.Parser<HelpLink> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.compute.v1.RequestMirrorPolicy getDefaultInstanceForType() {
+  public com.google.cloud.compute.v1.HelpLink getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

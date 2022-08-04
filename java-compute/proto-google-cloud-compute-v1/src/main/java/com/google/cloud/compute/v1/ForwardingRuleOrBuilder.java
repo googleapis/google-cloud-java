@@ -327,7 +327,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
    * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
@@ -340,7 +340,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
    * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
@@ -353,7 +353,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
    * Check the IpVersion enum for the list of possible values.
    * </pre>
    *

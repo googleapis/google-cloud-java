@@ -290,7 +290,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Policy for chosing target zone.
+   * Policy for chosing target zone. For more information, see Create VMs in bulk .
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -305,7 +305,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Policy for chosing target zone.
+   * Policy for chosing target zone. For more information, see Create VMs in bulk .
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -322,7 +322,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Policy for chosing target zone.
+   * Policy for chosing target zone. For more information, see Create VMs in bulk .
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -1434,7 +1434,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Policy for chosing target zone.
+     * Policy for chosing target zone. For more information, see Create VMs in bulk .
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -1448,7 +1448,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Policy for chosing target zone.
+     * Policy for chosing target zone. For more information, see Create VMs in bulk .
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -1468,7 +1468,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Policy for chosing target zone.
+     * Policy for chosing target zone. For more information, see Create VMs in bulk .
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -1490,7 +1490,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Policy for chosing target zone.
+     * Policy for chosing target zone. For more information, see Create VMs in bulk .
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -1510,7 +1510,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Policy for chosing target zone.
+     * Policy for chosing target zone. For more information, see Create VMs in bulk .
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -1538,7 +1538,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Policy for chosing target zone.
+     * Policy for chosing target zone. For more information, see Create VMs in bulk .
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -1557,7 +1557,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Policy for chosing target zone.
+     * Policy for chosing target zone. For more information, see Create VMs in bulk .
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -1571,7 +1571,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Policy for chosing target zone.
+     * Policy for chosing target zone. For more information, see Create VMs in bulk .
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>
@@ -1589,7 +1589,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Policy for chosing target zone.
+     * Policy for chosing target zone. For more information, see Create VMs in bulk .
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.LocationPolicy location_policy = 465689852;</code>

@@ -543,7 +543,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ForwardingRule.IpVersion}
@@ -1066,6 +1066,16 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The connection has been accepted by the producer, but the producer needs to take further action before the forwarding rule can serve traffic.
+     * </pre>
+     *
+     * <code>NEEDS_ATTENTION = 344491452;</code>
+     */
+    NEEDS_ATTENTION(344491452),
+    /**
+     *
+     *
+     * <pre>
      * The connection is pending acceptance by the producer.
      * </pre>
      *
@@ -1121,6 +1131,16 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The connection has been accepted by the producer, but the producer needs to take further action before the forwarding rule can serve traffic.
+     * </pre>
+     *
+     * <code>NEEDS_ATTENTION = 344491452;</code>
+     */
+    public static final int NEEDS_ATTENTION_VALUE = 344491452;
+    /**
+     *
+     *
+     * <pre>
      * The connection is pending acceptance by the producer.
      * </pre>
      *
@@ -1170,6 +1190,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           return ACCEPTED;
         case 380163436:
           return CLOSED;
+        case 344491452:
+          return NEEDS_ATTENTION;
         case 35394935:
           return PENDING;
         case 174130302:
@@ -1725,7 +1747,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
    * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
@@ -1741,7 +1763,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
    * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
@@ -1765,7 +1787,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
    * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
@@ -5180,7 +5202,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
      * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
@@ -5195,7 +5217,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
      * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
@@ -5218,7 +5240,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
      * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
@@ -5241,7 +5263,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
      * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
@@ -5263,7 +5285,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
      * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
@@ -5281,7 +5303,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
      * Check the IpVersion enum for the list of possible values.
      * </pre>
      *

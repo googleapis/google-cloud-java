@@ -179,6 +179,75 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    *
    *
    * <pre>
+   * Information about mappings provided by rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+   * </code>
+   */
+  java.util.List<
+          com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings>
+      getRuleMappingsList();
+  /**
+   *
+   *
+   * <pre>
+   * Information about mappings provided by rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+   * </code>
+   */
+  com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
+      getRuleMappings(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Information about mappings provided by rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+   * </code>
+   */
+  int getRuleMappingsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Information about mappings provided by rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.compute.v1
+                  .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuilder>
+      getRuleMappingsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Information about mappings provided by rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings rule_mappings = 486192968;
+   * </code>
+   */
+  com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuilder
+      getRuleMappingsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
    * </pre>
    *

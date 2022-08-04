@@ -64,6 +64,58 @@ public interface ErrorsOrBuilder
    *
    *
    * <pre>
+   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.ErrorDetails> getErrorDetailsList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+   */
+  com.google.cloud.compute.v1.ErrorDetails getErrorDetails(int index);
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+   */
+  int getErrorDetailsCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.ErrorDetailsOrBuilder>
+      getErrorDetailsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.ErrorDetails error_details = 274653963;</code>
+   */
+  com.google.cloud.compute.v1.ErrorDetailsOrBuilder getErrorDetailsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Indicates the field in the request that caused the error. This property is optional.
    * </pre>
    *

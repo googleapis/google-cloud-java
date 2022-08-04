@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Sets the scheduling options for an Instance. NextID: 21
+ * Sets the scheduling options for an Instance.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Scheduling}
@@ -1385,7 +1385,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Sets the scheduling options for an Instance. NextID: 21
+   * Sets the scheduling options for an Instance.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Scheduling}
