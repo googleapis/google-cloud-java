@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.8.8](https://github.com/googleapis/java-core/compare/v2.8.7...v2.8.8) (2022-08-04)
+
+
+### Dependencies
+
+* update dependency com.google.errorprone:error_prone_annotations to v2.15.0 ([#897](https://github.com/googleapis/java-core/issues/897)) ([29e4fc9](https://github.com/googleapis/java-core/commit/29e4fc93d5d4d50f7de85eae7a8150314cca6f43))
+
 ## [2.8.7](https://github.com/googleapis/java-core/compare/v2.8.6...v2.8.7) (2022-08-03)
 
 
