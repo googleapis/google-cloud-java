@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.120.10](https://github.com/googleapis/java-pubsub/compare/v1.120.9...v1.120.10) (2022-08-04)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.8.8 ([#1231](https://github.com/googleapis/java-pubsub/issues/1231)) ([9d13dd8](https://github.com/googleapis/java-pubsub/commit/9d13dd8bc43e24815884dde421409136958d4b0f))
+
 ## [1.120.9](https://github.com/googleapis/java-pubsub/compare/v1.120.8...v1.120.9) (2022-08-03)
 
 
