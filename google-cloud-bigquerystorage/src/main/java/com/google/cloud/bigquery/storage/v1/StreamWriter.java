@@ -562,7 +562,11 @@ public class StreamWriter implements AutoCloseable {
   }
 
   private void cleanupInflightRequests() {
-    Throwable finalStatus = new Exceptions.WriterClosedException(streamName);
+    Throwable finalStatus =
+        new Exceptions.StreamWriterClosedException(
+            Status.fromCode(Status.Code.FAILED_PRECONDITION)
+                .withDescription("Connection is already closed, cleanup inflight request"),
+            streamName);
     Deque<AppendRequestAndResponse> localQueue = new LinkedList<AppendRequestAndResponse>();
     this.lock.lock();
     try {
