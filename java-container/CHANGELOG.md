@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.5.1](https://github.com/googleapis/java-container/compare/v2.5.0...v2.5.1) (2022-08-04)
+
+
+### Bug Fixes
+
+* enable longpaths support for windows test ([#1485](https://github.com/googleapis/java-container/issues/1485)) ([#756](https://github.com/googleapis/java-container/issues/756)) ([6b1229b](https://github.com/googleapis/java-container/commit/6b1229be6d2dde634b10ba8fc55c52b221b872ab))
+
+
+### Documentation
+
+* BinaryAuthorization.enabled field is marked as deprecated ([#771](https://github.com/googleapis/java-container/issues/771)) ([0d7d617](https://github.com/googleapis/java-container/commit/0d7d617d09cd9b1cce2742653216fde104abf90c))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([#767](https://github.com/googleapis/java-container/issues/767)) ([94fad67](https://github.com/googleapis/java-container/commit/94fad67c8b02328cb092b7a43f2c8775c4b46218))
+
 ## [2.5.0](https://github.com/googleapis/java-container/compare/v2.4.1...v2.5.0) (2022-07-12)
 
 
