@@ -20,9 +20,12 @@
                           https://maven.apache.org/xsd/settings-1.0.0.xsd">
   <mirrors>
     <mirror>
+      <!-- Google's Maven Central mirror for Americas
+       https://maven-central.storage.googleapis.com/index.html
+      -->
       <id>google-maven-central</id>
       <name>GCS Maven Central mirror</name>
-      <url>https://maven-central.storage-download.googleapis.com/repos/central/data/</url>
+      <url>https://maven-central.storage-download.googleapis.com/maven2/</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
   </mirrors>
