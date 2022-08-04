@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.14.2](https://github.com/googleapis/java-bigquery/compare/v2.14.1...v2.14.2) (2022-08-04)
+
+
+### Dependencies
+
+* update arrow.version to v9 (major) ([#2201](https://github.com/googleapis/java-bigquery/issues/2201)) ([3ec5ef9](https://github.com/googleapis/java-bigquery/commit/3ec5ef987425315a0dc4d2ab9a4dc162cf000156))
+* update dependency com.google.apis:google-api-services-bigquery to v2-rev20220716-2.0.0 ([#2202](https://github.com/googleapis/java-bigquery/issues/2202)) ([c1ca09e](https://github.com/googleapis/java-bigquery/commit/c1ca09e41bb9d4b070e241437b46d717e66f4944))
+* update dependency com.google.cloud:google-cloud-bigquerystorage-bom to 2.18.0 ([c1ca09e](https://github.com/googleapis/java-bigquery/commit/c1ca09e41bb9d4b070e241437b46d717e66f4944))
+* update dependency com.google.cloud:google-cloud-datacatalog-bom to 1.9.1 ([c1ca09e](https://github.com/googleapis/java-bigquery/commit/c1ca09e41bb9d4b070e241437b46d717e66f4944))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v3 ([c1ca09e](https://github.com/googleapis/java-bigquery/commit/c1ca09e41bb9d4b070e241437b46d717e66f4944))
+* update dependency com.google.cloud:google-cloud-storage to 2.11.0 ([c1ca09e](https://github.com/googleapis/java-bigquery/commit/c1ca09e41bb9d4b070e241437b46d717e66f4944))
+* update dependency com.google.cloud:google-cloud-storage to v2.11.1 ([#2194](https://github.com/googleapis/java-bigquery/issues/2194)) ([45be001](https://github.com/googleapis/java-bigquery/commit/45be00165846010afd43e184d94b81d4254f5cd5))
+* update dependency com.google.code.gson:gson to v2.9.1 ([#2190](https://github.com/googleapis/java-bigquery/issues/2190)) ([4bd4539](https://github.com/googleapis/java-bigquery/commit/4bd4539be4aa2ced4eeefde4b48fdbaa5faf5801))
+* update dependency org.threeten:threeten-extra to v1.7.1 ([c1ca09e](https://github.com/googleapis/java-bigquery/commit/c1ca09e41bb9d4b070e241437b46d717e66f4944))
+
+
+### Documentation
+
+* **owlbot-java:** explaining why not using formatter in pom.xml ([#1511](https://github.com/googleapis/java-bigquery/issues/1511)) ([#2195](https://github.com/googleapis/java-bigquery/issues/2195)) ([7c45aa5](https://github.com/googleapis/java-bigquery/commit/7c45aa5bf78e2c15534cdd6d3d9af572ea871e57)), closes [#1502](https://github.com/googleapis/java-bigquery/issues/1502)
+
 ## [2.14.1](https://github.com/googleapis/java-bigquery/compare/v2.14.0...v2.14.1) (2022-07-27)
 
 
