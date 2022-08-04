@@ -28,10 +28,10 @@ mkdir -p ${HOME}/.m2
 cp settings.xml ${HOME}/.m2
 
 echo "Download and compile the dependencies...Run 1"
-mvn clean compile -pl '!google-cloud-gapic-bom,!CoverageAggregator'
+mvn clean compile -pl '!google-cloud-gapic-bom,!CoverageAggregator' -T 1C -Dclirr.skip=true -Denforcer.skip=true
 
 echo "Compile the dependencies...Run 2"
-mvn clean compile -pl '!google-cloud-gapic-bom,!CoverageAggregator'
+mvn clean compile -pl '!google-cloud-gapic-bom,!CoverageAggregator' -T 1C -Dclirr.skip=true -Denforcer.skip=true
 
 # if GOOGLE_APPLICATION_CREDENTIALS is specified as a relative path, prepend Kokoro root directory onto it
 if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTIALS}" != /* ]]; then
