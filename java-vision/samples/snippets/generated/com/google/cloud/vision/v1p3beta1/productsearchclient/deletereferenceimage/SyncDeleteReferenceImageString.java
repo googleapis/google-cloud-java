@@ -19,6 +19,7 @@ package com.google.cloud.vision.v1p3beta1.samples;
 // [START vision_v1p3beta1_generated_productsearchclient_deletereferenceimage_string_sync]
 import com.google.cloud.vision.v1p3beta1.ProductSearchClient;
 import com.google.cloud.vision.v1p3beta1.ReferenceImageName;
+import com.google.protobuf.Empty;
 
 public class SyncDeleteReferenceImageString {
 

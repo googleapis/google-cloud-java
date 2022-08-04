@@ -16,11 +16,11 @@
 
 package com.google.cloud.vision.v1p3beta1.samples;
 
-// [START
-// vision_v1p3beta1_generated_productsearchclient_addproducttoproductset_stringproductname_sync]
+// [START vision_v1p3beta1_generated_productsearchclient_addproducttoproductset_stringproductname_sync]
 import com.google.cloud.vision.v1p3beta1.ProductName;
 import com.google.cloud.vision.v1p3beta1.ProductSearchClient;
 import com.google.cloud.vision.v1p3beta1.ProductSetName;
+import com.google.protobuf.Empty;
 
 public class SyncAddProductToProductSetStringProductname {
 
@@ -38,5 +38,4 @@ public class SyncAddProductToProductSetStringProductname {
     }
   }
 }
-// [END
-// vision_v1p3beta1_generated_productsearchclient_addproducttoproductset_stringproductname_sync]
+// [END vision_v1p3beta1_generated_productsearchclient_addproducttoproductset_stringproductname_sync]

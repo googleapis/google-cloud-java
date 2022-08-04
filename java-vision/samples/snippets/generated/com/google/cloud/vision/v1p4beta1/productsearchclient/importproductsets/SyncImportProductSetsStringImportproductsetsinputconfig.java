@@ -16,8 +16,7 @@
 
 package com.google.cloud.vision.v1p4beta1.samples;
 
-// [START
-// vision_v1p4beta1_generated_productsearchclient_importproductsets_stringimportproductsetsinputconfig_sync]
+// [START vision_v1p4beta1_generated_productsearchclient_importproductsets_stringimportproductsetsinputconfig_sync]
 import com.google.cloud.vision.v1p4beta1.ImportProductSetsInputConfig;
 import com.google.cloud.vision.v1p4beta1.ImportProductSetsResponse;
 import com.google.cloud.vision.v1p4beta1.LocationName;
@@ -40,5 +39,4 @@ public class SyncImportProductSetsStringImportproductsetsinputconfig {
     }
   }
 }
-// [END
-// vision_v1p4beta1_generated_productsearchclient_importproductsets_stringimportproductsetsinputconfig_sync]
+// [END vision_v1p4beta1_generated_productsearchclient_importproductsets_stringimportproductsetsinputconfig_sync]

@@ -21,6 +21,7 @@ import com.google.cloud.vision.v1.ProductName;
 import com.google.cloud.vision.v1.ProductSearchClient;
 import com.google.cloud.vision.v1.ProductSetName;
 import com.google.cloud.vision.v1.RemoveProductFromProductSetRequest;
+import com.google.protobuf.Empty;
 
 public class SyncRemoveProductFromProductSet {
 

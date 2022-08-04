@@ -37,4 +37,55 @@ public interface TextDetectionParamsOrBuilder
    * @return The enableTextDetectionConfidenceScore.
    */
   boolean getEnableTextDetectionConfidenceScore();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of advanced OCR options to fine-tune OCR behavior.
+   * </pre>
+   *
+   * <code>repeated string advanced_ocr_options = 11;</code>
+   *
+   * @return A list containing the advancedOcrOptions.
+   */
+  java.util.List<java.lang.String> getAdvancedOcrOptionsList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of advanced OCR options to fine-tune OCR behavior.
+   * </pre>
+   *
+   * <code>repeated string advanced_ocr_options = 11;</code>
+   *
+   * @return The count of advancedOcrOptions.
+   */
+  int getAdvancedOcrOptionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of advanced OCR options to fine-tune OCR behavior.
+   * </pre>
+   *
+   * <code>repeated string advanced_ocr_options = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The advancedOcrOptions at the given index.
+   */
+  java.lang.String getAdvancedOcrOptions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of advanced OCR options to fine-tune OCR behavior.
+   * </pre>
+   *
+   * <code>repeated string advanced_ocr_options = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the advancedOcrOptions at the given index.
+   */
+  com.google.protobuf.ByteString getAdvancedOcrOptionsBytes(int index);
 }

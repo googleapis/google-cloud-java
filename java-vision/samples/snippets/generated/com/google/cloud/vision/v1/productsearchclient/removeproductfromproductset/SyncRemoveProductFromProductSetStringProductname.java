@@ -16,11 +16,11 @@
 
 package com.google.cloud.vision.v1.samples;
 
-// [START
-// vision_v1_generated_productsearchclient_removeproductfromproductset_stringproductname_sync]
+// [START vision_v1_generated_productsearchclient_removeproductfromproductset_stringproductname_sync]
 import com.google.cloud.vision.v1.ProductName;
 import com.google.cloud.vision.v1.ProductSearchClient;
 import com.google.cloud.vision.v1.ProductSetName;
+import com.google.protobuf.Empty;
 
 public class SyncRemoveProductFromProductSetStringProductname {
 

@@ -16,8 +16,7 @@
 
 package com.google.cloud.vision.v1p4beta1.samples;
 
-// [START
-// vision_v1p4beta1_generated_productsearchclient_createproduct_locationnameproductstring_sync]
+// [START vision_v1p4beta1_generated_productsearchclient_createproduct_locationnameproductstring_sync]
 import com.google.cloud.vision.v1p4beta1.LocationName;
 import com.google.cloud.vision.v1p4beta1.Product;
 import com.google.cloud.vision.v1p4beta1.ProductSearchClient;

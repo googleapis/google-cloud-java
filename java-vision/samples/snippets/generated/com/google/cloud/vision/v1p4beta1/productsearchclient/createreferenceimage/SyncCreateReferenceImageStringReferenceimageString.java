@@ -16,8 +16,7 @@
 
 package com.google.cloud.vision.v1p4beta1.samples;
 
-// [START
-// vision_v1p4beta1_generated_productsearchclient_createreferenceimage_stringreferenceimagestring_sync]
+// [START vision_v1p4beta1_generated_productsearchclient_createreferenceimage_stringreferenceimagestring_sync]
 import com.google.cloud.vision.v1p4beta1.ProductName;
 import com.google.cloud.vision.v1p4beta1.ProductSearchClient;
 import com.google.cloud.vision.v1p4beta1.ReferenceImage;
@@ -40,5 +39,4 @@ public class SyncCreateReferenceImageStringReferenceimageString {
     }
   }
 }
-// [END
-// vision_v1p4beta1_generated_productsearchclient_createreferenceimage_stringreferenceimagestring_sync]
+// [END vision_v1p4beta1_generated_productsearchclient_createreferenceimage_stringreferenceimagestring_sync]
