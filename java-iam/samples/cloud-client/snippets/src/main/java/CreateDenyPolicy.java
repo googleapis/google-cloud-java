@@ -36,10 +36,10 @@ public class CreateDenyPolicy {
       throws IOException, ExecutionException, InterruptedException, TimeoutException {
     // TODO(developer): Replace these variables before running the sample.
     // ID or number of the Google Cloud project you want to use.
-    String projectId = "sitalakshmi-deny";
+    String projectId = "your-google-cloud-project-id";
 
     // Specify the id of the Deny policy you want to create.
-    String policyId = "deny-policy-id-1";
+    String policyId = "deny-policy-id";
 
     createDenyPolicy(projectId, policyId);
   }
